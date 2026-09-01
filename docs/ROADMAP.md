@@ -1,0 +1,41 @@
+> **What this file is:** The path from the MVP (CEFR A1) through the full vision (CEFR C2), plus the non-content features deferred out of the MVP. Prevents "start small" from losing sight of the full shape of the product.
+> **How to use it:** Update when a phase completes or the plan changes. Each phase's content work follows the same pattern established for A1 in [PRODUCT.md](PRODUCT.md), [DATA_MODEL.md](DATA_MODEL.md), and [ARCHITECTURE.md](ARCHITECTURE.md) — this doc tracks *sequencing*, not re-deriving structure per level.
+
+_Last verified: 2026-09-01 — initial roadmap established via brainstorming session._
+
+# Roadmap
+
+## Vision
+
+A self-directed adult Arabic-speaking learner can go from zero English (A1) to full proficiency (C2), through the same structured, level-by-level, four-skill progression established for the MVP — offline-first, bilingual, on one app.
+
+## Content phases (A1 → C2)
+
+Guided-learning-hour figures below are cumulative, standard CEFR/Cambridge estimates (from zero) — a guideline for scoping each phase's content volume, not a commitment to exact numbers.
+
+| Phase | CEFR level(s) | Cumulative guided hours (reference) | Status |
+|---|---|---|---|
+| MVP | A1 | ~70–100 | In progress — see [PRODUCT.md](PRODUCT.md) |
+| Phase 2 | A2 | ~160–200 | Not started |
+| Phase 3 | B1 | ~350–400 | Not started |
+| Phase 4 | B2 | ~500–600 | Not started |
+| Phase 5 | C1 | ~700–800 | Not started |
+| Phase 6 | C2 | ~1,000–1,200 | Not started |
+
+Each content phase repeats the same shape as A1: break the level into thematic blocks derived from CEFR "can-do" statements for that level, author blocks/units/exercises across all 4 skills through the AI-generate-then-review pipeline, publish to Firestore, and let the app sync/cache as usual — no new mechanics required, just more content.
+
+## Non-content roadmap (deferred from MVP)
+
+These were explicitly scoped out of the MVP (see [PRODUCT.md](PRODUCT.md)) and are revisited here as the product matures, roughly in this order:
+
+1. **Cloud-based AI grading for speaking/writing** — replaces/augments the on-device speech-to-text + rule-based writing checks with real AI scoring (e.g. via Firebase Cloud Functions calling an LLM), once the offline-only approach's limitations are felt. See the "Explicitly rejected" note in [TECH_STACK.md](TECH_STACK.md).
+2. **CI/CD pipeline** — formalize build/release automation (Codemagic or GitHub Actions) once release cadence increases.
+3. **Monetization** — no plan yet; revisit once there's a working, validated product across more than one level.
+4. **Social/community features** — streaks-with-friends, leaderboards, etc. — only after the core solo learning experience is proven.
+5. **Teacher/classroom tools** — a different user (teacher) and data model (groups/assignments); treat as a distinct sub-project with its own brainstorming pass, not a bolt-on.
+6. **Additional native languages beyond Arabic** — would require generalizing the currently-fixed `nativeLanguage`/`targetLanguage` fields (already schema-flexible, see [DATA_MODEL.md](DATA_MODEL.md)) into a real localization system, plus re-authoring contrastive explanations per language pair.
+
+## Open questions carried from PRODUCT.md
+
+- Speaking/writing assessment quality is capped by the on-device/rule-based approach until non-content item 1 above is tackled — worth revisiting after A1 ships and real usage shows whether that's a real pain point.
+- Whether additional native languages are ever supported (non-content item 6) affects how hard-coded the Arabic/English assumption stays in the meantime; not a blocker for A1–C2 content phases, which are English-content-only regardless.
