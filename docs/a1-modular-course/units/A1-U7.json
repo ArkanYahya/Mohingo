@@ -1,0 +1,1049 @@
+{
+  "id": "A1-U7",
+  "title": "Shopping",
+  "titleAr": "التسوق",
+  "levelRole": "core",
+  "estimatedMinutes": [
+    80,
+    110
+  ],
+  "countsTowardA1Mastery": true,
+  "lessons": [
+    {
+      "id": "A1-U7-L1",
+      "title": "Prices",
+      "titleAr": "الأسعار",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U7.LISTENING.UNDERSTAND_PRICE",
+        "A1.U7.INTERACTION.ASK_ABOUT_PRODUCT"
+      ],
+      "grammar": [
+        "A1.G.QUESTION.HOW_MUCH_PRICE"
+      ],
+      "lexicon": [
+        "A1.LEX.SHOP.N01",
+        "A1.LEX.PRICE.N01",
+        "A1.LEX.COST.V01",
+        "A1.LEX.CHEAP.ADJ01",
+        "A1.LEX.EXPENSIVE.ADJ01",
+        "A1.LEX.CASH.N01",
+        "A1.LEX.CARD.N02"
+      ],
+      "chunks": [
+        "A1.CHUNK.HOW_MUCH_IS_THIS",
+        "A1.CHUNK.HOW_MUCH_ARE_THESE"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Customer",
+            "en": "How much is this bag?",
+            "ar": "كم سعر هذه الحقيبة؟"
+          },
+          {
+            "speaker": "Assistant",
+            "en": "It's twelve dollars.",
+            "ar": "سعرها اثنا عشر دولاراً."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U7-L1-A01",
+          "lessonId": "A1-U7-L1",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U7.LISTENING.UNDERSTAND_PRICE",
+            "A1.U7.INTERACTION.ASK_ABOUT_PRODUCT"
+          ],
+          "prompt": "How much is the bag?",
+          "promptAr": "كم سعر الحقيبة؟",
+          "options": [
+            "$12",
+            "$20",
+            "$2"
+          ],
+          "answer": "$12",
+          "audioTranscript": "This bag is twelve dollars."
+        },
+        {
+          "id": "A1-U7-L1-A02",
+          "lessonId": "A1-U7-L1",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U7.LISTENING.UNDERSTAND_PRICE",
+            "A1.U7.INTERACTION.ASK_ABOUT_PRODUCT"
+          ],
+          "prompt": "Match prices and words.",
+          "promptAr": "طابق الأسعار بالكلمات.",
+          "pairs": [
+            [
+              "$15",
+              "fifteen dollars"
+            ],
+            [
+              "$30",
+              "thirty dollars"
+            ],
+            [
+              "$45",
+              "forty-five dollars"
+            ]
+          ]
+        },
+        {
+          "id": "A1-U7-L1-A03",
+          "lessonId": "A1-U7-L1",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U7.LISTENING.UNDERSTAND_PRICE",
+            "A1.U7.INTERACTION.ASK_ABOUT_PRODUCT"
+          ],
+          "prompt": "Complete the price question.",
+          "promptAr": "أكمل سؤال السعر.",
+          "text": "How much ___ these shoes?",
+          "options": [
+            "is",
+            "are",
+            "do"
+          ],
+          "answer": "are"
+        },
+        {
+          "id": "A1-U7-L1-A04",
+          "lessonId": "A1-U7-L1",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U7.LISTENING.UNDERSTAND_PRICE",
+            "A1.U7.INTERACTION.ASK_ABOUT_PRODUCT"
+          ],
+          "prompt": "Which item is cheaper?",
+          "promptAr": "أي قطعة أرخص؟",
+          "options": [
+            "the shirt",
+            "the bag",
+            "same price"
+          ],
+          "answer": "the shirt",
+          "audioTranscript": "The shirt is eighteen dollars and the bag is twenty-two."
+        },
+        {
+          "id": "A1-U7-L1-A05",
+          "lessonId": "A1-U7-L1",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U7.LISTENING.UNDERSTAND_PRICE",
+            "A1.U7.INTERACTION.ASK_ABOUT_PRODUCT"
+          ],
+          "prompt": "Ask the price of one item and one pair of items.",
+          "promptAr": "اسأل عن سعر قطعة واحدة وقطع بصيغة الجمع.",
+          "accepted": [],
+          "evaluation": "singular-and-plural-price-questions",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U7-L2",
+      "title": "Colour and Size",
+      "titleAr": "اللون والمقاس",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U7.INTERACTION.ASK_ABOUT_PRODUCT",
+        "A1.U7.READING.CHOOSE_PRODUCT"
+      ],
+      "grammar": [
+        "A1.G.DEMONSTRATIVE.NEAR_FAR",
+        "A1.G.ADJECTIVE.BEFORE_NOUN_REVIEW"
+      ],
+      "lexicon": [
+        "A1.LEX.SIZE.N01",
+        "A1.LEX.SMALL.ADJ01",
+        "A1.LEX.MEDIUM.ADJ01",
+        "A1.LEX.LARGE.ADJ01",
+        "A1.LEX.RED.ADJ01",
+        "A1.LEX.BLUE.ADJ01",
+        "A1.LEX.BLACK.ADJ01",
+        "A1.LEX.WHITE.ADJ01"
+      ],
+      "chunks": [
+        "A1.CHUNK.WHAT_SIZE",
+        "A1.CHUNK.DO_YOU_HAVE_COLOR_SIZE"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Assistant",
+            "en": "What size do you need?",
+            "ar": "ما المقاس الذي تحتاجه؟"
+          },
+          {
+            "speaker": "Customer",
+            "en": "Medium. Do you have this in blue?",
+            "ar": "متوسط. هل لديكم هذا بالأزرق؟"
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U7-L2-A01",
+          "lessonId": "A1-U7-L2",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U7.INTERACTION.ASK_ABOUT_PRODUCT",
+            "A1.U7.READING.CHOOSE_PRODUCT"
+          ],
+          "prompt": "What size and colour does the customer want?",
+          "promptAr": "ما المقاس واللون المطلوبان؟",
+          "options": [
+            "medium blue",
+            "large black",
+            "small red"
+          ],
+          "answer": "medium blue",
+          "audioTranscript": "I need a medium one in blue."
+        },
+        {
+          "id": "A1-U7-L2-A02",
+          "lessonId": "A1-U7-L2",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U7.INTERACTION.ASK_ABOUT_PRODUCT",
+            "A1.U7.READING.CHOOSE_PRODUCT"
+          ],
+          "prompt": "Match colour words.",
+          "promptAr": "طابق كلمات الألوان.",
+          "pairs": [
+            [
+              "red",
+              "أحمر"
+            ],
+            [
+              "blue",
+              "أزرق"
+            ],
+            [
+              "black",
+              "أسود"
+            ],
+            [
+              "white",
+              "أبيض"
+            ]
+          ]
+        },
+        {
+          "id": "A1-U7-L2-A03",
+          "lessonId": "A1-U7-L2",
+          "type": "order",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U7.INTERACTION.ASK_ABOUT_PRODUCT",
+            "A1.U7.READING.CHOOSE_PRODUCT"
+          ],
+          "prompt": "Build the product description.",
+          "promptAr": "رتب وصف المنتج.",
+          "tokens": [
+            "bag",
+            "black",
+            "a",
+            "small"
+          ],
+          "answer": [
+            "a",
+            "small",
+            "black",
+            "bag"
+          ]
+        },
+        {
+          "id": "A1-U7-L2-A04",
+          "lessonId": "A1-U7-L2",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U7.INTERACTION.ASK_ABOUT_PRODUCT",
+            "A1.U7.READING.CHOOSE_PRODUCT"
+          ],
+          "prompt": "Choose the requested shirt.",
+          "promptAr": "اختر القميص المطلوب.",
+          "options": [
+            "large white shirt",
+            "medium white shirt",
+            "large blue shirt"
+          ],
+          "answer": "large white shirt",
+          "audioTranscript": "Do you have a large white shirt?"
+        },
+        {
+          "id": "A1-U7-L2-A05",
+          "lessonId": "A1-U7-L2",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U7.INTERACTION.ASK_ABOUT_PRODUCT",
+            "A1.U7.READING.CHOOSE_PRODUCT"
+          ],
+          "prompt": "Ask for an item in a specific size and colour.",
+          "promptAr": "اطلب قطعة بمقاس ولون محددين.",
+          "accepted": [],
+          "evaluation": "item-size-colour-request",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U7-L3",
+      "title": "Choose and Try",
+      "titleAr": "اختر وجرّب",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U7.READING.CHOOSE_PRODUCT",
+        "A1.U7.INTERACTION.ASK_ABOUT_PRODUCT"
+      ],
+      "grammar": [
+        "A1.G.SUBSTITUTION.ONE_ONES",
+        "A1.G.PRONOUN.OBJECT_BASIC"
+      ],
+      "lexicon": [
+        "A1.LEX.TRY_ON.V01",
+        "A1.LEX.FIT.V01",
+        "A1.LEX.CHANGING_ROOM.N01"
+      ],
+      "chunks": [
+        "A1.CHUNK.THE_COLOR_ONE",
+        "A1.CHUNK.CAN_I_TRY_IT_ON",
+        "A1.CHUNK.IT_FITS"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Customer",
+            "en": "Can I try on the black one?",
+            "ar": "هل يمكنني تجربة القطعة السوداء؟"
+          },
+          {
+            "speaker": "Assistant",
+            "en": "Yes. The changing room is there.",
+            "ar": "نعم. غرفة القياس هناك."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U7-L3-A01",
+          "lessonId": "A1-U7-L3",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U7.READING.CHOOSE_PRODUCT",
+            "A1.U7.INTERACTION.ASK_ABOUT_PRODUCT"
+          ],
+          "prompt": "Which item does the customer want to try?",
+          "promptAr": "أي قطعة يريد الزبون تجربتها؟",
+          "options": [
+            "the black one",
+            "the blue ones",
+            "the white one"
+          ],
+          "answer": "the black one",
+          "audioTranscript": "Can I try on the black one?"
+        },
+        {
+          "id": "A1-U7-L3-A02",
+          "lessonId": "A1-U7-L3",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U7.READING.CHOOSE_PRODUCT",
+            "A1.U7.INTERACTION.ASK_ABOUT_PRODUCT"
+          ],
+          "prompt": "Replace repeated nouns.",
+          "promptAr": "استبدل الأسماء المتكررة.",
+          "pairs": [
+            [
+              "blue shirt",
+              "blue one"
+            ],
+            [
+              "black shoes",
+              "black ones"
+            ]
+          ]
+        },
+        {
+          "id": "A1-U7-L3-A03",
+          "lessonId": "A1-U7-L3",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U7.READING.CHOOSE_PRODUCT",
+            "A1.U7.INTERACTION.ASK_ABOUT_PRODUCT"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "These shoes are small. They don't ___.",
+          "options": [
+            "fit",
+            "fits",
+            "fitting"
+          ],
+          "answer": "fit"
+        },
+        {
+          "id": "A1-U7-L3-A04",
+          "lessonId": "A1-U7-L3",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U7.READING.CHOOSE_PRODUCT",
+            "A1.U7.INTERACTION.ASK_ABOUT_PRODUCT"
+          ],
+          "prompt": "What is the problem?",
+          "promptAr": "ما المشكلة؟",
+          "options": [
+            "The jacket is too small.",
+            "The jacket is expensive.",
+            "The colour is wrong."
+          ],
+          "answer": "The jacket is too small.",
+          "audioTranscript": "I like this jacket, but it doesn't fit. It's too small."
+        },
+        {
+          "id": "A1-U7-L3-A05",
+          "lessonId": "A1-U7-L3",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U7.READING.CHOOSE_PRODUCT",
+            "A1.U7.INTERACTION.ASK_ABOUT_PRODUCT"
+          ],
+          "prompt": "Choose one item, ask to try it on and say whether it fits.",
+          "promptAr": "اختر قطعة واطلب تجربتها ثم قل هل تناسبك.",
+          "accepted": [],
+          "evaluation": "choose-try-fit-sequence",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U7-L4",
+      "title": "Buy and Pay",
+      "titleAr": "اشترِ وادفع",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U7.INTERACTION.BUY_ITEM",
+        "A1.U7.LISTENING.UNDERSTAND_PRICE"
+      ],
+      "grammar": [
+        "A1.G.NEED_WANT_NOUN",
+        "A1.G.PRONOUN.OBJECT_BASIC"
+      ],
+      "lexicon": [
+        "A1.LEX.CASH.N01",
+        "A1.LEX.CARD.N02",
+        "A1.LEX.RECEIPT.N01"
+      ],
+      "chunks": [
+        "A1.CHUNK.ILL_TAKE_IT",
+        "A1.CHUNK.CAN_I_PAY_BY_CARD",
+        "A1.CHUNK.THATS_ALL"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Customer",
+            "en": "It fits. I'll take it. Can I pay by card?",
+            "ar": "إنه مناسب. سآخذه. هل يمكنني الدفع بالبطاقة؟"
+          },
+          {
+            "speaker": "Assistant",
+            "en": "Yes. Here is your receipt.",
+            "ar": "نعم. هذا إيصالك."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U7-L4-A01",
+          "lessonId": "A1-U7-L4",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U7.INTERACTION.BUY_ITEM",
+            "A1.U7.LISTENING.UNDERSTAND_PRICE"
+          ],
+          "prompt": "How does the customer pay?",
+          "promptAr": "كيف يدفع الزبون؟",
+          "options": [
+            "by card",
+            "in cash",
+            "not stated"
+          ],
+          "answer": "by card",
+          "audioTranscript": "I'll take it. Can I pay by card?"
+        },
+        {
+          "id": "A1-U7-L4-A02",
+          "lessonId": "A1-U7-L4",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U7.INTERACTION.BUY_ITEM",
+            "A1.U7.LISTENING.UNDERSTAND_PRICE"
+          ],
+          "prompt": "Match shop turns.",
+          "promptAr": "طابق أدوار التسوق.",
+          "pairs": [
+            [
+              "I'll take it.",
+              "decision"
+            ],
+            [
+              "Can I pay by card?",
+              "payment question"
+            ],
+            [
+              "Here is your receipt.",
+              "proof of purchase"
+            ]
+          ]
+        },
+        {
+          "id": "A1-U7-L4-A03",
+          "lessonId": "A1-U7-L4",
+          "type": "order",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U7.INTERACTION.BUY_ITEM",
+            "A1.U7.LISTENING.UNDERSTAND_PRICE"
+          ],
+          "prompt": "Order the final purchase turns.",
+          "promptAr": "رتب خطوات الشراء النهائية.",
+          "tokens": [
+            "Can I pay by card?",
+            "I'll take it.",
+            "Here is your receipt."
+          ],
+          "answer": [
+            "I'll take it.",
+            "Can I pay by card?",
+            "Here is your receipt."
+          ]
+        },
+        {
+          "id": "A1-U7-L4-A04",
+          "lessonId": "A1-U7-L4",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U7.INTERACTION.BUY_ITEM",
+            "A1.U7.LISTENING.UNDERSTAND_PRICE"
+          ],
+          "prompt": "What does the customer buy and how?",
+          "promptAr": "ماذا يشتري الزبون وكيف يدفع؟",
+          "options": [
+            "blue bag by card",
+            "black bag in cash",
+            "blue shoes by card"
+          ],
+          "answer": "blue bag by card",
+          "audioTranscript": "The blue bag fits my budget. I'll take it and pay by card."
+        },
+        {
+          "id": "A1-U7-L4-A05",
+          "lessonId": "A1-U7-L4",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U7.INTERACTION.BUY_ITEM",
+            "A1.U7.LISTENING.UNDERSTAND_PRICE"
+          ],
+          "prompt": "Complete a purchase: select the item, ask the final price and choose payment.",
+          "promptAr": "أكمل عملية شراء: اختر القطعة واسأل عن السعر النهائي وحدد الدفع.",
+          "accepted": [],
+          "evaluation": "complete-purchase-interaction",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U7-L5",
+      "title": "A Shopping Problem",
+      "titleAr": "مشكلة في التسوق",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U7.INTERACTION.SOLVE_SHOPPING_PROBLEM",
+        "A1.U7.INTERACTION.BUY_ITEM"
+      ],
+      "grammar": [
+        "A1.G.NEED_WANT_NOUN"
+      ],
+      "lexicon": [
+        "A1.LEX.RECEIPT.N01",
+        "A1.LEX.CHANGE.V02",
+        "A1.LEX.BROKEN.ADJ01",
+        "A1.LEX.WRONG.ADJ01"
+      ],
+      "chunks": [
+        "A1.CHUNK.CAN_I_CHANGE_THIS",
+        "A1.CHUNK.THIS_ISNT_MY_ORDER"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Customer",
+            "en": "This shirt is the wrong size. Can I change it?",
+            "ar": "مقاس هذا القميص خطأ. هل يمكنني استبداله؟"
+          },
+          {
+            "speaker": "Assistant",
+            "en": "Yes. Do you have the receipt?",
+            "ar": "نعم. هل لديك الإيصال؟"
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U7-L5-A01",
+          "lessonId": "A1-U7-L5",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U7.INTERACTION.SOLVE_SHOPPING_PROBLEM",
+            "A1.U7.INTERACTION.BUY_ITEM"
+          ],
+          "prompt": "Why does the customer want to change the shirt?",
+          "promptAr": "لماذا يريد الزبون استبدال القميص؟",
+          "options": [
+            "wrong size",
+            "broken card",
+            "wrong price"
+          ],
+          "answer": "wrong size",
+          "audioTranscript": "This shirt is the wrong size. Can I change it?"
+        },
+        {
+          "id": "A1-U7-L5-A02",
+          "lessonId": "A1-U7-L5",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U7.INTERACTION.SOLVE_SHOPPING_PROBLEM",
+            "A1.U7.INTERACTION.BUY_ITEM"
+          ],
+          "prompt": "Match problems and requests.",
+          "promptAr": "طابق المشكلات والطلبات.",
+          "pairs": [
+            [
+              "wrong size",
+              "Can I change this?"
+            ],
+            [
+              "broken item",
+              "This is broken."
+            ],
+            [
+              "missing proof",
+              "I have the receipt here."
+            ]
+          ]
+        },
+        {
+          "id": "A1-U7-L5-A03",
+          "lessonId": "A1-U7-L5",
+          "type": "order",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U7.INTERACTION.SOLVE_SHOPPING_PROBLEM",
+            "A1.U7.INTERACTION.BUY_ITEM"
+          ],
+          "prompt": "Build the polite problem report.",
+          "promptAr": "رتب الإبلاغ المهذب.",
+          "tokens": [
+            "please",
+            "Can",
+            "this",
+            "change",
+            "I"
+          ],
+          "answer": [
+            "Can",
+            "I",
+            "change",
+            "this",
+            "please"
+          ]
+        },
+        {
+          "id": "A1-U7-L5-A04",
+          "lessonId": "A1-U7-L5",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U7.INTERACTION.SOLVE_SHOPPING_PROBLEM",
+            "A1.U7.INTERACTION.BUY_ITEM"
+          ],
+          "prompt": "What does the customer need?",
+          "promptAr": "ماذا يحتاج الزبون؟",
+          "options": [
+            "a new large black bag",
+            "a receipt for shoes",
+            "a cheaper red shirt"
+          ],
+          "answer": "a new large black bag",
+          "audioTranscript": "This black bag is broken. I need a new one in large."
+        },
+        {
+          "id": "A1-U7-L5-A05",
+          "lessonId": "A1-U7-L5",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U7.INTERACTION.SOLVE_SHOPPING_PROBLEM",
+            "A1.U7.INTERACTION.BUY_ITEM"
+          ],
+          "prompt": "Report one product problem and ask for a clear solution.",
+          "promptAr": "أبلغ عن مشكلة في منتج واطلب حلاً واضحاً.",
+          "accepted": [],
+          "evaluation": "shopping-problem-solution-request",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U7-L6",
+      "title": "Shopping List",
+      "titleAr": "قائمة تسوق",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U7.WRITING.WRITE_SHOPPING_REQUEST",
+        "A1.U7.READING.CHOOSE_PRODUCT",
+        "A1.U7.LISTENING.UNDERSTAND_PRICE"
+      ],
+      "grammar": [
+        "A1.G.ADJECTIVE.BEFORE_NOUN_REVIEW",
+        "A1.G.SUBSTITUTION.ONE_ONES"
+      ],
+      "lexicon": [
+        "A1.LEX.BUDGET.N01",
+        "A1.LEX.PRICE.N01"
+      ],
+      "chunks": [
+        "A1.CHUNK.DO_YOU_HAVE_COLOR_SIZE",
+        "A1.CHUNK.CAN_I_PAY_BY_CARD"
+      ],
+      "readingText": {
+        "title": "Weekend Sale",
+        "text": "White shirts: $12. Blue shirts: $15. Black trousers: $18. Small red bags: $10. Large black bags: $22. Card and cash accepted.",
+        "textAr": "تخفيضات نهاية الأسبوع..."
+      },
+      "activities": [
+        {
+          "id": "A1-U7-L6-A01",
+          "lessonId": "A1-U7-L6",
+          "type": "textChoice",
+          "mode": "encounter",
+          "skill": "reading",
+          "canDo": [
+            "A1.U7.WRITING.WRITE_SHOPPING_REQUEST",
+            "A1.U7.READING.CHOOSE_PRODUCT",
+            "A1.U7.LISTENING.UNDERSTAND_PRICE"
+          ],
+          "prompt": "Which two items cost $30 together?",
+          "promptAr": "أي قطعتين تكلفان 30 دولاراً معاً؟",
+          "options": [
+            "white shirt + black trousers",
+            "blue shirt + red bag",
+            "black trousers + red bag"
+          ],
+          "answer": "white shirt + black trousers"
+        },
+        {
+          "id": "A1-U7-L6-A02",
+          "lessonId": "A1-U7-L6",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U7.WRITING.WRITE_SHOPPING_REQUEST",
+            "A1.U7.READING.CHOOSE_PRODUCT",
+            "A1.U7.LISTENING.UNDERSTAND_PRICE"
+          ],
+          "prompt": "Match customer needs to products.",
+          "promptAr": "طابق احتياجات الزبون بالمنتجات.",
+          "pairs": [
+            [
+              "small red bag",
+              "$10"
+            ],
+            [
+              "large black bag",
+              "$22"
+            ],
+            [
+              "blue shirt",
+              "$15"
+            ]
+          ]
+        },
+        {
+          "id": "A1-U7-L6-A03",
+          "lessonId": "A1-U7-L6",
+          "type": "order",
+          "mode": "practice",
+          "skill": "writing",
+          "canDo": [
+            "A1.U7.WRITING.WRITE_SHOPPING_REQUEST",
+            "A1.U7.READING.CHOOSE_PRODUCT",
+            "A1.U7.LISTENING.UNDERSTAND_PRICE"
+          ],
+          "prompt": "Order the shopping request.",
+          "promptAr": "رتب طلب التسوق المكتوب.",
+          "tokens": [
+            "My budget is $35.",
+            "I need a large black bag and a white shirt.",
+            "Please tell me the total."
+          ],
+          "answer": [
+            "I need a large black bag and a white shirt.",
+            "My budget is $35.",
+            "Please tell me the total."
+          ]
+        },
+        {
+          "id": "A1-U7-L6-A04",
+          "lessonId": "A1-U7-L6",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U7.WRITING.WRITE_SHOPPING_REQUEST",
+            "A1.U7.READING.CHOOSE_PRODUCT",
+            "A1.U7.LISTENING.UNDERSTAND_PRICE"
+          ],
+          "prompt": "Is the purchase inside the budget?",
+          "promptAr": "هل الشراء ضمن الميزانية؟",
+          "options": [
+            "Yes, with $3 left.",
+            "No, it is $3 over.",
+            "Yes, with $5 left."
+          ],
+          "answer": "Yes, with $3 left.",
+          "audioTranscript": "The budget is thirty-five dollars. The bag is twenty-two and the shirt is ten."
+        },
+        {
+          "id": "A1-U7-L6-A05",
+          "lessonId": "A1-U7-L6",
+          "type": "write",
+          "mode": "mastery",
+          "skill": "writing",
+          "canDo": [
+            "A1.U7.WRITING.WRITE_SHOPPING_REQUEST",
+            "A1.U7.READING.CHOOSE_PRODUCT",
+            "A1.U7.LISTENING.UNDERSTAND_PRICE"
+          ],
+          "prompt": "Write a 35–50-word shopping request with two products, specifications, budget and payment question.",
+          "promptAr": "اكتب طلب تسوق من 35–50 كلمة يشمل منتجين ومواصفاتهما والميزانية وسؤال الدفع.",
+          "accepted": [],
+          "evaluation": "u7-shopping-request-rubric",
+          "wordGuide": [
+            35,
+            50
+          ]
+        }
+      ]
+    },
+    {
+      "id": "A1-U7-L7",
+      "title": "Mission: An Outfit on a Budget",
+      "titleAr": "المهمة: ملابس ضمن الميزانية",
+      "lessonType": "mission",
+      "canDo": [
+        "A1.U7.MEDIATION.COMPLETE_BUDGET_PURCHASE",
+        "A1.U7.LISTENING.UNDERSTAND_PRICE",
+        "A1.U7.INTERACTION.ASK_ABOUT_PRODUCT",
+        "A1.U7.READING.CHOOSE_PRODUCT",
+        "A1.U7.INTERACTION.BUY_ITEM",
+        "A1.U7.INTERACTION.SOLVE_SHOPPING_PROBLEM",
+        "A1.U7.WRITING.WRITE_SHOPPING_REQUEST"
+      ],
+      "grammar": [],
+      "lexicon": [],
+      "chunks": [],
+      "scenario": "Use an unseen sale list to choose suitable items under a fixed budget, ask for a size, complete payment and solve one product problem.",
+      "activities": [
+        {
+          "id": "A1-U7-L7-A01",
+          "lessonId": "A1-U7-L7",
+          "mode": "mastery",
+          "type": "textChoice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U7.READING.CHOOSE_PRODUCT",
+            "A1.U7.MEDIATION.COMPLETE_BUDGET_PURCHASE"
+          ],
+          "prompt": "Choose a medium outfit under $40.",
+          "promptAr": "اختر زياً متوسط المقاس بأقل من 40 دولاراً.",
+          "options": [
+            "blue shirt $15 + black trousers $18",
+            "white jacket $28 + shoes $20",
+            "red shirt $20 + bag $25"
+          ],
+          "answer": "blue shirt $15 + black trousers $18",
+          "sourceText": "Sale: medium blue shirt $15; medium black trousers $18; white jacket $28; shoes $20; red shirt $20; bag $25."
+        },
+        {
+          "id": "A1-U7-L7-A02",
+          "lessonId": "A1-U7-L7",
+          "mode": "mastery",
+          "type": "audioChoice",
+          "skill": "listening",
+          "canDo": [
+            "A1.U7.LISTENING.UNDERSTAND_PRICE"
+          ],
+          "prompt": "What is the final total?",
+          "promptAr": "ما المجموع النهائي؟",
+          "options": [
+            "$33",
+            "$35",
+            "$38"
+          ],
+          "answer": "$33",
+          "audioTranscript": "The blue shirt is fifteen dollars and the black trousers are eighteen."
+        },
+        {
+          "id": "A1-U7-L7-A03",
+          "lessonId": "A1-U7-L7",
+          "mode": "mastery",
+          "type": "speak",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U7.INTERACTION.ASK_ABOUT_PRODUCT",
+            "A1.U7.INTERACTION.BUY_ITEM"
+          ],
+          "prompt": "Ask for the correct sizes, confirm the items and pay by card.",
+          "promptAr": "اطلب المقاسات الصحيحة وأكد القطع وادفع بالبطاقة.",
+          "accepted": [],
+          "evaluation": "size-confirm-payment",
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A1-U7-L7-A04",
+          "lessonId": "A1-U7-L7",
+          "mode": "mastery",
+          "type": "audioChoice",
+          "skill": "listening",
+          "canDo": [
+            "A1.U7.INTERACTION.SOLVE_SHOPPING_PROBLEM"
+          ],
+          "prompt": "What problem appears after purchase?",
+          "promptAr": "ما المشكلة بعد الشراء؟",
+          "options": [
+            "The trousers are broken.",
+            "The shirt is too large.",
+            "The receipt is missing."
+          ],
+          "answer": "The trousers are broken.",
+          "audioTranscript": "The shirt is fine, but the trousers are broken."
+        },
+        {
+          "id": "A1-U7-L7-A05",
+          "lessonId": "A1-U7-L7",
+          "mode": "mastery",
+          "type": "speak",
+          "skill": "mediation",
+          "canDo": [
+            "A1.U7.MEDIATION.COMPLETE_BUDGET_PURCHASE",
+            "A1.U7.INTERACTION.SOLVE_SHOPPING_PROBLEM"
+          ],
+          "prompt": "Explain the purchase, budget and needed exchange to the assistant.",
+          "promptAr": "اشرح عملية الشراء والميزانية والاستبدال المطلوب للموظف.",
+          "accepted": [],
+          "evaluation": "purchase-problem-mediation",
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A1-U7-L7-A06",
+          "lessonId": "A1-U7-L7",
+          "mode": "mastery",
+          "type": "write",
+          "skill": "writing",
+          "canDo": [
+            "A1.U7.WRITING.WRITE_SHOPPING_REQUEST"
+          ],
+          "prompt": "Write a 40–60-word record of the final purchase and exchange.",
+          "promptAr": "اكتب سجلاً من 40–60 كلمة عن الشراء والاستبدال النهائي.",
+          "accepted": [],
+          "evaluation": "u7-mission-record-rubric",
+          "wordGuide": [
+            40,
+            60
+          ]
+        }
+      ]
+    }
+  ],
+  "mastery": {
+    "requiredObjectives": [
+      "A1.U7.LISTENING.UNDERSTAND_PRICE",
+      "A1.U7.INTERACTION.ASK_ABOUT_PRODUCT",
+      "A1.U7.READING.CHOOSE_PRODUCT",
+      "A1.U7.INTERACTION.BUY_ITEM",
+      "A1.U7.INTERACTION.SOLVE_SHOPPING_PROBLEM",
+      "A1.U7.WRITING.WRITE_SHOPPING_REQUEST",
+      "A1.U7.MEDIATION.COMPLETE_BUDGET_PURCHASE"
+    ],
+    "requiredSkillGroups": [
+      [
+        "listening",
+        "reading"
+      ],
+      [
+        "spokenInteraction",
+        "spokenProduction",
+        "writing"
+      ],
+      [
+        "mediation"
+      ]
+    ],
+    "minimumObjectiveScore": 0.75,
+    "missionRequired": true,
+    "retry": "targeted-by-objective",
+    "unlocks": "A1-U8"
+  }
+}

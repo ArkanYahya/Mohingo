@@ -1,0 +1,483 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U3",
+  "kind": "lexicon",
+  "records": [
+    {
+      "id": "A1.LEX.ROOM.N01",
+      "headword": "room",
+      "partOfSpeech": "noun",
+      "arabic": "غرفة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "room",
+      "examples": [
+        "This is my room."
+      ],
+      "introducedIn": "A1-U3-L1",
+      "recycledIn": [
+        "A1-U11"
+      ]
+    },
+    {
+      "id": "A1.LEX.BEDROOM.N01",
+      "headword": "bedroom",
+      "partOfSpeech": "noun",
+      "arabic": "غرفة نوم",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "bedroom",
+      "examples": [
+        "There is one bedroom."
+      ],
+      "introducedIn": "A1-U3-L1",
+      "recycledIn": [
+        "A1-U11"
+      ]
+    },
+    {
+      "id": "A1.LEX.LIVING_ROOM.N01",
+      "headword": "living room",
+      "partOfSpeech": "noun",
+      "arabic": "غرفة جلوس",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "living room",
+      "examples": [
+        "The living room is big."
+      ],
+      "introducedIn": "A1-U3-L1",
+      "recycledIn": [
+        "A1-U11"
+      ]
+    },
+    {
+      "id": "A1.LEX.KITCHEN.N01",
+      "headword": "kitchen",
+      "partOfSpeech": "noun",
+      "arabic": "مطبخ",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "kitchen",
+      "examples": [
+        "There is a table in the kitchen."
+      ],
+      "introducedIn": "A1-U3-L1",
+      "recycledIn": [
+        "A1-U6"
+      ]
+    },
+    {
+      "id": "A1.LEX.BATHROOM.N01",
+      "headword": "bathroom",
+      "partOfSpeech": "noun",
+      "arabic": "حمّام",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "bathroom",
+      "examples": [
+        "The bathroom is small."
+      ],
+      "introducedIn": "A1-U3-L1",
+      "recycledIn": [
+        "A1-U10"
+      ]
+    },
+    {
+      "id": "A1.LEX.GARDEN.N01",
+      "headword": "garden",
+      "partOfSpeech": "noun",
+      "arabic": "حديقة منزل",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "garden",
+      "examples": [
+        "There are two chairs in the garden."
+      ],
+      "introducedIn": "A1-U3-L1",
+      "recycledIn": [
+        "A1-U11"
+      ]
+    },
+    {
+      "id": "A1.LEX.DOOR.N01",
+      "headword": "door",
+      "partOfSpeech": "noun",
+      "arabic": "باب",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "door",
+      "examples": [
+        "There is a door."
+      ],
+      "introducedIn": "A1-U3-L1",
+      "recycledIn": [
+        "A1-U8"
+      ]
+    },
+    {
+      "id": "A1.LEX.WINDOW.N01",
+      "headword": "window",
+      "partOfSpeech": "noun",
+      "arabic": "نافذة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "window",
+      "examples": [
+        "There are two windows."
+      ],
+      "introducedIn": "A1-U3-L1",
+      "recycledIn": [
+        "A1-U11"
+      ]
+    },
+    {
+      "id": "A1.LEX.BED.N01",
+      "headword": "bed",
+      "partOfSpeech": "noun",
+      "arabic": "سرير",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "bed",
+      "examples": [
+        "There is a bed in the bedroom."
+      ],
+      "introducedIn": "A1-U3-L1",
+      "recycledIn": [
+        "A1-U11"
+      ]
+    },
+    {
+      "id": "A1.LEX.TABLE.N01",
+      "headword": "table",
+      "partOfSpeech": "noun",
+      "arabic": "طاولة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "table",
+      "examples": [
+        "There is a table in the kitchen."
+      ],
+      "introducedIn": "A1-U3-L2",
+      "recycledIn": [
+        "A1-U6"
+      ]
+    },
+    {
+      "id": "A1.LEX.CHAIR.N01",
+      "headword": "chair",
+      "partOfSpeech": "noun",
+      "arabic": "كرسي",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "chair",
+      "examples": [
+        "There are four chairs."
+      ],
+      "introducedIn": "A1-U3-L2",
+      "recycledIn": [
+        "A1-U6"
+      ]
+    },
+    {
+      "id": "A1.LEX.SOFA.N01",
+      "headword": "sofa",
+      "partOfSpeech": "noun",
+      "arabic": "أريكة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "sofa",
+      "examples": [
+        "The sofa is in the living room."
+      ],
+      "introducedIn": "A1-U3-L2",
+      "recycledIn": [
+        "A1-U11"
+      ]
+    },
+    {
+      "id": "A1.LEX.TV.N01",
+      "headword": "TV",
+      "partOfSpeech": "noun",
+      "arabic": "تلفاز",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "TV",
+      "examples": [
+        "There isn't a TV in my room."
+      ],
+      "introducedIn": "A1-U3-L2",
+      "recycledIn": [
+        "A1-U5"
+      ]
+    },
+    {
+      "id": "A1.LEX.LAMP.N01",
+      "headword": "lamp",
+      "partOfSpeech": "noun",
+      "arabic": "مصباح",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "lamp",
+      "examples": [
+        "The lamp is next to the bed."
+      ],
+      "introducedIn": "A1-U3-L2",
+      "recycledIn": [
+        "A1-U11"
+      ]
+    },
+    {
+      "id": "A1.LEX.PICTURE.N02",
+      "headword": "picture",
+      "partOfSpeech": "noun",
+      "arabic": "صورة معلّقة/صورة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "picture",
+      "examples": [
+        "There are two pictures on the wall."
+      ],
+      "introducedIn": "A1-U3-L2",
+      "recycledIn": [
+        "A1-U5"
+      ]
+    },
+    {
+      "id": "A1.LEX.WALL.N01",
+      "headword": "wall",
+      "partOfSpeech": "noun",
+      "arabic": "جدار",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "wall",
+      "examples": [
+        "The picture is on the wall."
+      ],
+      "introducedIn": "A1-U3-L2",
+      "recycledIn": [
+        "A1-U11"
+      ]
+    },
+    {
+      "id": "A1.LEX.DESK.N01",
+      "headword": "desk",
+      "partOfSpeech": "noun",
+      "arabic": "مكتب/منضدة دراسة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "desk",
+      "examples": [
+        "The desk is under the window."
+      ],
+      "introducedIn": "A1-U3-L2",
+      "recycledIn": [
+        "A1-U4"
+      ]
+    },
+    {
+      "id": "A1.LEX.CUPBOARD.N01",
+      "headword": "cupboard",
+      "partOfSpeech": "noun",
+      "arabic": "خزانة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "cupboard",
+      "examples": [
+        "The cups are in the cupboard."
+      ],
+      "introducedIn": "A1-U3-L2",
+      "recycledIn": [
+        "A1-U6"
+      ]
+    },
+    {
+      "id": "A1.LEX.FRIDGE.N01",
+      "headword": "fridge",
+      "partOfSpeech": "noun",
+      "arabic": "ثلاجة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "fridge",
+      "examples": [
+        "The fridge is in the kitchen."
+      ],
+      "introducedIn": "A1-U3-L2",
+      "recycledIn": [
+        "A1-U6"
+      ]
+    },
+    {
+      "id": "A1.LEX.KEY.N01",
+      "headword": "key",
+      "partOfSpeech": "noun",
+      "arabic": "مفتاح",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "key",
+      "examples": [
+        "The key is on the table."
+      ],
+      "introducedIn": "A1-U3-L3",
+      "recycledIn": [
+        "A1-U8"
+      ]
+    },
+    {
+      "id": "A1.LEX.KEYS.N01",
+      "headword": "keys",
+      "partOfSpeech": "noun",
+      "arabic": "مفاتيح",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "keys",
+      "examples": [
+        "The keys are in the bag."
+      ],
+      "introducedIn": "A1-U3-L3",
+      "recycledIn": [
+        "A1-U8"
+      ]
+    },
+    {
+      "id": "A1.LEX.BAG.N01",
+      "headword": "bag",
+      "partOfSpeech": "noun",
+      "arabic": "حقيبة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "bag",
+      "examples": [
+        "The bag is under the chair."
+      ],
+      "introducedIn": "A1-U3-L3",
+      "recycledIn": [
+        "A1-U7"
+      ]
+    },
+    {
+      "id": "A1.LEX.BOOK.N01",
+      "headword": "book",
+      "partOfSpeech": "noun",
+      "arabic": "كتاب",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "book",
+      "examples": [
+        "The book is on the desk."
+      ],
+      "introducedIn": "A1-U3-L3",
+      "recycledIn": [
+        "A1-U5"
+      ]
+    },
+    {
+      "id": "A1.LEX.PHONE.N01",
+      "headword": "phone",
+      "partOfSpeech": "noun",
+      "arabic": "هاتف",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "phone",
+      "examples": [
+        "Is this your phone?"
+      ],
+      "introducedIn": "A1-U3-L5",
+      "recycledIn": [
+        "A1-U9"
+      ]
+    },
+    {
+      "id": "A1.LEX.OWN.V01",
+      "headword": "own",
+      "partOfSpeech": "verb",
+      "arabic": "يملك/خاص بـ",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": false,
+      "meaning": "own",
+      "examples": [
+        "This is my own room."
+      ],
+      "introducedIn": "A1-U3-L5",
+      "recycledIn": [
+        "A1-U12"
+      ]
+    },
+    {
+      "id": "A1.LEX.BIG.ADJ01",
+      "headword": "big",
+      "partOfSpeech": "adjective",
+      "arabic": "كبير",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "big",
+      "examples": [
+        "The living room is big."
+      ],
+      "introducedIn": "A1-U3-L6",
+      "recycledIn": [
+        "A1-U8"
+      ]
+    },
+    {
+      "id": "A1.LEX.SMALL.ADJ01",
+      "headword": "small",
+      "partOfSpeech": "adjective",
+      "arabic": "صغير",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "small",
+      "examples": [
+        "The bathroom is small."
+      ],
+      "introducedIn": "A1-U3-L6",
+      "recycledIn": [
+        "A1-U8"
+      ]
+    },
+    {
+      "id": "A1.LEX.CLEAN.ADJ01",
+      "headword": "clean",
+      "partOfSpeech": "adjective",
+      "arabic": "نظيف",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "clean",
+      "examples": [
+        "My room is small but clean."
+      ],
+      "introducedIn": "A1-U3-L6",
+      "recycledIn": [
+        "A1-U6"
+      ]
+    }
+  ]
+}

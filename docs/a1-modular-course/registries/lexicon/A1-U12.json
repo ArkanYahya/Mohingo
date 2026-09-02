@@ -1,0 +1,307 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U12",
+  "kind": "lexicon",
+  "records": [
+    {
+      "id": "A1.LEX.PLAN.N01",
+      "headword": "plan",
+      "partOfSpeech": "noun",
+      "arabic": "خطة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "plan",
+      "examples": [
+        "What's your plan for Saturday?"
+      ],
+      "introducedIn": "A1-U12-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.VISIT.V01",
+      "headword": "visit",
+      "partOfSpeech": "verb",
+      "arabic": "يزور",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "visit",
+      "examples": [
+        "I'm going to visit my aunt."
+      ],
+      "introducedIn": "A1-U12-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.MEET.V01",
+      "headword": "meet",
+      "partOfSpeech": "verb",
+      "arabic": "يقابل",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "meet",
+      "examples": [
+        "We're going to meet at six."
+      ],
+      "introducedIn": "A1-U12-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.STAY.V01",
+      "headword": "stay",
+      "partOfSpeech": "verb",
+      "arabic": "يبقى",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "stay",
+      "examples": [
+        "I'm going to stay home."
+      ],
+      "introducedIn": "A1-U12-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.TRIP.N01",
+      "headword": "trip",
+      "partOfSpeech": "noun",
+      "arabic": "رحلة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "trip",
+      "examples": [
+        "We have a weekend trip."
+      ],
+      "introducedIn": "A1-U12-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.WEEKEND.N01",
+      "headword": "weekend",
+      "partOfSpeech": "noun",
+      "arabic": "عطلة نهاية الأسبوع",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "weekend",
+      "examples": [
+        "What are you doing this weekend?"
+      ],
+      "introducedIn": "A1-U12-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.NEXT_WEEK.PHRASE",
+      "headword": "next week",
+      "partOfSpeech": "phrase",
+      "arabic": "الأسبوع القادم",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "next week",
+      "examples": [
+        "I'm going to travel next week."
+      ],
+      "introducedIn": "A1-U12-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.THIS_EVENING.PHRASE",
+      "headword": "this evening",
+      "partOfSpeech": "phrase",
+      "arabic": "هذا المساء",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "this evening",
+      "examples": [
+        "I'm meeting Ali this evening."
+      ],
+      "introducedIn": "A1-U12-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.ARRANGE.V01",
+      "headword": "arrange",
+      "partOfSpeech": "verb",
+      "arabic": "يرتب موعداً",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": false,
+      "meaning": "arrange",
+      "examples": [
+        "Let's arrange a meeting."
+      ],
+      "introducedIn": "A1-U12-L3",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.CONFIRM.V01",
+      "headword": "confirm",
+      "partOfSpeech": "verb",
+      "arabic": "يؤكد",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": false,
+      "meaning": "confirm",
+      "examples": [
+        "Please confirm the time."
+      ],
+      "introducedIn": "A1-U12-L3",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.CANCEL.V01",
+      "headword": "cancel",
+      "partOfSpeech": "verb",
+      "arabic": "يلغي",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "cancel",
+      "examples": [
+        "I need to cancel the meeting."
+      ],
+      "introducedIn": "A1-U12-L4",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.CHANGE.V04",
+      "headword": "change",
+      "partOfSpeech": "verb",
+      "arabic": "يغيّر خطة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "modify a plan or arrangement",
+      "examples": [
+        "Can we change the time?"
+      ],
+      "introducedIn": "A1-U12-L4",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.AVAILABLE.ADJ01",
+      "headword": "available",
+      "partOfSpeech": "adjective",
+      "arabic": "متاح",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "available",
+      "examples": [
+        "I'm available after five."
+      ],
+      "introducedIn": "A1-U12-L3",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.PROBLEM.N01",
+      "headword": "problem",
+      "partOfSpeech": "noun",
+      "arabic": "مشكلة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "problem",
+      "examples": [
+        "No problem."
+      ],
+      "introducedIn": "A1-U12-L4",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.MESSAGE.N01",
+      "headword": "message",
+      "partOfSpeech": "noun",
+      "arabic": "رسالة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "message",
+      "examples": [
+        "Send me a message."
+      ],
+      "introducedIn": "A1-U12-L5",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.REPLY.V01",
+      "headword": "reply",
+      "partOfSpeech": "verb",
+      "arabic": "يرد",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "reply",
+      "examples": [
+        "Please reply today."
+      ],
+      "introducedIn": "A1-U12-L5",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.LATER.ADV01",
+      "headword": "later",
+      "partOfSpeech": "adverb",
+      "arabic": "لاحقاً",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "later",
+      "examples": [
+        "Can we meet later?"
+      ],
+      "introducedIn": "A1-U12-L4",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.EARLIER.ADV01",
+      "headword": "earlier",
+      "partOfSpeech": "adverb",
+      "arabic": "أبكر",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "earlier",
+      "examples": [
+        "Can we meet earlier?"
+      ],
+      "introducedIn": "A1-U12-L4",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.SO.CONJ01",
+      "headword": "so",
+      "partOfSpeech": "conjunction",
+      "arabic": "لذلك",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "so",
+      "examples": [
+        "I'm busy, so I can't come."
+      ],
+      "introducedIn": "A1-U12-L4",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.BECAUSE.CONJ01",
+      "headword": "because",
+      "partOfSpeech": "conjunction",
+      "arabic": "لأن",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "because",
+      "examples": [
+        "I can't come because I work late."
+      ],
+      "introducedIn": "A1-U12-L4",
+      "recycledIn": []
+    }
+  ]
+}

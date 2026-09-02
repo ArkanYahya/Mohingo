@@ -1,0 +1,1054 @@
+{
+  "id": "A1-U10",
+  "title": "Health and Help",
+  "titleAr": "الصحة وطلب المساعدة",
+  "levelRole": "core",
+  "estimatedMinutes": [
+    80,
+    110
+  ],
+  "countsTowardA1Mastery": true,
+  "lessons": [
+    {
+      "id": "A1-U10-L1",
+      "title": "My Body",
+      "titleAr": "جسمي",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U10.READING.IDENTIFY_BODY_AND_BASIC_HEALTH",
+        "A1.U10.PRODUCTION.DESCRIBE_SIMPLE_SYMPTOM"
+      ],
+      "grammar": [
+        "A1.G.HEALTH.BODY_HURTS"
+      ],
+      "lexicon": [
+        "A1.LEX.HEAD.N01",
+        "A1.LEX.EYE.N01",
+        "A1.LEX.EAR.N01",
+        "A1.LEX.MOUTH.N01",
+        "A1.LEX.THROAT.N01",
+        "A1.LEX.STOMACH.N01",
+        "A1.LEX.BACK.N01",
+        "A1.LEX.ARM.N01",
+        "A1.LEX.LEG.N01",
+        "A1.LEX.HAND.N01",
+        "A1.LEX.FOOT.N01"
+      ],
+      "chunks": [
+        "A1.CHUNK.MY_BODY_HURTS"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Nurse",
+            "en": "Where does it hurt?",
+            "ar": "أين يؤلمك؟"
+          },
+          {
+            "speaker": "Patient",
+            "en": "My left foot hurts.",
+            "ar": "قدمي اليسرى تؤلمني."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U10-L1-A01",
+          "lessonId": "A1-U10-L1",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U10.READING.IDENTIFY_BODY_AND_BASIC_HEALTH",
+            "A1.U10.PRODUCTION.DESCRIBE_SIMPLE_SYMPTOM"
+          ],
+          "prompt": "Which body part hurts?",
+          "promptAr": "أي جزء من الجسم يؤلم؟",
+          "options": [
+            "left foot",
+            "right hand",
+            "back"
+          ],
+          "answer": "left foot",
+          "audioTranscript": "My left foot hurts."
+        },
+        {
+          "id": "A1-U10-L1-A02",
+          "lessonId": "A1-U10-L1",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U10.READING.IDENTIFY_BODY_AND_BASIC_HEALTH",
+            "A1.U10.PRODUCTION.DESCRIBE_SIMPLE_SYMPTOM"
+          ],
+          "prompt": "Match body parts.",
+          "promptAr": "طابق أجزاء الجسم.",
+          "pairs": [
+            [
+              "head",
+              "رأس"
+            ],
+            [
+              "throat",
+              "حلق"
+            ],
+            [
+              "stomach",
+              "معدة"
+            ],
+            [
+              "back",
+              "ظهر"
+            ]
+          ]
+        },
+        {
+          "id": "A1-U10-L1-A03",
+          "lessonId": "A1-U10-L1",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U10.READING.IDENTIFY_BODY_AND_BASIC_HEALTH",
+            "A1.U10.PRODUCTION.DESCRIBE_SIMPLE_SYMPTOM"
+          ],
+          "prompt": "Complete the pain sentence.",
+          "promptAr": "أكمل جملة الألم.",
+          "text": "My arm ___.",
+          "options": [
+            "hurts",
+            "hurt",
+            "has"
+          ],
+          "answer": "hurts"
+        },
+        {
+          "id": "A1-U10-L1-A04",
+          "lessonId": "A1-U10-L1",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U10.READING.IDENTIFY_BODY_AND_BASIC_HEALTH",
+            "A1.U10.PRODUCTION.DESCRIBE_SIMPLE_SYMPTOM"
+          ],
+          "prompt": "Where is the pain?",
+          "promptAr": "أين الألم؟",
+          "options": [
+            "back and right leg",
+            "head and left arm",
+            "stomach and foot"
+          ],
+          "answer": "back and right leg",
+          "audioTranscript": "My back hurts, and I have pain in my right leg."
+        },
+        {
+          "id": "A1-U10-L1-A05",
+          "lessonId": "A1-U10-L1",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A1.U10.READING.IDENTIFY_BODY_AND_BASIC_HEALTH",
+            "A1.U10.PRODUCTION.DESCRIBE_SIMPLE_SYMPTOM"
+          ],
+          "prompt": "Identify four body parts and describe pain in one of them.",
+          "promptAr": "حدد أربعة أجزاء من الجسم وصف ألماً في أحدها.",
+          "accepted": [],
+          "evaluation": "four-body-parts-one-pain",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U10-L2",
+      "title": "How I Feel",
+      "titleAr": "كيف أشعر",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U10.PRODUCTION.DESCRIBE_SIMPLE_SYMPTOM",
+        "A1.U10.INTERACTION.ASK_FOR_HEALTH_HELP"
+      ],
+      "grammar": [
+        "A1.G.HEALTH.HAVE_SYMPTOM",
+        "A1.G.HEALTH.FEEL_ADJECTIVE"
+      ],
+      "lexicon": [
+        "A1.LEX.HEADACHE.N01",
+        "A1.LEX.COUGH.N01",
+        "A1.LEX.COLD.N02",
+        "A1.LEX.FEVER.N01",
+        "A1.LEX.SICK.ADJ01",
+        "A1.LEX.TIRED.ADJ01",
+        "A1.LEX.PAIN.N01"
+      ],
+      "chunks": [
+        "A1.CHUNK.I_HAVE_SYMPTOM",
+        "A1.CHUNK.I_FEEL_ADJ",
+        "A1.CHUNK.MY_BODY_HURTS"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Patient",
+            "en": "I have a headache and a cough. I feel tired.",
+            "ar": "لدي صداع وسعال. أشعر بالتعب."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U10-L2-A01",
+          "lessonId": "A1-U10-L2",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U10.PRODUCTION.DESCRIBE_SIMPLE_SYMPTOM",
+            "A1.U10.INTERACTION.ASK_FOR_HEALTH_HELP"
+          ],
+          "prompt": "Which symptoms does the patient report?",
+          "promptAr": "ما الأعراض التي يذكرها المريض؟",
+          "options": [
+            "headache, cough, tired",
+            "fever, back pain, hungry",
+            "cold, leg pain, thirsty"
+          ],
+          "answer": "headache, cough, tired",
+          "audioTranscript": "I have a headache and a cough. I feel tired."
+        },
+        {
+          "id": "A1-U10-L2-A02",
+          "lessonId": "A1-U10-L2",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U10.PRODUCTION.DESCRIBE_SIMPLE_SYMPTOM",
+            "A1.U10.INTERACTION.ASK_FOR_HEALTH_HELP"
+          ],
+          "prompt": "Match symptom patterns.",
+          "promptAr": "طابق تراكيب الأعراض.",
+          "pairs": [
+            [
+              "a headache",
+              "I have"
+            ],
+            [
+              "sick",
+              "I feel"
+            ],
+            [
+              "my stomach",
+              "hurts"
+            ]
+          ]
+        },
+        {
+          "id": "A1-U10-L2-A03",
+          "lessonId": "A1-U10-L2",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U10.PRODUCTION.DESCRIBE_SIMPLE_SYMPTOM",
+            "A1.U10.INTERACTION.ASK_FOR_HEALTH_HELP"
+          ],
+          "prompt": "Complete the symptom.",
+          "promptAr": "أكمل العرض.",
+          "text": "She ___ a fever.",
+          "options": [
+            "has",
+            "have",
+            "feels"
+          ],
+          "answer": "has"
+        },
+        {
+          "id": "A1-U10-L2-A04",
+          "lessonId": "A1-U10-L2",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U10.PRODUCTION.DESCRIBE_SIMPLE_SYMPTOM",
+            "A1.U10.INTERACTION.ASK_FOR_HEALTH_HELP"
+          ],
+          "prompt": "Which health card is correct?",
+          "promptAr": "أي بطاقة صحية صحيحة؟",
+          "options": [
+            "cold + fever + tired",
+            "headache + cough + better",
+            "back pain + hungry + fever"
+          ],
+          "answer": "cold + fever + tired",
+          "audioTranscript": "I have a cold and a fever, and I feel very tired."
+        },
+        {
+          "id": "A1-U10-L2-A05",
+          "lessonId": "A1-U10-L2",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A1.U10.PRODUCTION.DESCRIBE_SIMPLE_SYMPTOM",
+            "A1.U10.INTERACTION.ASK_FOR_HEALTH_HELP"
+          ],
+          "prompt": "Describe three simple symptoms using have, feel and hurts.",
+          "promptAr": "صف ثلاثة أعراض بسيطة مستخدماً have وfeel وhurts.",
+          "accepted": [],
+          "evaluation": "three-pattern-symptom-report",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U10-L3",
+      "title": "Simple Advice",
+      "titleAr": "نصيحة بسيطة",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U10.LISTENING.UNDERSTAND_BASIC_ADVICE",
+        "A1.U10.INTERACTION.ASK_FOR_HEALTH_HELP"
+      ],
+      "grammar": [
+        "A1.G.ADVICE.SHOULD_CHUNK",
+        "A1.G.QUESTION.DO_YOU_HAVE"
+      ],
+      "lexicon": [
+        "A1.LEX.REST.V01",
+        "A1.LEX.MEDICINE.N01",
+        "A1.LEX.TABLET.N01",
+        "A1.LEX.JOB.DOCTOR",
+        "A1.LEX.JOB.NURSE"
+      ],
+      "chunks": [
+        "A1.CHUNK.DO_YOU_HAVE_FEVER",
+        "A1.CHUNK.YOU_SHOULD",
+        "A1.CHUNK.YOU_SHOULDNT"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Nurse",
+            "en": "Do you have a fever?",
+            "ar": "هل لديك حمى؟"
+          },
+          {
+            "speaker": "Patient",
+            "en": "No, but I have a headache.",
+            "ar": "لا، لكن لدي صداع."
+          },
+          {
+            "speaker": "Nurse",
+            "en": "You should rest and drink water.",
+            "ar": "ينبغي أن ترتاح وتشرب الماء."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U10-L3-A01",
+          "lessonId": "A1-U10-L3",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U10.LISTENING.UNDERSTAND_BASIC_ADVICE",
+            "A1.U10.INTERACTION.ASK_FOR_HEALTH_HELP"
+          ],
+          "prompt": "What advice does the nurse give?",
+          "promptAr": "ما النصيحة التي تقدمها الممرضة؟",
+          "options": [
+            "rest and drink water",
+            "drive to work",
+            "take two buses"
+          ],
+          "answer": "rest and drink water",
+          "audioTranscript": "You should rest and drink water."
+        },
+        {
+          "id": "A1-U10-L3-A02",
+          "lessonId": "A1-U10-L3",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U10.LISTENING.UNDERSTAND_BASIC_ADVICE",
+            "A1.U10.INTERACTION.ASK_FOR_HEALTH_HELP"
+          ],
+          "prompt": "Match symptoms and basic advice.",
+          "promptAr": "طابق الأعراض والنصيحة الأساسية.",
+          "pairs": [
+            [
+              "tired",
+              "rest"
+            ],
+            [
+              "sore throat",
+              "drink water"
+            ],
+            [
+              "high fever",
+              "see a doctor"
+            ]
+          ]
+        },
+        {
+          "id": "A1-U10-L3-A03",
+          "lessonId": "A1-U10-L3",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U10.LISTENING.UNDERSTAND_BASIC_ADVICE",
+            "A1.U10.INTERACTION.ASK_FOR_HEALTH_HELP"
+          ],
+          "prompt": "Complete the advice.",
+          "promptAr": "أكمل النصيحة.",
+          "text": "You ___ rest today.",
+          "options": [
+            "should",
+            "are",
+            "have"
+          ],
+          "answer": "should"
+        },
+        {
+          "id": "A1-U10-L3-A04",
+          "lessonId": "A1-U10-L3",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U10.LISTENING.UNDERSTAND_BASIC_ADVICE",
+            "A1.U10.INTERACTION.ASK_FOR_HEALTH_HELP"
+          ],
+          "prompt": "What should the patient not do?",
+          "promptAr": "ماذا ينبغي ألا يفعل المريض؟",
+          "options": [
+            "go to work",
+            "drink water",
+            "rest"
+          ],
+          "answer": "go to work",
+          "audioTranscript": "You should rest today. You shouldn't go to work."
+        },
+        {
+          "id": "A1-U10-L3-A05",
+          "lessonId": "A1-U10-L3",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U10.LISTENING.UNDERSTAND_BASIC_ADVICE",
+            "A1.U10.INTERACTION.ASK_FOR_HEALTH_HELP"
+          ],
+          "prompt": "Ask about one symptom and give two safe, basic actions from the provided advice list.",
+          "promptAr": "اسأل عن عرض واحد وأعط إجراءين أساسيين آمنين من قائمة النصائح المتاحة.",
+          "accepted": [],
+          "evaluation": "symptom-question-two-listed-actions",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U10-L4",
+      "title": "At the Clinic",
+      "titleAr": "في العيادة",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U10.INTERACTION.ASK_FOR_HEALTH_HELP",
+        "A1.U10.READING.UNDERSTAND_HEALTH_INSTRUCTION"
+      ],
+      "grammar": [
+        "A1.G.IMPERATIVE.HEALTH"
+      ],
+      "lexicon": [
+        "A1.LEX.APPOINTMENT.N01",
+        "A1.LEX.JOB.DOCTOR",
+        "A1.LEX.JOB.NURSE",
+        "A1.LEX.MEDICINE.N01",
+        "A1.LEX.TABLET.N01"
+      ],
+      "chunks": [
+        "A1.CHUNK.I_NEED_A_DOCTOR",
+        "A1.CHUNK.CAN_I_HAVE"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Receptionist",
+            "en": "How can I help?",
+            "ar": "كيف أساعدك؟"
+          },
+          {
+            "speaker": "Patient",
+            "en": "I need a doctor. I have a bad cough.",
+            "ar": "أحتاج طبيباً. لدي سعال شديد."
+          },
+          {
+            "speaker": "Receptionist",
+            "en": "Please sit here and wait.",
+            "ar": "اجلس هنا وانتظر من فضلك."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U10-L4-A01",
+          "lessonId": "A1-U10-L4",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U10.INTERACTION.ASK_FOR_HEALTH_HELP",
+            "A1.U10.READING.UNDERSTAND_HEALTH_INSTRUCTION"
+          ],
+          "prompt": "Why does the patient need a doctor?",
+          "promptAr": "لماذا يحتاج المريض طبيباً؟",
+          "options": [
+            "a bad cough",
+            "a broken bag",
+            "a travel ticket"
+          ],
+          "answer": "a bad cough",
+          "audioTranscript": "I need a doctor. I have a bad cough."
+        },
+        {
+          "id": "A1-U10-L4-A02",
+          "lessonId": "A1-U10-L4",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U10.INTERACTION.ASK_FOR_HEALTH_HELP",
+            "A1.U10.READING.UNDERSTAND_HEALTH_INSTRUCTION"
+          ],
+          "prompt": "Match clinic needs and phrases.",
+          "promptAr": "طابق احتياجات العيادة والعبارات.",
+          "pairs": [
+            [
+              "need medical help",
+              "I need a doctor."
+            ],
+            [
+              "scheduled visit",
+              "I have an appointment."
+            ],
+            [
+              "need medicine",
+              "Can I have this medicine?"
+            ]
+          ]
+        },
+        {
+          "id": "A1-U10-L4-A03",
+          "lessonId": "A1-U10-L4",
+          "type": "order",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U10.INTERACTION.ASK_FOR_HEALTH_HELP",
+            "A1.U10.READING.UNDERSTAND_HEALTH_INSTRUCTION"
+          ],
+          "prompt": "Order the clinic request.",
+          "promptAr": "رتب طلب العيادة.",
+          "tokens": [
+            "a",
+            "doctor",
+            "I",
+            "need",
+            "please"
+          ],
+          "answer": [
+            "I",
+            "need",
+            "a",
+            "doctor",
+            "please"
+          ]
+        },
+        {
+          "id": "A1-U10-L4-A04",
+          "lessonId": "A1-U10-L4",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U10.INTERACTION.ASK_FOR_HEALTH_HELP",
+            "A1.U10.READING.UNDERSTAND_HEALTH_INSTRUCTION"
+          ],
+          "prompt": "What instruction does the patient receive?",
+          "promptAr": "ما التعليمات التي يتلقاها المريض؟",
+          "options": [
+            "take one tablet after food",
+            "take two tablets before food",
+            "do not take medicine"
+          ],
+          "answer": "take one tablet after food",
+          "audioTranscript": "Take one tablet after food. Don't take two."
+        },
+        {
+          "id": "A1-U10-L4-A05",
+          "lessonId": "A1-U10-L4",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U10.INTERACTION.ASK_FOR_HEALTH_HELP",
+            "A1.U10.READING.UNDERSTAND_HEALTH_INSTRUCTION"
+          ],
+          "prompt": "Request help at a clinic, describe one symptom and confirm one instruction.",
+          "promptAr": "اطلب المساعدة في عيادة وصف عرضاً وأكد تعليمة واحدة.",
+          "accepted": [],
+          "evaluation": "clinic-request-symptom-instruction",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U10-L5",
+      "title": "Emergency Information",
+      "titleAr": "معلومات الطوارئ",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U10.READING.UNDERSTAND_HEALTH_INSTRUCTION",
+        "A1.U10.LISTENING.UNDERSTAND_BASIC_ADVICE"
+      ],
+      "grammar": [
+        "A1.G.IMPERATIVE.HEALTH"
+      ],
+      "lexicon": [
+        "A1.LEX.EMERGENCY.N01",
+        "A1.LEX.CAREFUL.ADJ01",
+        "A1.LEX.BETTER.ADJ01"
+      ],
+      "chunks": [
+        "A1.CHUNK.CALL_HELP",
+        "A1.CHUNK.I_NEED_A_DOCTOR"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Announcement",
+            "en": "In an emergency, call 112. Give your location. Stay with the person and follow the operator's instructions.",
+            "ar": "في الطوارئ اتصل بالرقم 112 واذكر موقعك وابق مع الشخص واتبع التعليمات."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U10-L5-A01",
+          "lessonId": "A1-U10-L5",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U10.READING.UNDERSTAND_HEALTH_INSTRUCTION",
+            "A1.U10.LISTENING.UNDERSTAND_BASIC_ADVICE"
+          ],
+          "prompt": "What information must the caller give?",
+          "promptAr": "ما المعلومة التي يجب أن يقدمها المتصل؟",
+          "options": [
+            "location",
+            "shopping budget",
+            "train platform"
+          ],
+          "answer": "location",
+          "audioTranscript": "Call 112 and give your location."
+        },
+        {
+          "id": "A1-U10-L5-A02",
+          "lessonId": "A1-U10-L5",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U10.READING.UNDERSTAND_HEALTH_INSTRUCTION",
+            "A1.U10.LISTENING.UNDERSTAND_BASIC_ADVICE"
+          ],
+          "prompt": "Match emergency steps.",
+          "promptAr": "طابق خطوات الطوارئ.",
+          "pairs": [
+            [
+              "call",
+              "112"
+            ],
+            [
+              "give",
+              "your location"
+            ],
+            [
+              "follow",
+              "the operator's instructions"
+            ]
+          ]
+        },
+        {
+          "id": "A1-U10-L5-A03",
+          "lessonId": "A1-U10-L5",
+          "type": "order",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U10.READING.UNDERSTAND_HEALTH_INSTRUCTION",
+            "A1.U10.LISTENING.UNDERSTAND_BASIC_ADVICE"
+          ],
+          "prompt": "Order the emergency steps.",
+          "promptAr": "رتب خطوات الطوارئ.",
+          "tokens": [
+            "Follow instructions.",
+            "Give your location.",
+            "Call for help."
+          ],
+          "answer": [
+            "Call for help.",
+            "Give your location.",
+            "Follow instructions."
+          ]
+        },
+        {
+          "id": "A1-U10-L5-A04",
+          "lessonId": "A1-U10-L5",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U10.READING.UNDERSTAND_HEALTH_INSTRUCTION",
+            "A1.U10.LISTENING.UNDERSTAND_BASIC_ADVICE"
+          ],
+          "prompt": "What should the caller do next?",
+          "promptAr": "ماذا يفعل المتصل بعد ذلك؟",
+          "options": [
+            "stay with the person",
+            "leave the place",
+            "give medicine immediately"
+          ],
+          "answer": "stay with the person",
+          "audioTranscript": "Help is coming. Please stay with the person and keep the line open."
+        },
+        {
+          "id": "A1-U10-L5-A05",
+          "lessonId": "A1-U10-L5",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A1.U10.READING.UNDERSTAND_HEALTH_INSTRUCTION",
+            "A1.U10.LISTENING.UNDERSTAND_BASIC_ADVICE"
+          ],
+          "prompt": "State the three basic emergency communication steps shown in the lesson.",
+          "promptAr": "اذكر خطوات التواصل الثلاث الأساسية في الطوارئ كما وردت في الدرس.",
+          "accepted": [],
+          "evaluation": "three-provided-emergency-steps",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U10-L6",
+      "title": "Health Note",
+      "titleAr": "ملاحظة صحية",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U10.WRITING.WRITE_HEALTH_NOTE",
+        "A1.U10.PRODUCTION.DESCRIBE_SIMPLE_SYMPTOM",
+        "A1.U10.LISTENING.UNDERSTAND_BASIC_ADVICE"
+      ],
+      "grammar": [
+        "A1.G.HEALTH.HAVE_SYMPTOM",
+        "A1.G.HEALTH.FEEL_ADJECTIVE"
+      ],
+      "lexicon": [
+        "A1.LEX.APPOINTMENT.N01",
+        "A1.LEX.BETTER.ADJ01"
+      ],
+      "chunks": [
+        "A1.CHUNK.HOW_DO_YOU_FEEL",
+        "A1.CHUNK.YOU_SHOULD"
+      ],
+      "readingText": {
+        "title": "Note for the Clinic",
+        "text": "Name: Sami Kareem. I have a cough and a sore throat. I feel tired, but I don't have a fever. The symptoms started this morning. I can come after 4:00. Please confirm an appointment.",
+        "textAr": "ملاحظة للعيادة..."
+      },
+      "activities": [
+        {
+          "id": "A1-U10-L6-A01",
+          "lessonId": "A1-U10-L6",
+          "type": "textChoice",
+          "mode": "encounter",
+          "skill": "reading",
+          "canDo": [
+            "A1.U10.WRITING.WRITE_HEALTH_NOTE",
+            "A1.U10.PRODUCTION.DESCRIBE_SIMPLE_SYMPTOM",
+            "A1.U10.LISTENING.UNDERSTAND_BASIC_ADVICE"
+          ],
+          "prompt": "When can Sami come?",
+          "promptAr": "متى يستطيع سامي الحضور؟",
+          "options": [
+            "after 4:00",
+            "before 8:00",
+            "tomorrow morning only"
+          ],
+          "answer": "after 4:00"
+        },
+        {
+          "id": "A1-U10-L6-A02",
+          "lessonId": "A1-U10-L6",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U10.WRITING.WRITE_HEALTH_NOTE",
+            "A1.U10.PRODUCTION.DESCRIBE_SIMPLE_SYMPTOM",
+            "A1.U10.LISTENING.UNDERSTAND_BASIC_ADVICE"
+          ],
+          "prompt": "Match note details.",
+          "promptAr": "طابق تفاصيل الملاحظة.",
+          "pairs": [
+            [
+              "symptoms",
+              "cough and sore throat"
+            ],
+            [
+              "not present",
+              "fever"
+            ],
+            [
+              "available",
+              "after 4:00"
+            ]
+          ]
+        },
+        {
+          "id": "A1-U10-L6-A03",
+          "lessonId": "A1-U10-L6",
+          "type": "order",
+          "mode": "practice",
+          "skill": "writing",
+          "canDo": [
+            "A1.U10.WRITING.WRITE_HEALTH_NOTE",
+            "A1.U10.PRODUCTION.DESCRIBE_SIMPLE_SYMPTOM",
+            "A1.U10.LISTENING.UNDERSTAND_BASIC_ADVICE"
+          ],
+          "prompt": "Order a clear health note.",
+          "promptAr": "رتب ملاحظة صحية واضحة.",
+          "tokens": [
+            "Please confirm a time.",
+            "I have a headache.",
+            "Hello,",
+            "I can come after five."
+          ],
+          "answer": [
+            "Hello,",
+            "I have a headache.",
+            "I can come after five.",
+            "Please confirm a time."
+          ]
+        },
+        {
+          "id": "A1-U10-L6-A04",
+          "lessonId": "A1-U10-L6",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U10.WRITING.WRITE_HEALTH_NOTE",
+            "A1.U10.PRODUCTION.DESCRIBE_SIMPLE_SYMPTOM",
+            "A1.U10.LISTENING.UNDERSTAND_BASIC_ADVICE"
+          ],
+          "prompt": "Which detail must be added to the note?",
+          "promptAr": "أي تفصيل يجب إضافته إلى الملاحظة؟",
+          "options": [
+            "a cough started yesterday",
+            "a train leaves at five",
+            "a blue coat is needed"
+          ],
+          "answer": "a cough started yesterday",
+          "audioTranscript": "Please add that the cough started yesterday."
+        },
+        {
+          "id": "A1-U10-L6-A05",
+          "lessonId": "A1-U10-L6",
+          "type": "write",
+          "mode": "mastery",
+          "skill": "writing",
+          "canDo": [
+            "A1.U10.WRITING.WRITE_HEALTH_NOTE",
+            "A1.U10.PRODUCTION.DESCRIBE_SIMPLE_SYMPTOM",
+            "A1.U10.LISTENING.UNDERSTAND_BASIC_ADVICE"
+          ],
+          "prompt": "Write a 40–60-word fictional health note with symptoms, start time, availability and a request.",
+          "promptAr": "اكتب ملاحظة صحية خيالية من 40–60 كلمة تشمل الأعراض ووقت بدايتها والتوفر والطلب.",
+          "accepted": [],
+          "evaluation": "u10-health-note-rubric",
+          "wordGuide": [
+            40,
+            60
+          ]
+        }
+      ]
+    },
+    {
+      "id": "A1-U10-L7",
+      "title": "Mission: Get the Right Help",
+      "titleAr": "المهمة: احصل على المساعدة المناسبة",
+      "lessonType": "mission",
+      "canDo": [
+        "A1.U10.MEDIATION.SOLVE_SIMPLE_HEALTH_PROBLEM",
+        "A1.U10.READING.IDENTIFY_BODY_AND_BASIC_HEALTH",
+        "A1.U10.PRODUCTION.DESCRIBE_SIMPLE_SYMPTOM",
+        "A1.U10.INTERACTION.ASK_FOR_HEALTH_HELP",
+        "A1.U10.LISTENING.UNDERSTAND_BASIC_ADVICE",
+        "A1.U10.READING.UNDERSTAND_HEALTH_INSTRUCTION",
+        "A1.U10.WRITING.WRITE_HEALTH_NOTE"
+      ],
+      "grammar": [],
+      "lexicon": [],
+      "chunks": [],
+      "scenario": "A fictional visitor becomes unwell. Read the clinic information, understand the symptoms and advice, request the correct help and pass on the essential information.",
+      "privacyNote": "Use fictional health data only; do not request real diagnoses or sensitive medical history.",
+      "activities": [
+        {
+          "id": "A1-U10-L7-A01",
+          "lessonId": "A1-U10-L7",
+          "mode": "mastery",
+          "type": "textChoice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U10.READING.UNDERSTAND_HEALTH_INSTRUCTION",
+            "A1.U10.MEDIATION.SOLVE_SIMPLE_HEALTH_PROBLEM"
+          ],
+          "prompt": "Which service fits a high fever and bad cough?",
+          "promptAr": "أي خدمة تناسب حمى مرتفعة وسعالاً شديداً؟",
+          "options": [
+            "same-day clinic",
+            "clothes shop",
+            "travel desk"
+          ],
+          "answer": "same-day clinic",
+          "sourceText": "Clinic guide: same-day clinic—fever, cough, pain; pharmacy—simple medicine questions; emergency—serious immediate danger."
+        },
+        {
+          "id": "A1-U10-L7-A02",
+          "lessonId": "A1-U10-L7",
+          "mode": "mastery",
+          "type": "audioChoice",
+          "skill": "listening",
+          "canDo": [
+            "A1.U10.PRODUCTION.DESCRIBE_SIMPLE_SYMPTOM"
+          ],
+          "prompt": "Which symptoms must be reported?",
+          "promptAr": "ما الأعراض التي يجب ذكرها؟",
+          "options": [
+            "high fever, cough, tired",
+            "headache only",
+            "back pain and cold foot"
+          ],
+          "answer": "high fever, cough, tired",
+          "audioTranscript": "I have a high fever and a bad cough. I feel very tired."
+        },
+        {
+          "id": "A1-U10-L7-A03",
+          "lessonId": "A1-U10-L7",
+          "mode": "mastery",
+          "type": "speak",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U10.INTERACTION.ASK_FOR_HEALTH_HELP"
+          ],
+          "prompt": "Call the clinic, describe the symptoms and ask for an appointment.",
+          "promptAr": "اتصل بالعيادة وصف الأعراض واطلب موعداً.",
+          "accepted": [],
+          "evaluation": "clinic-call-symptoms-appointment",
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A1-U10-L7-A04",
+          "lessonId": "A1-U10-L7",
+          "mode": "mastery",
+          "type": "audioChoice",
+          "skill": "listening",
+          "canDo": [
+            "A1.U10.LISTENING.UNDERSTAND_BASIC_ADVICE"
+          ],
+          "prompt": "What two actions does the clinic give?",
+          "promptAr": "ما الإجراءان اللذان تنصح بهما العيادة؟",
+          "options": [
+            "rest and drink water",
+            "travel and work",
+            "take two unknown tablets"
+          ],
+          "answer": "rest and drink water",
+          "audioTranscript": "Please rest and drink water while you wait. Come at three."
+        },
+        {
+          "id": "A1-U10-L7-A05",
+          "lessonId": "A1-U10-L7",
+          "mode": "mastery",
+          "type": "speak",
+          "skill": "mediation",
+          "canDo": [
+            "A1.U10.MEDIATION.SOLVE_SIMPLE_HEALTH_PROBLEM",
+            "A1.U10.READING.UNDERSTAND_HEALTH_INSTRUCTION"
+          ],
+          "prompt": "Pass the symptoms, appointment time and safe instructions to the visitor.",
+          "promptAr": "انقل للزائر الأعراض ووقت الموعد والتعليمات الآمنة.",
+          "accepted": [],
+          "evaluation": "health-information-mediation",
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A1-U10-L7-A06",
+          "lessonId": "A1-U10-L7",
+          "mode": "mastery",
+          "type": "write",
+          "skill": "writing",
+          "canDo": [
+            "A1.U10.WRITING.WRITE_HEALTH_NOTE"
+          ],
+          "prompt": "Write a 45–65-word fictional clinic note recording the problem, advice and appointment.",
+          "promptAr": "اكتب ملاحظة عيادة خيالية من 45–65 كلمة تسجل المشكلة والنصيحة والموعد.",
+          "accepted": [],
+          "evaluation": "u10-mission-note-rubric",
+          "wordGuide": [
+            45,
+            65
+          ]
+        }
+      ]
+    }
+  ],
+  "mastery": {
+    "requiredObjectives": [
+      "A1.U10.READING.IDENTIFY_BODY_AND_BASIC_HEALTH",
+      "A1.U10.PRODUCTION.DESCRIBE_SIMPLE_SYMPTOM",
+      "A1.U10.INTERACTION.ASK_FOR_HEALTH_HELP",
+      "A1.U10.LISTENING.UNDERSTAND_BASIC_ADVICE",
+      "A1.U10.READING.UNDERSTAND_HEALTH_INSTRUCTION",
+      "A1.U10.WRITING.WRITE_HEALTH_NOTE",
+      "A1.U10.MEDIATION.SOLVE_SIMPLE_HEALTH_PROBLEM"
+    ],
+    "requiredSkillGroups": [
+      [
+        "listening",
+        "reading"
+      ],
+      [
+        "spokenInteraction",
+        "spokenProduction",
+        "writing"
+      ],
+      [
+        "mediation"
+      ]
+    ],
+    "minimumObjectiveScore": 0.75,
+    "missionRequired": true,
+    "retry": "targeted-by-objective",
+    "unlocks": "A1-U11"
+  }
+}

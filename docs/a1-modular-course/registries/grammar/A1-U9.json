@@ -1,0 +1,67 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U9",
+  "kind": "grammar",
+  "records": [
+    {
+      "id": "A1.G.TRANSPORT.BY",
+      "form": "by + transport; on foot",
+      "meaningAr": "وسيلة النقل مع by والاستثناء on foot",
+      "introducedIn": "A1-U9-L1",
+      "examples": [
+        {
+          "en": "I go by bus, but Sara goes on foot.",
+          "ar": "أذهب بالحافلة لكن سارة تذهب مشياً."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.MOVEMENT.FROM_TO",
+      "form": "from + origin; to + destination",
+      "meaningAr": "من نقطة الانطلاق إلى الوجهة",
+      "introducedIn": "A1-U9-L2",
+      "examples": [
+        {
+          "en": "The bus goes from the station to the airport.",
+          "ar": "تذهب الحافلة من المحطة إلى المطار."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.MODAL.CAN_POSSIBILITY",
+      "form": "can + base verb for available possibility",
+      "meaningAr": "استخدام can للخيار المتاح",
+      "introducedIn": "A1-U9-L4",
+      "examples": [
+        {
+          "en": "You can take bus 12.",
+          "ar": "يمكنك أخذ الحافلة 12."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.TIME.DEPARTURE_AT",
+      "form": "leave/arrive at + time",
+      "meaningAr": "ذكر وقت المغادرة والوصول",
+      "introducedIn": "A1-U9-L3",
+      "examples": [
+        {
+          "en": "The train leaves at nine and arrives at ten.",
+          "ar": "يغادر القطار في التاسعة ويصل في العاشرة."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.QUESTION.WHEN_WHAT_TIME",
+      "form": "When/What time does ... leave?",
+      "meaningAr": "السؤال عن وقت المغادرة",
+      "introducedIn": "A1-U9-L3",
+      "examples": [
+        {
+          "en": "What time does the bus leave?",
+          "ar": "في أي وقت تغادر الحافلة؟"
+        }
+      ]
+    }
+  ]
+}

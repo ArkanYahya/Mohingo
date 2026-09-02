@@ -1,0 +1,563 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U1",
+  "kind": "lexicon",
+  "records": [
+    {
+      "id": "A1.LEX.FROM.PREP",
+      "headword": "from",
+      "partOfSpeech": "preposition",
+      "arabic": "من",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "from",
+      "examples": [
+        "I'm from Iraq."
+      ],
+      "introducedIn": "A1-U1-L2",
+      "recycledIn": [
+        "A1-U1-L7"
+      ]
+    },
+    {
+      "id": "A1.LEX.COUNTRY.N01",
+      "headword": "country",
+      "partOfSpeech": "noun",
+      "arabic": "بلد",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "country",
+      "examples": [
+        "Iraq is a country."
+      ],
+      "introducedIn": "A1-U1-L2",
+      "recycledIn": [
+        "A1-U1-L3"
+      ]
+    },
+    {
+      "id": "A1.LEX.COUNTRY.IRAQ",
+      "headword": "Iraq",
+      "partOfSpeech": "properNoun",
+      "arabic": "العراق",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "Iraq",
+      "examples": [
+        "I'm from Iraq."
+      ],
+      "introducedIn": "A1-U1-L2",
+      "recycledIn": [
+        "A1-U1-L7"
+      ]
+    },
+    {
+      "id": "A1.LEX.COUNTRY.EGYPT",
+      "headword": "Egypt",
+      "partOfSpeech": "properNoun",
+      "arabic": "مصر",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "Egypt",
+      "examples": [
+        "I'm from Egypt."
+      ],
+      "introducedIn": "A1-U1-L2",
+      "recycledIn": [
+        "A1-U1-L7"
+      ]
+    },
+    {
+      "id": "A1.LEX.COUNTRY.JORDAN",
+      "headword": "Jordan",
+      "partOfSpeech": "properNoun",
+      "arabic": "الأردن",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "Jordan",
+      "examples": [
+        "I'm from Jordan."
+      ],
+      "introducedIn": "A1-U1-L2",
+      "recycledIn": [
+        "A1-U1-L7"
+      ]
+    },
+    {
+      "id": "A1.LEX.COUNTRY.TURKEY",
+      "headword": "Turkey",
+      "partOfSpeech": "properNoun",
+      "arabic": "تركيا",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "Turkey",
+      "examples": [
+        "I'm from Turkey."
+      ],
+      "introducedIn": "A1-U1-L2",
+      "recycledIn": [
+        "A1-U1-L7"
+      ]
+    },
+    {
+      "id": "A1.LEX.COUNTRY.SAUDI_ARABIA",
+      "headword": "Saudi Arabia",
+      "partOfSpeech": "properNoun",
+      "arabic": "السعودية",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": false,
+      "meaning": "Saudi Arabia",
+      "examples": [
+        "I'm from Saudi Arabia."
+      ],
+      "introducedIn": "A1-U1-L2",
+      "recycledIn": [
+        "A1-U1-L7"
+      ]
+    },
+    {
+      "id": "A1.LEX.COUNTRY.ITALY",
+      "headword": "Italy",
+      "partOfSpeech": "properNoun",
+      "arabic": "إيطاليا",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "Italy",
+      "examples": [
+        "I'm from Italy."
+      ],
+      "introducedIn": "A1-U1-L2",
+      "recycledIn": [
+        "A1-U1-L7"
+      ]
+    },
+    {
+      "id": "A1.LEX.COUNTRY.FRANCE",
+      "headword": "France",
+      "partOfSpeech": "properNoun",
+      "arabic": "فرنسا",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": false,
+      "meaning": "France",
+      "examples": [
+        "I'm from France."
+      ],
+      "introducedIn": "A1-U1-L2",
+      "recycledIn": [
+        "A1-U1-L7"
+      ]
+    },
+    {
+      "id": "A1.LEX.COUNTRY.GERMANY",
+      "headword": "Germany",
+      "partOfSpeech": "properNoun",
+      "arabic": "ألمانيا",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": false,
+      "meaning": "Germany",
+      "examples": [
+        "I'm from Germany."
+      ],
+      "introducedIn": "A1-U1-L2",
+      "recycledIn": [
+        "A1-U1-L7"
+      ]
+    },
+    {
+      "id": "A1.LEX.COUNTRY.INDIA",
+      "headword": "India",
+      "partOfSpeech": "properNoun",
+      "arabic": "الهند",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": false,
+      "meaning": "India",
+      "examples": [
+        "I'm from India."
+      ],
+      "introducedIn": "A1-U1-L2",
+      "recycledIn": [
+        "A1-U1-L7"
+      ]
+    },
+    {
+      "id": "A1.LEX.COUNTRY.CHINA",
+      "headword": "China",
+      "partOfSpeech": "properNoun",
+      "arabic": "الصين",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": false,
+      "meaning": "China",
+      "examples": [
+        "I'm from China."
+      ],
+      "introducedIn": "A1-U1-L2",
+      "recycledIn": [
+        "A1-U1-L7"
+      ]
+    },
+    {
+      "id": "A1.LEX.COUNTRY.JAPAN",
+      "headword": "Japan",
+      "partOfSpeech": "properNoun",
+      "arabic": "اليابان",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": false,
+      "meaning": "Japan",
+      "examples": [
+        "I'm from Japan."
+      ],
+      "introducedIn": "A1-U1-L2",
+      "recycledIn": [
+        "A1-U1-L7"
+      ]
+    },
+    {
+      "id": "A1.LEX.COUNTRY.BRAZIL",
+      "headword": "Brazil",
+      "partOfSpeech": "properNoun",
+      "arabic": "البرازيل",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": false,
+      "meaning": "Brazil",
+      "examples": [
+        "I'm from Brazil."
+      ],
+      "introducedIn": "A1-U1-L2",
+      "recycledIn": [
+        "A1-U1-L7"
+      ]
+    },
+    {
+      "id": "A1.LEX.LIVE.V01",
+      "headword": "live",
+      "partOfSpeech": "verb",
+      "arabic": "يسكن/يعيش",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "have your home in a place",
+      "examples": [
+        "I live in Kirkuk."
+      ],
+      "introducedIn": "A1-U1-L3",
+      "recycledIn": [
+        "A1-U4",
+        "A1-U5"
+      ]
+    },
+    {
+      "id": "A1.LEX.CITY.N01",
+      "headword": "city",
+      "partOfSpeech": "noun",
+      "arabic": "مدينة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "city",
+      "examples": [
+        "Kirkuk is a city."
+      ],
+      "introducedIn": "A1-U1-L3",
+      "recycledIn": [
+        "A1-U3"
+      ]
+    },
+    {
+      "id": "A1.LEX.HOME.N01",
+      "headword": "home",
+      "partOfSpeech": "noun",
+      "arabic": "منزل/بيت",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "home",
+      "examples": [
+        "This is my home."
+      ],
+      "introducedIn": "A1-U1-L3",
+      "recycledIn": [
+        "A1-U3"
+      ]
+    },
+    {
+      "id": "A1.LEX.HERE.ADV",
+      "headword": "here",
+      "partOfSpeech": "adverb",
+      "arabic": "هنا",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "here",
+      "examples": [
+        "I live here."
+      ],
+      "introducedIn": "A1-U1-L3",
+      "recycledIn": [
+        "A1-U3"
+      ]
+    },
+    {
+      "id": "A1.LEX.FRIEND.N01",
+      "headword": "friend",
+      "partOfSpeech": "noun",
+      "arabic": "صديق",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "friend",
+      "examples": [
+        "This is my friend."
+      ],
+      "introducedIn": "A1-U1-L4",
+      "recycledIn": [
+        "A1-U2"
+      ]
+    },
+    {
+      "id": "A1.LEX.BROTHER.N01",
+      "headword": "brother",
+      "partOfSpeech": "noun",
+      "arabic": "أخ",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "brother",
+      "examples": [
+        "This is my brother."
+      ],
+      "introducedIn": "A1-U1-L4",
+      "recycledIn": [
+        "A1-U2"
+      ]
+    },
+    {
+      "id": "A1.LEX.SISTER.N01",
+      "headword": "sister",
+      "partOfSpeech": "noun",
+      "arabic": "أخت",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "sister",
+      "examples": [
+        "This is my sister."
+      ],
+      "introducedIn": "A1-U1-L4",
+      "recycledIn": [
+        "A1-U2"
+      ]
+    },
+    {
+      "id": "A1.LEX.MAN.N01",
+      "headword": "man",
+      "partOfSpeech": "noun",
+      "arabic": "رجل",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "man",
+      "examples": [
+        "This is my man."
+      ],
+      "introducedIn": "A1-U1-L4",
+      "recycledIn": [
+        "A1-U2"
+      ]
+    },
+    {
+      "id": "A1.LEX.WOMAN.N01",
+      "headword": "woman",
+      "partOfSpeech": "noun",
+      "arabic": "امرأة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "woman",
+      "examples": [
+        "This is my woman."
+      ],
+      "introducedIn": "A1-U1-L4",
+      "recycledIn": [
+        "A1-U2"
+      ]
+    },
+    {
+      "id": "A1.LEX.JOB.STUDENT",
+      "headword": "student",
+      "partOfSpeech": "noun",
+      "arabic": "طالب",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "student",
+      "examples": [
+        "I'm a student."
+      ],
+      "introducedIn": "A1-U1-L5",
+      "recycledIn": [
+        "A1-U4",
+        "A1-U5"
+      ]
+    },
+    {
+      "id": "A1.LEX.JOB.TEACHER",
+      "headword": "teacher",
+      "partOfSpeech": "noun",
+      "arabic": "مدرس",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "teacher",
+      "examples": [
+        "I'm a teacher."
+      ],
+      "introducedIn": "A1-U1-L5",
+      "recycledIn": [
+        "A1-U4",
+        "A1-U5"
+      ]
+    },
+    {
+      "id": "A1.LEX.JOB.DOCTOR",
+      "headword": "doctor",
+      "partOfSpeech": "noun",
+      "arabic": "طبيب",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "doctor",
+      "examples": [
+        "I'm a doctor."
+      ],
+      "introducedIn": "A1-U1-L5",
+      "recycledIn": [
+        "A1-U4",
+        "A1-U5"
+      ]
+    },
+    {
+      "id": "A1.LEX.JOB.ENGINEER",
+      "headword": "engineer",
+      "partOfSpeech": "noun",
+      "arabic": "مهندس",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "engineer",
+      "examples": [
+        "I'm an engineer."
+      ],
+      "introducedIn": "A1-U1-L5",
+      "recycledIn": [
+        "A1-U4",
+        "A1-U5"
+      ]
+    },
+    {
+      "id": "A1.LEX.JOB.DRIVER",
+      "headword": "driver",
+      "partOfSpeech": "noun",
+      "arabic": "سائق",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "driver",
+      "examples": [
+        "I'm a driver."
+      ],
+      "introducedIn": "A1-U1-L5",
+      "recycledIn": [
+        "A1-U4",
+        "A1-U5"
+      ]
+    },
+    {
+      "id": "A1.LEX.JOB.MANAGER",
+      "headword": "manager",
+      "partOfSpeech": "noun",
+      "arabic": "مدير",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "manager",
+      "examples": [
+        "I'm a manager."
+      ],
+      "introducedIn": "A1-U1-L5",
+      "recycledIn": [
+        "A1-U4",
+        "A1-U5"
+      ]
+    },
+    {
+      "id": "A1.LEX.JOB.WORKER",
+      "headword": "worker",
+      "partOfSpeech": "noun",
+      "arabic": "عامل",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "worker",
+      "examples": [
+        "I'm a worker."
+      ],
+      "introducedIn": "A1-U1-L5",
+      "recycledIn": [
+        "A1-U4",
+        "A1-U5"
+      ]
+    },
+    {
+      "id": "A1.LEX.JOB.NURSE",
+      "headword": "nurse",
+      "partOfSpeech": "noun",
+      "arabic": "ممرض",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "nurse",
+      "examples": [
+        "I'm a nurse."
+      ],
+      "introducedIn": "A1-U1-L5",
+      "recycledIn": [
+        "A1-U4",
+        "A1-U5"
+      ]
+    },
+    {
+      "id": "A1.LEX.WORK.V01",
+      "headword": "work",
+      "partOfSpeech": "verb",
+      "arabic": "يعمل",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "do a job",
+      "examples": [
+        "I work in an office."
+      ],
+      "introducedIn": "A1-U1-L5",
+      "recycledIn": [
+        "A1-U4",
+        "A1-U5",
+        "A1-U11",
+        "A1-U12"
+      ]
+    }
+  ]
+}

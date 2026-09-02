@@ -1,0 +1,80 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U12",
+  "kind": "grammar",
+  "records": [
+    {
+      "id": "A1.G.FUTURE.GOING_TO_AFFIRMATIVE",
+      "form": "subject + am/is/are going to + base verb",
+      "meaningAr": "خطة مستقبلية بسيطة",
+      "introducedIn": "A1-U12-L1",
+      "examples": [
+        {
+          "en": "I'm going to visit my aunt.",
+          "ar": "سأزور عمتي."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.FUTURE.GOING_TO_QUESTION",
+      "form": "Am/Is/Are + subject + going to + base verb?",
+      "meaningAr": "السؤال عن الخطة المستقبلية",
+      "introducedIn": "A1-U12-L2",
+      "examples": [
+        {
+          "en": "What are you going to do?",
+          "ar": "ماذا ستفعل؟"
+        }
+      ]
+    },
+    {
+      "id": "A1.G.ARRANGEMENT.PRESENT_CONTINUOUS_CHUNK",
+      "form": "I'm meeting/We're leaving + future time",
+      "meaningAr": "ترتيب مستقبلي محدد بصيغة شائعة",
+      "introducedIn": "A1-U12-L3",
+      "examples": [
+        {
+          "en": "I'm meeting Sara at six.",
+          "ar": "سأقابل سارة في السادسة."
+        }
+      ],
+      "productiveTarget": "formulaic"
+    },
+    {
+      "id": "A1.G.CONNECTOR.SO",
+      "form": "reason, so + result",
+      "meaningAr": "ربط السبب بالنتيجة",
+      "introducedIn": "A1-U12-L4",
+      "examples": [
+        {
+          "en": "I'm busy, so I can't come.",
+          "ar": "أنا مشغول، لذلك لا أستطيع الحضور."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.FUTURE.TIME_EXPRESSIONS",
+      "form": "tomorrow/this evening/next + time",
+      "meaningAr": "تعبيرات الزمن المستقبلية",
+      "introducedIn": "A1-U12-L1",
+      "examples": [
+        {
+          "en": "We're going to travel next week.",
+          "ar": "سنسافر الأسبوع القادم."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.MESSAGE.PUNCTUATION_BASIC",
+      "form": "greeting + short body + closing",
+      "meaningAr": "تنظيم الرسالة الشخصية القصيرة",
+      "introducedIn": "A1-U12-L5",
+      "examples": [
+        {
+          "en": "Hi Ali, ... See you, Maya",
+          "ar": "مرحباً علي... أراك لاحقاً، مايا"
+        }
+      ]
+    }
+  ]
+}

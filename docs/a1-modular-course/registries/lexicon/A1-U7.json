@@ -1,0 +1,322 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U7",
+  "kind": "lexicon",
+  "records": [
+    {
+      "id": "A1.LEX.SHOP.N01",
+      "headword": "shop",
+      "partOfSpeech": "noun",
+      "arabic": "متجر",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "shop",
+      "examples": [
+        "This shop is open."
+      ],
+      "introducedIn": "A1-U7-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.PRICE.N01",
+      "headword": "price",
+      "partOfSpeech": "noun",
+      "arabic": "سعر",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "price",
+      "examples": [
+        "The price is ten dollars."
+      ],
+      "introducedIn": "A1-U7-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.COST.V01",
+      "headword": "cost",
+      "partOfSpeech": "verb",
+      "arabic": "يكلّف",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "cost",
+      "examples": [
+        "It costs five dollars."
+      ],
+      "introducedIn": "A1-U7-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.CHEAP.ADJ01",
+      "headword": "cheap",
+      "partOfSpeech": "adjective",
+      "arabic": "رخيص",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "cheap",
+      "examples": [
+        "This bag is cheap."
+      ],
+      "introducedIn": "A1-U7-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.EXPENSIVE.ADJ01",
+      "headword": "expensive",
+      "partOfSpeech": "adjective",
+      "arabic": "غالي",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "expensive",
+      "examples": [
+        "Those shoes are expensive."
+      ],
+      "introducedIn": "A1-U7-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.CASH.N01",
+      "headword": "cash",
+      "partOfSpeech": "noun",
+      "arabic": "نقد",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "cash",
+      "examples": [
+        "I pay in cash."
+      ],
+      "introducedIn": "A1-U7-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.CARD.N02",
+      "headword": "card",
+      "partOfSpeech": "noun",
+      "arabic": "بطاقة دفع",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "card",
+      "examples": [
+        "Can I pay by card?"
+      ],
+      "introducedIn": "A1-U7-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.SIZE.N01",
+      "headword": "size",
+      "partOfSpeech": "noun",
+      "arabic": "مقاس",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "size",
+      "examples": [
+        "What size do you need?"
+      ],
+      "introducedIn": "A1-U7-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.MEDIUM.ADJ01",
+      "headword": "medium",
+      "partOfSpeech": "adjective",
+      "arabic": "متوسط",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "medium",
+      "examples": [
+        "This jacket is medium."
+      ],
+      "introducedIn": "A1-U7-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.LARGE.ADJ01",
+      "headword": "large",
+      "partOfSpeech": "adjective",
+      "arabic": "كبير",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "large",
+      "examples": [
+        "Do you have a large one?"
+      ],
+      "introducedIn": "A1-U7-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.RED.ADJ01",
+      "headword": "red",
+      "partOfSpeech": "adjective",
+      "arabic": "أحمر",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "red",
+      "examples": [
+        "The red bag is nice."
+      ],
+      "introducedIn": "A1-U7-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.BLUE.ADJ01",
+      "headword": "blue",
+      "partOfSpeech": "adjective",
+      "arabic": "أزرق",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "blue",
+      "examples": [
+        "I like the blue one."
+      ],
+      "introducedIn": "A1-U7-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.BLACK.ADJ01",
+      "headword": "black",
+      "partOfSpeech": "adjective",
+      "arabic": "أسود",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "black",
+      "examples": [
+        "These shoes are black."
+      ],
+      "introducedIn": "A1-U7-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.WHITE.ADJ01",
+      "headword": "white",
+      "partOfSpeech": "adjective",
+      "arabic": "أبيض",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "white",
+      "examples": [
+        "She wants a white shirt."
+      ],
+      "introducedIn": "A1-U7-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.TRY_ON.V01",
+      "headword": "try on",
+      "partOfSpeech": "verb",
+      "arabic": "يجرّب لباساً",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "try on",
+      "examples": [
+        "Can I try it on?"
+      ],
+      "introducedIn": "A1-U7-L3",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.FIT.V01",
+      "headword": "fit",
+      "partOfSpeech": "verb",
+      "arabic": "يناسب المقاس",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "fit",
+      "examples": [
+        "It doesn't fit."
+      ],
+      "introducedIn": "A1-U7-L3",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.CHANGING_ROOM.N01",
+      "headword": "changing room",
+      "partOfSpeech": "noun",
+      "arabic": "غرفة قياس",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "changing room",
+      "examples": [
+        "The changing room is there."
+      ],
+      "introducedIn": "A1-U7-L3",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.RECEIPT.N01",
+      "headword": "receipt",
+      "partOfSpeech": "noun",
+      "arabic": "إيصال",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "receipt",
+      "examples": [
+        "Here is your receipt."
+      ],
+      "introducedIn": "A1-U7-L4",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.CHANGE.V02",
+      "headword": "change",
+      "partOfSpeech": "verb",
+      "arabic": "يستبدل",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "exchange a purchased item",
+      "examples": [
+        "Can I change this shirt?"
+      ],
+      "introducedIn": "A1-U7-L5",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.BROKEN.ADJ01",
+      "headword": "broken",
+      "partOfSpeech": "adjective",
+      "arabic": "مكسور/تالف",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "broken",
+      "examples": [
+        "This item is broken."
+      ],
+      "introducedIn": "A1-U7-L5",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.BUDGET.N01",
+      "headword": "budget",
+      "partOfSpeech": "noun",
+      "arabic": "ميزانية",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": false,
+      "meaning": "budget",
+      "examples": [
+        "My budget is twenty dollars."
+      ],
+      "introducedIn": "A1-U7-L6",
+      "recycledIn": []
+    }
+  ]
+}

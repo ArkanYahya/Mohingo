@@ -1,0 +1,1012 @@
+{
+  "id": "A1-U4",
+  "title": "My Day",
+  "titleAr": "يومي",
+  "levelRole": "core",
+  "estimatedMinutes": [
+    80,
+    110
+  ],
+  "countsTowardA1Mastery": true,
+  "lessons": [
+    {
+      "id": "A1-U4-L1",
+      "title": "My Morning",
+      "titleAr": "صباحي",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U4.PRODUCTION.DESCRIBE_DAILY_ROUTINE"
+      ],
+      "grammar": [
+        "A1.G.PRESENT_SIMPLE.I_WE_THEY_AFF"
+      ],
+      "lexicon": [
+        "A1.LEX.GET_UP.V01",
+        "A1.LEX.WASH.V01",
+        "A1.LEX.GET_DRESSED.V01",
+        "A1.LEX.BREAKFAST.N01",
+        "A1.LEX.GO_HOME.V01",
+        "A1.LEX.SLEEP.V01"
+      ],
+      "chunks": [],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Omar",
+            "en": "I get up at seven. I wash, get dressed and have breakfast.",
+            "ar": "أستيقظ في السابعة، وأغتسل وأرتدي ملابسي وأتناول الفطور."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U4-L1-A01",
+          "lessonId": "A1-U4-L1",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U4.PRODUCTION.DESCRIBE_DAILY_ROUTINE"
+          ],
+          "prompt": "What does Omar do after he gets up?",
+          "promptAr": "ماذا يفعل عمر بعد أن يستيقظ؟",
+          "options": [
+            "He washes and gets dressed.",
+            "He goes home.",
+            "He sleeps."
+          ],
+          "answer": "He washes and gets dressed.",
+          "audioTranscript": "I get up at seven. I wash and get dressed."
+        },
+        {
+          "id": "A1-U4-L1-A02",
+          "lessonId": "A1-U4-L1",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U4.PRODUCTION.DESCRIBE_DAILY_ROUTINE"
+          ],
+          "prompt": "Match the routine actions.",
+          "promptAr": "طابق أفعال الروتين.",
+          "pairs": [
+            [
+              "get up",
+              "استيقظ"
+            ],
+            [
+              "get dressed",
+              "أرتدي الملابس"
+            ],
+            [
+              "have breakfast",
+              "أتناول الفطور"
+            ]
+          ]
+        },
+        {
+          "id": "A1-U4-L1-A03",
+          "lessonId": "A1-U4-L1",
+          "type": "order",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U4.PRODUCTION.DESCRIBE_DAILY_ROUTINE"
+          ],
+          "prompt": "Order the morning.",
+          "promptAr": "رتب الصباح.",
+          "tokens": [
+            "have breakfast",
+            "get up",
+            "get dressed"
+          ],
+          "answer": [
+            "get up",
+            "get dressed",
+            "have breakfast"
+          ]
+        },
+        {
+          "id": "A1-U4-L1-A04",
+          "lessonId": "A1-U4-L1",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U4.PRODUCTION.DESCRIBE_DAILY_ROUTINE"
+          ],
+          "prompt": "Choose Sara's correct routine.",
+          "promptAr": "اختر روتين سارة الصحيح.",
+          "options": [
+            "get up – wash – breakfast",
+            "breakfast – get up – sleep",
+            "wash – sleep – breakfast"
+          ],
+          "answer": "get up – wash – breakfast",
+          "audioTranscript": "Sara gets up, washes her face and has breakfast."
+        },
+        {
+          "id": "A1-U4-L1-A05",
+          "lessonId": "A1-U4-L1",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A1.U4.PRODUCTION.DESCRIBE_DAILY_ROUTINE"
+          ],
+          "prompt": "Say four things you do in the morning.",
+          "promptAr": "اذكر أربعة أشياء تفعلها صباحاً.",
+          "accepted": [],
+          "evaluation": "four-ordered-routine-actions",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U4-L2",
+      "title": "What Time?",
+      "titleAr": "في أي وقت؟",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE",
+        "A1.U4.INTERACTION.ASK_ABOUT_ROUTINE"
+      ],
+      "grammar": [
+        "A1.G.TIME.AT_ON_IN"
+      ],
+      "lexicon": [
+        "A1.LEX.OCLOCK.ADV01",
+        "A1.LEX.HALF_PAST.PHRASE",
+        "A1.LEX.QUARTER_PAST.PHRASE",
+        "A1.LEX.QUARTER_TO.PHRASE",
+        "A1.LEX.MORNING.N01",
+        "A1.LEX.AFTERNOON.N01",
+        "A1.LEX.EVENING.N01",
+        "A1.LEX.NIGHT.N01"
+      ],
+      "chunks": [
+        "A1.CHUNK.WHAT_TIME_DO_YOU",
+        "A1.CHUNK.I_ACTIVITY_AT"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Maya",
+            "en": "What time do you start work?",
+            "ar": "في أي وقت تبدأ العمل؟"
+          },
+          {
+            "speaker": "Ali",
+            "en": "At half past seven.",
+            "ar": "في السابعة والنصف."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U4-L2-A01",
+          "lessonId": "A1-U4-L2",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE",
+            "A1.U4.INTERACTION.ASK_ABOUT_ROUTINE"
+          ],
+          "prompt": "When does Ali start work?",
+          "promptAr": "متى يبدأ علي العمل؟",
+          "options": [
+            "7:30",
+            "7:15",
+            "8:30"
+          ],
+          "answer": "7:30",
+          "audioTranscript": "I start work at half past seven."
+        },
+        {
+          "id": "A1-U4-L2-A02",
+          "lessonId": "A1-U4-L2",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE",
+            "A1.U4.INTERACTION.ASK_ABOUT_ROUTINE"
+          ],
+          "prompt": "Match the times.",
+          "promptAr": "طابق الأوقات.",
+          "pairs": [
+            [
+              "half past six",
+              "6:30"
+            ],
+            [
+              "quarter past eight",
+              "8:15"
+            ],
+            [
+              "quarter to nine",
+              "8:45"
+            ]
+          ]
+        },
+        {
+          "id": "A1-U4-L2-A03",
+          "lessonId": "A1-U4-L2",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE",
+            "A1.U4.INTERACTION.ASK_ABOUT_ROUTINE"
+          ],
+          "prompt": "Choose the time preposition.",
+          "promptAr": "اختر حرف الوقت.",
+          "text": "I start work ___ eight.",
+          "options": [
+            "at",
+            "on",
+            "in"
+          ],
+          "answer": "at"
+        },
+        {
+          "id": "A1-U4-L2-A04",
+          "lessonId": "A1-U4-L2",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE",
+            "A1.U4.INTERACTION.ASK_ABOUT_ROUTINE"
+          ],
+          "prompt": "Choose the correct schedule.",
+          "promptAr": "اختر الجدول الصحيح.",
+          "options": [
+            "work 8:15 – lunch 1:00",
+            "work 8:45 – lunch 12:00",
+            "work 8:15 – lunch 12:00"
+          ],
+          "answer": "work 8:15 – lunch 1:00",
+          "audioTranscript": "I start work at quarter past eight and have lunch at one o'clock."
+        },
+        {
+          "id": "A1-U4-L2-A05",
+          "lessonId": "A1-U4-L2",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE",
+            "A1.U4.INTERACTION.ASK_ABOUT_ROUTINE"
+          ],
+          "prompt": "Ask someone what time they have breakfast, then give your own time.",
+          "promptAr": "اسأل شخصاً متى يتناول الفطور ثم اذكر وقتك.",
+          "accepted": [],
+          "evaluation": "time-question-and-answer",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U4-L3",
+      "title": "His and Her Day",
+      "titleAr": "يومه ويومها",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U4.PRODUCTION.DESCRIBE_OTHER_ROUTINE",
+        "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE"
+      ],
+      "grammar": [
+        "A1.G.PRESENT_SIMPLE.HE_SHE_AFF",
+        "A1.G.PRESENT_SIMPLE.THIRD_S_SPELLING"
+      ],
+      "lexicon": [
+        "A1.LEX.START.V01",
+        "A1.LEX.FINISH.V01",
+        "A1.LEX.LUNCH.N01",
+        "A1.LEX.DINNER.N01"
+      ],
+      "chunks": [
+        "A1.CHUNK.WHAT_TIME_DOES",
+        "A1.CHUNK.HE_SHE_ACTIVITY_AT"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "Lina starts work at eight. She finishes at three and goes home.",
+            "ar": "تبدأ لينا العمل في الثامنة وتنهيه في الثالثة ثم تعود إلى المنزل."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U4-L3-A01",
+          "lessonId": "A1-U4-L3",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U4.PRODUCTION.DESCRIBE_OTHER_ROUTINE",
+            "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE"
+          ],
+          "prompt": "When does Lina finish work?",
+          "promptAr": "متى تنهي لينا العمل؟",
+          "options": [
+            "3:00",
+            "8:00",
+            "4:00"
+          ],
+          "answer": "3:00",
+          "audioTranscript": "Lina starts work at eight and finishes at three."
+        },
+        {
+          "id": "A1-U4-L3-A02",
+          "lessonId": "A1-U4-L3",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U4.PRODUCTION.DESCRIBE_OTHER_ROUTINE",
+            "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE"
+          ],
+          "prompt": "Match the base and third-person forms.",
+          "promptAr": "طابق الفعل مع صيغة الغائب.",
+          "pairs": [
+            [
+              "start",
+              "starts"
+            ],
+            [
+              "finish",
+              "finishes"
+            ],
+            [
+              "study",
+              "studies"
+            ]
+          ]
+        },
+        {
+          "id": "A1-U4-L3-A03",
+          "lessonId": "A1-U4-L3",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U4.PRODUCTION.DESCRIBE_OTHER_ROUTINE",
+            "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "He ___ home at four.",
+          "options": [
+            "go",
+            "goes",
+            "going"
+          ],
+          "answer": "goes"
+        },
+        {
+          "id": "A1-U4-L3-A04",
+          "lessonId": "A1-U4-L3",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U4.PRODUCTION.DESCRIBE_OTHER_ROUTINE",
+            "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE"
+          ],
+          "prompt": "Choose Karim's routine.",
+          "promptAr": "اختر روتين كريم.",
+          "options": [
+            "studies 9 – lunch 1 – home 4",
+            "studies 8 – lunch 2 – home 4",
+            "works 9 – dinner 1 – home 5"
+          ],
+          "answer": "studies 9 – lunch 1 – home 4",
+          "audioTranscript": "Karim studies at nine, has lunch at one and goes home at four."
+        },
+        {
+          "id": "A1-U4-L3-A05",
+          "lessonId": "A1-U4-L3",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A1.U4.PRODUCTION.DESCRIBE_OTHER_ROUTINE",
+            "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE"
+          ],
+          "prompt": "Describe three parts of another person's day using he or she.",
+          "promptAr": "صف ثلاثة أجزاء من يوم شخص آخر مستخدماً he أو she.",
+          "accepted": [],
+          "evaluation": "three-third-person-routine-statements",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U4-L4",
+      "title": "Ask About a Routine",
+      "titleAr": "اسأل عن الروتين",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U4.INTERACTION.ASK_ABOUT_ROUTINE",
+        "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE"
+      ],
+      "grammar": [
+        "A1.G.PRESENT_SIMPLE.ROUTINE_QUESTION_CHUNK"
+      ],
+      "lexicon": [
+        "A1.LEX.EARLY.ADJ01",
+        "A1.LEX.LATE.ADJ01"
+      ],
+      "chunks": [
+        "A1.CHUNK.WHAT_TIME_DO_YOU",
+        "A1.CHUNK.WHAT_TIME_DOES"
+      ],
+      "pedagogyNote": "Use What time do you...? and What time does...? functionally; full do/does analysis follows in U5.",
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Sara",
+            "en": "What time do you get up?",
+            "ar": "في أي وقت تستيقظ؟"
+          },
+          {
+            "speaker": "Omar",
+            "en": "At six. I'm early.",
+            "ar": "في السادسة. أنا مبكر."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U4-L4-A01",
+          "lessonId": "A1-U4-L4",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U4.INTERACTION.ASK_ABOUT_ROUTINE",
+            "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE"
+          ],
+          "prompt": "Is Omar early or late?",
+          "promptAr": "هل عمر مبكر أم متأخر؟",
+          "options": [
+            "early",
+            "late",
+            "not stated"
+          ],
+          "answer": "early",
+          "audioTranscript": "I get up at six. I'm early."
+        },
+        {
+          "id": "A1-U4-L4-A02",
+          "lessonId": "A1-U4-L4",
+          "type": "order",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U4.INTERACTION.ASK_ABOUT_ROUTINE",
+            "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE"
+          ],
+          "prompt": "Build the question.",
+          "promptAr": "رتب السؤال.",
+          "tokens": [
+            "you",
+            "do",
+            "What time",
+            "get up"
+          ],
+          "answer": [
+            "What time",
+            "do",
+            "you",
+            "get up"
+          ]
+        },
+        {
+          "id": "A1-U4-L4-A03",
+          "lessonId": "A1-U4-L4",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U4.INTERACTION.ASK_ABOUT_ROUTINE",
+            "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE"
+          ],
+          "prompt": "Complete the question about Sara.",
+          "promptAr": "أكمل السؤال عن سارة.",
+          "text": "What time ___ Sara start work?",
+          "options": [
+            "do",
+            "does",
+            "is"
+          ],
+          "answer": "does"
+        },
+        {
+          "id": "A1-U4-L4-A04",
+          "lessonId": "A1-U4-L4",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U4.INTERACTION.ASK_ABOUT_ROUTINE",
+            "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE"
+          ],
+          "prompt": "What information does the speaker need?",
+          "promptAr": "ما المعلومة التي يحتاجها المتحدث؟",
+          "options": [
+            "Sara's start time",
+            "Sara's job",
+            "Sara's city"
+          ],
+          "answer": "Sara's start time",
+          "audioTranscript": "What time does Sara start work?"
+        },
+        {
+          "id": "A1-U4-L4-A05",
+          "lessonId": "A1-U4-L4",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U4.INTERACTION.ASK_ABOUT_ROUTINE",
+            "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE"
+          ],
+          "prompt": "Ask two routine questions: one with you and one about he or she.",
+          "promptAr": "اطرح سؤالين عن الروتين: أحدهما مع you والآخر عن he أو she.",
+          "accepted": [],
+          "evaluation": "two-routine-questions-do-does",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U4-L5",
+      "title": "How Often?",
+      "titleAr": "كم مرة؟",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U4.PRODUCTION.STATE_FREQUENCY",
+        "A1.U4.PRODUCTION.DESCRIBE_OTHER_ROUTINE"
+      ],
+      "grammar": [
+        "A1.G.FREQUENCY.POSITION"
+      ],
+      "lexicon": [
+        "A1.LEX.ALWAYS.ADV01",
+        "A1.LEX.USUALLY.ADV01",
+        "A1.LEX.SOMETIMES.ADV01",
+        "A1.LEX.NEVER.ADV01"
+      ],
+      "chunks": [
+        "A1.CHUNK.HOW_OFTEN_DO_YOU",
+        "A1.CHUNK.I_USUALLY"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Ali",
+            "en": "I usually walk to work, but I sometimes go by car.",
+            "ar": "عادة أمشي إلى العمل لكنني أذهب بالسيارة أحياناً."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U4-L5-A01",
+          "lessonId": "A1-U4-L5",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U4.PRODUCTION.STATE_FREQUENCY",
+            "A1.U4.PRODUCTION.DESCRIBE_OTHER_ROUTINE"
+          ],
+          "prompt": "How does Ali usually go to work?",
+          "promptAr": "كيف يذهب علي عادة إلى العمل؟",
+          "options": [
+            "He walks.",
+            "He drives.",
+            "He takes a bus."
+          ],
+          "answer": "He walks.",
+          "audioTranscript": "I usually walk to work, but I sometimes go by car."
+        },
+        {
+          "id": "A1-U4-L5-A02",
+          "lessonId": "A1-U4-L5",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U4.PRODUCTION.STATE_FREQUENCY",
+            "A1.U4.PRODUCTION.DESCRIBE_OTHER_ROUTINE"
+          ],
+          "prompt": "Match the frequency words.",
+          "promptAr": "طابق كلمات التكرار.",
+          "pairs": [
+            [
+              "always",
+              "100%"
+            ],
+            [
+              "usually",
+              "often"
+            ],
+            [
+              "sometimes",
+              "not often"
+            ],
+            [
+              "never",
+              "0%"
+            ]
+          ]
+        },
+        {
+          "id": "A1-U4-L5-A03",
+          "lessonId": "A1-U4-L5",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U4.PRODUCTION.STATE_FREQUENCY",
+            "A1.U4.PRODUCTION.DESCRIBE_OTHER_ROUTINE"
+          ],
+          "prompt": "Put the frequency word in the natural place.",
+          "promptAr": "اختر الموضع الطبيعي لكلمة التكرار.",
+          "text": "She ___ has breakfast at home.",
+          "options": [
+            "usually",
+            "has usually",
+            "is usually has"
+          ],
+          "answer": "usually"
+        },
+        {
+          "id": "A1-U4-L5-A04",
+          "lessonId": "A1-U4-L5",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U4.PRODUCTION.STATE_FREQUENCY",
+            "A1.U4.PRODUCTION.DESCRIBE_OTHER_ROUTINE"
+          ],
+          "prompt": "Which statement is true?",
+          "promptAr": "أي جملة صحيحة؟",
+          "options": [
+            "He never works on Friday.",
+            "He always works on Friday.",
+            "He sometimes works on Friday."
+          ],
+          "answer": "He never works on Friday.",
+          "audioTranscript": "I work from Sunday to Thursday. I never work on Friday."
+        },
+        {
+          "id": "A1-U4-L5-A05",
+          "lessonId": "A1-U4-L5",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A1.U4.PRODUCTION.STATE_FREQUENCY",
+            "A1.U4.PRODUCTION.DESCRIBE_OTHER_ROUTINE"
+          ],
+          "prompt": "Say three routine facts using three different frequency words.",
+          "promptAr": "اذكر ثلاث حقائق عن الروتين مستخدماً ثلاث كلمات تكرار مختلفة.",
+          "accepted": [],
+          "evaluation": "three-frequency-statements",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U4-L6",
+      "title": "A Routine Profile",
+      "titleAr": "وصف روتين",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U4.WRITING.WRITE_ROUTINE",
+        "A1.U4.MEDIATION.COMPARE_ROUTINES",
+        "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE"
+      ],
+      "grammar": [
+        "A1.G.SEQUENCE.AND_THEN"
+      ],
+      "lexicon": [
+        "A1.LEX.ROUTINE.N01"
+      ],
+      "chunks": [
+        "A1.CHUNK.FIRST_THEN"
+      ],
+      "readingText": {
+        "title": "Two Mornings",
+        "text": "Maya gets up at six thirty and starts work at eight. Omar gets up at seven thirty and starts work at nine. Maya always has breakfast. Omar sometimes has breakfast.",
+        "textAr": "صباحان مختلفان..."
+      },
+      "activities": [
+        {
+          "id": "A1-U4-L6-A01",
+          "lessonId": "A1-U4-L6",
+          "type": "textChoice",
+          "mode": "encounter",
+          "skill": "reading",
+          "canDo": [
+            "A1.U4.WRITING.WRITE_ROUTINE",
+            "A1.U4.MEDIATION.COMPARE_ROUTINES",
+            "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE"
+          ],
+          "prompt": "Who starts work earlier?",
+          "promptAr": "من يبدأ العمل أبكر؟",
+          "options": [
+            "Maya",
+            "Omar",
+            "They start together."
+          ],
+          "answer": "Maya"
+        },
+        {
+          "id": "A1-U4-L6-A02",
+          "lessonId": "A1-U4-L6",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U4.WRITING.WRITE_ROUTINE",
+            "A1.U4.MEDIATION.COMPARE_ROUTINES",
+            "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE"
+          ],
+          "prompt": "Match each person to the fact.",
+          "promptAr": "طابق الشخص بالمعلومة.",
+          "pairs": [
+            [
+              "Maya",
+              "starts at 8"
+            ],
+            [
+              "Omar",
+              "starts at 9"
+            ],
+            [
+              "Maya",
+              "always has breakfast"
+            ],
+            [
+              "Omar",
+              "sometimes has breakfast"
+            ]
+          ]
+        },
+        {
+          "id": "A1-U4-L6-A03",
+          "lessonId": "A1-U4-L6",
+          "type": "order",
+          "mode": "practice",
+          "skill": "writing",
+          "canDo": [
+            "A1.U4.WRITING.WRITE_ROUTINE",
+            "A1.U4.MEDIATION.COMPARE_ROUTINES",
+            "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE"
+          ],
+          "prompt": "Order the routine.",
+          "promptAr": "رتب الروتين.",
+          "tokens": [
+            "Then I go to work.",
+            "First, I get up.",
+            "After that, I start work."
+          ],
+          "answer": [
+            "First, I get up.",
+            "Then I go to work.",
+            "After that, I start work."
+          ]
+        },
+        {
+          "id": "A1-U4-L6-A04",
+          "lessonId": "A1-U4-L6",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U4.WRITING.WRITE_ROUTINE",
+            "A1.U4.MEDIATION.COMPARE_ROUTINES",
+            "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE"
+          ],
+          "prompt": "Who has the longer morning before work?",
+          "promptAr": "من لديه وقت صباحي أطول قبل العمل؟",
+          "options": [
+            "Nora",
+            "David",
+            "The same"
+          ],
+          "answer": "Nora",
+          "audioTranscript": "Nora gets up at six and starts work at nine. David gets up at seven and starts at eight."
+        },
+        {
+          "id": "A1-U4-L6-A05",
+          "lessonId": "A1-U4-L6",
+          "type": "write",
+          "mode": "mastery",
+          "skill": "writing",
+          "canDo": [
+            "A1.U4.WRITING.WRITE_ROUTINE",
+            "A1.U4.MEDIATION.COMPARE_ROUTINES",
+            "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE"
+          ],
+          "prompt": "Write 5–7 sentences about your or a fictional person's routine. Include times, sequence and frequency.",
+          "promptAr": "اكتب 5–7 جمل عن روتينك أو روتين شخص خيالي، مع الوقت والترتيب والتكرار.",
+          "accepted": [],
+          "evaluation": "u4-routine-writing-rubric",
+          "wordGuide": [
+            40,
+            65
+          ]
+        }
+      ]
+    },
+    {
+      "id": "A1-U4-L7",
+      "title": "Mission: Two Daily Routines",
+      "titleAr": "المهمة: روتينان يوميان",
+      "lessonType": "mission",
+      "canDo": [
+        "A1.U4.MEDIATION.COMPARE_ROUTINES",
+        "A1.U4.PRODUCTION.DESCRIBE_DAILY_ROUTINE",
+        "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE",
+        "A1.U4.INTERACTION.ASK_ABOUT_ROUTINE",
+        "A1.U4.PRODUCTION.DESCRIBE_OTHER_ROUTINE",
+        "A1.U4.PRODUCTION.STATE_FREQUENCY",
+        "A1.U4.WRITING.WRITE_ROUTINE"
+      ],
+      "grammar": [],
+      "lexicon": [],
+      "chunks": [],
+      "scenario": "Read and listen to two unseen routine cards, identify differences, ask for one missing time and explain the comparison.",
+      "activities": [
+        {
+          "id": "A1-U4-L7-A01",
+          "lessonId": "A1-U4-L7",
+          "mode": "mastery",
+          "type": "audioChoice",
+          "skill": "listening",
+          "canDo": [
+            "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE",
+            "A1.U4.MEDIATION.COMPARE_ROUTINES"
+          ],
+          "prompt": "Which person starts earlier?",
+          "promptAr": "أي شخص يبدأ أبكر؟",
+          "options": [
+            "Rana",
+            "Hassan",
+            "They start together."
+          ],
+          "answer": "Rana",
+          "audioTranscript": "Rana starts at seven thirty. Hassan starts at eight."
+        },
+        {
+          "id": "A1-U4-L7-A02",
+          "lessonId": "A1-U4-L7",
+          "mode": "mastery",
+          "type": "textChoice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U4.MEDIATION.COMPARE_ROUTINES"
+          ],
+          "prompt": "Choose the correct comparison.",
+          "promptAr": "اختر المقارنة الصحيحة.",
+          "options": [
+            "Rana gets up earlier, but Hassan finishes earlier.",
+            "Hassan gets up earlier and finishes later.",
+            "They have the same routine."
+          ],
+          "answer": "Rana gets up earlier, but Hassan finishes earlier.",
+          "sourceText": "Rana gets up at 6:30 and finishes at 3. Hassan gets up at 7:00 and finishes at 2."
+        },
+        {
+          "id": "A1-U4-L7-A03",
+          "lessonId": "A1-U4-L7",
+          "mode": "mastery",
+          "type": "speak",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U4.INTERACTION.ASK_ABOUT_ROUTINE"
+          ],
+          "prompt": "Ask for Rana's lunch time.",
+          "promptAr": "اسأل عن وقت غداء رنا.",
+          "accepted": [],
+          "evaluation": "routine-time-question",
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A1-U4-L7-A04",
+          "lessonId": "A1-U4-L7",
+          "mode": "mastery",
+          "type": "speak",
+          "skill": "mediation",
+          "canDo": [
+            "A1.U4.MEDIATION.COMPARE_ROUTINES",
+            "A1.U4.PRODUCTION.DESCRIBE_OTHER_ROUTINE"
+          ],
+          "prompt": "Explain three differences between the two routines.",
+          "promptAr": "اشرح ثلاثة اختلافات بين الروتينين.",
+          "accepted": [],
+          "evaluation": "three-routine-differences",
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A1-U4-L7-A05",
+          "lessonId": "A1-U4-L7",
+          "mode": "mastery",
+          "type": "write",
+          "skill": "writing",
+          "canDo": [
+            "A1.U4.WRITING.WRITE_ROUTINE",
+            "A1.U4.PRODUCTION.STATE_FREQUENCY"
+          ],
+          "prompt": "Write a 45–70-word comparison of the routines.",
+          "promptAr": "اكتب مقارنة من 45–70 كلمة بين الروتينين.",
+          "accepted": [],
+          "evaluation": "u4-mission-writing-rubric",
+          "wordGuide": [
+            45,
+            70
+          ]
+        },
+        {
+          "id": "A1-U4-L7-A06",
+          "lessonId": "A1-U4-L7",
+          "mode": "mastery",
+          "type": "form",
+          "skill": "writing",
+          "canDo": [
+            "A1.U4.PRODUCTION.DESCRIBE_DAILY_ROUTINE"
+          ],
+          "prompt": "Create a corrected schedule for Hassan after his start time changes to 9:00.",
+          "promptAr": "أنشئ جدولاً مصححاً لحسن بعد تغيير وقت البدء إلى التاسعة.",
+          "fields": [
+            "getUpTime",
+            "breakfastFrequency",
+            "startTime",
+            "finishTime"
+          ],
+          "evaluation": "coherent-updated-routine"
+        }
+      ]
+    }
+  ],
+  "mastery": {
+    "requiredObjectives": [
+      "A1.U4.PRODUCTION.DESCRIBE_DAILY_ROUTINE",
+      "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE",
+      "A1.U4.INTERACTION.ASK_ABOUT_ROUTINE",
+      "A1.U4.PRODUCTION.DESCRIBE_OTHER_ROUTINE",
+      "A1.U4.PRODUCTION.STATE_FREQUENCY",
+      "A1.U4.WRITING.WRITE_ROUTINE",
+      "A1.U4.MEDIATION.COMPARE_ROUTINES"
+    ],
+    "requiredSkillGroups": [
+      [
+        "listening",
+        "reading"
+      ],
+      [
+        "spokenInteraction",
+        "spokenProduction",
+        "writing"
+      ],
+      [
+        "mediation"
+      ]
+    ],
+    "minimumObjectiveScore": 0.75,
+    "missionRequired": true,
+    "retry": "targeted-by-objective",
+    "unlocks": "A1-U5"
+  }
+}

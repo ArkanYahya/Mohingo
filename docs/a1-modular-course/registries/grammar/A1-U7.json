@@ -1,0 +1,67 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U7",
+  "kind": "grammar",
+  "records": [
+    {
+      "id": "A1.G.QUESTION.HOW_MUCH_PRICE",
+      "form": "How much is/are ...?",
+      "meaningAr": "السؤال عن السعر للمفرد والجمع",
+      "introducedIn": "A1-U7-L1",
+      "examples": [
+        {
+          "en": "How much is this shirt? How much are these shoes?",
+          "ar": "كم سعر هذا القميص؟ كم سعر هذا الحذاء؟"
+        }
+      ]
+    },
+    {
+      "id": "A1.G.PRONOUN.OBJECT_BASIC",
+      "form": "me/you/it/them after verb",
+      "meaningAr": "ضمائر المفعول الأساسية",
+      "introducedIn": "A1-U7-L3",
+      "examples": [
+        {
+          "en": "I like it. Can you show me them?",
+          "ar": "أحبه. هل يمكنك أن تريني إياها؟"
+        }
+      ]
+    },
+    {
+      "id": "A1.G.SUBSTITUTION.ONE_ONES",
+      "form": "one/ones to avoid repeating a countable noun",
+      "meaningAr": "استخدام one/ones لتجنب تكرار الاسم",
+      "introducedIn": "A1-U7-L3",
+      "examples": [
+        {
+          "en": "The blue one. The small ones.",
+          "ar": "الأزرق. الصغار."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.NEED_WANT_NOUN",
+      "form": "need/want + noun",
+      "meaningAr": "التعبير عن الحاجة والرغبة",
+      "introducedIn": "A1-U7-L4",
+      "examples": [
+        {
+          "en": "I need a large jacket. I want the blue one.",
+          "ar": "أحتاج سترة كبيرة. أريد الزرقاء."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.ADJECTIVE.BEFORE_NOUN_REVIEW",
+      "form": "size + colour + noun",
+      "meaningAr": "ترتيب الصفة الأساسية قبل الاسم",
+      "introducedIn": "A1-U7-L2",
+      "examples": [
+        {
+          "en": "a small black bag",
+          "ar": "حقيبة سوداء صغيرة"
+        }
+      ]
+    }
+  ]
+}

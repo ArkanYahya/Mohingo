@@ -1,0 +1,407 @@
+{
+  "status": "passed",
+  "contentVersion": "A1-COMPLETE-2026.09.02",
+  "generatedAt": "2026-09-02T06:17:24.600Z",
+  "principlesChecked": [
+    "no forward content references",
+    "all required objectives have mastery evidence",
+    "U4-U12 cover receptive, productive and mediation skills",
+    "new registry records contain bilingual teaching data",
+    "recycledIn targets exist",
+    "final assessment does not exactly reuse learning inputs"
+  ],
+  "totals": {
+    "units": 13,
+    "lessons": 89,
+    "lessonActivities": 445,
+    "grammar": 85,
+    "lexicon": 354,
+    "chunks": 143,
+    "media": 158,
+    "finalMissionActivities": 12,
+    "assessment": {
+      "listening": 16,
+      "reading": 16,
+      "writing": 2,
+      "speaking": 4,
+      "mediation": 2
+    }
+  },
+  "lexicalProfile": {
+    "receptive": 354,
+    "productive": 325,
+    "chunks": 143
+  },
+  "units": [
+    {
+      "id": "A1-U0",
+      "lessons": 5,
+      "activities": 19,
+      "skills": {
+        "listening": 11,
+        "spokenInteraction": 4,
+        "reading": 1,
+        "spokenProduction": 3
+      },
+      "modes": {
+        "encounter": 2,
+        "practice": 5,
+        "mastery": 12
+      },
+      "requiredObjectives": 4,
+      "masteryEvidence": {
+        "A1.U0.INTERACTION.RESPOND_GREETING": 2,
+        "A1.U0.LISTENING.FOLLOW_APP_INSTRUCTION": 3,
+        "A1.U0.LISTENING.UNDERSTAND_SPELLED_NAME": 1,
+        "A1.U0.PRODUCTION.SPELL_NAME": 2,
+        "A1.U0.LISTENING.UNDERSTAND_PERSONAL_NUMBER": 3,
+        "A1.U0.INTERACTION.REGISTER_FOR_CLASS": 1
+      }
+    },
+    {
+      "id": "A1-U1",
+      "lessons": 7,
+      "activities": 30,
+      "skills": {
+        "listening": 10,
+        "reading": 6,
+        "spokenProduction": 5,
+        "spokenInteraction": 9
+      },
+      "modes": {
+        "encounter": 5,
+        "practice": 7,
+        "mastery": 18
+      },
+      "requiredObjectives": 6,
+      "masteryEvidence": {
+        "A1.U1.PRODUCTION.INTRODUCE_SELF": 2,
+        "A1.U1.INTERACTION.ASK_NAME": 2,
+        "A1.U1.PRODUCTION.STATE_ORIGIN": 2,
+        "A1.U1.INTERACTION.ASK_ORIGIN": 1,
+        "A1.U1.PRODUCTION.STATE_RESIDENCE": 2,
+        "A1.U1.INTERACTION.ASK_RESIDENCE": 1,
+        "A1.U1.PRODUCTION.INTRODUCE_OTHER": 2,
+        "A1.U1.LISTENING.UNDERSTAND_PERSONAL_INFO": 4,
+        "A1.U1.PRODUCTION.STATE_JOB": 1,
+        "A1.U1.INTERACTION.USE_REPAIR_PHRASE": 2,
+        "A1.U1.INTERACTION.NEW_COLLEAGUE_MISSION": 4
+      }
+    },
+    {
+      "id": "A1-U2",
+      "lessons": 7,
+      "activities": 36,
+      "skills": {
+        "listening": 10,
+        "reading": 12,
+        "spokenProduction": 7,
+        "spokenInteraction": 2,
+        "writing": 4,
+        "mediation": 1
+      },
+      "modes": {
+        "encounter": 6,
+        "practice": 12,
+        "mastery": 18
+      },
+      "requiredObjectives": 7,
+      "masteryEvidence": {
+        "A1.U2.PRODUCTION.DESCRIBE_FAMILY": 3,
+        "A1.U2.PRODUCTION.STATE_RELATIONSHIP": 3,
+        "A1.U2.LISTENING.UNDERSTAND_PEOPLE_DESCRIPTION": 5,
+        "A1.U2.PRODUCTION.STATE_AGE": 3,
+        "A1.U2.INTERACTION.ASK_IDENTIFY_PERSON": 2,
+        "A1.U2.PRODUCTION.DESCRIBE_PERSON": 3,
+        "A1.U2.WRITING.WRITE_PEOPLE_PROFILE": 2,
+        "A1.U2.MEDIATION.EXPLAIN_PEOPLE_MAP": 3
+      }
+    },
+    {
+      "id": "A1-U3",
+      "lessons": 7,
+      "activities": 36,
+      "skills": {
+        "listening": 11,
+        "reading": 12,
+        "spokenProduction": 5,
+        "spokenInteraction": 4,
+        "writing": 3,
+        "mediation": 1
+      },
+      "modes": {
+        "encounter": 6,
+        "practice": 12,
+        "mastery": 18
+      },
+      "requiredObjectives": 8,
+      "masteryEvidence": {
+        "A1.U3.LISTENING.UNDERSTAND_ROOM_DESCRIPTION": 5,
+        "A1.U3.PRODUCTION.DESCRIBE_ROOM": 3,
+        "A1.U3.PRODUCTION.STATE_EXISTENCE": 3,
+        "A1.U3.PRODUCTION.LOCATE_OBJECTS": 4,
+        "A1.U3.INTERACTION.IDENTIFY_NEAR_FAR_OBJECTS": 2,
+        "A1.U3.INTERACTION.ASK_ANSWER_OWNERSHIP": 3,
+        "A1.U3.WRITING.WRITE_HOME_DESCRIPTION": 2,
+        "A1.U3.MEDIATION.SHOW_NEW_HOME": 2
+      }
+    },
+    {
+      "id": "A1-U4",
+      "lessons": 7,
+      "activities": 36,
+      "skills": {
+        "listening": 12,
+        "reading": 13,
+        "spokenProduction": 3,
+        "spokenInteraction": 3,
+        "writing": 4,
+        "mediation": 1
+      },
+      "modes": {
+        "encounter": 6,
+        "practice": 12,
+        "mastery": 18
+      },
+      "requiredObjectives": 7,
+      "masteryEvidence": {
+        "A1.U4.PRODUCTION.DESCRIBE_DAILY_ROUTINE": 3,
+        "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE": 9,
+        "A1.U4.INTERACTION.ASK_ABOUT_ROUTINE": 5,
+        "A1.U4.PRODUCTION.DESCRIBE_OTHER_ROUTINE": 5,
+        "A1.U4.PRODUCTION.STATE_FREQUENCY": 3,
+        "A1.U4.WRITING.WRITE_ROUTINE": 3,
+        "A1.U4.MEDIATION.COMPARE_ROUTINES": 5
+      }
+    },
+    {
+      "id": "A1-U5",
+      "lessons": 7,
+      "activities": 36,
+      "skills": {
+        "listening": 12,
+        "reading": 13,
+        "spokenProduction": 2,
+        "spokenInteraction": 4,
+        "writing": 4,
+        "mediation": 1
+      },
+      "modes": {
+        "encounter": 6,
+        "practice": 12,
+        "mastery": 18
+      },
+      "requiredObjectives": 7,
+      "masteryEvidence": {
+        "A1.U5.PRODUCTION.EXPRESS_PREFERENCE": 5,
+        "A1.U5.LISTENING.UNDERSTAND_PREFERENCES": 7,
+        "A1.U5.PRODUCTION.DESCRIBE_HOBBIES": 6,
+        "A1.U5.INTERACTION.ASK_ANSWER_ABILITY": 5,
+        "A1.U5.INTERACTION.MAKE_RESPOND_INVITATION": 5,
+        "A1.U5.WRITING.WRITE_FREE_TIME_MESSAGE": 3,
+        "A1.U5.MEDIATION.PLAN_FREE_AFTERNOON": 3
+      }
+    },
+    {
+      "id": "A1-U6",
+      "lessons": 7,
+      "activities": 36,
+      "skills": {
+        "listening": 13,
+        "reading": 13,
+        "spokenProduction": 2,
+        "spokenInteraction": 4,
+        "writing": 3,
+        "mediation": 1
+      },
+      "modes": {
+        "encounter": 6,
+        "practice": 12,
+        "mastery": 18
+      },
+      "requiredObjectives": 7,
+      "masteryEvidence": {
+        "A1.U6.READING.UNDERSTAND_BASIC_MENU": 7,
+        "A1.U6.PRODUCTION.STATE_FOOD_WANTS": 9,
+        "A1.U6.LISTENING.UNDERSTAND_FOOD_QUANTITY": 5,
+        "A1.U6.INTERACTION.ORDER_MEAL": 5,
+        "A1.U6.INTERACTION.CHECK_MEAL": 4,
+        "A1.U6.WRITING.WRITE_SIMPLE_ORDER": 3,
+        "A1.U6.MEDIATION.COMPLETE_MEAL_MISSION": 1
+      }
+    },
+    {
+      "id": "A1-U7",
+      "lessons": 7,
+      "activities": 36,
+      "skills": {
+        "listening": 13,
+        "reading": 13,
+        "spokenInteraction": 6,
+        "writing": 3,
+        "mediation": 1
+      },
+      "modes": {
+        "encounter": 6,
+        "practice": 12,
+        "mastery": 18
+      },
+      "requiredObjectives": 7,
+      "masteryEvidence": {
+        "A1.U7.LISTENING.UNDERSTAND_PRICE": 7,
+        "A1.U7.INTERACTION.ASK_ABOUT_PRODUCT": 7,
+        "A1.U7.READING.CHOOSE_PRODUCT": 7,
+        "A1.U7.INTERACTION.BUY_ITEM": 5,
+        "A1.U7.INTERACTION.SOLVE_SHOPPING_PROBLEM": 4,
+        "A1.U7.WRITING.WRITE_SHOPPING_REQUEST": 3,
+        "A1.U7.MEDIATION.COMPLETE_BUDGET_PURCHASE": 2
+      }
+    },
+    {
+      "id": "A1-U8",
+      "lessons": 7,
+      "activities": 36,
+      "skills": {
+        "listening": 12,
+        "reading": 12,
+        "spokenProduction": 4,
+        "spokenInteraction": 3,
+        "writing": 4,
+        "mediation": 1
+      },
+      "modes": {
+        "encounter": 6,
+        "practice": 12,
+        "mastery": 18
+      },
+      "requiredObjectives": 7,
+      "masteryEvidence": {
+        "A1.U8.READING.IDENTIFY_TOWN_PLACE": 3,
+        "A1.U8.PRODUCTION.STATE_LOCATION": 7,
+        "A1.U8.INTERACTION.ASK_FOR_DIRECTIONS": 7,
+        "A1.U8.PRODUCTION.GIVE_SIMPLE_DIRECTIONS": 7,
+        "A1.U8.WRITING.WRITE_DIRECTIONS": 5,
+        "A1.U8.READING.UNDERSTAND_PUBLIC_SIGN": 6,
+        "A1.U8.MEDIATION.GUIDE_VISITOR": 1
+      }
+    },
+    {
+      "id": "A1-U9",
+      "lessons": 7,
+      "activities": 36,
+      "skills": {
+        "listening": 12,
+        "reading": 13,
+        "spokenProduction": 4,
+        "spokenInteraction": 3,
+        "writing": 3,
+        "mediation": 1
+      },
+      "modes": {
+        "encounter": 6,
+        "practice": 12,
+        "mastery": 18
+      },
+      "requiredObjectives": 7,
+      "masteryEvidence": {
+        "A1.U9.LISTENING.UNDERSTAND_TRANSPORT_INFO": 6,
+        "A1.U9.PRODUCTION.DESCRIBE_JOURNEY": 5,
+        "A1.U9.READING.UNDERSTAND_SIMPLE_ROUTE": 7,
+        "A1.U9.INTERACTION.BUY_TICKET": 3,
+        "A1.U9.INTERACTION.ASK_DEPARTURE_INFO": 7,
+        "A1.U9.MEDIATION.PLAN_SIMPLE_JOURNEY": 4,
+        "A1.U9.WRITING.WRITE_TRAVEL_PLAN": 3
+      }
+    },
+    {
+      "id": "A1-U10",
+      "lessons": 7,
+      "activities": 36,
+      "skills": {
+        "listening": 13,
+        "reading": 13,
+        "spokenProduction": 3,
+        "spokenInteraction": 3,
+        "writing": 3,
+        "mediation": 1
+      },
+      "modes": {
+        "encounter": 6,
+        "practice": 12,
+        "mastery": 18
+      },
+      "requiredObjectives": 7,
+      "masteryEvidence": {
+        "A1.U10.READING.IDENTIFY_BODY_AND_BASIC_HEALTH": 2,
+        "A1.U10.PRODUCTION.DESCRIBE_SIMPLE_SYMPTOM": 7,
+        "A1.U10.INTERACTION.ASK_FOR_HEALTH_HELP": 7,
+        "A1.U10.LISTENING.UNDERSTAND_BASIC_ADVICE": 7,
+        "A1.U10.READING.UNDERSTAND_HEALTH_INSTRUCTION": 6,
+        "A1.U10.WRITING.WRITE_HEALTH_NOTE": 3,
+        "A1.U10.MEDIATION.SOLVE_SIMPLE_HEALTH_PROBLEM": 2
+      }
+    },
+    {
+      "id": "A1-U11",
+      "lessons": 7,
+      "activities": 36,
+      "skills": {
+        "listening": 12,
+        "reading": 13,
+        "spokenProduction": 5,
+        "spokenInteraction": 2,
+        "writing": 3,
+        "mediation": 1
+      },
+      "modes": {
+        "encounter": 6,
+        "practice": 12,
+        "mastery": 18
+      },
+      "requiredObjectives": 7,
+      "masteryEvidence": {
+        "A1.U11.LISTENING.UNDERSTAND_CURRENT_WEATHER": 7,
+        "A1.U11.PRODUCTION.GIVE_SIMPLE_REASON": 5,
+        "A1.U11.PRODUCTION.DESCRIBE_ACTION_NOW": 7,
+        "A1.U11.READING.CHOOSE_WEATHER_CLOTHES": 5,
+        "A1.U11.READING.UNDERSTAND_SIMPLE_FORECAST": 6,
+        "A1.U11.MEDIATION.PREPARE_FOR_TOMORROW_WEATHER": 4,
+        "A1.U11.WRITING.WRITE_WEATHER_UPDATE": 3
+      }
+    },
+    {
+      "id": "A1-U12",
+      "lessons": 7,
+      "activities": 36,
+      "skills": {
+        "listening": 13,
+        "reading": 12,
+        "spokenProduction": 1,
+        "spokenInteraction": 4,
+        "writing": 5,
+        "mediation": 1
+      },
+      "modes": {
+        "encounter": 6,
+        "practice": 12,
+        "mastery": 18
+      },
+      "requiredObjectives": 7,
+      "masteryEvidence": {
+        "A1.U12.PRODUCTION.STATE_FUTURE_PLAN": 7,
+        "A1.U12.READING.UNDERSTAND_SHORT_MESSAGE": 5,
+        "A1.U12.INTERACTION.ASK_ABOUT_PLAN": 5,
+        "A1.U12.INTERACTION.ARRANGE_MEETING": 7,
+        "A1.U12.INTERACTION.ACCEPT_REFUSE_CHANGE_PLAN": 8,
+        "A1.U12.WRITING.WRITE_SIMPLE_PERSONAL_MESSAGE": 5,
+        "A1.U12.MEDIATION.COORDINATE_WEEKEND_PLAN": 2
+      }
+    }
+  ],
+  "warnings": [
+    "legacy: A1-U3-L1: forward chunks reference A1.CHUNK.WELCOME_HOME introduced in A1-U3-L6",
+    "legacy: A1-U3-L4: forward lexicon reference A1.LEX.PHONE.N01 introduced in A1-U3-L5",
+    "picture|noun: legacy/duplicate surface senses A1.LEX.PICTURE.N01, A1.LEX.PICTURE.N02"
+  ],
+  "errors": []
+}

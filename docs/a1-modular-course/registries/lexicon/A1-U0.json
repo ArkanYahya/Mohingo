@@ -1,0 +1,883 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U0",
+  "kind": "lexicon",
+  "records": [
+    {
+      "id": "A1.LEX.HELLO.INTJ",
+      "headword": "hello",
+      "partOfSpeech": "interjection",
+      "arabic": "مرحباً",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "hello",
+      "examples": [
+        "Hello, I'm Maya."
+      ],
+      "introducedIn": "A1-U0-L1",
+      "recycledIn": [
+        "A1-U1-L1",
+        "A1-U1-L6"
+      ]
+    },
+    {
+      "id": "A1.LEX.HI.INTJ",
+      "headword": "hi",
+      "partOfSpeech": "interjection",
+      "arabic": "مرحباً",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "hi",
+      "examples": [
+        "Hi, Omar."
+      ],
+      "introducedIn": "A1-U0-L1",
+      "recycledIn": [
+        "A1-U1-L1"
+      ]
+    },
+    {
+      "id": "A1.LEX.GOODBYE.INTJ",
+      "headword": "goodbye",
+      "partOfSpeech": "interjection",
+      "arabic": "مع السلامة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "goodbye",
+      "examples": [
+        "Goodbye, Sara."
+      ],
+      "introducedIn": "A1-U0-L1",
+      "recycledIn": [
+        "A1-U1-L6"
+      ]
+    },
+    {
+      "id": "A1.LEX.PLEASE.ADV",
+      "headword": "please",
+      "partOfSpeech": "adverb",
+      "arabic": "من فضلك",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "please",
+      "examples": [
+        "Please repeat."
+      ],
+      "introducedIn": "A1-U0-L1",
+      "recycledIn": [
+        "A1-U0-L2",
+        "A1-U1-L6"
+      ]
+    },
+    {
+      "id": "A1.LEX.THANK.V",
+      "headword": "thank",
+      "partOfSpeech": "verb",
+      "arabic": "يشكر",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "thank",
+      "examples": [
+        "Thank you."
+      ],
+      "introducedIn": "A1-U0-L1",
+      "recycledIn": [
+        "A1-U1-L6"
+      ]
+    },
+    {
+      "id": "A1.LEX.SORRY.INTJ",
+      "headword": "sorry",
+      "partOfSpeech": "interjection",
+      "arabic": "آسف/عذراً",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "sorry",
+      "examples": [
+        "Sorry? Please repeat."
+      ],
+      "introducedIn": "A1-U0-L1",
+      "recycledIn": [
+        "A1-U1-L6"
+      ]
+    },
+    {
+      "id": "A1.LEX.LISTEN.V",
+      "headword": "listen",
+      "partOfSpeech": "verb",
+      "arabic": "استمع",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": false,
+      "meaning": "listen",
+      "examples": [
+        "Listen, please."
+      ],
+      "introducedIn": "A1-U0-L2",
+      "recycledIn": [
+        "ALL"
+      ]
+    },
+    {
+      "id": "A1.LEX.LOOK.V",
+      "headword": "look",
+      "partOfSpeech": "verb",
+      "arabic": "انظر",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": false,
+      "meaning": "look",
+      "examples": [
+        "Look, please."
+      ],
+      "introducedIn": "A1-U0-L2",
+      "recycledIn": [
+        "ALL"
+      ]
+    },
+    {
+      "id": "A1.LEX.READ.V",
+      "headword": "read",
+      "partOfSpeech": "verb",
+      "arabic": "اقرأ",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": false,
+      "meaning": "read",
+      "examples": [
+        "Read, please."
+      ],
+      "introducedIn": "A1-U0-L2",
+      "recycledIn": [
+        "ALL"
+      ]
+    },
+    {
+      "id": "A1.LEX.WRITE.V",
+      "headword": "write",
+      "partOfSpeech": "verb",
+      "arabic": "اكتب",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": false,
+      "meaning": "write",
+      "examples": [
+        "Write, please."
+      ],
+      "introducedIn": "A1-U0-L2",
+      "recycledIn": [
+        "ALL"
+      ]
+    },
+    {
+      "id": "A1.LEX.CHOOSE.V",
+      "headword": "choose",
+      "partOfSpeech": "verb",
+      "arabic": "اختر",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": false,
+      "meaning": "choose",
+      "examples": [
+        "Choose, please."
+      ],
+      "introducedIn": "A1-U0-L2",
+      "recycledIn": [
+        "ALL"
+      ]
+    },
+    {
+      "id": "A1.LEX.MATCH.V",
+      "headword": "match",
+      "partOfSpeech": "verb",
+      "arabic": "طابق",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": false,
+      "meaning": "match",
+      "examples": [
+        "Match, please."
+      ],
+      "introducedIn": "A1-U0-L2",
+      "recycledIn": [
+        "ALL"
+      ]
+    },
+    {
+      "id": "A1.LEX.REPEAT.V",
+      "headword": "repeat",
+      "partOfSpeech": "verb",
+      "arabic": "كرر",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": false,
+      "meaning": "repeat",
+      "examples": [
+        "Repeat, please."
+      ],
+      "introducedIn": "A1-U0-L2",
+      "recycledIn": [
+        "ALL"
+      ]
+    },
+    {
+      "id": "A1.LEX.SPEAK.V",
+      "headword": "speak",
+      "partOfSpeech": "verb",
+      "arabic": "تحدث",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": false,
+      "meaning": "speak",
+      "examples": [
+        "Speak, please."
+      ],
+      "introducedIn": "A1-U0-L2",
+      "recycledIn": [
+        "ALL"
+      ]
+    },
+    {
+      "id": "A1.LEX.ANSWER.V",
+      "headword": "answer",
+      "partOfSpeech": "verb",
+      "arabic": "أجب",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": false,
+      "meaning": "answer",
+      "examples": [
+        "Answer, please."
+      ],
+      "introducedIn": "A1-U0-L2",
+      "recycledIn": [
+        "ALL"
+      ]
+    },
+    {
+      "id": "A1.LEX.QUESTION.N01",
+      "headword": "question",
+      "partOfSpeech": "noun",
+      "arabic": "سؤال",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": false,
+      "meaning": "question",
+      "examples": [
+        "Choose the question."
+      ],
+      "introducedIn": "A1-U0-L2",
+      "recycledIn": [
+        "ALL"
+      ]
+    },
+    {
+      "id": "A1.LEX.WORD.N01",
+      "headword": "word",
+      "partOfSpeech": "noun",
+      "arabic": "كلمة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": false,
+      "meaning": "word",
+      "examples": [
+        "Choose the word."
+      ],
+      "introducedIn": "A1-U0-L2",
+      "recycledIn": [
+        "ALL"
+      ]
+    },
+    {
+      "id": "A1.LEX.SENTENCE.N01",
+      "headword": "sentence",
+      "partOfSpeech": "noun",
+      "arabic": "جملة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": false,
+      "meaning": "sentence",
+      "examples": [
+        "Choose the sentence."
+      ],
+      "introducedIn": "A1-U0-L2",
+      "recycledIn": [
+        "ALL"
+      ]
+    },
+    {
+      "id": "A1.LEX.PICTURE.N01",
+      "headword": "picture",
+      "partOfSpeech": "noun",
+      "arabic": "صورة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": false,
+      "meaning": "picture",
+      "examples": [
+        "Choose the picture."
+      ],
+      "introducedIn": "A1-U0-L2",
+      "recycledIn": [
+        "ALL"
+      ]
+    },
+    {
+      "id": "A1.LEX.AUDIO.N01",
+      "headword": "audio",
+      "partOfSpeech": "noun",
+      "arabic": "صوت",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": false,
+      "meaning": "audio",
+      "examples": [
+        "Choose the audio."
+      ],
+      "introducedIn": "A1-U0-L2",
+      "recycledIn": [
+        "ALL"
+      ]
+    },
+    {
+      "id": "A1.LEX.NAME.N01",
+      "headword": "name",
+      "partOfSpeech": "noun",
+      "arabic": "اسم",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "name",
+      "examples": [
+        "My name is Omar."
+      ],
+      "introducedIn": "A1-U0-L3",
+      "recycledIn": [
+        "A1-U1-L1",
+        "A1-U1-L4"
+      ]
+    },
+    {
+      "id": "A1.LEX.SPELL.V01",
+      "headword": "spell",
+      "partOfSpeech": "verb",
+      "arabic": "يتهجّى",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "spell",
+      "examples": [
+        "How do you spell Sara?"
+      ],
+      "introducedIn": "A1-U0-L3",
+      "recycledIn": [
+        "A1-U0-L5"
+      ]
+    },
+    {
+      "id": "A1.LEX.AGE.N01",
+      "headword": "age",
+      "partOfSpeech": "noun",
+      "arabic": "العمر",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "age",
+      "examples": [
+        "Age: 19"
+      ],
+      "introducedIn": "A1-U0-L4",
+      "recycledIn": [
+        "A1-U0-L5",
+        "A1-U1"
+      ]
+    },
+    {
+      "id": "A1.LEX.PHONE_NUMBER.N01",
+      "headword": "phone number",
+      "partOfSpeech": "noun",
+      "arabic": "رقم الهاتف",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "phone number",
+      "examples": [
+        "My phone number is 0770 314 8625."
+      ],
+      "introducedIn": "A1-U0-L4",
+      "recycledIn": [
+        "A1-U0-L5"
+      ]
+    },
+    {
+      "id": "A1.LEX.NUMBER.ZERO",
+      "headword": "zero",
+      "partOfSpeech": "number",
+      "arabic": "صفر",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "zero",
+      "examples": [],
+      "introducedIn": "A1-U0-L4",
+      "recycledIn": [
+        "A1-U4",
+        "A1-U7"
+      ]
+    },
+    {
+      "id": "A1.LEX.NUMBER.ONE",
+      "headword": "one",
+      "partOfSpeech": "number",
+      "arabic": "واحد",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "one",
+      "examples": [],
+      "introducedIn": "A1-U0-L4",
+      "recycledIn": [
+        "A1-U4",
+        "A1-U7"
+      ]
+    },
+    {
+      "id": "A1.LEX.NUMBER.TWO",
+      "headword": "two",
+      "partOfSpeech": "number",
+      "arabic": "اثنان",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "two",
+      "examples": [],
+      "introducedIn": "A1-U0-L4",
+      "recycledIn": [
+        "A1-U4",
+        "A1-U7"
+      ]
+    },
+    {
+      "id": "A1.LEX.NUMBER.THREE",
+      "headword": "three",
+      "partOfSpeech": "number",
+      "arabic": "ثلاثة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "three",
+      "examples": [],
+      "introducedIn": "A1-U0-L4",
+      "recycledIn": [
+        "A1-U4",
+        "A1-U7"
+      ]
+    },
+    {
+      "id": "A1.LEX.NUMBER.FOUR",
+      "headword": "four",
+      "partOfSpeech": "number",
+      "arabic": "أربعة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "four",
+      "examples": [],
+      "introducedIn": "A1-U0-L4",
+      "recycledIn": [
+        "A1-U4",
+        "A1-U7"
+      ]
+    },
+    {
+      "id": "A1.LEX.NUMBER.FIVE",
+      "headword": "five",
+      "partOfSpeech": "number",
+      "arabic": "خمسة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "five",
+      "examples": [],
+      "introducedIn": "A1-U0-L4",
+      "recycledIn": [
+        "A1-U4",
+        "A1-U7"
+      ]
+    },
+    {
+      "id": "A1.LEX.NUMBER.SIX",
+      "headword": "six",
+      "partOfSpeech": "number",
+      "arabic": "ستة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "six",
+      "examples": [],
+      "introducedIn": "A1-U0-L4",
+      "recycledIn": [
+        "A1-U4",
+        "A1-U7"
+      ]
+    },
+    {
+      "id": "A1.LEX.NUMBER.SEVEN",
+      "headword": "seven",
+      "partOfSpeech": "number",
+      "arabic": "سبعة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "seven",
+      "examples": [],
+      "introducedIn": "A1-U0-L4",
+      "recycledIn": [
+        "A1-U4",
+        "A1-U7"
+      ]
+    },
+    {
+      "id": "A1.LEX.NUMBER.EIGHT",
+      "headword": "eight",
+      "partOfSpeech": "number",
+      "arabic": "ثمانية",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "eight",
+      "examples": [],
+      "introducedIn": "A1-U0-L4",
+      "recycledIn": [
+        "A1-U4",
+        "A1-U7"
+      ]
+    },
+    {
+      "id": "A1.LEX.NUMBER.NINE",
+      "headword": "nine",
+      "partOfSpeech": "number",
+      "arabic": "تسعة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "nine",
+      "examples": [],
+      "introducedIn": "A1-U0-L4",
+      "recycledIn": [
+        "A1-U4",
+        "A1-U7"
+      ]
+    },
+    {
+      "id": "A1.LEX.NUMBER.TEN",
+      "headword": "ten",
+      "partOfSpeech": "number",
+      "arabic": "عشرة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "ten",
+      "examples": [],
+      "introducedIn": "A1-U0-L4",
+      "recycledIn": [
+        "A1-U4",
+        "A1-U7"
+      ]
+    },
+    {
+      "id": "A1.LEX.NUMBER.ELEVEN",
+      "headword": "eleven",
+      "partOfSpeech": "number",
+      "arabic": "أحد عشر",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "eleven",
+      "examples": [],
+      "introducedIn": "A1-U0-L4",
+      "recycledIn": [
+        "A1-U4",
+        "A1-U7"
+      ]
+    },
+    {
+      "id": "A1.LEX.NUMBER.TWELVE",
+      "headword": "twelve",
+      "partOfSpeech": "number",
+      "arabic": "اثنا عشر",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "twelve",
+      "examples": [],
+      "introducedIn": "A1-U0-L4",
+      "recycledIn": [
+        "A1-U4",
+        "A1-U7"
+      ]
+    },
+    {
+      "id": "A1.LEX.NUMBER.THIRTEEN",
+      "headword": "thirteen",
+      "partOfSpeech": "number",
+      "arabic": "ثلاثة عشر",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "thirteen",
+      "examples": [],
+      "introducedIn": "A1-U0-L4",
+      "recycledIn": [
+        "A1-U4",
+        "A1-U7"
+      ]
+    },
+    {
+      "id": "A1.LEX.NUMBER.FOURTEEN",
+      "headword": "fourteen",
+      "partOfSpeech": "number",
+      "arabic": "أربعة عشر",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "fourteen",
+      "examples": [],
+      "introducedIn": "A1-U0-L4",
+      "recycledIn": [
+        "A1-U4",
+        "A1-U7"
+      ]
+    },
+    {
+      "id": "A1.LEX.NUMBER.FIFTEEN",
+      "headword": "fifteen",
+      "partOfSpeech": "number",
+      "arabic": "خمسة عشر",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "fifteen",
+      "examples": [],
+      "introducedIn": "A1-U0-L4",
+      "recycledIn": [
+        "A1-U4",
+        "A1-U7"
+      ]
+    },
+    {
+      "id": "A1.LEX.NUMBER.SIXTEEN",
+      "headword": "sixteen",
+      "partOfSpeech": "number",
+      "arabic": "ستة عشر",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "sixteen",
+      "examples": [],
+      "introducedIn": "A1-U0-L4",
+      "recycledIn": [
+        "A1-U4",
+        "A1-U7"
+      ]
+    },
+    {
+      "id": "A1.LEX.NUMBER.SEVENTEEN",
+      "headword": "seventeen",
+      "partOfSpeech": "number",
+      "arabic": "سبعة عشر",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "seventeen",
+      "examples": [],
+      "introducedIn": "A1-U0-L4",
+      "recycledIn": [
+        "A1-U4",
+        "A1-U7"
+      ]
+    },
+    {
+      "id": "A1.LEX.NUMBER.EIGHTEEN",
+      "headword": "eighteen",
+      "partOfSpeech": "number",
+      "arabic": "ثمانية عشر",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "eighteen",
+      "examples": [],
+      "introducedIn": "A1-U0-L4",
+      "recycledIn": [
+        "A1-U4",
+        "A1-U7"
+      ]
+    },
+    {
+      "id": "A1.LEX.NUMBER.NINETEEN",
+      "headword": "nineteen",
+      "partOfSpeech": "number",
+      "arabic": "تسعة عشر",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "nineteen",
+      "examples": [],
+      "introducedIn": "A1-U0-L4",
+      "recycledIn": [
+        "A1-U4",
+        "A1-U7"
+      ]
+    },
+    {
+      "id": "A1.LEX.NUMBER.TWENTY",
+      "headword": "twenty",
+      "partOfSpeech": "number",
+      "arabic": "عشرون",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "twenty",
+      "examples": [],
+      "introducedIn": "A1-U0-L4",
+      "recycledIn": [
+        "A1-U4",
+        "A1-U7"
+      ]
+    },
+    {
+      "id": "A1.LEX.NUMBER.THIRTY",
+      "headword": "thirty",
+      "partOfSpeech": "number",
+      "arabic": "ثلاثون",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "thirty",
+      "examples": [],
+      "introducedIn": "A1-U0-L4",
+      "recycledIn": [
+        "A1-U4",
+        "A1-U7"
+      ]
+    },
+    {
+      "id": "A1.LEX.NUMBER.FORTY",
+      "headword": "forty",
+      "partOfSpeech": "number",
+      "arabic": "أربعون",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "forty",
+      "examples": [],
+      "introducedIn": "A1-U0-L4",
+      "recycledIn": [
+        "A1-U4",
+        "A1-U7"
+      ]
+    },
+    {
+      "id": "A1.LEX.NUMBER.FIFTY",
+      "headword": "fifty",
+      "partOfSpeech": "number",
+      "arabic": "خمسون",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "fifty",
+      "examples": [],
+      "introducedIn": "A1-U0-L4",
+      "recycledIn": [
+        "A1-U4",
+        "A1-U7"
+      ]
+    },
+    {
+      "id": "A1.LEX.NUMBER.SIXTY",
+      "headword": "sixty",
+      "partOfSpeech": "number",
+      "arabic": "ستون",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "sixty",
+      "examples": [],
+      "introducedIn": "A1-U0-L4",
+      "recycledIn": [
+        "A1-U4",
+        "A1-U7"
+      ]
+    },
+    {
+      "id": "A1.LEX.NUMBER.SEVENTY",
+      "headword": "seventy",
+      "partOfSpeech": "number",
+      "arabic": "سبعون",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "seventy",
+      "examples": [],
+      "introducedIn": "A1-U0-L4",
+      "recycledIn": [
+        "A1-U4",
+        "A1-U7"
+      ]
+    },
+    {
+      "id": "A1.LEX.NUMBER.EIGHTY",
+      "headword": "eighty",
+      "partOfSpeech": "number",
+      "arabic": "ثمانون",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "eighty",
+      "examples": [],
+      "introducedIn": "A1-U0-L4",
+      "recycledIn": [
+        "A1-U4",
+        "A1-U7"
+      ]
+    },
+    {
+      "id": "A1.LEX.NUMBER.NINETY",
+      "headword": "ninety",
+      "partOfSpeech": "number",
+      "arabic": "تسعون",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "ninety",
+      "examples": [],
+      "introducedIn": "A1-U0-L4",
+      "recycledIn": [
+        "A1-U4",
+        "A1-U7"
+      ]
+    },
+    {
+      "id": "A1.LEX.NUMBER.ONE_HUNDRED",
+      "headword": "one hundred",
+      "partOfSpeech": "number",
+      "arabic": "مئة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "one hundred",
+      "examples": [],
+      "introducedIn": "A1-U0-L4",
+      "recycledIn": [
+        "A1-U4",
+        "A1-U7"
+      ]
+    }
+  ]
+}

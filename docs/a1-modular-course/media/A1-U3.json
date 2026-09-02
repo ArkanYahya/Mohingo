@@ -1,0 +1,273 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U3",
+  "kind": "media",
+  "records": {
+    "one-bedroom-no-garden": {
+      "type": "homePlan",
+      "alt": "A home with one bedroom and no garden",
+      "render": {
+        "rooms": [
+          "living room",
+          "kitchen",
+          "bathroom",
+          "bedroom"
+        ],
+        "garden": false
+      }
+    },
+    "two-bedroom-garden": {
+      "type": "homePlan",
+      "alt": "A home with two bedrooms and a garden",
+      "render": {
+        "rooms": [
+          "living room",
+          "kitchen",
+          "bathroom",
+          "bedroom 1",
+          "bedroom 2"
+        ],
+        "garden": true
+      }
+    },
+    "one-bedroom-garden": {
+      "type": "homePlan",
+      "alt": "A home with one bedroom and a small garden",
+      "render": {
+        "rooms": [
+          "living room",
+          "kitchen",
+          "bathroom",
+          "bedroom"
+        ],
+        "garden": "small"
+      }
+    },
+    "book-on-desk-lamp-next": {
+      "type": "objectScene",
+      "alt": "A book on a desk with a lamp next to the book",
+      "render": {
+        "objects": [
+          {
+            "id": "book",
+            "relation": "on",
+            "target": "desk"
+          },
+          {
+            "id": "lamp",
+            "relation": "next to",
+            "target": "book"
+          }
+        ]
+      }
+    },
+    "book-under-desk-lamp-on": {
+      "type": "objectScene",
+      "alt": "A book under a desk and a lamp on the desk",
+      "render": {
+        "objects": [
+          {
+            "id": "book",
+            "relation": "under",
+            "target": "desk"
+          },
+          {
+            "id": "lamp",
+            "relation": "on",
+            "target": "desk"
+          }
+        ]
+      }
+    },
+    "book-in-desk-lamp-behind": {
+      "type": "objectScene",
+      "alt": "A book in a desk drawer and a lamp behind the desk",
+      "render": {
+        "objects": [
+          {
+            "id": "book",
+            "relation": "in",
+            "target": "desk"
+          },
+          {
+            "id": "lamp",
+            "relation": "behind",
+            "target": "desk"
+          }
+        ]
+      }
+    },
+    "phone-near": {
+      "type": "distanceScene",
+      "alt": "One phone near the speaker",
+      "render": {
+        "objects": [
+          {
+            "id": "phone",
+            "number": "singular",
+            "distance": "near"
+          }
+        ]
+      }
+    },
+    "bag-far": {
+      "type": "distanceScene",
+      "alt": "One bag far from the speaker",
+      "render": {
+        "objects": [
+          {
+            "id": "bag",
+            "number": "singular",
+            "distance": "far"
+          }
+        ]
+      }
+    },
+    "shoes-far": {
+      "type": "distanceScene",
+      "alt": "A pair of shoes far from the speaker",
+      "render": {
+        "objects": [
+          {
+            "id": "shoes",
+            "number": "plural",
+            "distance": "far"
+          }
+        ]
+      }
+    },
+    "one-near-book-two-far-bags": {
+      "type": "distanceScene",
+      "alt": "One book near the speaker and two bags far away",
+      "render": {
+        "objects": [
+          {
+            "id": "book",
+            "count": 1,
+            "distance": "near"
+          },
+          {
+            "id": "bag",
+            "count": 2,
+            "distance": "far"
+          }
+        ]
+      }
+    },
+    "one-far-book-two-near-bags": {
+      "type": "distanceScene",
+      "alt": "One book far away and two bags near the speaker",
+      "render": {
+        "objects": [
+          {
+            "id": "book",
+            "count": 1,
+            "distance": "far"
+          },
+          {
+            "id": "bag",
+            "count": 2,
+            "distance": "near"
+          }
+        ]
+      }
+    },
+    "two-far-books-one-near-bag": {
+      "type": "distanceScene",
+      "alt": "Two books far away and one bag near the speaker",
+      "render": {
+        "objects": [
+          {
+            "id": "book",
+            "count": 2,
+            "distance": "far"
+          },
+          {
+            "id": "bag",
+            "count": 1,
+            "distance": "near"
+          }
+        ]
+      }
+    },
+    "plan-a": {
+      "type": "apartmentPlan",
+      "alt": "Apartment plan A: one bedroom, one bathroom, separate kitchen, no garden",
+      "render": {
+        "rooms": [
+          "bedroom",
+          "bathroom",
+          "living room",
+          "kitchen"
+        ],
+        "adjacency": [],
+        "garden": false
+      }
+    },
+    "plan-b": {
+      "type": "apartmentPlan",
+      "alt": "Apartment plan B: two bedrooms, two bathrooms, kitchen next to bedroom, front garden",
+      "render": {
+        "rooms": [
+          "bedroom 1",
+          "bedroom 2",
+          "bathroom 1",
+          "bathroom 2",
+          "living room",
+          "kitchen"
+        ],
+        "adjacency": [
+          [
+            "kitchen",
+            "bedroom 1"
+          ]
+        ],
+        "garden": "front"
+      }
+    },
+    "plan-c": {
+      "type": "apartmentPlan",
+      "alt": "Apartment plan C: two bedrooms, one bathroom, kitchen next to living room, small garden behind",
+      "render": {
+        "rooms": [
+          "bedroom 1",
+          "bedroom 2",
+          "bathroom",
+          "living room",
+          "kitchen"
+        ],
+        "adjacency": [
+          [
+            "kitchen",
+            "living room"
+          ]
+        ],
+        "garden": "behind"
+      },
+      "objects": [
+        {
+          "id": "sofa",
+          "room": "living room"
+        },
+        {
+          "id": "table",
+          "room": "kitchen"
+        },
+        {
+          "id": "chairs",
+          "count": 4,
+          "room": "kitchen"
+        },
+        {
+          "id": "key",
+          "relation": "behind",
+          "target": "bedroom door"
+        },
+        {
+          "id": "phone",
+          "room": "living room"
+        }
+      ]
+    }
+  }
+}

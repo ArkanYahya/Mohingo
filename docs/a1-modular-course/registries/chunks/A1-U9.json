@@ -1,0 +1,88 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U9",
+  "kind": "chunks",
+  "records": [
+    {
+      "id": "A1.CHUNK.GO_BY_TRANSPORT",
+      "text": "I go by {transport}.",
+      "arabic": "أذهب بـ{transport}.",
+      "cefr": "A1",
+      "introducedIn": "A1-U9-L1",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.GO_ON_FOOT",
+      "text": "I go on foot.",
+      "arabic": "أذهب مشياً.",
+      "cefr": "A1",
+      "introducedIn": "A1-U9-L1",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.TICKET_TO",
+      "text": "A single/return ticket to {place}, please.",
+      "arabic": "تذكرة ذهاب/ذهاب وعودة إلى {place}.",
+      "cefr": "A1",
+      "introducedIn": "A1-U9-L2",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.WHAT_TIME_DOES_LEAVE",
+      "text": "What time does the {transport} leave?",
+      "arabic": "في أي وقت تغادر {transport}؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U9-L3",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.WHEN_IS_NEXT",
+      "text": "When is the next {transport}?",
+      "arabic": "متى وسيلة النقل التالية؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U9-L3",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.WHICH_PLATFORM",
+      "text": "Which platform?",
+      "arabic": "أي رصيف؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U9-L3",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.TAKE_NUMBER",
+      "text": "Take bus/train number {number}.",
+      "arabic": "استقل الحافلة/القطار رقم {number}.",
+      "cefr": "A1",
+      "introducedIn": "A1-U9-L4",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.CHANGE_AT",
+      "text": "Change at {station}.",
+      "arabic": "بدّل في محطة {station}.",
+      "cefr": "A1",
+      "introducedIn": "A1-U9-L4",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.IT_TAKES_TIME",
+      "text": "It takes {time}.",
+      "arabic": "تستغرق {time}.",
+      "cefr": "A1",
+      "introducedIn": "A1-U9-L5",
+      "productive": true,
+      "recycledIn": []
+    }
+  ]
+}

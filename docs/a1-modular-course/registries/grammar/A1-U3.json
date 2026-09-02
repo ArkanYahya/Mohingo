@@ -1,0 +1,115 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U3",
+  "kind": "grammar",
+  "records": [
+    {
+      "id": "A1.G.THERE_IS_ARE",
+      "form": "there is + singular / there are + plural",
+      "meaningAr": "يوجد للمفرد / توجد للجمع",
+      "introducedIn": "A1-U3-L1",
+      "examples": [
+        {
+          "en": "There is a bed. There are two chairs.",
+          "ar": "يوجد سرير. يوجد كرسيان."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.THERE.QUESTION",
+      "form": "Is there ...? / Are there ...?",
+      "meaningAr": "هل يوجد...؟",
+      "introducedIn": "A1-U3-L2",
+      "examples": [
+        {
+          "en": "Is there a table? Are there any chairs?",
+          "ar": "هل توجد طاولة؟ هل توجد كراسٍ؟"
+        }
+      ]
+    },
+    {
+      "id": "A1.G.THERE.NEGATIVE",
+      "form": "there isn't / there aren't",
+      "meaningAr": "لا يوجد / لا توجد",
+      "introducedIn": "A1-U3-L2",
+      "examples": [
+        {
+          "en": "There isn't a TV. There aren't any pictures.",
+          "ar": "لا يوجد تلفاز. لا توجد صور."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.PREPOSITION.PLACE_CORE",
+      "form": "in / on / under / next to / behind / in front of / between",
+      "meaningAr": "حروف وعبارات المكان الأساسية",
+      "introducedIn": "A1-U3-L3",
+      "examples": [
+        {
+          "en": "The keys are on the table.",
+          "ar": "المفاتيح على الطاولة."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.BE.LOCATION_QUESTION",
+      "form": "Where is/are ...?",
+      "meaningAr": "أين يوجد المفرد/الجمع؟",
+      "introducedIn": "A1-U3-L3",
+      "examples": [
+        {
+          "en": "Where are the keys?",
+          "ar": "أين المفاتيح؟"
+        }
+      ]
+    },
+    {
+      "id": "A1.G.DEMONSTRATIVE.NEAR_FAR",
+      "form": "this/these (near), that/those (far)",
+      "meaningAr": "هذا/هذه للقريب، ذلك/تلك للبعيد، مع المفرد والجمع",
+      "introducedIn": "A1-U3-L4",
+      "examples": [
+        {
+          "en": "This is my phone. Those are my shoes.",
+          "ar": "هذا هاتفي. ذلك حذائي."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.ARTICLE.A_AN_OBJECT",
+      "form": "a/an + singular object",
+      "meaningAr": "أداة تنكير قبل شيء مفرد",
+      "introducedIn": "A1-U3-L1",
+      "examples": [
+        {
+          "en": "There is a chair and an armchair.",
+          "ar": "يوجد كرسي وكرسي بذراعين."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.ARTICLE.THE_SHARED",
+      "form": "the + identified/shared object",
+      "meaningAr": "أداة التعريف عندما يعرف الطرفان الشيء المقصود",
+      "introducedIn": "A1-U3-L3",
+      "examples": [
+        {
+          "en": "The bag is under the chair.",
+          "ar": "الحقيبة تحت الكرسي."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.POSSESSIVE.MINE_YOURS",
+      "form": "mine / yours",
+      "meaningAr": "ملكي / ملكك دون تكرار الاسم",
+      "introducedIn": "A1-U3-L5",
+      "examples": [
+        {
+          "en": "Is this your book? Yes, it's mine.",
+          "ar": "هل هذا كتابك؟ نعم، إنه كتابي."
+        }
+      ]
+    }
+  ]
+}

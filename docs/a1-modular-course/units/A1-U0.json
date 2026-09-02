@@ -1,0 +1,554 @@
+{
+  "id": "A1-U0",
+  "title": "English Essentials",
+  "titleAr": "أساسيات الإنجليزية",
+  "levelRole": "prerequisite",
+  "estimatedMinutes": [
+    40,
+    60
+  ],
+  "countsTowardA1Mastery": false,
+  "lessons": [
+    {
+      "id": "A1-U0-L1",
+      "title": "Hello",
+      "titleAr": "مرحباً",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U0.INTERACTION.RESPOND_GREETING"
+      ],
+      "grammar": [],
+      "lexicon": [
+        "A1.LEX.HELLO.INTJ",
+        "A1.LEX.HI.INTJ",
+        "A1.LEX.GOODBYE.INTJ",
+        "A1.LEX.PLEASE.ADV",
+        "A1.LEX.THANK.V",
+        "A1.LEX.SORRY.INTJ"
+      ],
+      "chunks": [
+        "A1.CHUNK.GOOD_MORNING",
+        "A1.CHUNK.THANK_YOU",
+        "A1.CHUNK.YOURE_WELCOME"
+      ],
+      "encounter": {
+        "sceneAr": "شخص يدخل مكتباً صباحاً ثم يشكر زميله على المساعدة.",
+        "dialogue": [
+          {
+            "speaker": "A",
+            "en": "Good morning.",
+            "ar": "صباح الخير."
+          },
+          {
+            "speaker": "B",
+            "en": "Good morning.",
+            "ar": "صباح الخير."
+          },
+          {
+            "speaker": "A",
+            "en": "Thank you.",
+            "ar": "شكراً لك."
+          },
+          {
+            "speaker": "B",
+            "en": "You're welcome.",
+            "ar": "على الرحب والسعة."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U0-L1-A01",
+          "lessonId": "A1-U0-L1",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U0.INTERACTION.RESPOND_GREETING"
+          ],
+          "prompt": "اختر المشهد المناسب لما تسمعه.",
+          "options": [
+            "morning-office",
+            "night-bedroom",
+            "busy-street"
+          ],
+          "answer": "morning-office",
+          "audioTranscript": "Good morning."
+        },
+        {
+          "id": "A1-U0-L1-A02",
+          "lessonId": "A1-U0-L1",
+          "type": "audioChoice",
+          "mode": "practice",
+          "skill": "listening",
+          "canDo": [
+            "A1.U0.INTERACTION.RESPOND_GREETING"
+          ],
+          "prompt": "What is the natural reply?",
+          "options": [
+            "You're welcome.",
+            "Goodbye.",
+            "Sorry?"
+          ],
+          "answer": "You're welcome.",
+          "audioTranscript": "Thank you."
+        },
+        {
+          "id": "A1-U0-L1-A03",
+          "lessonId": "A1-U0-L1",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U0.INTERACTION.RESPOND_GREETING"
+          ],
+          "prompt": "What is the natural reply?",
+          "options": [
+            "Good morning.",
+            "Thank you.",
+            "Please repeat."
+          ],
+          "answer": "Good morning.",
+          "audioTranscript": "Good morning."
+        },
+        {
+          "id": "A1-U0-L1-A04",
+          "lessonId": "A1-U0-L1",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U0.INTERACTION.RESPOND_GREETING"
+          ],
+          "prompt": "A person helps you. Respond politely.",
+          "accepted": [
+            "Thank you.",
+            "Thanks."
+          ],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U0-L2",
+      "title": "Understand the App",
+      "titleAr": "افهم تعليمات التطبيق",
+      "lessonType": "focus-practice",
+      "canDo": [
+        "A1.U0.LISTENING.FOLLOW_APP_INSTRUCTION"
+      ],
+      "grammar": [],
+      "lexicon": [
+        "A1.LEX.LISTEN.V",
+        "A1.LEX.LOOK.V",
+        "A1.LEX.READ.V",
+        "A1.LEX.WRITE.V",
+        "A1.LEX.CHOOSE.V",
+        "A1.LEX.MATCH.V",
+        "A1.LEX.REPEAT.V",
+        "A1.LEX.SPEAK.V",
+        "A1.LEX.ANSWER.V",
+        "A1.LEX.QUESTION.N01",
+        "A1.LEX.WORD.N01",
+        "A1.LEX.SENTENCE.N01",
+        "A1.LEX.PICTURE.N01",
+        "A1.LEX.AUDIO.N01"
+      ],
+      "chunks": [
+        "A1.CHUNK.LISTEN_REPEAT",
+        "A1.CHUNK.CHOOSE_PICTURE"
+      ],
+      "uiPolicy": {
+        "firstExposuresArabic": 3,
+        "laterEnglishOnly": true,
+        "iconAlwaysVisible": true
+      },
+      "activities": [
+        {
+          "id": "A1-U0-L2-A01",
+          "lessonId": "A1-U0-L2",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U0.LISTENING.FOLLOW_APP_INSTRUCTION"
+          ],
+          "prompt": "نفّذ التعليمة.",
+          "options": [
+            "picture-cat",
+            "text-cat",
+            "audio-button"
+          ],
+          "answer": "picture-cat",
+          "audioTranscript": "Choose the picture."
+        },
+        {
+          "id": "A1-U0-L2-A02",
+          "lessonId": "A1-U0-L2",
+          "type": "textChoice",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U0.LISTENING.FOLLOW_APP_INSTRUCTION"
+          ],
+          "prompt": "Choose the word: cat",
+          "options": [
+            "cat",
+            "dog",
+            "book"
+          ],
+          "answer": "cat"
+        },
+        {
+          "id": "A1-U0-L2-A03",
+          "lessonId": "A1-U0-L2",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U0.LISTENING.FOLLOW_APP_INSTRUCTION"
+          ],
+          "prompt": "نفّذ التعليمة دون ترجمة.",
+          "options": [
+            "repeat-control",
+            "write-control",
+            "match-control"
+          ],
+          "answer": "repeat-control",
+          "audioTranscript": "Listen and repeat."
+        },
+        {
+          "id": "A1-U0-L2-A04",
+          "lessonId": "A1-U0-L2",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U0.LISTENING.FOLLOW_APP_INSTRUCTION"
+          ],
+          "prompt": "نفّذ التعليمة دون ترجمة.",
+          "options": [
+            "match-control",
+            "speak-control",
+            "read-control"
+          ],
+          "answer": "match-control",
+          "audioTranscript": "Match the words."
+        }
+      ]
+    },
+    {
+      "id": "A1-U0-L3",
+      "title": "Letters and Spelling",
+      "titleAr": "الحروف والتهجئة",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U0.PRODUCTION.SPELL_NAME",
+        "A1.U0.LISTENING.UNDERSTAND_SPELLED_NAME"
+      ],
+      "grammar": [],
+      "lexicon": [
+        "A1.LEX.NAME.N01",
+        "A1.LEX.SPELL.V01"
+      ],
+      "chunks": [
+        "A1.CHUNK.WHATS_YOUR_NAME",
+        "A1.CHUNK.MY_NAME_IS",
+        "A1.CHUNK.HOW_SPELL"
+      ],
+      "reference": {
+        "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        "letterNamesRequired": true,
+        "alphabetOrderTested": false
+      },
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "A",
+            "en": "What's your name?",
+            "ar": "ما اسمك؟"
+          },
+          {
+            "speaker": "B",
+            "en": "My name is Omar.",
+            "ar": "اسمي عمر."
+          },
+          {
+            "speaker": "A",
+            "en": "How do you spell Omar?",
+            "ar": "كيف تتهجّى عمر؟"
+          },
+          {
+            "speaker": "B",
+            "en": "O-M-A-R.",
+            "ar": "O-M-A-R."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U0-L3-A01",
+          "lessonId": "A1-U0-L3",
+          "type": "audioChoice",
+          "mode": "practice",
+          "skill": "listening",
+          "canDo": [
+            "A1.U0.LISTENING.UNDERSTAND_SPELLED_NAME"
+          ],
+          "prompt": "Choose the name.",
+          "options": [
+            "Sara",
+            "Sarah",
+            "Sora"
+          ],
+          "answer": "Sara",
+          "audioTranscript": "S-A-R-A"
+        },
+        {
+          "id": "A1-U0-L3-A02",
+          "lessonId": "A1-U0-L3",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U0.LISTENING.UNDERSTAND_SPELLED_NAME"
+          ],
+          "prompt": "Choose the name.",
+          "options": [
+            "Omar",
+            "Amar",
+            "Omer"
+          ],
+          "answer": "Omar",
+          "audioTranscript": "O-M-A-R"
+        },
+        {
+          "id": "A1-U0-L3-A03",
+          "lessonId": "A1-U0-L3",
+          "type": "speak",
+          "mode": "practice",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A1.U0.PRODUCTION.SPELL_NAME"
+          ],
+          "prompt": "Spell the name Ali.",
+          "accepted": [
+            "A-L-I"
+          ],
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A1-U0-L3-A04",
+          "lessonId": "A1-U0-L3",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A1.U0.PRODUCTION.SPELL_NAME"
+          ],
+          "prompt": "Spell your name.",
+          "accepted": [],
+          "evaluation": "letter-sequence-from-profile-name",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U0-L4",
+      "title": "Numbers that Matter",
+      "titleAr": "الأرقام المهمة",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U0.LISTENING.UNDERSTAND_PERSONAL_NUMBER"
+      ],
+      "grammar": [],
+      "lexicon": [
+        "A1.LEX.AGE.N01",
+        "A1.LEX.PHONE_NUMBER.N01"
+      ],
+      "chunks": [
+        "A1.CHUNK.HOW_OLD",
+        "A1.CHUNK.IM_AGE"
+      ],
+      "numberScope": {
+        "productive": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          30,
+          40,
+          50,
+          60,
+          70,
+          80,
+          90,
+          100
+        ],
+        "contexts": [
+          "age",
+          "phoneNumber"
+        ],
+        "excluded": [
+          "arithmetic"
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U0-L4-A01",
+          "lessonId": "A1-U0-L4",
+          "type": "audioChoice",
+          "mode": "practice",
+          "skill": "listening",
+          "canDo": [
+            "A1.U0.LISTENING.UNDERSTAND_PERSONAL_NUMBER"
+          ],
+          "prompt": "How old is he?",
+          "options": [
+            "18",
+            "19",
+            "90"
+          ],
+          "answer": "19",
+          "audioTranscript": "I'm nineteen."
+        },
+        {
+          "id": "A1-U0-L4-A02",
+          "lessonId": "A1-U0-L4",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U0.LISTENING.UNDERSTAND_PERSONAL_NUMBER"
+          ],
+          "prompt": "Choose the phone number.",
+          "options": [
+            "0770 314 8625",
+            "0770 341 8652",
+            "0770 314 8652"
+          ],
+          "answer": "0770 314 8625",
+          "audioTranscript": "My phone number is zero seven seven zero, three one four, eight six two five."
+        },
+        {
+          "id": "A1-U0-L4-A03",
+          "lessonId": "A1-U0-L4",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U0.LISTENING.UNDERSTAND_PERSONAL_NUMBER"
+          ],
+          "prompt": "How old are you?",
+          "accepted": [],
+          "evaluation": "valid-age-response",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U0-L5",
+      "title": "English Class Registration",
+      "titleAr": "التسجيل في صف الإنجليزية",
+      "lessonType": "mission",
+      "canDo": [
+        "A1.U0.INTERACTION.REGISTER_FOR_CLASS",
+        "A1.U0.PRODUCTION.SPELL_NAME",
+        "A1.U0.LISTENING.UNDERSTAND_PERSONAL_NUMBER",
+        "A1.U0.LISTENING.FOLLOW_APP_INSTRUCTION"
+      ],
+      "grammar": [],
+      "lexicon": [],
+      "chunks": [],
+      "activities": [
+        {
+          "id": "A1-U0-L5-A01",
+          "lessonId": "A1-U0-L5",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U0.INTERACTION.REGISTER_FOR_CLASS"
+          ],
+          "prompt": "What's your name?",
+          "accepted": [],
+          "evaluation": "non-empty-name",
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A1-U0-L5-A02",
+          "lessonId": "A1-U0-L5",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A1.U0.PRODUCTION.SPELL_NAME"
+          ],
+          "prompt": "How do you spell it?",
+          "accepted": [],
+          "evaluation": "letter-sequence-from-previous-answer",
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A1-U0-L5-A03",
+          "lessonId": "A1-U0-L5",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U0.LISTENING.UNDERSTAND_PERSONAL_NUMBER"
+          ],
+          "prompt": "How old are you?",
+          "accepted": [],
+          "evaluation": "valid-age-response",
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A1-U0-L5-A04",
+          "lessonId": "A1-U0-L5",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U0.LISTENING.FOLLOW_APP_INSTRUCTION"
+          ],
+          "prompt": "نفّذ التعليمة.",
+          "options": [
+            "Iraq",
+            "Italy",
+            "India"
+          ],
+          "answer": "Iraq",
+          "audioTranscript": "Choose Iraq."
+        }
+      ]
+    }
+  ],
+  "mastery": {
+    "requiredObjectives": [
+      "A1.U0.LISTENING.FOLLOW_APP_INSTRUCTION",
+      "A1.U0.PRODUCTION.SPELL_NAME",
+      "A1.U0.LISTENING.UNDERSTAND_PERSONAL_NUMBER",
+      "A1.U0.INTERACTION.REGISTER_FOR_CLASS"
+    ],
+    "unlocks": "A1-U1",
+    "retry": "targeted-by-objective"
+  }
+}

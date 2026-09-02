@@ -1,0 +1,369 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U11",
+  "kind": "lexicon",
+  "records": [
+    {
+      "id": "A1.LEX.WEATHER.N01",
+      "headword": "weather",
+      "partOfSpeech": "noun",
+      "arabic": "طقس",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "weather",
+      "examples": [
+        "The weather is nice."
+      ],
+      "introducedIn": "A1-U11-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.SUNNY.ADJ01",
+      "headword": "sunny",
+      "partOfSpeech": "adjective",
+      "arabic": "مشمس",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "sunny",
+      "examples": [
+        "It's sunny today."
+      ],
+      "introducedIn": "A1-U11-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.CLOUDY.ADJ01",
+      "headword": "cloudy",
+      "partOfSpeech": "adjective",
+      "arabic": "غائم",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "cloudy",
+      "examples": [
+        "It's cloudy this morning."
+      ],
+      "introducedIn": "A1-U11-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.RAINY.ADJ01",
+      "headword": "rainy",
+      "partOfSpeech": "adjective",
+      "arabic": "ممطر",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "rainy",
+      "examples": [
+        "It's a rainy day."
+      ],
+      "introducedIn": "A1-U11-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.WINDY.ADJ01",
+      "headword": "windy",
+      "partOfSpeech": "adjective",
+      "arabic": "عاصف",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "windy",
+      "examples": [
+        "It's cold and windy."
+      ],
+      "introducedIn": "A1-U11-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.HOT.ADJ01",
+      "headword": "hot",
+      "partOfSpeech": "adjective",
+      "arabic": "حار",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "hot",
+      "examples": [
+        "It's hot outside."
+      ],
+      "introducedIn": "A1-U11-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.WARM.ADJ01",
+      "headword": "warm",
+      "partOfSpeech": "adjective",
+      "arabic": "دافئ",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "warm",
+      "examples": [
+        "The afternoon is warm."
+      ],
+      "introducedIn": "A1-U11-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.COLD.ADJ01",
+      "headword": "cold",
+      "partOfSpeech": "adjective",
+      "arabic": "بارد",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "cold",
+      "examples": [
+        "It's cold tonight."
+      ],
+      "introducedIn": "A1-U11-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.RAIN.V01",
+      "headword": "rain",
+      "partOfSpeech": "verb",
+      "arabic": "تمطر",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "rain",
+      "examples": [
+        "It is raining."
+      ],
+      "introducedIn": "A1-U11-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.SNOW.V01",
+      "headword": "snow",
+      "partOfSpeech": "verb",
+      "arabic": "تثلج",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "snow",
+      "examples": [
+        "It is snowing."
+      ],
+      "introducedIn": "A1-U11-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.COAT.N01",
+      "headword": "coat",
+      "partOfSpeech": "noun",
+      "arabic": "معطف",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "coat",
+      "examples": [
+        "I'm wearing a coat."
+      ],
+      "introducedIn": "A1-U11-L3",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.JACKET.N01",
+      "headword": "jacket",
+      "partOfSpeech": "noun",
+      "arabic": "سترة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "jacket",
+      "examples": [
+        "Take a warm jacket."
+      ],
+      "introducedIn": "A1-U11-L3",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.SWEATER.N01",
+      "headword": "sweater",
+      "partOfSpeech": "noun",
+      "arabic": "كنزة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "sweater",
+      "examples": [
+        "This sweater is warm."
+      ],
+      "introducedIn": "A1-U11-L3",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.BOOTS.N01",
+      "headword": "boots",
+      "partOfSpeech": "noun",
+      "arabic": "حذاء طويل",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "boots",
+      "examples": [
+        "Wear boots in the rain."
+      ],
+      "introducedIn": "A1-U11-L3",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.HAT.N01",
+      "headword": "hat",
+      "partOfSpeech": "noun",
+      "arabic": "قبعة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "hat",
+      "examples": [
+        "He is wearing a hat."
+      ],
+      "introducedIn": "A1-U11-L3",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.UMBRELLA.N01",
+      "headword": "umbrella",
+      "partOfSpeech": "noun",
+      "arabic": "مظلة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "umbrella",
+      "examples": [
+        "Take an umbrella."
+      ],
+      "introducedIn": "A1-U11-L3",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.WEAR.V01",
+      "headword": "wear",
+      "partOfSpeech": "verb",
+      "arabic": "يرتدي",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "wear",
+      "examples": [
+        "She is wearing boots."
+      ],
+      "introducedIn": "A1-U11-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.TAKE.V03",
+      "headword": "take",
+      "partOfSpeech": "verb",
+      "arabic": "يأخذ معه",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "carry or bring with you",
+      "examples": [
+        "Take an umbrella."
+      ],
+      "introducedIn": "A1-U11-L3",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.TODAY.ADV01",
+      "headword": "today",
+      "partOfSpeech": "adverb",
+      "arabic": "اليوم",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "today",
+      "examples": [
+        "It's sunny today."
+      ],
+      "introducedIn": "A1-U11-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.TOMORROW.ADV01",
+      "headword": "tomorrow",
+      "partOfSpeech": "adverb",
+      "arabic": "غداً",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "tomorrow",
+      "examples": [
+        "It will rain tomorrow."
+      ],
+      "introducedIn": "A1-U11-L5",
+      "recycledIn": [
+        "A1-U12"
+      ]
+    },
+    {
+      "id": "A1.LEX.FORECAST.N01",
+      "headword": "forecast",
+      "partOfSpeech": "noun",
+      "arabic": "توقعات الطقس",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": false,
+      "meaning": "forecast",
+      "examples": [
+        "Read the weather forecast."
+      ],
+      "introducedIn": "A1-U11-L5",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.DEGREE.N01",
+      "headword": "degree",
+      "partOfSpeech": "noun",
+      "arabic": "درجة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": false,
+      "meaning": "degree",
+      "examples": [
+        "It is twenty degrees."
+      ],
+      "introducedIn": "A1-U11-L5",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.OUTSIDE.ADV01",
+      "headword": "outside",
+      "partOfSpeech": "adverb",
+      "arabic": "في الخارج",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "outside",
+      "examples": [
+        "They are waiting outside."
+      ],
+      "introducedIn": "A1-U11-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.INSIDE.ADV01",
+      "headword": "inside",
+      "partOfSpeech": "adverb",
+      "arabic": "في الداخل",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "inside",
+      "examples": [
+        "We are staying inside."
+      ],
+      "introducedIn": "A1-U11-L2",
+      "recycledIn": []
+    }
+  ]
+}

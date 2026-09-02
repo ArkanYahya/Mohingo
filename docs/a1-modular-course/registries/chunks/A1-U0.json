@@ -1,0 +1,118 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U0",
+  "kind": "chunks",
+  "records": [
+    {
+      "id": "A1.CHUNK.GOOD_MORNING",
+      "text": "Good morning.",
+      "arabic": "صباح الخير.",
+      "cefr": "A1",
+      "introducedIn": "A1-U0-L1",
+      "productive": true,
+      "recycledIn": [
+        "A1-U1-L6"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.THANK_YOU",
+      "text": "Thank you.",
+      "arabic": "شكراً لك.",
+      "cefr": "A1",
+      "introducedIn": "A1-U0-L1",
+      "productive": true,
+      "recycledIn": [
+        "A1-U1-L6"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.YOURE_WELCOME",
+      "text": "You're welcome.",
+      "arabic": "على الرحب والسعة.",
+      "cefr": "A1",
+      "introducedIn": "A1-U0-L1",
+      "productive": true,
+      "recycledIn": [
+        "A1-U1-L6"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.LISTEN_REPEAT",
+      "text": "Listen and repeat.",
+      "arabic": "استمع وكرر.",
+      "cefr": "A1",
+      "introducedIn": "A1-U0-L2",
+      "productive": false,
+      "recycledIn": [
+        "ALL"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.CHOOSE_PICTURE",
+      "text": "Choose the picture.",
+      "arabic": "اختر الصورة.",
+      "cefr": "A1",
+      "introducedIn": "A1-U0-L2",
+      "productive": false,
+      "recycledIn": [
+        "ALL"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.WHATS_YOUR_NAME",
+      "text": "What's your name?",
+      "arabic": "ما اسمك؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U0-L3",
+      "productive": true,
+      "recycledIn": [
+        "A1-U1-L1",
+        "A1-U1-L7"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.MY_NAME_IS",
+      "text": "My name is {name}.",
+      "arabic": "اسمي {name}.",
+      "cefr": "A1",
+      "introducedIn": "A1-U0-L3",
+      "productive": true,
+      "recycledIn": [
+        "A1-U1-L1"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.HOW_SPELL",
+      "text": "How do you spell {name}?",
+      "arabic": "كيف تتهجّى {name}؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U0-L3",
+      "productive": true,
+      "recycledIn": [
+        "A1-U0-L5"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.HOW_OLD",
+      "text": "How old are you?",
+      "arabic": "كم عمرك؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U0-L4",
+      "productive": true,
+      "recycledIn": [
+        "A1-U0-L5"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.IM_AGE",
+      "text": "I'm {age}.",
+      "arabic": "عمري {age}.",
+      "cefr": "A1",
+      "introducedIn": "A1-U0-L4",
+      "productive": true,
+      "recycledIn": [
+        "A1-U0-L5"
+      ]
+    }
+  ]
+}

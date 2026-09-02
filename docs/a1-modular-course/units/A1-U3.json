@@ -1,0 +1,1076 @@
+{
+  "id": "A1-U3",
+  "title": "My Home and My Things",
+  "titleAr": "منزلي وأشيائي",
+  "levelRole": "core",
+  "estimatedMinutes": [
+    80,
+    110
+  ],
+  "countsTowardA1Mastery": true,
+  "lessons": [
+    {
+      "id": "A1-U3-L1",
+      "title": "Rooms in a Home",
+      "titleAr": "غرف المنزل",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U3.PRODUCTION.DESCRIBE_ROOM",
+        "A1.U3.PRODUCTION.STATE_EXISTENCE",
+        "A1.U3.LISTENING.UNDERSTAND_ROOM_DESCRIPTION"
+      ],
+      "grammar": [
+        "A1.G.THERE_IS_ARE",
+        "A1.G.ARTICLE.A_AN_OBJECT"
+      ],
+      "lexicon": [
+        "A1.LEX.HOME.N01",
+        "A1.LEX.ROOM.N01",
+        "A1.LEX.BEDROOM.N01",
+        "A1.LEX.LIVING_ROOM.N01",
+        "A1.LEX.KITCHEN.N01",
+        "A1.LEX.BATHROOM.N01",
+        "A1.LEX.GARDEN.N01",
+        "A1.LEX.DOOR.N01",
+        "A1.LEX.WINDOW.N01",
+        "A1.LEX.BED.N01"
+      ],
+      "chunks": [
+        "A1.CHUNK.WELCOME_HOME",
+        "A1.CHUNK.THERE_IS"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Sara",
+            "en": "Welcome to my home.",
+            "ar": "أهلاً بك في منزلي."
+          },
+          {
+            "speaker": "Sara",
+            "en": "There is a living room, a kitchen and one bedroom.",
+            "ar": "توجد غرفة جلوس ومطبخ وغرفة نوم واحدة."
+          },
+          {
+            "speaker": "Ali",
+            "en": "Is there a garden?",
+            "ar": "هل توجد حديقة؟"
+          },
+          {
+            "speaker": "Sara",
+            "en": "Yes, there is.",
+            "ar": "نعم."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U3-L1-A01",
+          "lessonId": "A1-U3-L1",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U3.LISTENING.UNDERSTAND_ROOM_DESCRIPTION"
+          ],
+          "prompt": "How many bedrooms are there?",
+          "promptAr": "كم غرفة نوم توجد؟",
+          "options": [
+            "one",
+            "two",
+            "three"
+          ],
+          "answer": "one",
+          "audioTranscript": "There is one bedroom."
+        },
+        {
+          "id": "A1-U3-L1-A02",
+          "lessonId": "A1-U3-L1",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U3.PRODUCTION.DESCRIBE_ROOM"
+          ],
+          "prompt": "Match the rooms and pictures.",
+          "promptAr": "طابق الغرف بالصور.",
+          "pairs": [
+            [
+              "kitchen",
+              "room-kitchen"
+            ],
+            [
+              "bedroom",
+              "room-bedroom"
+            ],
+            [
+              "bathroom",
+              "room-bathroom"
+            ],
+            [
+              "living room",
+              "room-living"
+            ]
+          ]
+        },
+        {
+          "id": "A1-U3-L1-A03",
+          "lessonId": "A1-U3-L1",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U3.PRODUCTION.STATE_EXISTENCE"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "There ___ a bed in the bedroom.",
+          "options": [
+            "is",
+            "are",
+            "am"
+          ],
+          "answer": "is"
+        },
+        {
+          "id": "A1-U3-L1-A04",
+          "lessonId": "A1-U3-L1",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U3.LISTENING.UNDERSTAND_ROOM_DESCRIPTION"
+          ],
+          "prompt": "Choose the correct home plan.",
+          "promptAr": "اختر مخطط المنزل الصحيح.",
+          "options": [
+            "one-bedroom-no-garden",
+            "two-bedroom-garden",
+            "one-bedroom-garden"
+          ],
+          "answer": "one-bedroom-garden",
+          "audioTranscript": "My home has one bedroom. There is a kitchen, a living room and a small garden.",
+          "optionMode": "media"
+        },
+        {
+          "id": "A1-U3-L1-A05",
+          "lessonId": "A1-U3-L1",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A1.U3.PRODUCTION.DESCRIBE_ROOM",
+            "A1.U3.PRODUCTION.STATE_EXISTENCE"
+          ],
+          "prompt": "Name three rooms in a home using There is....",
+          "promptAr": "اذكر ثلاث غرف في منزل مستخدماً There is....",
+          "accepted": [],
+          "evaluation": "three-there-is-room-statements",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U3-L2",
+      "title": "Furniture: One and Many",
+      "titleAr": "الأثاث: مفرد وجمع",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U3.PRODUCTION.STATE_EXISTENCE",
+        "A1.U3.LISTENING.UNDERSTAND_ROOM_DESCRIPTION"
+      ],
+      "grammar": [
+        "A1.G.THERE_IS_ARE",
+        "A1.G.THERE.QUESTION",
+        "A1.G.THERE.NEGATIVE",
+        "A1.G.PLURAL.REGULAR"
+      ],
+      "lexicon": [
+        "A1.LEX.TABLE.N01",
+        "A1.LEX.CHAIR.N01",
+        "A1.LEX.SOFA.N01",
+        "A1.LEX.TV.N01",
+        "A1.LEX.LAMP.N01",
+        "A1.LEX.PICTURE.N02",
+        "A1.LEX.WALL.N01",
+        "A1.LEX.DESK.N01",
+        "A1.LEX.CUPBOARD.N01",
+        "A1.LEX.FRIDGE.N01"
+      ],
+      "chunks": [
+        "A1.CHUNK.THERE_IS",
+        "A1.CHUNK.THERE_ARE",
+        "A1.CHUNK.IS_THERE",
+        "A1.CHUNK.ARE_THERE_ANY",
+        "A1.CHUNK.THERE_ISNT"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Ali",
+            "en": "Is there a table in the kitchen?",
+            "ar": "هل توجد طاولة في المطبخ؟"
+          },
+          {
+            "speaker": "Sara",
+            "en": "Yes. There is a table and there are four chairs.",
+            "ar": "نعم، توجد طاولة وأربعة كراسٍ."
+          },
+          {
+            "speaker": "Ali",
+            "en": "Is there a TV in the bedroom?",
+            "ar": "هل يوجد تلفاز في غرفة النوم؟"
+          },
+          {
+            "speaker": "Sara",
+            "en": "No, there isn't.",
+            "ar": "لا، لا يوجد."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U3-L2-A01",
+          "lessonId": "A1-U3-L2",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U3.LISTENING.UNDERSTAND_ROOM_DESCRIPTION"
+          ],
+          "prompt": "What is in the kitchen?",
+          "promptAr": "ماذا يوجد في المطبخ؟",
+          "options": [
+            "a table and four chairs",
+            "a sofa and two lamps",
+            "a desk and one chair"
+          ],
+          "answer": "a table and four chairs",
+          "audioTranscript": "There is a table and there are four chairs."
+        },
+        {
+          "id": "A1-U3-L2-A02",
+          "lessonId": "A1-U3-L2",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U3.PRODUCTION.STATE_EXISTENCE"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "There ___ two lamps.",
+          "options": [
+            "is",
+            "are",
+            "has"
+          ],
+          "answer": "are"
+        },
+        {
+          "id": "A1-U3-L2-A03",
+          "lessonId": "A1-U3-L2",
+          "type": "textChoice",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U3.PRODUCTION.STATE_EXISTENCE"
+          ],
+          "prompt": "Choose the question about several objects.",
+          "promptAr": "اختر سؤالاً عن عدة أشياء.",
+          "options": [
+            "Are there any chairs?",
+            "Is there a chairs?",
+            "There are chairs?"
+          ],
+          "answer": "Are there any chairs?"
+        },
+        {
+          "id": "A1-U3-L2-A04",
+          "lessonId": "A1-U3-L2",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U3.LISTENING.UNDERSTAND_ROOM_DESCRIPTION"
+          ],
+          "prompt": "Which statement is true?",
+          "promptAr": "أي جملة صحيحة؟",
+          "options": [
+            "There is a TV.",
+            "There isn't a TV.",
+            "There are two TVs."
+          ],
+          "answer": "There isn't a TV.",
+          "audioTranscript": "There is a bed and a desk in my room, but there isn't a TV."
+        },
+        {
+          "id": "A1-U3-L2-A05",
+          "lessonId": "A1-U3-L2",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A1.U3.PRODUCTION.STATE_EXISTENCE"
+          ],
+          "prompt": "Describe a room with one There is sentence, one There are sentence and one negative sentence.",
+          "promptAr": "صف غرفة بجملة There is وجملة There are وجملة منفية.",
+          "accepted": [],
+          "evaluation": "there-is-are-negative-set",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U3-L3",
+      "title": "Where Is It?",
+      "titleAr": "أين هو؟",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U3.PRODUCTION.LOCATE_OBJECTS",
+        "A1.U3.LISTENING.UNDERSTAND_ROOM_DESCRIPTION"
+      ],
+      "grammar": [
+        "A1.G.PREPOSITION.PLACE_CORE",
+        "A1.G.BE.LOCATION_QUESTION",
+        "A1.G.ARTICLE.THE_SHARED"
+      ],
+      "lexicon": [
+        "A1.LEX.KEY.N01",
+        "A1.LEX.KEYS.N01",
+        "A1.LEX.BAG.N01",
+        "A1.LEX.BOOK.N01",
+        "A1.LEX.TABLE.N01",
+        "A1.LEX.CHAIR.N01",
+        "A1.LEX.DESK.N01"
+      ],
+      "chunks": [
+        "A1.CHUNK.WHERE_IS_OBJECT",
+        "A1.CHUNK.WHERE_ARE_OBJECTS",
+        "A1.CHUNK.OBJECT_IS_PLACE"
+      ],
+      "placeLanguage": [
+        "in",
+        "on",
+        "under",
+        "next to",
+        "behind",
+        "in front of",
+        "between"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Sara",
+            "en": "Where are my keys?",
+            "ar": "أين مفاتيحي؟"
+          },
+          {
+            "speaker": "Ali",
+            "en": "They're on the table, next to your phone.",
+            "ar": "إنها على الطاولة بجانب هاتفك."
+          },
+          {
+            "speaker": "Sara",
+            "en": "And where is my bag?",
+            "ar": "وأين حقيبتي؟"
+          },
+          {
+            "speaker": "Ali",
+            "en": "It's under the chair.",
+            "ar": "إنها تحت الكرسي."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U3-L3-A01",
+          "lessonId": "A1-U3-L3",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U3.LISTENING.UNDERSTAND_ROOM_DESCRIPTION"
+          ],
+          "prompt": "Where are the keys?",
+          "promptAr": "أين المفاتيح؟",
+          "options": [
+            "on the table",
+            "under the chair",
+            "in the bag"
+          ],
+          "answer": "on the table",
+          "audioTranscript": "The keys are on the table, next to the phone."
+        },
+        {
+          "id": "A1-U3-L3-A02",
+          "lessonId": "A1-U3-L3",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U3.PRODUCTION.LOCATE_OBJECTS"
+          ],
+          "prompt": "Match the location phrases and pictures.",
+          "promptAr": "طابق عبارات المكان بالصور.",
+          "pairs": [
+            [
+              "under",
+              "cat-under-table"
+            ],
+            [
+              "between",
+              "lamp-between-chairs"
+            ],
+            [
+              "behind",
+              "bag-behind-door"
+            ],
+            [
+              "next to",
+              "phone-next-to-book"
+            ]
+          ]
+        },
+        {
+          "id": "A1-U3-L3-A03",
+          "lessonId": "A1-U3-L3",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U3.PRODUCTION.LOCATE_OBJECTS"
+          ],
+          "prompt": "Choose the preposition.",
+          "promptAr": "اختر حرف المكان.",
+          "text": "The bag is ___ the chair.",
+          "options": [
+            "under",
+            "from",
+            "at"
+          ],
+          "answer": "under"
+        },
+        {
+          "id": "A1-U3-L3-A04",
+          "lessonId": "A1-U3-L3",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U3.LISTENING.UNDERSTAND_ROOM_DESCRIPTION"
+          ],
+          "prompt": "Choose the correct picture.",
+          "promptAr": "اختر الصورة الصحيحة.",
+          "options": [
+            "book-on-desk-lamp-next",
+            "book-under-desk-lamp-on",
+            "book-in-desk-lamp-behind"
+          ],
+          "answer": "book-on-desk-lamp-next",
+          "audioTranscript": "The book is on the desk. The lamp is next to the book.",
+          "optionMode": "media"
+        },
+        {
+          "id": "A1-U3-L3-A05",
+          "lessonId": "A1-U3-L3",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A1.U3.PRODUCTION.LOCATE_OBJECTS"
+          ],
+          "prompt": "Locate three objects using three different place phrases.",
+          "promptAr": "حدد مكان ثلاثة أشياء باستخدام ثلاث عبارات مكان مختلفة.",
+          "accepted": [],
+          "evaluation": "three-objects-three-place-phrases",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U3-L4",
+      "title": "This, That, These and Those",
+      "titleAr": "هذا وذاك وهذه وتلك",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U3.INTERACTION.IDENTIFY_NEAR_FAR_OBJECTS",
+        "A1.U3.LISTENING.UNDERSTAND_ROOM_DESCRIPTION"
+      ],
+      "grammar": [
+        "A1.G.DEMONSTRATIVE.NEAR_FAR"
+      ],
+      "lexicon": [
+        "A1.LEX.PHONE.N01",
+        "A1.LEX.BOOK.N01",
+        "A1.LEX.KEYS.N01",
+        "A1.LEX.BAG.N01"
+      ],
+      "chunks": [
+        "A1.CHUNK.THIS_THAT_OBJECT",
+        "A1.CHUNK.THESE_THOSE_OBJECTS"
+      ],
+      "encounter": {
+        "sceneAr": "المتحدث يمسك هاتفاً قريباً ويشير إلى أحذية بعيدة.",
+        "dialogue": [
+          {
+            "speaker": "Ali",
+            "en": "This is my phone.",
+            "ar": "هذا هاتفي."
+          },
+          {
+            "speaker": "Sara",
+            "en": "And is that your bag?",
+            "ar": "وهل تلك حقيبتك؟"
+          },
+          {
+            "speaker": "Ali",
+            "en": "Yes. These are my keys, and those are my shoes.",
+            "ar": "نعم. هذه مفاتيحي، وذلك حذائي."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U3-L4-A01",
+          "lessonId": "A1-U3-L4",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U3.INTERACTION.IDENTIFY_NEAR_FAR_OBJECTS"
+          ],
+          "prompt": "Choose the near singular object.",
+          "promptAr": "اختر الشيء المفرد القريب.",
+          "options": [
+            "phone-near",
+            "bag-far",
+            "shoes-far"
+          ],
+          "answer": "phone-near",
+          "audioTranscript": "This is my phone.",
+          "optionMode": "media"
+        },
+        {
+          "id": "A1-U3-L4-A02",
+          "lessonId": "A1-U3-L4",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U3.INTERACTION.IDENTIFY_NEAR_FAR_OBJECTS"
+          ],
+          "prompt": "Match each word to distance and number.",
+          "promptAr": "طابق كل كلمة بالمسافة والعدد.",
+          "pairs": [
+            [
+              "this",
+              "near singular"
+            ],
+            [
+              "that",
+              "far singular"
+            ],
+            [
+              "these",
+              "near plural"
+            ],
+            [
+              "those",
+              "far plural"
+            ]
+          ]
+        },
+        {
+          "id": "A1-U3-L4-A03",
+          "lessonId": "A1-U3-L4",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U3.INTERACTION.IDENTIFY_NEAR_FAR_OBJECTS"
+          ],
+          "prompt": "Choose the demonstrative.",
+          "promptAr": "اختر اسم الإشارة.",
+          "text": "___ are my keys here in my hand.",
+          "options": [
+            "These",
+            "Those",
+            "That"
+          ],
+          "answer": "These"
+        },
+        {
+          "id": "A1-U3-L4-A04",
+          "lessonId": "A1-U3-L4",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U3.LISTENING.UNDERSTAND_ROOM_DESCRIPTION",
+            "A1.U3.INTERACTION.IDENTIFY_NEAR_FAR_OBJECTS"
+          ],
+          "prompt": "Choose the correct scene.",
+          "promptAr": "اختر المشهد الصحيح.",
+          "options": [
+            "one-near-book-two-far-bags",
+            "one-far-book-two-near-bags",
+            "two-far-books-one-near-bag"
+          ],
+          "answer": "one-near-book-two-far-bags",
+          "audioTranscript": "This book is mine. Those two bags are my friends' bags.",
+          "optionMode": "media"
+        },
+        {
+          "id": "A1-U3-L4-A05",
+          "lessonId": "A1-U3-L4",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U3.INTERACTION.IDENTIFY_NEAR_FAR_OBJECTS"
+          ],
+          "prompt": "Point out one near object and one far object.",
+          "promptAr": "أشر إلى شيء قريب وآخر بعيد.",
+          "accepted": [],
+          "evaluation": "near-and-far-demonstrative",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U3-L5",
+      "title": "Is This Yours?",
+      "titleAr": "هل هذا لك؟",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U3.INTERACTION.ASK_ANSWER_OWNERSHIP",
+        "A1.U3.INTERACTION.IDENTIFY_NEAR_FAR_OBJECTS"
+      ],
+      "grammar": [
+        "A1.G.POSSESSIVE.MINE_YOURS",
+        "A1.G.POSSESSIVE.MY_YOUR",
+        "A1.G.WH.WHO_WHOSE"
+      ],
+      "lexicon": [
+        "A1.LEX.PHONE.N01",
+        "A1.LEX.BOOK.N01",
+        "A1.LEX.BAG.N01",
+        "A1.LEX.KEYS.N01",
+        "A1.LEX.OWN.V01"
+      ],
+      "chunks": [
+        "A1.CHUNK.IS_THIS_YOUR",
+        "A1.CHUNK.YES_ITS_MINE",
+        "A1.CHUNK.NO_IT_ISNT_MINE",
+        "A1.CHUNK.WHOSE_IS_THIS"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Sara",
+            "en": "Is this your phone?",
+            "ar": "هل هذا هاتفك؟"
+          },
+          {
+            "speaker": "Ali",
+            "en": "Yes, it's mine. Thank you.",
+            "ar": "نعم، إنه لي. شكراً."
+          },
+          {
+            "speaker": "Sara",
+            "en": "Whose book is this?",
+            "ar": "لمن هذا الكتاب؟"
+          },
+          {
+            "speaker": "Ali",
+            "en": "It isn't mine. It's Maya's.",
+            "ar": "ليس لي. إنه لمايا."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U3-L5-A01",
+          "lessonId": "A1-U3-L5",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U3.INTERACTION.ASK_ANSWER_OWNERSHIP"
+          ],
+          "prompt": "Who owns the phone?",
+          "promptAr": "لمن الهاتف؟",
+          "options": [
+            "Ali",
+            "Sara",
+            "Maya"
+          ],
+          "answer": "Ali",
+          "audioTranscript": "Sara: Is this your phone? Ali: Yes, it's mine."
+        },
+        {
+          "id": "A1-U3-L5-A02",
+          "lessonId": "A1-U3-L5",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U3.INTERACTION.ASK_ANSWER_OWNERSHIP"
+          ],
+          "prompt": "Complete the answer.",
+          "promptAr": "أكمل الإجابة.",
+          "text": "Is this your bag? Yes, it's ___.",
+          "options": [
+            "mine",
+            "my",
+            "your"
+          ],
+          "answer": "mine"
+        },
+        {
+          "id": "A1-U3-L5-A03",
+          "lessonId": "A1-U3-L5",
+          "type": "order",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U3.INTERACTION.ASK_ANSWER_OWNERSHIP"
+          ],
+          "prompt": "Build the ownership question.",
+          "promptAr": "رتب سؤال الملكية.",
+          "tokens": [
+            "this",
+            "your",
+            "Is",
+            "book"
+          ],
+          "answer": [
+            "Is",
+            "this",
+            "your",
+            "book"
+          ]
+        },
+        {
+          "id": "A1-U3-L5-A04",
+          "lessonId": "A1-U3-L5",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U3.INTERACTION.ASK_ANSWER_OWNERSHIP"
+          ],
+          "prompt": "Ask whether the phone belongs to the other person.",
+          "promptAr": "اسأل هل الهاتف يخص الشخص الآخر.",
+          "accepted": [
+            "Is this your phone?"
+          ],
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A1-U3-L5-A05",
+          "lessonId": "A1-U3-L5",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U3.INTERACTION.ASK_ANSWER_OWNERSHIP"
+          ],
+          "prompt": "The book is not yours; it belongs to Sara. Answer the question: Is this your book?",
+          "promptAr": "الكتاب ليس لك، بل لسارة. أجب عن السؤال: Is this your book?",
+          "accepted": [
+            "No, it isn't mine. It's Sara's."
+          ],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U3-L6",
+      "title": "Describe Your Home",
+      "titleAr": "صف منزلك",
+      "lessonType": "communication",
+      "canDo": [
+        "A1.U3.PRODUCTION.DESCRIBE_ROOM",
+        "A1.U3.PRODUCTION.LOCATE_OBJECTS",
+        "A1.U3.WRITING.WRITE_HOME_DESCRIPTION",
+        "A1.U3.LISTENING.UNDERSTAND_ROOM_DESCRIPTION"
+      ],
+      "grammar": [
+        "A1.G.THERE_IS_ARE",
+        "A1.G.PREPOSITION.PLACE_CORE",
+        "A1.G.CONJ.AND_BUT"
+      ],
+      "lexicon": [
+        "A1.LEX.BIG.ADJ01",
+        "A1.LEX.SMALL.ADJ01",
+        "A1.LEX.CLEAN.ADJ01",
+        "A1.LEX.QUIET.ADJ01"
+      ],
+      "chunks": [
+        "A1.CHUNK.WELCOME_HOME"
+      ],
+      "readingText": {
+        "title": "My Small Apartment",
+        "text": "I live in a small apartment. There is one bedroom, a living room, a kitchen and a bathroom. The living room is small but clean. There is a sofa next to the window. There are two pictures on the wall. I like my home.",
+        "textAr": "أسكن في شقة صغيرة..."
+      },
+      "activities": [
+        {
+          "id": "A1-U3-L6-A01",
+          "lessonId": "A1-U3-L6",
+          "type": "textChoice",
+          "mode": "encounter",
+          "skill": "reading",
+          "canDo": [
+            "A1.U3.LISTENING.UNDERSTAND_ROOM_DESCRIPTION"
+          ],
+          "prompt": "Where is the sofa?",
+          "promptAr": "أين الأريكة؟",
+          "options": [
+            "next to the window",
+            "under the pictures",
+            "in the kitchen"
+          ],
+          "answer": "next to the window"
+        },
+        {
+          "id": "A1-U3-L6-A02",
+          "lessonId": "A1-U3-L6",
+          "type": "textChoice",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U3.LISTENING.UNDERSTAND_ROOM_DESCRIPTION"
+          ],
+          "prompt": "Which statement is true?",
+          "promptAr": "أي جملة صحيحة؟",
+          "options": [
+            "The living room is small but clean.",
+            "There are two bedrooms.",
+            "There is no bathroom."
+          ],
+          "answer": "The living room is small but clean."
+        },
+        {
+          "id": "A1-U3-L6-A03",
+          "lessonId": "A1-U3-L6",
+          "type": "order",
+          "mode": "practice",
+          "skill": "writing",
+          "canDo": [
+            "A1.U3.WRITING.WRITE_HOME_DESCRIPTION"
+          ],
+          "prompt": "Order the home description.",
+          "promptAr": "رتب وصف المنزل.",
+          "tokens": [
+            "The keys are on the table.",
+            "There is a table and four chairs.",
+            "This is my kitchen.",
+            "The kitchen is small but clean."
+          ],
+          "answer": [
+            "This is my kitchen.",
+            "The kitchen is small but clean.",
+            "There is a table and four chairs.",
+            "The keys are on the table."
+          ]
+        },
+        {
+          "id": "A1-U3-L6-A04",
+          "lessonId": "A1-U3-L6",
+          "type": "write",
+          "mode": "mastery",
+          "skill": "writing",
+          "canDo": [
+            "A1.U3.WRITING.WRITE_HOME_DESCRIPTION"
+          ],
+          "prompt": "Write 5–7 sentences about a real or imaginary room. Include existence, quantity, location and one description.",
+          "promptAr": "اكتب 5–7 جمل عن غرفة حقيقية أو خيالية، تشمل الوجود والعدد والمكان ووصفاً واحداً.",
+          "accepted": [],
+          "evaluation": "u3-room-description-rubric",
+          "wordGuide": [
+            35,
+            60
+          ]
+        },
+        {
+          "id": "A1-U3-L6-A05",
+          "lessonId": "A1-U3-L6",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A1.U3.PRODUCTION.DESCRIBE_ROOM",
+            "A1.U3.PRODUCTION.LOCATE_OBJECTS"
+          ],
+          "prompt": "Give a short tour of one room.",
+          "promptAr": "قدّم جولة قصيرة في غرفة واحدة.",
+          "accepted": [],
+          "evaluation": "room-tour-existence-location-description",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U3-L7",
+      "title": "Mission: My New Apartment",
+      "titleAr": "المهمة: شقتي الجديدة",
+      "lessonType": "mission",
+      "canDo": [
+        "A1.U3.MEDIATION.SHOW_NEW_HOME",
+        "A1.U3.PRODUCTION.DESCRIBE_ROOM",
+        "A1.U3.PRODUCTION.STATE_EXISTENCE",
+        "A1.U3.PRODUCTION.LOCATE_OBJECTS",
+        "A1.U3.LISTENING.UNDERSTAND_ROOM_DESCRIPTION",
+        "A1.U3.INTERACTION.IDENTIFY_NEAR_FAR_OBJECTS",
+        "A1.U3.INTERACTION.ASK_ANSWER_OWNERSHIP",
+        "A1.U3.WRITING.WRITE_HOME_DESCRIPTION"
+      ],
+      "grammar": [],
+      "lexicon": [],
+      "chunks": [],
+      "scenario": "Show an unseen apartment plan to a friend, describe rooms and objects, answer questions, locate missing items and resolve ownership.",
+      "privacyNote": "Learners may use the supplied fictional apartment. Never require images or details of their real home.",
+      "activities": [
+        {
+          "id": "A1-U3-L7-A01",
+          "lessonId": "A1-U3-L7",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U3.LISTENING.UNDERSTAND_ROOM_DESCRIPTION"
+          ],
+          "prompt": "Choose the apartment plan described by the agent.",
+          "promptAr": "اختر مخطط الشقة الذي يصفه الموظف.",
+          "options": [
+            "plan-a",
+            "plan-b",
+            "plan-c"
+          ],
+          "answer": "plan-c",
+          "audioTranscript": "There are two bedrooms and one bathroom. The kitchen is next to the living room. There is a small garden behind the home.",
+          "optionMode": "media"
+        },
+        {
+          "id": "A1-U3-L7-A02",
+          "lessonId": "A1-U3-L7",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "mediation",
+          "canDo": [
+            "A1.U3.MEDIATION.SHOW_NEW_HOME",
+            "A1.U3.PRODUCTION.DESCRIBE_ROOM"
+          ],
+          "prompt": "Use plan C to help your friend understand the apartment. Welcome them and describe three rooms.",
+          "promptAr": "استخدم المخطط C لمساعدة صديقك على فهم الشقة. رحّب به وصف ثلاث غرف.",
+          "accepted": [],
+          "evaluation": "welcome-plus-three-room-mediated-tour",
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A1-U3-L7-A03",
+          "lessonId": "A1-U3-L7",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A1.U3.PRODUCTION.STATE_EXISTENCE",
+            "A1.U3.PRODUCTION.LOCATE_OBJECTS"
+          ],
+          "prompt": "Describe four objects: include one singular, one plural and two locations.",
+          "promptAr": "صف أربعة أشياء: مفرداً واحداً وجمعاً واحداً وموقعين.",
+          "accepted": [],
+          "evaluation": "existence-number-location-transfer",
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A1-U3-L7-A04",
+          "lessonId": "A1-U3-L7",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U3.PRODUCTION.LOCATE_OBJECTS"
+          ],
+          "prompt": "Where is the missing key?",
+          "promptAr": "أين المفتاح المفقود؟",
+          "options": [
+            "under the sofa",
+            "on the kitchen table",
+            "behind the bedroom door"
+          ],
+          "answer": "behind the bedroom door",
+          "audioTranscript": "The key isn't on the table. Look behind the bedroom door."
+        },
+        {
+          "id": "A1-U3-L7-A05",
+          "lessonId": "A1-U3-L7",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U3.INTERACTION.ASK_ANSWER_OWNERSHIP"
+          ],
+          "prompt": "You find a phone. Ask if it belongs to your friend, then respond when they say no.",
+          "promptAr": "تجد هاتفاً. اسأل هل يخص صديقك ثم استجب عندما يقول لا.",
+          "accepted": [],
+          "evaluation": "ownership-question-and-natural-follow-up",
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A1-U3-L7-A06",
+          "lessonId": "A1-U3-L7",
+          "type": "write",
+          "mode": "mastery",
+          "skill": "writing",
+          "canDo": [
+            "A1.U3.WRITING.WRITE_HOME_DESCRIPTION",
+            "A1.U3.MEDIATION.SHOW_NEW_HOME"
+          ],
+          "prompt": "Write a 45–70-word message describing apartment plan C to a friend.",
+          "promptAr": "اكتب رسالة من 45–70 كلمة تصف المخطط C لصديق.",
+          "accepted": [],
+          "evaluation": "u3-mission-writing-rubric",
+          "wordGuide": [
+            45,
+            70
+          ]
+        }
+      ]
+    }
+  ],
+  "mastery": {
+    "requiredObjectives": [
+      "A1.U3.PRODUCTION.DESCRIBE_ROOM",
+      "A1.U3.PRODUCTION.STATE_EXISTENCE",
+      "A1.U3.PRODUCTION.LOCATE_OBJECTS",
+      "A1.U3.LISTENING.UNDERSTAND_ROOM_DESCRIPTION",
+      "A1.U3.INTERACTION.IDENTIFY_NEAR_FAR_OBJECTS",
+      "A1.U3.INTERACTION.ASK_ANSWER_OWNERSHIP",
+      "A1.U3.WRITING.WRITE_HOME_DESCRIPTION",
+      "A1.U3.MEDIATION.SHOW_NEW_HOME"
+    ],
+    "requiredSkillGroups": [
+      [
+        "listening",
+        "reading"
+      ],
+      [
+        "spokenInteraction",
+        "spokenProduction",
+        "writing"
+      ],
+      [
+        "mediation"
+      ]
+    ],
+    "minimumObjectiveScore": 0.75,
+    "missionRequired": true,
+    "privacyAlternativeRequired": true,
+    "retry": "targeted-by-objective",
+    "unlocks": "A1-U4"
+  }
+}

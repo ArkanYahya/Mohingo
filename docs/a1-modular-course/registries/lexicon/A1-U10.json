@@ -1,0 +1,382 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U10",
+  "kind": "lexicon",
+  "records": [
+    {
+      "id": "A1.LEX.HEAD.N01",
+      "headword": "head",
+      "partOfSpeech": "noun",
+      "arabic": "رأس",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "head",
+      "examples": [
+        "My head hurts."
+      ],
+      "introducedIn": "A1-U10-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.EYE.N01",
+      "headword": "eye",
+      "partOfSpeech": "noun",
+      "arabic": "عين",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "eye",
+      "examples": [
+        "Her eyes are tired."
+      ],
+      "introducedIn": "A1-U10-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.EAR.N01",
+      "headword": "ear",
+      "partOfSpeech": "noun",
+      "arabic": "أذن",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "ear",
+      "examples": [
+        "My ear hurts."
+      ],
+      "introducedIn": "A1-U10-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.MOUTH.N01",
+      "headword": "mouth",
+      "partOfSpeech": "noun",
+      "arabic": "فم",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "mouth",
+      "examples": [
+        "Open your mouth."
+      ],
+      "introducedIn": "A1-U10-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.THROAT.N01",
+      "headword": "throat",
+      "partOfSpeech": "noun",
+      "arabic": "حلق",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "throat",
+      "examples": [
+        "I have a sore throat."
+      ],
+      "introducedIn": "A1-U10-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.STOMACH.N01",
+      "headword": "stomach",
+      "partOfSpeech": "noun",
+      "arabic": "معدة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "stomach",
+      "examples": [
+        "My stomach hurts."
+      ],
+      "introducedIn": "A1-U10-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.BACK.N01",
+      "headword": "back",
+      "partOfSpeech": "noun",
+      "arabic": "ظهر",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "back",
+      "examples": [
+        "His back hurts."
+      ],
+      "introducedIn": "A1-U10-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.ARM.N01",
+      "headword": "arm",
+      "partOfSpeech": "noun",
+      "arabic": "ذراع",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "arm",
+      "examples": [
+        "Move your arm."
+      ],
+      "introducedIn": "A1-U10-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.LEG.N01",
+      "headword": "leg",
+      "partOfSpeech": "noun",
+      "arabic": "ساق",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "leg",
+      "examples": [
+        "Her leg hurts."
+      ],
+      "introducedIn": "A1-U10-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.HAND.N01",
+      "headword": "hand",
+      "partOfSpeech": "noun",
+      "arabic": "يد",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "hand",
+      "examples": [
+        "Wash your hands."
+      ],
+      "introducedIn": "A1-U10-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.FOOT.N01",
+      "headword": "foot",
+      "partOfSpeech": "noun",
+      "arabic": "قدم",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "foot",
+      "examples": [
+        "My left foot hurts."
+      ],
+      "introducedIn": "A1-U10-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.HEADACHE.N01",
+      "headword": "headache",
+      "partOfSpeech": "noun",
+      "arabic": "صداع",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "headache",
+      "examples": [
+        "I have a headache."
+      ],
+      "introducedIn": "A1-U10-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.COUGH.N01",
+      "headword": "cough",
+      "partOfSpeech": "noun",
+      "arabic": "سعال",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "cough",
+      "examples": [
+        "She has a cough."
+      ],
+      "introducedIn": "A1-U10-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.COLD.N02",
+      "headword": "cold",
+      "partOfSpeech": "noun",
+      "arabic": "زكام",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "cold",
+      "examples": [
+        "I have a cold."
+      ],
+      "introducedIn": "A1-U10-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.FEVER.N01",
+      "headword": "fever",
+      "partOfSpeech": "noun",
+      "arabic": "حمى",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "fever",
+      "examples": [
+        "Do you have a fever?"
+      ],
+      "introducedIn": "A1-U10-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.SICK.ADJ01",
+      "headword": "sick",
+      "partOfSpeech": "adjective",
+      "arabic": "مريض",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "sick",
+      "examples": [
+        "I feel sick."
+      ],
+      "introducedIn": "A1-U10-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.TIRED.ADJ01",
+      "headword": "tired",
+      "partOfSpeech": "adjective",
+      "arabic": "متعب",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "tired",
+      "examples": [
+        "He feels tired."
+      ],
+      "introducedIn": "A1-U10-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.PAIN.N01",
+      "headword": "pain",
+      "partOfSpeech": "noun",
+      "arabic": "ألم",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "pain",
+      "examples": [
+        "I have pain in my back."
+      ],
+      "introducedIn": "A1-U10-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.REST.V01",
+      "headword": "rest",
+      "partOfSpeech": "verb",
+      "arabic": "يرتاح",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "rest",
+      "examples": [
+        "You should rest."
+      ],
+      "introducedIn": "A1-U10-L3",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.MEDICINE.N01",
+      "headword": "medicine",
+      "partOfSpeech": "noun",
+      "arabic": "دواء",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "medicine",
+      "examples": [
+        "Take this medicine."
+      ],
+      "introducedIn": "A1-U10-L3",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.TABLET.N01",
+      "headword": "tablet",
+      "partOfSpeech": "noun",
+      "arabic": "قرص دواء",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "tablet",
+      "examples": [
+        "Take one tablet."
+      ],
+      "introducedIn": "A1-U10-L3",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.APPOINTMENT.N01",
+      "headword": "appointment",
+      "partOfSpeech": "noun",
+      "arabic": "موعد",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "appointment",
+      "examples": [
+        "I have a doctor's appointment."
+      ],
+      "introducedIn": "A1-U10-L4",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.EMERGENCY.N01",
+      "headword": "emergency",
+      "partOfSpeech": "noun",
+      "arabic": "حالة طارئة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "emergency",
+      "examples": [
+        "Call this number in an emergency."
+      ],
+      "introducedIn": "A1-U10-L4",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.CAREFUL.ADJ01",
+      "headword": "careful",
+      "partOfSpeech": "adjective",
+      "arabic": "حذر",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "careful",
+      "examples": [
+        "Be careful."
+      ],
+      "introducedIn": "A1-U10-L4",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.BETTER.ADJ01",
+      "headword": "better",
+      "partOfSpeech": "adjective",
+      "arabic": "أفضل صحياً",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "better",
+      "examples": [
+        "I feel better today."
+      ],
+      "introducedIn": "A1-U10-L5",
+      "recycledIn": []
+    }
+  ]
+}

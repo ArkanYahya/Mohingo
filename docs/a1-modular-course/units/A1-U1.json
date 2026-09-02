@@ -1,0 +1,741 @@
+{
+  "id": "A1-U1",
+  "title": "Hello, I'm…",
+  "titleAr": "مرحباً، أنا...",
+  "levelRole": "core",
+  "estimatedMinutes": [
+    70,
+    100
+  ],
+  "countsTowardA1Mastery": true,
+  "lessons": [
+    {
+      "id": "A1-U1-L1",
+      "title": "My Name",
+      "titleAr": "اسمي",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U1.PRODUCTION.INTRODUCE_SELF",
+        "A1.U1.INTERACTION.ASK_NAME"
+      ],
+      "grammar": [
+        "A1.G.BE.I_AM",
+        "A1.G.BE.YOU_ARE",
+        "A1.G.POSSESSIVE.MY_YOUR",
+        "A1.G.WH.WHAT_BASIC"
+      ],
+      "lexicon": [
+        "A1.LEX.NAME.N01"
+      ],
+      "chunks": [
+        "A1.CHUNK.WHATS_YOUR_NAME",
+        "A1.CHUNK.MY_NAME_IS",
+        "A1.CHUNK.IM_NAME",
+        "A1.CHUNK.NICE_MEET"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Maya",
+            "en": "Hi. I'm Maya. What's your name?",
+            "ar": "مرحباً. أنا مايا. ما اسمك؟"
+          },
+          {
+            "speaker": "Omar",
+            "en": "I'm Omar.",
+            "ar": "أنا عمر."
+          },
+          {
+            "speaker": "Maya",
+            "en": "Nice to meet you.",
+            "ar": "سعيدة بلقائك."
+          },
+          {
+            "speaker": "Omar",
+            "en": "Nice to meet you too.",
+            "ar": "وأنا سعيد بلقائك أيضاً."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U1-L1-A01",
+          "lessonId": "A1-U1-L1",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U1.LISTENING.UNDERSTAND_PERSONAL_INFO"
+          ],
+          "prompt": "What's the man's name?",
+          "options": [
+            "Omar",
+            "Maya",
+            "Ali"
+          ],
+          "answer": "Omar",
+          "audioTranscript": "Maya: Hi. I'm Maya. What's your name? Omar: I'm Omar."
+        },
+        {
+          "id": "A1-U1-L1-A02",
+          "lessonId": "A1-U1-L1",
+          "type": "textChoice",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U1.PRODUCTION.INTRODUCE_SELF"
+          ],
+          "prompt": "Build the sentence.",
+          "options": [
+            "I'm / Ahmed.",
+            "Ahmed / I'm.",
+            "My / Ahmed."
+          ],
+          "answer": "I'm / Ahmed."
+        },
+        {
+          "id": "A1-U1-L1-A03",
+          "lessonId": "A1-U1-L1",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A1.U1.PRODUCTION.INTRODUCE_SELF"
+          ],
+          "prompt": "Introduce yourself.",
+          "accepted": [],
+          "evaluation": "contains-name-frame",
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A1-U1-L1-A04",
+          "lessonId": "A1-U1-L1",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U1.INTERACTION.ASK_NAME"
+          ],
+          "prompt": "Ask the new learner's name.",
+          "accepted": [
+            "What's your name?"
+          ],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U1-L2",
+      "title": "Where Are You From?",
+      "titleAr": "من أين أنت؟",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U1.PRODUCTION.STATE_ORIGIN",
+        "A1.U1.INTERACTION.ASK_ORIGIN",
+        "A1.U1.LISTENING.UNDERSTAND_PERSONAL_INFO"
+      ],
+      "grammar": [
+        "A1.G.WH.WHERE",
+        "A1.G.BE.QUESTION_YOU",
+        "A1.G.BE.SHORT_ANSWER_I"
+      ],
+      "lexicon": [
+        "A1.LEX.FROM.PREP",
+        "A1.LEX.COUNTRY.N01"
+      ],
+      "chunks": [
+        "A1.CHUNK.WHERE_FROM",
+        "A1.CHUNK.IM_FROM",
+        "A1.CHUNK.ARE_YOU_FROM",
+        "A1.CHUNK.YES_I_AM",
+        "A1.CHUNK.NO_IM_NOT"
+      ],
+      "activities": [
+        {
+          "id": "A1-U1-L2-A01",
+          "lessonId": "A1-U1-L2",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U1.LISTENING.UNDERSTAND_PERSONAL_INFO"
+          ],
+          "prompt": "Where is Anna from?",
+          "options": [
+            "Italy",
+            "France",
+            "Iraq"
+          ],
+          "answer": "Italy",
+          "audioTranscript": "Hi, I'm Anna. I'm from Italy."
+        },
+        {
+          "id": "A1-U1-L2-A02",
+          "lessonId": "A1-U1-L2",
+          "type": "textChoice",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U1.PRODUCTION.STATE_ORIGIN"
+          ],
+          "prompt": "Complete: I'm ___ Iraq.",
+          "options": [
+            "from",
+            "in",
+            "is"
+          ],
+          "answer": "from"
+        },
+        {
+          "id": "A1-U1-L2-A03",
+          "lessonId": "A1-U1-L2",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A1.U1.PRODUCTION.STATE_ORIGIN"
+          ],
+          "prompt": "Say where you are from.",
+          "accepted": [],
+          "evaluation": "im-from-country",
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A1-U1-L2-A04",
+          "lessonId": "A1-U1-L2",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U1.INTERACTION.ASK_ORIGIN"
+          ],
+          "prompt": "Ask where the person is from.",
+          "accepted": [
+            "Where are you from?"
+          ],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U1-L3",
+      "title": "Where Do You Live?",
+      "titleAr": "أين تسكن؟",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U1.PRODUCTION.STATE_RESIDENCE",
+        "A1.U1.INTERACTION.ASK_RESIDENCE"
+      ],
+      "grammar": [
+        "A1.G.CHUNK.WHERE_DO_YOU_LIVE"
+      ],
+      "lexicon": [
+        "A1.LEX.LIVE.V01",
+        "A1.LEX.CITY.N01",
+        "A1.LEX.COUNTRY.N01",
+        "A1.LEX.HOME.N01",
+        "A1.LEX.HERE.ADV"
+      ],
+      "chunks": [
+        "A1.CHUNK.WHERE_LIVE",
+        "A1.CHUNK.I_LIVE_IN",
+        "A1.CHUNK.I_LIVE_WITH"
+      ],
+      "pedagogyNote": "Teach Where do you live? as a functional chunk. Do not explain the do-support system until U5.",
+      "activities": [
+        {
+          "id": "A1-U1-L3-A01",
+          "lessonId": "A1-U1-L3",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U1.PRODUCTION.STATE_RESIDENCE"
+          ],
+          "prompt": "Where does Ali live?",
+          "options": [
+            "Kirkuk",
+            "Baghdad",
+            "Iraq"
+          ],
+          "answer": "Kirkuk",
+          "audioTranscript": "I'm Ali. I live in Kirkuk."
+        },
+        {
+          "id": "A1-U1-L3-A02",
+          "lessonId": "A1-U1-L3",
+          "type": "textChoice",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U1.PRODUCTION.STATE_RESIDENCE"
+          ],
+          "prompt": "Build the answer.",
+          "options": [
+            "I live in Baghdad.",
+            "I in live Baghdad.",
+            "I am live Baghdad."
+          ],
+          "answer": "I live in Baghdad."
+        },
+        {
+          "id": "A1-U1-L3-A03",
+          "lessonId": "A1-U1-L3",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A1.U1.PRODUCTION.STATE_RESIDENCE"
+          ],
+          "prompt": "Say where you live.",
+          "accepted": [],
+          "evaluation": "i-live-in-place",
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A1-U1-L3-A04",
+          "lessonId": "A1-U1-L3",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U1.INTERACTION.ASK_RESIDENCE"
+          ],
+          "prompt": "Ask where the person lives.",
+          "accepted": [
+            "Where do you live?"
+          ],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U1-L4",
+      "title": "He and She",
+      "titleAr": "هو وهي",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U1.PRODUCTION.INTRODUCE_OTHER",
+        "A1.U1.LISTENING.UNDERSTAND_PERSONAL_INFO"
+      ],
+      "grammar": [
+        "A1.G.PRONOUN.HE_SHE",
+        "A1.G.BE.HE_SHE_IS",
+        "A1.G.POSSESSIVE.HIS_HER",
+        "A1.G.DEMONSTRATIVE.THIS_INTRODUCTION"
+      ],
+      "lexicon": [
+        "A1.LEX.FRIEND.N01",
+        "A1.LEX.BROTHER.N01",
+        "A1.LEX.SISTER.N01",
+        "A1.LEX.MAN.N01",
+        "A1.LEX.WOMAN.N01"
+      ],
+      "chunks": [
+        "A1.CHUNK.THIS_IS",
+        "A1.CHUNK.HES_MY",
+        "A1.CHUNK.SHES_MY"
+      ],
+      "activities": [
+        {
+          "id": "A1-U1-L4-A01",
+          "lessonId": "A1-U1-L4",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U1.LISTENING.UNDERSTAND_PERSONAL_INFO"
+          ],
+          "prompt": "What's her name?",
+          "options": [
+            "Sara",
+            "Ali",
+            "Maya"
+          ],
+          "answer": "Sara",
+          "audioTranscript": "This is Sara. She's my friend."
+        },
+        {
+          "id": "A1-U1-L4-A02",
+          "lessonId": "A1-U1-L4",
+          "type": "textChoice",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U1.PRODUCTION.INTRODUCE_OTHER"
+          ],
+          "prompt": "Complete: This is Ali. ___ my brother.",
+          "options": [
+            "He's",
+            "She's",
+            "I'm"
+          ],
+          "answer": "He's"
+        },
+        {
+          "id": "A1-U1-L4-A03",
+          "lessonId": "A1-U1-L4",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A1.U1.PRODUCTION.INTRODUCE_OTHER"
+          ],
+          "prompt": "Introduce Sara as your friend.",
+          "accepted": [
+            "This is Sara. She's my friend."
+          ],
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A1-U1-L4-A04",
+          "lessonId": "A1-U1-L4",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U1.LISTENING.UNDERSTAND_PERSONAL_INFO"
+          ],
+          "prompt": "Choose the correct card.",
+          "options": [
+            "woman-Maya",
+            "man-Omar",
+            "woman-Sara"
+          ],
+          "answer": "woman-Maya",
+          "audioTranscript": "Her name is Maya. She's my sister."
+        }
+      ]
+    },
+    {
+      "id": "A1-U1-L5",
+      "title": "Jobs and Basic Details",
+      "titleAr": "العمل والمعلومات الأساسية",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U1.PRODUCTION.STATE_JOB",
+        "A1.U1.LISTENING.UNDERSTAND_PERSONAL_INFO"
+      ],
+      "grammar": [
+        "A1.G.ARTICLE.A_AN_JOB"
+      ],
+      "lexicon": [
+        "A1.LEX.JOB.STUDENT",
+        "A1.LEX.JOB.TEACHER",
+        "A1.LEX.JOB.DOCTOR",
+        "A1.LEX.JOB.ENGINEER",
+        "A1.LEX.JOB.DRIVER",
+        "A1.LEX.JOB.MANAGER",
+        "A1.LEX.JOB.WORKER",
+        "A1.LEX.JOB.NURSE",
+        "A1.LEX.WORK.V01"
+      ],
+      "chunks": [
+        "A1.CHUNK.IM_A_JOB"
+      ],
+      "activities": [
+        {
+          "id": "A1-U1-L5-A01",
+          "lessonId": "A1-U1-L5",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U1.LISTENING.UNDERSTAND_PERSONAL_INFO"
+          ],
+          "prompt": "What is Daniel's job?",
+          "options": [
+            "engineer",
+            "teacher",
+            "driver"
+          ],
+          "answer": "engineer",
+          "audioTranscript": "I'm Daniel. I'm an engineer."
+        },
+        {
+          "id": "A1-U1-L5-A02",
+          "lessonId": "A1-U1-L5",
+          "type": "textChoice",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U1.PRODUCTION.STATE_JOB"
+          ],
+          "prompt": "Complete: She's ___ engineer.",
+          "options": [
+            "an",
+            "a",
+            "the"
+          ],
+          "answer": "an"
+        },
+        {
+          "id": "A1-U1-L5-A03",
+          "lessonId": "A1-U1-L5",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U1.LISTENING.UNDERSTAND_PERSONAL_INFO"
+          ],
+          "prompt": "Choose the person.",
+          "options": [
+            "woman-doctor",
+            "man-driver",
+            "woman-teacher"
+          ],
+          "answer": "woman-doctor",
+          "audioTranscript": "Her name is Lina. She's a doctor."
+        },
+        {
+          "id": "A1-U1-L5-A04",
+          "lessonId": "A1-U1-L5",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A1.U1.PRODUCTION.STATE_JOB"
+          ],
+          "prompt": "Say your job. If you do not work, say you are a student.",
+          "accepted": [],
+          "evaluation": "im-a-an-job",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U1-L6",
+      "title": "Keep the Conversation Alive",
+      "titleAr": "استمر في المحادثة",
+      "lessonType": "communication",
+      "canDo": [
+        "A1.U1.INTERACTION.USE_REPAIR_PHRASE"
+      ],
+      "grammar": [],
+      "lexicon": [],
+      "chunks": [
+        "A1.CHUNK.NICE_MEET",
+        "A1.CHUNK.NICE_MEET_TOO",
+        "A1.CHUNK.AND_YOU",
+        "A1.CHUNK.SORRY_Q",
+        "A1.CHUNK.PLEASE_REPEAT",
+        "A1.CHUNK.DONT_UNDERSTAND",
+        "A1.CHUNK.THANK_YOU",
+        "A1.CHUNK.YOURE_WELCOME"
+      ],
+      "activities": [
+        {
+          "id": "A1-U1-L6-A01",
+          "lessonId": "A1-U1-L6",
+          "type": "audioChoice",
+          "mode": "practice",
+          "skill": "listening",
+          "canDo": [
+            "A1.U1.INTERACTION.USE_REPAIR_PHRASE"
+          ],
+          "prompt": "You did not hear. Choose a useful reply.",
+          "options": [
+            "Please repeat.",
+            "I'm an engineer.",
+            "Goodbye."
+          ],
+          "answer": "Please repeat.",
+          "audioTranscript": "Where do you live?"
+        },
+        {
+          "id": "A1-U1-L6-A02",
+          "lessonId": "A1-U1-L6",
+          "type": "textChoice",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U1.INTERACTION.USE_REPAIR_PHRASE"
+          ],
+          "prompt": "Reply naturally: Nice to meet you.",
+          "options": [
+            "Nice to meet you too.",
+            "You're welcome.",
+            "I'm from Iraq."
+          ],
+          "answer": "Nice to meet you too."
+        },
+        {
+          "id": "A1-U1-L6-A03",
+          "lessonId": "A1-U1-L6",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U1.INTERACTION.USE_REPAIR_PHRASE"
+          ],
+          "prompt": "You don't understand. Ask for help.",
+          "accepted": [
+            "Sorry?",
+            "Please repeat.",
+            "I don't understand."
+          ],
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A1-U1-L6-A04",
+          "lessonId": "A1-U1-L6",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U1.INTERACTION.USE_REPAIR_PHRASE"
+          ],
+          "prompt": "The other person says: I'm from Jordan. Continue with a short reciprocal prompt.",
+          "accepted": [
+            "And you?"
+          ],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U1-L7",
+      "title": "Mission: New Colleague",
+      "titleAr": "المهمة: زميل جديد",
+      "lessonType": "mission",
+      "canDo": [
+        "A1.U1.INTERACTION.NEW_COLLEAGUE_MISSION",
+        "A1.U1.PRODUCTION.INTRODUCE_SELF",
+        "A1.U1.INTERACTION.ASK_NAME",
+        "A1.U1.PRODUCTION.STATE_ORIGIN",
+        "A1.U1.PRODUCTION.STATE_RESIDENCE",
+        "A1.U1.LISTENING.UNDERSTAND_PERSONAL_INFO",
+        "A1.U1.PRODUCTION.INTRODUCE_OTHER"
+      ],
+      "grammar": [],
+      "lexicon": [],
+      "chunks": [],
+      "scenario": "A new colleague named Daniel meets the learner, asks personal questions, gives his own details, and introduces Anna.",
+      "activities": [
+        {
+          "id": "A1-U1-L7-A01",
+          "lessonId": "A1-U1-L7",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U1.INTERACTION.NEW_COLLEAGUE_MISSION",
+            "A1.U1.PRODUCTION.INTRODUCE_SELF"
+          ],
+          "prompt": "Daniel: Hi. I'm Daniel. What's your name?",
+          "accepted": [],
+          "evaluation": "contains-name-frame",
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A1-U1-L7-A02",
+          "lessonId": "A1-U1-L7",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U1.INTERACTION.NEW_COLLEAGUE_MISSION",
+            "A1.U1.PRODUCTION.STATE_ORIGIN"
+          ],
+          "prompt": "Daniel: Nice to meet you. Where are you from?",
+          "accepted": [],
+          "evaluation": "im-from-country",
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A1-U1-L7-A03",
+          "lessonId": "A1-U1-L7",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U1.INTERACTION.NEW_COLLEAGUE_MISSION",
+            "A1.U1.PRODUCTION.STATE_RESIDENCE"
+          ],
+          "prompt": "Daniel: Where do you live?",
+          "accepted": [],
+          "evaluation": "i-live-in-place",
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A1-U1-L7-A04",
+          "lessonId": "A1-U1-L7",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U1.LISTENING.UNDERSTAND_PERSONAL_INFO"
+          ],
+          "prompt": "Where is Daniel from?",
+          "options": [
+            "Canada",
+            "Italy",
+            "Iraq"
+          ],
+          "answer": "Canada",
+          "audioTranscript": "I'm from Canada. I'm an engineer."
+        },
+        {
+          "id": "A1-U1-L7-A05",
+          "lessonId": "A1-U1-L7",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U1.LISTENING.UNDERSTAND_PERSONAL_INFO",
+            "A1.U1.PRODUCTION.INTRODUCE_OTHER"
+          ],
+          "prompt": "What's her name?",
+          "options": [
+            "Anna",
+            "Daniel",
+            "Sara"
+          ],
+          "answer": "Anna",
+          "audioTranscript": "This is Anna. She's my friend."
+        },
+        {
+          "id": "A1-U1-L7-A06",
+          "lessonId": "A1-U1-L7",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U1.INTERACTION.ASK_NAME",
+            "A1.U1.INTERACTION.NEW_COLLEAGUE_MISSION"
+          ],
+          "prompt": "Ask Anna one personal question.",
+          "accepted": [
+            "What's your name?",
+            "Where are you from?",
+            "Where do you live?"
+          ],
+          "fallbackSkill": "writing"
+        }
+      ]
+    }
+  ],
+  "mastery": {
+    "requiredObjectives": [
+      "A1.U1.PRODUCTION.INTRODUCE_SELF",
+      "A1.U1.INTERACTION.ASK_NAME",
+      "A1.U1.PRODUCTION.STATE_ORIGIN",
+      "A1.U1.PRODUCTION.STATE_RESIDENCE",
+      "A1.U1.LISTENING.UNDERSTAND_PERSONAL_INFO",
+      "A1.U1.PRODUCTION.INTRODUCE_OTHER"
+    ],
+    "requiredSkillGroups": [
+      [
+        "listening"
+      ],
+      [
+        "spokenInteraction",
+        "spokenProduction",
+        "writing"
+      ]
+    ],
+    "minimumObjectiveScore": 0.75,
+    "missionRequired": true,
+    "retry": "targeted-by-objective"
+  }
+}

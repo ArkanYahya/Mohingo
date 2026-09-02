@@ -1,0 +1,1064 @@
+{
+  "id": "A1-U12",
+  "title": "Plans and Messages",
+  "titleAr": "الخطط والرسائل",
+  "levelRole": "core",
+  "estimatedMinutes": [
+    80,
+    110
+  ],
+  "countsTowardA1Mastery": true,
+  "lessons": [
+    {
+      "id": "A1-U12-L1",
+      "title": "My Next Plan",
+      "titleAr": "خطتي القادمة",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U12.PRODUCTION.STATE_FUTURE_PLAN",
+        "A1.U12.READING.UNDERSTAND_SHORT_MESSAGE"
+      ],
+      "grammar": [
+        "A1.G.FUTURE.GOING_TO_AFFIRMATIVE",
+        "A1.G.FUTURE.TIME_EXPRESSIONS"
+      ],
+      "lexicon": [
+        "A1.LEX.PLAN.N01",
+        "A1.LEX.VISIT.V01",
+        "A1.LEX.MEET.V01",
+        "A1.LEX.STAY.V01",
+        "A1.LEX.TRIP.N01",
+        "A1.LEX.WEEKEND.N01",
+        "A1.LEX.NEXT_WEEK.PHRASE",
+        "A1.LEX.THIS_EVENING.PHRASE"
+      ],
+      "chunks": [
+        "A1.CHUNK.IM_GOING_TO"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Maya",
+            "en": "I'm going to visit my family this weekend. On Sunday, I'm going to stay home.",
+            "ar": "سأزور عائلتي في عطلة نهاية الأسبوع. يوم الأحد سأبقى في المنزل."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U12-L1-A01",
+          "lessonId": "A1-U12-L1",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U12.PRODUCTION.STATE_FUTURE_PLAN",
+            "A1.U12.READING.UNDERSTAND_SHORT_MESSAGE"
+          ],
+          "prompt": "What is Maya going to do on Sunday?",
+          "promptAr": "ماذا ستفعل مايا يوم الأحد؟",
+          "options": [
+            "stay home",
+            "visit a café",
+            "travel by train"
+          ],
+          "answer": "stay home",
+          "audioTranscript": "On Sunday, I'm going to stay home."
+        },
+        {
+          "id": "A1-U12-L1-A02",
+          "lessonId": "A1-U12-L1",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U12.PRODUCTION.STATE_FUTURE_PLAN",
+            "A1.U12.READING.UNDERSTAND_SHORT_MESSAGE"
+          ],
+          "prompt": "Match future times.",
+          "promptAr": "طابق تعبيرات المستقبل.",
+          "pairs": [
+            [
+              "this evening",
+              "later today"
+            ],
+            [
+              "tomorrow",
+              "next day"
+            ],
+            [
+              "next week",
+              "week after this one"
+            ]
+          ]
+        },
+        {
+          "id": "A1-U12-L1-A03",
+          "lessonId": "A1-U12-L1",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U12.PRODUCTION.STATE_FUTURE_PLAN",
+            "A1.U12.READING.UNDERSTAND_SHORT_MESSAGE"
+          ],
+          "prompt": "Complete the plan.",
+          "promptAr": "أكمل الخطة.",
+          "text": "We ___ going to visit Ali.",
+          "options": [
+            "are",
+            "is",
+            "do"
+          ],
+          "answer": "are"
+        },
+        {
+          "id": "A1-U12-L1-A04",
+          "lessonId": "A1-U12-L1",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U12.PRODUCTION.STATE_FUTURE_PLAN",
+            "A1.U12.READING.UNDERSTAND_SHORT_MESSAGE"
+          ],
+          "prompt": "Choose Omar's weekend plan.",
+          "promptAr": "اختر خطة عمر لعطلة نهاية الأسبوع.",
+          "options": [
+            "Saturday trip; Sunday home",
+            "Saturday home; Sunday trip",
+            "both days at work"
+          ],
+          "answer": "Saturday trip; Sunday home",
+          "audioTranscript": "On Saturday I'm going on a short trip. On Sunday I'm going to stay home."
+        },
+        {
+          "id": "A1-U12-L1-A05",
+          "lessonId": "A1-U12-L1",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A1.U12.PRODUCTION.STATE_FUTURE_PLAN",
+            "A1.U12.READING.UNDERSTAND_SHORT_MESSAGE"
+          ],
+          "prompt": "State three real or fictional plans with three future time expressions.",
+          "promptAr": "اذكر ثلاث خطط حقيقية أو خيالية بثلاثة تعبيرات زمنية مستقبلية.",
+          "accepted": [],
+          "evaluation": "three-future-plans-times",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U12-L2",
+      "title": "Ask About Plans",
+      "titleAr": "اسأل عن الخطط",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U12.INTERACTION.ASK_ABOUT_PLAN",
+        "A1.U12.PRODUCTION.STATE_FUTURE_PLAN"
+      ],
+      "grammar": [
+        "A1.G.FUTURE.GOING_TO_QUESTION"
+      ],
+      "lexicon": [
+        "A1.LEX.WEEKEND.N01",
+        "A1.LEX.VISIT.V01",
+        "A1.LEX.TRIP.N01"
+      ],
+      "chunks": [
+        "A1.CHUNK.WHAT_ARE_YOU_GOING_TO_DO",
+        "A1.CHUNK.ARE_YOU_GOING_TO"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Ali",
+            "en": "What are you going to do tomorrow?",
+            "ar": "ماذا ستفعل غداً؟"
+          },
+          {
+            "speaker": "Sara",
+            "en": "I'm going to meet a friend. Are you going to work?",
+            "ar": "سأقابل صديقة. هل ستعمل؟"
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U12-L2-A01",
+          "lessonId": "A1-U12-L2",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U12.INTERACTION.ASK_ABOUT_PLAN",
+            "A1.U12.PRODUCTION.STATE_FUTURE_PLAN"
+          ],
+          "prompt": "Who is Sara going to meet?",
+          "promptAr": "من ستقابل سارة؟",
+          "options": [
+            "a friend",
+            "a doctor",
+            "a waiter"
+          ],
+          "answer": "a friend",
+          "audioTranscript": "I'm going to meet a friend tomorrow."
+        },
+        {
+          "id": "A1-U12-L2-A02",
+          "lessonId": "A1-U12-L2",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U12.INTERACTION.ASK_ABOUT_PLAN",
+            "A1.U12.PRODUCTION.STATE_FUTURE_PLAN"
+          ],
+          "prompt": "Match plan questions and answers.",
+          "promptAr": "طابق أسئلة الخطط والإجابات.",
+          "pairs": [
+            [
+              "What are you going to do?",
+              "I'm going to study."
+            ],
+            [
+              "Are you going to travel?",
+              "No, I'm not."
+            ]
+          ]
+        },
+        {
+          "id": "A1-U12-L2-A03",
+          "lessonId": "A1-U12-L2",
+          "type": "order",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U12.INTERACTION.ASK_ABOUT_PLAN",
+            "A1.U12.PRODUCTION.STATE_FUTURE_PLAN"
+          ],
+          "prompt": "Build the plan question.",
+          "promptAr": "رتب سؤال الخطة.",
+          "tokens": [
+            "going",
+            "What",
+            "do",
+            "are",
+            "to",
+            "you"
+          ],
+          "answer": [
+            "What",
+            "are",
+            "you",
+            "going",
+            "to",
+            "do"
+          ]
+        },
+        {
+          "id": "A1-U12-L2-A04",
+          "lessonId": "A1-U12-L2",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U12.INTERACTION.ASK_ABOUT_PLAN",
+            "A1.U12.PRODUCTION.STATE_FUTURE_PLAN"
+          ],
+          "prompt": "Which plan is not happening?",
+          "promptAr": "أي خطة لن تحدث؟",
+          "options": [
+            "travel",
+            "meet Sara",
+            "stay home Friday"
+          ],
+          "answer": "travel",
+          "audioTranscript": "I'm not going to travel. I'm going to meet Sara and stay home on Friday."
+        },
+        {
+          "id": "A1-U12-L2-A05",
+          "lessonId": "A1-U12-L2",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U12.INTERACTION.ASK_ABOUT_PLAN",
+            "A1.U12.PRODUCTION.STATE_FUTURE_PLAN"
+          ],
+          "prompt": "Ask two questions about future plans and answer one yes/no plan question.",
+          "promptAr": "اطرح سؤالين عن الخطط المستقبلية وأجب عن سؤال خطة بنعم أو لا.",
+          "accepted": [],
+          "evaluation": "two-plan-questions-one-answer",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U12-L3",
+      "title": "Fix a Time and Place",
+      "titleAr": "حدد الوقت والمكان",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U12.INTERACTION.ARRANGE_MEETING",
+        "A1.U12.INTERACTION.ASK_ABOUT_PLAN"
+      ],
+      "grammar": [
+        "A1.G.ARRANGEMENT.PRESENT_CONTINUOUS_CHUNK"
+      ],
+      "lexicon": [
+        "A1.LEX.ARRANGE.V01",
+        "A1.LEX.CONFIRM.V01",
+        "A1.LEX.AVAILABLE.ADJ01",
+        "A1.LEX.MEET.V01"
+      ],
+      "chunks": [
+        "A1.CHUNK.IM_MEETING_AT",
+        "A1.CHUNK.DOES_TIME_WORK",
+        "A1.CHUNK.YES_THAT_WORKS",
+        "A1.CHUNK.ARE_YOU_FREE"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Maya",
+            "en": "I'm meeting Omar at the café at six. Does six work for you?",
+            "ar": "سأقابل عمر في المقهى في السادسة. هل تناسبك السادسة؟"
+          },
+          {
+            "speaker": "Sara",
+            "en": "Yes, that works for me.",
+            "ar": "نعم، يناسبني."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U12-L3-A01",
+          "lessonId": "A1-U12-L3",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U12.INTERACTION.ARRANGE_MEETING",
+            "A1.U12.INTERACTION.ASK_ABOUT_PLAN"
+          ],
+          "prompt": "Where and when is the meeting?",
+          "promptAr": "أين ومتى اللقاء؟",
+          "options": [
+            "café at 6",
+            "station at 5",
+            "park at 7"
+          ],
+          "answer": "café at 6",
+          "audioTranscript": "We're meeting at the café at six."
+        },
+        {
+          "id": "A1-U12-L3-A02",
+          "lessonId": "A1-U12-L3",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U12.INTERACTION.ARRANGE_MEETING",
+            "A1.U12.INTERACTION.ASK_ABOUT_PLAN"
+          ],
+          "prompt": "Match arrangement turns.",
+          "promptAr": "طابق أدوار الترتيب.",
+          "pairs": [
+            [
+              "Does six work for you?",
+              "Yes, that works for me."
+            ],
+            [
+              "Where are we meeting?",
+              "At the café."
+            ]
+          ]
+        },
+        {
+          "id": "A1-U12-L3-A03",
+          "lessonId": "A1-U12-L3",
+          "type": "order",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U12.INTERACTION.ARRANGE_MEETING",
+            "A1.U12.INTERACTION.ASK_ABOUT_PLAN"
+          ],
+          "prompt": "Build the arrangement.",
+          "promptAr": "رتب الترتيب.",
+          "tokens": [
+            "at",
+            "Sara",
+            "six",
+            "meeting",
+            "I'm"
+          ],
+          "answer": [
+            "I'm",
+            "meeting",
+            "Sara",
+            "at",
+            "six"
+          ]
+        },
+        {
+          "id": "A1-U12-L3-A04",
+          "lessonId": "A1-U12-L3",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U12.INTERACTION.ARRANGE_MEETING",
+            "A1.U12.INTERACTION.ASK_ABOUT_PLAN"
+          ],
+          "prompt": "Choose the confirmed arrangement.",
+          "promptAr": "اختر الترتيب المؤكد.",
+          "options": [
+            "library, Tuesday, 4:30",
+            "café, Thursday, 4:00",
+            "library, Thursday, 4:30"
+          ],
+          "answer": "library, Thursday, 4:30",
+          "audioTranscript": "Let's meet at the library on Thursday at half past four. Yes, that works."
+        },
+        {
+          "id": "A1-U12-L3-A05",
+          "lessonId": "A1-U12-L3",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U12.INTERACTION.ARRANGE_MEETING",
+            "A1.U12.INTERACTION.ASK_ABOUT_PLAN"
+          ],
+          "prompt": "Arrange a meeting by agreeing on activity, place, day and time.",
+          "promptAr": "رتب لقاءً بالاتفاق على النشاط والمكان واليوم والوقت.",
+          "accepted": [],
+          "evaluation": "complete-four-detail-arrangement",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U12-L4",
+      "title": "Change the Plan",
+      "titleAr": "غيّر الخطة",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U12.INTERACTION.ACCEPT_REFUSE_CHANGE_PLAN",
+        "A1.U12.INTERACTION.ARRANGE_MEETING"
+      ],
+      "grammar": [
+        "A1.G.CONNECTOR.SO"
+      ],
+      "lexicon": [
+        "A1.LEX.CANCEL.V01",
+        "A1.LEX.CHANGE.V04",
+        "A1.LEX.PROBLEM.N01",
+        "A1.LEX.LATER.ADV01",
+        "A1.LEX.EARLIER.ADV01",
+        "A1.LEX.SO.CONJ01",
+        "A1.LEX.BECAUSE.CONJ01"
+      ],
+      "chunks": [
+        "A1.CHUNK.CAN_WE_CHANGE_TIME",
+        "A1.CHUNK.SORRY_I_CANT_COME",
+        "A1.CHUNK.YES_THAT_WORKS"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Ali",
+            "en": "Sorry, I can't come at five because I work late. Can we meet at seven?",
+            "ar": "آسف، لا أستطيع الحضور في الخامسة لأنني أعمل حتى وقت متأخر. هل نلتقي في السابعة؟"
+          },
+          {
+            "speaker": "Maya",
+            "en": "Yes, that works.",
+            "ar": "نعم، يناسبني."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U12-L4-A01",
+          "lessonId": "A1-U12-L4",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U12.INTERACTION.ACCEPT_REFUSE_CHANGE_PLAN",
+            "A1.U12.INTERACTION.ARRANGE_MEETING"
+          ],
+          "prompt": "What is the new meeting time?",
+          "promptAr": "ما وقت اللقاء الجديد؟",
+          "options": [
+            "7:00",
+            "5:00",
+            "6:00"
+          ],
+          "answer": "7:00",
+          "audioTranscript": "Can we meet at seven? Yes, that works."
+        },
+        {
+          "id": "A1-U12-L4-A02",
+          "lessonId": "A1-U12-L4",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U12.INTERACTION.ACCEPT_REFUSE_CHANGE_PLAN",
+            "A1.U12.INTERACTION.ARRANGE_MEETING"
+          ],
+          "prompt": "Match plan problems and responses.",
+          "promptAr": "طابق مشكلات الخطط بالردود.",
+          "pairs": [
+            [
+              "busy at five",
+              "Can we meet later?"
+            ],
+            [
+              "place is closed",
+              "Can we change the place?"
+            ],
+            [
+              "accept change",
+              "That works for me."
+            ]
+          ]
+        },
+        {
+          "id": "A1-U12-L4-A03",
+          "lessonId": "A1-U12-L4",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U12.INTERACTION.ACCEPT_REFUSE_CHANGE_PLAN",
+            "A1.U12.INTERACTION.ARRANGE_MEETING"
+          ],
+          "prompt": "Complete the reason-result link.",
+          "promptAr": "أكمل ربط السبب بالنتيجة.",
+          "text": "I'm busy, ___ I can't come at five.",
+          "options": [
+            "so",
+            "because",
+            "and"
+          ],
+          "answer": "so"
+        },
+        {
+          "id": "A1-U12-L4-A04",
+          "lessonId": "A1-U12-L4",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U12.INTERACTION.ACCEPT_REFUSE_CHANGE_PLAN",
+            "A1.U12.INTERACTION.ARRANGE_MEETING"
+          ],
+          "prompt": "Which detail changes?",
+          "promptAr": "أي تفصيل يتغير؟",
+          "options": [
+            "place changes to the park",
+            "time changes to eight",
+            "day changes to Sunday"
+          ],
+          "answer": "place changes to the park",
+          "audioTranscript": "The café is closed, so can we meet in the park? The time stays six."
+        },
+        {
+          "id": "A1-U12-L4-A05",
+          "lessonId": "A1-U12-L4",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U12.INTERACTION.ACCEPT_REFUSE_CHANGE_PLAN",
+            "A1.U12.INTERACTION.ARRANGE_MEETING"
+          ],
+          "prompt": "Refuse one arrangement politely, give a reason and negotiate one replacement detail.",
+          "promptAr": "ارفض ترتيباً بأدب وأعط سبباً وتفاوض على تفصيل بديل.",
+          "accepted": [],
+          "evaluation": "polite-refusal-reason-replacement",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U12-L5",
+      "title": "Read and Reply",
+      "titleAr": "اقرأ ورد",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U12.READING.UNDERSTAND_SHORT_MESSAGE",
+        "A1.U12.INTERACTION.ACCEPT_REFUSE_CHANGE_PLAN",
+        "A1.U12.WRITING.WRITE_SIMPLE_PERSONAL_MESSAGE"
+      ],
+      "grammar": [
+        "A1.G.MESSAGE.PUNCTUATION_BASIC"
+      ],
+      "lexicon": [
+        "A1.LEX.MESSAGE.N01",
+        "A1.LEX.REPLY.V01",
+        "A1.LEX.CONFIRM.V01"
+      ],
+      "chunks": [
+        "A1.CHUNK.PLEASE_CONFIRM",
+        "A1.CHUNK.SEE_YOU_THEN"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Message",
+            "en": "Hi Noor. We're meeting at River Café on Friday at 5:30. Please bring the tickets and confirm today. See you, Lina.",
+            "ar": "مرحباً نور. سنلتقي في مقهى النهر يوم الجمعة في الخامسة والنصف. أحضر التذاكر وأكد اليوم."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U12-L5-A01",
+          "lessonId": "A1-U12-L5",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U12.READING.UNDERSTAND_SHORT_MESSAGE",
+            "A1.U12.INTERACTION.ACCEPT_REFUSE_CHANGE_PLAN",
+            "A1.U12.WRITING.WRITE_SIMPLE_PERSONAL_MESSAGE"
+          ],
+          "prompt": "What must Noor bring?",
+          "promptAr": "ماذا يجب أن تحضر نور؟",
+          "options": [
+            "the tickets",
+            "an umbrella",
+            "a medicine note"
+          ],
+          "answer": "the tickets",
+          "audioTranscript": "Please bring the tickets and confirm today."
+        },
+        {
+          "id": "A1-U12-L5-A02",
+          "lessonId": "A1-U12-L5",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U12.READING.UNDERSTAND_SHORT_MESSAGE",
+            "A1.U12.INTERACTION.ACCEPT_REFUSE_CHANGE_PLAN",
+            "A1.U12.WRITING.WRITE_SIMPLE_PERSONAL_MESSAGE"
+          ],
+          "prompt": "Match message parts.",
+          "promptAr": "طابق أجزاء الرسالة.",
+          "pairs": [
+            [
+              "Hi Noor,",
+              "greeting"
+            ],
+            [
+              "Friday at 5:30",
+              "arrangement"
+            ],
+            [
+              "Please confirm",
+              "requested action"
+            ],
+            [
+              "See you, Lina",
+              "closing"
+            ]
+          ]
+        },
+        {
+          "id": "A1-U12-L5-A03",
+          "lessonId": "A1-U12-L5",
+          "type": "order",
+          "mode": "practice",
+          "skill": "writing",
+          "canDo": [
+            "A1.U12.READING.UNDERSTAND_SHORT_MESSAGE",
+            "A1.U12.INTERACTION.ACCEPT_REFUSE_CHANGE_PLAN",
+            "A1.U12.WRITING.WRITE_SIMPLE_PERSONAL_MESSAGE"
+          ],
+          "prompt": "Order the reply.",
+          "promptAr": "رتب الرد.",
+          "tokens": [
+            "See you then.",
+            "Yes, Friday at 5:30 works.",
+            "Hi Lina,",
+            "I'll bring the tickets."
+          ],
+          "answer": [
+            "Hi Lina,",
+            "Yes, Friday at 5:30 works.",
+            "I'll bring the tickets.",
+            "See you then."
+          ]
+        },
+        {
+          "id": "A1-U12-L5-A04",
+          "lessonId": "A1-U12-L5",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U12.READING.UNDERSTAND_SHORT_MESSAGE",
+            "A1.U12.INTERACTION.ACCEPT_REFUSE_CHANGE_PLAN",
+            "A1.U12.WRITING.WRITE_SIMPLE_PERSONAL_MESSAGE"
+          ],
+          "prompt": "Which reply answers every request?",
+          "promptAr": "أي رد يجيب عن كل الطلبات؟",
+          "options": [
+            "Yes, 5:30 works. I'll bring the tickets.",
+            "I like cafés.",
+            "Friday is a day."
+          ],
+          "answer": "Yes, 5:30 works. I'll bring the tickets.",
+          "audioTranscript": "Can you confirm five thirty and bring the tickets?"
+        },
+        {
+          "id": "A1-U12-L5-A05",
+          "lessonId": "A1-U12-L5",
+          "type": "write",
+          "mode": "mastery",
+          "skill": "writing",
+          "canDo": [
+            "A1.U12.READING.UNDERSTAND_SHORT_MESSAGE",
+            "A1.U12.INTERACTION.ACCEPT_REFUSE_CHANGE_PLAN",
+            "A1.U12.WRITING.WRITE_SIMPLE_PERSONAL_MESSAGE"
+          ],
+          "prompt": "Write a 35–50-word reply confirming or changing the time and answering one practical request.",
+          "promptAr": "اكتب رداً من 35–50 كلمة يؤكد الوقت أو يغيره ويجيب عن طلب عملي.",
+          "accepted": [],
+          "evaluation": "u12-reply-rubric",
+          "wordGuide": [
+            35,
+            50
+          ]
+        }
+      ]
+    },
+    {
+      "id": "A1-U12-L6",
+      "title": "Weekend Message",
+      "titleAr": "رسالة نهاية الأسبوع",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U12.WRITING.WRITE_SIMPLE_PERSONAL_MESSAGE",
+        "A1.U12.PRODUCTION.STATE_FUTURE_PLAN",
+        "A1.U12.INTERACTION.ARRANGE_MEETING",
+        "A1.U12.INTERACTION.ACCEPT_REFUSE_CHANGE_PLAN"
+      ],
+      "grammar": [
+        "A1.G.FUTURE.GOING_TO_AFFIRMATIVE",
+        "A1.G.MESSAGE.PUNCTUATION_BASIC"
+      ],
+      "lexicon": [
+        "A1.LEX.WEEKEND.N01",
+        "A1.LEX.PLAN.N01",
+        "A1.LEX.REPLY.V01"
+      ],
+      "chunks": [
+        "A1.CHUNK.IM_GOING_TO",
+        "A1.CHUNK.DOES_TIME_WORK",
+        "A1.CHUNK.PLEASE_CONFIRM"
+      ],
+      "readingText": {
+        "title": "Plan for Saturday",
+        "text": "Hi Dalia. I'm going to visit the new town market on Saturday morning. Would you like to come? We can meet at the bus stop at 9:00. The weather may be rainy, so please bring an umbrella. Does nine work for you?",
+        "textAr": "خطة ليوم السبت..."
+      },
+      "activities": [
+        {
+          "id": "A1-U12-L6-A01",
+          "lessonId": "A1-U12-L6",
+          "type": "textChoice",
+          "mode": "encounter",
+          "skill": "reading",
+          "canDo": [
+            "A1.U12.WRITING.WRITE_SIMPLE_PERSONAL_MESSAGE",
+            "A1.U12.PRODUCTION.STATE_FUTURE_PLAN",
+            "A1.U12.INTERACTION.ARRANGE_MEETING",
+            "A1.U12.INTERACTION.ACCEPT_REFUSE_CHANGE_PLAN"
+          ],
+          "prompt": "What three practical details are in the message?",
+          "promptAr": "ما التفاصيل العملية الثلاثة في الرسالة؟",
+          "options": [
+            "bus stop, 9:00, umbrella",
+            "station, 8:00, coat",
+            "market, 5:00, tickets"
+          ],
+          "answer": "bus stop, 9:00, umbrella"
+        },
+        {
+          "id": "A1-U12-L6-A02",
+          "lessonId": "A1-U12-L6",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U12.WRITING.WRITE_SIMPLE_PERSONAL_MESSAGE",
+            "A1.U12.PRODUCTION.STATE_FUTURE_PLAN",
+            "A1.U12.INTERACTION.ARRANGE_MEETING",
+            "A1.U12.INTERACTION.ACCEPT_REFUSE_CHANGE_PLAN"
+          ],
+          "prompt": "Match message purposes.",
+          "promptAr": "طابق وظائف الرسالة.",
+          "pairs": [
+            [
+              "visit the market",
+              "plan"
+            ],
+            [
+              "meet at bus stop",
+              "place"
+            ],
+            [
+              "bring umbrella",
+              "preparation"
+            ],
+            [
+              "Does nine work?",
+              "confirmation"
+            ]
+          ]
+        },
+        {
+          "id": "A1-U12-L6-A03",
+          "lessonId": "A1-U12-L6",
+          "type": "order",
+          "mode": "practice",
+          "skill": "writing",
+          "canDo": [
+            "A1.U12.WRITING.WRITE_SIMPLE_PERSONAL_MESSAGE",
+            "A1.U12.PRODUCTION.STATE_FUTURE_PLAN",
+            "A1.U12.INTERACTION.ARRANGE_MEETING",
+            "A1.U12.INTERACTION.ACCEPT_REFUSE_CHANGE_PLAN"
+          ],
+          "prompt": "Order a complete planning message.",
+          "promptAr": "رتب رسالة تخطيط كاملة.",
+          "tokens": [
+            "Please confirm.",
+            "Let's meet at the station at eight.",
+            "Hi Omar,",
+            "I'm going to visit Basra tomorrow.",
+            "See you."
+          ],
+          "answer": [
+            "Hi Omar,",
+            "I'm going to visit Basra tomorrow.",
+            "Let's meet at the station at eight.",
+            "Please confirm.",
+            "See you."
+          ]
+        },
+        {
+          "id": "A1-U12-L6-A04",
+          "lessonId": "A1-U12-L6",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U12.WRITING.WRITE_SIMPLE_PERSONAL_MESSAGE",
+            "A1.U12.PRODUCTION.STATE_FUTURE_PLAN",
+            "A1.U12.INTERACTION.ARRANGE_MEETING",
+            "A1.U12.INTERACTION.ACCEPT_REFUSE_CHANGE_PLAN"
+          ],
+          "prompt": "What change must the reply include?",
+          "promptAr": "ما التغيير الذي يجب أن يتضمنه الرد؟",
+          "options": [
+            "meet at 9:30 instead",
+            "bring two umbrellas",
+            "go on Sunday"
+          ],
+          "answer": "meet at 9:30 instead",
+          "audioTranscript": "Nine is too early for me. Can we meet at nine thirty instead?"
+        },
+        {
+          "id": "A1-U12-L6-A05",
+          "lessonId": "A1-U12-L6",
+          "type": "write",
+          "mode": "mastery",
+          "skill": "writing",
+          "canDo": [
+            "A1.U12.WRITING.WRITE_SIMPLE_PERSONAL_MESSAGE",
+            "A1.U12.PRODUCTION.STATE_FUTURE_PLAN",
+            "A1.U12.INTERACTION.ARRANGE_MEETING",
+            "A1.U12.INTERACTION.ACCEPT_REFUSE_CHANGE_PLAN"
+          ],
+          "prompt": "Write a 50–70-word weekend plan message with activity, place, time, preparation and confirmation request.",
+          "promptAr": "اكتب رسالة خطة نهاية أسبوع من 50–70 كلمة تشمل النشاط والمكان والوقت والتجهيز وطلب التأكيد.",
+          "accepted": [],
+          "evaluation": "u12-weekend-message-rubric",
+          "wordGuide": [
+            50,
+            70
+          ]
+        }
+      ]
+    },
+    {
+      "id": "A1-U12-L7",
+      "title": "Mission: Coordinate a Weekend Plan",
+      "titleAr": "المهمة: نسّق خطة نهاية الأسبوع",
+      "lessonType": "mission",
+      "canDo": [
+        "A1.U12.MEDIATION.COORDINATE_WEEKEND_PLAN",
+        "A1.U12.PRODUCTION.STATE_FUTURE_PLAN",
+        "A1.U12.INTERACTION.ASK_ABOUT_PLAN",
+        "A1.U12.INTERACTION.ARRANGE_MEETING",
+        "A1.U12.READING.UNDERSTAND_SHORT_MESSAGE",
+        "A1.U12.INTERACTION.ACCEPT_REFUSE_CHANGE_PLAN",
+        "A1.U12.WRITING.WRITE_SIMPLE_PERSONAL_MESSAGE"
+      ],
+      "grammar": [],
+      "lexicon": [],
+      "chunks": [],
+      "scenario": "Three fictional friends have different times, transport options and weather needs. Find a workable plan, negotiate one change and send the final confirmation.",
+      "activities": [
+        {
+          "id": "A1-U12-L7-A01",
+          "lessonId": "A1-U12-L7",
+          "mode": "mastery",
+          "type": "textChoice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U12.READING.UNDERSTAND_SHORT_MESSAGE",
+            "A1.U12.MEDIATION.COORDINATE_WEEKEND_PLAN"
+          ],
+          "prompt": "Choose the only time all three friends can meet.",
+          "promptAr": "اختر الوقت الوحيد الذي يستطيع فيه الأصدقاء الثلاثة اللقاء.",
+          "options": [
+            "Saturday 16:00",
+            "Saturday 10:00",
+            "Sunday 18:00"
+          ],
+          "answer": "Saturday 16:00",
+          "sourceText": "Maya: free Saturday after 15:00. Omar: free Saturday 12:00–18:00. Lina: free Saturday 16:00–20:00; busy Sunday."
+        },
+        {
+          "id": "A1-U12-L7-A02",
+          "lessonId": "A1-U12-L7",
+          "mode": "mastery",
+          "type": "audioChoice",
+          "skill": "listening",
+          "canDo": [
+            "A1.U12.PRODUCTION.STATE_FUTURE_PLAN"
+          ],
+          "prompt": "What activity and place does the group prefer?",
+          "promptAr": "ما النشاط والمكان اللذان تفضلهما المجموعة؟",
+          "options": [
+            "walk in River Park",
+            "film at home",
+            "shopping at the station"
+          ],
+          "answer": "walk in River Park",
+          "audioTranscript": "We all like walking, so let's meet in River Park."
+        },
+        {
+          "id": "A1-U12-L7-A03",
+          "lessonId": "A1-U12-L7",
+          "mode": "mastery",
+          "type": "speak",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U12.INTERACTION.ARRANGE_MEETING",
+            "A1.U12.INTERACTION.ASK_ABOUT_PLAN"
+          ],
+          "prompt": "Propose Saturday at 16:00 in River Park and ask for confirmation.",
+          "promptAr": "اقترح السبت في الرابعة في حديقة النهر واطلب التأكيد.",
+          "accepted": [],
+          "evaluation": "complete-plan-proposal-confirmation",
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A1-U12-L7-A04",
+          "lessonId": "A1-U12-L7",
+          "mode": "mastery",
+          "type": "audioChoice",
+          "skill": "listening",
+          "canDo": [
+            "A1.U12.INTERACTION.ACCEPT_REFUSE_CHANGE_PLAN"
+          ],
+          "prompt": "What change is needed after the forecast?",
+          "promptAr": "ما التغيير المطلوب بعد التوقعات؟",
+          "options": [
+            "meet at the café opposite the park",
+            "move to Sunday",
+            "meet at the airport"
+          ],
+          "answer": "meet at the café opposite the park",
+          "audioTranscript": "It will rain at four. Can we meet at the café opposite the park instead?"
+        },
+        {
+          "id": "A1-U12-L7-A05",
+          "lessonId": "A1-U12-L7",
+          "mode": "mastery",
+          "type": "speak",
+          "skill": "mediation",
+          "canDo": [
+            "A1.U12.MEDIATION.COORDINATE_WEEKEND_PLAN",
+            "A1.U12.INTERACTION.ACCEPT_REFUSE_CHANGE_PLAN"
+          ],
+          "prompt": "Explain the shared availability, original plan and weather-based change.",
+          "promptAr": "اشرح التوفر المشترك والخطة الأصلية والتغيير بسبب الطقس.",
+          "accepted": [],
+          "evaluation": "weekend-plan-change-mediation",
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A1-U12-L7-A06",
+          "lessonId": "A1-U12-L7",
+          "mode": "mastery",
+          "type": "write",
+          "skill": "writing",
+          "canDo": [
+            "A1.U12.WRITING.WRITE_SIMPLE_PERSONAL_MESSAGE"
+          ],
+          "prompt": "Write the final 55–75-word confirmation with people, activity, place, time, preparation and change reason.",
+          "promptAr": "اكتب التأكيد النهائي في 55–75 كلمة مع الأشخاص والنشاط والمكان والوقت والتجهيز وسبب التغيير.",
+          "accepted": [],
+          "evaluation": "u12-mission-confirmation-rubric",
+          "wordGuide": [
+            55,
+            75
+          ]
+        }
+      ]
+    }
+  ],
+  "mastery": {
+    "requiredObjectives": [
+      "A1.U12.PRODUCTION.STATE_FUTURE_PLAN",
+      "A1.U12.INTERACTION.ASK_ABOUT_PLAN",
+      "A1.U12.INTERACTION.ARRANGE_MEETING",
+      "A1.U12.READING.UNDERSTAND_SHORT_MESSAGE",
+      "A1.U12.INTERACTION.ACCEPT_REFUSE_CHANGE_PLAN",
+      "A1.U12.WRITING.WRITE_SIMPLE_PERSONAL_MESSAGE",
+      "A1.U12.MEDIATION.COORDINATE_WEEKEND_PLAN"
+    ],
+    "requiredSkillGroups": [
+      [
+        "listening",
+        "reading"
+      ],
+      [
+        "spokenInteraction",
+        "spokenProduction",
+        "writing"
+      ],
+      [
+        "mediation"
+      ]
+    ],
+    "minimumObjectiveScore": 0.75,
+    "missionRequired": true,
+    "retry": "targeted-by-objective",
+    "unlocks": "A1-FINAL-MISSION"
+  }
+}

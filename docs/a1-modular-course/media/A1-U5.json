@@ -1,0 +1,91 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U5",
+  "kind": "media",
+  "records": {
+    "audio-a1-u5-l1-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "I love music and films, but I don't like football.",
+      "activityId": "A1-U5-L1-A01"
+    },
+    "audio-a1-u5-l1-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "I like chess, but I hate tennis.",
+      "activityId": "A1-U5-L1-A04"
+    },
+    "audio-a1-u5-l2-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "My sister loves drawing.",
+      "activityId": "A1-U5-L2-A01"
+    },
+    "audio-a1-u5-l2-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "In my free time, I love cooking and swimming.",
+      "activityId": "A1-U5-L2-A04"
+    },
+    "audio-a1-u5-l3-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "I can swim, but I can't dance.",
+      "activityId": "A1-U5-L3-A01"
+    },
+    "audio-a1-u5-l3-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "Noor can sing and play chess, but she can't swim.",
+      "activityId": "A1-U5-L3-A04"
+    },
+    "audio-a1-u5-l4-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "Do you like running? No, I don't.",
+      "activityId": "A1-U5-L4-A01"
+    },
+    "audio-a1-u5-l4-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "I like films, but I don't like computer games.",
+      "activityId": "A1-U5-L4-A04"
+    },
+    "audio-a1-u5-l5-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "Would you like to walk in the park? Yes, I'd love to.",
+      "activityId": "A1-U5-L5-A01"
+    },
+    "audio-a1-u5-l5-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "Would you like to watch a film at five? Sorry, I'm busy at five. Maybe at seven?",
+      "activityId": "A1-U5-L5-A04"
+    },
+    "audio-a1-u5-l6-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "Are you free at five? Would you like to play chess?",
+      "activityId": "A1-U5-L6-A04"
+    },
+    "audio-a1-u5-l7-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "I love films, but I can't swim.",
+      "activityId": "A1-U5-L7-A01"
+    }
+  }
+}

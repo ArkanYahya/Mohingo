@@ -1,0 +1,97 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U12",
+  "kind": "chunks",
+  "records": [
+    {
+      "id": "A1.CHUNK.IM_GOING_TO",
+      "text": "I'm going to {activity}.",
+      "arabic": "سوف {activity}.",
+      "cefr": "A1",
+      "introducedIn": "A1-U12-L1",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.WHAT_ARE_YOU_GOING_TO_DO",
+      "text": "What are you going to do {time}?",
+      "arabic": "ماذا ستفعل {time}؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U12-L2",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.ARE_YOU_GOING_TO",
+      "text": "Are you going to {activity}?",
+      "arabic": "هل ستقوم بـ{activity}؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U12-L2",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.IM_MEETING_AT",
+      "text": "I'm meeting {person} at {time}.",
+      "arabic": "سأقابل {person} في {time}.",
+      "cefr": "A1",
+      "introducedIn": "A1-U12-L3",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.DOES_TIME_WORK",
+      "text": "Does {time} work for you?",
+      "arabic": "هل يناسبك وقت {time}؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U12-L3",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.YES_THAT_WORKS",
+      "text": "Yes, that works for me.",
+      "arabic": "نعم، هذا يناسبني.",
+      "cefr": "A1",
+      "introducedIn": "A1-U12-L3",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.CAN_WE_CHANGE_TIME",
+      "text": "Can we change the time to {time}?",
+      "arabic": "هل يمكننا تغيير الوقت إلى {time}؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U12-L4",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.SORRY_I_CANT_COME",
+      "text": "Sorry, I can't come because {reason}.",
+      "arabic": "آسف، لا أستطيع الحضور لأن {reason}.",
+      "cefr": "A1",
+      "introducedIn": "A1-U12-L4",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.SEE_YOU_THEN",
+      "text": "See you then.",
+      "arabic": "أراك في ذلك الوقت.",
+      "cefr": "A1",
+      "introducedIn": "A1-U12-L5",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.PLEASE_CONFIRM",
+      "text": "Please confirm the place and time.",
+      "arabic": "يرجى تأكيد المكان والوقت.",
+      "cefr": "A1",
+      "introducedIn": "A1-U12-L5",
+      "productive": true,
+      "recycledIn": []
+    }
+  ]
+}

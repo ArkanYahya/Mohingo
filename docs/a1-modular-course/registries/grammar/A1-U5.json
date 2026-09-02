@@ -1,0 +1,92 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U5",
+  "kind": "grammar",
+  "records": [
+    {
+      "id": "A1.G.PREFERENCE.LIKE_NOUN",
+      "form": "like/love/hate + noun",
+      "meaningAr": "التفضيل مع الاسم",
+      "introducedIn": "A1-U5-L1",
+      "examples": [
+        {
+          "en": "I like music, but I hate loud music.",
+          "ar": "أحب الموسيقى لكنني أكره الموسيقى الصاخبة."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.PREFERENCE.LIKE_ING",
+      "form": "like/love/hate + verb-ing",
+      "meaningAr": "التفضيل مع النشاط",
+      "introducedIn": "A1-U5-L2",
+      "examples": [
+        {
+          "en": "She loves reading.",
+          "ar": "هي تحب القراءة."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.MODAL.CAN_ABILITY",
+      "form": "can/can't + base verb",
+      "meaningAr": "القدرة وعدم القدرة",
+      "introducedIn": "A1-U5-L3",
+      "examples": [
+        {
+          "en": "I can swim, but I can't dance.",
+          "ar": "أستطيع السباحة لكنني لا أستطيع الرقص."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.MODAL.CAN_QUESTION",
+      "form": "Can + subject + base verb?",
+      "meaningAr": "السؤال عن القدرة وإجابته القصيرة",
+      "introducedIn": "A1-U5-L3",
+      "examples": [
+        {
+          "en": "Can you play chess? Yes, I can.",
+          "ar": "هل تستطيع لعب الشطرنج؟ نعم."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.PRESENT_SIMPLE.DO_QUESTION",
+      "form": "Do/Does + subject + base verb?",
+      "meaningAr": "أسئلة المضارع البسيط",
+      "introducedIn": "A1-U5-L4",
+      "examples": [
+        {
+          "en": "Do you like football? Does she play tennis?",
+          "ar": "هل تحب كرة القدم؟ هل تلعب هي التنس؟"
+        }
+      ]
+    },
+    {
+      "id": "A1.G.PRESENT_SIMPLE.DO_NEGATIVE",
+      "form": "don't/doesn't + base verb",
+      "meaningAr": "نفي المضارع البسيط",
+      "introducedIn": "A1-U5-L4",
+      "examples": [
+        {
+          "en": "I don't like running. He doesn't play football.",
+          "ar": "لا أحب الجري. هو لا يلعب كرة القدم."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.INVITATION.WOULD_LIKE_CHUNK",
+      "form": "Would you like to + verb?",
+      "meaningAr": "عبارة دعوة مهذبة؛ تحليل would مؤجل",
+      "introducedIn": "A1-U5-L5",
+      "examples": [
+        {
+          "en": "Would you like to watch a film?",
+          "ar": "هل ترغب في مشاهدة فيلم؟"
+        }
+      ],
+      "deferAnalysisUntil": "A2"
+    }
+  ]
+}

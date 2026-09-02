@@ -1,0 +1,91 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U4",
+  "kind": "media",
+  "records": {
+    "audio-a1-u4-l1-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "I get up at seven. I wash and get dressed.",
+      "activityId": "A1-U4-L1-A01"
+    },
+    "audio-a1-u4-l1-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "Sara gets up, washes her face and has breakfast.",
+      "activityId": "A1-U4-L1-A04"
+    },
+    "audio-a1-u4-l2-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "I start work at half past seven.",
+      "activityId": "A1-U4-L2-A01"
+    },
+    "audio-a1-u4-l2-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "I start work at quarter past eight and have lunch at one o'clock.",
+      "activityId": "A1-U4-L2-A04"
+    },
+    "audio-a1-u4-l3-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "Lina starts work at eight and finishes at three.",
+      "activityId": "A1-U4-L3-A01"
+    },
+    "audio-a1-u4-l3-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "Karim studies at nine, has lunch at one and goes home at four.",
+      "activityId": "A1-U4-L3-A04"
+    },
+    "audio-a1-u4-l4-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "I get up at six. I'm early.",
+      "activityId": "A1-U4-L4-A01"
+    },
+    "audio-a1-u4-l4-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "What time does Sara start work?",
+      "activityId": "A1-U4-L4-A04"
+    },
+    "audio-a1-u4-l5-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "I usually walk to work, but I sometimes go by car.",
+      "activityId": "A1-U4-L5-A01"
+    },
+    "audio-a1-u4-l5-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "I work from Sunday to Thursday. I never work on Friday.",
+      "activityId": "A1-U4-L5-A04"
+    },
+    "audio-a1-u4-l6-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "Nora gets up at six and starts work at nine. David gets up at seven and starts at eight.",
+      "activityId": "A1-U4-L6-A04"
+    },
+    "audio-a1-u4-l7-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "Rana starts at seven thirty. Hassan starts at eight.",
+      "activityId": "A1-U4-L7-A01"
+    }
+  }
+}

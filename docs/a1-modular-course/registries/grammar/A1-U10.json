@@ -1,0 +1,80 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U10",
+  "kind": "grammar",
+  "records": [
+    {
+      "id": "A1.G.HEALTH.HAVE_SYMPTOM",
+      "form": "have/has + symptom",
+      "meaningAr": "وصف عرض صحي باستخدام have/has",
+      "introducedIn": "A1-U10-L2",
+      "examples": [
+        {
+          "en": "I have a headache. She has a cough.",
+          "ar": "لدي صداع. لديها سعال."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.HEALTH.FEEL_ADJECTIVE",
+      "form": "feel + adjective",
+      "meaningAr": "وصف الشعور الصحي",
+      "introducedIn": "A1-U10-L2",
+      "examples": [
+        {
+          "en": "I feel sick and tired.",
+          "ar": "أشعر بالمرض والتعب."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.HEALTH.BODY_HURTS",
+      "form": "possessive + body part + hurts",
+      "meaningAr": "تحديد موضع الألم",
+      "introducedIn": "A1-U10-L1",
+      "examples": [
+        {
+          "en": "My back hurts.",
+          "ar": "ظهري يؤلمني."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.ADVICE.SHOULD_CHUNK",
+      "form": "You should/shouldn't + base verb",
+      "meaningAr": "نصيحة صحية بسيطة؛ التوسع مؤجل",
+      "introducedIn": "A1-U10-L3",
+      "examples": [
+        {
+          "en": "You should rest. You shouldn't drive.",
+          "ar": "ينبغي أن ترتاح. لا ينبغي أن تقود."
+        }
+      ],
+      "productiveTarget": "formulaic"
+    },
+    {
+      "id": "A1.G.IMPERATIVE.HEALTH",
+      "form": "base verb / Don't + base verb",
+      "meaningAr": "تعليمات صحية مباشرة",
+      "introducedIn": "A1-U10-L4",
+      "examples": [
+        {
+          "en": "Drink water. Don't take two tablets.",
+          "ar": "اشرب الماء. لا تأخذ قرصين."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.QUESTION.DO_YOU_HAVE",
+      "form": "Do you have + symptom/item?",
+      "meaningAr": "السؤال عن عرض أو حاجة صحية",
+      "introducedIn": "A1-U10-L3",
+      "examples": [
+        {
+          "en": "Do you have a fever?",
+          "ar": "هل لديك حمى؟"
+        }
+      ]
+    }
+  ]
+}

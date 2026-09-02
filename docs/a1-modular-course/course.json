@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "2.0.0",
+  "contentVersion": "A1-COMPLETE-2026.09.02",
+  "locale": {
+    "targetLanguage": "en",
+    "supportLanguage": "ar",
+    "direction": {
+      "target": "ltr",
+      "support": "rtl"
+    }
+  },
+  "course": {
+    "id": "EN-A1-V2",
+    "title": "English A1",
+    "titleAr": "اللغة الإنجليزية — المستوى A1",
+    "status": "complete-course",
+    "completedScope": [
+      "A1-U0",
+      "A1-U1",
+      "A1-U2",
+      "A1-U3",
+      "A1-U4",
+      "A1-U5",
+      "A1-U6",
+      "A1-U7",
+      "A1-U8",
+      "A1-U9",
+      "A1-U10",
+      "A1-U11",
+      "A1-U12",
+      "A1-FINAL-MISSION",
+      "A1-FINAL-ASSESSMENT"
+    ],
+    "pendingScope": [],
+    "authoredUnitCount": 13,
+    "authoredLessonCount": 89,
+    "finalMissionId": "A1-FINAL-MISSION",
+    "finalAssessmentId": "A1-FINAL-ASSESSMENT"
+  }
+}

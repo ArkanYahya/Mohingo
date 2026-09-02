@@ -1,0 +1,92 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U4",
+  "kind": "grammar",
+  "records": [
+    {
+      "id": "A1.G.PRESENT_SIMPLE.I_WE_THEY_AFF",
+      "form": "I/we/they + base verb",
+      "meaningAr": "المضارع البسيط مع I/we/they",
+      "introducedIn": "A1-U4-L1",
+      "examples": [
+        {
+          "en": "I get up at seven.",
+          "ar": "أستيقظ في السابعة."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.PRESENT_SIMPLE.HE_SHE_AFF",
+      "form": "he/she + verb-s/-es",
+      "meaningAr": "المضارع البسيط مع he/she",
+      "introducedIn": "A1-U4-L3",
+      "examples": [
+        {
+          "en": "She starts work at eight.",
+          "ar": "تبدأ العمل في الثامنة."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.PRESENT_SIMPLE.THIRD_S_SPELLING",
+      "form": "-s / -es / consonant+y → -ies",
+      "meaningAr": "تهجئة صيغة الغائب في المضارع البسيط",
+      "introducedIn": "A1-U4-L3",
+      "examples": [
+        {
+          "en": "He watches TV. She studies English.",
+          "ar": "هو يشاهد التلفاز. هي تدرس الإنجليزية."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.TIME.AT_ON_IN",
+      "form": "at + time; on + day; in + part of day",
+      "meaningAr": "استخدام at/on/in مع الوقت",
+      "introducedIn": "A1-U4-L2",
+      "examples": [
+        {
+          "en": "I work at eight on Monday morning.",
+          "ar": "أعمل في الثامنة صباح الاثنين."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.FREQUENCY.POSITION",
+      "form": "frequency adverb before main verb, after be",
+      "meaningAr": "موضع always/usually/sometimes/never",
+      "introducedIn": "A1-U4-L5",
+      "examples": [
+        {
+          "en": "I usually eat breakfast. She is always early.",
+          "ar": "عادة أتناول الفطور. هي دائماً مبكرة."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.SEQUENCE.AND_THEN",
+      "form": "and / then / after that",
+      "meaningAr": "ربط خطوات الروتين البسيطة",
+      "introducedIn": "A1-U4-L6",
+      "examples": [
+        {
+          "en": "I get up, then I have breakfast.",
+          "ar": "أستيقظ ثم أتناول الفطور."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.PRESENT_SIMPLE.ROUTINE_QUESTION_CHUNK",
+      "form": "What time do/does + subject + base verb?",
+      "meaningAr": "سؤال وظيفي عن وقت الروتين؛ التحليل الكامل في U5",
+      "introducedIn": "A1-U4-L4",
+      "examples": [
+        {
+          "en": "What time do you get up? What time does Sara start?",
+          "ar": "متى تستيقظ؟ متى تبدأ سارة؟"
+        }
+      ],
+      "deferFullAnalysisUntil": "A1-U5"
+    }
+  ]
+}

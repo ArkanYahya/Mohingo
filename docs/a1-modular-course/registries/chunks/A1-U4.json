@@ -1,0 +1,80 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U4",
+  "kind": "chunks",
+  "records": [
+    {
+      "id": "A1.CHUNK.WHAT_TIME_DO_YOU",
+      "text": "What time do you {activity}?",
+      "arabic": "في أي وقت {activity}؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U4-L2",
+      "productive": true,
+      "recycledIn": [
+        "A1-U12"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.I_ACTIVITY_AT",
+      "text": "I {activity} at {time}.",
+      "arabic": "أنا {activity} في {time}.",
+      "cefr": "A1",
+      "introducedIn": "A1-U4-L2",
+      "productive": true,
+      "recycledIn": [
+        "A1-U12"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.WHAT_TIME_DOES",
+      "text": "What time does {person} {activity}?",
+      "arabic": "في أي وقت يقوم {person} بـ{activity}؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U4-L3",
+      "productive": true,
+      "recycledIn": [
+        "A1-U5"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.HE_SHE_ACTIVITY_AT",
+      "text": "He/She {activity-s} at {time}.",
+      "arabic": "هو/هي {activity} في {time}.",
+      "cefr": "A1",
+      "introducedIn": "A1-U4-L3",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.HOW_OFTEN_DO_YOU",
+      "text": "How often do you {activity}?",
+      "arabic": "كم مرة/كم غالباً {activity}؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U4-L5",
+      "productive": true,
+      "recycledIn": [
+        "A1-U5"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.I_USUALLY",
+      "text": "I usually {activity}.",
+      "arabic": "عادةً {activity}.",
+      "cefr": "A1",
+      "introducedIn": "A1-U4-L5",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.FIRST_THEN",
+      "text": "First, {action}. Then, {action}.",
+      "arabic": "أولاً {action}، ثم {action}.",
+      "cefr": "A1",
+      "introducedIn": "A1-U4-L6",
+      "productive": true,
+      "recycledIn": [
+        "A1-U9"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U6",
+  "kind": "media",
+  "records": {
+    "audio-a1-u6-l1-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "Omar has a cheese sandwich and an apple.",
+      "activityId": "A1-U6-L1-A01"
+    },
+    "audio-a1-u6-l1-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "For dinner, we have soup, salad and some bread.",
+      "activityId": "A1-U6-L1-A04"
+    },
+    "audio-a1-u6-l2-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "We don't have any milk, but we have some juice.",
+      "activityId": "A1-U6-L2-A01"
+    },
+    "audio-a1-u6-l2-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "We have some tea, but we don't have any coffee.",
+      "activityId": "A1-U6-L2-A04"
+    },
+    "audio-a1-u6-l3-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "Two bottles of water and one bowl of soup, please.",
+      "activityId": "A1-U6-L3-A01"
+    },
+    "audio-a1-u6-l3-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "Can we have three cups of tea and two sandwiches?",
+      "activityId": "A1-U6-L3-A04"
+    },
+    "audio-a1-u6-l4-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "I'd like chicken and rice. Can I have some water too?",
+      "activityId": "A1-U6-L4-A01"
+    },
+    "audio-a1-u6-l4-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "I'd like a cheese sandwich and a bowl of soup. Can I have tea, please?",
+      "activityId": "A1-U6-L4-A04"
+    },
+    "audio-a1-u6-l5-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "This isn't my order. I ordered soup, not salad.",
+      "activityId": "A1-U6-L5-A01"
+    },
+    "audio-a1-u6-l5-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "We have the sandwiches and soup, but one bottle of water is missing.",
+      "activityId": "A1-U6-L5-A04"
+    },
+    "audio-a1-u6-l6-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "Please use the Park Café menu. I want one soup and one tea.",
+      "activityId": "A1-U6-L6-A04"
+    },
+    "audio-a1-u6-l7-a02": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "Two cheese sandwiches and one tea, please.",
+      "activityId": "A1-U6-L7-A02"
+    },
+    "audio-a1-u6-l7-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "Here are two chicken sandwiches and one tea.",
+      "activityId": "A1-U6-L7-A04"
+    }
+  }
+}

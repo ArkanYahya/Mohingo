@@ -1,0 +1,435 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U2",
+  "kind": "lexicon",
+  "records": [
+    {
+      "id": "A1.LEX.FAMILY.N01",
+      "headword": "family",
+      "partOfSpeech": "noun",
+      "arabic": "عائلة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "family",
+      "examples": [
+        "This is my family."
+      ],
+      "introducedIn": "A1-U2-L1",
+      "recycledIn": [
+        "A1-U4",
+        "A1-U12"
+      ]
+    },
+    {
+      "id": "A1.LEX.MOTHER.N01",
+      "headword": "mother",
+      "partOfSpeech": "noun",
+      "arabic": "أم",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "mother",
+      "examples": [
+        "This is my mother."
+      ],
+      "introducedIn": "A1-U2-L1",
+      "recycledIn": [
+        "A1-U4"
+      ]
+    },
+    {
+      "id": "A1.LEX.FATHER.N01",
+      "headword": "father",
+      "partOfSpeech": "noun",
+      "arabic": "أب",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "father",
+      "examples": [
+        "This is my father."
+      ],
+      "introducedIn": "A1-U2-L1",
+      "recycledIn": [
+        "A1-U4"
+      ]
+    },
+    {
+      "id": "A1.LEX.PARENT.N01",
+      "headword": "parent",
+      "partOfSpeech": "noun",
+      "arabic": "أحد الوالدين",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "parent",
+      "examples": [
+        "She's my parent."
+      ],
+      "introducedIn": "A1-U2-L1",
+      "recycledIn": [
+        "A1-U4"
+      ]
+    },
+    {
+      "id": "A1.LEX.PARENTS.N01",
+      "headword": "parents",
+      "partOfSpeech": "noun",
+      "arabic": "الوالدان",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "parents",
+      "examples": [
+        "They are my parents."
+      ],
+      "introducedIn": "A1-U2-L1",
+      "recycledIn": [
+        "A1-U4"
+      ]
+    },
+    {
+      "id": "A1.LEX.GRANDMOTHER.N01",
+      "headword": "grandmother",
+      "partOfSpeech": "noun",
+      "arabic": "جدة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "grandmother",
+      "examples": [
+        "My grandmother is Noor."
+      ],
+      "introducedIn": "A1-U2-L1",
+      "recycledIn": [
+        "A1-U12"
+      ]
+    },
+    {
+      "id": "A1.LEX.GRANDFATHER.N01",
+      "headword": "grandfather",
+      "partOfSpeech": "noun",
+      "arabic": "جد",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "grandfather",
+      "examples": [
+        "My grandfather is Sami."
+      ],
+      "introducedIn": "A1-U2-L1",
+      "recycledIn": [
+        "A1-U12"
+      ]
+    },
+    {
+      "id": "A1.LEX.HUSBAND.N01",
+      "headword": "husband",
+      "partOfSpeech": "noun",
+      "arabic": "زوج",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "husband",
+      "examples": [
+        "Ali is her husband."
+      ],
+      "introducedIn": "A1-U2-L1",
+      "recycledIn": [
+        "A1-U12"
+      ]
+    },
+    {
+      "id": "A1.LEX.WIFE.N01",
+      "headword": "wife",
+      "partOfSpeech": "noun",
+      "arabic": "زوجة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "wife",
+      "examples": [
+        "Sara is his wife."
+      ],
+      "introducedIn": "A1-U2-L1",
+      "recycledIn": [
+        "A1-U12"
+      ]
+    },
+    {
+      "id": "A1.LEX.SON.N01",
+      "headword": "son",
+      "partOfSpeech": "noun",
+      "arabic": "ابن",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "son",
+      "examples": [
+        "Their son is Omar."
+      ],
+      "introducedIn": "A1-U2-L1",
+      "recycledIn": [
+        "A1-U12"
+      ]
+    },
+    {
+      "id": "A1.LEX.DAUGHTER.N01",
+      "headword": "daughter",
+      "partOfSpeech": "noun",
+      "arabic": "ابنة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "daughter",
+      "examples": [
+        "Their daughter is Maya."
+      ],
+      "introducedIn": "A1-U2-L1",
+      "recycledIn": [
+        "A1-U12"
+      ]
+    },
+    {
+      "id": "A1.LEX.CHILD.N01",
+      "headword": "child",
+      "partOfSpeech": "noun",
+      "arabic": "طفل/ابن",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "child",
+      "examples": [
+        "They have one child."
+      ],
+      "introducedIn": "A1-U2-L2",
+      "recycledIn": [
+        "A1-U10"
+      ]
+    },
+    {
+      "id": "A1.LEX.CHILDREN.N01",
+      "headword": "children",
+      "partOfSpeech": "noun",
+      "arabic": "أطفال/أبناء",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "children",
+      "examples": [
+        "They have two children."
+      ],
+      "introducedIn": "A1-U2-L2",
+      "recycledIn": [
+        "A1-U10"
+      ]
+    },
+    {
+      "id": "A1.LEX.PERSON.N01",
+      "headword": "person",
+      "partOfSpeech": "noun",
+      "arabic": "شخص",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "person",
+      "examples": [
+        "One person is here."
+      ],
+      "introducedIn": "A1-U2-L2",
+      "recycledIn": [
+        "A1-U8"
+      ]
+    },
+    {
+      "id": "A1.LEX.PEOPLE.N01",
+      "headword": "people",
+      "partOfSpeech": "noun",
+      "arabic": "أشخاص/ناس",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "people",
+      "examples": [
+        "Three people are here."
+      ],
+      "introducedIn": "A1-U2-L2",
+      "recycledIn": [
+        "A1-U8"
+      ]
+    },
+    {
+      "id": "A1.LEX.HAVE.V01",
+      "headword": "have",
+      "partOfSpeech": "verb",
+      "arabic": "لديه/يملك",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "have",
+      "examples": [
+        "I have one brother."
+      ],
+      "introducedIn": "A1-U2-L2",
+      "recycledIn": [
+        "A1-U3",
+        "A1-U5",
+        "A1-U6"
+      ]
+    },
+    {
+      "id": "A1.LEX.OLD.ADJ01",
+      "headword": "old",
+      "partOfSpeech": "adjective",
+      "arabic": "كبير في السن/عمره",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "old",
+      "examples": [
+        "How old is your sister?"
+      ],
+      "introducedIn": "A1-U2-L2",
+      "recycledIn": [
+        "A1-U10"
+      ]
+    },
+    {
+      "id": "A1.LEX.YOUNG.ADJ01",
+      "headword": "young",
+      "partOfSpeech": "adjective",
+      "arabic": "شاب/صغير السن",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "young",
+      "examples": [
+        "My brother is young."
+      ],
+      "introducedIn": "A1-U2-L4",
+      "recycledIn": [
+        "A1-U10"
+      ]
+    },
+    {
+      "id": "A1.LEX.TALL.ADJ01",
+      "headword": "tall",
+      "partOfSpeech": "adjective",
+      "arabic": "طويل القامة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "tall",
+      "examples": [
+        "He's tall."
+      ],
+      "introducedIn": "A1-U2-L4",
+      "recycledIn": [
+        "A1-U11"
+      ]
+    },
+    {
+      "id": "A1.LEX.SHORT.ADJ01",
+      "headword": "short",
+      "partOfSpeech": "adjective",
+      "arabic": "قصير القامة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "short",
+      "examples": [
+        "She's short."
+      ],
+      "introducedIn": "A1-U2-L4",
+      "recycledIn": [
+        "A1-U11"
+      ]
+    },
+    {
+      "id": "A1.LEX.KIND.ADJ01",
+      "headword": "kind",
+      "partOfSpeech": "adjective",
+      "arabic": "طيب",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "kind",
+      "examples": [
+        "My mother is kind."
+      ],
+      "introducedIn": "A1-U2-L4",
+      "recycledIn": [
+        "A1-U10"
+      ]
+    },
+    {
+      "id": "A1.LEX.FRIENDLY.ADJ01",
+      "headword": "friendly",
+      "partOfSpeech": "adjective",
+      "arabic": "ودود",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "friendly",
+      "examples": [
+        "He's quiet but friendly."
+      ],
+      "introducedIn": "A1-U2-L4",
+      "recycledIn": [
+        "A1-U8"
+      ]
+    },
+    {
+      "id": "A1.LEX.FUNNY.ADJ01",
+      "headword": "funny",
+      "partOfSpeech": "adjective",
+      "arabic": "مضحك",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "funny",
+      "examples": [
+        "She's kind and funny."
+      ],
+      "introducedIn": "A1-U2-L4",
+      "recycledIn": [
+        "A1-U5"
+      ]
+    },
+    {
+      "id": "A1.LEX.QUIET.ADJ01",
+      "headword": "quiet",
+      "partOfSpeech": "adjective",
+      "arabic": "هادئ",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "quiet",
+      "examples": [
+        "My friend is quiet."
+      ],
+      "introducedIn": "A1-U2-L4",
+      "recycledIn": [
+        "A1-U3"
+      ]
+    },
+    {
+      "id": "A1.LEX.NICE.ADJ01",
+      "headword": "nice",
+      "partOfSpeech": "adjective",
+      "arabic": "لطيف/جميل",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "nice",
+      "examples": [
+        "They're nice people."
+      ],
+      "introducedIn": "A1-U2-L4",
+      "recycledIn": [
+        "A1-U8"
+      ]
+    }
+  ]
+}

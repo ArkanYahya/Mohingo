@@ -1,0 +1,1035 @@
+{
+  "id": "A1-U9",
+  "title": "Getting Around",
+  "titleAr": "التنقل",
+  "levelRole": "core",
+  "estimatedMinutes": [
+    80,
+    110
+  ],
+  "countsTowardA1Mastery": true,
+  "lessons": [
+    {
+      "id": "A1-U9-L1",
+      "title": "Ways to Travel",
+      "titleAr": "وسائل السفر",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U9.LISTENING.UNDERSTAND_TRANSPORT_INFO",
+        "A1.U9.PRODUCTION.DESCRIBE_JOURNEY"
+      ],
+      "grammar": [
+        "A1.G.TRANSPORT.BY"
+      ],
+      "lexicon": [
+        "A1.LEX.BUS.N01",
+        "A1.LEX.TRAIN.N01",
+        "A1.LEX.TAXI.N01",
+        "A1.LEX.CAR.N01",
+        "A1.LEX.BICYCLE.N01",
+        "A1.LEX.AIRPORT.N01",
+        "A1.LEX.BUS_STOP.N01"
+      ],
+      "chunks": [
+        "A1.CHUNK.GO_BY_TRANSPORT",
+        "A1.CHUNK.GO_ON_FOOT"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Lina",
+            "en": "I go to work by bus. My brother goes by bicycle, and my sister goes on foot.",
+            "ar": "أذهب إلى العمل بالحافلة. أخي يذهب بالدراجة وأختي تمشي."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U9-L1-A01",
+          "lessonId": "A1-U9-L1",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U9.LISTENING.UNDERSTAND_TRANSPORT_INFO",
+            "A1.U9.PRODUCTION.DESCRIBE_JOURNEY"
+          ],
+          "prompt": "Who goes on foot?",
+          "promptAr": "من يذهب مشياً؟",
+          "options": [
+            "Lina's sister",
+            "Lina",
+            "Lina's brother"
+          ],
+          "answer": "Lina's sister",
+          "audioTranscript": "My sister goes on foot."
+        },
+        {
+          "id": "A1-U9-L1-A02",
+          "lessonId": "A1-U9-L1",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U9.LISTENING.UNDERSTAND_TRANSPORT_INFO",
+            "A1.U9.PRODUCTION.DESCRIBE_JOURNEY"
+          ],
+          "prompt": "Match transport expressions.",
+          "promptAr": "طابق تعبيرات النقل.",
+          "pairs": [
+            [
+              "bus",
+              "by bus"
+            ],
+            [
+              "train",
+              "by train"
+            ],
+            [
+              "walking",
+              "on foot"
+            ]
+          ]
+        },
+        {
+          "id": "A1-U9-L1-A03",
+          "lessonId": "A1-U9-L1",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U9.LISTENING.UNDERSTAND_TRANSPORT_INFO",
+            "A1.U9.PRODUCTION.DESCRIBE_JOURNEY"
+          ],
+          "prompt": "Choose the transport preposition.",
+          "promptAr": "اختر حرف وسيلة النقل.",
+          "text": "We travel ___ train.",
+          "options": [
+            "by",
+            "on",
+            "at"
+          ],
+          "answer": "by"
+        },
+        {
+          "id": "A1-U9-L1-A04",
+          "lessonId": "A1-U9-L1",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U9.LISTENING.UNDERSTAND_TRANSPORT_INFO",
+            "A1.U9.PRODUCTION.DESCRIBE_JOURNEY"
+          ],
+          "prompt": "How does each person travel?",
+          "promptAr": "كيف يسافر كل شخص؟",
+          "options": [
+            "Maya: taxi; Omar: bus",
+            "Maya: bus; Omar: taxi",
+            "both by train"
+          ],
+          "answer": "Maya: taxi; Omar: bus",
+          "audioTranscript": "Maya takes a taxi to the airport. Omar goes there by bus."
+        },
+        {
+          "id": "A1-U9-L1-A05",
+          "lessonId": "A1-U9-L1",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A1.U9.LISTENING.UNDERSTAND_TRANSPORT_INFO",
+            "A1.U9.PRODUCTION.DESCRIBE_JOURNEY"
+          ],
+          "prompt": "Describe how three people travel using three different transport expressions.",
+          "promptAr": "صف تنقل ثلاثة أشخاص بثلاث وسائل مختلفة.",
+          "accepted": [],
+          "evaluation": "three-transport-statements",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U9-L2",
+      "title": "Tickets and Routes",
+      "titleAr": "التذاكر والمسارات",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U9.READING.UNDERSTAND_SIMPLE_ROUTE",
+        "A1.U9.INTERACTION.BUY_TICKET"
+      ],
+      "grammar": [
+        "A1.G.MOVEMENT.FROM_TO"
+      ],
+      "lexicon": [
+        "A1.LEX.TICKET.N01",
+        "A1.LEX.SINGLE.ADJ01",
+        "A1.LEX.RETURN.ADJ01",
+        "A1.LEX.PLATFORM.N01",
+        "A1.LEX.ROUTE.N01"
+      ],
+      "chunks": [
+        "A1.CHUNK.TICKET_TO"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Passenger",
+            "en": "A return ticket from Baghdad to Basra, please.",
+            "ar": "تذكرة ذهاب وعودة من بغداد إلى البصرة."
+          },
+          {
+            "speaker": "Clerk",
+            "en": "Platform two.",
+            "ar": "الرصيف الثاني."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U9-L2-A01",
+          "lessonId": "A1-U9-L2",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U9.READING.UNDERSTAND_SIMPLE_ROUTE",
+            "A1.U9.INTERACTION.BUY_TICKET"
+          ],
+          "prompt": "What ticket does the passenger need?",
+          "promptAr": "ما التذكرة المطلوبة؟",
+          "options": [
+            "return to Basra",
+            "single to Baghdad",
+            "return to the airport"
+          ],
+          "answer": "return to Basra",
+          "audioTranscript": "A return ticket from Baghdad to Basra, please."
+        },
+        {
+          "id": "A1-U9-L2-A02",
+          "lessonId": "A1-U9-L2",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U9.READING.UNDERSTAND_SIMPLE_ROUTE",
+            "A1.U9.INTERACTION.BUY_TICKET"
+          ],
+          "prompt": "Match ticket terms.",
+          "promptAr": "طابق مصطلحات التذاكر.",
+          "pairs": [
+            [
+              "single",
+              "one way"
+            ],
+            [
+              "return",
+              "go and come back"
+            ],
+            [
+              "platform",
+              "place to board a train"
+            ]
+          ]
+        },
+        {
+          "id": "A1-U9-L2-A03",
+          "lessonId": "A1-U9-L2",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U9.READING.UNDERSTAND_SIMPLE_ROUTE",
+            "A1.U9.INTERACTION.BUY_TICKET"
+          ],
+          "prompt": "Complete the route.",
+          "promptAr": "أكمل المسار.",
+          "text": "The train goes ___ Najaf ___ Karbala.",
+          "options": [
+            "from / to",
+            "to / from",
+            "at / on"
+          ],
+          "answer": "from / to"
+        },
+        {
+          "id": "A1-U9-L2-A04",
+          "lessonId": "A1-U9-L2",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U9.READING.UNDERSTAND_SIMPLE_ROUTE",
+            "A1.U9.INTERACTION.BUY_TICKET"
+          ],
+          "prompt": "Choose the correct ticket card.",
+          "promptAr": "اختر بطاقة التذكرة الصحيحة.",
+          "options": [
+            "single to Mosul, platform 4",
+            "return to Mosul, platform 4",
+            "single to Basra, platform 2"
+          ],
+          "answer": "single to Mosul, platform 4",
+          "audioTranscript": "One single ticket to Mosul. Your train is on platform four."
+        },
+        {
+          "id": "A1-U9-L2-A05",
+          "lessonId": "A1-U9-L2",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U9.READING.UNDERSTAND_SIMPLE_ROUTE",
+            "A1.U9.INTERACTION.BUY_TICKET"
+          ],
+          "prompt": "Buy a single or return ticket and confirm the destination and platform.",
+          "promptAr": "اشتر تذكرة ذهاب أو عودة وأكد الوجهة والرصيف.",
+          "accepted": [],
+          "evaluation": "ticket-destination-platform",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U9-L3",
+      "title": "Departure Times",
+      "titleAr": "أوقات المغادرة",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U9.INTERACTION.ASK_DEPARTURE_INFO",
+        "A1.U9.LISTENING.UNDERSTAND_TRANSPORT_INFO"
+      ],
+      "grammar": [
+        "A1.G.TIME.DEPARTURE_AT",
+        "A1.G.QUESTION.WHEN_WHAT_TIME"
+      ],
+      "lexicon": [
+        "A1.LEX.LEAVE.V01",
+        "A1.LEX.ARRIVE.V01",
+        "A1.LEX.NEXT.ADJ01",
+        "A1.LEX.DELAY.N01"
+      ],
+      "chunks": [
+        "A1.CHUNK.WHAT_TIME_DOES_LEAVE",
+        "A1.CHUNK.WHEN_IS_NEXT",
+        "A1.CHUNK.WHICH_PLATFORM"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Passenger",
+            "en": "When is the next bus to the airport?",
+            "ar": "متى الحافلة التالية إلى المطار؟"
+          },
+          {
+            "speaker": "Clerk",
+            "en": "It leaves at eight fifteen and arrives at nine.",
+            "ar": "تغادر في الثامنة والربع وتصل في التاسعة."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U9-L3-A01",
+          "lessonId": "A1-U9-L3",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U9.INTERACTION.ASK_DEPARTURE_INFO",
+            "A1.U9.LISTENING.UNDERSTAND_TRANSPORT_INFO"
+          ],
+          "prompt": "When does the bus arrive?",
+          "promptAr": "متى تصل الحافلة؟",
+          "options": [
+            "9:00",
+            "8:15",
+            "9:15"
+          ],
+          "answer": "9:00",
+          "audioTranscript": "It leaves at eight fifteen and arrives at nine."
+        },
+        {
+          "id": "A1-U9-L3-A02",
+          "lessonId": "A1-U9-L3",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U9.INTERACTION.ASK_DEPARTURE_INFO",
+            "A1.U9.LISTENING.UNDERSTAND_TRANSPORT_INFO"
+          ],
+          "prompt": "Match schedule verbs.",
+          "promptAr": "طابق أفعال الجدول.",
+          "pairs": [
+            [
+              "leave",
+              "start the journey"
+            ],
+            [
+              "arrive",
+              "reach the destination"
+            ],
+            [
+              "delay",
+              "later than planned"
+            ]
+          ]
+        },
+        {
+          "id": "A1-U9-L3-A03",
+          "lessonId": "A1-U9-L3",
+          "type": "order",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U9.INTERACTION.ASK_DEPARTURE_INFO",
+            "A1.U9.LISTENING.UNDERSTAND_TRANSPORT_INFO"
+          ],
+          "prompt": "Build the departure question.",
+          "promptAr": "رتب سؤال المغادرة.",
+          "tokens": [
+            "leave",
+            "does",
+            "What time",
+            "the train"
+          ],
+          "answer": [
+            "What time",
+            "does",
+            "the train",
+            "leave"
+          ]
+        },
+        {
+          "id": "A1-U9-L3-A04",
+          "lessonId": "A1-U9-L3",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U9.INTERACTION.ASK_DEPARTURE_INFO",
+            "A1.U9.LISTENING.UNDERSTAND_TRANSPORT_INFO"
+          ],
+          "prompt": "What is the updated departure time?",
+          "promptAr": "ما وقت المغادرة الجديد؟",
+          "options": [
+            "10:20",
+            "10:00",
+            "9:40"
+          ],
+          "answer": "10:20",
+          "audioTranscript": "The ten o'clock train has a twenty-minute delay. It leaves at ten twenty."
+        },
+        {
+          "id": "A1-U9-L3-A05",
+          "lessonId": "A1-U9-L3",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U9.INTERACTION.ASK_DEPARTURE_INFO",
+            "A1.U9.LISTENING.UNDERSTAND_TRANSPORT_INFO"
+          ],
+          "prompt": "Ask for the next departure, arrival time and platform.",
+          "promptAr": "اسأل عن المغادرة التالية ووقت الوصول والرصيف.",
+          "accepted": [],
+          "evaluation": "three-departure-information-questions",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U9-L4",
+      "title": "Choose a Route",
+      "titleAr": "اختر مساراً",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U9.READING.UNDERSTAND_SIMPLE_ROUTE",
+        "A1.U9.INTERACTION.ASK_DEPARTURE_INFO",
+        "A1.U9.MEDIATION.PLAN_SIMPLE_JOURNEY"
+      ],
+      "grammar": [
+        "A1.G.MODAL.CAN_POSSIBILITY"
+      ],
+      "lexicon": [
+        "A1.LEX.TAKE.V02",
+        "A1.LEX.CHANGE.V03",
+        "A1.LEX.ROUTE.N01"
+      ],
+      "chunks": [
+        "A1.CHUNK.TAKE_NUMBER",
+        "A1.CHUNK.CHANGE_AT",
+        "A1.CHUNK.GO_STRAIGHT"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Clerk",
+            "en": "You can take bus 12 to Central Station, then change to train 3.",
+            "ar": "يمكنك أخذ الحافلة 12 إلى المحطة المركزية ثم التبديل إلى القطار 3."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U9-L4-A01",
+          "lessonId": "A1-U9-L4",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U9.READING.UNDERSTAND_SIMPLE_ROUTE",
+            "A1.U9.INTERACTION.ASK_DEPARTURE_INFO",
+            "A1.U9.MEDIATION.PLAN_SIMPLE_JOURNEY"
+          ],
+          "prompt": "Where does the passenger change?",
+          "promptAr": "أين يبدّل المسافر؟",
+          "options": [
+            "Central Station",
+            "the airport",
+            "bus stop 12"
+          ],
+          "answer": "Central Station",
+          "audioTranscript": "Take bus 12 and change at Central Station."
+        },
+        {
+          "id": "A1-U9-L4-A02",
+          "lessonId": "A1-U9-L4",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U9.READING.UNDERSTAND_SIMPLE_ROUTE",
+            "A1.U9.INTERACTION.ASK_DEPARTURE_INFO",
+            "A1.U9.MEDIATION.PLAN_SIMPLE_JOURNEY"
+          ],
+          "prompt": "Match route steps.",
+          "promptAr": "طابق خطوات المسار.",
+          "pairs": [
+            [
+              "take bus 12",
+              "first transport"
+            ],
+            [
+              "change at Central",
+              "connection"
+            ],
+            [
+              "take train 3",
+              "second transport"
+            ]
+          ]
+        },
+        {
+          "id": "A1-U9-L4-A03",
+          "lessonId": "A1-U9-L4",
+          "type": "order",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U9.READING.UNDERSTAND_SIMPLE_ROUTE",
+            "A1.U9.INTERACTION.ASK_DEPARTURE_INFO",
+            "A1.U9.MEDIATION.PLAN_SIMPLE_JOURNEY"
+          ],
+          "prompt": "Order the journey.",
+          "promptAr": "رتب الرحلة.",
+          "tokens": [
+            "Take train 3.",
+            "Change at Central Station.",
+            "Take bus 12."
+          ],
+          "answer": [
+            "Take bus 12.",
+            "Change at Central Station.",
+            "Take train 3."
+          ]
+        },
+        {
+          "id": "A1-U9-L4-A04",
+          "lessonId": "A1-U9-L4",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U9.READING.UNDERSTAND_SIMPLE_ROUTE",
+            "A1.U9.INTERACTION.ASK_DEPARTURE_INFO",
+            "A1.U9.MEDIATION.PLAN_SIMPLE_JOURNEY"
+          ],
+          "prompt": "Which route has one change?",
+          "promptAr": "أي مسار فيه تبديل واحد؟",
+          "options": [
+            "bus 5 → Central → train 2",
+            "taxi direct",
+            "bus 8 direct"
+          ],
+          "answer": "bus 5 → Central → train 2",
+          "audioTranscript": "Take bus five to Central, then change to train two."
+        },
+        {
+          "id": "A1-U9-L4-A05",
+          "lessonId": "A1-U9-L4",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A1.U9.READING.UNDERSTAND_SIMPLE_ROUTE",
+            "A1.U9.INTERACTION.ASK_DEPARTURE_INFO",
+            "A1.U9.MEDIATION.PLAN_SIMPLE_JOURNEY"
+          ],
+          "prompt": "Explain a route with two transport stages and one change.",
+          "promptAr": "اشرح مساراً بمرحلتين من النقل وتبديل واحد.",
+          "accepted": [],
+          "evaluation": "two-stage-one-change-route",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U9-L5",
+      "title": "My Journey",
+      "titleAr": "رحلتي",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U9.PRODUCTION.DESCRIBE_JOURNEY",
+        "A1.U9.LISTENING.UNDERSTAND_TRANSPORT_INFO"
+      ],
+      "grammar": [
+        "A1.G.TRANSPORT.BY",
+        "A1.G.MOVEMENT.FROM_TO"
+      ],
+      "lexicon": [
+        "A1.LEX.JOURNEY.N01",
+        "A1.LEX.TRAVEL.V01",
+        "A1.LEX.LEAVE.V01",
+        "A1.LEX.ARRIVE.V01"
+      ],
+      "chunks": [
+        "A1.CHUNK.IT_TAKES_TIME",
+        "A1.CHUNK.FIRST_THEN"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Omar",
+            "en": "I travel from Kirkuk to Erbil by bus. I leave at seven and arrive at nine. It takes two hours.",
+            "ar": "أسافر من كركوك إلى أربيل بالحافلة. أغادر في السابعة وأصل في التاسعة. تستغرق ساعتين."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U9-L5-A01",
+          "lessonId": "A1-U9-L5",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U9.PRODUCTION.DESCRIBE_JOURNEY",
+            "A1.U9.LISTENING.UNDERSTAND_TRANSPORT_INFO"
+          ],
+          "prompt": "How long does Omar's journey take?",
+          "promptAr": "كم تستغرق رحلة عمر؟",
+          "options": [
+            "two hours",
+            "one hour",
+            "three hours"
+          ],
+          "answer": "two hours",
+          "audioTranscript": "I leave at seven and arrive at nine. It takes two hours."
+        },
+        {
+          "id": "A1-U9-L5-A02",
+          "lessonId": "A1-U9-L5",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U9.PRODUCTION.DESCRIBE_JOURNEY",
+            "A1.U9.LISTENING.UNDERSTAND_TRANSPORT_INFO"
+          ],
+          "prompt": "Match journey details.",
+          "promptAr": "طابق تفاصيل الرحلة.",
+          "pairs": [
+            [
+              "from",
+              "Kirkuk"
+            ],
+            [
+              "to",
+              "Erbil"
+            ],
+            [
+              "by",
+              "bus"
+            ],
+            [
+              "takes",
+              "two hours"
+            ]
+          ]
+        },
+        {
+          "id": "A1-U9-L5-A03",
+          "lessonId": "A1-U9-L5",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U9.PRODUCTION.DESCRIBE_JOURNEY",
+            "A1.U9.LISTENING.UNDERSTAND_TRANSPORT_INFO"
+          ],
+          "prompt": "Complete the duration sentence.",
+          "promptAr": "أكمل جملة المدة.",
+          "text": "The journey ___ one hour.",
+          "options": [
+            "takes",
+            "take",
+            "is take"
+          ],
+          "answer": "takes"
+        },
+        {
+          "id": "A1-U9-L5-A04",
+          "lessonId": "A1-U9-L5",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U9.PRODUCTION.DESCRIBE_JOURNEY",
+            "A1.U9.LISTENING.UNDERSTAND_TRANSPORT_INFO"
+          ],
+          "prompt": "Choose the journey card.",
+          "promptAr": "اختر بطاقة الرحلة.",
+          "options": [
+            "Najaf → Baghdad; train; 8–10",
+            "Baghdad → Najaf; bus; 8–9",
+            "Najaf → Basra; train; 9–10"
+          ],
+          "answer": "Najaf → Baghdad; train; 8–10",
+          "audioTranscript": "I travel from Najaf to Baghdad by train. I leave at eight and arrive at ten."
+        },
+        {
+          "id": "A1-U9-L5-A05",
+          "lessonId": "A1-U9-L5",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A1.U9.PRODUCTION.DESCRIBE_JOURNEY",
+            "A1.U9.LISTENING.UNDERSTAND_TRANSPORT_INFO"
+          ],
+          "prompt": "Describe a real or fictional journey with origin, destination, transport, times and duration.",
+          "promptAr": "صف رحلة حقيقية أو خيالية مع نقطة الانطلاق والوجهة والوسيلة والأوقات والمدة.",
+          "accepted": [],
+          "evaluation": "complete-simple-journey-description",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U9-L6",
+      "title": "Travel Plan",
+      "titleAr": "خطة سفر",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U9.WRITING.WRITE_TRAVEL_PLAN",
+        "A1.U9.READING.UNDERSTAND_SIMPLE_ROUTE",
+        "A1.U9.INTERACTION.ASK_DEPARTURE_INFO"
+      ],
+      "grammar": [
+        "A1.G.SEQUENCE.DIRECTIONS",
+        "A1.G.TIME.DEPARTURE_AT"
+      ],
+      "lexicon": [
+        "A1.LEX.TICKET.N01",
+        "A1.LEX.PLATFORM.N01",
+        "A1.LEX.DELAY.N01"
+      ],
+      "chunks": [
+        "A1.CHUNK.WHAT_TIME_DOES_LEAVE",
+        "A1.CHUNK.CHANGE_AT",
+        "A1.CHUNK.IT_TAKES_TIME"
+      ],
+      "readingText": {
+        "title": "Airport Route",
+        "text": "Bus 20 leaves City Station at 07:30 and reaches Central at 08:00. Change to Airport Train A on platform 5. It leaves at 08:15 and arrives at the airport at 08:45. Total price: $6.",
+        "textAr": "مسار المطار..."
+      },
+      "activities": [
+        {
+          "id": "A1-U9-L6-A01",
+          "lessonId": "A1-U9-L6",
+          "type": "textChoice",
+          "mode": "encounter",
+          "skill": "reading",
+          "canDo": [
+            "A1.U9.WRITING.WRITE_TRAVEL_PLAN",
+            "A1.U9.READING.UNDERSTAND_SIMPLE_ROUTE",
+            "A1.U9.INTERACTION.ASK_DEPARTURE_INFO"
+          ],
+          "prompt": "Where and when does the passenger change?",
+          "promptAr": "أين ومتى يبدّل المسافر؟",
+          "options": [
+            "Central around 08:00",
+            "airport at 08:45",
+            "City Station at 07:00"
+          ],
+          "answer": "Central around 08:00"
+        },
+        {
+          "id": "A1-U9-L6-A02",
+          "lessonId": "A1-U9-L6",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U9.WRITING.WRITE_TRAVEL_PLAN",
+            "A1.U9.READING.UNDERSTAND_SIMPLE_ROUTE",
+            "A1.U9.INTERACTION.ASK_DEPARTURE_INFO"
+          ],
+          "prompt": "Match plan details.",
+          "promptAr": "طابق تفاصيل الخطة.",
+          "pairs": [
+            [
+              "first transport",
+              "bus 20"
+            ],
+            [
+              "change",
+              "Central"
+            ],
+            [
+              "platform",
+              "5"
+            ],
+            [
+              "arrival",
+              "08:45"
+            ]
+          ]
+        },
+        {
+          "id": "A1-U9-L6-A03",
+          "lessonId": "A1-U9-L6",
+          "type": "order",
+          "mode": "practice",
+          "skill": "writing",
+          "canDo": [
+            "A1.U9.WRITING.WRITE_TRAVEL_PLAN",
+            "A1.U9.READING.UNDERSTAND_SIMPLE_ROUTE",
+            "A1.U9.INTERACTION.ASK_DEPARTURE_INFO"
+          ],
+          "prompt": "Order the travel plan.",
+          "promptAr": "رتب خطة السفر.",
+          "tokens": [
+            "Arrive at 08:45.",
+            "Change at Central.",
+            "Take bus 20 at 07:30.",
+            "Take Airport Train A."
+          ],
+          "answer": [
+            "Take bus 20 at 07:30.",
+            "Change at Central.",
+            "Take Airport Train A.",
+            "Arrive at 08:45."
+          ]
+        },
+        {
+          "id": "A1-U9-L6-A04",
+          "lessonId": "A1-U9-L6",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U9.WRITING.WRITE_TRAVEL_PLAN",
+            "A1.U9.READING.UNDERSTAND_SIMPLE_ROUTE",
+            "A1.U9.INTERACTION.ASK_DEPARTURE_INFO"
+          ],
+          "prompt": "Which detail changes?",
+          "promptAr": "أي تفصيل تغير؟",
+          "options": [
+            "train leaves at 08:25",
+            "bus leaves at 07:20",
+            "platform changes to 2"
+          ],
+          "answer": "train leaves at 08:25",
+          "audioTranscript": "Airport Train A has a ten-minute delay. It now leaves at eight twenty-five."
+        },
+        {
+          "id": "A1-U9-L6-A05",
+          "lessonId": "A1-U9-L6",
+          "type": "write",
+          "mode": "mastery",
+          "skill": "writing",
+          "canDo": [
+            "A1.U9.WRITING.WRITE_TRAVEL_PLAN",
+            "A1.U9.READING.UNDERSTAND_SIMPLE_ROUTE",
+            "A1.U9.INTERACTION.ASK_DEPARTURE_INFO"
+          ],
+          "prompt": "Write a 45–65-word travel plan with two stages, one connection, times and destination.",
+          "promptAr": "اكتب خطة سفر من 45–65 كلمة بمرحلتين وتبديل واحد وأوقات ووجهة.",
+          "accepted": [],
+          "evaluation": "u9-travel-plan-rubric",
+          "wordGuide": [
+            45,
+            65
+          ]
+        }
+      ]
+    },
+    {
+      "id": "A1-U9-L7",
+      "title": "Mission: Plan a Simple Journey",
+      "titleAr": "المهمة: خطط رحلة بسيطة",
+      "lessonType": "mission",
+      "canDo": [
+        "A1.U9.MEDIATION.PLAN_SIMPLE_JOURNEY",
+        "A1.U9.LISTENING.UNDERSTAND_TRANSPORT_INFO",
+        "A1.U9.READING.UNDERSTAND_SIMPLE_ROUTE",
+        "A1.U9.INTERACTION.BUY_TICKET",
+        "A1.U9.INTERACTION.ASK_DEPARTURE_INFO",
+        "A1.U9.PRODUCTION.DESCRIBE_JOURNEY",
+        "A1.U9.WRITING.WRITE_TRAVEL_PLAN"
+      ],
+      "grammar": [],
+      "lexicon": [],
+      "chunks": [],
+      "scenario": "Select a feasible journey from an unseen timetable, buy the correct ticket, respond to a delay and communicate the updated plan.",
+      "activities": [
+        {
+          "id": "A1-U9-L7-A01",
+          "lessonId": "A1-U9-L7",
+          "mode": "mastery",
+          "type": "textChoice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U9.READING.UNDERSTAND_SIMPLE_ROUTE",
+            "A1.U9.MEDIATION.PLAN_SIMPLE_JOURNEY"
+          ],
+          "prompt": "Choose the route that arrives before 10:00.",
+          "promptAr": "اختر المسار الذي يصل قبل العاشرة.",
+          "options": [
+            "bus 8:00 → train 8:45 → arrive 9:40",
+            "train 9:20 → arrive 10:10",
+            "bus 8:30 → arrive 10:00"
+          ],
+          "answer": "bus 8:00 → train 8:45 → arrive 9:40",
+          "sourceText": "Route A: bus 08:00, change at Central, train 08:45, arrive 09:40. Route B: train 09:20, arrive 10:10. Route C: bus 08:30, arrive 10:00."
+        },
+        {
+          "id": "A1-U9-L7-A02",
+          "lessonId": "A1-U9-L7",
+          "mode": "mastery",
+          "type": "audioChoice",
+          "skill": "listening",
+          "canDo": [
+            "A1.U9.INTERACTION.ASK_DEPARTURE_INFO"
+          ],
+          "prompt": "What changed in the selected route?",
+          "promptAr": "ما الذي تغير في المسار المختار؟",
+          "options": [
+            "The train leaves at 9:00.",
+            "The bus leaves at 8:30.",
+            "The platform is unchanged."
+          ],
+          "answer": "The train leaves at 9:00.",
+          "audioTranscript": "The eight forty-five train has a fifteen-minute delay. It now leaves at nine."
+        },
+        {
+          "id": "A1-U9-L7-A03",
+          "lessonId": "A1-U9-L7",
+          "mode": "mastery",
+          "type": "speak",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U9.INTERACTION.BUY_TICKET"
+          ],
+          "prompt": "Buy the correct ticket for the selected destination and ask for the platform.",
+          "promptAr": "اشتر التذكرة الصحيحة للوجهة المختارة واسأل عن الرصيف.",
+          "accepted": [],
+          "evaluation": "ticket-and-platform-interaction",
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A1-U9-L7-A04",
+          "lessonId": "A1-U9-L7",
+          "mode": "mastery",
+          "type": "speak",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A1.U9.PRODUCTION.DESCRIBE_JOURNEY"
+          ],
+          "prompt": "Describe the updated journey with both stages and new arrival logic.",
+          "promptAr": "صف الرحلة المحدثة بمرحلتيها ومنطق الوصول الجديد.",
+          "accepted": [],
+          "evaluation": "updated-two-stage-journey",
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A1-U9-L7-A05",
+          "lessonId": "A1-U9-L7",
+          "mode": "mastery",
+          "type": "speak",
+          "skill": "mediation",
+          "canDo": [
+            "A1.U9.MEDIATION.PLAN_SIMPLE_JOURNEY"
+          ],
+          "prompt": "Explain the delay and updated arrival to a waiting friend.",
+          "promptAr": "اشرح التأخير ووقت الوصول المحدث لصديق ينتظر.",
+          "accepted": [],
+          "evaluation": "delay-plan-mediation",
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A1-U9-L7-A06",
+          "lessonId": "A1-U9-L7",
+          "mode": "mastery",
+          "type": "write",
+          "skill": "writing",
+          "canDo": [
+            "A1.U9.WRITING.WRITE_TRAVEL_PLAN"
+          ],
+          "prompt": "Write the final 50–70-word journey plan including ticket, connection, delay and expected arrival.",
+          "promptAr": "اكتب خطة الرحلة النهائية في 50–70 كلمة متضمنة التذكرة والتبديل والتأخير والوصول المتوقع.",
+          "accepted": [],
+          "evaluation": "u9-mission-plan-rubric",
+          "wordGuide": [
+            50,
+            70
+          ]
+        }
+      ]
+    }
+  ],
+  "mastery": {
+    "requiredObjectives": [
+      "A1.U9.LISTENING.UNDERSTAND_TRANSPORT_INFO",
+      "A1.U9.READING.UNDERSTAND_SIMPLE_ROUTE",
+      "A1.U9.INTERACTION.BUY_TICKET",
+      "A1.U9.INTERACTION.ASK_DEPARTURE_INFO",
+      "A1.U9.PRODUCTION.DESCRIBE_JOURNEY",
+      "A1.U9.WRITING.WRITE_TRAVEL_PLAN",
+      "A1.U9.MEDIATION.PLAN_SIMPLE_JOURNEY"
+    ],
+    "requiredSkillGroups": [
+      [
+        "listening",
+        "reading"
+      ],
+      [
+        "spokenInteraction",
+        "spokenProduction",
+        "writing"
+      ],
+      [
+        "mediation"
+      ]
+    ],
+    "minimumObjectiveScore": 0.75,
+    "missionRequired": true,
+    "retry": "targeted-by-objective",
+    "unlocks": "A1-U10"
+  }
+}

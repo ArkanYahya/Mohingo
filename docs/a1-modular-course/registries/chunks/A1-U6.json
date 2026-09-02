@@ -1,0 +1,108 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U6",
+  "kind": "chunks",
+  "records": [
+    {
+      "id": "A1.CHUNK.ID_LIKE_ITEM",
+      "text": "I'd like {item}, please.",
+      "arabic": "أرغب في {item}، من فضلك.",
+      "cefr": "A1",
+      "introducedIn": "A1-U6-L4",
+      "productive": true,
+      "recycledIn": [
+        "A1-U7"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.CAN_I_HAVE",
+      "text": "Can I have {item}, please?",
+      "arabic": "هل يمكنني الحصول على {item}؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U6-L4",
+      "productive": true,
+      "recycledIn": [
+        "A1-U7",
+        "A1-U10"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.ANY_ITEM",
+      "text": "Do you have any {item}?",
+      "arabic": "هل لديكم أي {item}؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U6-L2",
+      "productive": true,
+      "recycledIn": [
+        "A1-U7"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.HOW_MUCH_FOOD",
+      "text": "How much {food/drink}?",
+      "arabic": "كم من {food/drink}؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U6-L3",
+      "productive": false,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.HOW_MANY_FOOD",
+      "text": "How many {items}?",
+      "arabic": "كم {items}؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U6-L3",
+      "productive": false,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.CONTAINER_OF",
+      "text": "a {container} of {food/drink}",
+      "arabic": "{container} من {food/drink}",
+      "cefr": "A1",
+      "introducedIn": "A1-U6-L3",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.ANYTHING_ELSE",
+      "text": "Anything else?",
+      "arabic": "أي شيء آخر؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U6-L4",
+      "productive": false,
+      "recycledIn": [
+        "A1-U7"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.THATS_ALL",
+      "text": "That's all, thank you.",
+      "arabic": "هذا كل شيء، شكراً.",
+      "cefr": "A1",
+      "introducedIn": "A1-U6-L4",
+      "productive": true,
+      "recycledIn": [
+        "A1-U7"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.CAN_I_HAVE_BILL",
+      "text": "Can I have the bill, please?",
+      "arabic": "هل يمكنني الحصول على الحساب؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U6-L5",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.THIS_ISNT_MY_ORDER",
+      "text": "This isn't my order.",
+      "arabic": "هذا ليس طلبي.",
+      "cefr": "A1",
+      "introducedIn": "A1-U6-L5",
+      "productive": true,
+      "recycledIn": []
+    }
+  ]
+}

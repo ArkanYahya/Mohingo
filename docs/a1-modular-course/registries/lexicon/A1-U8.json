@@ -1,0 +1,373 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U8",
+  "kind": "lexicon",
+  "records": [
+    {
+      "id": "A1.LEX.BANK.N01",
+      "headword": "bank",
+      "partOfSpeech": "noun",
+      "arabic": "مصرف",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "bank",
+      "examples": [
+        "The bank is near the park."
+      ],
+      "introducedIn": "A1-U8-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.POST_OFFICE.N01",
+      "headword": "post office",
+      "partOfSpeech": "noun",
+      "arabic": "مكتب بريد",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "post office",
+      "examples": [
+        "The post office is open."
+      ],
+      "introducedIn": "A1-U8-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.PHARMACY.N01",
+      "headword": "pharmacy",
+      "partOfSpeech": "noun",
+      "arabic": "صيدلية",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "pharmacy",
+      "examples": [
+        "There is a pharmacy here."
+      ],
+      "introducedIn": "A1-U8-L1",
+      "recycledIn": [
+        "A1-U10"
+      ]
+    },
+    {
+      "id": "A1.LEX.HOSPITAL.N01",
+      "headword": "hospital",
+      "partOfSpeech": "noun",
+      "arabic": "مستشفى",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "hospital",
+      "examples": [
+        "The hospital is on King Street."
+      ],
+      "introducedIn": "A1-U8-L1",
+      "recycledIn": [
+        "A1-U10"
+      ]
+    },
+    {
+      "id": "A1.LEX.SUPERMARKET.N01",
+      "headword": "supermarket",
+      "partOfSpeech": "noun",
+      "arabic": "متجر كبير",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "supermarket",
+      "examples": [
+        "We shop at the supermarket."
+      ],
+      "introducedIn": "A1-U8-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.LIBRARY.N01",
+      "headword": "library",
+      "partOfSpeech": "noun",
+      "arabic": "مكتبة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "library",
+      "examples": [
+        "The library closes at five."
+      ],
+      "introducedIn": "A1-U8-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.CAFÉ.N01",
+      "headword": "café",
+      "partOfSpeech": "noun",
+      "arabic": "مقهى",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "café",
+      "examples": [
+        "Meet me at the café."
+      ],
+      "introducedIn": "A1-U8-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.STATION.N01",
+      "headword": "station",
+      "partOfSpeech": "noun",
+      "arabic": "محطة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "station",
+      "examples": [
+        "The station is opposite the bank."
+      ],
+      "introducedIn": "A1-U8-L1",
+      "recycledIn": [
+        "A1-U9"
+      ]
+    },
+    {
+      "id": "A1.LEX.NEAR.ADJ01",
+      "headword": "near",
+      "partOfSpeech": "adjective",
+      "arabic": "قريب",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "near",
+      "examples": [
+        "Is there a bank near here?"
+      ],
+      "introducedIn": "A1-U8-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.FAR.ADJ01",
+      "headword": "far",
+      "partOfSpeech": "adjective",
+      "arabic": "بعيد",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "far",
+      "examples": [
+        "The hospital is far."
+      ],
+      "introducedIn": "A1-U8-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.OPPOSITE.PREP01",
+      "headword": "opposite",
+      "partOfSpeech": "preposition",
+      "arabic": "مقابل",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "opposite",
+      "examples": [
+        "The café is opposite the bank."
+      ],
+      "introducedIn": "A1-U8-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.BETWEEN.PREP01",
+      "headword": "between",
+      "partOfSpeech": "preposition",
+      "arabic": "بين",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "between",
+      "examples": [
+        "The shop is between the bank and café."
+      ],
+      "introducedIn": "A1-U8-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.CORNER.N01",
+      "headword": "corner",
+      "partOfSpeech": "noun",
+      "arabic": "زاوية",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "corner",
+      "examples": [
+        "It's on the corner."
+      ],
+      "introducedIn": "A1-U8-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.STREET.N01",
+      "headword": "street",
+      "partOfSpeech": "noun",
+      "arabic": "شارع",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "street",
+      "examples": [
+        "The bank is on Green Street."
+      ],
+      "introducedIn": "A1-U8-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.STRAIGHT.ADV01",
+      "headword": "straight",
+      "partOfSpeech": "adverb",
+      "arabic": "مباشرة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "straight",
+      "examples": [
+        "Go straight."
+      ],
+      "introducedIn": "A1-U8-L3",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.TURN.V01",
+      "headword": "turn",
+      "partOfSpeech": "verb",
+      "arabic": "ينعطف",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "turn",
+      "examples": [
+        "Turn right at the bank."
+      ],
+      "introducedIn": "A1-U8-L3",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.LEFT.N01",
+      "headword": "left",
+      "partOfSpeech": "noun",
+      "arabic": "يسار",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "left",
+      "examples": [
+        "Turn left."
+      ],
+      "introducedIn": "A1-U8-L3",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.RIGHT.N01",
+      "headword": "right",
+      "partOfSpeech": "noun",
+      "arabic": "يمين",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "right",
+      "examples": [
+        "The café is on your right."
+      ],
+      "introducedIn": "A1-U8-L3",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.CROSS.V01",
+      "headword": "cross",
+      "partOfSpeech": "verb",
+      "arabic": "يعبر",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "cross",
+      "examples": [
+        "Cross the street."
+      ],
+      "introducedIn": "A1-U8-L3",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.PAST.PREP01",
+      "headword": "past",
+      "partOfSpeech": "preposition",
+      "arabic": "متجاوزاً",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "past",
+      "examples": [
+        "Go past the library."
+      ],
+      "introducedIn": "A1-U8-L3",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.ENTRANCE.N01",
+      "headword": "entrance",
+      "partOfSpeech": "noun",
+      "arabic": "مدخل",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "entrance",
+      "examples": [
+        "Use this entrance."
+      ],
+      "introducedIn": "A1-U8-L5",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.EXIT.N01",
+      "headword": "exit",
+      "partOfSpeech": "noun",
+      "arabic": "مخرج",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "exit",
+      "examples": [
+        "The exit is on the left."
+      ],
+      "introducedIn": "A1-U8-L5",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.OPEN.ADJ01",
+      "headword": "open",
+      "partOfSpeech": "adjective",
+      "arabic": "مفتوح",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "open",
+      "examples": [
+        "The shop is open."
+      ],
+      "introducedIn": "A1-U8-L5",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.CLOSED.ADJ01",
+      "headword": "closed",
+      "partOfSpeech": "adjective",
+      "arabic": "مغلق",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "closed",
+      "examples": [
+        "The bank is closed."
+      ],
+      "introducedIn": "A1-U8-L5",
+      "recycledIn": []
+    }
+  ]
+}

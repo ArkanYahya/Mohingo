@@ -1,0 +1,55 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U8",
+  "kind": "grammar",
+  "records": [
+    {
+      "id": "A1.G.PREPOSITION.PLACE_EXTENDED",
+      "form": "next to, opposite, between, on the corner",
+      "meaningAr": "حروف وتعبيرات المكان",
+      "introducedIn": "A1-U8-L2",
+      "examples": [
+        {
+          "en": "The bank is opposite the café.",
+          "ar": "المصرف مقابل المقهى."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.IMPERATIVE.DIRECTIONS",
+      "form": "base verb for directions",
+      "meaningAr": "صيغة الأمر لإعطاء الاتجاهات",
+      "introducedIn": "A1-U8-L3",
+      "examples": [
+        {
+          "en": "Go straight. Turn left.",
+          "ar": "اذهب مباشرة. انعطف يساراً."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.SEQUENCE.DIRECTIONS",
+      "form": "first/then/after that",
+      "meaningAr": "ترتيب خطوات الاتجاهات",
+      "introducedIn": "A1-U8-L4",
+      "examples": [
+        {
+          "en": "First go straight, then turn right.",
+          "ar": "اذهب مباشرة أولاً ثم انعطف يميناً."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.PUBLIC_SIGN.IMPERATIVE_NEGATIVE",
+      "form": "Don't + base verb",
+      "meaningAr": "النهي في الإشارات العامة",
+      "introducedIn": "A1-U8-L5",
+      "examples": [
+        {
+          "en": "Don't enter.",
+          "ar": "ممنوع الدخول."
+        }
+      ]
+    }
+  ]
+}

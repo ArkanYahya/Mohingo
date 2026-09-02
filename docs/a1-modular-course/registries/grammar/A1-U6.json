@@ -1,0 +1,92 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U6",
+  "kind": "grammar",
+  "records": [
+    {
+      "id": "A1.G.NOUN.COUNT_UNCOUNT_FOUNDATION",
+      "form": "a/an + countable; no a/an with uncountable",
+      "meaningAr": "أساسيات المعدود وغير المعدود",
+      "introducedIn": "A1-U6-L1",
+      "examples": [
+        {
+          "en": "an apple; some rice",
+          "ar": "تفاحة؛ بعض الأرز"
+        }
+      ]
+    },
+    {
+      "id": "A1.G.QUANTIFIER.SOME_ANY",
+      "form": "some in affirmative; any in questions/negatives",
+      "meaningAr": "some وany في السياقات الأساسية",
+      "introducedIn": "A1-U6-L2",
+      "examples": [
+        {
+          "en": "We have some bread. Do you have any milk?",
+          "ar": "لدينا بعض الخبز. هل لديكم حليب؟"
+        }
+      ]
+    },
+    {
+      "id": "A1.G.QUANTITY.HOW_MUCH_MANY_RECEPTIVE",
+      "form": "How much + uncountable; How many + plural",
+      "meaningAr": "فهم السؤال عن الكمية",
+      "introducedIn": "A1-U6-L3",
+      "examples": [
+        {
+          "en": "How much water? How many apples?",
+          "ar": "كم من الماء؟ كم تفاحة؟"
+        }
+      ],
+      "productiveTarget": "limited"
+    },
+    {
+      "id": "A1.G.REQUEST.WOULD_LIKE",
+      "form": "I'd like + noun / to + verb",
+      "meaningAr": "طلب الطعام والشراب بأدب",
+      "introducedIn": "A1-U6-L4",
+      "examples": [
+        {
+          "en": "I'd like a chicken sandwich, please.",
+          "ar": "أرغب في شطيرة دجاج، من فضلك."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.REQUEST.CAN_I_HAVE",
+      "form": "Can I have + item, please?",
+      "meaningAr": "طلب شيء في المطعم",
+      "introducedIn": "A1-U6-L4",
+      "examples": [
+        {
+          "en": "Can I have some water, please?",
+          "ar": "هل يمكنني الحصول على بعض الماء؟"
+        }
+      ]
+    },
+    {
+      "id": "A1.G.ARTICLE.A_AN_SOME_FOOD",
+      "form": "a/an for one countable item; some for uncountable/plural",
+      "meaningAr": "اختيار a/an/some مع الطعام",
+      "introducedIn": "A1-U6-L2",
+      "examples": [
+        {
+          "en": "a banana, an egg, some soup",
+          "ar": "موزة، بيضة، بعض الحساء"
+        }
+      ]
+    },
+    {
+      "id": "A1.G.BE.THIS_ISNT_CORRECTION",
+      "form": "This isn't + noun; I ordered X, not Y",
+      "meaningAr": "تصحيح طلب خاطئ بعبارة وظيفية",
+      "introducedIn": "A1-U6-L5",
+      "examples": [
+        {
+          "en": "This isn't my order. I ordered soup, not salad.",
+          "ar": "هذا ليس طلبي. طلبت حساءً لا سلطة."
+        }
+      ]
+    }
+  ]
+}

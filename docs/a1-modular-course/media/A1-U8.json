@@ -1,0 +1,91 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U8",
+  "kind": "media",
+  "records": {
+    "audio-a1-u8-l1-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "There's a bank, a pharmacy and a café on this street.",
+      "activityId": "A1-U8-L1-A01"
+    },
+    "audio-a1-u8-l1-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "You can buy medicine at the pharmacy on Green Street.",
+      "activityId": "A1-U8-L1-A04"
+    },
+    "audio-a1-u8-l2-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "The bank is opposite the café.",
+      "activityId": "A1-U8-L2-A01"
+    },
+    "audio-a1-u8-l2-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "The bank is on the left, the library is on the right, and the café is between them.",
+      "activityId": "A1-U8-L2-A04"
+    },
+    "audio-a1-u8-l3-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "Turn left at the bank.",
+      "activityId": "A1-U8-L3-A01"
+    },
+    "audio-a1-u8-l3-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "Go straight, turn right at the library, then cross the street.",
+      "activityId": "A1-U8-L3-A04"
+    },
+    "audio-a1-u8-l4-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "Turn right. The station is on your left.",
+      "activityId": "A1-U8-L4-A01"
+    },
+    "audio-a1-u8-l4-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "Go past the pharmacy and turn left at the café. The post office is on your right.",
+      "activityId": "A1-U8-L4-A04"
+    },
+    "audio-a1-u8-l5-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "Use the side entrance. Don't enter through this door.",
+      "activityId": "A1-U8-L5-A01"
+    },
+    "audio-a1-u8-l5-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "This entrance is closed. Please use the next entrance on the right.",
+      "activityId": "A1-U8-L5-A04"
+    },
+    "audio-a1-u8-l6-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "The office is between the pharmacy and library. Use the blue entrance.",
+      "activityId": "A1-U8-L6-A04"
+    },
+    "audio-a1-u8-l7-a02": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "The front entrance is closed. Use the side entrance.",
+      "activityId": "A1-U8-L7-A02"
+    }
+  }
+}

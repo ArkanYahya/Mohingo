@@ -1,0 +1,91 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U11",
+  "kind": "media",
+  "records": {
+    "audio-a1-u11-l1-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "It's cloudy, cold and windy.",
+      "activityId": "A1-U11-L1-A01"
+    },
+    "audio-a1-u11-l1-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "It's cold and cloudy this morning, but warm and sunny this afternoon.",
+      "activityId": "A1-U11-L1-A04"
+    },
+    "audio-a1-u11-l2-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "Omar is walking outside with an umbrella.",
+      "activityId": "A1-U11-L2-A01"
+    },
+    "audio-a1-u11-l2-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "It is snowing now. People are wearing warm coats and hats.",
+      "activityId": "A1-U11-L2-A04"
+    },
+    "audio-a1-u11-l3-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "I'm wearing a warm black coat and boots.",
+      "activityId": "A1-U11-L3-A01"
+    },
+    "audio-a1-u11-l3-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "She's wearing a red jacket and black boots, and she's carrying an umbrella.",
+      "activityId": "A1-U11-L3-A04"
+    },
+    "audio-a1-u11-l4-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "Take an umbrella because it's raining.",
+      "activityId": "A1-U11-L4-A01"
+    },
+    "audio-a1-u11-l4-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "It's cold and windy, so wear a coat and take a hat.",
+      "activityId": "A1-U11-L4-A04"
+    },
+    "audio-a1-u11-l5-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "It will rain tomorrow afternoon.",
+      "activityId": "A1-U11-L5-A01"
+    },
+    "audio-a1-u11-l5-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "Tomorrow morning will be cold and windy. The rain starts after three.",
+      "activityId": "A1-U11-L5-A04"
+    },
+    "audio-a1-u11-l6-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "Tomorrow will be rainy, so please add what you are taking.",
+      "activityId": "A1-U11-L6-A04"
+    },
+    "audio-a1-u11-l7-a02": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "The morning stays sunny, but a light wind starts at ten.",
+      "activityId": "A1-U11-L7-A02"
+    }
+  }
+}

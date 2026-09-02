@@ -1,0 +1,97 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U7",
+  "kind": "chunks",
+  "records": [
+    {
+      "id": "A1.CHUNK.HOW_MUCH_IS_THIS",
+      "text": "How much is this {item}?",
+      "arabic": "كم سعر هذا {item}؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U7-L1",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.HOW_MUCH_ARE_THESE",
+      "text": "How much are these {items}?",
+      "arabic": "كم سعر هذه {items}؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U7-L1",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.WHAT_SIZE",
+      "text": "What size do you need?",
+      "arabic": "ما المقاس الذي تحتاجه؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U7-L2",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.DO_YOU_HAVE_COLOR_SIZE",
+      "text": "Do you have this in {colour/size}?",
+      "arabic": "هل لديكم هذا باللون/المقاس {colour/size}؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U7-L2",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.THE_COLOR_ONE",
+      "text": "The {colour} one, please.",
+      "arabic": "أريد القطعة {colour}، من فضلك.",
+      "cefr": "A1",
+      "introducedIn": "A1-U7-L3",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.CAN_I_TRY_IT_ON",
+      "text": "Can I try it on?",
+      "arabic": "هل يمكنني تجربته؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U7-L3",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.IT_FITS",
+      "text": "It fits. / It doesn't fit.",
+      "arabic": "إنه مناسب / غير مناسب.",
+      "cefr": "A1",
+      "introducedIn": "A1-U7-L3",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.ILL_TAKE_IT",
+      "text": "I'll take it.",
+      "arabic": "سآخذه.",
+      "cefr": "A1",
+      "introducedIn": "A1-U7-L4",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.CAN_I_PAY_BY_CARD",
+      "text": "Can I pay by card?",
+      "arabic": "هل يمكنني الدفع بالبطاقة؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U7-L4",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.CAN_I_CHANGE_THIS",
+      "text": "Can I change this?",
+      "arabic": "هل يمكنني استبدال هذا؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U7-L5",
+      "productive": true,
+      "recycledIn": []
+    }
+  ]
+}

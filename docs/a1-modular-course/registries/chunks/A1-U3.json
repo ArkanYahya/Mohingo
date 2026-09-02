@@ -1,0 +1,163 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U3",
+  "kind": "chunks",
+  "records": [
+    {
+      "id": "A1.CHUNK.THERE_IS",
+      "text": "There is a/an {object}.",
+      "arabic": "يوجد {object}.",
+      "cefr": "A1",
+      "introducedIn": "A1-U3-L1",
+      "productive": true,
+      "recycledIn": [
+        "A1-U8",
+        "A1-U11"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.THERE_ARE",
+      "text": "There are {number} {objects}.",
+      "arabic": "توجد {number} {objects}.",
+      "cefr": "A1",
+      "introducedIn": "A1-U3-L2",
+      "productive": true,
+      "recycledIn": [
+        "A1-U8",
+        "A1-U11"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.IS_THERE",
+      "text": "Is there a/an {object}?",
+      "arabic": "هل يوجد {object}؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U3-L2",
+      "productive": true,
+      "recycledIn": [
+        "A1-U8"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.ARE_THERE_ANY",
+      "text": "Are there any {objects}?",
+      "arabic": "هل توجد أي {objects}؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U3-L2",
+      "productive": true,
+      "recycledIn": [
+        "A1-U8"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.THERE_ISNT",
+      "text": "There isn't a/an {object}.",
+      "arabic": "لا يوجد {object}.",
+      "cefr": "A1",
+      "introducedIn": "A1-U3-L2",
+      "productive": true,
+      "recycledIn": [
+        "A1-U8"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.WHERE_IS_OBJECT",
+      "text": "Where is the {object}?",
+      "arabic": "أين {object}؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U3-L3",
+      "productive": true,
+      "recycledIn": [
+        "A1-U8"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.WHERE_ARE_OBJECTS",
+      "text": "Where are the {objects}?",
+      "arabic": "أين {objects}؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U3-L3",
+      "productive": true,
+      "recycledIn": [
+        "A1-U8"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.OBJECT_IS_PLACE",
+      "text": "The {object} is {place}.",
+      "arabic": "{object} {place}.",
+      "cefr": "A1",
+      "introducedIn": "A1-U3-L3",
+      "productive": true,
+      "recycledIn": [
+        "A1-U8"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.THIS_THAT_OBJECT",
+      "text": "This/That is my {object}.",
+      "arabic": "هذا/ذلك {object}ي.",
+      "cefr": "A1",
+      "introducedIn": "A1-U3-L4",
+      "productive": true,
+      "recycledIn": [
+        "A1-U7"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.THESE_THOSE_OBJECTS",
+      "text": "These/Those are my {objects}.",
+      "arabic": "هذه/تلك {objects}ي.",
+      "cefr": "A1",
+      "introducedIn": "A1-U3-L4",
+      "productive": true,
+      "recycledIn": [
+        "A1-U7"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.IS_THIS_YOUR",
+      "text": "Is this your {object}?",
+      "arabic": "هل هذا {object}ك؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U3-L5",
+      "productive": true,
+      "recycledIn": [
+        "A1-U7"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.YES_ITS_MINE",
+      "text": "Yes, it's mine.",
+      "arabic": "نعم، إنه لي.",
+      "cefr": "A1",
+      "introducedIn": "A1-U3-L5",
+      "productive": true,
+      "recycledIn": [
+        "A1-U7"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.NO_IT_ISNT_MINE",
+      "text": "No, it isn't mine.",
+      "arabic": "لا، ليس لي.",
+      "cefr": "A1",
+      "introducedIn": "A1-U3-L5",
+      "productive": true,
+      "recycledIn": [
+        "A1-U7"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.WELCOME_HOME",
+      "text": "Welcome to my home.",
+      "arabic": "أهلاً بك في منزلي.",
+      "cefr": "A1",
+      "introducedIn": "A1-U3-L6",
+      "productive": true,
+      "recycledIn": [
+        "A1-U12"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U11",
+  "kind": "chunks",
+  "records": [
+    {
+      "id": "A1.CHUNK.WHATS_WEATHER_LIKE",
+      "text": "What's the weather like?",
+      "arabic": "كيف حال الطقس؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U11-L1",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.ITS_WEATHER",
+      "text": "It's {weather adjective}.",
+      "arabic": "الجو {weather adjective}.",
+      "cefr": "A1",
+      "introducedIn": "A1-U11-L1",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.WHAT_ARE_YOU_DOING",
+      "text": "What are you doing?",
+      "arabic": "ماذا تفعل الآن؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U11-L2",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.IM_VERB_ING",
+      "text": "I'm {verb-ing}.",
+      "arabic": "أنا {verb-ing} الآن.",
+      "cefr": "A1",
+      "introducedIn": "A1-U11-L2",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.WEAR_TAKE_BECAUSE",
+      "text": "Wear/Take {item} because it's {weather}.",
+      "arabic": "ارتدِ/خذ {item} لأن الطقس {weather}.",
+      "cefr": "A1",
+      "introducedIn": "A1-U11-L4",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.IS_IT_RAINING",
+      "text": "Is it raining?",
+      "arabic": "هل تمطر الآن؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U11-L3",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.FORECAST_TOMORROW",
+      "text": "It will be {weather} tomorrow.",
+      "arabic": "سيكون الطقس {weather} غداً.",
+      "cefr": "A1",
+      "introducedIn": "A1-U11-L5",
+      "productive": false,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.STAY_INSIDE",
+      "text": "Stay inside.",
+      "arabic": "ابقَ في الداخل.",
+      "cefr": "A1",
+      "introducedIn": "A1-U11-L4",
+      "productive": true,
+      "recycledIn": []
+    }
+  ]
+}

@@ -1,0 +1,212 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U1",
+  "kind": "chunks",
+  "records": [
+    {
+      "id": "A1.CHUNK.IM_NAME",
+      "text": "I'm {name}.",
+      "arabic": "أنا {name}.",
+      "cefr": "A1",
+      "introducedIn": "A1-U1-L1",
+      "productive": true,
+      "recycledIn": [
+        "A1-U1-L7"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.WHERE_FROM",
+      "text": "Where are you from?",
+      "arabic": "من أين أنت؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U1-L2",
+      "productive": true,
+      "recycledIn": [
+        "A1-U1-L7"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.IM_FROM",
+      "text": "I'm from {country}.",
+      "arabic": "أنا من {country}.",
+      "cefr": "A1",
+      "introducedIn": "A1-U1-L2",
+      "productive": true,
+      "recycledIn": [
+        "A1-U1-L7"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.ARE_YOU_FROM",
+      "text": "Are you from {country}?",
+      "arabic": "هل أنت من {country}؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U1-L2",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.YES_I_AM",
+      "text": "Yes, I am.",
+      "arabic": "نعم.",
+      "cefr": "A1",
+      "introducedIn": "A1-U1-L2",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.NO_IM_NOT",
+      "text": "No, I'm not.",
+      "arabic": "لا.",
+      "cefr": "A1",
+      "introducedIn": "A1-U1-L2",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.WHERE_LIVE",
+      "text": "Where do you live?",
+      "arabic": "أين تسكن؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U1-L3",
+      "productive": true,
+      "recycledIn": [
+        "A1-U1-L7",
+        "A1-U5"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.I_LIVE_IN",
+      "text": "I live in {place}.",
+      "arabic": "أسكن في {place}.",
+      "cefr": "A1",
+      "introducedIn": "A1-U1-L3",
+      "productive": true,
+      "recycledIn": [
+        "A1-U1-L7",
+        "A1-U5"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.I_LIVE_WITH",
+      "text": "I live with my family.",
+      "arabic": "أسكن مع عائلتي.",
+      "cefr": "A1",
+      "introducedIn": "A1-U1-L3",
+      "productive": true,
+      "recycledIn": [
+        "A1-U2"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.THIS_IS",
+      "text": "This is {person}.",
+      "arabic": "هذا/هذه {person}.",
+      "cefr": "A1",
+      "introducedIn": "A1-U1-L4",
+      "productive": true,
+      "recycledIn": [
+        "A1-U2"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.HES_MY",
+      "text": "He's my {relation}.",
+      "arabic": "هو {relation}ي.",
+      "cefr": "A1",
+      "introducedIn": "A1-U1-L4",
+      "productive": true,
+      "recycledIn": [
+        "A1-U2"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.SHES_MY",
+      "text": "She's my {relation}.",
+      "arabic": "هي {relation}تي.",
+      "cefr": "A1",
+      "introducedIn": "A1-U1-L4",
+      "productive": true,
+      "recycledIn": [
+        "A1-U2"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.IM_A_JOB",
+      "text": "I'm a/an {job}.",
+      "arabic": "أنا {job}.",
+      "cefr": "A1",
+      "introducedIn": "A1-U1-L5",
+      "productive": true,
+      "recycledIn": [
+        "A1-U4",
+        "A1-U5"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.NICE_MEET",
+      "text": "Nice to meet you.",
+      "arabic": "سعيد بلقائك.",
+      "cefr": "A1",
+      "introducedIn": "A1-U1-L1",
+      "productive": true,
+      "recycledIn": [
+        "A1-U1-L6",
+        "A1-U1-L7"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.NICE_MEET_TOO",
+      "text": "Nice to meet you too.",
+      "arabic": "وأنا سعيد بلقائك أيضاً.",
+      "cefr": "A1",
+      "introducedIn": "A1-U1-L6",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.AND_YOU",
+      "text": "And you?",
+      "arabic": "وأنت؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U1-L6",
+      "productive": true,
+      "recycledIn": [
+        "A1-U1-L7"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.SORRY_Q",
+      "text": "Sorry?",
+      "arabic": "عذراً؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U1-L6",
+      "productive": true,
+      "recycledIn": [
+        "ALL"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.PLEASE_REPEAT",
+      "text": "Please repeat.",
+      "arabic": "كرر من فضلك.",
+      "cefr": "A1",
+      "introducedIn": "A1-U1-L6",
+      "productive": true,
+      "recycledIn": [
+        "ALL"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.DONT_UNDERSTAND",
+      "text": "I don't understand.",
+      "arabic": "أنا لا أفهم.",
+      "cefr": "A1",
+      "introducedIn": "A1-U1-L6",
+      "productive": true,
+      "recycledIn": [
+        "ALL"
+      ]
+    }
+  ]
+}

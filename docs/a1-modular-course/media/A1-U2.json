@@ -1,0 +1,321 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U2",
+  "kind": "media",
+  "records": {
+    "parents-and-one-son": {
+      "type": "peopleCard",
+      "alt": "Two parents with one adult son",
+      "render": {
+        "people": [
+          {
+            "id": "p1",
+            "role": "parent"
+          },
+          {
+            "id": "p2",
+            "role": "parent"
+          },
+          {
+            "id": "p3",
+            "role": "son"
+          }
+        ],
+        "links": [
+          [
+            "p1",
+            "p2",
+            "partners"
+          ],
+          [
+            "p1",
+            "p3",
+            "parent-child"
+          ],
+          [
+            "p2",
+            "p3",
+            "parent-child"
+          ]
+        ]
+      }
+    },
+    "mother-and-two-daughters": {
+      "type": "peopleCard",
+      "alt": "A mother with two daughters",
+      "render": {
+        "people": [
+          {
+            "id": "mother",
+            "gender": "woman"
+          },
+          {
+            "id": "daughter1",
+            "gender": "woman"
+          },
+          {
+            "id": "daughter2",
+            "gender": "woman"
+          }
+        ],
+        "links": [
+          [
+            "mother",
+            "daughter1",
+            "parent-child"
+          ],
+          [
+            "mother",
+            "daughter2",
+            "parent-child"
+          ]
+        ]
+      }
+    },
+    "grandparents-and-one-daughter": {
+      "type": "peopleCard",
+      "alt": "Two grandparents with one daughter",
+      "render": {
+        "people": [
+          {
+            "id": "grandmother",
+            "ageGroup": "older"
+          },
+          {
+            "id": "grandfather",
+            "ageGroup": "older"
+          },
+          {
+            "id": "daughter",
+            "ageGroup": "adult"
+          }
+        ],
+        "links": [
+          [
+            "grandmother",
+            "daughter",
+            "parent-child"
+          ],
+          [
+            "grandfather",
+            "daughter",
+            "parent-child"
+          ]
+        ]
+      }
+    },
+    "tall-kind-man": {
+      "type": "personCard",
+      "alt": "A tall man helping someone; visual cue for kind",
+      "render": {
+        "gender": "man",
+        "height": "tall",
+        "action": "helping"
+      }
+    },
+    "short-funny-woman": {
+      "type": "personCard",
+      "alt": "A short woman making friends laugh; visual cue for funny",
+      "render": {
+        "gender": "woman",
+        "height": "short",
+        "action": "making-people-laugh"
+      }
+    },
+    "quiet-friendly-man": {
+      "type": "personCard",
+      "alt": "A quiet man smiling and greeting a visitor; visual cue for friendly",
+      "render": {
+        "gender": "man",
+        "demeanour": "quiet",
+        "action": "friendly-greeting"
+      }
+    },
+    "two-friends": {
+      "type": "peopleCard",
+      "alt": "Two friends standing together",
+      "render": {
+        "people": [
+          {
+            "id": "a"
+          },
+          {
+            "id": "b"
+          }
+        ],
+        "link": "friends"
+      }
+    },
+    "two-parents": {
+      "type": "peopleCard",
+      "alt": "Two parents with their child",
+      "render": {
+        "people": [
+          {
+            "id": "parent1"
+          },
+          {
+            "id": "parent2"
+          },
+          {
+            "id": "child"
+          }
+        ],
+        "link": "parents"
+      }
+    },
+    "one-sister": {
+      "type": "peopleCard",
+      "alt": "One woman labelled my sister",
+      "render": {
+        "people": [
+          {
+            "id": "sister",
+            "label": "my sister"
+          }
+        ]
+      }
+    },
+    "map-a": {
+      "type": "peopleMap",
+      "alt": "People map A",
+      "render": {
+        "people": [
+          {
+            "name": "Sami",
+            "relation": "father"
+          },
+          {
+            "name": "Lina",
+            "relation": "mother"
+          },
+          {
+            "name": "Omar",
+            "relation": "son"
+          },
+          {
+            "name": "Noor",
+            "relation": "cousin",
+            "age": 18
+          }
+        ],
+        "links": [
+          [
+            "Sami",
+            "Lina",
+            "partners"
+          ],
+          [
+            "Sami",
+            "Omar",
+            "parent-child"
+          ],
+          [
+            "Lina",
+            "Omar",
+            "parent-child"
+          ]
+        ]
+      }
+    },
+    "map-b": {
+      "type": "peopleMap",
+      "alt": "People map B: Sami and Lina are Omar's parents; Noor is Omar's 18-year-old sister",
+      "render": {
+        "people": [
+          {
+            "name": "Sami",
+            "relation": "father"
+          },
+          {
+            "name": "Lina",
+            "relation": "mother"
+          },
+          {
+            "name": "Omar",
+            "relation": "son"
+          },
+          {
+            "name": "Noor",
+            "relation": "sister",
+            "age": 18
+          }
+        ],
+        "links": [
+          [
+            "Sami",
+            "Lina",
+            "partners"
+          ],
+          [
+            "Sami",
+            "Omar",
+            "parent-child"
+          ],
+          [
+            "Lina",
+            "Omar",
+            "parent-child"
+          ],
+          [
+            "Sami",
+            "Noor",
+            "parent-child"
+          ],
+          [
+            "Lina",
+            "Noor",
+            "parent-child"
+          ],
+          [
+            "Omar",
+            "Noor",
+            "siblings"
+          ]
+        ]
+      }
+    },
+    "map-c": {
+      "type": "peopleMap",
+      "alt": "People map C",
+      "render": {
+        "people": [
+          {
+            "name": "Sami",
+            "relation": "grandfather"
+          },
+          {
+            "name": "Lina",
+            "relation": "grandmother"
+          },
+          {
+            "name": "Omar",
+            "relation": "friend"
+          },
+          {
+            "name": "Noor",
+            "relation": "daughter",
+            "age": 20
+          }
+        ],
+        "links": [
+          [
+            "Sami",
+            "Lina",
+            "partners"
+          ],
+          [
+            "Sami",
+            "Noor",
+            "parent-child"
+          ],
+          [
+            "Lina",
+            "Noor",
+            "parent-child"
+          ]
+        ]
+      }
+    }
+  }
+}

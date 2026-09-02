@@ -1,0 +1,88 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U10",
+  "kind": "chunks",
+  "records": [
+    {
+      "id": "A1.CHUNK.I_HAVE_SYMPTOM",
+      "text": "I have a {symptom}.",
+      "arabic": "لدي {symptom}.",
+      "cefr": "A1",
+      "introducedIn": "A1-U10-L2",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.MY_BODY_HURTS",
+      "text": "My {body part} hurts.",
+      "arabic": "{body part} يؤلمني.",
+      "cefr": "A1",
+      "introducedIn": "A1-U10-L1",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.I_FEEL_ADJ",
+      "text": "I feel {adjective}.",
+      "arabic": "أشعر أنني {adjective}.",
+      "cefr": "A1",
+      "introducedIn": "A1-U10-L2",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.DO_YOU_HAVE_FEVER",
+      "text": "Do you have a fever?",
+      "arabic": "هل لديك حمى؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U10-L3",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.YOU_SHOULD",
+      "text": "You should {action}.",
+      "arabic": "ينبغي أن {action}.",
+      "cefr": "A1",
+      "introducedIn": "A1-U10-L3",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.YOU_SHOULDNT",
+      "text": "You shouldn't {action}.",
+      "arabic": "لا ينبغي أن {action}.",
+      "cefr": "A1",
+      "introducedIn": "A1-U10-L3",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.I_NEED_A_DOCTOR",
+      "text": "I need a doctor.",
+      "arabic": "أحتاج طبيباً.",
+      "cefr": "A1",
+      "introducedIn": "A1-U10-L4",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.CALL_HELP",
+      "text": "Please call for help.",
+      "arabic": "يرجى طلب المساعدة.",
+      "cefr": "A1",
+      "introducedIn": "A1-U10-L4",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.HOW_DO_YOU_FEEL",
+      "text": "How do you feel?",
+      "arabic": "كيف تشعر؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U10-L5",
+      "productive": true,
+      "recycledIn": []
+    }
+  ]
+}

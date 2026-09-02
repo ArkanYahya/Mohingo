@@ -1,0 +1,161 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U1",
+  "kind": "grammar",
+  "records": [
+    {
+      "id": "A1.G.BE.I_AM",
+      "form": "I am",
+      "shortForm": "I'm",
+      "meaningAr": "أنا أكون/أنا",
+      "introducedIn": "A1-U1-L1",
+      "examples": [
+        {
+          "en": "I'm Omar.",
+          "ar": "أنا عمر."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.BE.YOU_ARE",
+      "form": "you are",
+      "shortForm": "you're",
+      "meaningAr": "أنت تكون/أنت",
+      "introducedIn": "A1-U1-L1",
+      "examples": [
+        {
+          "en": "You're Sara.",
+          "ar": "أنتِ سارة."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.POSSESSIVE.MY_YOUR",
+      "form": "my / your",
+      "meaningAr": "ملكي / ملكك",
+      "introducedIn": "A1-U1-L1",
+      "examples": [
+        {
+          "en": "My name is Ali. What's your name?",
+          "ar": "اسمي علي. ما اسمك؟"
+        }
+      ]
+    },
+    {
+      "id": "A1.G.WH.WHAT_BASIC",
+      "form": "What is ...?",
+      "meaningAr": "ما/ماذا؟",
+      "introducedIn": "A1-U1-L1",
+      "examples": [
+        {
+          "en": "What's your name?",
+          "ar": "ما اسمك؟"
+        }
+      ]
+    },
+    {
+      "id": "A1.G.WH.WHERE",
+      "form": "Where ...?",
+      "meaningAr": "أين/من أين؟",
+      "introducedIn": "A1-U1-L2",
+      "examples": [
+        {
+          "en": "Where are you from?",
+          "ar": "من أين أنت؟"
+        }
+      ]
+    },
+    {
+      "id": "A1.G.BE.QUESTION_YOU",
+      "form": "Are you ...?",
+      "meaningAr": "هل أنت...؟",
+      "introducedIn": "A1-U1-L2",
+      "examples": [
+        {
+          "en": "Are you from Iraq?",
+          "ar": "هل أنت من العراق؟"
+        }
+      ]
+    },
+    {
+      "id": "A1.G.BE.SHORT_ANSWER_I",
+      "form": "Yes, I am. / No, I'm not.",
+      "meaningAr": "نعم / لا بإجابة قصيرة",
+      "introducedIn": "A1-U1-L2",
+      "examples": [
+        {
+          "en": "No, I'm not. I'm from Jordan.",
+          "ar": "لا. أنا من الأردن."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.CHUNK.WHERE_DO_YOU_LIVE",
+      "form": "Where do you live?",
+      "meaningAr": "أين تسكن؟ تعامل كعبارة ثابتة الآن؛ تحليل do مؤجل",
+      "introducedIn": "A1-U1-L3",
+      "deferAnalysisUntil": "A1-U5"
+    },
+    {
+      "id": "A1.G.PRONOUN.HE_SHE",
+      "form": "he / she",
+      "meaningAr": "هو / هي",
+      "introducedIn": "A1-U1-L4",
+      "examples": [
+        {
+          "en": "He's Ali. She's Sara.",
+          "ar": "هو علي. هي سارة."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.BE.HE_SHE_IS",
+      "form": "he is / she is",
+      "shortForm": "he's / she's",
+      "meaningAr": "هو/هي يكون",
+      "introducedIn": "A1-U1-L4",
+      "examples": [
+        {
+          "en": "She's my friend.",
+          "ar": "هي صديقتي."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.POSSESSIVE.HIS_HER",
+      "form": "his / her",
+      "meaningAr": "ملكه / ملكها",
+      "introducedIn": "A1-U1-L4",
+      "examples": [
+        {
+          "en": "Her name is Maya.",
+          "ar": "اسمها مايا."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.DEMONSTRATIVE.THIS_INTRODUCTION",
+      "form": "This is ...",
+      "meaningAr": "هذا/هذه ... للتقديم",
+      "introducedIn": "A1-U1-L4",
+      "examples": [
+        {
+          "en": "This is my brother.",
+          "ar": "هذا أخي."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.ARTICLE.A_AN_JOB",
+      "form": "a / an + job",
+      "meaningAr": "أداة تنكير قبل المهنة؛ an قبل الصوت المتحرك",
+      "introducedIn": "A1-U1-L5",
+      "examples": [
+        {
+          "en": "I'm a teacher. She's an engineer.",
+          "ar": "أنا مدرس. هي مهندسة."
+        }
+      ]
+    }
+  ]
+}

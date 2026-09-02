@@ -1,0 +1,403 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U5",
+  "kind": "lexicon",
+  "records": [
+    {
+      "id": "A1.LEX.HOBBY.N01",
+      "headword": "hobby",
+      "partOfSpeech": "noun",
+      "arabic": "هواية",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "hobby",
+      "examples": [
+        "Reading is my hobby."
+      ],
+      "introducedIn": "A1-U5-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.FREE_TIME.N01",
+      "headword": "free time",
+      "partOfSpeech": "noun",
+      "arabic": "وقت الفراغ",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "free time",
+      "examples": [
+        "I read in my free time."
+      ],
+      "introducedIn": "A1-U5-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.MUSIC.N01",
+      "headword": "music",
+      "partOfSpeech": "noun",
+      "arabic": "موسيقى",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "music",
+      "examples": [
+        "I like music."
+      ],
+      "introducedIn": "A1-U5-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.FILM.N01",
+      "headword": "film",
+      "partOfSpeech": "noun",
+      "arabic": "فيلم",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "film",
+      "examples": [
+        "We watch a film on Friday."
+      ],
+      "introducedIn": "A1-U5-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.GAME.N01",
+      "headword": "game",
+      "partOfSpeech": "noun",
+      "arabic": "لعبة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "game",
+      "examples": [
+        "This is a fun game."
+      ],
+      "introducedIn": "A1-U5-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.FOOTBALL.N01",
+      "headword": "football",
+      "partOfSpeech": "noun",
+      "arabic": "كرة القدم",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "football",
+      "examples": [
+        "He likes football."
+      ],
+      "introducedIn": "A1-U5-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.TENNIS.N01",
+      "headword": "tennis",
+      "partOfSpeech": "noun",
+      "arabic": "التنس",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "tennis",
+      "examples": [
+        "She plays tennis."
+      ],
+      "introducedIn": "A1-U5-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.CHESS.N01",
+      "headword": "chess",
+      "partOfSpeech": "noun",
+      "arabic": "الشطرنج",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "chess",
+      "examples": [
+        "Can you play chess?"
+      ],
+      "introducedIn": "A1-U5-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.PLAY.V01",
+      "headword": "play",
+      "partOfSpeech": "verb",
+      "arabic": "يلعب",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "play",
+      "examples": [
+        "I play football."
+      ],
+      "introducedIn": "A1-U5-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.WATCH.V01",
+      "headword": "watch",
+      "partOfSpeech": "verb",
+      "arabic": "يشاهد",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "watch",
+      "examples": [
+        "We watch films."
+      ],
+      "introducedIn": "A1-U5-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.SWIM.V01",
+      "headword": "swim",
+      "partOfSpeech": "verb",
+      "arabic": "يسبح",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "swim",
+      "examples": [
+        "She can swim."
+      ],
+      "introducedIn": "A1-U5-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.RUN.V01",
+      "headword": "run",
+      "partOfSpeech": "verb",
+      "arabic": "يركض",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "run",
+      "examples": [
+        "I like running."
+      ],
+      "introducedIn": "A1-U5-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.DANCE.V01",
+      "headword": "dance",
+      "partOfSpeech": "verb",
+      "arabic": "يرقص",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "dance",
+      "examples": [
+        "He can't dance."
+      ],
+      "introducedIn": "A1-U5-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.SING.V01",
+      "headword": "sing",
+      "partOfSpeech": "verb",
+      "arabic": "يغني",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "sing",
+      "examples": [
+        "Can you sing?"
+      ],
+      "introducedIn": "A1-U5-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.DRAW.V01",
+      "headword": "draw",
+      "partOfSpeech": "verb",
+      "arabic": "يرسم",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "draw",
+      "examples": [
+        "My sister loves drawing."
+      ],
+      "introducedIn": "A1-U5-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.COOK.V01",
+      "headword": "cook",
+      "partOfSpeech": "verb",
+      "arabic": "يطبخ",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "cook",
+      "examples": [
+        "We like cooking."
+      ],
+      "introducedIn": "A1-U5-L2",
+      "recycledIn": [
+        "A1-U6"
+      ]
+    },
+    {
+      "id": "A1.LEX.WALK.V01",
+      "headword": "walk",
+      "partOfSpeech": "verb",
+      "arabic": "يمشي",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "walk",
+      "examples": [
+        "I walk in the park."
+      ],
+      "introducedIn": "A1-U5-L2",
+      "recycledIn": [
+        "A1-U8"
+      ]
+    },
+    {
+      "id": "A1.LEX.LIKE.V01",
+      "headword": "like",
+      "partOfSpeech": "verb",
+      "arabic": "يحب",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "like",
+      "examples": [
+        "I like music."
+      ],
+      "introducedIn": "A1-U5-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.LOVE.V01",
+      "headword": "love",
+      "partOfSpeech": "verb",
+      "arabic": "يحب جداً",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "love",
+      "examples": [
+        "She loves reading."
+      ],
+      "introducedIn": "A1-U5-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.HATE.V01",
+      "headword": "hate",
+      "partOfSpeech": "verb",
+      "arabic": "يكره",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "hate",
+      "examples": [
+        "He hates running."
+      ],
+      "introducedIn": "A1-U5-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.INVITE.V01",
+      "headword": "invite",
+      "partOfSpeech": "verb",
+      "arabic": "يدعو",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": false,
+      "meaning": "invite",
+      "examples": [
+        "I want to invite Sara."
+      ],
+      "introducedIn": "A1-U5-L5",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.BUSY.ADJ01",
+      "headword": "busy",
+      "partOfSpeech": "adjective",
+      "arabic": "مشغول",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "busy",
+      "examples": [
+        "Sorry, I'm busy."
+      ],
+      "introducedIn": "A1-U5-L5",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.FREE.ADJ01",
+      "headword": "free",
+      "partOfSpeech": "adjective",
+      "arabic": "متفرغ",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "free",
+      "examples": [
+        "Are you free this afternoon?"
+      ],
+      "introducedIn": "A1-U5-L5",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.GREAT.ADJ01",
+      "headword": "great",
+      "partOfSpeech": "adjective",
+      "arabic": "رائع",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "great",
+      "examples": [
+        "Great! See you at four."
+      ],
+      "introducedIn": "A1-U5-L5",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.MAYBE.ADV01",
+      "headword": "maybe",
+      "partOfSpeech": "adverb",
+      "arabic": "ربما",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "maybe",
+      "examples": [
+        "Maybe on Saturday."
+      ],
+      "introducedIn": "A1-U5-L5",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.PARK.N01",
+      "headword": "park",
+      "partOfSpeech": "noun",
+      "arabic": "حديقة عامة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "park",
+      "examples": [
+        "Let's meet in the park."
+      ],
+      "introducedIn": "A1-U5-L5",
+      "recycledIn": [
+        "A1-U8"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "a1-modular-course",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "migrate": "node tools/modularize-a1.mjs",
+    "author:complete": "node tools/author-complete-a1.mjs",
+    "build": "node tools/build-a1.mjs",
+    "validate": "node tools/validate-a1.mjs",
+    "audit": "node tools/audit-quality.mjs",
+    "check": "npm run validate && npm run audit && npm run build"
+  }
+}

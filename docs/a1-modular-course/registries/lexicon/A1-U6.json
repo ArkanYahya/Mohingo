@@ -1,0 +1,459 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U6",
+  "kind": "lexicon",
+  "records": [
+    {
+      "id": "A1.LEX.APPLE.N01",
+      "headword": "apple",
+      "partOfSpeech": "noun",
+      "arabic": "تفاحة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "apple",
+      "examples": [
+        "I'd like an apple."
+      ],
+      "introducedIn": "A1-U6-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.BANANA.N01",
+      "headword": "banana",
+      "partOfSpeech": "noun",
+      "arabic": "موزة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "banana",
+      "examples": [
+        "I eat a banana for breakfast."
+      ],
+      "introducedIn": "A1-U6-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.EGG.N01",
+      "headword": "egg",
+      "partOfSpeech": "noun",
+      "arabic": "بيضة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "egg",
+      "examples": [
+        "There are two eggs."
+      ],
+      "introducedIn": "A1-U6-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.SANDWICH.N01",
+      "headword": "sandwich",
+      "partOfSpeech": "noun",
+      "arabic": "شطيرة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "sandwich",
+      "examples": [
+        "I'd like a cheese sandwich."
+      ],
+      "introducedIn": "A1-U6-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.BREAD.N01",
+      "headword": "bread",
+      "partOfSpeech": "noun",
+      "arabic": "خبز",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "bread",
+      "examples": [
+        "We have some bread."
+      ],
+      "introducedIn": "A1-U6-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.RICE.N01",
+      "headword": "rice",
+      "partOfSpeech": "noun",
+      "arabic": "أرز",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "rice",
+      "examples": [
+        "I like rice."
+      ],
+      "introducedIn": "A1-U6-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.CHEESE.N01",
+      "headword": "cheese",
+      "partOfSpeech": "noun",
+      "arabic": "جبن",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "cheese",
+      "examples": [
+        "There is some cheese."
+      ],
+      "introducedIn": "A1-U6-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.CHICKEN.N01",
+      "headword": "chicken",
+      "partOfSpeech": "noun",
+      "arabic": "دجاج",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "chicken",
+      "examples": [
+        "I'd like chicken and rice."
+      ],
+      "introducedIn": "A1-U6-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.SOUP.N01",
+      "headword": "soup",
+      "partOfSpeech": "noun",
+      "arabic": "حساء",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "soup",
+      "examples": [
+        "The soup is hot."
+      ],
+      "introducedIn": "A1-U6-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.SALAD.N01",
+      "headword": "salad",
+      "partOfSpeech": "noun",
+      "arabic": "سلطة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "salad",
+      "examples": [
+        "Can I have a salad?"
+      ],
+      "introducedIn": "A1-U6-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.WATER.N01",
+      "headword": "water",
+      "partOfSpeech": "noun",
+      "arabic": "ماء",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "water",
+      "examples": [
+        "Can I have some water?"
+      ],
+      "introducedIn": "A1-U6-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.MILK.N01",
+      "headword": "milk",
+      "partOfSpeech": "noun",
+      "arabic": "حليب",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "milk",
+      "examples": [
+        "Do you have any milk?"
+      ],
+      "introducedIn": "A1-U6-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.COFFEE.N01",
+      "headword": "coffee",
+      "partOfSpeech": "noun",
+      "arabic": "قهوة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "coffee",
+      "examples": [
+        "I'd like a coffee."
+      ],
+      "introducedIn": "A1-U6-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.TEA.N01",
+      "headword": "tea",
+      "partOfSpeech": "noun",
+      "arabic": "شاي",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "tea",
+      "examples": [
+        "She likes tea."
+      ],
+      "introducedIn": "A1-U6-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.JUICE.N01",
+      "headword": "juice",
+      "partOfSpeech": "noun",
+      "arabic": "عصير",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "juice",
+      "examples": [
+        "We have some orange juice."
+      ],
+      "introducedIn": "A1-U6-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.BOTTLE.N01",
+      "headword": "bottle",
+      "partOfSpeech": "noun",
+      "arabic": "قنينة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "bottle",
+      "examples": [
+        "a bottle of water"
+      ],
+      "introducedIn": "A1-U6-L3",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.CUP.N01",
+      "headword": "cup",
+      "partOfSpeech": "noun",
+      "arabic": "فنجان/كوب",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "cup",
+      "examples": [
+        "a cup of tea"
+      ],
+      "introducedIn": "A1-U6-L3",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.GLASS.N01",
+      "headword": "glass",
+      "partOfSpeech": "noun",
+      "arabic": "قدح زجاجي",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "glass",
+      "examples": [
+        "a glass of juice"
+      ],
+      "introducedIn": "A1-U6-L3",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.BOWL.N01",
+      "headword": "bowl",
+      "partOfSpeech": "noun",
+      "arabic": "وعاء",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "bowl",
+      "examples": [
+        "a bowl of soup"
+      ],
+      "introducedIn": "A1-U6-L3",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.PLATE.N01",
+      "headword": "plate",
+      "partOfSpeech": "noun",
+      "arabic": "طبق",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "plate",
+      "examples": [
+        "a plate of rice"
+      ],
+      "introducedIn": "A1-U6-L3",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.MENU.N01",
+      "headword": "menu",
+      "partOfSpeech": "noun",
+      "arabic": "قائمة الطعام",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "menu",
+      "examples": [
+        "Can I see the menu?"
+      ],
+      "introducedIn": "A1-U6-L4",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.WAITER.N01",
+      "headword": "waiter",
+      "partOfSpeech": "noun",
+      "arabic": "نادل",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "waiter",
+      "examples": [
+        "The waiter has the menu."
+      ],
+      "introducedIn": "A1-U6-L4",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.ORDER.N01",
+      "headword": "order",
+      "partOfSpeech": "noun",
+      "arabic": "طلب",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "order",
+      "examples": [
+        "This is my order."
+      ],
+      "introducedIn": "A1-U6-L4",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.MEAL.N01",
+      "headword": "meal",
+      "partOfSpeech": "noun",
+      "arabic": "وجبة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "meal",
+      "examples": [
+        "It's a good meal."
+      ],
+      "introducedIn": "A1-U6-L4",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.HUNGRY.ADJ01",
+      "headword": "hungry",
+      "partOfSpeech": "adjective",
+      "arabic": "جائع",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "hungry",
+      "examples": [
+        "I'm hungry."
+      ],
+      "introducedIn": "A1-U6-L4",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.THIRSTY.ADJ01",
+      "headword": "thirsty",
+      "partOfSpeech": "adjective",
+      "arabic": "عطشان",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "thirsty",
+      "examples": [
+        "I'm thirsty."
+      ],
+      "introducedIn": "A1-U6-L4",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.BILL.N01",
+      "headword": "bill",
+      "partOfSpeech": "noun",
+      "arabic": "الحساب",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "bill",
+      "examples": [
+        "Can I have the bill, please?"
+      ],
+      "introducedIn": "A1-U6-L5",
+      "recycledIn": [
+        "A1-U7"
+      ]
+    },
+    {
+      "id": "A1.LEX.WRONG.ADJ01",
+      "headword": "wrong",
+      "partOfSpeech": "adjective",
+      "arabic": "خاطئ",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "wrong",
+      "examples": [
+        "This order is wrong."
+      ],
+      "introducedIn": "A1-U6-L5",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.MISSING.ADJ01",
+      "headword": "missing",
+      "partOfSpeech": "adjective",
+      "arabic": "مفقود/ناقص",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "missing",
+      "examples": [
+        "The water is missing."
+      ],
+      "introducedIn": "A1-U6-L5",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.DELICIOUS.ADJ01",
+      "headword": "delicious",
+      "partOfSpeech": "adjective",
+      "arabic": "لذيذ",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "delicious",
+      "examples": [
+        "The soup is delicious."
+      ],
+      "introducedIn": "A1-U6-L6",
+      "recycledIn": []
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U2",
+  "kind": "grammar",
+  "records": [
+    {
+      "id": "A1.G.HAVE.I_YOU_WE_THEY",
+      "form": "I/you/we/they have",
+      "meaningAr": "لدي/لديك/لدينا/لديهم",
+      "introducedIn": "A1-U2-L2",
+      "examples": [
+        {
+          "en": "I have two sisters.",
+          "ar": "لدي أختان."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.HAVE.HE_SHE",
+      "form": "he/she has",
+      "meaningAr": "لديه/لديها",
+      "introducedIn": "A1-U2-L2",
+      "examples": [
+        {
+          "en": "She has one brother.",
+          "ar": "لديها أخ واحد."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.CHUNK.DO_YOU_HAVE",
+      "form": "Do you have ...?",
+      "meaningAr": "هل لديك...؟ تعامل كعبارة وظيفية؛ تحليل do/does الكامل مؤجل إلى U5",
+      "introducedIn": "A1-U2-L2",
+      "deferAnalysisUntil": "A1-U5"
+    },
+    {
+      "id": "A1.G.PLURAL.REGULAR",
+      "form": "noun + -s/-es",
+      "meaningAr": "جمع الأسماء المنتظم",
+      "introducedIn": "A1-U2-L2",
+      "examples": [
+        {
+          "en": "one brother — two brothers",
+          "ar": "أخ واحد — أخوان"
+        }
+      ]
+    },
+    {
+      "id": "A1.G.PLURAL.IRREGULAR.PEOPLE",
+      "form": "child/children, man/men, woman/women, person/people",
+      "meaningAr": "جموع شائعة غير منتظمة تخص الأشخاص",
+      "introducedIn": "A1-U2-L2",
+      "examples": [
+        {
+          "en": "They have two children.",
+          "ar": "لديهم طفلان."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.POSSESSIVE.S",
+      "form": "person + ’s + noun",
+      "meaningAr": "ملكية شخص لشيء أو علاقة",
+      "introducedIn": "A1-U2-L3",
+      "examples": [
+        {
+          "en": "Omar's sister is Maya.",
+          "ar": "أخت عمر هي مايا."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.WH.WHO_WHOSE",
+      "form": "Who ...? / Whose ...?",
+      "meaningAr": "من؟ / لِمَن؟",
+      "introducedIn": "A1-U2-L3",
+      "examples": [
+        {
+          "en": "Who's this? Whose phone is this?",
+          "ar": "من هذا؟ هاتف من هذا؟"
+        }
+      ]
+    },
+    {
+      "id": "A1.G.PRONOUN.WE_THEY",
+      "form": "we / they",
+      "meaningAr": "نحن / هم",
+      "introducedIn": "A1-U2-L5",
+      "examples": [
+        {
+          "en": "We are friends. They are my parents.",
+          "ar": "نحن أصدقاء. هم والداي."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.POSSESSIVE.OUR_THEIR",
+      "form": "our / their",
+      "meaningAr": "لنا / لهم",
+      "introducedIn": "A1-U2-L5",
+      "examples": [
+        {
+          "en": "Our friend is Ali. Their names are Noor and Sami.",
+          "ar": "صديقنا علي. اسماهما نور وسامي."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.CONJ.AND_BUT",
+      "form": "and / but",
+      "meaningAr": "و / لكن لربط وصفين بسيطين",
+      "introducedIn": "A1-U2-L4",
+      "examples": [
+        {
+          "en": "She's kind and funny. He's quiet but friendly.",
+          "ar": "هي طيبة ومضحكة. هو هادئ لكنه ودود."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,317 @@
+{
+  "id": "A1-FINAL-MISSION",
+  "title": "A Day in a New City",
+  "titleAr": "يوم في مدينة جديدة",
+  "status": "required-capstone",
+  "estimatedMinutes": [
+    20,
+    30
+  ],
+  "sourcePolicy": "All names, schedules, maps, menus and problems are fictional and unseen in earlier lessons.",
+  "scenario": "Register for a short activity, meet people, navigate to three places, buy something, solve a small problem and arrange a later meeting.",
+  "canDo": [
+    "A1.EXIT.LISTENING.UNDERSTAND_EVERYDAY_INFO",
+    "A1.EXIT.READING.UNDERSTAND_SIMPLE_TEXTS",
+    "A1.EXIT.WRITING.WRITE_SIMPLE_CONNECTED_TEXT",
+    "A1.EXIT.INTERACTION.HANDLE_SIMPLE_EXCHANGE",
+    "A1.EXIT.PRODUCTION.DESCRIBE_FAMILIAR_MATTER",
+    "A1.EXIT.MEDIATION.RELAY_SIMPLE_INFORMATION",
+    "A1.EXIT.ACTION.COMPLETE_MULTI_STEP_MISSION"
+  ],
+  "stages": [
+    {
+      "id": "A1-FINAL-MISSION-S1",
+      "title": "Register",
+      "titleAr": "سجّل",
+      "activityIds": [
+        "A1-FINAL-MISSION-A01",
+        "A1-FINAL-MISSION-A02"
+      ]
+    },
+    {
+      "id": "A1-FINAL-MISSION-S2",
+      "title": "Meet People",
+      "titleAr": "تعرّف على أشخاص",
+      "activityIds": [
+        "A1-FINAL-MISSION-A03",
+        "A1-FINAL-MISSION-A04"
+      ]
+    },
+    {
+      "id": "A1-FINAL-MISSION-S3",
+      "title": "Find the Places",
+      "titleAr": "اعثر على الأماكن",
+      "activityIds": [
+        "A1-FINAL-MISSION-A05",
+        "A1-FINAL-MISSION-A06"
+      ]
+    },
+    {
+      "id": "A1-FINAL-MISSION-S4",
+      "title": "Buy What You Need",
+      "titleAr": "اشتر ما تحتاجه",
+      "activityIds": [
+        "A1-FINAL-MISSION-A07",
+        "A1-FINAL-MISSION-A08"
+      ]
+    },
+    {
+      "id": "A1-FINAL-MISSION-S5",
+      "title": "Solve a Problem",
+      "titleAr": "حل مشكلة",
+      "activityIds": [
+        "A1-FINAL-MISSION-A09",
+        "A1-FINAL-MISSION-A10"
+      ]
+    },
+    {
+      "id": "A1-FINAL-MISSION-S6",
+      "title": "Make the Next Plan",
+      "titleAr": "رتب الخطة التالية",
+      "activityIds": [
+        "A1-FINAL-MISSION-A11",
+        "A1-FINAL-MISSION-A12"
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "A1-FINAL-MISSION-A01",
+      "type": "audioChoice",
+      "mode": "mastery",
+      "skill": "listening",
+      "canDo": [
+        "A1.EXIT.LISTENING.UNDERSTAND_EVERYDAY_INFO",
+        "A1.EXIT.ACTION.COMPLETE_MULTI_STEP_MISSION"
+      ],
+      "prompt": "Which registration time is available?",
+      "promptAr": "أي وقت متاح للتسجيل؟",
+      "options": [
+        "09:30",
+        "10:30",
+        "12:00"
+      ],
+      "answer": "10:30",
+      "audioTranscript": "The nine-thirty group is full. You can join the group at ten thirty."
+    },
+    {
+      "id": "A1-FINAL-MISSION-A02",
+      "type": "form",
+      "mode": "mastery",
+      "skill": "writing",
+      "canDo": [
+        "A1.EXIT.WRITING.WRITE_SIMPLE_CONNECTED_TEXT",
+        "A1.EXIT.ACTION.COMPLETE_MULTI_STEP_MISSION"
+      ],
+      "prompt": "Complete the fictional registration card.",
+      "promptAr": "أكمل بطاقة التسجيل الخيالية.",
+      "fields": [
+        "name",
+        "spelling",
+        "country",
+        "city",
+        "preferredTime"
+      ],
+      "evaluation": "complete-coherent-fictional-registration"
+    },
+    {
+      "id": "A1-FINAL-MISSION-A03",
+      "type": "speak",
+      "mode": "mastery",
+      "skill": "spokenInteraction",
+      "canDo": [
+        "A1.EXIT.INTERACTION.HANDLE_SIMPLE_EXCHANGE",
+        "A1.EXIT.ACTION.COMPLETE_MULTI_STEP_MISSION"
+      ],
+      "prompt": "Introduce yourself to Sam, ask two personal questions and use one repair phrase if needed.",
+      "promptAr": "عرّف نفسك إلى سام واسأله سؤالين شخصيين واستخدم عبارة إصلاح عند الحاجة.",
+      "evaluation": "introduction-two-questions-repair",
+      "accepted": [],
+      "fallbackSkill": "writing",
+      "fallbackCountsFor": "accessOnly"
+    },
+    {
+      "id": "A1-FINAL-MISSION-A04",
+      "type": "audioChoice",
+      "mode": "mastery",
+      "skill": "listening",
+      "canDo": [
+        "A1.EXIT.LISTENING.UNDERSTAND_EVERYDAY_INFO",
+        "A1.EXIT.ACTION.COMPLETE_MULTI_STEP_MISSION"
+      ],
+      "prompt": "Which profile belongs to Sam?",
+      "promptAr": "أي ملف يخص سام؟",
+      "options": [
+        "from Canada; lives in Erbil; teacher",
+        "from Italy; lives in Basra; engineer",
+        "from Canada; lives in Baghdad; doctor"
+      ],
+      "answer": "from Canada; lives in Erbil; teacher",
+      "audioTranscript": "Hi, I'm Sam. I'm from Canada, but I live in Erbil now. I'm a teacher."
+    },
+    {
+      "id": "A1-FINAL-MISSION-A05",
+      "type": "textChoice",
+      "mode": "mastery",
+      "skill": "reading",
+      "canDo": [
+        "A1.EXIT.READING.UNDERSTAND_SIMPLE_TEXTS",
+        "A1.EXIT.ACTION.COMPLETE_MULTI_STEP_MISSION"
+      ],
+      "prompt": "Which route reaches the information office first?",
+      "promptAr": "أي مسار يصل إلى مكتب المعلومات أولاً؟",
+      "options": [
+        "straight, left at bank, office beside pharmacy",
+        "right at café, past station, office opposite park",
+        "left at library, cross street, office at hospital"
+      ],
+      "answer": "straight, left at bank, office beside pharmacy",
+      "sourceText": "Map note: From the activity centre, go straight to the bank. Turn left. The information office is next to the pharmacy."
+    },
+    {
+      "id": "A1-FINAL-MISSION-A06",
+      "type": "speak",
+      "mode": "mastery",
+      "skill": "mediation",
+      "canDo": [
+        "A1.EXIT.MEDIATION.RELAY_SIMPLE_INFORMATION",
+        "A1.EXIT.ACTION.COMPLETE_MULTI_STEP_MISSION"
+      ],
+      "prompt": "Explain the route to Sam and include the closed front entrance: use the side entrance.",
+      "promptAr": "اشرح المسار لسام واذكر أن المدخل الأمامي مغلق وأن عليه استخدام المدخل الجانبي.",
+      "evaluation": "route-plus-access-change",
+      "accepted": [],
+      "fallbackSkill": "writing",
+      "fallbackCountsFor": "accessOnly"
+    },
+    {
+      "id": "A1-FINAL-MISSION-A07",
+      "type": "textChoice",
+      "mode": "mastery",
+      "skill": "reading",
+      "canDo": [
+        "A1.EXIT.READING.UNDERSTAND_SIMPLE_TEXTS",
+        "A1.EXIT.ACTION.COMPLETE_MULTI_STEP_MISSION"
+      ],
+      "prompt": "Choose one rain jacket and one drink within a $30 budget.",
+      "promptAr": "اختر سترة مطر وشراباً ضمن ميزانية 30 دولاراً.",
+      "options": [
+        "blue jacket $24 + water $2",
+        "black jacket $29 + juice $3",
+        "coat $35 + tea $1"
+      ],
+      "answer": "blue jacket $24 + water $2",
+      "sourceText": "City shop: blue rain jacket $24; black jacket $29; warm coat $35. Café: water $2; juice $3; tea $1."
+    },
+    {
+      "id": "A1-FINAL-MISSION-A08",
+      "type": "speak",
+      "mode": "mastery",
+      "skill": "spokenInteraction",
+      "canDo": [
+        "A1.EXIT.INTERACTION.HANDLE_SIMPLE_EXCHANGE",
+        "A1.EXIT.ACTION.COMPLETE_MULTI_STEP_MISSION"
+      ],
+      "prompt": "Ask for the blue jacket in medium, confirm the price and pay by card.",
+      "promptAr": "اطلب السترة الزرقاء بمقاس متوسط وأكد السعر وادفع بالبطاقة.",
+      "evaluation": "product-size-price-payment",
+      "accepted": [],
+      "fallbackSkill": "writing",
+      "fallbackCountsFor": "accessOnly"
+    },
+    {
+      "id": "A1-FINAL-MISSION-A09",
+      "type": "audioChoice",
+      "mode": "mastery",
+      "skill": "listening",
+      "canDo": [
+        "A1.EXIT.LISTENING.UNDERSTAND_EVERYDAY_INFO",
+        "A1.EXIT.ACTION.COMPLETE_MULTI_STEP_MISSION"
+      ],
+      "prompt": "What problem must be solved?",
+      "promptAr": "ما المشكلة التي يجب حلها؟",
+      "options": [
+        "Sam has a headache and the jacket is the wrong size.",
+        "The train is late and Sam is hungry.",
+        "The café is closed and the bag is broken."
+      ],
+      "answer": "Sam has a headache and the jacket is the wrong size.",
+      "audioTranscript": "I have a headache, and this jacket is large. We asked for medium."
+    },
+    {
+      "id": "A1-FINAL-MISSION-A10",
+      "type": "speak",
+      "mode": "mastery",
+      "skill": "mediation",
+      "canDo": [
+        "A1.EXIT.MEDIATION.RELAY_SIMPLE_INFORMATION",
+        "A1.EXIT.ACTION.COMPLETE_MULTI_STEP_MISSION"
+      ],
+      "prompt": "Tell the assistant the correct jacket request, then relay the pharmacy's simple advice to Sam: rest and drink water.",
+      "promptAr": "أخبر الموظف بطلب السترة الصحيح ثم انقل لسام نصيحة الصيدلية البسيطة: الراحة وشرب الماء.",
+      "evaluation": "two-part-problem-mediation",
+      "accepted": [],
+      "fallbackSkill": "writing",
+      "fallbackCountsFor": "accessOnly"
+    },
+    {
+      "id": "A1-FINAL-MISSION-A11",
+      "type": "speak",
+      "mode": "mastery",
+      "skill": "spokenInteraction",
+      "canDo": [
+        "A1.EXIT.INTERACTION.HANDLE_SIMPLE_EXCHANGE",
+        "A1.EXIT.ACTION.COMPLETE_MULTI_STEP_MISSION"
+      ],
+      "prompt": "Arrange a meeting with Sam tomorrow: agree on activity, place and time, then respond to one time change.",
+      "promptAr": "رتب لقاءً مع سام غداً: اتفق على النشاط والمكان والوقت ثم استجب لتغيير واحد في الوقت.",
+      "evaluation": "future-arrangement-and-change",
+      "accepted": [],
+      "fallbackSkill": "writing",
+      "fallbackCountsFor": "accessOnly"
+    },
+    {
+      "id": "A1-FINAL-MISSION-A12",
+      "type": "write",
+      "mode": "mastery",
+      "skill": "writing",
+      "canDo": [
+        "A1.EXIT.WRITING.WRITE_SIMPLE_CONNECTED_TEXT",
+        "A1.EXIT.ACTION.COMPLETE_MULTI_STEP_MISSION"
+      ],
+      "prompt": "Write a 45–60-word final message confirming tomorrow's activity, place, time, weather preparation and one item Sam should bring.",
+      "promptAr": "اكتب رسالة نهائية من 45–60 كلمة تؤكد نشاط الغد ومكانه ووقته والاستعداد للطقس وشيئاً يحضره سام.",
+      "evaluation": "capstone-confirmation-message",
+      "wordGuide": [
+        45,
+        60
+      ],
+      "accepted": []
+    }
+  ],
+  "scoring": {
+    "completionRequired": true,
+    "requiredSkillGroups": [
+      [
+        "listening",
+        "reading"
+      ],
+      [
+        "spokenInteraction",
+        "writing"
+      ],
+      [
+        "mediation"
+      ]
+    ],
+    "criteria": [
+      "taskCompletion",
+      "meaningComprehensible",
+      "appropriateA1Language",
+      "informationAccuracy"
+    ],
+    "minimumCriterionScore": 0.6,
+    "speechAccuracyWeight": 0.2,
+    "noSingleAverageCompensation": true
+  }
+}

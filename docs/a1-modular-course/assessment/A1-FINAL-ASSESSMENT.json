@@ -1,0 +1,876 @@
+{
+  "id": "A1-FINAL-ASSESSMENT",
+  "title": "A1 Exit Assessment",
+  "titleAr": "اختبار الخروج من A1",
+  "status": "summative",
+  "sourcePolicy": "Secure unseen inputs; do not draw prompts or answer options from practice activities.",
+  "estimatedMinutes": [
+    45,
+    70
+  ],
+  "sections": {
+    "listening": {
+      "targetEvidencePoints": 16,
+      "activities": [
+        {
+          "id": "A1-FINAL-ASSESS-L01",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.EXIT.LISTENING.UNDERSTAND_EVERYDAY_INFO"
+          ],
+          "prompt": "Where should the listener go?",
+          "promptAr": "أين ينبغي أن يذهب المستمع؟",
+          "options": [
+            "Room 4",
+            "Room 14",
+            "Room 40"
+          ],
+          "answer": "Room 4",
+          "audioTranscript": "Your English class is in room four, next to the library.",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A1-FINAL-ASSESS-L02",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.EXIT.LISTENING.UNDERSTAND_EVERYDAY_INFO"
+          ],
+          "prompt": "What is the woman's name?",
+          "promptAr": "ما اسم المرأة؟",
+          "options": [
+            "Nadia Karim",
+            "Nora Kareem",
+            "Nadia Kamil"
+          ],
+          "answer": "Nadia Karim",
+          "audioTranscript": "My name is Nadia Karim. Nadia: N-A-D-I-A. Karim: K-A-R-I-M.",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A1-FINAL-ASSESS-L03",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.EXIT.LISTENING.UNDERSTAND_EVERYDAY_INFO"
+          ],
+          "prompt": "When does the shop close?",
+          "promptAr": "متى يغلق المتجر؟",
+          "options": [
+            "5:30",
+            "6:00",
+            "6:30"
+          ],
+          "answer": "5:30",
+          "audioTranscript": "The shop opens at nine and closes at half past five today.",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A1-FINAL-ASSESS-L04",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.EXIT.LISTENING.UNDERSTAND_EVERYDAY_INFO"
+          ],
+          "prompt": "Which person is described?",
+          "promptAr": "أي شخص موصوف؟",
+          "options": [
+            "tall man with short black hair",
+            "short woman with long brown hair",
+            "tall woman with a red hat"
+          ],
+          "answer": "tall man with short black hair",
+          "audioTranscript": "My brother is tall. He has short black hair and glasses.",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A1-FINAL-ASSESS-L05",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.EXIT.LISTENING.UNDERSTAND_EVERYDAY_INFO"
+          ],
+          "prompt": "Where are the keys?",
+          "promptAr": "أين المفاتيح؟",
+          "options": [
+            "under the small table",
+            "on the kitchen table",
+            "next to the bed"
+          ],
+          "answer": "under the small table",
+          "audioTranscript": "The keys aren't on the kitchen table. They're under the small table near the door.",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A1-FINAL-ASSESS-L06",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.EXIT.LISTENING.UNDERSTAND_EVERYDAY_INFO"
+          ],
+          "prompt": "What does Lina usually do first?",
+          "promptAr": "ماذا تفعل لينا عادة أولاً؟",
+          "options": [
+            "has breakfast",
+            "starts work",
+            "walks home"
+          ],
+          "answer": "has breakfast",
+          "audioTranscript": "I usually have breakfast at seven, then I start work at eight.",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A1-FINAL-ASSESS-L07",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.EXIT.LISTENING.UNDERSTAND_EVERYDAY_INFO"
+          ],
+          "prompt": "Which activity can both people do?",
+          "promptAr": "أي نشاط يستطيع الشخصان فعله؟",
+          "options": [
+            "play chess",
+            "swim",
+            "dance"
+          ],
+          "answer": "play chess",
+          "audioTranscript": "I can play chess and swim. Sara can play chess, but she can't swim.",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A1-FINAL-ASSESS-L08",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.EXIT.LISTENING.UNDERSTAND_EVERYDAY_INFO"
+          ],
+          "prompt": "What is the complete order?",
+          "promptAr": "ما الطلب الكامل؟",
+          "options": [
+            "soup, bread, tea",
+            "salad, rice, water",
+            "sandwich, soup, juice"
+          ],
+          "answer": "soup, bread, tea",
+          "audioTranscript": "I'd like a bowl of soup, some bread and one tea, please.",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A1-FINAL-ASSESS-L09",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.EXIT.LISTENING.UNDERSTAND_EVERYDAY_INFO"
+          ],
+          "prompt": "How much is the purchase?",
+          "promptAr": "كم سعر الشراء؟",
+          "options": [
+            "$27",
+            "$37",
+            "$17"
+          ],
+          "answer": "$27",
+          "audioTranscript": "The shirt is twelve dollars and the trousers are fifteen. That's twenty-seven dollars.",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A1-FINAL-ASSESS-L10",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.EXIT.LISTENING.UNDERSTAND_EVERYDAY_INFO"
+          ],
+          "prompt": "Where is the pharmacy?",
+          "promptAr": "أين الصيدلية؟",
+          "options": [
+            "opposite the bank",
+            "behind the station",
+            "between two cafés"
+          ],
+          "answer": "opposite the bank",
+          "audioTranscript": "The pharmacy is opposite the bank, on the corner.",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A1-FINAL-ASSESS-L11",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.EXIT.LISTENING.UNDERSTAND_EVERYDAY_INFO"
+          ],
+          "prompt": "Which bus should the passenger take?",
+          "promptAr": "أي حافلة ينبغي أن يستقلها المسافر؟",
+          "options": [
+            "bus 18",
+            "bus 8",
+            "bus 80"
+          ],
+          "answer": "bus 18",
+          "audioTranscript": "Take bus eighteen from stop six. It goes directly to the airport.",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A1-FINAL-ASSESS-L12",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.EXIT.LISTENING.UNDERSTAND_EVERYDAY_INFO"
+          ],
+          "prompt": "What symptom does the speaker NOT have?",
+          "promptAr": "أي عرض لا يعاني منه المتحدث؟",
+          "options": [
+            "fever",
+            "cough",
+            "headache"
+          ],
+          "answer": "fever",
+          "audioTranscript": "I have a cough and a headache, but I don't have a fever.",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A1-FINAL-ASSESS-L13",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.EXIT.LISTENING.UNDERSTAND_EVERYDAY_INFO"
+          ],
+          "prompt": "What should the listener wear?",
+          "promptAr": "ماذا ينبغي أن يرتدي المستمع؟",
+          "options": [
+            "warm coat and boots",
+            "light shirt and hat",
+            "jacket and sandals"
+          ],
+          "answer": "warm coat and boots",
+          "audioTranscript": "It is snowing and very cold. Wear a warm coat and boots.",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A1-FINAL-ASSESS-L14",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.EXIT.LISTENING.UNDERSTAND_EVERYDAY_INFO"
+          ],
+          "prompt": "What are they doing now?",
+          "promptAr": "ماذا يفعلون الآن؟",
+          "options": [
+            "waiting inside",
+            "walking in the park",
+            "travelling by train"
+          ],
+          "answer": "waiting inside",
+          "audioTranscript": "It's raining, so we're waiting inside the station.",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A1-FINAL-ASSESS-L15",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.EXIT.LISTENING.UNDERSTAND_EVERYDAY_INFO"
+          ],
+          "prompt": "What is the new meeting arrangement?",
+          "promptAr": "ما ترتيب اللقاء الجديد؟",
+          "options": [
+            "Sunday at 4 in the café",
+            "Saturday at 4 in the park",
+            "Sunday at 5 at the station"
+          ],
+          "answer": "Sunday at 4 in the café",
+          "audioTranscript": "Saturday is difficult. Let's meet at the café on Sunday at four instead.",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A1-FINAL-ASSESS-L16",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.EXIT.LISTENING.UNDERSTAND_EVERYDAY_INFO"
+          ],
+          "prompt": "Why can't Omar come at six?",
+          "promptAr": "لماذا لا يستطيع عمر الحضور في السادسة؟",
+          "options": [
+            "he works late",
+            "the café is closed",
+            "he is travelling"
+          ],
+          "answer": "he works late",
+          "audioTranscript": "I finish work at seven, so I can't meet at six. Is eight okay?",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        }
+      ]
+    },
+    "reading": {
+      "targetEvidencePoints": 16,
+      "activities": [
+        {
+          "id": "A1-FINAL-ASSESS-R01",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A1.EXIT.READING.UNDERSTAND_SIMPLE_TEXTS"
+          ],
+          "prompt": "Which instruction means the learner must speak?",
+          "promptAr": "أي تعليمة تعني أن على المتعلم التحدث؟",
+          "options": [
+            "Say your answer.",
+            "Choose the picture.",
+            "Read the sentence."
+          ],
+          "answer": "Say your answer.",
+          "sourceText": "Lesson screen: 1 Listen to the audio. 2 Say your answer. 3 Choose Continue.",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A1-FINAL-ASSESS-R02",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A1.EXIT.READING.UNDERSTAND_SIMPLE_TEXTS"
+          ],
+          "prompt": "Which statement about Amal is true?",
+          "promptAr": "أي جملة عن أمل صحيحة؟",
+          "options": [
+            "She lives in Mosul and is a nurse.",
+            "She is from Mosul and lives in Amman.",
+            "She is a teacher from Jordan."
+          ],
+          "answer": "She lives in Mosul and is a nurse.",
+          "sourceText": "Amal is from Jordan, but she lives in Mosul. She works at a hospital as a nurse.",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A1-FINAL-ASSESS-R03",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A1.EXIT.READING.UNDERSTAND_SIMPLE_TEXTS"
+          ],
+          "prompt": "Who is Yasin?",
+          "promptAr": "من ياسين؟",
+          "options": [
+            "Rima's son",
+            "Rima's brother",
+            "Rima's father"
+          ],
+          "answer": "Rima's son",
+          "sourceText": "Rima is married to Hassan. They have one son, Yasin, and one daughter, Dalia.",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A1-FINAL-ASSESS-R04",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A1.EXIT.READING.UNDERSTAND_SIMPLE_TEXTS"
+          ],
+          "prompt": "Which room has two beds?",
+          "promptAr": "أي غرفة فيها سريران؟",
+          "options": [
+            "Room B",
+            "Room A",
+            "neither room"
+          ],
+          "answer": "Room B",
+          "sourceText": "Room A has one bed and a desk. Room B has two beds, one table and no desk.",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A1-FINAL-ASSESS-R05",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A1.EXIT.READING.UNDERSTAND_SIMPLE_TEXTS"
+          ],
+          "prompt": "When is the writer free?",
+          "promptAr": "متى يكون الكاتب متفرغاً؟",
+          "options": [
+            "Friday after 3",
+            "Friday morning",
+            "Saturday after 6"
+          ],
+          "answer": "Friday after 3",
+          "sourceText": "I work on Friday morning, but I'm free after three. On Saturday I visit my family all day.",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A1-FINAL-ASSESS-R06",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A1.EXIT.READING.UNDERSTAND_SIMPLE_TEXTS"
+          ],
+          "prompt": "Which activity does both Sara and Huda like?",
+          "promptAr": "أي نشاط تحبه سارة وهدى؟",
+          "options": [
+            "films",
+            "running",
+            "tennis"
+          ],
+          "answer": "films",
+          "sourceText": "Sara likes films and running. Huda likes films and tennis, but she doesn't like running.",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A1-FINAL-ASSESS-R07",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A1.EXIT.READING.UNDERSTAND_SIMPLE_TEXTS"
+          ],
+          "prompt": "Which meal has no meat?",
+          "promptAr": "أي وجبة بلا لحم؟",
+          "options": [
+            "cheese sandwich and salad",
+            "chicken soup and bread",
+            "rice with chicken"
+          ],
+          "answer": "cheese sandwich and salad",
+          "sourceText": "Menu: cheese sandwich; chicken soup; green salad; chicken and rice.",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A1-FINAL-ASSESS-R08",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A1.EXIT.READING.UNDERSTAND_SIMPLE_TEXTS"
+          ],
+          "prompt": "Can the customer buy the bag and shoes with $40?",
+          "promptAr": "هل يستطيع الزبون شراء الحقيبة والحذاء بـ40 دولاراً؟",
+          "options": [
+            "Yes, with $4 left.",
+            "No, needs $4 more.",
+            "Yes, with $6 left."
+          ],
+          "answer": "Yes, with $4 left.",
+          "sourceText": "Blue bag $14. Black shoes $22. Customer budget: $40.",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A1-FINAL-ASSESS-R09",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A1.EXIT.READING.UNDERSTAND_SIMPLE_TEXTS"
+          ],
+          "prompt": "What is beside the library?",
+          "promptAr": "ما المجاور للمكتبة؟",
+          "options": [
+            "the café",
+            "the bank",
+            "the station"
+          ],
+          "answer": "the café",
+          "sourceText": "Town map note: The café is next to the library. The bank is opposite both. The station is behind the bank.",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A1-FINAL-ASSESS-R10",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A1.EXIT.READING.UNDERSTAND_SIMPLE_TEXTS"
+          ],
+          "prompt": "Which sign tells people not to use the door?",
+          "promptAr": "أي إشارة تمنع الناس من استخدام الباب؟",
+          "options": [
+            "NO ENTRY—USE SIDE DOOR",
+            "EXIT",
+            "OPEN 9–5"
+          ],
+          "answer": "NO ENTRY—USE SIDE DOOR",
+          "sourceText": "Signs: A EXIT. B OPEN 9–5. C NO ENTRY—USE SIDE DOOR.",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A1-FINAL-ASSESS-R11",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A1.EXIT.READING.UNDERSTAND_SIMPLE_TEXTS"
+          ],
+          "prompt": "Which journey arrives earlier?",
+          "promptAr": "أي رحلة تصل أبكر؟",
+          "options": [
+            "Route A",
+            "Route B",
+            "same time"
+          ],
+          "answer": "Route A",
+          "sourceText": "Route A: bus leaves 08:10, arrives 09:00. Route B: train leaves 08:30, arrives 09:15.",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A1-FINAL-ASSESS-R12",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A1.EXIT.READING.UNDERSTAND_SIMPLE_TEXTS"
+          ],
+          "prompt": "What should the patient do before the appointment?",
+          "promptAr": "ماذا ينبغي للمريض أن يفعل قبل الموعد؟",
+          "options": [
+            "rest and drink water",
+            "take two tablets",
+            "go to work"
+          ],
+          "answer": "rest and drink water",
+          "sourceText": "Clinic message: Your appointment is at 3:00. Please rest and drink water. Do not take new medicine before you see the doctor.",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A1-FINAL-ASSESS-R13",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A1.EXIT.READING.UNDERSTAND_SIMPLE_TEXTS"
+          ],
+          "prompt": "Which clothes fit the forecast?",
+          "promptAr": "أي ملابس تناسب التوقع؟",
+          "options": [
+            "jacket and umbrella",
+            "light shirt only",
+            "boots and winter coat for hot sun"
+          ],
+          "answer": "jacket and umbrella",
+          "sourceText": "Forecast: warm morning, then rain and cool wind after 2:00.",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A1-FINAL-ASSESS-R14",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A1.EXIT.READING.UNDERSTAND_SIMPLE_TEXTS"
+          ],
+          "prompt": "What is happening now?",
+          "promptAr": "ماذا يحدث الآن؟",
+          "options": [
+            "Mona is waiting for a bus.",
+            "Mona is walking home.",
+            "Mona is buying a ticket."
+          ],
+          "answer": "Mona is waiting for a bus.",
+          "sourceText": "Message: I'm at the bus stop now. I'm waiting for bus 25. It is ten minutes late.",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A1-FINAL-ASSESS-R15",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A1.EXIT.READING.UNDERSTAND_SIMPLE_TEXTS"
+          ],
+          "prompt": "Which detail has changed?",
+          "promptAr": "أي تفصيل تغير؟",
+          "options": [
+            "meeting time",
+            "meeting place",
+            "activity"
+          ],
+          "answer": "meeting time",
+          "sourceText": "Original: Park Café, Tuesday, 5:00. Update: The café and day are the same, but let's meet at 5:30.",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A1-FINAL-ASSESS-R16",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A1.EXIT.READING.UNDERSTAND_SIMPLE_TEXTS"
+          ],
+          "prompt": "What must Fadi reply with?",
+          "promptAr": "بماذا يجب أن يرد فادي؟",
+          "options": [
+            "whether 6:00 works and whether he can bring the map",
+            "his favourite food",
+            "his phone price"
+          ],
+          "answer": "whether 6:00 works and whether he can bring the map",
+          "sourceText": "Hi Fadi. We're meeting at the station at 6:00 tomorrow. Can you bring the town map? Please confirm the time and the map today.",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        }
+      ]
+    },
+    "writing": {
+      "targetTasks": 2,
+      "activities": [
+        {
+          "id": "A1-FINAL-ASSESS-W01",
+          "type": "write",
+          "mode": "mastery",
+          "skill": "writing",
+          "canDo": [
+            "A1.EXIT.WRITING.WRITE_SIMPLE_CONNECTED_TEXT"
+          ],
+          "prompt": "Write 30–50 words to a fictional host: introduce yourself, say where you live, state one preference and ask one question about the visit.",
+          "promptAr": "اكتب 30–50 كلمة إلى مضيف خيالي: عرّف بنفسك واذكر أين تسكن وتفضيلاً واحداً واسأل سؤالاً عن الزيارة.",
+          "evaluation": "exit-writing-personal-message",
+          "wordGuide": [
+            30,
+            50
+          ],
+          "accepted": [],
+          "assessmentMode": "secure"
+        },
+        {
+          "id": "A1-FINAL-ASSESS-W02",
+          "type": "write",
+          "mode": "mastery",
+          "skill": "writing",
+          "canDo": [
+            "A1.EXIT.WRITING.WRITE_SIMPLE_CONNECTED_TEXT"
+          ],
+          "prompt": "Write 30–50 words changing a fictional meeting plan. Include the original detail, a reason, the new place or time and a request for confirmation.",
+          "promptAr": "اكتب 30–50 كلمة لتغيير خطة لقاء خيالية. اذكر التفصيل الأصلي والسبب والمكان أو الوقت الجديد واطلب التأكيد.",
+          "evaluation": "exit-writing-plan-change",
+          "wordGuide": [
+            30,
+            50
+          ],
+          "accepted": [],
+          "assessmentMode": "secure"
+        }
+      ]
+    },
+    "speaking": {
+      "targetTasks": 4,
+      "activities": [
+        {
+          "id": "A1-FINAL-ASSESS-S01",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A1.EXIT.PRODUCTION.DESCRIBE_FAMILIAR_MATTER"
+          ],
+          "prompt": "Give your first name or a fictional name, spell it, then say country, city and job or study status.",
+          "promptAr": "اذكر اسمك الأول أو اسماً خيالياً وتهجّه، ثم اذكر البلد والمدينة والعمل أو الدراسة.",
+          "evaluation": "exit-speaking-personal-profile",
+          "accepted": [],
+          "fallbackSkill": "writing",
+          "fallbackCountsFor": "accessOnly",
+          "assessmentMode": "secure"
+        },
+        {
+          "id": "A1-FINAL-ASSESS-S02",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.EXIT.INTERACTION.HANDLE_SIMPLE_EXCHANGE"
+          ],
+          "prompt": "Respond to four short examiner turns: greeting, routine time, preference and simple repair request.",
+          "promptAr": "استجب لأربع مداخلات قصيرة: تحية ووقت روتين وتفضيل وطلب إصلاح بسيط.",
+          "evaluation": "exit-speaking-short-exchange",
+          "accepted": [],
+          "fallbackSkill": "writing",
+          "fallbackCountsFor": "accessOnly",
+          "assessmentMode": "secure",
+          "examinerTurns": [
+            "Good morning.",
+            "What time do you start your day?",
+            "What do you like doing?",
+            "Sorry, please repeat your last answer."
+          ]
+        },
+        {
+          "id": "A1-FINAL-ASSESS-S03",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.EXIT.INTERACTION.HANDLE_SIMPLE_EXCHANGE"
+          ],
+          "prompt": "Role-play one unseen situation: ask for directions, buy a ticket or order a meal; complete at least three interaction turns.",
+          "promptAr": "مثّل موقفاً غير مسبوق: اسأل عن اتجاهات أو اشتر تذكرة أو اطلب وجبة، وأكمل ثلاث مداخلات على الأقل.",
+          "evaluation": "exit-speaking-situational-interaction",
+          "accepted": [],
+          "fallbackSkill": "writing",
+          "fallbackCountsFor": "accessOnly",
+          "assessmentMode": "secure",
+          "randomScenarioBank": [
+            "directions",
+            "ticket",
+            "meal"
+          ]
+        },
+        {
+          "id": "A1-FINAL-ASSESS-S04",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A1.EXIT.PRODUCTION.DESCRIBE_FAMILIAR_MATTER"
+          ],
+          "prompt": "Speak briefly about an unseen weather-and-weekend card: describe now, give a plan and one reason.",
+          "promptAr": "تحدث باختصار عن بطاقة طقس وعطلة غير مسبوقة: صف الآن واذكر خطة وسبباً واحداً.",
+          "evaluation": "exit-speaking-short-talk",
+          "accepted": [],
+          "fallbackSkill": "writing",
+          "fallbackCountsFor": "accessOnly",
+          "assessmentMode": "secure"
+        }
+      ]
+    },
+    "mediation": {
+      "targetTasks": 2,
+      "activities": [
+        {
+          "id": "A1-FINAL-ASSESS-M01",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "mediation",
+          "canDo": [
+            "A1.EXIT.MEDIATION.RELAY_SIMPLE_INFORMATION"
+          ],
+          "prompt": "Read a fictional timetable and tell a friend the departure, platform, connection and arrival in simple English.",
+          "promptAr": "اقرأ جدولاً خيالياً وانقل لصديق وقت المغادرة والرصيف والتبديل والوصول بإنجليزية بسيطة.",
+          "evaluation": "exit-spoken-mediation-travel",
+          "accepted": [],
+          "fallbackSkill": "writing",
+          "fallbackCountsFor": "accessOnly",
+          "assessmentMode": "secure",
+          "sourceCard": "Bus 14—08:00 to Central; Train B—platform 3 at 08:25; arrival 09:10."
+        },
+        {
+          "id": "A1-FINAL-ASSESS-M02",
+          "type": "write",
+          "mode": "mastery",
+          "skill": "mediation",
+          "canDo": [
+            "A1.EXIT.MEDIATION.RELAY_SIMPLE_INFORMATION"
+          ],
+          "prompt": "Write 30–45 words relaying the essential information from a fictional clinic notice: place, time, preparation and one prohibition.",
+          "promptAr": "اكتب 30–45 كلمة تنقل المعلومات الأساسية من إشعار عيادة خيالي: المكان والوقت والاستعداد ومنعاً واحداً.",
+          "evaluation": "exit-written-mediation-clinic",
+          "wordGuide": [
+            30,
+            45
+          ],
+          "accepted": [],
+          "assessmentMode": "secure",
+          "sourceCard": "Clinic B, 2nd floor. Appointment 14:30. Bring ID and water. Do not eat after 13:00."
+        }
+      ]
+    }
+  },
+  "scoring": {
+    "receptive": {
+      "method": "item-score",
+      "minimumPerSkill": 0.6
+    },
+    "writing": {
+      "criteria": [
+        "taskCompletion",
+        "informationCoverage",
+        "comprehensibility",
+        "A1Range",
+        "A1Accuracy"
+      ],
+      "minimumTaskCriterionAverage": 0.6,
+      "bothTasksRequired": true
+    },
+    "speaking": {
+      "criteria": [
+        "taskCompletion",
+        "intelligibility",
+        "appropriateLanguage",
+        "interaction"
+      ],
+      "minimumTaskCriterionAverage": 0.6,
+      "minimumCompletedTasks": 3,
+      "accuracyWeight": 0.2
+    },
+    "mediation": {
+      "criteria": [
+        "essentialInformation",
+        "accuracyOfRelay",
+        "comprehensibility"
+      ],
+      "minimumCriterionAverage": 0.6
+    },
+    "decisionRule": {
+      "noSingleOverallAverage": true,
+      "required": [
+        "listening",
+        "reading",
+        "writing",
+        "speaking",
+        "mediation"
+      ],
+      "capstoneMissionRequired": true
+    },
+    "accessibility": {
+      "microphoneFallback": "writing",
+      "fallbackDoesNotCreateSpeakingEvidence": true
+    }
+  }
+}

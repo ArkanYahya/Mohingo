@@ -1,0 +1,96 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U8",
+  "kind": "chunks",
+  "records": [
+    {
+      "id": "A1.CHUNK.IS_THERE_NEAR_HERE",
+      "text": "Is there a {place} near here?",
+      "arabic": "هل يوجد {place} قريب من هنا؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U8-L2",
+      "productive": true,
+      "recycledIn": [
+        "A1-U10"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.WHERE_IS_PLACE",
+      "text": "Where is the {place}?",
+      "arabic": "أين {place}؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U8-L2",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.ITS_NEXT_TO",
+      "text": "It's next to the {place}.",
+      "arabic": "إنه بجانب {place}.",
+      "cefr": "A1",
+      "introducedIn": "A1-U8-L2",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.GO_STRAIGHT",
+      "text": "Go straight.",
+      "arabic": "اذهب مباشرة.",
+      "cefr": "A1",
+      "introducedIn": "A1-U8-L3",
+      "productive": true,
+      "recycledIn": [
+        "A1-U9"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.TURN_LEFT_RIGHT",
+      "text": "Turn left/right at the {place}.",
+      "arabic": "انعطف يساراً/يميناً عند {place}.",
+      "cefr": "A1",
+      "introducedIn": "A1-U8-L3",
+      "productive": true,
+      "recycledIn": [
+        "A1-U9"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.GO_PAST",
+      "text": "Go past the {place}.",
+      "arabic": "تجاوز {place}.",
+      "cefr": "A1",
+      "introducedIn": "A1-U8-L3",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.ITS_ON_YOUR_SIDE",
+      "text": "It's on your left/right.",
+      "arabic": "إنه على يسارك/يمينك.",
+      "cefr": "A1",
+      "introducedIn": "A1-U8-L4",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.HOW_DO_I_GET_TO",
+      "text": "How do I get to the {place}?",
+      "arabic": "كيف أصل إلى {place}؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U8-L4",
+      "productive": true,
+      "recycledIn": [
+        "A1-U9"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.YOU_CANT_ENTER",
+      "text": "You can't enter here.",
+      "arabic": "لا يمكنك الدخول من هنا.",
+      "cefr": "A1",
+      "introducedIn": "A1-U8-L5",
+      "productive": true,
+      "recycledIn": []
+    }
+  ]
+}

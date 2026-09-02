@@ -1,0 +1,140 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-FINAL",
+  "kind": "media",
+  "records": {
+    "audio-a1-final-mission-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "The nine-thirty group is full. You can join the group at ten thirty.",
+      "activityId": "A1-FINAL-MISSION-A01"
+    },
+    "audio-a1-final-mission-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "Hi, I'm Sam. I'm from Canada, but I live in Erbil now. I'm a teacher.",
+      "activityId": "A1-FINAL-MISSION-A04"
+    },
+    "audio-a1-final-mission-a09": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "I have a headache, and this jacket is large. We asked for medium.",
+      "activityId": "A1-FINAL-MISSION-A09"
+    },
+    "audio-a1-final-assess-l01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "Your English class is in room four, next to the library.",
+      "activityId": "A1-FINAL-ASSESS-L01"
+    },
+    "audio-a1-final-assess-l02": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "My name is Nadia Karim. Nadia: N-A-D-I-A. Karim: K-A-R-I-M.",
+      "activityId": "A1-FINAL-ASSESS-L02"
+    },
+    "audio-a1-final-assess-l03": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "The shop opens at nine and closes at half past five today.",
+      "activityId": "A1-FINAL-ASSESS-L03"
+    },
+    "audio-a1-final-assess-l04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "My brother is tall. He has short black hair and glasses.",
+      "activityId": "A1-FINAL-ASSESS-L04"
+    },
+    "audio-a1-final-assess-l05": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "The keys aren't on the kitchen table. They're under the small table near the door.",
+      "activityId": "A1-FINAL-ASSESS-L05"
+    },
+    "audio-a1-final-assess-l06": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "I usually have breakfast at seven, then I start work at eight.",
+      "activityId": "A1-FINAL-ASSESS-L06"
+    },
+    "audio-a1-final-assess-l07": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "I can play chess and swim. Sara can play chess, but she can't swim.",
+      "activityId": "A1-FINAL-ASSESS-L07"
+    },
+    "audio-a1-final-assess-l08": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "I'd like a bowl of soup, some bread and one tea, please.",
+      "activityId": "A1-FINAL-ASSESS-L08"
+    },
+    "audio-a1-final-assess-l09": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "The shirt is twelve dollars and the trousers are fifteen. That's twenty-seven dollars.",
+      "activityId": "A1-FINAL-ASSESS-L09"
+    },
+    "audio-a1-final-assess-l10": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "The pharmacy is opposite the bank, on the corner.",
+      "activityId": "A1-FINAL-ASSESS-L10"
+    },
+    "audio-a1-final-assess-l11": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "Take bus eighteen from stop six. It goes directly to the airport.",
+      "activityId": "A1-FINAL-ASSESS-L11"
+    },
+    "audio-a1-final-assess-l12": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "I have a cough and a headache, but I don't have a fever.",
+      "activityId": "A1-FINAL-ASSESS-L12"
+    },
+    "audio-a1-final-assess-l13": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "It is snowing and very cold. Wear a warm coat and boots.",
+      "activityId": "A1-FINAL-ASSESS-L13"
+    },
+    "audio-a1-final-assess-l14": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "It's raining, so we're waiting inside the station.",
+      "activityId": "A1-FINAL-ASSESS-L14"
+    },
+    "audio-a1-final-assess-l15": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "Saturday is difficult. Let's meet at the café on Sunday at four instead.",
+      "activityId": "A1-FINAL-ASSESS-L15"
+    },
+    "audio-a1-final-assess-l16": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "I finish work at seven, so I can't meet at six. Is eight okay?",
+      "activityId": "A1-FINAL-ASSESS-L16"
+    }
+  }
+}

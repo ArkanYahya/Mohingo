@@ -1,0 +1,116 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U5",
+  "kind": "chunks",
+  "records": [
+    {
+      "id": "A1.CHUNK.I_LIKE_NOUN",
+      "text": "I like {thing}.",
+      "arabic": "أحب {thing}.",
+      "cefr": "A1",
+      "introducedIn": "A1-U5-L1",
+      "productive": true,
+      "recycledIn": [
+        "A1-U6",
+        "A1-U7"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.I_DONT_LIKE",
+      "text": "I don't like {thing/activity}.",
+      "arabic": "لا أحب {thing/activity}.",
+      "cefr": "A1",
+      "introducedIn": "A1-U5-L1",
+      "productive": true,
+      "recycledIn": [
+        "A1-U6"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.I_LIKE_ING",
+      "text": "I like {activity-ing}.",
+      "arabic": "أحب {activity}.",
+      "cefr": "A1",
+      "introducedIn": "A1-U5-L2",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.CAN_YOU",
+      "text": "Can you {activity}?",
+      "arabic": "هل تستطيع {activity}؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U5-L3",
+      "productive": true,
+      "recycledIn": [
+        "A1-U9",
+        "A1-U10"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.YES_CAN_NO_CANT",
+      "text": "Yes, I can. / No, I can't.",
+      "arabic": "نعم أستطيع / لا أستطيع.",
+      "cefr": "A1",
+      "introducedIn": "A1-U5-L3",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A1.CHUNK.DO_YOU_LIKE",
+      "text": "Do you like {thing/activity}?",
+      "arabic": "هل تحب {thing/activity}؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U5-L4",
+      "productive": true,
+      "recycledIn": [
+        "A1-U6"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.WOULD_YOU_LIKE_TO",
+      "text": "Would you like to {activity}?",
+      "arabic": "هل ترغب في {activity}؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U5-L5",
+      "productive": true,
+      "recycledIn": [
+        "A1-U6",
+        "A1-U12"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.YES_ID_LOVE_TO",
+      "text": "Yes, I'd love to.",
+      "arabic": "نعم، بكل سرور.",
+      "cefr": "A1",
+      "introducedIn": "A1-U5-L5",
+      "productive": true,
+      "recycledIn": [
+        "A1-U12"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.SORRY_IM_BUSY",
+      "text": "Sorry, I'm busy.",
+      "arabic": "آسف، أنا مشغول.",
+      "cefr": "A1",
+      "introducedIn": "A1-U5-L5",
+      "productive": true,
+      "recycledIn": [
+        "A1-U12"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.ARE_YOU_FREE",
+      "text": "Are you free {time}?",
+      "arabic": "هل أنت متفرغ {time}؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U5-L5",
+      "productive": true,
+      "recycledIn": [
+        "A1-U12"
+      ]
+    }
+  ]
+}

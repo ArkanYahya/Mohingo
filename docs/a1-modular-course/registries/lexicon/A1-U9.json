@@ -1,0 +1,307 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U9",
+  "kind": "lexicon",
+  "records": [
+    {
+      "id": "A1.LEX.BUS.N01",
+      "headword": "bus",
+      "partOfSpeech": "noun",
+      "arabic": "حافلة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "bus",
+      "examples": [
+        "I go by bus."
+      ],
+      "introducedIn": "A1-U9-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.TRAIN.N01",
+      "headword": "train",
+      "partOfSpeech": "noun",
+      "arabic": "قطار",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "train",
+      "examples": [
+        "The train leaves at nine."
+      ],
+      "introducedIn": "A1-U9-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.TAXI.N01",
+      "headword": "taxi",
+      "partOfSpeech": "noun",
+      "arabic": "سيارة أجرة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "taxi",
+      "examples": [
+        "We take a taxi."
+      ],
+      "introducedIn": "A1-U9-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.CAR.N01",
+      "headword": "car",
+      "partOfSpeech": "noun",
+      "arabic": "سيارة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "car",
+      "examples": [
+        "She goes by car."
+      ],
+      "introducedIn": "A1-U9-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.BICYCLE.N01",
+      "headword": "bicycle",
+      "partOfSpeech": "noun",
+      "arabic": "دراجة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "bicycle",
+      "examples": [
+        "He goes by bicycle."
+      ],
+      "introducedIn": "A1-U9-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.AIRPORT.N01",
+      "headword": "airport",
+      "partOfSpeech": "noun",
+      "arabic": "مطار",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "airport",
+      "examples": [
+        "The airport is far."
+      ],
+      "introducedIn": "A1-U9-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.BUS_STOP.N01",
+      "headword": "bus stop",
+      "partOfSpeech": "noun",
+      "arabic": "موقف حافلة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "bus stop",
+      "examples": [
+        "Wait at the bus stop."
+      ],
+      "introducedIn": "A1-U9-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.TICKET.N01",
+      "headword": "ticket",
+      "partOfSpeech": "noun",
+      "arabic": "تذكرة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "ticket",
+      "examples": [
+        "One ticket, please."
+      ],
+      "introducedIn": "A1-U9-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.SINGLE.ADJ01",
+      "headword": "single",
+      "partOfSpeech": "adjective",
+      "arabic": "ذهاب فقط",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "single",
+      "examples": [
+        "A single ticket to Basra."
+      ],
+      "introducedIn": "A1-U9-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.RETURN.ADJ01",
+      "headword": "return",
+      "partOfSpeech": "adjective",
+      "arabic": "ذهاب وعودة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "return",
+      "examples": [
+        "I need a return ticket."
+      ],
+      "introducedIn": "A1-U9-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.PLATFORM.N01",
+      "headword": "platform",
+      "partOfSpeech": "noun",
+      "arabic": "رصيف محطة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "platform",
+      "examples": [
+        "The train is on platform three."
+      ],
+      "introducedIn": "A1-U9-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.ROUTE.N01",
+      "headword": "route",
+      "partOfSpeech": "noun",
+      "arabic": "مسار",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "route",
+      "examples": [
+        "This route goes to the airport."
+      ],
+      "introducedIn": "A1-U9-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.LEAVE.V01",
+      "headword": "leave",
+      "partOfSpeech": "verb",
+      "arabic": "يغادر",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "leave",
+      "examples": [
+        "The bus leaves at seven."
+      ],
+      "introducedIn": "A1-U9-L3",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.ARRIVE.V01",
+      "headword": "arrive",
+      "partOfSpeech": "verb",
+      "arabic": "يصل",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "arrive",
+      "examples": [
+        "We arrive at ten."
+      ],
+      "introducedIn": "A1-U9-L3",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.NEXT.ADJ01",
+      "headword": "next",
+      "partOfSpeech": "adjective",
+      "arabic": "التالي",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "next",
+      "examples": [
+        "When is the next bus?"
+      ],
+      "introducedIn": "A1-U9-L3",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.DELAY.N01",
+      "headword": "delay",
+      "partOfSpeech": "noun",
+      "arabic": "تأخير",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "delay",
+      "examples": [
+        "There is a ten-minute delay."
+      ],
+      "introducedIn": "A1-U9-L3",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.JOURNEY.N01",
+      "headword": "journey",
+      "partOfSpeech": "noun",
+      "arabic": "رحلة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "journey",
+      "examples": [
+        "The journey takes one hour."
+      ],
+      "introducedIn": "A1-U9-L5",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.TRAVEL.V01",
+      "headword": "travel",
+      "partOfSpeech": "verb",
+      "arabic": "يسافر",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "travel",
+      "examples": [
+        "I travel by train."
+      ],
+      "introducedIn": "A1-U9-L5",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.TAKE.V02",
+      "headword": "take",
+      "partOfSpeech": "verb",
+      "arabic": "يستقل/يأخذ",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "use or board transport",
+      "examples": [
+        "Take bus number twelve."
+      ],
+      "introducedIn": "A1-U9-L4",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.CHANGE.V03",
+      "headword": "change",
+      "partOfSpeech": "verb",
+      "arabic": "يبدّل وسيلة النقل",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "move from one transport service to another",
+      "examples": [
+        "Change at Central Station."
+      ],
+      "introducedIn": "A1-U9-L4",
+      "recycledIn": []
+    }
+  ]
+}

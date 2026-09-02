@@ -1,0 +1,1052 @@
+{
+  "id": "A1-U2",
+  "title": "People in My Life",
+  "titleAr": "الناس في حياتي",
+  "levelRole": "core",
+  "estimatedMinutes": [
+    75,
+    105
+  ],
+  "countsTowardA1Mastery": true,
+  "lessons": [
+    {
+      "id": "A1-U2-L1",
+      "title": "My Family",
+      "titleAr": "عائلتي",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U2.PRODUCTION.DESCRIBE_FAMILY",
+        "A1.U2.PRODUCTION.STATE_RELATIONSHIP",
+        "A1.U2.LISTENING.UNDERSTAND_PEOPLE_DESCRIPTION"
+      ],
+      "grammar": [
+        "A1.G.PRONOUN.HE_SHE",
+        "A1.G.BE.HE_SHE_IS",
+        "A1.G.POSSESSIVE.MY_YOUR",
+        "A1.G.DEMONSTRATIVE.THIS_INTRODUCTION"
+      ],
+      "lexicon": [
+        "A1.LEX.FAMILY.N01",
+        "A1.LEX.MOTHER.N01",
+        "A1.LEX.FATHER.N01",
+        "A1.LEX.PARENT.N01",
+        "A1.LEX.PARENTS.N01",
+        "A1.LEX.BROTHER.N01",
+        "A1.LEX.SISTER.N01",
+        "A1.LEX.GRANDMOTHER.N01",
+        "A1.LEX.GRANDFATHER.N01",
+        "A1.LEX.HUSBAND.N01",
+        "A1.LEX.WIFE.N01",
+        "A1.LEX.SON.N01",
+        "A1.LEX.DAUGHTER.N01"
+      ],
+      "chunks": [
+        "A1.CHUNK.MY_FAMILY",
+        "A1.CHUNK.THIS_IS_MY_RELATION",
+        "A1.CHUNK.THIS_IS",
+        "A1.CHUNK.HES_MY",
+        "A1.CHUNK.SHES_MY"
+      ],
+      "encounter": {
+        "sceneAr": "مايا تعرض صورة عائلتها على عمر.",
+        "dialogue": [
+          {
+            "speaker": "Maya",
+            "en": "This is my family.",
+            "ar": "هذه عائلتي."
+          },
+          {
+            "speaker": "Maya",
+            "en": "This is my mother, Lina. This is my father, Sami.",
+            "ar": "هذه أمي لينا، وهذا أبي سامي."
+          },
+          {
+            "speaker": "Omar",
+            "en": "Who's this?",
+            "ar": "من هذه؟"
+          },
+          {
+            "speaker": "Maya",
+            "en": "She's my sister, Noor.",
+            "ar": "إنها أختي نور."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U2-L1-A01",
+          "lessonId": "A1-U2-L1",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U2.LISTENING.UNDERSTAND_PEOPLE_DESCRIPTION"
+          ],
+          "prompt": "Who is Noor?",
+          "promptAr": "من تكون نور؟",
+          "options": [
+            "Maya's sister",
+            "Maya's mother",
+            "Maya's friend"
+          ],
+          "answer": "Maya's sister",
+          "audioTranscript": "This is my sister, Noor."
+        },
+        {
+          "id": "A1-U2-L1-A02",
+          "lessonId": "A1-U2-L1",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U2.PRODUCTION.STATE_RELATIONSHIP"
+          ],
+          "prompt": "Match the people and relationships.",
+          "promptAr": "طابق الأشخاص بصلة القرابة.",
+          "pairs": [
+            [
+              "Lina",
+              "mother"
+            ],
+            [
+              "Sami",
+              "father"
+            ],
+            [
+              "Noor",
+              "sister"
+            ]
+          ]
+        },
+        {
+          "id": "A1-U2-L1-A03",
+          "lessonId": "A1-U2-L1",
+          "type": "order",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U2.PRODUCTION.DESCRIBE_FAMILY"
+          ],
+          "prompt": "Build the sentence.",
+          "promptAr": "رتب الجملة.",
+          "tokens": [
+            "is",
+            "This",
+            "mother",
+            "my"
+          ],
+          "answer": [
+            "This",
+            "is",
+            "my",
+            "mother"
+          ]
+        },
+        {
+          "id": "A1-U2-L1-A04",
+          "lessonId": "A1-U2-L1",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A1.U2.PRODUCTION.DESCRIBE_FAMILY",
+            "A1.U2.PRODUCTION.STATE_RELATIONSHIP"
+          ],
+          "prompt": "Introduce two people in your family. You may use fictional names.",
+          "promptAr": "قدّم شخصين من عائلتك، ويمكنك استخدام أسماء افتراضية.",
+          "accepted": [],
+          "evaluation": "two-this-is-my-relationship-statements",
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A1-U2-L1-A05",
+          "lessonId": "A1-U2-L1",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U2.LISTENING.UNDERSTAND_PEOPLE_DESCRIPTION"
+          ],
+          "prompt": "Choose the correct family card.",
+          "promptAr": "اختر بطاقة العائلة الصحيحة.",
+          "options": [
+            "parents-and-one-son",
+            "mother-and-two-daughters",
+            "grandparents-and-one-daughter"
+          ],
+          "answer": "mother-and-two-daughters",
+          "audioTranscript": "This is Huda. She's my mother. Sara and Maya are my sisters.",
+          "optionMode": "media"
+        }
+      ]
+    },
+    {
+      "id": "A1-U2-L2",
+      "title": "Brothers, Sisters and Ages",
+      "titleAr": "الإخوة والأعمار",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U2.PRODUCTION.DESCRIBE_FAMILY",
+        "A1.U2.PRODUCTION.STATE_AGE",
+        "A1.U2.LISTENING.UNDERSTAND_PEOPLE_DESCRIPTION"
+      ],
+      "grammar": [
+        "A1.G.HAVE.I_YOU_WE_THEY",
+        "A1.G.HAVE.HE_SHE",
+        "A1.G.CHUNK.DO_YOU_HAVE",
+        "A1.G.PLURAL.REGULAR",
+        "A1.G.PLURAL.IRREGULAR.PEOPLE"
+      ],
+      "lexicon": [
+        "A1.LEX.HAVE.V01",
+        "A1.LEX.CHILD.N01",
+        "A1.LEX.CHILDREN.N01",
+        "A1.LEX.PERSON.N01",
+        "A1.LEX.PEOPLE.N01",
+        "A1.LEX.OLD.ADJ01"
+      ],
+      "chunks": [
+        "A1.CHUNK.I_HAVE",
+        "A1.CHUNK.HE_SHE_HAS",
+        "A1.CHUNK.DO_YOU_HAVE",
+        "A1.CHUNK.HOW_MANY_SIBLINGS",
+        "A1.CHUNK.HOW_OLD_PERSON",
+        "A1.CHUNK.PERSON_AGE"
+      ],
+      "pedagogyNote": "Teach Do you have...? as a high-value chunk; do not teach the full do/does system until U5.",
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Ali",
+            "en": "Do you have any brothers or sisters?",
+            "ar": "هل لديك إخوة أو أخوات؟"
+          },
+          {
+            "speaker": "Sara",
+            "en": "Yes. I have two brothers.",
+            "ar": "نعم، لدي أخوان."
+          },
+          {
+            "speaker": "Ali",
+            "en": "How old is your brother Omar?",
+            "ar": "كم عمر أخيك عمر؟"
+          },
+          {
+            "speaker": "Sara",
+            "en": "He's twenty years old.",
+            "ar": "عمره عشرون سنة."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U2-L2-A01",
+          "lessonId": "A1-U2-L2",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U2.LISTENING.UNDERSTAND_PEOPLE_DESCRIPTION"
+          ],
+          "prompt": "How many brothers does Sara have?",
+          "promptAr": "كم أخاً لدى سارة؟",
+          "options": [
+            "one",
+            "two",
+            "three"
+          ],
+          "answer": "two",
+          "audioTranscript": "I have two brothers."
+        },
+        {
+          "id": "A1-U2-L2-A02",
+          "lessonId": "A1-U2-L2",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U2.PRODUCTION.DESCRIBE_FAMILY"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "She ___ one sister.",
+          "options": [
+            "have",
+            "has",
+            "is"
+          ],
+          "answer": "has"
+        },
+        {
+          "id": "A1-U2-L2-A03",
+          "lessonId": "A1-U2-L2",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U2.PRODUCTION.DESCRIBE_FAMILY"
+          ],
+          "prompt": "Choose the correct plural.",
+          "promptAr": "اختر الجمع الصحيح.",
+          "text": "They have two ___.",
+          "options": [
+            "child",
+            "childs",
+            "children"
+          ],
+          "answer": "children"
+        },
+        {
+          "id": "A1-U2-L2-A04",
+          "lessonId": "A1-U2-L2",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U2.LISTENING.UNDERSTAND_PEOPLE_DESCRIPTION",
+            "A1.U2.PRODUCTION.STATE_AGE"
+          ],
+          "prompt": "Choose the correct information.",
+          "promptAr": "اختر المعلومات الصحيحة.",
+          "options": [
+            "one sister, age 18",
+            "two sisters, ages 18 and 20",
+            "two brothers, ages 18 and 20"
+          ],
+          "answer": "two sisters, ages 18 and 20",
+          "audioTranscript": "I have two sisters. Maya is eighteen and Noor is twenty."
+        },
+        {
+          "id": "A1-U2-L2-A05",
+          "lessonId": "A1-U2-L2",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A1.U2.PRODUCTION.DESCRIBE_FAMILY",
+            "A1.U2.PRODUCTION.STATE_AGE"
+          ],
+          "prompt": "Say how many brothers or sisters you have and give one age. You may invent the details.",
+          "promptAr": "اذكر عدد إخوتك أو أخواتك وعمر أحدهم، ويمكنك اختلاق التفاصيل.",
+          "accepted": [],
+          "evaluation": "have-family-count-plus-age",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U2-L3",
+      "title": "Who and Whose?",
+      "titleAr": "من؟ ولِمَن؟",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U2.INTERACTION.ASK_IDENTIFY_PERSON",
+        "A1.U2.PRODUCTION.STATE_RELATIONSHIP",
+        "A1.U2.LISTENING.UNDERSTAND_PEOPLE_DESCRIPTION"
+      ],
+      "grammar": [
+        "A1.G.POSSESSIVE.S",
+        "A1.G.WH.WHO_WHOSE"
+      ],
+      "lexicon": [
+        "A1.LEX.FRIEND.N01",
+        "A1.LEX.NAME.N01"
+      ],
+      "chunks": [
+        "A1.CHUNK.WHOS_THIS",
+        "A1.CHUNK.WHOSE_IS_THIS",
+        "A1.CHUNK.PERSONS_RELATION"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Maya",
+            "en": "Who's this?",
+            "ar": "من هذا؟"
+          },
+          {
+            "speaker": "Omar",
+            "en": "This is Ali's brother, Karim.",
+            "ar": "هذا كريم أخو علي."
+          },
+          {
+            "speaker": "Maya",
+            "en": "Whose phone is this?",
+            "ar": "لمن هذا الهاتف؟"
+          },
+          {
+            "speaker": "Omar",
+            "en": "It's Karim's phone.",
+            "ar": "إنه هاتف كريم."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U2-L3-A01",
+          "lessonId": "A1-U2-L3",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U2.LISTENING.UNDERSTAND_PEOPLE_DESCRIPTION"
+          ],
+          "prompt": "Who is Karim?",
+          "promptAr": "من كريم؟",
+          "options": [
+            "Ali's brother",
+            "Ali's father",
+            "Omar's friend"
+          ],
+          "answer": "Ali's brother",
+          "audioTranscript": "This is Ali's brother, Karim."
+        },
+        {
+          "id": "A1-U2-L3-A02",
+          "lessonId": "A1-U2-L3",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U2.PRODUCTION.STATE_RELATIONSHIP"
+          ],
+          "prompt": "Complete the relationship.",
+          "promptAr": "أكمل العلاقة.",
+          "text": "Maya is Omar___ sister.",
+          "options": [
+            "s",
+            "'s",
+            "s'"
+          ],
+          "answer": "'s"
+        },
+        {
+          "id": "A1-U2-L3-A03",
+          "lessonId": "A1-U2-L3",
+          "type": "textChoice",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U2.INTERACTION.ASK_IDENTIFY_PERSON"
+          ],
+          "prompt": "Choose the question for a person.",
+          "promptAr": "اختر السؤال المناسب عن شخص.",
+          "options": [
+            "Who's this?",
+            "Whose phone is this?",
+            "Where is this?"
+          ],
+          "answer": "Who's this?"
+        },
+        {
+          "id": "A1-U2-L3-A04",
+          "lessonId": "A1-U2-L3",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U2.INTERACTION.ASK_IDENTIFY_PERSON"
+          ],
+          "prompt": "You see an unknown person in a photo. Ask who the person is.",
+          "promptAr": "ترى شخصاً لا تعرفه في صورة. اسأل من يكون.",
+          "accepted": [
+            "Who's this?"
+          ],
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A1-U2-L3-A05",
+          "lessonId": "A1-U2-L3",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A1.U2.PRODUCTION.STATE_RELATIONSHIP"
+          ],
+          "prompt": "Say: Noor is Sami's daughter and Omar's sister.",
+          "promptAr": "قل: نور ابنة سامي وأخت عمر.",
+          "accepted": [
+            "Noor is Sami's daughter and Omar's sister."
+          ],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U2-L4",
+      "title": "What Are They Like?",
+      "titleAr": "كيف تبدو شخصياتهم؟",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U2.PRODUCTION.DESCRIBE_PERSON",
+        "A1.U2.LISTENING.UNDERSTAND_PEOPLE_DESCRIPTION"
+      ],
+      "grammar": [
+        "A1.G.CONJ.AND_BUT",
+        "A1.G.BE.HE_SHE_IS"
+      ],
+      "lexicon": [
+        "A1.LEX.YOUNG.ADJ01",
+        "A1.LEX.TALL.ADJ01",
+        "A1.LEX.SHORT.ADJ01",
+        "A1.LEX.KIND.ADJ01",
+        "A1.LEX.FRIENDLY.ADJ01",
+        "A1.LEX.FUNNY.ADJ01",
+        "A1.LEX.QUIET.ADJ01",
+        "A1.LEX.NICE.ADJ01"
+      ],
+      "chunks": [
+        "A1.CHUNK.WHATS_PERSON_LIKE",
+        "A1.CHUNK.PERSON_IS_ADJ",
+        "A1.CHUNK.ADJ_AND_ADJ",
+        "A1.CHUNK.ADJ_BUT_ADJ"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Omar",
+            "en": "What's your sister like?",
+            "ar": "كيف هي أختك؟"
+          },
+          {
+            "speaker": "Maya",
+            "en": "Noor is kind and funny.",
+            "ar": "نور طيبة ومضحكة."
+          },
+          {
+            "speaker": "Omar",
+            "en": "What about your brother?",
+            "ar": "وماذا عن أخيك؟"
+          },
+          {
+            "speaker": "Maya",
+            "en": "Karim is quiet, but friendly.",
+            "ar": "كريم هادئ لكنه ودود."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U2-L4-A01",
+          "lessonId": "A1-U2-L4",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U2.LISTENING.UNDERSTAND_PEOPLE_DESCRIPTION"
+          ],
+          "prompt": "What is Noor like?",
+          "promptAr": "كيف هي نور؟",
+          "options": [
+            "kind and funny",
+            "quiet but friendly",
+            "tall and quiet"
+          ],
+          "answer": "kind and funny",
+          "audioTranscript": "Noor is kind and funny."
+        },
+        {
+          "id": "A1-U2-L4-A02",
+          "lessonId": "A1-U2-L4",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U2.PRODUCTION.DESCRIBE_PERSON"
+          ],
+          "prompt": "Match the descriptions.",
+          "promptAr": "طابق الأوصاف.",
+          "pairs": [
+            [
+              "kind",
+              "طيب"
+            ],
+            [
+              "funny",
+              "مضحك"
+            ],
+            [
+              "quiet",
+              "هادئ"
+            ],
+            [
+              "friendly",
+              "ودود"
+            ]
+          ]
+        },
+        {
+          "id": "A1-U2-L4-A03",
+          "lessonId": "A1-U2-L4",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U2.PRODUCTION.DESCRIBE_PERSON"
+          ],
+          "prompt": "Choose the connector.",
+          "promptAr": "اختر أداة الربط.",
+          "text": "He's quiet, ___ friendly.",
+          "options": [
+            "and",
+            "but",
+            "from"
+          ],
+          "answer": "but"
+        },
+        {
+          "id": "A1-U2-L4-A04",
+          "lessonId": "A1-U2-L4",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U2.LISTENING.UNDERSTAND_PEOPLE_DESCRIPTION"
+          ],
+          "prompt": "Choose the correct person card.",
+          "promptAr": "اختر بطاقة الشخص الصحيحة.",
+          "options": [
+            "tall-kind-man",
+            "short-funny-woman",
+            "quiet-friendly-man"
+          ],
+          "answer": "quiet-friendly-man",
+          "audioTranscript": "This is Samir. He's quiet, but he's very friendly.",
+          "optionMode": "media"
+        },
+        {
+          "id": "A1-U2-L4-A05",
+          "lessonId": "A1-U2-L4",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A1.U2.PRODUCTION.DESCRIBE_PERSON"
+          ],
+          "prompt": "Describe one person with two adjectives joined by and or but.",
+          "promptAr": "صف شخصاً بصفتين مربوطتين بـand أو but.",
+          "accepted": [],
+          "evaluation": "person-be-two-adjectives-with-connector",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U2-L5",
+      "title": "We and They",
+      "titleAr": "نحن وهم",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U2.PRODUCTION.DESCRIBE_FAMILY",
+        "A1.U2.PRODUCTION.STATE_RELATIONSHIP",
+        "A1.U2.LISTENING.UNDERSTAND_PEOPLE_DESCRIPTION"
+      ],
+      "grammar": [
+        "A1.G.PRONOUN.WE_THEY",
+        "A1.G.POSSESSIVE.OUR_THEIR"
+      ],
+      "lexicon": [
+        "A1.LEX.PARENTS.N01",
+        "A1.LEX.PEOPLE.N01",
+        "A1.LEX.FRIEND.N01"
+      ],
+      "chunks": [
+        "A1.CHUNK.WE_ARE_FRIENDS",
+        "A1.CHUNK.THEY_ARE_PARENTS",
+        "A1.CHUNK.THEIR_NAMES"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Lina",
+            "en": "This is Huda. We are friends.",
+            "ar": "هذه هدى. نحن صديقتان."
+          },
+          {
+            "speaker": "Huda",
+            "en": "Who are they?",
+            "ar": "من هما؟"
+          },
+          {
+            "speaker": "Lina",
+            "en": "They are my parents. Their names are Noor and Sami.",
+            "ar": "هما والداي. اسماهما نور وسامي."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U2-L5-A01",
+          "lessonId": "A1-U2-L5",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U2.LISTENING.UNDERSTAND_PEOPLE_DESCRIPTION"
+          ],
+          "prompt": "Who are Noor and Sami?",
+          "promptAr": "من نور وسامي؟",
+          "options": [
+            "Lina's parents",
+            "Huda's friends",
+            "Lina's children"
+          ],
+          "answer": "Lina's parents",
+          "audioTranscript": "They are my parents. Their names are Noor and Sami."
+        },
+        {
+          "id": "A1-U2-L5-A02",
+          "lessonId": "A1-U2-L5",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U2.PRODUCTION.STATE_RELATIONSHIP"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "Huda and I are friends. ___ are friends.",
+          "options": [
+            "We",
+            "They",
+            "She"
+          ],
+          "answer": "We"
+        },
+        {
+          "id": "A1-U2-L5-A03",
+          "lessonId": "A1-U2-L5",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U2.PRODUCTION.DESCRIBE_FAMILY"
+          ],
+          "prompt": "Choose the possessive word.",
+          "promptAr": "اختر كلمة الملكية.",
+          "text": "They are my parents. ___ names are Noor and Sami.",
+          "options": [
+            "Our",
+            "Their",
+            "Her"
+          ],
+          "answer": "Their"
+        },
+        {
+          "id": "A1-U2-L5-A04",
+          "lessonId": "A1-U2-L5",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U2.LISTENING.UNDERSTAND_PEOPLE_DESCRIPTION"
+          ],
+          "prompt": "Choose the correct picture.",
+          "promptAr": "اختر الصورة الصحيحة.",
+          "options": [
+            "two-friends",
+            "two-parents",
+            "one-sister"
+          ],
+          "answer": "two-friends",
+          "audioTranscript": "This is Ali. We are friends. Our teacher is Mr Adam.",
+          "optionMode": "media"
+        },
+        {
+          "id": "A1-U2-L5-A05",
+          "lessonId": "A1-U2-L5",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A1.U2.PRODUCTION.STATE_RELATIONSHIP"
+          ],
+          "prompt": "Use we once and they once to describe people.",
+          "promptAr": "استخدم we مرة وthey مرة لوصف أشخاص.",
+          "accepted": [],
+          "evaluation": "contains-we-and-they-people-statements",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U2-L6",
+      "title": "A People Profile",
+      "titleAr": "ملف تعريفي عن أشخاص",
+      "lessonType": "communication",
+      "canDo": [
+        "A1.U2.LISTENING.UNDERSTAND_PEOPLE_DESCRIPTION",
+        "A1.U2.WRITING.WRITE_PEOPLE_PROFILE",
+        "A1.U2.PRODUCTION.DESCRIBE_PERSON"
+      ],
+      "grammar": [
+        "A1.G.HAVE.I_YOU_WE_THEY",
+        "A1.G.HAVE.HE_SHE",
+        "A1.G.POSSESSIVE.S",
+        "A1.G.CONJ.AND_BUT"
+      ],
+      "lexicon": [],
+      "chunks": [],
+      "readingText": {
+        "title": "Maya's Family",
+        "text": "My name is Maya. I have one brother and one sister. My brother's name is Karim. He's twenty years old. He's quiet but friendly. My sister Noor is eighteen. She's kind and funny. We live in Kirkuk.",
+        "textAr": "اسمي مايا. لدي أخ وأخت..."
+      },
+      "activities": [
+        {
+          "id": "A1-U2-L6-A01",
+          "lessonId": "A1-U2-L6",
+          "type": "textChoice",
+          "mode": "encounter",
+          "skill": "reading",
+          "canDo": [
+            "A1.U2.LISTENING.UNDERSTAND_PEOPLE_DESCRIPTION"
+          ],
+          "prompt": "How many brothers and sisters does Maya have?",
+          "promptAr": "كم أخاً وأختاً لدى مايا؟",
+          "options": [
+            "one brother and one sister",
+            "two brothers",
+            "two sisters"
+          ],
+          "answer": "one brother and one sister"
+        },
+        {
+          "id": "A1-U2-L6-A02",
+          "lessonId": "A1-U2-L6",
+          "type": "textChoice",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U2.LISTENING.UNDERSTAND_PEOPLE_DESCRIPTION"
+          ],
+          "prompt": "Which statement is true?",
+          "promptAr": "أي جملة صحيحة؟",
+          "options": [
+            "Karim is quiet but friendly.",
+            "Noor is twenty.",
+            "Maya has two brothers."
+          ],
+          "answer": "Karim is quiet but friendly."
+        },
+        {
+          "id": "A1-U2-L6-A03",
+          "lessonId": "A1-U2-L6",
+          "type": "order",
+          "mode": "practice",
+          "skill": "writing",
+          "canDo": [
+            "A1.U2.WRITING.WRITE_PEOPLE_PROFILE"
+          ],
+          "prompt": "Put the profile in a clear order.",
+          "promptAr": "رتب الملف التعريفي بوضوح.",
+          "tokens": [
+            "She's kind and funny.",
+            "Her name is Sara.",
+            "This is my sister.",
+            "She's nineteen."
+          ],
+          "answer": [
+            "This is my sister.",
+            "Her name is Sara.",
+            "She's nineteen.",
+            "She's kind and funny."
+          ]
+        },
+        {
+          "id": "A1-U2-L6-A04",
+          "lessonId": "A1-U2-L6",
+          "type": "write",
+          "mode": "mastery",
+          "skill": "writing",
+          "canDo": [
+            "A1.U2.WRITING.WRITE_PEOPLE_PROFILE"
+          ],
+          "prompt": "Write 4–6 short sentences about one person. Include relationship, name, age and two adjectives. You may invent the person.",
+          "promptAr": "اكتب 4–6 جمل قصيرة عن شخص واحد، تشمل العلاقة والاسم والعمر وصفتين. يمكنك اختلاق الشخص.",
+          "accepted": [],
+          "evaluation": "u2-people-profile-rubric",
+          "wordGuide": [
+            25,
+            45
+          ]
+        },
+        {
+          "id": "A1-U2-L6-A05",
+          "lessonId": "A1-U2-L6",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A1.U2.PRODUCTION.DESCRIBE_PERSON"
+          ],
+          "prompt": "Give a short spoken profile of one person.",
+          "promptAr": "قدّم وصفاً شفهياً قصيراً لشخص.",
+          "accepted": [],
+          "evaluation": "relationship-name-age-description",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U2-L7",
+      "title": "Mission: My People Map",
+      "titleAr": "المهمة: خريطة الأشخاص في حياتي",
+      "lessonType": "mission",
+      "canDo": [
+        "A1.U2.MEDIATION.EXPLAIN_PEOPLE_MAP",
+        "A1.U2.PRODUCTION.DESCRIBE_FAMILY",
+        "A1.U2.PRODUCTION.STATE_RELATIONSHIP",
+        "A1.U2.PRODUCTION.STATE_AGE",
+        "A1.U2.PRODUCTION.DESCRIBE_PERSON",
+        "A1.U2.LISTENING.UNDERSTAND_PEOPLE_DESCRIPTION",
+        "A1.U2.WRITING.WRITE_PEOPLE_PROFILE"
+      ],
+      "grammar": [],
+      "lexicon": [],
+      "chunks": [],
+      "scenario": "Create a small map with four fictional or real people, then explain relationships and help a new friend understand it.",
+      "privacyNote": "Learners may use fictional people. Never require real family information.",
+      "activities": [
+        {
+          "id": "A1-U2-L7-A01",
+          "lessonId": "A1-U2-L7",
+          "type": "form",
+          "mode": "mastery",
+          "skill": "writing",
+          "canDo": [
+            "A1.U2.MEDIATION.EXPLAIN_PEOPLE_MAP"
+          ],
+          "prompt": "Create four people cards.",
+          "promptAr": "أنشئ أربع بطاقات لأشخاص.",
+          "fields": [
+            "name",
+            "relationship",
+            "ageOptional",
+            "twoAdjectives"
+          ],
+          "evaluation": "four-complete-people-cards"
+        },
+        {
+          "id": "A1-U2-L7-A02",
+          "lessonId": "A1-U2-L7",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U2.LISTENING.UNDERSTAND_PEOPLE_DESCRIPTION"
+          ],
+          "prompt": "Which map matches the description?",
+          "promptAr": "أي خريطة تطابق الوصف؟",
+          "options": [
+            "map-a",
+            "map-b",
+            "map-c"
+          ],
+          "answer": "map-b",
+          "audioTranscript": "Sami and Lina are Omar's parents. Noor is Omar's sister. Noor is eighteen.",
+          "optionMode": "media"
+        },
+        {
+          "id": "A1-U2-L7-A03",
+          "lessonId": "A1-U2-L7",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "mediation",
+          "canDo": [
+            "A1.U2.MEDIATION.EXPLAIN_PEOPLE_MAP",
+            "A1.U2.PRODUCTION.DESCRIBE_FAMILY"
+          ],
+          "prompt": "Explain the people map so a new friend can understand who everyone is.",
+          "promptAr": "اشرح خريطة الأشخاص كي يفهم صديق جديد من يكون كل شخص.",
+          "accepted": [],
+          "evaluation": "four-people-relationship-mediation",
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A1-U2-L7-A04",
+          "lessonId": "A1-U2-L7",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U2.INTERACTION.ASK_IDENTIFY_PERSON"
+          ],
+          "prompt": "You do not know one person on the map. Ask who they are.",
+          "promptAr": "لا تعرف شخصاً في الخريطة. اسأل من يكون.",
+          "accepted": [
+            "Who's this?",
+            "Who is he?",
+            "Who is she?"
+          ],
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A1-U2-L7-A05",
+          "lessonId": "A1-U2-L7",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A1.U2.PRODUCTION.STATE_AGE",
+            "A1.U2.PRODUCTION.DESCRIBE_PERSON"
+          ],
+          "prompt": "Give the age and two qualities of one person.",
+          "promptAr": "اذكر عمر شخص وصفتيه.",
+          "accepted": [],
+          "evaluation": "age-plus-two-adjectives",
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A1-U2-L7-A06",
+          "lessonId": "A1-U2-L7",
+          "type": "write",
+          "mode": "mastery",
+          "skill": "writing",
+          "canDo": [
+            "A1.U2.WRITING.WRITE_PEOPLE_PROFILE",
+            "A1.U2.MEDIATION.EXPLAIN_PEOPLE_MAP"
+          ],
+          "prompt": "Write a 35–55-word explanation of your people map.",
+          "promptAr": "اكتب شرحاً من 35–55 كلمة لخريطة الأشخاص.",
+          "accepted": [],
+          "evaluation": "u2-mission-writing-rubric",
+          "wordGuide": [
+            35,
+            55
+          ]
+        }
+      ]
+    }
+  ],
+  "mastery": {
+    "requiredObjectives": [
+      "A1.U2.PRODUCTION.DESCRIBE_FAMILY",
+      "A1.U2.PRODUCTION.STATE_RELATIONSHIP",
+      "A1.U2.PRODUCTION.STATE_AGE",
+      "A1.U2.PRODUCTION.DESCRIBE_PERSON",
+      "A1.U2.LISTENING.UNDERSTAND_PEOPLE_DESCRIPTION",
+      "A1.U2.WRITING.WRITE_PEOPLE_PROFILE",
+      "A1.U2.MEDIATION.EXPLAIN_PEOPLE_MAP"
+    ],
+    "requiredSkillGroups": [
+      [
+        "listening",
+        "reading"
+      ],
+      [
+        "spokenInteraction",
+        "spokenProduction",
+        "writing"
+      ],
+      [
+        "mediation"
+      ]
+    ],
+    "minimumObjectiveScore": 0.75,
+    "missionRequired": true,
+    "privacyAlternativeRequired": true,
+    "retry": "targeted-by-objective",
+    "unlocks": "A1-U3"
+  }
+}

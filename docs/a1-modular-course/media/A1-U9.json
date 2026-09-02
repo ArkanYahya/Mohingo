@@ -1,0 +1,91 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U9",
+  "kind": "media",
+  "records": {
+    "audio-a1-u9-l1-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "My sister goes on foot.",
+      "activityId": "A1-U9-L1-A01"
+    },
+    "audio-a1-u9-l1-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "Maya takes a taxi to the airport. Omar goes there by bus.",
+      "activityId": "A1-U9-L1-A04"
+    },
+    "audio-a1-u9-l2-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "A return ticket from Baghdad to Basra, please.",
+      "activityId": "A1-U9-L2-A01"
+    },
+    "audio-a1-u9-l2-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "One single ticket to Mosul. Your train is on platform four.",
+      "activityId": "A1-U9-L2-A04"
+    },
+    "audio-a1-u9-l3-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "It leaves at eight fifteen and arrives at nine.",
+      "activityId": "A1-U9-L3-A01"
+    },
+    "audio-a1-u9-l3-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "The ten o'clock train has a twenty-minute delay. It leaves at ten twenty.",
+      "activityId": "A1-U9-L3-A04"
+    },
+    "audio-a1-u9-l4-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "Take bus 12 and change at Central Station.",
+      "activityId": "A1-U9-L4-A01"
+    },
+    "audio-a1-u9-l4-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "Take bus five to Central, then change to train two.",
+      "activityId": "A1-U9-L4-A04"
+    },
+    "audio-a1-u9-l5-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "I leave at seven and arrive at nine. It takes two hours.",
+      "activityId": "A1-U9-L5-A01"
+    },
+    "audio-a1-u9-l5-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "I travel from Najaf to Baghdad by train. I leave at eight and arrive at ten.",
+      "activityId": "A1-U9-L5-A04"
+    },
+    "audio-a1-u9-l6-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "Airport Train A has a ten-minute delay. It now leaves at eight twenty-five.",
+      "activityId": "A1-U9-L6-A04"
+    },
+    "audio-a1-u9-l7-a02": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "The eight forty-five train has a fifteen-minute delay. It now leaves at nine.",
+      "activityId": "A1-U9-L7-A02"
+    }
+  }
+}

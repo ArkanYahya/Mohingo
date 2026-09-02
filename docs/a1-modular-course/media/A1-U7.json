@@ -1,0 +1,98 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U7",
+  "kind": "media",
+  "records": {
+    "audio-a1-u7-l1-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "This bag is twelve dollars.",
+      "activityId": "A1-U7-L1-A01"
+    },
+    "audio-a1-u7-l1-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "The shirt is eighteen dollars and the bag is twenty-two.",
+      "activityId": "A1-U7-L1-A04"
+    },
+    "audio-a1-u7-l2-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "I need a medium one in blue.",
+      "activityId": "A1-U7-L2-A01"
+    },
+    "audio-a1-u7-l2-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "Do you have a large white shirt?",
+      "activityId": "A1-U7-L2-A04"
+    },
+    "audio-a1-u7-l3-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "Can I try on the black one?",
+      "activityId": "A1-U7-L3-A01"
+    },
+    "audio-a1-u7-l3-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "I like this jacket, but it doesn't fit. It's too small.",
+      "activityId": "A1-U7-L3-A04"
+    },
+    "audio-a1-u7-l4-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "I'll take it. Can I pay by card?",
+      "activityId": "A1-U7-L4-A01"
+    },
+    "audio-a1-u7-l4-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "The blue bag fits my budget. I'll take it and pay by card.",
+      "activityId": "A1-U7-L4-A04"
+    },
+    "audio-a1-u7-l5-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "This shirt is the wrong size. Can I change it?",
+      "activityId": "A1-U7-L5-A01"
+    },
+    "audio-a1-u7-l5-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "This black bag is broken. I need a new one in large.",
+      "activityId": "A1-U7-L5-A04"
+    },
+    "audio-a1-u7-l6-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "The budget is thirty-five dollars. The bag is twenty-two and the shirt is ten.",
+      "activityId": "A1-U7-L6-A04"
+    },
+    "audio-a1-u7-l7-a02": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "The blue shirt is fifteen dollars and the black trousers are eighteen.",
+      "activityId": "A1-U7-L7-A02"
+    },
+    "audio-a1-u7-l7-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "The shirt is fine, but the trousers are broken.",
+      "activityId": "A1-U7-L7-A04"
+    }
+  }
+}

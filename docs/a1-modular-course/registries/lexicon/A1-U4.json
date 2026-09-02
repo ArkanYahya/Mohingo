@@ -1,0 +1,405 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U4",
+  "kind": "lexicon",
+  "records": [
+    {
+      "id": "A1.LEX.GET_UP.V01",
+      "headword": "get up",
+      "partOfSpeech": "verb",
+      "arabic": "يستيقظ/ينهض",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "get up",
+      "examples": [
+        "I get up at seven."
+      ],
+      "introducedIn": "A1-U4-L1",
+      "recycledIn": [
+        "A1-U12"
+      ]
+    },
+    {
+      "id": "A1.LEX.WAKE_UP.V01",
+      "headword": "wake up",
+      "partOfSpeech": "verb",
+      "arabic": "يستيقظ",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "wake up",
+      "examples": [
+        "I wake up at six thirty."
+      ],
+      "introducedIn": "A1-U4-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.WASH.V01",
+      "headword": "wash",
+      "partOfSpeech": "verb",
+      "arabic": "يغسل",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "wash",
+      "examples": [
+        "I wash my face."
+      ],
+      "introducedIn": "A1-U4-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.GET_DRESSED.V01",
+      "headword": "get dressed",
+      "partOfSpeech": "verb",
+      "arabic": "يرتدي ملابسه",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "get dressed",
+      "examples": [
+        "She gets dressed at seven."
+      ],
+      "introducedIn": "A1-U4-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.BREAKFAST.N01",
+      "headword": "breakfast",
+      "partOfSpeech": "noun",
+      "arabic": "فطور",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "breakfast",
+      "examples": [
+        "I have breakfast at home."
+      ],
+      "introducedIn": "A1-U4-L1",
+      "recycledIn": [
+        "A1-U6"
+      ]
+    },
+    {
+      "id": "A1.LEX.LUNCH.N01",
+      "headword": "lunch",
+      "partOfSpeech": "noun",
+      "arabic": "غداء",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "lunch",
+      "examples": [
+        "We have lunch at one."
+      ],
+      "introducedIn": "A1-U4-L1",
+      "recycledIn": [
+        "A1-U6"
+      ]
+    },
+    {
+      "id": "A1.LEX.DINNER.N01",
+      "headword": "dinner",
+      "partOfSpeech": "noun",
+      "arabic": "عشاء",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "dinner",
+      "examples": [
+        "They have dinner at eight."
+      ],
+      "introducedIn": "A1-U4-L1",
+      "recycledIn": [
+        "A1-U6"
+      ]
+    },
+    {
+      "id": "A1.LEX.START.V01",
+      "headword": "start",
+      "partOfSpeech": "verb",
+      "arabic": "يبدأ",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "start",
+      "examples": [
+        "Work starts at eight."
+      ],
+      "introducedIn": "A1-U4-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.FINISH.V01",
+      "headword": "finish",
+      "partOfSpeech": "verb",
+      "arabic": "ينتهي",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "finish",
+      "examples": [
+        "I finish work at three."
+      ],
+      "introducedIn": "A1-U4-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.GO_HOME.V01",
+      "headword": "go home",
+      "partOfSpeech": "verb",
+      "arabic": "يعود إلى المنزل",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "go home",
+      "examples": [
+        "I go home at four."
+      ],
+      "introducedIn": "A1-U4-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.SLEEP.V01",
+      "headword": "sleep",
+      "partOfSpeech": "verb",
+      "arabic": "ينام",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "sleep",
+      "examples": [
+        "I sleep at eleven."
+      ],
+      "introducedIn": "A1-U4-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.OCLOCK.ADV01",
+      "headword": "o'clock",
+      "partOfSpeech": "adverb",
+      "arabic": "تماماً للساعة",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "o'clock",
+      "examples": [
+        "It's seven o'clock."
+      ],
+      "introducedIn": "A1-U4-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.HALF_PAST.PHRASE",
+      "headword": "half past",
+      "partOfSpeech": "phrase",
+      "arabic": "والنصف",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "half past",
+      "examples": [
+        "It's half past six."
+      ],
+      "introducedIn": "A1-U4-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.QUARTER_PAST.PHRASE",
+      "headword": "quarter past",
+      "partOfSpeech": "phrase",
+      "arabic": "والربع",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "quarter past",
+      "examples": [
+        "It's quarter past eight."
+      ],
+      "introducedIn": "A1-U4-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.QUARTER_TO.PHRASE",
+      "headword": "quarter to",
+      "partOfSpeech": "phrase",
+      "arabic": "إلا ربعاً",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "quarter to",
+      "examples": [
+        "It's quarter to nine."
+      ],
+      "introducedIn": "A1-U4-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.EARLY.ADJ01",
+      "headword": "early",
+      "partOfSpeech": "adjective",
+      "arabic": "مبكر",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "early",
+      "examples": [
+        "She's early."
+      ],
+      "introducedIn": "A1-U4-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.LATE.ADJ01",
+      "headword": "late",
+      "partOfSpeech": "adjective",
+      "arabic": "متأخر",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "late",
+      "examples": [
+        "He's late."
+      ],
+      "introducedIn": "A1-U4-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.MORNING.N01",
+      "headword": "morning",
+      "partOfSpeech": "noun",
+      "arabic": "صباح",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "morning",
+      "examples": [
+        "I work in the morning."
+      ],
+      "introducedIn": "A1-U4-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.AFTERNOON.N01",
+      "headword": "afternoon",
+      "partOfSpeech": "noun",
+      "arabic": "بعد الظهر",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "afternoon",
+      "examples": [
+        "I go home in the afternoon."
+      ],
+      "introducedIn": "A1-U4-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.EVENING.N01",
+      "headword": "evening",
+      "partOfSpeech": "noun",
+      "arabic": "مساء",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "evening",
+      "examples": [
+        "We eat in the evening."
+      ],
+      "introducedIn": "A1-U4-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.NIGHT.N01",
+      "headword": "night",
+      "partOfSpeech": "noun",
+      "arabic": "ليل",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "night",
+      "examples": [
+        "I sleep at night."
+      ],
+      "introducedIn": "A1-U4-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.ALWAYS.ADV01",
+      "headword": "always",
+      "partOfSpeech": "adverb",
+      "arabic": "دائماً",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "always",
+      "examples": [
+        "I always get up early."
+      ],
+      "introducedIn": "A1-U4-L5",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.USUALLY.ADV01",
+      "headword": "usually",
+      "partOfSpeech": "adverb",
+      "arabic": "عادةً",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "usually",
+      "examples": [
+        "We usually eat at home."
+      ],
+      "introducedIn": "A1-U4-L5",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.SOMETIMES.ADV01",
+      "headword": "sometimes",
+      "partOfSpeech": "adverb",
+      "arabic": "أحياناً",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "sometimes",
+      "examples": [
+        "She sometimes walks to work."
+      ],
+      "introducedIn": "A1-U4-L5",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.NEVER.ADV01",
+      "headword": "never",
+      "partOfSpeech": "adverb",
+      "arabic": "أبداً",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": true,
+      "meaning": "never",
+      "examples": [
+        "He never works on Friday."
+      ],
+      "introducedIn": "A1-U4-L5",
+      "recycledIn": []
+    },
+    {
+      "id": "A1.LEX.ROUTINE.N01",
+      "headword": "routine",
+      "partOfSpeech": "noun",
+      "arabic": "روتين",
+      "cefr": "A1",
+      "receptive": true,
+      "productive": false,
+      "meaning": "routine",
+      "examples": [
+        "This is my daily routine."
+      ],
+      "introducedIn": "A1-U4-L6",
+      "recycledIn": []
+    }
+  ]
+}

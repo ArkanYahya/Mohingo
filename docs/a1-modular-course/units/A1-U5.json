@@ -1,0 +1,1036 @@
+{
+  "id": "A1-U5",
+  "title": "Likes and Free Time",
+  "titleAr": "ما أحب ووقت الفراغ",
+  "levelRole": "core",
+  "estimatedMinutes": [
+    80,
+    110
+  ],
+  "countsTowardA1Mastery": true,
+  "lessons": [
+    {
+      "id": "A1-U5-L1",
+      "title": "Things I Like",
+      "titleAr": "أشياء أحبها",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U5.PRODUCTION.EXPRESS_PREFERENCE",
+        "A1.U5.LISTENING.UNDERSTAND_PREFERENCES"
+      ],
+      "grammar": [
+        "A1.G.PREFERENCE.LIKE_NOUN"
+      ],
+      "lexicon": [
+        "A1.LEX.HOBBY.N01",
+        "A1.LEX.FREE_TIME.N01",
+        "A1.LEX.MUSIC.N01",
+        "A1.LEX.FILM.N01",
+        "A1.LEX.GAME.N01",
+        "A1.LEX.FOOTBALL.N01",
+        "A1.LEX.TENNIS.N01",
+        "A1.LEX.CHESS.N01",
+        "A1.LEX.LIKE.V01",
+        "A1.LEX.LOVE.V01",
+        "A1.LEX.HATE.V01"
+      ],
+      "chunks": [
+        "A1.CHUNK.I_LIKE_NOUN",
+        "A1.CHUNK.I_DONT_LIKE"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Sara",
+            "en": "I love music and films, but I don't like football.",
+            "ar": "أحب الموسيقى والأفلام لكنني لا أحب كرة القدم."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U5-L1-A01",
+          "lessonId": "A1-U5-L1",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U5.PRODUCTION.EXPRESS_PREFERENCE",
+            "A1.U5.LISTENING.UNDERSTAND_PREFERENCES"
+          ],
+          "prompt": "What doesn't Sara like?",
+          "promptAr": "ماذا لا تحب سارة؟",
+          "options": [
+            "football",
+            "music",
+            "films"
+          ],
+          "answer": "football",
+          "audioTranscript": "I love music and films, but I don't like football."
+        },
+        {
+          "id": "A1-U5-L1-A02",
+          "lessonId": "A1-U5-L1",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U5.PRODUCTION.EXPRESS_PREFERENCE",
+            "A1.U5.LISTENING.UNDERSTAND_PREFERENCES"
+          ],
+          "prompt": "Match the preference strength.",
+          "promptAr": "طابق قوة التفضيل.",
+          "pairs": [
+            [
+              "love",
+              "أحب جداً"
+            ],
+            [
+              "like",
+              "أحب"
+            ],
+            [
+              "don't like",
+              "لا أحب"
+            ],
+            [
+              "hate",
+              "أكره"
+            ]
+          ]
+        },
+        {
+          "id": "A1-U5-L1-A03",
+          "lessonId": "A1-U5-L1",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U5.PRODUCTION.EXPRESS_PREFERENCE",
+            "A1.U5.LISTENING.UNDERSTAND_PREFERENCES"
+          ],
+          "prompt": "Complete the preference.",
+          "promptAr": "أكمل التفضيل.",
+          "text": "I ___ music, but I hate loud games.",
+          "options": [
+            "love",
+            "can",
+            "am"
+          ],
+          "answer": "love"
+        },
+        {
+          "id": "A1-U5-L1-A04",
+          "lessonId": "A1-U5-L1",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U5.PRODUCTION.EXPRESS_PREFERENCE",
+            "A1.U5.LISTENING.UNDERSTAND_PREFERENCES"
+          ],
+          "prompt": "Choose Ali's preferences.",
+          "promptAr": "اختر تفضيلات علي.",
+          "options": [
+            "likes chess, hates tennis",
+            "loves tennis, hates chess",
+            "likes both"
+          ],
+          "answer": "likes chess, hates tennis",
+          "audioTranscript": "I like chess, but I hate tennis."
+        },
+        {
+          "id": "A1-U5-L1-A05",
+          "lessonId": "A1-U5-L1",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A1.U5.PRODUCTION.EXPRESS_PREFERENCE",
+            "A1.U5.LISTENING.UNDERSTAND_PREFERENCES"
+          ],
+          "prompt": "Say two things you like and one thing you don't like.",
+          "promptAr": "اذكر شيئين تحبهما وشيئاً لا تحبه.",
+          "accepted": [],
+          "evaluation": "three-clear-preference-statements",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U5-L2",
+      "title": "Activities I Enjoy",
+      "titleAr": "أنشطة أستمتع بها",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U5.PRODUCTION.DESCRIBE_HOBBIES",
+        "A1.U5.LISTENING.UNDERSTAND_PREFERENCES"
+      ],
+      "grammar": [
+        "A1.G.PREFERENCE.LIKE_ING"
+      ],
+      "lexicon": [
+        "A1.LEX.PLAY.V01",
+        "A1.LEX.WATCH.V01",
+        "A1.LEX.SWIM.V01",
+        "A1.LEX.RUN.V01",
+        "A1.LEX.DANCE.V01",
+        "A1.LEX.SING.V01",
+        "A1.LEX.DRAW.V01",
+        "A1.LEX.COOK.V01",
+        "A1.LEX.WALK.V01"
+      ],
+      "chunks": [
+        "A1.CHUNK.I_LIKE_ING"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Omar",
+            "en": "I like cooking and watching films. My sister loves drawing.",
+            "ar": "أحب الطبخ ومشاهدة الأفلام. أختي تحب الرسم."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U5-L2-A01",
+          "lessonId": "A1-U5-L2",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U5.PRODUCTION.DESCRIBE_HOBBIES",
+            "A1.U5.LISTENING.UNDERSTAND_PREFERENCES"
+          ],
+          "prompt": "What does Omar's sister love?",
+          "promptAr": "ماذا تحب أخت عمر؟",
+          "options": [
+            "drawing",
+            "cooking",
+            "watching films"
+          ],
+          "answer": "drawing",
+          "audioTranscript": "My sister loves drawing."
+        },
+        {
+          "id": "A1-U5-L2-A02",
+          "lessonId": "A1-U5-L2",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U5.PRODUCTION.DESCRIBE_HOBBIES",
+            "A1.U5.LISTENING.UNDERSTAND_PREFERENCES"
+          ],
+          "prompt": "Match the base verb and activity form.",
+          "promptAr": "طابق الفعل بصيغة النشاط.",
+          "pairs": [
+            [
+              "swim",
+              "swimming"
+            ],
+            [
+              "run",
+              "running"
+            ],
+            [
+              "dance",
+              "dancing"
+            ],
+            [
+              "draw",
+              "drawing"
+            ]
+          ]
+        },
+        {
+          "id": "A1-U5-L2-A03",
+          "lessonId": "A1-U5-L2",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U5.PRODUCTION.DESCRIBE_HOBBIES",
+            "A1.U5.LISTENING.UNDERSTAND_PREFERENCES"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "She loves ___.",
+          "options": [
+            "read",
+            "reading",
+            "reads"
+          ],
+          "answer": "reading"
+        },
+        {
+          "id": "A1-U5-L2-A04",
+          "lessonId": "A1-U5-L2",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U5.PRODUCTION.DESCRIBE_HOBBIES",
+            "A1.U5.LISTENING.UNDERSTAND_PREFERENCES"
+          ],
+          "prompt": "Choose the correct hobby card.",
+          "promptAr": "اختر بطاقة الهوايات الصحيحة.",
+          "options": [
+            "cooking and swimming",
+            "running and drawing",
+            "singing and football"
+          ],
+          "answer": "cooking and swimming",
+          "audioTranscript": "In my free time, I love cooking and swimming."
+        },
+        {
+          "id": "A1-U5-L2-A05",
+          "lessonId": "A1-U5-L2",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A1.U5.PRODUCTION.DESCRIBE_HOBBIES",
+            "A1.U5.LISTENING.UNDERSTAND_PREFERENCES"
+          ],
+          "prompt": "Describe three free-time activities using like, love or hate plus -ing.",
+          "promptAr": "صف ثلاثة أنشطة مستخدماً like أو love أو hate مع -ing.",
+          "accepted": [],
+          "evaluation": "three-ing-preference-statements",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U5-L3",
+      "title": "What Can You Do?",
+      "titleAr": "ماذا تستطيع؟",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U5.INTERACTION.ASK_ANSWER_ABILITY",
+        "A1.U5.LISTENING.UNDERSTAND_PREFERENCES"
+      ],
+      "grammar": [
+        "A1.G.MODAL.CAN_ABILITY",
+        "A1.G.MODAL.CAN_QUESTION"
+      ],
+      "lexicon": [
+        "A1.LEX.SWIM.V01",
+        "A1.LEX.DANCE.V01",
+        "A1.LEX.SING.V01",
+        "A1.LEX.CHESS.N01"
+      ],
+      "chunks": [
+        "A1.CHUNK.CAN_YOU",
+        "A1.CHUNK.YES_CAN_NO_CANT"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Maya",
+            "en": "Can you swim?",
+            "ar": "هل تستطيع السباحة؟"
+          },
+          {
+            "speaker": "Ali",
+            "en": "Yes, I can, but I can't dance.",
+            "ar": "نعم، لكنني لا أستطيع الرقص."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U5-L3-A01",
+          "lessonId": "A1-U5-L3",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U5.INTERACTION.ASK_ANSWER_ABILITY",
+            "A1.U5.LISTENING.UNDERSTAND_PREFERENCES"
+          ],
+          "prompt": "What can't Ali do?",
+          "promptAr": "ماذا لا يستطيع علي؟",
+          "options": [
+            "dance",
+            "swim",
+            "sing"
+          ],
+          "answer": "dance",
+          "audioTranscript": "I can swim, but I can't dance."
+        },
+        {
+          "id": "A1-U5-L3-A02",
+          "lessonId": "A1-U5-L3",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U5.INTERACTION.ASK_ANSWER_ABILITY",
+            "A1.U5.LISTENING.UNDERSTAND_PREFERENCES"
+          ],
+          "prompt": "Match questions and answers.",
+          "promptAr": "طابق الأسئلة والإجابات.",
+          "pairs": [
+            [
+              "Can you swim?",
+              "Yes, I can."
+            ],
+            [
+              "Can you dance?",
+              "No, I can't."
+            ]
+          ]
+        },
+        {
+          "id": "A1-U5-L3-A03",
+          "lessonId": "A1-U5-L3",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U5.INTERACTION.ASK_ANSWER_ABILITY",
+            "A1.U5.LISTENING.UNDERSTAND_PREFERENCES"
+          ],
+          "prompt": "Complete with can or can't.",
+          "promptAr": "أكمل بـcan أو can't.",
+          "text": "She ___ sing very well.",
+          "options": [
+            "can",
+            "cans",
+            "is can"
+          ],
+          "answer": "can"
+        },
+        {
+          "id": "A1-U5-L3-A04",
+          "lessonId": "A1-U5-L3",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U5.INTERACTION.ASK_ANSWER_ABILITY",
+            "A1.U5.LISTENING.UNDERSTAND_PREFERENCES"
+          ],
+          "prompt": "Which two abilities does Noor have?",
+          "promptAr": "ما القدرتان اللتان تملكهما نور؟",
+          "options": [
+            "sing and play chess",
+            "dance and swim",
+            "sing and swim"
+          ],
+          "answer": "sing and play chess",
+          "audioTranscript": "Noor can sing and play chess, but she can't swim."
+        },
+        {
+          "id": "A1-U5-L3-A05",
+          "lessonId": "A1-U5-L3",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U5.INTERACTION.ASK_ANSWER_ABILITY",
+            "A1.U5.LISTENING.UNDERSTAND_PREFERENCES"
+          ],
+          "prompt": "Ask two ability questions and answer them.",
+          "promptAr": "اطرح سؤالين عن القدرة وأجب عنهما.",
+          "accepted": [],
+          "evaluation": "two-can-questions-short-answers",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U5-L4",
+      "title": "Questions and Negatives",
+      "titleAr": "الأسئلة والنفي",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U5.PRODUCTION.EXPRESS_PREFERENCE",
+        "A1.U5.PRODUCTION.DESCRIBE_HOBBIES"
+      ],
+      "grammar": [
+        "A1.G.PRESENT_SIMPLE.DO_QUESTION",
+        "A1.G.PRESENT_SIMPLE.DO_NEGATIVE"
+      ],
+      "lexicon": [],
+      "chunks": [
+        "A1.CHUNK.DO_YOU_LIKE",
+        "A1.CHUNK.I_DONT_LIKE"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Ali",
+            "en": "Do you like running?",
+            "ar": "هل تحبين الجري؟"
+          },
+          {
+            "speaker": "Sara",
+            "en": "No, I don't. My brother likes it, but he doesn't run every day.",
+            "ar": "لا. أخي يحبه لكنه لا يجري كل يوم."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U5-L4-A01",
+          "lessonId": "A1-U5-L4",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U5.PRODUCTION.EXPRESS_PREFERENCE",
+            "A1.U5.PRODUCTION.DESCRIBE_HOBBIES"
+          ],
+          "prompt": "Does Sara like running?",
+          "promptAr": "هل تحب سارة الجري؟",
+          "options": [
+            "No, she doesn't.",
+            "Yes, she does.",
+            "Not stated."
+          ],
+          "answer": "No, she doesn't.",
+          "audioTranscript": "Do you like running? No, I don't."
+        },
+        {
+          "id": "A1-U5-L4-A02",
+          "lessonId": "A1-U5-L4",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U5.PRODUCTION.EXPRESS_PREFERENCE",
+            "A1.U5.PRODUCTION.DESCRIBE_HOBBIES"
+          ],
+          "prompt": "Match subjects and question helpers.",
+          "promptAr": "طابق الفاعل بأداة السؤال.",
+          "pairs": [
+            [
+              "you",
+              "Do"
+            ],
+            [
+              "they",
+              "Do"
+            ],
+            [
+              "he",
+              "Does"
+            ],
+            [
+              "Sara",
+              "Does"
+            ]
+          ]
+        },
+        {
+          "id": "A1-U5-L4-A03",
+          "lessonId": "A1-U5-L4",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U5.PRODUCTION.EXPRESS_PREFERENCE",
+            "A1.U5.PRODUCTION.DESCRIBE_HOBBIES"
+          ],
+          "prompt": "Complete the negative.",
+          "promptAr": "أكمل النفي.",
+          "text": "He ___ like football.",
+          "options": [
+            "doesn't",
+            "don't",
+            "isn't"
+          ],
+          "answer": "doesn't"
+        },
+        {
+          "id": "A1-U5-L4-A04",
+          "lessonId": "A1-U5-L4",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U5.PRODUCTION.EXPRESS_PREFERENCE",
+            "A1.U5.PRODUCTION.DESCRIBE_HOBBIES"
+          ],
+          "prompt": "Choose the true statement.",
+          "promptAr": "اختر الجملة الصحيحة.",
+          "options": [
+            "Lina likes films but doesn't like games.",
+            "Lina likes games but not films.",
+            "Lina dislikes both."
+          ],
+          "answer": "Lina likes films but doesn't like games.",
+          "audioTranscript": "I like films, but I don't like computer games."
+        },
+        {
+          "id": "A1-U5-L4-A05",
+          "lessonId": "A1-U5-L4",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U5.PRODUCTION.EXPRESS_PREFERENCE",
+            "A1.U5.PRODUCTION.DESCRIBE_HOBBIES"
+          ],
+          "prompt": "Ask what someone likes, then give a negative answer about one activity.",
+          "promptAr": "اسأل ماذا يحب شخص ثم أعط إجابة منفية عن نشاط.",
+          "accepted": [],
+          "evaluation": "do-question-and-negative-answer",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U5-L5",
+      "title": "Make an Invitation",
+      "titleAr": "قدّم دعوة",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U5.INTERACTION.MAKE_RESPOND_INVITATION",
+        "A1.U5.INTERACTION.ASK_ANSWER_ABILITY"
+      ],
+      "grammar": [
+        "A1.G.INVITATION.WOULD_LIKE_CHUNK"
+      ],
+      "lexicon": [
+        "A1.LEX.BUSY.ADJ01",
+        "A1.LEX.FREE.ADJ01",
+        "A1.LEX.GREAT.ADJ01",
+        "A1.LEX.MAYBE.ADV01",
+        "A1.LEX.PARK.N01"
+      ],
+      "chunks": [
+        "A1.CHUNK.WOULD_YOU_LIKE_TO",
+        "A1.CHUNK.YES_ID_LOVE_TO",
+        "A1.CHUNK.SORRY_IM_BUSY",
+        "A1.CHUNK.ARE_YOU_FREE"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Maya",
+            "en": "Are you free this afternoon? Would you like to walk in the park?",
+            "ar": "هل أنت متفرغ بعد الظهر؟ هل ترغب في المشي في الحديقة؟"
+          },
+          {
+            "speaker": "Omar",
+            "en": "Yes, I'd love to.",
+            "ar": "نعم، بكل سرور."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U5-L5-A01",
+          "lessonId": "A1-U5-L5",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U5.INTERACTION.MAKE_RESPOND_INVITATION",
+            "A1.U5.INTERACTION.ASK_ANSWER_ABILITY"
+          ],
+          "prompt": "What are Maya and Omar going to do?",
+          "promptAr": "ماذا سيفعل مايا وعمر؟",
+          "options": [
+            "walk in the park",
+            "watch a film",
+            "play tennis"
+          ],
+          "answer": "walk in the park",
+          "audioTranscript": "Would you like to walk in the park? Yes, I'd love to."
+        },
+        {
+          "id": "A1-U5-L5-A02",
+          "lessonId": "A1-U5-L5",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U5.INTERACTION.MAKE_RESPOND_INVITATION",
+            "A1.U5.INTERACTION.ASK_ANSWER_ABILITY"
+          ],
+          "prompt": "Match invitations and replies.",
+          "promptAr": "طابق الدعوات والردود.",
+          "pairs": [
+            [
+              "Would you like to watch a film?",
+              "Yes, I'd love to."
+            ],
+            [
+              "Are you free at four?",
+              "Sorry, I'm busy."
+            ]
+          ]
+        },
+        {
+          "id": "A1-U5-L5-A03",
+          "lessonId": "A1-U5-L5",
+          "type": "order",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U5.INTERACTION.MAKE_RESPOND_INVITATION",
+            "A1.U5.INTERACTION.ASK_ANSWER_ABILITY"
+          ],
+          "prompt": "Build the invitation.",
+          "promptAr": "رتب الدعوة.",
+          "tokens": [
+            "to",
+            "Would",
+            "like",
+            "you",
+            "swim"
+          ],
+          "answer": [
+            "Would",
+            "you",
+            "like",
+            "to",
+            "swim"
+          ]
+        },
+        {
+          "id": "A1-U5-L5-A04",
+          "lessonId": "A1-U5-L5",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U5.INTERACTION.MAKE_RESPOND_INVITATION",
+            "A1.U5.INTERACTION.ASK_ANSWER_ABILITY"
+          ],
+          "prompt": "Why can't David come?",
+          "promptAr": "لماذا لا يستطيع ديفيد الحضور؟",
+          "options": [
+            "He's busy.",
+            "He hates films.",
+            "He can't walk."
+          ],
+          "answer": "He's busy.",
+          "audioTranscript": "Would you like to watch a film at five? Sorry, I'm busy at five. Maybe at seven?"
+        },
+        {
+          "id": "A1-U5-L5-A05",
+          "lessonId": "A1-U5-L5",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U5.INTERACTION.MAKE_RESPOND_INVITATION",
+            "A1.U5.INTERACTION.ASK_ANSWER_ABILITY"
+          ],
+          "prompt": "Invite someone to one activity and respond naturally to acceptance or refusal.",
+          "promptAr": "ادع شخصاً إلى نشاط واستجب بصورة طبيعية للقبول أو الرفض.",
+          "accepted": [],
+          "evaluation": "invitation-and-natural-response",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U5-L6",
+      "title": "My Free-Time Message",
+      "titleAr": "رسالة عن وقت الفراغ",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U5.WRITING.WRITE_FREE_TIME_MESSAGE",
+        "A1.U5.PRODUCTION.DESCRIBE_HOBBIES",
+        "A1.U5.INTERACTION.MAKE_RESPOND_INVITATION"
+      ],
+      "grammar": [
+        "A1.G.PREFERENCE.LIKE_ING",
+        "A1.G.PRESENT_SIMPLE.DO_NEGATIVE"
+      ],
+      "lexicon": [
+        "A1.LEX.FREE_TIME.N01"
+      ],
+      "chunks": [
+        "A1.CHUNK.ARE_YOU_FREE",
+        "A1.CHUNK.WOULD_YOU_LIKE_TO"
+      ],
+      "readingText": {
+        "title": "Saturday Message",
+        "text": "Hi Sara. I'm free on Saturday afternoon. I like walking and taking photos. Would you like to meet in the park at four? I can't stay after six. Please message me.",
+        "textAr": "مرحباً سارة..."
+      },
+      "activities": [
+        {
+          "id": "A1-U5-L6-A01",
+          "lessonId": "A1-U5-L6",
+          "type": "textChoice",
+          "mode": "encounter",
+          "skill": "reading",
+          "canDo": [
+            "A1.U5.WRITING.WRITE_FREE_TIME_MESSAGE",
+            "A1.U5.PRODUCTION.DESCRIBE_HOBBIES",
+            "A1.U5.INTERACTION.MAKE_RESPOND_INVITATION"
+          ],
+          "prompt": "When and where is the meeting?",
+          "promptAr": "متى وأين اللقاء؟",
+          "options": [
+            "Saturday at 4 in the park",
+            "Sunday at 6 in the park",
+            "Saturday at 6 at home"
+          ],
+          "answer": "Saturday at 4 in the park"
+        },
+        {
+          "id": "A1-U5-L6-A02",
+          "lessonId": "A1-U5-L6",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U5.WRITING.WRITE_FREE_TIME_MESSAGE",
+            "A1.U5.PRODUCTION.DESCRIBE_HOBBIES",
+            "A1.U5.INTERACTION.MAKE_RESPOND_INVITATION"
+          ],
+          "prompt": "Match each message part to its job.",
+          "promptAr": "طابق جزء الرسالة بوظيفته.",
+          "pairs": [
+            [
+              "I'm free on Saturday.",
+              "availability"
+            ],
+            [
+              "Would you like to meet?",
+              "invitation"
+            ],
+            [
+              "I can't stay after six.",
+              "limit"
+            ]
+          ]
+        },
+        {
+          "id": "A1-U5-L6-A03",
+          "lessonId": "A1-U5-L6",
+          "type": "order",
+          "mode": "practice",
+          "skill": "writing",
+          "canDo": [
+            "A1.U5.WRITING.WRITE_FREE_TIME_MESSAGE",
+            "A1.U5.PRODUCTION.DESCRIBE_HOBBIES",
+            "A1.U5.INTERACTION.MAKE_RESPOND_INVITATION"
+          ],
+          "prompt": "Order the message.",
+          "promptAr": "رتب الرسالة.",
+          "tokens": [
+            "See you!",
+            "Would you like to play chess?",
+            "Hi Ali,",
+            "I'm free at five."
+          ],
+          "answer": [
+            "Hi Ali,",
+            "I'm free at five.",
+            "Would you like to play chess?",
+            "See you!"
+          ]
+        },
+        {
+          "id": "A1-U5-L6-A04",
+          "lessonId": "A1-U5-L6",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U5.WRITING.WRITE_FREE_TIME_MESSAGE",
+            "A1.U5.PRODUCTION.DESCRIBE_HOBBIES",
+            "A1.U5.INTERACTION.MAKE_RESPOND_INVITATION"
+          ],
+          "prompt": "Which reply fits the invitation?",
+          "promptAr": "أي رد يناسب الدعوة؟",
+          "options": [
+            "Yes, I'd love to. See you at five.",
+            "I get up at five.",
+            "There are five parks."
+          ],
+          "answer": "Yes, I'd love to. See you at five.",
+          "audioTranscript": "Are you free at five? Would you like to play chess?"
+        },
+        {
+          "id": "A1-U5-L6-A05",
+          "lessonId": "A1-U5-L6",
+          "type": "write",
+          "mode": "mastery",
+          "skill": "writing",
+          "canDo": [
+            "A1.U5.WRITING.WRITE_FREE_TIME_MESSAGE",
+            "A1.U5.PRODUCTION.DESCRIBE_HOBBIES",
+            "A1.U5.INTERACTION.MAKE_RESPOND_INVITATION"
+          ],
+          "prompt": "Write a 35–55-word message about what you like and invite a friend to one activity.",
+          "promptAr": "اكتب رسالة من 35–55 كلمة عن ما تحب وادع صديقاً إلى نشاط.",
+          "accepted": [],
+          "evaluation": "u5-free-time-message-rubric",
+          "wordGuide": [
+            35,
+            55
+          ]
+        }
+      ]
+    },
+    {
+      "id": "A1-U5-L7",
+      "title": "Mission: A Free Afternoon",
+      "titleAr": "المهمة: وقت فراغ بعد الظهر",
+      "lessonType": "mission",
+      "canDo": [
+        "A1.U5.MEDIATION.PLAN_FREE_AFTERNOON",
+        "A1.U5.PRODUCTION.EXPRESS_PREFERENCE",
+        "A1.U5.INTERACTION.ASK_ANSWER_ABILITY",
+        "A1.U5.LISTENING.UNDERSTAND_PREFERENCES",
+        "A1.U5.INTERACTION.MAKE_RESPOND_INVITATION",
+        "A1.U5.WRITING.WRITE_FREE_TIME_MESSAGE"
+      ],
+      "grammar": [],
+      "lexicon": [],
+      "chunks": [],
+      "scenario": "Two friends have different preferences, abilities and times. Find an activity both can do, negotiate a time and send confirmation.",
+      "activities": [
+        {
+          "id": "A1-U5-L7-A01",
+          "lessonId": "A1-U5-L7",
+          "mode": "mastery",
+          "type": "audioChoice",
+          "skill": "listening",
+          "canDo": [
+            "A1.U5.LISTENING.UNDERSTAND_PREFERENCES"
+          ],
+          "prompt": "What does Lina like and what can't she do?",
+          "promptAr": "ماذا تحب لينا وماذا لا تستطيع؟",
+          "options": [
+            "likes films; can't swim",
+            "likes swimming; can't watch films",
+            "likes chess; can't walk"
+          ],
+          "answer": "likes films; can't swim",
+          "audioTranscript": "I love films, but I can't swim."
+        },
+        {
+          "id": "A1-U5-L7-A02",
+          "lessonId": "A1-U5-L7",
+          "mode": "mastery",
+          "type": "textChoice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U5.MEDIATION.PLAN_FREE_AFTERNOON"
+          ],
+          "prompt": "Choose the activity both friends can do.",
+          "promptAr": "اختر النشاط الذي يستطيع الصديقان فعله.",
+          "options": [
+            "watch a film",
+            "swim",
+            "play tennis"
+          ],
+          "answer": "watch a film",
+          "sourceText": "Lina likes films and can't swim. Omar likes films and swimming, but he can't play tennis."
+        },
+        {
+          "id": "A1-U5-L7-A03",
+          "lessonId": "A1-U5-L7",
+          "mode": "mastery",
+          "type": "speak",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U5.INTERACTION.MAKE_RESPOND_INVITATION"
+          ],
+          "prompt": "Invite Omar to the shared activity and suggest a time.",
+          "promptAr": "ادع عمر إلى النشاط المشترك واقترح وقتاً.",
+          "accepted": [],
+          "evaluation": "invitation-activity-time",
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A1-U5-L7-A04",
+          "lessonId": "A1-U5-L7",
+          "mode": "mastery",
+          "type": "speak",
+          "skill": "mediation",
+          "canDo": [
+            "A1.U5.MEDIATION.PLAN_FREE_AFTERNOON",
+            "A1.U5.PRODUCTION.EXPRESS_PREFERENCE",
+            "A1.U5.INTERACTION.ASK_ANSWER_ABILITY"
+          ],
+          "prompt": "Explain why this activity works for both friends.",
+          "promptAr": "اشرح لماذا يناسب هذا النشاط الصديقين.",
+          "accepted": [],
+          "evaluation": "preference-ability-mediation",
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A1-U5-L7-A05",
+          "lessonId": "A1-U5-L7",
+          "mode": "mastery",
+          "type": "write",
+          "skill": "writing",
+          "canDo": [
+            "A1.U5.WRITING.WRITE_FREE_TIME_MESSAGE"
+          ],
+          "prompt": "Write a 40–60-word confirmation message with activity, place and time.",
+          "promptAr": "اكتب رسالة تأكيد من 40–60 كلمة تشمل النشاط والمكان والوقت.",
+          "accepted": [],
+          "evaluation": "u5-mission-message-rubric",
+          "wordGuide": [
+            40,
+            60
+          ]
+        },
+        {
+          "id": "A1-U5-L7-A06",
+          "lessonId": "A1-U5-L7",
+          "mode": "mastery",
+          "type": "form",
+          "skill": "writing",
+          "canDo": [
+            "A1.U5.MEDIATION.PLAN_FREE_AFTERNOON"
+          ],
+          "prompt": "Create the final afternoon plan.",
+          "promptAr": "أنشئ خطة بعد الظهر النهائية.",
+          "fields": [
+            "activity",
+            "place",
+            "startTime",
+            "endTime",
+            "confirmation"
+          ],
+          "evaluation": "complete-feasible-free-time-plan"
+        }
+      ]
+    }
+  ],
+  "mastery": {
+    "requiredObjectives": [
+      "A1.U5.PRODUCTION.EXPRESS_PREFERENCE",
+      "A1.U5.PRODUCTION.DESCRIBE_HOBBIES",
+      "A1.U5.INTERACTION.ASK_ANSWER_ABILITY",
+      "A1.U5.LISTENING.UNDERSTAND_PREFERENCES",
+      "A1.U5.INTERACTION.MAKE_RESPOND_INVITATION",
+      "A1.U5.WRITING.WRITE_FREE_TIME_MESSAGE",
+      "A1.U5.MEDIATION.PLAN_FREE_AFTERNOON"
+    ],
+    "requiredSkillGroups": [
+      [
+        "listening",
+        "reading"
+      ],
+      [
+        "spokenInteraction",
+        "spokenProduction",
+        "writing"
+      ],
+      [
+        "mediation"
+      ]
+    ],
+    "minimumObjectiveScore": 0.75,
+    "missionRequired": true,
+    "retry": "targeted-by-objective",
+    "unlocks": "A1-U6"
+  }
+}

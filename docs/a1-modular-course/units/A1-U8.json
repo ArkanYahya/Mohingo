@@ -1,0 +1,1029 @@
+{
+  "id": "A1-U8",
+  "title": "Around Town",
+  "titleAr": "في المدينة",
+  "levelRole": "core",
+  "estimatedMinutes": [
+    80,
+    110
+  ],
+  "countsTowardA1Mastery": true,
+  "lessons": [
+    {
+      "id": "A1-U8-L1",
+      "title": "Town Places",
+      "titleAr": "أماكن المدينة",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U8.READING.IDENTIFY_TOWN_PLACE",
+        "A1.U8.PRODUCTION.STATE_LOCATION"
+      ],
+      "grammar": [
+        "A1.G.THERE_IS_ARE"
+      ],
+      "lexicon": [
+        "A1.LEX.BANK.N01",
+        "A1.LEX.POST_OFFICE.N01",
+        "A1.LEX.PHARMACY.N01",
+        "A1.LEX.HOSPITAL.N01",
+        "A1.LEX.SUPERMARKET.N01",
+        "A1.LEX.LIBRARY.N01",
+        "A1.LEX.CAFÉ.N01",
+        "A1.LEX.STATION.N01"
+      ],
+      "chunks": [],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Maya",
+            "en": "There's a bank, a pharmacy and a café on this street.",
+            "ar": "يوجد مصرف وصيدلية ومقهى في هذا الشارع."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U8-L1-A01",
+          "lessonId": "A1-U8-L1",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U8.READING.IDENTIFY_TOWN_PLACE",
+            "A1.U8.PRODUCTION.STATE_LOCATION"
+          ],
+          "prompt": "Which three places are on the street?",
+          "promptAr": "ما الأماكن الثلاثة في الشارع؟",
+          "options": [
+            "bank, pharmacy, café",
+            "hospital, station, library",
+            "bank, school, shop"
+          ],
+          "answer": "bank, pharmacy, café",
+          "audioTranscript": "There's a bank, a pharmacy and a café on this street."
+        },
+        {
+          "id": "A1-U8-L1-A02",
+          "lessonId": "A1-U8-L1",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U8.READING.IDENTIFY_TOWN_PLACE",
+            "A1.U8.PRODUCTION.STATE_LOCATION"
+          ],
+          "prompt": "Match town places and purposes.",
+          "promptAr": "طابق أماكن المدينة بوظائفها.",
+          "pairs": [
+            [
+              "pharmacy",
+              "medicine"
+            ],
+            [
+              "bank",
+              "money"
+            ],
+            [
+              "library",
+              "books"
+            ],
+            [
+              "station",
+              "trains"
+            ]
+          ]
+        },
+        {
+          "id": "A1-U8-L1-A03",
+          "lessonId": "A1-U8-L1",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U8.READING.IDENTIFY_TOWN_PLACE",
+            "A1.U8.PRODUCTION.STATE_LOCATION"
+          ],
+          "prompt": "Complete the place sentence.",
+          "promptAr": "أكمل جملة المكان.",
+          "text": "There ___ a post office here.",
+          "options": [
+            "is",
+            "are",
+            "be"
+          ],
+          "answer": "is"
+        },
+        {
+          "id": "A1-U8-L1-A04",
+          "lessonId": "A1-U8-L1",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U8.READING.IDENTIFY_TOWN_PLACE",
+            "A1.U8.PRODUCTION.STATE_LOCATION"
+          ],
+          "prompt": "Where should the visitor go for medicine?",
+          "promptAr": "أين يجب أن يذهب الزائر للدواء؟",
+          "options": [
+            "pharmacy",
+            "bank",
+            "library"
+          ],
+          "answer": "pharmacy",
+          "audioTranscript": "You can buy medicine at the pharmacy on Green Street."
+        },
+        {
+          "id": "A1-U8-L1-A05",
+          "lessonId": "A1-U8-L1",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A1.U8.READING.IDENTIFY_TOWN_PLACE",
+            "A1.U8.PRODUCTION.STATE_LOCATION"
+          ],
+          "prompt": "Name four places in a real or fictional town and say what one place is for.",
+          "promptAr": "اذكر أربعة أماكن في مدينة حقيقية أو خيالية ووظيفة أحدها.",
+          "accepted": [],
+          "evaluation": "four-places-one-purpose",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U8-L2",
+      "title": "Where Is It?",
+      "titleAr": "أين هو؟",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U8.PRODUCTION.STATE_LOCATION",
+        "A1.U8.INTERACTION.ASK_FOR_DIRECTIONS"
+      ],
+      "grammar": [
+        "A1.G.THERE.QUESTION",
+        "A1.G.PREPOSITION.PLACE_EXTENDED"
+      ],
+      "lexicon": [
+        "A1.LEX.NEAR.ADJ01",
+        "A1.LEX.FAR.ADJ01",
+        "A1.LEX.OPPOSITE.PREP01",
+        "A1.LEX.BETWEEN.PREP01",
+        "A1.LEX.CORNER.N01",
+        "A1.LEX.STREET.N01"
+      ],
+      "chunks": [
+        "A1.CHUNK.IS_THERE_NEAR_HERE",
+        "A1.CHUNK.WHERE_IS_PLACE",
+        "A1.CHUNK.ITS_NEXT_TO"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Visitor",
+            "en": "Is there a bank near here?",
+            "ar": "هل يوجد مصرف قريب؟"
+          },
+          {
+            "speaker": "Resident",
+            "en": "Yes. It's opposite the café.",
+            "ar": "نعم. إنه مقابل المقهى."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U8-L2-A01",
+          "lessonId": "A1-U8-L2",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U8.PRODUCTION.STATE_LOCATION",
+            "A1.U8.INTERACTION.ASK_FOR_DIRECTIONS"
+          ],
+          "prompt": "Where is the bank?",
+          "promptAr": "أين المصرف؟",
+          "options": [
+            "opposite the café",
+            "between two cafés",
+            "far from the street"
+          ],
+          "answer": "opposite the café",
+          "audioTranscript": "The bank is opposite the café."
+        },
+        {
+          "id": "A1-U8-L2-A02",
+          "lessonId": "A1-U8-L2",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U8.PRODUCTION.STATE_LOCATION",
+            "A1.U8.INTERACTION.ASK_FOR_DIRECTIONS"
+          ],
+          "prompt": "Match place relations.",
+          "promptAr": "طابق علاقات المكان.",
+          "pairs": [
+            [
+              "opposite",
+              "across from"
+            ],
+            [
+              "between",
+              "in the middle of two places"
+            ],
+            [
+              "on the corner",
+              "where two streets meet"
+            ]
+          ]
+        },
+        {
+          "id": "A1-U8-L2-A03",
+          "lessonId": "A1-U8-L2",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U8.PRODUCTION.STATE_LOCATION",
+            "A1.U8.INTERACTION.ASK_FOR_DIRECTIONS"
+          ],
+          "prompt": "Complete the question.",
+          "promptAr": "أكمل السؤال.",
+          "text": "___ there a pharmacy near here?",
+          "options": [
+            "Is",
+            "Are",
+            "Does"
+          ],
+          "answer": "Is"
+        },
+        {
+          "id": "A1-U8-L2-A04",
+          "lessonId": "A1-U8-L2",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U8.PRODUCTION.STATE_LOCATION",
+            "A1.U8.INTERACTION.ASK_FOR_DIRECTIONS"
+          ],
+          "prompt": "Choose the correct map statement.",
+          "promptAr": "اختر وصف الخريطة الصحيح.",
+          "options": [
+            "The café is between the bank and library.",
+            "The bank is between two cafés.",
+            "The library is far from the café."
+          ],
+          "answer": "The café is between the bank and library.",
+          "audioTranscript": "The bank is on the left, the library is on the right, and the café is between them."
+        },
+        {
+          "id": "A1-U8-L2-A05",
+          "lessonId": "A1-U8-L2",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U8.PRODUCTION.STATE_LOCATION",
+            "A1.U8.INTERACTION.ASK_FOR_DIRECTIONS"
+          ],
+          "prompt": "Ask where a place is and answer with two location details.",
+          "promptAr": "اسأل عن مكان وأجب بتفصيلين عن الموقع.",
+          "accepted": [],
+          "evaluation": "place-question-two-location-details",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U8-L3",
+      "title": "Go Straight",
+      "titleAr": "اذهب مباشرة",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U8.PRODUCTION.GIVE_SIMPLE_DIRECTIONS",
+        "A1.U8.INTERACTION.ASK_FOR_DIRECTIONS"
+      ],
+      "grammar": [
+        "A1.G.IMPERATIVE.DIRECTIONS"
+      ],
+      "lexicon": [
+        "A1.LEX.STRAIGHT.ADV01",
+        "A1.LEX.TURN.V01",
+        "A1.LEX.LEFT.N01",
+        "A1.LEX.RIGHT.N01",
+        "A1.LEX.CROSS.V01",
+        "A1.LEX.PAST.PREP01"
+      ],
+      "chunks": [
+        "A1.CHUNK.GO_STRAIGHT",
+        "A1.CHUNK.TURN_LEFT_RIGHT",
+        "A1.CHUNK.GO_PAST"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Resident",
+            "en": "Go straight, turn left at the bank and go past the café.",
+            "ar": "اذهب مباشرة ثم انعطف يساراً عند المصرف وتجاوز المقهى."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U8-L3-A01",
+          "lessonId": "A1-U8-L3",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U8.PRODUCTION.GIVE_SIMPLE_DIRECTIONS",
+            "A1.U8.INTERACTION.ASK_FOR_DIRECTIONS"
+          ],
+          "prompt": "Where does the visitor turn?",
+          "promptAr": "أين ينعطف الزائر؟",
+          "options": [
+            "at the bank",
+            "at the café",
+            "at the hospital"
+          ],
+          "answer": "at the bank",
+          "audioTranscript": "Turn left at the bank."
+        },
+        {
+          "id": "A1-U8-L3-A02",
+          "lessonId": "A1-U8-L3",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U8.PRODUCTION.GIVE_SIMPLE_DIRECTIONS",
+            "A1.U8.INTERACTION.ASK_FOR_DIRECTIONS"
+          ],
+          "prompt": "Match direction commands.",
+          "promptAr": "طابق أوامر الاتجاهات.",
+          "pairs": [
+            [
+              "go straight",
+              "استمر مباشرة"
+            ],
+            [
+              "turn right",
+              "انعطف يميناً"
+            ],
+            [
+              "cross the street",
+              "اعبر الشارع"
+            ]
+          ]
+        },
+        {
+          "id": "A1-U8-L3-A03",
+          "lessonId": "A1-U8-L3",
+          "type": "order",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U8.PRODUCTION.GIVE_SIMPLE_DIRECTIONS",
+            "A1.U8.INTERACTION.ASK_FOR_DIRECTIONS"
+          ],
+          "prompt": "Order the route.",
+          "promptAr": "رتب المسار.",
+          "tokens": [
+            "Go past the café.",
+            "Turn left at the bank.",
+            "Go straight."
+          ],
+          "answer": [
+            "Go straight.",
+            "Turn left at the bank.",
+            "Go past the café."
+          ]
+        },
+        {
+          "id": "A1-U8-L3-A04",
+          "lessonId": "A1-U8-L3",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U8.PRODUCTION.GIVE_SIMPLE_DIRECTIONS",
+            "A1.U8.INTERACTION.ASK_FOR_DIRECTIONS"
+          ],
+          "prompt": "Choose the route.",
+          "promptAr": "اختر المسار.",
+          "options": [
+            "straight – right at library – cross street",
+            "straight – left at library – stop",
+            "cross – right at bank – straight"
+          ],
+          "answer": "straight – right at library – cross street",
+          "audioTranscript": "Go straight, turn right at the library, then cross the street."
+        },
+        {
+          "id": "A1-U8-L3-A05",
+          "lessonId": "A1-U8-L3",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A1.U8.PRODUCTION.GIVE_SIMPLE_DIRECTIONS",
+            "A1.U8.INTERACTION.ASK_FOR_DIRECTIONS"
+          ],
+          "prompt": "Give a three-step route using straight, a turn and one landmark.",
+          "promptAr": "أعط مساراً من ثلاث خطوات يشمل الاستمرار وانعطافاً ومعلماً.",
+          "accepted": [],
+          "evaluation": "three-step-landmark-route",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U8-L4",
+      "title": "Ask and Guide",
+      "titleAr": "اسأل وأرشد",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U8.INTERACTION.ASK_FOR_DIRECTIONS",
+        "A1.U8.PRODUCTION.GIVE_SIMPLE_DIRECTIONS",
+        "A1.U8.WRITING.WRITE_DIRECTIONS"
+      ],
+      "grammar": [
+        "A1.G.SEQUENCE.DIRECTIONS"
+      ],
+      "lexicon": [
+        "A1.LEX.STREET.N01",
+        "A1.LEX.CORNER.N01"
+      ],
+      "chunks": [
+        "A1.CHUNK.HOW_DO_I_GET_TO",
+        "A1.CHUNK.ITS_ON_YOUR_SIDE",
+        "A1.CHUNK.FIRST_THEN"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Visitor",
+            "en": "How do I get to the station?",
+            "ar": "كيف أصل إلى المحطة؟"
+          },
+          {
+            "speaker": "Resident",
+            "en": "First, go straight. Then turn right. It's on your left.",
+            "ar": "اذهب مباشرة أولاً ثم انعطف يميناً. ستكون على يسارك."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U8-L4-A01",
+          "lessonId": "A1-U8-L4",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U8.INTERACTION.ASK_FOR_DIRECTIONS",
+            "A1.U8.PRODUCTION.GIVE_SIMPLE_DIRECTIONS",
+            "A1.U8.WRITING.WRITE_DIRECTIONS"
+          ],
+          "prompt": "Which side is the station on?",
+          "promptAr": "في أي جانب تقع المحطة؟",
+          "options": [
+            "left",
+            "right",
+            "not stated"
+          ],
+          "answer": "left",
+          "audioTranscript": "Turn right. The station is on your left."
+        },
+        {
+          "id": "A1-U8-L4-A02",
+          "lessonId": "A1-U8-L4",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U8.INTERACTION.ASK_FOR_DIRECTIONS",
+            "A1.U8.PRODUCTION.GIVE_SIMPLE_DIRECTIONS",
+            "A1.U8.WRITING.WRITE_DIRECTIONS"
+          ],
+          "prompt": "Match route stages.",
+          "promptAr": "طابق مراحل المسار.",
+          "pairs": [
+            [
+              "First",
+              "start"
+            ],
+            [
+              "Then",
+              "next step"
+            ],
+            [
+              "After that",
+              "later step"
+            ]
+          ]
+        },
+        {
+          "id": "A1-U8-L4-A03",
+          "lessonId": "A1-U8-L4",
+          "type": "order",
+          "mode": "practice",
+          "skill": "writing",
+          "canDo": [
+            "A1.U8.INTERACTION.ASK_FOR_DIRECTIONS",
+            "A1.U8.PRODUCTION.GIVE_SIMPLE_DIRECTIONS",
+            "A1.U8.WRITING.WRITE_DIRECTIONS"
+          ],
+          "prompt": "Order the written directions.",
+          "promptAr": "رتب الاتجاهات المكتوبة.",
+          "tokens": [
+            "It is on your right.",
+            "Then turn left at the bank.",
+            "First go straight."
+          ],
+          "answer": [
+            "First go straight.",
+            "Then turn left at the bank.",
+            "It is on your right."
+          ]
+        },
+        {
+          "id": "A1-U8-L4-A04",
+          "lessonId": "A1-U8-L4",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U8.INTERACTION.ASK_FOR_DIRECTIONS",
+            "A1.U8.PRODUCTION.GIVE_SIMPLE_DIRECTIONS",
+            "A1.U8.WRITING.WRITE_DIRECTIONS"
+          ],
+          "prompt": "Which destination matches the directions?",
+          "promptAr": "أي وجهة تطابق الاتجاهات؟",
+          "options": [
+            "post office",
+            "pharmacy",
+            "café"
+          ],
+          "answer": "post office",
+          "audioTranscript": "Go past the pharmacy and turn left at the café. The post office is on your right."
+        },
+        {
+          "id": "A1-U8-L4-A05",
+          "lessonId": "A1-U8-L4",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U8.INTERACTION.ASK_FOR_DIRECTIONS",
+            "A1.U8.PRODUCTION.GIVE_SIMPLE_DIRECTIONS",
+            "A1.U8.WRITING.WRITE_DIRECTIONS"
+          ],
+          "prompt": "Ask for directions, then give a four-step answer to a different place.",
+          "promptAr": "اسأل عن اتجاهات ثم أعط إجابة من أربع خطوات إلى مكان آخر.",
+          "accepted": [],
+          "evaluation": "ask-and-four-step-guide",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U8-L5",
+      "title": "Public Signs",
+      "titleAr": "إشارات عامة",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U8.READING.UNDERSTAND_PUBLIC_SIGN",
+        "A1.U8.PRODUCTION.STATE_LOCATION"
+      ],
+      "grammar": [
+        "A1.G.PUBLIC_SIGN.IMPERATIVE_NEGATIVE"
+      ],
+      "lexicon": [
+        "A1.LEX.ENTRANCE.N01",
+        "A1.LEX.EXIT.N01",
+        "A1.LEX.OPEN.ADJ01",
+        "A1.LEX.CLOSED.ADJ01"
+      ],
+      "chunks": [
+        "A1.CHUNK.YOU_CANT_ENTER"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "The bank is closed. Use the side entrance. Don't enter through this door.",
+            "ar": "المصرف مغلق. استخدم المدخل الجانبي. لا تدخل من هذا الباب."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U8-L5-A01",
+          "lessonId": "A1-U8-L5",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U8.READING.UNDERSTAND_PUBLIC_SIGN",
+            "A1.U8.PRODUCTION.STATE_LOCATION"
+          ],
+          "prompt": "Which instruction is correct?",
+          "promptAr": "أي تعليمات صحيحة؟",
+          "options": [
+            "Use the side entrance.",
+            "Enter through this door.",
+            "The bank is open."
+          ],
+          "answer": "Use the side entrance.",
+          "audioTranscript": "Use the side entrance. Don't enter through this door."
+        },
+        {
+          "id": "A1-U8-L5-A02",
+          "lessonId": "A1-U8-L5",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U8.READING.UNDERSTAND_PUBLIC_SIGN",
+            "A1.U8.PRODUCTION.STATE_LOCATION"
+          ],
+          "prompt": "Match signs and meanings.",
+          "promptAr": "طابق الإشارات بمعانيها.",
+          "pairs": [
+            [
+              "EXIT",
+              "way out"
+            ],
+            [
+              "CLOSED",
+              "not open"
+            ],
+            [
+              "NO ENTRY",
+              "don't enter"
+            ]
+          ]
+        },
+        {
+          "id": "A1-U8-L5-A03",
+          "lessonId": "A1-U8-L5",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U8.READING.UNDERSTAND_PUBLIC_SIGN",
+            "A1.U8.PRODUCTION.STATE_LOCATION"
+          ],
+          "prompt": "Complete the negative instruction.",
+          "promptAr": "أكمل تعليمات النهي.",
+          "text": "___ cross here.",
+          "options": [
+            "Don't",
+            "Not",
+            "No"
+          ],
+          "answer": "Don't"
+        },
+        {
+          "id": "A1-U8-L5-A04",
+          "lessonId": "A1-U8-L5",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U8.READING.UNDERSTAND_PUBLIC_SIGN",
+            "A1.U8.PRODUCTION.STATE_LOCATION"
+          ],
+          "prompt": "What should the visitor do?",
+          "promptAr": "ماذا يجب أن يفعل الزائر؟",
+          "options": [
+            "Use the next entrance.",
+            "Wait at the exit.",
+            "Cross the closed street."
+          ],
+          "answer": "Use the next entrance.",
+          "audioTranscript": "This entrance is closed. Please use the next entrance on the right."
+        },
+        {
+          "id": "A1-U8-L5-A05",
+          "lessonId": "A1-U8-L5",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A1.U8.READING.UNDERSTAND_PUBLIC_SIGN",
+            "A1.U8.PRODUCTION.STATE_LOCATION"
+          ],
+          "prompt": "Explain the meaning of three simple public signs.",
+          "promptAr": "اشرح معنى ثلاث إشارات عامة بسيطة.",
+          "accepted": [],
+          "evaluation": "three-sign-meanings",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U8-L6",
+      "title": "Directions Message",
+      "titleAr": "رسالة اتجاهات",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U8.WRITING.WRITE_DIRECTIONS",
+        "A1.U8.PRODUCTION.GIVE_SIMPLE_DIRECTIONS",
+        "A1.U8.READING.UNDERSTAND_PUBLIC_SIGN"
+      ],
+      "grammar": [
+        "A1.G.SEQUENCE.DIRECTIONS",
+        "A1.G.IMPERATIVE.DIRECTIONS"
+      ],
+      "lexicon": [
+        "A1.LEX.ENTRANCE.N01",
+        "A1.LEX.EXIT.N01"
+      ],
+      "chunks": [
+        "A1.CHUNK.HOW_DO_I_GET_TO",
+        "A1.CHUNK.GO_STRAIGHT",
+        "A1.CHUNK.TURN_LEFT_RIGHT"
+      ],
+      "readingText": {
+        "title": "Find Our Office",
+        "text": "Start at the station. Go straight on Park Street. Turn left at the bank. Go past the café. Our office is between the pharmacy and the library. Use the blue entrance.",
+        "textAr": "اعثر على مكتبنا..."
+      },
+      "activities": [
+        {
+          "id": "A1-U8-L6-A01",
+          "lessonId": "A1-U8-L6",
+          "type": "textChoice",
+          "mode": "encounter",
+          "skill": "reading",
+          "canDo": [
+            "A1.U8.WRITING.WRITE_DIRECTIONS",
+            "A1.U8.PRODUCTION.GIVE_SIMPLE_DIRECTIONS",
+            "A1.U8.READING.UNDERSTAND_PUBLIC_SIGN"
+          ],
+          "prompt": "What is next to the office?",
+          "promptAr": "ما المجاور للمكتب؟",
+          "options": [
+            "the pharmacy and library",
+            "the station and bank",
+            "two cafés"
+          ],
+          "answer": "the pharmacy and library"
+        },
+        {
+          "id": "A1-U8-L6-A02",
+          "lessonId": "A1-U8-L6",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U8.WRITING.WRITE_DIRECTIONS",
+            "A1.U8.PRODUCTION.GIVE_SIMPLE_DIRECTIONS",
+            "A1.U8.READING.UNDERSTAND_PUBLIC_SIGN"
+          ],
+          "prompt": "Match route details.",
+          "promptAr": "طابق تفاصيل المسار.",
+          "pairs": [
+            [
+              "start",
+              "station"
+            ],
+            [
+              "turn",
+              "left at bank"
+            ],
+            [
+              "entrance",
+              "blue"
+            ]
+          ]
+        },
+        {
+          "id": "A1-U8-L6-A03",
+          "lessonId": "A1-U8-L6",
+          "type": "order",
+          "mode": "practice",
+          "skill": "writing",
+          "canDo": [
+            "A1.U8.WRITING.WRITE_DIRECTIONS",
+            "A1.U8.PRODUCTION.GIVE_SIMPLE_DIRECTIONS",
+            "A1.U8.READING.UNDERSTAND_PUBLIC_SIGN"
+          ],
+          "prompt": "Order the message parts.",
+          "promptAr": "رتب أجزاء الرسالة.",
+          "tokens": [
+            "Use the red entrance.",
+            "Turn right at the café.",
+            "Start at the library.",
+            "Go straight."
+          ],
+          "answer": [
+            "Start at the library.",
+            "Go straight.",
+            "Turn right at the café.",
+            "Use the red entrance."
+          ]
+        },
+        {
+          "id": "A1-U8-L6-A04",
+          "lessonId": "A1-U8-L6",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U8.WRITING.WRITE_DIRECTIONS",
+            "A1.U8.PRODUCTION.GIVE_SIMPLE_DIRECTIONS",
+            "A1.U8.READING.UNDERSTAND_PUBLIC_SIGN"
+          ],
+          "prompt": "Which final landmark identifies the place?",
+          "promptAr": "أي معلم نهائي يحدد المكان؟",
+          "options": [
+            "a blue entrance",
+            "a red bank",
+            "a closed café"
+          ],
+          "answer": "a blue entrance",
+          "audioTranscript": "The office is between the pharmacy and library. Use the blue entrance."
+        },
+        {
+          "id": "A1-U8-L6-A05",
+          "lessonId": "A1-U8-L6",
+          "type": "write",
+          "mode": "mastery",
+          "skill": "writing",
+          "canDo": [
+            "A1.U8.WRITING.WRITE_DIRECTIONS",
+            "A1.U8.PRODUCTION.GIVE_SIMPLE_DIRECTIONS",
+            "A1.U8.READING.UNDERSTAND_PUBLIC_SIGN"
+          ],
+          "prompt": "Write 45–65 words guiding someone from a known start point to a fictional destination, including one sign or entrance.",
+          "promptAr": "اكتب 45–65 كلمة ترشد شخصاً من نقطة معلومة إلى وجهة خيالية، مع إشارة أو مدخل.",
+          "accepted": [],
+          "evaluation": "u8-directions-writing-rubric",
+          "wordGuide": [
+            45,
+            65
+          ]
+        }
+      ]
+    },
+    {
+      "id": "A1-U8-L7",
+      "title": "Mission: Guide a Visitor",
+      "titleAr": "المهمة: أرشد زائراً",
+      "lessonType": "mission",
+      "canDo": [
+        "A1.U8.MEDIATION.GUIDE_VISITOR",
+        "A1.U8.READING.IDENTIFY_TOWN_PLACE",
+        "A1.U8.PRODUCTION.STATE_LOCATION",
+        "A1.U8.INTERACTION.ASK_FOR_DIRECTIONS",
+        "A1.U8.PRODUCTION.GIVE_SIMPLE_DIRECTIONS",
+        "A1.U8.READING.UNDERSTAND_PUBLIC_SIGN",
+        "A1.U8.WRITING.WRITE_DIRECTIONS"
+      ],
+      "grammar": [],
+      "lexicon": [],
+      "chunks": [],
+      "scenario": "A visitor must reach three places on an unseen town map while one entrance is closed. Interpret the map and signs, give directions and write the final route.",
+      "activities": [
+        {
+          "id": "A1-U8-L7-A01",
+          "lessonId": "A1-U8-L7",
+          "mode": "mastery",
+          "type": "textChoice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U8.READING.IDENTIFY_TOWN_PLACE",
+            "A1.U8.PRODUCTION.STATE_LOCATION"
+          ],
+          "prompt": "Which place is between the bank and station?",
+          "promptAr": "أي مكان يقع بين المصرف والمحطة؟",
+          "options": [
+            "pharmacy",
+            "library",
+            "café"
+          ],
+          "answer": "pharmacy",
+          "sourceText": "Map note: bank — pharmacy — station. The library is opposite the bank; the café is behind the station."
+        },
+        {
+          "id": "A1-U8-L7-A02",
+          "lessonId": "A1-U8-L7",
+          "mode": "mastery",
+          "type": "audioChoice",
+          "skill": "listening",
+          "canDo": [
+            "A1.U8.READING.UNDERSTAND_PUBLIC_SIGN"
+          ],
+          "prompt": "Why can't the visitor use the first door?",
+          "promptAr": "لماذا لا يستطيع الزائر استخدام الباب الأول؟",
+          "options": [
+            "It is closed.",
+            "It is the exit.",
+            "It is far away."
+          ],
+          "answer": "It is closed.",
+          "audioTranscript": "The front entrance is closed. Use the side entrance."
+        },
+        {
+          "id": "A1-U8-L7-A03",
+          "lessonId": "A1-U8-L7",
+          "mode": "mastery",
+          "type": "speak",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U8.INTERACTION.ASK_FOR_DIRECTIONS"
+          ],
+          "prompt": "Ask how to get from the station to the library.",
+          "promptAr": "اسأل كيف تصل من المحطة إلى المكتبة.",
+          "accepted": [],
+          "evaluation": "direction-question-origin-destination",
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A1-U8-L7-A04",
+          "lessonId": "A1-U8-L7",
+          "mode": "mastery",
+          "type": "speak",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A1.U8.PRODUCTION.GIVE_SIMPLE_DIRECTIONS"
+          ],
+          "prompt": "Give a route that visits the pharmacy, library and café in that order.",
+          "promptAr": "أعط مساراً يزور الصيدلية والمكتبة والمقهى بهذا الترتيب.",
+          "accepted": [],
+          "evaluation": "three-destination-route",
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A1-U8-L7-A05",
+          "lessonId": "A1-U8-L7",
+          "mode": "mastery",
+          "type": "speak",
+          "skill": "mediation",
+          "canDo": [
+            "A1.U8.MEDIATION.GUIDE_VISITOR",
+            "A1.U8.READING.UNDERSTAND_PUBLIC_SIGN"
+          ],
+          "prompt": "Explain the route change caused by the closed entrance.",
+          "promptAr": "اشرح تغيير المسار بسبب المدخل المغلق.",
+          "accepted": [],
+          "evaluation": "route-change-mediation",
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A1-U8-L7-A06",
+          "lessonId": "A1-U8-L7",
+          "mode": "mastery",
+          "type": "write",
+          "skill": "writing",
+          "canDo": [
+            "A1.U8.WRITING.WRITE_DIRECTIONS"
+          ],
+          "prompt": "Write the final 50–75-word visitor route with landmarks and the usable entrance.",
+          "promptAr": "اكتب المسار النهائي للزائر في 50–75 كلمة مع المعالم والمدخل المتاح.",
+          "accepted": [],
+          "evaluation": "u8-mission-route-rubric",
+          "wordGuide": [
+            50,
+            75
+          ]
+        }
+      ]
+    }
+  ],
+  "mastery": {
+    "requiredObjectives": [
+      "A1.U8.READING.IDENTIFY_TOWN_PLACE",
+      "A1.U8.PRODUCTION.STATE_LOCATION",
+      "A1.U8.INTERACTION.ASK_FOR_DIRECTIONS",
+      "A1.U8.PRODUCTION.GIVE_SIMPLE_DIRECTIONS",
+      "A1.U8.READING.UNDERSTAND_PUBLIC_SIGN",
+      "A1.U8.WRITING.WRITE_DIRECTIONS",
+      "A1.U8.MEDIATION.GUIDE_VISITOR"
+    ],
+    "requiredSkillGroups": [
+      [
+        "listening",
+        "reading"
+      ],
+      [
+        "spokenInteraction",
+        "spokenProduction",
+        "writing"
+      ],
+      [
+        "mediation"
+      ]
+    ],
+    "minimumObjectiveScore": 0.75,
+    "missionRequired": true,
+    "retry": "targeted-by-objective",
+    "unlocks": "A1-U9"
+  }
+}

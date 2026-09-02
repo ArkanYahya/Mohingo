@@ -1,0 +1,1063 @@
+{
+  "id": "A1-U6",
+  "title": "Food and Drink",
+  "titleAr": "الطعام والشراب",
+  "levelRole": "core",
+  "estimatedMinutes": [
+    80,
+    110
+  ],
+  "countsTowardA1Mastery": true,
+  "lessons": [
+    {
+      "id": "A1-U6-L1",
+      "title": "Food I Know",
+      "titleAr": "أطعمة أعرفها",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U6.READING.UNDERSTAND_BASIC_MENU",
+        "A1.U6.PRODUCTION.STATE_FOOD_WANTS"
+      ],
+      "grammar": [
+        "A1.G.NOUN.COUNT_UNCOUNT_FOUNDATION"
+      ],
+      "lexicon": [
+        "A1.LEX.APPLE.N01",
+        "A1.LEX.BANANA.N01",
+        "A1.LEX.EGG.N01",
+        "A1.LEX.SANDWICH.N01",
+        "A1.LEX.BREAD.N01",
+        "A1.LEX.RICE.N01",
+        "A1.LEX.CHEESE.N01",
+        "A1.LEX.CHICKEN.N01",
+        "A1.LEX.SOUP.N01",
+        "A1.LEX.SALAD.N01"
+      ],
+      "chunks": [
+        "A1.CHUNK.I_LIKE_NOUN"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Maya",
+            "en": "For lunch, I have chicken and rice. Omar has a cheese sandwich and an apple.",
+            "ar": "أتناول الدجاج والأرز للغداء. عمر يتناول شطيرة جبن وتفاحة."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U6-L1-A01",
+          "lessonId": "A1-U6-L1",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U6.READING.UNDERSTAND_BASIC_MENU",
+            "A1.U6.PRODUCTION.STATE_FOOD_WANTS"
+          ],
+          "prompt": "What does Omar have?",
+          "promptAr": "ماذا يتناول عمر؟",
+          "options": [
+            "a cheese sandwich and an apple",
+            "chicken and rice",
+            "soup and salad"
+          ],
+          "answer": "a cheese sandwich and an apple",
+          "audioTranscript": "Omar has a cheese sandwich and an apple."
+        },
+        {
+          "id": "A1-U6-L1-A02",
+          "lessonId": "A1-U6-L1",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U6.READING.UNDERSTAND_BASIC_MENU",
+            "A1.U6.PRODUCTION.STATE_FOOD_WANTS"
+          ],
+          "prompt": "Match the food words.",
+          "promptAr": "طابق كلمات الطعام.",
+          "pairs": [
+            [
+              "bread",
+              "خبز"
+            ],
+            [
+              "rice",
+              "أرز"
+            ],
+            [
+              "soup",
+              "حساء"
+            ],
+            [
+              "egg",
+              "بيضة"
+            ]
+          ]
+        },
+        {
+          "id": "A1-U6-L1-A03",
+          "lessonId": "A1-U6-L1",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U6.READING.UNDERSTAND_BASIC_MENU",
+            "A1.U6.PRODUCTION.STATE_FOOD_WANTS"
+          ],
+          "prompt": "Choose a or an.",
+          "promptAr": "اختر a أو an.",
+          "text": "I'd like ___ egg.",
+          "options": [
+            "a",
+            "an",
+            "some"
+          ],
+          "answer": "an"
+        },
+        {
+          "id": "A1-U6-L1-A04",
+          "lessonId": "A1-U6-L1",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U6.READING.UNDERSTAND_BASIC_MENU",
+            "A1.U6.PRODUCTION.STATE_FOOD_WANTS"
+          ],
+          "prompt": "Choose the complete meal.",
+          "promptAr": "اختر الوجبة الكاملة.",
+          "options": [
+            "soup, salad and bread",
+            "rice, egg and juice",
+            "chicken, apple and milk"
+          ],
+          "answer": "soup, salad and bread",
+          "audioTranscript": "For dinner, we have soup, salad and some bread."
+        },
+        {
+          "id": "A1-U6-L1-A05",
+          "lessonId": "A1-U6-L1",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A1.U6.READING.UNDERSTAND_BASIC_MENU",
+            "A1.U6.PRODUCTION.STATE_FOOD_WANTS"
+          ],
+          "prompt": "Describe a simple meal with three foods.",
+          "promptAr": "صف وجبة بسيطة تحتوي على ثلاثة أطعمة.",
+          "accepted": [],
+          "evaluation": "three-food-meal-description",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U6-L2",
+      "title": "Some and Any",
+      "titleAr": "بعض وأي",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U6.PRODUCTION.STATE_FOOD_WANTS",
+        "A1.U6.LISTENING.UNDERSTAND_FOOD_QUANTITY"
+      ],
+      "grammar": [
+        "A1.G.QUANTIFIER.SOME_ANY",
+        "A1.G.ARTICLE.A_AN_SOME_FOOD"
+      ],
+      "lexicon": [
+        "A1.LEX.WATER.N01",
+        "A1.LEX.MILK.N01",
+        "A1.LEX.COFFEE.N01",
+        "A1.LEX.TEA.N01",
+        "A1.LEX.JUICE.N01"
+      ],
+      "chunks": [
+        "A1.CHUNK.ANY_ITEM"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Ali",
+            "en": "Do we have any milk?",
+            "ar": "هل لدينا حليب؟"
+          },
+          {
+            "speaker": "Sara",
+            "en": "No, but we have some juice.",
+            "ar": "لا، لكن لدينا بعض العصير."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U6-L2-A01",
+          "lessonId": "A1-U6-L2",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U6.PRODUCTION.STATE_FOOD_WANTS",
+            "A1.U6.LISTENING.UNDERSTAND_FOOD_QUANTITY"
+          ],
+          "prompt": "What do they have?",
+          "promptAr": "ماذا لديهم؟",
+          "options": [
+            "some juice",
+            "some milk",
+            "no drinks"
+          ],
+          "answer": "some juice",
+          "audioTranscript": "We don't have any milk, but we have some juice."
+        },
+        {
+          "id": "A1-U6-L2-A02",
+          "lessonId": "A1-U6-L2",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U6.PRODUCTION.STATE_FOOD_WANTS",
+            "A1.U6.LISTENING.UNDERSTAND_FOOD_QUANTITY"
+          ],
+          "prompt": "Match the food to a/an/some.",
+          "promptAr": "طابق الطعام بـa/an/some.",
+          "pairs": [
+            [
+              "apple",
+              "an"
+            ],
+            [
+              "banana",
+              "a"
+            ],
+            [
+              "rice",
+              "some"
+            ],
+            [
+              "bread",
+              "some"
+            ]
+          ]
+        },
+        {
+          "id": "A1-U6-L2-A03",
+          "lessonId": "A1-U6-L2",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U6.PRODUCTION.STATE_FOOD_WANTS",
+            "A1.U6.LISTENING.UNDERSTAND_FOOD_QUANTITY"
+          ],
+          "prompt": "Choose some or any.",
+          "promptAr": "اختر some أو any.",
+          "text": "Do you have ___ water?",
+          "options": [
+            "some",
+            "any",
+            "an"
+          ],
+          "answer": "any"
+        },
+        {
+          "id": "A1-U6-L2-A04",
+          "lessonId": "A1-U6-L2",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U6.PRODUCTION.STATE_FOOD_WANTS",
+            "A1.U6.LISTENING.UNDERSTAND_FOOD_QUANTITY"
+          ],
+          "prompt": "Which statement is true?",
+          "promptAr": "أي جملة صحيحة؟",
+          "options": [
+            "There is some tea but no coffee.",
+            "There is coffee but no tea.",
+            "There are no drinks."
+          ],
+          "answer": "There is some tea but no coffee.",
+          "audioTranscript": "We have some tea, but we don't have any coffee."
+        },
+        {
+          "id": "A1-U6-L2-A05",
+          "lessonId": "A1-U6-L2",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U6.PRODUCTION.STATE_FOOD_WANTS",
+            "A1.U6.LISTENING.UNDERSTAND_FOOD_QUANTITY"
+          ],
+          "prompt": "Ask for one food or drink with any, then answer with some or a negative.",
+          "promptAr": "اسأل عن طعام أو شراب مستخدماً any ثم أجب بـsome أو النفي.",
+          "accepted": [],
+          "evaluation": "some-any-question-answer",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U6-L3",
+      "title": "How Much and How Many",
+      "titleAr": "كم من الكمية؟",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U6.LISTENING.UNDERSTAND_FOOD_QUANTITY",
+        "A1.U6.READING.UNDERSTAND_BASIC_MENU"
+      ],
+      "grammar": [
+        "A1.G.QUANTITY.HOW_MUCH_MANY_RECEPTIVE"
+      ],
+      "lexicon": [
+        "A1.LEX.BOTTLE.N01",
+        "A1.LEX.CUP.N01",
+        "A1.LEX.GLASS.N01",
+        "A1.LEX.BOWL.N01",
+        "A1.LEX.PLATE.N01"
+      ],
+      "chunks": [
+        "A1.CHUNK.HOW_MUCH_FOOD",
+        "A1.CHUNK.HOW_MANY_FOOD",
+        "A1.CHUNK.CONTAINER_OF"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Waiter",
+            "en": "How many bottles of water?",
+            "ar": "كم قنينة ماء؟"
+          },
+          {
+            "speaker": "Ali",
+            "en": "Two, please. And one bowl of soup.",
+            "ar": "اثنتان، ووعاء حساء واحد."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U6-L3-A01",
+          "lessonId": "A1-U6-L3",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U6.LISTENING.UNDERSTAND_FOOD_QUANTITY",
+            "A1.U6.READING.UNDERSTAND_BASIC_MENU"
+          ],
+          "prompt": "How many bottles of water?",
+          "promptAr": "كم قنينة ماء؟",
+          "options": [
+            "two",
+            "one",
+            "three"
+          ],
+          "answer": "two",
+          "audioTranscript": "Two bottles of water and one bowl of soup, please."
+        },
+        {
+          "id": "A1-U6-L3-A02",
+          "lessonId": "A1-U6-L3",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U6.LISTENING.UNDERSTAND_FOOD_QUANTITY",
+            "A1.U6.READING.UNDERSTAND_BASIC_MENU"
+          ],
+          "prompt": "Match containers and food or drink.",
+          "promptAr": "طابق الأوعية بالطعام أو الشراب.",
+          "pairs": [
+            [
+              "bottle",
+              "water"
+            ],
+            [
+              "cup",
+              "tea"
+            ],
+            [
+              "bowl",
+              "soup"
+            ],
+            [
+              "plate",
+              "rice"
+            ]
+          ]
+        },
+        {
+          "id": "A1-U6-L3-A03",
+          "lessonId": "A1-U6-L3",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U6.LISTENING.UNDERSTAND_FOOD_QUANTITY",
+            "A1.U6.READING.UNDERSTAND_BASIC_MENU"
+          ],
+          "prompt": "Choose much or many.",
+          "promptAr": "اختر much أو many.",
+          "text": "How ___ apples?",
+          "options": [
+            "much",
+            "many",
+            "any"
+          ],
+          "answer": "many"
+        },
+        {
+          "id": "A1-U6-L3-A04",
+          "lessonId": "A1-U6-L3",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U6.LISTENING.UNDERSTAND_FOOD_QUANTITY",
+            "A1.U6.READING.UNDERSTAND_BASIC_MENU"
+          ],
+          "prompt": "Choose the correct order quantities.",
+          "promptAr": "اختر كميات الطلب الصحيحة.",
+          "options": [
+            "3 cups of tea, 2 sandwiches",
+            "2 cups of tea, 3 sandwiches",
+            "3 bottles of water, 2 soups"
+          ],
+          "answer": "3 cups of tea, 2 sandwiches",
+          "audioTranscript": "Can we have three cups of tea and two sandwiches?"
+        },
+        {
+          "id": "A1-U6-L3-A05",
+          "lessonId": "A1-U6-L3",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A1.U6.LISTENING.UNDERSTAND_FOOD_QUANTITY",
+            "A1.U6.READING.UNDERSTAND_BASIC_MENU"
+          ],
+          "prompt": "State three quantities using container of or a number.",
+          "promptAr": "اذكر ثلاث كميات مستخدماً وعاءً أو عدداً.",
+          "accepted": [],
+          "evaluation": "three-food-quantity-phrases",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U6-L4",
+      "title": "Order a Meal",
+      "titleAr": "اطلب وجبة",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U6.INTERACTION.ORDER_MEAL",
+        "A1.U6.PRODUCTION.STATE_FOOD_WANTS"
+      ],
+      "grammar": [
+        "A1.G.REQUEST.WOULD_LIKE",
+        "A1.G.REQUEST.CAN_I_HAVE"
+      ],
+      "lexicon": [
+        "A1.LEX.MENU.N01",
+        "A1.LEX.WAITER.N01",
+        "A1.LEX.ORDER.N01",
+        "A1.LEX.MEAL.N01",
+        "A1.LEX.HUNGRY.ADJ01",
+        "A1.LEX.THIRSTY.ADJ01"
+      ],
+      "chunks": [
+        "A1.CHUNK.ID_LIKE_ITEM",
+        "A1.CHUNK.CAN_I_HAVE",
+        "A1.CHUNK.ANYTHING_ELSE",
+        "A1.CHUNK.THATS_ALL"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Waiter",
+            "en": "What would you like?",
+            "ar": "ماذا ترغب؟"
+          },
+          {
+            "speaker": "Sara",
+            "en": "I'd like chicken and rice, please. Can I have some water too?",
+            "ar": "أرغب في الدجاج والأرز. هل يمكنني الحصول على ماء أيضاً؟"
+          },
+          {
+            "speaker": "Waiter",
+            "en": "Anything else?",
+            "ar": "أي شيء آخر؟"
+          },
+          {
+            "speaker": "Sara",
+            "en": "That's all, thank you.",
+            "ar": "هذا كل شيء، شكراً."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U6-L4-A01",
+          "lessonId": "A1-U6-L4",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U6.INTERACTION.ORDER_MEAL",
+            "A1.U6.PRODUCTION.STATE_FOOD_WANTS"
+          ],
+          "prompt": "What drink does Sara order?",
+          "promptAr": "ما الشراب الذي تطلبه سارة؟",
+          "options": [
+            "water",
+            "tea",
+            "juice"
+          ],
+          "answer": "water",
+          "audioTranscript": "I'd like chicken and rice. Can I have some water too?"
+        },
+        {
+          "id": "A1-U6-L4-A02",
+          "lessonId": "A1-U6-L4",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U6.INTERACTION.ORDER_MEAL",
+            "A1.U6.PRODUCTION.STATE_FOOD_WANTS"
+          ],
+          "prompt": "Match restaurant turns.",
+          "promptAr": "طابق أدوار الحوار.",
+          "pairs": [
+            [
+              "What would you like?",
+              "I'd like soup, please."
+            ],
+            [
+              "Anything else?",
+              "That's all, thank you."
+            ]
+          ]
+        },
+        {
+          "id": "A1-U6-L4-A03",
+          "lessonId": "A1-U6-L4",
+          "type": "order",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U6.INTERACTION.ORDER_MEAL",
+            "A1.U6.PRODUCTION.STATE_FOOD_WANTS"
+          ],
+          "prompt": "Build the polite order.",
+          "promptAr": "رتب الطلب المهذب.",
+          "tokens": [
+            "please",
+            "I'd",
+            "salad",
+            "a",
+            "like"
+          ],
+          "answer": [
+            "I'd",
+            "like",
+            "a",
+            "salad",
+            "please"
+          ]
+        },
+        {
+          "id": "A1-U6-L4-A04",
+          "lessonId": "A1-U6-L4",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U6.INTERACTION.ORDER_MEAL",
+            "A1.U6.PRODUCTION.STATE_FOOD_WANTS"
+          ],
+          "prompt": "Choose the full order.",
+          "promptAr": "اختر الطلب الكامل.",
+          "options": [
+            "cheese sandwich, soup, tea",
+            "chicken sandwich, salad, coffee",
+            "cheese sandwich, salad, tea"
+          ],
+          "answer": "cheese sandwich, soup, tea",
+          "audioTranscript": "I'd like a cheese sandwich and a bowl of soup. Can I have tea, please?"
+        },
+        {
+          "id": "A1-U6-L4-A05",
+          "lessonId": "A1-U6-L4",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U6.INTERACTION.ORDER_MEAL",
+            "A1.U6.PRODUCTION.STATE_FOOD_WANTS"
+          ],
+          "prompt": "Order one meal and one drink politely, then close the order.",
+          "promptAr": "اطلب وجبة وشراباً بأدب ثم أنهِ الطلب.",
+          "accepted": [],
+          "evaluation": "complete-polite-meal-order",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U6-L5",
+      "title": "Check the Order",
+      "titleAr": "تحقق من الطلب",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U6.INTERACTION.CHECK_MEAL",
+        "A1.U6.INTERACTION.ORDER_MEAL"
+      ],
+      "grammar": [
+        "A1.G.BE.THIS_ISNT_CORRECTION"
+      ],
+      "lexicon": [
+        "A1.LEX.BILL.N01",
+        "A1.LEX.WRONG.ADJ01",
+        "A1.LEX.MISSING.ADJ01"
+      ],
+      "chunks": [
+        "A1.CHUNK.CAN_I_HAVE_BILL",
+        "A1.CHUNK.THIS_ISNT_MY_ORDER",
+        "A1.CHUNK.SORRY_Q",
+        "A1.CHUNK.PLEASE_REPEAT"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Sara",
+            "en": "Sorry, this isn't my order. I ordered soup, not salad.",
+            "ar": "عذراً، هذا ليس طلبي. طلبت حساءً لا سلطة."
+          },
+          {
+            "speaker": "Waiter",
+            "en": "I'm sorry. One soup.",
+            "ar": "أنا آسف. حساء واحد."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A1-U6-L5-A01",
+          "lessonId": "A1-U6-L5",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A1.U6.INTERACTION.CHECK_MEAL",
+            "A1.U6.INTERACTION.ORDER_MEAL"
+          ],
+          "prompt": "What is wrong?",
+          "promptAr": "ما الخطأ؟",
+          "options": [
+            "Sara received salad instead of soup.",
+            "The bill is missing.",
+            "The water is cold."
+          ],
+          "answer": "Sara received salad instead of soup.",
+          "audioTranscript": "This isn't my order. I ordered soup, not salad."
+        },
+        {
+          "id": "A1-U6-L5-A02",
+          "lessonId": "A1-U6-L5",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U6.INTERACTION.CHECK_MEAL",
+            "A1.U6.INTERACTION.ORDER_MEAL"
+          ],
+          "prompt": "Match problems and useful phrases.",
+          "promptAr": "طابق المشكلات بالعبارات المفيدة.",
+          "pairs": [
+            [
+              "wrong meal",
+              "This isn't my order."
+            ],
+            [
+              "no water",
+              "The water is missing."
+            ],
+            [
+              "need to pay",
+              "Can I have the bill?"
+            ]
+          ]
+        },
+        {
+          "id": "A1-U6-L5-A03",
+          "lessonId": "A1-U6-L5",
+          "type": "order",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U6.INTERACTION.CHECK_MEAL",
+            "A1.U6.INTERACTION.ORDER_MEAL"
+          ],
+          "prompt": "Build the correction.",
+          "promptAr": "رتب التصحيح.",
+          "tokens": [
+            "ordered",
+            "I",
+            "not",
+            "tea",
+            "coffee"
+          ],
+          "answer": [
+            "I",
+            "ordered",
+            "tea",
+            "not",
+            "coffee"
+          ]
+        },
+        {
+          "id": "A1-U6-L5-A04",
+          "lessonId": "A1-U6-L5",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U6.INTERACTION.CHECK_MEAL",
+            "A1.U6.INTERACTION.ORDER_MEAL"
+          ],
+          "prompt": "What is missing?",
+          "promptAr": "ما الشيء الناقص؟",
+          "options": [
+            "one bottle of water",
+            "the salad",
+            "the bill"
+          ],
+          "answer": "one bottle of water",
+          "audioTranscript": "We have the sandwiches and soup, but one bottle of water is missing."
+        },
+        {
+          "id": "A1-U6-L5-A05",
+          "lessonId": "A1-U6-L5",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U6.INTERACTION.CHECK_MEAL",
+            "A1.U6.INTERACTION.ORDER_MEAL"
+          ],
+          "prompt": "Politely report a wrong or missing item and state the correct item.",
+          "promptAr": "أبلغ بأدب عن شيء خاطئ أو ناقص واذكر الشيء الصحيح.",
+          "accepted": [],
+          "evaluation": "restaurant-problem-and-correction",
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A1-U6-L6",
+      "title": "Read a Menu",
+      "titleAr": "اقرأ قائمة طعام",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A1.U6.READING.UNDERSTAND_BASIC_MENU",
+        "A1.U6.WRITING.WRITE_SIMPLE_ORDER",
+        "A1.U6.PRODUCTION.STATE_FOOD_WANTS"
+      ],
+      "grammar": [
+        "A1.G.ARTICLE.A_AN_SOME_FOOD"
+      ],
+      "lexicon": [
+        "A1.LEX.DELICIOUS.ADJ01",
+        "A1.LEX.MENU.N01"
+      ],
+      "chunks": [
+        "A1.CHUNK.ID_LIKE_ITEM",
+        "A1.CHUNK.CAN_I_HAVE"
+      ],
+      "readingText": {
+        "title": "Park Café Menu",
+        "text": "Breakfast: egg sandwich — 3,000 IQD. Lunch: chicken and rice — 7,000 IQD. Soup — 3,500 IQD. Drinks: tea — 1,000 IQD; water — 500 IQD; juice — 1,500 IQD.",
+        "textAr": "قائمة مقهى الحديقة..."
+      },
+      "activities": [
+        {
+          "id": "A1-U6-L6-A01",
+          "lessonId": "A1-U6-L6",
+          "type": "textChoice",
+          "mode": "encounter",
+          "skill": "reading",
+          "canDo": [
+            "A1.U6.READING.UNDERSTAND_BASIC_MENU",
+            "A1.U6.WRITING.WRITE_SIMPLE_ORDER",
+            "A1.U6.PRODUCTION.STATE_FOOD_WANTS"
+          ],
+          "prompt": "How much are chicken and rice?",
+          "promptAr": "كم سعر الدجاج والأرز؟",
+          "options": [
+            "7,000 IQD",
+            "3,500 IQD",
+            "1,500 IQD"
+          ],
+          "answer": "7,000 IQD"
+        },
+        {
+          "id": "A1-U6-L6-A02",
+          "lessonId": "A1-U6-L6",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U6.READING.UNDERSTAND_BASIC_MENU",
+            "A1.U6.WRITING.WRITE_SIMPLE_ORDER",
+            "A1.U6.PRODUCTION.STATE_FOOD_WANTS"
+          ],
+          "prompt": "Match menu items and prices.",
+          "promptAr": "طابق الأصناف بالأسعار.",
+          "pairs": [
+            [
+              "soup",
+              "3,500 IQD"
+            ],
+            [
+              "tea",
+              "1,000 IQD"
+            ],
+            [
+              "water",
+              "500 IQD"
+            ]
+          ]
+        },
+        {
+          "id": "A1-U6-L6-A03",
+          "lessonId": "A1-U6-L6",
+          "type": "order",
+          "mode": "practice",
+          "skill": "writing",
+          "canDo": [
+            "A1.U6.READING.UNDERSTAND_BASIC_MENU",
+            "A1.U6.WRITING.WRITE_SIMPLE_ORDER",
+            "A1.U6.PRODUCTION.STATE_FOOD_WANTS"
+          ],
+          "prompt": "Order the written request.",
+          "promptAr": "رتب الطلب المكتوب.",
+          "tokens": [
+            "Thank you.",
+            "One soup and one water, please.",
+            "Hello,"
+          ],
+          "answer": [
+            "Hello,",
+            "One soup and one water, please.",
+            "Thank you."
+          ]
+        },
+        {
+          "id": "A1-U6-L6-A04",
+          "lessonId": "A1-U6-L6",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A1.U6.READING.UNDERSTAND_BASIC_MENU",
+            "A1.U6.WRITING.WRITE_SIMPLE_ORDER",
+            "A1.U6.PRODUCTION.STATE_FOOD_WANTS"
+          ],
+          "prompt": "Which order costs 4,500 IQD?",
+          "promptAr": "أي طلب يكلف 4,500 دينار؟",
+          "options": [
+            "soup and tea",
+            "soup and juice",
+            "egg sandwich and water"
+          ],
+          "answer": "soup and tea",
+          "audioTranscript": "Please use the Park Café menu. I want one soup and one tea."
+        },
+        {
+          "id": "A1-U6-L6-A05",
+          "lessonId": "A1-U6-L6",
+          "type": "write",
+          "mode": "mastery",
+          "skill": "writing",
+          "canDo": [
+            "A1.U6.READING.UNDERSTAND_BASIC_MENU",
+            "A1.U6.WRITING.WRITE_SIMPLE_ORDER",
+            "A1.U6.PRODUCTION.STATE_FOOD_WANTS"
+          ],
+          "prompt": "Write a 30–45-word café order with quantities, food, drink and one polite closing.",
+          "promptAr": "اكتب طلباً من 30–45 كلمة يتضمن الكمية والطعام والشراب وختاماً مهذباً.",
+          "accepted": [],
+          "evaluation": "u6-written-order-rubric",
+          "wordGuide": [
+            30,
+            45
+          ]
+        }
+      ]
+    },
+    {
+      "id": "A1-U6-L7",
+      "title": "Mission: Order and Check a Meal",
+      "titleAr": "المهمة: اطلب وجبة وتحقق منها",
+      "lessonType": "mission",
+      "canDo": [
+        "A1.U6.MEDIATION.COMPLETE_MEAL_MISSION",
+        "A1.U6.READING.UNDERSTAND_BASIC_MENU",
+        "A1.U6.PRODUCTION.STATE_FOOD_WANTS",
+        "A1.U6.INTERACTION.ORDER_MEAL",
+        "A1.U6.LISTENING.UNDERSTAND_FOOD_QUANTITY",
+        "A1.U6.INTERACTION.CHECK_MEAL",
+        "A1.U6.WRITING.WRITE_SIMPLE_ORDER"
+      ],
+      "grammar": [],
+      "lexicon": [],
+      "chunks": [],
+      "scenario": "Use an unseen menu, choose a meal for stated needs, order it, notice one error, request correction and confirm the final bill.",
+      "activities": [
+        {
+          "id": "A1-U6-L7-A01",
+          "lessonId": "A1-U6-L7",
+          "mode": "mastery",
+          "type": "textChoice",
+          "skill": "reading",
+          "canDo": [
+            "A1.U6.READING.UNDERSTAND_BASIC_MENU",
+            "A1.U6.PRODUCTION.STATE_FOOD_WANTS"
+          ],
+          "prompt": "Choose a meal with no meat and one hot drink.",
+          "promptAr": "اختر وجبة بلا لحم وشراباً ساخناً.",
+          "options": [
+            "cheese sandwich and tea",
+            "chicken and rice with juice",
+            "soup with cold water"
+          ],
+          "answer": "cheese sandwich and tea",
+          "sourceText": "Menu: cheese sandwich, chicken and rice, vegetable soup; tea, juice, water."
+        },
+        {
+          "id": "A1-U6-L7-A02",
+          "lessonId": "A1-U6-L7",
+          "mode": "mastery",
+          "type": "audioChoice",
+          "skill": "listening",
+          "canDo": [
+            "A1.U6.LISTENING.UNDERSTAND_FOOD_QUANTITY"
+          ],
+          "prompt": "What quantities are ordered?",
+          "promptAr": "ما الكميات المطلوبة؟",
+          "options": [
+            "2 sandwiches and 1 tea",
+            "1 sandwich and 2 teas",
+            "2 soups and 1 water"
+          ],
+          "answer": "2 sandwiches and 1 tea",
+          "audioTranscript": "Two cheese sandwiches and one tea, please."
+        },
+        {
+          "id": "A1-U6-L7-A03",
+          "lessonId": "A1-U6-L7",
+          "mode": "mastery",
+          "type": "speak",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A1.U6.INTERACTION.ORDER_MEAL"
+          ],
+          "prompt": "Place the complete order politely.",
+          "promptAr": "قدّم الطلب الكامل بأدب.",
+          "accepted": [],
+          "evaluation": "complete-order-turn",
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A1-U6-L7-A04",
+          "lessonId": "A1-U6-L7",
+          "mode": "mastery",
+          "type": "audioChoice",
+          "skill": "listening",
+          "canDo": [
+            "A1.U6.INTERACTION.CHECK_MEAL"
+          ],
+          "prompt": "What is wrong with the delivered order?",
+          "promptAr": "ما الخطأ في الطلب المستلم؟",
+          "options": [
+            "It has chicken instead of cheese.",
+            "The tea is missing.",
+            "There are two extra soups."
+          ],
+          "answer": "It has chicken instead of cheese.",
+          "audioTranscript": "Here are two chicken sandwiches and one tea."
+        },
+        {
+          "id": "A1-U6-L7-A05",
+          "lessonId": "A1-U6-L7",
+          "mode": "mastery",
+          "type": "speak",
+          "skill": "mediation",
+          "canDo": [
+            "A1.U6.MEDIATION.COMPLETE_MEAL_MISSION",
+            "A1.U6.INTERACTION.CHECK_MEAL"
+          ],
+          "prompt": "Explain the original order and the correction needed to the waiter.",
+          "promptAr": "اشرح للنادل الطلب الأصلي والتصحيح المطلوب.",
+          "accepted": [],
+          "evaluation": "order-correction-mediation",
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A1-U6-L7-A06",
+          "lessonId": "A1-U6-L7",
+          "mode": "mastery",
+          "type": "write",
+          "skill": "writing",
+          "canDo": [
+            "A1.U6.WRITING.WRITE_SIMPLE_ORDER"
+          ],
+          "prompt": "Write a 35–50-word final order confirmation including corrected items and quantities.",
+          "promptAr": "اكتب تأكيداً نهائياً من 35–50 كلمة يشمل الأصناف والكميات المصححة.",
+          "accepted": [],
+          "evaluation": "u6-mission-order-rubric",
+          "wordGuide": [
+            35,
+            50
+          ]
+        }
+      ]
+    }
+  ],
+  "mastery": {
+    "requiredObjectives": [
+      "A1.U6.READING.UNDERSTAND_BASIC_MENU",
+      "A1.U6.PRODUCTION.STATE_FOOD_WANTS",
+      "A1.U6.INTERACTION.ORDER_MEAL",
+      "A1.U6.LISTENING.UNDERSTAND_FOOD_QUANTITY",
+      "A1.U6.INTERACTION.CHECK_MEAL",
+      "A1.U6.WRITING.WRITE_SIMPLE_ORDER",
+      "A1.U6.MEDIATION.COMPLETE_MEAL_MISSION"
+    ],
+    "requiredSkillGroups": [
+      [
+        "listening",
+        "reading"
+      ],
+      [
+        "spokenInteraction",
+        "spokenProduction",
+        "writing"
+      ],
+      [
+        "mediation"
+      ]
+    ],
+    "minimumObjectiveScore": 0.75,
+    "missionRequired": true,
+    "retry": "targeted-by-objective",
+    "unlocks": "A1-U7"
+  }
+}

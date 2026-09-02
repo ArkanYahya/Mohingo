@@ -1,0 +1,98 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U12",
+  "kind": "media",
+  "records": {
+    "audio-a1-u12-l1-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "On Sunday, I'm going to stay home.",
+      "activityId": "A1-U12-L1-A01"
+    },
+    "audio-a1-u12-l1-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "On Saturday I'm going on a short trip. On Sunday I'm going to stay home.",
+      "activityId": "A1-U12-L1-A04"
+    },
+    "audio-a1-u12-l2-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "I'm going to meet a friend tomorrow.",
+      "activityId": "A1-U12-L2-A01"
+    },
+    "audio-a1-u12-l2-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "I'm not going to travel. I'm going to meet Sara and stay home on Friday.",
+      "activityId": "A1-U12-L2-A04"
+    },
+    "audio-a1-u12-l3-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "We're meeting at the café at six.",
+      "activityId": "A1-U12-L3-A01"
+    },
+    "audio-a1-u12-l3-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "Let's meet at the library on Thursday at half past four. Yes, that works.",
+      "activityId": "A1-U12-L3-A04"
+    },
+    "audio-a1-u12-l4-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "Can we meet at seven? Yes, that works.",
+      "activityId": "A1-U12-L4-A01"
+    },
+    "audio-a1-u12-l4-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "The café is closed, so can we meet in the park? The time stays six.",
+      "activityId": "A1-U12-L4-A04"
+    },
+    "audio-a1-u12-l5-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "Please bring the tickets and confirm today.",
+      "activityId": "A1-U12-L5-A01"
+    },
+    "audio-a1-u12-l5-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "Can you confirm five thirty and bring the tickets?",
+      "activityId": "A1-U12-L5-A04"
+    },
+    "audio-a1-u12-l6-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "Nine is too early for me. Can we meet at nine thirty instead?",
+      "activityId": "A1-U12-L6-A04"
+    },
+    "audio-a1-u12-l7-a02": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "We all like walking, so let's meet in River Park.",
+      "activityId": "A1-U12-L7-A02"
+    },
+    "audio-a1-u12-l7-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "It will rain at four. Can we meet at the café opposite the park instead?",
+      "activityId": "A1-U12-L7-A04"
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U11",
+  "kind": "grammar",
+  "records": [
+    {
+      "id": "A1.G.WEATHER.IT_IS",
+      "form": "It is + weather adjective",
+      "meaningAr": "وصف الطقس بـIt is",
+      "introducedIn": "A1-U11-L1",
+      "examples": [
+        {
+          "en": "It's cold and windy.",
+          "ar": "الجو بارد وعاصف."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.PRESENT_CONTINUOUS.AFFIRMATIVE",
+      "form": "subject + am/is/are + verb-ing",
+      "meaningAr": "وصف ما يحدث الآن",
+      "introducedIn": "A1-U11-L2",
+      "examples": [
+        {
+          "en": "They are walking in the rain.",
+          "ar": "هم يمشون تحت المطر."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.PRESENT_CONTINUOUS.QUESTION",
+      "form": "Am/Is/Are + subject + verb-ing?",
+      "meaningAr": "السؤال عما يحدث الآن",
+      "introducedIn": "A1-U11-L3",
+      "examples": [
+        {
+          "en": "Are you wearing a coat?",
+          "ar": "هل ترتدي معطفاً؟"
+        }
+      ]
+    },
+    {
+      "id": "A1.G.REASON.BECAUSE",
+      "form": "statement + because + simple reason",
+      "meaningAr": "إعطاء سبب بسيط",
+      "introducedIn": "A1-U11-L4",
+      "examples": [
+        {
+          "en": "I'm wearing boots because it's raining.",
+          "ar": "أرتدي حذاءً طويلاً لأن المطر يهطل."
+        }
+      ]
+    },
+    {
+      "id": "A1.G.ADJECTIVE.CLOTHING_ORDER",
+      "form": "size/quality + colour + clothing noun",
+      "meaningAr": "ترتيب الصفات الأساسية مع الملابس",
+      "introducedIn": "A1-U11-L3",
+      "examples": [
+        {
+          "en": "a warm black coat",
+          "ar": "معطف أسود دافئ"
+        }
+      ]
+    },
+    {
+      "id": "A1.G.FORECAST.WILL_BE_RECEPTIVE",
+      "form": "It will be + weather adjective",
+      "meaningAr": "فهم صيغة التوقع الشائعة دون إنتاج إلزامي",
+      "introducedIn": "A1-U11-L5",
+      "examples": [
+        {
+          "en": "It will be sunny tomorrow.",
+          "ar": "سيكون الجو مشمساً غداً."
+        }
+      ],
+      "productiveTarget": "receptive"
+    }
+  ]
+}

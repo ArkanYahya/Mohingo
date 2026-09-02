@@ -1,0 +1,98 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U10",
+  "kind": "media",
+  "records": {
+    "audio-a1-u10-l1-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "My left foot hurts.",
+      "activityId": "A1-U10-L1-A01"
+    },
+    "audio-a1-u10-l1-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "My back hurts, and I have pain in my right leg.",
+      "activityId": "A1-U10-L1-A04"
+    },
+    "audio-a1-u10-l2-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "I have a headache and a cough. I feel tired.",
+      "activityId": "A1-U10-L2-A01"
+    },
+    "audio-a1-u10-l2-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "I have a cold and a fever, and I feel very tired.",
+      "activityId": "A1-U10-L2-A04"
+    },
+    "audio-a1-u10-l3-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "You should rest and drink water.",
+      "activityId": "A1-U10-L3-A01"
+    },
+    "audio-a1-u10-l3-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "You should rest today. You shouldn't go to work.",
+      "activityId": "A1-U10-L3-A04"
+    },
+    "audio-a1-u10-l4-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "I need a doctor. I have a bad cough.",
+      "activityId": "A1-U10-L4-A01"
+    },
+    "audio-a1-u10-l4-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "Take one tablet after food. Don't take two.",
+      "activityId": "A1-U10-L4-A04"
+    },
+    "audio-a1-u10-l5-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "Call 112 and give your location.",
+      "activityId": "A1-U10-L5-A01"
+    },
+    "audio-a1-u10-l5-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "Help is coming. Please stay with the person and keep the line open.",
+      "activityId": "A1-U10-L5-A04"
+    },
+    "audio-a1-u10-l6-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "Please add that the cough started yesterday.",
+      "activityId": "A1-U10-L6-A04"
+    },
+    "audio-a1-u10-l7-a02": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "I have a high fever and a bad cough. I feel very tired.",
+      "activityId": "A1-U10-L7-A02"
+    },
+    "audio-a1-u10-l7-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a1",
+      "transcript": "Please rest and drink water while you wait. Come at three.",
+      "activityId": "A1-U10-L7-A04"
+    }
+  }
+}

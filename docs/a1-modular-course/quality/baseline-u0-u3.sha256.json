@@ -1,0 +1,26 @@
+{
+  "createdFrom": "A1-U0-U3-2026.09.01",
+  "purpose": "Guard completed U0-U3 against accidental rewrites",
+  "files": {
+    "units/A1-U0.json": "62a5db74a0a48013b429092578661fb908e64d21cb359a6014f58f2e62c3e167",
+    "registries/grammar/A1-U0.json": "30002f90b995a921a6cf6d3920aab78560ada9464aefe53e26882849efa48378",
+    "registries/lexicon/A1-U0.json": "e47e1bf43cb0705ab92f65481f51f2d4a0e367095fd28b712179cc5e3cbbdbab",
+    "registries/chunks/A1-U0.json": "c7856a968b40aa50626789a9289f4567ed670204a04b63e9ccc09e545cdd2cc9",
+    "media/A1-U0.json": "5e068039e6ee066ebdc82c0ecb38f742dfa145a0ddb3450b4c19c002cf72aab2",
+    "units/A1-U1.json": "df0b27d7be4eb3228c5750f8bac40b39e6a30a016e26e9b7d578e0ee7dfd8ab6",
+    "registries/grammar/A1-U1.json": "914213e7516d687aa82adcebaee99b4c71285f5c048d2cfd3c02f3c2879bb120",
+    "registries/lexicon/A1-U1.json": "2e74e0955f96b4596f68a437e840a46035d2b58370e33d04f3f4fb2c3c145baf",
+    "registries/chunks/A1-U1.json": "8fc2521e255653d9a91af4df3b05b7bd602b64349d58a07192b10c19eee5b9eb",
+    "media/A1-U1.json": "d5168f1b1fe3ca3219f14e8d477948ee333ce20f78ab75fefd7e040285ddee53",
+    "units/A1-U2.json": "d9fba9d8a767101ebf5054d564ec76be9bdb9dda009711bff7f260801241d3fc",
+    "registries/grammar/A1-U2.json": "ad2ba357c8fdf880425aa8bebf275dd1ec67da8aa0d6af8120f3d59b4e89589d",
+    "registries/lexicon/A1-U2.json": "8fe35b0a55d3427fe17ce4f59ac46c262149b085b2f312698cd40985e4ee890b",
+    "registries/chunks/A1-U2.json": "e44ab1e0e69a63b3bceda764510157f7f4d0e088d01dcf9dbf27a546bdb8c2cc",
+    "media/A1-U2.json": "27ecef59c616e4307d5ace7bc4811d3e787a5c977d748f289c69ad7b355b4bb1",
+    "units/A1-U3.json": "7f8212a173bb4cac6304d86d3dff0970ee864a5323375979398b9facfcfc4ab7",
+    "registries/grammar/A1-U3.json": "f8ed148428e3ff295fa4a32a0f86d774e5348ef14392b258c97cbf9e7ab84bdb",
+    "registries/lexicon/A1-U3.json": "666b598bc165c34c4683e093128f588beffd5c75a0dad67eec334aeeb89a30d2",
+    "registries/chunks/A1-U3.json": "f57cac2aa86042e809ab69b85340ec9bba22dfe1639a9dd4d5b2ce427b938f10",
+    "media/A1-U3.json": "a651a5d2a0b025a629de88bcc816a0efafd6b8db829664d0cdb5ecdda9e01a5b"
+  }
+}

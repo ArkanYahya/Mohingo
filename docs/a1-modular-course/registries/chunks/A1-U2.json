@@ -1,0 +1,206 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A1-U2",
+  "kind": "chunks",
+  "records": [
+    {
+      "id": "A1.CHUNK.MY_FAMILY",
+      "text": "This is my family.",
+      "arabic": "هذه عائلتي.",
+      "cefr": "A1",
+      "introducedIn": "A1-U2-L1",
+      "productive": true,
+      "recycledIn": [
+        "A1-U12"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.THIS_IS_MY_RELATION",
+      "text": "This is my {relation}.",
+      "arabic": "هذا/هذه {relation}ي.",
+      "cefr": "A1",
+      "introducedIn": "A1-U2-L1",
+      "productive": true,
+      "recycledIn": [
+        "A1-U12"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.I_HAVE",
+      "text": "I have {number} {people}.",
+      "arabic": "لدي {number} {people}.",
+      "cefr": "A1",
+      "introducedIn": "A1-U2-L2",
+      "productive": true,
+      "recycledIn": [
+        "A1-U5",
+        "A1-U6"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.HE_SHE_HAS",
+      "text": "He/She has {number} {people}.",
+      "arabic": "لديه/لديها {number}.",
+      "cefr": "A1",
+      "introducedIn": "A1-U2-L2",
+      "productive": true,
+      "recycledIn": [
+        "A1-U5"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.DO_YOU_HAVE",
+      "text": "Do you have any brothers or sisters?",
+      "arabic": "هل لديك إخوة أو أخوات؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U2-L2",
+      "productive": true,
+      "recycledIn": [
+        "A1-U5"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.HOW_MANY_SIBLINGS",
+      "text": "How many brothers and sisters do you have?",
+      "arabic": "كم أخاً وأختاً لديك؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U2-L2",
+      "productive": true,
+      "recycledIn": [
+        "A1-U6"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.HOW_OLD_PERSON",
+      "text": "How old is {person}?",
+      "arabic": "كم عمر {person}؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U2-L2",
+      "productive": true,
+      "recycledIn": [
+        "A1-U10"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.PERSON_AGE",
+      "text": "{Person} is {age} years old.",
+      "arabic": "عمر {person} {age} سنة.",
+      "cefr": "A1",
+      "introducedIn": "A1-U2-L2",
+      "productive": true,
+      "recycledIn": [
+        "A1-U10"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.WHOS_THIS",
+      "text": "Who's this?",
+      "arabic": "من هذا/هذه؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U2-L3",
+      "productive": true,
+      "recycledIn": [
+        "A1-U3"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.WHOSE_IS_THIS",
+      "text": "Whose {object} is this?",
+      "arabic": "لمن هذا {object}؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U2-L3",
+      "productive": true,
+      "recycledIn": [
+        "A1-U3-L5"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.PERSONS_RELATION",
+      "text": "{Name}'s {relation}",
+      "arabic": "{relation} الخاص بـ{name}.",
+      "cefr": "A1",
+      "introducedIn": "A1-U2-L3",
+      "productive": true,
+      "recycledIn": [
+        "A1-U12"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.WHATS_PERSON_LIKE",
+      "text": "What's {person} like?",
+      "arabic": "كيف هو/هي {person}؟",
+      "cefr": "A1",
+      "introducedIn": "A1-U2-L4",
+      "productive": true,
+      "recycledIn": [
+        "A1-U10"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.PERSON_IS_ADJ",
+      "text": "{Person} is {adjective}.",
+      "arabic": "{person} هو/هي {adjective}.",
+      "cefr": "A1",
+      "introducedIn": "A1-U2-L4",
+      "productive": true,
+      "recycledIn": [
+        "A1-U10"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.ADJ_AND_ADJ",
+      "text": "{Person} is {adjective} and {adjective}.",
+      "arabic": "{person} هو/هي {adjective} و{adjective}.",
+      "cefr": "A1",
+      "introducedIn": "A1-U2-L4",
+      "productive": true,
+      "recycledIn": [
+        "A1-U10"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.ADJ_BUT_ADJ",
+      "text": "{Person} is {adjective}, but {adjective}.",
+      "arabic": "{person} هو/هي {adjective} لكنه/لكنها {adjective}.",
+      "cefr": "A1",
+      "introducedIn": "A1-U2-L4",
+      "productive": true,
+      "recycledIn": [
+        "A1-U10"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.WE_ARE_FRIENDS",
+      "text": "We are friends.",
+      "arabic": "نحن أصدقاء.",
+      "cefr": "A1",
+      "introducedIn": "A1-U2-L5",
+      "productive": true,
+      "recycledIn": [
+        "A1-U5"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.THEY_ARE_PARENTS",
+      "text": "They are my parents.",
+      "arabic": "هما والداي.",
+      "cefr": "A1",
+      "introducedIn": "A1-U2-L5",
+      "productive": true,
+      "recycledIn": [
+        "A1-U12"
+      ]
+    },
+    {
+      "id": "A1.CHUNK.THEIR_NAMES",
+      "text": "Their names are {name} and {name}.",
+      "arabic": "اسماهما {name} و{name}.",
+      "cefr": "A1",
+      "introducedIn": "A1-U2-L5",
+      "productive": true,
+      "recycledIn": [
+        "A1-U12"
+      ]
+    }
+  ]
+}
