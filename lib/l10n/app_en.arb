@@ -1,0 +1,40 @@
+{
+  "@@locale": "en",
+  "appTitle": "Mohingo",
+  "@appTitle": {
+    "description": "The application name, shown as the OS app title. Not translated per-locale — brand name stays the same in both languages."
+  },
+  "navHome": "Home",
+  "@navHome": {
+    "description": "Bottom navigation label for the Home tab."
+  },
+  "navLearn": "Learn",
+  "@navLearn": {
+    "description": "Bottom navigation label for the Learn tab (level catalogue and guided unit path)."
+  },
+  "navReview": "Review",
+  "@navReview": {
+    "description": "Bottom navigation label for the Review tab (vocabulary, grammar, due items)."
+  },
+  "navTests": "Tests",
+  "@navTests": {
+    "description": "Bottom navigation label for the Tests tab (placement, unit checks, final mission/assessment)."
+  },
+  "navSettings": "Settings",
+  "@navSettings": {
+    "description": "Bottom navigation label for the Settings tab."
+  },
+  "comingSoon": "Coming soon",
+  "@comingSoon": {
+    "description": "Label shown on a CEFR level card (A2-C2) that has no content yet and cannot be selected."
+  },
+  "placeholderScreenBody": "{screenName} — coming in a later phase.",
+  "@placeholderScreenBody": {
+    "description": "Body text for a scaffold screen that has no real content yet.",
+    "placeholders": {
+      "screenName": {
+        "type": "String"
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "@@locale": "ar",
+  "appTitle": "Mohingo",
+  "navHome": "الرئيسية",
+  "navLearn": "تعلّم",
+  "navReview": "مراجعة",
+  "navTests": "الاختبارات",
+  "navSettings": "الإعدادات",
+  "comingSoon": "قريباً",
+  "placeholderScreenBody": "{screenName} — قادمة في مرحلة لاحقة."
+}

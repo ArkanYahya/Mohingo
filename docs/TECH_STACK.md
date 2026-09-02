@@ -1,7 +1,7 @@
 > **What this file is:** The chosen technologies and the reasoning behind each choice — not just *what* we use but *why*, and what we deliberately didn't pick.
 > **How to use it:** Check before adding a new library/framework/service. If something isn't listed, it isn't approved yet — raise it for discussion rather than adding silently. A stack change belongs here *and* as an entry in [adr/](adr/).
 
-_Last verified: 2026-09-02 — v1 rescoped to fully local/zero-Firebase (see [ADR 0004](adr/0004-local-only-v1-no-firebase-backend.md)); added go_router, content-model, speech, and utility packages driven by the real A1 curriculum bundle inspected this session._
+_Last verified: 2026-09-02 — v1 rescoped to fully local/zero-Firebase (see [ADR 0004](adr/0004-local-only-v1-no-firebase-backend.md)); added go_router, content-model, speech, and utility packages driven by the real A1 curriculum bundle inspected this session. Phase 3 scaffolding verified `flutter_riverpod`, `go_router`, `drift`/`drift_flutter`, `shared_preferences`, and `uuid` against current pub.dev, and corrected the local-DB native-library choice (`sqlite3_flutter_libs` is now EOL — see Database section)._
 
 # Tech Stack
 
@@ -20,7 +20,7 @@ _Last verified: 2026-09-02 — v1 rescoped to fully local/zero-Firebase (see [AD
 
 ## Database
 
-- **Local (on-device):** Drift (SQLite-based) — stores learner progress only (enrolments, attempts, mastery evidence, review state — see [DATA_MODEL.md](DATA_MODEL.md)). It does **not** store curriculum content: the A1 bundle is a bundled read-only asset, parsed and indexed in memory (see [ARCHITECTURE.md](ARCHITECTURE.md)'s `lib/content/` module), and Drift only ever references the bundle's stable string IDs. Explicit schema migrations from day one even though v1 ships only one schema version.
+- **Local (on-device):** Drift (SQLite-based) — stores learner progress only (enrolments, attempts, mastery evidence, review state — see [DATA_MODEL.md](DATA_MODEL.md)). It does **not** store curriculum content: the A1 bundle is a bundled read-only asset, parsed and indexed in memory (see [ARCHITECTURE.md](ARCHITECTURE.md)'s `lib/content/` module), and Drift only ever references the bundle's stable string IDs. Explicit schema migrations from day one even though v1 ships only one schema version. Native SQLite access is via `drift_flutter` (the `driftDatabase()` helper, which handles per-platform database-directory setup) + `sqlite3` — **not** the older `sqlite3_flutter_libs`, which is now end-of-life (a no-op package kept only so old apps don't break); `sqlite3` 3.x bundles its native library automatically via Dart's native-assets/hooks mechanism, verified working in `flutter test` on Windows during Phase 3 scaffolding.
 - **Cloud (sync):** none in v1 — deferred alongside the backend decision above. When added, Firestore remains the planned choice for cross-device progress sync.
 - **Device/UI preferences:** `shared_preferences` for small, non-critical settings only (theme mode, colour theme, interface language, text scale, TTS voice/rate/pitch, "seen onboarding" flag) — never for progress data, so a "reset progress" action in Settings can never accidentally also reset the learner's language/theme.
 - **Alternatives considered:** Isar, Hive — considered for local storage; Drift chosen for its relational/SQL querying, which fits structured curriculum-reference and mastery-evidence data (e.g. one indexed join per Can-Do objective across skill groups) better than a pure key-value/NoSQL local store.

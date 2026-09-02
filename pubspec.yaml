@@ -1,0 +1,36 @@
+name: mohingo
+description: "Offline-first, bilingual (Arabic/English) CEFR English-learning app."
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: ^3.13.2
+
+dependencies:
+  drift: ^2.34.3
+  drift_flutter: ^0.3.1
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  flutter_riverpod: ^3.4.2
+  go_router: ^18.0.0
+  intl: ^0.20.3
+  path: ^1.9.1
+  path_provider: ^2.1.6
+  riverpod_annotation: ^4.0.6
+  shared_preferences: ^2.5.5
+  sqlite3: ^3.5.2
+  uuid: ^4.6.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  build_runner: ^2.16.1
+  riverpod_generator: ^4.0.8
+  drift_dev: ^2.34.5
+
+flutter:
+  uses-material-design: true
+  generate: true

@@ -1,7 +1,7 @@
 > **What this file is:** The entry point every AI session reads first. It doesn't contain the actual decisions — it points to the docs that do, and states the few rules that are non-negotiable everywhere.
 > **How to use it:** Keep this short. When a rule applies to the whole codebase and has zero exceptions, put it here. Everything else belongs in one of the linked docs below — update this list if a doc is renamed or added.
 
-_Last verified: 2026-09-02 — docs realigned for a local-only, zero-Firebase v1 and the real A1 curriculum bundle (see [ADR 0004](docs/adr/0004-local-only-v1-no-firebase-backend.md)); implementation still not yet started — see the Phase 2 architecture proposal in this session's plan for what's next._
+_Last verified: 2026-09-02 — docs realigned for a local-only, zero-Firebase v1 and the real A1 curriculum bundle (see [ADR 0004](docs/adr/0004-local-only-v1-no-firebase-backend.md)); Phase 3 scaffolding (project setup, theme, l10n, local DB, 5-tab shell) is done and verified (`dart format`/`flutter analyze`/`flutter test` all pass). Phase 4 (curriculum parser + catalogue + progress repositories) is next._
 
 # Mohingo
 
@@ -56,11 +56,13 @@ If a doc's **Last verified** line is older than the code it describes, treat the
 
 ## Commands
 
-Project not yet scaffolded (no `pubspec.yaml`/`lib/` exist yet — docs describe the intended design, not running code). Once `flutter create` has been run per [ARCHITECTURE.md](docs/ARCHITECTURE.md)'s folder structure, these are the standard Flutter commands:
+Scaffolded (Phase 3, per [ARCHITECTURE.md](docs/ARCHITECTURE.md)'s folder structure): `pubspec.yaml`/`lib/` exist, with the 5-tab shell, Material 3 theme, Arabic/English l10n, and the local Drift progress database (12 tables) in place — but no curriculum/lesson features yet, and no `integration_test/` suite yet. Android/iOS Gradle/Xcode projects are scaffolded but unbuilt (no Android SDK installed in the dev environment as of this writing).
 
 ```
+setup: flutter pub get
+gen:   dart run build_runner build --delete-conflicting-outputs   # after editing Drift tables or @riverpod providers
 build: flutter build apk / flutter build ios
-test:  flutter test && flutter test integration_test/
-lint:  flutter analyze
+test:  flutter test && flutter test integration_test/    # integration_test/ not yet added
+lint:  dart format --set-exit-if-changed . && flutter analyze
 run:   flutter run
 ```
