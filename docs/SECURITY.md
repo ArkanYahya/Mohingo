@@ -1,34 +1,36 @@
 > **What this file is:** The auth model, how secrets are handled, and the hard limits nothing should cross (e.g. "never log PII"). Security rules are exactly the kind of thing that must never be re-derived per session — they must be inherited.
 > **How to use it:** Treat every rule here as a hard constraint, not a guideline. If a task seems to require violating one, stop and raise it rather than making a local exception.
 
-_Last verified: 2026-09-01 — initial security model established via brainstorming session._
+_Last verified: 2026-09-02 — rewritten for the local-only, zero-Firebase, no-accounts v1 decided this session; see [ADR 0004](adr/0004-local-only-v1-no-firebase-backend.md). The raw-audio and secrets-handling rules are unchanged and now stronger, since v1 has no cloud path at all._
 
 # Security
 
-## Auth model
+## Auth model (v1)
 
-- Mechanism: Firebase Auth (email/password at minimum; Sign in with Apple required if any other third-party sign-in is offered, per App Store rules — finalize exact providers when auth is implemented).
-- Roles/permissions: single role — `Learner`. No in-app admin/author role; content authoring happens entirely outside the app via the separate dev-time tool using Firebase admin credentials (see [ARCHITECTURE.md](ARCHITECTURE.md)).
-- Token lifetime/refresh: handled automatically by the Firebase Auth SDK — no custom token logic.
+- **No accounts, no sign-in, no Firebase Auth in v1.** A single local `Learner` profile is created automatically on first launch, identified by a locally-generated stable UUID (see [DATA_MODEL.md](DATA_MODEL.md)) — there is nothing to authenticate against, since there is no backend at all.
+- Roles/permissions: single implicit role — `Learner`. No in-app admin/author role; content authoring happens entirely outside the app via the separate dev-time curriculum tool (`docs/a1-modular-course/`), which never runs on a learner's device (see [ARCHITECTURE.md](ARCHITECTURE.md)).
+- **Deferred, post-v1:** Firebase Auth (email/password at minimum; Sign in with Apple required if any other third-party sign-in is offered, per App Store rules), once account-based sync is built — the original direction in [ADR 0001](adr/0001-offline-first-firebase-only-backend.md), now scoped to that later phase per [ADR 0004](adr/0004-local-only-v1-no-firebase-backend.md).
 
 ## Secrets handling
 
-- Where secrets live: LLM API keys used for content generation live only in the separate dev-time authoring tool's local environment (e.g. `.env`, gitignored) — never bundled into the shipped app, never committed.
-- Firebase client config (`google-services.json` / `GoogleService-Info.plist`) is bundled into the app per standard Firebase practice — this is not a secret by Firebase's own model, but access to Firestore/Storage data is enforced by Security Rules, not by hiding this config.
+- Where secrets live: LLM API keys used for content generation live only in the separate dev-time authoring tool's local environment (e.g. `.env`, gitignored) — never bundled into the shipped app, never committed. Unchanged by the local-only decision — this rule was never about Firebase.
+- **No Firebase client config is bundled in v1** — there is no Firebase SDK usage at all, so `google-services.json`/`GoogleService-Info.plist` don't apply until the deferred post-v1 sync phase.
 - Rule: never commit secrets, never ship secrets to the client (standing rule).
 
 ## Data handling
 
-- PII fields: auth email, `Learner.nativeLanguage`/`targetLanguage` (personal but not sensitive), Attempt history (learning progress).
-- What must never be logged: auth email, auth tokens. Speaking exercises are transcribed on-device only (see [TECH_STACK.md](TECH_STACK.md)) — raw audio is never uploaded, stored remotely, or logged.
-- Encryption at rest / in transit: Firestore/Cloud Storage use Firebase's default encryption at rest and TLS in transit. The local Drift database is not encrypted by default for MVP — acceptable given the limited PII involved (no payment data, no writing-sample content sensitive beyond normal learning data); revisit if that changes.
+- PII fields (v1): `Learner.nativeLanguage`/`targetLanguage` (personal but not sensitive), Attempt history (learning progress) — see [DATA_MODEL.md](DATA_MODEL.md). No auth email or auth tokens exist in v1, since there are no accounts.
+- What must never be logged: any learner-entered answer text, any speech transcript, the local learner UUID. Speaking activities are transcribed on-device only (see [TECH_STACK.md](TECH_STACK.md)) — raw audio is never uploaded (there is no server to upload to in v1), never stored at rest, and never logged; only minimal derived scoring data (e.g. task-completion flags) is persisted, and a verbatim transcript shown to the learner pre-submit is discarded after scoring.
+- Encryption at rest / in transit: **no data leaves the device in v1**, so "in transit" doesn't apply. The local Drift database is not encrypted by default for v1 — acceptable given the limited PII involved (no payment data, no accounts, no writing-sample content sensitive beyond normal learning data); revisit if that changes, and definitely revisit once the deferred post-v1 sync phase introduces data in transit again.
 
 ## Hard limits
 
 - No client-side secret keys — the LLM API key is never bundled into the shipped app.
-- Firestore/Storage Security Rules must enforce that a Learner can only read/write their own `/learners/{learnerId}` and `/learners/{learnerId}/attempts/*` documents (see [API_CONTRACT.md](API_CONTRACT.md)); all other content collections are client-read-only.
-- All external input (exercise answers, placement-test responses) validated before being written to Drift/Firestore — never trust client-submitted data as pre-validated when it affects progress-gating.
+- **No network permission or background network call is required for any learning feature in v1** — verify at build time that no plugin silently requires `INTERNET` beyond what's unavoidable for platform tooling.
+- Microphone permission is requested only when a learner deliberately starts a speaking task, never on activity mount or app launch — see [ARCHITECTURE.md](ARCHITECTURE.md)'s speech feature and [TECH_STACK.md](TECH_STACK.md).
+- All external input (activity answers, placement-test responses) validated before being written to Drift — never trust client-submitted data as pre-validated when it affects mastery evidence.
+- **Deferred, post-v1:** Firestore/Storage Security Rules enforcing per-learner data isolation, once accounts and sync exist (see [API_CONTRACT.md](API_CONTRACT.md), currently N/A for v1).
 
 ## Dependency / vulnerability policy
 
-Solo project — lightweight policy: periodically run `flutter pub outdated`, review changelogs before upgrading Firebase SDKs specifically (they touch auth and data access), and prioritize security patches over feature-driven upgrades.
+Solo project — lightweight policy: periodically run `flutter pub outdated`, review changelogs before upgrading — with particular attention to `drift`/`sqlite3_flutter_libs` (local data access), `speech_to_text`/`flutter_tts`/`permission_handler` (microphone access, a sensitive OS permission) — and prioritize security patches over feature-driven upgrades. Revisit this list to include Firebase SDKs once the deferred post-v1 sync phase adds them.

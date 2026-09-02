@@ -1,6 +1,6 @@
 # 0001: Offline-first architecture with Firebase as the only backend
 
-**Status:** Accepted
+**Status:** Accepted — **superseded for the v1 timeframe by [0004](0004-local-only-v1-no-firebase-backend.md)**, which ships v1 with zero Firebase usage at all (no auth, no Firestore, no Cloud Storage) and content as a bundled asset. This ADR's longer-term philosophy — Firebase as the only backend whenever a backend is actually needed — still stands for the post-v1 sync phase; only the "used from day one" part is superseded.
 
 ## Context
 

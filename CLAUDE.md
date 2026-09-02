@@ -1,7 +1,7 @@
 > **What this file is:** The entry point every AI session reads first. It doesn't contain the actual decisions — it points to the docs that do, and states the few rules that are non-negotiable everywhere.
 > **How to use it:** Keep this short. When a rule applies to the whole codebase and has zero exceptions, put it here. Everything else belongs in one of the linked docs below — update this list if a doc is renamed or added.
 
-_Last verified: 2026-09-01 — product, stack, and architecture defined via brainstorming session; implementation not yet started._
+_Last verified: 2026-09-02 — docs realigned for a local-only, zero-Firebase v1 and the real A1 curriculum bundle (see [ADR 0004](docs/adr/0004-local-only-v1-no-firebase-backend.md)); implementation still not yet started — see the Phase 2 architecture proposal in this session's plan for what's next._
 
 # Mohingo
 

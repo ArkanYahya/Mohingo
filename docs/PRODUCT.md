@@ -1,7 +1,7 @@
 > **What this file is:** The definition of what the app is, who it's for, and what counts as "done." Prevents scope from being reinvented differently in each session.
 > **How to use it:** Update when scope actually changes (a feature is added/cut/reprioritized). Keep it at the level of *what and why*, not *how* — implementation belongs in [ARCHITECTURE.md](ARCHITECTURE.md).
 
-_Last verified: 2026-09-01 — initial product definition established via brainstorming session._
+_Last verified: 2026-09-02 — onboarding and progress-gating flows updated for the local-only, free-access v1 decided this session; see [ADR 0004](adr/0004-local-only-v1-no-firebase-backend.md)._
 
 # Product
 
@@ -28,7 +28,7 @@ Self-directed adult learners, native Arabic speakers, learning English on their 
 - Bilingual explanations for grammar/vocabulary (contrastive notes — e.g. explaining how an English structure differs from the Arabic equivalent)
 - RTL (Arabic) + LTR (English) layout support throughout
 - AI-generated lesson content, curated and reviewed before publishing (content pipeline: generate → review → publish)
-- Unit-by-unit progress gating (must pass a unit's assessment to advance)
+- A recommended unit-by-unit path with mastery tracking (not a hard lock — see key user flow 5)
 
 ### Explicitly out of scope (for now)
 
@@ -45,11 +45,11 @@ The MVP is "done" when all A1 content and mechanics are built and functional: al
 
 ## Key user flows
 
-1. **Onboarding** — learner signs up, selects Arabic as native language, and is introduced to the app in bilingual UI.
+1. **Onboarding** — learner creates a local profile (no account/sign-up in v1 — see [ADR 0004](adr/0004-local-only-v1-no-firebase-backend.md)), selects Arabic as native language, and is introduced to the app in bilingual UI.
 2. **Placement test** — learner takes a short test; MVP always confirms/assigns A1 as the starting level.
 3. **Level overview** — learner sees the A1 level broken into its 4 thematic blocks and the units within each.
 4. **Unit lesson flow** — within a unit: vocabulary (with bilingual glosses) → grammar instruction (bilingual explanation) → guided practice/drills → reading passage → listening exercise → writing task → speaking task → end-of-unit assessment.
-5. **Progress gating** — passing a unit's assessment unlocks the next unit; a block completes when all its units are passed.
+5. **Progress tracking, not hard gating** — the app recommends the next unit via mastery evidence (per-CanDo-objective, tracked separately per skill — see [DATA_MODEL.md](DATA_MODEL.md)), but a learner may freely open any unit, vocabulary, grammar, review, or test screen at any time; a block completes when all its units are mastered.
 6. **Level completion** — after all 4 blocks are passed, the learner completes CEFR level A1.
 7. **Progress tracking** — learner can see their position within A1 (blocks/units completed, skills practiced) at any time.
 

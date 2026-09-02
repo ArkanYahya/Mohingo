@@ -1,7 +1,7 @@
 > **What this file is:** How the app talks to and treats users — voice, tone, how it handles errors/empty states, and the accessibility bar it must clear. Keeps copy and interaction patterns from feeling like they were written by a different person on every screen.
 > **How to use it:** Reference when writing any user-facing copy or interaction (errors, empty states, confirmations). If a new pattern is needed, add it here once decided rather than inventing it locally each time.
 
-_Last verified: 2026-09-01 — initial UX principles established via brainstorming session._
+_Last verified: 2026-09-02 — corrected the destructive-action example, which referenced a now-superseded `currentLevelId` field and an outdated placement-retake behavior; see [ADR 0004](adr/0004-local-only-v1-no-firebase-backend.md)._
 
 # UX Principles
 
@@ -25,7 +25,7 @@ Content downloads (new/updated lesson content) show progress, since they may tak
 
 ## Confirmations / destructive actions
 
-Confirmation required only for actions that lose progress or data (e.g. retaking the placement test, which resets `currentLevelId`). Confirmation copy states what will be lost, plainly, before the action is taken.
+Confirmation required only for actions that lose progress or data (e.g. resetting progress in Settings, which erases all local mastery evidence and attempt history — see [DATA_MODEL.md](DATA_MODEL.md)). Confirmation copy states what will be lost, plainly, before the action is taken. Retaking the placement test is **not** destructive under the free-access model (see [PRODUCT.md](PRODUCT.md) flow 5) — it's advisory only and never erases existing unit progress, so it needs no confirmation.
 
 ## Accessibility baseline
 

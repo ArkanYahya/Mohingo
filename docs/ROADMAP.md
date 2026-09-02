@@ -1,7 +1,7 @@
 > **What this file is:** The path from the MVP (CEFR A1) through the full vision (CEFR C2), plus the non-content features deferred out of the MVP. Prevents "start small" from losing sight of the full shape of the product.
 > **How to use it:** Update when a phase completes or the plan changes. Each phase's content work follows the same pattern established for A1 in [PRODUCT.md](PRODUCT.md), [DATA_MODEL.md](DATA_MODEL.md), and [ARCHITECTURE.md](ARCHITECTURE.md) — this doc tracks *sequencing*, not re-deriving structure per level.
 
-_Last verified: 2026-09-01 — initial roadmap established via brainstorming session._
+_Last verified: 2026-09-02 — added analytics/crash reporting and local backup export/import to the deferred list, decided this session; see [ADR 0004](adr/0004-local-only-v1-no-firebase-backend.md)._
 
 # Roadmap
 
@@ -34,6 +34,8 @@ These were explicitly scoped out of the MVP (see [PRODUCT.md](PRODUCT.md)) and a
 4. **Social/community features** — streaks-with-friends, leaderboards, etc. — only after the core solo learning experience is proven.
 5. **Teacher/classroom tools** — a different user (teacher) and data model (groups/assignments); treat as a distinct sub-project with its own brainstorming pass, not a bolt-on.
 6. **Additional native languages beyond Arabic** — would require generalizing the currently-fixed `nativeLanguage`/`targetLanguage` fields (already schema-flexible, see [DATA_MODEL.md](DATA_MODEL.md)) into a real localization system, plus re-authoring contrastive explanations per language pair.
+7. **Analytics and crash reporting** — no telemetry SDK ships in v1, to keep the app free of any required network call or third-party data collection while it's fully local. Revisit once there's a concrete question telemetry would answer.
+8. **Account-based sync and local backup export/import** — v1 stores progress locally only, with no way to move it between devices or recover it after an uninstall (see [ADR 0004](adr/0004-local-only-v1-no-firebase-backend.md)). A basic local export/import is the smaller near-term step; full account sync is the larger one, likely arriving together with item 1 above (both need the same account/backend groundwork).
 
 ## Open questions carried from PRODUCT.md
 
