@@ -1,7 +1,7 @@
 > **What this file is:** The definition of what the app is, who it's for, and what counts as "done." Prevents scope from being reinvented differently in each session.
 > **How to use it:** Update when scope actually changes (a feature is added/cut/reprioritized). Keep it at the level of *what and why*, not *how* — implementation belongs in [ARCHITECTURE.md](ARCHITECTURE.md).
 
-_Last verified: 2026-09-02 — onboarding and progress-gating flows updated for the local-only, free-access v1 decided this session; see [ADR 0004](adr/0004-local-only-v1-no-firebase-backend.md)._
+_Last verified: 2026-09-02 — onboarding and progress-gating flows updated for the local-only, free-access v1 decided this session; see [ADR 0004](adr/0004-local-only-v1-no-firebase-backend.md). Phase 10 corrected stale "progress gating" wording in Success criteria (the actual v1 model is recommendation-only, per flow 5) and resolved 3 of the 4 Open questions below against what actually got built._
 
 # Product
 
@@ -41,7 +41,7 @@ Self-directed adult learners, native Arabic speakers, learning English on their 
 
 ## Success criteria
 
-The MVP is "done" when all A1 content and mechanics are built and functional: all 4 thematic blocks, all 4 skills, the placement test, bilingual UI/explanations, and unit progress gating all work end-to-end. This is a feature-completeness bar, not a pedagogical-outcomes bar — it is not gated on real learners completing the level yet.
+The MVP is "done" when all A1 content and mechanics are built and functional: all 4 thematic blocks, all 4 skills, the placement test, bilingual UI/explanations, and unit progress tracking (recommendation-based, never a hard lock — see flow 5) all work end-to-end. This is a feature-completeness bar, not a pedagogical-outcomes bar — it is not gated on real learners completing the level yet.
 
 ## Key user flows
 
@@ -55,7 +55,7 @@ The MVP is "done" when all A1 content and mechanics are built and functional: al
 
 ## Open questions
 
-- How is speaking practice actually assessed (automated pronunciation/fluency scoring vs. simpler recording-and-self-check)? To be resolved in TECH_STACK.md / ARCHITECTURE.md.
-- How is writing practice graded (rules-based checks vs. AI-graded free text)? To be resolved in TECH_STACK.md / ARCHITECTURE.md.
-- What does the content review workflow look like in practice (queue, approval states, versioning)? To be resolved in DATA_MODEL.md / ARCHITECTURE.md.
-- Post-MVP: will additional native languages (beyond Arabic) ever be supported, or is the bilingual Arabic/English design permanent? Affects how hard-coded vs. localizable the UI layer should be.
+- ~~How is speaking practice actually assessed?~~ **Resolved**: on-device speech-to-text checks task completion only (never pronunciation/fluency scoring), with a typed-answer fallback that's always available and never recorded as speaking evidence — see [ADR 0003](adr/0003-on-device-speech-writing-assessment-for-mvp.md) and [TECH_STACK.md](TECH_STACK.md).
+- ~~How is writing practice graded?~~ **Resolved**: rules-based exact/near-match checking against the bundle's own `accepted` answer list where one is declared; free-response items with no `accepted` list are recorded but reported honestly as not-yet-scored (`notAutoGraded`/"pending review") rather than guessed at — no AI-graded free text in v1, see [TECH_STACK.md](TECH_STACK.md)'s "Explicitly rejected" table.
+- ~~What does the content review workflow look like in practice?~~ **Resolved**: the separate dev-time curriculum tool's own pipeline (LLM draft → author review/edit → `validate-a1.mjs`/`audit-quality.mjs`/`build-a1.mjs`) produces one versioned `dist/a1-course-bundle.json`, copied into the app as a static asset — no in-app review queue or approval states exist, since content authoring never happens on-device. See [ARCHITECTURE.md](ARCHITECTURE.md)'s content-loading flow.
+- Post-MVP: will additional native languages (beyond Arabic) ever be supported, or is the bilingual Arabic/English design permanent? Affects how hard-coded vs. localizable the UI layer should be. Still open — no decision made this session.

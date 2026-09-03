@@ -1,0 +1,327 @@
+import 'dart:async';
+import 'dart:convert';
+
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import '../../../../content/models/activity.dart';
+import '../../../../core/l10n/generated/app_localizations.dart';
+import '../../../speech/domain/speech_capability_service.dart';
+import '../../../speech/domain/speech_recognition_service.dart';
+import '../../../speech/providers/speech_providers.dart';
+import '../../domain/activity_submission.dart';
+import '../activity_chrome.dart';
+
+enum _SpeakMode {
+  checkingCapability,
+  requestingPermission,
+  recordAvailable,
+  recording,
+  reviewTranscript,
+  typedFallback,
+}
+
+/// Renders a `speak` activity.
+///
+/// Offers real on-device speech recognition when
+/// [SpeechCapabilityService] reports it's actually usable right now
+/// (locale supported, microphone permission already granted); otherwise
+/// offers to request permission; and always falls back to a typed answer —
+/// preserving lesson access without ever recording it as speaking evidence.
+/// See docs/ARCHITECTURE.md's speech-capability strategy and
+/// docs/DATA_MODEL.md.
+///
+/// The microphone is never touched until the learner deliberately taps
+/// "Record" — capability/permission are only *checked*, never requested, on
+/// mount. A temporary transcript is always shown for review before
+/// submission; nothing is auto-submitted, and no raw audio is ever
+/// retained. See docs/SECURITY.md.
+class SpeakActivityView extends ConsumerStatefulWidget {
+  const SpeakActivityView({
+    required this.activity,
+    required this.onSubmitted,
+    super.key,
+  });
+
+  final SpeakActivity activity;
+  final OnActivitySubmitted onSubmitted;
+
+  @override
+  ConsumerState<SpeakActivityView> createState() => _SpeakActivityViewState();
+}
+
+class _SpeakActivityViewState extends ConsumerState<SpeakActivityView> {
+  static const _localeCode = 'en';
+
+  _SpeakMode _mode = _SpeakMode.checkingCapability;
+  DeviceSpeechCapabilities? _capabilities;
+  String _liveTranscript = '';
+  StreamSubscription<SpeechRecognitionResult>? _recognitionSubscription;
+
+  final _typedController = TextEditingController();
+  ActivitySubmission? _submission;
+
+  @override
+  void initState() {
+    super.initState();
+    _checkCapability();
+  }
+
+  @override
+  void dispose() {
+    _recognitionSubscription?.cancel();
+    _typedController.dispose();
+    super.dispose();
+  }
+
+  Future<void> _checkCapability() async {
+    final capabilities = await ref
+        .read(speechCapabilityServiceProvider)
+        .currentCapabilities(localeCode: _localeCode);
+    if (!mounted) return;
+    setState(() {
+      _capabilities = capabilities;
+      _mode = capabilities.canRecordNow
+          ? _SpeakMode.recordAvailable
+          : (capabilities.canRequestPermission
+                ? _SpeakMode.requestingPermission
+                : _SpeakMode.typedFallback);
+    });
+  }
+
+  Future<void> _requestPermission() async {
+    final status = await ref
+        .read(speechRecognitionServiceProvider)
+        .requestPermission();
+    if (!mounted) return;
+    setState(() {
+      _mode = status == SpeechPermissionStatus.granted
+          ? _SpeakMode.recordAvailable
+          : _SpeakMode.typedFallback;
+    });
+  }
+
+  void _startRecording() {
+    setState(() {
+      _mode = _SpeakMode.recording;
+      _liveTranscript = '';
+    });
+    final stream = ref
+        .read(speechRecognitionServiceProvider)
+        .recognize(
+          localeCode: _localeCode,
+          listenFor: const Duration(seconds: 20),
+        );
+    _recognitionSubscription = stream.listen(
+      (result) {
+        if (!mounted) return;
+        setState(() => _liveTranscript = result.transcript);
+        if (result.isFinal) {
+          setState(() => _mode = _SpeakMode.reviewTranscript);
+        }
+      },
+      onError: (Object _) {
+        if (mounted) setState(() => _mode = _SpeakMode.typedFallback);
+      },
+      onDone: () {
+        if (mounted && _mode == _SpeakMode.recording) {
+          // Stream ended without a final result (e.g. cancelled/timed out).
+          setState(
+            () => _mode = _liveTranscript.isEmpty
+                ? _SpeakMode.recordAvailable
+                : _SpeakMode.reviewTranscript,
+          );
+        }
+      },
+    );
+  }
+
+  void _stopRecording() {
+    ref.read(speechRecognitionServiceProvider).cancel();
+  }
+
+  void _submitTranscript() => _submit(_liveTranscript, wasFallback: false);
+
+  void _submitTyped() {
+    final text = _typedController.text.trim();
+    if (text.isEmpty) return;
+    _submit(text, wasFallback: true);
+  }
+
+  void _submit(String text, {required bool wasFallback}) {
+    if (_submission != null) return;
+
+    final ActivitySubmission submission;
+    if (widget.activity.accepted.isNotEmpty) {
+      final isCorrect = widget.activity.accepted.any(
+        (a) => a.trim().toLowerCase() == text.trim().toLowerCase(),
+      );
+      submission = ActivitySubmission(
+        correctness: isCorrect
+            ? ActivityCorrectness.correct
+            : ActivityCorrectness.incorrect,
+        score: isCorrect ? 1.0 : 0.0,
+        rawAnswerJson: jsonEncode(text),
+        wasFallback: wasFallback,
+      );
+    } else {
+      submission = ActivitySubmission(
+        correctness: ActivityCorrectness.notAutoGraded,
+        rawAnswerJson: jsonEncode(text),
+        wasFallback: wasFallback,
+      );
+    }
+    setState(() => _submission = submission);
+    widget.onSubmitted(submission);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+
+    return ActivityChrome(
+      prompt: widget.activity.prompt,
+      promptAr: widget.activity.promptAr,
+      help: _mode == _SpeakMode.typedFallback && _submission == null
+          ? Text(
+              _capabilities?.micPermission ==
+                      SpeechPermissionStatus.permanentlyDenied
+                  ? l10n.speakPermissionPermanentlyDenied
+                  : l10n.activitySpeechUnavailableUseWriting,
+              style: Theme.of(context).textTheme.labelSmall,
+            )
+          : null,
+      body: _buildBody(context, l10n),
+      feedback: _submission != null
+          ? ActivityFeedbackBanner(
+              submission: _submission!,
+              correctAnswerLabel: widget.activity.accepted.isNotEmpty
+                  ? widget.activity.accepted.join(' / ')
+                  : null,
+            )
+          : null,
+    );
+  }
+
+  Widget _buildBody(BuildContext context, AppLocalizations l10n) {
+    switch (_mode) {
+      case _SpeakMode.checkingCapability:
+        return const Center(child: CircularProgressIndicator());
+
+      case _SpeakMode.requestingPermission:
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            FilledButton.icon(
+              icon: const Icon(Icons.mic),
+              onPressed: _requestPermission,
+              label: Text(l10n.speakEnableMicrophone),
+            ),
+            const SizedBox(height: 8),
+            TextButton(
+              onPressed: () => setState(() => _mode = _SpeakMode.typedFallback),
+              child: Text(l10n.speakUseTypedAnswerInstead),
+            ),
+          ],
+        );
+
+      case _SpeakMode.recordAvailable:
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            FilledButton.icon(
+              icon: const Icon(Icons.mic),
+              onPressed: _startRecording,
+              label: Text(l10n.speakStartRecording),
+            ),
+            const SizedBox(height: 8),
+            TextButton(
+              onPressed: () => setState(() => _mode = _SpeakMode.typedFallback),
+              child: Text(l10n.speakUseTypedAnswerInstead),
+            ),
+          ],
+        );
+
+      case _SpeakMode.recording:
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Icon(Icons.mic, color: Colors.red),
+                const SizedBox(width: 8),
+                Text(l10n.speakListening),
+              ],
+            ),
+            if (_liveTranscript.isNotEmpty)
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8),
+                child: Text(
+                  _liveTranscript,
+                  textDirection: TextDirection.ltr,
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            const SizedBox(height: 8),
+            OutlinedButton(
+              onPressed: _stopRecording,
+              child: Text(l10n.speakStopRecording),
+            ),
+          ],
+        );
+
+      case _SpeakMode.reviewTranscript:
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(l10n.speakReviewTranscript),
+            const SizedBox(height: 4),
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.surfaceContainer,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Text(_liveTranscript, textDirection: TextDirection.ltr),
+            ),
+            const SizedBox(height: 8),
+            if (_submission == null) ...[
+              FilledButton(
+                onPressed: _submitTranscript,
+                child: Text(AppLocalizations.of(context)!.activitySubmitButton),
+              ),
+              const SizedBox(height: 4),
+              TextButton(
+                onPressed: () =>
+                    setState(() => _mode = _SpeakMode.recordAvailable),
+                child: Text(l10n.speakRerecord),
+              ),
+            ],
+          ],
+        );
+
+      case _SpeakMode.typedFallback:
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            TextField(
+              controller: _typedController,
+              enabled: _submission == null,
+              maxLines: 2,
+              decoration: const InputDecoration(border: OutlineInputBorder()),
+              onChanged: (_) => setState(() {}),
+            ),
+            const SizedBox(height: 8),
+            if (_submission == null)
+              FilledButton(
+                onPressed: _typedController.text.trim().isEmpty
+                    ? null
+                    : _submitTyped,
+                child: Text(l10n.activitySubmitButton),
+              ),
+          ],
+        );
+    }
+  }
+}

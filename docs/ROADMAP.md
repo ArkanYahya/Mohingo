@@ -1,7 +1,7 @@
 > **What this file is:** The path from the MVP (CEFR A1) through the full vision (CEFR C2), plus the non-content features deferred out of the MVP. Prevents "start small" from losing sight of the full shape of the product.
 > **How to use it:** Update when a phase completes or the plan changes. Each phase's content work follows the same pattern established for A1 in [PRODUCT.md](PRODUCT.md), [DATA_MODEL.md](DATA_MODEL.md), and [ARCHITECTURE.md](ARCHITECTURE.md) — this doc tracks *sequencing*, not re-deriving structure per level.
 
-_Last verified: 2026-09-02 — added analytics/crash reporting and local backup export/import to the deferred list, decided this session; see [ADR 0004](adr/0004-local-only-v1-no-firebase-backend.md)._
+_Last verified: 2026-09-02 — added analytics/crash reporting and local backup export/import to the deferred list, decided this session; see [ADR 0004](adr/0004-local-only-v1-no-firebase-backend.md). Phase 10 corrected a stale line in "Content phases" that still described publishing future levels to Firestore — future levels ship as bundled assets, same as A1, per the local-only v1 decision; bumped the MVP row's status to reflect Phases 3-9 being feature-complete._
 
 # Roadmap
 
@@ -15,14 +15,14 @@ Guided-learning-hour figures below are cumulative, standard CEFR/Cambridge estim
 
 | Phase | CEFR level(s) | Cumulative guided hours (reference) | Status |
 |---|---|---|---|
-| MVP | A1 | ~70–100 | In progress — see [PRODUCT.md](PRODUCT.md) |
+| MVP | A1 | ~70–100 | Feature-complete, Phase 10 (QA/performance/store-readiness/docs) in progress — see [PRODUCT.md](PRODUCT.md) and [CLAUDE.md](../CLAUDE.md) |
 | Phase 2 | A2 | ~160–200 | Not started |
 | Phase 3 | B1 | ~350–400 | Not started |
 | Phase 4 | B2 | ~500–600 | Not started |
 | Phase 5 | C1 | ~700–800 | Not started |
 | Phase 6 | C2 | ~1,000–1,200 | Not started |
 
-Each content phase repeats the same shape as A1: break the level into thematic blocks derived from CEFR "can-do" statements for that level, author blocks/units/exercises across all 4 skills through the AI-generate-then-review pipeline, publish to Firestore, and let the app sync/cache as usual — no new mechanics required, just more content.
+Each content phase repeats the same shape as A1: break the level into thematic blocks derived from CEFR "can-do" statements for that level, author blocks/units/exercises across all 4 skills through the AI-generate-then-review pipeline, and ship the result as a new bundled asset (`assets/content/en/A2/...`, etc.) the same way A1 ships — no Firestore, no network sync, per the local-only v1 decision (see [ADR 0004](adr/0004-local-only-v1-no-firebase-backend.md)); `course_catalog`'s level-availability table is what makes adding a level purely additive. No new app mechanics required, just more content — until the deferred account-sync phase (item 8 below) changes this delivery mechanism.
 
 ## Non-content roadmap (deferred from MVP)
 

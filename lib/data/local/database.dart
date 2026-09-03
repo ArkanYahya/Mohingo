@@ -48,4 +48,56 @@ class AppDatabase extends _$AppDatabase {
   @override
   MigrationStrategy get migration =>
       MigrationStrategy(onCreate: (migrator) => migrator.createAll());
+
+  /// Erases every progress row for [learnerId] — mastery evidence, attempt
+  /// history (lesson/placement/mission/assessment alike), vocabulary/grammar
+  /// review state (including favourites), and the course enrolment record
+  /// (idempotently re-created on next app read, see
+  /// `ensureA1EnrollmentProvider`). The `Learners` row itself, its stable
+  /// UUID, and `content_versions` (a course-level log, not learner-level)
+  /// are untouched — this resets a learner's *progress*, not their identity.
+  /// See docs/UX_PRINCIPLES.md's "resetting progress" confirmation-copy rule
+  /// and docs/DATA_MODEL.md.
+  Future<void> resetProgressForLearner(int learnerId) {
+    return transaction(() async {
+      final attemptIds =
+          await (selectOnly(activityAttempts)
+                ..addColumns([activityAttempts.id])
+                ..where(activityAttempts.learnerId.equals(learnerId)))
+              .map((row) => row.read(activityAttempts.id)!)
+              .get();
+      if (attemptIds.isNotEmpty) {
+        await (delete(
+          activityAttemptCanDos,
+        )..where((t) => t.attemptId.isIn(attemptIds))).go();
+      }
+      await (delete(
+        activityAttempts,
+      )..where((t) => t.learnerId.equals(learnerId))).go();
+      await (delete(
+        unitProgress,
+      )..where((t) => t.learnerId.equals(learnerId))).go();
+      await (delete(
+        lessonProgress,
+      )..where((t) => t.learnerId.equals(learnerId))).go();
+      await (delete(
+        placementAttempts,
+      )..where((t) => t.learnerId.equals(learnerId))).go();
+      await (delete(
+        finalMissionAttempts,
+      )..where((t) => t.learnerId.equals(learnerId))).go();
+      await (delete(
+        finalAssessmentAttempts,
+      )..where((t) => t.learnerId.equals(learnerId))).go();
+      await (delete(
+        vocabularyReviewState,
+      )..where((t) => t.learnerId.equals(learnerId))).go();
+      await (delete(
+        grammarReviewState,
+      )..where((t) => t.learnerId.equals(learnerId))).go();
+      await (delete(
+        courseEnrolments,
+      )..where((t) => t.learnerId.equals(learnerId))).go();
+    });
+  }
 }

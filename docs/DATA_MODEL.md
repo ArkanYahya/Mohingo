@@ -1,7 +1,7 @@
 > **What this file is:** The entities, their relationships, and the constraints that matter (uniqueness, ownership, required fields). Keeps the schema's intent legible even as migrations accumulate.
 > **How to use it:** Update when an entity or relationship changes. If migration files exist, treat them as the literal source of truth and keep this as the readable summary + rationale.
 
-_Last verified: 2026-09-02 — full rewrite grounded in the actual A1 curriculum bundle (`docs/a1-modular-course/dist/a1-course-bundle.json`) and the local-only v1 decision; see [ADR 0004](adr/0004-local-only-v1-no-firebase-backend.md). The old Learner/Level/Block/Unit/Exercise/Attempt/ContentItem model predated inspection of the real curriculum data and is superseded by this document._
+_Last verified: 2026-09-02 — full rewrite grounded in the actual A1 curriculum bundle (`docs/a1-modular-course/dist/a1-course-bundle.json`) and the local-only v1 decision; see [ADR 0004](adr/0004-local-only-v1-no-firebase-backend.md). The old Learner/Level/Block/Unit/Exercise/Attempt/ContentItem model predated inspection of the real curriculum data and is superseded by this document. Phase 7 confirmed the `vocabulary_review_state` columns against a real SM-2 implementation, not just reserved them. Phase 9 confirmed `placement_attempts`/`final_mission_attempts`/`final_assessment_attempts` against real read/write usage (no schema change needed) and fixed a real latent bug in their "most recent attempt" queries: ordering by `startedAt` alone ties when two attempts start within the same clock tick (a fast retake); a stable `id DESC` tiebreaker was added to all three.
 
 # Data Model
 
@@ -100,7 +100,7 @@ Each holds one row per attempt at that assessment (`id`, `uuid`, `learnerId`, `s
 
 ### vocabulary_review_state
 
-`id`, `uuid`, `learnerId`, `lexiconId` (nullable) or `chunkId` (nullable, exactly one set), `isFavorite`, `confidenceMarker`, `easeFactor`, `intervalDays`, `repetitions`, `dueAt`, `lastReviewedAt`, `updatedAt`. Created lazily on first favourite/review-queue encounter, not pre-populated for all ~500 lexicon+chunk records at enrolment.
+`id`, `uuid`, `learnerId`, `lexiconId` (nullable) or `chunkId` (nullable, exactly one set), `isFavorite`, `confidenceMarker`, `easeFactor`, `intervalDays`, `repetitions`, `dueAt`, `lastReviewedAt`, `updatedAt`. Created lazily on first favourite/review-queue encounter, not pre-populated for all ~500 lexicon+chunk records at enrolment. `easeFactor`/`intervalDays`/`repetitions`/`dueAt` are computed by a genuine SM-2 (SuperMemo-2) scheduler (`SpacedReviewScheduler`) driven by a simplified 3-button Again/Good/Easy confidence input — see its doc comment for the exact formula. This schedule is vocabulary-memory only; it never grants or affects Can-Do mastery, which lives entirely in `activity_attempts`/`unit_progress` instead.
 
 ### grammar_review_state
 
@@ -124,7 +124,7 @@ One `learners` row has many `course_enrolments`, `unit_progress`, `lesson_progre
 
 - **Content and progress never mix.** No Drift table stores curriculum text/prompts/options; no content model stores a learner's answers. Content-reference columns store bundle string ids verbatim.
 - **Mastery is per-`(canDoId, evidenceSkill, mode)`, not a single score.** A Can-Do objective is "mastered" per `MASTERY_POLICY`: enough `mode='mastery'` evidence rows (`minimumEvidencePerRequiredObjective`), each meeting `minimumObjectiveScore`, with productive evidence present where the unit's `requiredSkillGroups` declare it required. `practiceCountsAsMastery` is always `false` — `mode='practice'` rows are never counted. A learner who can recognise language but not produce it must not show as fully mastered — see [PRODUCT.md](PRODUCT.md) and the curriculum's own non-negotiable rule (`docs/a1-modular-course/README_AR.md`).
-- **Attempts are insert-only.** Revisiting a completed unit/activity appends new `activity_attempts` rows; nothing is ever overwritten or deleted, so mastery history is always reconstructable.
+- **Attempts are insert-only.** Revisiting a completed unit/activity appends new `activity_attempts` rows; nothing is ever overwritten or deleted, so mastery history is always reconstructable. The one deliberate exception is a learner explicitly choosing "Reset progress" in Settings (`AppDatabase.resetProgressForLearner`) — a confirmed, destructive, learner-initiated action (see [UX_PRINCIPLES.md](UX_PRINCIPLES.md)'s confirmation-copy rule) that deletes every progress/attempt/review row for that learner across every table listed here, while leaving the `learners` row itself (and its uuid) untouched — it resets progress, not identity.
 - **A speaking fallback never creates speaking evidence.** Encoded at write time via `evidenceSkill`/`wasFallback`, not derived at read time — see `activity_attempts` above.
 - **Assessment inputs stay isolated from training.** `placement`/`finalMission`/`finalAssessment` attempts are never surfaced through ordinary Review screens, which query `activity_attempts` filtered to `sessionType='lesson'` only.
 - **A Unit's progression is a recommendation, not a hard lock.** `unit_progress.state` drives the "Continue learning" suggestion and unit badges; it never blocks navigation to another unit — see [PRODUCT.md](PRODUCT.md) flow 5 and [ARCHITECTURE.md](ARCHITECTURE.md)'s navigation guards.

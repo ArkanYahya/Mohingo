@@ -26,6 +26,18 @@
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<!-- Required by speech_to_text (both keys — see its README) and by
+	     permission_handler's Permission.microphone. Checked/requested only
+	     when a learner deliberately starts a speaking task, never on
+	     launch — see docs/SECURITY.md. Not yet localized to Arabic: doing
+	     that correctly needs an ios/Runner/*.lproj/InfoPlist.strings setup
+	     wired into the Xcode project, which this environment has no Xcode
+	     install to verify actually gets bundled — see docs/TESTING.md's
+	     real-device-testing limitation. -->
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Mohingo uses the microphone only when you tap to record an answer to a speaking task.</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Mohingo uses on-device speech recognition to check your spoken answers to speaking tasks.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

@@ -155,4 +155,202 @@ void main() {
       expect(rows.single.evidenceSkill, 'writing');
     },
   );
+
+  group('resetProgressForLearner', () {
+    test('erases every progress row for the learner across every table, '
+        'never touches another learner\'s data, and preserves the Learners '
+        'row itself (identity, not progress)', () async {
+      final learnerAId = await database
+          .into(database.learners)
+          .insert(
+            LearnersCompanion.insert(
+              uuid: 'learner-a',
+              createdAt: DateTime.utc(2026, 9, 2),
+            ),
+          );
+      final learnerBId = await database
+          .into(database.learners)
+          .insert(
+            LearnersCompanion.insert(
+              uuid: 'learner-b',
+              createdAt: DateTime.utc(2026, 9, 2),
+            ),
+          );
+
+      Future<void> seedFor(int learnerId) async {
+        await database
+            .into(database.courseEnrolments)
+            .insert(
+              CourseEnrolmentsCompanion.insert(
+                uuid: const Uuid().v4(),
+                learnerId: learnerId,
+                courseId: 'EN-A1-V2',
+                contentVersion: 'v1',
+                enrolledAt: DateTime.utc(2026, 9, 2),
+                status: 'active',
+              ),
+            );
+        await database
+            .into(database.unitProgress)
+            .insert(
+              UnitProgressCompanion.insert(
+                uuid: const Uuid().v4(),
+                learnerId: learnerId,
+                unitId: 'A1-U1',
+                state: 'inProgress',
+                updatedAt: DateTime.utc(2026, 9, 2),
+              ),
+            );
+        await database
+            .into(database.lessonProgress)
+            .insert(
+              LessonProgressCompanion.insert(
+                uuid: const Uuid().v4(),
+                learnerId: learnerId,
+                lessonId: 'A1-U1-L1',
+                unitId: 'A1-U1',
+                state: 'inProgress',
+                updatedAt: DateTime.utc(2026, 9, 2),
+              ),
+            );
+        final attemptId = await database
+            .into(database.activityAttempts)
+            .insert(
+              ActivityAttemptsCompanion.insert(
+                uuid: const Uuid().v4(),
+                learnerId: learnerId,
+                activityId: 'A1-U1-L1-A01',
+                sessionType: 'lesson',
+                mode: 'mastery',
+                evidenceSkill: 'listening',
+                attemptedAt: DateTime.utc(2026, 9, 2),
+                updatedAt: DateTime.utc(2026, 9, 2),
+              ),
+            );
+        await database
+            .into(database.activityAttemptCanDos)
+            .insert(
+              ActivityAttemptCanDosCompanion.insert(
+                attemptId: attemptId,
+                canDoId: 'A1.U1.LISTENING.UNDERSTAND_PERSONAL_INFO',
+              ),
+            );
+        await database
+            .into(database.placementAttempts)
+            .insert(
+              PlacementAttemptsCompanion.insert(
+                uuid: const Uuid().v4(),
+                learnerId: learnerId,
+                startedAt: DateTime.utc(2026, 9, 2),
+              ),
+            );
+        await database
+            .into(database.finalMissionAttempts)
+            .insert(
+              FinalMissionAttemptsCompanion.insert(
+                uuid: const Uuid().v4(),
+                learnerId: learnerId,
+                courseId: 'EN-A1-V2',
+                startedAt: DateTime.utc(2026, 9, 2),
+              ),
+            );
+        await database
+            .into(database.finalAssessmentAttempts)
+            .insert(
+              FinalAssessmentAttemptsCompanion.insert(
+                uuid: const Uuid().v4(),
+                learnerId: learnerId,
+                courseId: 'EN-A1-V2',
+                startedAt: DateTime.utc(2026, 9, 2),
+              ),
+            );
+        await database
+            .into(database.vocabularyReviewState)
+            .insert(
+              VocabularyReviewStateCompanion.insert(
+                uuid: const Uuid().v4(),
+                learnerId: learnerId,
+                lexiconId: const Value('A1.LEX.WORD.N01'),
+                isFavorite: const Value(true),
+                updatedAt: DateTime.utc(2026, 9, 2),
+              ),
+            );
+        await database
+            .into(database.grammarReviewState)
+            .insert(
+              GrammarReviewStateCompanion.insert(
+                uuid: const Uuid().v4(),
+                learnerId: learnerId,
+                grammarId: 'A1.GRAM.PRESENT_SIMPLE',
+                isFavorite: const Value(true),
+                updatedAt: DateTime.utc(2026, 9, 2),
+              ),
+            );
+      }
+
+      await seedFor(learnerAId);
+      await seedFor(learnerBId);
+
+      await database.resetProgressForLearner(learnerAId);
+
+      // Learner A: every progress table is empty.
+      for (final rows in [
+        await (database.select(
+          database.courseEnrolments,
+        )..where((t) => t.learnerId.equals(learnerAId))).get(),
+        await (database.select(
+          database.unitProgress,
+        )..where((t) => t.learnerId.equals(learnerAId))).get(),
+        await (database.select(
+          database.lessonProgress,
+        )..where((t) => t.learnerId.equals(learnerAId))).get(),
+        await (database.select(
+          database.activityAttempts,
+        )..where((t) => t.learnerId.equals(learnerAId))).get(),
+        await (database.select(
+          database.placementAttempts,
+        )..where((t) => t.learnerId.equals(learnerAId))).get(),
+        await (database.select(
+          database.finalMissionAttempts,
+        )..where((t) => t.learnerId.equals(learnerAId))).get(),
+        await (database.select(
+          database.finalAssessmentAttempts,
+        )..where((t) => t.learnerId.equals(learnerAId))).get(),
+        await (database.select(
+          database.vocabularyReviewState,
+        )..where((t) => t.learnerId.equals(learnerAId))).get(),
+        await (database.select(
+          database.grammarReviewState,
+        )..where((t) => t.learnerId.equals(learnerAId))).get(),
+      ]) {
+        expect(rows, isEmpty);
+      }
+      expect(
+        await database.select(database.activityAttemptCanDos).get(),
+        hasLength(1),
+        reason:
+            'learner A\'s can-do link must go with its attempt, but '
+            'learner B\'s own attempt/link (seeded separately) must survive',
+      );
+
+      // Learner B: completely untouched.
+      expect(
+        await (database.select(
+          database.unitProgress,
+        )..where((t) => t.learnerId.equals(learnerBId))).get(),
+        hasLength(1),
+      );
+      expect(
+        await (database.select(
+          database.vocabularyReviewState,
+        )..where((t) => t.learnerId.equals(learnerBId))).get(),
+        hasLength(1),
+      );
+
+      // Both Learners rows themselves are preserved — reset erases
+      // progress, not identity.
+      final learners = await database.select(database.learners).get();
+      expect(learners.map((l) => l.id).toSet(), {learnerAId, learnerBId});
+    });
+  });
 }

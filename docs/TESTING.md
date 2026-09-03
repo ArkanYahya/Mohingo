@@ -1,7 +1,7 @@
 > **What this file is:** What must be tested, at what level, and how to run it. Keeps test coverage expectations consistent instead of depending on whichever session happens to be writing a feature.
 > **How to use it:** Check before adding a feature — what test(s) does this convention require? Update the commands section the moment the test setup changes so it never goes stale.
 
-_Last verified: 2026-09-02 — expanded coverage list for the real curriculum bundle, the mastery-evidence model, and the local-only v1 (sync testing deferred); see [ADR 0004](adr/0004-local-only-v1-no-firebase-backend.md)._
+_Last verified: 2026-09-02 — expanded coverage list for the real curriculum bundle, the mastery-evidence model, and the local-only v1 (sync testing deferred); see [ADR 0004](adr/0004-local-only-v1-no-firebase-backend.md). Phase 9 implemented the "Placement/mission/assessment" row below in full: classification-boundary tests for all 4 outcomes, sessionType-isolation tests (placement evidence excluded from `masteryEvidenceForObjective`, alongside the pre-existing finalAssessment case), retake-storage tests, and a deterministic real-content placement-flow widget test using an overridable RNG-seed provider. Phase 10 (QA pass) added Settings screen tests (locale/theme-mode switching, the reset-progress confirm-and-erase flow) and a `resetProgressForLearner` test proving it clears every progress table for one learner without touching another learner's data or the `learners` row itself — 134 tests passing overall. Phase 10's QA pass also surfaced and fixed several hardcoded-English-string bugs (a genuine bilingual-copy violation, not a testing gap per se) and two real store-blocking bugs the test suite structurally cannot catch without a device: missing Android `RECORD_AUDIO`/iOS `NSMicrophoneUsageDescription` permission declarations — see [SECURITY.md](SECURITY.md) and [TECH_STACK.md](TECH_STACK.md)._
 
 # Testing
 
@@ -22,6 +22,15 @@ _Last verified: 2026-09-02 — expanded coverage list for the real curriculum bu
 - **Speech:** speech-unavailable and permission-denied fallback to the typed-answer path; a `speak` activity answered via that fallback never records speaking evidence (`evidenceSkill='writing'`, `wasFallback=true` — see [DATA_MODEL.md](DATA_MODEL.md)); no verbatim transcript is persisted after scoring.
 - **Localisation/theming:** Arabic/English locale and RTL/LTR rendering correctness for any screen carrying bilingual content, including mixed-direction text (an Arabic sentence with an embedded English word/phrase must not force the embedded text into RTL); light/dark/system theme and colour-theme selection persist across restarts and apply immediately without one.
 - **Offline:** at least one full end-to-end "complete an A1 unit" flow in airplane mode, covering onboarding (local profile creation) → guided path → a lesson → an activity of each broad type → unit state updates, all without any network connectivity.
+
+## Performance
+
+No real device or profiler (DevTools timeline, frame-rendering stats, memory snapshots) is available in this dev environment, so frame-rate/jank/memory profiling has not been done — flag this explicitly rather than claiming a performance bar was verified when it wasn't. What has actually been checked:
+
+- **Content parsing/indexing time**, the one cost proportional to the curriculum bundle's size (738KB, ~1,200 leaf records): measured directly (`CourseBundleParser.parse` + `CourseContentIndex.build`, JIT-warmed) at ~9ms total on this dev machine's Dart VM — not a real phone, and not a first-run (un-warmed) number, but a strong signal this isn't a performance risk even accounting for slower mobile hardware, especially since it already runs off the UI isolate via `Isolate.run` (see [ARCHITECTURE.md](ARCHITECTURE.md)) so a slower result would show as a longer splash screen, never a janky frame.
+- **No obvious anti-patterns** (rebuilding a whole screen from a single-field state change, an unbounded list with no lazy building, a synchronous DB call on the UI thread) were introduced — Drift's async API and Riverpod's provider-scoped rebuilds are used throughout as intended.
+
+Real profiling (startup time to first frame, scroll jank in the longest lists, memory under a full A1 session) should be one of the first things done once a real Android/iOS device or emulator is available — see the real-device-testing limitation noted throughout this doc and [TECH_STACK.md](TECH_STACK.md).
 
 ## What doesn't need tests
 

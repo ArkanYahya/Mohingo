@@ -1,7 +1,7 @@
 > **What this file is:** The visual language — color tokens, type scale, spacing, component states. Without this, every session invents its own shade of blue.
 > **How to use it:** Treat values here as tokens, not suggestions — reference them by name (e.g. `color.primary`) in code rather than hardcoding hex/px values. Add a token here before using a new one in a component.
 
-_Last verified: 2026-09-02 — replaced the bright Duolingo-style direction with a calm, adult Material 3 system per this session's Decision Gate ("calm visuals, light gamification"); see [ADR 0004](adr/0004-local-only-v1-no-firebase-backend.md). Tokens now map onto Flutter's `ColorScheme` roles instead of ad hoc names, since [TECH_STACK.md](TECH_STACK.md) commits to Material 3 + `ColorScheme` + `ThemeExtension`._
+_Last verified: 2026-09-02 — replaced the bright Duolingo-style direction with a calm, adult Material 3 system per this session's Decision Gate ("calm visuals, light gamification"); see [ADR 0004](adr/0004-local-only-v1-no-firebase-backend.md). Tokens now map onto Flutter's `ColorScheme` roles instead of ad hoc names, since [TECH_STACK.md](TECH_STACK.md) commits to Material 3 + `ColorScheme` + `ThemeExtension`. Phase 10 confirmed the theme-mode and colour-theme pickers described below are now real, working Settings UI (previously the preference providers existed but nothing exposed them)._
 
 # Design System
 

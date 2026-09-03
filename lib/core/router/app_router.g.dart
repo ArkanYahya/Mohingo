@@ -10,39 +10,42 @@ part of 'app_router.dart';
 // ignore_for_file: type=lint, type=warning
 /// The app's route tree.
 ///
-/// Phase 3 scope: the 5-tab shell only, with placeholder screens. The
-/// content-load root [GoRouter.redirect] gate (routing to a splash/
-/// unsupported-content screen based on the curriculum bundle's load status)
-/// is added once `lib/content/` exists — see docs/ARCHITECTURE.md's
-/// navigation map. Likewise, the full-screen pushes for the lesson player,
-/// placement test, final mission, and final assessment are added once their
-/// owning features exist.
+/// The root [GoRouter.redirect] gates every route on the A1 curriculum
+/// bundle's load status: `/splash` while loading, `/content-error` on an
+/// unsupported schema or parse failure, otherwise the normal tree. See
+/// docs/ARCHITECTURE.md's content-loading strategy.
+///
+/// The lesson player, and any future placement/final-mission/
+/// final-assessment flows, are deliberately full-screen pushes *outside*
+/// the 5-tab `StatefulShellRoute` (hides the bottom nav during a lesson).
 
 @ProviderFor(appRouter)
 final appRouterProvider = AppRouterProvider._();
 
 /// The app's route tree.
 ///
-/// Phase 3 scope: the 5-tab shell only, with placeholder screens. The
-/// content-load root [GoRouter.redirect] gate (routing to a splash/
-/// unsupported-content screen based on the curriculum bundle's load status)
-/// is added once `lib/content/` exists — see docs/ARCHITECTURE.md's
-/// navigation map. Likewise, the full-screen pushes for the lesson player,
-/// placement test, final mission, and final assessment are added once their
-/// owning features exist.
+/// The root [GoRouter.redirect] gates every route on the A1 curriculum
+/// bundle's load status: `/splash` while loading, `/content-error` on an
+/// unsupported schema or parse failure, otherwise the normal tree. See
+/// docs/ARCHITECTURE.md's content-loading strategy.
+///
+/// The lesson player, and any future placement/final-mission/
+/// final-assessment flows, are deliberately full-screen pushes *outside*
+/// the 5-tab `StatefulShellRoute` (hides the bottom nav during a lesson).
 
 final class AppRouterProvider
     extends $FunctionalProvider<GoRouter, GoRouter, GoRouter>
     with $Provider<GoRouter> {
   /// The app's route tree.
   ///
-  /// Phase 3 scope: the 5-tab shell only, with placeholder screens. The
-  /// content-load root [GoRouter.redirect] gate (routing to a splash/
-  /// unsupported-content screen based on the curriculum bundle's load status)
-  /// is added once `lib/content/` exists — see docs/ARCHITECTURE.md's
-  /// navigation map. Likewise, the full-screen pushes for the lesson player,
-  /// placement test, final mission, and final assessment are added once their
-  /// owning features exist.
+  /// The root [GoRouter.redirect] gates every route on the A1 curriculum
+  /// bundle's load status: `/splash` while loading, `/content-error` on an
+  /// unsupported schema or parse failure, otherwise the normal tree. See
+  /// docs/ARCHITECTURE.md's content-loading strategy.
+  ///
+  /// The lesson player, and any future placement/final-mission/
+  /// final-assessment flows, are deliberately full-screen pushes *outside*
+  /// the 5-tab `StatefulShellRoute` (hides the bottom nav during a lesson).
   AppRouterProvider._()
     : super(
         from: null,
@@ -76,4 +79,4 @@ final class AppRouterProvider
   }
 }
 
-String _$appRouterHash() => r'43f34445320348ab2368bd86c6e4995a60d3e3aa';
+String _$appRouterHash() => r'fe699286dac08552d7fccd16a33290439a9a2e06';

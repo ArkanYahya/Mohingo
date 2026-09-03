@@ -1,6 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Required for on-device speech recognition (speech_to_text) — checked/
+         requested only when a learner deliberately starts a speaking task,
+         never on launch. See docs/SECURITY.md. -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
     <application
-        android:label="mohingo"
+        android:label="Mohingo"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
@@ -40,6 +44,13 @@
         <intent>
             <action android:name="android.intent.action.PROCESS_TEXT"/>
             <data android:mimeType="text/plain"/>
+        </intent>
+        <!-- Required on Android 11+ (API 30+) package-visibility rules so
+             speech_to_text can actually find the on-device recognition
+             service when checking availability — see
+             docs/TECH_STACK.md's Speech section. -->
+        <intent>
+            <action android:name="android.speech.RecognitionService"/>
         </intent>
     </queries>
 </manifest>

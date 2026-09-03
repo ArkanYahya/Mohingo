@@ -1,29 +1,74 @@
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
+import '../../content/providers/course_content_providers.dart';
 import '../../features/app_shell/presentation/app_shell_scaffold.dart';
+import '../../features/app_shell/presentation/content_error_screen.dart';
+import '../../features/app_shell/presentation/splash_screen.dart';
+import '../../content/models/activity.dart';
 import '../../features/course_catalog/presentation/level_catalog_screen.dart';
+import '../../features/course_catalog/presentation/level_detail_screen.dart';
+import '../../features/final_assessment/presentation/final_assessment_screen.dart';
+import '../../features/final_mission/presentation/final_mission_screen.dart';
+import '../../features/grammar/presentation/grammar_detail_screen.dart';
+import '../../features/grammar/presentation/grammar_list_screen.dart';
 import '../../features/home/presentation/home_screen.dart';
+import '../../features/learning_path/presentation/unit_overview_screen.dart';
+import '../../features/lesson_player/presentation/lesson_player_screen.dart';
+import '../../features/placement_test/presentation/placement_test_screen.dart';
+import '../../features/review/presentation/quick_practice_screen.dart';
 import '../../features/review/presentation/review_home_screen.dart';
 import '../../features/settings/presentation/settings_screen.dart';
 import '../../features/tests_home/presentation/tests_home_screen.dart';
+import '../../features/vocabulary/presentation/chunk_detail_screen.dart';
+import '../../features/vocabulary/presentation/vocabulary_list_screen.dart';
+import '../../features/vocabulary/presentation/word_detail_screen.dart';
+import 'content_load_refresh_listenable.dart';
 
 part 'app_router.g.dart';
 
 /// The app's route tree.
 ///
-/// Phase 3 scope: the 5-tab shell only, with placeholder screens. The
-/// content-load root [GoRouter.redirect] gate (routing to a splash/
-/// unsupported-content screen based on the curriculum bundle's load status)
-/// is added once `lib/content/` exists — see docs/ARCHITECTURE.md's
-/// navigation map. Likewise, the full-screen pushes for the lesson player,
-/// placement test, final mission, and final assessment are added once their
-/// owning features exist.
+/// The root [GoRouter.redirect] gates every route on the A1 curriculum
+/// bundle's load status: `/splash` while loading, `/content-error` on an
+/// unsupported schema or parse failure, otherwise the normal tree. See
+/// docs/ARCHITECTURE.md's content-loading strategy.
+///
+/// The lesson player, and any future placement/final-mission/
+/// final-assessment flows, are deliberately full-screen pushes *outside*
+/// the 5-tab `StatefulShellRoute` (hides the bottom nav during a lesson).
 @riverpod
 GoRouter appRouter(Ref ref) {
+  final refreshListenable = ContentLoadRefreshListenable(ref);
+  ref.onDispose(refreshListenable.dispose);
+
   return GoRouter(
     initialLocation: '/home',
+    refreshListenable: refreshListenable,
+    redirect: (context, state) {
+      final contentAsync = ref.read(courseContentProvider('a1'));
+      final atGateScreen =
+          state.matchedLocation == '/splash' ||
+          state.matchedLocation == '/content-error';
+
+      if (contentAsync.isLoading) {
+        return state.matchedLocation == '/splash' ? null : '/splash';
+      }
+      if (contentAsync.hasError) {
+        return state.matchedLocation == '/content-error'
+            ? null
+            : '/content-error';
+      }
+      // Content ready: leave the gate screens if we're still on one.
+      return atGateScreen ? '/home' : null;
+    },
     routes: [
+      GoRoute(path: '/splash', builder: (_, _) => const SplashScreen()),
+      GoRoute(
+        path: '/content-error',
+        builder: (_, _) => const ContentErrorScreen(),
+      ),
+
       StatefulShellRoute.indexedStack(
         builder: (context, state, navigationShell) =>
             AppShellScaffold(navigationShell: navigationShell),
@@ -38,6 +83,27 @@ GoRouter appRouter(Ref ref) {
               GoRoute(
                 path: '/learn',
                 builder: (_, _) => const LevelCatalogScreen(),
+                routes: [
+                  GoRoute(
+                    path: ':levelId',
+                    // Coming Soon cards are disabled (non-tappable) on
+                    // LevelCatalogScreen — a stray deep link is the only way
+                    // here, and LevelDetailScreen already renders an honest
+                    // inline Coming Soon state for any unavailable/unknown
+                    // id, so no redirect guard is needed on this route.
+                    builder: (_, state) => LevelDetailScreen(
+                      levelId: state.pathParameters['levelId']!,
+                    ),
+                    routes: [
+                      GoRoute(
+                        path: 'unit/:unitId',
+                        builder: (_, state) => UnitOverviewScreen(
+                          unitId: state.pathParameters['unitId']!,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
               ),
             ],
           ),
@@ -46,6 +112,38 @@ GoRouter appRouter(Ref ref) {
               GoRoute(
                 path: '/review',
                 builder: (_, _) => const ReviewHomeScreen(),
+                routes: [
+                  GoRoute(
+                    path: 'vocabulary',
+                    builder: (_, _) => const VocabularyListScreen(),
+                    routes: [
+                      GoRoute(
+                        path: ':lexiconId',
+                        builder: (_, state) => WordDetailScreen(
+                          lexiconId: state.pathParameters['lexiconId']!,
+                        ),
+                      ),
+                    ],
+                  ),
+                  GoRoute(
+                    path: 'chunks/:chunkId',
+                    builder: (_, state) => ChunkDetailScreen(
+                      chunkId: state.pathParameters['chunkId']!,
+                    ),
+                  ),
+                  GoRoute(
+                    path: 'grammar',
+                    builder: (_, _) => const GrammarListScreen(),
+                    routes: [
+                      GoRoute(
+                        path: ':grammarId',
+                        builder: (_, state) => GrammarDetailScreen(
+                          grammarId: state.pathParameters['grammarId']!,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
               ),
             ],
           ),
@@ -66,6 +164,35 @@ GoRouter appRouter(Ref ref) {
             ],
           ),
         ],
+      ),
+
+      GoRoute(
+        path: '/lesson-player/:unitId/:lessonId',
+        builder: (_, state) => LessonPlayerScreen(
+          unitId: state.pathParameters['unitId']!,
+          lessonId: state.pathParameters['lessonId']!,
+        ),
+      ),
+      GoRoute(
+        // Pushed with `extra: <Activity>` from Grammar's "Quick practice"
+        // and Review's "weak objective -> practice this" links — the
+        // activity itself is looked up from the already-loaded
+        // CourseContentIndex at the call site, not re-fetched by id here.
+        path: '/review/practice',
+        builder: (_, state) =>
+            QuickPracticeScreen(activity: state.extra! as Activity),
+      ),
+      GoRoute(
+        path: '/tests/placement',
+        builder: (_, _) => const PlacementTestScreen(),
+      ),
+      GoRoute(
+        path: '/tests/final-mission',
+        builder: (_, _) => const FinalMissionScreen(),
+      ),
+      GoRoute(
+        path: '/tests/final-assessment',
+        builder: (_, _) => const FinalAssessmentScreen(),
       ),
     ],
   );
