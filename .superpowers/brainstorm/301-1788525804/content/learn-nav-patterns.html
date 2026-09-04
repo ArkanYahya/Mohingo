@@ -1,0 +1,86 @@
+<style>
+  .phone { width: 260px; height: 460px; border-radius: 20px; overflow: hidden; background: var(--bg, #14171c); position: relative; display: flex; flex-direction: column; font-size: 12px; }
+  .phone-bar { padding: 10px 12px; font-weight: 600; font-size: 12px; }
+  .phone-body { flex: 1; padding: 10px 12px; overflow: hidden; position: relative; }
+  .node { width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; }
+  .node-done { background: #3FB950; color: #08260f; }
+  .node-current { background: #FFB020; color: #3a2400; box-shadow: 0 0 0 4px rgba(255,176,32,0.25); }
+  .node-locked { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.35); }
+  .row { display: flex; align-items: center; gap: 8px; padding: 6px 0; }
+  .pill { padding: 2px 8px; border-radius: 999px; font-size: 10px; font-weight: 600; }
+  .bar-track { height: 6px; border-radius: 999px; background: rgba(255,255,255,0.1); overflow: hidden; }
+  .bar-fill { height: 100%; background: #3FB950; }
+  .spine { position: absolute; left: 22px; top: 0; bottom: 0; width: 2px; background: rgba(255,255,255,0.15); }
+</style>
+
+<h2>What "Duolingo's path map" means — and two calmer alternatives</h2>
+<p class="subtitle">Duolingo's course screen is a winding trail of circular nodes (one per lesson) snaking down the screen — you tap the glowing "current" node to play, checkmarked nodes behind you are done, greyed nodes ahead are locked. It's the single biggest reason people say Duolingo "always shows me where I am." But it's also a heavily game-flavored look, and Mohingo's design docs already committed to a calmer, adult, Material-3 direction with just one modest progress accent — not full gamification. Here are three ways to solve the same "where am I / what's done" problem, from most game-like to most restrained.</p>
+
+<div class="cards">
+  <div class="card" data-choice="winding-path" onclick="toggleSelect(this)">
+    <div class="card-image" style="display:flex;align-items:center;justify-content:center;padding:16px;background:#0b0d10;">
+      <div class="phone">
+        <div class="phone-bar" style="background:#1c2027;color:#eee;">A1 · Block 2</div>
+        <div class="phone-body" style="background:#14171c;color:#eee;">
+          <div style="display:flex;flex-direction:column;gap:18px;align-items:center;margin-top:10px;">
+            <div style="display:flex;justify-content:flex-start;width:100%;"><div class="node node-done">✓</div></div>
+            <div style="display:flex;justify-content:flex-end;width:100%;"><div class="node node-done">✓</div></div>
+            <div style="display:flex;justify-content:center;width:100%;"><div class="node node-current">▶</div></div>
+            <div style="display:flex;justify-content:flex-start;width:100%;"><div class="node node-locked">4</div></div>
+            <div style="display:flex;justify-content:flex-end;width:100%;"><div class="node node-locked">5</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A. Winding path (Duolingo-style)</h3>
+      <p>A snaking trail of lesson nodes. Extremely legible "you are here," playful and fun to scroll through. Trade-off: reads as game-like/childish, and it's a real chunk of new custom layout code (irregular node positions, connecting line) vs. the plain lists Mohingo uses everywhere else.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="structured-list" onclick="toggleSelect(this)">
+    <div class="card-image" style="display:flex;align-items:center;justify-content:center;padding:16px;background:#0b0d10;">
+      <div class="phone">
+        <div class="phone-bar" style="background:#1c2027;color:#eee;">
+          A1 progress
+          <div class="bar-track" style="margin-top:6px;"><div class="bar-fill" style="width:45%;"></div></div>
+          <div style="margin-top:3px;color:#9aa1ac;">6 / 13 units mastered</div>
+        </div>
+        <div class="phone-body" style="background:#14171c;color:#eee;">
+          <div style="font-weight:700;margin-bottom:2px;">Block 1 · Foundations <span class="pill" style="background:#3FB950;color:#08260f;">4/4</span></div>
+          <div style="font-weight:700;margin:10px 0 2px;">Block 2 · Personal info <span class="pill" style="background:#FFB020;color:#3a2400;">2/4</span></div>
+          <div class="row"><div class="node node-done" style="width:22px;height:22px;font-size:10px;">✓</div>Unit 5 — Where from?</div>
+          <div class="row"><div class="node node-current" style="width:22px;height:22px;font-size:10px;">◐</div><b>Unit 6 — Family</b></div>
+          <div class="row"><div class="node node-locked" style="width:22px;height:22px;font-size:10px;">7</div>Unit 7 — Jobs</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B. Grouped list + progress bar</h3>
+      <p>Same list layout Mohingo already uses everywhere (cheap to build, consistent with the rest of the app), but adds: a persistent top progress bar, block sections with their own mini-tally, and a real status icon per row instead of today's single color pill. Calm, Busuu/Babbel-like, matches the "restrained adult" design direction already written down.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="journey-spine" onclick="toggleSelect(this)">
+    <div class="card-image" style="display:flex;align-items:center;justify-content:center;padding:16px;background:#0b0d10;">
+      <div class="phone">
+        <div class="phone-bar" style="background:#1c2027;color:#eee;">A1 · Journey</div>
+        <div class="phone-body" style="background:#14171c;color:#eee;">
+          <div style="position:relative;padding-left:40px;">
+            <div class="spine"></div>
+            <div class="row" style="margin-bottom:14px;"><div class="node node-done" style="width:30px;height:30px;font-size:12px;position:absolute;left:8px;">◆</div><b>Block 1: Foundations</b></div>
+            <div class="row"><div class="node node-done" style="width:20px;height:20px;font-size:9px;position:absolute;left:12px;">✓</div>Unit 4</div>
+            <div class="row" style="margin-bottom:14px;"><div class="node node-current" style="width:30px;height:30px;font-size:12px;position:absolute;left:8px;">◆</div><b>Block 2: Personal info</b> <span class="pill" style="background:#FFB020;color:#3a2400;">you are here</span></div>
+            <div class="row"><div class="node node-locked" style="width:20px;height:20px;font-size:9px;position:absolute;left:12px;">6</div>Unit 6</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C. Journey spine with milestones</h3>
+      <p>A middle ground: a straight vertical line instead of a snake (easier to build than A), with bigger "milestone" markers at each Block boundary and a literal "you are here" flag. More visual interest than B without A's full game skin. More custom layout work than B, less than A.</p>
+    </div>
+  </div>
+</div>
+
+<p class="subtitle">All three would also carry across to fixing the missing per-lesson status inside a unit, and could reuse the same status icon language on Review/Tests cards. Click one to react to, or tell me in the terminal if you want a mix (e.g. B's calm list but with A's per-lesson node icons).</p>

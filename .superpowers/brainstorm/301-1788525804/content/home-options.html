@@ -1,0 +1,75 @@
+<style>
+  .phone2 { width: 260px; height: 460px; border-radius: 20px; overflow: hidden; background: #14171c; position: relative; display: flex; flex-direction: column; font-size: 12px; color: #eee; }
+  .pb { padding: 12px; }
+  .card2 { background: #1c2027; border-radius: 12px; padding: 12px; margin-bottom: 10px; }
+  .streak { display:flex; align-items:center; gap:8px; background: linear-gradient(90deg, rgba(255,176,32,0.18), rgba(255,176,32,0.04)); border-radius: 12px; padding: 10px 12px; margin-bottom: 10px; }
+  .flame { width:28px; height:28px; border-radius:50%; background:#FFB020; color:#3a2400; display:flex; align-items:center; justify-content:center; font-weight:800; }
+  .track2 { height: 6px; border-radius: 999px; background: rgba(255,255,255,0.1); overflow: hidden; }
+  .fill2 { height: 100%; background: #3FB950; }
+  .btn2 { background:#3FB950; color:#08260f; text-align:center; border-radius:10px; padding:10px; font-weight:700; }
+  .mini-spine { display:flex; align-items:center; gap:6px; }
+  .dot { width:14px;height:14px;border-radius:50%; }
+</style>
+
+<h2>Home screen — three directions</h2>
+<p class="subtitle">All three keep the existing "Continue" card as the primary action, since that already works — the question is what else earns a place on a screen people open every day.</p>
+
+<div class="cards">
+  <div class="card" data-choice="dashboard" onclick="toggleSelect(this)">
+    <div class="card-image" style="display:flex;align-items:center;justify-content:center;padding:16px;background:#0b0d10;">
+      <div class="phone2">
+        <div class="pb">
+          <div class="streak"><div class="flame">6</div><div><b>6-day streak</b><div style="color:#9aa1ac;">Keep it going today</div></div></div>
+          <div class="card2"><b>Continue: Family</b><div style="color:#9aa1ac;margin:4px 0;">Block 2 · Unit 6</div><div class="btn2">Continue</div></div>
+          <div class="card2"><b>A1 progress</b><div class="track2" style="margin:6px 0;"><div class="fill2" style="width:46%"></div></div><span style="color:#9aa1ac;">6 of 13 units</span></div>
+          <div class="card2">📚 <b>12 words</b> due for review</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A. Full dashboard</h3>
+      <p>Streak, continue card, level-progress bar, and a review-due nudge — a real "here's everything" landing page. Most complete, but four stacked cards is the busiest of the three.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="teaser" onclick="toggleSelect(this)">
+    <div class="card-image" style="display:flex;align-items:center;justify-content:center;padding:16px;background:#0b0d10;">
+      <div class="phone2">
+        <div class="pb">
+          <div class="streak"><div class="flame">6</div><div><b>6-day streak</b></div></div>
+          <div class="card2">
+            <b>Continue: Family</b><div style="color:#9aa1ac;margin:6px 0;">Your spot on the journey:</div>
+            <div class="mini-spine"><div class="dot" style="background:#3FB950;"></div><div class="dot" style="background:#3FB950;"></div><div class="dot" style="background:#FFB020;width:18px;height:18px;"></div><div class="dot" style="background:rgba(255,255,255,0.15);"></div><div class="dot" style="background:rgba(255,255,255,0.15);"></div></div>
+            <div class="btn2" style="margin-top:10px;">Continue</div>
+          </div>
+          <div class="card2" style="display:flex;justify-content:space-between;">📚 12 due <span style="color:#9aa1ac;">→ Review</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B. Journey teaser</h3>
+      <p>Echoes the new Learn spine directly on Home with a tiny dot-strip ("you are here" at a glance), so Home and Learn visually rhyme. Streak + one review nudge below. Ties the two screens together but duplicates a bit of Learn's own visual language.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="minimal" onclick="toggleSelect(this)">
+    <div class="card-image" style="display:flex;align-items:center;justify-content:center;padding:16px;background:#0b0d10;">
+      <div class="phone2">
+        <div class="pb">
+          <div class="card2" style="text-align:center;padding:20px 12px;">
+            <div class="flame" style="width:44px;height:44px;font-size:18px;margin:0 auto 8px;">6</div>
+            <b>6-day streak · 46% through A1</b>
+          </div>
+          <div class="card2"><b>Continue: Family</b><div style="color:#9aa1ac;margin:4px 0;">Block 2 · Unit 6</div><div class="btn2">Continue</div></div>
+          <div style="display:flex;justify-content:space-between;color:#9aa1ac;padding:0 4px;"><span>📚 12 due for review</span><span>›</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C. Minimal: one hero stat + one CTA</h3>
+      <p>Single combined "streak + overall %" hero line instead of two separate cards, one Continue card, one plain text row for review-due (not even a full card). Calmest, least visually busy of the three — closest to Mohingo's "restrained" design direction — but says less at a glance than A or B.</p>
+    </div>
+  </div>
+</div>
+
+<p class="subtitle">Click one, or mix-and-match in the terminal (e.g. C's calm hero stat with B's mini spine dots instead of a plain progress bar).</p>
