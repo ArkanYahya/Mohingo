@@ -212,6 +212,12 @@ abstract class AppLocalizations {
   /// **'Mastered'**
   String get unitStateMastered;
 
+  /// Unit/lesson progress badge — was mastered but evidence or content has gone stale.
+  ///
+  /// In en, this message translates to:
+  /// **'Needs review'**
+  String get unitStateNeedsReview;
+
   /// Shown when a learner opens an A2-C2 level card.
   ///
   /// In en, this message translates to:

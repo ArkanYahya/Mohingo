@@ -84,6 +84,8 @@
   "@unitStateInProgress": {"description": "Unit progress badge."},
   "unitStateMastered": "Mastered",
   "@unitStateMastered": {"description": "Unit progress badge."},
+  "unitStateNeedsReview": "Needs review",
+  "@unitStateNeedsReview": {"description": "Unit/lesson progress badge — was mastered but evidence or content has gone stale."},
   "comingSoonLevelBody": "This level isn't available yet. A1 is ready now — start there.",
   "@comingSoonLevelBody": {
     "description": "Shown when a learner opens an A2-C2 level card."

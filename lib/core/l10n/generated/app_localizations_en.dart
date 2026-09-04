@@ -76,6 +76,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get unitStateMastered => 'Mastered';
 
   @override
+  String get unitStateNeedsReview => 'Needs review';
+
+  @override
   String get comingSoonLevelBody =>
       'This level isn\'t available yet. A1 is ready now — start there.';
 

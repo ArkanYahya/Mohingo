@@ -19,6 +19,7 @@
   "unitStateNotStarted": "لم تبدأ بعد",
   "unitStateInProgress": "قيد التقدّم",
   "unitStateMastered": "أتقنتها",
+  "unitStateNeedsReview": "يحتاج مراجعة",
   "comingSoonLevelBody": "هذا المستوى غير متاح بعد. المستوى A1 جاهز الآن — ابدأ منه.",
   "continueLearningTitle": "أكمل التعلّم",
   "continueLearningCta": "متابعة",

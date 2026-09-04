@@ -76,6 +76,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get unitStateMastered => 'أتقنتها';
 
   @override
+  String get unitStateNeedsReview => 'يحتاج مراجعة';
+
+  @override
   String get comingSoonLevelBody =>
       'هذا المستوى غير متاح بعد. المستوى A1 جاهز الآن — ابدأ منه.';
 
