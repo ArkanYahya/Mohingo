@@ -129,6 +129,12 @@ class _FakeUnitLessonProgressRepository
   }) async => null;
 
   @override
+  Future<List<LessonProgressData>> lessonProgressForUnit({
+    required int learnerId,
+    required String unitId,
+  }) async => const [];
+
+  @override
   Future<void> recordLessonPosition({
     required int learnerId,
     required String lessonId,

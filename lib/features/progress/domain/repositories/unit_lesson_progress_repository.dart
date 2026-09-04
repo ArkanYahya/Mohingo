@@ -41,6 +41,15 @@ abstract interface class UnitLessonProgressRepository {
     required String lessonId,
   });
 
+  /// All lesson-progress rows for one learner within one unit — used to
+  /// render per-lesson status on the unit overview without one query per
+  /// lesson. See docs/superpowers/specs/
+  /// 2026-09-04-ui-navigation-redesign-design.md.
+  Future<List<LessonProgressData>> lessonProgressForUnit({
+    required int learnerId,
+    required String unitId,
+  });
+
   /// Written after every meaningful lesson-player event (not just at lesson
   /// end) so the app can resume safely after being killed mid-lesson. See
   /// docs/DATA_MODEL.md.
