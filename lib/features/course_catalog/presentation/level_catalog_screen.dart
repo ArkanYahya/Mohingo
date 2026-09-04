@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../content/catalog/level_catalog.dart';
+import '../../../content/providers/course_content_providers.dart';
 import '../../../core/l10n/generated/app_localizations.dart';
+import '../../learning_path/providers/unit_progress_providers.dart';
 
 /// Learn tab landing screen — the CEFR level catalogue. A1 is tappable and
 /// opens the guided unit path; A2-C2 are visible but disabled with
@@ -30,16 +33,29 @@ class LevelCatalogScreen extends StatelessWidget {
   }
 }
 
-class _LevelCard extends StatelessWidget {
+class _LevelCard extends ConsumerWidget {
   const _LevelCard({required this.entry});
 
   final LevelCatalogEntry entry;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context)!;
     final colorScheme = Theme.of(context).colorScheme;
     final available = entry.availability == LevelAvailability.available;
+
+    (int mastered, int total)? progress;
+    if (available) {
+      final contentAsync = ref.watch(courseContentProvider(entry.levelId));
+      final progressAsync = ref.watch(allUnitProgressProvider);
+      final total = contentAsync.value?.bundle.units.length;
+      if (total != null) {
+        final mastered = (progressAsync.value ?? const [])
+            .where((p) => p.state == 'mastered')
+            .length;
+        progress = (mastered, total);
+      }
+    }
 
     return Semantics(
       button: available,
@@ -61,11 +77,25 @@ class _LevelCard extends StatelessWidget {
               padding: const EdgeInsets.all(16),
               child: Row(
                 children: [
-                  Text(
-                    entry.cefrCode,
-                    style: Theme.of(context).textTheme.titleLarge,
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          entry.cefrCode,
+                          style: Theme.of(context).textTheme.titleLarge,
+                        ),
+                        if (progress != null)
+                          Text(
+                            l10n.homeLevelProgressCaption(
+                              progress.$1,
+                              progress.$2,
+                            ),
+                            style: Theme.of(context).textTheme.bodySmall,
+                          ),
+                      ],
+                    ),
                   ),
-                  const Spacer(),
                   if (!available)
                     Container(
                       padding: const EdgeInsets.symmetric(
