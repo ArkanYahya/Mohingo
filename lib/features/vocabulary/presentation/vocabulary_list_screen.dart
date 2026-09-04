@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../../content/providers/course_content_providers.dart';
 import '../../../core/l10n/generated/app_localizations.dart';
+import '../../../core/widgets/status_indicator.dart';
 import '../providers/vocabulary_providers.dart';
 
 /// The Vocabulary area: separate Word and Chunk views, searchable by
@@ -136,6 +137,10 @@ class _WordListView extends ConsumerWidget {
           for (final s in reviewStateAsync.value ?? const [])
             if (s.isFavorite && s.lexiconId != null) s.lexiconId,
         };
+        final reviewStateByLexiconId = {
+          for (final s in reviewStateAsync.value ?? const [])
+            if (s.lexiconId != null) s.lexiconId!: s,
+        };
 
         final items = index.bundle.lexicon.where((item) {
           if (!_matchesQuery(query, [
@@ -162,10 +167,16 @@ class _WordListView extends ConsumerWidget {
           itemBuilder: (context, i) {
             final item = items[i];
             final isFavorite = favoriteLexiconIds.contains(item.id);
+            final reviewState = reviewStateByLexiconId[item.id];
             return _VocabularyRow(
               headword: item.headword,
               arabic: item.arabic,
               isFavorite: isFavorite,
+              progressState: _vocabularyProgressState(
+                repetitions: reviewState?.repetitions ?? 0,
+                dueAt: reviewState?.dueAt,
+                now: DateTime.now(),
+              ),
               onTap: () => context.push('/review/vocabulary/${item.id}'),
             );
           },
@@ -195,6 +206,10 @@ class _ChunkListView extends ConsumerWidget {
           for (final s in reviewStateAsync.value ?? const [])
             if (s.isFavorite && s.chunkId != null) s.chunkId,
         };
+        final reviewStateByChunkId = {
+          for (final s in reviewStateAsync.value ?? const [])
+            if (s.chunkId != null) s.chunkId!: s,
+        };
 
         final items = index.bundle.chunks.where((item) {
           if (!_matchesQuery(query, [item.text, item.arabic])) return false;
@@ -214,10 +229,16 @@ class _ChunkListView extends ConsumerWidget {
           itemBuilder: (context, i) {
             final item = items[i];
             final isFavorite = favoriteChunkIds.contains(item.id);
+            final reviewState = reviewStateByChunkId[item.id];
             return _VocabularyRow(
               headword: item.text,
               arabic: item.arabic,
               isFavorite: isFavorite,
+              progressState: _vocabularyProgressState(
+                repetitions: reviewState?.repetitions ?? 0,
+                dueAt: reviewState?.dueAt,
+                now: DateTime.now(),
+              ),
               onTap: () => context.push('/review/chunks/${item.id}'),
             );
           },
@@ -227,23 +248,45 @@ class _ChunkListView extends ConsumerWidget {
   }
 }
 
+/// Maps one vocabulary/chunk review row onto the shared 4-state
+/// [ProgressState]: no row (or never successfully recalled) is
+/// [ProgressState.notStarted]; overdue is [ProgressState.needsReview];
+/// recalled at least once but not yet graduated (repetitions < 3, matching
+/// [SpacedReviewScheduler]'s interval steps: 1st repetition -> 1 day, 2nd ->
+/// 6 days, 3rd+ -> ease-factor-driven) is [ProgressState.inProgress];
+/// repetitions >= 3 is [ProgressState.mastered]. See docs/superpowers/specs/
+/// 2026-09-04-ui-navigation-redesign-design.md.
+ProgressState _vocabularyProgressState({
+  required int repetitions,
+  required DateTime? dueAt,
+  required DateTime now,
+}) {
+  if (repetitions == 0) return ProgressState.notStarted;
+  if (dueAt != null && dueAt.isBefore(now)) return ProgressState.needsReview;
+  if (repetitions >= 3) return ProgressState.mastered;
+  return ProgressState.inProgress;
+}
+
 class _VocabularyRow extends StatelessWidget {
   const _VocabularyRow({
     required this.headword,
     required this.arabic,
     required this.isFavorite,
+    required this.progressState,
     required this.onTap,
   });
 
   final String headword;
   final String arabic;
   final bool isFavorite;
+  final ProgressState progressState;
   final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
       onTap: onTap,
+      leading: StatusIndicator(state: progressState, size: 20),
       title: Text(headword, textDirection: TextDirection.ltr),
       subtitle: Text(arabic, textDirection: TextDirection.rtl),
       trailing: isFavorite
