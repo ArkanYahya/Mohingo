@@ -79,6 +79,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get unitStateNeedsReview => 'تحتاج مراجعة';
 
   @override
+  String get unitPathYouAreHere => 'أنت هنا';
+
+  @override
   String get comingSoonLevelBody =>
       'هذا المستوى غير متاح بعد. المستوى A1 جاهز الآن — ابدأ منه.';
 

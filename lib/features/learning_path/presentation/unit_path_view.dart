@@ -1,3 +1,4 @@
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -5,18 +6,22 @@ import 'package:go_router/go_router.dart';
 import '../../../content/models/curriculum_structure.dart';
 import '../../../content/providers/course_content_providers.dart';
 import '../../../core/l10n/generated/app_localizations.dart';
+import '../../../core/widgets/status_indicator.dart';
 import '../providers/unit_progress_providers.dart';
 
-/// The A1 guided unit path (U0-U12) — each unit shows a state badge
-/// (not started / in progress / mastered) sourced from the
-/// `unit_progress` read-model, never a hard lock: every unit is always
-/// tappable, per the free-access model. See docs/PRODUCT.md flow 5.
+/// The A1 guided unit path (U0-U12), rendered as a vertical journey spine:
+/// one node per unit, larger "milestone" nodes for units with a mission
+/// lesson, and a "you are here" marker at the learner's current position.
+/// State badges are a recommendation, never a hard lock: every unit is
+/// always tappable, per docs/PRODUCT.md flow 5. There is no Block/chapter
+/// entity in the real curriculum data (see [Unit]'s doc comment) — milestone
+/// grouping is derived from mission lessons, not a chapter boundary. See
+/// docs/superpowers/specs/2026-09-04-ui-navigation-redesign-design.md.
 class UnitPathView extends ConsumerWidget {
   const UnitPathView({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final l10n = AppLocalizations.of(context)!;
     final contentAsync = ref.watch(courseContentProvider('a1'));
     final progressAsync = ref.watch(allUnitProgressProvider);
 
@@ -29,20 +34,31 @@ class UnitPathView extends ConsumerWidget {
           final progressByUnitId = {
             for (final p in progressAsync.value ?? const []) p.unitId: p,
           };
-          return ListView(
-            padding: const EdgeInsets.all(16),
-            children: [
-              for (final unit in index.bundle.units)
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 8),
-                  child: _UnitTile(
-                    unit: unit,
-                    state: progressByUnitId[unit.id]?.state,
-                    l10n: l10n,
-                    onTap: () => context.go('/learn/a1/unit/${unit.id}'),
-                  ),
-                ),
-            ],
+          final units = index.bundle.units;
+          final masteredIds = {
+            for (final p in progressByUnitId.values)
+              if (p.state == 'mastered') p.unitId,
+          };
+          final currentUnitId = units
+              .where((u) => !masteredIds.contains(u.id))
+              .firstOrNull
+              ?.id;
+
+          return ListView.builder(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            itemCount: units.length,
+            itemBuilder: (context, i) {
+              final unit = units[i];
+              return _SpineTile(
+                unit: unit,
+                state: ProgressState.fromRaw(progressByUnitId[unit.id]?.state),
+                isMilestone: unit.lessons.any((l) => l.lessonType == 'mission'),
+                isCurrent: unit.id == currentUnitId,
+                isFirst: i == 0,
+                isLast: i == units.length - 1,
+                onTap: () => context.go('/learn/a1/unit/${unit.id}'),
+              );
+            },
           );
         },
       ),
@@ -50,65 +66,98 @@ class UnitPathView extends ConsumerWidget {
   }
 }
 
-class _UnitTile extends StatelessWidget {
-  const _UnitTile({
+class _SpineTile extends StatelessWidget {
+  const _SpineTile({
     required this.unit,
     required this.state,
-    required this.l10n,
+    required this.isMilestone,
+    required this.isCurrent,
+    required this.isFirst,
+    required this.isLast,
     required this.onTap,
   });
 
   final Unit unit;
-  final String? state;
-  final AppLocalizations l10n;
+  final ProgressState state;
+  final bool isMilestone;
+  final bool isCurrent;
+  final bool isFirst;
+  final bool isLast;
   final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
-    final (String label, Color color) = switch (state) {
-      'mastered' => (l10n.unitStateMastered, colorScheme.primary),
-      'inProgress' => (l10n.unitStateInProgress, colorScheme.tertiary),
-      _ => (l10n.unitStateNotStarted, colorScheme.onSurfaceVariant),
-    };
+    final l10n = AppLocalizations.of(context)!;
+    final railColor = colorScheme.outlineVariant;
 
     return Material(
-      color: colorScheme.surfaceContainer,
-      borderRadius: BorderRadius.circular(12),
+      color: Colors.transparent,
       child: InkWell(
-        borderRadius: BorderRadius.circular(12),
         onTap: onTap,
-        child: Padding(
-          padding: const EdgeInsets.all(16),
+        child: IntrinsicHeight(
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Expanded(
+              SizedBox(
+                width: 40,
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      unit.title,
-                      style: Theme.of(context).textTheme.titleMedium,
-                      textDirection: TextDirection.ltr,
+                    Expanded(
+                      child: isFirst
+                          ? const SizedBox.shrink()
+                          : Container(width: 2, color: railColor),
                     ),
-                    Text(
-                      unit.titleAr,
-                      style: Theme.of(context).textTheme.bodySmall,
-                      textDirection: TextDirection.rtl,
+                    StatusIndicator(state: state, size: isMilestone ? 32 : 22),
+                    Expanded(
+                      child: isLast
+                          ? const SizedBox.shrink()
+                          : Container(width: 2, color: railColor),
                     ),
                   ],
                 ),
               ),
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                decoration: BoxDecoration(
-                  color: color.withValues(alpha: 0.15),
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Text(
-                  label,
-                  style: Theme.of(context).textTheme.labelSmall
-                      ?.copyWith(color: color),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 12),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      if (isCurrent)
+                        Container(
+                          margin: const EdgeInsets.only(bottom: 4),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 8,
+                            vertical: 2,
+                          ),
+                          decoration: BoxDecoration(
+                            color: colorScheme.tertiaryContainer,
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: Text(
+                            l10n.unitPathYouAreHere,
+                            style: Theme.of(context).textTheme.labelSmall
+                                ?.copyWith(
+                                  color: colorScheme.onTertiaryContainer,
+                                ),
+                          ),
+                        ),
+                      Text(
+                        unit.title,
+                        textDirection: TextDirection.ltr,
+                        style: isMilestone
+                            ? Theme.of(context).textTheme.titleMedium
+                                  ?.copyWith(fontWeight: FontWeight.bold)
+                            : Theme.of(context).textTheme.titleSmall,
+                      ),
+                      Text(
+                        unit.titleAr,
+                        textDirection: TextDirection.rtl,
+                        style: Theme.of(context).textTheme.bodySmall,
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],

@@ -218,6 +218,12 @@ abstract class AppLocalizations {
   /// **'Needs review'**
   String get unitStateNeedsReview;
 
+  /// Marker on the Learn journey spine showing the learner's current unit.
+  ///
+  /// In en, this message translates to:
+  /// **'You are here'**
+  String get unitPathYouAreHere;
+
   /// Shown when a learner opens an A2-C2 level card.
   ///
   /// In en, this message translates to:
