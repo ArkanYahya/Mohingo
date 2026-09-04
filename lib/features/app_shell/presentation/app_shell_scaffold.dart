@@ -1,19 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../core/l10n/generated/app_localizations.dart';
+import '../../review/providers/review_providers.dart';
 
 /// The 5-tab bottom-navigation shell (Home / Learn / Review / Tests /
 /// Settings) — see docs/ARCHITECTURE.md's navigation map. Vocabulary and
 /// Grammar live inside Review, not as separate top-level destinations.
-class AppShellScaffold extends StatelessWidget {
+class AppShellScaffold extends ConsumerWidget {
   const AppShellScaffold({required this.navigationShell, super.key});
 
   final StatefulNavigationShell navigationShell;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context)!;
+    final dueCount = ref.watch(dueVocabularyCountProvider).value ?? 0;
+
+    Widget reviewIcon(IconData icon) {
+      if (dueCount <= 0) return Icon(icon);
+      return Badge(label: Text('$dueCount'), child: Icon(icon));
+    }
+
     return Scaffold(
       body: navigationShell,
       bottomNavigationBar: NavigationBar(
@@ -34,8 +43,8 @@ class AppShellScaffold extends StatelessWidget {
             label: l10n.navLearn,
           ),
           NavigationDestination(
-            icon: const Icon(Icons.refresh_outlined),
-            selectedIcon: const Icon(Icons.refresh),
+            icon: reviewIcon(Icons.refresh_outlined),
+            selectedIcon: reviewIcon(Icons.refresh),
             label: l10n.navReview,
           ),
           NavigationDestination(
