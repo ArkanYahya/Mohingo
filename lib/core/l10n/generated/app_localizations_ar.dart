@@ -96,7 +96,10 @@ class AppLocalizationsAr extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       days,
       locale: localeName,
-      other: 'تتابع $days أيام',
+      other: 'تتابع $days يوم',
+      many: 'تتابع $days يوماً',
+      few: 'تتابع $days أيام',
+      two: 'تتابع يومين',
       one: 'تتابع يوم واحد',
       zero: 'لا يوجد تتابع بعد',
     );
@@ -119,7 +122,10 @@ class AppLocalizationsAr extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count عناصر بحاجة للمراجعة',
+      other: '$count عنصر بحاجة للمراجعة',
+      many: '$count عنصراً بحاجة للمراجعة',
+      few: '$count عناصر بحاجة للمراجعة',
+      two: 'عنصران بحاجة للمراجعة',
       one: 'عنصر واحد بحاجة للمراجعة',
       zero: 'لا يوجد شيء بحاجة للمراجعة',
     );
