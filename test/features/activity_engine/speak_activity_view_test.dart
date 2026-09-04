@@ -206,6 +206,31 @@ void main() {
     });
 
     testWidgets(
+      'a typed answer missing the accepted answer\'s terminal punctuation '
+      'still grades correct',
+      (tester) async {
+        ActivitySubmission? reported;
+        await _pumpSpeak(
+          tester,
+          capabilities: const DeviceSpeechCapabilities(
+            sttAvailableForLocale: false,
+            micPermission: SpeechPermissionStatus.notDetermined,
+          ),
+          onSubmitted: (s) => reported = s,
+        );
+
+        // Accepted answer is "Thanks." (with a period) — a real learner
+        // typing (or a transcript omitting) the bare word must still pass.
+        await tester.enterText(find.byType(TextField), 'thanks');
+        await tester.pump();
+        await tester.tap(find.byType(FilledButton));
+        await tester.pump();
+
+        expect(reported?.correctness, ActivityCorrectness.correct);
+      },
+    );
+
+    testWidgets(
       'submitting a real recognized transcript sets wasFallback=false — '
       'genuine speaking evidence, not a fallback',
       (tester) async {
@@ -238,5 +263,62 @@ void main() {
         expect(reported?.correctness, ActivityCorrectness.correct);
       },
     );
+  });
+
+  group('letter-spelling accepted answers', () {
+    SpeakActivity spellActivity() {
+      return const SpeakActivity(
+        id: 'A1-U0-L3-A03',
+        lessonId: 'A1-U0-L3',
+        mode: ActivityMode.practice,
+        skill: Skill.spokenProduction,
+        canDo: ['A1.U0.PRODUCTION.SPELL_NAME'],
+        prompt: 'Spell the name Ali.',
+        promptAr: 'تهجّى اسم علي.',
+        raw: {},
+        accepted: ['A-L-I'],
+        fallbackSkill: 'writing',
+      );
+    }
+
+    testWidgets('a spoken-out-loud spelling ("a l i") grades correct against a '
+        'hyphen-joined accepted answer ("A-L-I")', (tester) async {
+      ActivitySubmission? reported;
+      await tester.pumpWidget(
+        ProviderScope(
+          overrides: [
+            speechCapabilityServiceProvider.overrideWithValue(
+              FakeSpeechCapabilityService(
+                const DeviceSpeechCapabilities(
+                  sttAvailableForLocale: false,
+                  micPermission: SpeechPermissionStatus.notDetermined,
+                ),
+              ),
+            ),
+            speechRecognitionServiceProvider.overrideWithValue(
+              FakeSpeechRecognitionService(),
+            ),
+          ],
+          child: MaterialApp(
+            supportedLocales: AppLocalizations.supportedLocales,
+            localizationsDelegates: AppLocalizations.localizationsDelegates,
+            home: Scaffold(
+              body: SpeakActivityView(
+                activity: spellActivity(),
+                onSubmitted: (s) => reported = s,
+              ),
+            ),
+          ),
+        ),
+      );
+      await tester.pumpAndSettle();
+
+      await tester.enterText(find.byType(TextField), 'a l i');
+      await tester.pump();
+      await tester.tap(find.byType(FilledButton));
+      await tester.pump();
+
+      expect(reported?.correctness, ActivityCorrectness.correct);
+    });
   });
 }

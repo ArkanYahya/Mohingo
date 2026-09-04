@@ -10,6 +10,7 @@ import '../../../speech/domain/speech_capability_service.dart';
 import '../../../speech/domain/speech_recognition_service.dart';
 import '../../../speech/providers/speech_providers.dart';
 import '../../domain/activity_submission.dart';
+import '../../domain/answer_matching.dart';
 import '../activity_chrome.dart';
 
 enum _SpeakMode {
@@ -154,7 +155,7 @@ class _SpeakActivityViewState extends ConsumerState<SpeakActivityView> {
     final ActivitySubmission submission;
     if (widget.activity.accepted.isNotEmpty) {
       final isCorrect = widget.activity.accepted.any(
-        (a) => a.trim().toLowerCase() == text.trim().toLowerCase(),
+        (a) => answersMatch(a, text),
       );
       submission = ActivitySubmission(
         correctness: isCorrect

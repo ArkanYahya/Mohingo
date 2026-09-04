@@ -5,14 +5,16 @@ import 'package:flutter/material.dart';
 import '../../../../content/models/activity.dart';
 import '../../../../core/l10n/generated/app_localizations.dart';
 import '../../domain/activity_submission.dart';
+import '../../domain/answer_matching.dart';
 import '../activity_chrome.dart';
 
 /// Renders a `write` activity: a free-text response, with a suggested word
 /// count when [WriteActivity.wordGuide] is declared.
 ///
 /// When [WriteActivity.accepted] lists specific acceptable answers (short,
-/// closed-form writing tasks), the response is checked against them
-/// case-insensitively; otherwise (open-ended tasks relying on
+/// closed-form writing tasks), the response is checked against them via
+/// [answersMatch] — case-insensitively, tolerant of harmless punctuation
+/// and apostrophe-style differences; otherwise (open-ended tasks relying on
 /// [WriteActivity.evaluation], a rubric id) the submission is recorded as
 /// [ActivityCorrectness.notAutoGraded] — writing tasks generally need a
 /// task-specific rubric, not an automatic right/wrong check. See
@@ -42,7 +44,7 @@ class _WriteActivityViewState extends State<WriteActivityView> {
     final ActivitySubmission submission;
     if (widget.activity.accepted.isNotEmpty) {
       final isCorrect = widget.activity.accepted.any(
-        (a) => a.trim().toLowerCase() == text.toLowerCase(),
+        (a) => answersMatch(a, text),
       );
       submission = ActivitySubmission(
         correctness: isCorrect
