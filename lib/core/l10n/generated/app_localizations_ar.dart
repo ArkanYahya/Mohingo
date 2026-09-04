@@ -76,7 +76,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get unitStateMastered => 'أتقنتها';
 
   @override
-  String get unitStateNeedsReview => 'يحتاج مراجعة';
+  String get unitStateNeedsReview => 'تحتاج مراجعة';
 
   @override
   String get comingSoonLevelBody =>

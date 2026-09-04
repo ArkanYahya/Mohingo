@@ -60,11 +60,11 @@ Per component, default / hover(press) / active(selected) / disabled / error stat
 - **Input (writing exercises):** default = `colorScheme.surfaceContainer` with border; focused = `colorScheme.primary` border; error = `colorScheme.error` border + inline message below
 - **Progress bar (unit path):** filled portion = `colorScheme.primary`; unfilled = `colorScheme.surfaceContainer`
 - **Card (unit/lesson tile):** default = `colorScheme.surfaceContainer`, `radii.12`; states are "not started / in progress / needs review / mastered" (per [PRODUCT.md](PRODUCT.md)'s free-access model), never a "locked" visual — there is no route-level lock in v1, see [ARCHITECTURE.md](ARCHITECTURE.md)
-- **Status indicator:** icon + color + text (never color alone) showing unit/lesson/vocabulary/test progress — 4 states:
-  - `notStarted`: outline circle icon, `colorScheme.onSurfaceVariant` color, "Not started" label
-  - `inProgress`: half-filled ring icon, `colorScheme.tertiary` color, "In progress" label
-  - `needsReview`: refresh icon, `colorScheme.tertiary` color, "Needs review" label
-  - `mastered`: filled check circle icon, `colorScheme.primary` color, "Mastered" label
+- **Status indicator:** icon + color, shape-distinguishable across all 4 states (never color alone), plus a screen-reader semantic label — not paired with inline visible text, used compactly on unit spine nodes and lesson/vocabulary/test rows. 4 states:
+  - `notStarted`: outline circle icon, `colorScheme.onSurfaceVariant` color, "Not started" semantic label
+  - `inProgress`: half-filled ring icon, `colorScheme.tertiary` color, "In progress" semantic label
+  - `needsReview`: refresh icon, `colorScheme.tertiary` color, "Needs review" semantic label
+  - `mastered`: filled check circle icon, `colorScheme.primary` color, "Mastered" semantic label
 - **Streak/progress indicator (Home only):** the one approved gamification element — `streakAccent` fill, small, non-modal, no animation beyond a subtle count-up; must respect reduced-motion settings per [UX_PRINCIPLES.md](UX_PRINCIPLES.md)
 
 ## Theming rules
