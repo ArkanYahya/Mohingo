@@ -146,6 +146,32 @@ class AppLocalizationsAr extends AppLocalizations {
   String get lessonCompleteDone => 'تم';
 
   @override
+  String lessonCompleteTally(int correct, int total) {
+    return '$correct من $total إجابة صحيحة';
+  }
+
+  @override
+  String lessonCompletePendingReview(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count إجابة محفوظة للمراجعة',
+      many: '$count إجابةً محفوظة للمراجعة',
+      few: '$count إجابات محفوظة للمراجعة',
+      two: 'إجابتان محفوظتان للمراجعة',
+      one: 'إجابة واحدة محفوظة للمراجعة',
+      zero: 'لا توجد إجابات محفوظة للمراجعة',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get lessonCompleteNextLesson => 'الدرس التالي';
+
+  @override
+  String get lessonCompleteBackToUnit => 'العودة إلى الوحدة';
+
+  @override
   String get lessonPlayerNext => 'التالي';
 
   @override

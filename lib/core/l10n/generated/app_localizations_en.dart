@@ -140,6 +140,28 @@ class AppLocalizationsEn extends AppLocalizations {
   String get lessonCompleteDone => 'Done';
 
   @override
+  String lessonCompleteTally(int correct, int total) {
+    return '$correct of $total correct';
+  }
+
+  @override
+  String lessonCompletePendingReview(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count answers saved for review',
+      one: '1 answer saved for review',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get lessonCompleteNextLesson => 'Next lesson';
+
+  @override
+  String get lessonCompleteBackToUnit => 'Back to unit';
+
+  @override
   String get lessonPlayerNext => 'Next';
 
   @override

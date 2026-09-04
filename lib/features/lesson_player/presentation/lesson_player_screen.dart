@@ -107,6 +107,7 @@ class _LessonPlayerBodyState extends ConsumerState<_LessonPlayerBody> {
   int? _currentIndex;
   ActivitySubmission? _lastSubmission;
   bool _finished = false;
+  final List<ActivityCorrectness> _results = [];
 
   @override
   void initState() {
@@ -169,6 +170,7 @@ class _LessonPlayerBodyState extends ConsumerState<_LessonPlayerBody> {
           lastActivityId: activity.id,
         );
 
+    _results.add(submission.correctness);
     if (mounted) setState(() => _lastSubmission = submission);
   }
 
@@ -202,7 +204,20 @@ class _LessonPlayerBodyState extends ConsumerState<_LessonPlayerBody> {
       return const _LoadingScaffold();
     }
     if (_finished) {
-      return const _LessonCompleteScreen();
+      final lessons = widget.unit.lessons;
+      final currentIndex = lessons.indexWhere((l) => l.id == widget.lesson.id);
+      final nextLesson = currentIndex >= 0 && currentIndex < lessons.length - 1
+          ? lessons[currentIndex + 1]
+          : null;
+      return _LessonCompleteScreen(
+        results: _results,
+        hasNextLesson: nextLesson != null,
+        onNext: nextLesson != null
+            ? () => context.pushReplacement(
+                '/lesson-player/${widget.unitId}/${nextLesson.id}',
+              )
+            : () => context.pop(),
+      );
     }
 
     final l10n = AppLocalizations.of(context)!;
@@ -213,6 +228,13 @@ class _LessonPlayerBodyState extends ConsumerState<_LessonPlayerBody> {
       appBar: AppBar(
         title: Text(
           l10n.lessonPlayerProgress(_currentIndex! + 1, activities.length),
+        ),
+        bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(4),
+          child: LinearProgressIndicator(
+            value: (_currentIndex! + 1) / activities.length,
+            minHeight: 4,
+          ),
         ),
       ),
       body: SafeArea(
@@ -244,12 +266,31 @@ class _LessonPlayerBodyState extends ConsumerState<_LessonPlayerBody> {
 }
 
 class _LessonCompleteScreen extends StatelessWidget {
-  const _LessonCompleteScreen();
+  const _LessonCompleteScreen({
+    required this.results,
+    required this.hasNextLesson,
+    required this.onNext,
+  });
+
+  final List<ActivityCorrectness> results;
+  final bool hasNextLesson;
+  final VoidCallback onNext;
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final colorScheme = Theme.of(context).colorScheme;
+    final correct = results
+        .where((r) => r == ActivityCorrectness.correct)
+        .length;
+    final incorrect = results
+        .where((r) => r == ActivityCorrectness.incorrect)
+        .length;
+    final pending = results
+        .where((r) => r == ActivityCorrectness.notAutoGraded)
+        .length;
+    final scored = correct + incorrect;
+
     return Scaffold(
       body: Center(
         child: Padding(
@@ -264,11 +305,23 @@ class _LessonCompleteScreen extends StatelessWidget {
                 style: Theme.of(context).textTheme.titleLarge,
               ),
               const SizedBox(height: 8),
-              Text(l10n.lessonCompleteBody, textAlign: TextAlign.center),
+              if (scored > 0) Text(l10n.lessonCompleteTally(correct, scored)),
+              if (pending > 0)
+                Padding(
+                  padding: const EdgeInsets.only(top: 4),
+                  child: Text(
+                    l10n.lessonCompletePendingReview(pending),
+                    style: Theme.of(context).textTheme.bodySmall,
+                  ),
+                ),
               const SizedBox(height: 24),
               FilledButton(
-                onPressed: () => context.pop(),
-                child: Text(l10n.lessonCompleteDone),
+                onPressed: onNext,
+                child: Text(
+                  hasNextLesson
+                      ? l10n.lessonCompleteNextLesson
+                      : l10n.lessonCompleteBackToUnit,
+                ),
               ),
             ],
           ),

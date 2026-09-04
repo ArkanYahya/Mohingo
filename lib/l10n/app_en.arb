@@ -138,6 +138,23 @@
   "@lessonCompleteDone": {
     "description": "Button to leave the lesson player after finishing a lesson."
   },
+  "lessonCompleteTally": "{correct} of {total} correct",
+  "@lessonCompleteTally": {
+    "description": "Lesson-complete screen: auto-graded correct/total tally.",
+    "placeholders": {
+      "correct": {"type": "int"},
+      "total": {"type": "int"}
+    }
+  },
+  "lessonCompletePendingReview": "{count, plural, =1{1 answer saved for review} other{{count} answers saved for review}}",
+  "@lessonCompletePendingReview": {
+    "description": "Lesson-complete screen: writing/speaking answers not auto-graded.",
+    "placeholders": {"count": {"type": "int"}}
+  },
+  "lessonCompleteNextLesson": "Next lesson",
+  "@lessonCompleteNextLesson": {"description": "Lesson-complete screen CTA when more lessons remain in the unit."},
+  "lessonCompleteBackToUnit": "Back to unit",
+  "@lessonCompleteBackToUnit": {"description": "Lesson-complete screen CTA when this was the unit's last lesson."},
   "lessonPlayerNext": "Next",
   "@lessonPlayerNext": {
     "description": "Button to advance to the next activity after seeing feedback."

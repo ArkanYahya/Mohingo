@@ -296,6 +296,30 @@ abstract class AppLocalizations {
   /// **'Done'**
   String get lessonCompleteDone;
 
+  /// Lesson-complete screen: auto-graded correct/total tally.
+  ///
+  /// In en, this message translates to:
+  /// **'{correct} of {total} correct'**
+  String lessonCompleteTally(int correct, int total);
+
+  /// Lesson-complete screen: writing/speaking answers not auto-graded.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 answer saved for review} other{{count} answers saved for review}}'**
+  String lessonCompletePendingReview(int count);
+
+  /// Lesson-complete screen CTA when more lessons remain in the unit.
+  ///
+  /// In en, this message translates to:
+  /// **'Next lesson'**
+  String get lessonCompleteNextLesson;
+
+  /// Lesson-complete screen CTA when this was the unit's last lesson.
+  ///
+  /// In en, this message translates to:
+  /// **'Back to unit'**
+  String get lessonCompleteBackToUnit;
+
   /// Button to advance to the next activity after seeing feedback.
   ///
   /// In en, this message translates to:
