@@ -208,6 +208,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get reviewQualityEasy => 'Easy';
 
   @override
+  String get reviewConfidenceSaved => 'Saved';
+
+  @override
   String get grammarDetailForm => 'Form';
 
   @override

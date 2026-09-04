@@ -218,6 +218,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get reviewQualityEasy => 'سهل';
 
   @override
+  String get reviewConfidenceSaved => 'تم الحفظ';
+
+  @override
   String get grammarDetailForm => 'الصيغة';
 
   @override

@@ -404,6 +404,12 @@ abstract class AppLocalizations {
   /// **'Easy'**
   String get reviewQualityEasy;
 
+  /// Confirmation shown briefly after tapping a spaced-review confidence button, before returning to the previous screen.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved'**
+  String get reviewConfidenceSaved;
+
   /// Grammar detail screen field label.
   ///
   /// In en, this message translates to:
