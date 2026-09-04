@@ -36,6 +36,18 @@ dev_dependencies:
   drift_dev: ^2.34.5
   riverpod: ^3.4.2
 
+# permission_handler_android 14.0.0 (a transitive dep of permission_handler
+# ^13.0.1) bumped its own compileSdk requirement to 37 — but Android SDK 37
+# isn't published as a plain, Gradle-resolvable `android-37` platform yet
+# (only preview/dotted revisions like 37.0/37.1/37.2-betaN exist as of this
+# writing), so any app pulling 14.0.0 fails to build with "Failed to find
+# target with hash string 'android-37'" regardless of what compileSdk value
+# the app itself declares. Pinned back to the last working pre-breaking
+# release until Android SDK 37 actually ships as a stable, resolvable
+# platform — see docs/TECH_STACK.md.
+dependency_overrides:
+  permission_handler_android: 13.0.1
+
 flutter:
   uses-material-design: true
   generate: true

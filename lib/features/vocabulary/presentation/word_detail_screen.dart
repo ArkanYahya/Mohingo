@@ -54,10 +54,12 @@ class WordDetailScreen extends ConsumerWidget {
             children: [
               Row(
                 children: [
-                  Text(
-                    item.headword,
-                    textDirection: TextDirection.ltr,
-                    style: Theme.of(context).textTheme.headlineSmall,
+                  Expanded(
+                    child: Text(
+                      item.headword,
+                      textDirection: TextDirection.ltr,
+                      style: Theme.of(context).textTheme.headlineSmall,
+                    ),
                   ),
                   ListenButton(text: item.headword),
                 ],

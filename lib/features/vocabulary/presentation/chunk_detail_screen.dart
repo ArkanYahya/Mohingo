@@ -64,10 +64,12 @@ class ChunkDetailScreen extends ConsumerWidget {
             children: [
               Row(
                 children: [
-                  Text(
-                    item.text,
-                    textDirection: TextDirection.ltr,
-                    style: Theme.of(context).textTheme.headlineSmall,
+                  Expanded(
+                    child: Text(
+                      item.text,
+                      textDirection: TextDirection.ltr,
+                      style: Theme.of(context).textTheme.headlineSmall,
+                    ),
                   ),
                   ListenButton(text: item.text),
                 ],

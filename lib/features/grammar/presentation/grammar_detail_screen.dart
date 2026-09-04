@@ -81,10 +81,12 @@ class GrammarDetailScreen extends ConsumerWidget {
               ),
               Row(
                 children: [
-                  Text(
-                    item.form,
-                    textDirection: TextDirection.ltr,
-                    style: Theme.of(context).textTheme.headlineSmall,
+                  Expanded(
+                    child: Text(
+                      item.form,
+                      textDirection: TextDirection.ltr,
+                      style: Theme.of(context).textTheme.headlineSmall,
+                    ),
                   ),
                   ListenButton(text: item.form),
                 ],
@@ -109,7 +111,12 @@ class GrammarDetailScreen extends ConsumerWidget {
                 for (final example in item.examples) ...[
                   Row(
                     children: [
-                      Text(example.en, textDirection: TextDirection.ltr),
+                      Expanded(
+                        child: Text(
+                          example.en,
+                          textDirection: TextDirection.ltr,
+                        ),
+                      ),
                       ListenButton(text: example.en),
                     ],
                   ),
