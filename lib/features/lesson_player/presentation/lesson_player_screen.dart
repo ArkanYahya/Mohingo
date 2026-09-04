@@ -171,6 +171,17 @@ class _LessonPlayerBodyState extends ConsumerState<_LessonPlayerBody> {
         );
 
     _results.add(submission.correctness);
+    // Invalidated here too, not just in _next()'s finish branch: a learner
+    // who answers some activities and backs out without finishing the
+    // lesson still moves it from "not started" to "in progress" in the
+    // database, and the unit overview (a ref.watch consumer) should reflect
+    // that even though the lesson was never completed.
+    ref.invalidate(
+      lessonProgressForUnitProvider((
+        learnerId: widget.learnerId,
+        unitId: widget.unitId,
+      )),
+    );
     if (mounted) setState(() => _lastSubmission = submission);
   }
 

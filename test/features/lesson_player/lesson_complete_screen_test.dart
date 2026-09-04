@@ -11,8 +11,10 @@ import 'package:mohingo/content/parsing/course_bundle_parser.dart';
 import 'package:mohingo/content/providers/course_content_providers.dart';
 import 'package:mohingo/core/l10n/generated/app_localizations.dart';
 import 'package:mohingo/core/preferences/shared_preferences_provider.dart';
+import 'package:mohingo/core/widgets/status_indicator.dart';
 import 'package:mohingo/data/local/database.dart';
 import 'package:mohingo/data/local/database_provider.dart';
+import 'package:mohingo/features/learning_path/presentation/unit_overview_screen.dart';
 import 'package:mohingo/features/lesson_player/presentation/lesson_player_screen.dart';
 import 'package:mohingo/features/speech/domain/speech_capability_service.dart';
 import 'package:mohingo/features/speech/domain/speech_recognition_service.dart';
@@ -156,4 +158,103 @@ void main() {
     expect(find.text(l10n.lessonCompleteNextLesson), findsOneWidget);
     expect(find.text(l10n.lessonCompleteBackToUnit), findsNothing);
   });
+
+  testWidgets(
+    'answering one activity without finishing the lesson still marks it '
+    'in progress on the unit overview',
+    (tester) async {
+      final db = AppDatabase(NativeDatabase.memory());
+      addTearDown(db.close);
+      final index = _realA1Index();
+      final lesson = index.lessonsById['A1-U0-L1']!;
+      // A1-U0-L1 has 4 activities — answering just the first leaves it
+      // unfinished, the case _next()'s finish branch never sees.
+      expect(lesson.activities.length, greaterThan(1));
+
+      SharedPreferences.setMockInitialValues({});
+      final prefs = await SharedPreferences.getInstance();
+
+      final container = ProviderContainer(
+        overrides: [
+          sharedPreferencesProvider.overrideWithValue(prefs),
+          appDatabaseProvider.overrideWithValue(db),
+          courseContentProvider('a1').overrideWith((ref) async => index),
+          textToSpeechServiceProvider.overrideWithValue(
+            FakeTextToSpeechService(),
+          ),
+          speechCapabilityServiceProvider.overrideWithValue(
+            FakeSpeechCapabilityService(
+              const DeviceSpeechCapabilities(
+                sttAvailableForLocale: false,
+                micPermission: SpeechPermissionStatus.notDetermined,
+              ),
+            ),
+          ),
+        ],
+      );
+      addTearDown(container.dispose);
+
+      final lessonRow = index.unitsById['A1-U0']!.lessons.indexWhere(
+        (l) => l.id == 'A1-U0-L1',
+      );
+      StatusIndicator lessonIndicator() => tester
+          .widgetList<StatusIndicator>(find.byType(StatusIndicator))
+          .elementAt(lessonRow);
+
+      // Pump the unit overview FIRST, so `lessonProgressForUnitProvider`
+      // gets watched and cached with the "not started" baseline — this is
+      // the step that makes the provider non-autoDispose-cached, which is
+      // exactly the condition under which stale data would survive if
+      // _handleSubmitted didn't invalidate it.
+      await tester.pumpWidget(
+        UncontrolledProviderScope(
+          container: container,
+          child: MaterialApp(
+            supportedLocales: AppLocalizations.supportedLocales,
+            localizationsDelegates: AppLocalizations.localizationsDelegates,
+            home: const UnitOverviewScreen(unitId: 'A1-U0'),
+          ),
+        ),
+      );
+      await tester.pumpAndSettle();
+      expect(lessonIndicator().state, ProgressState.notStarted);
+
+      // Same container, switch to the lesson player and answer only the
+      // first activity — the lesson stays unfinished.
+      await tester.pumpWidget(
+        UncontrolledProviderScope(
+          container: container,
+          child: MaterialApp(
+            supportedLocales: AppLocalizations.supportedLocales,
+            localizationsDelegates: AppLocalizations.localizationsDelegates,
+            home: const LessonPlayerScreen(
+              unitId: 'A1-U0',
+              lessonId: 'A1-U0-L1',
+            ),
+          ),
+        ),
+      );
+      await tester.pumpAndSettle();
+      await _answerAndAdvance(tester, lesson.activities.first);
+      await tester.pumpAndSettle();
+      expect(find.byIcon(Icons.celebration), findsNothing);
+
+      // Same container again, back to the unit overview — simulating a
+      // back-navigation without ever reaching LessonPlayerScreen's _next()
+      // finish branch. If _handleSubmitted hadn't invalidated the cached
+      // provider, this would still show notStarted.
+      await tester.pumpWidget(
+        UncontrolledProviderScope(
+          container: container,
+          child: MaterialApp(
+            supportedLocales: AppLocalizations.supportedLocales,
+            localizationsDelegates: AppLocalizations.localizationsDelegates,
+            home: const UnitOverviewScreen(unitId: 'A1-U0'),
+          ),
+        ),
+      );
+      await tester.pumpAndSettle();
+      expect(lessonIndicator().state, ProgressState.inProgress);
+    },
+  );
 }
