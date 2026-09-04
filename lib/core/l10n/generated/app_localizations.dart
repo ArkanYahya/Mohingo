@@ -872,6 +872,18 @@ abstract class AppLocalizations {
   /// **'Done'**
   String get finalAssessmentDone;
 
+  /// Final Assessment result screen — a section's average score as a percentage.
+  ///
+  /// In en, this message translates to:
+  /// **'{percent}%'**
+  String finalAssessmentSectionScore(int percent);
+
+  /// Final Assessment result screen CTA shown when the overall result isn't yet a pass, linking back to the Learn tab.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep practicing'**
+  String get finalAssessmentWhatsNext;
+
   /// Shown when a deep link or stored reference (e.g. a favourited word) points at a word/chunk/grammar/unit id that no longer resolves against the current content bundle.
   ///
   /// In en, this message translates to:

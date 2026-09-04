@@ -353,6 +353,13 @@
   "@finalAssessmentSkillPendingReview": {"description": "Final Assessment per-section status label — shown when a section has a free-response item this app can't auto-grade yet."},
   "finalAssessmentDone": "Done",
   "@finalAssessmentDone": {"description": "Final Assessment result screen dismiss button."},
+  "finalAssessmentSectionScore": "{percent}%",
+  "@finalAssessmentSectionScore": {
+    "description": "Final Assessment result screen — a section's average score as a percentage.",
+    "placeholders": {"percent": {"type": "int"}}
+  },
+  "finalAssessmentWhatsNext": "Keep practicing",
+  "@finalAssessmentWhatsNext": {"description": "Final Assessment result screen CTA shown when the overall result isn't yet a pass, linking back to the Learn tab."},
   "contentNotFoundTitle": "Content not found",
   "@contentNotFoundTitle": {"description": "Shown when a deep link or stored reference (e.g. a favourited word) points at a word/chunk/grammar/unit id that no longer resolves against the current content bundle."},
   "grammarSectionTitle": "Grammar",

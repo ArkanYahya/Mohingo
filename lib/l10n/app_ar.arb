@@ -129,6 +129,8 @@
   "finalAssessmentSkillNotMet": "لم تُحقَّق بعد",
   "finalAssessmentSkillPendingReview": "قيد المراجعة",
   "finalAssessmentDone": "تم",
+  "finalAssessmentSectionScore": "{percent}٪",
+  "finalAssessmentWhatsNext": "واصل التدرّب",
   "contentNotFoundTitle": "لم يتم العثور على المحتوى",
   "grammarSectionTitle": "القواعد",
   "grammarFilterAllUnits": "الكل",

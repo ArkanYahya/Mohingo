@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../content/models/activity.dart';
 import '../../../content/models/capstone.dart';
@@ -15,6 +16,18 @@ import '../../activity_engine/presentation/activity_view_registry.dart';
 import '../../progress/providers/current_learner_provider.dart';
 import '../../progress/providers/progress_providers.dart';
 import '../domain/final_assessment_scoring.dart';
+
+/// Test-only construction path for [_AssessmentResultView] — the class
+/// itself stays private since its only real entry point is
+/// [_FinalAssessmentBodyState]; this just gives widget tests a way to pump
+/// the result view directly without driving a full attempt through.
+@visibleForTesting
+Widget buildFinalAssessmentResultViewForTest({
+  required List<FinalAssessmentSectionResult> results,
+  required bool overallPassed,
+}) {
+  return _AssessmentResultView(results: results, overallPassed: overallPassed);
+}
 
 class _FlatItem {
   const _FlatItem(this.sectionKey, this.activity);
@@ -302,6 +315,13 @@ class _AssessmentResultView extends StatelessWidget {
                 Card(
                   child: ListTile(
                     title: Text(sectionLabel(l10n, result.section)),
+                    subtitle: result.scoredCount > 0
+                        ? Text(
+                            l10n.finalAssessmentSectionScore(
+                              (result.averageScore * 100).round(),
+                            ),
+                          )
+                        : null,
                     trailing: Text(switch (result.status) {
                       FinalAssessmentSectionStatus.passed =>
                         l10n.finalAssessmentSkillPassed,
@@ -313,6 +333,15 @@ class _AssessmentResultView extends StatelessWidget {
                   ),
                 ),
               const SizedBox(height: 16),
+              if (!overallPassed)
+                FilledButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                    context.go('/learn/a1');
+                  },
+                  child: Text(l10n.finalAssessmentWhatsNext),
+                ),
+              const SizedBox(height: 8),
               OutlinedButton(
                 onPressed: () => Navigator.of(context).pop(),
                 child: Text(l10n.finalAssessmentDone),

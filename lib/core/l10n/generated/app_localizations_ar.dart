@@ -476,6 +476,14 @@ class AppLocalizationsAr extends AppLocalizations {
   String get finalAssessmentDone => 'تم';
 
   @override
+  String finalAssessmentSectionScore(int percent) {
+    return '$percent٪';
+  }
+
+  @override
+  String get finalAssessmentWhatsNext => 'واصل التدرّب';
+
+  @override
   String get contentNotFoundTitle => 'لم يتم العثور على المحتوى';
 
   @override

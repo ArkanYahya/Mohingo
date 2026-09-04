@@ -466,6 +466,14 @@ class AppLocalizationsEn extends AppLocalizations {
   String get finalAssessmentDone => 'Done';
 
   @override
+  String finalAssessmentSectionScore(int percent) {
+    return '$percent%';
+  }
+
+  @override
+  String get finalAssessmentWhatsNext => 'Keep practicing';
+
+  @override
   String get contentNotFoundTitle => 'Content not found';
 
   @override
