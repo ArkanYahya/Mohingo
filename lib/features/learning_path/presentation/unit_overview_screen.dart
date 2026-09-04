@@ -10,6 +10,29 @@ import '../../../data/local/database.dart';
 import '../../progress/providers/current_learner_provider.dart';
 import '../../progress/providers/progress_providers.dart';
 
+/// Per-unit lesson-progress rows for one learner — feeds
+/// [_UnitOverviewBody]'s per-lesson [StatusIndicator]s. A watchable provider
+/// rather than a one-shot [Future] so it can be invalidated (see each lesson
+/// row's `onTap`) after returning from the lesson player: the Navigator
+/// keeps this screen mounted across a push/pop, so without an explicit
+/// invalidate a completed lesson's status would stay stale until some
+/// unrelated rebuild happened to occur.
+///
+/// Declared here rather than in a shared providers file since it has exactly
+/// one consumer — see [placementSeedProvider] in `placement_test_screen.dart`
+/// for the same single-consumer-provider-lives-with-its-screen convention.
+final _lessonProgressForUnitProvider =
+    FutureProvider.family<
+      List<LessonProgressData>,
+      ({int learnerId, String unitId})
+    >((ref, params) {
+      final repository = ref.watch(unitLessonProgressRepositoryProvider);
+      return repository.lessonProgressForUnit(
+        learnerId: params.learnerId,
+        unitId: params.unitId,
+      );
+    });
+
 /// Shows one unit's lessons, each with a [StatusIndicator] derived from
 /// whether the learner's recorded position in that lesson has reached its
 /// final activity. Every lesson is always tappable — free access, no hard
@@ -56,15 +79,17 @@ class _UnitOverviewBody extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return FutureBuilder(
-      future: ref
-          .read(unitLessonProgressRepositoryProvider)
-          .lessonProgressForUnit(learnerId: learnerId, unitId: unit.id),
-      builder: (context, snapshot) {
-        final progressByLessonId = {
-          for (final row in snapshot.data ?? const <LessonProgressData>[])
-            row.lessonId: row,
-        };
+    final progressParams = (learnerId: learnerId, unitId: unit.id);
+    final progressAsync = ref.watch(
+      _lessonProgressForUnitProvider(progressParams),
+    );
+
+    return progressAsync.when(
+      loading: () =>
+          const Scaffold(body: Center(child: CircularProgressIndicator())),
+      error: (error, _) => Scaffold(body: Center(child: Text('$error'))),
+      data: (rows) {
+        final progressByLessonId = {for (final row in rows) row.lessonId: row};
 
         return Scaffold(
           appBar: AppBar(title: Text(unit.title)),
@@ -79,9 +104,19 @@ class _UnitOverviewBody extends ConsumerWidget {
                     borderRadius: BorderRadius.circular(12),
                     child: InkWell(
                       borderRadius: BorderRadius.circular(12),
-                      onTap: () => context.push(
-                        '/lesson-player/${unit.id}/${lesson.id}',
-                      ),
+                      onTap: () async {
+                        await context.push(
+                          '/lesson-player/${unit.id}/${lesson.id}',
+                        );
+                        // The Navigator keeps this screen mounted across the
+                        // push/pop, so the provider must be explicitly
+                        // invalidated on return or a freshly completed
+                        // lesson's status would stay stale — see
+                        // [_lessonProgressForUnitProvider]'s doc comment.
+                        ref.invalidate(
+                          _lessonProgressForUnitProvider(progressParams),
+                        );
+                      },
                       child: Padding(
                         padding: const EdgeInsets.all(16),
                         child: Row(
