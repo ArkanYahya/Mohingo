@@ -363,6 +363,17 @@ class AppLocalizationsEn extends AppLocalizations {
   String get testsHomeFutureLevelsTitle => 'A2 and beyond placement';
 
   @override
+  String get testsHomeNotYetTaken => 'Not yet taken';
+
+  @override
+  String get testsHomeInProgress => 'In progress';
+
+  @override
+  String testsHomeCompletedOn(String date) {
+    return 'Completed $date';
+  }
+
+  @override
   String get placementIntroTitle => 'A1 Gateway Placement Test';
 
   @override

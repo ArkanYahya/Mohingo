@@ -692,6 +692,24 @@ abstract class AppLocalizations {
   /// **'A2 and beyond placement'**
   String get testsHomeFutureLevelsTitle;
 
+  /// Tests tab card state line — no attempt exists yet.
+  ///
+  /// In en, this message translates to:
+  /// **'Not yet taken'**
+  String get testsHomeNotYetTaken;
+
+  /// Tests tab card state line — an attempt was started but not completed.
+  ///
+  /// In en, this message translates to:
+  /// **'In progress'**
+  String get testsHomeInProgress;
+
+  /// Tests tab card state line — an attempt was completed on this date.
+  ///
+  /// In en, this message translates to:
+  /// **'Completed {date}'**
+  String testsHomeCompletedOn(String date);
+
   /// Placement test intro screen app bar title.
   ///
   /// In en, this message translates to:

@@ -290,6 +290,15 @@
   "@testsHomeUnitChecksSubtitle": {"description": "Tests tab card subtitle."},
   "testsHomeFutureLevelsTitle": "A2 and beyond placement",
   "@testsHomeFutureLevelsTitle": {"description": "Tests tab card title for a not-yet-built feature — disabled, shown with the app-wide comingSoon label."},
+  "testsHomeNotYetTaken": "Not yet taken",
+  "@testsHomeNotYetTaken": {"description": "Tests tab card state line — no attempt exists yet."},
+  "testsHomeInProgress": "In progress",
+  "@testsHomeInProgress": {"description": "Tests tab card state line — an attempt was started but not completed."},
+  "testsHomeCompletedOn": "Completed {date}",
+  "@testsHomeCompletedOn": {
+    "description": "Tests tab card state line — an attempt was completed on this date.",
+    "placeholders": {"date": {"type": "String"}}
+  },
   "placementIntroTitle": "A1 Gateway Placement Test",
   "@placementIntroTitle": {"description": "Placement test intro screen app bar title."},
   "placementIntroBody": "A few quick questions across the A1 units, from easiest to hardest. We'll stop as soon as we find your starting point — most people finish in a few minutes.",

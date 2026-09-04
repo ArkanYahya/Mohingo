@@ -373,6 +373,17 @@ class AppLocalizationsAr extends AppLocalizations {
   String get testsHomeFutureLevelsTitle => 'تحديد المستوى لما بعد A1';
 
   @override
+  String get testsHomeNotYetTaken => 'لم تبدأ المحاولة بعد';
+
+  @override
+  String get testsHomeInProgress => 'قيد التقدّم';
+
+  @override
+  String testsHomeCompletedOn(String date) {
+    return 'اكتملت المحاولة في $date';
+  }
+
+  @override
   String get placementIntroTitle => 'اختبار تحديد المستوى لـ A1';
 
   @override
