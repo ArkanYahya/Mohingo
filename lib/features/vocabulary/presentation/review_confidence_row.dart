@@ -38,6 +38,7 @@ class _ReviewConfidenceRowState extends ConsumerState<ReviewConfidenceRow> {
   Future<void> _record(ReviewQuality quality) async {
     setState(() => _selected = quality);
     final learner = await ref.read(currentLearnerProvider.future);
+    if (!mounted) return;
     await ref
         .read(vocabularyReviewServiceProvider)
         .recordReview(
@@ -46,8 +47,8 @@ class _ReviewConfidenceRowState extends ConsumerState<ReviewConfidenceRow> {
           chunkId: widget.chunkId,
           quality: quality,
         );
-    ref.invalidate(allVocabularyReviewStateProvider);
     if (!mounted) return;
+    ref.invalidate(allVocabularyReviewStateProvider);
     await Future.delayed(const Duration(milliseconds: 700));
     if (!mounted) return;
     Navigator.of(context).pop();
