@@ -102,6 +102,28 @@
   "@homeAllUnitsMastered": {
     "description": "Shown on Home when there is no next unit to recommend."
   },
+  "homeStreakTitle": "{days, plural, =0{No streak yet} =1{1-day streak} other{{days}-day streak}}",
+  "@homeStreakTitle": {
+    "description": "Home streak card title.",
+    "placeholders": {"days": {"type": "int"}}
+  },
+  "homeStreakEncouragement": "Keep it going today",
+  "@homeStreakEncouragement": {"description": "Home streak card subtitle."},
+  "homeLevelProgressTitle": "A1 progress",
+  "@homeLevelProgressTitle": {"description": "Home level-progress card title."},
+  "homeLevelProgressCaption": "{mastered} of {total} units mastered",
+  "@homeLevelProgressCaption": {
+    "description": "Home level-progress card caption.",
+    "placeholders": {
+      "mastered": {"type": "int"},
+      "total": {"type": "int"}
+    }
+  },
+  "homeReviewDueTitle": "{count, plural, =0{Nothing due for review} =1{1 item due for review} other{{count} items due for review}}",
+  "@homeReviewDueTitle": {
+    "description": "Home review-due card title.",
+    "placeholders": {"count": {"type": "int"}}
+  },
   "lessonCompleteTitle": "Lesson complete",
   "@lessonCompleteTitle": {
     "description": "Shown after finishing the last activity in a lesson."

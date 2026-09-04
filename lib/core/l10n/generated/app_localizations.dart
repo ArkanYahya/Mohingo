@@ -242,6 +242,36 @@ abstract class AppLocalizations {
   /// **'You\'ve mastered every A1 unit so far!'**
   String get homeAllUnitsMastered;
 
+  /// Home streak card title.
+  ///
+  /// In en, this message translates to:
+  /// **'{days, plural, =0{No streak yet} =1{1-day streak} other{{days}-day streak}}'**
+  String homeStreakTitle(int days);
+
+  /// Home streak card subtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep it going today'**
+  String get homeStreakEncouragement;
+
+  /// Home level-progress card title.
+  ///
+  /// In en, this message translates to:
+  /// **'A1 progress'**
+  String get homeLevelProgressTitle;
+
+  /// Home level-progress card caption.
+  ///
+  /// In en, this message translates to:
+  /// **'{mastered} of {total} units mastered'**
+  String homeLevelProgressCaption(int mastered, int total);
+
+  /// Home review-due card title.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{Nothing due for review} =1{1 item due for review} other{{count} items due for review}}'**
+  String homeReviewDueTitle(int count);
+
   /// Shown after finishing the last activity in a lesson.
   ///
   /// In en, this message translates to:

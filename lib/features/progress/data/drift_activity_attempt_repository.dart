@@ -101,4 +101,31 @@ class DriftActivityAttemptRepository implements ActivityAttemptRepository {
         ))
         .get();
   }
+
+  @override
+  Future<int> currentStreakDays({
+    required int learnerId,
+    required DateTime asOf,
+  }) async {
+    final rows =
+        await (_db.selectOnly(_db.activityAttempts)
+              ..addColumns([_db.activityAttempts.attemptedAt])
+              ..where(_db.activityAttempts.learnerId.equals(learnerId)))
+            .get();
+
+    final activeDates = <DateTime>{
+      for (final row in rows)
+        _dateOnly(row.read(_db.activityAttempts.attemptedAt)!),
+    };
+
+    var streak = 0;
+    var day = _dateOnly(asOf);
+    while (activeDates.contains(day)) {
+      streak += 1;
+      day = day.subtract(const Duration(days: 1));
+    }
+    return streak;
+  }
 }
+
+DateTime _dateOnly(DateTime dt) => DateTime(dt.year, dt.month, dt.day);

@@ -18,3 +18,15 @@ final currentLearnerProvider = FutureProvider<Learner>((ref) {
   final repository = ref.watch(learnerRepositoryProvider);
   return repository.getOrCreateLearner();
 });
+
+/// Consecutive days (ending today) the learner has done at least one
+/// activity. Home-only display signal — never used for gating. See
+/// [ActivityAttemptRepository.currentStreakDays].
+final currentStreakDaysProvider = FutureProvider<int>((ref) async {
+  final learner = await ref.watch(currentLearnerProvider.future);
+  final repository = ref.watch(activityAttemptRepositoryProvider);
+  return repository.currentStreakDays(
+    learnerId: learner.id,
+    asOf: DateTime.now(),
+  );
+});

@@ -80,6 +80,12 @@ class _FakeActivityAttemptRepository implements ActivityAttemptRepository {
     required int learnerId,
     required List<String> lessonIds,
   }) async => const [];
+
+  @override
+  Future<int> currentStreakDays({
+    required int learnerId,
+    required DateTime asOf,
+  }) async => throw UnimplementedError('not needed by these tests');
 }
 
 class _FakeUnitLessonProgressRepository

@@ -40,3 +40,9 @@ final dueVocabularyProvider = FutureProvider((ref) async {
   final repository = ref.watch(reviewStateRepositoryProvider);
   return repository.dueVocabulary(learnerId: learner.id, asOf: DateTime.now());
 });
+
+/// Just the count of [dueVocabularyProvider] — Home's review-due card and
+/// the Review nav-tab badge both need only the number, not the rows.
+final dueVocabularyCountProvider = Provider<AsyncValue<int>>((ref) {
+  return ref.watch(dueVocabularyProvider).whenData((items) => items.length);
+});

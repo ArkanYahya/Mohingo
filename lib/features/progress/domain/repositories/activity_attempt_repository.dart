@@ -57,4 +57,14 @@ abstract interface class ActivityAttemptRepository {
     required int learnerId,
     required List<String> lessonIds,
   });
+
+  /// Consecutive calendar days (ending on [asOf]'s date, inclusive) on which
+  /// [learnerId] has at least one attempt. 0 if there's no attempt on
+  /// [asOf]'s own date. Used only for Home's streak display — not a
+  /// mastery/gating signal. See docs/superpowers/specs/
+  /// 2026-09-04-ui-navigation-redesign-design.md.
+  Future<int> currentStreakDays({
+    required int learnerId,
+    required DateTime asOf,
+  });
 }

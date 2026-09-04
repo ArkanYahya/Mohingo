@@ -92,6 +92,41 @@ class AppLocalizationsAr extends AppLocalizations {
   String get homeAllUnitsMastered => 'أتقنت جميع وحدات A1 حتى الآن!';
 
   @override
+  String homeStreakTitle(int days) {
+    String _temp0 = intl.Intl.pluralLogic(
+      days,
+      locale: localeName,
+      other: 'تتابع $days أيام',
+      one: 'تتابع يوم واحد',
+      zero: 'لا يوجد تتابع بعد',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get homeStreakEncouragement => 'واصل اليوم أيضاً';
+
+  @override
+  String get homeLevelProgressTitle => 'تقدّم A1';
+
+  @override
+  String homeLevelProgressCaption(int mastered, int total) {
+    return 'أتقنت $mastered من $total وحدة';
+  }
+
+  @override
+  String homeReviewDueTitle(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count عناصر بحاجة للمراجعة',
+      one: 'عنصر واحد بحاجة للمراجعة',
+      zero: 'لا يوجد شيء بحاجة للمراجعة',
+    );
+    return '$_temp0';
+  }
+
+  @override
   String get lessonCompleteTitle => 'اكتمل الدرس';
 
   @override
