@@ -79,6 +79,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get unitStateNeedsReview => 'Needs review';
 
   @override
+  String get lessonStateCompleted => 'Completed';
+
+  @override
+  String get vocabularyStateLearned => 'Learned';
+
+  @override
   String get unitPathYouAreHere => 'You are here';
 
   @override
@@ -131,13 +137,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get lessonCompleteTitle => 'Lesson complete';
-
-  @override
-  String get lessonCompleteBody =>
-      'Nice work. You can keep going or come back to this unit anytime.';
-
-  @override
-  String get lessonCompleteDone => 'Done';
 
   @override
   String lessonCompleteTally(int correct, int total) {

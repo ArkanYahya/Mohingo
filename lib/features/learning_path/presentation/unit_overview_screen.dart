@@ -8,30 +8,7 @@ import '../../../core/l10n/generated/app_localizations.dart';
 import '../../../core/widgets/status_indicator.dart';
 import '../../../data/local/database.dart';
 import '../../progress/providers/current_learner_provider.dart';
-import '../../progress/providers/progress_providers.dart';
-
-/// Per-unit lesson-progress rows for one learner — feeds
-/// [_UnitOverviewBody]'s per-lesson [StatusIndicator]s. A watchable provider
-/// rather than a one-shot [Future] so it can be invalidated (see each lesson
-/// row's `onTap`) after returning from the lesson player: the Navigator
-/// keeps this screen mounted across a push/pop, so without an explicit
-/// invalidate a completed lesson's status would stay stale until some
-/// unrelated rebuild happened to occur.
-///
-/// Declared here rather than in a shared providers file since it has exactly
-/// one consumer — see [placementSeedProvider] in `placement_test_screen.dart`
-/// for the same single-consumer-provider-lives-with-its-screen convention.
-final _lessonProgressForUnitProvider =
-    FutureProvider.family<
-      List<LessonProgressData>,
-      ({int learnerId, String unitId})
-    >((ref, params) {
-      final repository = ref.watch(unitLessonProgressRepositoryProvider);
-      return repository.lessonProgressForUnit(
-        learnerId: params.learnerId,
-        unitId: params.unitId,
-      );
-    });
+import '../providers/unit_progress_providers.dart';
 
 /// Shows one unit's lessons, each with a [StatusIndicator] derived from
 /// whether the learner's recorded position in that lesson has reached its
@@ -79,9 +56,8 @@ class _UnitOverviewBody extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final progressParams = (learnerId: learnerId, unitId: unit.id);
     final progressAsync = ref.watch(
-      _lessonProgressForUnitProvider(progressParams),
+      lessonProgressForUnitProvider((learnerId: learnerId, unitId: unit.id)),
     );
 
     return progressAsync.when(
@@ -104,29 +80,23 @@ class _UnitOverviewBody extends ConsumerWidget {
                     borderRadius: BorderRadius.circular(12),
                     child: InkWell(
                       borderRadius: BorderRadius.circular(12),
-                      onTap: () async {
-                        await context.push(
-                          '/lesson-player/${unit.id}/${lesson.id}',
-                        );
-                        // The Navigator keeps this screen mounted across the
-                        // push/pop, so the provider must be explicitly
-                        // invalidated on return or a freshly completed
-                        // lesson's status would stay stale — see
-                        // [_lessonProgressForUnitProvider]'s doc comment.
-                        ref.invalidate(
-                          _lessonProgressForUnitProvider(progressParams),
-                        );
-                      },
+                      // No invalidate-on-return here: the lesson player
+                      // invalidates [lessonProgressForUnitProvider] itself
+                      // the moment a lesson is finished, which covers both
+                      // its "Back to unit" (pop) and "Next lesson"
+                      // (pushReplacement) exits. See that provider's doc
+                      // comment.
+                      onTap: () => context.push(
+                        '/lesson-player/${unit.id}/${lesson.id}',
+                      ),
                       child: Padding(
                         padding: const EdgeInsets.all(16),
                         child: Row(
                           children: [
-                            StatusIndicator(
-                              state: _lessonState(
-                                lesson,
-                                progressByLessonId[lesson.id],
-                              ),
-                              size: 20,
+                            _lessonStatusIndicator(
+                              context,
+                              lesson,
+                              progressByLessonId[lesson.id],
                             ),
                             const SizedBox(width: 12),
                             Expanded(
@@ -161,6 +131,26 @@ class _UnitOverviewBody extends ConsumerWidget {
           ),
         );
       },
+    );
+  }
+
+  /// The lesson row's status dot. A finished lesson deliberately announces
+  /// "Completed" rather than the shared "Mastered" label: reaching a
+  /// lesson's last activity is not course mastery as docs/GLOSSARY.md
+  /// defines it (that is `MasteryAggregationService`'s call, made per unit
+  /// against Can-Do evidence). See [StatusIndicator.semanticLabelOverride].
+  Widget _lessonStatusIndicator(
+    BuildContext context,
+    Lesson lesson,
+    LessonProgressData? row,
+  ) {
+    final state = _lessonState(lesson, row);
+    return StatusIndicator(
+      state: state,
+      size: 20,
+      semanticLabelOverride: state == ProgressState.mastered
+          ? AppLocalizations.of(context)!.lessonStateCompleted
+          : null,
     );
   }
 

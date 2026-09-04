@@ -193,7 +193,22 @@ class _LessonPlayerBodyState extends ConsumerState<_LessonPlayerBody> {
           unit: widget.unit,
           masteryPolicy: widget.masteryPolicy,
         );
+    // Invalidation is owned here, at the one place lesson progress actually
+    // changes, rather than by the screens that read it: this lesson player
+    // can exit by `pop` ("Back to unit") *or* `pushReplacement` ("Next
+    // lesson"), and go_router's `pushReplacement` never completes the
+    // replaced route's future — so an invalidate-after-`await context.push`
+    // on the unit overview would stop firing forever after the first "Next
+    // lesson" tap. Every consumer `ref.watch`es these, so they rebuild with
+    // fresh data whichever way the learner leaves.
     ref.invalidate(allUnitProgressProvider);
+    ref.invalidate(
+      lessonProgressForUnitProvider((
+        learnerId: widget.learnerId,
+        unitId: widget.unitId,
+      )),
+    );
+    ref.invalidate(currentStreakDaysProvider);
 
     if (mounted) setState(() => _finished = true);
   }

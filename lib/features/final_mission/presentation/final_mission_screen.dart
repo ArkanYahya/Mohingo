@@ -15,6 +15,7 @@ import '../../activity_engine/domain/evidence_skill_resolver.dart';
 import '../../activity_engine/presentation/activity_view_registry.dart';
 import '../../progress/providers/current_learner_provider.dart';
 import '../../progress/providers/progress_providers.dart';
+import '../../tests_home/providers/tests_home_providers.dart';
 import '../domain/final_mission_scoring.dart';
 
 /// The A1 Final Mission — a scenario-based capstone reusing the bundle's own
@@ -160,6 +161,9 @@ class _FinalMissionBodyState extends ConsumerState<_FinalMissionBody> {
           ),
           outcome: result.passed ? 'passed' : 'notYetComplete',
         );
+    // The Tests tab's final-mission card reads the latest attempt from a
+    // cached provider — refresh it now that this attempt is persisted.
+    ref.invalidate(latestFinalMissionAttemptProvider);
     if (mounted) setState(() => _result = result);
   }
 

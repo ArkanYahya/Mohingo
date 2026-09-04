@@ -17,6 +17,7 @@ import '../../activity_engine/domain/evidence_skill_resolver.dart';
 import '../../activity_engine/presentation/activity_view_registry.dart';
 import '../../progress/providers/current_learner_provider.dart';
 import '../../progress/providers/progress_providers.dart';
+import '../../tests_home/providers/tests_home_providers.dart';
 import '../domain/placement_classifier.dart';
 import '../domain/placement_item_sampler.dart';
 import '../domain/placement_outcome.dart';
@@ -283,6 +284,9 @@ class _PlacementTestBodyState extends ConsumerState<_PlacementTestBody> {
           recommendedUnitId: classification.recommendedUnitId,
           confidenceSelfReportsJson: jsonEncode({'overall': value}),
         );
+    // The Tests tab's placement card reads the latest attempt from a cached
+    // provider — refresh it now that this attempt is persisted.
+    ref.invalidate(latestPlacementAttemptProvider);
     if (mounted) {
       setState(() {
         _classification = classification;

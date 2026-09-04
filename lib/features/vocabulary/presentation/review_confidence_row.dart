@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/l10n/generated/app_localizations.dart';
 import '../../progress/providers/current_learner_provider.dart';
+import '../../review/providers/review_providers.dart';
 import '../domain/spaced_review_scheduler.dart';
 import '../providers/vocabulary_providers.dart';
 
@@ -49,6 +50,10 @@ class _ReviewConfidenceRowState extends ConsumerState<ReviewConfidenceRow> {
         );
     if (!mounted) return;
     ref.invalidate(allVocabularyReviewStateProvider);
+    // The just-reviewed item is no longer due, so Home's review-due card and
+    // the Review nav-tab badge (both fed by `dueVocabularyCountProvider`)
+    // must be recomputed here — nothing else invalidates them.
+    ref.invalidate(dueVocabularyProvider);
     await Future.delayed(const Duration(milliseconds: 700));
     if (!mounted) return;
     Navigator.of(context).pop();

@@ -218,6 +218,18 @@ abstract class AppLocalizations {
   /// **'Needs review'**
   String get unitStateNeedsReview;
 
+  /// Lesson-row status label for a lesson the learner has played to its last activity. Deliberately NOT "Mastered": mastery is course/Can-Do evidence meeting MasteryAggregationService's policy (see docs/GLOSSARY.md), which simply reaching a lesson's end does not establish.
+  ///
+  /// In en, this message translates to:
+  /// **'Completed'**
+  String get lessonStateCompleted;
+
+  /// Vocabulary/chunk row status label for an item recalled enough times to have graduated the spaced-review schedule. Deliberately NOT "Mastered": memorising a word is not course mastery (see docs/GLOSSARY.md).
+  ///
+  /// In en, this message translates to:
+  /// **'Learned'**
+  String get vocabularyStateLearned;
+
   /// Marker on the Learn journey spine showing the learner's current unit.
   ///
   /// In en, this message translates to:
@@ -283,18 +295,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Lesson complete'**
   String get lessonCompleteTitle;
-
-  /// Body text on the lesson-complete screen.
-  ///
-  /// In en, this message translates to:
-  /// **'Nice work. You can keep going or come back to this unit anytime.'**
-  String get lessonCompleteBody;
-
-  /// Button to leave the lesson player after finishing a lesson.
-  ///
-  /// In en, this message translates to:
-  /// **'Done'**
-  String get lessonCompleteDone;
 
   /// Lesson-complete screen: auto-graded correct/total tally.
   ///

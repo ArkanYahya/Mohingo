@@ -14,6 +14,7 @@ import '../../review/providers/review_providers.dart';
 import '../../speech/domain/speech_recognition_service.dart';
 import '../../speech/providers/speech_providers.dart';
 import '../../speech/providers/tts_preferences_provider.dart';
+import '../../tests_home/providers/tests_home_providers.dart';
 import '../../vocabulary/providers/vocabulary_providers.dart';
 
 /// Settings tab landing screen.
@@ -216,6 +217,13 @@ class _ResetProgressButton extends ConsumerWidget {
     ref.invalidate(weakObjectivesProvider);
     ref.invalidate(dueVocabularyProvider);
     ref.invalidate(ensureA1EnrollmentProvider);
+    ref.invalidate(currentStreakDaysProvider);
+    ref.invalidate(latestPlacementAttemptProvider);
+    ref.invalidate(latestFinalMissionAttemptProvider);
+    ref.invalidate(latestFinalAssessmentAttemptProvider);
+    // A family: invalidating the family itself clears every already-built
+    // (learnerId, unitId) instance, which is what a full wipe needs.
+    ref.invalidate(lessonProgressForUnitProvider);
 
     if (context.mounted) {
       ScaffoldMessenger.of(

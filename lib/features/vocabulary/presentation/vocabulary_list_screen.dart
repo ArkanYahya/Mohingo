@@ -284,9 +284,19 @@ class _VocabularyRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return ListTile(
       onTap: onTap,
-      leading: StatusIndicator(state: progressState, size: 20),
+      // A graduated item announces "Learned", not the shared "Mastered"
+      // label: memorising a word is a spaced-review outcome, never course
+      // mastery (see docs/GLOSSARY.md and [ReviewConfidenceRow]).
+      leading: StatusIndicator(
+        state: progressState,
+        size: 20,
+        semanticLabelOverride: progressState == ProgressState.mastered
+            ? l10n.vocabularyStateLearned
+            : null,
+      ),
       title: Text(headword, textDirection: TextDirection.ltr),
       subtitle: Text(arabic, textDirection: TextDirection.rtl),
       trailing: isFavorite

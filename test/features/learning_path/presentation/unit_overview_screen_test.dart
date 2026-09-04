@@ -16,6 +16,9 @@ import 'package:mohingo/core/widgets/status_indicator.dart';
 import 'package:mohingo/data/local/database.dart';
 import 'package:mohingo/data/local/database_provider.dart';
 import 'package:mohingo/features/learning_path/presentation/unit_overview_screen.dart';
+import 'package:mohingo/features/learning_path/providers/unit_progress_providers.dart';
+import 'package:mohingo/features/progress/providers/current_learner_provider.dart';
+import 'package:mohingo/features/progress/providers/progress_providers.dart';
 
 // The brief's sample helper returned `CourseBundleParser.parse(json)`
 // directly (a `CourseBundle`), but `courseContentProvider` — and this
@@ -72,4 +75,78 @@ void main() {
 
     expect(find.byType(StatusIndicator), findsNWidgets(unit.lessons.length));
   });
+
+  // Guards the Fix-1 contract: invalidation of lessonProgressForUnitProvider
+  // is owned by LessonPlayerScreen (which can leave by pop *or*
+  // pushReplacement), and this screen must pick the fresh value up purely
+  // through its `ref.watch`, with no Navigator event of its own. The old
+  // design — `await context.push(...)` then invalidate — could not do this,
+  // because go_router's `pushReplacement` never completes the replaced
+  // route's future.
+  testWidgets(
+    'picks up a lesson finished elsewhere when the shared provider is '
+    'invalidated, and labels it "Completed", not "Mastered"',
+    (tester) async {
+      SharedPreferences.setMockInitialValues({});
+      final prefs = await SharedPreferences.getInstance();
+      final db = AppDatabase(NativeDatabase.memory());
+      addTearDown(db.close);
+
+      final index = await _realA1Index();
+      final unit = index.bundle.units.firstWhere(
+        (u) => u.lessons.any((l) => l.activities.isNotEmpty),
+      );
+      final lesson = unit.lessons.firstWhere((l) => l.activities.isNotEmpty);
+      final lessonRow = unit.lessons.indexOf(lesson);
+
+      final container = ProviderContainer(
+        overrides: [
+          sharedPreferencesProvider.overrideWithValue(prefs),
+          appDatabaseProvider.overrideWithValue(db),
+          courseContentProvider('a1')
+              .overrideWith((ref) async => _realA1Index()),
+        ],
+      );
+      addTearDown(container.dispose);
+
+      await tester.pumpWidget(
+        UncontrolledProviderScope(
+          container: container,
+          child: MaterialApp(
+            locale: const Locale('en'),
+            supportedLocales: AppLocalizations.supportedLocales,
+            localizationsDelegates: AppLocalizations.localizationsDelegates,
+            home: UnitOverviewScreen(unitId: unit.id),
+          ),
+        ),
+      );
+      await tester.pumpAndSettle();
+
+      StatusIndicator indicatorAt(int i) => tester
+          .widgetList<StatusIndicator>(find.byType(StatusIndicator))
+          .elementAt(i);
+
+      expect(indicatorAt(lessonRow).state, ProgressState.notStarted);
+
+      // Exactly what LessonPlayerScreen._next() does once the last activity
+      // is answered: persist the position, then invalidate — from a route
+      // this screen never hears back from.
+      final learner = await container.read(currentLearnerProvider.future);
+      await container
+          .read(unitLessonProgressRepositoryProvider)
+          .recordLessonPosition(
+            learnerId: learner.id,
+            lessonId: lesson.id,
+            unitId: unit.id,
+            lastActivityId: lesson.activities.last.id,
+          );
+      container.invalidate(
+        lessonProgressForUnitProvider((learnerId: learner.id, unitId: unit.id)),
+      );
+      await tester.pumpAndSettle();
+
+      expect(indicatorAt(lessonRow).state, ProgressState.mastered);
+      expect(indicatorAt(lessonRow).semanticLabelOverride, 'Completed');
+    },
+  );
 }

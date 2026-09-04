@@ -79,6 +79,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get unitStateNeedsReview => 'تحتاج مراجعة';
 
   @override
+  String get lessonStateCompleted => 'مكتمل';
+
+  @override
+  String get vocabularyStateLearned => 'محفوظة';
+
+  @override
   String get unitPathYouAreHere => 'أنت هنا';
 
   @override
@@ -139,15 +145,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get lessonCompleteTitle => 'اكتمل الدرس';
 
   @override
-  String get lessonCompleteBody =>
-      'أحسنت. يمكنك المتابعة أو العودة إلى هذه الوحدة في أي وقت.';
-
-  @override
-  String get lessonCompleteDone => 'تم';
-
-  @override
   String lessonCompleteTally(int correct, int total) {
-    return '$correct من $total إجابة صحيحة';
+    return 'الإجابات الصحيحة: $correct من $total';
   }
 
   @override

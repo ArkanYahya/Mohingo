@@ -81,7 +81,6 @@ class _StreakCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    final colorScheme = Theme.of(context).colorScheme;
     final gamification = Theme.of(context).extension<GamificationTheme>()!;
     return Card(
       child: Padding(
@@ -93,7 +92,10 @@ class _StreakCard extends StatelessWidget {
               child: Text(
                 '$days',
                 style: TextStyle(
-                  color: colorScheme.onPrimary,
+                  // Not colorScheme.onPrimary — that is white in the light
+                  // theme and only 3.64:1 on this ground. See
+                  // [GamificationTheme.onStreakAccent].
+                  color: gamification.onStreakAccent,
                   fontWeight: FontWeight.bold,
                 ),
               ),

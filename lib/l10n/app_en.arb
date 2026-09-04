@@ -86,6 +86,14 @@
   "@unitStateMastered": {"description": "Unit progress badge."},
   "unitStateNeedsReview": "Needs review",
   "@unitStateNeedsReview": {"description": "Unit/lesson progress badge — was mastered but evidence or content has gone stale."},
+  "lessonStateCompleted": "Completed",
+  "@lessonStateCompleted": {
+    "description": "Lesson-row status label for a lesson the learner has played to its last activity. Deliberately NOT \"Mastered\": mastery is course/Can-Do evidence meeting MasteryAggregationService's policy (see docs/GLOSSARY.md), which simply reaching a lesson's end does not establish."
+  },
+  "vocabularyStateLearned": "Learned",
+  "@vocabularyStateLearned": {
+    "description": "Vocabulary/chunk row status label for an item recalled enough times to have graduated the spaced-review schedule. Deliberately NOT \"Mastered\": memorising a word is not course mastery (see docs/GLOSSARY.md)."
+  },
   "unitPathYouAreHere": "You are here",
   "@unitPathYouAreHere": {"description": "Marker on the Learn journey spine showing the learner's current unit."},
   "comingSoonLevelBody": "This level isn't available yet. A1 is ready now — start there.",
@@ -129,14 +137,6 @@
   "lessonCompleteTitle": "Lesson complete",
   "@lessonCompleteTitle": {
     "description": "Shown after finishing the last activity in a lesson."
-  },
-  "lessonCompleteBody": "Nice work. You can keep going or come back to this unit anytime.",
-  "@lessonCompleteBody": {
-    "description": "Body text on the lesson-complete screen."
-  },
-  "lessonCompleteDone": "Done",
-  "@lessonCompleteDone": {
-    "description": "Button to leave the lesson player after finishing a lesson."
   },
   "lessonCompleteTally": "{correct} of {total} correct",
   "@lessonCompleteTally": {

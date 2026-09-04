@@ -1,7 +1,7 @@
 > **What this file is:** The visual language — color tokens, type scale, spacing, component states. Without this, every session invents its own shade of blue.
 > **How to use it:** Treat values here as tokens, not suggestions — reference them by name (e.g. `color.primary`) in code rather than hardcoding hex/px values. Add a token here before using a new one in a component.
 
-_Last verified: 2026-09-04 — added StatusIndicator component; corrected streakAccent naming — see the 2026-09-04 UI redesign plan. Replaced the bright Duolingo-style direction with a calm, adult Material 3 system per this session's Decision Gate ("calm visuals, light gamification"); see [ADR 0004](adr/0004-local-only-v1-no-firebase-backend.md). Tokens now map onto Flutter's `ColorScheme` roles instead of ad hoc names, since [TECH_STACK.md](TECH_STACK.md) commits to Material 3 + `ColorScheme` + `ThemeExtension`. Phase 10 confirmed the theme-mode and colour-theme pickers described below are now real, working Settings UI (previously the preference providers existed but nothing exposed them)._
+_Last verified: 2026-09-04 — added StatusIndicator component; corrected streakAccent naming; added the `onStreakAccent` foreground token (fixes a 3.64:1 AA contrast failure on the light-theme streak card) and `StatusIndicator.semanticLabelOverride` (lesson/vocabulary rows no longer announce "Mastered") — see the 2026-09-04 UI redesign plan and its final fix pass. Replaced the bright Duolingo-style direction with a calm, adult Material 3 system per this session's Decision Gate ("calm visuals, light gamification"); see [ADR 0004](adr/0004-local-only-v1-no-firebase-backend.md). Tokens now map onto Flutter's `ColorScheme` roles instead of ad hoc names, since [TECH_STACK.md](TECH_STACK.md) commits to Material 3 + `ColorScheme` + `ThemeExtension`. Phase 10 confirmed the theme-mode and colour-theme pickers described below are now real, working Settings UI (previously the preference providers existed but nothing exposed them)._
 
 # Design System
 
@@ -25,7 +25,7 @@ Generated via `ColorScheme.fromSeed(seedColor: ..., brightness: ...)` — Materi
 
 **Approved alternate seeds (Settings colour-theme picker):** `color.seed.slate-indigo` (`#3F4A7A`), `color.seed.warm-terracotta` (`#8A5238`) — same generation mechanism, swap the seed. No theme may be added ad hoc outside this approved list without updating this doc.
 
-**Gamification token (`ThemeExtension`, not a `ColorScheme` role):** `streakAccent` — a single warm amber (`#B7791F` light / `#D9A441` dark), used *only* for the one streak/progress element on Home per the "light gamification" decision. Deliberately not reused elsewhere, so it doesn't creep into a general accent colour the way the old `color.accent` did.
+**Gamification tokens (`ThemeExtension`, not `ColorScheme` roles):** `streakAccent` — a single warm amber (`#B7791F` light / `#D9A441` dark), used *only* for the one streak/progress element on Home per the "light gamification" decision. Deliberately not reused elsewhere, so it doesn't creep into a general accent colour the way the old `color.accent` did. Its paired foreground is `onStreakAccent` (`#1A1200` light / `#2B1D00` dark) — **always use it for content drawn on `streakAccent`, never `colorScheme.onPrimary`**: `onPrimary` is white in the light theme and computes to only 3.64:1 on `#B7791F`, below the 4.5:1 AA floor in [UX_PRINCIPLES.md](UX_PRINCIPLES.md). The shipped pairs measure 5.10:1 (light) and 7.30:1 (dark).
 
 Exercise feedback (correct/incorrect) is never colour-alone — always paired with an icon + text, per [UX_PRINCIPLES.md](UX_PRINCIPLES.md).
 
@@ -65,6 +65,7 @@ Per component, default / hover(press) / active(selected) / disabled / error stat
   - `inProgress`: half-filled ring icon, `colorScheme.tertiary` color, "In progress" semantic label
   - `needsReview`: refresh icon, `colorScheme.tertiary` color, "Needs review" semantic label
   - `mastered`: filled check circle icon, `colorScheme.primary` color, "Mastered" semantic label
+  - `semanticLabelOverride` replaces the state-derived label (icon/colour unchanged) where "Mastered" would be wrong: lesson rows say "Completed"/"مكتمل" and vocabulary rows say "Learned"/"محفوظة", because only a *unit* reaching `MasteryAggregationService`'s policy is mastery as [GLOSSARY.md](GLOSSARY.md) defines it
 - **Streak/progress indicator (Home only):** the one approved gamification element — `streakAccent` fill, small, non-modal, no animation beyond a subtle count-up; must respect reduced-motion settings per [UX_PRINCIPLES.md](UX_PRINCIPLES.md)
 
 ## Theming rules

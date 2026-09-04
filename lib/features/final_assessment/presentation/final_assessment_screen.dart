@@ -15,6 +15,7 @@ import '../../activity_engine/domain/evidence_skill_resolver.dart';
 import '../../activity_engine/presentation/activity_view_registry.dart';
 import '../../progress/providers/current_learner_provider.dart';
 import '../../progress/providers/progress_providers.dart';
+import '../../tests_home/providers/tests_home_providers.dart';
 import '../domain/final_assessment_scoring.dart';
 
 /// Test-only construction path for [_AssessmentResultView] — the class
@@ -201,6 +202,9 @@ class _FinalAssessmentBodyState extends ConsumerState<_FinalAssessmentBody> {
             'requiredSkills': widget.assessment.requiredSkills,
           }),
         );
+    // The Tests tab's final-assessment card reads the latest attempt from a
+    // cached provider — refresh it now that this attempt is persisted.
+    ref.invalidate(latestFinalAssessmentAttemptProvider);
     if (mounted) setState(() => _results = results);
   }
 
@@ -333,7 +337,10 @@ class _AssessmentResultView extends StatelessWidget {
                   ),
                 ),
               const SizedBox(height: 16),
-              if (!overallPassed)
+              // The spacer lives inside the conditional so the pass path —
+              // where this button isn't rendered at all — doesn't leave a
+              // stray gap above "Done".
+              if (!overallPassed) ...[
                 FilledButton(
                   onPressed: () {
                     Navigator.of(context).pop();
@@ -341,7 +348,8 @@ class _AssessmentResultView extends StatelessWidget {
                   },
                   child: Text(l10n.finalAssessmentWhatsNext),
                 ),
-              const SizedBox(height: 8),
+                const SizedBox(height: 8),
+              ],
               OutlinedButton(
                 onPressed: () => Navigator.of(context).pop(),
                 child: Text(l10n.finalAssessmentDone),
