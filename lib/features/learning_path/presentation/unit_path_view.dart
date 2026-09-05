@@ -1,4 +1,3 @@
-import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -7,6 +6,7 @@ import '../../../content/models/curriculum_structure.dart';
 import '../../../content/providers/course_content_providers.dart';
 import '../../../core/l10n/generated/app_localizations.dart';
 import '../../../core/widgets/status_indicator.dart';
+import '../domain/current_unit_selector.dart';
 import '../providers/unit_progress_providers.dart';
 
 /// The A1 guided unit path (U0-U12), rendered as a vertical journey spine:
@@ -24,6 +24,7 @@ class UnitPathView extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final contentAsync = ref.watch(courseContentProvider('a1'));
     final progressAsync = ref.watch(allUnitProgressProvider);
+    final lessonProgressAsync = ref.watch(allLessonProgressProvider);
 
     return Scaffold(
       appBar: AppBar(title: const Text('A1')),
@@ -35,14 +36,15 @@ class UnitPathView extends ConsumerWidget {
             for (final p in progressAsync.value ?? const []) p.unitId: p,
           };
           final units = index.bundle.units;
-          final masteredIds = {
+          final masteredIds = <String>{
             for (final p in progressByUnitId.values)
               if (p.state == 'mastered') p.unitId,
           };
-          final currentUnitId = units
-              .where((u) => !masteredIds.contains(u.id))
-              .firstOrNull
-              ?.id;
+          final currentUnit = currentUnitId(
+            units: units,
+            masteredUnitIds: masteredIds,
+            allLessonProgress: lessonProgressAsync.value ?? const [],
+          );
 
           return ListView.builder(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
@@ -53,7 +55,7 @@ class UnitPathView extends ConsumerWidget {
                 unit: unit,
                 state: ProgressState.fromRaw(progressByUnitId[unit.id]?.state),
                 isMilestone: unit.lessons.any((l) => l.lessonType == 'mission'),
-                isCurrent: unit.id == currentUnitId,
+                isCurrent: unit.id == currentUnit,
                 isFirst: i == 0,
                 isLast: i == units.length - 1,
                 onTap: () => context.go('/learn/a1/unit/${unit.id}'),

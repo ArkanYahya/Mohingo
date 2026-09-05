@@ -50,6 +50,11 @@ abstract interface class UnitLessonProgressRepository {
     required String unitId,
   });
 
+  /// Every lesson-progress row for one learner, across all units — used to
+  /// find their most recently active unit (see `currentUnitId`) without one
+  /// query per unit.
+  Future<List<LessonProgressData>> allLessonProgress({required int learnerId});
+
   /// Written after every meaningful lesson-player event (not just at lesson
   /// end) so the app can resume safely after being killed mid-lesson. See
   /// docs/DATA_MODEL.md.

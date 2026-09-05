@@ -90,6 +90,13 @@ class DriftUnitLessonProgressRepository
   }
 
   @override
+  Future<List<LessonProgressData>> allLessonProgress({required int learnerId}) {
+    return (_db.select(
+      _db.lessonProgress,
+    )..where((t) => t.learnerId.equals(learnerId))).get();
+  }
+
+  @override
   Future<void> recordLessonPosition({
     required int learnerId,
     required String lessonId,

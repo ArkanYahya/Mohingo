@@ -1,4 +1,3 @@
-import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -6,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import '../../../content/providers/course_content_providers.dart';
 import '../../../core/l10n/generated/app_localizations.dart';
 import '../../../core/theme/gamification_theme_extension.dart';
+import '../../learning_path/domain/current_unit_selector.dart';
 import '../../learning_path/providers/unit_progress_providers.dart';
 import '../../progress/providers/current_learner_provider.dart';
 import '../../review/providers/review_providers.dart';
@@ -21,6 +21,7 @@ class HomeScreen extends ConsumerWidget {
     final l10n = AppLocalizations.of(context)!;
     final contentAsync = ref.watch(courseContentProvider('a1'));
     final progressAsync = ref.watch(allUnitProgressProvider);
+    final lessonProgressAsync = ref.watch(allLessonProgressProvider);
     final streakAsync = ref.watch(currentStreakDaysProvider);
     final dueCountAsync = ref.watch(dueVocabularyCountProvider);
 
@@ -30,15 +31,20 @@ class HomeScreen extends ConsumerWidget {
         loading: () => const Center(child: CircularProgressIndicator()),
         error: (error, _) => Center(child: Text('$error')),
         data: (index) {
-          final masteredUnitIds = {
+          final masteredUnitIds = <String>{
             for (final p in progressAsync.value ?? const [])
               if (p.state == 'mastered') p.unitId,
           };
           final totalUnits = index.bundle.units.length;
           final masteredCount = masteredUnitIds.length;
-          final nextUnit = index.bundle.units
-              .where((u) => !masteredUnitIds.contains(u.id))
-              .firstOrNull;
+          final currentUnit = currentUnitId(
+            units: index.bundle.units,
+            masteredUnitIds: masteredUnitIds,
+            allLessonProgress: lessonProgressAsync.value ?? const [],
+          );
+          final nextUnit = currentUnit == null
+              ? null
+              : index.unitsById[currentUnit];
 
           return ListView(
             padding: const EdgeInsets.all(16),

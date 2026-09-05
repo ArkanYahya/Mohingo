@@ -182,6 +182,17 @@ class _LessonPlayerBodyState extends ConsumerState<_LessonPlayerBody> {
         unitId: widget.unitId,
       )),
     );
+    ref.invalidate(
+      lessonAttemptsForUnitProvider((
+        learnerId: widget.learnerId,
+        unitId: widget.unitId,
+      )),
+    );
+    // Also invalidated on every submission (not just at lesson finish): the
+    // Learn spine's/Home's "current unit" position is meant to follow
+    // wherever the learner is actually active right now, not just where
+    // they last fully finished a lesson.
+    ref.invalidate(allLessonProgressProvider);
     if (mounted) setState(() => _lastSubmission = submission);
   }
 

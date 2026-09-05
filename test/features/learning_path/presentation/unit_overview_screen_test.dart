@@ -8,6 +8,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:mohingo/content/index/course_content_index.dart';
+import 'package:mohingo/content/models/domain_definitions.dart';
 import 'package:mohingo/content/parsing/course_bundle_parser.dart';
 import 'package:mohingo/content/providers/course_content_providers.dart';
 import 'package:mohingo/core/l10n/generated/app_localizations.dart';
@@ -149,4 +150,75 @@ void main() {
       expect(indicatorAt(lessonRow).semanticLabelOverride, 'Completed');
     },
   );
+
+  testWidgets('a finished lesson with a wrong answer shows needsReview, not '
+      'mastered — the reported bug: "2 wrong" still showed the finished icon', (
+    tester,
+  ) async {
+    SharedPreferences.setMockInitialValues({});
+    final prefs = await SharedPreferences.getInstance();
+    final db = AppDatabase(NativeDatabase.memory());
+    addTearDown(db.close);
+
+    final index = await _realA1Index();
+    final unit = index.bundle.units.firstWhere(
+      (u) => u.lessons.any((l) => l.activities.isNotEmpty),
+    );
+    final lesson = unit.lessons.firstWhere((l) => l.activities.isNotEmpty);
+    final lessonRow = unit.lessons.indexOf(lesson);
+    final firstActivity = lesson.activities.first;
+
+    final container = ProviderContainer(
+      overrides: [
+        sharedPreferencesProvider.overrideWithValue(prefs),
+        appDatabaseProvider.overrideWithValue(db),
+        courseContentProvider('a1').overrideWith((ref) async => _realA1Index()),
+      ],
+    );
+    addTearDown(container.dispose);
+    final learner = await container.read(currentLearnerProvider.future);
+
+    // Finish the lesson, but with its first activity recorded wrong.
+    await container
+        .read(activityAttemptRepositoryProvider)
+        .recordAttempt(
+          learnerId: learner.id,
+          activityId: firstActivity.id,
+          lessonId: lesson.id,
+          sessionType: 'lesson',
+          mode: ActivityMode.mastery,
+          evidenceSkill: firstActivity.skill,
+          canDoIds: firstActivity.canDo,
+          isCorrect: false,
+        );
+    await container
+        .read(unitLessonProgressRepositoryProvider)
+        .recordLessonPosition(
+          learnerId: learner.id,
+          lessonId: lesson.id,
+          unitId: unit.id,
+          lastActivityId: lesson.activities.last.id,
+        );
+
+    await tester.pumpWidget(
+      UncontrolledProviderScope(
+        container: container,
+        child: MaterialApp(
+          locale: const Locale('en'),
+          supportedLocales: AppLocalizations.supportedLocales,
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          home: UnitOverviewScreen(unitId: unit.id),
+        ),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    final indicator = tester
+        .widgetList<StatusIndicator>(find.byType(StatusIndicator))
+        .elementAt(lessonRow);
+    expect(indicator.state, ProgressState.needsReview);
+    // needsReview keeps StatusIndicator's own default label — no
+    // "Completed" override, unlike the all-correct mastered case.
+    expect(indicator.semanticLabelOverride, null);
+  });
 }

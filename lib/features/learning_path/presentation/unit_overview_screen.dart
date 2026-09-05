@@ -8,6 +8,7 @@ import '../../../core/l10n/generated/app_localizations.dart';
 import '../../../core/widgets/status_indicator.dart';
 import '../../../data/local/database.dart';
 import '../../progress/providers/current_learner_provider.dart';
+import '../domain/lesson_status_selector.dart';
 import '../providers/unit_progress_providers.dart';
 
 /// Shows one unit's lessons, each with a [StatusIndicator] derived from
@@ -59,6 +60,9 @@ class _UnitOverviewBody extends ConsumerWidget {
     final progressAsync = ref.watch(
       lessonProgressForUnitProvider((learnerId: learnerId, unitId: unit.id)),
     );
+    final attemptsAsync = ref.watch(
+      lessonAttemptsForUnitProvider((learnerId: learnerId, unitId: unit.id)),
+    );
 
     return progressAsync.when(
       loading: () =>
@@ -66,6 +70,7 @@ class _UnitOverviewBody extends ConsumerWidget {
       error: (error, _) => Scaffold(body: Center(child: Text('$error'))),
       data: (rows) {
         final progressByLessonId = {for (final row in rows) row.lessonId: row};
+        final lessonAttempts = attemptsAsync.value ?? const [];
 
         return Scaffold(
           appBar: AppBar(title: Text(unit.title)),
@@ -97,6 +102,7 @@ class _UnitOverviewBody extends ConsumerWidget {
                               context,
                               lesson,
                               progressByLessonId[lesson.id],
+                              lessonAttempts,
                             ),
                             const SizedBox(width: 12),
                             Expanded(
@@ -134,17 +140,24 @@ class _UnitOverviewBody extends ConsumerWidget {
     );
   }
 
-  /// The lesson row's status dot. A finished lesson deliberately announces
-  /// "Completed" rather than the shared "Mastered" label: reaching a
-  /// lesson's last activity is not course mastery as docs/GLOSSARY.md
-  /// defines it (that is `MasteryAggregationService`'s call, made per unit
-  /// against Can-Do evidence). See [StatusIndicator.semanticLabelOverride].
+  /// The lesson row's status dot. A finished, all-correct lesson
+  /// deliberately announces "Completed" rather than the shared "Mastered"
+  /// label: reaching a lesson's last activity is not course mastery as
+  /// docs/GLOSSARY.md defines it (that is `MasteryAggregationService`'s
+  /// call, made per unit against Can-Do evidence). A finished lesson with
+  /// at least one wrong answer shows `needsReview` instead, using its own
+  /// default "Needs review" label — see [lessonStatus].
   Widget _lessonStatusIndicator(
     BuildContext context,
     Lesson lesson,
     LessonProgressData? row,
+    List<ActivityAttempt> lessonAttempts,
   ) {
-    final state = _lessonState(lesson, row);
+    final state = lessonStatus(
+      lesson: lesson,
+      progress: row,
+      lessonAttempts: lessonAttempts,
+    );
     return StatusIndicator(
       state: state,
       size: 20,
@@ -152,21 +165,5 @@ class _UnitOverviewBody extends ConsumerWidget {
           ? AppLocalizations.of(context)!.lessonStateCompleted
           : null,
     );
-  }
-
-  /// A lesson with no recorded position is [ProgressState.notStarted]; one
-  /// whose last recorded activity is its final activity is
-  /// [ProgressState.mastered] (the lesson player's own "reached the last
-  /// activity" resume rule — see `lesson_player_screen.dart`); anything else
-  /// recorded is [ProgressState.inProgress].
-  ProgressState _lessonState(Lesson lesson, LessonProgressData? row) {
-    if (row == null || lesson.activities.isEmpty) {
-      return ProgressState.notStarted;
-    }
-    final lastActivityId = row.lastActivityId;
-    if (lastActivityId != null && lastActivityId == lesson.activities.last.id) {
-      return ProgressState.mastered;
-    }
-    return ProgressState.inProgress;
   }
 }
