@@ -63,6 +63,8 @@ class FakeSpeechRecognitionService implements SpeechRecognitionService {
 
 class FakeTextToSpeechService implements TextToSpeechService {
   final List<String> spoken = [];
+  final _playbackStateController =
+      StreamController<TtsPlaybackState>.broadcast();
 
   @override
   Future<List<TtsVoice>> availableVoicesForLocale(String localeCode) async =>
@@ -83,5 +85,11 @@ class FakeTextToSpeechService implements TextToSpeechService {
   Future<void> stop() async {}
 
   @override
-  Stream<TtsPlaybackState> get playbackState => const Stream.empty();
+  Stream<TtsPlaybackState> get playbackState => _playbackStateController.stream;
+
+  /// Test hook: simulates the on-device TTS engine reporting a playback
+  /// state change (e.g. `TtsPlaybackState.error`, to test a silent/broken
+  /// engine).
+  void emitPlaybackState(TtsPlaybackState state) =>
+      _playbackStateController.add(state);
 }

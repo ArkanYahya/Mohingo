@@ -62,6 +62,10 @@
   "@activitySpeechUnavailableUseWriting": {
     "description": "Shown on a speak activity's typed-answer accessibility fallback. Never phrased as a permanent limitation of the learner's ability, only the device/build."
   },
+  "activityShowTranscript": "Show transcript",
+  "@activityShowTranscript": {
+    "description": "Button on a listening activity's audio card that reveals the hidden transcript text on demand."
+  },
   "activityWordGuide": "About {min}-{max} words",
   "@activityWordGuide": {
     "description": "Suggested word count range for a writing activity.",

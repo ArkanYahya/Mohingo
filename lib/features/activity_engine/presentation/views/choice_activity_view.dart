@@ -1,11 +1,16 @@
+import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../content/models/activity.dart';
 import '../../../../content/models/media_specification.dart';
+import '../../../../core/l10n/generated/app_localizations.dart';
 import '../../../../core/media/scene_diagram.dart';
+import '../../../speech/domain/text_to_speech_service.dart';
 import '../../../speech/presentation/listen_button.dart';
+import '../../../speech/providers/speech_providers.dart';
 import '../../domain/activity_submission.dart';
 import '../activity_chrome.dart';
 
@@ -115,17 +120,50 @@ class _ChoiceActivityViewState extends State<ChoiceActivityView> {
 
 /// Plays [transcript] aloud via on-device TTS ([ListenButton]) — the
 /// bundle ships no pre-recorded audio, so this transcript is the only
-/// source for what a listening activity's audio actually says. The
-/// transcript text itself always stays visible too, never audio-only: an
+/// source for what a listening activity's audio actually says.
+///
+/// The transcript text stays hidden by default — showing it defeats the
+/// point of a listening exercise — but the learner can reveal it manually
+/// at any time via [AppLocalizations.activityShowTranscript]. It also
+/// auto-reveals the moment the TTS engine reports a playback error: an
 /// unavailable/silent TTS engine (see docs/TESTING.md — not verified on a
 /// real device) must never leave the activity unusable.
-class _AudioTranscriptCard extends StatelessWidget {
+class _AudioTranscriptCard extends ConsumerStatefulWidget {
   const _AudioTranscriptCard({required this.transcript});
 
   final String transcript;
 
   @override
+  ConsumerState<_AudioTranscriptCard> createState() =>
+      _AudioTranscriptCardState();
+}
+
+class _AudioTranscriptCardState extends ConsumerState<_AudioTranscriptCard> {
+  bool _revealed = false;
+  StreamSubscription<TtsPlaybackState>? _playbackSubscription;
+
+  @override
+  void initState() {
+    super.initState();
+    _playbackSubscription = ref
+        .read(textToSpeechServiceProvider)
+        .playbackState
+        .listen((state) {
+          if (state == TtsPlaybackState.error && mounted) {
+            setState(() => _revealed = true);
+          }
+        });
+  }
+
+  @override
+  void dispose() {
+    _playbackSubscription?.cancel();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final colorScheme = Theme.of(context).colorScheme;
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 4),
@@ -136,14 +174,19 @@ class _AudioTranscriptCard extends StatelessWidget {
       child: Row(
         children: [
           const SizedBox(width: 8),
-          ListenButton(text: transcript),
+          ListenButton(text: widget.transcript),
           const SizedBox(width: 4),
           Expanded(
-            child: Text(
-              transcript,
-              textDirection: TextDirection.ltr,
-              style: Theme.of(context).textTheme.bodyMedium,
-            ),
+            child: _revealed
+                ? Text(
+                    widget.transcript,
+                    textDirection: TextDirection.ltr,
+                    style: Theme.of(context).textTheme.bodyMedium,
+                  )
+                : TextButton(
+                    onPressed: () => setState(() => _revealed = true),
+                    child: Text(l10n.activityShowTranscript),
+                  ),
           ),
         ],
       ),

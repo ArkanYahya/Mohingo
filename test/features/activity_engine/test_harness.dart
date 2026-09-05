@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mohingo/core/l10n/generated/app_localizations.dart';
+import 'package:mohingo/features/speech/domain/text_to_speech_service.dart';
 import 'package:mohingo/features/speech/providers/speech_providers.dart';
 // `Override` isn't part of flutter_riverpod's public export surface (an
 // explicit `show` list omits it) — it's only exported from this path.
@@ -16,14 +17,21 @@ import '../speech/fake_speech_services.dart';
 /// [ListenButton], which needs `textToSpeechServiceProvider` resolvable.
 /// Real device plugins have no platform to respond to in `flutter test`;
 /// see docs/TESTING.md.
+///
+/// Pass [textToSpeechService] instead of putting a `textToSpeechServiceProvider`
+/// override in [overrides] directly — a provider can't be overridden twice
+/// in one container, and this widget already provides the default one.
 Widget wrapForTest(
   Widget child, {
   Locale locale = const Locale('en'),
   List<Override> overrides = const [],
+  TextToSpeechService? textToSpeechService,
 }) {
   return ProviderScope(
     overrides: [
-      textToSpeechServiceProvider.overrideWithValue(FakeTextToSpeechService()),
+      textToSpeechServiceProvider.overrideWithValue(
+        textToSpeechService ?? FakeTextToSpeechService(),
+      ),
       ...overrides,
     ],
     child: MaterialApp(
@@ -40,5 +48,13 @@ extension PumpActivityView on WidgetTester {
     Widget child, {
     Locale locale = const Locale('en'),
     List<Override> overrides = const [],
-  }) => pumpWidget(wrapForTest(child, locale: locale, overrides: overrides));
+    TextToSpeechService? textToSpeechService,
+  }) => pumpWidget(
+    wrapForTest(
+      child,
+      locale: locale,
+      overrides: overrides,
+      textToSpeechService: textToSpeechService,
+    ),
+  );
 }

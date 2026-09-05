@@ -13,6 +13,7 @@
   "activityFeedbackIncorrectWithAnswer": "ليست صحيحة — الإجابة الصحيحة هي: {correctAnswer}",
   "activityFeedbackSavedForReview": "تم الحفظ — سيُراجَع لاحقاً ولن يُصحَّح تلقائياً.",
   "activitySpeechUnavailableUseWriting": "التحدث غير متاح على هذا الجهاز حالياً — اكتب إجابتك بدلاً من ذلك.",
+  "activityShowTranscript": "عرض النص",
   "activityWordGuide": "من {min} إلى {max} كلمة تقريباً",
   "contentErrorTitle": "تعذّر تحميل الدروس",
   "contentErrorBody": "حدث خطأ أثناء تحميل محتوى الدورة. جرّب إعادة تثبيت التطبيق؛ تقدّمك محفوظ بشكل منفصل ولن يُفقد.",

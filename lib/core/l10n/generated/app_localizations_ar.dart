@@ -55,6 +55,9 @@ class AppLocalizationsAr extends AppLocalizations {
       'التحدث غير متاح على هذا الجهاز حالياً — اكتب إجابتك بدلاً من ذلك.';
 
   @override
+  String get activityShowTranscript => 'عرض النص';
+
+  @override
   String activityWordGuide(int min, int max) {
     return 'من $min إلى $max كلمة تقريباً';
   }

@@ -3,10 +3,13 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mohingo/content/models/activity.dart';
 import 'package:mohingo/content/models/domain_definitions.dart';
 import 'package:mohingo/content/models/media_specification.dart';
+import 'package:mohingo/core/l10n/generated/app_localizations.dart';
 import 'package:mohingo/core/media/scene_diagram.dart';
 import 'package:mohingo/features/activity_engine/domain/activity_submission.dart';
 import 'package:mohingo/features/activity_engine/presentation/views/choice_activity_view.dart';
+import 'package:mohingo/features/speech/domain/text_to_speech_service.dart';
 
+import '../speech/fake_speech_services.dart';
 import 'test_harness.dart';
 
 AudioChoiceActivity _audioChoice({bool mediaOptions = false}) {
@@ -26,9 +29,28 @@ AudioChoiceActivity _audioChoice({bool mediaOptions = false}) {
 }
 
 void main() {
-  testWidgets(
-    'renders prompt, promptAr, options, and the transcript help card',
-    (tester) async {
+  testWidgets('renders prompt, promptAr, options, and the transcript help card '
+      'with the transcript text hidden until revealed', (tester) async {
+    await tester.pumpActivityView(
+      ChoiceActivityView.audioChoice(
+        activity: _audioChoice(),
+        onSubmitted: (_) {},
+      ),
+    );
+
+    expect(find.text("What's the man's name?"), findsOneWidget);
+    expect(find.text('ما اسم الرجل؟'), findsOneWidget);
+    expect(find.text('Omar'), findsOneWidget);
+    expect(find.text('Maya'), findsOneWidget);
+    // The transcript is the whole point of a listening exercise — it must
+    // not be readable before the learner chooses to reveal it.
+    expect(find.text("Hi, I'm Omar."), findsNothing);
+  });
+
+  group('audio transcript reveal', () {
+    testWidgets('tapping "Show transcript" reveals the transcript text', (
+      tester,
+    ) async {
       await tester.pumpActivityView(
         ChoiceActivityView.audioChoice(
           activity: _audioChoice(),
@@ -36,13 +58,33 @@ void main() {
         ),
       );
 
-      expect(find.text("What's the man's name?"), findsOneWidget);
-      expect(find.text('ما اسم الرجل؟'), findsOneWidget);
-      expect(find.text('Omar'), findsOneWidget);
-      expect(find.text('Maya'), findsOneWidget);
+      final l10n = AppLocalizations.of(tester.element(find.byType(Scaffold)))!;
+      await tester.tap(find.text(l10n.activityShowTranscript));
+      await tester.pump();
+
       expect(find.text("Hi, I'm Omar."), findsOneWidget);
-    },
-  );
+      expect(find.text(l10n.activityShowTranscript), findsNothing);
+    });
+
+    testWidgets('a TTS playback error auto-reveals the transcript, so a broken '
+        'engine never leaves the exercise unusable', (tester) async {
+      final fakeTts = FakeTextToSpeechService();
+      await tester.pumpActivityView(
+        ChoiceActivityView.audioChoice(
+          activity: _audioChoice(),
+          onSubmitted: (_) {},
+        ),
+        textToSpeechService: fakeTts,
+      );
+
+      expect(find.text("Hi, I'm Omar."), findsNothing);
+
+      fakeTts.emitPlaybackState(TtsPlaybackState.error);
+      await tester.pump();
+
+      expect(find.text("Hi, I'm Omar."), findsOneWidget);
+    });
+  });
 
   testWidgets('submit button is disabled until an option is selected', (
     tester,

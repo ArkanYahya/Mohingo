@@ -176,6 +176,12 @@ abstract class AppLocalizations {
   /// **'Speaking practice isn\'t available on this device yet — type your answer instead.'**
   String get activitySpeechUnavailableUseWriting;
 
+  /// Button on a listening activity's audio card that reveals the hidden transcript text on demand.
+  ///
+  /// In en, this message translates to:
+  /// **'Show transcript'**
+  String get activityShowTranscript;
+
   /// Suggested word count range for a writing activity.
   ///
   /// In en, this message translates to:

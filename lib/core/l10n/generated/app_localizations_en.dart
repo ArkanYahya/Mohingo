@@ -55,6 +55,9 @@ class AppLocalizationsEn extends AppLocalizations {
       'Speaking practice isn\'t available on this device yet — type your answer instead.';
 
   @override
+  String get activityShowTranscript => 'Show transcript';
+
+  @override
   String activityWordGuide(int min, int max) {
     return 'About $min-$max words';
   }
