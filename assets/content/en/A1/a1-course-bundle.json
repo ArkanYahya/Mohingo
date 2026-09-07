@@ -8833,7 +8833,24 @@
               "promptAr": "قل مرحباً واطلب الانضمام إلى صف الإنجليزية.",
               "accepted": [],
               "evaluation": {
-                "type": "nonEmpty"
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "hello",
+                    "hi",
+                    "good morning",
+                    "good afternoon",
+                    "good evening"
+                  ],
+                  [
+                    "join",
+                    "register",
+                    "class",
+                    "english",
+                    "sign up"
+                  ]
+                ],
+                "minGroupsMatched": 2
               },
               "fallbackSkill": "writing"
             }
