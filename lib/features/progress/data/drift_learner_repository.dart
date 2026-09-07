@@ -54,4 +54,16 @@ class DriftLearnerRepository implements LearnerRepository {
           ),
         );
   }
+
+  @override
+  Future<void> updateName({
+    required int learnerId,
+    required String name,
+  }) async {
+    await (_db.update(
+      _db.learners,
+    )..where((t) => t.id.equals(learnerId))).write(
+      LearnersCompanion(name: Value(name.trim().isEmpty ? null : name.trim())),
+    );
+  }
 }

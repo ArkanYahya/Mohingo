@@ -43,11 +43,17 @@ class AppDatabase extends _$AppDatabase {
   AppDatabase.defaults() : super(driftDatabase(name: 'mohingo_progress'));
 
   @override
-  int get schemaVersion => 1;
+  int get schemaVersion => 2;
 
   @override
-  MigrationStrategy get migration =>
-      MigrationStrategy(onCreate: (migrator) => migrator.createAll());
+  MigrationStrategy get migration => MigrationStrategy(
+    onCreate: (migrator) => migrator.createAll(),
+    onUpgrade: (migrator, from, to) async {
+      if (from < 2) {
+        await migrator.addColumn(learners, learners.name);
+      }
+    },
+  );
 
   /// Erases every progress row for [learnerId] — mastery evidence, attempt
   /// history (lesson/placement/mission/assessment alike), vocabulary/grammar

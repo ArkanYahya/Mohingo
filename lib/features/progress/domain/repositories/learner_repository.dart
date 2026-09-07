@@ -22,4 +22,9 @@ abstract interface class LearnerRepository {
     required String courseId,
     required String contentVersion,
   });
+
+  /// Sets [learnerId]'s display name — used by the `letterSequence`
+  /// evaluator's `profileName` reference. Passing an empty string clears it
+  /// back to unset.
+  Future<void> updateName({required int learnerId, required String name});
 }

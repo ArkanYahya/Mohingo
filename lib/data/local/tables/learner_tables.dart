@@ -10,6 +10,7 @@ import 'package:drift/drift.dart';
 class Learners extends Table {
   IntColumn get id => integer().autoIncrement()();
   TextColumn get uuid => text().unique()();
+  TextColumn get name => text().nullable()();
   TextColumn get nativeLanguage => text().withDefault(const Constant('ar'))();
   TextColumn get targetLanguage => text().withDefault(const Constant('en'))();
   DateTimeColumn get createdAt => dateTime()();

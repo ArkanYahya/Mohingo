@@ -31,6 +31,15 @@ class $LearnersTable extends Learners with TableInfo<$LearnersTable, Learner> {
     requiredDuringInsert: true,
     defaultConstraints: GeneratedColumn.constraintIsAlways('UNIQUE'),
   );
+  static const VerificationMeta _nameMeta = const VerificationMeta('name');
+  @override
+  late final GeneratedColumn<String> name = GeneratedColumn<String>(
+    'name',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
   static const VerificationMeta _nativeLanguageMeta = const VerificationMeta(
     'nativeLanguage',
   );
@@ -85,6 +94,7 @@ class $LearnersTable extends Learners with TableInfo<$LearnersTable, Learner> {
   List<GeneratedColumn> get $columns => [
     id,
     uuid,
+    name,
     nativeLanguage,
     targetLanguage,
     createdAt,
@@ -112,6 +122,12 @@ class $LearnersTable extends Learners with TableInfo<$LearnersTable, Learner> {
       );
     } else if (isInserting) {
       context.missing(_uuidMeta);
+    }
+    if (data.containsKey('name')) {
+      context.handle(
+        _nameMeta,
+        name.isAcceptableOrUnknown(data['name']!, _nameMeta),
+      );
     }
     if (data.containsKey('native_language')) {
       context.handle(
@@ -162,6 +178,10 @@ class $LearnersTable extends Learners with TableInfo<$LearnersTable, Learner> {
         DriftSqlType.string,
         data['${effectivePrefix}uuid'],
       )!,
+      name: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}name'],
+      ),
       nativeLanguage: attachedDatabase.typeMapping.read(
         DriftSqlType.string,
         data['${effectivePrefix}native_language'],
@@ -190,6 +210,7 @@ class $LearnersTable extends Learners with TableInfo<$LearnersTable, Learner> {
 class Learner extends DataClass implements Insertable<Learner> {
   final int id;
   final String uuid;
+  final String? name;
   final String nativeLanguage;
   final String targetLanguage;
   final DateTime createdAt;
@@ -197,6 +218,7 @@ class Learner extends DataClass implements Insertable<Learner> {
   const Learner({
     required this.id,
     required this.uuid,
+    this.name,
     required this.nativeLanguage,
     required this.targetLanguage,
     required this.createdAt,
@@ -207,6 +229,9 @@ class Learner extends DataClass implements Insertable<Learner> {
     final map = <String, Expression>{};
     map['id'] = Variable<int>(id);
     map['uuid'] = Variable<String>(uuid);
+    if (!nullToAbsent || name != null) {
+      map['name'] = Variable<String>(name);
+    }
     map['native_language'] = Variable<String>(nativeLanguage);
     map['target_language'] = Variable<String>(targetLanguage);
     map['created_at'] = Variable<DateTime>(createdAt);
@@ -218,6 +243,7 @@ class Learner extends DataClass implements Insertable<Learner> {
     return LearnersCompanion(
       id: Value(id),
       uuid: Value(uuid),
+      name: name == null && nullToAbsent ? const Value.absent() : Value(name),
       nativeLanguage: Value(nativeLanguage),
       targetLanguage: Value(targetLanguage),
       createdAt: Value(createdAt),
@@ -233,6 +259,7 @@ class Learner extends DataClass implements Insertable<Learner> {
     return Learner(
       id: serializer.fromJson<int>(json['id']),
       uuid: serializer.fromJson<String>(json['uuid']),
+      name: serializer.fromJson<String?>(json['name']),
       nativeLanguage: serializer.fromJson<String>(json['nativeLanguage']),
       targetLanguage: serializer.fromJson<String>(json['targetLanguage']),
       createdAt: serializer.fromJson<DateTime>(json['createdAt']),
@@ -245,6 +272,7 @@ class Learner extends DataClass implements Insertable<Learner> {
     return <String, dynamic>{
       'id': serializer.toJson<int>(id),
       'uuid': serializer.toJson<String>(uuid),
+      'name': serializer.toJson<String?>(name),
       'nativeLanguage': serializer.toJson<String>(nativeLanguage),
       'targetLanguage': serializer.toJson<String>(targetLanguage),
       'createdAt': serializer.toJson<DateTime>(createdAt),
@@ -255,6 +283,7 @@ class Learner extends DataClass implements Insertable<Learner> {
   Learner copyWith({
     int? id,
     String? uuid,
+    Value<String?> name = const Value.absent(),
     String? nativeLanguage,
     String? targetLanguage,
     DateTime? createdAt,
@@ -262,6 +291,7 @@ class Learner extends DataClass implements Insertable<Learner> {
   }) => Learner(
     id: id ?? this.id,
     uuid: uuid ?? this.uuid,
+    name: name.present ? name.value : this.name,
     nativeLanguage: nativeLanguage ?? this.nativeLanguage,
     targetLanguage: targetLanguage ?? this.targetLanguage,
     createdAt: createdAt ?? this.createdAt,
@@ -271,6 +301,7 @@ class Learner extends DataClass implements Insertable<Learner> {
     return Learner(
       id: data.id.present ? data.id.value : this.id,
       uuid: data.uuid.present ? data.uuid.value : this.uuid,
+      name: data.name.present ? data.name.value : this.name,
       nativeLanguage: data.nativeLanguage.present
           ? data.nativeLanguage.value
           : this.nativeLanguage,
@@ -287,6 +318,7 @@ class Learner extends DataClass implements Insertable<Learner> {
     return (StringBuffer('Learner(')
           ..write('id: $id, ')
           ..write('uuid: $uuid, ')
+          ..write('name: $name, ')
           ..write('nativeLanguage: $nativeLanguage, ')
           ..write('targetLanguage: $targetLanguage, ')
           ..write('createdAt: $createdAt, ')
@@ -299,6 +331,7 @@ class Learner extends DataClass implements Insertable<Learner> {
   int get hashCode => Object.hash(
     id,
     uuid,
+    name,
     nativeLanguage,
     targetLanguage,
     createdAt,
@@ -310,6 +343,7 @@ class Learner extends DataClass implements Insertable<Learner> {
       (other is Learner &&
           other.id == this.id &&
           other.uuid == this.uuid &&
+          other.name == this.name &&
           other.nativeLanguage == this.nativeLanguage &&
           other.targetLanguage == this.targetLanguage &&
           other.createdAt == this.createdAt &&
@@ -319,6 +353,7 @@ class Learner extends DataClass implements Insertable<Learner> {
 class LearnersCompanion extends UpdateCompanion<Learner> {
   final Value<int> id;
   final Value<String> uuid;
+  final Value<String?> name;
   final Value<String> nativeLanguage;
   final Value<String> targetLanguage;
   final Value<DateTime> createdAt;
@@ -326,6 +361,7 @@ class LearnersCompanion extends UpdateCompanion<Learner> {
   const LearnersCompanion({
     this.id = const Value.absent(),
     this.uuid = const Value.absent(),
+    this.name = const Value.absent(),
     this.nativeLanguage = const Value.absent(),
     this.targetLanguage = const Value.absent(),
     this.createdAt = const Value.absent(),
@@ -334,6 +370,7 @@ class LearnersCompanion extends UpdateCompanion<Learner> {
   LearnersCompanion.insert({
     this.id = const Value.absent(),
     required String uuid,
+    this.name = const Value.absent(),
     this.nativeLanguage = const Value.absent(),
     this.targetLanguage = const Value.absent(),
     required DateTime createdAt,
@@ -343,6 +380,7 @@ class LearnersCompanion extends UpdateCompanion<Learner> {
   static Insertable<Learner> custom({
     Expression<int>? id,
     Expression<String>? uuid,
+    Expression<String>? name,
     Expression<String>? nativeLanguage,
     Expression<String>? targetLanguage,
     Expression<DateTime>? createdAt,
@@ -351,6 +389,7 @@ class LearnersCompanion extends UpdateCompanion<Learner> {
     return RawValuesInsertable({
       if (id != null) 'id': id,
       if (uuid != null) 'uuid': uuid,
+      if (name != null) 'name': name,
       if (nativeLanguage != null) 'native_language': nativeLanguage,
       if (targetLanguage != null) 'target_language': targetLanguage,
       if (createdAt != null) 'created_at': createdAt,
@@ -361,6 +400,7 @@ class LearnersCompanion extends UpdateCompanion<Learner> {
   LearnersCompanion copyWith({
     Value<int>? id,
     Value<String>? uuid,
+    Value<String?>? name,
     Value<String>? nativeLanguage,
     Value<String>? targetLanguage,
     Value<DateTime>? createdAt,
@@ -369,6 +409,7 @@ class LearnersCompanion extends UpdateCompanion<Learner> {
     return LearnersCompanion(
       id: id ?? this.id,
       uuid: uuid ?? this.uuid,
+      name: name ?? this.name,
       nativeLanguage: nativeLanguage ?? this.nativeLanguage,
       targetLanguage: targetLanguage ?? this.targetLanguage,
       createdAt: createdAt ?? this.createdAt,
@@ -384,6 +425,9 @@ class LearnersCompanion extends UpdateCompanion<Learner> {
     }
     if (uuid.present) {
       map['uuid'] = Variable<String>(uuid.value);
+    }
+    if (name.present) {
+      map['name'] = Variable<String>(name.value);
     }
     if (nativeLanguage.present) {
       map['native_language'] = Variable<String>(nativeLanguage.value);
@@ -405,6 +449,7 @@ class LearnersCompanion extends UpdateCompanion<Learner> {
     return (StringBuffer('LearnersCompanion(')
           ..write('id: $id, ')
           ..write('uuid: $uuid, ')
+          ..write('name: $name, ')
           ..write('nativeLanguage: $nativeLanguage, ')
           ..write('targetLanguage: $targetLanguage, ')
           ..write('createdAt: $createdAt, ')
@@ -6778,6 +6823,7 @@ abstract class _$AppDatabase extends GeneratedDatabase {
 typedef $$LearnersTableCreateCompanionBuilder = LearnersCompanion Function({
   Value<int> id,
   required String uuid,
+  Value<String?> name,
   Value<String> nativeLanguage,
   Value<String> targetLanguage,
   required DateTime createdAt,
@@ -6786,6 +6832,7 @@ typedef $$LearnersTableCreateCompanionBuilder = LearnersCompanion Function({
 typedef $$LearnersTableUpdateCompanionBuilder = LearnersCompanion Function({
   Value<int> id,
   Value<String> uuid,
+  Value<String?> name,
   Value<String> nativeLanguage,
   Value<String> targetLanguage,
   Value<DateTime> createdAt,
@@ -7009,6 +7056,11 @@ class $$LearnersTableFilterComposer
 
   ColumnFilters<String> get uuid => $composableBuilder(
     column: $table.uuid,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get name => $composableBuilder(
+    column: $table.name,
     builder: (column) => ColumnFilters(column),
   );
 
@@ -7279,6 +7331,11 @@ class $$LearnersTableOrderingComposer
     builder: (column) => ColumnOrderings(column),
   );
 
+  ColumnOrderings<String> get name => $composableBuilder(
+    column: $table.name,
+    builder: (column) => ColumnOrderings(column),
+  );
+
   ColumnOrderings<String> get nativeLanguage => $composableBuilder(
     column: $table.nativeLanguage,
     builder: (column) => ColumnOrderings(column),
@@ -7314,6 +7371,9 @@ class $$LearnersTableAnnotationComposer
 
   GeneratedColumn<String> get uuid =>
       $composableBuilder(column: $table.uuid, builder: (column) => column);
+
+  GeneratedColumn<String> get name =>
+      $composableBuilder(column: $table.name, builder: (column) => column);
 
   GeneratedColumn<String> get nativeLanguage => $composableBuilder(
     column: $table.nativeLanguage,
@@ -7603,6 +7663,7 @@ class $$LearnersTableTableManager
               ({
                 Value<int> id = const Value.absent(),
                 Value<String> uuid = const Value.absent(),
+                Value<String?> name = const Value.absent(),
                 Value<String> nativeLanguage = const Value.absent(),
                 Value<String> targetLanguage = const Value.absent(),
                 Value<DateTime> createdAt = const Value.absent(),
@@ -7610,6 +7671,7 @@ class $$LearnersTableTableManager
               }) => LearnersCompanion(
                 id: id,
                 uuid: uuid,
+                name: name,
                 nativeLanguage: nativeLanguage,
                 targetLanguage: targetLanguage,
                 createdAt: createdAt,
@@ -7619,6 +7681,7 @@ class $$LearnersTableTableManager
               ({
                 Value<int> id = const Value.absent(),
                 required String uuid,
+                Value<String?> name = const Value.absent(),
                 Value<String> nativeLanguage = const Value.absent(),
                 Value<String> targetLanguage = const Value.absent(),
                 required DateTime createdAt,
@@ -7626,6 +7689,7 @@ class $$LearnersTableTableManager
               }) => LearnersCompanion.insert(
                 id: id,
                 uuid: uuid,
+                name: name,
                 nativeLanguage: nativeLanguage,
                 targetLanguage: targetLanguage,
                 createdAt: createdAt,

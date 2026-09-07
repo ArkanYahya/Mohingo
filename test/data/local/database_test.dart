@@ -1,7 +1,8 @@
-import 'package:drift/drift.dart';
+import 'package:drift/drift.dart' hide isNull;
 import 'package:drift/native.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mohingo/data/local/database.dart';
+import 'package:sqlite3/sqlite3.dart' as sqlite3;
 import 'package:uuid/uuid.dart';
 
 void main() {
@@ -15,8 +16,46 @@ void main() {
     await database.close();
   });
 
-  test('schema version is 1', () {
-    expect(database.schemaVersion, 1);
+  test('schema version is 2', () {
+    expect(database.schemaVersion, 2);
+  });
+
+  test('migrating from schemaVersion 1 adds a nullable name column without '
+      'losing existing rows', () async {
+    // Build a v1-shaped `learners` table by hand — v1 never had a `name`
+    // column — then set drift's own version marker to 1, so opening it
+    // through AppDatabase runs onUpgrade exactly like a real upgrading
+    // install would.
+    final raw = sqlite3.sqlite3.openInMemory();
+    raw.execute('''
+        CREATE TABLE learners (
+          id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+          uuid TEXT NOT NULL UNIQUE,
+          native_language TEXT NOT NULL DEFAULT 'ar',
+          target_language TEXT NOT NULL DEFAULT 'en',
+          created_at INTEGER NOT NULL,
+          is_active INTEGER NOT NULL DEFAULT 1
+        )
+      ''');
+    raw.execute(
+      "INSERT INTO learners (uuid, created_at) VALUES ('learner-1', 0)",
+    );
+    raw.execute('PRAGMA user_version = 1');
+
+    final upgraded = AppDatabase(NativeDatabase.opened(raw));
+    addTearDown(upgraded.close);
+
+    final row = await upgraded.select(upgraded.learners).getSingle();
+    expect(row.uuid, 'learner-1');
+    expect(row.name, isNull);
+
+    await (upgraded.update(upgraded.learners)
+          ..where((t) => t.id.equals(row.id)))
+        .write(const LearnersCompanion(name: Value('Ali')));
+    final updated = await (upgraded.select(
+      upgraded.learners,
+    )..where((t) => t.id.equals(row.id))).getSingle();
+    expect(updated.name, 'Ali');
   });
 
   test('can insert and read back a learner, with ar/en defaults', () async {
