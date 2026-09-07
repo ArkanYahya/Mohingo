@@ -18,7 +18,6 @@ WriteActivity _openEndedWrite() {
     promptAr: 'اكتب 4-6 جمل قصيرة عن شخص واحد.',
     raw: {},
     accepted: [],
-    evaluation: 'u2-people-profile-rubric',
     wordGuide: [25, 45],
   );
 }
