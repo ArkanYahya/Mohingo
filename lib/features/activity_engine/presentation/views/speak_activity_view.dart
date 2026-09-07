@@ -11,6 +11,8 @@ import '../../../speech/domain/speech_recognition_service.dart';
 import '../../../speech/providers/speech_providers.dart';
 import '../../domain/activity_submission.dart';
 import '../../domain/answer_matching.dart';
+import '../../domain/evaluation/evaluation_context.dart';
+import '../../domain/evaluation/evaluator.dart';
 import '../activity_chrome.dart';
 
 enum _SpeakMode {
@@ -41,11 +43,13 @@ class SpeakActivityView extends ConsumerStatefulWidget {
   const SpeakActivityView({
     required this.activity,
     required this.onSubmitted,
+    this.evaluationContext = const EvaluationContext.empty(),
     super.key,
   });
 
   final SpeakActivity activity;
   final OnActivitySubmitted onSubmitted;
+  final EvaluationContext evaluationContext;
 
   @override
   ConsumerState<SpeakActivityView> createState() => _SpeakActivityViewState();
@@ -162,6 +166,18 @@ class _SpeakActivityViewState extends ConsumerState<SpeakActivityView> {
             ? ActivityCorrectness.correct
             : ActivityCorrectness.incorrect,
         score: isCorrect ? 1.0 : 0.0,
+        rawAnswerJson: jsonEncode(text),
+        wasFallback: wasFallback,
+      );
+    } else if (widget.activity.evaluation != null) {
+      final result = evaluate(
+        widget.activity.evaluation!,
+        text,
+        context: widget.evaluationContext,
+      );
+      submission = ActivitySubmission(
+        correctness: result.correctness,
+        score: result.score,
         rawAnswerJson: jsonEncode(text),
         wasFallback: wasFallback,
       );

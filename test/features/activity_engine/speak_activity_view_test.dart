@@ -5,6 +5,8 @@ import 'package:mohingo/content/models/activity.dart';
 import 'package:mohingo/content/models/domain_definitions.dart';
 import 'package:mohingo/core/l10n/generated/app_localizations.dart';
 import 'package:mohingo/features/activity_engine/domain/activity_submission.dart';
+import 'package:mohingo/features/activity_engine/domain/evaluation/evaluation_context.dart';
+import 'package:mohingo/features/activity_engine/domain/evaluation/evaluation_spec.dart';
 import 'package:mohingo/features/activity_engine/presentation/views/speak_activity_view.dart';
 import 'package:mohingo/features/speech/domain/speech_capability_service.dart';
 import 'package:mohingo/features/speech/domain/speech_recognition_service.dart';
@@ -33,6 +35,8 @@ Future<void> _pumpSpeak(
   FakeSpeechRecognitionService? recognitionService,
   void Function(ActivitySubmission)? onSubmitted,
   Locale locale = const Locale('en'),
+  SpeakActivity? activity,
+  EvaluationContext evaluationContext = const EvaluationContext.empty(),
 }) async {
   await tester.pumpWidget(
     ProviderScope(
@@ -50,8 +54,9 @@ Future<void> _pumpSpeak(
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         home: Scaffold(
           body: SpeakActivityView(
-            activity: _speakActivity(),
+            activity: activity ?? _speakActivity(),
             onSubmitted: onSubmitted ?? (_) {},
+            evaluationContext: evaluationContext,
           ),
         ),
       ),
@@ -261,6 +266,52 @@ void main() {
 
         expect(reported?.wasFallback, isFalse);
         expect(reported?.correctness, ActivityCorrectness.correct);
+      },
+    );
+  });
+
+  group('structured evaluation spec', () {
+    testWidgets(
+      'an activity with a structured evaluation spec is graded via it '
+      'through the typed-fallback path',
+      (tester) async {
+        const activity = SpeakActivity(
+          id: 'A1-U0-L5-A01',
+          lessonId: 'A1-U0-L5',
+          mode: ActivityMode.mastery,
+          skill: Skill.spokenInteraction,
+          canDo: ['A1.U0.INTERACTION.REGISTER_FOR_CLASS'],
+          prompt: "What's your name?",
+          promptAr: 'ما اسمك؟',
+          raw: {},
+          accepted: [],
+          evaluation: NonEmptyEvaluationSpec(),
+          fallbackSkill: 'writing',
+        );
+
+        ActivitySubmission? captured;
+        // This exact capability combination is this file's/the codebase's
+        // established way to force a `speak` activity straight to its typed
+        // fallback in a widget test, with no real platform to answer a
+        // capability/permission check — see
+        // test/features/lesson_player/lesson_player_e2e_test.dart.
+        await _pumpSpeak(
+          tester,
+          activity: activity,
+          capabilities: const DeviceSpeechCapabilities(
+            sttAvailableForLocale: false,
+            micPermission: SpeechPermissionStatus.notDetermined,
+          ),
+          onSubmitted: (s) => captured = s,
+        );
+
+        await tester.enterText(find.byType(TextField), 'Ali');
+        await tester.pump();
+        await tester.tap(find.text('Check'));
+        await tester.pump();
+
+        expect(captured!.correctness, ActivityCorrectness.correct);
+        expect(captured!.wasFallback, isTrue);
       },
     );
   });
