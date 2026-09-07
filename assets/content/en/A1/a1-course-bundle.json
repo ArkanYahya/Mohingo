@@ -8614,7 +8614,10 @@
               ],
               "prompt": "Spell your name.",
               "accepted": [],
-              "evaluation": "letter-sequence-from-profile-name",
+              "evaluation": {
+                "type": "letterSequence",
+                "reference": "profileName"
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -8724,7 +8727,11 @@
               ],
               "prompt": "How old are you?",
               "accepted": [],
-              "evaluation": "valid-age-response",
+              "evaluation": {
+                "type": "numericRange",
+                "min": 1,
+                "max": 120
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -8755,7 +8762,9 @@
               ],
               "prompt": "What's your name?",
               "accepted": [],
-              "evaluation": "non-empty-name",
+              "evaluation": {
+                "type": "nonEmpty"
+              },
               "fallbackSkill": "writing"
             },
             {
@@ -8769,7 +8778,10 @@
               ],
               "prompt": "How do you spell it?",
               "accepted": [],
-              "evaluation": "letter-sequence-from-previous-answer",
+              "evaluation": {
+                "type": "letterSequence",
+                "reference": "previousAnswer:A1-U0-L5-A01"
+              },
               "fallbackSkill": "writing"
             },
             {
@@ -8783,7 +8795,11 @@
               ],
               "prompt": "How old are you?",
               "accepted": [],
-              "evaluation": "valid-age-response",
+              "evaluation": {
+                "type": "numericRange",
+                "min": 1,
+                "max": 120
+              },
               "fallbackSkill": "writing"
             },
             {
@@ -8803,6 +8819,23 @@
               ],
               "answer": "Iraq",
               "audioTranscript": "Choose Iraq."
+            },
+            {
+              "id": "A1-U0-L5-A05",
+              "lessonId": "A1-U0-L5",
+              "type": "speak",
+              "mode": "mastery",
+              "skill": "spokenInteraction",
+              "canDo": [
+                "A1.U0.INTERACTION.REGISTER_FOR_CLASS"
+              ],
+              "prompt": "Say hello and ask to join the English class.",
+              "promptAr": "قل مرحباً واطلب الانضمام إلى صف الإنجليزية.",
+              "accepted": [],
+              "evaluation": {
+                "type": "nonEmpty"
+              },
+              "fallbackSkill": "writing"
             }
           ]
         }
