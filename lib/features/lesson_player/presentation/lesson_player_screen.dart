@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -9,6 +11,7 @@ import '../../../content/models/media_specification.dart';
 import '../../../content/providers/course_content_providers.dart';
 import '../../../core/l10n/generated/app_localizations.dart';
 import '../../activity_engine/domain/activity_submission.dart';
+import '../../activity_engine/domain/evaluation/evaluation_context.dart';
 import '../../activity_engine/domain/evidence_skill_resolver.dart';
 import '../../activity_engine/presentation/activity_view_registry.dart';
 import '../../learning_path/providers/unit_progress_providers.dart';
@@ -58,6 +61,7 @@ class LessonPlayerScreen extends ConsumerWidget {
             unit: unit,
             lesson: lesson,
             learnerId: learner.id,
+            learnerName: learner.name,
             masteryPolicy: index.bundle.domain.masteryPolicy,
             mediaByKey: index.bundle.mediaSpecifications,
           ),
@@ -88,6 +92,7 @@ class _LessonPlayerBody extends ConsumerStatefulWidget {
     required this.unit,
     required this.lesson,
     required this.learnerId,
+    required this.learnerName,
     required this.masteryPolicy,
     required this.mediaByKey,
   });
@@ -96,6 +101,7 @@ class _LessonPlayerBody extends ConsumerStatefulWidget {
   final Unit unit;
   final Lesson lesson;
   final int learnerId;
+  final String? learnerName;
   final MasteryPolicy masteryPolicy;
   final Map<String, MediaSpecification> mediaByKey;
 
@@ -108,6 +114,7 @@ class _LessonPlayerBodyState extends ConsumerState<_LessonPlayerBody> {
   ActivitySubmission? _lastSubmission;
   bool _finished = false;
   final List<ActivityCorrectness> _results = [];
+  final Map<String, String> _previousAnswers = {};
 
   @override
   void initState() {
@@ -139,6 +146,11 @@ class _LessonPlayerBodyState extends ConsumerState<_LessonPlayerBody> {
     Activity activity,
     ActivitySubmission submission,
   ) async {
+    if (submission.rawAnswerJson != null) {
+      final decoded = jsonDecode(submission.rawAnswerJson!);
+      if (decoded is String) _previousAnswers[activity.id] = decoded;
+    }
+
     final evidenceSkill = resolveEvidenceSkill(activity, submission);
 
     await ref
@@ -285,6 +297,10 @@ class _LessonPlayerBodyState extends ConsumerState<_LessonPlayerBody> {
                 onSubmitted: (submission) =>
                     _handleSubmitted(activity, submission),
                 mediaByKey: widget.mediaByKey,
+                evaluationContext: EvaluationContext(
+                  profileName: widget.learnerName,
+                  previousAnswers: Map.unmodifiable(_previousAnswers),
+                ),
               ),
               if (_lastSubmission != null)
                 Padding(

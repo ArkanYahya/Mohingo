@@ -199,4 +199,80 @@ void main() {
       );
     },
   );
+
+  testWidgets(
+    'a letterSequence/profileName activity (A1-U0-L3-A04, "Spell your '
+    'name.") is graded against the learner\'s saved name',
+    (tester) async {
+      final db = AppDatabase(NativeDatabase.memory());
+      final index = _realA1Index();
+      final lesson = index.lessonsById['A1-U0-L3']!;
+      expect(
+        lesson.activities,
+        hasLength(4),
+        reason:
+            'this test is written against the real content shape — if '
+            'A1-U0-L3 changes, update the driving steps below alongside it',
+      );
+      await db
+          .into(db.learners)
+          .insert(
+            LearnersCompanion.insert(
+              uuid: 'learner-1',
+              name: const Value('Ali'),
+              createdAt: DateTime.utc(2026, 9, 7),
+            ),
+          );
+
+      SharedPreferences.setMockInitialValues({});
+      final prefs = await SharedPreferences.getInstance();
+
+      await tester.pumpWidget(
+        ProviderScope(
+          overrides: [
+            sharedPreferencesProvider.overrideWithValue(prefs),
+            appDatabaseProvider.overrideWithValue(db),
+            courseContentProvider('a1').overrideWith((ref) async => index),
+            textToSpeechServiceProvider.overrideWithValue(
+              FakeTextToSpeechService(),
+            ),
+            speechCapabilityServiceProvider.overrideWithValue(
+              FakeSpeechCapabilityService(
+                const DeviceSpeechCapabilities(
+                  sttAvailableForLocale: false,
+                  micPermission: SpeechPermissionStatus.notDetermined,
+                ),
+              ),
+            ),
+          ],
+          child: MaterialApp(
+            locale: const Locale('en'),
+            supportedLocales: AppLocalizations.supportedLocales,
+            localizationsDelegates: AppLocalizations.localizationsDelegates,
+            home: const LessonPlayerScreen(
+              unitId: 'A1-U0',
+              lessonId: 'A1-U0-L3',
+            ),
+          ),
+        ),
+      );
+      await tester.pumpAndSettle();
+
+      // A01, A02, A03 — drive with the file's existing generic helper.
+      for (final activity in lesson.activities.take(3)) {
+        await _answerAndAdvance(tester, activity);
+      }
+
+      // A04 ("Spell your name.") — answer manually to assert on its grading.
+      await tester.pumpAndSettle();
+      await tester.enterText(find.byType(TextField), 'a l i');
+      await tester.pump();
+      await tester.tap(find.byType(FilledButton)); // Check
+      await tester.pump();
+
+      expect(find.byIcon(Icons.check_circle), findsOneWidget);
+
+      await db.close();
+    },
+  );
 }

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../content/models/activity.dart';
 import '../../../content/models/media_specification.dart';
 import '../domain/activity_submission.dart';
+import '../domain/evaluation/evaluation_context.dart';
 import 'views/choice_activity_view.dart';
 import 'views/dialogue_activity_view.dart';
 import 'views/form_activity_view.dart';
@@ -25,6 +26,7 @@ Widget buildActivityView(
   Activity activity, {
   required OnActivitySubmitted onSubmitted,
   Map<String, MediaSpecification> mediaByKey = const {},
+  EvaluationContext evaluationContext = const EvaluationContext.empty(),
   Key? key,
 }) {
   return switch (activity) {
@@ -64,11 +66,13 @@ Widget buildActivityView(
       key: key,
       activity: a,
       onSubmitted: onSubmitted,
+      evaluationContext: evaluationContext,
     ),
     WriteActivity a => WriteActivityView(
       key: key,
       activity: a,
       onSubmitted: onSubmitted,
+      evaluationContext: evaluationContext,
     ),
     DialogueActivity a => DialogueActivityView(
       key: key,
