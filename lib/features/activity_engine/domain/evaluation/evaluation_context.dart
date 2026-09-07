@@ -4,7 +4,9 @@
 /// docs/superpowers/specs/2026-09-07-offline-answer-evaluation-design.md.
 class EvaluationContext {
   const EvaluationContext({this.profileName, this.previousAnswers = const {}});
-  const EvaluationContext.empty() : profileName = null, previousAnswers = const {};
+  const EvaluationContext.empty()
+    : profileName = null,
+      previousAnswers = const {};
 
   /// The learner's persisted `Learners.name`, if set.
   final String? profileName;

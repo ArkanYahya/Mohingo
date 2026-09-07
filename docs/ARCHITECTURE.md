@@ -1,7 +1,7 @@
 > **What this file is:** The high-level shape of the system — layers, boundaries, data flow, folder structure. The single biggest lever for keeping AI sessions from drifting, since most inconsistency comes from this not being written down.
 > **How to use it:** Read before adding a new module or changing how data flows. If a change alters this shape, update the diagram/description *and* record the reasoning as an [ADR](adr/).
 
-_Last verified: 2026-09-02 — rescoped for the local-only, zero-Firebase v1 decided this session (see [ADR 0004](adr/0004-local-only-v1-no-firebase-backend.md)); added the `lib/content/` module and the curriculum-bundle content-loading flow, grounded in the actual A1 bundle at `docs/a1-modular-course/dist/a1-course-bundle.json`. Phase 9 implemented `placement_test`/`final_mission`/`final_assessment` (previously listed as planned feature areas only) — see the note at the end of "Key flows" below._
+_Last verified: 2026-09-08 — rescoped for the local-only, zero-Firebase v1 decided this session (see [ADR 0004](adr/0004-local-only-v1-no-firebase-backend.md)); added the `lib/content/` module and the curriculum-bundle content-loading flow, grounded in the actual A1 bundle at `docs/a1-modular-course/dist/a1-course-bundle.json`. Phase 9 implemented `placement_test`/`final_mission`/`final_assessment` (previously listed as planned feature areas only) — see the note at the end of "Key flows" below. 2026-09-08: `lib/content/`'s "never imports from `lib/features/`" rule written down explicitly, after the offline-answer-evaluation work briefly inverted it; `EvaluationSpec` (pure bundle data) now lives in `lib/content/models/evaluation_spec.dart`, while grading it stays in `lib/features/activity_engine/domain/evaluation/`._
 
 # Architecture
 
@@ -35,9 +35,14 @@ lib/
   core/            # theme (ColorScheme/ThemeExtension), router (go_router), l10n wiring,
                     #   media (diagram renderers for the curriculum's structured scene types),
                     #   shared widgets (loading/empty/error/unsupported-content states), utils
-  content/         # bundled curriculum ONLY — read-only, never mutated, never imported by data/local
+  content/         # bundled curriculum ONLY — read-only, never mutated, never imported by data/local,
+                    #   and never importing from lib/features/ (it is a foundational layer *under*
+                    #   the feature layer; anything a feature needs from it flows one way only)
     models/          # typed immutable models (freezed) for the bundle's shape: units, lessons,
-                      #   activities (9 types), grammar/lexicon/chunk registries, media specs,
+                      #   activities (9 types), an activity's structured `evaluation` grading spec
+                      #   (EvaluationSpec — pure data; *evaluating* it is a feature concern and
+                      #   lives in features/activity_engine/domain/evaluation/),
+                      #   grammar/lexicon/chunk registries, media specs,
                       #   final mission, final assessment, domain definitions (skills/modes/canDo/policy)
     parsing/         # CourseBundleParser + schemaVersion/contentVersion validation
     index/           # CourseContentIndex — id -> object maps, built once at startup

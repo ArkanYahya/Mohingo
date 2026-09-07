@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mohingo/content/models/activity.dart';
-import 'package:mohingo/features/activity_engine/domain/evaluation/evaluation_spec.dart';
+import 'package:mohingo/content/models/evaluation_spec.dart';
 
 void main() {
   group('WriteActivity.evaluation', () {

@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mohingo/features/activity_engine/domain/activity_submission.dart';
 import 'package:mohingo/features/activity_engine/domain/evaluation/evaluation_context.dart';
-import 'package:mohingo/features/activity_engine/domain/evaluation/evaluation_spec.dart';
+import 'package:mohingo/content/models/evaluation_spec.dart';
 import 'package:mohingo/features/activity_engine/domain/evaluation/evaluator.dart';
 
 void main() {
@@ -92,6 +92,75 @@ void main() {
       final result = evaluate(spec, 'a l e');
       expect(result.correctness, ActivityCorrectness.incorrect);
     });
+
+    group('a reference with no Latin letters at all', () {
+      // The app's learners are Arabic speakers, so a name saved in Settings
+      // is plausibly Arabic script. Letters-only comparison only understands
+      // Latin letters, so such a reference normalizes to '' — it must be
+      // treated as "no usable reference", not silently compared against ''
+      // (which could never match and would make A1-U0-L3-A04 permanently
+      // ungradeable, blocking A1.U0.PRODUCTION.SPELL_NAME and all of A1-U0).
+      test('a profileName reference softens to the non-empty fallback', () {
+        const spec = LetterSequenceEvaluationSpec(
+          reference: ProfileNameReference(),
+        );
+        // The regression: a learner saved "علي" and spells it back in Latin
+        // letters, as A1-U0-L3-A04 ("Spell your name.") asks. Comparing
+        // against the raw reference marks this — and every other answer —
+        // wrong forever, making A1.U0.PRODUCTION.SPELL_NAME unmasterable.
+        expect(
+          evaluate(
+            spec,
+            'a l i',
+            context: const EvaluationContext(profileName: 'علي'),
+          ).correctness,
+          ActivityCorrectness.correct,
+        );
+        expect(
+          evaluate(
+            spec,
+            'ع ل ي',
+            context: const EvaluationContext(profileName: 'علي'),
+          ).correctness,
+          ActivityCorrectness.correct,
+        );
+      });
+
+      test('the non-empty fallback still rejects a blank answer', () {
+        const spec = LetterSequenceEvaluationSpec(
+          reference: ProfileNameReference(),
+        );
+        final result = evaluate(
+          spec,
+          '   ',
+          context: const EvaluationContext(profileName: 'علي'),
+        );
+        expect(result.correctness, ActivityCorrectness.incorrect);
+      });
+
+      test('a previousAnswer reference is not-auto-graded, not falsely '
+          'correct', () {
+        const spec = LetterSequenceEvaluationSpec(
+          reference: PreviousAnswerReference('A1-U0-L5-A01'),
+        );
+        final result = evaluate(
+          spec,
+          'a l i',
+          context: const EvaluationContext(
+            previousAnswers: {'A1-U0-L5-A01': 'علي'},
+          ),
+        );
+        expect(result.correctness, ActivityCorrectness.notAutoGraded);
+      });
+
+      test('a literal reference is not-auto-graded, not falsely correct', () {
+        const spec = LetterSequenceEvaluationSpec(
+          reference: LiteralReference('١٢٣'),
+        );
+        final result = evaluate(spec, 'a l i');
+        expect(result.correctness, ActivityCorrectness.notAutoGraded);
+      });
+    });
   });
 
   group('keywordChecklist', () {
@@ -114,6 +183,71 @@ void main() {
       final result = evaluate(spec, 'Hello there.');
       expect(result.correctness, ActivityCorrectness.incorrect);
       expect(result.score, 0.5);
+    });
+
+    test('a keyword buried inside an unrelated word does not count as a '
+        'match', () {
+      // "this" contains the substring "hi" and "sunday" contains "sun" —
+      // a plain contains() check would score this answer 1.0 despite it
+      // greeting nobody and naming no day.
+      final result = evaluate(spec, 'I would like this class.');
+      expect(result.correctness, ActivityCorrectness.incorrect);
+      expect(result.score, 0.0);
+    });
+
+    test('the same keyword as a standalone word still matches', () {
+      final result = evaluate(spec, 'Hi! I am free on Saturday.');
+      expect(result.correctness, ActivityCorrectness.correct);
+      expect(result.score, 1.0);
+    });
+
+    test('a multi-word keyword phrase matches as a phrase', () {
+      const phraseSpec = KeywordChecklistEvaluationSpec(
+        requiredGroups: [
+          ['hello', 'good morning'],
+        ],
+        minGroupsMatched: 1,
+      );
+      expect(
+        evaluate(phraseSpec, 'Good morning, teacher.').correctness,
+        ActivityCorrectness.correct,
+      );
+      expect(
+        evaluate(phraseSpec, 'Good afternoon, teacher.').correctness,
+        ActivityCorrectness.incorrect,
+      );
+      // The phrase is boundary-anchored at both ends, not just the start.
+      expect(
+        evaluate(phraseSpec, 'Have a good morningtime.').correctness,
+        ActivityCorrectness.incorrect,
+      );
+    });
+
+    test('the A1-U0-L5-A05 shape: a greeting plus registration intent', () {
+      const registerSpec = KeywordChecklistEvaluationSpec(
+        requiredGroups: [
+          ['hello', 'hi', 'good morning', 'good afternoon', 'good evening'],
+          ['join', 'register', 'class', 'english', 'sign up'],
+        ],
+        minGroupsMatched: 2,
+      );
+      expect(
+        evaluate(
+          registerSpec,
+          'Hello, I want to join the English class.',
+        ).correctness,
+        ActivityCorrectness.correct,
+      );
+      // Registration intent but no greeting — must not pass on "th-i-s".
+      expect(
+        evaluate(registerSpec, 'I want to join this class.').correctness,
+        ActivityCorrectness.incorrect,
+      );
+      // A greeting alone is not enough either.
+      expect(
+        evaluate(registerSpec, 'Hello there!').correctness,
+        ActivityCorrectness.incorrect,
+      );
     });
   });
 }

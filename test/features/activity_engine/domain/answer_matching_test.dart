@@ -60,4 +60,46 @@ void main() {
       expect(answersMatch('One coffee, please.', 'onecoffeeplease'), isFalse);
     });
   });
+
+  group('lettersOnly', () {
+    test('keeps only lowercase Latin letters', () {
+      expect(lettersOnly('A-L-I'), 'ali');
+      expect(lettersOnly('a l i'), 'ali');
+      expect(lettersOnly('Ali!'), 'ali');
+      expect(lettersOnly("O'Brien"), 'obrien');
+    });
+
+    test('returns an empty string for text with no Latin letters', () {
+      // The load-bearing case: an Arabic name a learner saved in Settings
+      // is non-empty raw but has nothing this comparison can use, so
+      // callers must check the normalized form, not the raw string. See the
+      // letterSequence evaluator.
+      expect(lettersOnly('علي'), isEmpty);
+      expect(lettersOnly('١٢٣'), isEmpty);
+      expect(lettersOnly('   '), isEmpty);
+      expect(lettersOnly(''), isEmpty);
+    });
+
+    test('drops non-Latin characters but keeps Latin ones alongside them', () {
+      expect(lettersOnly('Ali علي'), 'ali');
+    });
+  });
+
+  group('lettersOnlyMatch', () {
+    test('matches the same letters across spacing, case and punctuation', () {
+      expect(lettersOnlyMatch('Ali', 'a l i'), isTrue);
+      expect(lettersOnlyMatch('A-L-I', 'ali'), isTrue);
+      expect(lettersOnlyMatch('Ali', 'A.L.I.'), isTrue);
+    });
+
+    test('does not match a different letter sequence', () {
+      expect(lettersOnlyMatch('Ali', 'ale'), isFalse);
+    });
+
+    test('two letterless strings match each other — which is exactly why '
+        'callers must guard an empty normalized reference', () {
+      expect(lettersOnlyMatch('علي', 'محمد'), isTrue);
+      expect(lettersOnlyMatch('علي', 'ali'), isFalse);
+    });
+  });
 }

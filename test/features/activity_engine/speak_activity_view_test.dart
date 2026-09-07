@@ -6,7 +6,7 @@ import 'package:mohingo/content/models/domain_definitions.dart';
 import 'package:mohingo/core/l10n/generated/app_localizations.dart';
 import 'package:mohingo/features/activity_engine/domain/activity_submission.dart';
 import 'package:mohingo/features/activity_engine/domain/evaluation/evaluation_context.dart';
-import 'package:mohingo/features/activity_engine/domain/evaluation/evaluation_spec.dart';
+import 'package:mohingo/content/models/evaluation_spec.dart';
 import 'package:mohingo/features/activity_engine/presentation/views/speak_activity_view.dart';
 import 'package:mohingo/features/speech/domain/speech_capability_service.dart';
 import 'package:mohingo/features/speech/domain/speech_recognition_service.dart';

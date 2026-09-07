@@ -20,9 +20,12 @@ import 'package:uuid/uuid.dart';
 /// bundle, so the resume position can be asserted exactly without depending
 /// on real content shape. See docs/TESTING.md.
 Map<String, dynamic> _fixtureBundleJson() {
-  Map<String, dynamic> gapActivity(String id) => {
+  Map<String, dynamic> gapActivity(
+    String id, {
+    String lessonId = 'TEST-U1-L1',
+  }) => {
     'id': id,
-    'lessonId': 'TEST-U1-L1',
+    'lessonId': lessonId,
     'type': 'gap',
     'mode': 'mastery',
     'skill': 'reading',
@@ -31,6 +34,28 @@ Map<String, dynamic> _fixtureBundleJson() {
     'text': 'a ___ b',
     'options': ['x', 'y'],
     'answer': 'x',
+  };
+
+  // A second lesson whose last activity's rubric spells back an *earlier*
+  // activity's answer — the shape that breaks if a mid-lesson resume skips
+  // past the referenced activity without rehydrating its recorded answer.
+  Map<String, dynamic> writeActivity(String id) => {
+    'id': id,
+    'lessonId': 'TEST-U1-L2',
+    'type': 'write',
+    'mode': 'mastery',
+    'skill': 'writing',
+    'canDo': ['TEST.CANDO'],
+    'prompt': 'p $id',
+    'accepted': <String>[],
+  };
+
+  Map<String, dynamic> spellBackActivity(String id, String referencedId) => {
+    ...writeActivity(id),
+    'evaluation': {
+      'type': 'letterSequence',
+      'reference': 'previousAnswer:$referencedId',
+    },
   };
 
   return {
@@ -87,6 +112,22 @@ Map<String, dynamic> _fixtureBundleJson() {
               gapActivity('A2'),
               gapActivity('A3'),
               gapActivity('A4'),
+            ],
+          },
+          {
+            'id': 'TEST-U1-L2',
+            'title': 'Spell-back Lesson',
+            'titleAr': 'درس',
+            'lessonType': 'practice',
+            'canDo': ['TEST.CANDO'],
+            'grammar': <String>[],
+            'lexicon': <String>[],
+            'chunks': <String>[],
+            'activities': [
+              writeActivity('B1'),
+              gapActivity('B2', lessonId: 'TEST-U1-L2'),
+              spellBackActivity('B3', 'B1'),
+              gapActivity('B4', lessonId: 'TEST-U1-L2'),
             ],
           },
         ],
@@ -249,4 +290,90 @@ void main() {
 
     expect(find.text('p A1'), findsOneWidget);
   });
+
+  testWidgets(
+    'a resumed lesson rehydrates the skipped activities\' answers, so a '
+    'later previousAnswer rubric still grades instead of dropping to '
+    'notAutoGraded',
+    (tester) async {
+      final db = AppDatabase(NativeDatabase.memory());
+      final uuid = const Uuid();
+      final learnerId = await db
+          .into(db.learners)
+          .insert(
+            LearnersCompanion.insert(
+              uuid: uuid.v4(),
+              createdAt: DateTime.utc(2026, 9, 2),
+            ),
+          );
+      // A prior session: the learner answered B1 ("Ali") and B2, then left.
+      await db
+          .into(db.activityAttempts)
+          .insert(
+            ActivityAttemptsCompanion.insert(
+              uuid: uuid.v4(),
+              learnerId: learnerId,
+              activityId: 'B1',
+              lessonId: const Value('TEST-U1-L2'),
+              sessionType: 'lesson',
+              mode: 'mastery',
+              evidenceSkill: 'writing',
+              rawAnswer: Value(jsonEncode('Ali')),
+              attemptedAt: DateTime.utc(2026, 9, 2, 10),
+              updatedAt: DateTime.utc(2026, 9, 2, 10),
+            ),
+          );
+      await db
+          .into(db.lessonProgress)
+          .insert(
+            LessonProgressCompanion.insert(
+              uuid: uuid.v4(),
+              learnerId: learnerId,
+              lessonId: 'TEST-U1-L2',
+              unitId: 'TEST-U1',
+              state: 'inProgress',
+              lastActivityId: const Value('B2'),
+              updatedAt: DateTime.utc(2026, 9, 2),
+            ),
+          );
+
+      SharedPreferences.setMockInitialValues({});
+      final prefs = await SharedPreferences.getInstance();
+
+      await tester.pumpWidget(
+        ProviderScope(
+          overrides: [
+            sharedPreferencesProvider.overrideWithValue(prefs),
+            appDatabaseProvider.overrideWithValue(db),
+            courseContentProvider('a1')
+                .overrideWith((ref) async => _fixtureIndex()),
+          ],
+          child: MaterialApp(
+            supportedLocales: AppLocalizations.supportedLocales,
+            localizationsDelegates: AppLocalizations.localizationsDelegates,
+            home: const LessonPlayerScreen(
+              unitId: 'TEST-U1',
+              lessonId: 'TEST-U1-L2',
+            ),
+          ),
+        ),
+      );
+      await tester.pumpAndSettle();
+
+      // Resumed at B3 — B1's answer was never entered in *this* State.
+      expect(find.text('p B3'), findsOneWidget);
+
+      await tester.enterText(find.byType(TextField), 'a l i');
+      await tester.pump();
+      await tester.tap(find.byType(FilledButton).first);
+      await tester.pumpAndSettle();
+
+      final recorded = await (db.select(
+        db.activityAttempts,
+      )..where((t) => t.activityId.equals('B3'))).getSingle();
+      // Without rehydration the reference resolves to nothing and this is
+      // recorded as notAutoGraded (isCorrect == null).
+      expect(recorded.isCorrect, isTrue);
+    },
+  );
 }

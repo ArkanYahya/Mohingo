@@ -14,7 +14,7 @@ bool answersMatch(String accepted, String given) {
   if (_normalize(accepted) == _normalize(given)) return true;
 
   if (_isLetterSpellingAnswer(accepted)) {
-    return _lettersOnly(accepted) == _lettersOnly(given);
+    return lettersOnlyMatch(accepted, given);
   }
 
   return false;
@@ -36,11 +36,22 @@ bool _isLetterSpellingAnswer(String text) =>
 
 final _nonLetters = RegExp('[^a-z]');
 
-String _lettersOnly(String text) =>
+/// [text] reduced to its lowercase Latin letters, dropping case, spacing,
+/// and punctuation — e.g. "Ali", "a l i", and "A-L-I" all normalize to
+/// "ali".
+///
+/// Returns an **empty string** for text with no Latin letters at all (an
+/// Arabic name like "علي", digits, emoji). Callers that compare against a
+/// learner- or content-supplied reference must check the *normalized* form
+/// for emptiness, not the raw string: a non-Latin reference is non-empty raw
+/// but unusable here, and comparing it would fail every answer forever. See
+/// the `letterSequence` evaluator in
+/// lib/features/activity_engine/domain/evaluation/evaluator.dart.
+String lettersOnly(String text) =>
     text.toLowerCase().replaceAll(_nonLetters, '');
 
 /// Whether [a] and [b] contain the same sequence of letters, ignoring case,
 /// spacing, and punctuation — e.g. "Ali", "a l i", and "A-L-I" all match.
 /// Shared by [answersMatch]'s letter-spelling case and the `letterSequence`
 /// evaluator (see lib/features/activity_engine/domain/evaluation).
-bool lettersOnlyMatch(String a, String b) => _lettersOnly(a) == _lettersOnly(b);
+bool lettersOnlyMatch(String a, String b) => lettersOnly(a) == lettersOnly(b);

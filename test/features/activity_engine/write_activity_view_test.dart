@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mohingo/content/models/activity.dart';
 import 'package:mohingo/content/models/domain_definitions.dart';
 import 'package:mohingo/features/activity_engine/domain/activity_submission.dart';
-import 'package:mohingo/features/activity_engine/domain/evaluation/evaluation_spec.dart';
+import 'package:mohingo/content/models/evaluation_spec.dart';
 import 'package:mohingo/features/activity_engine/presentation/views/write_activity_view.dart';
 
 import 'test_harness.dart';

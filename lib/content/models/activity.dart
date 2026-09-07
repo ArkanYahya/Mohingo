@@ -1,5 +1,5 @@
-import '../../features/activity_engine/domain/evaluation/evaluation_spec.dart';
 import 'domain_definitions.dart';
+import 'evaluation_spec.dart';
 import 'exceptions.dart';
 
 /// One typed exercise, discriminated by [type].

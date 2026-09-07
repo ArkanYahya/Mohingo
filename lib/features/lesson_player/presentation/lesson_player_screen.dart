@@ -10,6 +10,7 @@ import '../../../content/models/domain_definitions.dart';
 import '../../../content/models/media_specification.dart';
 import '../../../content/providers/course_content_providers.dart';
 import '../../../core/l10n/generated/app_localizations.dart';
+import '../../../data/local/database.dart';
 import '../../activity_engine/domain/activity_submission.dart';
 import '../../activity_engine/domain/evaluation/evaluation_context.dart';
 import '../../activity_engine/domain/evidence_skill_resolver.dart';
@@ -24,8 +25,10 @@ import '../../progress/providers/progress_providers.dart';
 ///
 /// Resume behaviour: if [LessonProgressData.lastActivityId] exists and
 /// isn't the lesson's final activity, playback resumes right after it
-/// (interrupted mid-lesson). Otherwise — no prior progress, or the lesson
-/// was previously finished — playback starts at activity 0; revisiting a
+/// (interrupted mid-lesson), after rehydrating the skipped activities'
+/// recorded answers so a later `letterSequence` rubric that references one
+/// of them still grades. Otherwise — no prior progress, or the lesson was
+/// previously finished — playback starts at activity 0; revisiting a
 /// finished lesson is a full replay, which appends fresh evidence rather
 /// than overwriting history (`ActivityAttemptRepository.recordAttempt` is
 /// insert-only). See docs/DATA_MODEL.md.
@@ -139,16 +142,82 @@ class _LessonPlayerBodyState extends ConsumerState<_LessonPlayerBody> {
       // else: lastActivityId was the final activity (lesson previously
       // completed) -> intentional replay from the start.
     }
+    if (startIndex > 0) {
+      await _rehydratePreviousAnswers(skippedCount: startIndex);
+    }
     if (mounted) setState(() => _currentIndex = startIndex);
+  }
+
+  /// Refills [_previousAnswers] from already-recorded attempts before
+  /// resuming a lesson part-way through.
+  ///
+  /// [_previousAnswers] is in-memory and per-`State`, so on a mid-lesson
+  /// resume it starts empty — but a later activity's `letterSequence`
+  /// rubric can reference an earlier activity's answer
+  /// (`"reference": "previousAnswer:<id>"`), and that earlier activity is
+  /// exactly the kind that was answered in the *previous* session and is
+  /// now being skipped. Without this the reference resolves to nothing and
+  /// the activity silently drops to `notAutoGraded`, costing the learner
+  /// mastery evidence purely because they backed out and came back.
+  ///
+  /// Only the [skippedCount] activities being skipped are rehydrated — a
+  /// reference always points backwards, and reading no further keeps a
+  /// stale answer from an older replay of a *later* activity out of the
+  /// map. Answers are stored exactly as [_handleSubmitted] writes them:
+  /// JSON-encoded, and only kept when they decode to a plain string.
+  Future<void> _rehydratePreviousAnswers({required int skippedCount}) async {
+    final answered = widget.lesson.activities
+        .take(skippedCount)
+        .map((a) => a.id)
+        .toSet();
+    if (answered.isEmpty) return;
+
+    final attempts = await ref
+        .read(activityAttemptRepositoryProvider)
+        .attemptsForLessons(
+          learnerId: widget.learnerId,
+          lessonIds: [widget.lesson.id],
+        );
+
+    final latestByActivity = <String, ActivityAttempt>{};
+    for (final attempt in attempts) {
+      if (attempt.sessionType != 'lesson') continue;
+      if (!answered.contains(attempt.activityId)) continue;
+      final existing = latestByActivity[attempt.activityId];
+      if (existing == null ||
+          !attempt.attemptedAt.isBefore(existing.attemptedAt)) {
+        latestByActivity[attempt.activityId] = attempt;
+      }
+    }
+
+    for (final entry in latestByActivity.entries) {
+      final rawAnswer = entry.value.rawAnswer;
+      if (rawAnswer == null) continue;
+      final decoded = _decodeRawAnswer(rawAnswer);
+      if (decoded != null) _previousAnswers[entry.key] = decoded;
+    }
+  }
+
+  /// A stored `rawAnswer` decoded back to the plain string
+  /// [_previousAnswers] holds, or `null` if it isn't one (a structured
+  /// answer, or unparseable JSON written by an older build).
+  String? _decodeRawAnswer(String rawAnswer) {
+    try {
+      final decoded = jsonDecode(rawAnswer);
+      return decoded is String ? decoded : null;
+    } on FormatException {
+      return null;
+    }
   }
 
   Future<void> _handleSubmitted(
     Activity activity,
     ActivitySubmission submission,
   ) async {
-    if (submission.rawAnswerJson != null) {
-      final decoded = jsonDecode(submission.rawAnswerJson!);
-      if (decoded is String) _previousAnswers[activity.id] = decoded;
+    final rawAnswerJson = submission.rawAnswerJson;
+    if (rawAnswerJson != null) {
+      final decoded = _decodeRawAnswer(rawAnswerJson);
+      if (decoded != null) _previousAnswers[activity.id] = decoded;
     }
 
     final evidenceSkill = resolveEvidenceSkill(activity, submission);
