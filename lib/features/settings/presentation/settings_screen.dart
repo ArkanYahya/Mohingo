@@ -10,6 +10,7 @@ import '../../grammar/providers/grammar_providers.dart';
 import '../../learning_path/providers/unit_progress_providers.dart';
 import '../../progress/providers/current_learner_provider.dart';
 import '../../progress/providers/ensure_a1_enrollment_provider.dart';
+import '../../progress/providers/progress_providers.dart';
 import '../../review/providers/review_providers.dart';
 import '../../speech/domain/speech_recognition_service.dart';
 import '../../speech/providers/speech_providers.dart';
@@ -45,6 +46,9 @@ class SettingsScreen extends ConsumerWidget {
           const SizedBox(height: 24),
           _SectionTitle(l10n.settingsColorThemeTitle),
           const _ColorThemePicker(),
+          const SizedBox(height: 24),
+          _SectionTitle(l10n.settingsNameTitle),
+          const _NameField(),
           const SizedBox(height: 24),
           _SectionTitle(l10n.settingsSpeechTitle),
           const _SpeechStatusCard(),
@@ -175,6 +179,73 @@ class _ColorThemePicker extends ConsumerWidget {
             ),
           ),
       ],
+    );
+  }
+}
+
+class _NameField extends ConsumerStatefulWidget {
+  const _NameField();
+
+  @override
+  ConsumerState<_NameField> createState() => _NameFieldState();
+}
+
+class _NameFieldState extends ConsumerState<_NameField> {
+  final _controller = TextEditingController();
+  bool _initialized = false;
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  Future<void> _save(BuildContext context, WidgetRef ref) async {
+    final l10n = AppLocalizations.of(context)!;
+    final learner = await ref.read(currentLearnerProvider.future);
+    await ref
+        .read(learnerRepositoryProvider)
+        .updateName(learnerId: learner.id, name: _controller.text.trim());
+    ref.invalidate(currentLearnerProvider);
+    if (context.mounted) {
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text(l10n.settingsNameSaved)));
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final learnerAsync = ref.watch(currentLearnerProvider);
+    return learnerAsync.when(
+      loading: () => const LinearProgressIndicator(),
+      error: (error, _) => Text('$error'),
+      data: (learner) {
+        if (!_initialized) {
+          _controller.text = learner.name ?? '';
+          _initialized = true;
+        }
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            TextField(
+              controller: _controller,
+              decoration: InputDecoration(
+                border: const OutlineInputBorder(),
+                helperText: l10n.settingsNameHint,
+              ),
+            ),
+            const SizedBox(height: 8),
+            Align(
+              alignment: AlignmentDirectional.centerEnd,
+              child: FilledButton(
+                onPressed: () => _save(context, ref),
+                child: Text(l10n.settingsNameSaveButton),
+              ),
+            ),
+          ],
+        );
+      },
     );
   }
 }

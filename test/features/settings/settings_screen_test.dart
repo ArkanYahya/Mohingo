@@ -223,4 +223,33 @@ void main() {
       expect(find.text('Progress reset.'), findsOneWidget);
     },
   );
+
+  testWidgets(
+    'entering a name and tapping Save persists it and shows confirmation',
+    (tester) async {
+      _useTallViewport(tester);
+      final (db, prefs) = await _setupBacking();
+
+      await tester.pumpWidget(
+        ProviderScope(
+          overrides: _baseOverrides(prefs, db),
+          child: MaterialApp(
+            supportedLocales: AppLocalizations.supportedLocales,
+            localizationsDelegates: AppLocalizations.localizationsDelegates,
+            home: const SettingsScreen(),
+          ),
+        ),
+      );
+      await tester.pumpAndSettle();
+
+      await tester.enterText(find.byType(TextField), 'Ali');
+      await tester.tap(find.text('Save'));
+      await tester.pumpAndSettle();
+
+      expect(find.text('Name saved'), findsOneWidget);
+
+      final row = await db.select(db.learners).getSingle();
+      expect(row.name, 'Ali');
+    },
+  );
 }

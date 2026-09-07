@@ -515,6 +515,18 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settingsColorThemeTitle => 'Colour theme';
 
   @override
+  String get settingsNameTitle => 'Your name';
+
+  @override
+  String get settingsNameHint => 'Used by a few spelling exercises';
+
+  @override
+  String get settingsNameSaveButton => 'Save';
+
+  @override
+  String get settingsNameSaved => 'Name saved';
+
+  @override
   String get settingsAboutTitle => 'About';
 
   @override

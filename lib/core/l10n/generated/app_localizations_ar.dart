@@ -525,6 +525,18 @@ class AppLocalizationsAr extends AppLocalizations {
   String get settingsColorThemeTitle => 'لون الواجهة';
 
   @override
+  String get settingsNameTitle => 'اسمك';
+
+  @override
+  String get settingsNameHint => 'يُستخدم في بعض تمارين التهجئة';
+
+  @override
+  String get settingsNameSaveButton => 'حفظ';
+
+  @override
+  String get settingsNameSaved => 'تم حفظ الاسم';
+
+  @override
   String get settingsAboutTitle => 'حول التطبيق';
 
   @override

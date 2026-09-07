@@ -968,6 +968,30 @@ abstract class AppLocalizations {
   /// **'Colour theme'**
   String get settingsColorThemeTitle;
 
+  /// Section title on Settings for the learner's name field.
+  ///
+  /// In en, this message translates to:
+  /// **'Your name'**
+  String get settingsNameTitle;
+
+  /// Helper text under the Settings name field explaining why it's asked.
+  ///
+  /// In en, this message translates to:
+  /// **'Used by a few spelling exercises'**
+  String get settingsNameHint;
+
+  /// Button to save the learner's name in Settings.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get settingsNameSaveButton;
+
+  /// Snackbar confirmation after saving the learner's name in Settings.
+  ///
+  /// In en, this message translates to:
+  /// **'Name saved'**
+  String get settingsNameSaved;
+
   /// Settings section title for app/privacy information.
   ///
   /// In en, this message translates to:
