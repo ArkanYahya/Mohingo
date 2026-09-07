@@ -1,3 +1,4 @@
+import '../../features/activity_engine/domain/evaluation/evaluation_spec.dart';
 import 'domain_definitions.dart';
 import 'exceptions.dart';
 
@@ -286,7 +287,7 @@ class FormActivity extends Activity {
       promptAr: c.promptAr,
       raw: json,
       fields: List<String>.from(json['fields'] as List),
-      evaluation: json['evaluation'] as String?,
+      evaluation: EvaluationSpec.fromJson(json['evaluation']),
     );
   }
 
@@ -294,7 +295,7 @@ class FormActivity extends Activity {
 
   /// A rubric id string — task-specific grading, never a single overall
   /// score. See docs/DATA_MODEL.md.
-  final String? evaluation;
+  final EvaluationSpec? evaluation;
 }
 
 class SpeakActivity extends Activity {
@@ -324,13 +325,13 @@ class SpeakActivity extends Activity {
       promptAr: c.promptAr,
       raw: json,
       accepted: List<String>.from(json['accepted'] as List? ?? const []),
-      evaluation: json['evaluation'] as String?,
+      evaluation: EvaluationSpec.fromJson(json['evaluation']),
       fallbackSkill: json['fallbackSkill'] as String?,
     );
   }
 
   final List<String> accepted;
-  final String? evaluation;
+  final EvaluationSpec? evaluation;
 
   /// The typed-answer accessibility fallback skill (e.g. `"writing"`) —
   /// answering via this fallback must be recorded with `wasFallback=true`
@@ -366,7 +367,7 @@ class WriteActivity extends Activity {
       promptAr: c.promptAr,
       raw: json,
       accepted: List<String>.from(json['accepted'] as List? ?? const []),
-      evaluation: json['evaluation'] as String?,
+      evaluation: EvaluationSpec.fromJson(json['evaluation']),
       wordGuide: json['wordGuide'] == null
           ? null
           : List<int>.from(json['wordGuide'] as List),
@@ -374,7 +375,7 @@ class WriteActivity extends Activity {
   }
 
   final List<String> accepted;
-  final String? evaluation;
+  final EvaluationSpec? evaluation;
 
   /// `[min, max]` suggested word count, when the bundle declares one.
   final List<int>? wordGuide;
