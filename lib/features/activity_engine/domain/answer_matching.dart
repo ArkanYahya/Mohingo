@@ -38,3 +38,9 @@ final _nonLetters = RegExp('[^a-z]');
 
 String _lettersOnly(String text) =>
     text.toLowerCase().replaceAll(_nonLetters, '');
+
+/// Whether [a] and [b] contain the same sequence of letters, ignoring case,
+/// spacing, and punctuation — e.g. "Ali", "a l i", and "A-L-I" all match.
+/// Shared by [answersMatch]'s letter-spelling case and the `letterSequence`
+/// evaluator (see lib/features/activity_engine/domain/evaluation).
+bool lettersOnlyMatch(String a, String b) => _lettersOnly(a) == _lettersOnly(b);
