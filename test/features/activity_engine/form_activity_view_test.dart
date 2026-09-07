@@ -18,7 +18,6 @@ FormActivity _formActivity() {
     promptAr: 'أنشئ أربع بطاقات لأشخاص.',
     raw: {},
     fields: ['name', 'relationship'],
-    evaluation: 'four-complete-people-cards',
   );
 }
 
