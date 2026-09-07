@@ -6,6 +6,8 @@ import '../../../../content/models/activity.dart';
 import '../../../../core/l10n/generated/app_localizations.dart';
 import '../../domain/activity_submission.dart';
 import '../../domain/answer_matching.dart';
+import '../../domain/evaluation/evaluation_context.dart';
+import '../../domain/evaluation/evaluator.dart';
 import '../activity_chrome.dart';
 
 /// Renders a `write` activity: a free-text response, with a suggested word
@@ -14,20 +16,22 @@ import '../activity_chrome.dart';
 /// When [WriteActivity.accepted] lists specific acceptable answers (short,
 /// closed-form writing tasks), the response is checked against them via
 /// [answersMatch] — case-insensitively, tolerant of harmless punctuation
-/// and apostrophe-style differences; otherwise (open-ended tasks relying on
-/// [WriteActivity.evaluation], a rubric id) the submission is recorded as
-/// [ActivityCorrectness.notAutoGraded] — writing tasks generally need a
-/// task-specific rubric, not an automatic right/wrong check. See
-/// docs/DATA_MODEL.md.
+/// and apostrophe-style differences. Otherwise, when [WriteActivity.evaluation]
+/// declares a structured [EvaluationSpec], the response is graded via
+/// [evaluate]. Failing both, the submission is recorded as
+/// [ActivityCorrectness.notAutoGraded] — some open-ended writing tasks have
+/// no automatic right/wrong check at all. See docs/DATA_MODEL.md.
 class WriteActivityView extends StatefulWidget {
   const WriteActivityView({
     required this.activity,
     required this.onSubmitted,
+    this.evaluationContext = const EvaluationContext.empty(),
     super.key,
   });
 
   final WriteActivity activity;
   final OnActivitySubmitted onSubmitted;
+  final EvaluationContext evaluationContext;
 
   @override
   State<WriteActivityView> createState() => _WriteActivityViewState();
@@ -51,6 +55,17 @@ class _WriteActivityViewState extends State<WriteActivityView> {
             ? ActivityCorrectness.correct
             : ActivityCorrectness.incorrect,
         score: isCorrect ? 1.0 : 0.0,
+        rawAnswerJson: jsonEncode(text),
+      );
+    } else if (widget.activity.evaluation != null) {
+      final result = evaluate(
+        widget.activity.evaluation!,
+        text,
+        context: widget.evaluationContext,
+      );
+      submission = ActivitySubmission(
+        correctness: result.correctness,
+        score: result.score,
         rawAnswerJson: jsonEncode(text),
       );
     } else {
