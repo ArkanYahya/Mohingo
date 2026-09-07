@@ -293,8 +293,9 @@ class FormActivity extends Activity {
 
   final List<String> fields;
 
-  /// A rubric id string — task-specific grading, never a single overall
-  /// score. See docs/DATA_MODEL.md.
+  /// A structured grading rubric, task-specific, never a single overall
+  /// score. `null` for a not-yet-migrated legacy rubric-name string or an
+  /// absent field. See docs/DATA_MODEL.md.
   final EvaluationSpec? evaluation;
 }
 
