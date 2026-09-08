@@ -12,8 +12,11 @@ import 'package:mohingo/app.dart';
 import 'package:mohingo/core/preferences/shared_preferences_provider.dart';
 import 'package:mohingo/data/local/database.dart';
 import 'package:mohingo/data/local/database_provider.dart';
+import 'package:mohingo/features/activity_engine/providers/online_refinement_providers.dart';
 import 'package:mohingo/features/app_shell/presentation/app_shell_scaffold.dart';
 import 'package:mohingo/features/review/providers/review_providers.dart';
+
+import 'features/activity_engine/fake_connectivity_service.dart';
 
 Future<SharedPreferences> _mockPrefs([
   Map<String, Object> values = const {},
@@ -46,12 +49,22 @@ Future<void> _pumpAppAndWaitForContent(
     // defaults() opens a real file via path_provider, which isn't mocked in
     // the widget-test environment and hangs. Override with an in-memory
     // instance instead — nothing here asserts on persisted progress.
+    //
+    // Likewise, MohingoApp watches pendingRefinementDrainerProvider at root
+    // (Task 10), which reads/listens to the real DeviceConnectivityService's
+    // connectivity_plus platform channel — also unmocked here, and reported
+    // by the plugin as an unhandled MissingPluginException on both listen
+    // and cancel. Override with a fake instead; nothing here exercises the
+    // online-refinement drain.
     await tester.pumpWidget(
       ProviderScope(
         overrides: [
           sharedPreferencesProvider.overrideWithValue(prefs),
           appDatabaseProvider.overrideWithValue(
             AppDatabase(NativeDatabase.memory()),
+          ),
+          connectivityServiceProvider.overrideWithValue(
+            FakeConnectivityService(online: false),
           ),
           ...overrides,
         ],

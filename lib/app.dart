@@ -6,6 +6,7 @@ import 'core/l10n/locale_preference_provider.dart';
 import 'core/router/app_router.dart';
 import 'core/theme/app_theme.dart';
 import 'core/theme/theme_preferences_provider.dart';
+import 'features/activity_engine/providers/online_refinement_providers.dart';
 import 'features/progress/providers/ensure_a1_enrollment_provider.dart';
 
 /// The root widget. Theme mode, colour theme, and interface language are all
@@ -25,6 +26,11 @@ class MohingoApp extends ConsumerWidget {
     // awaited here — nothing in the UI blocks on it, see
     // ensureA1EnrollmentProvider's doc comment.
     ref.watch(ensureA1EnrollmentProvider);
+    // Fire-and-forget: drains any queued open-ended answers immediately if
+    // already online, and again whenever connectivity is regained. Never
+    // required for a learning feature to function — see
+    // pendingRefinementDrainerProvider's doc comment.
+    ref.watch(pendingRefinementDrainerProvider);
 
     return MaterialApp.router(
       onGenerateTitle: (context) => AppLocalizations.of(context)!.appTitle,
