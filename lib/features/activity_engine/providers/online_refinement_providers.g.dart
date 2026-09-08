@@ -66,3 +66,62 @@ final class ConnectivityServiceProvider
 
 String _$connectivityServiceHash() =>
     r'f4b7196f2c38431baab2a91cc4b4245a5b29c647';
+
+/// Bound to the real LanguageTool-backed implementation today, same seam
+/// pattern as [connectivityService] above — a future alternative
+/// implementation swaps in by changing only this binding.
+
+@ProviderFor(grammarCheckService)
+final grammarCheckServiceProvider = GrammarCheckServiceProvider._();
+
+/// Bound to the real LanguageTool-backed implementation today, same seam
+/// pattern as [connectivityService] above — a future alternative
+/// implementation swaps in by changing only this binding.
+
+final class GrammarCheckServiceProvider
+    extends
+        $FunctionalProvider<
+          GrammarCheckService,
+          GrammarCheckService,
+          GrammarCheckService
+        >
+    with $Provider<GrammarCheckService> {
+  /// Bound to the real LanguageTool-backed implementation today, same seam
+  /// pattern as [connectivityService] above — a future alternative
+  /// implementation swaps in by changing only this binding.
+  GrammarCheckServiceProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'grammarCheckServiceProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$grammarCheckServiceHash();
+
+  @$internal
+  @override
+  $ProviderElement<GrammarCheckService> $createElement(
+    $ProviderPointer pointer,
+  ) => $ProviderElement(pointer);
+
+  @override
+  GrammarCheckService create(Ref ref) {
+    return grammarCheckService(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(GrammarCheckService value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<GrammarCheckService>(value),
+    );
+  }
+}
+
+String _$grammarCheckServiceHash() =>
+    r'0a846684f1fb15ad3a7d85166b8c887d360450a1';
