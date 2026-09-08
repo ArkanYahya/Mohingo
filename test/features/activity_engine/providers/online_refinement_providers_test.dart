@@ -158,4 +158,150 @@ void main() {
     final remaining = await db.select(db.pendingOnlineRefinements).get();
     expect(remaining, isEmpty);
   });
+
+  test(
+    'a device that is never online still resolves a queued row via the '
+    'bounded local-only fallback — the drain is not gated on connectivity',
+    () async {
+      final db = AppDatabase(NativeDatabase.memory());
+      addTearDown(db.close);
+      final index = _realA1Index();
+      final learnerId = await db
+          .into(db.learners)
+          .insert(
+            LearnersCompanion.insert(
+              uuid: const Uuid().v4(),
+              createdAt: DateTime.utc(2026, 9, 8),
+            ),
+          );
+      await db
+          .into(db.pendingOnlineRefinements)
+          .insert(
+            PendingOnlineRefinementsCompanion.insert(
+              uuid: const Uuid().v4(),
+              learnerId: learnerId,
+              activityId: 'A1-U0-L5-A01',
+              lessonId: 'A1-U0-L5',
+              unitId: 'A1-U0',
+              canDoIds: '[]',
+              rawAnswer: '"Hi there!"',
+              evidenceSkill: 'spokenInteraction',
+              mode: 'mastery',
+              localScore: 0.8,
+              // Old enough to be past the drain service's age bound, so
+              // the very first failed check finalizes it locally.
+              submittedAt: DateTime.now().subtract(const Duration(days: 30)),
+            ),
+          );
+
+      final container = ProviderContainer(
+        overrides: [
+          appDatabaseProvider.overrideWithValue(db),
+          courseContentProvider('a1').overrideWith((ref) async => index),
+          // Offline for the whole test — never comes online, never fires an
+          // onlineChanges event.
+          connectivityServiceProvider.overrideWithValue(
+            FakeConnectivityService(online: false),
+          ),
+          grammarCheckServiceProvider.overrideWithValue(
+            FakeGrammarCheckService(
+              failure: const GrammarCheckUnavailableException('offline'),
+            ),
+          ),
+        ],
+      );
+      addTearDown(container.dispose);
+
+      container.read(pendingRefinementDrainerProvider);
+      await _settle();
+
+      expect(await db.select(db.pendingOnlineRefinements).get(), isEmpty);
+      final attempts = await db.select(db.activityAttempts).get();
+      expect(
+        attempts,
+        hasLength(1),
+        reason:
+            'the bounded local-only fallback lives inside drainOnce(), so a '
+            'never-online device must still reach it',
+      );
+      expect(attempts.single.score, 0.8); // local-only score, unrefined
+    },
+  );
+
+  test('two overlapping drains record the queued answer only once — the '
+      're-entrancy guard', () async {
+    final db = AppDatabase(NativeDatabase.memory());
+    addTearDown(db.close);
+    final index = _realA1Index();
+    final learnerId = await db
+        .into(db.learners)
+        .insert(
+          LearnersCompanion.insert(
+            uuid: const Uuid().v4(),
+            createdAt: DateTime.utc(2026, 9, 8),
+          ),
+        );
+    await db
+        .into(db.pendingOnlineRefinements)
+        .insert(
+          PendingOnlineRefinementsCompanion.insert(
+            uuid: const Uuid().v4(),
+            learnerId: learnerId,
+            activityId: 'A1-U0-L5-A01',
+            lessonId: 'A1-U0-L5',
+            unitId: 'A1-U0',
+            canDoIds: '[]',
+            rawAnswer: '"Hi there!"',
+            evidenceSkill: 'spokenInteraction',
+            mode: 'mastery',
+            localScore: 1.0,
+            submittedAt: DateTime.utc(2026, 9, 8),
+          ),
+        );
+
+    final connectivity = FakeConnectivityService(online: true);
+    final container = ProviderContainer(
+      overrides: [
+        appDatabaseProvider.overrideWithValue(db),
+        courseContentProvider('a1').overrideWith((ref) async => index),
+        connectivityServiceProvider.overrideWithValue(connectivity),
+        grammarCheckServiceProvider.overrideWithValue(
+          FakeGrammarCheckService(
+            result: const GrammarCheckResult(errorCount: 0, wordCount: 2),
+            // Long enough that a second trigger lands while the first
+            // drain is still awaiting its check — the real wifi-to-mobile
+            // handoff window.
+            delay: const Duration(milliseconds: 200),
+          ),
+        ),
+      ],
+    );
+    addTearDown(container.dispose);
+
+    // Trigger one: provider creation. Trigger two: a connectivity-regained
+    // event fired while that first drain is still in flight.
+    container.read(pendingRefinementDrainerProvider);
+    await Future<void>.delayed(const Duration(milliseconds: 20));
+    connectivity.setOnline(true);
+    await Future<void>.delayed(const Duration(milliseconds: 500));
+    await _settle();
+
+    expect(await db.select(db.pendingOnlineRefinements).get(), isEmpty);
+    expect(
+      await db.select(db.activityAttempts).get(),
+      hasLength(1),
+      reason:
+          'both drains would otherwise snapshot the same queue row and '
+          'record the same answer as mastery evidence twice',
+    );
+  });
+}
+
+/// Both drain triggers are fire-and-forget, and a resolved item then runs
+/// an async unit-progress refresh — give the microtask queue enough turns
+/// for all of it to finish.
+Future<void> _settle({int turns = 30}) async {
+  for (var i = 0; i < turns; i++) {
+    await Future<void>.delayed(Duration.zero);
+  }
 }

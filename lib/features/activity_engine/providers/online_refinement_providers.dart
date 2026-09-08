@@ -1,3 +1,6 @@
+import 'dart:async';
+
+import 'package:flutter/foundation.dart' show debugPrint;
 import 'package:flutter_riverpod/flutter_riverpod.dart' show Provider;
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -39,14 +42,29 @@ PendingRefinementRepository pendingRefinementRepository(Ref ref) {
 }
 
 /// Watched once at app root (`MohingoApp`) — drains
-/// `pending_online_refinements` immediately if already online, then again
-/// every time [ConnectivityService.onlineChanges] reports the device just
-/// came online. Never required for any learning feature to function: if
-/// this never fires (a learner who's never online), queued items still
-/// resolve via `PendingRefinementDrainService`'s bounded local-only
-/// fallback the next time a drain happens to run — this provider is only
-/// what makes that happen *sooner* when possible. See
-/// docs/adr/0005-narrow-network-exception-for-open-ended-grading.md.
+/// `pending_online_refinements` once at startup, then again every time
+/// [ConnectivityService.onlineChanges] reports the device just came online.
+///
+/// The drain runs **unconditionally** at both trigger points — never gated
+/// on [ConnectivityService.isOnline]. `PendingRefinementDrainService`'s
+/// bounded local-only fallback (the mechanism that guarantees a learner who
+/// is never online still gets every queued answer resolved, per
+/// [ADR 0005](docs/adr/0005-narrow-network-exception-for-open-ended-grading.md))
+/// lives *inside* `drainOnce()`, so gating that call on connectivity would
+/// make the fallback unreachable on exactly the devices it exists for.
+/// Calling it while offline is safe on its own terms: the grammar check
+/// throws [GrammarCheckUnavailableException] with no network, and
+/// `PendingRefinementDrainService`'s own per-item handling already turns
+/// that into either a retry or — once the row is retried/old enough — a
+/// local-score-only resolution. Regained connectivity is still a useful
+/// *extra* trigger (it's when an online refinement can actually succeed);
+/// it just isn't a precondition for draining at all.
+///
+/// At most one drain is ever in flight: both triggers are fire-and-forget
+/// and one grammar check can take up to 10s, so two overlapping drains
+/// would otherwise both read the same queue rows and record the same answer
+/// as mastery evidence twice (the loser's `remove(id:)` being a silent
+/// no-op).
 ///
 /// [OnItemResolved] is wired here, not inside the drain service itself,
 /// because refreshing a unit's cached mastery state needs a real [Unit]
@@ -83,16 +101,40 @@ final pendingRefinementDrainerProvider = Provider<void>((ref) {
   );
   final connectivity = ref.watch(connectivityServiceProvider);
 
-  Future<void> drainIfOnline() async {
-    if (await connectivity.isOnline()) {
+  // Captured by the closures below (same shape as `subscription`), never a
+  // module-level global — one guard per drainer instance is exactly the
+  // scope that matters.
+  var draining = false;
+  Future<void> drain() async {
+    // Synchronous check-and-set: nothing awaits between reading and
+    // writing `draining`, so a second trigger can never slip past it.
+    if (draining) return;
+    draining = true;
+    try {
       await service.drainOnce();
+    } finally {
+      draining = false;
     }
   }
 
-  drainIfOnline();
+  // Nothing awaits either trigger, so an unexpected failure would otherwise
+  // become an unhandled async error — swallowed silently in release, a
+  // crash in debug. Log it and move on: the queue rows are untouched and
+  // the next trigger tries again.
+  void startDrain() {
+    unawaited(
+      drain().catchError((Object error, StackTrace stackTrace) {
+        debugPrint(
+          'Pending online-refinement drain failed: $error\n$stackTrace',
+        );
+      }),
+    );
+  }
+
+  startDrain();
 
   final subscription = connectivity.onlineChanges
       .where((isOnline) => isOnline)
-      .listen((_) => drainIfOnline());
+      .listen((_) => startDrain());
   ref.onDispose(subscription.cancel);
 });
