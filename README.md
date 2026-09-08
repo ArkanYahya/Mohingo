@@ -65,6 +65,7 @@ If a widget test hangs or times out, it's almost always a missing fake-service o
 - **No CI/CD is configured** — see [ROADMAP.md](docs/ROADMAP.md).
 - **Release builds sign with the debug key** on Android (`android/app/build.gradle.kts`) — a real signing config is needed before any Play Store upload.
 - **App icons are still the default Flutter template icons** on both platforms — no branded icon has been designed yet.
+- **App-store data-safety/privacy-label declarations and a privacy-policy update have not been addressed** for the app's first third-party network transmission: open-ended writing/speaking answers on the ~40 rubrics marked `onlineRefinement` may be sent to the free public LanguageTool API for a grammar-quality check (always optional — a bounded local-only fallback grades them if the device is never online; see [ADR 0005](docs/adr/0005-narrow-network-exception-for-open-ended-grading.md)). Google Play Data Safety and Apple Privacy Nutrition Label entries, and whatever privacy-policy text they require, still need to be decided and written before any store submission.
 
 ## Project structure
 
