@@ -13618,7 +13618,16 @@
               "prompt": "Write a 35–55-word message about what you like and invite a friend to one activity.",
               "promptAr": "اكتب رسالة من 35–55 كلمة عن ما تحب وادع صديقاً إلى نشاط.",
               "accepted": [],
-              "evaluation": "u5-free-time-message-rubric",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  ["like", "love", "enjoy", "hobby", "hobbies"],
+                  ["free time", "weekend", "hobby", "hobbies"],
+                  ["would you like", "let's", "join", "come"]
+                ],
+                "minGroupsMatched": 2,
+                "onlineRefinement": "grammarCheck"
+              },
               "wordGuide": [
                 35,
                 55
