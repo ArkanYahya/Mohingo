@@ -15,6 +15,7 @@ import '../../activity_engine/domain/activity_submission.dart';
 import '../../activity_engine/domain/evaluation/evaluation_context.dart';
 import '../../activity_engine/domain/evidence_skill_resolver.dart';
 import '../../activity_engine/presentation/activity_view_registry.dart';
+import '../../activity_engine/providers/online_refinement_providers.dart';
 import '../../learning_path/providers/unit_progress_providers.dart';
 import '../../progress/providers/current_learner_provider.dart';
 import '../../progress/providers/progress_providers.dart';
@@ -222,25 +223,41 @@ class _LessonPlayerBodyState extends ConsumerState<_LessonPlayerBody> {
 
     final evidenceSkill = resolveEvidenceSkill(activity, submission);
 
-    await ref
-        .read(activityAttemptRepositoryProvider)
-        .recordAttempt(
-          learnerId: widget.learnerId,
-          activityId: activity.id,
-          lessonId: widget.lesson.id,
-          sessionType: 'lesson',
-          mode: activity.mode,
-          evidenceSkill: evidenceSkill,
-          canDoIds: activity.canDo,
-          rawAnswer: submission.rawAnswerJson,
-          isCorrect: switch (submission.correctness) {
-            ActivityCorrectness.correct => true,
-            ActivityCorrectness.incorrect => false,
-            ActivityCorrectness.notAutoGraded => null,
-          },
-          score: submission.score,
-          wasFallback: submission.wasFallback,
-        );
+    if (submission.pendingOnlineRefinement) {
+      await ref
+          .read(pendingRefinementRepositoryProvider)
+          .enqueue(
+            learnerId: widget.learnerId,
+            activityId: activity.id,
+            lessonId: widget.lesson.id,
+            unitId: widget.unitId,
+            canDoIds: activity.canDo,
+            rawAnswer: submission.rawAnswerJson!,
+            evidenceSkill: evidenceSkill.name,
+            mode: activity.mode.name,
+            localScore: submission.score ?? 0.0,
+          );
+    } else {
+      await ref
+          .read(activityAttemptRepositoryProvider)
+          .recordAttempt(
+            learnerId: widget.learnerId,
+            activityId: activity.id,
+            lessonId: widget.lesson.id,
+            sessionType: 'lesson',
+            mode: activity.mode,
+            evidenceSkill: evidenceSkill,
+            canDoIds: activity.canDo,
+            rawAnswer: submission.rawAnswerJson,
+            isCorrect: switch (submission.correctness) {
+              ActivityCorrectness.correct => true,
+              ActivityCorrectness.incorrect => false,
+              ActivityCorrectness.notAutoGraded => null,
+            },
+            score: submission.score,
+            wasFallback: submission.wasFallback,
+          );
+    }
 
     await ref
         .read(unitLessonProgressRepositoryProvider)

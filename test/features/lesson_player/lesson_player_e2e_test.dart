@@ -275,4 +275,96 @@ void main() {
       await db.close();
     },
   );
+
+  testWidgets(
+    'an onlineRefinement activity is queued in pending_online_refinements, '
+    'not recorded as an ordinary attempt, when submitted',
+    (tester) async {
+      final db = AppDatabase(NativeDatabase.memory());
+      final index = _realA1Index();
+      final lesson = index.lessonsById['A1-U5-L6']!;
+      final lastActivity = lesson.activities.last;
+      expect(
+        lastActivity.id,
+        'A1-U5-L6-A05',
+        reason:
+            'this test is written against the real content shape — if '
+            'A1-U5-L6 changes, update the assumption here alongside it',
+      );
+
+      SharedPreferences.setMockInitialValues({});
+      final prefs = await SharedPreferences.getInstance();
+
+      await tester.pumpWidget(
+        ProviderScope(
+          overrides: [
+            sharedPreferencesProvider.overrideWithValue(prefs),
+            appDatabaseProvider.overrideWithValue(db),
+            courseContentProvider('a1').overrideWith((ref) async => index),
+            textToSpeechServiceProvider.overrideWithValue(
+              FakeTextToSpeechService(),
+            ),
+            speechCapabilityServiceProvider.overrideWithValue(
+              FakeSpeechCapabilityService(
+                const DeviceSpeechCapabilities(
+                  sttAvailableForLocale: false,
+                  micPermission: SpeechPermissionStatus.notDetermined,
+                ),
+              ),
+            ),
+          ],
+          child: MaterialApp(
+            locale: const Locale('en'),
+            supportedLocales: AppLocalizations.supportedLocales,
+            localizationsDelegates: AppLocalizations.localizationsDelegates,
+            home: const LessonPlayerScreen(
+              unitId: 'A1-U5',
+              lessonId: 'A1-U5-L6',
+            ),
+          ),
+        ),
+      );
+      await tester.pumpAndSettle();
+
+      for (final activity in lesson.activities.sublist(
+        0,
+        lesson.activities.length - 1,
+      )) {
+        await _answerAndAdvance(tester, activity);
+      }
+
+      // A1-U5-L6-A05 — a `write` activity with wordGuide [35, 55]; drive it
+      // manually, since a wordGuide-shaped answer isn't what
+      // _answerAndAdvance's generic "an answer" text produces.
+      await tester.enterText(
+        find.byType(TextField),
+        'Hello! I love hiking and reading on weekends. Would you like to join '
+        'me for a walk in the park this Saturday afternoon?',
+      );
+      await tester.pump();
+      await tester.tap(find.byType(FilledButton));
+      await tester.pump();
+
+      final attemptRows = await (db.select(
+        db.activityAttempts,
+      )..where((t) => t.activityId.equals('A1-U5-L6-A05'))).get();
+      expect(
+        attemptRows,
+        isEmpty,
+        reason:
+            'a queued, not-yet-refined answer must not appear as an '
+            'ordinary attempt yet',
+      );
+
+      final pendingRows = await (db.select(
+        db.pendingOnlineRefinements,
+      )..where((t) => t.activityId.equals('A1-U5-L6-A05'))).get();
+      expect(pendingRows, hasLength(1));
+      expect(pendingRows.single.lessonId, 'A1-U5-L6');
+      expect(pendingRows.single.unitId, 'A1-U5');
+      expect(pendingRows.single.mode, 'mastery');
+
+      await db.close();
+    },
+  );
 }
