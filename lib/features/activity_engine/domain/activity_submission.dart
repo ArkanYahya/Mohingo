@@ -15,6 +15,7 @@ class ActivitySubmission {
     this.score,
     this.rawAnswerJson,
     this.wasFallback = false,
+    this.pendingOnlineRefinement = false,
   });
 
   final ActivityCorrectness correctness;
@@ -33,6 +34,14 @@ class ActivitySubmission {
   /// [SpeakActivityView] in this phase (no on-device STT exists yet, see
   /// docs/ARCHITECTURE.md's Phase 8).
   final bool wasFallback;
+
+  /// True only for an open-ended `keywordChecklist`/`onlineRefinement`
+  /// rubric's submission: [score] here is the *local* content-only score,
+  /// not the final grade — the lesson player enqueues this into
+  /// `pending_online_refinements` instead of recording it as an ordinary
+  /// attempt. See docs/superpowers/specs/
+  /// 2026-09-07-offline-answer-evaluation-design.md's Tier 2.
+  final bool pendingOnlineRefinement;
 }
 
 typedef OnActivitySubmitted = void Function(ActivitySubmission submission);
