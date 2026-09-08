@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../content/models/activity.dart';
+import '../../../../content/models/evaluation_spec.dart';
 import '../../../../core/l10n/generated/app_localizations.dart';
 import '../../../speech/domain/speech_capability_service.dart';
 import '../../../speech/domain/speech_recognition_service.dart';
@@ -157,6 +158,7 @@ class _SpeakActivityViewState extends ConsumerState<SpeakActivityView> {
     if (_submission != null) return;
 
     final ActivitySubmission submission;
+    final evaluation = widget.activity.evaluation;
     if (widget.activity.accepted.isNotEmpty) {
       final isCorrect = widget.activity.accepted.any(
         (a) => answersMatch(a, text),
@@ -169,9 +171,19 @@ class _SpeakActivityViewState extends ConsumerState<SpeakActivityView> {
         rawAnswerJson: jsonEncode(text),
         wasFallback: wasFallback,
       );
-    } else if (widget.activity.evaluation != null) {
+    } else if (evaluation is KeywordChecklistEvaluationSpec &&
+        evaluation.onlineRefinement != null) {
+      final localResult = evaluate(evaluation, text);
+      submission = ActivitySubmission(
+        correctness: ActivityCorrectness.notAutoGraded,
+        score: localResult.score,
+        rawAnswerJson: jsonEncode(text),
+        wasFallback: wasFallback,
+        pendingOnlineRefinement: true,
+      );
+    } else if (evaluation != null) {
       final result = evaluate(
-        widget.activity.evaluation!,
+        evaluation,
         text,
         context: widget.evaluationContext,
       );

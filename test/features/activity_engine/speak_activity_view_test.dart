@@ -316,6 +316,57 @@ void main() {
     );
   });
 
+  group('onlineRefinement queuing', () {
+    testWidgets(
+      'an activity with an onlineRefinement rubric is queued through the '
+      'typed-fallback path, not graded',
+      (tester) async {
+        const activity = SpeakActivity(
+          id: 'A1-U5-L6-A05',
+          lessonId: 'A1-U5-L6',
+          mode: ActivityMode.mastery,
+          skill: Skill.spokenProduction,
+          canDo: ['A1.U5.WRITING.WRITE_FREE_TIME_MESSAGE'],
+          prompt: 'Tell a friend about your free time.',
+          promptAr: 'أخبر صديقاً عن وقت فراغك.',
+          raw: {},
+          accepted: [],
+          evaluation: KeywordChecklistEvaluationSpec(
+            requiredGroups: [
+              ['hi', 'hello'],
+            ],
+            minGroupsMatched: 1,
+            onlineRefinement: 'grammarCheck',
+          ),
+          fallbackSkill: 'writing',
+        );
+
+        ActivitySubmission? captured;
+        await _pumpSpeak(
+          tester,
+          activity: activity,
+          capabilities: const DeviceSpeechCapabilities(
+            sttAvailableForLocale: false,
+            micPermission: SpeechPermissionStatus.notDetermined,
+          ),
+          onSubmitted: (s) => captured = s,
+        );
+
+        await tester.enterText(
+          find.byType(TextField),
+          'Hello! Free on Saturday?',
+        );
+        await tester.pump();
+        await tester.tap(find.text('Check'));
+        await tester.pump();
+
+        expect(captured!.pendingOnlineRefinement, isTrue);
+        expect(captured!.correctness, ActivityCorrectness.notAutoGraded);
+        expect(captured!.wasFallback, isTrue);
+      },
+    );
+  });
+
   group('letter-spelling accepted answers', () {
     SpeakActivity spellActivity() {
       return const SpeakActivity(
