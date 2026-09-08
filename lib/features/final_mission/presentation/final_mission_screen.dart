@@ -132,9 +132,20 @@ class _FinalMissionBodyState extends ConsumerState<_FinalMissionBody> {
           score: submission.score,
           wasFallback: submission.wasFallback,
         );
-    _scoresBySkill
-        .putIfAbsent(evidenceSkill.name, () => [])
-        .add(submission.score);
+    // `form` activities are recorded above for progress/audit purposes but
+    // never counted as scoring evidence: FormActivityView always submits
+    // notAutoGraded (see its doc comment — multi-field form grading isn't
+    // wired up), so a form activity's null score would otherwise permanently
+    // stick its skill group's pendingReviewCount above zero and make the
+    // mission un-passable regardless of every other answer. Every other
+    // notAutoGraded submission (a still-unmigrated rubric, an unresolved
+    // online refinement) still counts, so the honest pending-review signal
+    // final_mission_scoring.dart documents is preserved for real gaps.
+    if (activity is! FormActivity) {
+      _scoresBySkill
+          .putIfAbsent(evidenceSkill.name, () => [])
+          .add(submission.score);
+    }
     if (mounted) setState(() => _lastSubmission = submission);
   }
 

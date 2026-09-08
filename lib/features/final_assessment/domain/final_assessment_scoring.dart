@@ -4,10 +4,13 @@ import '../../../content/models/capstone.dart';
 
 /// One [FinalAssessment] section's outcome. [pendingReview] (not
 /// pass/fail) is reported whenever any item in the section couldn't be
-/// auto-graded — this app has no rubric evaluator for free-response
-/// writing/speaking/mediation yet, and the assessment's own
-/// `noSingleOverallAverage` rule means a section is never averaged away or
-/// guessed at. See docs/TECH_STACK.md and docs/DATA_MODEL.md.
+/// auto-graded — most free-response writing/speaking/mediation activities
+/// now carry a real structured `EvaluationSpec` rubric (see
+/// docs/DATA_MODEL.md), but a `notAutoGraded` result can still occur for a
+/// still-unmigrated rubric or an online-refinement item awaiting its
+/// deferred grade, and the assessment's own `noSingleOverallAverage` rule
+/// means a section is never averaged away or guessed at in that case. See
+/// docs/DATA_MODEL.md.
 enum FinalAssessmentSectionStatus { passed, notMet, pendingReview }
 
 class FinalAssessmentSectionResult {

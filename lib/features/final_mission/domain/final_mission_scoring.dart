@@ -4,9 +4,14 @@ import '../../../content/models/capstone.dart';
 /// into a single overall average with any other group, per the bundle's own
 /// `noSingleAverageCompensation: true`. A group with any un-auto-gradable
 /// (`notAutoGraded`) evidence is honestly reported as
-/// [pendingReviewCount] > 0 rather than silently passed or failed — this
-/// app has no rubric evaluator for free-response writing/speaking yet, see
-/// docs/TECH_STACK.md.
+/// [pendingReviewCount] > 0 rather than silently passed or failed — most
+/// free-response writing/speaking/mediation activities now carry a real
+/// structured `EvaluationSpec` rubric (see docs/DATA_MODEL.md), but a
+/// `notAutoGraded` result can still occur for a still-unmigrated rubric or
+/// an online-refinement item awaiting its deferred grade. `form`-type
+/// activities are deliberately excluded from this evidence entirely by the
+/// caller (see final_mission_screen.dart) since they are never graded at
+/// all.
 class SkillGroupResult {
   const SkillGroupResult({
     required this.skills,

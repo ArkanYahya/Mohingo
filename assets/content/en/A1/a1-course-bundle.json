@@ -8974,7 +8974,19 @@
               ],
               "prompt": "Introduce yourself.",
               "accepted": [],
-              "evaluation": "contains-name-frame",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "i'm",
+                    "im",
+                    "i am",
+                    "my name is",
+                    "my name's"
+                  ]
+                ],
+                "minGroupsMatched": 1
+              },
               "fallbackSkill": "writing"
             },
             {
@@ -9067,7 +9079,20 @@
               ],
               "prompt": "Say where you are from.",
               "accepted": [],
-              "evaluation": "im-from-country",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "i'm",
+                    "im",
+                    "i am"
+                  ],
+                  [
+                    "from"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             },
             {
@@ -9159,7 +9184,18 @@
               ],
               "prompt": "Say where you live.",
               "accepted": [],
-              "evaluation": "i-live-in-place",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "i live"
+                  ],
+                  [
+                    "in"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             },
             {
@@ -9368,7 +9404,21 @@
               ],
               "prompt": "Say your job. If you do not work, say you are a student.",
               "accepted": [],
-              "evaluation": "im-a-an-job",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "i'm",
+                    "im",
+                    "i am"
+                  ],
+                  [
+                    "a",
+                    "an"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -9494,7 +9544,19 @@
               ],
               "prompt": "Daniel: Hi. I'm Daniel. What's your name?",
               "accepted": [],
-              "evaluation": "contains-name-frame",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "i'm",
+                    "im",
+                    "i am",
+                    "my name is",
+                    "my name's"
+                  ]
+                ],
+                "minGroupsMatched": 1
+              },
               "fallbackSkill": "writing"
             },
             {
@@ -9509,7 +9571,20 @@
               ],
               "prompt": "Daniel: Nice to meet you. Where are you from?",
               "accepted": [],
-              "evaluation": "im-from-country",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "i'm",
+                    "im",
+                    "i am"
+                  ],
+                  [
+                    "from"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             },
             {
@@ -9524,7 +9599,18 @@
               ],
               "prompt": "Daniel: Where do you live?",
               "accepted": [],
-              "evaluation": "i-live-in-place",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "i live"
+                  ],
+                  [
+                    "in"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             },
             {
@@ -9766,7 +9852,33 @@
               "prompt": "Introduce two people in your family. You may use fictional names.",
               "promptAr": "قدّم شخصين من عائلتك، ويمكنك استخدام أسماء افتراضية.",
               "accepted": [],
-              "evaluation": "two-this-is-my-relationship-statements",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "mother",
+                    "father",
+                    "brother",
+                    "sister",
+                    "son",
+                    "daughter",
+                    "wife",
+                    "husband",
+                    "parents",
+                    "grandmother",
+                    "grandfather",
+                    "friend"
+                  ],
+                  [
+                    "this is",
+                    "he's",
+                    "she's",
+                    "hes",
+                    "shes"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             },
             {
@@ -9940,7 +10052,22 @@
               "prompt": "Say how many brothers or sisters you have and give one age. You may invent the details.",
               "promptAr": "اذكر عدد إخوتك أو أخواتك وعمر أحدهم، ويمكنك اختلاق التفاصيل.",
               "accepted": [],
-              "evaluation": "have-family-count-plus-age",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "have",
+                    "has"
+                  ],
+                  [
+                    "brother",
+                    "brothers",
+                    "sister",
+                    "sisters"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -10237,7 +10364,26 @@
               "prompt": "Describe one person with two adjectives joined by and or but.",
               "promptAr": "صف شخصاً بصفتين مربوطتين بـand أو but.",
               "accepted": [],
-              "evaluation": "person-be-two-adjectives-with-connector",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "and",
+                    "but"
+                  ],
+                  [
+                    "kind",
+                    "funny",
+                    "quiet",
+                    "friendly",
+                    "nice",
+                    "tall",
+                    "short",
+                    "young"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -10375,7 +10521,18 @@
               "prompt": "Use we once and they once to describe people.",
               "promptAr": "استخدم we مرة وthey مرة لوصف أشخاص.",
               "accepted": [],
-              "evaluation": "contains-we-and-they-people-statements",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "we"
+                  ],
+                  [
+                    "they"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -10476,7 +10633,37 @@
               "prompt": "Write 4–6 short sentences about one person. Include relationship, name, age and two adjectives. You may invent the person.",
               "promptAr": "اكتب 4–6 جمل قصيرة عن شخص واحد، تشمل العلاقة والاسم والعمر وصفتين. يمكنك اختلاق الشخص.",
               "accepted": [],
-              "evaluation": "u2-people-profile-rubric",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "mother",
+                    "father",
+                    "brother",
+                    "sister",
+                    "son",
+                    "daughter",
+                    "wife",
+                    "husband",
+                    "parents",
+                    "grandmother",
+                    "grandfather",
+                    "friend"
+                  ],
+                  [
+                    "kind",
+                    "funny",
+                    "quiet",
+                    "friendly",
+                    "nice",
+                    "tall",
+                    "short",
+                    "young"
+                  ]
+                ],
+                "minGroupsMatched": 2,
+                "onlineRefinement": "grammarCheck"
+              },
               "wordGuide": [
                 25,
                 45
@@ -10494,7 +10681,36 @@
               "prompt": "Give a short spoken profile of one person.",
               "promptAr": "قدّم وصفاً شفهياً قصيراً لشخص.",
               "accepted": [],
-              "evaluation": "relationship-name-age-description",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "mother",
+                    "father",
+                    "brother",
+                    "sister",
+                    "son",
+                    "daughter",
+                    "wife",
+                    "husband",
+                    "parents",
+                    "grandmother",
+                    "grandfather",
+                    "friend"
+                  ],
+                  [
+                    "kind",
+                    "funny",
+                    "quiet",
+                    "friendly",
+                    "nice",
+                    "tall",
+                    "short",
+                    "young"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -10571,7 +10787,34 @@
               "prompt": "Explain the people map so a new friend can understand who everyone is.",
               "promptAr": "اشرح خريطة الأشخاص كي يفهم صديق جديد من يكون كل شخص.",
               "accepted": [],
-              "evaluation": "four-people-relationship-mediation",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "mother",
+                    "father",
+                    "brother",
+                    "sister",
+                    "son",
+                    "daughter",
+                    "wife",
+                    "husband",
+                    "parents",
+                    "grandmother",
+                    "grandfather",
+                    "friend"
+                  ],
+                  [
+                    "this is",
+                    "he's",
+                    "she's",
+                    "hes",
+                    "shes",
+                    "is my"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             },
             {
@@ -10605,7 +10848,26 @@
               "prompt": "Give the age and two qualities of one person.",
               "promptAr": "اذكر عمر شخص وصفتيه.",
               "accepted": [],
-              "evaluation": "age-plus-two-adjectives",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "years old",
+                    "year old"
+                  ],
+                  [
+                    "kind",
+                    "funny",
+                    "quiet",
+                    "friendly",
+                    "nice",
+                    "tall",
+                    "short",
+                    "young"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             },
             {
@@ -10621,7 +10883,35 @@
               "prompt": "Write a 35–55-word explanation of your people map.",
               "promptAr": "اكتب شرحاً من 35–55 كلمة لخريطة الأشخاص.",
               "accepted": [],
-              "evaluation": "u2-mission-writing-rubric",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "mother",
+                    "father",
+                    "brother",
+                    "sister",
+                    "son",
+                    "daughter",
+                    "wife",
+                    "husband",
+                    "parents",
+                    "grandmother",
+                    "grandfather",
+                    "friend"
+                  ],
+                  [
+                    "this is",
+                    "he's",
+                    "she's",
+                    "hes",
+                    "shes",
+                    "is my"
+                  ]
+                ],
+                "minGroupsMatched": 2,
+                "onlineRefinement": "grammarCheck"
+              },
               "wordGuide": [
                 35,
                 55
@@ -10828,7 +11118,24 @@
               "prompt": "Name three rooms in a home using There is....",
               "promptAr": "اذكر ثلاث غرف في منزل مستخدماً There is....",
               "accepted": [],
-              "evaluation": "three-there-is-room-statements",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "there is",
+                    "there's"
+                  ],
+                  [
+                    "bedroom",
+                    "kitchen",
+                    "bathroom",
+                    "living room",
+                    "garden",
+                    "room"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -10979,7 +11286,26 @@
               "prompt": "Describe a room with one There is sentence, one There are sentence and one negative sentence.",
               "promptAr": "صف غرفة بجملة There is وجملة There are وجملة منفية.",
               "accepted": [],
-              "evaluation": "there-is-are-negative-set",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "there is",
+                    "there's"
+                  ],
+                  [
+                    "there are"
+                  ],
+                  [
+                    "isn't",
+                    "aren't",
+                    "there isn't",
+                    "there aren't",
+                    "not"
+                  ]
+                ],
+                "minGroupsMatched": 3
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -11146,7 +11472,30 @@
               "prompt": "Locate three objects using three different place phrases.",
               "promptAr": "حدد مكان ثلاثة أشياء باستخدام ثلاث عبارات مكان مختلفة.",
               "accepted": [],
-              "evaluation": "three-objects-three-place-phrases",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "in",
+                    "on",
+                    "under",
+                    "next to",
+                    "behind",
+                    "in front of",
+                    "between"
+                  ],
+                  [
+                    "key",
+                    "keys",
+                    "bag",
+                    "book",
+                    "table",
+                    "chair",
+                    "desk"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -11296,7 +11645,20 @@
               "prompt": "Point out one near object and one far object.",
               "promptAr": "أشر إلى شيء قريب وآخر بعيد.",
               "accepted": [],
-              "evaluation": "near-and-far-demonstrative",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "this",
+                    "these"
+                  ],
+                  [
+                    "that",
+                    "those"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -11552,7 +11914,27 @@
               "prompt": "Write 5–7 sentences about a real or imaginary room. Include existence, quantity, location and one description.",
               "promptAr": "اكتب 5–7 جمل عن غرفة حقيقية أو خيالية، تشمل الوجود والعدد والمكان ووصفاً واحداً.",
               "accepted": [],
-              "evaluation": "u3-room-description-rubric",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "there is",
+                    "there are",
+                    "there's"
+                  ],
+                  [
+                    "in",
+                    "on",
+                    "under",
+                    "next to",
+                    "behind",
+                    "in front of",
+                    "between"
+                  ]
+                ],
+                "minGroupsMatched": 2,
+                "onlineRefinement": "grammarCheck"
+              },
               "wordGuide": [
                 35,
                 60
@@ -11571,7 +11953,26 @@
               "prompt": "Give a short tour of one room.",
               "promptAr": "قدّم جولة قصيرة في غرفة واحدة.",
               "accepted": [],
-              "evaluation": "room-tour-existence-location-description",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "there is",
+                    "there are",
+                    "there's"
+                  ],
+                  [
+                    "in",
+                    "on",
+                    "under",
+                    "next to",
+                    "behind",
+                    "in front of",
+                    "between"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -11630,7 +12031,23 @@
               "prompt": "Use plan C to help your friend understand the apartment. Welcome them and describe three rooms.",
               "promptAr": "استخدم المخطط C لمساعدة صديقك على فهم الشقة. رحّب به وصف ثلاث غرف.",
               "accepted": [],
-              "evaluation": "welcome-plus-three-room-mediated-tour",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "welcome"
+                  ],
+                  [
+                    "bedroom",
+                    "kitchen",
+                    "bathroom",
+                    "living room",
+                    "garden",
+                    "room"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             },
             {
@@ -11646,7 +12063,26 @@
               "prompt": "Describe four objects: include one singular, one plural and two locations.",
               "promptAr": "صف أربعة أشياء: مفرداً واحداً وجمعاً واحداً وموقعين.",
               "accepted": [],
-              "evaluation": "existence-number-location-transfer",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "there is",
+                    "there are",
+                    "there's"
+                  ],
+                  [
+                    "in",
+                    "on",
+                    "under",
+                    "next to",
+                    "behind",
+                    "in front of",
+                    "between"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             },
             {
@@ -11680,7 +12116,23 @@
               "prompt": "You find a phone. Ask if it belongs to your friend, then respond when they say no.",
               "promptAr": "تجد هاتفاً. اسأل هل يخص صديقك ثم استجب عندما يقول لا.",
               "accepted": [],
-              "evaluation": "ownership-question-and-natural-follow-up",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "is this your",
+                    "is it your",
+                    "whose"
+                  ],
+                  [
+                    "it isn't mine",
+                    "it's not mine",
+                    "not mine",
+                    "isn't mine"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             },
             {
@@ -11696,7 +12148,26 @@
               "prompt": "Write a 45–70-word message describing apartment plan C to a friend.",
               "promptAr": "اكتب رسالة من 45–70 كلمة تصف المخطط C لصديق.",
               "accepted": [],
-              "evaluation": "u3-mission-writing-rubric",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "there is",
+                    "there are",
+                    "there's"
+                  ],
+                  [
+                    "bedroom",
+                    "kitchen",
+                    "bathroom",
+                    "living room",
+                    "garden",
+                    "room"
+                  ]
+                ],
+                "minGroupsMatched": 2,
+                "onlineRefinement": "grammarCheck"
+              },
               "wordGuide": [
                 45,
                 70
@@ -11876,7 +12347,31 @@
               "prompt": "Say four things you do in the morning.",
               "promptAr": "اذكر أربعة أشياء تفعلها صباحاً.",
               "accepted": [],
-              "evaluation": "four-ordered-routine-actions",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "get up",
+                    "wake up"
+                  ],
+                  [
+                    "wash"
+                  ],
+                  [
+                    "get dressed"
+                  ],
+                  [
+                    "breakfast"
+                  ],
+                  [
+                    "go home"
+                  ],
+                  [
+                    "sleep"
+                  ]
+                ],
+                "minGroupsMatched": 4
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -12022,7 +12517,18 @@
               "prompt": "Ask someone what time they have breakfast, then give your own time.",
               "promptAr": "اسأل شخصاً متى يتناول الفطور ثم اذكر وقتك.",
               "accepted": [],
-              "evaluation": "time-question-and-answer",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "what time"
+                  ],
+                  [
+                    "at"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -12160,7 +12666,27 @@
               "prompt": "Describe three parts of another person's day using he or she.",
               "promptAr": "صف ثلاثة أجزاء من يوم شخص آخر مستخدماً he أو she.",
               "accepted": [],
-              "evaluation": "three-third-person-routine-statements",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "he",
+                    "she"
+                  ],
+                  [
+                    "gets up",
+                    "starts",
+                    "finishes",
+                    "goes home",
+                    "has breakfast",
+                    "sleeps",
+                    "wakes up",
+                    "works",
+                    "studies"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -12299,7 +12825,19 @@
               "prompt": "Ask two routine questions: one with you and one about he or she.",
               "promptAr": "اطرح سؤالين عن الروتين: أحدهما مع you والآخر عن he أو she.",
               "accepted": [],
-              "evaluation": "two-routine-questions-do-does",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "do you"
+                  ],
+                  [
+                    "does he",
+                    "does she"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -12440,7 +12978,24 @@
               "prompt": "Say three routine facts using three different frequency words.",
               "promptAr": "اذكر ثلاث حقائق عن الروتين مستخدماً ثلاث كلمات تكرار مختلفة.",
               "accepted": [],
-              "evaluation": "three-frequency-statements",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "always"
+                  ],
+                  [
+                    "usually"
+                  ],
+                  [
+                    "sometimes"
+                  ],
+                  [
+                    "never"
+                  ]
+                ],
+                "minGroupsMatched": 3
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -12581,7 +13136,25 @@
               "prompt": "Write 5–7 sentences about your or a fictional person's routine. Include times, sequence and frequency.",
               "promptAr": "اكتب 5–7 جمل عن روتينك أو روتين شخص خيالي، مع الوقت والترتيب والتكرار.",
               "accepted": [],
-              "evaluation": "u4-routine-writing-rubric",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "at"
+                  ],
+                  [
+                    "always",
+                    "usually",
+                    "sometimes",
+                    "never",
+                    "first",
+                    "then",
+                    "after that"
+                  ]
+                ],
+                "minGroupsMatched": 2,
+                "onlineRefinement": "grammarCheck"
+              },
               "wordGuide": [
                 40,
                 65
@@ -12659,7 +13232,18 @@
               "prompt": "Ask for Rana's lunch time.",
               "promptAr": "اسأل عن وقت غداء رنا.",
               "accepted": [],
-              "evaluation": "routine-time-question",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "what time"
+                  ],
+                  [
+                    "lunch"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             },
             {
@@ -12675,7 +13259,23 @@
               "prompt": "Explain three differences between the two routines.",
               "promptAr": "اشرح ثلاثة اختلافات بين الروتينين.",
               "accepted": [],
-              "evaluation": "three-routine-differences",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "but",
+                    "while",
+                    "whereas"
+                  ],
+                  [
+                    "earlier",
+                    "later",
+                    "before",
+                    "after"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             },
             {
@@ -12691,7 +13291,24 @@
               "prompt": "Write a 45–70-word comparison of the routines.",
               "promptAr": "اكتب مقارنة من 45–70 كلمة بين الروتينين.",
               "accepted": [],
-              "evaluation": "u4-mission-writing-rubric",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "but",
+                    "while",
+                    "whereas"
+                  ],
+                  [
+                    "earlier",
+                    "later",
+                    "before",
+                    "after"
+                  ]
+                ],
+                "minGroupsMatched": 2,
+                "onlineRefinement": "grammarCheck"
+              },
               "wordGuide": [
                 45,
                 70
@@ -12903,7 +13520,21 @@
               "prompt": "Say two things you like and one thing you don't like.",
               "promptAr": "اذكر شيئين تحبهما وشيئاً لا تحبه.",
               "accepted": [],
-              "evaluation": "three-clear-preference-statements",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "like",
+                    "love"
+                  ],
+                  [
+                    "don't like",
+                    "dont like",
+                    "hate"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -13048,7 +13679,29 @@
               "prompt": "Describe three free-time activities using like, love or hate plus -ing.",
               "promptAr": "صف ثلاثة أنشطة مستخدماً like أو love أو hate مع -ing.",
               "accepted": [],
-              "evaluation": "three-ing-preference-statements",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "like",
+                    "love",
+                    "hate"
+                  ],
+                  [
+                    "swimming",
+                    "running",
+                    "dancing",
+                    "singing",
+                    "drawing",
+                    "cooking",
+                    "walking",
+                    "watching",
+                    "playing",
+                    "reading"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -13187,7 +13840,20 @@
               "prompt": "Ask two ability questions and answer them.",
               "promptAr": "اطرح سؤالين عن القدرة وأجب عنهما.",
               "accepted": [],
-              "evaluation": "two-can-questions-short-answers",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "can you"
+                  ],
+                  [
+                    "i can",
+                    "i can't",
+                    "i cant"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -13329,7 +13995,22 @@
               "prompt": "Ask what someone likes, then give a negative answer about one activity.",
               "promptAr": "اسأل ماذا يحب شخص ثم أعط إجابة منفية عن نشاط.",
               "accepted": [],
-              "evaluation": "do-question-and-negative-answer",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "do you like",
+                    "what do you like"
+                  ],
+                  [
+                    "don't",
+                    "doesn't",
+                    "dont",
+                    "doesnt"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -13477,7 +14158,22 @@
               "prompt": "Invite someone to one activity and respond naturally to acceptance or refusal.",
               "promptAr": "ادع شخصاً إلى نشاط واستجب بصورة طبيعية للقبول أو الرفض.",
               "accepted": [],
-              "evaluation": "invitation-and-natural-response",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "would you like"
+                  ],
+                  [
+                    "i'd love to",
+                    "id love to",
+                    "sorry",
+                    "i'm busy",
+                    "im busy"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -13703,7 +14399,18 @@
               "prompt": "Invite Omar to the shared activity and suggest a time.",
               "promptAr": "ادع عمر إلى النشاط المشترك واقترح وقتاً.",
               "accepted": [],
-              "evaluation": "invitation-activity-time",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "would you like"
+                  ],
+                  [
+                    "at"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             },
             {
@@ -13720,7 +14427,22 @@
               "prompt": "Explain why this activity works for both friends.",
               "promptAr": "اشرح لماذا يناسب هذا النشاط الصديقين.",
               "accepted": [],
-              "evaluation": "preference-ability-mediation",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "because",
+                    "so"
+                  ],
+                  [
+                    "both",
+                    "can",
+                    "like",
+                    "likes"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             },
             {
@@ -13735,7 +14457,22 @@
               "prompt": "Write a 40–60-word confirmation message with activity, place and time.",
               "promptAr": "اكتب رسالة تأكيد من 40–60 كلمة تشمل النشاط والمكان والوقت.",
               "accepted": [],
-              "evaluation": "u5-mission-message-rubric",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "at"
+                  ],
+                  [
+                    "see you",
+                    "looking forward",
+                    "confirm",
+                    "great"
+                  ]
+                ],
+                "minGroupsMatched": 2,
+                "onlineRefinement": "grammarCheck"
+              },
               "wordGuide": [
                 40,
                 60
@@ -13946,7 +14683,30 @@
               "prompt": "Describe a simple meal with three foods.",
               "promptAr": "صف وجبة بسيطة تحتوي على ثلاثة أطعمة.",
               "accepted": [],
-              "evaluation": "three-food-meal-description",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "have",
+                    "eat",
+                    "i'd like",
+                    "id like"
+                  ],
+                  [
+                    "chicken",
+                    "rice",
+                    "soup",
+                    "salad",
+                    "bread",
+                    "egg",
+                    "cheese",
+                    "sandwich",
+                    "apple",
+                    "banana"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -14093,7 +14853,21 @@
               "prompt": "Ask for one food or drink with any, then answer with some or a negative.",
               "promptAr": "اسأل عن طعام أو شراب مستخدماً any ثم أجب بـsome أو النفي.",
               "accepted": [],
-              "evaluation": "some-any-question-answer",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "any"
+                  ],
+                  [
+                    "some",
+                    "don't have",
+                    "dont have",
+                    "no"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -14241,7 +15015,22 @@
               "prompt": "State three quantities using container of or a number.",
               "promptAr": "اذكر ثلاث كميات مستخدماً وعاءً أو عدداً.",
               "accepted": [],
-              "evaluation": "three-food-quantity-phrases",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "bottle",
+                    "cup",
+                    "glass",
+                    "bowl",
+                    "plate"
+                  ],
+                  [
+                    "of"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -14401,7 +15190,23 @@
               "prompt": "Order one meal and one drink politely, then close the order.",
               "promptAr": "اطلب وجبة وشراباً بأدب ثم أنهِ الطلب.",
               "accepted": [],
-              "evaluation": "complete-polite-meal-order",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "i'd like",
+                    "id like",
+                    "can i have"
+                  ],
+                  [
+                    "please",
+                    "that's all",
+                    "thats all",
+                    "thank you"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -14551,7 +15356,22 @@
               "prompt": "Politely report a wrong or missing item and state the correct item.",
               "promptAr": "أبلغ بأدب عن شيء خاطئ أو ناقص واذكر الشيء الصحيح.",
               "accepted": [],
-              "evaluation": "restaurant-problem-and-correction",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "this isn't my order",
+                    "this isn't",
+                    "missing",
+                    "wrong"
+                  ],
+                  [
+                    "i ordered",
+                    "not"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -14690,7 +15510,22 @@
               "prompt": "Write a 30–45-word café order with quantities, food, drink and one polite closing.",
               "promptAr": "اكتب طلباً من 30–45 كلمة يتضمن الكمية والطعام والشراب وختاماً مهذباً.",
               "accepted": [],
-              "evaluation": "u6-written-order-rubric",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "please",
+                    "thank you"
+                  ],
+                  [
+                    "i'd like",
+                    "id like",
+                    "can i have"
+                  ]
+                ],
+                "minGroupsMatched": 2,
+                "onlineRefinement": "grammarCheck"
+              },
               "wordGuide": [
                 30,
                 45
@@ -14768,7 +15603,20 @@
               "prompt": "Place the complete order politely.",
               "promptAr": "قدّم الطلب الكامل بأدب.",
               "accepted": [],
-              "evaluation": "complete-order-turn",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "i'd like",
+                    "id like",
+                    "can i have"
+                  ],
+                  [
+                    "please"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             },
             {
@@ -14803,7 +15651,21 @@
               "prompt": "Explain the original order and the correction needed to the waiter.",
               "promptAr": "اشرح للنادل الطلب الأصلي والتصحيح المطلوب.",
               "accepted": [],
-              "evaluation": "order-correction-mediation",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "ordered",
+                    "order"
+                  ],
+                  [
+                    "not",
+                    "instead",
+                    "but"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             },
             {
@@ -14813,12 +15675,28 @@
               "type": "write",
               "skill": "writing",
               "canDo": [
-                "A1.U6.WRITING.WRITE_SIMPLE_ORDER"
+                "A1.U6.WRITING.WRITE_SIMPLE_ORDER",
+                "A1.U6.MEDIATION.COMPLETE_MEAL_MISSION"
               ],
               "prompt": "Write a 35–50-word final order confirmation including corrected items and quantities.",
               "promptAr": "اكتب تأكيداً نهائياً من 35–50 كلمة يشمل الأصناف والكميات المصححة.",
               "accepted": [],
-              "evaluation": "u6-mission-order-rubric",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "ordered",
+                    "order"
+                  ],
+                  [
+                    "not",
+                    "instead",
+                    "but"
+                  ]
+                ],
+                "minGroupsMatched": 2,
+                "onlineRefinement": "grammarCheck"
+              },
               "wordGuide": [
                 35,
                 50
@@ -15008,7 +15886,18 @@
               "prompt": "Ask the price of one item and one pair of items.",
               "promptAr": "اسأل عن سعر قطعة واحدة وقطع بصيغة الجمع.",
               "accepted": [],
-              "evaluation": "singular-and-plural-price-questions",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "how much is"
+                  ],
+                  [
+                    "how much are"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -15164,7 +16053,23 @@
               "prompt": "Ask for an item in a specific size and colour.",
               "promptAr": "اطلب قطعة بمقاس ولون محددين.",
               "accepted": [],
-              "evaluation": "item-size-colour-request",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "small",
+                    "medium",
+                    "large"
+                  ],
+                  [
+                    "red",
+                    "blue",
+                    "black",
+                    "white"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -15303,7 +16208,22 @@
               "prompt": "Choose one item, ask to try it on and say whether it fits.",
               "promptAr": "اختر قطعة واطلب تجربتها ثم قل هل تناسبك.",
               "accepted": [],
-              "evaluation": "choose-try-fit-sequence",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "try on",
+                    "try it on"
+                  ],
+                  [
+                    "fit",
+                    "fits",
+                    "doesn't fit",
+                    "fine"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -15449,7 +16369,22 @@
               "prompt": "Complete a purchase: select the item, ask the final price and choose payment.",
               "promptAr": "أكمل عملية شراء: اختر القطعة واسأل عن السعر النهائي وحدد الدفع.",
               "accepted": [],
-              "evaluation": "complete-purchase-interaction",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "how much",
+                    "price"
+                  ],
+                  [
+                    "cash",
+                    "card",
+                    "i'll take it",
+                    "ill take it"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -15598,7 +16533,22 @@
               "prompt": "Report one product problem and ask for a clear solution.",
               "promptAr": "أبلغ عن مشكلة في منتج واطلب حلاً واضحاً.",
               "accepted": [],
-              "evaluation": "shopping-problem-solution-request",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "broken",
+                    "wrong",
+                    "doesn't fit"
+                  ],
+                  [
+                    "can i change",
+                    "can i have",
+                    "can you"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -15738,7 +16688,25 @@
               "prompt": "Write a 35–50-word shopping request with two products, specifications, budget and payment question.",
               "promptAr": "اكتب طلب تسوق من 35–50 كلمة يشمل منتجين ومواصفاتهما والميزانية وسؤال الدفع.",
               "accepted": [],
-              "evaluation": "u7-shopping-request-rubric",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "need",
+                    "want",
+                    "i'd like",
+                    "id like"
+                  ],
+                  [
+                    "budget",
+                    "cash",
+                    "card",
+                    "pay"
+                  ]
+                ],
+                "minGroupsMatched": 2,
+                "onlineRefinement": "grammarCheck"
+              },
               "wordGuide": [
                 35,
                 50
@@ -15817,7 +16785,23 @@
               "prompt": "Ask for the correct sizes, confirm the items and pay by card.",
               "promptAr": "اطلب المقاسات الصحيحة وأكد القطع وادفع بالبطاقة.",
               "accepted": [],
-              "evaluation": "size-confirm-payment",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "size",
+                    "small",
+                    "medium",
+                    "large"
+                  ],
+                  [
+                    "card",
+                    "cash",
+                    "pay"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             },
             {
@@ -15852,7 +16836,20 @@
               "prompt": "Explain the purchase, budget and needed exchange to the assistant.",
               "promptAr": "اشرح عملية الشراء والميزانية والاستبدال المطلوب للموظف.",
               "accepted": [],
-              "evaluation": "purchase-problem-mediation",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "budget"
+                  ],
+                  [
+                    "broken",
+                    "change",
+                    "exchange"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             },
             {
@@ -15867,7 +16864,24 @@
               "prompt": "Write a 40–60-word record of the final purchase and exchange.",
               "promptAr": "اكتب سجلاً من 40–60 كلمة عن الشراء والاستبدال النهائي.",
               "accepted": [],
-              "evaluation": "u7-mission-record-rubric",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "bought",
+                    "buy",
+                    "paid",
+                    "pay"
+                  ],
+                  [
+                    "broken",
+                    "change",
+                    "exchange"
+                  ]
+                ],
+                "minGroupsMatched": 2,
+                "onlineRefinement": "grammarCheck"
+              },
               "wordGuide": [
                 40,
                 60
@@ -16054,7 +17068,27 @@
               "prompt": "Name four places in a real or fictional town and say what one place is for.",
               "promptAr": "اذكر أربعة أماكن في مدينة حقيقية أو خيالية ووظيفة أحدها.",
               "accepted": [],
-              "evaluation": "four-places-one-purpose",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "bank",
+                    "pharmacy",
+                    "hospital",
+                    "supermarket",
+                    "library",
+                    "café",
+                    "cafe",
+                    "station",
+                    "post office"
+                  ],
+                  [
+                    "for",
+                    "is for"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -16200,7 +17234,24 @@
               "prompt": "Ask where a place is and answer with two location details.",
               "promptAr": "اسأل عن مكان وأجب بتفصيلين عن الموقع.",
               "accepted": [],
-              "evaluation": "place-question-two-location-details",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "where is",
+                    "is there"
+                  ],
+                  [
+                    "near",
+                    "opposite",
+                    "between",
+                    "next to",
+                    "on the corner",
+                    "far"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -16343,7 +17394,18 @@
               "prompt": "Give a three-step route using straight, a turn and one landmark.",
               "promptAr": "أعط مساراً من ثلاث خطوات يشمل الاستمرار وانعطافاً ومعلماً.",
               "accepted": [],
-              "evaluation": "three-step-landmark-route",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "straight"
+                  ],
+                  [
+                    "turn"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -16493,7 +17555,21 @@
               "prompt": "Ask for directions, then give a four-step answer to a different place.",
               "promptAr": "اسأل عن اتجاهات ثم أعط إجابة من أربع خطوات إلى مكان آخر.",
               "accepted": [],
-              "evaluation": "ask-and-four-step-guide",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "how do i get to",
+                    "how do i get"
+                  ],
+                  [
+                    "first",
+                    "then",
+                    "after that"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -16629,7 +17705,23 @@
               "prompt": "Explain the meaning of three simple public signs.",
               "promptAr": "اشرح معنى ثلاث إشارات عامة بسيطة.",
               "accepted": [],
-              "evaluation": "three-sign-meanings",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "entrance",
+                    "exit",
+                    "open",
+                    "closed",
+                    "no entry"
+                  ],
+                  [
+                    "means",
+                    "is"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -16772,7 +17864,21 @@
               "prompt": "Write 45–65 words guiding someone from a known start point to a fictional destination, including one sign or entrance.",
               "promptAr": "اكتب 45–65 كلمة ترشد شخصاً من نقطة معلومة إلى وجهة خيالية، مع إشارة أو مدخل.",
               "accepted": [],
-              "evaluation": "u8-directions-writing-rubric",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "straight",
+                    "turn"
+                  ],
+                  [
+                    "entrance",
+                    "exit"
+                  ]
+                ],
+                "minGroupsMatched": 2,
+                "onlineRefinement": "grammarCheck"
+              },
               "wordGuide": [
                 45,
                 65
@@ -16850,7 +17956,19 @@
               "prompt": "Ask how to get from the station to the library.",
               "promptAr": "اسأل كيف تصل من المحطة إلى المكتبة.",
               "accepted": [],
-              "evaluation": "direction-question-origin-destination",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "how do i get to",
+                    "how do i get"
+                  ],
+                  [
+                    "from"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             },
             {
@@ -16865,7 +17983,25 @@
               "prompt": "Give a route that visits the pharmacy, library and café in that order.",
               "promptAr": "أعط مساراً يزور الصيدلية والمكتبة والمقهى بهذا الترتيب.",
               "accepted": [],
-              "evaluation": "three-destination-route",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "first",
+                    "then",
+                    "after that"
+                  ],
+                  [
+                    "pharmacy",
+                    "library",
+                    "café",
+                    "cafe",
+                    "bank",
+                    "station"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             },
             {
@@ -16881,7 +18017,20 @@
               "prompt": "Explain the route change caused by the closed entrance.",
               "promptAr": "اشرح تغيير المسار بسبب المدخل المغلق.",
               "accepted": [],
-              "evaluation": "route-change-mediation",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "closed"
+                  ],
+                  [
+                    "instead",
+                    "but",
+                    "change"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             },
             {
@@ -16891,12 +18040,27 @@
               "type": "write",
               "skill": "writing",
               "canDo": [
-                "A1.U8.WRITING.WRITE_DIRECTIONS"
+                "A1.U8.WRITING.WRITE_DIRECTIONS",
+                "A1.U8.MEDIATION.GUIDE_VISITOR"
               ],
               "prompt": "Write the final 50–75-word visitor route with landmarks and the usable entrance.",
               "promptAr": "اكتب المسار النهائي للزائر في 50–75 كلمة مع المعالم والمدخل المتاح.",
               "accepted": [],
-              "evaluation": "u8-mission-route-rubric",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "straight",
+                    "turn"
+                  ],
+                  [
+                    "entrance",
+                    "exit"
+                  ]
+                ],
+                "minGroupsMatched": 2,
+                "onlineRefinement": "grammarCheck"
+              },
               "wordGuide": [
                 50,
                 75
@@ -17081,7 +18245,23 @@
               "prompt": "Describe how three people travel using three different transport expressions.",
               "promptAr": "صف تنقل ثلاثة أشخاص بثلاث وسائل مختلفة.",
               "accepted": [],
-              "evaluation": "three-transport-statements",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "by"
+                  ],
+                  [
+                    "bus",
+                    "train",
+                    "taxi",
+                    "car",
+                    "bicycle",
+                    "foot"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -17223,7 +18403,20 @@
               "prompt": "Buy a single or return ticket and confirm the destination and platform.",
               "promptAr": "اشتر تذكرة ذهاب أو عودة وأكد الوجهة والرصيف.",
               "accepted": [],
-              "evaluation": "ticket-destination-platform",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "ticket",
+                    "single",
+                    "return"
+                  ],
+                  [
+                    "platform"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -17372,7 +18565,21 @@
               "prompt": "Ask for the next departure, arrival time and platform.",
               "promptAr": "اسأل عن المغادرة التالية ووقت الوصول والرصيف.",
               "accepted": [],
-              "evaluation": "three-departure-information-questions",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "what time",
+                    "when"
+                  ],
+                  [
+                    "leave",
+                    "arrive",
+                    "platform"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -17518,7 +18725,18 @@
               "prompt": "Explain a route with two transport stages and one change.",
               "promptAr": "اشرح مساراً بمرحلتين من النقل وتبديل واحد.",
               "accepted": [],
-              "evaluation": "two-stage-one-change-route",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "take"
+                  ],
+                  [
+                    "change"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -17660,7 +18878,20 @@
               "prompt": "Describe a real or fictional journey with origin, destination, transport, times and duration.",
               "promptAr": "صف رحلة حقيقية أو خيالية مع نقطة الانطلاق والوجهة والوسيلة والأوقات والمدة.",
               "accepted": [],
-              "evaluation": "complete-simple-journey-description",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "from",
+                    "to"
+                  ],
+                  [
+                    "by",
+                    "takes"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -17808,7 +19039,21 @@
               "prompt": "Write a 45–65-word travel plan with two stages, one connection, times and destination.",
               "promptAr": "اكتب خطة سفر من 45–65 كلمة بمرحلتين وتبديل واحد وأوقات ووجهة.",
               "accepted": [],
-              "evaluation": "u9-travel-plan-rubric",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "take",
+                    "change"
+                  ],
+                  [
+                    "arrive",
+                    "leave"
+                  ]
+                ],
+                "minGroupsMatched": 2,
+                "onlineRefinement": "grammarCheck"
+              },
               "wordGuide": [
                 45,
                 65
@@ -17886,7 +19131,20 @@
               "prompt": "Buy the correct ticket for the selected destination and ask for the platform.",
               "promptAr": "اشتر التذكرة الصحيحة للوجهة المختارة واسأل عن الرصيف.",
               "accepted": [],
-              "evaluation": "ticket-and-platform-interaction",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "ticket",
+                    "single",
+                    "return"
+                  ],
+                  [
+                    "platform"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             },
             {
@@ -17901,7 +19159,21 @@
               "prompt": "Describe the updated journey with both stages and new arrival logic.",
               "promptAr": "صف الرحلة المحدثة بمرحلتيها ومنطق الوصول الجديد.",
               "accepted": [],
-              "evaluation": "updated-two-stage-journey",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "take",
+                    "change"
+                  ],
+                  [
+                    "now",
+                    "delay",
+                    "new"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             },
             {
@@ -17916,7 +19188,19 @@
               "prompt": "Explain the delay and updated arrival to a waiting friend.",
               "promptAr": "اشرح التأخير ووقت الوصول المحدث لصديق ينتظر.",
               "accepted": [],
-              "evaluation": "delay-plan-mediation",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "delay"
+                  ],
+                  [
+                    "arrive",
+                    "now"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             },
             {
@@ -17931,7 +19215,21 @@
               "prompt": "Write the final 50–70-word journey plan including ticket, connection, delay and expected arrival.",
               "promptAr": "اكتب خطة الرحلة النهائية في 50–70 كلمة متضمنة التذكرة والتبديل والتأخير والوصول المتوقع.",
               "accepted": [],
-              "evaluation": "u9-mission-plan-rubric",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "ticket",
+                    "platform"
+                  ],
+                  [
+                    "delay",
+                    "arrive"
+                  ]
+                ],
+                "minGroupsMatched": 2,
+                "onlineRefinement": "grammarCheck"
+              },
               "wordGuide": [
                 50,
                 70
@@ -18128,7 +19426,29 @@
               "prompt": "Identify four body parts and describe pain in one of them.",
               "promptAr": "حدد أربعة أجزاء من الجسم وصف ألماً في أحدها.",
               "accepted": [],
-              "evaluation": "four-body-parts-one-pain",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "head",
+                    "eye",
+                    "ear",
+                    "mouth",
+                    "throat",
+                    "stomach",
+                    "back",
+                    "arm",
+                    "leg",
+                    "hand",
+                    "foot"
+                  ],
+                  [
+                    "hurts",
+                    "pain"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -18270,7 +19590,21 @@
               "prompt": "Describe three simple symptoms using have, feel and hurts.",
               "promptAr": "صف ثلاثة أعراض بسيطة مستخدماً have وfeel وhurts.",
               "accepted": [],
-              "evaluation": "three-pattern-symptom-report",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "have"
+                  ],
+                  [
+                    "feel"
+                  ],
+                  [
+                    "hurts"
+                  ]
+                ],
+                "minGroupsMatched": 3
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -18420,7 +19754,22 @@
               "prompt": "Ask about one symptom and give two safe, basic actions from the provided advice list.",
               "promptAr": "اسأل عن عرض واحد وأعط إجراءين أساسيين آمنين من قائمة النصائح المتاحة.",
               "accepted": [],
-              "evaluation": "symptom-question-two-listed-actions",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "do you have",
+                    "what's wrong",
+                    "are you"
+                  ],
+                  [
+                    "should",
+                    "rest",
+                    "drink water"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -18575,7 +19924,23 @@
               "prompt": "Request help at a clinic, describe one symptom and confirm one instruction.",
               "promptAr": "اطلب المساعدة في عيادة وصف عرضاً وأكد تعليمة واحدة.",
               "accepted": [],
-              "evaluation": "clinic-request-symptom-instruction",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "i need a doctor",
+                    "i need"
+                  ],
+                  [
+                    "cough",
+                    "fever",
+                    "headache",
+                    "pain",
+                    "hurts"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -18714,7 +20079,23 @@
               "prompt": "State the three basic emergency communication steps shown in the lesson.",
               "promptAr": "اذكر خطوات التواصل الثلاث الأساسية في الطوارئ كما وردت في الدرس.",
               "accepted": [],
-              "evaluation": "three-provided-emergency-steps",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "call"
+                  ],
+                  [
+                    "location"
+                  ],
+                  [
+                    "follow",
+                    "stay",
+                    "instructions"
+                  ]
+                ],
+                "minGroupsMatched": 3
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -18856,7 +20237,26 @@
               "prompt": "Write a 40–60-word fictional health note with symptoms, start time, availability and a request.",
               "promptAr": "اكتب ملاحظة صحية خيالية من 40–60 كلمة تشمل الأعراض ووقت بدايتها والتوفر والطلب.",
               "accepted": [],
-              "evaluation": "u10-health-note-rubric",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "cough",
+                    "fever",
+                    "headache",
+                    "pain",
+                    "hurts",
+                    "tired"
+                  ],
+                  [
+                    "can come",
+                    "available",
+                    "please"
+                  ]
+                ],
+                "minGroupsMatched": 2,
+                "onlineRefinement": "grammarCheck"
+              },
               "wordGuide": [
                 40,
                 60
@@ -18935,7 +20335,23 @@
               "prompt": "Call the clinic, describe the symptoms and ask for an appointment.",
               "promptAr": "اتصل بالعيادة وصف الأعراض واطلب موعداً.",
               "accepted": [],
-              "evaluation": "clinic-call-symptoms-appointment",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "cough",
+                    "fever",
+                    "headache",
+                    "pain",
+                    "hurts",
+                    "tired"
+                  ],
+                  [
+                    "appointment"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             },
             {
@@ -18970,7 +20386,20 @@
               "prompt": "Pass the symptoms, appointment time and safe instructions to the visitor.",
               "promptAr": "انقل للزائر الأعراض ووقت الموعد والتعليمات الآمنة.",
               "accepted": [],
-              "evaluation": "health-information-mediation",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "appointment"
+                  ],
+                  [
+                    "should",
+                    "rest",
+                    "drink water"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             },
             {
@@ -18985,7 +20414,24 @@
               "prompt": "Write a 45–65-word fictional clinic note recording the problem, advice and appointment.",
               "promptAr": "اكتب ملاحظة عيادة خيالية من 45–65 كلمة تسجل المشكلة والنصيحة والموعد.",
               "accepted": [],
-              "evaluation": "u10-mission-note-rubric",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "cough",
+                    "fever",
+                    "headache",
+                    "pain",
+                    "hurts",
+                    "tired"
+                  ],
+                  [
+                    "appointment"
+                  ]
+                ],
+                "minGroupsMatched": 2,
+                "onlineRefinement": "grammarCheck"
+              },
               "wordGuide": [
                 45,
                 65
@@ -19181,7 +20627,33 @@
               "prompt": "Describe today's real or fictional weather with three details.",
               "promptAr": "صف طقس اليوم الحقيقي أو الخيالي بثلاثة تفاصيل.",
               "accepted": [],
-              "evaluation": "three-weather-details",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "sunny"
+                  ],
+                  [
+                    "cloudy"
+                  ],
+                  [
+                    "rainy"
+                  ],
+                  [
+                    "windy"
+                  ],
+                  [
+                    "hot"
+                  ],
+                  [
+                    "warm"
+                  ],
+                  [
+                    "cold"
+                  ]
+                ],
+                "minGroupsMatched": 3
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -19323,7 +20795,23 @@
               "prompt": "Describe three actions happening now in a weather scene.",
               "promptAr": "صف ثلاثة أفعال تحدث الآن في مشهد طقس.",
               "accepted": [],
-              "evaluation": "three-present-continuous-actions",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "is",
+                    "are"
+                  ],
+                  [
+                    "raining",
+                    "wearing",
+                    "sitting",
+                    "walking",
+                    "snowing"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -19478,7 +20966,24 @@
               "prompt": "Ask what someone is wearing and answer with two clothing details.",
               "promptAr": "اسأل ماذا يرتدي شخص وأجب بتفصيلين عن الملابس.",
               "accepted": [],
-              "evaluation": "clothing-question-two-details",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "what are you wearing",
+                    "are you wearing"
+                  ],
+                  [
+                    "coat",
+                    "jacket",
+                    "sweater",
+                    "boots",
+                    "hat",
+                    "umbrella"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -19619,7 +21124,23 @@
               "prompt": "Recommend three clothing items for a weather card and give a reason for each.",
               "promptAr": "اقترح ثلاث قطع لبطاقة طقس وأعط سبباً لكل منها.",
               "accepted": [],
-              "evaluation": "three-clothing-reasons",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "coat",
+                    "jacket",
+                    "sweater",
+                    "boots",
+                    "hat",
+                    "umbrella"
+                  ],
+                  [
+                    "because"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -19756,7 +21277,19 @@
               "prompt": "Summarise a provided morning-and-afternoon forecast and suggest preparation.",
               "promptAr": "لخّص توقعاً معطى للصباح وبعد الظهر واقترح التجهيز.",
               "accepted": [],
-              "evaluation": "forecast-summary-preparation",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "will"
+                  ],
+                  [
+                    "take",
+                    "wear"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -19906,7 +21439,26 @@
               "prompt": "Write a 45–65-word weather update with today's conditions, one action now, tomorrow's forecast and preparation.",
               "promptAr": "اكتب تحديثاً من 45–65 كلمة يشمل طقس اليوم وفعلاً الآن وتوقع الغد والتجهيز.",
               "accepted": [],
-              "evaluation": "u11-weather-update-rubric",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "sunny",
+                    "cloudy",
+                    "rainy",
+                    "windy",
+                    "hot",
+                    "warm",
+                    "cold"
+                  ],
+                  [
+                    "will",
+                    "tomorrow"
+                  ]
+                ],
+                "minGroupsMatched": 2,
+                "onlineRefinement": "grammarCheck"
+              },
               "wordGuide": [
                 45,
                 65
@@ -19985,7 +21537,23 @@
               "prompt": "Choose suitable clothes for the walk and give two reasons.",
               "promptAr": "اختر ملابس مناسبة للمشي وأعط سببين.",
               "accepted": [],
-              "evaluation": "clothing-two-weather-reasons",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "coat",
+                    "jacket",
+                    "sweater",
+                    "boots",
+                    "hat",
+                    "umbrella"
+                  ],
+                  [
+                    "because"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             },
             {
@@ -20000,7 +21568,20 @@
               "prompt": "Call a friend: say what the group is doing now and check what the friend is wearing.",
               "promptAr": "اتصل بصديق: اذكر ما تفعله المجموعة الآن وتحقق مما يرتديه.",
               "accepted": [],
-              "evaluation": "current-action-clothing-check",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "is",
+                    "are"
+                  ],
+                  [
+                    "wearing",
+                    "what are you wearing"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             },
             {
@@ -20016,7 +21597,20 @@
               "prompt": "Explain why the time and preparation changed after the update.",
               "promptAr": "اشرح لماذا تغير الوقت والتجهيز بعد التحديث.",
               "accepted": [],
-              "evaluation": "forecast-change-mediation",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "will",
+                    "now"
+                  ],
+                  [
+                    "because",
+                    "so"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             },
             {
@@ -20031,7 +21625,27 @@
               "prompt": "Write the final 50–70-word trip update with weather, time, clothes and reason.",
               "promptAr": "اكتب تحديث الرحلة النهائي في 50–70 كلمة مع الطقس والوقت والملابس والسبب.",
               "accepted": [],
-              "evaluation": "u11-mission-update-rubric",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "sunny",
+                    "cloudy",
+                    "rainy",
+                    "windy",
+                    "hot",
+                    "warm",
+                    "cold"
+                  ],
+                  [
+                    "because",
+                    "take",
+                    "wear"
+                  ]
+                ],
+                "minGroupsMatched": 2,
+                "onlineRefinement": "grammarCheck"
+              },
               "wordGuide": [
                 50,
                 70
@@ -20217,7 +21831,23 @@
               "prompt": "State three real or fictional plans with three future time expressions.",
               "promptAr": "اذكر ثلاث خطط حقيقية أو خيالية بثلاثة تعبيرات زمنية مستقبلية.",
               "accepted": [],
-              "evaluation": "three-future-plans-times",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "going to"
+                  ],
+                  [
+                    "tomorrow",
+                    "this evening",
+                    "next week",
+                    "weekend",
+                    "saturday",
+                    "sunday"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -20363,7 +21993,21 @@
               "prompt": "Ask two questions about future plans and answer one yes/no plan question.",
               "promptAr": "اطرح سؤالين عن الخطط المستقبلية وأجب عن سؤال خطة بنعم أو لا.",
               "accepted": [],
-              "evaluation": "two-plan-questions-one-answer",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "are you going to",
+                    "what are you going to"
+                  ],
+                  [
+                    "i'm going to",
+                    "i'm not going to",
+                    "im going to"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -20510,7 +22154,19 @@
               "prompt": "Arrange a meeting by agreeing on activity, place, day and time.",
               "promptAr": "رتب لقاءً بالاتفاق على النشاط والمكان واليوم والوقت.",
               "accepted": [],
-              "evaluation": "complete-four-detail-arrangement",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "meet",
+                    "meeting"
+                  ],
+                  [
+                    "at"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -20656,7 +22312,21 @@
               "prompt": "Refuse one arrangement politely, give a reason and negotiate one replacement detail.",
               "promptAr": "ارفض ترتيباً بأدب وأعط سبباً وتفاوض على تفصيل بديل.",
               "accepted": [],
-              "evaluation": "polite-refusal-reason-replacement",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "sorry",
+                    "i can't",
+                    "i cant"
+                  ],
+                  [
+                    "because",
+                    "can we"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             }
           ]
@@ -20807,7 +22477,21 @@
               "prompt": "Write a 35–50-word reply confirming or changing the time and answering one practical request.",
               "promptAr": "اكتب رداً من 35–50 كلمة يؤكد الوقت أو يغيره ويجيب عن طلب عملي.",
               "accepted": [],
-              "evaluation": "u12-reply-rubric",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "works",
+                    "confirm"
+                  ],
+                  [
+                    "i'll",
+                    "bring"
+                  ]
+                ],
+                "minGroupsMatched": 2,
+                "onlineRefinement": "grammarCheck"
+              },
               "wordGuide": [
                 35,
                 50
@@ -20966,7 +22650,20 @@
               "prompt": "Write a 50–70-word weekend plan message with activity, place, time, preparation and confirmation request.",
               "promptAr": "اكتب رسالة خطة نهاية أسبوع من 50–70 كلمة تشمل النشاط والمكان والوقت والتجهيز وطلب التأكيد.",
               "accepted": [],
-              "evaluation": "u12-weekend-message-rubric",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "going to"
+                  ],
+                  [
+                    "please",
+                    "confirm"
+                  ]
+                ],
+                "minGroupsMatched": 2,
+                "onlineRefinement": "grammarCheck"
+              },
               "wordGuide": [
                 50,
                 70
@@ -21045,7 +22742,19 @@
               "prompt": "Propose Saturday at 16:00 in River Park and ask for confirmation.",
               "promptAr": "اقترح السبت في الرابعة في حديقة النهر واطلب التأكيد.",
               "accepted": [],
-              "evaluation": "complete-plan-proposal-confirmation",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "let's",
+                    "can we"
+                  ],
+                  [
+                    "confirm"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             },
             {
@@ -21080,7 +22789,20 @@
               "prompt": "Explain the shared availability, original plan and weather-based change.",
               "promptAr": "اشرح التوفر المشترك والخطة الأصلية والتغيير بسبب الطقس.",
               "accepted": [],
-              "evaluation": "weekend-plan-change-mediation",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "because",
+                    "so"
+                  ],
+                  [
+                    "instead",
+                    "change"
+                  ]
+                ],
+                "minGroupsMatched": 2
+              },
               "fallbackSkill": "writing"
             },
             {
@@ -21095,7 +22817,20 @@
               "prompt": "Write the final 55–75-word confirmation with people, activity, place, time, preparation and change reason.",
               "promptAr": "اكتب التأكيد النهائي في 55–75 كلمة مع الأشخاص والنشاط والمكان والوقت والتجهيز وسبب التغيير.",
               "accepted": [],
-              "evaluation": "u12-mission-confirmation-rubric",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "confirm"
+                  ],
+                  [
+                    "because",
+                    "instead"
+                  ]
+                ],
+                "minGroupsMatched": 2,
+                "onlineRefinement": "grammarCheck"
+              },
               "wordGuide": [
                 55,
                 75
@@ -22761,7 +24496,23 @@
         ],
         "prompt": "Introduce yourself to Sam, ask two personal questions and use one repair phrase if needed.",
         "promptAr": "عرّف نفسك إلى سام واسأله سؤالين شخصيين واستخدم عبارة إصلاح عند الحاجة.",
-        "evaluation": "introduction-two-questions-repair",
+        "evaluation": {
+          "type": "keywordChecklist",
+          "requiredGroups": [
+            [
+              "i'm",
+              "im",
+              "i am",
+              "my name is"
+            ],
+            [
+              "what's your name",
+              "where are you from",
+              "where do you live"
+            ]
+          ],
+          "minGroupsMatched": 2
+        },
         "accepted": [],
         "fallbackSkill": "writing",
         "fallbackCountsFor": "accessOnly"
@@ -22815,7 +24566,23 @@
         ],
         "prompt": "Explain the route to Sam and include the closed front entrance: use the side entrance.",
         "promptAr": "اشرح المسار لسام واذكر أن المدخل الأمامي مغلق وأن عليه استخدام المدخل الجانبي.",
-        "evaluation": "route-plus-access-change",
+        "evaluation": {
+          "type": "keywordChecklist",
+          "requiredGroups": [
+            [
+              "straight",
+              "turn",
+              "left",
+              "right"
+            ],
+            [
+              "closed",
+              "side entrance",
+              "use the side"
+            ]
+          ],
+          "minGroupsMatched": 2
+        },
         "accepted": [],
         "fallbackSkill": "writing",
         "fallbackCountsFor": "accessOnly"
@@ -22850,7 +24617,24 @@
         ],
         "prompt": "Ask for the blue jacket in medium, confirm the price and pay by card.",
         "promptAr": "اطلب السترة الزرقاء بمقاس متوسط وأكد السعر وادفع بالبطاقة.",
-        "evaluation": "product-size-price-payment",
+        "evaluation": {
+          "type": "keywordChecklist",
+          "requiredGroups": [
+            [
+              "medium",
+              "small",
+              "large",
+              "jacket"
+            ],
+            [
+              "price",
+              "card",
+              "cash",
+              "pay"
+            ]
+          ],
+          "minGroupsMatched": 2
+        },
         "accepted": [],
         "fallbackSkill": "writing",
         "fallbackCountsFor": "accessOnly"
@@ -22885,7 +24669,21 @@
         ],
         "prompt": "Tell the assistant the correct jacket request, then relay the pharmacy's simple advice to Sam: rest and drink water.",
         "promptAr": "أخبر الموظف بطلب السترة الصحيح ثم انقل لسام نصيحة الصيدلية البسيطة: الراحة وشرب الماء.",
-        "evaluation": "two-part-problem-mediation",
+        "evaluation": {
+          "type": "keywordChecklist",
+          "requiredGroups": [
+            [
+              "medium",
+              "jacket",
+              "size"
+            ],
+            [
+              "rest",
+              "drink water"
+            ]
+          ],
+          "minGroupsMatched": 2
+        },
         "accepted": [],
         "fallbackSkill": "writing",
         "fallbackCountsFor": "accessOnly"
@@ -22901,7 +24699,22 @@
         ],
         "prompt": "Arrange a meeting with Sam tomorrow: agree on activity, place and time, then respond to one time change.",
         "promptAr": "رتب لقاءً مع سام غداً: اتفق على النشاط والمكان والوقت ثم استجب لتغيير واحد في الوقت.",
-        "evaluation": "future-arrangement-and-change",
+        "evaluation": {
+          "type": "keywordChecklist",
+          "requiredGroups": [
+            [
+              "meet",
+              "meeting",
+              "going to"
+            ],
+            [
+              "can we",
+              "instead",
+              "change"
+            ]
+          ],
+          "minGroupsMatched": 2
+        },
         "accepted": [],
         "fallbackSkill": "writing",
         "fallbackCountsFor": "accessOnly"
@@ -22917,7 +24730,23 @@
         ],
         "prompt": "Write a 45–60-word final message confirming tomorrow's activity, place, time, weather preparation and one item Sam should bring.",
         "promptAr": "اكتب رسالة نهائية من 45–60 كلمة تؤكد نشاط الغد ومكانه ووقته والاستعداد للطقس وشيئاً يحضره سام.",
-        "evaluation": "capstone-confirmation-message",
+        "evaluation": {
+          "type": "keywordChecklist",
+          "requiredGroups": [
+            [
+              "tomorrow",
+              "going to"
+            ],
+            [
+              "bring",
+              "take",
+              "umbrella",
+              "jacket",
+              "coat"
+            ]
+          ],
+          "minGroupsMatched": 2
+        },
         "wordGuide": [
           45,
           60
@@ -23625,7 +25454,22 @@
             ],
             "prompt": "Write 30–50 words to a fictional host: introduce yourself, say where you live, state one preference and ask one question about the visit.",
             "promptAr": "اكتب 30–50 كلمة إلى مضيف خيالي: عرّف بنفسك واذكر أين تسكن وتفضيلاً واحداً واسأل سؤالاً عن الزيارة.",
-            "evaluation": "exit-writing-personal-message",
+            "evaluation": {
+              "type": "keywordChecklist",
+              "requiredGroups": [
+                [
+                  "i'm",
+                  "im",
+                  "i am",
+                  "my name is"
+                ],
+                [
+                  "i live in",
+                  "i live"
+                ]
+              ],
+              "minGroupsMatched": 2
+            },
             "wordGuide": [
               30,
               50
@@ -23643,7 +25487,21 @@
             ],
             "prompt": "Write 30–50 words changing a fictional meeting plan. Include the original detail, a reason, the new place or time and a request for confirmation.",
             "promptAr": "اكتب 30–50 كلمة لتغيير خطة لقاء خيالية. اذكر التفصيل الأصلي والسبب والمكان أو الوقت الجديد واطلب التأكيد.",
-            "evaluation": "exit-writing-plan-change",
+            "evaluation": {
+              "type": "keywordChecklist",
+              "requiredGroups": [
+                [
+                  "because",
+                  "so"
+                ],
+                [
+                  "instead",
+                  "can we",
+                  "confirm"
+                ]
+              ],
+              "minGroupsMatched": 2
+            },
             "wordGuide": [
               30,
               50
@@ -23666,7 +25524,25 @@
             ],
             "prompt": "Give your first name or a fictional name, spell it, then say country, city and job or study status.",
             "promptAr": "اذكر اسمك الأول أو اسماً خيالياً وتهجّه، ثم اذكر البلد والمدينة والعمل أو الدراسة.",
-            "evaluation": "exit-speaking-personal-profile",
+            "evaluation": {
+              "type": "keywordChecklist",
+              "requiredGroups": [
+                [
+                  "i'm",
+                  "im",
+                  "i am",
+                  "my name is"
+                ],
+                [
+                  "from"
+                ],
+                [
+                  "i live in",
+                  "i live"
+                ]
+              ],
+              "minGroupsMatched": 2
+            },
             "accepted": [],
             "fallbackSkill": "writing",
             "fallbackCountsFor": "accessOnly",
@@ -23682,7 +25558,29 @@
             ],
             "prompt": "Respond to four short examiner turns: greeting, routine time, preference and simple repair request.",
             "promptAr": "استجب لأربع مداخلات قصيرة: تحية ووقت روتين وتفضيل وطلب إصلاح بسيط.",
-            "evaluation": "exit-speaking-short-exchange",
+            "evaluation": {
+              "type": "keywordChecklist",
+              "requiredGroups": [
+                [
+                  "good morning"
+                ],
+                [
+                  "i start",
+                  "i get up",
+                  "at"
+                ],
+                [
+                  "like",
+                  "love",
+                  "enjoy"
+                ],
+                [
+                  "sorry",
+                  "please repeat"
+                ]
+              ],
+              "minGroupsMatched": 3
+            },
             "accepted": [],
             "fallbackSkill": "writing",
             "fallbackCountsFor": "accessOnly",
@@ -23704,7 +25602,23 @@
             ],
             "prompt": "Role-play one unseen situation: ask for directions, buy a ticket or order a meal; complete at least three interaction turns.",
             "promptAr": "مثّل موقفاً غير مسبوق: اسأل عن اتجاهات أو اشتر تذكرة أو اطلب وجبة، وأكمل ثلاث مداخلات على الأقل.",
-            "evaluation": "exit-speaking-situational-interaction",
+            "evaluation": {
+              "type": "keywordChecklist",
+              "requiredGroups": [
+                [
+                  "where is",
+                  "how do i get to",
+                  "can i have",
+                  "i'd like",
+                  "could i"
+                ],
+                [
+                  "please",
+                  "thank you"
+                ]
+              ],
+              "minGroupsMatched": 2
+            },
             "accepted": [],
             "fallbackSkill": "writing",
             "fallbackCountsFor": "accessOnly",
@@ -23725,7 +25639,25 @@
             ],
             "prompt": "Speak briefly about an unseen weather-and-weekend card: describe now, give a plan and one reason.",
             "promptAr": "تحدث باختصار عن بطاقة طقس وعطلة غير مسبوقة: صف الآن واذكر خطة وسبباً واحداً.",
-            "evaluation": "exit-speaking-short-talk",
+            "evaluation": {
+              "type": "keywordChecklist",
+              "requiredGroups": [
+                [
+                  "is",
+                  "it's",
+                  "its"
+                ],
+                [
+                  "going to",
+                  "will"
+                ],
+                [
+                  "because",
+                  "so"
+                ]
+              ],
+              "minGroupsMatched": 2
+            },
             "accepted": [],
             "fallbackSkill": "writing",
             "fallbackCountsFor": "accessOnly",
@@ -23746,7 +25678,25 @@
             ],
             "prompt": "Read a fictional timetable and tell a friend the departure, platform, connection and arrival in simple English.",
             "promptAr": "اقرأ جدولاً خيالياً وانقل لصديق وقت المغادرة والرصيف والتبديل والوصول بإنجليزية بسيطة.",
-            "evaluation": "exit-spoken-mediation-travel",
+            "evaluation": {
+              "type": "keywordChecklist",
+              "requiredGroups": [
+                [
+                  "leave",
+                  "leaves",
+                  "departure"
+                ],
+                [
+                  "platform"
+                ],
+                [
+                  "arrive",
+                  "arrives",
+                  "arrival"
+                ]
+              ],
+              "minGroupsMatched": 2
+            },
             "accepted": [],
             "fallbackSkill": "writing",
             "fallbackCountsFor": "accessOnly",
@@ -23763,7 +25713,24 @@
             ],
             "prompt": "Write 30–45 words relaying the essential information from a fictional clinic notice: place, time, preparation and one prohibition.",
             "promptAr": "اكتب 30–45 كلمة تنقل المعلومات الأساسية من إشعار عيادة خيالي: المكان والوقت والاستعداد ومنعاً واحداً.",
-            "evaluation": "exit-written-mediation-clinic",
+            "evaluation": {
+              "type": "keywordChecklist",
+              "requiredGroups": [
+                [
+                  "appointment",
+                  "at"
+                ],
+                [
+                  "bring"
+                ],
+                [
+                  "don't",
+                  "do not",
+                  "not"
+                ]
+              ],
+              "minGroupsMatched": 2
+            },
             "wordGuide": [
               30,
               45
