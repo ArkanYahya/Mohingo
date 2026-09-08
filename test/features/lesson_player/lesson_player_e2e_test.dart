@@ -13,12 +13,16 @@ import 'package:mohingo/core/l10n/generated/app_localizations.dart';
 import 'package:mohingo/core/preferences/shared_preferences_provider.dart';
 import 'package:mohingo/data/local/database.dart';
 import 'package:mohingo/data/local/database_provider.dart';
+import 'package:mohingo/features/activity_engine/domain/evaluation/grammar_check_service.dart';
+import 'package:mohingo/features/activity_engine/providers/online_refinement_providers.dart';
 import 'package:mohingo/features/lesson_player/presentation/lesson_player_screen.dart';
 import 'package:mohingo/features/speech/domain/speech_capability_service.dart';
 import 'package:mohingo/features/speech/domain/speech_recognition_service.dart';
 import 'package:mohingo/features/speech/providers/speech_providers.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../activity_engine/fake_connectivity_service.dart';
+import '../activity_engine/fake_grammar_check_service.dart';
 import '../speech/fake_speech_services.dart';
 
 /// A full, offline, end-to-end pass through **real** A1-U0-L1 content —
@@ -363,6 +367,115 @@ void main() {
       expect(pendingRows.single.lessonId, 'A1-U5-L6');
       expect(pendingRows.single.unitId, 'A1-U5');
       expect(pendingRows.single.mode, 'mastery');
+
+      await db.close();
+    },
+  );
+
+  testWidgets(
+    'an onlineRefinement activity submitted while already online resolves '
+    'promptly — the drainer used to trigger only at app start and on a '
+    'connectivity-change event, so a learner who was online the whole '
+    'time (no transition, no restart) would see it stuck on "pending" '
+    'indefinitely',
+    (tester) async {
+      final db = AppDatabase(NativeDatabase.memory());
+      final index = _realA1Index();
+      final lesson = index.lessonsById['A1-U5-L6']!;
+
+      SharedPreferences.setMockInitialValues({});
+      final prefs = await SharedPreferences.getInstance();
+      // Online for the whole test — `setOnline` (the only thing that fires
+      // `onlineChanges`) is never called, so the connectivity-regained
+      // trigger never fires either.
+      final connectivity = FakeConnectivityService(online: true);
+
+      await tester.pumpWidget(
+        ProviderScope(
+          overrides: [
+            sharedPreferencesProvider.overrideWithValue(prefs),
+            appDatabaseProvider.overrideWithValue(db),
+            courseContentProvider('a1').overrideWith((ref) async => index),
+            textToSpeechServiceProvider.overrideWithValue(
+              FakeTextToSpeechService(),
+            ),
+            speechCapabilityServiceProvider.overrideWithValue(
+              FakeSpeechCapabilityService(
+                const DeviceSpeechCapabilities(
+                  sttAvailableForLocale: false,
+                  micPermission: SpeechPermissionStatus.notDetermined,
+                ),
+              ),
+            ),
+            connectivityServiceProvider.overrideWithValue(connectivity),
+            grammarCheckServiceProvider.overrideWithValue(
+              FakeGrammarCheckService(
+                result: const GrammarCheckResult(errorCount: 0, wordCount: 20),
+              ),
+            ),
+          ],
+          // Mirrors MohingoApp watching pendingRefinementDrainerProvider at
+          // its own root — the app's one and only drainer instance, alive
+          // for the app's lifetime, exactly as in the real app.
+          child: Consumer(
+            builder: (context, ref, _) {
+              ref.watch(pendingRefinementDrainerProvider);
+              return MaterialApp(
+                locale: const Locale('en'),
+                supportedLocales: AppLocalizations.supportedLocales,
+                localizationsDelegates: AppLocalizations.localizationsDelegates,
+                home: const LessonPlayerScreen(
+                  unitId: 'A1-U5',
+                  lessonId: 'A1-U5-L6',
+                ),
+              );
+            },
+          ),
+        ),
+      );
+      await tester.pumpAndSettle();
+
+      for (final activity in lesson.activities.sublist(
+        0,
+        lesson.activities.length - 1,
+      )) {
+        await _answerAndAdvance(tester, activity);
+      }
+
+      // A1-U5-L6-A05 — submit the onlineRefinement write activity.
+      await tester.enterText(
+        find.byType(TextField),
+        'Hello! I love hiking and reading on weekends. Would you like to join '
+        'me for a walk in the park this Saturday afternoon?',
+      );
+      await tester.pump();
+      await tester.tap(find.byType(FilledButton));
+
+      // The post-enqueue drain trigger and its async chain (grammar check,
+      // recording the real attempt, removing the queue row) are all
+      // fire-and-forget — give the microtask/frame queue time to run them.
+      for (var i = 0; i < 10; i++) {
+        await tester.pump();
+      }
+
+      final pendingRows = await (db.select(
+        db.pendingOnlineRefinements,
+      )..where((t) => t.activityId.equals('A1-U5-L6-A05'))).get();
+      expect(
+        pendingRows,
+        isEmpty,
+        reason:
+            'a learner who is online the entire time this test runs must '
+            'not be left on "pending" — nothing here ever fires a '
+            'connectivity-change event or recreates the provider, so '
+            'app-start and connectivity-regained cannot be what resolved '
+            'this',
+      );
+
+      final attemptRows = await (db.select(
+        db.activityAttempts,
+      )..where((t) => t.activityId.equals('A1-U5-L6-A05'))).get();
+      expect(attemptRows, hasLength(1));
 
       await db.close();
     },

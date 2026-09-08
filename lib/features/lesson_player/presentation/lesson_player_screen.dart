@@ -238,6 +238,13 @@ class _LessonPlayerBodyState extends ConsumerState<_LessonPlayerBody> {
             localScore: submission.score ?? 0.0,
             wasFallback: submission.wasFallback,
           );
+      // Without this, a learner who is online the *entire* time they use
+      // the app would never see this resolve: the drainer otherwise only
+      // triggers at app start (before this item existed) and on a
+      // connectivity *transition* (which never fires if the device was
+      // never offline to begin with) — see
+      // online_refinement_providers.dart's doc comment.
+      ref.read(pendingRefinementDrainerProvider).triggerDrain();
     } else {
       await ref
           .read(activityAttemptRepositoryProvider)

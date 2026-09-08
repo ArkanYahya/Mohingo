@@ -41,11 +41,59 @@ PendingRefinementRepository pendingRefinementRepository(Ref ref) {
   return DriftPendingRefinementRepository(ref.watch(appDatabaseProvider));
 }
 
+/// Exposes a manually-triggerable drain alongside the automatic app-start
+/// and connectivity-regained triggers — see [pendingRefinementDrainerProvider].
+/// All three share this one instance's re-entrancy guard, so a caller (e.g.
+/// the lesson player, right after enqueueing a new item) can safely ask for
+/// an immediate attempt without risking a double-processed row.
+class PendingRefinementDrainer {
+  PendingRefinementDrainer(this._service);
+
+  final PendingRefinementDrainService _service;
+
+  // Never a module-level global — one guard per drainer instance is exactly
+  // the scope that matters.
+  var _draining = false;
+
+  Future<void> _drain() async {
+    // Synchronous check-and-set: nothing awaits between reading and
+    // writing `_draining`, so a second trigger can never slip past it.
+    if (_draining) return;
+    _draining = true;
+    try {
+      await _service.drainOnce();
+    } finally {
+      _draining = false;
+    }
+  }
+
+  /// Fire-and-forget: nothing awaits this, so an unexpected failure would
+  /// otherwise become an unhandled async error — swallowed silently in
+  /// release, a crash in debug. Log it and move on: the queue rows are
+  /// untouched and the next trigger tries again.
+  void triggerDrain() {
+    unawaited(
+      _drain().catchError((Object error, StackTrace stackTrace) {
+        debugPrint(
+          'Pending online-refinement drain failed: $error\n$stackTrace',
+        );
+      }),
+    );
+  }
+}
+
 /// Watched once at app root (`MohingoApp`) — drains
-/// `pending_online_refinements` once at startup, then again every time
-/// [ConnectivityService.onlineChanges] reports the device just came online.
+/// `pending_online_refinements` once at startup, again every time
+/// [ConnectivityService.onlineChanges] reports the device just came online,
+/// and on demand via [PendingRefinementDrainer.triggerDrain] (the lesson
+/// player calls this right after enqueueing a new item — otherwise a
+/// learner who is online the *entire* time they use the app would never see
+/// their answer resolved: `onlineChanges` only fires on a connectivity
+/// *transition*, never merely because the device already is online, so a
+/// newly-queued item would sit untouched until the next app restart or an
+/// actual network blip).
 ///
-/// The drain runs **unconditionally** at both trigger points — never gated
+/// The drain runs **unconditionally** at every trigger point — never gated
 /// on [ConnectivityService.isOnline]. `PendingRefinementDrainService`'s
 /// bounded local-only fallback (the mechanism that guarantees a learner who
 /// is never online still gets every queued answer resolved, per
@@ -56,21 +104,24 @@ PendingRefinementRepository pendingRefinementRepository(Ref ref) {
 /// throws [GrammarCheckUnavailableException] with no network, and
 /// `PendingRefinementDrainService`'s own per-item handling already turns
 /// that into either a retry or — once the row is retried/old enough — a
-/// local-score-only resolution. Regained connectivity is still a useful
-/// *extra* trigger (it's when an online refinement can actually succeed);
-/// it just isn't a precondition for draining at all.
+/// local-score-only resolution. Regained connectivity (and a fresh
+/// enqueue) are still useful *extra* triggers; neither is a precondition
+/// for draining at all.
 ///
-/// At most one drain is ever in flight: both triggers are fire-and-forget
-/// and one grammar check can take up to 10s, so two overlapping drains
-/// would otherwise both read the same queue rows and record the same answer
-/// as mastery evidence twice (the loser's `remove(id:)` being a silent
-/// no-op).
+/// At most one drain is ever in flight, no matter which trigger fires it:
+/// every trigger routes through this one [PendingRefinementDrainer]
+/// instance's guard, and one grammar check can take up to 10s, so two
+/// overlapping drains would otherwise both read the same queue rows and
+/// record the same answer as mastery evidence twice (the loser's
+/// `remove(id:)` being a silent no-op).
 ///
 /// [OnItemResolved] is wired here, not inside the drain service itself,
 /// because refreshing a unit's cached mastery state needs a real [Unit]
 /// from the content bundle plus `MasteryAggregationService` — content and
 /// Riverpod concerns the drain service deliberately knows nothing about.
-final pendingRefinementDrainerProvider = Provider<void>((ref) {
+final pendingRefinementDrainerProvider = Provider<PendingRefinementDrainer>((
+  ref,
+) {
   final service = PendingRefinementDrainService(
     pendingRepository: ref.watch(pendingRefinementRepositoryProvider),
     attemptRepository: ref.watch(activityAttemptRepositoryProvider),
@@ -99,42 +150,15 @@ final pendingRefinementDrainerProvider = Provider<void>((ref) {
       ref.invalidate(allLessonProgressProvider);
     },
   );
+  final drainer = PendingRefinementDrainer(service);
   final connectivity = ref.watch(connectivityServiceProvider);
 
-  // Captured by the closures below (same shape as `subscription`), never a
-  // module-level global — one guard per drainer instance is exactly the
-  // scope that matters.
-  var draining = false;
-  Future<void> drain() async {
-    // Synchronous check-and-set: nothing awaits between reading and
-    // writing `draining`, so a second trigger can never slip past it.
-    if (draining) return;
-    draining = true;
-    try {
-      await service.drainOnce();
-    } finally {
-      draining = false;
-    }
-  }
-
-  // Nothing awaits either trigger, so an unexpected failure would otherwise
-  // become an unhandled async error — swallowed silently in release, a
-  // crash in debug. Log it and move on: the queue rows are untouched and
-  // the next trigger tries again.
-  void startDrain() {
-    unawaited(
-      drain().catchError((Object error, StackTrace stackTrace) {
-        debugPrint(
-          'Pending online-refinement drain failed: $error\n$stackTrace',
-        );
-      }),
-    );
-  }
-
-  startDrain();
+  drainer.triggerDrain();
 
   final subscription = connectivity.onlineChanges
       .where((isOnline) => isOnline)
-      .listen((_) => startDrain());
+      .listen((_) => drainer.triggerDrain());
   ref.onDispose(subscription.cancel);
+
+  return drainer;
 });
