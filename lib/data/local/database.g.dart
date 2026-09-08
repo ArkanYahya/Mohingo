@@ -6773,6 +6773,827 @@ class ContentVersionsCompanion extends UpdateCompanion<ContentVersion> {
   }
 }
 
+class $PendingOnlineRefinementsTable extends PendingOnlineRefinements
+    with TableInfo<$PendingOnlineRefinementsTable, PendingOnlineRefinement> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $PendingOnlineRefinementsTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<int> id = GeneratedColumn<int>(
+    'id',
+    aliasedName,
+    false,
+    hasAutoIncrement: true,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'PRIMARY KEY AUTOINCREMENT',
+    ),
+  );
+  static const VerificationMeta _uuidMeta = const VerificationMeta('uuid');
+  @override
+  late final GeneratedColumn<String> uuid = GeneratedColumn<String>(
+    'uuid',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+    defaultConstraints: GeneratedColumn.constraintIsAlways('UNIQUE'),
+  );
+  static const VerificationMeta _learnerIdMeta = const VerificationMeta(
+    'learnerId',
+  );
+  @override
+  late final GeneratedColumn<int> learnerId = GeneratedColumn<int>(
+    'learner_id',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: true,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'REFERENCES learners (id)',
+    ),
+  );
+  static const VerificationMeta _activityIdMeta = const VerificationMeta(
+    'activityId',
+  );
+  @override
+  late final GeneratedColumn<String> activityId = GeneratedColumn<String>(
+    'activity_id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _lessonIdMeta = const VerificationMeta(
+    'lessonId',
+  );
+  @override
+  late final GeneratedColumn<String> lessonId = GeneratedColumn<String>(
+    'lesson_id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _unitIdMeta = const VerificationMeta('unitId');
+  @override
+  late final GeneratedColumn<String> unitId = GeneratedColumn<String>(
+    'unit_id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _canDoIdsMeta = const VerificationMeta(
+    'canDoIds',
+  );
+  @override
+  late final GeneratedColumn<String> canDoIds = GeneratedColumn<String>(
+    'can_do_ids',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _rawAnswerMeta = const VerificationMeta(
+    'rawAnswer',
+  );
+  @override
+  late final GeneratedColumn<String> rawAnswer = GeneratedColumn<String>(
+    'raw_answer',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _evidenceSkillMeta = const VerificationMeta(
+    'evidenceSkill',
+  );
+  @override
+  late final GeneratedColumn<String> evidenceSkill = GeneratedColumn<String>(
+    'evidence_skill',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _modeMeta = const VerificationMeta('mode');
+  @override
+  late final GeneratedColumn<String> mode = GeneratedColumn<String>(
+    'mode',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _localScoreMeta = const VerificationMeta(
+    'localScore',
+  );
+  @override
+  late final GeneratedColumn<double> localScore = GeneratedColumn<double>(
+    'local_score',
+    aliasedName,
+    false,
+    type: DriftSqlType.double,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _submittedAtMeta = const VerificationMeta(
+    'submittedAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> submittedAt = GeneratedColumn<DateTime>(
+    'submitted_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _attemptCountMeta = const VerificationMeta(
+    'attemptCount',
+  );
+  @override
+  late final GeneratedColumn<int> attemptCount = GeneratedColumn<int>(
+    'attempt_count',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _lastAttemptAtMeta = const VerificationMeta(
+    'lastAttemptAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> lastAttemptAt =
+      GeneratedColumn<DateTime>(
+        'last_attempt_at',
+        aliasedName,
+        true,
+        type: DriftSqlType.dateTime,
+        requiredDuringInsert: false,
+      );
+  @override
+  List<GeneratedColumn> get $columns => [
+    id,
+    uuid,
+    learnerId,
+    activityId,
+    lessonId,
+    unitId,
+    canDoIds,
+    rawAnswer,
+    evidenceSkill,
+    mode,
+    localScore,
+    submittedAt,
+    attemptCount,
+    lastAttemptAt,
+  ];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'pending_online_refinements';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<PendingOnlineRefinement> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    }
+    if (data.containsKey('uuid')) {
+      context.handle(
+        _uuidMeta,
+        uuid.isAcceptableOrUnknown(data['uuid']!, _uuidMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_uuidMeta);
+    }
+    if (data.containsKey('learner_id')) {
+      context.handle(
+        _learnerIdMeta,
+        learnerId.isAcceptableOrUnknown(data['learner_id']!, _learnerIdMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_learnerIdMeta);
+    }
+    if (data.containsKey('activity_id')) {
+      context.handle(
+        _activityIdMeta,
+        activityId.isAcceptableOrUnknown(data['activity_id']!, _activityIdMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_activityIdMeta);
+    }
+    if (data.containsKey('lesson_id')) {
+      context.handle(
+        _lessonIdMeta,
+        lessonId.isAcceptableOrUnknown(data['lesson_id']!, _lessonIdMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_lessonIdMeta);
+    }
+    if (data.containsKey('unit_id')) {
+      context.handle(
+        _unitIdMeta,
+        unitId.isAcceptableOrUnknown(data['unit_id']!, _unitIdMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_unitIdMeta);
+    }
+    if (data.containsKey('can_do_ids')) {
+      context.handle(
+        _canDoIdsMeta,
+        canDoIds.isAcceptableOrUnknown(data['can_do_ids']!, _canDoIdsMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_canDoIdsMeta);
+    }
+    if (data.containsKey('raw_answer')) {
+      context.handle(
+        _rawAnswerMeta,
+        rawAnswer.isAcceptableOrUnknown(data['raw_answer']!, _rawAnswerMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_rawAnswerMeta);
+    }
+    if (data.containsKey('evidence_skill')) {
+      context.handle(
+        _evidenceSkillMeta,
+        evidenceSkill.isAcceptableOrUnknown(
+          data['evidence_skill']!,
+          _evidenceSkillMeta,
+        ),
+      );
+    } else if (isInserting) {
+      context.missing(_evidenceSkillMeta);
+    }
+    if (data.containsKey('mode')) {
+      context.handle(
+        _modeMeta,
+        mode.isAcceptableOrUnknown(data['mode']!, _modeMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_modeMeta);
+    }
+    if (data.containsKey('local_score')) {
+      context.handle(
+        _localScoreMeta,
+        localScore.isAcceptableOrUnknown(data['local_score']!, _localScoreMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_localScoreMeta);
+    }
+    if (data.containsKey('submitted_at')) {
+      context.handle(
+        _submittedAtMeta,
+        submittedAt.isAcceptableOrUnknown(
+          data['submitted_at']!,
+          _submittedAtMeta,
+        ),
+      );
+    } else if (isInserting) {
+      context.missing(_submittedAtMeta);
+    }
+    if (data.containsKey('attempt_count')) {
+      context.handle(
+        _attemptCountMeta,
+        attemptCount.isAcceptableOrUnknown(
+          data['attempt_count']!,
+          _attemptCountMeta,
+        ),
+      );
+    }
+    if (data.containsKey('last_attempt_at')) {
+      context.handle(
+        _lastAttemptAtMeta,
+        lastAttemptAt.isAcceptableOrUnknown(
+          data['last_attempt_at']!,
+          _lastAttemptAtMeta,
+        ),
+      );
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  PendingOnlineRefinement map(
+    Map<String, dynamic> data, {
+    String? tablePrefix,
+  }) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return PendingOnlineRefinement(
+      id: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}id'],
+      )!,
+      uuid: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}uuid'],
+      )!,
+      learnerId: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}learner_id'],
+      )!,
+      activityId: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}activity_id'],
+      )!,
+      lessonId: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}lesson_id'],
+      )!,
+      unitId: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}unit_id'],
+      )!,
+      canDoIds: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}can_do_ids'],
+      )!,
+      rawAnswer: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}raw_answer'],
+      )!,
+      evidenceSkill: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}evidence_skill'],
+      )!,
+      mode: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}mode'],
+      )!,
+      localScore: attachedDatabase.typeMapping.read(
+        DriftSqlType.double,
+        data['${effectivePrefix}local_score'],
+      )!,
+      submittedAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}submitted_at'],
+      )!,
+      attemptCount: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}attempt_count'],
+      )!,
+      lastAttemptAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}last_attempt_at'],
+      ),
+    );
+  }
+
+  @override
+  $PendingOnlineRefinementsTable createAlias(String alias) {
+    return $PendingOnlineRefinementsTable(attachedDatabase, alias);
+  }
+}
+
+class PendingOnlineRefinement extends DataClass
+    implements Insertable<PendingOnlineRefinement> {
+  final int id;
+  final String uuid;
+  final int learnerId;
+  final String activityId;
+  final String lessonId;
+  final String unitId;
+  final String canDoIds;
+  final String rawAnswer;
+  final String evidenceSkill;
+  final String mode;
+  final double localScore;
+  final DateTime submittedAt;
+  final int attemptCount;
+  final DateTime? lastAttemptAt;
+  const PendingOnlineRefinement({
+    required this.id,
+    required this.uuid,
+    required this.learnerId,
+    required this.activityId,
+    required this.lessonId,
+    required this.unitId,
+    required this.canDoIds,
+    required this.rawAnswer,
+    required this.evidenceSkill,
+    required this.mode,
+    required this.localScore,
+    required this.submittedAt,
+    required this.attemptCount,
+    this.lastAttemptAt,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<int>(id);
+    map['uuid'] = Variable<String>(uuid);
+    map['learner_id'] = Variable<int>(learnerId);
+    map['activity_id'] = Variable<String>(activityId);
+    map['lesson_id'] = Variable<String>(lessonId);
+    map['unit_id'] = Variable<String>(unitId);
+    map['can_do_ids'] = Variable<String>(canDoIds);
+    map['raw_answer'] = Variable<String>(rawAnswer);
+    map['evidence_skill'] = Variable<String>(evidenceSkill);
+    map['mode'] = Variable<String>(mode);
+    map['local_score'] = Variable<double>(localScore);
+    map['submitted_at'] = Variable<DateTime>(submittedAt);
+    map['attempt_count'] = Variable<int>(attemptCount);
+    if (!nullToAbsent || lastAttemptAt != null) {
+      map['last_attempt_at'] = Variable<DateTime>(lastAttemptAt);
+    }
+    return map;
+  }
+
+  PendingOnlineRefinementsCompanion toCompanion(bool nullToAbsent) {
+    return PendingOnlineRefinementsCompanion(
+      id: Value(id),
+      uuid: Value(uuid),
+      learnerId: Value(learnerId),
+      activityId: Value(activityId),
+      lessonId: Value(lessonId),
+      unitId: Value(unitId),
+      canDoIds: Value(canDoIds),
+      rawAnswer: Value(rawAnswer),
+      evidenceSkill: Value(evidenceSkill),
+      mode: Value(mode),
+      localScore: Value(localScore),
+      submittedAt: Value(submittedAt),
+      attemptCount: Value(attemptCount),
+      lastAttemptAt: lastAttemptAt == null && nullToAbsent
+          ? const Value.absent()
+          : Value(lastAttemptAt),
+    );
+  }
+
+  factory PendingOnlineRefinement.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return PendingOnlineRefinement(
+      id: serializer.fromJson<int>(json['id']),
+      uuid: serializer.fromJson<String>(json['uuid']),
+      learnerId: serializer.fromJson<int>(json['learnerId']),
+      activityId: serializer.fromJson<String>(json['activityId']),
+      lessonId: serializer.fromJson<String>(json['lessonId']),
+      unitId: serializer.fromJson<String>(json['unitId']),
+      canDoIds: serializer.fromJson<String>(json['canDoIds']),
+      rawAnswer: serializer.fromJson<String>(json['rawAnswer']),
+      evidenceSkill: serializer.fromJson<String>(json['evidenceSkill']),
+      mode: serializer.fromJson<String>(json['mode']),
+      localScore: serializer.fromJson<double>(json['localScore']),
+      submittedAt: serializer.fromJson<DateTime>(json['submittedAt']),
+      attemptCount: serializer.fromJson<int>(json['attemptCount']),
+      lastAttemptAt: serializer.fromJson<DateTime?>(json['lastAttemptAt']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<int>(id),
+      'uuid': serializer.toJson<String>(uuid),
+      'learnerId': serializer.toJson<int>(learnerId),
+      'activityId': serializer.toJson<String>(activityId),
+      'lessonId': serializer.toJson<String>(lessonId),
+      'unitId': serializer.toJson<String>(unitId),
+      'canDoIds': serializer.toJson<String>(canDoIds),
+      'rawAnswer': serializer.toJson<String>(rawAnswer),
+      'evidenceSkill': serializer.toJson<String>(evidenceSkill),
+      'mode': serializer.toJson<String>(mode),
+      'localScore': serializer.toJson<double>(localScore),
+      'submittedAt': serializer.toJson<DateTime>(submittedAt),
+      'attemptCount': serializer.toJson<int>(attemptCount),
+      'lastAttemptAt': serializer.toJson<DateTime?>(lastAttemptAt),
+    };
+  }
+
+  PendingOnlineRefinement copyWith({
+    int? id,
+    String? uuid,
+    int? learnerId,
+    String? activityId,
+    String? lessonId,
+    String? unitId,
+    String? canDoIds,
+    String? rawAnswer,
+    String? evidenceSkill,
+    String? mode,
+    double? localScore,
+    DateTime? submittedAt,
+    int? attemptCount,
+    Value<DateTime?> lastAttemptAt = const Value.absent(),
+  }) => PendingOnlineRefinement(
+    id: id ?? this.id,
+    uuid: uuid ?? this.uuid,
+    learnerId: learnerId ?? this.learnerId,
+    activityId: activityId ?? this.activityId,
+    lessonId: lessonId ?? this.lessonId,
+    unitId: unitId ?? this.unitId,
+    canDoIds: canDoIds ?? this.canDoIds,
+    rawAnswer: rawAnswer ?? this.rawAnswer,
+    evidenceSkill: evidenceSkill ?? this.evidenceSkill,
+    mode: mode ?? this.mode,
+    localScore: localScore ?? this.localScore,
+    submittedAt: submittedAt ?? this.submittedAt,
+    attemptCount: attemptCount ?? this.attemptCount,
+    lastAttemptAt: lastAttemptAt.present
+        ? lastAttemptAt.value
+        : this.lastAttemptAt,
+  );
+  PendingOnlineRefinement copyWithCompanion(
+    PendingOnlineRefinementsCompanion data,
+  ) {
+    return PendingOnlineRefinement(
+      id: data.id.present ? data.id.value : this.id,
+      uuid: data.uuid.present ? data.uuid.value : this.uuid,
+      learnerId: data.learnerId.present ? data.learnerId.value : this.learnerId,
+      activityId: data.activityId.present
+          ? data.activityId.value
+          : this.activityId,
+      lessonId: data.lessonId.present ? data.lessonId.value : this.lessonId,
+      unitId: data.unitId.present ? data.unitId.value : this.unitId,
+      canDoIds: data.canDoIds.present ? data.canDoIds.value : this.canDoIds,
+      rawAnswer: data.rawAnswer.present ? data.rawAnswer.value : this.rawAnswer,
+      evidenceSkill: data.evidenceSkill.present
+          ? data.evidenceSkill.value
+          : this.evidenceSkill,
+      mode: data.mode.present ? data.mode.value : this.mode,
+      localScore: data.localScore.present
+          ? data.localScore.value
+          : this.localScore,
+      submittedAt: data.submittedAt.present
+          ? data.submittedAt.value
+          : this.submittedAt,
+      attemptCount: data.attemptCount.present
+          ? data.attemptCount.value
+          : this.attemptCount,
+      lastAttemptAt: data.lastAttemptAt.present
+          ? data.lastAttemptAt.value
+          : this.lastAttemptAt,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('PendingOnlineRefinement(')
+          ..write('id: $id, ')
+          ..write('uuid: $uuid, ')
+          ..write('learnerId: $learnerId, ')
+          ..write('activityId: $activityId, ')
+          ..write('lessonId: $lessonId, ')
+          ..write('unitId: $unitId, ')
+          ..write('canDoIds: $canDoIds, ')
+          ..write('rawAnswer: $rawAnswer, ')
+          ..write('evidenceSkill: $evidenceSkill, ')
+          ..write('mode: $mode, ')
+          ..write('localScore: $localScore, ')
+          ..write('submittedAt: $submittedAt, ')
+          ..write('attemptCount: $attemptCount, ')
+          ..write('lastAttemptAt: $lastAttemptAt')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(
+    id,
+    uuid,
+    learnerId,
+    activityId,
+    lessonId,
+    unitId,
+    canDoIds,
+    rawAnswer,
+    evidenceSkill,
+    mode,
+    localScore,
+    submittedAt,
+    attemptCount,
+    lastAttemptAt,
+  );
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is PendingOnlineRefinement &&
+          other.id == this.id &&
+          other.uuid == this.uuid &&
+          other.learnerId == this.learnerId &&
+          other.activityId == this.activityId &&
+          other.lessonId == this.lessonId &&
+          other.unitId == this.unitId &&
+          other.canDoIds == this.canDoIds &&
+          other.rawAnswer == this.rawAnswer &&
+          other.evidenceSkill == this.evidenceSkill &&
+          other.mode == this.mode &&
+          other.localScore == this.localScore &&
+          other.submittedAt == this.submittedAt &&
+          other.attemptCount == this.attemptCount &&
+          other.lastAttemptAt == this.lastAttemptAt);
+}
+
+class PendingOnlineRefinementsCompanion
+    extends UpdateCompanion<PendingOnlineRefinement> {
+  final Value<int> id;
+  final Value<String> uuid;
+  final Value<int> learnerId;
+  final Value<String> activityId;
+  final Value<String> lessonId;
+  final Value<String> unitId;
+  final Value<String> canDoIds;
+  final Value<String> rawAnswer;
+  final Value<String> evidenceSkill;
+  final Value<String> mode;
+  final Value<double> localScore;
+  final Value<DateTime> submittedAt;
+  final Value<int> attemptCount;
+  final Value<DateTime?> lastAttemptAt;
+  const PendingOnlineRefinementsCompanion({
+    this.id = const Value.absent(),
+    this.uuid = const Value.absent(),
+    this.learnerId = const Value.absent(),
+    this.activityId = const Value.absent(),
+    this.lessonId = const Value.absent(),
+    this.unitId = const Value.absent(),
+    this.canDoIds = const Value.absent(),
+    this.rawAnswer = const Value.absent(),
+    this.evidenceSkill = const Value.absent(),
+    this.mode = const Value.absent(),
+    this.localScore = const Value.absent(),
+    this.submittedAt = const Value.absent(),
+    this.attemptCount = const Value.absent(),
+    this.lastAttemptAt = const Value.absent(),
+  });
+  PendingOnlineRefinementsCompanion.insert({
+    this.id = const Value.absent(),
+    required String uuid,
+    required int learnerId,
+    required String activityId,
+    required String lessonId,
+    required String unitId,
+    required String canDoIds,
+    required String rawAnswer,
+    required String evidenceSkill,
+    required String mode,
+    required double localScore,
+    required DateTime submittedAt,
+    this.attemptCount = const Value.absent(),
+    this.lastAttemptAt = const Value.absent(),
+  }) : uuid = Value(uuid),
+       learnerId = Value(learnerId),
+       activityId = Value(activityId),
+       lessonId = Value(lessonId),
+       unitId = Value(unitId),
+       canDoIds = Value(canDoIds),
+       rawAnswer = Value(rawAnswer),
+       evidenceSkill = Value(evidenceSkill),
+       mode = Value(mode),
+       localScore = Value(localScore),
+       submittedAt = Value(submittedAt);
+  static Insertable<PendingOnlineRefinement> custom({
+    Expression<int>? id,
+    Expression<String>? uuid,
+    Expression<int>? learnerId,
+    Expression<String>? activityId,
+    Expression<String>? lessonId,
+    Expression<String>? unitId,
+    Expression<String>? canDoIds,
+    Expression<String>? rawAnswer,
+    Expression<String>? evidenceSkill,
+    Expression<String>? mode,
+    Expression<double>? localScore,
+    Expression<DateTime>? submittedAt,
+    Expression<int>? attemptCount,
+    Expression<DateTime>? lastAttemptAt,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (uuid != null) 'uuid': uuid,
+      if (learnerId != null) 'learner_id': learnerId,
+      if (activityId != null) 'activity_id': activityId,
+      if (lessonId != null) 'lesson_id': lessonId,
+      if (unitId != null) 'unit_id': unitId,
+      if (canDoIds != null) 'can_do_ids': canDoIds,
+      if (rawAnswer != null) 'raw_answer': rawAnswer,
+      if (evidenceSkill != null) 'evidence_skill': evidenceSkill,
+      if (mode != null) 'mode': mode,
+      if (localScore != null) 'local_score': localScore,
+      if (submittedAt != null) 'submitted_at': submittedAt,
+      if (attemptCount != null) 'attempt_count': attemptCount,
+      if (lastAttemptAt != null) 'last_attempt_at': lastAttemptAt,
+    });
+  }
+
+  PendingOnlineRefinementsCompanion copyWith({
+    Value<int>? id,
+    Value<String>? uuid,
+    Value<int>? learnerId,
+    Value<String>? activityId,
+    Value<String>? lessonId,
+    Value<String>? unitId,
+    Value<String>? canDoIds,
+    Value<String>? rawAnswer,
+    Value<String>? evidenceSkill,
+    Value<String>? mode,
+    Value<double>? localScore,
+    Value<DateTime>? submittedAt,
+    Value<int>? attemptCount,
+    Value<DateTime?>? lastAttemptAt,
+  }) {
+    return PendingOnlineRefinementsCompanion(
+      id: id ?? this.id,
+      uuid: uuid ?? this.uuid,
+      learnerId: learnerId ?? this.learnerId,
+      activityId: activityId ?? this.activityId,
+      lessonId: lessonId ?? this.lessonId,
+      unitId: unitId ?? this.unitId,
+      canDoIds: canDoIds ?? this.canDoIds,
+      rawAnswer: rawAnswer ?? this.rawAnswer,
+      evidenceSkill: evidenceSkill ?? this.evidenceSkill,
+      mode: mode ?? this.mode,
+      localScore: localScore ?? this.localScore,
+      submittedAt: submittedAt ?? this.submittedAt,
+      attemptCount: attemptCount ?? this.attemptCount,
+      lastAttemptAt: lastAttemptAt ?? this.lastAttemptAt,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<int>(id.value);
+    }
+    if (uuid.present) {
+      map['uuid'] = Variable<String>(uuid.value);
+    }
+    if (learnerId.present) {
+      map['learner_id'] = Variable<int>(learnerId.value);
+    }
+    if (activityId.present) {
+      map['activity_id'] = Variable<String>(activityId.value);
+    }
+    if (lessonId.present) {
+      map['lesson_id'] = Variable<String>(lessonId.value);
+    }
+    if (unitId.present) {
+      map['unit_id'] = Variable<String>(unitId.value);
+    }
+    if (canDoIds.present) {
+      map['can_do_ids'] = Variable<String>(canDoIds.value);
+    }
+    if (rawAnswer.present) {
+      map['raw_answer'] = Variable<String>(rawAnswer.value);
+    }
+    if (evidenceSkill.present) {
+      map['evidence_skill'] = Variable<String>(evidenceSkill.value);
+    }
+    if (mode.present) {
+      map['mode'] = Variable<String>(mode.value);
+    }
+    if (localScore.present) {
+      map['local_score'] = Variable<double>(localScore.value);
+    }
+    if (submittedAt.present) {
+      map['submitted_at'] = Variable<DateTime>(submittedAt.value);
+    }
+    if (attemptCount.present) {
+      map['attempt_count'] = Variable<int>(attemptCount.value);
+    }
+    if (lastAttemptAt.present) {
+      map['last_attempt_at'] = Variable<DateTime>(lastAttemptAt.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('PendingOnlineRefinementsCompanion(')
+          ..write('id: $id, ')
+          ..write('uuid: $uuid, ')
+          ..write('learnerId: $learnerId, ')
+          ..write('activityId: $activityId, ')
+          ..write('lessonId: $lessonId, ')
+          ..write('unitId: $unitId, ')
+          ..write('canDoIds: $canDoIds, ')
+          ..write('rawAnswer: $rawAnswer, ')
+          ..write('evidenceSkill: $evidenceSkill, ')
+          ..write('mode: $mode, ')
+          ..write('localScore: $localScore, ')
+          ..write('submittedAt: $submittedAt, ')
+          ..write('attemptCount: $attemptCount, ')
+          ..write('lastAttemptAt: $lastAttemptAt')
+          ..write(')'))
+        .toString();
+  }
+}
+
 abstract class _$AppDatabase extends GeneratedDatabase {
   _$AppDatabase(QueryExecutor e) : super(e);
   $AppDatabaseManager get managers => $AppDatabaseManager(this);
@@ -6800,6 +7621,8 @@ abstract class _$AppDatabase extends GeneratedDatabase {
   late final $ContentVersionsTable contentVersions = $ContentVersionsTable(
     this,
   );
+  late final $PendingOnlineRefinementsTable pendingOnlineRefinements =
+      $PendingOnlineRefinementsTable(this);
   @override
   Iterable<TableInfo<Table, Object?>> get allTables =>
       allSchemaEntities.whereType<TableInfo<Table, Object?>>();
@@ -6817,6 +7640,7 @@ abstract class _$AppDatabase extends GeneratedDatabase {
     vocabularyReviewState,
     grammarReviewState,
     contentVersions,
+    pendingOnlineRefinements,
   ];
 }
 
@@ -7033,6 +7857,31 @@ final class $$LearnersTableReferences
 
     final cache = $_typedResult.readTableOrNull(
       _grammarReviewStateRefsTable($_db),
+    );
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: cache),
+    );
+  }
+
+  static MultiTypedResultKey<
+    $PendingOnlineRefinementsTable,
+    List<PendingOnlineRefinement>
+  >
+  _pendingOnlineRefinementsRefsTable(_$AppDatabase db) =>
+      MultiTypedResultKey.fromTable(
+        db.pendingOnlineRefinements,
+        aliasName: 'learners__id__pending_online_refinements__learner_id',
+      );
+
+  $$PendingOnlineRefinementsTableProcessedTableManager
+  get pendingOnlineRefinementsRefs {
+    final manager = $$PendingOnlineRefinementsTableTableManager(
+      $_db,
+      $_db.pendingOnlineRefinements,
+    ).filter((f) => f.learnerId.id.sqlEquals($_itemColumn<int>('id')!));
+
+    final cache = $_typedResult.readTableOrNull(
+      _pendingOnlineRefinementsRefsTable($_db),
     );
     return ProcessedTableManager(
       manager.$state.copyWith(prefetchedData: cache),
@@ -7308,6 +8157,33 @@ class $$LearnersTableFilterComposer
                 $removeJoinBuilderFromRootComposer,
           ),
     );
+    return f(composer);
+  }
+
+  Expression<bool> pendingOnlineRefinementsRefs(
+    Expression<bool> Function($$PendingOnlineRefinementsTableFilterComposer f)
+    f,
+  ) {
+    final $$PendingOnlineRefinementsTableFilterComposer composer =
+        $composerBuilder(
+          composer: this,
+          getCurrentColumn: (t) => t.id,
+          referencedTable: $db.pendingOnlineRefinements,
+          getReferencedColumn: (t) => t.learnerId,
+          builder:
+              (
+                joinBuilder, {
+                $addJoinBuilderToRootComposer,
+                $removeJoinBuilderFromRootComposer,
+              }) => $$PendingOnlineRefinementsTableFilterComposer(
+                $db: $db,
+                $table: $db.pendingOnlineRefinements,
+                $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+                joinBuilder: joinBuilder,
+                $removeJoinBuilderFromRootComposer:
+                    $removeJoinBuilderFromRootComposer,
+              ),
+        );
     return f(composer);
   }
 }
@@ -7621,6 +8497,33 @@ class $$LearnersTableAnnotationComposer
         );
     return f(composer);
   }
+
+  Expression<T> pendingOnlineRefinementsRefs<T extends Object>(
+    Expression<T> Function($$PendingOnlineRefinementsTableAnnotationComposer a)
+    f,
+  ) {
+    final $$PendingOnlineRefinementsTableAnnotationComposer composer =
+        $composerBuilder(
+          composer: this,
+          getCurrentColumn: (t) => t.id,
+          referencedTable: $db.pendingOnlineRefinements,
+          getReferencedColumn: (t) => t.learnerId,
+          builder:
+              (
+                joinBuilder, {
+                $addJoinBuilderToRootComposer,
+                $removeJoinBuilderFromRootComposer,
+              }) => $$PendingOnlineRefinementsTableAnnotationComposer(
+                $db: $db,
+                $table: $db.pendingOnlineRefinements,
+                $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+                joinBuilder: joinBuilder,
+                $removeJoinBuilderFromRootComposer:
+                    $removeJoinBuilderFromRootComposer,
+              ),
+        );
+    return f(composer);
+  }
 }
 
 class $$LearnersTableTableManager
@@ -7646,6 +8549,7 @@ class $$LearnersTableTableManager
             bool finalAssessmentAttemptsRefs,
             bool vocabularyReviewStateRefs,
             bool grammarReviewStateRefs,
+            bool pendingOnlineRefinementsRefs,
           })
         > {
   $$LearnersTableTableManager(_$AppDatabase db, $LearnersTable table)
@@ -7714,6 +8618,7 @@ class $$LearnersTableTableManager
                 finalAssessmentAttemptsRefs = false,
                 vocabularyReviewStateRefs = false,
                 grammarReviewStateRefs = false,
+                pendingOnlineRefinementsRefs = false,
               }) {
                 return PrefetchHooks(
                   db: db,
@@ -7727,6 +8632,8 @@ class $$LearnersTableTableManager
                     if (finalAssessmentAttemptsRefs) db.finalAssessmentAttempts,
                     if (vocabularyReviewStateRefs) db.vocabularyReviewState,
                     if (grammarReviewStateRefs) db.grammarReviewState,
+                    if (pendingOnlineRefinementsRefs)
+                      db.pendingOnlineRefinements,
                   ],
                   addJoins: null,
                   getPrefetchedDataCallback: (items) async {
@@ -7920,6 +8827,27 @@ class $$LearnersTableTableManager
                               ),
                           typedResults: items,
                         ),
+                      if (pendingOnlineRefinementsRefs)
+                        await $_getPrefetchedData<
+                          Learner,
+                          $LearnersTable,
+                          PendingOnlineRefinement
+                        >(
+                          currentTable: table,
+                          referencedTable: $$LearnersTableReferences
+                              ._pendingOnlineRefinementsRefsTable(db),
+                          managerFromTypedResult: (p0) =>
+                              $$LearnersTableReferences(
+                                db,
+                                table,
+                                p0,
+                              ).pendingOnlineRefinementsRefs,
+                          referencedItemsForCurrentItem:
+                              (item, referencedItems) => referencedItems.where(
+                                (e) => e.learnerId == item.id,
+                              ),
+                          typedResults: items,
+                        ),
                     ];
                   },
                 );
@@ -7950,6 +8878,7 @@ typedef $$LearnersTableProcessedTableManager =
         bool finalAssessmentAttemptsRefs,
         bool vocabularyReviewStateRefs,
         bool grammarReviewStateRefs,
+        bool pendingOnlineRefinementsRefs,
       })
     >;
 typedef $$CourseEnrolmentsTableCreateCompanionBuilder =
@@ -12395,6 +13324,520 @@ typedef $$ContentVersionsTableProcessedTableManager =
       ContentVersion,
       PrefetchHooks Function()
     >;
+typedef $$PendingOnlineRefinementsTableCreateCompanionBuilder =
+    PendingOnlineRefinementsCompanion Function({
+      Value<int> id,
+      required String uuid,
+      required int learnerId,
+      required String activityId,
+      required String lessonId,
+      required String unitId,
+      required String canDoIds,
+      required String rawAnswer,
+      required String evidenceSkill,
+      required String mode,
+      required double localScore,
+      required DateTime submittedAt,
+      Value<int> attemptCount,
+      Value<DateTime?> lastAttemptAt,
+    });
+typedef $$PendingOnlineRefinementsTableUpdateCompanionBuilder =
+    PendingOnlineRefinementsCompanion Function({
+      Value<int> id,
+      Value<String> uuid,
+      Value<int> learnerId,
+      Value<String> activityId,
+      Value<String> lessonId,
+      Value<String> unitId,
+      Value<String> canDoIds,
+      Value<String> rawAnswer,
+      Value<String> evidenceSkill,
+      Value<String> mode,
+      Value<double> localScore,
+      Value<DateTime> submittedAt,
+      Value<int> attemptCount,
+      Value<DateTime?> lastAttemptAt,
+    });
+
+final class $$PendingOnlineRefinementsTableReferences
+    extends
+        BaseReferences<
+          _$AppDatabase,
+          $PendingOnlineRefinementsTable,
+          PendingOnlineRefinement
+        > {
+  $$PendingOnlineRefinementsTableReferences(
+    super.$_db,
+    super.$_table,
+    super.$_typedResult,
+  );
+
+  static $LearnersTable _learnerIdTable(_$AppDatabase db) => db.learners
+      .createAlias('pending_online_refinements__learner_id__learners__id');
+
+  $$LearnersTableProcessedTableManager get learnerId {
+    final $_column = $_itemColumn<int>('learner_id')!;
+
+    final manager = $$LearnersTableTableManager(
+      $_db,
+      $_db.learners,
+    ).filter((f) => f.id.sqlEquals($_column));
+    final item = $_typedResult.readTableOrNull(_learnerIdTable($_db));
+    if (item == null) return manager;
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: [item]),
+    );
+  }
+}
+
+class $$PendingOnlineRefinementsTableFilterComposer
+    extends Composer<_$AppDatabase, $PendingOnlineRefinementsTable> {
+  $$PendingOnlineRefinementsTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<int> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get uuid => $composableBuilder(
+    column: $table.uuid,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get activityId => $composableBuilder(
+    column: $table.activityId,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get lessonId => $composableBuilder(
+    column: $table.lessonId,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get unitId => $composableBuilder(
+    column: $table.unitId,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get canDoIds => $composableBuilder(
+    column: $table.canDoIds,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get rawAnswer => $composableBuilder(
+    column: $table.rawAnswer,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get evidenceSkill => $composableBuilder(
+    column: $table.evidenceSkill,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get mode => $composableBuilder(
+    column: $table.mode,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<double> get localScore => $composableBuilder(
+    column: $table.localScore,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get submittedAt => $composableBuilder(
+    column: $table.submittedAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get attemptCount => $composableBuilder(
+    column: $table.attemptCount,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get lastAttemptAt => $composableBuilder(
+    column: $table.lastAttemptAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  $$LearnersTableFilterComposer get learnerId {
+    final $$LearnersTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.learnerId,
+      referencedTable: $db.learners,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$LearnersTableFilterComposer(
+            $db: $db,
+            $table: $db.learners,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$PendingOnlineRefinementsTableOrderingComposer
+    extends Composer<_$AppDatabase, $PendingOnlineRefinementsTable> {
+  $$PendingOnlineRefinementsTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<int> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get uuid => $composableBuilder(
+    column: $table.uuid,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get activityId => $composableBuilder(
+    column: $table.activityId,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get lessonId => $composableBuilder(
+    column: $table.lessonId,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get unitId => $composableBuilder(
+    column: $table.unitId,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get canDoIds => $composableBuilder(
+    column: $table.canDoIds,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get rawAnswer => $composableBuilder(
+    column: $table.rawAnswer,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get evidenceSkill => $composableBuilder(
+    column: $table.evidenceSkill,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get mode => $composableBuilder(
+    column: $table.mode,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<double> get localScore => $composableBuilder(
+    column: $table.localScore,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get submittedAt => $composableBuilder(
+    column: $table.submittedAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get attemptCount => $composableBuilder(
+    column: $table.attemptCount,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get lastAttemptAt => $composableBuilder(
+    column: $table.lastAttemptAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  $$LearnersTableOrderingComposer get learnerId {
+    final $$LearnersTableOrderingComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.learnerId,
+      referencedTable: $db.learners,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$LearnersTableOrderingComposer(
+            $db: $db,
+            $table: $db.learners,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$PendingOnlineRefinementsTableAnnotationComposer
+    extends Composer<_$AppDatabase, $PendingOnlineRefinementsTable> {
+  $$PendingOnlineRefinementsTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<int> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<String> get uuid =>
+      $composableBuilder(column: $table.uuid, builder: (column) => column);
+
+  GeneratedColumn<String> get activityId => $composableBuilder(
+    column: $table.activityId,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get lessonId =>
+      $composableBuilder(column: $table.lessonId, builder: (column) => column);
+
+  GeneratedColumn<String> get unitId =>
+      $composableBuilder(column: $table.unitId, builder: (column) => column);
+
+  GeneratedColumn<String> get canDoIds =>
+      $composableBuilder(column: $table.canDoIds, builder: (column) => column);
+
+  GeneratedColumn<String> get rawAnswer =>
+      $composableBuilder(column: $table.rawAnswer, builder: (column) => column);
+
+  GeneratedColumn<String> get evidenceSkill => $composableBuilder(
+    column: $table.evidenceSkill,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get mode =>
+      $composableBuilder(column: $table.mode, builder: (column) => column);
+
+  GeneratedColumn<double> get localScore => $composableBuilder(
+    column: $table.localScore,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<DateTime> get submittedAt => $composableBuilder(
+    column: $table.submittedAt,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<int> get attemptCount => $composableBuilder(
+    column: $table.attemptCount,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<DateTime> get lastAttemptAt => $composableBuilder(
+    column: $table.lastAttemptAt,
+    builder: (column) => column,
+  );
+
+  $$LearnersTableAnnotationComposer get learnerId {
+    final $$LearnersTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.learnerId,
+      referencedTable: $db.learners,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$LearnersTableAnnotationComposer(
+            $db: $db,
+            $table: $db.learners,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$PendingOnlineRefinementsTableTableManager
+    extends
+        RootTableManager<
+          _$AppDatabase,
+          $PendingOnlineRefinementsTable,
+          PendingOnlineRefinement,
+          $$PendingOnlineRefinementsTableFilterComposer,
+          $$PendingOnlineRefinementsTableOrderingComposer,
+          $$PendingOnlineRefinementsTableAnnotationComposer,
+          $$PendingOnlineRefinementsTableCreateCompanionBuilder,
+          $$PendingOnlineRefinementsTableUpdateCompanionBuilder,
+          (PendingOnlineRefinement, $$PendingOnlineRefinementsTableReferences),
+          PendingOnlineRefinement,
+          PrefetchHooks Function({bool learnerId})
+        > {
+  $$PendingOnlineRefinementsTableTableManager(
+    _$AppDatabase db,
+    $PendingOnlineRefinementsTable table,
+  ) : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$PendingOnlineRefinementsTableFilterComposer(
+                $db: db,
+                $table: table,
+              ),
+          createOrderingComposer: () =>
+              $$PendingOnlineRefinementsTableOrderingComposer(
+                $db: db,
+                $table: table,
+              ),
+          createComputedFieldComposer: () =>
+              $$PendingOnlineRefinementsTableAnnotationComposer(
+                $db: db,
+                $table: table,
+              ),
+          updateCompanionCallback:
+              ({
+                Value<int> id = const Value.absent(),
+                Value<String> uuid = const Value.absent(),
+                Value<int> learnerId = const Value.absent(),
+                Value<String> activityId = const Value.absent(),
+                Value<String> lessonId = const Value.absent(),
+                Value<String> unitId = const Value.absent(),
+                Value<String> canDoIds = const Value.absent(),
+                Value<String> rawAnswer = const Value.absent(),
+                Value<String> evidenceSkill = const Value.absent(),
+                Value<String> mode = const Value.absent(),
+                Value<double> localScore = const Value.absent(),
+                Value<DateTime> submittedAt = const Value.absent(),
+                Value<int> attemptCount = const Value.absent(),
+                Value<DateTime?> lastAttemptAt = const Value.absent(),
+              }) => PendingOnlineRefinementsCompanion(
+                id: id,
+                uuid: uuid,
+                learnerId: learnerId,
+                activityId: activityId,
+                lessonId: lessonId,
+                unitId: unitId,
+                canDoIds: canDoIds,
+                rawAnswer: rawAnswer,
+                evidenceSkill: evidenceSkill,
+                mode: mode,
+                localScore: localScore,
+                submittedAt: submittedAt,
+                attemptCount: attemptCount,
+                lastAttemptAt: lastAttemptAt,
+              ),
+          createCompanionCallback:
+              ({
+                Value<int> id = const Value.absent(),
+                required String uuid,
+                required int learnerId,
+                required String activityId,
+                required String lessonId,
+                required String unitId,
+                required String canDoIds,
+                required String rawAnswer,
+                required String evidenceSkill,
+                required String mode,
+                required double localScore,
+                required DateTime submittedAt,
+                Value<int> attemptCount = const Value.absent(),
+                Value<DateTime?> lastAttemptAt = const Value.absent(),
+              }) => PendingOnlineRefinementsCompanion.insert(
+                id: id,
+                uuid: uuid,
+                learnerId: learnerId,
+                activityId: activityId,
+                lessonId: lessonId,
+                unitId: unitId,
+                canDoIds: canDoIds,
+                rawAnswer: rawAnswer,
+                evidenceSkill: evidenceSkill,
+                mode: mode,
+                localScore: localScore,
+                submittedAt: submittedAt,
+                attemptCount: attemptCount,
+                lastAttemptAt: lastAttemptAt,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map(
+                (e) => (
+                  e.readTable(table),
+                  $$PendingOnlineRefinementsTableReferences(db, table, e),
+                ),
+              )
+              .toList(),
+          prefetchHooksCallback: ({learnerId = false}) {
+            return PrefetchHooks(
+              db: db,
+              explicitlyWatchedTables: [],
+              addJoins:
+                  <
+                    T extends TableManagerState<
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic
+                    >
+                  >(state) {
+                    if (learnerId) {
+                      state = state.withJoin(
+                        currentTable: table,
+                        currentColumn: table.learnerId,
+                        referencedTable:
+                            $$PendingOnlineRefinementsTableReferences
+                                ._learnerIdTable(db),
+                        referencedColumn:
+                            $$PendingOnlineRefinementsTableReferences
+                                ._learnerIdTable(db)
+                                .id,
+                      ) as T;
+                    }
+
+                    return state;
+                  },
+              getPrefetchedDataCallback: (items) async {
+                return [];
+              },
+            );
+          },
+        ),
+      );
+}
+
+typedef $$PendingOnlineRefinementsTableProcessedTableManager =
+    ProcessedTableManager<
+      _$AppDatabase,
+      $PendingOnlineRefinementsTable,
+      PendingOnlineRefinement,
+      $$PendingOnlineRefinementsTableFilterComposer,
+      $$PendingOnlineRefinementsTableOrderingComposer,
+      $$PendingOnlineRefinementsTableAnnotationComposer,
+      $$PendingOnlineRefinementsTableCreateCompanionBuilder,
+      $$PendingOnlineRefinementsTableUpdateCompanionBuilder,
+      (PendingOnlineRefinement, $$PendingOnlineRefinementsTableReferences),
+      PendingOnlineRefinement,
+      PrefetchHooks Function({bool learnerId})
+    >;
 
 class $AppDatabaseManager {
   final _$AppDatabase _db;
@@ -12426,4 +13869,9 @@ class $AppDatabaseManager {
       $$GrammarReviewStateTableTableManager(_db, _db.grammarReviewState);
   $$ContentVersionsTableTableManager get contentVersions =>
       $$ContentVersionsTableTableManager(_db, _db.contentVersions);
+  $$PendingOnlineRefinementsTableTableManager get pendingOnlineRefinements =>
+      $$PendingOnlineRefinementsTableTableManager(
+        _db,
+        _db.pendingOnlineRefinements,
+      );
 }

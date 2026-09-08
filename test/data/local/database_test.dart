@@ -6,6 +6,12 @@ import 'package:sqlite3/sqlite3.dart' as sqlite3;
 import 'package:uuid/uuid.dart';
 
 void main() {
+  // This file intentionally opens more than one AppDatabase instance per
+  // process (each migration test opens its own upgraded instance alongside
+  // the `setUp` one) — never against the same executor, so there's no real
+  // race. See https://drift.simonbinder.eu/faq/#using-the-database.
+  driftRuntimeOptions.dontWarnAboutMultipleDatabases = true;
+
   late AppDatabase database;
 
   setUp(() {
@@ -16,8 +22,8 @@ void main() {
     await database.close();
   });
 
-  test('schema version is 2', () {
-    expect(database.schemaVersion, 2);
+  test('schema version is 3', () {
+    expect(database.schemaVersion, 3);
   });
 
   test('migrating from schemaVersion 1 adds a nullable name column without '
@@ -56,6 +62,62 @@ void main() {
       upgraded.learners,
     )..where((t) => t.id.equals(row.id))).getSingle();
     expect(updated.name, 'Ali');
+  });
+
+  test('a real v1 install jumping straight to schemaVersion 3 applies both '
+      'migrations, in order: the name column is added AND the '
+      'pending_online_refinements table is created', () async {
+    // Same v1-shaped `learners` table (no `name` column) as the test
+    // above — this is what a genuine v1 install's on-disk schema looks
+    // like. Nothing about the existing `from < 2` branch changes here;
+    // this only proves it still fires correctly when `to` is 3, not 2.
+    final raw = sqlite3.sqlite3.openInMemory();
+    raw.execute('''
+          CREATE TABLE learners (
+            id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+            uuid TEXT NOT NULL UNIQUE,
+            native_language TEXT NOT NULL DEFAULT 'ar',
+            target_language TEXT NOT NULL DEFAULT 'en',
+            created_at INTEGER NOT NULL,
+            is_active INTEGER NOT NULL DEFAULT 1
+          )
+        ''');
+    raw.execute(
+      "INSERT INTO learners (uuid, created_at) VALUES ('learner-1', 0)",
+    );
+    raw.execute('PRAGMA user_version = 1');
+
+    final upgraded = AppDatabase(NativeDatabase.opened(raw));
+    addTearDown(upgraded.close);
+
+    // from < 2 branch: the name column exists and is nullable.
+    final row = await upgraded.select(upgraded.learners).getSingle();
+    expect(row.uuid, 'learner-1');
+    expect(row.name, isNull);
+
+    // from < 3 branch: the new queue table exists and is usable.
+    await upgraded
+        .into(upgraded.pendingOnlineRefinements)
+        .insert(
+          PendingOnlineRefinementsCompanion.insert(
+            uuid: const Uuid().v4(),
+            learnerId: row.id,
+            activityId: 'A1-U5-L6-A05',
+            lessonId: 'A1-U5-L6',
+            unitId: 'A1-U5',
+            canDoIds: '[]',
+            rawAnswer: 'answer',
+            evidenceSkill: 'writing',
+            mode: 'mastery',
+            localScore: 0.0,
+            submittedAt: DateTime.utc(2026, 9, 8),
+          ),
+        );
+    final pending = await upgraded
+        .select(upgraded.pendingOnlineRefinements)
+        .get();
+    expect(pending, hasLength(1));
+    expect(pending.single.learnerId, row.id);
   });
 
   test('can insert and read back a learner, with ar/en defaults', () async {
@@ -325,6 +387,23 @@ void main() {
                 updatedAt: DateTime.utc(2026, 9, 2),
               ),
             );
+        await database
+            .into(database.pendingOnlineRefinements)
+            .insert(
+              PendingOnlineRefinementsCompanion.insert(
+                uuid: const Uuid().v4(),
+                learnerId: learnerId,
+                activityId: 'A1-U5-L6-A05',
+                lessonId: 'A1-U5-L6',
+                unitId: 'A1-U5',
+                canDoIds: '[]',
+                rawAnswer: 'answer',
+                evidenceSkill: 'writing',
+                mode: 'mastery',
+                localScore: 0.5,
+                submittedAt: DateTime.utc(2026, 9, 2),
+              ),
+            );
       }
 
       await seedFor(learnerAId);
@@ -361,6 +440,9 @@ void main() {
         await (database.select(
           database.grammarReviewState,
         )..where((t) => t.learnerId.equals(learnerAId))).get(),
+        await (database.select(
+          database.pendingOnlineRefinements,
+        )..where((t) => t.learnerId.equals(learnerAId))).get(),
       ]) {
         expect(rows, isEmpty);
       }
@@ -385,11 +467,56 @@ void main() {
         )..where((t) => t.learnerId.equals(learnerBId))).get(),
         hasLength(1),
       );
+      expect(
+        await (database.select(
+          database.pendingOnlineRefinements,
+        )..where((t) => t.learnerId.equals(learnerBId))).get(),
+        hasLength(1),
+      );
 
       // Both Learners rows themselves are preserved — reset erases
       // progress, not identity.
       final learners = await database.select(database.learners).get();
       expect(learners.map((l) => l.id).toSet(), {learnerAId, learnerBId});
+    });
+  });
+
+  group('pendingOnlineRefinements', () {
+    test('can insert and read back a queued refinement', () async {
+      final learnerId = await database
+          .into(database.learners)
+          .insert(
+            LearnersCompanion.insert(
+              uuid: const Uuid().v4(),
+              createdAt: DateTime.utc(2026, 9, 8),
+            ),
+          );
+
+      await database
+          .into(database.pendingOnlineRefinements)
+          .insert(
+            PendingOnlineRefinementsCompanion.insert(
+              uuid: const Uuid().v4(),
+              learnerId: learnerId,
+              activityId: 'A1-U5-L6-A05',
+              lessonId: 'A1-U5-L6',
+              unitId: 'A1-U5',
+              canDoIds: '["A1.U5.WRITING.WRITE_FREE_TIME_MESSAGE"]',
+              rawAnswer: 'See you at the park on Saturday!',
+              evidenceSkill: 'writing',
+              mode: 'mastery',
+              localScore: 0.5,
+              submittedAt: DateTime.utc(2026, 9, 8),
+            ),
+          );
+
+      final rows = await database
+          .select(database.pendingOnlineRefinements)
+          .get();
+      expect(rows, hasLength(1));
+      expect(rows.single.activityId, 'A1-U5-L6-A05');
+      expect(rows.single.attemptCount, 0);
+      expect(rows.single.lastAttemptAt, isNull);
     });
   });
 }

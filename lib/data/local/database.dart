@@ -6,6 +6,7 @@ import 'tables/attempt_tables.dart';
 import 'tables/content_versions_table.dart';
 import 'tables/learner_tables.dart';
 import 'tables/lesson_progress_tables.dart';
+import 'tables/pending_online_refinement_tables.dart';
 import 'tables/review_state_tables.dart';
 
 part 'database.g.dart';
@@ -31,6 +32,7 @@ part 'database.g.dart';
     VocabularyReviewState,
     GrammarReviewState,
     ContentVersions,
+    PendingOnlineRefinements,
   ],
 )
 class AppDatabase extends _$AppDatabase {
@@ -43,7 +45,7 @@ class AppDatabase extends _$AppDatabase {
   AppDatabase.defaults() : super(driftDatabase(name: 'mohingo_progress'));
 
   @override
-  int get schemaVersion => 2;
+  int get schemaVersion => 3;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
@@ -52,16 +54,21 @@ class AppDatabase extends _$AppDatabase {
       if (from < 2) {
         await migrator.addColumn(learners, learners.name);
       }
+      if (from < 3) {
+        await migrator.createTable(pendingOnlineRefinements);
+      }
     },
   );
 
   /// Erases every progress row for [learnerId] — mastery evidence, attempt
   /// history (lesson/placement/mission/assessment alike), vocabulary/grammar
-  /// review state (including favourites), and the course enrolment record
+  /// review state (including favourites), the course enrolment record
   /// (idempotently re-created on next app read, see
-  /// `ensureA1EnrollmentProvider`). The `Learners` row itself, its stable
-  /// UUID, and `content_versions` (a course-level log, not learner-level)
-  /// are untouched — this resets a learner's *progress*, not their identity.
+  /// `ensureA1EnrollmentProvider`), and any still-queued
+  /// `PendingOnlineRefinements` items (a queued-but-unresolved answer is
+  /// progress state too). The `Learners` row itself, its stable UUID, and
+  /// `content_versions` (a course-level log, not learner-level) are
+  /// untouched — this resets a learner's *progress*, not their identity.
   /// See docs/UX_PRINCIPLES.md's "resetting progress" confirmation-copy rule
   /// and docs/DATA_MODEL.md.
   Future<void> resetProgressForLearner(int learnerId) {
@@ -103,6 +110,9 @@ class AppDatabase extends _$AppDatabase {
       )..where((t) => t.learnerId.equals(learnerId))).go();
       await (delete(
         courseEnrolments,
+      )..where((t) => t.learnerId.equals(learnerId))).go();
+      await (delete(
+        pendingOnlineRefinements,
       )..where((t) => t.learnerId.equals(learnerId))).go();
     });
   }

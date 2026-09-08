@@ -125,3 +125,60 @@ final class GrammarCheckServiceProvider
 
 String _$grammarCheckServiceHash() =>
     r'0a846684f1fb15ad3a7d85166b8c887d360450a1';
+
+/// The single [PendingRefinementRepository] binding for v1 — same seam
+/// pattern as [connectivityService]/[grammarCheckService] above.
+
+@ProviderFor(pendingRefinementRepository)
+final pendingRefinementRepositoryProvider =
+    PendingRefinementRepositoryProvider._();
+
+/// The single [PendingRefinementRepository] binding for v1 — same seam
+/// pattern as [connectivityService]/[grammarCheckService] above.
+
+final class PendingRefinementRepositoryProvider
+    extends
+        $FunctionalProvider<
+          PendingRefinementRepository,
+          PendingRefinementRepository,
+          PendingRefinementRepository
+        >
+    with $Provider<PendingRefinementRepository> {
+  /// The single [PendingRefinementRepository] binding for v1 — same seam
+  /// pattern as [connectivityService]/[grammarCheckService] above.
+  PendingRefinementRepositoryProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'pendingRefinementRepositoryProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$pendingRefinementRepositoryHash();
+
+  @$internal
+  @override
+  $ProviderElement<PendingRefinementRepository> $createElement(
+    $ProviderPointer pointer,
+  ) => $ProviderElement(pointer);
+
+  @override
+  PendingRefinementRepository create(Ref ref) {
+    return pendingRefinementRepository(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(PendingRefinementRepository value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<PendingRefinementRepository>(value),
+    );
+  }
+}
+
+String _$pendingRefinementRepositoryHash() =>
+    r'323e1d5f98dc7da22128513b62880b0a66d34cb3';
