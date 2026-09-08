@@ -223,6 +223,67 @@ void main() {
       );
     });
 
+    test('meeting exactly minGroupsMatched scores a full 1.0 even when the '
+        'rubric lists more groups than it requires', () {
+      // The real A1-U5-L6-A05 shape: "mention any 2 of these 3 things."
+      const twoOfThree = KeywordChecklistEvaluationSpec(
+        requiredGroups: [
+          ['hi', 'hello'],
+          ['weekend', 'saturday'],
+          ['park', 'cinema'],
+        ],
+        minGroupsMatched: 2,
+      );
+
+      final result = evaluate(twoOfThree, 'Hello! See you on Saturday.');
+
+      expect(result.correctness, ActivityCorrectness.correct);
+      expect(
+        result.score,
+        1.0,
+        reason:
+            'scoring against the group count instead of the pass bar would '
+            'give 0.667 — below MasteryPolicy.minimumObjectiveScore (0.75), '
+            'so MasteryAggregationService would refuse a rubric-passing '
+            'answer as evidence',
+      );
+    });
+
+    test('covering more groups than required never scores above 1.0', () {
+      const twoOfThree = KeywordChecklistEvaluationSpec(
+        requiredGroups: [
+          ['hi', 'hello'],
+          ['weekend', 'saturday'],
+          ['park', 'cinema'],
+        ],
+        minGroupsMatched: 2,
+      );
+
+      final result = evaluate(
+        twoOfThree,
+        'Hello! See you at the park on Saturday.',
+      );
+
+      expect(result.correctness, ActivityCorrectness.correct);
+      expect(result.score, 1.0);
+    });
+
+    test('falling short of the pass bar still scores proportionally', () {
+      const twoOfThree = KeywordChecklistEvaluationSpec(
+        requiredGroups: [
+          ['hi', 'hello'],
+          ['weekend', 'saturday'],
+          ['park', 'cinema'],
+        ],
+        minGroupsMatched: 2,
+      );
+
+      final result = evaluate(twoOfThree, 'Hello there.');
+
+      expect(result.correctness, ActivityCorrectness.incorrect);
+      expect(result.score, 0.5); // 1 of the 2 required groups
+    });
+
     test('the A1-U0-L5-A05 shape: a greeting plus registration intent', () {
       const registerSpec = KeywordChecklistEvaluationSpec(
         requiredGroups: [

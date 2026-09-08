@@ -1,3 +1,5 @@
+import 'dart:math' show min;
+
 import '../../../../content/models/evaluation_spec.dart';
 import '../activity_submission.dart';
 import '../answer_matching.dart';
@@ -118,6 +120,19 @@ bool _mentionsKeyword(String answer, String keyword) {
   return RegExp('$prefix$body$suffix', caseSensitive: false).hasMatch(answer);
 }
 
+/// The score is measured against the rubric's own pass bar
+/// ([KeywordChecklistEvaluationSpec.minGroupsMatched]), not against the
+/// total number of groups.
+///
+/// A rubric may legitimately ask for "any 2 of these 3 things" (the real
+/// `A1-U5-L6-A05` does). Scoring `matched / requiredGroups.length` would
+/// give such an answer 0.667 — `correct` by the rubric, yet below
+/// `MasteryPolicy.minimumObjectiveScore` (0.75), so
+/// `MasteryAggregationService` (which reads `score` before `isCorrect`)
+/// would refuse to count a rubric-passing answer as qualifying evidence.
+/// Dividing by the pass bar instead means exactly meeting it always scores
+/// a full 1.0, falling short scores proportionally, and covering *more*
+/// groups than asked never exceeds 1.0.
 ({ActivityCorrectness correctness, double? score}) _keywordChecklist(
   KeywordChecklistEvaluationSpec spec,
   String answer,
@@ -126,9 +141,11 @@ bool _mentionsKeyword(String answer, String keyword) {
       .where((group) => group.any((kw) => _mentionsKeyword(answer, kw)))
       .length;
   final isCorrect = matchedGroups >= spec.minGroupsMatched;
-  final score = spec.requiredGroups.isEmpty
+  // Guards both a rubric with no groups at all and a non-positive pass bar
+  // (which every answer clears, and which would divide by zero).
+  final score = spec.requiredGroups.isEmpty || spec.minGroupsMatched <= 0
       ? (isCorrect ? 1.0 : 0.0)
-      : matchedGroups / spec.requiredGroups.length;
+      : min(1.0, matchedGroups / spec.minGroupsMatched);
   return (
     correctness: isCorrect
         ? ActivityCorrectness.correct
