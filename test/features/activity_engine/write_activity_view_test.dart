@@ -1,9 +1,16 @@
+import 'package:drift/drift.dart' hide isNull, isNotNull;
+import 'package:drift/native.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mohingo/content/models/activity.dart';
 import 'package:mohingo/content/models/domain_definitions.dart';
+import 'package:mohingo/core/l10n/generated/app_localizations.dart';
+import 'package:mohingo/data/local/database.dart';
+import 'package:mohingo/data/local/database_provider.dart';
 import 'package:mohingo/features/activity_engine/domain/activity_submission.dart';
 import 'package:mohingo/content/models/evaluation_spec.dart';
+import 'package:mohingo/features/activity_engine/providers/online_refinement_providers.dart';
 import 'package:mohingo/features/activity_engine/presentation/views/write_activity_view.dart';
 
 import 'test_harness.dart';
@@ -40,7 +47,11 @@ WriteActivity _closedFormWrite() {
 void main() {
   testWidgets('shows the word-count guide when declared', (tester) async {
     await tester.pumpActivityView(
-      WriteActivityView(activity: _openEndedWrite(), onSubmitted: (_) {}),
+      WriteActivityView(
+        activity: _openEndedWrite(),
+        learnerId: 1,
+        onSubmitted: (_) {},
+      ),
     );
     expect(find.textContaining('25'), findsOneWidget);
     expect(find.textContaining('45'), findsOneWidget);
@@ -53,6 +64,7 @@ void main() {
     await tester.pumpActivityView(
       WriteActivityView(
         activity: _openEndedWrite(),
+        learnerId: 1,
         onSubmitted: (s) => reported = s,
       ),
     );
@@ -73,6 +85,7 @@ void main() {
       await tester.pumpActivityView(
         WriteActivityView(
           activity: _closedFormWrite(),
+          learnerId: 1,
           onSubmitted: (s) => reported = s,
         ),
       );
@@ -105,7 +118,11 @@ void main() {
 
       ActivitySubmission? captured;
       await tester.pumpActivityView(
-        WriteActivityView(activity: activity, onSubmitted: (s) => captured = s),
+        WriteActivityView(
+          activity: activity,
+          learnerId: 1,
+          onSubmitted: (s) => captured = s,
+        ),
       );
 
       await tester.enterText(find.byType(TextField), 'Ali');
@@ -117,50 +134,154 @@ void main() {
     },
   );
 
-  testWidgets(
-    'an activity with an onlineRefinement rubric is queued, not graded, '
-    'and shows the pending-online-refinement banner',
-    (tester) async {
-      const activity = WriteActivity(
-        id: 'A1-U5-L6-A05',
-        lessonId: 'A1-U5-L6',
-        mode: ActivityMode.mastery,
-        skill: Skill.writing,
-        canDo: ['A1.U5.WRITING.WRITE_FREE_TIME_MESSAGE'],
-        prompt: 'Write a message about your free time.',
-        promptAr: 'اكتب رسالة عن وقت فراغك.',
-        raw: {},
-        accepted: [],
-        evaluation: KeywordChecklistEvaluationSpec(
-          requiredGroups: [
-            ['hi', 'hello'],
-          ],
-          minGroupsMatched: 1,
-          onlineRefinement: 'grammarCheck',
-        ),
-        wordGuide: [35, 55],
-      );
+  group('onlineRefinement rubric', () {
+    const activity = WriteActivity(
+      id: 'A1-U5-L6-A05',
+      lessonId: 'A1-U5-L6',
+      mode: ActivityMode.mastery,
+      skill: Skill.writing,
+      canDo: ['A1.U5.WRITING.WRITE_FREE_TIME_MESSAGE'],
+      prompt: 'Write a message about your free time.',
+      promptAr: 'اكتب رسالة عن وقت فراغك.',
+      raw: {},
+      accepted: [],
+      evaluation: KeywordChecklistEvaluationSpec(
+        requiredGroups: [
+          ['hi', 'hello'],
+        ],
+        minGroupsMatched: 1,
+        onlineRefinement: 'grammarCheck',
+      ),
+      wordGuide: [35, 55],
+    );
 
-      ActivitySubmission? captured;
-      await tester.pumpActivityView(
-        WriteActivityView(activity: activity, onSubmitted: (s) => captured = s),
-      );
+    testWidgets(
+      'is queued, not graded, and shows the pending-online-refinement '
+      'banner',
+      (tester) async {
+        final db = AppDatabase(NativeDatabase.memory());
+        addTearDown(db.close);
+        final learnerId = await db
+            .into(db.learners)
+            .insert(
+              LearnersCompanion.insert(
+                uuid: 'learner-1',
+                createdAt: DateTime.utc(2026, 9, 8),
+              ),
+            );
 
-      await tester.enterText(
-        find.byType(TextField),
-        'Hello! Free on Saturday?',
-      );
-      await tester.pump();
-      await tester.tap(find.widgetWithText(FilledButton, 'Check'));
-      await tester.pump();
+        ActivitySubmission? captured;
+        await tester.pumpActivityView(
+          WriteActivityView(
+            activity: activity,
+            learnerId: learnerId,
+            onSubmitted: (s) => captured = s,
+          ),
+          overrides: [appDatabaseProvider.overrideWithValue(db)],
+        );
 
-      expect(captured!.pendingOnlineRefinement, isTrue);
-      expect(captured!.correctness, ActivityCorrectness.notAutoGraded);
-      expect(captured!.score, 1.0); // 1 of 1 required group matched, locally
-      expect(
-        find.text('Saved — we\'ll finish checking this once you\'re online'),
-        findsOneWidget,
-      );
-    },
-  );
+        await tester.enterText(
+          find.byType(TextField),
+          'Hello! Free on Saturday?',
+        );
+        await tester.pump();
+        await tester.tap(find.widgetWithText(FilledButton, 'Check'));
+        await tester.pump();
+
+        expect(captured!.pendingOnlineRefinement, isTrue);
+        expect(captured!.correctness, ActivityCorrectness.notAutoGraded);
+        expect(captured!.score, 1.0); // 1/1 required group matched, locally
+        expect(
+          find.text('Saved — we\'ll finish checking this once you\'re online'),
+          findsOneWidget,
+        );
+      },
+    );
+
+    testWidgets(
+      'flips from the pending banner to the real Correct/Incorrect result '
+      'the moment a matching resolved attempt appears in the database — '
+      'without the learner leaving or re-entering the activity',
+      (tester) async {
+        final db = AppDatabase(NativeDatabase.memory());
+        addTearDown(db.close);
+        final learnerId = await db
+            .into(db.learners)
+            .insert(
+              LearnersCompanion.insert(
+                uuid: 'learner-1',
+                createdAt: DateTime.utc(2026, 9, 8),
+              ),
+            );
+
+        final container = ProviderContainer(
+          overrides: [appDatabaseProvider.overrideWithValue(db)],
+        );
+        addTearDown(container.dispose);
+
+        await tester.pumpWidget(
+          UncontrolledProviderScope(
+            container: container,
+            child: MaterialApp(
+              locale: const Locale('en'),
+              supportedLocales: AppLocalizations.supportedLocales,
+              localizationsDelegates: AppLocalizations.localizationsDelegates,
+              home: Scaffold(
+                body: WriteActivityView(
+                  activity: activity,
+                  learnerId: learnerId,
+                  onSubmitted: (_) {},
+                ),
+              ),
+            ),
+          ),
+        );
+
+        await tester.enterText(
+          find.byType(TextField),
+          'Hello! Free on Saturday?',
+        );
+        await tester.pump();
+        await tester.tap(find.widgetWithText(FilledButton, 'Check'));
+        await tester.pump();
+
+        expect(
+          find.text('Saved — we\'ll finish checking this once you\'re online'),
+          findsOneWidget,
+        );
+
+        // Exactly what PendingRefinementDrainService._finalize does once
+        // the deferred grammar check comes back — write the real attempt,
+        // then (via onItemResolved in production) invalidate
+        // latestAttemptProvider. Simulated directly here since no real
+        // network call happens in this test.
+        await db
+            .into(db.activityAttempts)
+            .insert(
+              ActivityAttemptsCompanion.insert(
+                uuid: 'attempt-1',
+                learnerId: learnerId,
+                activityId: activity.id,
+                sessionType: 'lesson',
+                mode: activity.mode.name,
+                evidenceSkill: activity.skill.name,
+                isCorrect: const Value(false),
+                score: const Value(0.204),
+                attemptedAt: DateTime.now(),
+                updatedAt: DateTime.now(),
+              ),
+            );
+        container.invalidate(latestAttemptProvider);
+        await tester.pump();
+        await tester.pump();
+
+        expect(
+          find.text('Saved — we\'ll finish checking this once you\'re online'),
+          findsNothing,
+          reason: 'the stale pending message must not still be showing',
+        );
+        expect(find.byIcon(Icons.cancel), findsOneWidget);
+      },
+    );
+  });
 }

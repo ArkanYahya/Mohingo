@@ -133,7 +133,11 @@ void main() {
     };
 
     for (final entry in cases.entries) {
-      final widget = buildActivityView(entry.key, onSubmitted: (_) {});
+      final widget = buildActivityView(
+        entry.key,
+        learnerId: 1,
+        onSubmitted: (_) {},
+      );
       expect(
         widget.runtimeType,
         entry.value,

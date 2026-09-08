@@ -303,6 +303,7 @@ class _PlacementTestBodyState extends ConsumerState<_PlacementTestBody> {
         unit: widget.units[_unitIndex],
         progress: '${_itemIndex + 1} / ${_unitItems.length}',
         activity: _unitItems[_itemIndex],
+        learnerId: widget.learnerId,
         mediaByKey: widget.mediaByKey,
         submission: _lastSubmission,
         onSubmitted: (s) => _handleItemSubmitted(_unitItems[_itemIndex], s),
@@ -312,6 +313,7 @@ class _PlacementTestBodyState extends ConsumerState<_PlacementTestBody> {
         unit: widget.units[_unitIndex],
         progress: null,
         activity: _productiveActivity!,
+        learnerId: widget.learnerId,
         mediaByKey: widget.mediaByKey,
         submission: _lastSubmission,
         onSubmitted: _handleProductiveSubmitted,
@@ -371,6 +373,7 @@ class _ItemView extends StatelessWidget {
     required this.unit,
     required this.progress,
     required this.activity,
+    required this.learnerId,
     required this.mediaByKey,
     required this.submission,
     required this.onSubmitted,
@@ -380,6 +383,7 @@ class _ItemView extends StatelessWidget {
   final Unit unit;
   final String? progress;
   final Activity activity;
+  final int learnerId;
   final Map<String, MediaSpecification> mediaByKey;
   final ActivitySubmission? submission;
   final void Function(ActivitySubmission submission) onSubmitted;
@@ -402,6 +406,7 @@ class _ItemView extends StatelessWidget {
               buildActivityView(
                 key: ValueKey(activity.id),
                 activity,
+                learnerId: learnerId,
                 onSubmitted: onSubmitted,
                 mediaByKey: mediaByKey,
               ),

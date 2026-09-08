@@ -1,14 +1,17 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../content/models/activity.dart';
 import '../../../../content/models/evaluation_spec.dart';
 import '../../../../core/l10n/generated/app_localizations.dart';
+import '../../../../data/local/database.dart' show ActivityAttempt;
 import '../../domain/activity_submission.dart';
 import '../../domain/answer_matching.dart';
 import '../../domain/evaluation/evaluation_context.dart';
 import '../../domain/evaluation/evaluator.dart';
+import '../../providers/online_refinement_providers.dart';
 import '../activity_chrome.dart';
 
 /// Renders a `write` activity: a free-text response, with a suggested word
@@ -22,25 +25,45 @@ import '../activity_chrome.dart';
 /// [evaluate]. Failing both, the submission is recorded as
 /// [ActivityCorrectness.notAutoGraded] — some open-ended writing tasks have
 /// no automatic right/wrong check at all. See docs/DATA_MODEL.md.
-class WriteActivityView extends StatefulWidget {
+///
+/// [learnerId] is only used to watch [latestAttemptProvider] once an
+/// `onlineRefinement` submission goes pending — see [_resolvedSubmission].
+class WriteActivityView extends ConsumerStatefulWidget {
   const WriteActivityView({
     required this.activity,
+    required this.learnerId,
     required this.onSubmitted,
     this.evaluationContext = const EvaluationContext.empty(),
     super.key,
   });
 
   final WriteActivity activity;
+  final int learnerId;
   final OnActivitySubmitted onSubmitted;
   final EvaluationContext evaluationContext;
 
   @override
-  State<WriteActivityView> createState() => _WriteActivityViewState();
+  ConsumerState<WriteActivityView> createState() => _WriteActivityViewState();
 }
 
-class _WriteActivityViewState extends State<WriteActivityView> {
+class _WriteActivityViewState extends ConsumerState<WriteActivityView> {
   final _controller = TextEditingController();
   ActivitySubmission? _submission;
+
+  /// Captured the instant [_submission] goes pending — a resolved attempt
+  /// with an older `attemptedAt` belongs to an earlier retry of this same
+  /// activity, not this submission, and must not be shown as its result.
+  ///
+  /// Truncated to whole seconds: `ActivityAttempts.attemptedAt` is stored
+  /// at whole-second precision (Drift's `dateTime()` column default), so a
+  /// millisecond-precision `DateTime.now()` captured here can otherwise
+  /// compare as *after* the very row this submission itself produces a
+  /// moment later, in the same wall-clock second — wrongly discarding a
+  /// genuinely new result as a stale retry.
+  DateTime? _pendingSince;
+
+  DateTime _truncatedToSeconds(DateTime dt) =>
+      DateTime(dt.year, dt.month, dt.day, dt.hour, dt.minute, dt.second);
 
   void _submit() {
     final text = _controller.text.trim();
@@ -73,6 +96,7 @@ class _WriteActivityViewState extends State<WriteActivityView> {
         rawAnswerJson: jsonEncode(text),
         pendingOnlineRefinement: true,
       );
+      _pendingSince = _truncatedToSeconds(DateTime.now());
     } else if (evaluation != null) {
       final result = evaluate(
         evaluation,
@@ -94,6 +118,22 @@ class _WriteActivityViewState extends State<WriteActivityView> {
     widget.onSubmitted(submission);
   }
 
+  /// The pending [_submission] recast as its real graded result, once
+  /// [attempt] proves to be the one this submission actually became (not a
+  /// stale row from an earlier retry — see [_pendingSince]). `null` while
+  /// still genuinely waiting.
+  ActivitySubmission? _resolvedSubmission(ActivityAttempt? attempt) {
+    if (attempt == null) return null;
+    if (attempt.attemptedAt.isBefore(_pendingSince!)) return null;
+    return ActivitySubmission(
+      correctness: attempt.isCorrect == true
+          ? ActivityCorrectness.correct
+          : ActivityCorrectness.incorrect,
+      score: attempt.score,
+      rawAnswerJson: _submission!.rawAnswerJson,
+    );
+  }
+
   @override
   void dispose() {
     _controller.dispose();
@@ -103,6 +143,21 @@ class _WriteActivityViewState extends State<WriteActivityView> {
   @override
   Widget build(BuildContext context) {
     final wordGuide = widget.activity.wordGuide;
+    final submission = _submission;
+    final displaySubmission =
+        (submission != null && submission.pendingOnlineRefinement)
+        ? _resolvedSubmission(
+                ref
+                    .watch(
+                      latestAttemptProvider((
+                        learnerId: widget.learnerId,
+                        activityId: widget.activity.id,
+                      )),
+                    )
+                    .value,
+              ) ??
+              submission
+        : submission;
     return ActivityChrome(
       prompt: widget.activity.prompt,
       promptAr: widget.activity.promptAr,
@@ -121,7 +176,7 @@ class _WriteActivityViewState extends State<WriteActivityView> {
         onChanged: (_) => setState(() {}),
       ),
       feedback: ActivitySubmitOrFeedback(
-        submission: _submission,
+        submission: displaySubmission,
         canSubmit: _controller.text.trim().isNotEmpty,
         onSubmit: _submit,
         correctAnswerLabel: widget.activity.accepted.isNotEmpty

@@ -67,4 +67,13 @@ abstract interface class ActivityAttemptRepository {
     required int learnerId,
     required DateTime asOf,
   });
+
+  /// The most recently attempted row for one learner + activity, or `null`
+  /// if none exists yet. Used to detect when a deferred
+  /// `pending_online_refinements` grade has actually landed — see
+  /// `latestAttemptProvider` in online_refinement_providers.dart.
+  Future<ActivityAttempt?> latestAttempt({
+    required int learnerId,
+    required String activityId,
+  });
 }

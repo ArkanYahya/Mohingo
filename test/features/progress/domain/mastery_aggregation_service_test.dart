@@ -86,6 +86,12 @@ class _FakeActivityAttemptRepository implements ActivityAttemptRepository {
     required int learnerId,
     required DateTime asOf,
   }) async => throw UnimplementedError('not needed by these tests');
+
+  @override
+  Future<ActivityAttempt?> latestAttempt({
+    required int learnerId,
+    required String activityId,
+  }) async => throw UnimplementedError('not needed by these tests');
 }
 
 class _FakeUnitLessonProgressRepository

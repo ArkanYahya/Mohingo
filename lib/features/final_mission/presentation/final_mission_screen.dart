@@ -230,6 +230,7 @@ class _FinalMissionBodyState extends ConsumerState<_FinalMissionBody> {
               buildActivityView(
                 key: ValueKey(activity.id),
                 activity,
+                learnerId: widget.learnerId,
                 onSubmitted: (s) => _handleSubmitted(activity, s),
                 mediaByKey: widget.mediaByKey,
               ),

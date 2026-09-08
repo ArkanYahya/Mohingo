@@ -24,6 +24,7 @@ import 'views/write_activity_view.dart';
 /// activity that doesn't need it.
 Widget buildActivityView(
   Activity activity, {
+  required int learnerId,
   required OnActivitySubmitted onSubmitted,
   Map<String, MediaSpecification> mediaByKey = const {},
   EvaluationContext evaluationContext = const EvaluationContext.empty(),
@@ -65,12 +66,14 @@ Widget buildActivityView(
     SpeakActivity a => SpeakActivityView(
       key: key,
       activity: a,
+      learnerId: learnerId,
       onSubmitted: onSubmitted,
       evaluationContext: evaluationContext,
     ),
     WriteActivity a => WriteActivityView(
       key: key,
       activity: a,
+      learnerId: learnerId,
       onSubmitted: onSubmitted,
       evaluationContext: evaluationContext,
     ),

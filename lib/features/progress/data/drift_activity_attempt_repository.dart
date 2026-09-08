@@ -126,6 +126,20 @@ class DriftActivityAttemptRepository implements ActivityAttemptRepository {
     }
     return streak;
   }
+
+  @override
+  Future<ActivityAttempt?> latestAttempt({
+    required int learnerId,
+    required String activityId,
+  }) {
+    final query = _db.select(_db.activityAttempts)
+      ..where(
+        (t) => t.learnerId.equals(learnerId) & t.activityId.equals(activityId),
+      )
+      ..orderBy([(t) => OrderingTerm.desc(t.attemptedAt)])
+      ..limit(1);
+    return query.getSingleOrNull();
+  }
 }
 
 DateTime _dateOnly(DateTime dt) => DateTime(dt.year, dt.month, dt.day);

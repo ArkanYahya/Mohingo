@@ -7,6 +7,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../content/models/activity.dart';
 import '../../../../content/models/evaluation_spec.dart';
 import '../../../../core/l10n/generated/app_localizations.dart';
+import '../../../../data/local/database.dart' show ActivityAttempt;
 import '../../../speech/domain/speech_capability_service.dart';
 import '../../../speech/domain/speech_recognition_service.dart';
 import '../../../speech/providers/speech_providers.dart';
@@ -14,6 +15,7 @@ import '../../domain/activity_submission.dart';
 import '../../domain/answer_matching.dart';
 import '../../domain/evaluation/evaluation_context.dart';
 import '../../domain/evaluation/evaluator.dart';
+import '../../providers/online_refinement_providers.dart';
 import '../activity_chrome.dart';
 
 enum _SpeakMode {
@@ -43,12 +45,14 @@ enum _SpeakMode {
 class SpeakActivityView extends ConsumerStatefulWidget {
   const SpeakActivityView({
     required this.activity,
+    required this.learnerId,
     required this.onSubmitted,
     this.evaluationContext = const EvaluationContext.empty(),
     super.key,
   });
 
   final SpeakActivity activity;
+  final int learnerId;
   final OnActivitySubmitted onSubmitted;
   final EvaluationContext evaluationContext;
 
@@ -66,6 +70,22 @@ class _SpeakActivityViewState extends ConsumerState<SpeakActivityView> {
 
   final _typedController = TextEditingController();
   ActivitySubmission? _submission;
+
+  /// Captured the instant [_submission] goes pending — a resolved attempt
+  /// with an older `attemptedAt` belongs to an earlier retry of this same
+  /// activity, not this submission, and must not be shown as its result.
+  ///
+  /// Truncated to whole seconds: `ActivityAttempts.attemptedAt` is stored
+  /// at whole-second precision (Drift's `dateTime()` column default), so a
+  /// millisecond-precision `DateTime.now()` captured here can otherwise
+  /// compare as *after* the very row this submission itself produces a
+  /// moment later, in the same wall-clock second — wrongly discarding a
+  /// genuinely new result as a stale retry. Same field, same reason, as
+  /// `write_activity_view.dart`'s.
+  DateTime? _pendingSince;
+
+  DateTime _truncatedToSeconds(DateTime dt) =>
+      DateTime(dt.year, dt.month, dt.day, dt.hour, dt.minute, dt.second);
 
   @override
   void initState() {
@@ -181,6 +201,7 @@ class _SpeakActivityViewState extends ConsumerState<SpeakActivityView> {
         wasFallback: wasFallback,
         pendingOnlineRefinement: true,
       );
+      _pendingSince = _truncatedToSeconds(DateTime.now());
     } else if (evaluation != null) {
       final result = evaluate(
         evaluation,
@@ -204,9 +225,41 @@ class _SpeakActivityViewState extends ConsumerState<SpeakActivityView> {
     widget.onSubmitted(submission);
   }
 
+  /// The pending [_submission] recast as its real graded result, once
+  /// [attempt] proves to be the one this submission actually became (not a
+  /// stale row from an earlier retry — see [_pendingSince]). `null` while
+  /// still genuinely waiting.
+  ActivitySubmission? _resolvedSubmission(ActivityAttempt? attempt) {
+    if (attempt == null) return null;
+    if (attempt.attemptedAt.isBefore(_pendingSince!)) return null;
+    return ActivitySubmission(
+      correctness: attempt.isCorrect == true
+          ? ActivityCorrectness.correct
+          : ActivityCorrectness.incorrect,
+      score: attempt.score,
+      rawAnswerJson: _submission!.rawAnswerJson,
+      wasFallback: _submission!.wasFallback,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
+    final submission = _submission;
+    final displaySubmission =
+        (submission != null && submission.pendingOnlineRefinement)
+        ? _resolvedSubmission(
+                ref
+                    .watch(
+                      latestAttemptProvider((
+                        learnerId: widget.learnerId,
+                        activityId: widget.activity.id,
+                      )),
+                    )
+                    .value,
+              ) ??
+              submission
+        : submission;
 
     return ActivityChrome(
       prompt: widget.activity.prompt,
@@ -221,9 +274,9 @@ class _SpeakActivityViewState extends ConsumerState<SpeakActivityView> {
             )
           : null,
       body: _buildBody(context, l10n),
-      feedback: _submission != null
+      feedback: displaySubmission != null
           ? ActivityFeedbackBanner(
-              submission: _submission!,
+              submission: displaySubmission,
               correctAnswerLabel: widget.activity.accepted.isNotEmpty
                   ? widget.activity.accepted.join(' / ')
                   : null,

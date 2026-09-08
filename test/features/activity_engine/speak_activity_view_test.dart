@@ -1,9 +1,12 @@
+import 'package:drift/native.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mohingo/content/models/activity.dart';
 import 'package:mohingo/content/models/domain_definitions.dart';
 import 'package:mohingo/core/l10n/generated/app_localizations.dart';
+import 'package:mohingo/data/local/database.dart';
+import 'package:mohingo/data/local/database_provider.dart';
 import 'package:mohingo/features/activity_engine/domain/activity_submission.dart';
 import 'package:mohingo/features/activity_engine/domain/evaluation/evaluation_context.dart';
 import 'package:mohingo/content/models/evaluation_spec.dart';
@@ -11,6 +14,9 @@ import 'package:mohingo/features/activity_engine/presentation/views/speak_activi
 import 'package:mohingo/features/speech/domain/speech_capability_service.dart';
 import 'package:mohingo/features/speech/domain/speech_recognition_service.dart';
 import 'package:mohingo/features/speech/providers/speech_providers.dart';
+// `Override` isn't part of flutter_riverpod's public export surface (an
+// explicit `show` list omits it) — it's only exported from this path.
+import 'package:riverpod/misc.dart' show Override;
 
 import '../../features/speech/fake_speech_services.dart';
 
@@ -37,6 +43,8 @@ Future<void> _pumpSpeak(
   Locale locale = const Locale('en'),
   SpeakActivity? activity,
   EvaluationContext evaluationContext = const EvaluationContext.empty(),
+  int learnerId = 1,
+  List<Override> overrides = const [],
 }) async {
   await tester.pumpWidget(
     ProviderScope(
@@ -47,6 +55,7 @@ Future<void> _pumpSpeak(
         speechRecognitionServiceProvider.overrideWithValue(
           recognitionService ?? FakeSpeechRecognitionService(),
         ),
+        ...overrides,
       ],
       child: MaterialApp(
         locale: locale,
@@ -55,6 +64,7 @@ Future<void> _pumpSpeak(
         home: Scaffold(
           body: SpeakActivityView(
             activity: activity ?? _speakActivity(),
+            learnerId: learnerId,
             onSubmitted: onSubmitted ?? (_) {},
             evaluationContext: evaluationContext,
           ),
@@ -341,6 +351,17 @@ void main() {
           fallbackSkill: 'writing',
         );
 
+        final db = AppDatabase(NativeDatabase.memory());
+        addTearDown(db.close);
+        final learnerId = await db
+            .into(db.learners)
+            .insert(
+              LearnersCompanion.insert(
+                uuid: 'learner-1',
+                createdAt: DateTime.utc(2026, 9, 8),
+              ),
+            );
+
         ActivitySubmission? captured;
         await _pumpSpeak(
           tester,
@@ -350,6 +371,8 @@ void main() {
             micPermission: SpeechPermissionStatus.notDetermined,
           ),
           onSubmitted: (s) => captured = s,
+          learnerId: learnerId,
+          overrides: [appDatabaseProvider.overrideWithValue(db)],
         );
 
         await tester.enterText(
@@ -407,6 +430,7 @@ void main() {
             home: Scaffold(
               body: SpeakActivityView(
                 activity: spellActivity(),
+                learnerId: 1,
                 onSubmitted: (s) => reported = s,
               ),
             ),

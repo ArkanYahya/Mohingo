@@ -1,3 +1,4 @@
+import 'package:drift/drift.dart' hide isNull, isNotNull;
 import 'package:drift/native.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mohingo/content/models/domain_definitions.dart';
@@ -161,5 +162,123 @@ void main() {
       canDoId: 'A1.U1.LISTENING.UNDERSTAND_PERSONAL_INFO',
     );
     expect(evidence, hasLength(3));
+  });
+
+  group('latestAttempt', () {
+    test('returns null when no attempt exists for that activity', () async {
+      final result = await repo.latestAttempt(
+        learnerId: learnerId,
+        activityId: 'A1-U1-L1-A01',
+      );
+      expect(result, isNull);
+    });
+
+    test('returns the attempt when exactly one exists', () async {
+      await repo.recordAttempt(
+        learnerId: learnerId,
+        activityId: 'A1-U5-L7-A05',
+        sessionType: 'lesson',
+        mode: ActivityMode.mastery,
+        evidenceSkill: Skill.writing,
+        canDoIds: ['A1.U5.WRITING.WRITE_FREE_TIME_MESSAGE'],
+        isCorrect: false,
+        score: 0.3,
+      );
+
+      final result = await repo.latestAttempt(
+        learnerId: learnerId,
+        activityId: 'A1-U5-L7-A05',
+      );
+      expect(result, isNotNull);
+      expect(result!.isCorrect, isFalse);
+      expect(result.score, 0.3);
+    });
+
+    test(
+      'returns the most recently attempted row, not the first — a learner '
+      'retrying an activity must see the newest result, not an earlier one',
+      () async {
+        await repo.recordAttempt(
+          learnerId: learnerId,
+          activityId: 'A1-U5-L7-A05',
+          sessionType: 'lesson',
+          mode: ActivityMode.mastery,
+          evidenceSkill: Skill.writing,
+          canDoIds: ['A1.U5.WRITING.WRITE_FREE_TIME_MESSAGE'],
+          isCorrect: false,
+          score: 0.2,
+        );
+        // Drift's DateTime column has whole-second precision, so two
+        // attempts in the same test run can otherwise land on an identical
+        // timestamp — push the first row's timestamp into the past rather
+        // than relying on real wall-clock delay between the two
+        // recordAttempt calls.
+        await (db.update(
+          db.activityAttempts,
+        )..where((t) => t.activityId.equals('A1-U5-L7-A05'))).write(
+          ActivityAttemptsCompanion(
+            attemptedAt: Value(
+              DateTime.now().subtract(const Duration(days: 1)),
+            ),
+          ),
+        );
+        await repo.recordAttempt(
+          learnerId: learnerId,
+          activityId: 'A1-U5-L7-A05',
+          sessionType: 'lesson',
+          mode: ActivityMode.mastery,
+          evidenceSkill: Skill.writing,
+          canDoIds: ['A1.U5.WRITING.WRITE_FREE_TIME_MESSAGE'],
+          isCorrect: true,
+          score: 0.9,
+        );
+
+        final result = await repo.latestAttempt(
+          learnerId: learnerId,
+          activityId: 'A1-U5-L7-A05',
+        );
+        expect(result!.score, 0.9);
+      },
+    );
+
+    test(
+      'never returns another activity\'s or another learner\'s attempt',
+      () async {
+        final otherLearnerId = await db
+            .into(db.learners)
+            .insert(
+              LearnersCompanion.insert(
+                uuid: 'learner-2',
+                createdAt: DateTime.utc(2026, 9, 2),
+              ),
+            );
+        await repo.recordAttempt(
+          learnerId: learnerId,
+          activityId: 'A1-U5-L7-A04',
+          sessionType: 'lesson',
+          mode: ActivityMode.mastery,
+          evidenceSkill: Skill.spokenProduction,
+          canDoIds: [],
+          isCorrect: true,
+          score: 1.0,
+        );
+        await repo.recordAttempt(
+          learnerId: otherLearnerId,
+          activityId: 'A1-U5-L7-A05',
+          sessionType: 'lesson',
+          mode: ActivityMode.mastery,
+          evidenceSkill: Skill.writing,
+          canDoIds: [],
+          isCorrect: true,
+          score: 1.0,
+        );
+
+        final result = await repo.latestAttempt(
+          learnerId: learnerId,
+          activityId: 'A1-U5-L7-A05',
+        );
+        expect(result, isNull);
+      },
+    );
   });
 }

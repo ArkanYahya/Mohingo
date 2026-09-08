@@ -268,6 +268,7 @@ class _FinalAssessmentBodyState extends ConsumerState<_FinalAssessmentBody> {
               buildActivityView(
                 key: ValueKey(item.activity.id),
                 item.activity,
+                learnerId: widget.learnerId,
                 onSubmitted: (s) => _handleSubmitted(item, s),
                 mediaByKey: widget.mediaByKey,
               ),

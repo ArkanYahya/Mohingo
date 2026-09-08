@@ -66,23 +66,39 @@ class _QuickPracticeScreenState extends ConsumerState<QuickPracticeScreen> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    return Scaffold(
-      appBar: AppBar(title: Text(l10n.grammarQuickPractice)),
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              buildActivityView(widget.activity, onSubmitted: _handleSubmitted),
-              if (_done)
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
-                  child: FilledButton(
-                    onPressed: () => context.pop(),
-                    child: Text(l10n.quickPracticeDone),
-                  ),
+    final appBar = AppBar(title: Text(l10n.grammarQuickPractice));
+    final learnerAsync = ref.watch(currentLearnerProvider);
+    return learnerAsync.when(
+      loading: () => Scaffold(
+        appBar: appBar,
+        body: const Center(child: CircularProgressIndicator()),
+      ),
+      error: (error, _) => Scaffold(
+        appBar: appBar,
+        body: Center(child: Text('$error')),
+      ),
+      data: (learner) => Scaffold(
+        appBar: appBar,
+        body: SafeArea(
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                buildActivityView(
+                  widget.activity,
+                  learnerId: learner.id,
+                  onSubmitted: _handleSubmitted,
                 ),
-            ],
+                if (_done)
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+                    child: FilledButton(
+                      onPressed: () => context.pop(),
+                      child: Text(l10n.quickPracticeDone),
+                    ),
+                  ),
+              ],
+            ),
           ),
         ),
       ),

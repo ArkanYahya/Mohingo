@@ -388,6 +388,7 @@ class _LessonPlayerBodyState extends ConsumerState<_LessonPlayerBody> {
               buildActivityView(
                 key: ValueKey(activity.id),
                 activity,
+                learnerId: widget.learnerId,
                 onSubmitted: (submission) =>
                     _handleSubmitted(activity, submission),
                 mediaByKey: widget.mediaByKey,

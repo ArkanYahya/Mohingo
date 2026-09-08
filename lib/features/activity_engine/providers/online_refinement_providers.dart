@@ -1,10 +1,12 @@
 import 'dart:async';
 
 import 'package:flutter/foundation.dart' show debugPrint;
-import 'package:flutter_riverpod/flutter_riverpod.dart' show Provider;
+import 'package:flutter_riverpod/flutter_riverpod.dart'
+    show FutureProvider, Provider;
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../../content/providers/course_content_providers.dart';
+import '../../../data/local/database.dart';
 import '../../../data/local/database_provider.dart';
 import '../../learning_path/providers/unit_progress_providers.dart';
 import '../../progress/providers/progress_providers.dart';
@@ -148,6 +150,12 @@ final pendingRefinementDrainerProvider = Provider<PendingRefinementDrainer>((
         lessonAttemptsForUnitProvider((learnerId: learnerId, unitId: unitId)),
       );
       ref.invalidate(allLessonProgressProvider);
+      // Family-wide: this callback only knows learnerId/unitId, not which
+      // activityId just resolved, so every currently-watched
+      // latestAttemptProvider instance is asked to recompute rather than
+      // targeting one. Cheap — at most one activity view is ever watching
+      // this at a time.
+      ref.invalidate(latestAttemptProvider);
     },
   );
   final drainer = PendingRefinementDrainer(service);
@@ -162,3 +170,31 @@ final pendingRefinementDrainerProvider = Provider<PendingRefinementDrainer>((
 
   return drainer;
 });
+
+/// The most recently attempted row for one learner + activity — used by
+/// `WriteActivityView`/`SpeakActivityView` to detect when a deferred
+/// `pending_online_refinements` grade has actually landed, so their
+/// feedback banner can flip from "pending" to the real result without the
+/// learner leaving and revisiting the activity. `null` while nothing has
+/// been recorded for that activity yet.
+///
+/// Declared as a plain (non-code-generated) provider — same reason as
+/// `lessonAttemptsForUnitProvider` in unit_progress_providers.dart:
+/// riverpod_generator fails on providers returning Drift `DataClass` types
+/// directly.
+///
+/// Invalidated (family-wide, see [pendingRefinementDrainerProvider]'s
+/// `onItemResolved`) at the one place a queued item actually turns into a
+/// real row — the same trigger that already refreshes unit/lesson
+/// progress.
+final latestAttemptProvider =
+    FutureProvider.family<
+      ActivityAttempt?,
+      ({int learnerId, String activityId})
+    >((ref, params) {
+      final repository = ref.watch(activityAttemptRepositoryProvider);
+      return repository.latestAttempt(
+        learnerId: params.learnerId,
+        activityId: params.activityId,
+      );
+    });
