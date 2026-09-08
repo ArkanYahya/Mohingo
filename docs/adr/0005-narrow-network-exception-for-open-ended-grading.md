@@ -14,7 +14,7 @@ This is the first time anything in the app sends learner-authored content off th
 
 A narrow, bounded exception to ADR 0004: when the device is online, an open-ended writing/speaking answer (only the ~40 rubrics explicitly marked `onlineRefinement: "grammarCheck"`) may be sent to the free public LanguageTool API (`api.languagetool.org`) for a grammar/spelling-quality check — a rule-based checker, not an AI/LLM, no API key, no cost. This is strictly a quality upgrade, never a requirement: every such answer is graded locally first (content-coverage score), queued, and — per `docs/superpowers/specs/2026-09-07-offline-answer-evaluation-design.md`'s Tier 2 — resolved via the bounded local-only fallback if the device never goes online. ADR 0004's actual guarantee ("no network call is *required*") still holds exactly as written; what's new is that the *capability* now exists in the codebase.
 
-The learner is told, before this first applies to them, that their open-ended answer may be sent online for a quality check — a bilingual, non-blocking notice on the submission itself (see the Tier 2 plan's Task 6), not something that happens silently.
+The learner sees a message when the answer is submitted indicating it will be checked further once they are online — a bilingual, non-blocking notice on the submission itself (see the Tier 2 plan's Task 6). This is not a disclosure of which service performs the check or that the answer leaves the device; it indicates only that additional grading will occur when online and a fallback local-only grade is available if they never go online.
 
 ## Alternatives considered
 
@@ -25,6 +25,6 @@ The learner is told, before this first applies to them, that their open-ended an
 ## Consequences
 
 - `docs/SECURITY.md`'s "no network permission or background network call is required" and "no data leaves the device" statements now carry one explicit, scoped exception — updated in the same change as this ADR, not left to drift.
-- The app declares internet-access capability at the platform level for the first time (already implicit for any Flutter app that can make an HTTP call; no new OS permission prompt is needed on either platform for outbound HTTP).
+- The app declares internet-access capability at the platform level for the first time: Android requires declaring the `INTERNET` permission in its manifest (a build-time declaration, not a runtime prompt the learner sees); iOS needs no equivalent change (outbound HTTPS calls don't require an Info.plist entitlement on iOS).
 - A learner's open-ended answer text (never any other PII, never audio, never a speech transcript verbatim — see `docs/SECURITY.md`'s existing "never logged" list, unaffected) may leave the device, only when: the rubric is one of the ~40 explicitly marked ones, the device is online, and the learner has been shown the disclosure notice.
 - Does **not** reverse `docs/TECH_STACK.md`'s rejection of cloud-based AI grading, and does not open the door to one — a genuinely new AI-grading proposal still needs its own ADR.

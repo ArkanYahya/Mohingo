@@ -3,6 +3,11 @@
          requested only when a learner deliberately starts a speaking task,
          never on launch. See docs/SECURITY.md. -->
     <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <!-- Required for the free, optional online grammar-quality check on
+         open-ended writing/speaking answers (Tier 2) — never required, a
+         bounded local-only fallback always resolves the grade if this is
+         unavailable. See docs/adr/0005-narrow-network-exception-for-open-ended-grading.md. -->
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:label="Mohingo"
         android:name="${applicationName}"
