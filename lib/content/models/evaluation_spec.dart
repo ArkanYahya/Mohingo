@@ -60,9 +60,11 @@ sealed class EvaluationSpec {
       }
       requiredGroups.add(keywords);
     }
+    final onlineRefinement = json['onlineRefinement'];
     return KeywordChecklistEvaluationSpec(
       requiredGroups: requiredGroups,
       minGroupsMatched: minGroupsMatched,
+      onlineRefinement: onlineRefinement is String ? onlineRefinement : null,
     );
   }
 }
@@ -124,12 +126,18 @@ class LetterSequenceEvaluationSpec extends EvaluationSpec {
 /// Short structured answers *and* open-ended paragraphs: the answer must
 /// mention at least [minGroupsMatched] of [requiredGroups] (each group is a
 /// list of acceptable surface forms — matching any one word/phrase in a
-/// group counts as covering it).
+/// group counts as covering it). [onlineRefinement] marks a rubric as
+/// eligible for a deferred, free-tier online grammar-quality pass (see
+/// docs/superpowers/specs/2026-09-07-offline-answer-evaluation-design.md's
+/// Tier 2) — `null` for every structured/short-answer rubric, which never
+/// touches the network.
 class KeywordChecklistEvaluationSpec extends EvaluationSpec {
   const KeywordChecklistEvaluationSpec({
     required this.requiredGroups,
     required this.minGroupsMatched,
+    this.onlineRefinement,
   });
   final List<List<String>> requiredGroups;
   final int minGroupsMatched;
+  final String? onlineRefinement;
 }

@@ -83,6 +83,31 @@ void main() {
       expect(checklist.minGroupsMatched, 2);
     });
 
+    test('parses keywordChecklist with an onlineRefinement flag', () {
+      final spec = EvaluationSpec.fromJson({
+        'type': 'keywordChecklist',
+        'requiredGroups': [
+          ['hi', 'hello'],
+        ],
+        'minGroupsMatched': 1,
+        'onlineRefinement': 'grammarCheck',
+      });
+      final checklist = spec as KeywordChecklistEvaluationSpec;
+      expect(checklist.onlineRefinement, 'grammarCheck');
+    });
+
+    test('keywordChecklist without onlineRefinement leaves it null', () {
+      final spec = EvaluationSpec.fromJson({
+        'type': 'keywordChecklist',
+        'requiredGroups': [
+          ['hi', 'hello'],
+        ],
+        'minGroupsMatched': 1,
+      });
+      final checklist = spec as KeywordChecklistEvaluationSpec;
+      expect(checklist.onlineRefinement, isNull);
+    });
+
     // A recognized `type` whose required fields are missing or the wrong
     // shape is an authoring error in the bundle. It must degrade to `null`
     // (one un-auto-graded activity) rather than throwing: CourseBundleParser
