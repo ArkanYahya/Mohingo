@@ -49,6 +49,30 @@ void main() {
     );
     expect(pending.single.localScore, 0.5);
     expect(pending.single.attemptCount, 0);
+    expect(pending.single.evidenceSkill, 'writing');
+    expect(pending.single.wasFallback, isFalse);
+  });
+
+  test('enqueue preserves wasFallback for a typed-answer speaking '
+      'fallback', () async {
+    await repository.enqueue(
+      learnerId: learnerId,
+      activityId: 'A1-U5-L6-A06',
+      lessonId: 'A1-U5-L6',
+      unitId: 'A1-U5',
+      canDoIds: const [],
+      rawAnswer: '"A typed answer to a speaking task."',
+      // wasFallback=true is always paired with the fallback skill — see
+      // docs/DATA_MODEL.md.
+      evidenceSkill: 'writing',
+      mode: 'mastery',
+      localScore: 1.0,
+      wasFallback: true,
+    );
+
+    final pending = await repository.allPending();
+    expect(pending.single.wasFallback, isTrue);
+    expect(pending.single.evidenceSkill, 'writing');
   });
 
   test(

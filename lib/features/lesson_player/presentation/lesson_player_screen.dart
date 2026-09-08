@@ -236,6 +236,7 @@ class _LessonPlayerBodyState extends ConsumerState<_LessonPlayerBody> {
             evidenceSkill: evidenceSkill.name,
             mode: activity.mode.name,
             localScore: submission.score ?? 0.0,
+            wasFallback: submission.wasFallback,
           );
     } else {
       await ref

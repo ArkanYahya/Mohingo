@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:drift/drift.dart' hide isNotNull;
 import 'package:drift/native.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -42,7 +44,8 @@ void main() {
       lessonId: 'A1-U5-L6',
       unitId: 'A1-U5',
       canDoIds: ['A1.U5.WRITING.WRITE_FREE_TIME_MESSAGE'],
-      rawAnswer: 'Hello! Free time message.',
+      // Stored JSON-encoded, exactly as the lesson player enqueues it.
+      rawAnswer: jsonEncode('Hello!\nMy free "time" message.'),
       evidenceSkill: 'writing',
       mode: 'mastery',
       localScore: 1.0,
@@ -75,7 +78,110 @@ void main() {
     expect(attempts.single.isCorrect, isTrue);
     expect(attempts.single.mode, 'mastery');
     expect(resolved, [(learnerId: learnerId, unitId: 'A1-U5')]);
+    expect(
+      grammarCheckService.checkedText.single,
+      'Hello!\nMy free "time" message.',
+      reason:
+          'the grammar checker must see the learner\'s actual sentence, not '
+          'its JSON literal — enclosing quotes and escaped newlines would '
+          'inflate the error density and corrupt the word count',
+    );
+    expect(
+      attempts.single.rawAnswer,
+      jsonEncode('Hello!\nMy free "time" message.'),
+      reason:
+          'what is *stored* stays JSON-encoded, matching every other attempt '
+          'row in the app',
+    );
   });
+
+  test('wasFallback round-trips through the queue into the recorded '
+      'attempt', () async {
+    await pendingRepository.enqueue(
+      learnerId: learnerId,
+      activityId: 'A1-U5-L6-A05',
+      lessonId: 'A1-U5-L6',
+      unitId: 'A1-U5',
+      canDoIds: const [],
+      rawAnswer: jsonEncode('A typed answer to a speaking task.'),
+      // A speak activity answered through its typed-answer accessibility
+      // fallback: wasFallback=true is always paired with the fallback
+      // skill, and must survive the queue (see docs/DATA_MODEL.md).
+      evidenceSkill: 'writing',
+      mode: 'mastery',
+      localScore: 1.0,
+      wasFallback: true,
+    );
+    final service = PendingRefinementDrainService(
+      pendingRepository: pendingRepository,
+      attemptRepository: attemptRepository,
+      grammarCheckService: FakeGrammarCheckService(
+        result: const GrammarCheckResult(errorCount: 0, wordCount: 6),
+      ),
+    );
+
+    await service.drainOnce();
+
+    final attempts = await db.select(db.activityAttempts).get();
+    expect(attempts.single.wasFallback, isTrue);
+    expect(attempts.single.evidenceSkill, 'writing');
+  });
+
+  test(
+    'one malformed queue row does not block the rest of the batch',
+    () async {
+      // `mastry` is not an ActivityMode — ActivityMode.parse throws
+      // UnsupportedContentSchemaException on it, from inside _finalize.
+      await pendingRepository.enqueue(
+        learnerId: learnerId,
+        activityId: 'A1-BAD-A01',
+        lessonId: 'A1-U5-L6',
+        unitId: 'A1-U5',
+        canDoIds: const [],
+        rawAnswer: jsonEncode('poison'),
+        evidenceSkill: 'writing',
+        mode: 'mastry',
+        localScore: 1.0,
+      );
+      await pendingRepository.enqueue(
+        learnerId: learnerId,
+        activityId: 'A1-U5-L6-A05',
+        lessonId: 'A1-U5-L6',
+        unitId: 'A1-U5',
+        canDoIds: const [],
+        rawAnswer: jsonEncode('a perfectly normal answer'),
+        evidenceSkill: 'writing',
+        mode: 'mastery',
+        localScore: 1.0,
+      );
+      final service = PendingRefinementDrainService(
+        pendingRepository: pendingRepository,
+        attemptRepository: attemptRepository,
+        grammarCheckService: FakeGrammarCheckService(
+          result: const GrammarCheckResult(errorCount: 0, wordCount: 5),
+        ),
+      );
+
+      await service.drainOnce();
+
+      final attempts = await db.select(db.activityAttempts).get();
+      expect(
+        attempts.map((a) => a.activityId),
+        ['A1-U5-L6-A05'],
+        reason:
+            'the bad row comes first in allPending() order — without per-item '
+            'isolation it would abort the batch and wedge the queue forever',
+      );
+      final pending = await pendingRepository.allPending();
+      expect(pending, hasLength(1));
+      expect(pending.single.activityId, 'A1-BAD-A01');
+      expect(
+        pending.single.attemptCount,
+        1,
+        reason: 'the bad row degrades into an ordinary retry, not a crash',
+      );
+    },
+  );
 
   test('many grammar errors pull the combined score down, but content '
       'coverage still dominates', () async {

@@ -59,11 +59,40 @@ class PendingRefinementDrainService {
 
   /// Resolves up to [maxItems] queued rows. Safe to call opportunistically
   /// and often — an empty queue is a no-op, and every row either resolves
-  /// or is left untouched for the next call.
+  /// or is left untouched for the next call. Safe to call while offline
+  /// too: each item's own failure handling (below) turns "no network" into
+  /// a retry or, once bounded, a local-score-only resolution, which is what
+  /// makes the never-online learner's guarantee actually reachable.
   Future<void> drainOnce({int maxItems = 5}) async {
     final pending = await _pendingRepository.allPending();
     for (final item in pending.take(maxItems)) {
-      await _resolveOne(item);
+      try {
+        await _resolveOne(item);
+      } catch (error) {
+        // Per-item isolation. `_finalize` parses stored strings
+        // (`ActivityMode.parse`, `Skill.parse`, `jsonDecode`), any of which
+        // can throw on unexpected/corrupted data. Rows are processed in
+        // `allPending()` order, so without this one poison row would abort
+        // the whole batch and re-throw identically on every future call —
+        // permanently wedging every row behind it. Treat it as a failed
+        // attempt for *that* item only (exactly like a grammar-check
+        // failure) and keep going.
+        await _recordFailedAttemptQuietly(item);
+      }
+    }
+  }
+
+  /// Bumps [item]'s retry bookkeeping, tolerating the row already being
+  /// gone — an item that threw *after* `_finalize` removed it has nothing
+  /// left to retry, and the rest of the batch must still run.
+  Future<void> _recordFailedAttemptQuietly(PendingOnlineRefinement item) async {
+    try {
+      await _pendingRepository.recordFailedAttempt(
+        id: item.id,
+        attemptedAt: DateTime.now(),
+      );
+    } catch (_) {
+      // Nothing further to do — deliberately swallowed.
     }
   }
 
@@ -71,7 +100,7 @@ class PendingRefinementDrainService {
     GrammarCheckResult? grammarResult;
     try {
       grammarResult = await _grammarCheckService.check(
-        item.rawAnswer,
+        _plainAnswerText(item.rawAnswer),
         localeCode: 'en',
       );
     } on GrammarCheckUnavailableException {
@@ -97,6 +126,26 @@ class PendingRefinementDrainService {
       item,
       score: _combineScores(item.localScore, grammarResult),
     );
+  }
+
+  /// The learner's actual sentence, decoded out of the JSON-encoded form
+  /// `rawAnswer` is stored in (`jsonEncode(text)`, matching
+  /// `activity_attempts.raw_answer` everywhere else in this app).
+  ///
+  /// Only the *grammar check* needs the plain text — sending it the JSON
+  /// literal would hand LanguageTool the enclosing quote marks and literal
+  /// two-character `\n` escapes, inflating the error density and corrupting
+  /// the word count. What gets written back to `activity_attempts` stays
+  /// JSON-encoded, unchanged. A value that isn't a JSON string (older or
+  /// hand-written queue data) is used as-is rather than failing the item.
+  String _plainAnswerText(String rawAnswer) {
+    try {
+      final decoded = jsonDecode(rawAnswer);
+      if (decoded is String) return decoded;
+    } on FormatException {
+      // Not JSON at all — fall through to the raw value.
+    }
+    return rawAnswer;
   }
 
   /// Content coverage (the offline score) still dominates: grammar quality
@@ -126,6 +175,7 @@ class PendingRefinementDrainService {
       rawAnswer: item.rawAnswer,
       isCorrect: score >= 0.75,
       score: score,
+      wasFallback: item.wasFallback,
     );
     await _pendingRepository.remove(id: item.id);
     await onItemResolved?.call(learnerId: item.learnerId, unitId: item.unitId);

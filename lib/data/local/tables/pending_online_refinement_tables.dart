@@ -16,7 +16,15 @@ import 'learner_tables.dart';
 /// needs a fresh content-bundle lookup. [localScore] is the offline
 /// `keywordChecklist` content score, computed once at submission time —
 /// combined with the online grammar signal (or used alone, on fallback) to
-/// produce the final score. See docs/DATA_MODEL.md.
+/// produce the final score.
+///
+/// [evidenceSkill] and [wasFallback] are carried through the queue exactly
+/// as `ActivityAttempts` would have recorded them at submit time (see
+/// `attempt_tables.dart`), so an answer typed through a `speak` activity's
+/// accessibility fallback still resolves into an attempt row that pairs
+/// `wasFallback=true` with the fallback skill — the documented invariant
+/// that keeps a speaking fallback from ever counting as speaking evidence.
+/// See docs/DATA_MODEL.md.
 class PendingOnlineRefinements extends Table {
   IntColumn get id => integer().autoIncrement()();
   TextColumn get uuid => text().unique()();
@@ -27,6 +35,7 @@ class PendingOnlineRefinements extends Table {
   TextColumn get canDoIds => text()(); // JSON-encoded List<String>
   TextColumn get rawAnswer => text()();
   TextColumn get evidenceSkill => text()();
+  BoolColumn get wasFallback => boolean().withDefault(const Constant(false))();
   TextColumn get mode => text()(); // encounter | practice | mastery
   RealColumn get localScore => real()();
   DateTimeColumn get submittedAt => dateTime()();

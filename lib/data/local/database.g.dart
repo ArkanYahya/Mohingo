@@ -6880,6 +6880,21 @@ class $PendingOnlineRefinementsTable extends PendingOnlineRefinements
     type: DriftSqlType.string,
     requiredDuringInsert: true,
   );
+  static const VerificationMeta _wasFallbackMeta = const VerificationMeta(
+    'wasFallback',
+  );
+  @override
+  late final GeneratedColumn<bool> wasFallback = GeneratedColumn<bool>(
+    'was_fallback',
+    aliasedName,
+    false,
+    type: DriftSqlType.bool,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'CHECK ("was_fallback" IN (0, 1))',
+    ),
+    defaultValue: const Constant(false),
+  );
   static const VerificationMeta _modeMeta = const VerificationMeta('mode');
   @override
   late final GeneratedColumn<String> mode = GeneratedColumn<String>(
@@ -6946,6 +6961,7 @@ class $PendingOnlineRefinementsTable extends PendingOnlineRefinements
     canDoIds,
     rawAnswer,
     evidenceSkill,
+    wasFallback,
     mode,
     localScore,
     submittedAt,
@@ -7033,6 +7049,15 @@ class $PendingOnlineRefinementsTable extends PendingOnlineRefinements
       );
     } else if (isInserting) {
       context.missing(_evidenceSkillMeta);
+    }
+    if (data.containsKey('was_fallback')) {
+      context.handle(
+        _wasFallbackMeta,
+        wasFallback.isAcceptableOrUnknown(
+          data['was_fallback']!,
+          _wasFallbackMeta,
+        ),
+      );
     }
     if (data.containsKey('mode')) {
       context.handle(
@@ -7127,6 +7152,10 @@ class $PendingOnlineRefinementsTable extends PendingOnlineRefinements
         DriftSqlType.string,
         data['${effectivePrefix}evidence_skill'],
       )!,
+      wasFallback: attachedDatabase.typeMapping.read(
+        DriftSqlType.bool,
+        data['${effectivePrefix}was_fallback'],
+      )!,
       mode: attachedDatabase.typeMapping.read(
         DriftSqlType.string,
         data['${effectivePrefix}mode'],
@@ -7167,6 +7196,7 @@ class PendingOnlineRefinement extends DataClass
   final String canDoIds;
   final String rawAnswer;
   final String evidenceSkill;
+  final bool wasFallback;
   final String mode;
   final double localScore;
   final DateTime submittedAt;
@@ -7182,6 +7212,7 @@ class PendingOnlineRefinement extends DataClass
     required this.canDoIds,
     required this.rawAnswer,
     required this.evidenceSkill,
+    required this.wasFallback,
     required this.mode,
     required this.localScore,
     required this.submittedAt,
@@ -7200,6 +7231,7 @@ class PendingOnlineRefinement extends DataClass
     map['can_do_ids'] = Variable<String>(canDoIds);
     map['raw_answer'] = Variable<String>(rawAnswer);
     map['evidence_skill'] = Variable<String>(evidenceSkill);
+    map['was_fallback'] = Variable<bool>(wasFallback);
     map['mode'] = Variable<String>(mode);
     map['local_score'] = Variable<double>(localScore);
     map['submitted_at'] = Variable<DateTime>(submittedAt);
@@ -7221,6 +7253,7 @@ class PendingOnlineRefinement extends DataClass
       canDoIds: Value(canDoIds),
       rawAnswer: Value(rawAnswer),
       evidenceSkill: Value(evidenceSkill),
+      wasFallback: Value(wasFallback),
       mode: Value(mode),
       localScore: Value(localScore),
       submittedAt: Value(submittedAt),
@@ -7246,6 +7279,7 @@ class PendingOnlineRefinement extends DataClass
       canDoIds: serializer.fromJson<String>(json['canDoIds']),
       rawAnswer: serializer.fromJson<String>(json['rawAnswer']),
       evidenceSkill: serializer.fromJson<String>(json['evidenceSkill']),
+      wasFallback: serializer.fromJson<bool>(json['wasFallback']),
       mode: serializer.fromJson<String>(json['mode']),
       localScore: serializer.fromJson<double>(json['localScore']),
       submittedAt: serializer.fromJson<DateTime>(json['submittedAt']),
@@ -7266,6 +7300,7 @@ class PendingOnlineRefinement extends DataClass
       'canDoIds': serializer.toJson<String>(canDoIds),
       'rawAnswer': serializer.toJson<String>(rawAnswer),
       'evidenceSkill': serializer.toJson<String>(evidenceSkill),
+      'wasFallback': serializer.toJson<bool>(wasFallback),
       'mode': serializer.toJson<String>(mode),
       'localScore': serializer.toJson<double>(localScore),
       'submittedAt': serializer.toJson<DateTime>(submittedAt),
@@ -7284,6 +7319,7 @@ class PendingOnlineRefinement extends DataClass
     String? canDoIds,
     String? rawAnswer,
     String? evidenceSkill,
+    bool? wasFallback,
     String? mode,
     double? localScore,
     DateTime? submittedAt,
@@ -7299,6 +7335,7 @@ class PendingOnlineRefinement extends DataClass
     canDoIds: canDoIds ?? this.canDoIds,
     rawAnswer: rawAnswer ?? this.rawAnswer,
     evidenceSkill: evidenceSkill ?? this.evidenceSkill,
+    wasFallback: wasFallback ?? this.wasFallback,
     mode: mode ?? this.mode,
     localScore: localScore ?? this.localScore,
     submittedAt: submittedAt ?? this.submittedAt,
@@ -7324,6 +7361,9 @@ class PendingOnlineRefinement extends DataClass
       evidenceSkill: data.evidenceSkill.present
           ? data.evidenceSkill.value
           : this.evidenceSkill,
+      wasFallback: data.wasFallback.present
+          ? data.wasFallback.value
+          : this.wasFallback,
       mode: data.mode.present ? data.mode.value : this.mode,
       localScore: data.localScore.present
           ? data.localScore.value
@@ -7352,6 +7392,7 @@ class PendingOnlineRefinement extends DataClass
           ..write('canDoIds: $canDoIds, ')
           ..write('rawAnswer: $rawAnswer, ')
           ..write('evidenceSkill: $evidenceSkill, ')
+          ..write('wasFallback: $wasFallback, ')
           ..write('mode: $mode, ')
           ..write('localScore: $localScore, ')
           ..write('submittedAt: $submittedAt, ')
@@ -7372,6 +7413,7 @@ class PendingOnlineRefinement extends DataClass
     canDoIds,
     rawAnswer,
     evidenceSkill,
+    wasFallback,
     mode,
     localScore,
     submittedAt,
@@ -7391,6 +7433,7 @@ class PendingOnlineRefinement extends DataClass
           other.canDoIds == this.canDoIds &&
           other.rawAnswer == this.rawAnswer &&
           other.evidenceSkill == this.evidenceSkill &&
+          other.wasFallback == this.wasFallback &&
           other.mode == this.mode &&
           other.localScore == this.localScore &&
           other.submittedAt == this.submittedAt &&
@@ -7409,6 +7452,7 @@ class PendingOnlineRefinementsCompanion
   final Value<String> canDoIds;
   final Value<String> rawAnswer;
   final Value<String> evidenceSkill;
+  final Value<bool> wasFallback;
   final Value<String> mode;
   final Value<double> localScore;
   final Value<DateTime> submittedAt;
@@ -7424,6 +7468,7 @@ class PendingOnlineRefinementsCompanion
     this.canDoIds = const Value.absent(),
     this.rawAnswer = const Value.absent(),
     this.evidenceSkill = const Value.absent(),
+    this.wasFallback = const Value.absent(),
     this.mode = const Value.absent(),
     this.localScore = const Value.absent(),
     this.submittedAt = const Value.absent(),
@@ -7440,6 +7485,7 @@ class PendingOnlineRefinementsCompanion
     required String canDoIds,
     required String rawAnswer,
     required String evidenceSkill,
+    this.wasFallback = const Value.absent(),
     required String mode,
     required double localScore,
     required DateTime submittedAt,
@@ -7466,6 +7512,7 @@ class PendingOnlineRefinementsCompanion
     Expression<String>? canDoIds,
     Expression<String>? rawAnswer,
     Expression<String>? evidenceSkill,
+    Expression<bool>? wasFallback,
     Expression<String>? mode,
     Expression<double>? localScore,
     Expression<DateTime>? submittedAt,
@@ -7482,6 +7529,7 @@ class PendingOnlineRefinementsCompanion
       if (canDoIds != null) 'can_do_ids': canDoIds,
       if (rawAnswer != null) 'raw_answer': rawAnswer,
       if (evidenceSkill != null) 'evidence_skill': evidenceSkill,
+      if (wasFallback != null) 'was_fallback': wasFallback,
       if (mode != null) 'mode': mode,
       if (localScore != null) 'local_score': localScore,
       if (submittedAt != null) 'submitted_at': submittedAt,
@@ -7500,6 +7548,7 @@ class PendingOnlineRefinementsCompanion
     Value<String>? canDoIds,
     Value<String>? rawAnswer,
     Value<String>? evidenceSkill,
+    Value<bool>? wasFallback,
     Value<String>? mode,
     Value<double>? localScore,
     Value<DateTime>? submittedAt,
@@ -7516,6 +7565,7 @@ class PendingOnlineRefinementsCompanion
       canDoIds: canDoIds ?? this.canDoIds,
       rawAnswer: rawAnswer ?? this.rawAnswer,
       evidenceSkill: evidenceSkill ?? this.evidenceSkill,
+      wasFallback: wasFallback ?? this.wasFallback,
       mode: mode ?? this.mode,
       localScore: localScore ?? this.localScore,
       submittedAt: submittedAt ?? this.submittedAt,
@@ -7554,6 +7604,9 @@ class PendingOnlineRefinementsCompanion
     if (evidenceSkill.present) {
       map['evidence_skill'] = Variable<String>(evidenceSkill.value);
     }
+    if (wasFallback.present) {
+      map['was_fallback'] = Variable<bool>(wasFallback.value);
+    }
     if (mode.present) {
       map['mode'] = Variable<String>(mode.value);
     }
@@ -7584,6 +7637,7 @@ class PendingOnlineRefinementsCompanion
           ..write('canDoIds: $canDoIds, ')
           ..write('rawAnswer: $rawAnswer, ')
           ..write('evidenceSkill: $evidenceSkill, ')
+          ..write('wasFallback: $wasFallback, ')
           ..write('mode: $mode, ')
           ..write('localScore: $localScore, ')
           ..write('submittedAt: $submittedAt, ')
@@ -13335,6 +13389,7 @@ typedef $$PendingOnlineRefinementsTableCreateCompanionBuilder =
       required String canDoIds,
       required String rawAnswer,
       required String evidenceSkill,
+      Value<bool> wasFallback,
       required String mode,
       required double localScore,
       required DateTime submittedAt,
@@ -13352,6 +13407,7 @@ typedef $$PendingOnlineRefinementsTableUpdateCompanionBuilder =
       Value<String> canDoIds,
       Value<String> rawAnswer,
       Value<String> evidenceSkill,
+      Value<bool> wasFallback,
       Value<String> mode,
       Value<double> localScore,
       Value<DateTime> submittedAt,
@@ -13436,6 +13492,11 @@ class $$PendingOnlineRefinementsTableFilterComposer
 
   ColumnFilters<String> get evidenceSkill => $composableBuilder(
     column: $table.evidenceSkill,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<bool> get wasFallback => $composableBuilder(
+    column: $table.wasFallback,
     builder: (column) => ColumnFilters(column),
   );
 
@@ -13537,6 +13598,11 @@ class $$PendingOnlineRefinementsTableOrderingComposer
     builder: (column) => ColumnOrderings(column),
   );
 
+  ColumnOrderings<bool> get wasFallback => $composableBuilder(
+    column: $table.wasFallback,
+    builder: (column) => ColumnOrderings(column),
+  );
+
   ColumnOrderings<String> get mode => $composableBuilder(
     column: $table.mode,
     builder: (column) => ColumnOrderings(column),
@@ -13620,6 +13686,11 @@ class $$PendingOnlineRefinementsTableAnnotationComposer
 
   GeneratedColumn<String> get evidenceSkill => $composableBuilder(
     column: $table.evidenceSkill,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<bool> get wasFallback => $composableBuilder(
+    column: $table.wasFallback,
     builder: (column) => column,
   );
 
@@ -13718,6 +13789,7 @@ class $$PendingOnlineRefinementsTableTableManager
                 Value<String> canDoIds = const Value.absent(),
                 Value<String> rawAnswer = const Value.absent(),
                 Value<String> evidenceSkill = const Value.absent(),
+                Value<bool> wasFallback = const Value.absent(),
                 Value<String> mode = const Value.absent(),
                 Value<double> localScore = const Value.absent(),
                 Value<DateTime> submittedAt = const Value.absent(),
@@ -13733,6 +13805,7 @@ class $$PendingOnlineRefinementsTableTableManager
                 canDoIds: canDoIds,
                 rawAnswer: rawAnswer,
                 evidenceSkill: evidenceSkill,
+                wasFallback: wasFallback,
                 mode: mode,
                 localScore: localScore,
                 submittedAt: submittedAt,
@@ -13750,6 +13823,7 @@ class $$PendingOnlineRefinementsTableTableManager
                 required String canDoIds,
                 required String rawAnswer,
                 required String evidenceSkill,
+                Value<bool> wasFallback = const Value.absent(),
                 required String mode,
                 required double localScore,
                 required DateTime submittedAt,
@@ -13765,6 +13839,7 @@ class $$PendingOnlineRefinementsTableTableManager
                 canDoIds: canDoIds,
                 rawAnswer: rawAnswer,
                 evidenceSkill: evidenceSkill,
+                wasFallback: wasFallback,
                 mode: mode,
                 localScore: localScore,
                 submittedAt: submittedAt,

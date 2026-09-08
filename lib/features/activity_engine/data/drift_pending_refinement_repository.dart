@@ -24,6 +24,7 @@ class DriftPendingRefinementRepository implements PendingRefinementRepository {
     required String evidenceSkill,
     required String mode,
     required double localScore,
+    bool wasFallback = false,
   }) {
     final now = DateTime.now();
     return _db
@@ -38,6 +39,7 @@ class DriftPendingRefinementRepository implements PendingRefinementRepository {
             canDoIds: jsonEncode(canDoIds),
             rawAnswer: rawAnswer,
             evidenceSkill: evidenceSkill,
+            wasFallback: Value(wasFallback),
             mode: mode,
             localScore: localScore,
             submittedAt: now,

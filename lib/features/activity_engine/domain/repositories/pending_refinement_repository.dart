@@ -8,6 +8,12 @@ abstract interface class PendingRefinementRepository {
   /// [localScore] is the already-computed offline content score. [unitId]
   /// is stored so a later resolution can refresh that unit's cached
   /// mastery state without a content-bundle lookup.
+  ///
+  /// [evidenceSkill] and [wasFallback] mean exactly what they mean on
+  /// `ActivityAttemptRepository.recordAttempt` and are carried through
+  /// verbatim, so a `speak` activity answered via its typed-answer
+  /// accessibility fallback still resolves into an attempt row pairing
+  /// `wasFallback: true` with the fallback skill. See docs/DATA_MODEL.md.
   Future<int> enqueue({
     required int learnerId,
     required String activityId,
@@ -18,6 +24,7 @@ abstract interface class PendingRefinementRepository {
     required String evidenceSkill,
     required String mode,
     required double localScore,
+    bool wasFallback = false,
   });
 
   /// Every queued item across every learner — the drain service resolves
@@ -36,7 +43,13 @@ abstract interface class PendingRefinementRepository {
   /// online or via the bounded fallback.
   Future<void> remove({required int id});
 
-  /// Clears every queued item for [learnerId] — used by
-  /// `AppDatabase.resetProgressForLearner`.
+  /// Clears every queued item for [learnerId].
+  ///
+  /// Not called from production code today: `AppDatabase.
+  /// resetProgressForLearner` deletes from `pendingOnlineRefinements`
+  /// directly inside its own transaction (a reset must be atomic across
+  /// every progress table at once, which a repository call can't join), so
+  /// this exists for completeness of the queue's own interface and is
+  /// exercised by its repository test.
   Future<void> removeAllForLearner({required int learnerId});
 }
