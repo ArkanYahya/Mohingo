@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 
 import '../../../../content/models/activity.dart';
+import '../../../../content/models/evaluation_spec.dart';
 import '../../../../core/l10n/generated/app_localizations.dart';
 import '../../domain/activity_submission.dart';
 import '../../domain/answer_matching.dart';
@@ -46,6 +47,7 @@ class _WriteActivityViewState extends State<WriteActivityView> {
     if (text.isEmpty || _submission != null) return;
 
     final ActivitySubmission submission;
+    final evaluation = widget.activity.evaluation;
     if (widget.activity.accepted.isNotEmpty) {
       final isCorrect = widget.activity.accepted.any(
         (a) => answersMatch(a, text),
@@ -57,9 +59,23 @@ class _WriteActivityViewState extends State<WriteActivityView> {
         score: isCorrect ? 1.0 : 0.0,
         rawAnswerJson: jsonEncode(text),
       );
-    } else if (widget.activity.evaluation != null) {
+    } else if (evaluation is KeywordChecklistEvaluationSpec &&
+        evaluation.onlineRefinement != null) {
+      // Open-ended, deferred-grading path: the local score is computed now
+      // but never used as the graded score directly — it's carried through
+      // to the pending_online_refinements queue and combined with a free
+      // online grammar-quality pass once the device is online. See
+      // docs/superpowers/specs/2026-09-07-offline-answer-evaluation-design.md.
+      final localResult = evaluate(evaluation, text);
+      submission = ActivitySubmission(
+        correctness: ActivityCorrectness.notAutoGraded,
+        score: localResult.score,
+        rawAnswerJson: jsonEncode(text),
+        pendingOnlineRefinement: true,
+      );
+    } else if (evaluation != null) {
       final result = evaluate(
-        widget.activity.evaluation!,
+        evaluation,
         text,
         context: widget.evaluationContext,
       );

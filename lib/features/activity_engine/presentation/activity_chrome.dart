@@ -92,26 +92,35 @@ class ActivityFeedbackBanner extends StatelessWidget {
       Color onColor,
       IconData icon,
       String label,
-    ) = switch (submission.correctness) {
-      ActivityCorrectness.correct => (
-        colorScheme.primaryContainer,
-        colorScheme.onPrimaryContainer,
-        Icons.check_circle,
-        l10n.activityFeedbackCorrect,
-      ),
-      ActivityCorrectness.incorrect => (
-        colorScheme.errorContainer,
-        colorScheme.onErrorContainer,
-        Icons.cancel,
-        l10n.activityFeedbackIncorrectWithAnswer(correctAnswerLabel ?? ''),
-      ),
-      ActivityCorrectness.notAutoGraded => (
-        colorScheme.surfaceContainerHighest,
-        colorScheme.onSurface,
-        Icons.hourglass_top,
-        l10n.activityFeedbackSavedForReview,
-      ),
-    };
+    ) = submission.pendingOnlineRefinement
+        ? (
+            colorScheme.surfaceContainerHighest,
+            colorScheme.onSurface,
+            Icons.cloud_sync,
+            l10n.activityFeedbackPendingOnlineRefinement,
+          )
+        : switch (submission.correctness) {
+            ActivityCorrectness.correct => (
+              colorScheme.primaryContainer,
+              colorScheme.onPrimaryContainer,
+              Icons.check_circle,
+              l10n.activityFeedbackCorrect,
+            ),
+            ActivityCorrectness.incorrect => (
+              colorScheme.errorContainer,
+              colorScheme.onErrorContainer,
+              Icons.cancel,
+              l10n.activityFeedbackIncorrectWithAnswer(
+                correctAnswerLabel ?? '',
+              ),
+            ),
+            ActivityCorrectness.notAutoGraded => (
+              colorScheme.surfaceContainerHighest,
+              colorScheme.onSurface,
+              Icons.hourglass_top,
+              l10n.activityFeedbackSavedForReview,
+            ),
+          };
 
     return Semantics(
       liveRegion: true,

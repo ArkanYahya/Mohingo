@@ -116,4 +116,51 @@ void main() {
       expect(captured!.correctness, ActivityCorrectness.correct);
     },
   );
+
+  testWidgets(
+    'an activity with an onlineRefinement rubric is queued, not graded, '
+    'and shows the pending-online-refinement banner',
+    (tester) async {
+      const activity = WriteActivity(
+        id: 'A1-U5-L6-A05',
+        lessonId: 'A1-U5-L6',
+        mode: ActivityMode.mastery,
+        skill: Skill.writing,
+        canDo: ['A1.U5.WRITING.WRITE_FREE_TIME_MESSAGE'],
+        prompt: 'Write a message about your free time.',
+        promptAr: 'اكتب رسالة عن وقت فراغك.',
+        raw: {},
+        accepted: [],
+        evaluation: KeywordChecklistEvaluationSpec(
+          requiredGroups: [
+            ['hi', 'hello'],
+          ],
+          minGroupsMatched: 1,
+          onlineRefinement: 'grammarCheck',
+        ),
+        wordGuide: [35, 55],
+      );
+
+      ActivitySubmission? captured;
+      await tester.pumpActivityView(
+        WriteActivityView(activity: activity, onSubmitted: (s) => captured = s),
+      );
+
+      await tester.enterText(
+        find.byType(TextField),
+        'Hello! Free on Saturday?',
+      );
+      await tester.pump();
+      await tester.tap(find.widgetWithText(FilledButton, 'Check'));
+      await tester.pump();
+
+      expect(captured!.pendingOnlineRefinement, isTrue);
+      expect(captured!.correctness, ActivityCorrectness.notAutoGraded);
+      expect(captured!.score, 1.0); // 1 of 1 required group matched, locally
+      expect(
+        find.text('Saved — we\'ll finish checking this once you\'re online'),
+        findsOneWidget,
+      );
+    },
+  );
 }

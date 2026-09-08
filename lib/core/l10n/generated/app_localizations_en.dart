@@ -51,6 +51,10 @@ class AppLocalizationsEn extends AppLocalizations {
       'Saved — this will be reviewed, not auto-graded.';
 
   @override
+  String get activityFeedbackPendingOnlineRefinement =>
+      'Saved — we\'ll finish checking this once you\'re online';
+
+  @override
   String get activitySpeechUnavailableUseWriting =>
       'Speaking practice isn\'t available on this device yet — type your answer instead.';
 

@@ -12,6 +12,7 @@
   "activityFeedbackCorrect": "إجابة صحيحة!",
   "activityFeedbackIncorrectWithAnswer": "ليست صحيحة — الإجابة الصحيحة هي: {correctAnswer}",
   "activityFeedbackSavedForReview": "تم الحفظ — سيُراجَع لاحقاً ولن يُصحَّح تلقائياً.",
+  "activityFeedbackPendingOnlineRefinement": "تم الحفظ — سنكمل تصحيح هذه الإجابة عند اتصالك بالإنترنت",
   "activitySpeechUnavailableUseWriting": "التحدث غير متاح على هذا الجهاز حالياً — اكتب إجابتك بدلاً من ذلك.",
   "activityShowTranscript": "عرض النص",
   "activityWordGuide": "من {min} إلى {max} كلمة تقريباً",

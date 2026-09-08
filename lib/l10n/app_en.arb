@@ -58,6 +58,10 @@
   "@activityFeedbackSavedForReview": {
     "description": "Feedback shown for writing/speaking activities, which need a task-specific rubric rather than an automatic right/wrong check."
   },
+  "activityFeedbackPendingOnlineRefinement": "Saved — we'll finish checking this once you're online",
+  "@activityFeedbackPendingOnlineRefinement": {
+    "description": "Feedback banner shown after submitting an open-ended writing/speaking answer whose full grading is deferred until the device is online (Tier 2 online refinement)."
+  },
   "activitySpeechUnavailableUseWriting": "Speaking practice isn't available on this device yet — type your answer instead.",
   "@activitySpeechUnavailableUseWriting": {
     "description": "Shown on a speak activity's typed-answer accessibility fallback. Never phrased as a permanent limitation of the learner's ability, only the device/build."

@@ -51,6 +51,10 @@ class AppLocalizationsAr extends AppLocalizations {
       'تم الحفظ — سيُراجَع لاحقاً ولن يُصحَّح تلقائياً.';
 
   @override
+  String get activityFeedbackPendingOnlineRefinement =>
+      'تم الحفظ — سنكمل تصحيح هذه الإجابة عند اتصالك بالإنترنت';
+
+  @override
   String get activitySpeechUnavailableUseWriting =>
       'التحدث غير متاح على هذا الجهاز حالياً — اكتب إجابتك بدلاً من ذلك.';
 

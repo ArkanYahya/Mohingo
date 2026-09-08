@@ -170,6 +170,12 @@ abstract class AppLocalizations {
   /// **'Saved — this will be reviewed, not auto-graded.'**
   String get activityFeedbackSavedForReview;
 
+  /// Feedback banner shown after submitting an open-ended writing/speaking answer whose full grading is deferred until the device is online (Tier 2 online refinement).
+  ///
+  /// In en, this message translates to:
+  /// **'Saved — we\'ll finish checking this once you\'re online'**
+  String get activityFeedbackPendingOnlineRefinement;
+
   /// Shown on a speak activity's typed-answer accessibility fallback. Never phrased as a permanent limitation of the learner's ability, only the device/build.
   ///
   /// In en, this message translates to:
