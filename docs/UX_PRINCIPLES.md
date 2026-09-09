@@ -1,7 +1,7 @@
 > **What this file is:** How the app talks to and treats users — voice, tone, how it handles errors/empty states, and the accessibility bar it must clear. Keeps copy and interaction patterns from feeling like they were written by a different person on every screen.
 > **How to use it:** Reference when writing any user-facing copy or interaction (errors, empty states, confirmations). If a new pattern is needed, add it here once decided rather than inventing it locally each time.
 
-_Last verified: 2026-09-02 — corrected the destructive-action example, which referenced a now-superseded `currentLevelId` field and an outdated placement-retake behavior; see [ADR 0004](adr/0004-local-only-v1-no-firebase-backend.md)._
+_Last verified: 2026-09-09 — added the "not answered" empty-state copy introduced by the Learn tab's lesson-answer-review feature; see docs/superpowers/specs/2026-09-09-lesson-answer-review-design.md._
 
 # UX Principles
 
@@ -18,6 +18,8 @@ Warm, encouraging, celebratory — never scolding. A learner getting an answer w
 ## Empty states
 
 Placement test not yet taken / no progress yet: framed as an invitation to start, not a blank/broken screen ("Let's find your starting point" rather than "No data").
+
+Lesson answer review, per-activity: a finished lesson's read-only review screen (Learn tab only) can encounter an activity with no recorded attempt at all — content changed after the lesson was completed, for instance. This renders inside that activity's own chrome (never a generic list item or a raw gap) as a neutral "Not answered" placeholder — no icon or color implying an error, since nothing went wrong; the learner simply never answered it.
 
 ## Loading states
 

@@ -1,7 +1,7 @@
 > **What this file is:** The definition of what the app is, who it's for, and what counts as "done." Prevents scope from being reinvented differently in each session.
 > **How to use it:** Update when scope actually changes (a feature is added/cut/reprioritized). Keep it at the level of *what and why*, not *how* — implementation belongs in [ARCHITECTURE.md](ARCHITECTURE.md).
 
-_Last verified: 2026-09-02 — onboarding and progress-gating flows updated for the local-only, free-access v1 decided this session; see [ADR 0004](adr/0004-local-only-v1-no-firebase-backend.md). Phase 10 corrected stale "progress gating" wording in Success criteria (the actual v1 model is recommendation-only, per flow 5) and resolved 3 of the 4 Open questions below against what actually got built._
+_Last verified: 2026-09-09 — onboarding and progress-gating flows updated for the local-only, free-access v1 decided this session; see [ADR 0004](adr/0004-local-only-v1-no-firebase-backend.md). Phase 10 corrected stale "progress gating" wording in Success criteria (the actual v1 model is recommendation-only, per flow 5) and resolved 3 of the 4 Open questions below against what actually got built. Added flow 4's read-only lesson-answer-review step (Learn tab only) — see docs/superpowers/specs/2026-09-09-lesson-answer-review-design.md._
 
 # Product
 
@@ -48,7 +48,7 @@ The MVP is "done" when all A1 content and mechanics are built and functional: al
 1. **Onboarding** — learner creates a local profile (no account/sign-up in v1 — see [ADR 0004](adr/0004-local-only-v1-no-firebase-backend.md)), selects Arabic as native language, and is introduced to the app in bilingual UI.
 2. **Placement test** — learner takes a short test; MVP always confirms/assigns A1 as the starting level.
 3. **Level overview** — learner sees the A1 level broken into its 4 thematic blocks and the units within each.
-4. **Unit lesson flow** — within a unit: vocabulary (with bilingual glosses) → grammar instruction (bilingual explanation) → guided practice/drills → reading passage → listening exercise → writing task → speaking task → end-of-unit assessment.
+4. **Unit lesson flow** — within a unit: vocabulary (with bilingual glosses) → grammar instruction (bilingual explanation) → guided practice/drills → reading passage → listening exercise → writing task → speaking task → end-of-unit assessment. Reopening a lesson that's already reached its final activity (Learn tab only) shows a read-only review of the learner's latest answer to each activity first — correct/incorrect, and the correct answer where one exists — rather than dropping back into a blank replay; an explicit "Practice again" button is the only way from there into a full live replay, which still appends fresh evidence rather than overwriting history (see [DATA_MODEL.md](DATA_MODEL.md)). The Tests tab's own retake flows (Final Mission, Final Assessment, the Placement Test) are unaffected — a separate, later decision.
 5. **Progress tracking, not hard gating** — the app recommends the next unit via mastery evidence (per-CanDo-objective, tracked separately per skill — see [DATA_MODEL.md](DATA_MODEL.md)), but a learner may freely open any unit, vocabulary, grammar, review, or test screen at any time; a block completes when all its units are mastered.
 6. **Level completion** — after all 4 blocks are passed, the learner completes CEFR level A1.
 7. **Progress tracking** — learner can see their position within A1 (blocks/units completed, skills practiced) at any time.
