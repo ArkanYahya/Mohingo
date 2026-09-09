@@ -1,0 +1,382 @@
+<title>Mohingo Accent Pop</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+  :root {
+    --bg: #f7f5f2;
+    --surface: #ffffff;
+    --surface-2: #fbf9f6;
+    --text: #1c1b1f;
+    --text-muted: #6b6f76;
+    --divider: #e4e1dc;
+    --accent: #3645e2;
+    --accent-soft: #eceeff;
+    --shadow: 0 1px 2px rgba(28,27,31,0.06), 0 6px 20px rgba(28,27,31,0.06);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #15171a;
+      --surface: #1e2124;
+      --surface-2: #24272b;
+      --text: #e8e6e3;
+      --text-muted: #9aa0a6;
+      --divider: #2c2f33;
+      --accent: #7d8bff;
+      --accent-soft: #23264a;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 10px 28px rgba(0,0,0,0.35);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #15171a;
+    --surface: #1e2124;
+    --surface-2: #24272b;
+    --text: #e8e6e3;
+    --text-muted: #9aa0a6;
+    --divider: #2c2f33;
+    --accent: #7d8bff;
+    --accent-soft: #23264a;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 10px 28px rgba(0,0,0,0.35);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.5;
+  }
+
+  .wrap { max-width: 920px; margin: 0 auto; padding: 48px 24px 80px; }
+
+  .eyebrow {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 10px;
+  }
+  h1 {
+    font-size: clamp(26px, 4vw, 34px);
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+  .intro {
+    max-width: 62ch;
+    color: var(--text-muted);
+    font-size: 15.5px;
+    margin: 0 0 8px;
+  }
+  .intro strong { color: var(--text); font-weight: 600; }
+
+  .method {
+    margin-top: 20px;
+    padding: 14px 16px;
+    background: var(--surface-2);
+    border: 1px solid var(--divider);
+    border-radius: 10px;
+    font-size: 13.5px;
+    color: var(--text-muted);
+  }
+  .method b { color: var(--text); }
+  .method code {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 12.5px;
+    background: var(--surface);
+    border: 1px solid var(--divider);
+    border-radius: 4px;
+    padding: 1px 5px;
+  }
+
+  section.theme {
+    margin-top: 56px;
+    padding-top: 40px;
+    border-top: 1px solid var(--divider);
+  }
+  section.theme:first-of-type { margin-top: 44px; }
+
+  .theme-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 4px; }
+  .theme-name { font-size: 19px; font-weight: 700; letter-spacing: -0.01em; }
+  .theme-name .ar { font-weight: 500; color: var(--text-muted); font-size: 15px; margin-inline-start: 8px; }
+  .theme-desc { color: var(--text-muted); font-size: 14px; margin: 0 0 24px; max-width: 60ch; }
+
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  @media (max-width: 620px) {
+    .compare { grid-template-columns: 1fr; }
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--divider);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+  .card-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--divider);
+  }
+  .card-label .name { font-size: 12.5px; font-weight: 600; letter-spacing: 0.03em; text-transform: uppercase; color: var(--text-muted); }
+  .tag {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 20px;
+  }
+  .tag.today { background: var(--surface-2); color: var(--text-muted); border: 1px solid var(--divider); }
+  .tag.proposed { background: var(--accent-soft); color: var(--accent); }
+
+  /* --- app-mockup preview: fixed light-mode app colors, deliberately   */
+  /* NOT driven by the page's own theme tokens above -- this is a frozen */
+  /* snapshot of Mohingo's own ColorScheme output, being compared.       */
+  .mock {
+    padding: 18px 16px 16px;
+    background: #f5faf9;
+    font-family: 'Inter', sans-serif;
+  }
+  .mock .progress {
+    height: 4px;
+    border-radius: 2px;
+    background: #e2e8e7;
+    overflow: hidden;
+    margin-bottom: 14px;
+  }
+  .mock .progress i { display: block; height: 100%; width: 62%; }
+  .mock .prompt {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #1a1c1c;
+    margin: 0 0 3px;
+  }
+  .mock .prompt-ar {
+    direction: rtl;
+    font-size: 12px;
+    color: #6c7472;
+    margin: 0 0 12px;
+  }
+  .mock .chips { display: flex; flex-direction: column; gap: 7px; margin-bottom: 14px; }
+  .mock .chip {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 11px;
+    border-radius: 9px;
+    background: #eef2f1;
+    border: 1.5px solid transparent;
+    font-size: 12.5px;
+    color: #2b2f2e;
+  }
+  .mock .chip.selected {
+    background: #fff;
+    font-weight: 600;
+  }
+  .mock .chip .dot {
+    width: 15px; height: 15px; border-radius: 50%;
+    border: 1.6px solid #9aa3a1;
+    flex-shrink: 0;
+  }
+  .mock .chip.selected .dot { border-width: 4.5px; }
+  .mock .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .swatches {
+    display: flex;
+    gap: 14px;
+    padding: 12px 16px;
+    border-top: 1px solid var(--divider);
+    background: var(--surface-2);
+  }
+  .swatch { display: flex; align-items: center; gap: 7px; }
+  .swatch .chip-color { width: 14px; height: 14px; border-radius: 4px; border: 1px solid rgba(0,0,0,0.08); flex-shrink: 0; }
+  .swatch code { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--text-muted); }
+  .swatch .role { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.03em; }
+
+  footer {
+    margin-top: 56px;
+    padding-top: 28px;
+    border-top: 1px solid var(--divider);
+    color: var(--text-muted);
+    font-size: 13.5px;
+    max-width: 62ch;
+  }
+  footer b { color: var(--text); }
+</style>
+
+<div class="wrap">
+  <p class="eyebrow">Mohingo &middot; Colour theme review</p>
+  <h1>Why the app reads muted, and what a punchier accent looks like</h1>
+  <p class="intro">
+    Every colour role is generated from one seed colour via Material&nbsp;3's
+    <code>ColorScheme.fromSeed()</code>, and the seeds themselves were chosen
+    deliberately muted &mdash; calm over energetic. <strong>Below is each of the
+    3 selectable themes today</strong>, next to <strong>one proposed change</strong>:
+    keep every muted background exactly as it is, but swap
+    <code>colorScheme.primary</code> &mdash; the one role that drives buttons,
+    selected answers, progress bars and the &ldquo;correct&rdquo; state &mdash;
+    for a flat, saturated brand tone.
+  </p>
+  <div class="method">
+    <b>How these were chosen, not just picked by eye:</b> each proposed colour was
+    swept across lightness at full saturation and checked against WCAG 2.1 contrast
+    with its on-colour &mdash; the same 4.5:1 floor <code>docs/UX_PRINCIPLES.md</code>
+    already holds <code>streakAccent</code> to. Everything shown here clears it.
+  </div>
+
+  <section class="theme">
+    <div class="theme-head">
+      <div class="theme-name">Calm Teal <span class="ar">أزرق مخضر هادئ</span></div>
+    </div>
+    <p class="theme-desc">Default theme. Today's primary is a fully-saturated but very dark teal &mdash; accessible, but reads closer to ink than to an accent.</p>
+    <div class="compare">
+      <div class="card">
+        <div class="card-label"><span class="name">Today</span><span class="tag today">#006972</span></div>
+        <div class="mock">
+          <div class="progress"><i style="background:#006972"></i></div>
+          <p class="prompt">Introduce Sara as your friend.</p>
+          <p class="prompt-ar">قدّم سارة كصديقتك.</p>
+          <div class="chips">
+            <div class="chip selected" style="border-color:#006972;color:#004f56"><span class="dot" style="border-color:#006972"></span>This is Sara. She's my friend.</div>
+            <div class="chip"><span class="dot"></span>Sara is my teacher.</div>
+          </div>
+          <div class="btn" style="background:#006972;color:#ffffff">Check</div>
+        </div>
+        <div class="swatches">
+          <div class="swatch"><span class="chip-color" style="background:#006972"></span><div><div class="role">primary</div><code>#006972</code></div></div>
+          <div class="swatch"><span class="chip-color" style="background:#ffffff;border-color:#ccc"></span><div><div class="role">on-primary</div><code>#FFFFFF</code></div></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-label"><span class="name">Proposed</span><span class="tag proposed">#00CBE5</span></div>
+        <div class="mock">
+          <div class="progress"><i style="background:#00CBE5"></i></div>
+          <p class="prompt">Introduce Sara as your friend.</p>
+          <p class="prompt-ar">قدّم سارة كصديقتك.</p>
+          <div class="chips">
+            <div class="chip selected" style="border-color:#00CBE5;color:#00363c"><span class="dot" style="border-color:#00CBE5"></span>This is Sara. She's my friend.</div>
+            <div class="chip"><span class="dot"></span>Sara is my teacher.</div>
+          </div>
+          <div class="btn" style="background:#00CBE5;color:#00363c">Check</div>
+        </div>
+        <div class="swatches">
+          <div class="swatch"><span class="chip-color" style="background:#00CBE5"></span><div><div class="role">primary</div><code>#00CBE5</code></div></div>
+          <div class="swatch"><span class="chip-color" style="background:#00363c"></span><div><div class="role">on-primary</div><code>#00363C</code></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="theme">
+    <div class="theme-head">
+      <div class="theme-name">Slate Indigo <span class="ar">نيلي رمادي</span></div>
+    </div>
+    <p class="theme-desc">Today's primary is a soft, grey-leaning blue. The proposed tone is the same hue pushed to full saturation &mdash; closer to Telegram's blue &mdash; and white text stays comfortably accessible on it.</p>
+    <div class="compare">
+      <div class="card">
+        <div class="card-label"><span class="name">Today</span><span class="tag today">#4F5B92</span></div>
+        <div class="mock">
+          <div class="progress"><i style="background:#4F5B92"></i></div>
+          <p class="prompt">Introduce Sara as your friend.</p>
+          <p class="prompt-ar">قدّم سارة كصديقتك.</p>
+          <div class="chips">
+            <div class="chip selected" style="border-color:#4F5B92;color:#374379"><span class="dot" style="border-color:#4F5B92"></span>This is Sara. She's my friend.</div>
+            <div class="chip"><span class="dot"></span>Sara is my teacher.</div>
+          </div>
+          <div class="btn" style="background:#4F5B92;color:#ffffff">Check</div>
+        </div>
+        <div class="swatches">
+          <div class="swatch"><span class="chip-color" style="background:#4F5B92"></span><div><div class="role">primary</div><code>#4F5B92</code></div></div>
+          <div class="swatch"><span class="chip-color" style="background:#ffffff;border-color:#ccc"></span><div><div class="role">on-primary</div><code>#FFFFFF</code></div></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-label"><span class="name">Proposed</span><span class="tag proposed">#3645E2</span></div>
+        <div class="mock">
+          <div class="progress"><i style="background:#3645E2"></i></div>
+          <p class="prompt">Introduce Sara as your friend.</p>
+          <p class="prompt-ar">قدّم سارة كصديقتك.</p>
+          <div class="chips">
+            <div class="chip selected" style="border-color:#3645E2;color:#2531b0"><span class="dot" style="border-color:#3645E2"></span>This is Sara. She's my friend.</div>
+            <div class="chip"><span class="dot"></span>Sara is my teacher.</div>
+          </div>
+          <div class="btn" style="background:#3645E2;color:#ffffff">Check</div>
+        </div>
+        <div class="swatches">
+          <div class="swatch"><span class="chip-color" style="background:#3645E2"></span><div><div class="role">primary</div><code>#3645E2</code></div></div>
+          <div class="swatch"><span class="chip-color" style="background:#ffffff;border-color:#ccc"></span><div><div class="role">on-primary</div><code>#FFFFFF</code></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="theme">
+    <div class="theme-head">
+      <div class="theme-name">Warm Terracotta <span class="ar">طيني دافئ</span></div>
+    </div>
+    <p class="theme-desc">Today's primary is a muted clay brown. The proposed tone keeps the same warm hue but pushes it to a bright, saturated orange-terracotta.</p>
+    <div class="compare">
+      <div class="card">
+        <div class="card-label"><span class="name">Today</span><span class="tag today">#8E4D2E</span></div>
+        <div class="mock">
+          <div class="progress"><i style="background:#8E4D2E"></i></div>
+          <p class="prompt">Introduce Sara as your friend.</p>
+          <p class="prompt-ar">قدّم سارة كصديقتك.</p>
+          <div class="chips">
+            <div class="chip selected" style="border-color:#8E4D2E;color:#713619"><span class="dot" style="border-color:#8E4D2E"></span>This is Sara. She's my friend.</div>
+            <div class="chip"><span class="dot"></span>Sara is my teacher.</div>
+          </div>
+          <div class="btn" style="background:#8E4D2E;color:#ffffff">Check</div>
+        </div>
+        <div class="swatches">
+          <div class="swatch"><span class="chip-color" style="background:#8E4D2E"></span><div><div class="role">primary</div><code>#8E4D2E</code></div></div>
+          <div class="swatch"><span class="chip-color" style="background:#ffffff;border-color:#ccc"></span><div><div class="role">on-primary</div><code>#FFFFFF</code></div></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-label"><span class="name">Proposed</span><span class="tag proposed">#C74605</span></div>
+        <div class="mock">
+          <div class="progress"><i style="background:#C74605"></i></div>
+          <p class="prompt">Introduce Sara as your friend.</p>
+          <p class="prompt-ar">قدّم سارة كصديقتك.</p>
+          <div class="chips">
+            <div class="chip selected" style="border-color:#C74605;color:#953404"><span class="dot" style="border-color:#C74605"></span>This is Sara. She's my friend.</div>
+            <div class="chip"><span class="dot"></span>Sara is my teacher.</div>
+          </div>
+          <div class="btn" style="background:#C74605;color:#ffffff">Check</div>
+        </div>
+        <div class="swatches">
+          <div class="swatch"><span class="chip-color" style="background:#C74605"></span><div><div class="role">primary</div><code>#C74605</code></div></div>
+          <div class="swatch"><span class="chip-color" style="background:#ffffff;border-color:#ccc"></span><div><div class="role">on-primary</div><code>#FFFFFF</code></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <b>What doesn't change:</b> backgrounds, cards, secondary/tertiary roles, error red,
+    and the streak accent all stay exactly as they are &mdash; this only touches the one
+    role behind buttons, selected answers, progress fills and the &ldquo;correct&rdquo;
+    state. Dark mode gets the same treatment (each theme's own M3-generated dark
+    <code>primary</code>/<code>onPrimary</code> swapped the same way).
+    <br><br>
+    Reply with which theme(s) you want shipped &mdash; all three, just the default,
+    or a mix &mdash; and it's a small, contained change to
+    <code>lib/core/theme/app_theme.dart</code> and <code>color_seed.dart</code>.
+  </footer>
+</div>
