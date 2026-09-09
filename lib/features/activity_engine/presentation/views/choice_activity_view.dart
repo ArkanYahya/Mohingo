@@ -93,8 +93,12 @@ class _ChoiceActivityViewState extends State<ChoiceActivityView> {
 
   String? _decodeSelection(String? rawAnswer) {
     if (rawAnswer == null) return null;
-    final decoded = jsonDecode(rawAnswer);
-    return decoded is String ? decoded : null;
+    try {
+      final decoded = jsonDecode(rawAnswer);
+      return decoded is String ? decoded : null;
+    } on FormatException {
+      return null;
+    }
   }
 
   void _submit() {
