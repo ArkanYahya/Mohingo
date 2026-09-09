@@ -161,8 +161,12 @@ class _ChoiceActivityViewState extends State<ChoiceActivityView> {
 
   String? _decodeSelection(String? rawAnswer) {
     if (rawAnswer == null) return null;
-    final decoded = jsonDecode(rawAnswer);
-    return decoded is String ? decoded : null;
+    try {
+      final decoded = jsonDecode(rawAnswer);
+      return decoded is String ? decoded : null;
+    } on FormatException {
+      return null;
+    }
   }
 
   void _submit() {
@@ -302,8 +306,12 @@ class _GapActivityViewState extends State<GapActivityView> {
 
   String? _decodeSelection(String? rawAnswer) {
     if (rawAnswer == null) return null;
-    final decoded = jsonDecode(rawAnswer);
-    return decoded is String ? decoded : null;
+    try {
+      final decoded = jsonDecode(rawAnswer);
+      return decoded is String ? decoded : null;
+    } on FormatException {
+      return null;
+    }
   }
 
   void _submit() {
@@ -450,8 +458,17 @@ class _MatchActivityViewState extends State<MatchActivityView> {
 
   Map<String, String>? _decodeMatches(String? rawAnswer) {
     if (rawAnswer == null) return null;
-    final decoded = jsonDecode(rawAnswer);
-    return decoded is Map ? Map<String, String>.from(decoded) : null;
+    try {
+      final decoded = jsonDecode(rawAnswer);
+      return decoded is Map ? Map<String, String>.from(decoded) : null;
+    } catch (_) {
+      // Catches both malformed JSON (FormatException) and a syntactically
+      // valid JSON value in the wrong shape, e.g. a Map with non-String
+      // values (TypeError from the cast above) — either way, a corrupted
+      // or legacy row degrades to "no prior selection" rather than
+      // crashing initState().
+      return null;
+    }
   }
 
   bool get _isComplete => _userMatches.length == widget.activity.pairs.length;
@@ -595,8 +612,17 @@ class _OrderActivityViewState extends State<OrderActivityView> {
 
   List<String>? _decodeOrder(String? rawAnswer) {
     if (rawAnswer == null) return null;
-    final decoded = jsonDecode(rawAnswer);
-    return decoded is List ? List<String>.from(decoded) : null;
+    try {
+      final decoded = jsonDecode(rawAnswer);
+      return decoded is List ? List<String>.from(decoded) : null;
+    } catch (_) {
+      // Catches both malformed JSON (FormatException) and a syntactically
+      // valid JSON value in the wrong shape, e.g. a List with non-String
+      // elements (TypeError from the cast above) — either way, a corrupted
+      // or legacy row degrades to "nothing placed" rather than crashing
+      // initState().
+      return null;
+    }
   }
 
   List<String> get _remaining {
@@ -740,8 +766,17 @@ class _FormActivityViewState extends State<FormActivityView> {
 
   Map<String, String>? _decodeAnswers(String? rawAnswer) {
     if (rawAnswer == null) return null;
-    final decoded = jsonDecode(rawAnswer);
-    return decoded is Map ? Map<String, String>.from(decoded) : null;
+    try {
+      final decoded = jsonDecode(rawAnswer);
+      return decoded is Map ? Map<String, String>.from(decoded) : null;
+    } catch (_) {
+      // Catches both malformed JSON (FormatException) and a syntactically
+      // valid JSON value in the wrong shape, e.g. a Map with non-String
+      // values (TypeError from the cast above) — either way, a corrupted
+      // or legacy row degrades to "no saved values" rather than crashing
+      // initState().
+      return null;
+    }
   }
 
   bool get _allFilled =>
@@ -889,8 +924,12 @@ Add `initState` and a decode helper to `_WriteActivityViewState`, right after th
 
   String? _decodeText(String? rawAnswer) {
     if (rawAnswer == null) return null;
-    final decoded = jsonDecode(rawAnswer);
-    return decoded is String ? decoded : null;
+    try {
+      final decoded = jsonDecode(rawAnswer);
+      return decoded is String ? decoded : null;
+    } on FormatException {
+      return null;
+    }
   }
 
   void _submit() {
@@ -1046,8 +1085,12 @@ Replace the existing `initState` override in `_SpeakActivityViewState`:
 
   String? _decodeText(String? rawAnswer) {
     if (rawAnswer == null) return null;
-    final decoded = jsonDecode(rawAnswer);
-    return decoded is String ? decoded : null;
+    try {
+      final decoded = jsonDecode(rawAnswer);
+      return decoded is String ? decoded : null;
+    } on FormatException {
+      return null;
+    }
   }
 ```
 
