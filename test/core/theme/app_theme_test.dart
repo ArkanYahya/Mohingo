@@ -12,8 +12,26 @@ void main() {
       expect(theme.colorScheme.onPrimary, AppColorSeed.calmTeal.onBrandPrimary);
     });
 
+    test("overrides primaryContainer/onPrimaryContainer with the seed's own "
+        "punchier tint too — the algorithm's pale, near-pastel container read "
+        'as a mismatched, muted surface right next to the now-vivid primary '
+        '(the reported "some are vivid and some are mute" follow-up: the '
+        '"Correct!" banner and the Home "Continue learning" card both use '
+        'this role)', () {
+      final theme = AppTheme.light(AppColorSeed.calmTeal);
+      expect(
+        theme.colorScheme.primaryContainer,
+        AppColorSeed.calmTeal.brandPrimaryContainer,
+      );
+      expect(
+        theme.colorScheme.onPrimaryContainer,
+        AppColorSeed.calmTeal.onBrandPrimaryContainer,
+      );
+    });
+
     test('leaves every other role exactly as ColorScheme.fromSeed derives it — '
-        'only primary/onPrimary are hand-picked', () {
+        'only primary/onPrimary/primaryContainer/onPrimaryContainer are '
+        'hand-picked', () {
       final generated = ColorScheme.fromSeed(
         seedColor: AppColorSeed.calmTeal.seedColor,
         brightness: Brightness.light,
@@ -21,11 +39,6 @@ void main() {
       final theme = AppTheme.light(AppColorSeed.calmTeal);
       expect(theme.colorScheme.surface, generated.surface);
       expect(theme.colorScheme.surfaceContainer, generated.surfaceContainer);
-      expect(theme.colorScheme.primaryContainer, generated.primaryContainer);
-      expect(
-        theme.colorScheme.onPrimaryContainer,
-        generated.onPrimaryContainer,
-      );
       expect(theme.colorScheme.secondary, generated.secondary);
       expect(theme.colorScheme.tertiary, generated.tertiary);
       expect(theme.colorScheme.error, generated.error);
@@ -38,6 +51,16 @@ void main() {
         expect(
           theme.colorScheme.onPrimary,
           seed.onBrandPrimary,
+          reason: seed.name,
+        );
+        expect(
+          theme.colorScheme.primaryContainer,
+          seed.brandPrimaryContainer,
+          reason: seed.name,
+        );
+        expect(
+          theme.colorScheme.onPrimaryContainer,
+          seed.onBrandPrimaryContainer,
           reason: seed.name,
         );
       }
@@ -60,6 +83,16 @@ void main() {
         expect(
           theme.colorScheme.onPrimary,
           generated.onPrimary,
+          reason: seed.name,
+        );
+        expect(
+          theme.colorScheme.primaryContainer,
+          generated.primaryContainer,
+          reason: seed.name,
+        );
+        expect(
+          theme.colorScheme.onPrimaryContainer,
+          generated.onPrimaryContainer,
           reason: seed.name,
         );
       }

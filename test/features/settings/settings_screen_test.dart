@@ -7,6 +7,7 @@ import 'package:mohingo/core/l10n/generated/app_localizations.dart';
 import 'package:mohingo/core/l10n/locale_preference_provider.dart';
 import 'package:mohingo/core/preferences/shared_preferences_provider.dart';
 import 'package:mohingo/core/theme/app_theme.dart';
+import 'package:mohingo/core/theme/color_seed.dart';
 import 'package:mohingo/core/theme/theme_preferences_provider.dart';
 import 'package:mohingo/data/local/database.dart';
 import 'package:mohingo/data/local/database_provider.dart';
@@ -119,6 +120,45 @@ void main() {
       findsOneWidget,
     );
   });
+
+  testWidgets(
+    'the colour-theme picker swatches preview the actual flat brand accent '
+    'the app applies (AppColorSeed.brandPrimary), not the muted raw seed — '
+    'otherwise the picker no longer shows what selecting that theme '
+    'produces',
+    (tester) async {
+      _useTallViewport(tester);
+      final (db, prefs) = await _setupBacking();
+
+      await tester.pumpWidget(
+        ProviderScope(
+          overrides: _baseOverrides(prefs, db),
+          child: MaterialApp(
+            supportedLocales: AppLocalizations.supportedLocales,
+            localizationsDelegates: AppLocalizations.localizationsDelegates,
+            home: const SettingsScreen(),
+          ),
+        ),
+      );
+      await tester.pumpAndSettle();
+
+      final swatches = tester
+          .widgetList<CircleAvatar>(find.byType(CircleAvatar))
+          .map((c) => c.backgroundColor)
+          .toSet();
+      expect(
+        swatches,
+        containsAll(AppColorSeed.values.map((s) => s.brandPrimary)),
+      );
+      expect(
+        swatches.intersection(
+          AppColorSeed.values.map((s) => s.seedColor).toSet(),
+        ),
+        isEmpty,
+        reason: 'the raw, muted seed colour must not leak into the picker',
+      );
+    },
+  );
 
   testWidgets('switching interface language via Settings actually changes '
       'the app locale', (tester) async {

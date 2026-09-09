@@ -170,7 +170,10 @@ class _ColorThemePicker extends ConsumerWidget {
                     ref.read(colorSeedPreferenceProvider.notifier).set(seed),
                 child: CircleAvatar(
                   radius: 20,
-                  backgroundColor: seed.seedColor,
+                  // The seed's *applied* accent, not the raw seed — see
+                  // AppColorSeed.brandPrimary's doc comment. The picker must
+                  // preview what selecting this theme actually produces.
+                  backgroundColor: seed.brandPrimary,
                   child: seed == selected
                       ? const Icon(Icons.check, color: Colors.white)
                       : null,

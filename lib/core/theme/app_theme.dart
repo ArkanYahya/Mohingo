@@ -18,16 +18,20 @@ abstract final class AppTheme {
       seedColor: seed.seedColor,
       brightness: brightness,
     );
-    // Every role but primary/onPrimary stays exactly as Material 3's
-    // tonal-palette algorithm derives it — calm surfaces, secondary/
-    // tertiary accents, error red are untouched. Only light-mode primary
-    // (the one role behind buttons, selected answers, progress fills, and
-    // the "correct" state — see docs/DESIGN_SYSTEM.md) is swapped for
-    // [AppColorSeed.brandPrimary]; see that field's doc comment for why.
+    // Every role but primary/onPrimary/primaryContainer/onPrimaryContainer
+    // stays exactly as Material 3's tonal-palette algorithm derives it —
+    // calm surfaces, secondary/tertiary accents, error red are untouched.
+    // Only light-mode primary and its container (the roles behind buttons,
+    // selected answers, progress fills, the "correct" state, and the
+    // "Correct!"/"Continue learning" containers — see docs/DESIGN_SYSTEM.md)
+    // are swapped for [AppColorSeed.brandPrimary]/[brandPrimaryContainer];
+    // see those fields' doc comments for why.
     final colorScheme = brightness == Brightness.light
         ? generated.copyWith(
             primary: seed.brandPrimary,
             onPrimary: seed.onBrandPrimary,
+            primaryContainer: seed.brandPrimaryContainer,
+            onPrimaryContainer: seed.onBrandPrimaryContainer,
           )
         : generated;
     return ThemeData(

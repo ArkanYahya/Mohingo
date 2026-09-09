@@ -5,8 +5,9 @@ import 'package:flutter/material.dart';
 /// Material 3's `ColorScheme.fromSeed` derives the full light/dark role set
 /// from one seed colour per theme, so adding a "colour theme" choice is a
 /// matter of adding an entry here, not hand-maintaining a full palette. The
-/// one exception is [brandPrimary]/[onBrandPrimary] — see their doc comment.
-/// See docs/DESIGN_SYSTEM.md.
+/// exceptions are [brandPrimary]/[onBrandPrimary]/[brandPrimaryContainer]/
+/// [onBrandPrimaryContainer] — see their doc comments. See
+/// docs/DESIGN_SYSTEM.md.
 enum AppColorSeed {
   calmTeal(
     seedColor: Color(0xFF2A6F77),
@@ -14,6 +15,8 @@ enum AppColorSeed {
     labelAr: 'أزرق مخضر هادئ',
     brandPrimary: Color(0xFF00CBE5),
     onBrandPrimary: Color(0xFF00363C),
+    brandPrimaryContainer: Color(0xFF3DE8FF),
+    onBrandPrimaryContainer: Color(0xFF00363C),
   ),
   slateIndigo(
     seedColor: Color(0xFF3F4A7A),
@@ -21,6 +24,8 @@ enum AppColorSeed {
     labelAr: 'نيلي رمادي',
     brandPrimary: Color(0xFF3645E2),
     onBrandPrimary: Color(0xFFFFFFFF),
+    brandPrimaryContainer: Color(0xFF9DA4F1),
+    onBrandPrimaryContainer: Color(0xFF1F2C61),
   ),
   warmTerracotta(
     seedColor: Color(0xFF8A5238),
@@ -28,6 +33,8 @@ enum AppColorSeed {
     labelAr: 'طيني دافئ',
     brandPrimary: Color(0xFFC74605),
     onBrandPrimary: Color(0xFFFFFFFF),
+    brandPrimaryContainer: Color(0xFFFBA174),
+    onBrandPrimaryContainer: Color(0xFF542105),
   );
 
   const AppColorSeed({
@@ -36,6 +43,8 @@ enum AppColorSeed {
     required this.labelAr,
     required this.brandPrimary,
     required this.onBrandPrimary,
+    required this.brandPrimaryContainer,
+    required this.onBrandPrimaryContainer,
   });
 
   final Color seedColor;
@@ -59,4 +68,18 @@ enum AppColorSeed {
   /// [calmTeal]'s (a vivid cyan) — mirroring exactly why
   /// `GamificationTheme.onStreakAccent` isn't always white either.
   final Color onBrandPrimary;
+
+  /// Replaces `ColorScheme.fromSeed`'s own light-mode `primaryContainer` —
+  /// that algorithm's container tone is a pale, near-pastel tint (e.g.
+  /// `#9DF0FB` for [calmTeal]), which read as a mismatched, washed-out
+  /// surface once [brandPrimary] made the *solid* `primary` role vivid (the
+  /// "Correct!" feedback banner and Home's "Continue learning" card both
+  /// use this role, right next to solid-`primary` buttons/chips). Still
+  /// clearly a lighter tint than [brandPrimary] — just not desaturated all
+  /// the way to pastel. Same hue family, same AA-with-[onBrandPrimaryContainer]
+  /// verification as [brandPrimary].
+  final Color brandPrimaryContainer;
+
+  /// Foreground colour for content drawn on [brandPrimaryContainer].
+  final Color onBrandPrimaryContainer;
 }
