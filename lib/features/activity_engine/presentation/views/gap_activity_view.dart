@@ -2,15 +2,18 @@ import 'dart:convert';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../content/models/activity.dart';
 import '../../../../data/local/database.dart' show ActivityAttempt;
 import '../../domain/activity_submission.dart';
+import '../../domain/sound_effects_service.dart';
+import '../../providers/sound_effects_providers.dart';
 import '../activity_chrome.dart';
 
 /// Renders a `gap` activity: a sentence with a `___` blank, filled by
 /// picking one of [GapActivity.options].
-class GapActivityView extends StatefulWidget {
+class GapActivityView extends ConsumerStatefulWidget {
   GapActivityView({
     required this.activity,
     required this.onSubmitted,
@@ -36,10 +39,10 @@ class GapActivityView extends StatefulWidget {
   final Random _random;
 
   @override
-  State<GapActivityView> createState() => _GapActivityViewState();
+  ConsumerState<GapActivityView> createState() => _GapActivityViewState();
 }
 
-class _GapActivityViewState extends State<GapActivityView> {
+class _GapActivityViewState extends ConsumerState<GapActivityView> {
   String? _selected;
   ActivitySubmission? _submission;
 
@@ -98,6 +101,12 @@ class _GapActivityViewState extends State<GapActivityView> {
     );
     setState(() => _submission = submission);
     widget.onSubmitted(submission);
+    playFeedbackSoundSafely(
+      ref.read(soundEffectsServiceProvider),
+      isCorrect
+          ? ActivityFeedbackSound.correct
+          : ActivityFeedbackSound.incorrect,
+    );
   }
 
   @override

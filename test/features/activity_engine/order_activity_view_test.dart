@@ -6,8 +6,11 @@ import 'package:mohingo/content/models/activity.dart';
 import 'package:mohingo/content/models/domain_definitions.dart';
 import 'package:mohingo/data/local/database.dart' show ActivityAttempt;
 import 'package:mohingo/features/activity_engine/domain/activity_submission.dart';
+import 'package:mohingo/features/activity_engine/domain/sound_effects_service.dart';
 import 'package:mohingo/features/activity_engine/presentation/views/order_activity_view.dart';
+import 'package:mohingo/features/activity_engine/providers/sound_effects_providers.dart';
 
+import 'fake_sound_effects_service.dart';
 import 'test_harness.dart';
 
 OrderActivity _orderActivity() {
@@ -57,6 +60,22 @@ void main() {
       expect(find.byType(FilledButton), findsNothing);
     },
   );
+
+  testWidgets('plays the correct sound when the last token completes a '
+      'correct order', (tester) async {
+    final fakeSound = FakeSoundEffectsService();
+    await tester.pumpActivityView(
+      OrderActivityView(activity: _orderActivity(), onSubmitted: (_) {}),
+      overrides: [soundEffectsServiceProvider.overrideWithValue(fakeSound)],
+    );
+
+    for (final token in ['This', 'is', 'my', 'mother']) {
+      await tester.tap(find.text(token));
+      await tester.pump();
+    }
+
+    expect(fakeSound.played, [ActivityFeedbackSound.correct]);
+  });
 
   testWidgets(
     'placing the last token in the wrong order submits immediately and '

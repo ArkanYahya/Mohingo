@@ -10,10 +10,13 @@ import 'package:mohingo/core/l10n/generated/app_localizations.dart';
 import 'package:mohingo/core/media/scene_diagram.dart';
 import 'package:mohingo/data/local/database.dart' show ActivityAttempt;
 import 'package:mohingo/features/activity_engine/domain/activity_submission.dart';
+import 'package:mohingo/features/activity_engine/domain/sound_effects_service.dart';
 import 'package:mohingo/features/activity_engine/presentation/views/choice_activity_view.dart';
+import 'package:mohingo/features/activity_engine/providers/sound_effects_providers.dart';
 import 'package:mohingo/features/speech/domain/text_to_speech_service.dart';
 
 import '../speech/fake_speech_services.dart';
+import 'fake_sound_effects_service.dart';
 import 'test_harness.dart';
 
 AudioChoiceActivity _audioChoice({bool mediaOptions = false}) {
@@ -280,6 +283,72 @@ void main() {
       );
     },
   );
+
+  testWidgets('plays the correct sound when submitting the right answer', (
+    tester,
+  ) async {
+    final fakeSound = FakeSoundEffectsService();
+    await tester.pumpActivityView(
+      ChoiceActivityView.audioChoice(
+        activity: _audioChoice(),
+        onSubmitted: (_) {},
+      ),
+      overrides: [soundEffectsServiceProvider.overrideWithValue(fakeSound)],
+    );
+
+    await tester.tap(find.text('Omar'));
+    await tester.pump();
+
+    expect(fakeSound.played, [ActivityFeedbackSound.correct]);
+  });
+
+  testWidgets('plays the incorrect sound when submitting the wrong answer', (
+    tester,
+  ) async {
+    final fakeSound = FakeSoundEffectsService();
+    await tester.pumpActivityView(
+      ChoiceActivityView.audioChoice(
+        activity: _audioChoice(),
+        onSubmitted: (_) {},
+      ),
+      overrides: [soundEffectsServiceProvider.overrideWithValue(fakeSound)],
+    );
+
+    await tester.tap(find.text('Maya'));
+    await tester.pump();
+
+    expect(fakeSound.played, [ActivityFeedbackSound.incorrect]);
+  });
+
+  testWidgets('review mode never plays a sound — nothing was just submitted', (
+    tester,
+  ) async {
+    final fakeSound = FakeSoundEffectsService();
+    await tester.pumpActivityView(
+      ChoiceActivityView.audioChoice(
+        activity: _audioChoice(),
+        onSubmitted: (_) {},
+        reviewAttempt: ActivityAttempt(
+          id: 1,
+          uuid: 'attempt-1',
+          learnerId: 1,
+          activityId: 'A1-U1-L1-A01',
+          sessionType: 'lesson',
+          mode: 'mastery',
+          evidenceSkill: 'listening',
+          rawAnswer: jsonEncode('Omar'),
+          isCorrect: true,
+          score: 1.0,
+          wasFallback: false,
+          attemptedAt: DateTime.utc(2026, 9, 9),
+          updatedAt: DateTime.utc(2026, 9, 9),
+        ),
+      ),
+      overrides: [soundEffectsServiceProvider.overrideWithValue(fakeSound)],
+    );
+
+    expect(fakeSound.played, isEmpty);
+  });
 
   testWidgets('selecting the wrong option submits immediately and reveals the '
       'correct answer for this activity', (tester) async {

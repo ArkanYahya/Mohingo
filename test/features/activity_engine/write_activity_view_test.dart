@@ -11,10 +11,13 @@ import 'package:mohingo/core/l10n/generated/app_localizations.dart';
 import 'package:mohingo/data/local/database.dart';
 import 'package:mohingo/data/local/database_provider.dart';
 import 'package:mohingo/features/activity_engine/domain/activity_submission.dart';
+import 'package:mohingo/features/activity_engine/domain/sound_effects_service.dart';
 import 'package:mohingo/content/models/evaluation_spec.dart';
 import 'package:mohingo/features/activity_engine/providers/online_refinement_providers.dart';
+import 'package:mohingo/features/activity_engine/providers/sound_effects_providers.dart';
 import 'package:mohingo/features/activity_engine/presentation/views/write_activity_view.dart';
 
+import 'fake_sound_effects_service.dart';
 import 'test_harness.dart';
 
 WriteActivity _openEndedWrite() {
@@ -100,6 +103,50 @@ void main() {
       expect(reported?.correctness, ActivityCorrectness.correct);
     },
   );
+
+  testWidgets(
+    'plays the correct sound when a closed-form answer grades correct, and '
+    'no sound at all for a notAutoGraded (open-ended) submission',
+    (tester) async {
+      final fakeSound = FakeSoundEffectsService();
+      await tester.pumpActivityView(
+        WriteActivityView(
+          activity: _closedFormWrite(),
+          learnerId: 1,
+          onSubmitted: (_) {},
+        ),
+        overrides: [soundEffectsServiceProvider.overrideWithValue(fakeSound)],
+      );
+
+      await tester.enterText(find.byType(TextField), 'One coffee, please.');
+      await tester.pump();
+      await tester.tap(find.byType(FilledButton));
+      await tester.pump();
+
+      expect(fakeSound.played, [ActivityFeedbackSound.correct]);
+    },
+  );
+
+  testWidgets('an open-ended (notAutoGraded) submission never plays a sound', (
+    tester,
+  ) async {
+    final fakeSound = FakeSoundEffectsService();
+    await tester.pumpActivityView(
+      WriteActivityView(
+        activity: _openEndedWrite(),
+        learnerId: 1,
+        onSubmitted: (_) {},
+      ),
+      overrides: [soundEffectsServiceProvider.overrideWithValue(fakeSound)],
+    );
+
+    await tester.enterText(find.byType(TextField), 'This is my sister.');
+    await tester.pump();
+    await tester.tap(find.byType(FilledButton));
+    await tester.pump();
+
+    expect(fakeSound.played, isEmpty);
+  });
 
   testWidgets(
     'an activity with a structured evaluation spec (no accepted list) is '

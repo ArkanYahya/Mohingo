@@ -1,14 +1,17 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../content/models/activity.dart';
 import '../../../../data/local/database.dart' show ActivityAttempt;
 import '../../domain/activity_submission.dart';
+import '../../domain/sound_effects_service.dart';
+import '../../providers/sound_effects_providers.dart';
 import '../activity_chrome.dart';
 
 /// Renders an `order` activity: tap tokens in order to build the sentence.
-class OrderActivityView extends StatefulWidget {
+class OrderActivityView extends ConsumerStatefulWidget {
   const OrderActivityView({
     required this.activity,
     required this.onSubmitted,
@@ -27,10 +30,10 @@ class OrderActivityView extends StatefulWidget {
   final ActivityAttempt? reviewAttempt;
 
   @override
-  State<OrderActivityView> createState() => _OrderActivityViewState();
+  ConsumerState<OrderActivityView> createState() => _OrderActivityViewState();
 }
 
-class _OrderActivityViewState extends State<OrderActivityView> {
+class _OrderActivityViewState extends ConsumerState<OrderActivityView> {
   final List<String> _placed = [];
   ActivitySubmission? _submission;
 
@@ -98,6 +101,12 @@ class _OrderActivityViewState extends State<OrderActivityView> {
     );
     setState(() => _submission = submission);
     widget.onSubmitted(submission);
+    playFeedbackSoundSafely(
+      ref.read(soundEffectsServiceProvider),
+      isCorrect
+          ? ActivityFeedbackSound.correct
+          : ActivityFeedbackSound.incorrect,
+    );
   }
 
   @override

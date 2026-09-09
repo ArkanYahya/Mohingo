@@ -14,6 +14,8 @@ import '../../../speech/domain/text_to_speech_service.dart';
 import '../../../speech/presentation/listen_button.dart';
 import '../../../speech/providers/speech_providers.dart';
 import '../../domain/activity_submission.dart';
+import '../../domain/sound_effects_service.dart';
+import '../../providers/sound_effects_providers.dart';
 import '../activity_chrome.dart';
 
 /// Renders `audioChoice` and `textChoice` activities — a prompt plus a
@@ -26,7 +28,7 @@ import '../activity_chrome.dart';
 /// real A1-U2 data — picture-choice items), each option string is a
 /// [MediaSpecification] key, not display text, and is rendered via
 /// [SceneDiagram] instead of a text button.
-class ChoiceActivityView extends StatefulWidget {
+class ChoiceActivityView extends ConsumerStatefulWidget {
   ChoiceActivityView.audioChoice({
     required AudioChoiceActivity activity,
     required this.onSubmitted,
@@ -81,10 +83,10 @@ class ChoiceActivityView extends StatefulWidget {
   final ActivityAttempt? reviewAttempt;
 
   @override
-  State<ChoiceActivityView> createState() => _ChoiceActivityViewState();
+  ConsumerState<ChoiceActivityView> createState() => _ChoiceActivityViewState();
 }
 
-class _ChoiceActivityViewState extends State<ChoiceActivityView> {
+class _ChoiceActivityViewState extends ConsumerState<ChoiceActivityView> {
   String? _selected;
   ActivitySubmission? _submission;
 
@@ -144,6 +146,12 @@ class _ChoiceActivityViewState extends State<ChoiceActivityView> {
     );
     setState(() => _submission = submission);
     widget.onSubmitted(submission);
+    playFeedbackSoundSafely(
+      ref.read(soundEffectsServiceProvider),
+      isCorrect
+          ? ActivityFeedbackSound.correct
+          : ActivityFeedbackSound.incorrect,
+    );
   }
 
   @override

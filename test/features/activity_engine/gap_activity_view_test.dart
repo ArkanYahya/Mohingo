@@ -7,8 +7,11 @@ import 'package:mohingo/content/models/activity.dart';
 import 'package:mohingo/content/models/domain_definitions.dart';
 import 'package:mohingo/data/local/database.dart' show ActivityAttempt;
 import 'package:mohingo/features/activity_engine/domain/activity_submission.dart';
+import 'package:mohingo/features/activity_engine/domain/sound_effects_service.dart';
 import 'package:mohingo/features/activity_engine/presentation/views/gap_activity_view.dart';
+import 'package:mohingo/features/activity_engine/providers/sound_effects_providers.dart';
 
+import 'fake_sound_effects_service.dart';
 import 'test_harness.dart';
 
 GapActivity _gapActivity() {
@@ -70,6 +73,20 @@ void main() {
       expect(find.byType(FilledButton), findsNothing);
     },
   );
+
+  testWidgets('plays the correct/incorrect sound on submit, never in review '
+      'mode', (tester) async {
+    final fakeSound = FakeSoundEffectsService();
+    await tester.pumpActivityView(
+      GapActivityView(activity: _gapActivity(), onSubmitted: (_) {}),
+      overrides: [soundEffectsServiceProvider.overrideWithValue(fakeSound)],
+    );
+
+    await tester.tap(find.widgetWithText(ChoiceChip, 'have')); // wrong
+    await tester.pump();
+
+    expect(fakeSound.played, [ActivityFeedbackSound.incorrect]);
+  });
 
   testWidgets(
     'renders options in a shuffled order, not the bundle\'s raw JSON order',

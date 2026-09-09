@@ -11,7 +11,9 @@ import '../../domain/activity_submission.dart';
 import '../../domain/answer_matching.dart';
 import '../../domain/evaluation/evaluation_context.dart';
 import '../../domain/evaluation/evaluator.dart';
+import '../../domain/sound_effects_service.dart';
 import '../../providers/online_refinement_providers.dart';
+import '../../providers/sound_effects_providers.dart';
 import '../activity_chrome.dart';
 
 /// Renders a `write` activity: a free-text response, with a suggested word
@@ -152,6 +154,17 @@ class _WriteActivityViewState extends ConsumerState<WriteActivityView> {
     }
     setState(() => _submission = submission);
     widget.onSubmitted(submission);
+    // Never for notAutoGraded — nothing definitive to celebrate or flag
+    // yet, whether it's a form-style "no automatic check exists" answer or
+    // one still queued for deferred online-refinement grading.
+    if (submission.correctness != ActivityCorrectness.notAutoGraded) {
+      playFeedbackSoundSafely(
+        ref.read(soundEffectsServiceProvider),
+        submission.correctness == ActivityCorrectness.correct
+            ? ActivityFeedbackSound.correct
+            : ActivityFeedbackSound.incorrect,
+      );
+    }
   }
 
   /// The pending [_submission] recast as its real graded result, once

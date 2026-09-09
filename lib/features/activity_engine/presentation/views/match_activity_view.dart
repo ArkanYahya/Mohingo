@@ -2,15 +2,18 @@ import 'dart:convert';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../content/models/activity.dart';
 import '../../../../data/local/database.dart' show ActivityAttempt;
 import '../../domain/activity_submission.dart';
+import '../../domain/sound_effects_service.dart';
+import '../../providers/sound_effects_providers.dart';
 import '../activity_chrome.dart';
 
 /// Renders a `match` activity: tap a left item, then its matching right
 /// item, to pair them up.
-class MatchActivityView extends StatefulWidget {
+class MatchActivityView extends ConsumerStatefulWidget {
   const MatchActivityView({
     required this.activity,
     required this.onSubmitted,
@@ -29,10 +32,10 @@ class MatchActivityView extends StatefulWidget {
   final ActivityAttempt? reviewAttempt;
 
   @override
-  State<MatchActivityView> createState() => _MatchActivityViewState();
+  ConsumerState<MatchActivityView> createState() => _MatchActivityViewState();
 }
 
-class _MatchActivityViewState extends State<MatchActivityView> {
+class _MatchActivityViewState extends ConsumerState<MatchActivityView> {
   late final List<String> _rightShuffled =
       widget.activity.pairs.map((pair) => pair[1]).toList()
         ..shuffle(Random(widget.activity.pairs.length));
@@ -101,6 +104,12 @@ class _MatchActivityViewState extends State<MatchActivityView> {
     );
     setState(() => _submission = submission);
     widget.onSubmitted(submission);
+    playFeedbackSoundSafely(
+      ref.read(soundEffectsServiceProvider),
+      allCorrect
+          ? ActivityFeedbackSound.correct
+          : ActivityFeedbackSound.incorrect,
+    );
   }
 
   @override

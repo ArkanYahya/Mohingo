@@ -6,8 +6,11 @@ import 'package:mohingo/content/models/activity.dart';
 import 'package:mohingo/content/models/domain_definitions.dart';
 import 'package:mohingo/data/local/database.dart' show ActivityAttempt;
 import 'package:mohingo/features/activity_engine/domain/activity_submission.dart';
+import 'package:mohingo/features/activity_engine/domain/sound_effects_service.dart';
 import 'package:mohingo/features/activity_engine/presentation/views/match_activity_view.dart';
+import 'package:mohingo/features/activity_engine/providers/sound_effects_providers.dart';
 
+import 'fake_sound_effects_service.dart';
 import 'test_harness.dart';
 
 MatchActivity _matchActivity() {
@@ -88,6 +91,26 @@ void main() {
       expect(find.byType(FilledButton), findsNothing);
     },
   );
+
+  testWidgets('plays the correct sound when the last pair completes a '
+      'fully correct match', (tester) async {
+    final fakeSound = FakeSoundEffectsService();
+    await tester.pumpActivityView(
+      MatchActivityView(activity: _matchActivity(), onSubmitted: (_) {}),
+      overrides: [soundEffectsServiceProvider.overrideWithValue(fakeSound)],
+    );
+
+    await tester.tap(find.text('Lina'));
+    await tester.pump();
+    await tester.tap(find.text('mother'));
+    await tester.pump();
+    await tester.tap(find.text('Sami'));
+    await tester.pump();
+    await tester.tap(find.text('father'));
+    await tester.pump();
+
+    expect(fakeSound.played, [ActivityFeedbackSound.correct]);
+  });
 
   group('review mode (reviewAttempt)', () {
     testWidgets(

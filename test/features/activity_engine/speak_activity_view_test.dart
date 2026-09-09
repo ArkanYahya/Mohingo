@@ -11,8 +11,10 @@ import 'package:mohingo/data/local/database.dart';
 import 'package:mohingo/data/local/database_provider.dart';
 import 'package:mohingo/features/activity_engine/domain/activity_submission.dart';
 import 'package:mohingo/features/activity_engine/domain/evaluation/evaluation_context.dart';
+import 'package:mohingo/features/activity_engine/domain/sound_effects_service.dart';
 import 'package:mohingo/content/models/evaluation_spec.dart';
 import 'package:mohingo/features/activity_engine/presentation/views/speak_activity_view.dart';
+import 'package:mohingo/features/activity_engine/providers/sound_effects_providers.dart';
 import 'package:mohingo/features/speech/domain/speech_capability_service.dart';
 import 'package:mohingo/features/speech/domain/speech_recognition_service.dart';
 import 'package:mohingo/features/speech/providers/speech_providers.dart';
@@ -21,6 +23,7 @@ import 'package:mohingo/features/speech/providers/speech_providers.dart';
 import 'package:riverpod/misc.dart' show Override;
 
 import '../../features/speech/fake_speech_services.dart';
+import 'fake_sound_effects_service.dart';
 
 SpeakActivity _speakActivity() {
   return const SpeakActivity(
@@ -257,6 +260,26 @@ void main() {
 
       expect(reported?.wasFallback, isTrue);
       expect(reported?.correctness, ActivityCorrectness.correct);
+    });
+
+    testWidgets('plays the correct sound when the typed-fallback answer grades '
+        'correct', (tester) async {
+      final fakeSound = FakeSoundEffectsService();
+      await _pumpSpeak(
+        tester,
+        capabilities: const DeviceSpeechCapabilities(
+          sttAvailableForLocale: false,
+          micPermission: SpeechPermissionStatus.notDetermined,
+        ),
+        overrides: [soundEffectsServiceProvider.overrideWithValue(fakeSound)],
+      );
+
+      await tester.enterText(find.byType(TextField), 'Thanks.');
+      await tester.pump();
+      await tester.tap(find.byType(FilledButton));
+      await tester.pump();
+
+      expect(fakeSound.played, [ActivityFeedbackSound.correct]);
     });
 
     testWidgets(
