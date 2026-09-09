@@ -79,6 +79,13 @@ class _GapActivityViewState extends State<GapActivityView> {
     }
   }
 
+  /// A single tap is a complete answer for this activity type, so
+  /// selecting an option submits it immediately — no separate Check tap.
+  void _selectAndSubmit(String option) {
+    setState(() => _selected = option);
+    _submit();
+  }
+
   void _submit() {
     if (_selected == null || _submission != null) return;
     final isCorrect = _selected == widget.activity.answer;
@@ -129,13 +136,17 @@ class _GapActivityViewState extends State<GapActivityView> {
                   label: Text(option),
                   selected: _selected == option,
                   onSelected: _submission == null
-                      ? (_) => setState(() => _selected = option)
+                      ? (_) => _selectAndSubmit(option)
                       : null,
                 ),
             ],
           ),
         ],
       ),
+      // No Check button is ever reached in practice — a single tap
+      // (_selectAndSubmit) always submits before this would render; kept
+      // as a safety net, matching the shared ActivitySubmitOrFeedback
+      // contract every activity view uses.
       feedback: ActivitySubmitOrFeedback(
         submission: _submission,
         canSubmit: _selected != null,

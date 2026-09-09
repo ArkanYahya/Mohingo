@@ -36,49 +36,48 @@ void main() {
     }
   });
 
-  testWidgets('tapping tokens in the correct order reports correct', (
-    tester,
-  ) async {
-    ActivitySubmission? reported;
-    await tester.pumpActivityView(
-      OrderActivityView(
-        activity: _orderActivity(),
-        onSubmitted: (s) => reported = s,
-      ),
-    );
+  testWidgets(
+    'placing the last token in the correct order submits immediately — no '
+    'separate Check tap needed',
+    (tester) async {
+      ActivitySubmission? reported;
+      await tester.pumpActivityView(
+        OrderActivityView(
+          activity: _orderActivity(),
+          onSubmitted: (s) => reported = s,
+        ),
+      );
 
-    for (final token in ['This', 'is', 'my', 'mother']) {
-      await tester.tap(find.text(token));
-      await tester.pump();
-    }
+      for (final token in ['This', 'is', 'my', 'mother']) {
+        await tester.tap(find.text(token));
+        await tester.pump();
+      }
 
-    await tester.tap(find.byType(FilledButton));
-    await tester.pump();
+      expect(reported?.correctness, ActivityCorrectness.correct);
+      expect(find.byType(FilledButton), findsNothing);
+    },
+  );
 
-    expect(reported?.correctness, ActivityCorrectness.correct);
-  });
+  testWidgets(
+    'placing the last token in the wrong order submits immediately and '
+    'reports incorrect',
+    (tester) async {
+      ActivitySubmission? reported;
+      await tester.pumpActivityView(
+        OrderActivityView(
+          activity: _orderActivity(),
+          onSubmitted: (s) => reported = s,
+        ),
+      );
 
-  testWidgets('tapping tokens in the wrong order reports incorrect', (
-    tester,
-  ) async {
-    ActivitySubmission? reported;
-    await tester.pumpActivityView(
-      OrderActivityView(
-        activity: _orderActivity(),
-        onSubmitted: (s) => reported = s,
-      ),
-    );
+      for (final token in ['is', 'This', 'my', 'mother']) {
+        await tester.tap(find.text(token));
+        await tester.pump();
+      }
 
-    for (final token in ['is', 'This', 'my', 'mother']) {
-      await tester.tap(find.text(token));
-      await tester.pump();
-    }
-
-    await tester.tap(find.byType(FilledButton));
-    await tester.pump();
-
-    expect(reported?.correctness, ActivityCorrectness.incorrect);
-  });
+      expect(reported?.correctness, ActivityCorrectness.incorrect);
+    },
+  );
 
   testWidgets('tapping a placed token removes it, allowing re-order', (
     tester,

@@ -41,21 +41,29 @@ CourseContentIndex _realA1Index() {
 Future<void> _answerCorrectly(WidgetTester tester, Activity activity) async {
   await tester.pumpAndSettle();
 
+  // Choice/Gap/Order/Match submit the instant a complete answer is given —
+  // no separate Check tap. Speak/Write/Form/Dialogue still show one.
+  var needsExplicitCheck = true;
+
   switch (activity) {
     case AudioChoiceActivity a:
       await tester.tap(find.text(a.answer).last);
+      needsExplicitCheck = false;
     case TextChoiceActivity a:
       await tester.tap(find.text(a.answer).last);
+      needsExplicitCheck = false;
     case GapActivity a:
       // `.first`: a gap activity's own distractor options can coincidentally
       // repeat the same word twice (a real content quirk, not a bug in this
       // test) — either duplicate chip represents the same choice.
       await tester.tap(find.widgetWithText(ChoiceChip, a.answer).first);
+      needsExplicitCheck = false;
     case OrderActivity a:
       for (final token in a.answer) {
         await tester.tap(find.text(token).first);
         await tester.pump();
       }
+      needsExplicitCheck = false;
     case MatchActivity a:
       // `.first`: across the whole curriculum, a match activity's left/right
       // option pool can coincidentally repeat the same word (e.g. "Do"
@@ -67,6 +75,7 @@ Future<void> _answerCorrectly(WidgetTester tester, Activity activity) async {
         await tester.tap(find.text(pair[1]).first);
         await tester.pump();
       }
+      needsExplicitCheck = false;
     case SpeakActivity a:
       await tester.enterText(
         find.byType(TextField),
@@ -87,8 +96,10 @@ Future<void> _answerCorrectly(WidgetTester tester, Activity activity) async {
   }
   await tester.pump();
 
-  await tester.tap(find.byType(FilledButton)); // Check
-  await tester.pump();
+  if (needsExplicitCheck) {
+    await tester.tap(find.byType(FilledButton)); // Check
+    await tester.pump();
+  }
   await tester.tap(find.byType(FilledButton)); // Next
   await tester.pump();
 }

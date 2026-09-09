@@ -44,13 +44,18 @@ CourseContentIndex _realA1Index() {
   return CourseContentIndex.build(CourseBundleParser.parse(raw));
 }
 
-/// Answers [activity] the way a learner would, then taps Check followed by
-/// Next — using each activity's own real answer key, since (unlike a
-/// learner) the test driver is allowed to know it.
+/// Answers [activity] the way a learner would, then taps Next (and, for the
+/// activity types that still require one, Check first) — using each
+/// activity's own real answer key, since (unlike a learner) the test driver
+/// is allowed to know it.
 Future<void> _answerAndAdvance(WidgetTester tester, Activity activity) async {
   // Some activity views (e.g. SpeakActivityView) do an async capability
   // check in initState before their real body renders — settle that first.
   await tester.pumpAndSettle();
+
+  // Choice/Gap/Order/Match submit the instant a complete answer is given —
+  // no separate Check tap. Speak/Write/Form/Dialogue still show one.
+  var needsExplicitCheck = true;
 
   switch (activity) {
     case AudioChoiceActivity a:
@@ -59,18 +64,22 @@ Future<void> _answerAndAdvance(WidgetTester tester, Activity activity) async {
       // morning."), which renders twice — the transcript help card first,
       // the tappable option second, in that tree order.
       await tester.tap(find.text(a.answer).last);
+      needsExplicitCheck = false;
     case TextChoiceActivity a:
       await tester.tap(find.text(a.answer).last);
+      needsExplicitCheck = false;
     case GapActivity a:
       // `.first`: a gap activity's own distractor options can coincidentally
       // repeat the same word twice (a real content quirk, not a bug in this
       // test) — either duplicate chip represents the same choice.
       await tester.tap(find.widgetWithText(ChoiceChip, a.answer).first);
+      needsExplicitCheck = false;
     case OrderActivity a:
       for (final token in a.answer) {
         await tester.tap(find.text(token).first);
         await tester.pump();
       }
+      needsExplicitCheck = false;
     case MatchActivity a:
       // `.first`: a match activity's left/right option pool can
       // coincidentally repeat the same word — either duplicate resolves the
@@ -81,6 +90,7 @@ Future<void> _answerAndAdvance(WidgetTester tester, Activity activity) async {
         await tester.tap(find.text(pair[1]).first);
         await tester.pump();
       }
+      needsExplicitCheck = false;
     case SpeakActivity a:
       await tester.enterText(
         find.byType(TextField),
@@ -101,8 +111,10 @@ Future<void> _answerAndAdvance(WidgetTester tester, Activity activity) async {
   }
   await tester.pump();
 
-  await tester.tap(find.byType(FilledButton)); // Check
-  await tester.pump();
+  if (needsExplicitCheck) {
+    await tester.tap(find.byType(FilledButton)); // Check
+    await tester.pump();
+  }
   await tester.tap(find.byType(FilledButton)); // Next (or finish)
   await tester.pump();
 }

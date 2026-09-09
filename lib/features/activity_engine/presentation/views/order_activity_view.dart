@@ -73,6 +73,9 @@ class _OrderActivityViewState extends State<OrderActivityView> {
   void _place(String token) {
     if (_submission != null) return;
     setState(() => _placed.add(token));
+    // The last token placed completes the answer — submit immediately,
+    // no separate Check tap needed.
+    if (_placed.length == widget.activity.tokens.length) _submit();
   }
 
   void _removeLast() {
@@ -140,6 +143,10 @@ class _OrderActivityViewState extends State<OrderActivityView> {
           ),
         ],
       ),
+      // No Check button is ever reached in practice — placing the last
+      // token (_place) always submits before this would render; kept as
+      // a safety net, matching the shared ActivitySubmitOrFeedback
+      // contract every activity view uses.
       feedback: ActivitySubmitOrFeedback(
         submission: _submission,
         canSubmit: _placed.length == widget.activity.tokens.length,

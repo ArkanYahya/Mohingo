@@ -52,22 +52,24 @@ void main() {
     expect(find.text('She has one sister.'), findsOneWidget);
   });
 
-  testWidgets('choosing the correct option reports correct', (tester) async {
-    ActivitySubmission? reported;
-    await tester.pumpActivityView(
-      GapActivityView(
-        activity: _gapActivity(),
-        onSubmitted: (s) => reported = s,
-      ),
-    );
+  testWidgets(
+    'choosing an option submits immediately — no separate Check tap needed',
+    (tester) async {
+      ActivitySubmission? reported;
+      await tester.pumpActivityView(
+        GapActivityView(
+          activity: _gapActivity(),
+          onSubmitted: (s) => reported = s,
+        ),
+      );
 
-    await tester.tap(find.widgetWithText(ChoiceChip, 'has'));
-    await tester.pump();
-    await tester.tap(find.byType(FilledButton));
-    await tester.pump();
+      await tester.tap(find.widgetWithText(ChoiceChip, 'has'));
+      await tester.pump();
 
-    expect(reported?.correctness, ActivityCorrectness.correct);
-  });
+      expect(reported?.correctness, ActivityCorrectness.correct);
+      expect(find.byType(FilledButton), findsNothing);
+    },
+  );
 
   testWidgets(
     'renders options in a shuffled order, not the bundle\'s raw JSON order',

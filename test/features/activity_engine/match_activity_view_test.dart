@@ -63,29 +63,31 @@ void main() {
     );
   });
 
-  testWidgets('matching every pair correctly reports correct', (tester) async {
-    ActivitySubmission? reported;
-    await tester.pumpActivityView(
-      MatchActivityView(
-        activity: _matchActivity(),
-        onSubmitted: (s) => reported = s,
-      ),
-    );
+  testWidgets(
+    'matching the last pair submits immediately — no separate Check tap '
+    'needed',
+    (tester) async {
+      ActivitySubmission? reported;
+      await tester.pumpActivityView(
+        MatchActivityView(
+          activity: _matchActivity(),
+          onSubmitted: (s) => reported = s,
+        ),
+      );
 
-    await tester.tap(find.text('Lina'));
-    await tester.pump();
-    await tester.tap(find.text('mother'));
-    await tester.pump();
-    await tester.tap(find.text('Sami'));
-    await tester.pump();
-    await tester.tap(find.text('father'));
-    await tester.pump();
+      await tester.tap(find.text('Lina'));
+      await tester.pump();
+      await tester.tap(find.text('mother'));
+      await tester.pump();
+      await tester.tap(find.text('Sami'));
+      await tester.pump();
+      await tester.tap(find.text('father'));
+      await tester.pump();
 
-    await tester.tap(find.byType(FilledButton));
-    await tester.pump();
-
-    expect(reported?.correctness, ActivityCorrectness.correct);
-  });
+      expect(reported?.correctness, ActivityCorrectness.correct);
+      expect(find.byType(FilledButton), findsNothing);
+    },
+  );
 
   group('review mode (reviewAttempt)', () {
     testWidgets(

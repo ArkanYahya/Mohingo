@@ -82,6 +82,9 @@ class _MatchActivityViewState extends State<MatchActivityView> {
       _userMatches[_pendingLeft!] = right;
       _pendingLeft = null;
     });
+    // The last pair completes the answer — submit immediately, no
+    // separate Check tap needed.
+    if (_isComplete) _submit();
   }
 
   void _submit() {
@@ -142,6 +145,10 @@ class _MatchActivityViewState extends State<MatchActivityView> {
           ),
         ],
       ),
+      // No Check button is ever reached in practice — matching the last
+      // pair (_tapRight) always submits before this would render; kept
+      // as a safety net, matching the shared ActivitySubmitOrFeedback
+      // contract every activity view uses.
       feedback: ActivitySubmitOrFeedback(
         submission: _submission,
         canSubmit: _isComplete,

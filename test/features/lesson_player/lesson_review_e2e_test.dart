@@ -24,12 +24,13 @@ import '../speech/fake_speech_services.dart';
 /// activities: A01's answer is [a01Answer] (varied between passes to
 /// produce two different results for the same activity across a replay);
 /// A02/A03/A04 are always answered correctly so the lesson reliably
-/// reaches its final activity regardless of A01's outcome.
+/// reaches its final activity regardless of A01's outcome. The three
+/// `audioChoice` activities (A01-A03) submit the instant an option is
+/// tapped — no separate Check tap; only A04 (`speak`, via its typed
+/// fallback) still shows one.
 Future<void> _playLessonOnce(WidgetTester tester, String a01Answer) async {
   await tester.pumpAndSettle();
   await tester.tap(find.text(a01Answer).last);
-  await tester.pump();
-  await tester.tap(find.byType(FilledButton)); // Check
   await tester.pump();
   await tester.tap(find.byType(FilledButton)); // Next
   await tester.pump();
@@ -37,25 +38,21 @@ Future<void> _playLessonOnce(WidgetTester tester, String a01Answer) async {
   await tester.pumpAndSettle();
   await tester.tap(find.text("You're welcome.").last); // A02
   await tester.pump();
-  await tester.tap(find.byType(FilledButton));
-  await tester.pump();
-  await tester.tap(find.byType(FilledButton));
+  await tester.tap(find.byType(FilledButton)); // Next
   await tester.pump();
 
   await tester.pumpAndSettle();
   await tester.tap(find.text('Good morning.').last); // A03
   await tester.pump();
-  await tester.tap(find.byType(FilledButton));
-  await tester.pump();
-  await tester.tap(find.byType(FilledButton));
+  await tester.tap(find.byType(FilledButton)); // Next
   await tester.pump();
 
   await tester.pumpAndSettle();
   await tester.enterText(find.byType(TextField), 'Thank you.'); // A04
   await tester.pump();
-  await tester.tap(find.byType(FilledButton));
+  await tester.tap(find.byType(FilledButton)); // Check
   await tester.pump();
-  await tester.tap(find.byType(FilledButton));
+  await tester.tap(find.byType(FilledButton)); // Next (or finish)
   await tester.pump();
 }
 

@@ -202,8 +202,8 @@ void main() {
   });
 
   testWidgets(
-    'selecting the correct option and submitting reports correct, and '
-    'reveals the answer only after submission',
+    'selecting the correct option submits immediately — no separate Check '
+    'tap needed — and reveals the answer only once submitted',
     (tester) async {
       ActivitySubmission? reported;
       await tester.pumpActivityView(
@@ -213,41 +213,41 @@ void main() {
         ),
       );
 
-      // Before submission: no feedback banner, no "Correct!" text anywhere.
+      // Before selection: no feedback banner, no "Correct!" text anywhere.
       expect(find.text('Correct!'), findsNothing);
 
       await tester.tap(find.text('Omar'));
-      await tester.pump();
-      await tester.tap(find.byType(FilledButton));
       await tester.pump();
 
       expect(reported?.correctness, ActivityCorrectness.correct);
       expect(reported?.score, 1.0);
       expect(find.text('Correct!'), findsOneWidget);
-    },
-  );
-
-  testWidgets(
-    'selecting the wrong option reports incorrect and reveals the correct '
-    'answer for this activity',
-    (tester) async {
-      ActivitySubmission? reported;
-      await tester.pumpActivityView(
-        ChoiceActivityView.audioChoice(
-          activity: _audioChoice(),
-          onSubmitted: (s) => reported = s,
-        ),
+      expect(
+        find.byType(FilledButton),
+        findsNothing,
+        reason:
+            'the Check button never appears — a single-tap selection is '
+            'a complete answer on its own',
       );
-
-      await tester.tap(find.text('Maya'));
-      await tester.pump();
-      await tester.tap(find.byType(FilledButton));
-      await tester.pump();
-
-      expect(reported?.correctness, ActivityCorrectness.incorrect);
-      expect(find.textContaining('Omar'), findsWidgets);
     },
   );
+
+  testWidgets('selecting the wrong option submits immediately and reveals the '
+      'correct answer for this activity', (tester) async {
+    ActivitySubmission? reported;
+    await tester.pumpActivityView(
+      ChoiceActivityView.audioChoice(
+        activity: _audioChoice(),
+        onSubmitted: (s) => reported = s,
+      ),
+    );
+
+    await tester.tap(find.text('Maya'));
+    await tester.pump();
+
+    expect(reported?.correctness, ActivityCorrectness.incorrect);
+    expect(find.textContaining('Omar'), findsWidgets);
+  });
 
   testWidgets(
     'optionMode "media" renders each option via SceneDiagram, not plain text',

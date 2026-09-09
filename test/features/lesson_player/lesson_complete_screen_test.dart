@@ -45,18 +45,26 @@ Future<void> _answerAndAdvance(WidgetTester tester, Activity activity) async {
   // check in initState before their real body renders — settle that first.
   await tester.pumpAndSettle();
 
+  // Choice/Gap/Order/Match submit the instant a complete answer is given —
+  // no separate Check tap. Speak/Write/Form/Dialogue still show one.
+  var needsExplicitCheck = true;
+
   switch (activity) {
     case AudioChoiceActivity a:
       await tester.tap(find.text(a.answer).last);
+      needsExplicitCheck = false;
     case TextChoiceActivity a:
       await tester.tap(find.text(a.answer).last);
+      needsExplicitCheck = false;
     case GapActivity a:
       await tester.tap(find.widgetWithText(ChoiceChip, a.answer).first);
+      needsExplicitCheck = false;
     case OrderActivity a:
       for (final token in a.answer) {
         await tester.tap(find.text(token).first);
         await tester.pump();
       }
+      needsExplicitCheck = false;
     case MatchActivity a:
       for (final pair in a.pairs) {
         await tester.tap(find.text(pair[0]).first);
@@ -64,6 +72,7 @@ Future<void> _answerAndAdvance(WidgetTester tester, Activity activity) async {
         await tester.tap(find.text(pair[1]).first);
         await tester.pump();
       }
+      needsExplicitCheck = false;
     case SpeakActivity a:
       await tester.enterText(
         find.byType(TextField),
@@ -84,8 +93,10 @@ Future<void> _answerAndAdvance(WidgetTester tester, Activity activity) async {
   }
   await tester.pump();
 
-  await tester.tap(find.byType(FilledButton)); // Check
-  await tester.pump();
+  if (needsExplicitCheck) {
+    await tester.tap(find.byType(FilledButton)); // Check
+    await tester.pump();
+  }
   await tester.tap(find.byType(FilledButton)); // Next (or finish)
   await tester.pump();
 }

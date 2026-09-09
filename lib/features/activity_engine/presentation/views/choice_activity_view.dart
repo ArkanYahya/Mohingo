@@ -125,6 +125,13 @@ class _ChoiceActivityViewState extends State<ChoiceActivityView> {
     }
   }
 
+  /// A single tap is a complete answer for this activity type, so
+  /// selecting an option submits it immediately — no separate Check tap.
+  void _selectAndSubmit(String option) {
+    setState(() => _selected = option);
+    _submit();
+  }
+
   void _submit() {
     if (_selected == null || _submission != null) return;
     final isCorrect = _selected == widget.answer;
@@ -154,19 +161,19 @@ class _ChoiceActivityViewState extends State<ChoiceActivityView> {
               selected: _selected,
               submitted: _submission != null,
               correctOption: widget.answer,
-              onSelected: _submission == null
-                  ? (option) => setState(() => _selected = option)
-                  : null,
+              onSelected: _submission == null ? _selectAndSubmit : null,
             )
           : _TextOptionList(
               options: _displayOptions,
               selected: _selected,
               submitted: _submission != null,
               correctOption: widget.answer,
-              onSelected: _submission == null
-                  ? (option) => setState(() => _selected = option)
-                  : null,
+              onSelected: _submission == null ? _selectAndSubmit : null,
             ),
+      // No Check button is ever reached in practice: a single tap is a
+      // complete answer, so `_selectAndSubmit` above always submits before
+      // this would render — kept as a safety net, matching the shared
+      // ActivitySubmitOrFeedback contract every activity view uses.
       feedback: ActivitySubmitOrFeedback(
         submission: _submission,
         canSubmit: _selected != null,
