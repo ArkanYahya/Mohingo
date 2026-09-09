@@ -41,6 +41,12 @@ class FormActivityView extends StatefulWidget {
 }
 
 class _FormActivityViewState extends State<FormActivityView> {
+  // Decoded in a `late final` field initializer rather than in `initState`
+  // (unlike its 6 sibling views): `_controllers` below is itself a `late
+  // final` field whose own initializer needs each TextEditingController's
+  // starting text up front, and field initializers run before `initState`
+  // — by the time `initState` would run, it's too late to seed
+  // `_controllers`' starting text.
   late final Map<String, String> _reviewAnswers =
       _decodeAnswers(widget.reviewAttempt?.rawAnswer) ?? const {};
 

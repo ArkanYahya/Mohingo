@@ -391,8 +391,15 @@ class _SpeakActivityViewState extends ConsumerState<SpeakActivityView> {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(l10n.speakReviewTranscript),
-            const SizedBox(height: 4),
+            // Only shown while genuinely about to submit — in review mode
+            // (`_submission != null`, seeded straight into this mode from a
+            // recorded attempt), nothing is about to be submitted, and
+            // "before submitting" would be misleading (doubly so for a
+            // typed-fallback attempt, where nothing was ever heard at all).
+            if (_submission == null) ...[
+              Text(l10n.speakReviewTranscript),
+              const SizedBox(height: 4),
+            ],
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(

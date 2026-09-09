@@ -14,9 +14,15 @@ import '../providers/unit_progress_providers.dart';
 /// Shows one unit's lessons, each with a [StatusIndicator] derived from
 /// whether the learner's recorded position in that lesson has reached its
 /// final activity. Every lesson is always tappable — free access, no hard
-/// lock — per docs/PRODUCT.md flow 5. Revisiting a completed lesson replays
-/// it from the start and appends fresh evidence rather than overwriting
-/// history; see docs/DATA_MODEL.md.
+/// lock — per docs/PRODUCT.md flow 5. Tapping a lesson that's genuinely
+/// finished opens a read-only `LessonReviewScreen` of the learner's latest
+/// answers first, rather than replaying it directly; its own "Practice
+/// again" button is what actually replays the lesson from the start and
+/// appends fresh evidence rather than overwriting history — see
+/// docs/DATA_MODEL.md and docs/superpowers/specs/
+/// 2026-09-09-lesson-answer-review-design.md. A not-started or mid-lesson
+/// tap still goes straight into the live player, resuming where the
+/// learner left off, exactly as before.
 class UnitOverviewScreen extends ConsumerWidget {
   const UnitOverviewScreen({required this.unitId, super.key});
 

@@ -62,6 +62,22 @@ Map<String, ActivityAttempt> latestAttemptPerActivity(
 /// lesson has already reached its final activity. "Practice again" is the
 /// only door back into the real (replaying, evidence-recording) player. See
 /// docs/superpowers/specs/2026-09-09-lesson-answer-review-design.md.
+///
+/// Two known, intentional properties, already discussed and accepted (see
+/// this plan's ledger's final whole-branch review), not bugs:
+/// - Within a reviewed [ChoiceActivityView], the per-option tile
+///   highlighting reflects the *current* curriculum content's answer key
+///   (`widget.answer`), while the feedback banner reflects the
+///   *historically recorded* judgment (`reviewAttempt.isCorrect`). These can
+///   disagree if the curriculum content for that activity changed after the
+///   attempt was recorded — showing the current correct answer still has
+///   real pedagogical value, so this is accepted rather than "fixed" to
+///   agree with the (necessarily untouched, never-re-graded) recorded
+///   judgment.
+/// - A `dialogue`-type activity has no review-mode support at all and
+///   always renders fully live/interactive even inside this read-only
+///   screen — deliberate, since no authored `dialogue` instance exists in
+///   the current A1 bundle; there is nothing to review yet.
 class LessonReviewScreen extends ConsumerWidget {
   const LessonReviewScreen({
     required this.unitId,
@@ -83,7 +99,8 @@ class LessonReviewScreen extends ConsumerWidget {
       data: (index) {
         final lesson = index.lessonsById[lessonId];
         if (lesson == null) {
-          return const _ErrorScaffold(message: 'Lesson not found');
+          final l10n = AppLocalizations.of(context)!;
+          return _ErrorScaffold(message: l10n.contentNotFoundTitle);
         }
         return learnerAsync.when(
           loading: () => const _LoadingScaffold(),

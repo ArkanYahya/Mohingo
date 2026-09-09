@@ -5,10 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../content/models/activity.dart';
-import '../../../../data/local/database.dart' show ActivityAttempt;
 import '../../../../content/models/media_specification.dart';
 import '../../../../core/l10n/generated/app_localizations.dart';
 import '../../../../core/media/scene_diagram.dart';
+import '../../../../data/local/database.dart' show ActivityAttempt;
 import '../../../speech/domain/text_to_speech_service.dart';
 import '../../../speech/presentation/listen_button.dart';
 import '../../../speech/providers/speech_providers.dart';
