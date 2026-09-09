@@ -175,6 +175,14 @@
       "total": {"type": "int"}
     }
   },
+  "lessonReviewPracticeAgain": "Practice again",
+  "@lessonReviewPracticeAgain": {
+    "description": "Button on the lesson review screen (a finished lesson's read-only answer walkthrough) that starts a fresh replay of the lesson."
+  },
+  "lessonReviewNotAnswered": "Not answered",
+  "@lessonReviewNotAnswered": {
+    "description": "Placeholder shown on the lesson review screen for an activity with no recorded attempt at all (e.g. content changed after the lesson was finished)."
+  },
   "vocabularyTabWords": "Words",
   "@vocabularyTabWords": {"description": "Vocabulary screen tab label."},
   "vocabularyTabChunks": "Phrases",

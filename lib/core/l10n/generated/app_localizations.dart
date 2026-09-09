@@ -344,6 +344,18 @@ abstract class AppLocalizations {
   /// **'{current} of {total}'**
   String lessonPlayerProgress(int current, int total);
 
+  /// Button on the lesson review screen (a finished lesson's read-only answer walkthrough) that starts a fresh replay of the lesson.
+  ///
+  /// In en, this message translates to:
+  /// **'Practice again'**
+  String get lessonReviewPracticeAgain;
+
+  /// Placeholder shown on the lesson review screen for an activity with no recorded attempt at all (e.g. content changed after the lesson was finished).
+  ///
+  /// In en, this message translates to:
+  /// **'Not answered'**
+  String get lessonReviewNotAnswered;
+
   /// Vocabulary screen tab label.
   ///
   /// In en, this message translates to:

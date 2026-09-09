@@ -41,6 +41,8 @@
   "lessonCompleteBackToUnit": "العودة إلى الوحدة",
   "lessonPlayerNext": "التالي",
   "lessonPlayerProgress": "{current} من {total}",
+  "lessonReviewPracticeAgain": "تدرّب مرة أخرى",
+  "lessonReviewNotAnswered": "لم تتم الإجابة",
   "vocabularyTabWords": "كلمات",
   "vocabularyTabChunks": "عبارات",
   "vocabularySearchHint": "ابحث بالإنجليزية أو العربية",

@@ -176,6 +176,12 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String get lessonReviewPracticeAgain => 'Practice again';
+
+  @override
+  String get lessonReviewNotAnswered => 'Not answered';
+
+  @override
   String get vocabularyTabWords => 'Words';
 
   @override
