@@ -160,16 +160,24 @@ class _LessonReviewBody extends ConsumerWidget {
                             reviewAttempt: latest[activity.id],
                           ),
                   ),
-                FilledButton(
-                  onPressed: () =>
-                      context.push('/lesson-player/$unitId/${lesson.id}'),
-                  child: Text(l10n.lessonReviewPracticeAgain),
-                ),
               ],
             ),
           );
         },
       ),
+      // Pinned below the scrolling content rather than as the ListView's
+      // last child — the design spec calls for this button to always be
+      // present/unmissable, which a scrolling list's last item is not.
+      persistentFooterButtons: [
+        Padding(
+          padding: const EdgeInsets.all(8),
+          child: FilledButton(
+            onPressed: () =>
+                context.push('/lesson-player/$unitId/${lesson.id}'),
+            child: Text(l10n.lessonReviewPracticeAgain),
+          ),
+        ),
+      ],
     );
   }
 }
