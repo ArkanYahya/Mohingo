@@ -11,6 +11,7 @@ import 'package:mohingo/data/local/database.dart';
 import 'package:mohingo/data/local/database_provider.dart';
 import 'package:mohingo/features/activity_engine/domain/evaluation/grammar_check_service.dart';
 import 'package:mohingo/features/activity_engine/providers/online_refinement_providers.dart';
+import 'package:mohingo/features/lesson_player/presentation/lesson_review_screen.dart';
 import 'package:uuid/uuid.dart';
 
 import '../fake_connectivity_service.dart';
@@ -225,6 +226,88 @@ void main() {
             'never-online device must still reach it',
       );
       expect(attempts.single.score, 0.8); // local-only score, unrefined
+    },
+  );
+
+  test(
+    'a resolved queued item invalidates the lesson review screen\'s cached '
+    'attempts, so a learner who opened review while grading was still in '
+    'flight sees the freshly-resolved result rather than a stale one',
+    () async {
+      final db = AppDatabase(NativeDatabase.memory());
+      addTearDown(db.close);
+      final index = _realA1Index();
+      final learnerId = await db
+          .into(db.learners)
+          .insert(
+            LearnersCompanion.insert(
+              uuid: const Uuid().v4(),
+              createdAt: DateTime.utc(2026, 9, 8),
+            ),
+          );
+      await db
+          .into(db.pendingOnlineRefinements)
+          .insert(
+            PendingOnlineRefinementsCompanion.insert(
+              uuid: const Uuid().v4(),
+              learnerId: learnerId,
+              activityId: 'A1-U0-L5-A01',
+              lessonId: 'A1-U0-L5',
+              unitId: 'A1-U0',
+              canDoIds: '["A1.U0.INTERACTION.REGISTER_FOR_CLASS"]',
+              rawAnswer: 'Hi there!',
+              evidenceSkill: 'spokenInteraction',
+              mode: 'mastery',
+              localScore: 1.0,
+              submittedAt: DateTime.utc(2026, 9, 8),
+            ),
+          );
+
+      final container = ProviderContainer(
+        overrides: [
+          appDatabaseProvider.overrideWithValue(db),
+          courseContentProvider('a1').overrideWith((ref) async => index),
+          connectivityServiceProvider.overrideWithValue(
+            FakeConnectivityService(online: true),
+          ),
+          grammarCheckServiceProvider.overrideWithValue(
+            FakeGrammarCheckService(
+              result: const GrammarCheckResult(errorCount: 0, wordCount: 2),
+            ),
+          ),
+        ],
+      );
+      addTearDown(container.dispose);
+
+      // Read (and cache) the review screen's attempts BEFORE the item
+      // resolves — mirrors a learner opening LessonReviewScreen while the
+      // answer is still queued.
+      final before = await container.read(
+        lessonReviewAttemptsProvider((
+          learnerId: learnerId,
+          lessonId: 'A1-U0-L5',
+        )).future,
+      );
+      expect(before, isEmpty);
+
+      container.read(pendingRefinementDrainerProvider);
+      for (var i = 0; i < 4; i++) {
+        await Future<void>.delayed(Duration.zero);
+      }
+
+      final after = await container.read(
+        lessonReviewAttemptsProvider((
+          learnerId: learnerId,
+          lessonId: 'A1-U0-L5',
+        )).future,
+      );
+      expect(
+        after.map((a) => a.activityId),
+        contains('A1-U0-L5-A01'),
+        reason:
+            'the cached provider must reflect the freshly-resolved attempt, '
+            'not the stale empty read from before the drain',
+      );
     },
   );
 

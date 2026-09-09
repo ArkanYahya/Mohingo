@@ -9,6 +9,7 @@ import '../../../content/providers/course_content_providers.dart';
 import '../../../data/local/database.dart';
 import '../../../data/local/database_provider.dart';
 import '../../learning_path/providers/unit_progress_providers.dart';
+import '../../lesson_player/presentation/lesson_review_screen.dart';
 import '../../progress/providers/progress_providers.dart';
 import '../data/device_connectivity_service.dart';
 import '../data/drift_pending_refinement_repository.dart';
@@ -156,6 +157,14 @@ final pendingRefinementDrainerProvider = Provider<PendingRefinementDrainer>((
       // targeting one. Cheap — at most one activity view is ever watching
       // this at a time.
       ref.invalidate(latestAttemptProvider);
+      // Family-wide for the same reason: this callback doesn't know which
+      // lessonId the resolved item belongs to, only learnerId/unitId. A
+      // learner who opened LessonReviewScreen while a write/speak answer
+      // was still queued for deferred grading would otherwise keep seeing
+      // that lesson's pre-resolution attempts for the rest of the app
+      // session — nothing else invalidates this provider. See
+      // lesson_review_screen.dart.
+      ref.invalidate(lessonReviewAttemptsProvider);
     },
   );
   final drainer = PendingRefinementDrainer(service);
