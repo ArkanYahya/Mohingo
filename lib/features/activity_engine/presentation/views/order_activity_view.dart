@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 
 import '../../../../content/models/activity.dart';
+import '../../../../data/local/database.dart' show ActivityAttempt;
 import '../../domain/activity_submission.dart';
 import '../activity_chrome.dart';
 
@@ -11,11 +12,19 @@ class OrderActivityView extends StatefulWidget {
   const OrderActivityView({
     required this.activity,
     required this.onSubmitted,
+    this.reviewAttempt,
     super.key,
   });
 
   final OrderActivity activity;
   final OnActivitySubmitted onSubmitted;
+
+  /// When non-null, this view renders read-only straight into its submitted
+  /// state, seeded from this recorded attempt — never live-interactive, and
+  /// [reviewAttempt].isCorrect/.score are trusted verbatim, never
+  /// recomputed. See docs/superpowers/specs/
+  /// 2026-09-09-lesson-answer-review-design.md.
+  final ActivityAttempt? reviewAttempt;
 
   @override
   State<OrderActivityView> createState() => _OrderActivityViewState();
@@ -24,6 +33,32 @@ class OrderActivityView extends StatefulWidget {
 class _OrderActivityViewState extends State<OrderActivityView> {
   final List<String> _placed = [];
   ActivitySubmission? _submission;
+
+  @override
+  void initState() {
+    super.initState();
+    final reviewAttempt = widget.reviewAttempt;
+    if (reviewAttempt == null) return;
+    final decoded = _decodeOrder(reviewAttempt.rawAnswer);
+    if (decoded != null) _placed.addAll(decoded);
+    _submission = ActivitySubmission(
+      correctness: reviewAttempt.isCorrect == true
+          ? ActivityCorrectness.correct
+          : ActivityCorrectness.incorrect,
+      score: reviewAttempt.score,
+      rawAnswerJson: reviewAttempt.rawAnswer,
+    );
+  }
+
+  List<String>? _decodeOrder(String? rawAnswer) {
+    if (rawAnswer == null) return null;
+    try {
+      final decoded = jsonDecode(rawAnswer);
+      return decoded is List ? List<String>.from(decoded) : null;
+    } on FormatException {
+      return null;
+    }
+  }
 
   List<String> get _remaining {
     final remaining = [...widget.activity.tokens];
