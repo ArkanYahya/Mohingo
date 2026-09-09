@@ -1,6 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mohingo/content/models/activity.dart';
 import 'package:mohingo/content/models/domain_definitions.dart';
+import 'package:mohingo/data/local/database.dart' show ActivityAttempt;
 import 'package:mohingo/features/activity_engine/presentation/activity_view_registry.dart';
 import 'package:mohingo/features/activity_engine/presentation/views/choice_activity_view.dart';
 import 'package:mohingo/features/activity_engine/presentation/views/dialogue_activity_view.dart';
@@ -144,5 +145,43 @@ void main() {
         reason: '${entry.key.runtimeType} should build a ${entry.value}',
       );
     }
+  });
+
+  test('reviewAttempt threads through to every view that declares the '
+      'parameter, and is silently ignored by DialogueActivityView (which has '
+      'none — no real dialogue content exists to review yet)', () {
+    final reviewAttempt = ActivityAttempt(
+      id: 1,
+      uuid: 'attempt-1',
+      learnerId: 1,
+      activityId: 'x',
+      sessionType: 'lesson',
+      mode: 'mastery',
+      evidenceSkill: 'writing',
+      rawAnswer: '"an answer"',
+      isCorrect: true,
+      wasFallback: false,
+      attemptedAt: DateTime.utc(2026, 9, 9),
+      updatedAt: DateTime.utc(2026, 9, 9),
+    );
+
+    final widget = buildActivityView(
+      WriteActivity(
+        id: _common.id,
+        lessonId: _common.lessonId,
+        mode: _common.mode,
+        skill: _common.skill,
+        canDo: _common.canDo,
+        prompt: _common.prompt,
+        promptAr: _common.promptAr,
+        raw: _common.raw,
+        accepted: const [],
+      ),
+      learnerId: 1,
+      onSubmitted: (_) {},
+      reviewAttempt: reviewAttempt,
+    ) as WriteActivityView;
+
+    expect(widget.reviewAttempt, same(reviewAttempt));
   });
 }

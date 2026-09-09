@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../content/models/activity.dart';
 import '../../../content/models/media_specification.dart';
+import '../../../data/local/database.dart' show ActivityAttempt;
 import '../domain/activity_submission.dart';
 import '../domain/evaluation/evaluation_context.dart';
 import 'views/choice_activity_view.dart';
@@ -28,6 +29,7 @@ Widget buildActivityView(
   required OnActivitySubmitted onSubmitted,
   Map<String, MediaSpecification> mediaByKey = const {},
   EvaluationContext evaluationContext = const EvaluationContext.empty(),
+  ActivityAttempt? reviewAttempt,
   Key? key,
 }) {
   return switch (activity) {
@@ -36,32 +38,38 @@ Widget buildActivityView(
       activity: a,
       onSubmitted: onSubmitted,
       mediaByKey: mediaByKey,
+      reviewAttempt: reviewAttempt,
     ),
     TextChoiceActivity a => ChoiceActivityView.textChoice(
       key: key,
       activity: a,
       onSubmitted: onSubmitted,
       mediaByKey: mediaByKey,
+      reviewAttempt: reviewAttempt,
     ),
     MatchActivity a => MatchActivityView(
       key: key,
       activity: a,
       onSubmitted: onSubmitted,
+      reviewAttempt: reviewAttempt,
     ),
     OrderActivity a => OrderActivityView(
       key: key,
       activity: a,
       onSubmitted: onSubmitted,
+      reviewAttempt: reviewAttempt,
     ),
     GapActivity a => GapActivityView(
       key: key,
       activity: a,
       onSubmitted: onSubmitted,
+      reviewAttempt: reviewAttempt,
     ),
     FormActivity a => FormActivityView(
       key: key,
       activity: a,
       onSubmitted: onSubmitted,
+      reviewAttempt: reviewAttempt,
     ),
     SpeakActivity a => SpeakActivityView(
       key: key,
@@ -69,6 +77,7 @@ Widget buildActivityView(
       learnerId: learnerId,
       onSubmitted: onSubmitted,
       evaluationContext: evaluationContext,
+      reviewAttempt: reviewAttempt,
     ),
     WriteActivity a => WriteActivityView(
       key: key,
@@ -76,7 +85,12 @@ Widget buildActivityView(
       learnerId: learnerId,
       onSubmitted: onSubmitted,
       evaluationContext: evaluationContext,
+      reviewAttempt: reviewAttempt,
     ),
+    // dialogue has no review mode — no authored instance exists in the real
+    // bundle to review yet (verified in DialogueActivityView's own doc
+    // comment). Always renders live/interactive; see docs/superpowers/specs/
+    // 2026-09-09-lesson-answer-review-design.md.
     DialogueActivity a => DialogueActivityView(
       key: key,
       activity: a,
