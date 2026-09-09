@@ -327,5 +327,36 @@ void main() {
         expect(field.controller!.text, 'One coffee, please.');
       },
     );
+
+    testWidgets('a never-graded (isCorrect: null) attempt renders the neutral '
+        '"saved for review" treatment, never as incorrect', (tester) async {
+      await tester.pumpActivityView(
+        WriteActivityView(
+          activity: _closedFormWrite(),
+          learnerId: 1,
+          onSubmitted: (_) {},
+          reviewAttempt: ActivityAttempt(
+            id: 1,
+            uuid: 'attempt-1',
+            learnerId: 1,
+            activityId: 'A1-U6-L1-A04',
+            sessionType: 'lesson',
+            mode: 'mastery',
+            evidenceSkill: 'writing',
+            rawAnswer: jsonEncode('One coffee, please.'),
+            isCorrect: null,
+            score: null,
+            wasFallback: false,
+            attemptedAt: DateTime.utc(2026, 9, 9),
+            updatedAt: DateTime.utc(2026, 9, 9),
+          ),
+        ),
+      );
+
+      expect(find.byIcon(Icons.hourglass_top), findsOneWidget);
+      expect(find.byIcon(Icons.cancel), findsNothing);
+      expect(find.byIcon(Icons.check_circle), findsNothing);
+      expect(find.byType(FilledButton), findsNothing);
+    });
   });
 }

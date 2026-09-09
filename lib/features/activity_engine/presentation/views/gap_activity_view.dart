@@ -42,9 +42,11 @@ class _GapActivityViewState extends State<GapActivityView> {
     if (reviewAttempt == null) return;
     _selected = _decodeSelection(reviewAttempt.rawAnswer);
     _submission = ActivitySubmission(
-      correctness: reviewAttempt.isCorrect == true
-          ? ActivityCorrectness.correct
-          : ActivityCorrectness.incorrect,
+      correctness: switch (reviewAttempt.isCorrect) {
+        true => ActivityCorrectness.correct,
+        false => ActivityCorrectness.incorrect,
+        null => ActivityCorrectness.notAutoGraded,
+      },
       score: reviewAttempt.score,
       rawAnswerJson: reviewAttempt.rawAnswer,
     );

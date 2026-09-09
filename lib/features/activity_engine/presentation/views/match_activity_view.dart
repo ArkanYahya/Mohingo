@@ -49,9 +49,11 @@ class _MatchActivityViewState extends State<MatchActivityView> {
     final decoded = _decodeMatches(reviewAttempt.rawAnswer);
     if (decoded != null) _userMatches.addAll(decoded);
     _submission = ActivitySubmission(
-      correctness: reviewAttempt.isCorrect == true
-          ? ActivityCorrectness.correct
-          : ActivityCorrectness.incorrect,
+      correctness: switch (reviewAttempt.isCorrect) {
+        true => ActivityCorrectness.correct,
+        false => ActivityCorrectness.incorrect,
+        null => ActivityCorrectness.notAutoGraded,
+      },
       score: reviewAttempt.score,
       rawAnswerJson: reviewAttempt.rawAnswer,
     );

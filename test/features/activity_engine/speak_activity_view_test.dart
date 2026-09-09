@@ -498,5 +498,44 @@ void main() {
       expect(find.byType(TextField), findsNothing);
       expect(find.byIcon(Icons.mic), findsNothing);
     });
+
+    testWidgets('a never-graded (isCorrect: null) attempt renders the neutral '
+        '"saved for review" treatment, never as incorrect', (tester) async {
+      await tester.pumpWidget(
+        ProviderScope(
+          child: MaterialApp(
+            supportedLocales: AppLocalizations.supportedLocales,
+            localizationsDelegates: AppLocalizations.localizationsDelegates,
+            home: Scaffold(
+              body: SpeakActivityView(
+                activity: _speakActivity(),
+                learnerId: 1,
+                onSubmitted: (_) {},
+                reviewAttempt: ActivityAttempt(
+                  id: 1,
+                  uuid: 'attempt-1',
+                  learnerId: 1,
+                  activityId: 'A1-U0-L1-A04',
+                  sessionType: 'lesson',
+                  mode: 'mastery',
+                  evidenceSkill: 'writing',
+                  rawAnswer: jsonEncode('Thank you.'),
+                  isCorrect: null,
+                  score: null,
+                  wasFallback: true,
+                  attemptedAt: DateTime.utc(2026, 9, 9),
+                  updatedAt: DateTime.utc(2026, 9, 9),
+                ),
+              ),
+            ),
+          ),
+        ),
+      );
+      await tester.pump();
+
+      expect(find.byIcon(Icons.hourglass_top), findsOneWidget);
+      expect(find.byIcon(Icons.cancel), findsNothing);
+      expect(find.byIcon(Icons.check_circle), findsNothing);
+    });
   });
 }

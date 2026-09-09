@@ -106,9 +106,11 @@ class _SpeakActivityViewState extends ConsumerState<SpeakActivityView> {
     _liveTranscript = _decodeText(reviewAttempt.rawAnswer) ?? '';
     _mode = _SpeakMode.reviewTranscript;
     _submission = ActivitySubmission(
-      correctness: reviewAttempt.isCorrect == true
-          ? ActivityCorrectness.correct
-          : ActivityCorrectness.incorrect,
+      correctness: switch (reviewAttempt.isCorrect) {
+        true => ActivityCorrectness.correct,
+        false => ActivityCorrectness.incorrect,
+        null => ActivityCorrectness.notAutoGraded,
+      },
       score: reviewAttempt.score,
       rawAnswerJson: reviewAttempt.rawAnswer,
       wasFallback: reviewAttempt.wasFallback,

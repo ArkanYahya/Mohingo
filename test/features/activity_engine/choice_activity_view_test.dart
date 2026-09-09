@@ -211,5 +211,35 @@ void main() {
         expect(find.byType(FilledButton), findsNothing);
       },
     );
+
+    testWidgets('a never-graded (isCorrect: null) attempt renders the neutral '
+        '"saved for review" treatment, never as incorrect', (tester) async {
+      await tester.pumpActivityView(
+        ChoiceActivityView.audioChoice(
+          activity: _audioChoice(),
+          onSubmitted: (_) {},
+          reviewAttempt: ActivityAttempt(
+            id: 1,
+            uuid: 'attempt-1',
+            learnerId: 1,
+            activityId: 'A1-U1-L1-A01',
+            sessionType: 'lesson',
+            mode: 'mastery',
+            evidenceSkill: 'listening',
+            rawAnswer: jsonEncode('Omar'),
+            isCorrect: null,
+            score: null,
+            wasFallback: false,
+            attemptedAt: DateTime.utc(2026, 9, 9),
+            updatedAt: DateTime.utc(2026, 9, 9),
+          ),
+        ),
+      );
+
+      expect(find.byIcon(Icons.hourglass_top), findsOneWidget);
+      expect(find.byIcon(Icons.cancel), findsNothing);
+      expect(find.byIcon(Icons.check_circle), findsNothing);
+      expect(find.byType(FilledButton), findsNothing);
+    });
   });
 }

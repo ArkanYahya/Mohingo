@@ -81,9 +81,11 @@ class _WriteActivityViewState extends ConsumerState<WriteActivityView> {
     final decoded = _decodeText(reviewAttempt.rawAnswer);
     if (decoded != null) _controller.text = decoded;
     _submission = ActivitySubmission(
-      correctness: reviewAttempt.isCorrect == true
-          ? ActivityCorrectness.correct
-          : ActivityCorrectness.incorrect,
+      correctness: switch (reviewAttempt.isCorrect) {
+        true => ActivityCorrectness.correct,
+        false => ActivityCorrectness.incorrect,
+        null => ActivityCorrectness.notAutoGraded,
+      },
       score: reviewAttempt.score,
       rawAnswerJson: reviewAttempt.rawAnswer,
     );
