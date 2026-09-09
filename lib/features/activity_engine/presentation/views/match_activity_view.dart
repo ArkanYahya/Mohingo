@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 import '../../../../content/models/activity.dart';
+import '../../../../data/local/database.dart' show ActivityAttempt;
 import '../../domain/activity_submission.dart';
 import '../activity_chrome.dart';
 
@@ -13,11 +14,19 @@ class MatchActivityView extends StatefulWidget {
   const MatchActivityView({
     required this.activity,
     required this.onSubmitted,
+    this.reviewAttempt,
     super.key,
   });
 
   final MatchActivity activity;
   final OnActivitySubmitted onSubmitted;
+
+  /// When non-null, this view renders read-only straight into its submitted
+  /// state, seeded from this recorded attempt — never live-interactive, and
+  /// [reviewAttempt].isCorrect/.score are trusted verbatim, never
+  /// recomputed. See docs/superpowers/specs/
+  /// 2026-09-09-lesson-answer-review-design.md.
+  final ActivityAttempt? reviewAttempt;
 
   @override
   State<MatchActivityView> createState() => _MatchActivityViewState();
@@ -31,6 +40,28 @@ class _MatchActivityViewState extends State<MatchActivityView> {
   final Map<String, String> _userMatches = {}; // left -> right
   String? _pendingLeft;
   ActivitySubmission? _submission;
+
+  @override
+  void initState() {
+    super.initState();
+    final reviewAttempt = widget.reviewAttempt;
+    if (reviewAttempt == null) return;
+    final decoded = _decodeMatches(reviewAttempt.rawAnswer);
+    if (decoded != null) _userMatches.addAll(decoded);
+    _submission = ActivitySubmission(
+      correctness: reviewAttempt.isCorrect == true
+          ? ActivityCorrectness.correct
+          : ActivityCorrectness.incorrect,
+      score: reviewAttempt.score,
+      rawAnswerJson: reviewAttempt.rawAnswer,
+    );
+  }
+
+  Map<String, String>? _decodeMatches(String? rawAnswer) {
+    if (rawAnswer == null) return null;
+    final decoded = jsonDecode(rawAnswer);
+    return decoded is Map ? Map<String, String>.from(decoded) : null;
+  }
 
   bool get _isComplete => _userMatches.length == widget.activity.pairs.length;
 
