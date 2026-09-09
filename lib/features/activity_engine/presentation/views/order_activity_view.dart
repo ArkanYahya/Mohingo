@@ -55,7 +55,7 @@ class _OrderActivityViewState extends State<OrderActivityView> {
     try {
       final decoded = jsonDecode(rawAnswer);
       return decoded is List ? List<String>.from(decoded) : null;
-    } on FormatException {
+    } catch (_) {
       return null;
     }
   }
