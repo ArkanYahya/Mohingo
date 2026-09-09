@@ -48,6 +48,7 @@ class SpeakActivityView extends ConsumerStatefulWidget {
     required this.learnerId,
     required this.onSubmitted,
     this.evaluationContext = const EvaluationContext.empty(),
+    this.reviewAttempt,
     super.key,
   });
 
@@ -55,6 +56,13 @@ class SpeakActivityView extends ConsumerStatefulWidget {
   final int learnerId;
   final OnActivitySubmitted onSubmitted;
   final EvaluationContext evaluationContext;
+
+  /// When non-null, this view skips its microphone-capability check
+  /// entirely and renders read-only straight into its submitted state,
+  /// seeded from this recorded attempt — [reviewAttempt].isCorrect/.score
+  /// are trusted verbatim, never recomputed. See docs/superpowers/specs/
+  /// 2026-09-09-lesson-answer-review-design.md.
+  final ActivityAttempt? reviewAttempt;
 
   @override
   ConsumerState<SpeakActivityView> createState() => _SpeakActivityViewState();
@@ -90,7 +98,21 @@ class _SpeakActivityViewState extends ConsumerState<SpeakActivityView> {
   @override
   void initState() {
     super.initState();
-    _checkCapability();
+    final reviewAttempt = widget.reviewAttempt;
+    if (reviewAttempt == null) {
+      _checkCapability();
+      return;
+    }
+    _liveTranscript = _decodeText(reviewAttempt.rawAnswer) ?? '';
+    _mode = _SpeakMode.reviewTranscript;
+    _submission = ActivitySubmission(
+      correctness: reviewAttempt.isCorrect == true
+          ? ActivityCorrectness.correct
+          : ActivityCorrectness.incorrect,
+      score: reviewAttempt.score,
+      rawAnswerJson: reviewAttempt.rawAnswer,
+      wasFallback: reviewAttempt.wasFallback,
+    );
   }
 
   @override
@@ -98,6 +120,16 @@ class _SpeakActivityViewState extends ConsumerState<SpeakActivityView> {
     _recognitionSubscription?.cancel();
     _typedController.dispose();
     super.dispose();
+  }
+
+  String? _decodeText(String? rawAnswer) {
+    if (rawAnswer == null) return null;
+    try {
+      final decoded = jsonDecode(rawAnswer);
+      return decoded is String ? decoded : null;
+    } on FormatException {
+      return null;
+    }
   }
 
   Future<void> _checkCapability() async {

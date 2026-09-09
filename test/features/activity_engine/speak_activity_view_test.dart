@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:drift/native.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -445,6 +447,56 @@ void main() {
       await tester.pump();
 
       expect(reported?.correctness, ActivityCorrectness.correct);
+    });
+  });
+
+  group('review mode (reviewAttempt)', () {
+    testWidgets('renders the recorded transcript read-only, trusting isCorrect '
+        'verbatim even when it contradicts what live re-grading of the same '
+        'answer would produce — no capability check, no mic/typed UI', (
+      tester,
+    ) async {
+      await tester.pumpWidget(
+        ProviderScope(
+          child: MaterialApp(
+            supportedLocales: AppLocalizations.supportedLocales,
+            localizationsDelegates: AppLocalizations.localizationsDelegates,
+            home: Scaffold(
+              body: SpeakActivityView(
+                activity: _speakActivity(),
+                learnerId: 1,
+                onSubmitted: (_) {},
+                reviewAttempt: ActivityAttempt(
+                  id: 1,
+                  uuid: 'attempt-1',
+                  learnerId: 1,
+                  activityId: 'A1-U0-L1-A04',
+                  sessionType: 'lesson',
+                  mode: 'mastery',
+                  evidenceSkill: 'writing',
+                  rawAnswer: jsonEncode(
+                    'Thank you.',
+                  ), // the actually-accepted answer
+                  isCorrect: false, // deliberately recorded wrong
+                  score: 0.0,
+                  wasFallback: true,
+                  attemptedAt: DateTime.utc(2026, 9, 9),
+                  updatedAt: DateTime.utc(2026, 9, 9),
+                ),
+              ),
+            ),
+          ),
+        ),
+      );
+      await tester.pump();
+
+      expect(find.text('Thank you.'), findsOneWidget);
+      expect(find.byIcon(Icons.cancel), findsOneWidget);
+      expect(find.byIcon(Icons.check_circle), findsNothing);
+      // No capability check ever ran: no spinner, no mic/typed controls.
+      expect(find.byType(CircularProgressIndicator), findsNothing);
+      expect(find.byType(TextField), findsNothing);
+      expect(find.byIcon(Icons.mic), findsNothing);
     });
   });
 }
