@@ -152,6 +152,43 @@ void main() {
     });
   });
 
+  group('stop recording', () {
+    testWidgets(
+      'tapping Stop with nothing recognized yet returns to the Record '
+      'button, rather than staying stuck on "Stop" — the underlying '
+      'recognition stream never completes on its own after cancel(), so '
+      'the view must reset its own state directly',
+      (tester) async {
+        await _pumpSpeak(
+          tester,
+          capabilities: const DeviceSpeechCapabilities(
+            sttAvailableForLocale: true,
+            micPermission: SpeechPermissionStatus.granted,
+          ),
+          // Default empty `results` — mirrors "Stop tapped before any
+          // speech was recognized", the exact scenario that hung.
+          recognitionService: FakeSpeechRecognitionService(),
+        );
+
+        await tester.tap(find.widgetWithText(FilledButton, 'Record'));
+        await tester.pump();
+        expect(find.widgetWithText(OutlinedButton, 'Stop'), findsOneWidget);
+
+        await tester.tap(find.widgetWithText(OutlinedButton, 'Stop'));
+        await tester.pump();
+
+        expect(
+          find.widgetWithText(FilledButton, 'Record'),
+          findsOneWidget,
+          reason:
+              'must return to the recordAvailable state, not hang in '
+              'the recording state',
+        );
+        expect(find.widgetWithText(OutlinedButton, 'Stop'), findsNothing);
+      },
+    );
+  });
+
   group('permission-denied -> fallback', () {
     testWidgets(
       'requesting the microphone and having it denied falls back to typed '

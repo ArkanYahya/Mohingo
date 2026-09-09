@@ -197,7 +197,21 @@ class _SpeakActivityViewState extends ConsumerState<SpeakActivityView> {
   }
 
   void _stopRecording() {
+    // Cancelling the underlying service alone never completes the
+    // recognition stream (see DeviceSpeechRecognitionService.recognize —
+    // its StreamController is only closed by a final result, not by
+    // cancel()), so onDone below would never fire and the UI would stay
+    // stuck showing "Stop". Cancel the subscription (which does stop the
+    // stream, via its own onCancel handler) and reset the mode directly,
+    // mirroring exactly what onDone already does for the natural-
+    // completion case.
+    _recognitionSubscription?.cancel();
     ref.read(speechRecognitionServiceProvider).cancel();
+    setState(() {
+      _mode = _liveTranscript.isEmpty
+          ? _SpeakMode.recordAvailable
+          : _SpeakMode.reviewTranscript;
+    });
   }
 
   void _submitTranscript() => _submit(_liveTranscript, wasFallback: false);

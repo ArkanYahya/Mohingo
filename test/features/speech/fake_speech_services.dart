@@ -52,7 +52,23 @@ class FakeSpeechRecognitionService implements SpeechRecognitionService {
     required String localeCode,
     Duration? listenFor,
   }) {
-    return Stream.fromIterable(_results);
+    // Mirrors the real DeviceSpeechRecognitionService: calling cancel()
+    // alone never closes this stream — only a final result does (see
+    // cancel() below). A widget that relied on the stream completing after
+    // calling cancel() would hang exactly as the real "Stop" button bug
+    // did, with an empty (or no-final-result) `_results` list.
+    final controller = StreamController<SpeechRecognitionResult>();
+    scheduleMicrotask(() async {
+      for (final result in _results) {
+        if (controller.isClosed) return;
+        controller.add(result);
+        if (result.isFinal) {
+          await controller.close();
+          return;
+        }
+      }
+    });
+    return controller.stream;
   }
 
   @override
