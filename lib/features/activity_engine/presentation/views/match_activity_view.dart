@@ -59,8 +59,12 @@ class _MatchActivityViewState extends State<MatchActivityView> {
 
   Map<String, String>? _decodeMatches(String? rawAnswer) {
     if (rawAnswer == null) return null;
-    final decoded = jsonDecode(rawAnswer);
-    return decoded is Map ? Map<String, String>.from(decoded) : null;
+    try {
+      final decoded = jsonDecode(rawAnswer);
+      return decoded is Map ? Map<String, String>.from(decoded) : null;
+    } on FormatException {
+      return null;
+    }
   }
 
   bool get _isComplete => _userMatches.length == widget.activity.pairs.length;
