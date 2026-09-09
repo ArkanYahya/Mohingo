@@ -11,6 +11,7 @@ import 'package:mohingo/core/l10n/generated/app_localizations.dart';
 import 'package:mohingo/data/local/database.dart';
 import 'package:mohingo/data/local/database_provider.dart';
 import 'package:mohingo/features/activity_engine/domain/activity_submission.dart';
+import 'package:mohingo/features/activity_engine/domain/evaluation/evaluation_context.dart';
 import 'package:mohingo/features/activity_engine/domain/sound_effects_service.dart';
 import 'package:mohingo/content/models/evaluation_spec.dart';
 import 'package:mohingo/features/activity_engine/providers/online_refinement_providers.dart';
@@ -180,6 +181,46 @@ void main() {
       await tester.pump();
 
       expect(captured!.correctness, ActivityCorrectness.correct);
+    },
+  );
+
+  testWidgets(
+    'an incorrect letterSequence answer reveals the resolved reference as '
+    'the correct answer, not a blank "the correct answer is:"',
+    (tester) async {
+      const activity = WriteActivity(
+        id: 'A1-U0-L5-A02',
+        lessonId: 'A1-U0-L5',
+        mode: ActivityMode.mastery,
+        skill: Skill.writing,
+        canDo: ['A1.U0.PRODUCTION.SPELL_NAME'],
+        prompt: 'How do you spell it?',
+        promptAr: 'كيف تتهجّاه؟',
+        raw: {},
+        accepted: [],
+        evaluation: LetterSequenceEvaluationSpec(
+          reference: ProfileNameReference(),
+        ),
+      );
+
+      await tester.pumpActivityView(
+        WriteActivityView(
+          activity: activity,
+          learnerId: 1,
+          onSubmitted: (_) {},
+          evaluationContext: const EvaluationContext(profileName: 'Arkan'),
+        ),
+      );
+
+      await tester.enterText(find.byType(TextField), 'x y z');
+      await tester.pump();
+      await tester.tap(find.widgetWithText(FilledButton, 'Check'));
+      await tester.pump();
+
+      expect(
+        find.text('Not quite — the correct answer is: Arkan'),
+        findsOneWidget,
+      );
     },
   );
 

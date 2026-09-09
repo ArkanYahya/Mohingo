@@ -8780,7 +8780,7 @@
               "accepted": [],
               "evaluation": {
                 "type": "letterSequence",
-                "reference": "previousAnswer:A1-U0-L5-A01"
+                "reference": "profileName"
               },
               "fallbackSkill": "writing"
             },

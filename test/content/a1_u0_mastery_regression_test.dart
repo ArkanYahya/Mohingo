@@ -3,7 +3,9 @@ import 'dart:io';
 import 'package:drift/native.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mohingo/content/index/course_content_index.dart';
+import 'package:mohingo/content/models/activity.dart';
 import 'package:mohingo/content/models/domain_definitions.dart';
+import 'package:mohingo/content/models/evaluation_spec.dart';
 import 'package:mohingo/content/parsing/course_bundle_parser.dart';
 import 'package:mohingo/data/local/database.dart';
 import 'package:mohingo/features/progress/data/drift_activity_attempt_repository.dart';
@@ -85,5 +87,27 @@ void main() {
       (a) => a.id == 'A1-U0-L3-A04',
     );
     expect((l3a04 as dynamic).evaluation, isNotNull);
+  });
+
+  test('L5-A02 ("How do you spell it?") grades against the profile name, not '
+      'the free-text answer to "What\'s your name?" — the lesson right '
+      'before this mission teaches "My name is {name}." as the expected '
+      'reply, so grading against the whole previous answer would fail every '
+      'correctly-spelled name that includes those words', () async {
+    final json = File('assets/content/en/A1/a1-course-bundle.json')
+        .readAsStringSync();
+    final index = CourseContentIndex.build(CourseBundleParser.parse(json));
+    final l5a02 = index.lessonsById['A1-U0-L5']!.activities.firstWhere(
+      (a) => a.id == 'A1-U0-L5-A02',
+    ) as SpeakActivity;
+
+    expect(
+      l5a02.evaluation,
+      isA<LetterSequenceEvaluationSpec>().having(
+        (s) => s.reference,
+        'reference',
+        isA<ProfileNameReference>(),
+      ),
+    );
   });
 }

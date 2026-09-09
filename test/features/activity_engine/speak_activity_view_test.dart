@@ -386,6 +386,48 @@ void main() {
         expect(captured!.wasFallback, isTrue);
       },
     );
+
+    testWidgets(
+      'an incorrect letterSequence answer reveals the resolved reference as '
+      'the correct answer, not a blank "the correct answer is:"',
+      (tester) async {
+        const activity = SpeakActivity(
+          id: 'A1-U0-L5-A02',
+          lessonId: 'A1-U0-L5',
+          mode: ActivityMode.mastery,
+          skill: Skill.spokenProduction,
+          canDo: ['A1.U0.PRODUCTION.SPELL_NAME'],
+          prompt: 'How do you spell it?',
+          promptAr: 'كيف تتهجّاه؟',
+          raw: {},
+          accepted: [],
+          evaluation: LetterSequenceEvaluationSpec(
+            reference: ProfileNameReference(),
+          ),
+          fallbackSkill: 'writing',
+        );
+
+        await _pumpSpeak(
+          tester,
+          activity: activity,
+          capabilities: const DeviceSpeechCapabilities(
+            sttAvailableForLocale: false,
+            micPermission: SpeechPermissionStatus.notDetermined,
+          ),
+          evaluationContext: const EvaluationContext(profileName: 'Arkan'),
+        );
+
+        await tester.enterText(find.byType(TextField), 'x y z');
+        await tester.pump();
+        await tester.tap(find.text('Check'));
+        await tester.pump();
+
+        expect(
+          find.text('Not quite — the correct answer is: Arkan'),
+          findsOneWidget,
+        );
+      },
+    );
   });
 
   group('onlineRefinement queuing', () {

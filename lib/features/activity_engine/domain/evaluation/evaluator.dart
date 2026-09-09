@@ -23,6 +23,38 @@ final _numberPattern = RegExp(r'\d+(\.\d+)?');
   };
 }
 
+/// A short, human-readable description of what [spec] expects — shown as
+/// the "the correct answer is: ..." reveal after an incorrect submission
+/// (see `ActivityFeedbackBanner.correctAnswerLabel`). `null` when there's no
+/// single fixed answer to reveal: [NonEmptyEvaluationSpec] accepts anything
+/// non-blank, [KeywordChecklistEvaluationSpec] grades open-ended text
+/// against a checklist rather than one string, and a [LetterSequenceEvaluationSpec]
+/// whose reference isn't resolvable yet (an unset profile name, or a
+/// previous answer that hasn't been given) has nothing concrete to show.
+String? expectedAnswerLabel(EvaluationSpec spec, EvaluationContext context) {
+  return switch (spec) {
+    NonEmptyEvaluationSpec() => null,
+    NumericRangeEvaluationSpec s => _formatRange(s),
+    LetterSequenceEvaluationSpec s => _resolveReferenceText(
+      s.reference,
+      context,
+    ),
+    KeywordChecklistEvaluationSpec() => null,
+  };
+}
+
+String _formatRange(NumericRangeEvaluationSpec spec) =>
+    '${_formatNumber(spec.min)}–${_formatNumber(spec.max)}';
+
+/// Drops a trailing `.0` from a whole number (`120.0` -> `120`) but keeps a
+/// genuine fraction (`0.5` stays `0.5`) — [NumericRangeEvaluationSpec]'s
+/// bounds are always `double`, even when the bundle authored them as plain
+/// integers (e.g. an age range), and showing "1.0–120.0" to a learner would
+/// look like a typo.
+String _formatNumber(double value) => value == value.roundToDouble()
+    ? value.toInt().toString()
+    : value.toString();
+
 ({ActivityCorrectness correctness, double? score}) _nonEmpty(String answer) {
   final isCorrect = answer.trim().isNotEmpty;
   return (
@@ -51,17 +83,27 @@ final _numberPattern = RegExp(r'\d+(\.\d+)?');
   );
 }
 
-({ActivityCorrectness correctness, double? score}) _letterSequence(
-  LetterSequenceEvaluationSpec spec,
-  String answer,
+/// The raw text [reference] points at, or `null` if it isn't resolvable yet
+/// (an unset profile name, or a previous-answer reference whose activity
+/// hasn't been answered — see the callers for how each handles that).
+String? _resolveReferenceText(
+  LetterSequenceReference reference,
   EvaluationContext context,
 ) {
-  final reference = switch (spec.reference) {
+  return switch (reference) {
     ProfileNameReference() => context.profileName,
     PreviousAnswerReference(:final activityId) =>
       context.previousAnswers[activityId],
     LiteralReference(:final text) => text,
   };
+}
+
+({ActivityCorrectness correctness, double? score}) _letterSequence(
+  LetterSequenceEvaluationSpec spec,
+  String answer,
+  EvaluationContext context,
+) {
+  final reference = _resolveReferenceText(spec.reference, context);
 
   // Normalize *before* the emptiness check, not after: this comparison only
   // understands Latin letters, so a reference with none of them — an Arabic

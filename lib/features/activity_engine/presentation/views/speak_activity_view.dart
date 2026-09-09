@@ -303,6 +303,21 @@ class _SpeakActivityViewState extends ConsumerState<SpeakActivityView> {
     );
   }
 
+  /// The "correct answer is: ___" reveal shown on an incorrect submission.
+  /// [widget.activity.accepted] wins when present (a closed-form answer
+  /// list); otherwise falls back to whatever [widget.activity.evaluation]'s
+  /// structured rubric can reveal (e.g. the resolved name for a
+  /// `letterSequence` rubric) — `null` when neither has anything fixed to
+  /// show, e.g. an open-ended `keywordChecklist` rubric.
+  String? _correctAnswerLabel() {
+    if (widget.activity.accepted.isNotEmpty) {
+      return widget.activity.accepted.join(' / ');
+    }
+    final evaluation = widget.activity.evaluation;
+    if (evaluation == null) return null;
+    return expectedAnswerLabel(evaluation, widget.evaluationContext);
+  }
+
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
@@ -338,9 +353,7 @@ class _SpeakActivityViewState extends ConsumerState<SpeakActivityView> {
       feedback: displaySubmission != null
           ? ActivityFeedbackBanner(
               submission: displaySubmission,
-              correctAnswerLabel: widget.activity.accepted.isNotEmpty
-                  ? widget.activity.accepted.join(' / ')
-                  : null,
+              correctAnswerLabel: _correctAnswerLabel(),
             )
           : null,
     );

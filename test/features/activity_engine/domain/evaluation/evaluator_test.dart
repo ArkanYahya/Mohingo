@@ -311,4 +311,86 @@ void main() {
       );
     });
   });
+
+  group('expectedAnswerLabel', () {
+    test('nonEmpty has no single fixed answer to reveal', () {
+      expect(
+        expectedAnswerLabel(
+          const NonEmptyEvaluationSpec(),
+          const EvaluationContext.empty(),
+        ),
+        isNull,
+      );
+    });
+
+    test('numericRange reveals the accepted range', () {
+      expect(
+        expectedAnswerLabel(
+          const NumericRangeEvaluationSpec(min: 1, max: 120),
+          const EvaluationContext.empty(),
+        ),
+        '1–120',
+      );
+    });
+
+    test('numericRange drops a trailing .0 from whole-number bounds, but '
+        'keeps a genuine fraction', () {
+      expect(
+        expectedAnswerLabel(
+          const NumericRangeEvaluationSpec(min: 0.5, max: 3),
+          const EvaluationContext.empty(),
+        ),
+        '0.5–3',
+      );
+    });
+
+    test('letterSequence with a resolved profileName reveals the name as '
+        'saved, not letters-only-normalized', () {
+      expect(
+        expectedAnswerLabel(
+          const LetterSequenceEvaluationSpec(reference: ProfileNameReference()),
+          const EvaluationContext(profileName: 'Arkan'),
+        ),
+        'Arkan',
+      );
+    });
+
+    test('letterSequence with a resolved previousAnswer reveals it', () {
+      expect(
+        expectedAnswerLabel(
+          const LetterSequenceEvaluationSpec(
+            reference: PreviousAnswerReference('A1-U0-L5-A01'),
+          ),
+          const EvaluationContext(previousAnswers: {'A1-U0-L5-A01': 'Ali'}),
+        ),
+        'Ali',
+      );
+    });
+
+    test('letterSequence with no usable reference has nothing to reveal', () {
+      expect(
+        expectedAnswerLabel(
+          const LetterSequenceEvaluationSpec(reference: ProfileNameReference()),
+          const EvaluationContext.empty(),
+        ),
+        isNull,
+      );
+    });
+
+    test('keywordChecklist has no single fixed answer to reveal — it '
+        'grades open-ended text against a checklist, not one string', () {
+      expect(
+        expectedAnswerLabel(
+          const KeywordChecklistEvaluationSpec(
+            requiredGroups: [
+              ['hi', 'hello'],
+            ],
+            minGroupsMatched: 1,
+          ),
+          const EvaluationContext.empty(),
+        ),
+        isNull,
+      );
+    });
+  });
 }
