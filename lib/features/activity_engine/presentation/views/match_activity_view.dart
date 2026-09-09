@@ -62,7 +62,7 @@ class _MatchActivityViewState extends State<MatchActivityView> {
     try {
       final decoded = jsonDecode(rawAnswer);
       return decoded is Map ? Map<String, String>.from(decoded) : null;
-    } on FormatException {
+    } catch (_) {
       return null;
     }
   }
