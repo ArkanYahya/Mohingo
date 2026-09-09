@@ -51,6 +51,55 @@ void main() {
     expect(find.text("Hi, I'm Omar."), findsNothing);
   });
 
+  testWidgets(
+    'the audio plays automatically the moment the activity appears — no '
+    'tap on the Listen button needed',
+    (tester) async {
+      final fakeTts = FakeTextToSpeechService();
+      await tester.pumpActivityView(
+        ChoiceActivityView.audioChoice(
+          activity: _audioChoice(),
+          onSubmitted: (_) {},
+        ),
+        textToSpeechService: fakeTts,
+      );
+
+      expect(fakeTts.spoken, ["Hi, I'm Omar."]);
+    },
+  );
+
+  testWidgets(
+    'does NOT auto-play in review mode — a review screen can show several '
+    'of these at once, and nothing here is a live listening exercise',
+    (tester) async {
+      final fakeTts = FakeTextToSpeechService();
+      await tester.pumpActivityView(
+        ChoiceActivityView.audioChoice(
+          activity: _audioChoice(),
+          onSubmitted: (_) {},
+          reviewAttempt: ActivityAttempt(
+            id: 1,
+            uuid: 'attempt-1',
+            learnerId: 1,
+            activityId: 'A1-U1-L1-A01',
+            sessionType: 'lesson',
+            mode: 'mastery',
+            evidenceSkill: 'listening',
+            rawAnswer: jsonEncode('Omar'),
+            isCorrect: true,
+            score: 1.0,
+            wasFallback: false,
+            attemptedAt: DateTime.utc(2026, 9, 9),
+            updatedAt: DateTime.utc(2026, 9, 9),
+          ),
+        ),
+        textToSpeechService: fakeTts,
+      );
+
+      expect(fakeTts.spoken, isEmpty);
+    },
+  );
+
   group('option order is shuffled', () {
     testWidgets(
       'renders options in a shuffled order, not the bundle\'s raw JSON '

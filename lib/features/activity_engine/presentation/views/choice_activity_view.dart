@@ -152,7 +152,13 @@ class _ChoiceActivityViewState extends State<ChoiceActivityView> {
       prompt: widget.prompt,
       promptAr: widget.promptAr,
       help: widget.audioTranscript != null
-          ? _AudioTranscriptCard(transcript: widget.audioTranscript!)
+          ? _AudioTranscriptCard(
+              transcript: widget.audioTranscript!,
+              // Never in review mode: a review screen can show several of
+              // these at once, and none of them is a live listening
+              // exercise the learner is being asked to do right now.
+              autoPlay: widget.reviewAttempt == null,
+            )
           : null,
       body: widget.isMediaOptions
           ? _MediaOptionGrid(
@@ -195,9 +201,10 @@ class _ChoiceActivityViewState extends State<ChoiceActivityView> {
 /// unavailable/silent TTS engine (see docs/TESTING.md — not verified on a
 /// real device) must never leave the activity unusable.
 class _AudioTranscriptCard extends ConsumerStatefulWidget {
-  const _AudioTranscriptCard({required this.transcript});
+  const _AudioTranscriptCard({required this.transcript, this.autoPlay = false});
 
   final String transcript;
+  final bool autoPlay;
 
   @override
   ConsumerState<_AudioTranscriptCard> createState() =>
@@ -240,7 +247,7 @@ class _AudioTranscriptCardState extends ConsumerState<_AudioTranscriptCard> {
       child: Row(
         children: [
           const SizedBox(width: 8),
-          ListenButton(text: widget.transcript),
+          ListenButton(text: widget.transcript, autoPlay: widget.autoPlay),
           const SizedBox(width: 4),
           Expanded(
             child: _revealed

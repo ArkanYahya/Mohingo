@@ -9,6 +9,7 @@ import 'package:mohingo/content/index/course_content_index.dart';
 import 'package:mohingo/content/parsing/course_bundle_parser.dart';
 import 'package:mohingo/content/providers/course_content_providers.dart';
 import 'package:mohingo/core/l10n/generated/app_localizations.dart';
+import 'package:mohingo/core/preferences/shared_preferences_provider.dart';
 import 'package:mohingo/data/local/database.dart';
 import 'package:mohingo/data/local/database_provider.dart';
 import 'package:mohingo/features/lesson_player/presentation/lesson_player_screen.dart';
@@ -17,6 +18,7 @@ import 'package:mohingo/features/progress/providers/current_learner_provider.dar
 import 'package:mohingo/features/speech/domain/speech_capability_service.dart';
 import 'package:mohingo/features/speech/domain/speech_recognition_service.dart';
 import 'package:mohingo/features/speech/providers/speech_providers.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../speech/fake_speech_services.dart';
 
@@ -71,9 +73,15 @@ void main() {
         ),
       );
 
+      SharedPreferences.setMockInitialValues({});
+      final prefs = await SharedPreferences.getInstance();
       final overrides = [
         appDatabaseProvider.overrideWithValue(db),
         courseContentProvider('a1').overrideWith((ref) async => index),
+        // The real A1-U0-L1 audioChoice activities now auto-play their
+        // transcript on mount, which reads the TTS rate/pitch preferences —
+        // both backed by sharedPreferencesProvider.
+        sharedPreferencesProvider.overrideWithValue(prefs),
         textToSpeechServiceProvider.overrideWithValue(
           FakeTextToSpeechService(),
         ),
@@ -193,6 +201,8 @@ void main() {
         ),
       );
 
+      SharedPreferences.setMockInitialValues({});
+      final prefs = await SharedPreferences.getInstance();
       // A single container, reused for every pump below — the point of this
       // test is that `lessonReviewAttemptsProvider`'s value on *this one*
       // container changes after a replay, which only happens if
@@ -203,6 +213,10 @@ void main() {
         overrides: [
           appDatabaseProvider.overrideWithValue(db),
           courseContentProvider('a1').overrideWith((ref) async => index),
+          // The real A1-U0-L1 audioChoice activities now auto-play their
+          // transcript on mount, which reads the TTS rate/pitch
+          // preferences — both backed by sharedPreferencesProvider.
+          sharedPreferencesProvider.overrideWithValue(prefs),
           textToSpeechServiceProvider.overrideWithValue(
             FakeTextToSpeechService(),
           ),

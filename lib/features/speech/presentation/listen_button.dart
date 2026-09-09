@@ -10,10 +10,22 @@ import '../providers/tts_preferences_provider.dart';
 /// playback — one place that owns "how does the app speak text out loud".
 /// See docs/ARCHITECTURE.md.
 class ListenButton extends ConsumerStatefulWidget {
-  const ListenButton({required this.text, this.localeCode = 'en', super.key});
+  const ListenButton({
+    required this.text,
+    this.localeCode = 'en',
+    this.autoPlay = false,
+    super.key,
+  });
 
   final String text;
   final String localeCode;
+
+  /// When true, plays [text] once automatically on mount — no tap needed.
+  /// Used by `_AudioTranscriptCard` (`choice_activity_view.dart`) so a
+  /// listening exercise's audio starts the moment the question appears;
+  /// every other caller (Vocabulary/Grammar pronunciation) leaves this at
+  /// the default `false`, unaffected.
+  final bool autoPlay;
 
   @override
   ConsumerState<ListenButton> createState() => _ListenButtonState();
@@ -21,6 +33,12 @@ class ListenButton extends ConsumerStatefulWidget {
 
 class _ListenButtonState extends ConsumerState<ListenButton> {
   bool _playing = false;
+
+  @override
+  void initState() {
+    super.initState();
+    if (widget.autoPlay) _play();
+  }
 
   Future<void> _play() async {
     setState(() => _playing = true);

@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mohingo/core/l10n/generated/app_localizations.dart';
+import 'package:mohingo/core/preferences/shared_preferences_provider.dart';
 import 'package:mohingo/features/speech/domain/text_to_speech_service.dart';
 import 'package:mohingo/features/speech/providers/speech_providers.dart';
 // `Override` isn't part of flutter_riverpod's public export surface (an
 // explicit `show` list omits it) — it's only exported from this path.
 import 'package:riverpod/misc.dart' show Override;
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../speech/fake_speech_services.dart';
 
@@ -14,9 +16,11 @@ import '../speech/fake_speech_services.dart';
 /// (they read `AppLocalizations.of(context)!`), under [locale], and a
 /// [ProviderScope] with the speech services faked out by default — several
 /// activity views (e.g. `AudioChoiceActivity`'s transcript card) render a
-/// [ListenButton], which needs `textToSpeechServiceProvider` resolvable.
-/// Real device plugins have no platform to respond to in `flutter test`;
-/// see docs/TESTING.md.
+/// [ListenButton], which needs `textToSpeechServiceProvider` resolvable, and
+/// now auto-plays on mount, which also reads `ttsRatePreferenceProvider`/
+/// `ttsPitchPreferenceProvider` — both backed by `sharedPreferencesProvider`,
+/// so [sharedPreferences] must be resolvable too. Real device plugins have
+/// no platform to respond to in `flutter test`; see docs/TESTING.md.
 ///
 /// Pass [textToSpeechService] instead of putting a `textToSpeechServiceProvider`
 /// override in [overrides] directly — a provider can't be overridden twice
@@ -26,12 +30,14 @@ Widget wrapForTest(
   Locale locale = const Locale('en'),
   List<Override> overrides = const [],
   TextToSpeechService? textToSpeechService,
+  required SharedPreferences sharedPreferences,
 }) {
   return ProviderScope(
     overrides: [
       textToSpeechServiceProvider.overrideWithValue(
         textToSpeechService ?? FakeTextToSpeechService(),
       ),
+      sharedPreferencesProvider.overrideWithValue(sharedPreferences),
       ...overrides,
     ],
     child: MaterialApp(
@@ -49,12 +55,17 @@ extension PumpActivityView on WidgetTester {
     Locale locale = const Locale('en'),
     List<Override> overrides = const [],
     TextToSpeechService? textToSpeechService,
-  }) => pumpWidget(
-    wrapForTest(
-      child,
-      locale: locale,
-      overrides: overrides,
-      textToSpeechService: textToSpeechService,
-    ),
-  );
+  }) async {
+    SharedPreferences.setMockInitialValues({});
+    final prefs = await SharedPreferences.getInstance();
+    await pumpWidget(
+      wrapForTest(
+        child,
+        locale: locale,
+        overrides: overrides,
+        textToSpeechService: textToSpeechService,
+        sharedPreferences: prefs,
+      ),
+    );
+  }
 }
