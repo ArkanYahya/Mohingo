@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../content/models/activity.dart';
+import '../../../../data/local/database.dart' show ActivityAttempt;
 import '../../../../content/models/media_specification.dart';
 import '../../../../core/l10n/generated/app_localizations.dart';
 import '../../../../core/media/scene_diagram.dart';
@@ -29,6 +30,7 @@ class ChoiceActivityView extends StatefulWidget {
     required AudioChoiceActivity activity,
     required this.onSubmitted,
     this.mediaByKey = const {},
+    this.reviewAttempt,
     super.key,
   }) : prompt = activity.prompt,
        promptAr = activity.promptAr,
@@ -41,6 +43,7 @@ class ChoiceActivityView extends StatefulWidget {
     required TextChoiceActivity activity,
     required this.onSubmitted,
     this.mediaByKey = const {},
+    this.reviewAttempt,
     super.key,
   }) : prompt = activity.prompt,
        promptAr = activity.promptAr,
@@ -58,6 +61,13 @@ class ChoiceActivityView extends StatefulWidget {
   final Map<String, MediaSpecification> mediaByKey;
   final OnActivitySubmitted onSubmitted;
 
+  /// When non-null, this view renders read-only straight into its submitted
+  /// state, seeded from this recorded attempt — never live-interactive, and
+  /// [reviewAttempt].isCorrect/.score are trusted verbatim, never
+  /// recomputed. See docs/superpowers/specs/
+  /// 2026-09-09-lesson-answer-review-design.md.
+  final ActivityAttempt? reviewAttempt;
+
   @override
   State<ChoiceActivityView> createState() => _ChoiceActivityViewState();
 }
@@ -65,6 +75,27 @@ class ChoiceActivityView extends StatefulWidget {
 class _ChoiceActivityViewState extends State<ChoiceActivityView> {
   String? _selected;
   ActivitySubmission? _submission;
+
+  @override
+  void initState() {
+    super.initState();
+    final reviewAttempt = widget.reviewAttempt;
+    if (reviewAttempt == null) return;
+    _selected = _decodeSelection(reviewAttempt.rawAnswer);
+    _submission = ActivitySubmission(
+      correctness: reviewAttempt.isCorrect == true
+          ? ActivityCorrectness.correct
+          : ActivityCorrectness.incorrect,
+      score: reviewAttempt.score,
+      rawAnswerJson: reviewAttempt.rawAnswer,
+    );
+  }
+
+  String? _decodeSelection(String? rawAnswer) {
+    if (rawAnswer == null) return null;
+    final decoded = jsonDecode(rawAnswer);
+    return decoded is String ? decoded : null;
+  }
 
   void _submit() {
     if (_selected == null || _submission != null) return;

@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mohingo/content/models/activity.dart';
@@ -5,6 +7,7 @@ import 'package:mohingo/content/models/domain_definitions.dart';
 import 'package:mohingo/content/models/media_specification.dart';
 import 'package:mohingo/core/l10n/generated/app_localizations.dart';
 import 'package:mohingo/core/media/scene_diagram.dart';
+import 'package:mohingo/data/local/database.dart' show ActivityAttempt;
 import 'package:mohingo/features/activity_engine/domain/activity_submission.dart';
 import 'package:mohingo/features/activity_engine/presentation/views/choice_activity_view.dart';
 import 'package:mohingo/features/speech/domain/text_to_speech_service.dart';
@@ -173,4 +176,40 @@ void main() {
       expect(find.byType(SceneDiagram), findsWidgets);
     },
   );
+
+  group('review mode (reviewAttempt)', () {
+    testWidgets(
+      'renders the recorded result read-only, trusting isCorrect verbatim '
+      'even when it contradicts what live re-grading of the same answer '
+      'would produce — no live interaction, no submit button',
+      (tester) async {
+        await tester.pumpActivityView(
+          ChoiceActivityView.audioChoice(
+            activity: _audioChoice(),
+            onSubmitted: (_) {},
+            reviewAttempt: ActivityAttempt(
+              id: 1,
+              uuid: 'attempt-1',
+              learnerId: 1,
+              activityId: 'A1-U1-L1-A01',
+              sessionType: 'lesson',
+              mode: 'mastery',
+              evidenceSkill: 'listening',
+              rawAnswer: jsonEncode('Omar'), // the actually-correct answer
+              isCorrect: false, // deliberately recorded wrong
+              score: 0.0,
+              wasFallback: false,
+              attemptedAt: DateTime.utc(2026, 9, 9),
+              updatedAt: DateTime.utc(2026, 9, 9),
+            ),
+          ),
+        );
+
+        // Trusts the recorded isCorrect, never re-evaluates "Omar" == answer.
+        expect(find.byIcon(Icons.cancel), findsOneWidget);
+        expect(find.byIcon(Icons.check_circle), findsNothing);
+        expect(find.byType(FilledButton), findsNothing);
+      },
+    );
+  });
 }
