@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -67,6 +68,54 @@ void main() {
 
     expect(reported?.correctness, ActivityCorrectness.correct);
   });
+
+  testWidgets(
+    'renders options in a shuffled order, not the bundle\'s raw JSON order',
+    (tester) async {
+      const activity = GapActivity(
+        id: 'A1-TEST-A02',
+        lessonId: 'A1-TEST-L1',
+        mode: ActivityMode.practice,
+        skill: Skill.reading,
+        canDo: [],
+        prompt: 'Complete the sentence.',
+        promptAr: 'أكمل الجملة.',
+        raw: {},
+        text: 'Pick ___.',
+        options: ['v', 'w', 'x', 'y', 'z'],
+        answer: 'v',
+      );
+
+      await tester.pumpActivityView(
+        GapActivityView(
+          activity: activity,
+          onSubmitted: (_) {},
+          random: Random(0),
+        ),
+      );
+
+      // Random(0).shuffle() on ['v','w','x','y','z'] deterministically
+      // produces ['z','x','y','w','v']. Sorted by (row, then column) since
+      // these chips flow left-to-right within a Wrap — several can share
+      // the same vertical position, so dy alone can't recover list order.
+      Offset topLeft(String option) =>
+          tester.getTopLeft(find.widgetWithText(ChoiceChip, option));
+      final sortedByPosition =
+          [
+            for (final option in ['v', 'w', 'x', 'y', 'z']) option,
+          ]..sort((a, b) {
+            final byRow = topLeft(a).dy.compareTo(topLeft(b).dy);
+            return byRow != 0 ? byRow : topLeft(a).dx.compareTo(topLeft(b).dx);
+          });
+
+      expect(sortedByPosition, ['z', 'x', 'y', 'w', 'v']);
+      expect(
+        sortedByPosition,
+        isNot(['v', 'w', 'x', 'y', 'z']),
+        reason: 'must not render in the original, guessable bundle order',
+      );
+    },
+  );
 
   group('review mode (reviewAttempt)', () {
     testWidgets(

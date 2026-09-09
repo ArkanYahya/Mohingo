@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -48,6 +49,103 @@ void main() {
     // The transcript is the whole point of a listening exercise — it must
     // not be readable before the learner chooses to reveal it.
     expect(find.text("Hi, I'm Omar."), findsNothing);
+  });
+
+  group('option order is shuffled', () {
+    testWidgets(
+      'renders options in a shuffled order, not the bundle\'s raw JSON '
+      'order — the real A1 bundle has the correct answer as option 0 in '
+      '95% of choice activities, making it guessable without a shuffle',
+      (tester) async {
+        final activity = AudioChoiceActivity(
+          id: 'A1-TEST-A01',
+          lessonId: 'A1-TEST-L1',
+          mode: ActivityMode.mastery,
+          skill: Skill.listening,
+          canDo: const [],
+          prompt: 'Pick one.',
+          promptAr: 'اختر واحداً.',
+          raw: const {},
+          options: const ['a', 'b', 'c', 'd', 'e'],
+          answer: 'a',
+        );
+
+        await tester.pumpActivityView(
+          ChoiceActivityView.audioChoice(
+            activity: activity,
+            onSubmitted: (_) {},
+            // A fixed seed makes the resulting order deterministic and
+            // provable in a test — production uses an unseeded Random()
+            // (the default when none is injected), so it differs on every
+            // real mount.
+            random: Random(0),
+          ),
+        );
+
+        // Random(0).shuffle() on ['a','b','c','d','e'] deterministically
+        // produces ['e','c','d','b','a'] — verified directly against
+        // dart:math's shuffle implementation.
+        final expectedOrder = ['e', 'c', 'd', 'b', 'a'];
+        final sortedByPosition =
+            [
+              for (final option in ['a', 'b', 'c', 'd', 'e']) option,
+            ]..sort(
+              (x, y) => tester
+                  .getTopLeft(find.text(x))
+                  .dy
+                  .compareTo(tester.getTopLeft(find.text(y)).dy),
+            );
+
+        expect(sortedByPosition, expectedOrder);
+        expect(
+          sortedByPosition,
+          isNot(['a', 'b', 'c', 'd', 'e']),
+          reason: 'must not render in the original, guessable bundle order',
+        );
+      },
+    );
+
+    testWidgets('the shuffled order stays stable across the activity\'s own '
+        'rebuilds (e.g. after selecting an option) — only a fresh mount '
+        'reshuffles', (tester) async {
+      final activity = AudioChoiceActivity(
+        id: 'A1-TEST-A02',
+        lessonId: 'A1-TEST-L1',
+        mode: ActivityMode.mastery,
+        skill: Skill.listening,
+        canDo: const [],
+        prompt: 'Pick one.',
+        promptAr: 'اختر واحداً.',
+        raw: const {},
+        options: const ['a', 'b', 'c', 'd', 'e'],
+        answer: 'a',
+      );
+
+      await tester.pumpActivityView(
+        ChoiceActivityView.audioChoice(
+          activity: activity,
+          onSubmitted: (_) {},
+          random: Random(0),
+        ),
+      );
+
+      List<String> currentOrder() =>
+          [
+            for (final option in ['a', 'b', 'c', 'd', 'e']) option,
+          ]..sort(
+            (x, y) => tester
+                .getTopLeft(find.text(x))
+                .dy
+                .compareTo(tester.getTopLeft(find.text(y)).dy),
+          );
+
+      final beforeSelection = currentOrder();
+      await tester.tap(find.text('b'));
+      await tester.pump();
+      final afterSelection = currentOrder();
+
+      expect(afterSelection, beforeSelection);
+    });
   });
 
   group('audio transcript reveal', () {

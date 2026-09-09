@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:math';
 
 import 'package:flutter/material.dart';
 
@@ -10,12 +11,13 @@ import '../activity_chrome.dart';
 /// Renders a `gap` activity: a sentence with a `___` blank, filled by
 /// picking one of [GapActivity.options].
 class GapActivityView extends StatefulWidget {
-  const GapActivityView({
+  GapActivityView({
     required this.activity,
     required this.onSubmitted,
     this.reviewAttempt,
+    Random? random,
     super.key,
-  });
+  }) : _random = random ?? Random();
 
   final GapActivity activity;
   final OnActivitySubmitted onSubmitted;
@@ -27,6 +29,12 @@ class GapActivityView extends StatefulWidget {
   /// 2026-09-09-lesson-answer-review-design.md.
   final ActivityAttempt? reviewAttempt;
 
+  /// Used once, at first build, to shuffle [GapActivity.options] for
+  /// display — see [_GapActivityViewState._displayOptions]. Injectable so a
+  /// test can assert on a deterministic shuffle order; production call
+  /// sites always omit it, getting a genuinely random order on every mount.
+  final Random _random;
+
   @override
   State<GapActivityView> createState() => _GapActivityViewState();
 }
@@ -34,6 +42,15 @@ class GapActivityView extends StatefulWidget {
 class _GapActivityViewState extends State<GapActivityView> {
   String? _selected;
   ActivitySubmission? _submission;
+
+  /// [GapActivity.options] shuffled once per mount — same rationale as
+  /// `ChoiceActivityView._displayOptions`: real A1 content overwhelmingly
+  /// puts the correct answer first, so the raw order is guessable without
+  /// a shuffle. Stable across this instance's own rebuilds; only a fresh
+  /// mount reshuffles.
+  late final List<String> _displayOptions = List<String>.from(
+    widget.activity.options,
+  )..shuffle(widget._random);
 
   @override
   void initState() {
@@ -107,7 +124,7 @@ class _GapActivityViewState extends State<GapActivityView> {
             spacing: 8,
             runSpacing: 8,
             children: [
-              for (final option in widget.activity.options)
+              for (final option in _displayOptions)
                 ChoiceChip(
                   label: Text(option),
                   selected: _selected == option,

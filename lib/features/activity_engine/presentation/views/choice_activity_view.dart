@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
+import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -31,26 +32,30 @@ class ChoiceActivityView extends StatefulWidget {
     required this.onSubmitted,
     this.mediaByKey = const {},
     this.reviewAttempt,
+    Random? random,
     super.key,
   }) : prompt = activity.prompt,
        promptAr = activity.promptAr,
        options = activity.options,
        answer = activity.answer,
        audioTranscript = activity.audioTranscript,
-       isMediaOptions = activity.raw['optionMode'] == 'media';
+       isMediaOptions = activity.raw['optionMode'] == 'media',
+       _random = random ?? Random();
 
   ChoiceActivityView.textChoice({
     required TextChoiceActivity activity,
     required this.onSubmitted,
     this.mediaByKey = const {},
     this.reviewAttempt,
+    Random? random,
     super.key,
   }) : prompt = activity.prompt,
        promptAr = activity.promptAr,
        options = activity.options,
        answer = activity.answer,
        audioTranscript = null,
-       isMediaOptions = activity.raw['optionMode'] == 'media';
+       isMediaOptions = activity.raw['optionMode'] == 'media',
+       _random = random ?? Random();
 
   final String prompt;
   final String? promptAr;
@@ -60,6 +65,13 @@ class ChoiceActivityView extends StatefulWidget {
   final bool isMediaOptions;
   final Map<String, MediaSpecification> mediaByKey;
   final OnActivitySubmitted onSubmitted;
+
+  /// Used once, at first build, to shuffle [options] for display — see
+  /// [_ChoiceActivityViewState._displayOptions]. Injectable so a test can
+  /// assert on a deterministic shuffle order; production call sites always
+  /// omit it, getting a genuinely random order on every mount (`Random()`
+  /// with no seed).
+  final Random _random;
 
   /// When non-null, this view renders read-only straight into its submitted
   /// state, seeded from this recorded attempt — never live-interactive, and
@@ -75,6 +87,16 @@ class ChoiceActivityView extends StatefulWidget {
 class _ChoiceActivityViewState extends State<ChoiceActivityView> {
   String? _selected;
   ActivitySubmission? _submission;
+
+  /// [widget.options] shuffled once per mount — real A1 content puts the
+  /// correct answer as option 0 in 95% of choice activities, so rendering
+  /// the bundle's raw order would make the answer guessable without
+  /// understanding the content. Computed once (`late final`) so it stays
+  /// stable across this instance's own rebuilds (e.g. after selecting an
+  /// option) — only a fresh mount (a genuine new attempt, e.g. on replay)
+  /// reshuffles.
+  late final List<String> _displayOptions = List<String>.from(widget.options)
+    ..shuffle(widget._random);
 
   @override
   void initState() {
@@ -127,7 +149,7 @@ class _ChoiceActivityViewState extends State<ChoiceActivityView> {
           : null,
       body: widget.isMediaOptions
           ? _MediaOptionGrid(
-              options: widget.options,
+              options: _displayOptions,
               mediaByKey: widget.mediaByKey,
               selected: _selected,
               submitted: _submission != null,
@@ -137,7 +159,7 @@ class _ChoiceActivityViewState extends State<ChoiceActivityView> {
                   : null,
             )
           : _TextOptionList(
-              options: widget.options,
+              options: _displayOptions,
               selected: _selected,
               submitted: _submission != null,
               correctOption: widget.answer,
