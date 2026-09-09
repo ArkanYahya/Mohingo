@@ -13,6 +13,7 @@ import 'package:mohingo/data/local/database.dart';
 import 'package:mohingo/data/local/database_provider.dart';
 import 'package:mohingo/features/lesson_player/presentation/lesson_player_screen.dart';
 import 'package:mohingo/features/lesson_player/presentation/lesson_review_screen.dart';
+import 'package:mohingo/features/progress/providers/current_learner_provider.dart';
 import 'package:mohingo/features/speech/domain/speech_capability_service.dart';
 import 'package:mohingo/features/speech/domain/speech_recognition_service.dart';
 import 'package:mohingo/features/speech/providers/speech_providers.dart';
@@ -176,6 +177,126 @@ void main() {
       await tester.pumpAndSettle();
 
       // A01 wrong (latest); A02/A03/A04 correct on both passes.
+      expect(find.byIcon(Icons.cancel), findsOneWidget);
+      expect(find.byIcon(Icons.check_circle), findsNWidgets(3));
+    },
+  );
+
+  testWidgets(
+    'invalidating lessonReviewAttemptsProvider after a "Practice again" '
+    'replay refreshes data an already-open review screen previously '
+    'fetched — proving the invalidation itself takes effect, not just that '
+    'a freshly-mounted screen naturally fetches fresh data',
+    (tester) async {
+      final db = AppDatabase(NativeDatabase.memory());
+      addTearDown(db.close);
+      final index = CourseContentIndex.build(
+        CourseBundleParser.parse(
+          File('assets/content/en/A1/a1-course-bundle.json').readAsStringSync(),
+        ),
+      );
+
+      // A single container, reused for every pump below — the point of this
+      // test is that `lessonReviewAttemptsProvider`'s value on *this one*
+      // container changes after a replay, which only happens if
+      // `LessonPlayerScreen._handleSubmitted` actually invalidates it (a
+      // fresh ProviderScope per pump, as the test above uses, would fetch
+      // fresh data regardless of whether invalidation ever fired).
+      final container = ProviderContainer(
+        overrides: [
+          appDatabaseProvider.overrideWithValue(db),
+          courseContentProvider('a1').overrideWith((ref) async => index),
+          textToSpeechServiceProvider.overrideWithValue(
+            FakeTextToSpeechService(),
+          ),
+          speechCapabilityServiceProvider.overrideWithValue(
+            FakeSpeechCapabilityService(
+              const DeviceSpeechCapabilities(
+                sttAvailableForLocale: false,
+                micPermission: SpeechPermissionStatus.notDetermined,
+              ),
+            ),
+          ),
+        ],
+      );
+      addTearDown(container.dispose);
+
+      Future<void> pump(Widget home) => tester.pumpWidget(
+        UncontrolledProviderScope(
+          container: container,
+          child: MaterialApp(
+            supportedLocales: AppLocalizations.supportedLocales,
+            localizationsDelegates: AppLocalizations.localizationsDelegates,
+            home: home,
+          ),
+        ),
+      );
+
+      // Same tall-viewport technique as the test above — the review body's
+      // ListView only builds what fits on screen at the default test size.
+      tester.view.physicalSize = const Size(800, 3000);
+      tester.view.devicePixelRatio = 1.0;
+      addTearDown(tester.view.resetPhysicalSize);
+
+      // First pass: A01 answered correctly.
+      await pump(
+        const LessonPlayerScreen(unitId: 'A1-U0', lessonId: 'A1-U0-L1'),
+      );
+      await _playLessonOnce(tester, 'morning-office');
+      await tester.pumpAndSettle();
+      expect(find.byIcon(Icons.celebration), findsOneWidget);
+
+      // Open review on the SAME container — this both proves the first
+      // attempt is visible and, crucially, establishes
+      // lessonReviewAttemptsProvider's cached value on this container (the
+      // exact value that must later be invalidated, not just re-fetched
+      // fresh).
+      await pump(const SizedBox.shrink());
+      await pump(
+        const LessonReviewScreen(unitId: 'A1-U0', lessonId: 'A1-U0-L1'),
+      );
+      await tester.pumpAndSettle();
+      expect(find.byIcon(Icons.check_circle), findsNWidgets(4));
+      expect(find.byIcon(Icons.cancel), findsNothing);
+
+      // Replay through the SAME container via "Practice again"'s real
+      // destination screen: A01 answered incorrectly this time.
+      await pump(const SizedBox.shrink());
+      await pump(
+        const LessonPlayerScreen(unitId: 'A1-U0', lessonId: 'A1-U0-L1'),
+      );
+      await _playLessonOnce(tester, 'night-bedroom');
+      await tester.pumpAndSettle();
+      expect(find.byIcon(Icons.celebration), findsOneWidget);
+
+      // `_handleSubmitted` invalidates `lessonReviewAttemptsProvider` on
+      // this container for every one of the 4 activities just replayed, but
+      // it's a non-autoDispose provider with no active watcher right now
+      // (the review screen isn't mounted) — invalidation only actually
+      // re-runs the query the next time something reads it. Reading its
+      // `.future` here waits for that pending re-fetch to resolve, the same
+      // way real navigation (page-transition frames, the learner tapping
+      // back into the lesson row) gives it time to settle before a fresh
+      // `LessonReviewScreen` ever watches it.
+      final learner = await container.read(currentLearnerProvider.future);
+      await container.read(
+        lessonReviewAttemptsProvider((
+          learnerId: learner.id,
+          lessonId: 'A1-U0-L1',
+        )).future,
+      );
+
+      // Re-open review on the SAME container: must reflect the *second*
+      // attempt now, not the value already cached from the first pump
+      // above. This is the assertion that actually exercises the fix —
+      // without `_handleSubmitted`'s `ref.invalidate(
+      // lessonReviewAttemptsProvider(...))`, this container would keep
+      // serving the stale first-pass data forever.
+      await pump(const SizedBox.shrink());
+      await pump(
+        const LessonReviewScreen(unitId: 'A1-U0', lessonId: 'A1-U0-L1'),
+      );
+      await tester.pumpAndSettle();
       expect(find.byIcon(Icons.cancel), findsOneWidget);
       expect(find.byIcon(Icons.check_circle), findsNWidgets(3));
     },

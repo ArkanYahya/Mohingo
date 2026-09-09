@@ -19,6 +19,7 @@ import '../../activity_engine/providers/online_refinement_providers.dart';
 import '../../learning_path/providers/unit_progress_providers.dart';
 import '../../progress/providers/current_learner_provider.dart';
 import '../../progress/providers/progress_providers.dart';
+import 'lesson_review_screen.dart' show lessonReviewAttemptsProvider;
 
 /// Sequences through one lesson's activities, rendering each via the
 /// activity-engine registry, recording every submission, and refreshing
@@ -299,6 +300,17 @@ class _LessonPlayerBodyState extends ConsumerState<_LessonPlayerBody> {
     // wherever the learner is actually active right now, not just where
     // they last fully finished a lesson.
     ref.invalidate(allLessonProgressProvider);
+    // A "Practice again" replay recorded a fresh attempt for this lesson —
+    // without this, LessonReviewScreen would keep showing the pre-replay
+    // data for the rest of the app session (it has no other trigger to
+    // refetch). See docs/superpowers/specs/
+    // 2026-09-09-lesson-answer-review-design.md.
+    ref.invalidate(
+      lessonReviewAttemptsProvider((
+        learnerId: widget.learnerId,
+        lessonId: widget.lesson.id,
+      )),
+    );
     if (mounted) setState(() => _lastSubmission = submission);
   }
 
