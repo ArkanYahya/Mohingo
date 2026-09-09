@@ -169,7 +169,21 @@ class _LessonReviewBody extends ConsumerWidget {
                     child: latest[activity.id] == null
                         ? _NotAnsweredCard(activity: activity)
                         : buildActivityView(
-                            key: ValueKey(activity.id),
+                            // Keyed on the *attempt*, not just the activity:
+                            // the review screen is never unmounted while
+                            // "Practice again"'s player is pushed on top of
+                            // it (a real Navigator.pop() — e.g. the device
+                            // Back button — reveals this same still-alive
+                            // screen again), so a key that never changes
+                            // across a replay would make Flutter reuse the
+                            // same activity view State, whose reviewAttempt
+                            // is only ever read once, in initState — the
+                            // learner would keep seeing the pre-replay
+                            // result forever. See docs/superpowers/specs/
+                            // 2026-09-09-lesson-answer-review-design.md.
+                            key: ValueKey(
+                              '${activity.id}-${latest[activity.id]!.id}',
+                            ),
                             activity,
                             learnerId: learnerId,
                             onSubmitted: (_) {},
