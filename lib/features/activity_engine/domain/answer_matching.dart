@@ -21,11 +21,40 @@ bool answersMatch(String accepted, String given) {
 }
 
 final _curlyApostrophes = RegExp('[‘’ʼ]');
-final _terminalPunctuation = RegExp(r'[.!?,;:]+$');
+final _sentencePunctuation = RegExp(r'[.!?,;:]+');
+final _whitespaceRun = RegExp(r'\s+');
+
+// Expands the small set of be-verb/negation contractions this A1 content
+// actually uses (see the curriculum's own `A1.G.BE.*` grammar entries) to
+// their full form, so an accepted answer authored with a contraction
+// matches a given answer that spells it out, and vice versa — both sides
+// run through the same expansion before comparing. `'s` is only expanded
+// after this closed set of pronoun/wh-word subjects, never after an
+// arbitrary noun: "Sara's book" must not become "Sara is book".
+final _contractionIs = RegExp(
+  r"\b(he|she|it|that|there|what|who|where|how|here)'s\b",
+  caseSensitive: false,
+);
+final _contractionAre = RegExp(r"\b(you|we|they)'re\b", caseSensitive: false);
+final _contractionAm = RegExp(r"\bi'm\b", caseSensitive: false);
+final _contractionNot = RegExp(r"n't\b", caseSensitive: false);
+final _contractionWill = RegExp(r"'ll\b", caseSensitive: false);
+final _contractionHave = RegExp(r"'ve\b", caseSensitive: false);
 
 String _normalize(String text) {
   var result = text.trim().toLowerCase().replaceAll(_curlyApostrophes, "'");
-  result = result.replaceAll(_terminalPunctuation, '').trim();
+  result = result.replaceAllMapped(_contractionIs, (m) => '${m[1]} is');
+  result = result.replaceAllMapped(_contractionAre, (m) => '${m[1]} are');
+  result = result.replaceAll(_contractionAm, 'i am');
+  result = result.replaceAll(_contractionNot, ' not');
+  result = result.replaceAll(_contractionWill, ' will');
+  result = result.replaceAll(_contractionHave, ' have');
+  // Punctuation anywhere in the sentence, not just at the end — a spoken
+  // or typed answer commonly drops the internal full stop between two
+  // clauses ("This is Sara. She's my friend." vs "This is Sara she's my
+  // friend") without changing the meaning.
+  result = result.replaceAll(_sentencePunctuation, ' ');
+  result = result.replaceAll(_whitespaceRun, ' ').trim();
   return result;
 }
 

@@ -31,6 +31,49 @@ void main() {
       expect(answersMatch('Thanks.', 'hello'), isFalse);
     });
 
+    group('internal punctuation and contractions', () {
+      test('matches when the given answer runs two clauses together without '
+          'the accepted answer\'s internal sentence break', () {
+        expect(
+          answersMatch(
+            'This is Sara. She likes tea.',
+            'this is sara she likes tea',
+          ),
+          isTrue,
+        );
+      });
+
+      test('matches a be-verb contraction against its expanded form, and vice '
+          'versa — the reported bug: "This is Sara. She\'s my friend." vs '
+          '"this is Sara she is my friend"', () {
+        expect(
+          answersMatch(
+            "This is Sara. She's my friend.",
+            'this is Sara she is my friend',
+          ),
+          isTrue,
+        );
+        expect(answersMatch('She is my friend.', "she's my friend"), isTrue);
+      });
+
+      test('matches other common be-verb and negation contractions against '
+          'their expanded form', () {
+        expect(answersMatch("I'm ready.", 'i am ready'), isTrue);
+        expect(answersMatch("You're welcome.", 'you are welcome'), isTrue);
+        expect(answersMatch("It isn't ready.", 'it is not ready'), isTrue);
+        expect(answersMatch("I'll go.", 'i will go'), isTrue);
+        expect(answersMatch("We've finished.", 'we have finished'), isTrue);
+      });
+
+      test('does not treat a possessive "\'s" on a name as the "is" '
+          'contraction — only the closed set of pronoun/wh-word subjects', () {
+        expect(
+          answersMatch("This is Sara's book.", 'this is sara book'),
+          isFalse,
+        );
+      });
+    });
+
     group('letter-spelling accepted answers', () {
       test('matches a hyphen-joined accepted answer against itself', () {
         expect(answersMatch('A-L-I', 'A-L-I'), isTrue);
