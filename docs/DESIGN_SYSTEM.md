@@ -1,7 +1,7 @@
 > **What this file is:** The visual language — color tokens, type scale, spacing, component states. Without this, every session invents its own shade of blue.
 > **How to use it:** Treat values here as tokens, not suggestions — reference them by name (e.g. `color.primary`) in code rather than hardcoding hex/px values. Add a token here before using a new one in a component.
 
-_Last verified: 2026-09-04 — added StatusIndicator component; corrected streakAccent naming; added the `onStreakAccent` foreground token (fixes a 3.64:1 AA contrast failure on the light-theme streak card) and `StatusIndicator.semanticLabelOverride` (lesson/vocabulary rows no longer announce "Mastered") — see the 2026-09-04 UI redesign plan and its final fix pass. Replaced the bright Duolingo-style direction with a calm, adult Material 3 system per this session's Decision Gate ("calm visuals, light gamification"); see [ADR 0004](adr/0004-local-only-v1-no-firebase-backend.md). Tokens now map onto Flutter's `ColorScheme` roles instead of ad hoc names, since [TECH_STACK.md](TECH_STACK.md) commits to Material 3 + `ColorScheme` + `ThemeExtension`. Phase 10 confirmed the theme-mode and colour-theme pickers described below are now real, working Settings UI (previously the preference providers existed but nothing exposed them)._
+_Last verified: 2026-09-09 — light-mode `colorScheme.primary` is now overridden per seed with a hand-picked flat brand accent (`AppColorSeed.brandPrimary`/`onBrandPrimary`), fixing a "the app reads muted next to WhatsApp/Telegram" report; every other role (surfaces, secondary/tertiary, error, dark mode) is untouched — see the Color section below. Previously verified 2026-09-04: added StatusIndicator component; corrected streakAccent naming; added the `onStreakAccent` foreground token (fixes a 3.64:1 AA contrast failure on the light-theme streak card) and `StatusIndicator.semanticLabelOverride` (lesson/vocabulary rows no longer announce "Mastered") — see the 2026-09-04 UI redesign plan and its final fix pass. Replaced the bright Duolingo-style direction with a calm, adult Material 3 system per this session's Decision Gate ("calm visuals, light gamification"); see [ADR 0004](adr/0004-local-only-v1-no-firebase-backend.md). Tokens now map onto Flutter's `ColorScheme` roles instead of ad hoc names, since [TECH_STACK.md](TECH_STACK.md) commits to Material 3 + `ColorScheme` + `ThemeExtension`. Phase 10 confirmed the theme-mode and colour-theme pickers described below are now real, working Settings UI (previously the preference providers existed but nothing exposed them)._
 
 # Design System
 
@@ -19,9 +19,17 @@ Generated via `ColorScheme.fromSeed(seedColor: ..., brightness: ...)` — Materi
 | `colorScheme.surfaceContainer` | light neutral | dark neutral | Cards, exercise panels |
 | `colorScheme.onSurface` | near-black | near-white | Primary text |
 | `colorScheme.onSurfaceVariant` | mid grey | light grey | Secondary/help text |
-| `colorScheme.primary` | `#2A6F77`-derived tone | lighter teal tone | Primary actions, "correct" feedback |
+| `colorScheme.primary` | **hand-picked flat brand accent** — see below | lighter teal tone (pure algorithm output) | Primary actions, "correct" feedback |
 | `colorScheme.error` | muted red | lighter muted red | Errors, "incorrect" feedback |
 | `colorScheme.tertiary` | muted warm tone | lighter warm tone | Hints, informational callouts |
+
+**Light-mode `primary` is overridden, every other role is not (`AppColorSeed.brandPrimary`/`onBrandPrimary`, applied in `AppTheme._build`).** `ColorScheme.fromSeed`'s own light-mode `primary` sits at a deliberately dark tone (to guarantee white-text contrast), which read closer to ink than to an accent and prompted a "the app feels muted next to WhatsApp/Telegram" report. Since `primary` is the one role behind buttons, selected answers, progress fills and the "correct" state (see Components below), swapping just that role for a flat, saturated tone in the same hue family fixes the complaint without touching the calm surfaces/secondary/tertiary/error roles the original ADR 0004 direction still holds for. Each value was swept across lightness at full saturation and checked against the 4.5:1 WCAG 2.1 AA floor with its paired on-colour — white passes for `slate-indigo`/`warm-terracotta` but not for `calm-teal` (a vivid cyan), mirroring `GamificationTheme.onStreakAccent`'s own white-fails-AA case below. Dark mode is left as pure algorithm output: its `primary` is already a light, visible tone against the dark surface, so it doesn't have the same problem.
+
+| Seed | `brandPrimary` (light-mode `primary`) | `onBrandPrimary` |
+|---|---|---|
+| `color.seed.calm-teal` | `#00CBE5` | `#00363C` |
+| `color.seed.slate-indigo` | `#3645E2` | `#FFFFFF` |
+| `color.seed.warm-terracotta` | `#C74605` | `#FFFFFF` |
 
 **Approved alternate seeds (Settings colour-theme picker):** `color.seed.slate-indigo` (`#3F4A7A`), `color.seed.warm-terracotta` (`#8A5238`) — same generation mechanism, swap the seed. No theme may be added ad hoc outside this approved list without updating this doc.
 
