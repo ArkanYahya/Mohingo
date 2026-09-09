@@ -8,6 +8,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mohingo/content/models/activity.dart';
 import 'package:mohingo/content/models/domain_definitions.dart';
 import 'package:mohingo/core/l10n/generated/app_localizations.dart';
+import 'package:mohingo/core/theme/app_theme.dart';
+import 'package:mohingo/core/theme/color_seed.dart';
 import 'package:mohingo/data/local/database.dart';
 import 'package:mohingo/data/local/database_provider.dart';
 import 'package:mohingo/features/activity_engine/domain/activity_submission.dart';
@@ -313,6 +315,7 @@ void main() {
           UncontrolledProviderScope(
             container: container,
             child: MaterialApp(
+              theme: AppTheme.light(AppColorSeed.calmTeal),
               locale: const Locale('en'),
               supportedLocales: AppLocalizations.supportedLocales,
               localizationsDelegates: AppLocalizations.localizationsDelegates,

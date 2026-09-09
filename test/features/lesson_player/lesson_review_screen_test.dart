@@ -11,6 +11,8 @@ import 'package:mohingo/content/models/domain_definitions.dart';
 import 'package:mohingo/content/parsing/course_bundle_parser.dart';
 import 'package:mohingo/content/providers/course_content_providers.dart';
 import 'package:mohingo/core/l10n/generated/app_localizations.dart';
+import 'package:mohingo/core/theme/app_theme.dart';
+import 'package:mohingo/core/theme/color_seed.dart';
 import 'package:mohingo/data/local/database.dart';
 import 'package:mohingo/data/local/database_provider.dart';
 import 'package:mohingo/features/lesson_player/presentation/lesson_review_screen.dart';
@@ -79,6 +81,7 @@ void main() {
         UncontrolledProviderScope(
           container: container,
           child: MaterialApp(
+            theme: AppTheme.light(AppColorSeed.calmTeal),
             locale: const Locale('en'),
             supportedLocales: AppLocalizations.supportedLocales,
             localizationsDelegates: AppLocalizations.localizationsDelegates,
@@ -130,6 +133,7 @@ void main() {
       UncontrolledProviderScope(
         container: container,
         child: MaterialApp.router(
+          theme: AppTheme.light(AppColorSeed.calmTeal),
           routerConfig: router,
           locale: const Locale('en'),
           supportedLocales: AppLocalizations.supportedLocales,

@@ -11,6 +11,8 @@ import 'package:mohingo/content/parsing/course_bundle_parser.dart';
 import 'package:mohingo/content/providers/course_content_providers.dart';
 import 'package:mohingo/core/l10n/generated/app_localizations.dart';
 import 'package:mohingo/core/preferences/shared_preferences_provider.dart';
+import 'package:mohingo/core/theme/app_theme.dart';
+import 'package:mohingo/core/theme/color_seed.dart';
 import 'package:mohingo/data/local/database.dart';
 import 'package:mohingo/data/local/database_provider.dart';
 import 'package:mohingo/features/activity_engine/domain/evaluation/grammar_check_service.dart';
@@ -163,6 +165,7 @@ void main() {
             ),
           ],
           child: MaterialApp(
+            theme: AppTheme.light(AppColorSeed.calmTeal),
             supportedLocales: AppLocalizations.supportedLocales,
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             home: const LessonPlayerScreen(
@@ -262,6 +265,7 @@ void main() {
             ),
           ],
           child: MaterialApp(
+            theme: AppTheme.light(AppColorSeed.calmTeal),
             locale: const Locale('en'),
             supportedLocales: AppLocalizations.supportedLocales,
             localizationsDelegates: AppLocalizations.localizationsDelegates,
@@ -330,6 +334,7 @@ void main() {
             ),
           ],
           child: MaterialApp(
+            theme: AppTheme.light(AppColorSeed.calmTeal),
             locale: const Locale('en'),
             supportedLocales: AppLocalizations.supportedLocales,
             localizationsDelegates: AppLocalizations.localizationsDelegates,
@@ -433,6 +438,7 @@ void main() {
             builder: (context, ref, _) {
               ref.watch(pendingRefinementDrainerProvider);
               return MaterialApp(
+                theme: AppTheme.light(AppColorSeed.calmTeal),
                 locale: const Locale('en'),
                 supportedLocales: AppLocalizations.supportedLocales,
                 localizationsDelegates: AppLocalizations.localizationsDelegates,

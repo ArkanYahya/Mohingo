@@ -3,6 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mohingo/core/l10n/generated/app_localizations.dart';
 import 'package:mohingo/core/preferences/shared_preferences_provider.dart';
+import 'package:mohingo/core/theme/app_theme.dart';
+import 'package:mohingo/core/theme/color_seed.dart';
 import 'package:mohingo/features/speech/domain/text_to_speech_service.dart';
 import 'package:mohingo/features/speech/providers/speech_providers.dart';
 // `Override` isn't part of flutter_riverpod's public export surface (an
@@ -41,6 +43,11 @@ Widget wrapForTest(
       ...overrides,
     ],
     child: MaterialApp(
+      // The real theme, not Flutter's Material default — several activity
+      // views read `FeedbackTheme`/other AppTheme extensions for their
+      // correct/incorrect colours, which only a plain MaterialApp() theme
+      // doesn't register.
+      theme: AppTheme.light(AppColorSeed.calmTeal),
       locale: locale,
       supportedLocales: AppLocalizations.supportedLocales,
       localizationsDelegates: AppLocalizations.localizationsDelegates,

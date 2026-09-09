@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/l10n/generated/app_localizations.dart';
+import '../../../core/theme/feedback_theme_extension.dart';
 import '../domain/activity_submission.dart';
 
 /// The shared shell every activity view renders inside: prompt, an optional
@@ -85,6 +86,7 @@ class ActivityFeedbackBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
+    final feedbackTheme = Theme.of(context).extension<FeedbackTheme>()!;
     final l10n = AppLocalizations.of(context)!;
 
     final (
@@ -100,9 +102,12 @@ class ActivityFeedbackBanner extends StatelessWidget {
             l10n.activityFeedbackPendingOnlineRefinement,
           )
         : switch (submission.correctness) {
+            // A real green, not colorScheme.primaryContainer — "correct"
+            // reads as universal success, independent of which brand
+            // colour theme the learner picked. See FeedbackTheme.
             ActivityCorrectness.correct => (
-              colorScheme.primaryContainer,
-              colorScheme.onPrimaryContainer,
+              feedbackTheme.successContainer,
+              feedbackTheme.onSuccessContainer,
               Icons.check_circle,
               l10n.activityFeedbackCorrect,
             ),

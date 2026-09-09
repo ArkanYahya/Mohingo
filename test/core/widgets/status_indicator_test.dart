@@ -2,10 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:mohingo/core/l10n/generated/app_localizations.dart';
+import 'package:mohingo/core/theme/app_theme.dart';
+import 'package:mohingo/core/theme/color_seed.dart';
+import 'package:mohingo/core/theme/feedback_theme_extension.dart';
 import 'package:mohingo/core/widgets/status_indicator.dart';
 
 Widget _wrapped(Widget child) {
   return MaterialApp(
+    theme: AppTheme.light(AppColorSeed.calmTeal),
     supportedLocales: AppLocalizations.supportedLocales,
     localizationsDelegates: AppLocalizations.localizationsDelegates,
     home: Scaffold(body: child),
@@ -60,4 +64,23 @@ void main() {
 
     expect(masteredIcon.color, isNot(equals(notStartedIcon.color)));
   });
+
+  testWidgets(
+    "mastered uses the theme's semantic success colour (a real green), not "
+    "colorScheme.primary — a per-theme brand colour (e.g. warmTerracotta's "
+    'orange) doesn\'t read as "success" the way green universally does',
+    (tester) async {
+      await tester.pumpWidget(
+        _wrapped(const StatusIndicator(state: ProgressState.mastered)),
+      );
+      final icon = tester.widget<Icon>(find.byType(Icon));
+
+      final context = tester.element(find.byType(Icon));
+      final feedbackTheme = Theme.of(context).extension<FeedbackTheme>()!;
+      final colorScheme = Theme.of(context).colorScheme;
+
+      expect(icon.color, feedbackTheme.success);
+      expect(icon.color, isNot(equals(colorScheme.primary)));
+    },
+  );
 }

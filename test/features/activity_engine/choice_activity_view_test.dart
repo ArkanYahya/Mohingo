@@ -8,6 +8,7 @@ import 'package:mohingo/content/models/domain_definitions.dart';
 import 'package:mohingo/content/models/media_specification.dart';
 import 'package:mohingo/core/l10n/generated/app_localizations.dart';
 import 'package:mohingo/core/media/scene_diagram.dart';
+import 'package:mohingo/core/theme/feedback_theme_extension.dart';
 import 'package:mohingo/data/local/database.dart' show ActivityAttempt;
 import 'package:mohingo/features/activity_engine/domain/activity_submission.dart';
 import 'package:mohingo/features/activity_engine/domain/sound_effects_service.dart';
@@ -52,6 +53,32 @@ void main() {
     // The transcript is the whole point of a listening exercise — it must
     // not be readable before the learner chooses to reveal it.
     expect(find.text("Hi, I'm Omar."), findsNothing);
+  });
+
+  testWidgets('the correct option fills with the semantic success colour, not '
+      "colorScheme.primary — 'correct' must read as green regardless of "
+      "the learner's chosen theme", (tester) async {
+    await tester.pumpActivityView(
+      ChoiceActivityView.audioChoice(
+        activity: _audioChoice(),
+        onSubmitted: (_) {},
+      ),
+    );
+
+    await tester.tap(find.text('Omar'));
+    await tester.pump();
+
+    final context = tester.element(find.text('Omar'));
+    final feedbackTheme = Theme.of(context).extension<FeedbackTheme>()!;
+    final colorScheme = Theme.of(context).colorScheme;
+
+    final material = tester
+        .widgetList<Material>(
+          find.ancestor(of: find.text('Omar'), matching: find.byType(Material)),
+        )
+        .first;
+    expect(material.color, feedbackTheme.success);
+    expect(material.color, isNot(equals(colorScheme.primary)));
   });
 
   testWidgets(

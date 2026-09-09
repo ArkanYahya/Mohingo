@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'color_seed.dart';
+import 'feedback_theme_extension.dart';
 import 'gamification_theme_extension.dart';
 
 /// Builds the app's light/dark [ThemeData] from an approved [AppColorSeed].
@@ -22,10 +23,11 @@ abstract final class AppTheme {
     // stays exactly as Material 3's tonal-palette algorithm derives it —
     // calm surfaces, secondary/tertiary accents, error red are untouched.
     // Only light-mode primary and its container (the roles behind buttons,
-    // selected answers, progress fills, the "correct" state, and the
-    // "Correct!"/"Continue learning" containers — see docs/DESIGN_SYSTEM.md)
-    // are swapped for [AppColorSeed.brandPrimary]/[brandPrimaryContainer];
-    // see those fields' doc comments for why.
+    // selected answers, progress fills, and the "Continue learning" hero
+    // card — see docs/DESIGN_SYSTEM.md) are swapped for
+    // [AppColorSeed.brandPrimary]/[brandPrimaryContainer]; see those
+    // fields' doc comments for why. The "correct"/mastered state no longer
+    // reads from primary at all — see [FeedbackTheme].
     final colorScheme = brightness == Brightness.light
         ? generated.copyWith(
             primary: seed.brandPrimary,
@@ -41,6 +43,9 @@ abstract final class AppTheme {
         brightness == Brightness.light
             ? GamificationTheme.light
             : GamificationTheme.dark,
+        brightness == Brightness.light
+            ? FeedbackTheme.light
+            : FeedbackTheme.dark,
       ],
     );
   }

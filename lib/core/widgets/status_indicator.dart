@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../l10n/generated/app_localizations.dart';
+import '../theme/feedback_theme_extension.dart';
 
 /// The 4 progress states shown across Learn, Review, and Tests — mirrors
 /// [UnitProgressState] but lives in the presentation layer since not every
@@ -51,6 +52,7 @@ class StatusIndicator extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final colorScheme = Theme.of(context).colorScheme;
+    final feedbackTheme = Theme.of(context).extension<FeedbackTheme>()!;
     final (IconData icon, Color color, String defaultLabel) = switch (state) {
       ProgressState.notStarted => (
         Icons.circle_outlined,
@@ -67,9 +69,12 @@ class StatusIndicator extends StatelessWidget {
         colorScheme.tertiary,
         l10n.unitStateNeedsReview,
       ),
+      // A real green, not colorScheme.primary — "mastered"/"correct" reads
+      // as universal success, independent of which brand colour theme the
+      // learner picked. See FeedbackTheme's doc comment.
       ProgressState.mastered => (
         Icons.check_circle,
-        colorScheme.primary,
+        feedbackTheme.success,
         l10n.unitStateMastered,
       ),
     };

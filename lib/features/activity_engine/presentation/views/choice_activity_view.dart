@@ -9,6 +9,7 @@ import '../../../../content/models/activity.dart';
 import '../../../../content/models/media_specification.dart';
 import '../../../../core/l10n/generated/app_localizations.dart';
 import '../../../../core/media/scene_diagram.dart';
+import '../../../../core/theme/feedback_theme_extension.dart';
 import '../../../../data/local/database.dart' show ActivityAttempt;
 import '../../../speech/domain/text_to_speech_service.dart';
 import '../../../speech/presentation/listen_button.dart';
@@ -293,6 +294,7 @@ class _TextOptionList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
+    final feedbackTheme = Theme.of(context).extension<FeedbackTheme>()!;
     return Column(
       children: [
         for (final option in options)
@@ -311,6 +313,7 @@ class _TextOptionList extends StatelessWidget {
                         ? _OptionState.incorrect
                         : _OptionState.neutral),
               colorScheme: colorScheme,
+              feedbackTheme: feedbackTheme,
               onTap: onSelected == null ? null : () => onSelected!(option),
             ),
           ),
@@ -339,6 +342,7 @@ class _MediaOptionGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
+    final feedbackTheme = Theme.of(context).extension<FeedbackTheme>()!;
     return Wrap(
       spacing: 8,
       runSpacing: 8,
@@ -356,6 +360,7 @@ class _MediaOptionGrid extends StatelessWidget {
                       ? _OptionState.incorrect
                       : _OptionState.neutral),
             colorScheme: colorScheme,
+            feedbackTheme: feedbackTheme,
             onTap: onSelected == null ? null : () => onSelected!(option),
           ),
       ],
@@ -370,6 +375,7 @@ class _MediaOptionCard extends StatelessWidget {
     required this.selected,
     required this.state,
     required this.colorScheme,
+    required this.feedbackTheme,
     required this.onTap,
   });
 
@@ -378,6 +384,7 @@ class _MediaOptionCard extends StatelessWidget {
   final bool selected;
   final _OptionState state;
   final ColorScheme colorScheme;
+  final FeedbackTheme feedbackTheme;
   final VoidCallback? onTap;
 
   @override
@@ -407,7 +414,9 @@ class _MediaOptionCard extends StatelessWidget {
   }
 
   Color _borderColor(ColorScheme colorScheme) => switch (state) {
-    _OptionState.correct => colorScheme.primary,
+    // "Correct" reads as the universal semantic green, not the learner's
+    // chosen brand colour — see FeedbackTheme.
+    _OptionState.correct => feedbackTheme.success,
     _OptionState.incorrect => colorScheme.error,
     _OptionState.neutral =>
       selected ? colorScheme.primary : colorScheme.outlineVariant,
@@ -422,6 +431,7 @@ class _OptionTile extends StatelessWidget {
     required this.selected,
     required this.state,
     required this.colorScheme,
+    required this.feedbackTheme,
     required this.onTap,
   });
 
@@ -429,14 +439,17 @@ class _OptionTile extends StatelessWidget {
   final bool selected;
   final _OptionState state;
   final ColorScheme colorScheme;
+  final FeedbackTheme feedbackTheme;
   final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
     final (Color fill, Color onFill, IconData? icon) = switch (state) {
+      // "Correct" reads as the universal semantic green, not the learner's
+      // chosen brand colour — see FeedbackTheme.
       _OptionState.correct => (
-        colorScheme.primary,
-        colorScheme.onPrimary,
+        feedbackTheme.success,
+        feedbackTheme.onSuccess,
         Icons.check,
       ),
       _OptionState.incorrect => (

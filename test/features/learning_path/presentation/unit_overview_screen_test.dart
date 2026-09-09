@@ -14,6 +14,8 @@ import 'package:mohingo/content/parsing/course_bundle_parser.dart';
 import 'package:mohingo/content/providers/course_content_providers.dart';
 import 'package:mohingo/core/l10n/generated/app_localizations.dart';
 import 'package:mohingo/core/preferences/shared_preferences_provider.dart';
+import 'package:mohingo/core/theme/app_theme.dart';
+import 'package:mohingo/core/theme/color_seed.dart';
 import 'package:mohingo/core/widgets/status_indicator.dart';
 import 'package:mohingo/data/local/database.dart';
 import 'package:mohingo/data/local/database_provider.dart';
@@ -67,6 +69,7 @@ void main() {
               .overrideWith((ref) async => _realA1Index()),
         ],
         child: MaterialApp(
+          theme: AppTheme.light(AppColorSeed.calmTeal),
           supportedLocales: AppLocalizations.supportedLocales,
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           home: UnitOverviewScreen(unitId: unit.id),
@@ -115,6 +118,7 @@ void main() {
         UncontrolledProviderScope(
           container: container,
           child: MaterialApp(
+            theme: AppTheme.light(AppColorSeed.calmTeal),
             locale: const Locale('en'),
             supportedLocales: AppLocalizations.supportedLocales,
             localizationsDelegates: AppLocalizations.localizationsDelegates,
@@ -205,6 +209,7 @@ void main() {
       UncontrolledProviderScope(
         container: container,
         child: MaterialApp(
+          theme: AppTheme.light(AppColorSeed.calmTeal),
           locale: const Locale('en'),
           supportedLocales: AppLocalizations.supportedLocales,
           localizationsDelegates: AppLocalizations.localizationsDelegates,
@@ -263,6 +268,7 @@ void main() {
                 .overrideWith((ref) async => _realA1Index()),
           ],
           child: MaterialApp.router(
+            theme: AppTheme.light(AppColorSeed.calmTeal),
             routerConfig: testRouter(
               home: () => UnitOverviewScreen(unitId: unit.id),
             ),
@@ -317,6 +323,7 @@ void main() {
         UncontrolledProviderScope(
           container: container,
           child: MaterialApp.router(
+            theme: AppTheme.light(AppColorSeed.calmTeal),
             routerConfig: testRouter(
               home: () => UnitOverviewScreen(unitId: unit.id),
             ),
