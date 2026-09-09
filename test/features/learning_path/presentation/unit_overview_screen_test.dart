@@ -5,6 +5,7 @@ import 'package:drift/native.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:go_router/go_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:mohingo/content/index/course_content_index.dart';
@@ -220,5 +221,116 @@ void main() {
     // needsReview keeps StatusIndicator's own default label — no
     // "Completed" override, unlike the all-correct mastered case.
     expect(indicator.semanticLabelOverride, null);
+  });
+
+  group('lesson-row tap routing', () {
+    GoRouter testRouter({required Widget Function() home}) {
+      return GoRouter(
+        initialLocation: '/unit-test',
+        routes: [
+          GoRoute(path: '/unit-test', builder: (_, _) => home()),
+          GoRoute(
+            path: '/lesson-player/:unitId/:lessonId',
+            builder: (_, _) => const Scaffold(body: Text('LESSON_PLAYER_STUB')),
+          ),
+          GoRoute(
+            path: '/lesson-review/:unitId/:lessonId',
+            builder: (_, _) => const Scaffold(body: Text('LESSON_REVIEW_STUB')),
+          ),
+        ],
+      );
+    }
+
+    testWidgets('a not-started lesson still routes to the real lesson player, '
+        'unaffected', (tester) async {
+      SharedPreferences.setMockInitialValues({});
+      final prefs = await SharedPreferences.getInstance();
+      final db = AppDatabase(NativeDatabase.memory());
+      addTearDown(db.close);
+
+      final index = await _realA1Index();
+      final unit = index.bundle.units.firstWhere(
+        (u) => u.lessons.any((l) => l.activities.isNotEmpty),
+      );
+      final lesson = unit.lessons.firstWhere((l) => l.activities.isNotEmpty);
+
+      await tester.pumpWidget(
+        ProviderScope(
+          overrides: [
+            sharedPreferencesProvider.overrideWithValue(prefs),
+            appDatabaseProvider.overrideWithValue(db),
+            courseContentProvider('a1')
+                .overrideWith((ref) async => _realA1Index()),
+          ],
+          child: MaterialApp.router(
+            routerConfig: testRouter(
+              home: () => UnitOverviewScreen(unitId: unit.id),
+            ),
+            supportedLocales: AppLocalizations.supportedLocales,
+            localizationsDelegates: AppLocalizations.localizationsDelegates,
+          ),
+        ),
+      );
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.text(lesson.title).first);
+      await tester.pumpAndSettle();
+
+      expect(find.text('LESSON_PLAYER_STUB'), findsOneWidget);
+    });
+
+    testWidgets('a finished lesson routes to the read-only review screen', (
+      tester,
+    ) async {
+      SharedPreferences.setMockInitialValues({});
+      final prefs = await SharedPreferences.getInstance();
+      final db = AppDatabase(NativeDatabase.memory());
+      addTearDown(db.close);
+
+      final index = await _realA1Index();
+      final unit = index.bundle.units.firstWhere(
+        (u) => u.lessons.any((l) => l.activities.isNotEmpty),
+      );
+      final lesson = unit.lessons.firstWhere((l) => l.activities.isNotEmpty);
+
+      final container = ProviderContainer(
+        overrides: [
+          sharedPreferencesProvider.overrideWithValue(prefs),
+          appDatabaseProvider.overrideWithValue(db),
+          courseContentProvider('a1')
+              .overrideWith((ref) async => _realA1Index()),
+        ],
+      );
+      addTearDown(container.dispose);
+      final learner = await container.read(currentLearnerProvider.future);
+
+      await container
+          .read(unitLessonProgressRepositoryProvider)
+          .recordLessonPosition(
+            learnerId: learner.id,
+            lessonId: lesson.id,
+            unitId: unit.id,
+            lastActivityId: lesson.activities.last.id,
+          );
+
+      await tester.pumpWidget(
+        UncontrolledProviderScope(
+          container: container,
+          child: MaterialApp.router(
+            routerConfig: testRouter(
+              home: () => UnitOverviewScreen(unitId: unit.id),
+            ),
+            supportedLocales: AppLocalizations.supportedLocales,
+            localizationsDelegates: AppLocalizations.localizationsDelegates,
+          ),
+        ),
+      );
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.text(lesson.title).first);
+      await tester.pumpAndSettle();
+
+      expect(find.text('LESSON_REVIEW_STUB'), findsOneWidget);
+    });
   });
 }

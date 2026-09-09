@@ -15,6 +15,7 @@ import '../../features/grammar/presentation/grammar_list_screen.dart';
 import '../../features/home/presentation/home_screen.dart';
 import '../../features/learning_path/presentation/unit_overview_screen.dart';
 import '../../features/lesson_player/presentation/lesson_player_screen.dart';
+import '../../features/lesson_player/presentation/lesson_review_screen.dart';
 import '../../features/placement_test/presentation/placement_test_screen.dart';
 import '../../features/review/presentation/quick_practice_screen.dart';
 import '../../features/review/presentation/review_home_screen.dart';
@@ -169,6 +170,13 @@ GoRouter appRouter(Ref ref) {
       GoRoute(
         path: '/lesson-player/:unitId/:lessonId',
         builder: (_, state) => LessonPlayerScreen(
+          unitId: state.pathParameters['unitId']!,
+          lessonId: state.pathParameters['lessonId']!,
+        ),
+      ),
+      GoRoute(
+        path: '/lesson-review/:unitId/:lessonId',
+        builder: (_, state) => LessonReviewScreen(
           unitId: state.pathParameters['unitId']!,
           lessonId: state.pathParameters['lessonId']!,
         ),

@@ -78,60 +78,11 @@ class _UnitOverviewBody extends ConsumerWidget {
             padding: const EdgeInsets.all(16),
             children: [
               for (final lesson in unit.lessons)
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 8),
-                  child: Material(
-                    color: Theme.of(context).colorScheme.surfaceContainer,
-                    borderRadius: BorderRadius.circular(12),
-                    child: InkWell(
-                      borderRadius: BorderRadius.circular(12),
-                      // No invalidate-on-return here: the lesson player
-                      // invalidates [lessonProgressForUnitProvider] itself
-                      // the moment a lesson is finished, which covers both
-                      // its "Back to unit" (pop) and "Next lesson"
-                      // (pushReplacement) exits. See that provider's doc
-                      // comment.
-                      onTap: () => context.push(
-                        '/lesson-player/${unit.id}/${lesson.id}',
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(16),
-                        child: Row(
-                          children: [
-                            _lessonStatusIndicator(
-                              context,
-                              lesson,
-                              progressByLessonId[lesson.id],
-                              lessonAttempts,
-                            ),
-                            const SizedBox(width: 12),
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    lesson.title,
-                                    textDirection: TextDirection.ltr,
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .titleSmall,
-                                  ),
-                                  Text(
-                                    lesson.titleAr,
-                                    textDirection: TextDirection.rtl,
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .bodySmall,
-                                  ),
-                                ],
-                              ),
-                            ),
-                            const Icon(Icons.chevron_right),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
+                _lessonRow(
+                  context,
+                  lesson,
+                  progressByLessonId[lesson.id],
+                  lessonAttempts,
                 ),
             ],
           ),
@@ -140,14 +91,14 @@ class _UnitOverviewBody extends ConsumerWidget {
     );
   }
 
-  /// The lesson row's status dot. A finished, all-correct lesson
-  /// deliberately announces "Completed" rather than the shared "Mastered"
-  /// label: reaching a lesson's last activity is not course mastery as
-  /// docs/GLOSSARY.md defines it (that is `MasteryAggregationService`'s
-  /// call, made per unit against Can-Do evidence). A finished lesson with
-  /// at least one wrong answer shows `needsReview` instead, using its own
-  /// default "Needs review" label — see [lessonStatus].
-  Widget _lessonStatusIndicator(
+  /// One lesson's tappable row. Reused between the "genuinely finished"
+  /// (read-only review) and "not started"/"mid-lesson" (resume/start the
+  /// real player) cases — [isFinished] is the same "reached the lesson's
+  /// final activity" signal `lesson_player_screen.dart`'s
+  /// `_resolveStartIndex` uses, derived once here via [lessonStatus] so the
+  /// status dot and the tap target never disagree. See
+  /// docs/superpowers/specs/2026-09-09-lesson-answer-review-design.md.
+  Widget _lessonRow(
     BuildContext context,
     Lesson lesson,
     LessonProgressData? row,
@@ -158,6 +109,66 @@ class _UnitOverviewBody extends ConsumerWidget {
       progress: row,
       lessonAttempts: lessonAttempts,
     );
+    final isFinished =
+        state == ProgressState.mastered || state == ProgressState.needsReview;
+
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8),
+      child: Material(
+        color: Theme.of(context).colorScheme.surfaceContainer,
+        borderRadius: BorderRadius.circular(12),
+        child: InkWell(
+          borderRadius: BorderRadius.circular(12),
+          // No invalidate-on-return here: the lesson player invalidates
+          // [lessonProgressForUnitProvider] itself the moment a lesson is
+          // finished, which covers both its "Back to unit" (pop) and "Next
+          // lesson" (pushReplacement) exits. See that provider's doc
+          // comment.
+          onTap: () => context.push(
+            isFinished
+                ? '/lesson-review/${unit.id}/${lesson.id}'
+                : '/lesson-player/${unit.id}/${lesson.id}',
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Row(
+              children: [
+                _lessonStatusIndicator(context, state),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        lesson.title,
+                        textDirection: TextDirection.ltr,
+                        style: Theme.of(context).textTheme.titleSmall,
+                      ),
+                      Text(
+                        lesson.titleAr,
+                        textDirection: TextDirection.rtl,
+                        style: Theme.of(context).textTheme.bodySmall,
+                      ),
+                    ],
+                  ),
+                ),
+                const Icon(Icons.chevron_right),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  /// The lesson row's status dot. A finished, all-correct lesson
+  /// deliberately announces "Completed" rather than the shared "Mastered"
+  /// label: reaching a lesson's last activity is not course mastery as
+  /// docs/GLOSSARY.md defines it (that is `MasteryAggregationService`'s
+  /// call, made per unit against Can-Do evidence). A finished lesson with
+  /// at least one wrong answer shows `needsReview` instead, using its own
+  /// default "Needs review" label — see [lessonStatus].
+  Widget _lessonStatusIndicator(BuildContext context, ProgressState state) {
     return StatusIndicator(
       state: state,
       size: 20,
