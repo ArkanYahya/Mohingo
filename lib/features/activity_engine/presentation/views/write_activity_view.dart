@@ -34,6 +34,7 @@ class WriteActivityView extends ConsumerStatefulWidget {
     required this.learnerId,
     required this.onSubmitted,
     this.evaluationContext = const EvaluationContext.empty(),
+    this.reviewAttempt,
     super.key,
   });
 
@@ -41,6 +42,13 @@ class WriteActivityView extends ConsumerStatefulWidget {
   final int learnerId;
   final OnActivitySubmitted onSubmitted;
   final EvaluationContext evaluationContext;
+
+  /// When non-null, this view renders read-only straight into its submitted
+  /// state, pre-filled from this recorded attempt — never live-interactive,
+  /// and [reviewAttempt].isCorrect/.score are trusted verbatim, never
+  /// recomputed (and never sent through the online-refinement queue). See
+  /// docs/superpowers/specs/2026-09-09-lesson-answer-review-design.md.
+  final ActivityAttempt? reviewAttempt;
 
   @override
   ConsumerState<WriteActivityView> createState() => _WriteActivityViewState();
@@ -64,6 +72,32 @@ class _WriteActivityViewState extends ConsumerState<WriteActivityView> {
 
   DateTime _truncatedToSeconds(DateTime dt) =>
       DateTime(dt.year, dt.month, dt.day, dt.hour, dt.minute, dt.second);
+
+  @override
+  void initState() {
+    super.initState();
+    final reviewAttempt = widget.reviewAttempt;
+    if (reviewAttempt == null) return;
+    final decoded = _decodeText(reviewAttempt.rawAnswer);
+    if (decoded != null) _controller.text = decoded;
+    _submission = ActivitySubmission(
+      correctness: reviewAttempt.isCorrect == true
+          ? ActivityCorrectness.correct
+          : ActivityCorrectness.incorrect,
+      score: reviewAttempt.score,
+      rawAnswerJson: reviewAttempt.rawAnswer,
+    );
+  }
+
+  String? _decodeText(String? rawAnswer) {
+    if (rawAnswer == null) return null;
+    try {
+      final decoded = jsonDecode(rawAnswer);
+      return decoded is String ? decoded : null;
+    } on FormatException {
+      return null;
+    }
+  }
 
   void _submit() {
     final text = _controller.text.trim();

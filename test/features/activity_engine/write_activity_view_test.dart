@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:drift/drift.dart' hide isNull, isNotNull;
 import 'package:drift/native.dart';
 import 'package:flutter/material.dart';
@@ -281,6 +283,48 @@ void main() {
           reason: 'the stale pending message must not still be showing',
         );
         expect(find.byIcon(Icons.cancel), findsOneWidget);
+      },
+    );
+  });
+
+  group('review mode (reviewAttempt)', () {
+    testWidgets(
+      'pre-fills the recorded text, disabled, trusting isCorrect verbatim '
+      'even when it contradicts what live re-grading of the same answer '
+      'would produce — no submit button, no online-refinement watch',
+      (tester) async {
+        await tester.pumpActivityView(
+          WriteActivityView(
+            activity: _closedFormWrite(),
+            learnerId: 1,
+            onSubmitted: (_) {},
+            reviewAttempt: ActivityAttempt(
+              id: 1,
+              uuid: 'attempt-1',
+              learnerId: 1,
+              activityId: 'A1-U6-L1-A04',
+              sessionType: 'lesson',
+              mode: 'mastery',
+              evidenceSkill: 'writing',
+              rawAnswer: jsonEncode(
+                'One coffee, please.',
+              ), // the actually-accepted answer
+              isCorrect: false, // deliberately recorded wrong
+              score: 0.0,
+              wasFallback: false,
+              attemptedAt: DateTime.utc(2026, 9, 9),
+              updatedAt: DateTime.utc(2026, 9, 9),
+            ),
+          ),
+        );
+
+        expect(find.byIcon(Icons.cancel), findsOneWidget);
+        expect(find.byIcon(Icons.check_circle), findsNothing);
+        expect(find.byType(FilledButton), findsNothing);
+
+        final field = tester.widget<TextField>(find.byType(TextField));
+        expect(field.enabled, isFalse);
+        expect(field.controller!.text, 'One coffee, please.');
       },
     );
   });
