@@ -1,7 +1,10 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mohingo/content/models/activity.dart';
 import 'package:mohingo/content/models/domain_definitions.dart';
+import 'package:mohingo/data/local/database.dart' show ActivityAttempt;
 import 'package:mohingo/features/activity_engine/domain/activity_submission.dart';
 import 'package:mohingo/features/activity_engine/presentation/views/gap_activity_view.dart';
 
@@ -63,5 +66,41 @@ void main() {
     await tester.pump();
 
     expect(reported?.correctness, ActivityCorrectness.correct);
+  });
+
+  group('review mode (reviewAttempt)', () {
+    testWidgets(
+      'renders the recorded result read-only, trusting isCorrect verbatim '
+      'even when it contradicts what live re-grading of the same answer '
+      'would produce — no submit button, gap filled from the record',
+      (tester) async {
+        await tester.pumpActivityView(
+          GapActivityView(
+            activity: _gapActivity(),
+            onSubmitted: (_) {},
+            reviewAttempt: ActivityAttempt(
+              id: 1,
+              uuid: 'attempt-1',
+              learnerId: 1,
+              activityId: 'A1-U2-L2-A02',
+              sessionType: 'lesson',
+              mode: 'practice',
+              evidenceSkill: 'reading',
+              rawAnswer: jsonEncode('has'), // the actually-correct answer
+              isCorrect: false, // deliberately recorded wrong
+              score: 0.0,
+              wasFallback: false,
+              attemptedAt: DateTime.utc(2026, 9, 9),
+              updatedAt: DateTime.utc(2026, 9, 9),
+            ),
+          ),
+        );
+
+        expect(find.text('She has one sister.'), findsOneWidget);
+        expect(find.byIcon(Icons.cancel), findsOneWidget);
+        expect(find.byIcon(Icons.check_circle), findsNothing);
+        expect(find.byType(FilledButton), findsNothing);
+      },
+    );
   });
 }
