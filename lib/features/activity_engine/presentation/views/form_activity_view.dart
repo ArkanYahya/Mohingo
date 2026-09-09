@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 
 import '../../../../content/models/activity.dart';
+import '../../../../data/local/database.dart' show ActivityAttempt;
 import '../../domain/activity_submission.dart';
 import '../activity_chrome.dart';
 
@@ -21,21 +22,54 @@ class FormActivityView extends StatefulWidget {
   const FormActivityView({
     required this.activity,
     required this.onSubmitted,
+    this.reviewAttempt,
     super.key,
   });
 
   final FormActivity activity;
   final OnActivitySubmitted onSubmitted;
 
+  /// When non-null, this view renders read-only straight into its submitted
+  /// state, pre-filled from this recorded attempt — never live-editable.
+  /// Always the neutral `notAutoGraded` treatment, exactly like a live
+  /// submission — forms are never auto-graded. See docs/superpowers/specs/
+  /// 2026-09-09-lesson-answer-review-design.md.
+  final ActivityAttempt? reviewAttempt;
+
   @override
   State<FormActivityView> createState() => _FormActivityViewState();
 }
 
 class _FormActivityViewState extends State<FormActivityView> {
+  late final Map<String, String> _reviewAnswers =
+      _decodeAnswers(widget.reviewAttempt?.rawAnswer) ?? const {};
+
   late final Map<String, TextEditingController> _controllers = {
-    for (final field in widget.activity.fields) field: TextEditingController(),
+    for (final field in widget.activity.fields)
+      field: TextEditingController(text: _reviewAnswers[field] ?? ''),
   };
   ActivitySubmission? _submission;
+
+  @override
+  void initState() {
+    super.initState();
+    final reviewAttempt = widget.reviewAttempt;
+    if (reviewAttempt == null) return;
+    _submission = ActivitySubmission(
+      correctness: ActivityCorrectness.notAutoGraded,
+      rawAnswerJson: reviewAttempt.rawAnswer,
+    );
+  }
+
+  Map<String, String>? _decodeAnswers(String? rawAnswer) {
+    if (rawAnswer == null) return null;
+    try {
+      final decoded = jsonDecode(rawAnswer);
+      return decoded is Map ? Map<String, String>.from(decoded) : null;
+    } on FormatException {
+      return null;
+    }
+  }
 
   bool get _allFilled =>
       _controllers.values.every((c) => c.text.trim().isNotEmpty);

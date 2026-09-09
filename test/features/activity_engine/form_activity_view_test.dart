@@ -1,7 +1,10 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mohingo/content/models/activity.dart';
 import 'package:mohingo/content/models/domain_definitions.dart';
+import 'package:mohingo/data/local/database.dart' show ActivityAttempt;
 import 'package:mohingo/features/activity_engine/domain/activity_submission.dart';
 import 'package:mohingo/features/activity_engine/presentation/views/form_activity_view.dart';
 
@@ -57,5 +60,43 @@ void main() {
     await tester.pump();
 
     expect(reported?.correctness, ActivityCorrectness.notAutoGraded);
+  });
+
+  group('review mode (reviewAttempt)', () {
+    testWidgets(
+      'pre-fills the recorded field values, disabled, with the neutral '
+      'saved-for-review treatment — no submit button',
+      (tester) async {
+        await tester.pumpActivityView(
+          FormActivityView(
+            activity: _formActivity(),
+            onSubmitted: (_) {},
+            reviewAttempt: ActivityAttempt(
+              id: 1,
+              uuid: 'attempt-1',
+              learnerId: 1,
+              activityId: 'A1-U2-L7-A01',
+              sessionType: 'lesson',
+              mode: 'mastery',
+              evidenceSkill: 'writing',
+              rawAnswer: jsonEncode({'name': 'Lina', 'relationship': 'mother'}),
+              wasFallback: false,
+              attemptedAt: DateTime.utc(2026, 9, 9),
+              updatedAt: DateTime.utc(2026, 9, 9),
+            ),
+          ),
+        );
+
+        expect(find.text('Lina'), findsOneWidget);
+        expect(find.text('mother'), findsOneWidget);
+        expect(find.byType(FilledButton), findsNothing);
+        expect(find.byIcon(Icons.hourglass_top), findsOneWidget);
+
+        final nameField = tester.widget<TextField>(
+          find.byType(TextField).first,
+        );
+        expect(nameField.enabled, isFalse);
+      },
+    );
   });
 }
