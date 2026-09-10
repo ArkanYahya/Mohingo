@@ -95,6 +95,11 @@ class AppLocalizationsAr extends AppLocalizations {
   String get unitPathYouAreHere => 'أنت هنا';
 
   @override
+  String unitOverviewLessonsComplete(int completed, int total) {
+    return 'أكملت $completed من $total دروس';
+  }
+
+  @override
   String get comingSoonLevelBody =>
       'هذا المستوى غير متاح بعد. المستوى A1 جاهز الآن — ابدأ منه.';
 

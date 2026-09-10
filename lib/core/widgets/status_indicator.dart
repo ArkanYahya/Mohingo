@@ -31,6 +31,7 @@ class StatusIndicator extends StatelessWidget {
     required this.state,
     this.size = 22,
     this.semanticLabelOverride,
+    this.colorOverride,
     super.key,
   });
 
@@ -47,6 +48,13 @@ class StatusIndicator extends StatelessWidget {
   /// first is "mastery" as docs/GLOSSARY.md defines it, so the other two
   /// pass their own honest label here rather than announcing "Mastered".
   final String? semanticLabelOverride;
+
+  /// Replaces the [state]-derived colour when non-null; the icon shape and
+  /// semantic label still come from [state]. Used by the unit overview's
+  /// "current lesson" node, which forces the brand accent regardless of
+  /// whether the underlying state is `notStarted` or `inProgress` — the
+  /// highlight is about "do this one next," not the state itself.
+  final Color? colorOverride;
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +88,7 @@ class StatusIndicator extends StatelessWidget {
     };
     return Icon(
       icon,
-      color: color,
+      color: colorOverride ?? color,
       size: size,
       semanticLabel: semanticLabelOverride ?? defaultLabel,
     );

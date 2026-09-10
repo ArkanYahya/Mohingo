@@ -83,4 +83,27 @@ void main() {
       expect(icon.color, isNot(equals(colorScheme.primary)));
     },
   );
+
+  testWidgets('colorOverride replaces the state-derived colour (icon shape and '
+      'semantic label are unaffected) — used to force the "current lesson" '
+      'highlight to read as the brand accent regardless of its raw state', (
+    tester,
+  ) async {
+    await tester.pumpWidget(
+      _wrapped(
+        StatusIndicator(
+          state: ProgressState.notStarted,
+          colorOverride: const Color(0xFF3645E2),
+        ),
+      ),
+    );
+    final icon = tester.widget<Icon>(find.byType(Icon));
+
+    final context = tester.element(find.byType(Icon));
+    final l10n = AppLocalizations.of(context)!;
+
+    expect(icon.color, const Color(0xFF3645E2));
+    expect(icon.icon, Icons.circle_outlined);
+    expect(icon.semanticLabel, l10n.unitStateNotStarted);
+  });
 }

@@ -248,6 +248,12 @@ abstract class AppLocalizations {
   /// **'You are here'**
   String get unitPathYouAreHere;
 
+  /// Unit overview header caption — how many of this unit's lessons have been played through to the end.
+  ///
+  /// In en, this message translates to:
+  /// **'{completed} of {total} lessons complete'**
+  String unitOverviewLessonsComplete(int completed, int total);
+
   /// Shown when a learner opens an A2-C2 level card.
   ///
   /// In en, this message translates to:

@@ -104,6 +104,14 @@
   },
   "unitPathYouAreHere": "You are here",
   "@unitPathYouAreHere": {"description": "Marker on the Learn journey spine showing the learner's current unit."},
+  "unitOverviewLessonsComplete": "{completed} of {total} lessons complete",
+  "@unitOverviewLessonsComplete": {
+    "description": "Unit overview header caption — how many of this unit's lessons have been played through to the end.",
+    "placeholders": {
+      "completed": {"type": "int"},
+      "total": {"type": "int"}
+    }
+  },
   "comingSoonLevelBody": "This level isn't available yet. A1 is ready now — start there.",
   "@comingSoonLevelBody": {
     "description": "Shown when a learner opens an A2-C2 level card."

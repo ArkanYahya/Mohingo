@@ -25,6 +25,7 @@
   "lessonStateCompleted": "مكتمل",
   "vocabularyStateLearned": "محفوظة",
   "unitPathYouAreHere": "أنت هنا",
+  "unitOverviewLessonsComplete": "أكملت {completed} من {total} دروس",
   "comingSoonLevelBody": "هذا المستوى غير متاح بعد. المستوى A1 جاهز الآن — ابدأ منه.",
   "continueLearningTitle": "أكمل التعلّم",
   "continueLearningCta": "متابعة",
