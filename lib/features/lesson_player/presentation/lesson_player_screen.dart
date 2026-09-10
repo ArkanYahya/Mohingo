@@ -17,6 +17,7 @@ import '../../activity_engine/domain/evidence_skill_resolver.dart';
 import '../../activity_engine/presentation/activity_view_registry.dart';
 import '../../activity_engine/providers/online_refinement_providers.dart';
 import '../../learning_path/providers/unit_progress_providers.dart';
+import '../../progress/domain/repositories/daily_task_event_repository.dart';
 import '../../progress/providers/current_learner_provider.dart';
 import '../../progress/providers/progress_providers.dart';
 import 'lesson_review_screen.dart' show lessonReviewAttemptsProvider;
@@ -349,6 +350,16 @@ class _LessonPlayerBodyState extends ConsumerState<_LessonPlayerBody> {
       )),
     );
     ref.invalidate(currentStreakDaysProvider);
+
+    // Feeds Home's "Finish a lesson" daily task — the one place a lesson
+    // actually finishing is known.
+    await ref
+        .read(dailyTaskEventRepositoryProvider)
+        .recordEvent(
+          learnerId: widget.learnerId,
+          taskType: DailyTaskType.lesson,
+        );
+    ref.invalidate(dailyTaskCountsProvider);
 
     if (mounted) setState(() => _finished = true);
   }

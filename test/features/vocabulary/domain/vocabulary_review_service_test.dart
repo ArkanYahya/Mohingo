@@ -1,8 +1,28 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mohingo/data/local/database.dart';
+import 'package:mohingo/features/progress/domain/repositories/daily_task_event_repository.dart';
 import 'package:mohingo/features/progress/domain/repositories/review_state_repository.dart';
 import 'package:mohingo/features/vocabulary/domain/spaced_review_scheduler.dart';
 import 'package:mohingo/features/vocabulary/domain/vocabulary_review_service.dart';
+
+class _FakeDailyTaskEventRepository implements DailyTaskEventRepository {
+  final List<({int learnerId, DailyTaskType taskType})> recorded = [];
+
+  @override
+  Future<void> recordEvent({
+    required int learnerId,
+    required DailyTaskType taskType,
+    DateTime? occurredAt,
+  }) async {
+    recorded.add((learnerId: learnerId, taskType: taskType));
+  }
+
+  @override
+  Future<DailyTaskCounts> countsForToday({
+    required int learnerId,
+    required DateTime asOf,
+  }) async => (lesson: 0, vocabularyReview: 0, speaking: 0);
+}
 
 class _FakeReviewStateRepository implements ReviewStateRepository {
   VocabularyReviewStateData? stored;
@@ -86,7 +106,10 @@ void main() {
   test('a first-ever review starts from the default ease factor 2.5, 0 '
       'repetitions, 0 interval', () async {
     final repo = _FakeReviewStateRepository();
-    final service = VocabularyReviewService(repository: repo);
+    final service = VocabularyReviewService(
+      repository: repo,
+      dailyTaskEventRepository: _FakeDailyTaskEventRepository(),
+    );
     final now = DateTime.utc(2026, 9, 2);
 
     await service.recordReview(
@@ -117,7 +140,10 @@ void main() {
         repetitions: 2,
         updatedAt: DateTime.utc(2026, 9, 1),
       );
-    final service = VocabularyReviewService(repository: repo);
+    final service = VocabularyReviewService(
+      repository: repo,
+      dailyTaskEventRepository: _FakeDailyTaskEventRepository(),
+    );
     final now = DateTime.utc(2026, 9, 2);
 
     await service.recordReview(
@@ -134,4 +160,31 @@ void main() {
       15,
     ); // round(6 * 2.5), not the 1st-repetition default
   });
+
+  test(
+    'recording a review also records a vocabularyReview daily-task event — '
+    'feeds Home\'s "Review 5 words" task, regardless of confidence quality',
+    () async {
+      final repo = _FakeReviewStateRepository();
+      final dailyTaskEvents = _FakeDailyTaskEventRepository();
+      final service = VocabularyReviewService(
+        repository: repo,
+        dailyTaskEventRepository: dailyTaskEvents,
+      );
+
+      await service.recordReview(
+        learnerId: 7,
+        lexiconId: 'A1.LEX.HELLO.INTJ',
+        quality: ReviewQuality.again,
+        now: DateTime.utc(2026, 9, 2),
+      );
+
+      expect(dailyTaskEvents.recorded, hasLength(1));
+      expect(dailyTaskEvents.recorded.single.learnerId, 7);
+      expect(
+        dailyTaskEvents.recorded.single.taskType,
+        DailyTaskType.vocabularyReview,
+      );
+    },
+  );
 }

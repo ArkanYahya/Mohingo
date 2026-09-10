@@ -311,6 +311,54 @@ final class ContentVersionRepositoryProvider
 String _$contentVersionRepositoryHash() =>
     r'c7af0ca07caf5ff015cb03e9a330c171ded9a272';
 
+@ProviderFor(dailyTaskEventRepository)
+final dailyTaskEventRepositoryProvider = DailyTaskEventRepositoryProvider._();
+
+final class DailyTaskEventRepositoryProvider
+    extends
+        $FunctionalProvider<
+          DailyTaskEventRepository,
+          DailyTaskEventRepository,
+          DailyTaskEventRepository
+        >
+    with $Provider<DailyTaskEventRepository> {
+  DailyTaskEventRepositoryProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'dailyTaskEventRepositoryProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$dailyTaskEventRepositoryHash();
+
+  @$internal
+  @override
+  $ProviderElement<DailyTaskEventRepository> $createElement(
+    $ProviderPointer pointer,
+  ) => $ProviderElement(pointer);
+
+  @override
+  DailyTaskEventRepository create(Ref ref) {
+    return dailyTaskEventRepository(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(DailyTaskEventRepository value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<DailyTaskEventRepository>(value),
+    );
+  }
+}
+
+String _$dailyTaskEventRepositoryHash() =>
+    r'405a240c35b7937e48b03f1e6ec58f74f45fcf93';
+
 @ProviderFor(masteryAggregationService)
 final masteryAggregationServiceProvider = MasteryAggregationServiceProvider._();
 

@@ -22,8 +22,8 @@ void main() {
     await database.close();
   });
 
-  test('schema version is 3', () {
-    expect(database.schemaVersion, 3);
+  test('schema version is 4', () {
+    expect(database.schemaVersion, 4);
   });
 
   test('migrating from schemaVersion 1 adds a nullable name column without '
@@ -64,9 +64,10 @@ void main() {
     expect(updated.name, 'Ali');
   });
 
-  test('a real v1 install jumping straight to schemaVersion 3 applies both '
-      'migrations, in order: the name column is added AND the '
-      'pending_online_refinements table is created', () async {
+  test('a real v1 install jumping straight to schemaVersion 4 applies all '
+      'three migrations, in order: the name column is added, the '
+      'pending_online_refinements table is created, AND the '
+      'daily_task_events table is created', () async {
     // Same v1-shaped `learners` table (no `name` column) as the test
     // above — this is what a genuine v1 install's on-disk schema looks
     // like. Nothing about the existing `from < 2` branch changes here;
@@ -118,6 +119,24 @@ void main() {
         .get();
     expect(pending, hasLength(1));
     expect(pending.single.learnerId, row.id);
+
+    // from < 4 branch: the new daily-task-events table exists and is
+    // usable.
+    await upgraded
+        .into(upgraded.dailyTaskEvents)
+        .insert(
+          DailyTaskEventsCompanion.insert(
+            uuid: const Uuid().v4(),
+            learnerId: row.id,
+            taskType: 'lesson',
+            occurredAt: DateTime.utc(2026, 9, 10),
+          ),
+        );
+    final dailyTaskEvents = await upgraded
+        .select(upgraded.dailyTaskEvents)
+        .get();
+    expect(dailyTaskEvents, hasLength(1));
+    expect(dailyTaskEvents.single.learnerId, row.id);
   });
 
   test('can insert and read back a learner, with ar/en defaults', () async {
@@ -404,6 +423,16 @@ void main() {
                 submittedAt: DateTime.utc(2026, 9, 2),
               ),
             );
+        await database
+            .into(database.dailyTaskEvents)
+            .insert(
+              DailyTaskEventsCompanion.insert(
+                uuid: const Uuid().v4(),
+                learnerId: learnerId,
+                taskType: 'lesson',
+                occurredAt: DateTime.utc(2026, 9, 2),
+              ),
+            );
       }
 
       await seedFor(learnerAId);
@@ -443,6 +472,9 @@ void main() {
         await (database.select(
           database.pendingOnlineRefinements,
         )..where((t) => t.learnerId.equals(learnerAId))).get(),
+        await (database.select(
+          database.dailyTaskEvents,
+        )..where((t) => t.learnerId.equals(learnerAId))).get(),
       ]) {
         expect(rows, isEmpty);
       }
@@ -470,6 +502,12 @@ void main() {
       expect(
         await (database.select(
           database.pendingOnlineRefinements,
+        )..where((t) => t.learnerId.equals(learnerBId))).get(),
+        hasLength(1),
+      );
+      expect(
+        await (database.select(
+          database.dailyTaskEvents,
         )..where((t) => t.learnerId.equals(learnerBId))).get(),
         hasLength(1),
       );

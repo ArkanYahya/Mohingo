@@ -7648,6 +7648,362 @@ class PendingOnlineRefinementsCompanion
   }
 }
 
+class $DailyTaskEventsTable extends DailyTaskEvents
+    with TableInfo<$DailyTaskEventsTable, DailyTaskEvent> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $DailyTaskEventsTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<int> id = GeneratedColumn<int>(
+    'id',
+    aliasedName,
+    false,
+    hasAutoIncrement: true,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'PRIMARY KEY AUTOINCREMENT',
+    ),
+  );
+  static const VerificationMeta _uuidMeta = const VerificationMeta('uuid');
+  @override
+  late final GeneratedColumn<String> uuid = GeneratedColumn<String>(
+    'uuid',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+    defaultConstraints: GeneratedColumn.constraintIsAlways('UNIQUE'),
+  );
+  static const VerificationMeta _learnerIdMeta = const VerificationMeta(
+    'learnerId',
+  );
+  @override
+  late final GeneratedColumn<int> learnerId = GeneratedColumn<int>(
+    'learner_id',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: true,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'REFERENCES learners (id)',
+    ),
+  );
+  static const VerificationMeta _taskTypeMeta = const VerificationMeta(
+    'taskType',
+  );
+  @override
+  late final GeneratedColumn<String> taskType = GeneratedColumn<String>(
+    'task_type',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _occurredAtMeta = const VerificationMeta(
+    'occurredAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> occurredAt = GeneratedColumn<DateTime>(
+    'occurred_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  @override
+  List<GeneratedColumn> get $columns => [
+    id,
+    uuid,
+    learnerId,
+    taskType,
+    occurredAt,
+  ];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'daily_task_events';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<DailyTaskEvent> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    }
+    if (data.containsKey('uuid')) {
+      context.handle(
+        _uuidMeta,
+        uuid.isAcceptableOrUnknown(data['uuid']!, _uuidMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_uuidMeta);
+    }
+    if (data.containsKey('learner_id')) {
+      context.handle(
+        _learnerIdMeta,
+        learnerId.isAcceptableOrUnknown(data['learner_id']!, _learnerIdMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_learnerIdMeta);
+    }
+    if (data.containsKey('task_type')) {
+      context.handle(
+        _taskTypeMeta,
+        taskType.isAcceptableOrUnknown(data['task_type']!, _taskTypeMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_taskTypeMeta);
+    }
+    if (data.containsKey('occurred_at')) {
+      context.handle(
+        _occurredAtMeta,
+        occurredAt.isAcceptableOrUnknown(data['occurred_at']!, _occurredAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_occurredAtMeta);
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  DailyTaskEvent map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return DailyTaskEvent(
+      id: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}id'],
+      )!,
+      uuid: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}uuid'],
+      )!,
+      learnerId: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}learner_id'],
+      )!,
+      taskType: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}task_type'],
+      )!,
+      occurredAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}occurred_at'],
+      )!,
+    );
+  }
+
+  @override
+  $DailyTaskEventsTable createAlias(String alias) {
+    return $DailyTaskEventsTable(attachedDatabase, alias);
+  }
+}
+
+class DailyTaskEvent extends DataClass implements Insertable<DailyTaskEvent> {
+  final int id;
+  final String uuid;
+  final int learnerId;
+  final String taskType;
+  final DateTime occurredAt;
+  const DailyTaskEvent({
+    required this.id,
+    required this.uuid,
+    required this.learnerId,
+    required this.taskType,
+    required this.occurredAt,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<int>(id);
+    map['uuid'] = Variable<String>(uuid);
+    map['learner_id'] = Variable<int>(learnerId);
+    map['task_type'] = Variable<String>(taskType);
+    map['occurred_at'] = Variable<DateTime>(occurredAt);
+    return map;
+  }
+
+  DailyTaskEventsCompanion toCompanion(bool nullToAbsent) {
+    return DailyTaskEventsCompanion(
+      id: Value(id),
+      uuid: Value(uuid),
+      learnerId: Value(learnerId),
+      taskType: Value(taskType),
+      occurredAt: Value(occurredAt),
+    );
+  }
+
+  factory DailyTaskEvent.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return DailyTaskEvent(
+      id: serializer.fromJson<int>(json['id']),
+      uuid: serializer.fromJson<String>(json['uuid']),
+      learnerId: serializer.fromJson<int>(json['learnerId']),
+      taskType: serializer.fromJson<String>(json['taskType']),
+      occurredAt: serializer.fromJson<DateTime>(json['occurredAt']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<int>(id),
+      'uuid': serializer.toJson<String>(uuid),
+      'learnerId': serializer.toJson<int>(learnerId),
+      'taskType': serializer.toJson<String>(taskType),
+      'occurredAt': serializer.toJson<DateTime>(occurredAt),
+    };
+  }
+
+  DailyTaskEvent copyWith({
+    int? id,
+    String? uuid,
+    int? learnerId,
+    String? taskType,
+    DateTime? occurredAt,
+  }) => DailyTaskEvent(
+    id: id ?? this.id,
+    uuid: uuid ?? this.uuid,
+    learnerId: learnerId ?? this.learnerId,
+    taskType: taskType ?? this.taskType,
+    occurredAt: occurredAt ?? this.occurredAt,
+  );
+  DailyTaskEvent copyWithCompanion(DailyTaskEventsCompanion data) {
+    return DailyTaskEvent(
+      id: data.id.present ? data.id.value : this.id,
+      uuid: data.uuid.present ? data.uuid.value : this.uuid,
+      learnerId: data.learnerId.present ? data.learnerId.value : this.learnerId,
+      taskType: data.taskType.present ? data.taskType.value : this.taskType,
+      occurredAt: data.occurredAt.present
+          ? data.occurredAt.value
+          : this.occurredAt,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('DailyTaskEvent(')
+          ..write('id: $id, ')
+          ..write('uuid: $uuid, ')
+          ..write('learnerId: $learnerId, ')
+          ..write('taskType: $taskType, ')
+          ..write('occurredAt: $occurredAt')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(id, uuid, learnerId, taskType, occurredAt);
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is DailyTaskEvent &&
+          other.id == this.id &&
+          other.uuid == this.uuid &&
+          other.learnerId == this.learnerId &&
+          other.taskType == this.taskType &&
+          other.occurredAt == this.occurredAt);
+}
+
+class DailyTaskEventsCompanion extends UpdateCompanion<DailyTaskEvent> {
+  final Value<int> id;
+  final Value<String> uuid;
+  final Value<int> learnerId;
+  final Value<String> taskType;
+  final Value<DateTime> occurredAt;
+  const DailyTaskEventsCompanion({
+    this.id = const Value.absent(),
+    this.uuid = const Value.absent(),
+    this.learnerId = const Value.absent(),
+    this.taskType = const Value.absent(),
+    this.occurredAt = const Value.absent(),
+  });
+  DailyTaskEventsCompanion.insert({
+    this.id = const Value.absent(),
+    required String uuid,
+    required int learnerId,
+    required String taskType,
+    required DateTime occurredAt,
+  }) : uuid = Value(uuid),
+       learnerId = Value(learnerId),
+       taskType = Value(taskType),
+       occurredAt = Value(occurredAt);
+  static Insertable<DailyTaskEvent> custom({
+    Expression<int>? id,
+    Expression<String>? uuid,
+    Expression<int>? learnerId,
+    Expression<String>? taskType,
+    Expression<DateTime>? occurredAt,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (uuid != null) 'uuid': uuid,
+      if (learnerId != null) 'learner_id': learnerId,
+      if (taskType != null) 'task_type': taskType,
+      if (occurredAt != null) 'occurred_at': occurredAt,
+    });
+  }
+
+  DailyTaskEventsCompanion copyWith({
+    Value<int>? id,
+    Value<String>? uuid,
+    Value<int>? learnerId,
+    Value<String>? taskType,
+    Value<DateTime>? occurredAt,
+  }) {
+    return DailyTaskEventsCompanion(
+      id: id ?? this.id,
+      uuid: uuid ?? this.uuid,
+      learnerId: learnerId ?? this.learnerId,
+      taskType: taskType ?? this.taskType,
+      occurredAt: occurredAt ?? this.occurredAt,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<int>(id.value);
+    }
+    if (uuid.present) {
+      map['uuid'] = Variable<String>(uuid.value);
+    }
+    if (learnerId.present) {
+      map['learner_id'] = Variable<int>(learnerId.value);
+    }
+    if (taskType.present) {
+      map['task_type'] = Variable<String>(taskType.value);
+    }
+    if (occurredAt.present) {
+      map['occurred_at'] = Variable<DateTime>(occurredAt.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('DailyTaskEventsCompanion(')
+          ..write('id: $id, ')
+          ..write('uuid: $uuid, ')
+          ..write('learnerId: $learnerId, ')
+          ..write('taskType: $taskType, ')
+          ..write('occurredAt: $occurredAt')
+          ..write(')'))
+        .toString();
+  }
+}
+
 abstract class _$AppDatabase extends GeneratedDatabase {
   _$AppDatabase(QueryExecutor e) : super(e);
   $AppDatabaseManager get managers => $AppDatabaseManager(this);
@@ -7677,6 +8033,9 @@ abstract class _$AppDatabase extends GeneratedDatabase {
   );
   late final $PendingOnlineRefinementsTable pendingOnlineRefinements =
       $PendingOnlineRefinementsTable(this);
+  late final $DailyTaskEventsTable dailyTaskEvents = $DailyTaskEventsTable(
+    this,
+  );
   @override
   Iterable<TableInfo<Table, Object?>> get allTables =>
       allSchemaEntities.whereType<TableInfo<Table, Object?>>();
@@ -7695,6 +8054,7 @@ abstract class _$AppDatabase extends GeneratedDatabase {
     grammarReviewState,
     contentVersions,
     pendingOnlineRefinements,
+    dailyTaskEvents,
   ];
 }
 
@@ -7936,6 +8296,26 @@ final class $$LearnersTableReferences
 
     final cache = $_typedResult.readTableOrNull(
       _pendingOnlineRefinementsRefsTable($_db),
+    );
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: cache),
+    );
+  }
+
+  static MultiTypedResultKey<$DailyTaskEventsTable, List<DailyTaskEvent>>
+  _dailyTaskEventsRefsTable(_$AppDatabase db) => MultiTypedResultKey.fromTable(
+    db.dailyTaskEvents,
+    aliasName: 'learners__id__daily_task_events__learner_id',
+  );
+
+  $$DailyTaskEventsTableProcessedTableManager get dailyTaskEventsRefs {
+    final manager = $$DailyTaskEventsTableTableManager(
+      $_db,
+      $_db.dailyTaskEvents,
+    ).filter((f) => f.learnerId.id.sqlEquals($_itemColumn<int>('id')!));
+
+    final cache = $_typedResult.readTableOrNull(
+      _dailyTaskEventsRefsTable($_db),
     );
     return ProcessedTableManager(
       manager.$state.copyWith(prefetchedData: cache),
@@ -8238,6 +8618,31 @@ class $$LearnersTableFilterComposer
                     $removeJoinBuilderFromRootComposer,
               ),
         );
+    return f(composer);
+  }
+
+  Expression<bool> dailyTaskEventsRefs(
+    Expression<bool> Function($$DailyTaskEventsTableFilterComposer f) f,
+  ) {
+    final $$DailyTaskEventsTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.id,
+      referencedTable: $db.dailyTaskEvents,
+      getReferencedColumn: (t) => t.learnerId,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$DailyTaskEventsTableFilterComposer(
+            $db: $db,
+            $table: $db.dailyTaskEvents,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
     return f(composer);
   }
 }
@@ -8578,6 +8983,31 @@ class $$LearnersTableAnnotationComposer
         );
     return f(composer);
   }
+
+  Expression<T> dailyTaskEventsRefs<T extends Object>(
+    Expression<T> Function($$DailyTaskEventsTableAnnotationComposer a) f,
+  ) {
+    final $$DailyTaskEventsTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.id,
+      referencedTable: $db.dailyTaskEvents,
+      getReferencedColumn: (t) => t.learnerId,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$DailyTaskEventsTableAnnotationComposer(
+            $db: $db,
+            $table: $db.dailyTaskEvents,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return f(composer);
+  }
 }
 
 class $$LearnersTableTableManager
@@ -8604,6 +9034,7 @@ class $$LearnersTableTableManager
             bool vocabularyReviewStateRefs,
             bool grammarReviewStateRefs,
             bool pendingOnlineRefinementsRefs,
+            bool dailyTaskEventsRefs,
           })
         > {
   $$LearnersTableTableManager(_$AppDatabase db, $LearnersTable table)
@@ -8673,6 +9104,7 @@ class $$LearnersTableTableManager
                 vocabularyReviewStateRefs = false,
                 grammarReviewStateRefs = false,
                 pendingOnlineRefinementsRefs = false,
+                dailyTaskEventsRefs = false,
               }) {
                 return PrefetchHooks(
                   db: db,
@@ -8688,6 +9120,7 @@ class $$LearnersTableTableManager
                     if (grammarReviewStateRefs) db.grammarReviewState,
                     if (pendingOnlineRefinementsRefs)
                       db.pendingOnlineRefinements,
+                    if (dailyTaskEventsRefs) db.dailyTaskEvents,
                   ],
                   addJoins: null,
                   getPrefetchedDataCallback: (items) async {
@@ -8902,6 +9335,27 @@ class $$LearnersTableTableManager
                               ),
                           typedResults: items,
                         ),
+                      if (dailyTaskEventsRefs)
+                        await $_getPrefetchedData<
+                          Learner,
+                          $LearnersTable,
+                          DailyTaskEvent
+                        >(
+                          currentTable: table,
+                          referencedTable: $$LearnersTableReferences
+                              ._dailyTaskEventsRefsTable(db),
+                          managerFromTypedResult: (p0) =>
+                              $$LearnersTableReferences(
+                                db,
+                                table,
+                                p0,
+                              ).dailyTaskEventsRefs,
+                          referencedItemsForCurrentItem:
+                              (item, referencedItems) => referencedItems.where(
+                                (e) => e.learnerId == item.id,
+                              ),
+                          typedResults: items,
+                        ),
                     ];
                   },
                 );
@@ -8933,6 +9387,7 @@ typedef $$LearnersTableProcessedTableManager =
         bool vocabularyReviewStateRefs,
         bool grammarReviewStateRefs,
         bool pendingOnlineRefinementsRefs,
+        bool dailyTaskEventsRefs,
       })
     >;
 typedef $$CourseEnrolmentsTableCreateCompanionBuilder =
@@ -13913,6 +14368,324 @@ typedef $$PendingOnlineRefinementsTableProcessedTableManager =
       PendingOnlineRefinement,
       PrefetchHooks Function({bool learnerId})
     >;
+typedef $$DailyTaskEventsTableCreateCompanionBuilder =
+    DailyTaskEventsCompanion Function({
+      Value<int> id,
+      required String uuid,
+      required int learnerId,
+      required String taskType,
+      required DateTime occurredAt,
+    });
+typedef $$DailyTaskEventsTableUpdateCompanionBuilder =
+    DailyTaskEventsCompanion Function({
+      Value<int> id,
+      Value<String> uuid,
+      Value<int> learnerId,
+      Value<String> taskType,
+      Value<DateTime> occurredAt,
+    });
+
+final class $$DailyTaskEventsTableReferences
+    extends
+        BaseReferences<_$AppDatabase, $DailyTaskEventsTable, DailyTaskEvent> {
+  $$DailyTaskEventsTableReferences(
+    super.$_db,
+    super.$_table,
+    super.$_typedResult,
+  );
+
+  static $LearnersTable _learnerIdTable(_$AppDatabase db) =>
+      db.learners.createAlias('daily_task_events__learner_id__learners__id');
+
+  $$LearnersTableProcessedTableManager get learnerId {
+    final $_column = $_itemColumn<int>('learner_id')!;
+
+    final manager = $$LearnersTableTableManager(
+      $_db,
+      $_db.learners,
+    ).filter((f) => f.id.sqlEquals($_column));
+    final item = $_typedResult.readTableOrNull(_learnerIdTable($_db));
+    if (item == null) return manager;
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: [item]),
+    );
+  }
+}
+
+class $$DailyTaskEventsTableFilterComposer
+    extends Composer<_$AppDatabase, $DailyTaskEventsTable> {
+  $$DailyTaskEventsTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<int> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get uuid => $composableBuilder(
+    column: $table.uuid,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get taskType => $composableBuilder(
+    column: $table.taskType,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get occurredAt => $composableBuilder(
+    column: $table.occurredAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  $$LearnersTableFilterComposer get learnerId {
+    final $$LearnersTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.learnerId,
+      referencedTable: $db.learners,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$LearnersTableFilterComposer(
+            $db: $db,
+            $table: $db.learners,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$DailyTaskEventsTableOrderingComposer
+    extends Composer<_$AppDatabase, $DailyTaskEventsTable> {
+  $$DailyTaskEventsTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<int> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get uuid => $composableBuilder(
+    column: $table.uuid,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get taskType => $composableBuilder(
+    column: $table.taskType,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get occurredAt => $composableBuilder(
+    column: $table.occurredAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  $$LearnersTableOrderingComposer get learnerId {
+    final $$LearnersTableOrderingComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.learnerId,
+      referencedTable: $db.learners,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$LearnersTableOrderingComposer(
+            $db: $db,
+            $table: $db.learners,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$DailyTaskEventsTableAnnotationComposer
+    extends Composer<_$AppDatabase, $DailyTaskEventsTable> {
+  $$DailyTaskEventsTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<int> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<String> get uuid =>
+      $composableBuilder(column: $table.uuid, builder: (column) => column);
+
+  GeneratedColumn<String> get taskType =>
+      $composableBuilder(column: $table.taskType, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get occurredAt => $composableBuilder(
+    column: $table.occurredAt,
+    builder: (column) => column,
+  );
+
+  $$LearnersTableAnnotationComposer get learnerId {
+    final $$LearnersTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.learnerId,
+      referencedTable: $db.learners,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$LearnersTableAnnotationComposer(
+            $db: $db,
+            $table: $db.learners,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$DailyTaskEventsTableTableManager
+    extends
+        RootTableManager<
+          _$AppDatabase,
+          $DailyTaskEventsTable,
+          DailyTaskEvent,
+          $$DailyTaskEventsTableFilterComposer,
+          $$DailyTaskEventsTableOrderingComposer,
+          $$DailyTaskEventsTableAnnotationComposer,
+          $$DailyTaskEventsTableCreateCompanionBuilder,
+          $$DailyTaskEventsTableUpdateCompanionBuilder,
+          (DailyTaskEvent, $$DailyTaskEventsTableReferences),
+          DailyTaskEvent,
+          PrefetchHooks Function({bool learnerId})
+        > {
+  $$DailyTaskEventsTableTableManager(
+    _$AppDatabase db,
+    $DailyTaskEventsTable table,
+  ) : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$DailyTaskEventsTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$DailyTaskEventsTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$DailyTaskEventsTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback:
+              ({
+                Value<int> id = const Value.absent(),
+                Value<String> uuid = const Value.absent(),
+                Value<int> learnerId = const Value.absent(),
+                Value<String> taskType = const Value.absent(),
+                Value<DateTime> occurredAt = const Value.absent(),
+              }) => DailyTaskEventsCompanion(
+                id: id,
+                uuid: uuid,
+                learnerId: learnerId,
+                taskType: taskType,
+                occurredAt: occurredAt,
+              ),
+          createCompanionCallback:
+              ({
+                Value<int> id = const Value.absent(),
+                required String uuid,
+                required int learnerId,
+                required String taskType,
+                required DateTime occurredAt,
+              }) => DailyTaskEventsCompanion.insert(
+                id: id,
+                uuid: uuid,
+                learnerId: learnerId,
+                taskType: taskType,
+                occurredAt: occurredAt,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map(
+                (e) => (
+                  e.readTable(table),
+                  $$DailyTaskEventsTableReferences(db, table, e),
+                ),
+              )
+              .toList(),
+          prefetchHooksCallback: ({learnerId = false}) {
+            return PrefetchHooks(
+              db: db,
+              explicitlyWatchedTables: [],
+              addJoins:
+                  <
+                    T extends TableManagerState<
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic
+                    >
+                  >(state) {
+                    if (learnerId) {
+                      state = state.withJoin(
+                        currentTable: table,
+                        currentColumn: table.learnerId,
+                        referencedTable: $$DailyTaskEventsTableReferences
+                            ._learnerIdTable(db),
+                        referencedColumn: $$DailyTaskEventsTableReferences
+                            ._learnerIdTable(db)
+                            .id,
+                      ) as T;
+                    }
+
+                    return state;
+                  },
+              getPrefetchedDataCallback: (items) async {
+                return [];
+              },
+            );
+          },
+        ),
+      );
+}
+
+typedef $$DailyTaskEventsTableProcessedTableManager =
+    ProcessedTableManager<
+      _$AppDatabase,
+      $DailyTaskEventsTable,
+      DailyTaskEvent,
+      $$DailyTaskEventsTableFilterComposer,
+      $$DailyTaskEventsTableOrderingComposer,
+      $$DailyTaskEventsTableAnnotationComposer,
+      $$DailyTaskEventsTableCreateCompanionBuilder,
+      $$DailyTaskEventsTableUpdateCompanionBuilder,
+      (DailyTaskEvent, $$DailyTaskEventsTableReferences),
+      DailyTaskEvent,
+      PrefetchHooks Function({bool learnerId})
+    >;
 
 class $AppDatabaseManager {
   final _$AppDatabase _db;
@@ -13949,4 +14722,6 @@ class $AppDatabaseManager {
         _db,
         _db.pendingOnlineRefinements,
       );
+  $$DailyTaskEventsTableTableManager get dailyTaskEvents =>
+      $$DailyTaskEventsTableTableManager(_db, _db.dailyTaskEvents);
 }

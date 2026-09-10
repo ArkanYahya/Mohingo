@@ -4,6 +4,7 @@ import 'package:drift_flutter/drift_flutter.dart';
 import 'tables/assessment_attempt_tables.dart';
 import 'tables/attempt_tables.dart';
 import 'tables/content_versions_table.dart';
+import 'tables/daily_task_event_tables.dart';
 import 'tables/learner_tables.dart';
 import 'tables/lesson_progress_tables.dart';
 import 'tables/pending_online_refinement_tables.dart';
@@ -33,6 +34,7 @@ part 'database.g.dart';
     GrammarReviewState,
     ContentVersions,
     PendingOnlineRefinements,
+    DailyTaskEvents,
   ],
 )
 class AppDatabase extends _$AppDatabase {
@@ -45,7 +47,7 @@ class AppDatabase extends _$AppDatabase {
   AppDatabase.defaults() : super(driftDatabase(name: 'mohingo_progress'));
 
   @override
-  int get schemaVersion => 3;
+  int get schemaVersion => 4;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
@@ -57,6 +59,9 @@ class AppDatabase extends _$AppDatabase {
       if (from < 3) {
         await migrator.createTable(pendingOnlineRefinements);
       }
+      if (from < 4) {
+        await migrator.createTable(dailyTaskEvents);
+      }
     },
   );
 
@@ -64,9 +69,11 @@ class AppDatabase extends _$AppDatabase {
   /// history (lesson/placement/mission/assessment alike), vocabulary/grammar
   /// review state (including favourites), the course enrolment record
   /// (idempotently re-created on next app read, see
-  /// `ensureA1EnrollmentProvider`), and any still-queued
+  /// `ensureA1EnrollmentProvider`), any still-queued
   /// `PendingOnlineRefinements` items (a queued-but-unresolved answer is
-  /// progress state too). The `Learners` row itself, its stable UUID, and
+  /// progress state too), and `DailyTaskEvents` (Home's "Tasks today" row
+  /// resets with everything else). The `Learners` row itself, its stable
+  /// UUID, and
   /// `content_versions` (a course-level log, not learner-level) are
   /// untouched — this resets a learner's *progress*, not their identity.
   /// See docs/UX_PRINCIPLES.md's "resetting progress" confirmation-copy rule
@@ -113,6 +120,9 @@ class AppDatabase extends _$AppDatabase {
       )..where((t) => t.learnerId.equals(learnerId))).go();
       await (delete(
         pendingOnlineRefinements,
+      )..where((t) => t.learnerId.equals(learnerId))).go();
+      await (delete(
+        dailyTaskEvents,
       )..where((t) => t.learnerId.equals(learnerId))).go();
     });
   }

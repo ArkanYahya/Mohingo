@@ -143,6 +143,18 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String get homeTasksTodayTitle => 'Tasks today';
+
+  @override
+  String get homeTaskFinishLesson => 'Finish a lesson';
+
+  @override
+  String get homeTaskReviewWords => 'Review 5 words';
+
+  @override
+  String get homeTaskSpeakOnce => 'Speak once';
+
+  @override
   String get lessonCompleteTitle => 'Lesson complete';
 
   @override

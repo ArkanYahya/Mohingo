@@ -4,6 +4,7 @@ import 'package:uuid/uuid.dart';
 import '../../../content/models/domain_definitions.dart';
 import '../../../data/local/database.dart';
 import '../domain/repositories/activity_attempt_repository.dart';
+import '../domain/repositories/daily_task_event_repository.dart';
 
 class DriftActivityAttemptRepository implements ActivityAttemptRepository {
   DriftActivityAttemptRepository(this._db, {Uuid? uuid})
@@ -59,6 +60,23 @@ class DriftActivityAttemptRepository implements ActivityAttemptRepository {
               ActivityAttemptCanDosCompanion.insert(
                 attemptId: attemptId,
                 canDoId: canDoId,
+              ),
+            );
+      }
+
+      // Feeds Home's "Speak once" daily task — only real speaking evidence
+      // counts, never a `speak` activity answered via its typed-answer
+      // fallback (that's graded under evidenceSkill=writing instead).
+      if (evidenceSkill == Skill.spokenProduction ||
+          evidenceSkill == Skill.spokenInteraction) {
+        await _db
+            .into(_db.dailyTaskEvents)
+            .insert(
+              DailyTaskEventsCompanion.insert(
+                uuid: _uuid.v4(),
+                learnerId: learnerId,
+                taskType: DailyTaskType.speaking.name,
+                occurredAt: now,
               ),
             );
       }

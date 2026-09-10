@@ -142,6 +142,22 @@
     "description": "Home review-due card title.",
     "placeholders": {"count": {"type": "int"}}
   },
+  "homeTasksTodayTitle": "Tasks today",
+  "@homeTasksTodayTitle": {
+    "description": "Home screen section title above the 3 daily-task tiles."
+  },
+  "homeTaskFinishLesson": "Finish a lesson",
+  "@homeTaskFinishLesson": {
+    "description": "Home daily-task tile label — finish 1 lesson today."
+  },
+  "homeTaskReviewWords": "Review 5 words",
+  "@homeTaskReviewWords": {
+    "description": "Home daily-task tile label — review 5 vocabulary words today."
+  },
+  "homeTaskSpeakOnce": "Speak once",
+  "@homeTaskSpeakOnce": {
+    "description": "Home daily-task tile label — complete 1 speaking activity today."
+  },
   "lessonCompleteTitle": "Lesson complete",
   "@lessonCompleteTitle": {
     "description": "Shown after finishing the last activity in a lesson."

@@ -149,6 +149,18 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
+  String get homeTasksTodayTitle => 'مهام اليوم';
+
+  @override
+  String get homeTaskFinishLesson => 'أنهِ درساً';
+
+  @override
+  String get homeTaskReviewWords => 'راجع 5 كلمات';
+
+  @override
+  String get homeTaskSpeakOnce => 'تحدّث مرة';
+
+  @override
   String get lessonCompleteTitle => 'اكتمل الدرس';
 
   @override

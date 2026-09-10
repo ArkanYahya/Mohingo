@@ -12,6 +12,7 @@ part 'vocabulary_providers.g.dart';
 VocabularyReviewService vocabularyReviewService(Ref ref) {
   return VocabularyReviewService(
     repository: ref.watch(reviewStateRepositoryProvider),
+    dailyTaskEventRepository: ref.watch(dailyTaskEventRepositoryProvider),
   );
 }
 

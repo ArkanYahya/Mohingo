@@ -55,4 +55,4 @@ final class VocabularyReviewServiceProvider
 }
 
 String _$vocabularyReviewServiceHash() =>
-    r'10b3fe46eb85b68942c8d6d975a729a20638ef6c';
+    r'b5a730662b143d1568337ad4f52586c804b55462';

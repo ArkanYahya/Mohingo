@@ -216,6 +216,14 @@ void main() {
         unitProgress!.state,
         anyOf('notStarted', 'inProgress', 'mastered'),
       );
+
+      // Finishing the lesson recorded exactly one "lesson" daily-task
+      // event — feeds Home's "Finish a lesson" task.
+      final dailyTaskEvents = await db.select(db.dailyTaskEvents).get();
+      expect(
+        dailyTaskEvents.where((e) => e.taskType == 'lesson'),
+        hasLength(1),
+      );
     },
   );
 

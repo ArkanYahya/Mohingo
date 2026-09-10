@@ -302,6 +302,30 @@ abstract class AppLocalizations {
   /// **'{count, plural, =0{Nothing due for review} =1{1 item due for review} other{{count} items due for review}}'**
   String homeReviewDueTitle(int count);
 
+  /// Home screen section title above the 3 daily-task tiles.
+  ///
+  /// In en, this message translates to:
+  /// **'Tasks today'**
+  String get homeTasksTodayTitle;
+
+  /// Home daily-task tile label — finish 1 lesson today.
+  ///
+  /// In en, this message translates to:
+  /// **'Finish a lesson'**
+  String get homeTaskFinishLesson;
+
+  /// Home daily-task tile label — review 5 vocabulary words today.
+  ///
+  /// In en, this message translates to:
+  /// **'Review 5 words'**
+  String get homeTaskReviewWords;
+
+  /// Home daily-task tile label — complete 1 speaking activity today.
+  ///
+  /// In en, this message translates to:
+  /// **'Speak once'**
+  String get homeTaskSpeakOnce;
+
   /// Shown after finishing the last activity in a lesson.
   ///
   /// In en, this message translates to:

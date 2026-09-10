@@ -281,4 +281,63 @@ void main() {
       },
     );
   });
+
+  test('recording a spokenProduction attempt also records a daily-task '
+      "speaking event — feeds Home's \"Speak once\" task", () async {
+    await repo.recordAttempt(
+      learnerId: learnerId,
+      activityId: 'A1-U1-L1-A03',
+      sessionType: 'lesson',
+      mode: ActivityMode.mastery,
+      evidenceSkill: Skill.spokenProduction,
+      canDoIds: const [],
+      isCorrect: true,
+      score: 1.0,
+    );
+
+    final events = await db.select(db.dailyTaskEvents).get();
+    expect(events, hasLength(1));
+    expect(events.single.taskType, 'speaking');
+    expect(events.single.learnerId, learnerId);
+  });
+
+  test('recording a spokenInteraction attempt also records a daily-task '
+      'speaking event', () async {
+    await repo.recordAttempt(
+      learnerId: learnerId,
+      activityId: 'A1-U1-L1-A03',
+      sessionType: 'lesson',
+      mode: ActivityMode.mastery,
+      evidenceSkill: Skill.spokenInteraction,
+      canDoIds: const [],
+      isCorrect: true,
+      score: 1.0,
+    );
+
+    final events = await db.select(db.dailyTaskEvents).get();
+    expect(events, hasLength(1));
+    expect(events.single.taskType, 'speaking');
+  });
+
+  test(
+    'recording a non-speaking attempt (e.g. a speak activity answered via '
+    'its typed-answer fallback, evidenceSkill=writing) never records a '
+    "daily-task speaking event — a typed fallback didn't actually speak",
+    () async {
+      await repo.recordAttempt(
+        learnerId: learnerId,
+        activityId: 'A1-U1-L1-A03',
+        sessionType: 'lesson',
+        mode: ActivityMode.mastery,
+        evidenceSkill: Skill.writing,
+        canDoIds: const [],
+        isCorrect: true,
+        score: 1.0,
+        wasFallback: true,
+      );
+
+      final events = await db.select(db.dailyTaskEvents).get();
+      expect(events, isEmpty);
+    },
+  );
 }

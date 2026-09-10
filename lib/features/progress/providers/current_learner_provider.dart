@@ -1,6 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../data/local/database.dart';
+import '../domain/repositories/daily_task_event_repository.dart';
 import 'progress_providers.dart';
 
 /// The app's single local learner profile, created on first launch if none
@@ -29,4 +30,12 @@ final currentStreakDaysProvider = FutureProvider<int>((ref) async {
     learnerId: learner.id,
     asOf: DateTime.now(),
   );
+});
+
+/// Today's "Tasks today" counts (lesson finished / words reviewed / spoke)
+/// for Home's tasks row. See [DailyTaskEventRepository.countsForToday].
+final dailyTaskCountsProvider = FutureProvider<DailyTaskCounts>((ref) async {
+  final learner = await ref.watch(currentLearnerProvider.future);
+  final repository = ref.watch(dailyTaskEventRepositoryProvider);
+  return repository.countsForToday(learnerId: learner.id, asOf: DateTime.now());
 });
