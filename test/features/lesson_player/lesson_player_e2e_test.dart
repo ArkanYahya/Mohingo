@@ -16,6 +16,7 @@ import 'package:mohingo/core/theme/color_seed.dart';
 import 'package:mohingo/data/local/database.dart';
 import 'package:mohingo/data/local/database_provider.dart';
 import 'package:mohingo/features/activity_engine/domain/evaluation/grammar_check_service.dart';
+import 'package:mohingo/features/activity_engine/presentation/activity_chrome.dart';
 import 'package:mohingo/features/activity_engine/providers/online_refinement_providers.dart';
 import 'package:mohingo/features/lesson_player/presentation/lesson_player_screen.dart';
 import 'package:mohingo/features/speech/domain/speech_capability_service.dart';
@@ -224,6 +225,86 @@ void main() {
         dailyTaskEvents.where((e) => e.taskType == 'lesson'),
         hasLength(1),
       );
+    },
+  );
+
+  testWidgets(
+    'answering an activity incorrectly during live play shows a modal '
+    "bottom sheet with the correct answer, not the inline banner — and "
+    "its Continue button both dismisses the sheet and advances to the "
+    'next activity',
+    (tester) async {
+      final db = AppDatabase(NativeDatabase.memory());
+      final index = _realA1Index();
+      final lesson = index.lessonsById['A1-U0-L1']!;
+
+      SharedPreferences.setMockInitialValues({});
+      final prefs = await SharedPreferences.getInstance();
+
+      await tester.pumpWidget(
+        ProviderScope(
+          overrides: [
+            sharedPreferencesProvider.overrideWithValue(prefs),
+            appDatabaseProvider.overrideWithValue(db),
+            courseContentProvider('a1').overrideWith((ref) async => index),
+            textToSpeechServiceProvider.overrideWithValue(
+              FakeTextToSpeechService(),
+            ),
+            speechCapabilityServiceProvider.overrideWithValue(
+              FakeSpeechCapabilityService(
+                const DeviceSpeechCapabilities(
+                  sttAvailableForLocale: false,
+                  micPermission: SpeechPermissionStatus.notDetermined,
+                ),
+              ),
+            ),
+          ],
+          child: MaterialApp(
+            theme: AppTheme.light(AppColorSeed.calmTeal),
+            locale: const Locale('en'),
+            supportedLocales: AppLocalizations.supportedLocales,
+            localizationsDelegates: AppLocalizations.localizationsDelegates,
+            home: const LessonPlayerScreen(
+              unitId: 'A1-U0',
+              lessonId: 'A1-U0-L1',
+            ),
+          ),
+        ),
+      );
+      await tester.pumpAndSettle();
+
+      // A01, A02 — answer correctly with the shared helper.
+      await _answerAndAdvance(tester, lesson.activities[0]);
+      await _answerAndAdvance(tester, lesson.activities[1]);
+      await tester.pumpAndSettle();
+
+      // A03 ("What is the natural reply?", answer "Good morning.") —
+      // answer WRONG.
+      final l10n = AppLocalizations.of(
+        tester.element(find.byType(LessonPlayerScreen)),
+      )!;
+      expect(find.text('Thank you.'), findsOneWidget);
+      await tester.tap(find.text('Thank you.'));
+      await tester.pumpAndSettle();
+
+      // The bottom sheet is showing, the inline banner/Next button are not.
+      expect(find.text(l10n.activityIncorrectSheetTitle), findsOneWidget);
+      expect(
+        find.text(l10n.activityIncorrectSheetBody('Good morning.')),
+        findsOneWidget,
+      );
+      expect(find.byType(ActivityFeedbackBanner), findsNothing);
+      expect(find.text(l10n.lessonPlayerNext), findsNothing);
+
+      await tester.tap(find.text(l10n.activityIncorrectSheetContinue));
+      await tester.pumpAndSettle();
+
+      // Advanced to A04 (speak) — the sheet is gone and the progress
+      // header reflects the 4th activity.
+      expect(find.text(l10n.activityIncorrectSheetTitle), findsNothing);
+      expect(find.text(l10n.lessonPlayerProgress(4, 4)), findsOneWidget);
+
+      await db.close();
     },
   );
 

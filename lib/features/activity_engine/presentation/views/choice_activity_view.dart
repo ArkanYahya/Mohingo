@@ -35,6 +35,7 @@ class ChoiceActivityView extends ConsumerStatefulWidget {
     required this.onSubmitted,
     this.mediaByKey = const {},
     this.reviewAttempt,
+    this.suppressIncorrectBanner = false,
     Random? random,
     super.key,
   }) : prompt = activity.prompt,
@@ -50,6 +51,7 @@ class ChoiceActivityView extends ConsumerStatefulWidget {
     required this.onSubmitted,
     this.mediaByKey = const {},
     this.reviewAttempt,
+    this.suppressIncorrectBanner = false,
     Random? random,
     super.key,
   }) : prompt = activity.prompt,
@@ -82,6 +84,10 @@ class ChoiceActivityView extends ConsumerStatefulWidget {
   /// recomputed. See docs/superpowers/specs/
   /// 2026-09-09-lesson-answer-review-design.md.
   final ActivityAttempt? reviewAttempt;
+
+  /// True only when rendered by the live lesson player — see
+  /// [ActivitySubmitOrFeedback.suppressIncorrectBanner].
+  final bool suppressIncorrectBanner;
 
   @override
   ConsumerState<ChoiceActivityView> createState() => _ChoiceActivityViewState();
@@ -144,6 +150,7 @@ class _ChoiceActivityViewState extends ConsumerState<ChoiceActivityView> {
           : ActivityCorrectness.incorrect,
       score: isCorrect ? 1.0 : 0.0,
       rawAnswerJson: jsonEncode(_selected),
+      correctAnswerLabel: widget.answer,
     );
     setState(() => _submission = submission);
     widget.onSubmitted(submission);
@@ -194,6 +201,7 @@ class _ChoiceActivityViewState extends ConsumerState<ChoiceActivityView> {
         canSubmit: _selected != null,
         onSubmit: _submit,
         correctAnswerLabel: widget.answer,
+        suppressIncorrectBanner: widget.suppressIncorrectBanner,
       ),
     );
   }

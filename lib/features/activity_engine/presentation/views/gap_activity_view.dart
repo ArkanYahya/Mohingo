@@ -18,6 +18,7 @@ class GapActivityView extends ConsumerStatefulWidget {
     required this.activity,
     required this.onSubmitted,
     this.reviewAttempt,
+    this.suppressIncorrectBanner = false,
     Random? random,
     super.key,
   }) : _random = random ?? Random();
@@ -31,6 +32,10 @@ class GapActivityView extends ConsumerStatefulWidget {
   /// recomputed. See docs/superpowers/specs/
   /// 2026-09-09-lesson-answer-review-design.md.
   final ActivityAttempt? reviewAttempt;
+
+  /// True only when rendered by the live lesson player — see
+  /// [ActivitySubmitOrFeedback.suppressIncorrectBanner].
+  final bool suppressIncorrectBanner;
 
   /// Used once, at first build, to shuffle [GapActivity.options] for
   /// display — see [_GapActivityViewState._displayOptions]. Injectable so a
@@ -98,6 +103,7 @@ class _GapActivityViewState extends ConsumerState<GapActivityView> {
           : ActivityCorrectness.incorrect,
       score: isCorrect ? 1.0 : 0.0,
       rawAnswerJson: jsonEncode(_selected),
+      correctAnswerLabel: widget.activity.answer,
     );
     setState(() => _submission = submission);
     widget.onSubmitted(submission);
@@ -161,6 +167,7 @@ class _GapActivityViewState extends ConsumerState<GapActivityView> {
         canSubmit: _selected != null,
         onSubmit: _submit,
         correctAnswerLabel: widget.activity.answer,
+        suppressIncorrectBanner: widget.suppressIncorrectBanner,
       ),
     );
   }

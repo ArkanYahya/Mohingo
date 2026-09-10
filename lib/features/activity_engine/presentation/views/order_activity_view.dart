@@ -16,6 +16,7 @@ class OrderActivityView extends ConsumerStatefulWidget {
     required this.activity,
     required this.onSubmitted,
     this.reviewAttempt,
+    this.suppressIncorrectBanner = false,
     super.key,
   });
 
@@ -28,6 +29,10 @@ class OrderActivityView extends ConsumerStatefulWidget {
   /// recomputed. See docs/superpowers/specs/
   /// 2026-09-09-lesson-answer-review-design.md.
   final ActivityAttempt? reviewAttempt;
+
+  /// True only when rendered by the live lesson player — see
+  /// [ActivitySubmitOrFeedback.suppressIncorrectBanner].
+  final bool suppressIncorrectBanner;
 
   @override
   ConsumerState<OrderActivityView> createState() => _OrderActivityViewState();
@@ -98,6 +103,7 @@ class _OrderActivityViewState extends ConsumerState<OrderActivityView> {
           : ActivityCorrectness.incorrect,
       score: isCorrect ? 1.0 : 0.0,
       rawAnswerJson: jsonEncode(_placed),
+      correctAnswerLabel: widget.activity.answer.join(' '),
     );
     setState(() => _submission = submission);
     widget.onSubmitted(submission);
@@ -161,6 +167,7 @@ class _OrderActivityViewState extends ConsumerState<OrderActivityView> {
         canSubmit: _placed.length == widget.activity.tokens.length,
         onSubmit: _submit,
         correctAnswerLabel: widget.activity.answer.join(' '),
+        suppressIncorrectBanner: widget.suppressIncorrectBanner,
       ),
     );
   }

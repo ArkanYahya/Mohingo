@@ -68,4 +68,69 @@ void main() {
       expect(decoration.color, colorScheme.errorContainer);
     });
   });
+
+  group('ActivitySubmitOrFeedback', () {
+    testWidgets(
+      'suppressIncorrectBanner hides the incorrect banner entirely — the '
+      'live lesson player shows a bottom sheet instead, so the inline '
+      "banner would just duplicate it",
+      (tester) async {
+        await _pump(
+          tester,
+          const ActivitySubmitOrFeedback(
+            submission: ActivitySubmission(
+              correctness: ActivityCorrectness.incorrect,
+            ),
+            canSubmit: false,
+            onSubmit: _noop,
+            correctAnswerLabel: 'answer',
+            suppressIncorrectBanner: true,
+          ),
+        );
+
+        expect(find.byType(ActivityFeedbackBanner), findsNothing);
+      },
+    );
+
+    testWidgets('suppressIncorrectBanner leaves a correct submission\'s banner '
+        'untouched — only the incorrect case is ever suppressed', (
+      tester,
+    ) async {
+      await _pump(
+        tester,
+        const ActivitySubmitOrFeedback(
+          submission: ActivitySubmission(
+            correctness: ActivityCorrectness.correct,
+          ),
+          canSubmit: false,
+          onSubmit: _noop,
+          suppressIncorrectBanner: true,
+        ),
+      );
+
+      expect(find.byType(ActivityFeedbackBanner), findsOneWidget);
+    });
+
+    testWidgets(
+      'suppressIncorrectBanner defaults to false — review mode (which never '
+      'passes it) keeps showing the inline incorrect banner as before',
+      (tester) async {
+        await _pump(
+          tester,
+          const ActivitySubmitOrFeedback(
+            submission: ActivitySubmission(
+              correctness: ActivityCorrectness.incorrect,
+            ),
+            canSubmit: false,
+            onSubmit: _noop,
+            correctAnswerLabel: 'answer',
+          ),
+        );
+
+        expect(find.byType(ActivityFeedbackBanner), findsOneWidget);
+      },
+    );
+  });
 }
+
+void _noop() {}

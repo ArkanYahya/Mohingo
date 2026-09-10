@@ -37,6 +37,7 @@ class WriteActivityView extends ConsumerStatefulWidget {
     required this.onSubmitted,
     this.evaluationContext = const EvaluationContext.empty(),
     this.reviewAttempt,
+    this.suppressIncorrectBanner = false,
     super.key,
   });
 
@@ -51,6 +52,10 @@ class WriteActivityView extends ConsumerStatefulWidget {
   /// recomputed (and never sent through the online-refinement queue). See
   /// docs/superpowers/specs/2026-09-09-lesson-answer-review-design.md.
   final ActivityAttempt? reviewAttempt;
+
+  /// True only when rendered by the live lesson player — see
+  /// [ActivitySubmitOrFeedback.suppressIncorrectBanner].
+  final bool suppressIncorrectBanner;
 
   @override
   ConsumerState<WriteActivityView> createState() => _WriteActivityViewState();
@@ -119,6 +124,7 @@ class _WriteActivityViewState extends ConsumerState<WriteActivityView> {
             : ActivityCorrectness.incorrect,
         score: isCorrect ? 1.0 : 0.0,
         rawAnswerJson: jsonEncode(text),
+        correctAnswerLabel: _correctAnswerLabel(),
       );
     } else if (evaluation is KeywordChecklistEvaluationSpec &&
         evaluation.onlineRefinement != null) {
@@ -145,6 +151,7 @@ class _WriteActivityViewState extends ConsumerState<WriteActivityView> {
         correctness: result.correctness,
         score: result.score,
         rawAnswerJson: jsonEncode(text),
+        correctAnswerLabel: _correctAnswerLabel(),
       );
     } else {
       submission = ActivitySubmission(
@@ -244,6 +251,7 @@ class _WriteActivityViewState extends ConsumerState<WriteActivityView> {
         canSubmit: _controller.text.trim().isNotEmpty,
         onSubmit: _submit,
         correctAnswerLabel: _correctAnswerLabel(),
+        suppressIncorrectBanner: widget.suppressIncorrectBanner,
       ),
     );
   }

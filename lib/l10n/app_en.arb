@@ -54,6 +54,23 @@
       }
     }
   },
+  "activityIncorrectSheetTitle": "Not quite",
+  "@activityIncorrectSheetTitle": {
+    "description": "Title of the modal bottom sheet shown during live lesson-play when an answer is wrong."
+  },
+  "activityIncorrectSheetBody": "The correct answer is: {correctAnswer}",
+  "@activityIncorrectSheetBody": {
+    "description": "Body text of the incorrect-answer bottom sheet, revealing the correct answer for this activity only.",
+    "placeholders": {
+      "correctAnswer": {
+        "type": "String"
+      }
+    }
+  },
+  "activityIncorrectSheetContinue": "Continue",
+  "@activityIncorrectSheetContinue": {
+    "description": "Button on the incorrect-answer bottom sheet that dismisses it and advances to the next activity."
+  },
   "activityFeedbackSavedForReview": "Saved — this will be reviewed, not auto-graded.",
   "@activityFeedbackSavedForReview": {
     "description": "Feedback shown for writing/speaking activities, which need a task-specific rubric rather than an automatic right/wrong check."

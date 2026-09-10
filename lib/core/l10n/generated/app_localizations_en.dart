@@ -47,6 +47,17 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String get activityIncorrectSheetTitle => 'Not quite';
+
+  @override
+  String activityIncorrectSheetBody(String correctAnswer) {
+    return 'The correct answer is: $correctAnswer';
+  }
+
+  @override
+  String get activityIncorrectSheetContinue => 'Continue';
+
+  @override
   String get activityFeedbackSavedForReview =>
       'Saved — this will be reviewed, not auto-graded.';
 

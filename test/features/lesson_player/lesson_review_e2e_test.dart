@@ -38,11 +38,15 @@ import '../speech/fake_speech_services.dart';
 Future<void> _playLessonOnce(WidgetTester tester, String a01Answer) async {
   await tester.pumpAndSettle();
   await tester.tap(find.text(a01Answer).last);
-  await tester.pump();
-  await tester.tap(find.byType(FilledButton)); // Next
-  await tester.pump();
-
+  // pumpAndSettle, not pump: a wrong A01 answer now shows a modal bottom
+  // sheet ("Not quite" + Continue) instead of the inline Next button — its
+  // slide-up entrance animation must finish before the FilledButton below
+  // is at its final, tappable position. A correct answer settles just as
+  // fast, so this is safe either way.
   await tester.pumpAndSettle();
+  await tester.tap(find.byType(FilledButton)); // Next, or the sheet's Continue
+  await tester.pumpAndSettle();
+
   await tester.tap(find.text("You're welcome.").last); // A02
   await tester.pump();
   await tester.tap(find.byType(FilledButton)); // Next

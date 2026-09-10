@@ -47,6 +47,17 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
+  String get activityIncorrectSheetTitle => 'ليست صحيحة';
+
+  @override
+  String activityIncorrectSheetBody(String correctAnswer) {
+    return 'الإجابة الصحيحة هي: $correctAnswer';
+  }
+
+  @override
+  String get activityIncorrectSheetContinue => 'متابعة';
+
+  @override
   String get activityFeedbackSavedForReview =>
       'تم الحفظ — سيُراجَع لاحقاً ولن يُصحَّح تلقائياً.';
 

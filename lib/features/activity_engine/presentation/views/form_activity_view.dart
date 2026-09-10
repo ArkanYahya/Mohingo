@@ -23,6 +23,7 @@ class FormActivityView extends StatefulWidget {
     required this.activity,
     required this.onSubmitted,
     this.reviewAttempt,
+    this.suppressIncorrectBanner = false,
     super.key,
   });
 
@@ -35,6 +36,11 @@ class FormActivityView extends StatefulWidget {
   /// submission — forms are never auto-graded. See docs/superpowers/specs/
   /// 2026-09-09-lesson-answer-review-design.md.
   final ActivityAttempt? reviewAttempt;
+
+  /// Unused here — a `form` activity is always `notAutoGraded`, never
+  /// `incorrect` — but accepted for the uniform interface every activity
+  /// view shares. See [ActivitySubmitOrFeedback.suppressIncorrectBanner].
+  final bool suppressIncorrectBanner;
 
   @override
   State<FormActivityView> createState() => _FormActivityViewState();
@@ -128,6 +134,7 @@ class _FormActivityViewState extends State<FormActivityView> {
         submission: _submission,
         canSubmit: _allFilled,
         onSubmit: _submit,
+        suppressIncorrectBanner: widget.suppressIncorrectBanner,
       ),
     );
   }

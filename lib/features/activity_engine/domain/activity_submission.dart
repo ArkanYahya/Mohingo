@@ -16,9 +16,19 @@ class ActivitySubmission {
     this.rawAnswerJson,
     this.wasFallback = false,
     this.pendingOnlineRefinement = false,
+    this.correctAnswerLabel,
   });
 
   final ActivityCorrectness correctness;
+
+  /// The correct answer, in display form — set by the activity view
+  /// whenever it already knows one (the same value it passes to its own
+  /// inline [ActivityFeedbackBanner]). `LessonPlayerScreen` reads this to
+  /// populate the incorrect-answer bottom sheet, since the callback that
+  /// fires this submission carries no other way to reach it. `null` when
+  /// the activity has no single fixed correct answer to show (e.g. an
+  /// open-ended writing/speaking rubric).
+  final String? correctAnswerLabel;
 
   /// 0.0-1.0 where known (choice/order/gap/match are 1.0/0.0; writing/
   /// speaking are null until a rubric evaluator exists).

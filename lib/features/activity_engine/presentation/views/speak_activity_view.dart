@@ -51,6 +51,7 @@ class SpeakActivityView extends ConsumerStatefulWidget {
     required this.onSubmitted,
     this.evaluationContext = const EvaluationContext.empty(),
     this.reviewAttempt,
+    this.suppressIncorrectBanner = false,
     super.key,
   });
 
@@ -65,6 +66,13 @@ class SpeakActivityView extends ConsumerStatefulWidget {
   /// are trusted verbatim, never recomputed. See docs/superpowers/specs/
   /// 2026-09-09-lesson-answer-review-design.md.
   final ActivityAttempt? reviewAttempt;
+
+  /// True only when rendered by the live lesson player — see
+  /// [ActivitySubmitOrFeedback.suppressIncorrectBanner]. This view renders
+  /// [ActivityFeedbackBanner] directly (no submit button of its own to
+  /// share via [ActivitySubmitOrFeedback]), so the same suppression is
+  /// applied manually in [build].
+  final bool suppressIncorrectBanner;
 
   @override
   ConsumerState<SpeakActivityView> createState() => _SpeakActivityViewState();
@@ -240,6 +248,7 @@ class _SpeakActivityViewState extends ConsumerState<SpeakActivityView> {
         score: isCorrect ? 1.0 : 0.0,
         rawAnswerJson: jsonEncode(text),
         wasFallback: wasFallback,
+        correctAnswerLabel: _correctAnswerLabel(),
       );
     } else if (evaluation is KeywordChecklistEvaluationSpec &&
         evaluation.onlineRefinement != null) {
@@ -263,6 +272,7 @@ class _SpeakActivityViewState extends ConsumerState<SpeakActivityView> {
         score: result.score,
         rawAnswerJson: jsonEncode(text),
         wasFallback: wasFallback,
+        correctAnswerLabel: _correctAnswerLabel(),
       );
     } else {
       submission = ActivitySubmission(
@@ -350,12 +360,23 @@ class _SpeakActivityViewState extends ConsumerState<SpeakActivityView> {
             )
           : null,
       body: _buildBody(context, l10n),
-      feedback: displaySubmission != null
-          ? ActivityFeedbackBanner(
-              submission: displaySubmission,
-              correctAnswerLabel: _correctAnswerLabel(),
-            )
-          : null,
+      feedback: _buildFeedback(displaySubmission),
+    );
+  }
+
+  /// Mirrors [ActivitySubmitOrFeedback.suppressIncorrectBanner]'s logic —
+  /// this view has no submit button to share that widget with, so the same
+  /// suppression is applied here by hand.
+  Widget? _buildFeedback(ActivitySubmission? displaySubmission) {
+    if (displaySubmission == null) return null;
+    final isLiveIncorrect =
+        widget.suppressIncorrectBanner &&
+        !displaySubmission.pendingOnlineRefinement &&
+        displaySubmission.correctness == ActivityCorrectness.incorrect;
+    if (isLiveIncorrect) return null;
+    return ActivityFeedbackBanner(
+      submission: displaySubmission,
+      correctAnswerLabel: _correctAnswerLabel(),
     );
   }
 

@@ -18,6 +18,7 @@ class MatchActivityView extends ConsumerStatefulWidget {
     required this.activity,
     required this.onSubmitted,
     this.reviewAttempt,
+    this.suppressIncorrectBanner = false,
     super.key,
   });
 
@@ -30,6 +31,10 @@ class MatchActivityView extends ConsumerStatefulWidget {
   /// recomputed. See docs/superpowers/specs/
   /// 2026-09-09-lesson-answer-review-design.md.
   final ActivityAttempt? reviewAttempt;
+
+  /// True only when rendered by the live lesson player — see
+  /// [ActivitySubmitOrFeedback.suppressIncorrectBanner].
+  final bool suppressIncorrectBanner;
 
   @override
   ConsumerState<MatchActivityView> createState() => _MatchActivityViewState();
@@ -95,12 +100,16 @@ class _MatchActivityViewState extends ConsumerState<MatchActivityView> {
     final allCorrect = widget.activity.pairs.every(
       (pair) => _userMatches[pair[0]] == pair[1],
     );
+    final correctPairLabel = widget.activity.pairs
+        .map((p) => '${p[0]} → ${p[1]}')
+        .join(', ');
     final submission = ActivitySubmission(
       correctness: allCorrect
           ? ActivityCorrectness.correct
           : ActivityCorrectness.incorrect,
       score: allCorrect ? 1.0 : 0.0,
       rawAnswerJson: jsonEncode(_userMatches),
+      correctAnswerLabel: correctPairLabel,
     );
     setState(() => _submission = submission);
     widget.onSubmitted(submission);
@@ -163,6 +172,7 @@ class _MatchActivityViewState extends ConsumerState<MatchActivityView> {
         canSubmit: _isComplete,
         onSubmit: _submit,
         correctAnswerLabel: correctPairLabel,
+        suppressIncorrectBanner: widget.suppressIncorrectBanner,
       ),
     );
   }

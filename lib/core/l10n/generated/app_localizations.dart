@@ -164,6 +164,24 @@ abstract class AppLocalizations {
   /// **'Not quite — the correct answer is: {correctAnswer}'**
   String activityFeedbackIncorrectWithAnswer(String correctAnswer);
 
+  /// Title of the modal bottom sheet shown during live lesson-play when an answer is wrong.
+  ///
+  /// In en, this message translates to:
+  /// **'Not quite'**
+  String get activityIncorrectSheetTitle;
+
+  /// Body text of the incorrect-answer bottom sheet, revealing the correct answer for this activity only.
+  ///
+  /// In en, this message translates to:
+  /// **'The correct answer is: {correctAnswer}'**
+  String activityIncorrectSheetBody(String correctAnswer);
+
+  /// Button on the incorrect-answer bottom sheet that dismisses it and advances to the next activity.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue'**
+  String get activityIncorrectSheetContinue;
+
   /// Feedback shown for writing/speaking activities, which need a task-specific rubric rather than an automatic right/wrong check.
   ///
   /// In en, this message translates to:

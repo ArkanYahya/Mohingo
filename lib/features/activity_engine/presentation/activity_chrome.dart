@@ -159,6 +159,7 @@ class ActivitySubmitOrFeedback extends StatelessWidget {
     required this.canSubmit,
     required this.onSubmit,
     this.correctAnswerLabel,
+    this.suppressIncorrectBanner = false,
     super.key,
   });
 
@@ -171,10 +172,25 @@ class ActivitySubmitOrFeedback extends StatelessWidget {
   final VoidCallback onSubmit;
   final String? correctAnswerLabel;
 
+  /// When true, an incorrect [submission] renders nothing here instead of
+  /// the inline [ActivityFeedbackBanner] — used only during live lesson
+  /// play, where `LessonPlayerScreen` shows a modal bottom sheet instead so
+  /// the two don't duplicate each other. Review mode never passes this
+  /// (defaults false), so it keeps the plain inline banner, since a review
+  /// screen can show several past answers at once and a popping modal per
+  /// row would make no sense there. `correct`/`notAutoGraded`/
+  /// pending-online-refinement submissions are never affected.
+  final bool suppressIncorrectBanner;
+
   @override
   Widget build(BuildContext context) {
     final submission = this.submission;
     if (submission != null) {
+      final isLiveIncorrect =
+          suppressIncorrectBanner &&
+          !submission.pendingOnlineRefinement &&
+          submission.correctness == ActivityCorrectness.incorrect;
+      if (isLiveIncorrect) return const SizedBox.shrink();
       return ActivityFeedbackBanner(
         submission: submission,
         correctAnswerLabel: correctAnswerLabel,

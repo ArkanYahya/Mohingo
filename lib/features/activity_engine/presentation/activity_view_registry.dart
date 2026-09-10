@@ -30,6 +30,11 @@ Widget buildActivityView(
   Map<String, MediaSpecification> mediaByKey = const {},
   EvaluationContext evaluationContext = const EvaluationContext.empty(),
   ActivityAttempt? reviewAttempt,
+  // True only for the live lesson player — see
+  // ActivitySubmitOrFeedback.suppressIncorrectBanner. Every other caller
+  // (review, quick practice, placement test, final mission/assessment)
+  // leaves this at its default, keeping today's plain inline banner.
+  bool suppressIncorrectBanner = false,
   Key? key,
 }) {
   return switch (activity) {
@@ -39,6 +44,7 @@ Widget buildActivityView(
       onSubmitted: onSubmitted,
       mediaByKey: mediaByKey,
       reviewAttempt: reviewAttempt,
+      suppressIncorrectBanner: suppressIncorrectBanner,
     ),
     TextChoiceActivity a => ChoiceActivityView.textChoice(
       key: key,
@@ -46,30 +52,35 @@ Widget buildActivityView(
       onSubmitted: onSubmitted,
       mediaByKey: mediaByKey,
       reviewAttempt: reviewAttempt,
+      suppressIncorrectBanner: suppressIncorrectBanner,
     ),
     MatchActivity a => MatchActivityView(
       key: key,
       activity: a,
       onSubmitted: onSubmitted,
       reviewAttempt: reviewAttempt,
+      suppressIncorrectBanner: suppressIncorrectBanner,
     ),
     OrderActivity a => OrderActivityView(
       key: key,
       activity: a,
       onSubmitted: onSubmitted,
       reviewAttempt: reviewAttempt,
+      suppressIncorrectBanner: suppressIncorrectBanner,
     ),
     GapActivity a => GapActivityView(
       key: key,
       activity: a,
       onSubmitted: onSubmitted,
       reviewAttempt: reviewAttempt,
+      suppressIncorrectBanner: suppressIncorrectBanner,
     ),
     FormActivity a => FormActivityView(
       key: key,
       activity: a,
       onSubmitted: onSubmitted,
       reviewAttempt: reviewAttempt,
+      suppressIncorrectBanner: suppressIncorrectBanner,
     ),
     SpeakActivity a => SpeakActivityView(
       key: key,
@@ -78,6 +89,7 @@ Widget buildActivityView(
       onSubmitted: onSubmitted,
       evaluationContext: evaluationContext,
       reviewAttempt: reviewAttempt,
+      suppressIncorrectBanner: suppressIncorrectBanner,
     ),
     WriteActivity a => WriteActivityView(
       key: key,
@@ -86,6 +98,7 @@ Widget buildActivityView(
       onSubmitted: onSubmitted,
       evaluationContext: evaluationContext,
       reviewAttempt: reviewAttempt,
+      suppressIncorrectBanner: suppressIncorrectBanner,
     ),
     // dialogue has no review mode — no authored instance exists in the real
     // bundle to review yet (verified in DialogueActivityView's own doc
@@ -95,6 +108,7 @@ Widget buildActivityView(
       key: key,
       activity: a,
       onSubmitted: onSubmitted,
+      suppressIncorrectBanner: suppressIncorrectBanner,
     ),
   };
 }

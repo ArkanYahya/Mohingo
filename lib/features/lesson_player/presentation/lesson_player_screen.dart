@@ -313,6 +313,89 @@ class _LessonPlayerBodyState extends ConsumerState<_LessonPlayerBody> {
       )),
     );
     if (mounted) setState(() => _lastSubmission = submission);
+
+    // Live incorrect answers get a modal bottom sheet, not the inline
+    // banner (which buildActivityView already suppressed for this
+    // submission via suppressIncorrectBanner) — see _showIncorrectSheet.
+    if (mounted && _isLiveIncorrect(submission)) {
+      _showIncorrectSheet(submission);
+    }
+  }
+
+  bool _isLiveIncorrect(ActivitySubmission submission) =>
+      !submission.pendingOnlineRefinement &&
+      submission.correctness == ActivityCorrectness.incorrect;
+
+  /// The mockup's asymmetric feedback treatment: a correct answer stays an
+  /// inline banner with its own "Next" button, but a wrong answer instead
+  /// slides up this modal sheet — "Not quite" + the correct answer + a
+  /// "Continue" button that both dismisses the sheet and calls [_next].
+  /// Not dismissible by tapping outside or dragging down: the learner must
+  /// acknowledge the correction via Continue, matching the mockup's
+  /// deliberate flow. See docs/DESIGN_SYSTEM.md.
+  void _showIncorrectSheet(ActivitySubmission submission) {
+    final l10n = AppLocalizations.of(context)!;
+    final colorScheme = Theme.of(context).colorScheme;
+    showModalBottomSheet<void>(
+      context: context,
+      isDismissible: false,
+      enableDrag: false,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(28)),
+      ),
+      builder: (sheetContext) => Padding(
+        padding: const EdgeInsets.fromLTRB(22, 22, 22, 28),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                CircleAvatar(
+                  radius: 17,
+                  backgroundColor: colorScheme.errorContainer,
+                  child: Icon(
+                    Icons.close,
+                    color: colorScheme.onErrorContainer,
+                    size: 17,
+                  ),
+                ),
+                const SizedBox(width: 10),
+                Text(
+                  l10n.activityIncorrectSheetTitle,
+                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                    color: colorScheme.error,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 14),
+            Text(
+              l10n.activityIncorrectSheetBody(
+                submission.correctAnswerLabel ?? '',
+              ),
+              textDirection: TextDirection.ltr,
+            ),
+            const SizedBox(height: 20),
+            SizedBox(
+              width: double.infinity,
+              child: FilledButton(
+                style: FilledButton.styleFrom(
+                  backgroundColor: colorScheme.error,
+                  foregroundColor: colorScheme.onError,
+                ),
+                onPressed: () {
+                  Navigator.of(sheetContext).pop();
+                  _next();
+                },
+                child: Text(l10n.activityIncorrectSheetContinue),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 
   Future<void> _next() async {
@@ -419,8 +502,14 @@ class _LessonPlayerBodyState extends ConsumerState<_LessonPlayerBody> {
                   profileName: widget.learnerName,
                   previousAnswers: Map.unmodifiable(_previousAnswers),
                 ),
+                suppressIncorrectBanner: true,
               ),
-              if (_lastSubmission != null)
+              // Not shown for a live-incorrect answer: the bottom sheet's
+              // own Continue button (see _showIncorrectSheet) is the only
+              // way to advance in that case, so this would just duplicate
+              // it.
+              if (_lastSubmission != null &&
+                  !_isLiveIncorrect(_lastSubmission!))
                 Padding(
                   padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
                   child: FilledButton(
