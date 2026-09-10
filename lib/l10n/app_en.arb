@@ -224,6 +224,18 @@
   "@lessonReviewNotAnswered": {
     "description": "Placeholder shown on the lesson review screen for an activity with no recorded attempt at all (e.g. content changed after the lesson was finished)."
   },
+  "vocabularyStatDue": "Due",
+  "@vocabularyStatDue": {
+    "description": "Vocabulary screen stat tile label — count of words overdue for spaced review."
+  },
+  "vocabularyStatLearning": "Learning",
+  "@vocabularyStatLearning": {
+    "description": "Vocabulary screen stat tile label — count of words recalled at least once but not yet graduated the spaced-review schedule."
+  },
+  "vocabularySavedWordsTitle": "Saved words",
+  "@vocabularySavedWordsTitle": {
+    "description": "Vocabulary screen row label — count of favourited words/chunks."
+  },
   "vocabularyTabWords": "Words",
   "@vocabularyTabWords": {"description": "Vocabulary screen tab label."},
   "vocabularyTabChunks": "Phrases",

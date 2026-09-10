@@ -220,6 +220,15 @@ class AppLocalizationsAr extends AppLocalizations {
   String get lessonReviewNotAnswered => 'لم تتم الإجابة';
 
   @override
+  String get vocabularyStatDue => 'مستحقة';
+
+  @override
+  String get vocabularyStatLearning => 'قيد التعلم';
+
+  @override
+  String get vocabularySavedWordsTitle => 'الكلمات المحفوظة';
+
+  @override
   String get vocabularyTabWords => 'كلمات';
 
   @override

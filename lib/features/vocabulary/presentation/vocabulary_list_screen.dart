@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../../content/providers/course_content_providers.dart';
 import '../../../core/l10n/generated/app_localizations.dart';
+import '../../../core/theme/feedback_theme_extension.dart';
 import '../../../core/widgets/status_indicator.dart';
 import '../providers/vocabulary_providers.dart';
 
@@ -52,6 +53,7 @@ class _VocabularyListScreenState extends State<VocabularyListScreen>
       ),
       body: Column(
         children: [
+          const _VocabularyStatsHeader(),
           Padding(
             padding: const EdgeInsets.all(16),
             child: Column(
@@ -110,6 +112,197 @@ bool _matchesQuery(String query, List<String> haystack) {
   if (query.trim().isEmpty) return true;
   final lower = query.trim().toLowerCase();
   return haystack.any((s) => s.toLowerCase().contains(lower));
+}
+
+/// The 3 stat tiles (Due / Learning / Learned) plus the saved-words count
+/// row, above the search/tab UI. Counts are aggregated across *both* words
+/// and chunks — one combined "vocabulary" picture, even though the list
+/// below splits them into tabs. See docs/DESIGN_SYSTEM.md.
+class _VocabularyStatsHeader extends ConsumerWidget {
+  const _VocabularyStatsHeader();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
+    final colorScheme = Theme.of(context).colorScheme;
+    final feedbackTheme = Theme.of(context).extension<FeedbackTheme>()!;
+    final contentAsync = ref.watch(courseContentProvider('a1'));
+    final reviewStateAsync = ref.watch(allVocabularyReviewStateProvider);
+
+    final index = contentAsync.value;
+    if (index == null) return const SizedBox.shrink();
+
+    final reviewState = reviewStateAsync.value ?? const [];
+    final reviewStateByLexiconId = {
+      for (final s in reviewState)
+        if (s.lexiconId != null) s.lexiconId!: s,
+    };
+    final reviewStateByChunkId = {
+      for (final s in reviewState)
+        if (s.chunkId != null) s.chunkId!: s,
+    };
+    final favoritesCount = reviewState.where((s) => s.isFavorite).length;
+
+    var due = 0;
+    var learning = 0;
+    var learned = 0;
+    final now = DateTime.now();
+    void tally(ProgressState state) {
+      switch (state) {
+        case ProgressState.needsReview:
+          due++;
+        case ProgressState.inProgress:
+          learning++;
+        case ProgressState.mastered:
+          learned++;
+        case ProgressState.notStarted:
+          break;
+      }
+    }
+
+    for (final item in index.bundle.lexicon) {
+      final state = reviewStateByLexiconId[item.id];
+      tally(
+        _vocabularyProgressState(
+          repetitions: state?.repetitions ?? 0,
+          dueAt: state?.dueAt,
+          now: now,
+        ),
+      );
+    }
+    for (final item in index.bundle.chunks) {
+      final state = reviewStateByChunkId[item.id];
+      tally(
+        _vocabularyProgressState(
+          repetitions: state?.repetitions ?? 0,
+          dueAt: state?.dueAt,
+          now: now,
+        ),
+      );
+    }
+
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
+      child: Column(
+        children: [
+          // IntrinsicHeight, not Row(crossAxisAlignment: stretch) — this
+          // Row sits in an unbounded-height context (a plain, non-Expanded
+          // Column child), and `stretch` there asks its flex children for
+          // infinite height. See home_screen.dart's _TasksTodayRow, which
+          // hit the same crash first.
+          IntrinsicHeight(
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Expanded(
+                  child: _StatTile(
+                    icon: Icons.replay,
+                    label: l10n.vocabularyStatDue,
+                    count: due,
+                    fill: colorScheme.error,
+                    onFill: colorScheme.onError,
+                  ),
+                ),
+                const SizedBox(width: 10),
+                Expanded(
+                  child: _StatTile(
+                    icon: Icons.hourglass_bottom,
+                    label: l10n.vocabularyStatLearning,
+                    count: learning,
+                    fill: colorScheme.primary,
+                    onFill: colorScheme.onPrimary,
+                  ),
+                ),
+                const SizedBox(width: 10),
+                Expanded(
+                  child: _StatTile(
+                    icon: Icons.check,
+                    label: l10n.vocabularyStateLearned,
+                    count: learned,
+                    fill: feedbackTheme.success,
+                    onFill: feedbackTheme.onSuccess,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 10),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+            decoration: BoxDecoration(
+              color: colorScheme.primaryContainer,
+              borderRadius: BorderRadius.circular(16),
+            ),
+            child: Row(
+              children: [
+                Icon(Icons.bookmark, color: colorScheme.onPrimaryContainer),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Text(
+                    l10n.vocabularySavedWordsTitle,
+                    style: Theme.of(context).textTheme.titleSmall
+                        ?.copyWith(color: colorScheme.onPrimaryContainer),
+                  ),
+                ),
+                Text(
+                  '$favoritesCount',
+                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                    color: colorScheme.onPrimaryContainer,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _StatTile extends StatelessWidget {
+  const _StatTile({
+    required this.icon,
+    required this.label,
+    required this.count,
+    required this.fill,
+    required this.onFill,
+  });
+
+  final IconData icon;
+  final String label;
+  final int count;
+  final Color fill;
+  final Color onFill;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 6),
+      decoration: BoxDecoration(
+        color: fill,
+        borderRadius: BorderRadius.circular(18),
+      ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(icon, color: onFill, size: 20),
+          const SizedBox(height: 6),
+          Text(
+            label,
+            style: Theme.of(context).textTheme.labelMedium
+                ?.copyWith(color: onFill, fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 2),
+          Text(
+            '$count',
+            style: Theme.of(context).textTheme.titleMedium
+                ?.copyWith(color: onFill, fontWeight: FontWeight.bold),
+          ),
+        ],
+      ),
+    );
+  }
 }
 
 class _WordListView extends ConsumerWidget {
@@ -285,23 +478,99 @@ class _VocabularyRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    return ListTile(
-      onTap: onTap,
-      // A graduated item announces "Learned", not the shared "Mastered"
-      // label: memorising a word is a spaced-review outcome, never course
-      // mastery (see docs/GLOSSARY.md and [ReviewConfidenceRow]).
-      leading: StatusIndicator(
-        state: progressState,
-        size: 20,
-        semanticLabelOverride: progressState == ProgressState.mastered
-            ? l10n.vocabularyStateLearned
-            : null,
+    final colorScheme = Theme.of(context).colorScheme;
+    final feedbackTheme = Theme.of(context).extension<FeedbackTheme>()!;
+
+    // A bigger circular icon node, matching the unit overview's lesson-path
+    // treatment (see unit_overview_screen.dart's _LessonNode) — the row
+    // card itself stays plain (surfaceContainer) rather than tinted, since
+    // this list can run to 100+ items and a tinted row per state would be
+    // visual noise at that density; only the circle carries the colour.
+    final (
+      Color circleFill,
+      Color? circleBorder,
+      Color iconColor,
+    ) = switch (progressState) {
+      ProgressState.mastered => (
+        feedbackTheme.success,
+        null,
+        feedbackTheme.onSuccess,
       ),
-      title: Text(headword, textDirection: TextDirection.ltr),
-      subtitle: Text(arabic, textDirection: TextDirection.rtl),
-      trailing: isFavorite
-          ? Icon(Icons.star, color: Theme.of(context).colorScheme.tertiary)
-          : null,
+      ProgressState.needsReview => (
+        colorScheme.errorContainer,
+        null,
+        colorScheme.error,
+      ),
+      ProgressState.inProgress => (
+        colorScheme.primaryContainer,
+        null,
+        colorScheme.primary,
+      ),
+      ProgressState.notStarted => (
+        colorScheme.surface,
+        colorScheme.outlineVariant,
+        colorScheme.onSurfaceVariant,
+      ),
+    };
+
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8),
+      child: Material(
+        color: colorScheme.surfaceContainer,
+        borderRadius: BorderRadius.circular(16),
+        child: InkWell(
+          onTap: onTap,
+          borderRadius: BorderRadius.circular(16),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+            child: Row(
+              children: [
+                Container(
+                  width: 44,
+                  height: 44,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: circleFill,
+                    border: circleBorder != null
+                        ? Border.all(color: circleBorder, width: 2)
+                        : null,
+                  ),
+                  child: Center(
+                    // A graduated item announces "Learned", not the shared
+                    // "Mastered" label: memorising a word is a
+                    // spaced-review outcome, never course mastery (see
+                    // docs/GLOSSARY.md and [ReviewConfidenceRow]).
+                    child: StatusIndicator(
+                      state: progressState,
+                      size: 20,
+                      colorOverride: iconColor,
+                      semanticLabelOverride:
+                          progressState == ProgressState.mastered
+                          ? l10n.vocabularyStateLearned
+                          : null,
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(headword, textDirection: TextDirection.ltr),
+                      Text(
+                        arabic,
+                        textDirection: TextDirection.rtl,
+                        style: Theme.of(context).textTheme.bodySmall,
+                      ),
+                    ],
+                  ),
+                ),
+                if (isFavorite) Icon(Icons.star, color: colorScheme.tertiary),
+              ],
+            ),
+          ),
+        ),
+      ),
     );
   }
 }

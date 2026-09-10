@@ -210,6 +210,15 @@ class AppLocalizationsEn extends AppLocalizations {
   String get lessonReviewNotAnswered => 'Not answered';
 
   @override
+  String get vocabularyStatDue => 'Due';
+
+  @override
+  String get vocabularyStatLearning => 'Learning';
+
+  @override
+  String get vocabularySavedWordsTitle => 'Saved words';
+
+  @override
   String get vocabularyTabWords => 'Words';
 
   @override

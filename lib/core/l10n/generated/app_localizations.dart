@@ -404,6 +404,24 @@ abstract class AppLocalizations {
   /// **'Not answered'**
   String get lessonReviewNotAnswered;
 
+  /// Vocabulary screen stat tile label — count of words overdue for spaced review.
+  ///
+  /// In en, this message translates to:
+  /// **'Due'**
+  String get vocabularyStatDue;
+
+  /// Vocabulary screen stat tile label — count of words recalled at least once but not yet graduated the spaced-review schedule.
+  ///
+  /// In en, this message translates to:
+  /// **'Learning'**
+  String get vocabularyStatLearning;
+
+  /// Vocabulary screen row label — count of favourited words/chunks.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved words'**
+  String get vocabularySavedWordsTitle;
+
   /// Vocabulary screen tab label.
   ///
   /// In en, this message translates to:
