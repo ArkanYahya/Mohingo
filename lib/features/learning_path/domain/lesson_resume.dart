@@ -1,8 +1,8 @@
 import '../../../content/models/curriculum_structure.dart';
 import '../../../data/local/database.dart';
 
-/// The lesson Home's hero card offers to resume, and how far into it the
-/// learner is.
+/// The lesson Home's hero card and the Learn tab's current-unit card offer
+/// to resume, and how far into it the learner is.
 class LessonResume {
   const LessonResume({
     required this.lesson,

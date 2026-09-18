@@ -135,16 +135,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get vocabularyStateLearned => 'Learned';
 
   @override
-  String get unitPathYouAreHere => 'You are here';
-
-  @override
   String unitOverviewLessonsComplete(int completed, int total) {
     return '$completed of $total lessons complete';
   }
-
-  @override
-  String get comingSoonLevelBody =>
-      'This level isn\'t available yet. A1 is ready now — start there.';
 
   @override
   String get homeAllUnitsMastered => 'You\'ve mastered every A1 unit so far!';
@@ -358,6 +351,68 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get lessonIntroStartPractice => 'Start practice';
+
+  @override
+  String get learnCourseOverline => 'Your course';
+
+  @override
+  String get learnUnitsTitle => 'Units';
+
+  @override
+  String learnLessonCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count lessons',
+      one: '1 lesson',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String learnUnitMinutes(int min, int max) {
+    return '$min–$max min';
+  }
+
+  @override
+  String get learnUnitStarter => 'Starter';
+
+  @override
+  String learnUnitInProgressOverline(int unit) {
+    return 'Unit $unit · In progress';
+  }
+
+  @override
+  String learnUnitStartHereOverline(int unit) {
+    return 'Unit $unit · Start here';
+  }
+
+  @override
+  String learnUnitLessonsDone(int done, int total) {
+    return '$done of $total lessons';
+  }
+
+  @override
+  String learnUnitNodeSemantics(int unit, String state) {
+    return 'Unit $unit: $state';
+  }
+
+  @override
+  String get learnFinishOverline => 'Finish A1';
+
+  @override
+  String get learnFinishTitle => 'Final mission & assessment';
+
+  @override
+  String get learnFinishBody =>
+      'Show what you can do after the last unit — in the Tests tab.';
+
+  @override
+  String get learnComingLaterTitle => 'Coming later';
+
+  @override
+  String get learnComingLaterBody =>
+      'More levels are on the way. Everything you learn in A1 carries over.';
 
   @override
   String get lessonCompleteCorrectCaption => 'correct';

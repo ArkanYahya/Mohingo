@@ -14,7 +14,7 @@ import '../../learning_path/providers/unit_progress_providers.dart';
 import '../../progress/providers/current_learner_provider.dart';
 import '../../review/providers/review_providers.dart';
 import '../domain/day_part.dart';
-import '../domain/lesson_resume.dart';
+import '../../learning_path/domain/lesson_resume.dart';
 import 'widgets/continue_lesson_card.dart';
 import 'widgets/daily_goal_section.dart';
 import 'widgets/home_header.dart';
@@ -91,7 +91,7 @@ class _HomeBody extends ConsumerWidget {
       if (lessonResume != null) {
         context.push('/lesson-player/${unit.id}/${lessonResume.lesson.id}');
       } else {
-        context.go('/learn/a1/unit/${unit.id}');
+        context.go('/learn/unit/${unit.id}');
       }
     }
 
@@ -147,7 +147,7 @@ class _HomeBody extends ConsumerWidget {
                   ? unitTitle(units[currentPosition + 1])
                   : l10n.testsHomeFinalMissionTitle,
             ),
-      onTap: () => context.go('/learn/a1'),
+      onTap: () => context.go('/learn'),
     );
 
     final review = ReviewStatus(

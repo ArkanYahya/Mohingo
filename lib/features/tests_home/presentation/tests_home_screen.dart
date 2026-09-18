@@ -74,7 +74,7 @@ class TestsHomeScreen extends ConsumerWidget {
             title: l10n.testsHomeUnitChecksTitle,
             subtitle: l10n.testsHomeUnitChecksSubtitle,
             stateLine: null,
-            onTap: () => context.go('/learn/a1'),
+            onTap: () => context.go('/learn'),
           ),
           const SizedBox(height: 12),
           _TestCard(

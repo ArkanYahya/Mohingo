@@ -345,7 +345,7 @@ class _AssessmentResultView extends StatelessWidget {
                 FilledButton(
                   onPressed: () {
                     Navigator.of(context).pop();
-                    context.go('/learn/a1');
+                    context.go('/learn');
                   },
                   child: Text(l10n.finalAssessmentWhatsNext),
                 ),

@@ -308,23 +308,11 @@ abstract class AppLocalizations {
   /// **'Learned'**
   String get vocabularyStateLearned;
 
-  /// Marker on the Learn journey spine showing the learner's current unit.
-  ///
-  /// In en, this message translates to:
-  /// **'You are here'**
-  String get unitPathYouAreHere;
-
   /// Unit overview header caption — how many of this unit's lessons have been played through to the end.
   ///
   /// In en, this message translates to:
   /// **'{completed} of {total} lessons complete'**
   String unitOverviewLessonsComplete(int completed, int total);
-
-  /// Shown when a learner opens an A2-C2 level card.
-  ///
-  /// In en, this message translates to:
-  /// **'This level isn\'t available yet. A1 is ready now — start there.'**
-  String get comingSoonLevelBody;
 
   /// Shown on Home when there is no next unit to recommend.
   ///
@@ -637,6 +625,90 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Start practice'**
   String get lessonIntroStartPractice;
+
+  /// Overline above the course title at the top of the Learn tab.
+  ///
+  /// In en, this message translates to:
+  /// **'Your course'**
+  String get learnCourseOverline;
+
+  /// Section title above the course's unit path.
+  ///
+  /// In en, this message translates to:
+  /// **'Units'**
+  String get learnUnitsTitle;
+
+  /// Number of lessons, in a unit or the whole course.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 lesson} other{{count} lessons}}'**
+  String learnLessonCount(int count);
+
+  /// Estimated time to finish a unit.
+  ///
+  /// In en, this message translates to:
+  /// **'{min}–{max} min'**
+  String learnUnitMinutes(int min, int max);
+
+  /// Tag on the course's introductory unit, which prepares for the rest and doesn't count towards A1 mastery.
+  ///
+  /// In en, this message translates to:
+  /// **'Starter'**
+  String get learnUnitStarter;
+
+  /// Overline on the highlighted card for the unit the learner is working on.
+  ///
+  /// In en, this message translates to:
+  /// **'Unit {unit} · In progress'**
+  String learnUnitInProgressOverline(int unit);
+
+  /// Overline on the highlighted card for the unit a learner who hasn't started it yet should begin with.
+  ///
+  /// In en, this message translates to:
+  /// **'Unit {unit} · Start here'**
+  String learnUnitStartHereOverline(int unit);
+
+  /// Lessons finished in a unit.
+  ///
+  /// In en, this message translates to:
+  /// **'{done} of {total} lessons'**
+  String learnUnitLessonsDone(int done, int total);
+
+  /// Screen-reader label of a unit's circle on the path.
+  ///
+  /// In en, this message translates to:
+  /// **'Unit {unit}: {state}'**
+  String learnUnitNodeSemantics(int unit, String state);
+
+  /// Overline on the card at the end of the unit path.
+  ///
+  /// In en, this message translates to:
+  /// **'Finish A1'**
+  String get learnFinishOverline;
+
+  /// Title of the card at the end of the unit path.
+  ///
+  /// In en, this message translates to:
+  /// **'Final mission & assessment'**
+  String get learnFinishTitle;
+
+  /// Body of the card at the end of the unit path; it opens the Tests tab.
+  ///
+  /// In en, this message translates to:
+  /// **'Show what you can do after the last unit — in the Tests tab.'**
+  String get learnFinishBody;
+
+  /// Section title above the list of levels that aren't available yet.
+  ///
+  /// In en, this message translates to:
+  /// **'Coming later'**
+  String get learnComingLaterTitle;
+
+  /// Line under the not-yet-available levels.
+  ///
+  /// In en, this message translates to:
+  /// **'More levels are on the way. Everything you learn in A1 carries over.'**
+  String get learnComingLaterBody;
 
   /// Small word under the correct/total fraction inside the lesson-complete score ring, e.g. '3/4' over 'correct'.
   ///

@@ -4,7 +4,7 @@ import 'package:mohingo/content/models/curriculum_structure.dart';
 import 'package:mohingo/content/models/domain_definitions.dart';
 import 'package:mohingo/data/local/database.dart';
 import 'package:mohingo/features/home/domain/day_part.dart';
-import 'package:mohingo/features/home/domain/lesson_resume.dart';
+import 'package:mohingo/features/learning_path/domain/lesson_resume.dart';
 
 Activity _activity(String id, String lessonId) => TextChoiceActivity(
   id: id,

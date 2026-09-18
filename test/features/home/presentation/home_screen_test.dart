@@ -47,12 +47,12 @@ GoRouter _router() => GoRouter(
       ),
     ),
     GoRoute(
-      path: '/learn/a1/unit/:unitId',
+      path: '/learn/unit/:unitId',
       builder: (_, state) =>
           Scaffold(body: Text('UNIT ${state.pathParameters['unitId']}')),
     ),
     GoRoute(
-      path: '/learn/a1',
+      path: '/learn',
       builder: (_, _) => const Scaffold(body: Text('LEARN')),
     ),
     GoRoute(

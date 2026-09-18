@@ -139,16 +139,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get vocabularyStateLearned => 'محفوظة';
 
   @override
-  String get unitPathYouAreHere => 'أنت هنا';
-
-  @override
   String unitOverviewLessonsComplete(int completed, int total) {
     return 'أكملت $completed من $total دروس';
   }
-
-  @override
-  String get comingSoonLevelBody =>
-      'هذا المستوى غير متاح بعد. المستوى A1 جاهز الآن — ابدأ منه.';
 
   @override
   String get homeAllUnitsMastered => 'أتقنت جميع وحدات A1 حتى الآن!';
@@ -375,6 +368,72 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get lessonIntroStartPractice => 'ابدأ التدريب';
+
+  @override
+  String get learnCourseOverline => 'مقررك';
+
+  @override
+  String get learnUnitsTitle => 'الوحدات';
+
+  @override
+  String learnLessonCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count درس',
+      many: '$count درساً',
+      few: '$count دروس',
+      two: 'درسان',
+      one: 'درس واحد',
+      zero: 'لا دروس',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String learnUnitMinutes(int min, int max) {
+    return 'من $min إلى $max دقيقة';
+  }
+
+  @override
+  String get learnUnitStarter => 'تمهيدية';
+
+  @override
+  String learnUnitInProgressOverline(int unit) {
+    return 'الوحدة $unit · قيد التعلّم';
+  }
+
+  @override
+  String learnUnitStartHereOverline(int unit) {
+    return 'الوحدة $unit · ابدأ من هنا';
+  }
+
+  @override
+  String learnUnitLessonsDone(int done, int total) {
+    return 'الدروس المكتملة: $done من $total';
+  }
+
+  @override
+  String learnUnitNodeSemantics(int unit, String state) {
+    return 'الوحدة $unit: $state';
+  }
+
+  @override
+  String get learnFinishOverline => 'ختام المستوى A1';
+
+  @override
+  String get learnFinishTitle => 'المهمة النهائية والتقييم';
+
+  @override
+  String get learnFinishBody =>
+      'بعد آخر وحدة، أظهر ما تستطيع فعله — في تبويب الاختبارات.';
+
+  @override
+  String get learnComingLaterTitle => 'قريباً';
+
+  @override
+  String get learnComingLaterBody =>
+      'مستويات أخرى في الطريق، وكل ما تتعلّمه في A1 يبقى معك.';
 
   @override
   String get lessonCompleteCorrectCaption => 'صحيحة';

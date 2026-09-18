@@ -557,7 +557,7 @@ class _ResultView extends StatelessWidget {
               if (recommendedUnit != null)
                 FilledButton(
                   onPressed: () =>
-                      context.go('/learn/a1/unit/${recommendedUnit.id}'),
+                      context.go('/learn/unit/${recommendedUnit.id}'),
                   child: Text(l10n.placementResultGoToUnit),
                 ),
               const SizedBox(height: 8),

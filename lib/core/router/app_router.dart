@@ -6,13 +6,12 @@ import '../../features/app_shell/presentation/app_shell_scaffold.dart';
 import '../../features/app_shell/presentation/content_error_screen.dart';
 import '../../features/app_shell/presentation/splash_screen.dart';
 import '../../content/models/activity.dart';
-import '../../features/course_catalog/presentation/level_catalog_screen.dart';
-import '../../features/course_catalog/presentation/level_detail_screen.dart';
 import '../../features/final_assessment/presentation/final_assessment_screen.dart';
 import '../../features/final_mission/presentation/final_mission_screen.dart';
 import '../../features/grammar/presentation/grammar_detail_screen.dart';
 import '../../features/grammar/presentation/grammar_list_screen.dart';
 import '../../features/home/presentation/home_screen.dart';
+import '../../features/learning_path/presentation/course_screen.dart';
 import '../../features/learning_path/presentation/unit_overview_screen.dart';
 import '../../features/lesson_player/presentation/lesson_player_screen.dart';
 import '../../features/lesson_player/presentation/lesson_review_screen.dart';
@@ -25,6 +24,7 @@ import '../../features/vocabulary/presentation/chunk_detail_screen.dart';
 import '../../features/vocabulary/presentation/vocabulary_list_screen.dart';
 import '../../features/vocabulary/presentation/word_detail_screen.dart';
 import 'content_load_refresh_listenable.dart';
+import 'legacy_learn_redirect.dart';
 
 part 'app_router.g.dart';
 
@@ -83,24 +83,27 @@ GoRouter appRouter(Ref ref) {
             routes: [
               GoRoute(
                 path: '/learn',
-                builder: (_, _) => const LevelCatalogScreen(),
+                // The Learn tab opens straight on the A1 course — there is no
+                // separate level list; unavailable levels are a "Coming
+                // later" strip on the course page.
+                builder: (_, _) => const CourseScreen(),
                 routes: [
                   GoRoute(
-                    path: ':levelId',
-                    // Coming Soon cards are disabled (non-tappable) on
-                    // LevelCatalogScreen — a stray deep link is the only way
-                    // here, and LevelDetailScreen already renders an honest
-                    // inline Coming Soon state for any unavailable/unknown
-                    // id, so no redirect guard is needed on this route.
-                    builder: (_, state) => LevelDetailScreen(
-                      levelId: state.pathParameters['levelId']!,
+                    path: 'unit/:unitId',
+                    builder: (_, state) => UnitOverviewScreen(
+                      unitId: state.pathParameters['unitId']!,
                     ),
+                  ),
+                  // Old addresses — /learn/<level> and
+                  // /learn/<level>/unit/<id> — from saved or deep links. Must
+                  // come after 'unit/:unitId', which ':levelId' would match.
+                  GoRoute(
+                    path: ':levelId',
+                    redirect: (_, state) => legacyLearnRedirect(state.uri),
                     routes: [
                       GoRoute(
                         path: 'unit/:unitId',
-                        builder: (_, state) => UnitOverviewScreen(
-                          unitId: state.pathParameters['unitId']!,
-                        ),
+                        redirect: (_, state) => legacyLearnRedirect(state.uri),
                       ),
                     ],
                   ),

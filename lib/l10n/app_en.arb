@@ -127,8 +127,6 @@
   "@vocabularyStateLearned": {
     "description": "Vocabulary/chunk row status label for an item recalled enough times to have graduated the spaced-review schedule. Deliberately NOT \"Mastered\": memorising a word is not course mastery (see docs/GLOSSARY.md)."
   },
-  "unitPathYouAreHere": "You are here",
-  "@unitPathYouAreHere": {"description": "Marker on the Learn journey spine showing the learner's current unit."},
   "unitOverviewLessonsComplete": "{completed} of {total} lessons complete",
   "@unitOverviewLessonsComplete": {
     "description": "Unit overview header caption — how many of this unit's lessons have been played through to the end.",
@@ -136,10 +134,6 @@
       "completed": {"type": "int"},
       "total": {"type": "int"}
     }
-  },
-  "comingSoonLevelBody": "This level isn't available yet. A1 is ready now — start there.",
-  "@comingSoonLevelBody": {
-    "description": "Shown when a learner opens an A2-C2 level card."
   },
   "homeAllUnitsMastered": "You've mastered every A1 unit so far!",
   "@homeAllUnitsMastered": {
@@ -306,6 +300,34 @@
   "@lessonIntroNew": {"description": "Badge on a key phrase this lesson introduces for the first time."},
   "lessonIntroStartPractice": "Start practice",
   "@lessonIntroStartPractice": {"description": "Button that leaves the lesson intro for its first question."},
+  "learnCourseOverline": "Your course",
+  "@learnCourseOverline": {"description": "Overline above the course title at the top of the Learn tab."},
+  "learnUnitsTitle": "Units",
+  "@learnUnitsTitle": {"description": "Section title above the course's unit path."},
+  "learnLessonCount": "{count, plural, =1{1 lesson} other{{count} lessons}}",
+  "@learnLessonCount": {"description": "Number of lessons, in a unit or the whole course.", "placeholders": {"count": {"type": "int"}}},
+  "learnUnitMinutes": "{min}–{max} min",
+  "@learnUnitMinutes": {"description": "Estimated time to finish a unit.", "placeholders": {"min": {"type": "int"}, "max": {"type": "int"}}},
+  "learnUnitStarter": "Starter",
+  "@learnUnitStarter": {"description": "Tag on the course's introductory unit, which prepares for the rest and doesn't count towards A1 mastery."},
+  "learnUnitInProgressOverline": "Unit {unit} · In progress",
+  "@learnUnitInProgressOverline": {"description": "Overline on the highlighted card for the unit the learner is working on.", "placeholders": {"unit": {"type": "int"}}},
+  "learnUnitStartHereOverline": "Unit {unit} · Start here",
+  "@learnUnitStartHereOverline": {"description": "Overline on the highlighted card for the unit a learner who hasn't started it yet should begin with.", "placeholders": {"unit": {"type": "int"}}},
+  "learnUnitLessonsDone": "{done} of {total} lessons",
+  "@learnUnitLessonsDone": {"description": "Lessons finished in a unit.", "placeholders": {"done": {"type": "int"}, "total": {"type": "int"}}},
+  "learnUnitNodeSemantics": "Unit {unit}: {state}",
+  "@learnUnitNodeSemantics": {"description": "Screen-reader label of a unit's circle on the path.", "placeholders": {"unit": {"type": "int"}, "state": {"type": "String"}}},
+  "learnFinishOverline": "Finish A1",
+  "@learnFinishOverline": {"description": "Overline on the card at the end of the unit path."},
+  "learnFinishTitle": "Final mission & assessment",
+  "@learnFinishTitle": {"description": "Title of the card at the end of the unit path."},
+  "learnFinishBody": "Show what you can do after the last unit — in the Tests tab.",
+  "@learnFinishBody": {"description": "Body of the card at the end of the unit path; it opens the Tests tab."},
+  "learnComingLaterTitle": "Coming later",
+  "@learnComingLaterTitle": {"description": "Section title above the list of levels that aren't available yet."},
+  "learnComingLaterBody": "More levels are on the way. Everything you learn in A1 carries over.",
+  "@learnComingLaterBody": {"description": "Line under the not-yet-available levels."},
   "lessonCompleteCorrectCaption": "correct",
   "@lessonCompleteCorrectCaption": {"description": "Small word under the correct/total fraction inside the lesson-complete score ring, e.g. '3/4' over 'correct'."},
   "lessonCompleteStreakLabel": "Streak",
