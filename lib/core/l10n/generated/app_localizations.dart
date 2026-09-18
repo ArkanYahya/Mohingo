@@ -848,11 +848,125 @@ abstract class AppLocalizations {
   /// **'Learning'**
   String get vocabularyStatLearning;
 
-  /// Vocabulary screen row label — count of favourited words/chunks.
+  /// Filter chip on the words and phrases list: no status filter.
   ///
   /// In en, this message translates to:
-  /// **'Saved words'**
-  String get vocabularySavedWordsTitle;
+  /// **'All'**
+  String get vocabularyFilterAll;
+
+  /// Filter chip on the words and phrases list: starred items only.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved'**
+  String get vocabularyFilterSaved;
+
+  /// Filter chip on the words list: only words the learner is expected to use when speaking and writing.
+  ///
+  /// In en, this message translates to:
+  /// **'Speaking & writing'**
+  String get vocabularyFilterProductive;
+
+  /// Screen-reader label of a status filter chip with its count.
+  ///
+  /// In en, this message translates to:
+  /// **'{label}: {count}'**
+  String vocabularyFilterSemantics(String label, int count);
+
+  /// Part of speech shown above a word.
+  ///
+  /// In en, this message translates to:
+  /// **'noun'**
+  String get partOfSpeechNoun;
+
+  /// Part of speech shown above a word.
+  ///
+  /// In en, this message translates to:
+  /// **'verb'**
+  String get partOfSpeechVerb;
+
+  /// Part of speech shown above a word.
+  ///
+  /// In en, this message translates to:
+  /// **'adjective'**
+  String get partOfSpeechAdjective;
+
+  /// Part of speech shown above a word.
+  ///
+  /// In en, this message translates to:
+  /// **'adverb'**
+  String get partOfSpeechAdverb;
+
+  /// Part of speech shown above a word.
+  ///
+  /// In en, this message translates to:
+  /// **'number'**
+  String get partOfSpeechNumber;
+
+  /// Part of speech shown above a word: a proper noun.
+  ///
+  /// In en, this message translates to:
+  /// **'name'**
+  String get partOfSpeechProperNoun;
+
+  /// Part of speech shown above a word.
+  ///
+  /// In en, this message translates to:
+  /// **'phrase'**
+  String get partOfSpeechPhrase;
+
+  /// Part of speech shown above a word.
+  ///
+  /// In en, this message translates to:
+  /// **'interjection'**
+  String get partOfSpeechInterjection;
+
+  /// Part of speech shown above a word.
+  ///
+  /// In en, this message translates to:
+  /// **'preposition'**
+  String get partOfSpeechPreposition;
+
+  /// Part of speech shown above a word.
+  ///
+  /// In en, this message translates to:
+  /// **'conjunction'**
+  String get partOfSpeechConjunction;
+
+  /// Word page: the word is one the learner should be able to produce.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'ll use this word when speaking and writing.'**
+  String get wordUsageProductive;
+
+  /// Word page: the word only needs to be recognised.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'ll need to understand this word when listening and reading.'**
+  String get wordUsageReceptive;
+
+  /// Word or phrase page: the item has never been rated.
+  ///
+  /// In en, this message translates to:
+  /// **'Not in your reviews yet — rate it below to add it.'**
+  String get wordStatusNew;
+
+  /// Word or phrase page: the item is due for review.
+  ///
+  /// In en, this message translates to:
+  /// **'Due for review now'**
+  String get wordStatusDue;
+
+  /// Word or phrase page: heading above the lesson that introduces it.
+  ///
+  /// In en, this message translates to:
+  /// **'Where you met it'**
+  String get wordMetInOverline;
+
+  /// Under the lesson that introduces a word: its unit and lesson numbers.
+  ///
+  /// In en, this message translates to:
+  /// **'Unit {unit} · Lesson {lesson}'**
+  String wordMetInMeta(int unit, int lesson);
 
   /// Vocabulary screen tab label.
   ///
@@ -872,29 +986,11 @@ abstract class AppLocalizations {
   /// **'Search English or Arabic'**
   String get vocabularySearchHint;
 
-  /// Vocabulary list filter toggle.
-  ///
-  /// In en, this message translates to:
-  /// **'Favourites only'**
-  String get vocabularyFavoritesOnly;
-
-  /// Vocabulary list filter toggle — words the learner is expected to produce, not just recognise.
-  ///
-  /// In en, this message translates to:
-  /// **'Productive only'**
-  String get vocabularyProductiveOnly;
-
   /// Shown when a vocabulary search/filter combination matches nothing.
   ///
   /// In en, this message translates to:
   /// **'No words match your search.'**
   String get vocabularyEmptyResults;
-
-  /// Word/chunk/grammar detail screen — which unit first taught this item.
-  ///
-  /// In en, this message translates to:
-  /// **'Introduced in {unitTitle}'**
-  String wordDetailIntroducedIn(String unitTitle);
 
   /// Section heading on word/grammar detail screens.
   ///
@@ -925,12 +1021,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Easy'**
   String get reviewQualityEasy;
-
-  /// Confirmation shown briefly after tapping a spaced-review confidence button, before returning to the previous screen.
-  ///
-  /// In en, this message translates to:
-  /// **'Saved'**
-  String get reviewConfidenceSaved;
 
   /// Grammar detail screen field label.
   ///
@@ -1025,7 +1115,7 @@ abstract class AppLocalizations {
   /// Review tab card when the learner has nothing in spaced review yet.
   ///
   /// In en, this message translates to:
-  /// **'Words and phrases from your lessons will come back here to review.'**
+  /// **'Open a word or phrase and rate how well you know it to add it to your reviews.'**
   String get reviewCaughtUpEmpty;
 
   /// Review tab section of Can-Do goals that need more practice.
@@ -1609,18 +1699,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'All'**
   String get grammarFilterAllUnits;
-
-  /// Chip label on a vocabulary word's detail screen, shown when the word is tagged receptive (recognise, not necessarily produce).
-  ///
-  /// In en, this message translates to:
-  /// **'Receptive'**
-  String get vocabularyReceptiveLabel;
-
-  /// Chip label on a vocabulary word's detail screen, shown when the word is tagged productive (expected to actively use it).
-  ///
-  /// In en, this message translates to:
-  /// **'Productive'**
-  String get vocabularyProductiveLabel;
 
   /// Screen-reader label/tooltip for the star toggle button when the item is not currently a favorite.
   ///

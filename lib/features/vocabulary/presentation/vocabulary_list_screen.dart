@@ -2,301 +2,333 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../content/index/course_content_index.dart';
 import '../../../content/providers/course_content_providers.dart';
 import '../../../core/l10n/generated/app_localizations.dart';
-import '../../../core/theme/feedback_theme_extension.dart';
-import '../../../core/widgets/status_indicator.dart';
+import '../../../core/theme/app_tokens.dart';
+import '../../../core/theme/gamification_theme_extension.dart';
+import '../../../data/local/database.dart';
+import '../domain/vocabulary_status.dart';
 import '../providers/vocabulary_providers.dart';
+import 'vocabulary_status_pill.dart';
 
-/// The Vocabulary area: separate Word and Chunk views, searchable by
-/// English word or Arabic meaning, filterable by favourite/productive
-/// status. Two lexical senses that share a headword (e.g. the bundle's
-/// `A1.LEX.PICTURE.N01`/`N02`) are always distinct rows, keyed by id, never
-/// merged by spelling. See docs/ARCHITECTURE.md.
-class VocabularyListScreen extends StatefulWidget {
+/// Which status the list is narrowed to.
+enum _Filter { all, due, learning, learned, saved }
+
+/// One row: a word or a phrase.
+class _Entry {
+  const _Entry({
+    required this.text,
+    required this.arabic,
+    required this.searchable,
+    required this.route,
+    required this.status,
+    required this.saved,
+    required this.productive,
+  });
+
+  final String text;
+  final String arabic;
+  final List<String> searchable;
+  final String route;
+  final VocabularyStatus status;
+  final bool saved;
+  final bool productive;
+
+  bool matches(_Filter filter) => switch (filter) {
+    _Filter.all => true,
+    _Filter.due => status == VocabularyStatus.due,
+    _Filter.learning => status == VocabularyStatus.learning,
+    _Filter.learned => status == VocabularyStatus.learned,
+    _Filter.saved => saved,
+  };
+}
+
+/// Words & phrases: every lexicon entry or chunk, searchable by English or
+/// Arabic, switchable between words and phrases, and narrowed by review
+/// status (with counts) or to saved items; words can also be narrowed to
+/// those the learner should use when speaking and writing. Rows show the
+/// English over the Arabic with a small status label. Two lexical senses
+/// that share a headword (e.g. `A1.LEX.PICTURE.N01`/`N02`) are always
+/// distinct rows, keyed by id, never merged by spelling. See
+/// docs/ARCHITECTURE.md.
+class VocabularyListScreen extends ConsumerStatefulWidget {
   const VocabularyListScreen({super.key});
 
   @override
-  State<VocabularyListScreen> createState() => _VocabularyListScreenState();
+  ConsumerState<VocabularyListScreen> createState() =>
+      _VocabularyListScreenState();
 }
 
-class _VocabularyListScreenState extends State<VocabularyListScreen>
-    with SingleTickerProviderStateMixin {
-  late final TabController _tabController = TabController(
-    length: 2,
-    vsync: this,
-  );
+class _VocabularyListScreenState extends ConsumerState<VocabularyListScreen> {
   final _searchController = TextEditingController();
-  bool _favoritesOnly = false;
+  bool _phrases = false;
+  _Filter _filter = _Filter.all;
   bool _productiveOnly = false;
 
   @override
   void dispose() {
-    _tabController.dispose();
     _searchController.dispose();
     super.dispose();
   }
 
-  @override
-  Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(l10n.navReview),
-        bottom: TabBar(
-          controller: _tabController,
-          tabs: [
-            Tab(text: l10n.vocabularyTabWords),
-            Tab(text: l10n.vocabularyTabChunks),
-          ],
-        ),
-      ),
-      body: Column(
-        children: [
-          const _VocabularyStatsHeader(),
-          Padding(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              children: [
-                TextField(
-                  controller: _searchController,
-                  decoration: InputDecoration(
-                    hintText: l10n.vocabularySearchHint,
-                    prefixIcon: const Icon(Icons.search),
-                    border: const OutlineInputBorder(),
-                  ),
-                  onChanged: (_) => setState(() {}),
-                ),
-                const SizedBox(height: 8),
-                Wrap(
-                  spacing: 8,
-                  children: [
-                    FilterChip(
-                      label: Text(l10n.vocabularyFavoritesOnly),
-                      selected: _favoritesOnly,
-                      onSelected: (v) => setState(() => _favoritesOnly = v),
-                    ),
-                    FilterChip(
-                      label: Text(l10n.vocabularyProductiveOnly),
-                      selected: _productiveOnly,
-                      onSelected: (v) => setState(() => _productiveOnly = v),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-          Expanded(
-            child: TabBarView(
-              controller: _tabController,
-              children: [
-                _WordListView(
-                  query: _searchController.text,
-                  favoritesOnly: _favoritesOnly,
-                  productiveOnly: _productiveOnly,
-                ),
-                _ChunkListView(
-                  query: _searchController.text,
-                  favoritesOnly: _favoritesOnly,
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-bool _matchesQuery(String query, List<String> haystack) {
-  if (query.trim().isEmpty) return true;
-  final lower = query.trim().toLowerCase();
-  return haystack.any((s) => s.toLowerCase().contains(lower));
-}
-
-/// The 3 stat tiles (Due / Learning / Learned) plus the saved-words count
-/// row, above the search/tab UI. Counts are aggregated across *both* words
-/// and chunks — one combined "vocabulary" picture, even though the list
-/// below splits them into tabs. See docs/DESIGN_SYSTEM.md.
-class _VocabularyStatsHeader extends ConsumerWidget {
-  const _VocabularyStatsHeader();
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final l10n = AppLocalizations.of(context)!;
-    final colorScheme = Theme.of(context).colorScheme;
-    final feedbackTheme = Theme.of(context).extension<FeedbackTheme>()!;
-    final contentAsync = ref.watch(courseContentProvider('a1'));
-    final reviewStateAsync = ref.watch(allVocabularyReviewStateProvider);
-
-    final index = contentAsync.value;
-    if (index == null) return const SizedBox.shrink();
-
-    final reviewState = reviewStateAsync.value ?? const [];
-    final reviewStateByLexiconId = {
-      for (final s in reviewState)
+  List<_Entry> _entries(
+    CourseContentIndex index,
+    List<VocabularyReviewStateData> states,
+    DateTime now,
+  ) {
+    final byLexicon = {
+      for (final s in states)
         if (s.lexiconId != null) s.lexiconId!: s,
     };
-    final reviewStateByChunkId = {
-      for (final s in reviewState)
+    final byChunk = {
+      for (final s in states)
         if (s.chunkId != null) s.chunkId!: s,
     };
-    final favoritesCount = reviewState.where((s) => s.isFavorite).length;
-
-    var due = 0;
-    var learning = 0;
-    var learned = 0;
-    final now = DateTime.now();
-    void tally(ProgressState state) {
-      switch (state) {
-        case ProgressState.needsReview:
-          due++;
-        case ProgressState.inProgress:
-          learning++;
-        case ProgressState.mastered:
-          learned++;
-        case ProgressState.notStarted:
-          break;
-      }
-    }
-
-    for (final item in index.bundle.lexicon) {
-      final state = reviewStateByLexiconId[item.id];
-      tally(
-        _vocabularyProgressState(
-          repetitions: state?.repetitions ?? 0,
-          dueAt: state?.dueAt,
-          now: now,
-        ),
-      );
-    }
-    for (final item in index.bundle.chunks) {
-      final state = reviewStateByChunkId[item.id];
-      tally(
-        _vocabularyProgressState(
-          repetitions: state?.repetitions ?? 0,
-          dueAt: state?.dueAt,
-          now: now,
-        ),
-      );
-    }
-
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
-      child: Column(
-        children: [
-          // IntrinsicHeight, not Row(crossAxisAlignment: stretch) — this
-          // Row sits in an unbounded-height context (a plain, non-Expanded
-          // Column child), and `stretch` there asks its flex children for
-          // infinite height.
-          IntrinsicHeight(
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Expanded(
-                  child: _StatTile(
-                    icon: Icons.replay,
-                    label: l10n.vocabularyStatDue,
-                    count: due,
-                    fill: colorScheme.error,
-                    onFill: colorScheme.onError,
-                  ),
-                ),
-                const SizedBox(width: 10),
-                Expanded(
-                  child: _StatTile(
-                    icon: Icons.hourglass_bottom,
-                    label: l10n.vocabularyStatLearning,
-                    count: learning,
-                    fill: colorScheme.primary,
-                    onFill: colorScheme.onPrimary,
-                  ),
-                ),
-                const SizedBox(width: 10),
-                Expanded(
-                  child: _StatTile(
-                    icon: Icons.check,
-                    label: l10n.vocabularyStateLearned,
-                    count: learned,
-                    fill: feedbackTheme.success,
-                    onFill: feedbackTheme.onSuccess,
-                  ),
-                ),
-              ],
-            ),
+    if (_phrases) {
+      return [
+        for (final c in index.bundle.chunks)
+          _Entry(
+            text: c.text,
+            arabic: c.arabic,
+            searchable: [c.text, c.arabic],
+            route: '/review/chunks/${c.id}',
+            status: vocabularyStatus(byChunk[c.id], now),
+            saved: byChunk[c.id]?.isFavorite ?? false,
+            productive: c.productive,
           ),
-          const SizedBox(height: 10),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-            decoration: BoxDecoration(
-              color: colorScheme.primaryContainer,
-              borderRadius: BorderRadius.circular(16),
-            ),
-            child: Row(
-              children: [
-                Icon(Icons.bookmark, color: colorScheme.onPrimaryContainer),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: Text(
-                    l10n.vocabularySavedWordsTitle,
-                    style: Theme.of(context).textTheme.titleSmall
-                        ?.copyWith(color: colorScheme.onPrimaryContainer),
-                  ),
-                ),
-                Text(
-                  '$favoritesCount',
-                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    color: colorScheme.onPrimaryContainer,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
+      ];
+    }
+    return [
+      for (final w in index.bundle.lexicon)
+        _Entry(
+          text: w.headword,
+          arabic: w.arabic,
+          searchable: [w.headword, w.arabic, w.meaning],
+          route: '/review/vocabulary/${w.id}',
+          status: vocabularyStatus(byLexicon[w.id], now),
+          saved: byLexicon[w.id]?.isFavorite ?? false,
+          productive: w.productive,
+        ),
+    ];
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final contentAsync = ref.watch(courseContentProvider('a1'));
+    final states =
+        ref.watch(allVocabularyReviewStateProvider).value ?? const [];
+
+    return Scaffold(
+      appBar: AppBar(title: Text(l10n.reviewWordsTile)),
+      body: contentAsync.when(
+        loading: () => const Center(child: CircularProgressIndicator()),
+        error: (error, _) => Center(child: Text('$error')),
+        data: (index) {
+          final query = _searchController.text.trim().toLowerCase();
+          final kindEntries = _entries(
+            index,
+            states,
+            DateTime.now(),
+          ).where((e) => !_productiveOnly || _phrases || e.productive).toList();
+          final shown = kindEntries
+              .where(
+                (e) =>
+                    e.matches(_filter) &&
+                    (query.isEmpty ||
+                        e.searchable.any(
+                          (s) => s.toLowerCase().contains(query),
+                        )),
+              )
+              .toList();
+
+          return Column(
+            children: [
+              _Controls(
+                searchController: _searchController,
+                onSearch: () => setState(() {}),
+                phrases: _phrases,
+                wordCount: index.bundle.lexicon.length,
+                phraseCount: index.bundle.chunks.length,
+                onKind: (phrases) => setState(() => _phrases = phrases),
+                filter: _filter,
+                counts: {
+                  for (final f in _Filter.values)
+                    f: kindEntries.where((e) => e.matches(f)).length,
+                },
+                onFilter: (f) => setState(() => _filter = f),
+                productiveOnly: _productiveOnly,
+                onProductive: (v) => setState(() => _productiveOnly = v),
+              ),
+              Expanded(
+                child: shown.isEmpty
+                    ? Center(child: Text(l10n.vocabularyEmptyResults))
+                    : ListView.builder(
+                        padding: const EdgeInsets.fromLTRB(
+                          AppSpace.md,
+                          0,
+                          AppSpace.md,
+                          AppSpace.lg,
+                        ),
+                        itemCount: shown.length,
+                        itemBuilder: (context, i) => _EntryRow(
+                          entry: shown[i],
+                          isFirst: i == 0,
+                          isLast: i == shown.length - 1,
+                        ),
+                      ),
+              ),
+            ],
+          );
+        },
       ),
     );
   }
 }
 
-class _StatTile extends StatelessWidget {
-  const _StatTile({
-    required this.icon,
-    required this.label,
-    required this.count,
-    required this.fill,
-    required this.onFill,
+/// Search, Words/Phrases, and the filter chips.
+class _Controls extends StatelessWidget {
+  const _Controls({
+    required this.searchController,
+    required this.onSearch,
+    required this.phrases,
+    required this.wordCount,
+    required this.phraseCount,
+    required this.onKind,
+    required this.filter,
+    required this.counts,
+    required this.onFilter,
+    required this.productiveOnly,
+    required this.onProductive,
   });
 
-  final IconData icon;
-  final String label;
-  final int count;
-  final Color fill;
-  final Color onFill;
+  final TextEditingController searchController;
+  final VoidCallback onSearch;
+  final bool phrases;
+  final int wordCount;
+  final int phraseCount;
+  final ValueChanged<bool> onKind;
+  final _Filter filter;
+  final Map<_Filter, int> counts;
+  final ValueChanged<_Filter> onFilter;
+  final bool productiveOnly;
+  final ValueChanged<bool> onProductive;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 6),
-      decoration: BoxDecoration(
-        color: fill,
-        borderRadius: BorderRadius.circular(18),
-      ),
-      child: Column(
+    final theme = Theme.of(context);
+    final tokens = theme.extension<AppTokens>()!;
+    final l10n = AppLocalizations.of(context)!;
+    final countStyle = theme.textTheme.labelMedium?.copyWith(
+      color: tokens.textSecondary,
+    );
+
+    // Scales down rather than wrapping mid-word on a narrow screen with
+    // large text.
+    Widget kind(String label, int count) => FittedBox(
+      fit: BoxFit.scaleDown,
+      child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(icon, color: onFill, size: 20),
-          const SizedBox(height: 6),
-          Text(
-            label,
-            style: Theme.of(context).textTheme.labelMedium
-                ?.copyWith(color: onFill, fontWeight: FontWeight.bold),
+          Text(label),
+          const SizedBox(width: AppSpace.xs - 2),
+          Text('$count', style: countStyle),
+        ],
+      ),
+    );
+
+    Widget chip(_Filter f, String label) {
+      final count = counts[f] ?? 0;
+      return Padding(
+        padding: const EdgeInsetsDirectional.only(end: AppSpace.xs),
+        child: ChoiceChip(
+          showCheckmark: false,
+          selected: filter == f,
+          onSelected: (_) => onFilter(f),
+          label: Semantics(
+            label: l10n.vocabularyFilterSemantics(label, count),
+            child: ExcludeSemantics(
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(label),
+                  const SizedBox(width: AppSpace.xs - 2),
+                  Text(
+                    '$count',
+                    style: const TextStyle(fontWeight: FontWeight.w700),
+                  ),
+                ],
+              ),
+            ),
           ),
-          const SizedBox(height: 2),
-          Text(
-            '$count',
-            style: Theme.of(context).textTheme.titleMedium
-                ?.copyWith(color: onFill, fontWeight: FontWeight.bold),
+        ),
+      );
+    }
+
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(
+        AppSpace.md,
+        AppSpace.xxs,
+        AppSpace.md,
+        AppSpace.sm,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          TextField(
+            controller: searchController,
+            onChanged: (_) => onSearch(),
+            decoration: InputDecoration(
+              hintText: l10n.vocabularySearchHint,
+              prefixIcon: const Icon(Icons.search_rounded),
+              filled: true,
+              fillColor: tokens.cardMuted,
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(24),
+                borderSide: BorderSide.none,
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(24),
+                borderSide: BorderSide.none,
+              ),
+            ),
+          ),
+          const SizedBox(height: AppSpace.sm),
+          SegmentedButton<bool>(
+            showSelectedIcon: false,
+            segments: [
+              ButtonSegment(
+                value: false,
+                label: kind(l10n.vocabularyTabWords, wordCount),
+              ),
+              ButtonSegment(
+                value: true,
+                label: kind(l10n.vocabularyTabChunks, phraseCount),
+              ),
+            ],
+            selected: {phrases},
+            onSelectionChanged: (s) => onKind(s.first),
+          ),
+          const SizedBox(height: AppSpace.sm),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                chip(_Filter.all, l10n.vocabularyFilterAll),
+                chip(_Filter.due, l10n.vocabularyStatDue),
+                chip(_Filter.learning, l10n.vocabularyStatLearning),
+                chip(_Filter.learned, l10n.vocabularyStateLearned),
+                chip(_Filter.saved, l10n.vocabularyFilterSaved),
+                if (!phrases)
+                  FilterChip(
+                    showCheckmark: true,
+                    selected: productiveOnly,
+                    onSelected: onProductive,
+                    label: Text(l10n.vocabularyFilterProductive),
+                  ),
+              ],
+            ),
           ),
         ],
       ),
@@ -304,272 +336,91 @@ class _StatTile extends StatelessWidget {
   }
 }
 
-class _WordListView extends ConsumerWidget {
-  const _WordListView({
-    required this.query,
-    required this.favoritesOnly,
-    required this.productiveOnly,
+/// A word or phrase: English over Arabic, a star when saved, and its
+/// status label. Rows join into one rounded card.
+class _EntryRow extends StatelessWidget {
+  const _EntryRow({
+    required this.entry,
+    required this.isFirst,
+    required this.isLast,
   });
 
-  final String query;
-  final bool favoritesOnly;
-  final bool productiveOnly;
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final l10n = AppLocalizations.of(context)!;
-    final contentAsync = ref.watch(courseContentProvider('a1'));
-    final reviewStateAsync = ref.watch(allVocabularyReviewStateProvider);
-
-    return contentAsync.when(
-      loading: () => const Center(child: CircularProgressIndicator()),
-      error: (error, _) => Center(child: Text('$error')),
-      data: (index) {
-        final favoriteLexiconIds = {
-          for (final s in reviewStateAsync.value ?? const [])
-            if (s.isFavorite && s.lexiconId != null) s.lexiconId,
-        };
-        final reviewStateByLexiconId = {
-          for (final s in reviewStateAsync.value ?? const [])
-            if (s.lexiconId != null) s.lexiconId!: s,
-        };
-
-        final items = index.bundle.lexicon.where((item) {
-          if (!_matchesQuery(query, [
-            item.headword,
-            item.arabic,
-            item.meaning,
-          ])) {
-            return false;
-          }
-          if (favoritesOnly && !favoriteLexiconIds.contains(item.id)) {
-            return false;
-          }
-          if (productiveOnly && !item.productive) return false;
-          return true;
-        }).toList();
-
-        if (items.isEmpty) {
-          return Center(child: Text(l10n.vocabularyEmptyResults));
-        }
-
-        return ListView.builder(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          itemCount: items.length,
-          itemBuilder: (context, i) {
-            final item = items[i];
-            final isFavorite = favoriteLexiconIds.contains(item.id);
-            final reviewState = reviewStateByLexiconId[item.id];
-            return _VocabularyRow(
-              headword: item.headword,
-              arabic: item.arabic,
-              isFavorite: isFavorite,
-              progressState: _vocabularyProgressState(
-                repetitions: reviewState?.repetitions ?? 0,
-                dueAt: reviewState?.dueAt,
-                now: DateTime.now(),
-              ),
-              onTap: () => context.push('/review/vocabulary/${item.id}'),
-            );
-          },
-        );
-      },
-    );
-  }
-}
-
-class _ChunkListView extends ConsumerWidget {
-  const _ChunkListView({required this.query, required this.favoritesOnly});
-
-  final String query;
-  final bool favoritesOnly;
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final l10n = AppLocalizations.of(context)!;
-    final contentAsync = ref.watch(courseContentProvider('a1'));
-    final reviewStateAsync = ref.watch(allVocabularyReviewStateProvider);
-
-    return contentAsync.when(
-      loading: () => const Center(child: CircularProgressIndicator()),
-      error: (error, _) => Center(child: Text('$error')),
-      data: (index) {
-        final favoriteChunkIds = {
-          for (final s in reviewStateAsync.value ?? const [])
-            if (s.isFavorite && s.chunkId != null) s.chunkId,
-        };
-        final reviewStateByChunkId = {
-          for (final s in reviewStateAsync.value ?? const [])
-            if (s.chunkId != null) s.chunkId!: s,
-        };
-
-        final items = index.bundle.chunks.where((item) {
-          if (!_matchesQuery(query, [item.text, item.arabic])) return false;
-          if (favoritesOnly && !favoriteChunkIds.contains(item.id)) {
-            return false;
-          }
-          return true;
-        }).toList();
-
-        if (items.isEmpty) {
-          return Center(child: Text(l10n.vocabularyEmptyResults));
-        }
-
-        return ListView.builder(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          itemCount: items.length,
-          itemBuilder: (context, i) {
-            final item = items[i];
-            final isFavorite = favoriteChunkIds.contains(item.id);
-            final reviewState = reviewStateByChunkId[item.id];
-            return _VocabularyRow(
-              headword: item.text,
-              arabic: item.arabic,
-              isFavorite: isFavorite,
-              progressState: _vocabularyProgressState(
-                repetitions: reviewState?.repetitions ?? 0,
-                dueAt: reviewState?.dueAt,
-                now: DateTime.now(),
-              ),
-              onTap: () => context.push('/review/chunks/${item.id}'),
-            );
-          },
-        );
-      },
-    );
-  }
-}
-
-/// Maps one vocabulary/chunk review row onto the shared 4-state
-/// [ProgressState]: no row (or never successfully recalled) is
-/// [ProgressState.notStarted]; overdue is [ProgressState.needsReview];
-/// recalled at least once but not yet graduated (repetitions < 3, matching
-/// [SpacedReviewScheduler]'s interval steps: 1st repetition -> 1 day, 2nd ->
-/// 6 days, 3rd+ -> ease-factor-driven) is [ProgressState.inProgress];
-/// repetitions >= 3 is [ProgressState.mastered]. See docs/superpowers/specs/
-/// 2026-09-04-ui-navigation-redesign-design.md.
-ProgressState _vocabularyProgressState({
-  required int repetitions,
-  required DateTime? dueAt,
-  required DateTime now,
-}) {
-  if (repetitions == 0) return ProgressState.notStarted;
-  if (dueAt != null && dueAt.isBefore(now)) return ProgressState.needsReview;
-  if (repetitions >= 3) return ProgressState.mastered;
-  return ProgressState.inProgress;
-}
-
-class _VocabularyRow extends StatelessWidget {
-  const _VocabularyRow({
-    required this.headword,
-    required this.arabic,
-    required this.isFavorite,
-    required this.progressState,
-    required this.onTap,
-  });
-
-  final String headword;
-  final String arabic;
-  final bool isFavorite;
-  final ProgressState progressState;
-  final VoidCallback onTap;
+  final _Entry entry;
+  final bool isFirst;
+  final bool isLast;
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final tokens = theme.extension<AppTokens>()!;
     final l10n = AppLocalizations.of(context)!;
-    final colorScheme = Theme.of(context).colorScheme;
-    final feedbackTheme = Theme.of(context).extension<FeedbackTheme>()!;
+    const radius = Radius.circular(AppRadius.card);
 
-    // A bigger circular icon node, matching the unit overview's lesson-path
-    // treatment (see unit_overview_screen.dart's _LessonNode) — the row
-    // card itself stays plain (surfaceContainer) rather than tinted, since
-    // this list can run to 100+ items and a tinted row per state would be
-    // visual noise at that density; only the circle carries the colour.
-    final (
-      Color circleFill,
-      Color? circleBorder,
-      Color iconColor,
-    ) = switch (progressState) {
-      ProgressState.mastered => (
-        feedbackTheme.success,
-        null,
-        feedbackTheme.onSuccess,
-      ),
-      ProgressState.needsReview => (
-        colorScheme.errorContainer,
-        null,
-        colorScheme.error,
-      ),
-      ProgressState.inProgress => (
-        colorScheme.primaryContainer,
-        null,
-        colorScheme.primary,
-      ),
-      ProgressState.notStarted => (
-        colorScheme.surface,
-        colorScheme.outlineVariant,
-        colorScheme.onSurfaceVariant,
-      ),
-    };
-
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 8),
-      child: Material(
-        color: colorScheme.surfaceContainer,
-        borderRadius: BorderRadius.circular(16),
-        child: InkWell(
-          onTap: onTap,
-          borderRadius: BorderRadius.circular(16),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
-            child: Row(
-              children: [
-                Container(
-                  width: 44,
-                  height: 44,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: circleFill,
-                    border: circleBorder != null
-                        ? Border.all(color: circleBorder, width: 2)
-                        : null,
-                  ),
-                  child: Center(
-                    // A graduated item announces "Learned", not the shared
-                    // "Mastered" label: memorising a word is a
-                    // spaced-review outcome, never course mastery (see
-                    // docs/GLOSSARY.md and [ReviewConfidenceRow]).
-                    child: StatusIndicator(
-                      state: progressState,
-                      size: 20,
-                      colorOverride: iconColor,
-                      semanticLabelOverride:
-                          progressState == ProgressState.mastered
-                          ? l10n.vocabularyStateLearned
-                          : null,
+    return Column(
+      children: [
+        Material(
+          color: tokens.card,
+          clipBehavior: Clip.antiAlias,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.vertical(
+              top: isFirst ? radius : Radius.zero,
+              bottom: isLast ? radius : Radius.zero,
+            ),
+          ),
+          child: InkWell(
+            onTap: () => context.push(entry.route),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: AppSpace.md - 2,
+                vertical: AppSpace.sm - 2,
+              ),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        Align(
+                          alignment: AlignmentDirectional.centerStart,
+                          child: Text(
+                            entry.text,
+                            textDirection: TextDirection.ltr,
+                            style: theme.textTheme.titleMedium?.copyWith(
+                              color: tokens.textPrimary,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ),
+                        Align(
+                          alignment: AlignmentDirectional.centerStart,
+                          child: Text(
+                            entry.arabic,
+                            textDirection: TextDirection.rtl,
+                            style: theme.textTheme.bodyMedium?.copyWith(
+                              color: tokens.textSecondary,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                ),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(headword, textDirection: TextDirection.ltr),
-                      Text(
-                        arabic,
-                        textDirection: TextDirection.rtl,
-                        style: Theme.of(context).textTheme.bodySmall,
-                      ),
-                    ],
-                  ),
-                ),
-                if (isFavorite) Icon(Icons.star, color: colorScheme.tertiary),
-              ],
+                  if (entry.saved) ...[
+                    Icon(
+                      Icons.star_rounded,
+                      size: 18,
+                      semanticLabel: l10n.vocabularyFilterSaved,
+                      color: theme.extension<GamificationTheme>()!.streakAccent,
+                    ),
+                    const SizedBox(width: AppSpace.xs),
+                  ],
+                  VocabularyStatusPill(status: entry.status),
+                ],
+              ),
             ),
           ),
         ),
-      ),
+        if (!isLast) Divider(height: 1, color: tokens.border),
+      ],
     );
   }
 }

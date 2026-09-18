@@ -13,6 +13,7 @@ import '../../progress/providers/current_learner_provider.dart';
 import '../../progress/providers/progress_providers.dart';
 import '../../speech/presentation/listen_button.dart';
 import '../../vocabulary/domain/spaced_review_scheduler.dart';
+import '../../vocabulary/presentation/review_rating_bar.dart';
 import '../../vocabulary/providers/vocabulary_providers.dart';
 import '../domain/next_review.dart';
 import '../providers/review_providers.dart';
@@ -163,7 +164,7 @@ class _ReviewSessionScreenState extends ConsumerState<ReviewSessionScreen> {
           showArrow: false,
           onPressed: () => Navigator.of(context).pop(),
         ),
-        _ when _revealed => _RatingBar(
+        _ when _revealed => ReviewRatingBar(
           state: cards[_position].state,
           enabled: !_saving,
           onRate: _rate,
@@ -333,128 +334,6 @@ class _CardView extends StatelessWidget {
             ],
           ],
         ],
-      ),
-    );
-  }
-}
-
-/// "How well did you know it?" and Again / Good / Easy, each with when it
-/// brings the item back.
-class _RatingBar extends StatelessWidget {
-  const _RatingBar({
-    required this.state,
-    required this.enabled,
-    required this.onRate,
-  });
-
-  final VocabularyReviewStateData state;
-  final bool enabled;
-  final ValueChanged<ReviewQuality> onRate;
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final tokens = theme.extension<AppTokens>()!;
-    final l10n = AppLocalizations.of(context)!;
-    final now = DateTime.now();
-
-    // Side by side normally; stacked full-width rows when the screen is
-    // narrow for the text size, so a hint like "tomorrow" never breaks.
-    final stacked =
-        MediaQuery.sizeOf(context).width /
-            MediaQuery.textScalerOf(context).scale(1) <
-        340;
-
-    Widget button(ReviewQuality quality, String label, {Color? color}) {
-      final days = SpacedReviewScheduler.schedule(
-        currentEaseFactor: state.easeFactor,
-        currentIntervalDays: state.intervalDays,
-        currentRepetitions: state.repetitions,
-        quality: quality,
-        now: now,
-      ).intervalDays;
-      final hint = Text(
-        l10n.reviewSeeAgain(days),
-        style: theme.textTheme.bodySmall?.copyWith(color: tokens.textSecondary),
-      );
-      final outlined = OutlinedButton(
-        style: OutlinedButton.styleFrom(
-          minimumSize: const Size.fromHeight(56),
-          padding: const EdgeInsets.symmetric(horizontal: AppSpace.xxs),
-          foregroundColor: color ?? tokens.textPrimary,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(AppRadius.control),
-          ),
-        ),
-        onPressed: enabled ? () => onRate(quality) : null,
-        child: stacked
-            ? Padding(
-                padding: const EdgeInsets.symmetric(horizontal: AppSpace.sm),
-                child: Row(
-                  children: [
-                    Expanded(child: Text(label)),
-                    const SizedBox(width: AppSpace.xs),
-                    hint,
-                  ],
-                ),
-              )
-            : Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [Text(label), hint],
-              ),
-      );
-      return stacked ? outlined : Expanded(child: outlined);
-    }
-
-    final buttons = [
-      button(
-        ReviewQuality.again,
-        l10n.reviewQualityAgain,
-        color: theme.colorScheme.error,
-      ),
-      button(ReviewQuality.good, l10n.reviewQualityGood),
-      button(ReviewQuality.easy, l10n.reviewQualityEasy),
-    ];
-
-    return DecoratedBox(
-      decoration: BoxDecoration(
-        color: tokens.page,
-        border: Border(top: BorderSide(color: tokens.border)),
-      ),
-      child: Padding(
-        padding: EdgeInsets.fromLTRB(
-          AppSpace.md,
-          AppSpace.sm,
-          AppSpace.md,
-          AppSpace.md + MediaQuery.paddingOf(context).bottom,
-        ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Text(
-              l10n.reviewHowWellKnew,
-              style: theme.textTheme.titleSmall?.copyWith(
-                color: tokens.textPrimary,
-              ),
-            ),
-            const SizedBox(height: AppSpace.xs),
-            if (stacked)
-              for (final (i, b) in buttons.indexed) ...[
-                if (i > 0) const SizedBox(height: AppSpace.xs),
-                b,
-              ]
-            else
-              Row(
-                children: [
-                  for (final (i, b) in buttons.indexed) ...[
-                    if (i > 0) const SizedBox(width: AppSpace.xs),
-                    b,
-                  ],
-                ],
-              ),
-          ],
-        ),
       ),
     );
   }

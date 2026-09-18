@@ -497,7 +497,71 @@ class AppLocalizationsEn extends AppLocalizations {
   String get vocabularyStatLearning => 'Learning';
 
   @override
-  String get vocabularySavedWordsTitle => 'Saved words';
+  String get vocabularyFilterAll => 'All';
+
+  @override
+  String get vocabularyFilterSaved => 'Saved';
+
+  @override
+  String get vocabularyFilterProductive => 'Speaking & writing';
+
+  @override
+  String vocabularyFilterSemantics(String label, int count) {
+    return '$label: $count';
+  }
+
+  @override
+  String get partOfSpeechNoun => 'noun';
+
+  @override
+  String get partOfSpeechVerb => 'verb';
+
+  @override
+  String get partOfSpeechAdjective => 'adjective';
+
+  @override
+  String get partOfSpeechAdverb => 'adverb';
+
+  @override
+  String get partOfSpeechNumber => 'number';
+
+  @override
+  String get partOfSpeechProperNoun => 'name';
+
+  @override
+  String get partOfSpeechPhrase => 'phrase';
+
+  @override
+  String get partOfSpeechInterjection => 'interjection';
+
+  @override
+  String get partOfSpeechPreposition => 'preposition';
+
+  @override
+  String get partOfSpeechConjunction => 'conjunction';
+
+  @override
+  String get wordUsageProductive =>
+      'You\'ll use this word when speaking and writing.';
+
+  @override
+  String get wordUsageReceptive =>
+      'You\'ll need to understand this word when listening and reading.';
+
+  @override
+  String get wordStatusNew =>
+      'Not in your reviews yet — rate it below to add it.';
+
+  @override
+  String get wordStatusDue => 'Due for review now';
+
+  @override
+  String get wordMetInOverline => 'Where you met it';
+
+  @override
+  String wordMetInMeta(int unit, int lesson) {
+    return 'Unit $unit · Lesson $lesson';
+  }
 
   @override
   String get vocabularyTabWords => 'Words';
@@ -509,18 +573,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get vocabularySearchHint => 'Search English or Arabic';
 
   @override
-  String get vocabularyFavoritesOnly => 'Favourites only';
-
-  @override
-  String get vocabularyProductiveOnly => 'Productive only';
-
-  @override
   String get vocabularyEmptyResults => 'No words match your search.';
-
-  @override
-  String wordDetailIntroducedIn(String unitTitle) {
-    return 'Introduced in $unitTitle';
-  }
 
   @override
   String get wordDetailExamples => 'Examples';
@@ -536,9 +589,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get reviewQualityEasy => 'Easy';
-
-  @override
-  String get reviewConfidenceSaved => 'Saved';
 
   @override
   String get grammarDetailForm => 'Form';
@@ -614,7 +664,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get reviewCaughtUpEmpty =>
-      'Words and phrases from your lessons will come back here to review.';
+      'Open a word or phrase and rate how well you know it to add it to your reviews.';
 
   @override
   String get reviewWeakSpotsOverline => 'Practise weak spots';
@@ -966,12 +1016,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get grammarFilterAllUnits => 'All';
-
-  @override
-  String get vocabularyReceptiveLabel => 'Receptive';
-
-  @override
-  String get vocabularyProductiveLabel => 'Productive';
 
   @override
   String get favoriteAddTooltip => 'Add to favorites';

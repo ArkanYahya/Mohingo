@@ -518,7 +518,70 @@ class AppLocalizationsAr extends AppLocalizations {
   String get vocabularyStatLearning => 'قيد التعلم';
 
   @override
-  String get vocabularySavedWordsTitle => 'الكلمات المحفوظة';
+  String get vocabularyFilterAll => 'الكل';
+
+  @override
+  String get vocabularyFilterSaved => 'المحفوظة';
+
+  @override
+  String get vocabularyFilterProductive => 'للتحدث والكتابة';
+
+  @override
+  String vocabularyFilterSemantics(String label, int count) {
+    return '$label: $count';
+  }
+
+  @override
+  String get partOfSpeechNoun => 'اسم';
+
+  @override
+  String get partOfSpeechVerb => 'فعل';
+
+  @override
+  String get partOfSpeechAdjective => 'صفة';
+
+  @override
+  String get partOfSpeechAdverb => 'ظرف';
+
+  @override
+  String get partOfSpeechNumber => 'عدد';
+
+  @override
+  String get partOfSpeechProperNoun => 'اسم علم';
+
+  @override
+  String get partOfSpeechPhrase => 'عبارة';
+
+  @override
+  String get partOfSpeechInterjection => 'كلمة تعجّب وتحية';
+
+  @override
+  String get partOfSpeechPreposition => 'حرف جر';
+
+  @override
+  String get partOfSpeechConjunction => 'حرف عطف';
+
+  @override
+  String get wordUsageProductive => 'ستستخدم هذه الكلمة في التحدث والكتابة.';
+
+  @override
+  String get wordUsageReceptive =>
+      'ستحتاج إلى فهم هذه الكلمة عند الاستماع والقراءة.';
+
+  @override
+  String get wordStatusNew =>
+      'ليست في مراجعاتك بعد — قيّمها في الأسفل لإضافتها.';
+
+  @override
+  String get wordStatusDue => 'حان وقت مراجعتها';
+
+  @override
+  String get wordMetInOverline => 'أين تعلّمتها';
+
+  @override
+  String wordMetInMeta(int unit, int lesson) {
+    return 'الوحدة $unit · الدرس $lesson';
+  }
 
   @override
   String get vocabularyTabWords => 'كلمات';
@@ -530,18 +593,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get vocabularySearchHint => 'ابحث بالإنجليزية أو العربية';
 
   @override
-  String get vocabularyFavoritesOnly => 'المفضلة فقط';
-
-  @override
-  String get vocabularyProductiveOnly => 'إنتاجية فقط';
-
-  @override
   String get vocabularyEmptyResults => 'لا توجد كلمات مطابقة لبحثك.';
-
-  @override
-  String wordDetailIntroducedIn(String unitTitle) {
-    return 'قُدّمت في $unitTitle';
-  }
 
   @override
   String get wordDetailExamples => 'أمثلة';
@@ -557,9 +609,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get reviewQualityEasy => 'سهل';
-
-  @override
-  String get reviewConfidenceSaved => 'تم الحفظ';
 
   @override
   String get grammarDetailForm => 'الصيغة';
@@ -641,7 +690,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get reviewCaughtUpEmpty =>
-      'ستعود إليك هنا الكلمات والعبارات من دروسك لتراجعها.';
+      'افتح كلمة أو عبارة وقيّم مدى معرفتك بها لتُضاف إلى مراجعاتك.';
 
   @override
   String get reviewWeakSpotsOverline => 'تدرّب على نقاط ضعفك';
@@ -998,12 +1047,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get grammarFilterAllUnits => 'الكل';
-
-  @override
-  String get vocabularyReceptiveLabel => 'استيعابية';
-
-  @override
-  String get vocabularyProductiveLabel => 'إنتاجية';
 
   @override
   String get favoriteAddTooltip => 'أضف إلى المفضلة';
