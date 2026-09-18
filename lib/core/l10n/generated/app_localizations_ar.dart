@@ -419,6 +419,42 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
+  String learnUnitOverline(int unit) {
+    return 'الوحدة $unit';
+  }
+
+  @override
+  String learnLessonInProgressOverline(int lesson) {
+    return 'الدرس $lesson · قيد التعلّم';
+  }
+
+  @override
+  String learnLessonStartHereOverline(int lesson) {
+    return 'الدرس $lesson · ابدأ من هنا';
+  }
+
+  @override
+  String get learnMissionOverline => 'مهمة الوحدة';
+
+  @override
+  String get learnMissionBody => 'تُثبت إتقانك للوحدة';
+
+  @override
+  String get learnLessonCompletedReview => 'مكتمل · راجع إجاباتك';
+
+  @override
+  String get learnLessonNeedsReviewReview =>
+      'بعض الإجابات تحتاج مراجعة · راجع إجاباتك';
+
+  @override
+  String learnLessonNodeSemantics(int lesson, String state) {
+    return 'الدرس $lesson: $state';
+  }
+
+  @override
+  String get learnLessonHasConversation => 'يبدأ بمحادثة';
+
+  @override
   String get learnFinishOverline => 'ختام المستوى A1';
 
   @override

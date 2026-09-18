@@ -270,8 +270,7 @@ class _UnitRow extends StatelessWidget {
       ProgressState.mastered => l10n.unitStateMastered,
       ProgressState.needsReview => l10n.unitStateNeedsReview,
       ProgressState.inProgress => l10n.unitStateInProgress,
-      ProgressState.notStarted =>
-        isCurrent ? l10n.unitStateInProgress : l10n.unitStateNotStarted,
+      ProgressState.notStarted => l10n.unitStateNotStarted,
     };
     final kind = state == ProgressState.mastered
         ? PathNodeKind.done

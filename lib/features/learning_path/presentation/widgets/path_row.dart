@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/theme/app_tokens.dart';
 import '../../../../core/theme/feedback_theme_extension.dart';
+import '../../../../core/theme/gamification_theme_extension.dart';
 
 /// What a node on the learning path shows.
 enum PathNodeKind {
@@ -13,6 +14,10 @@ enum PathNodeKind {
 
   /// Not reached yet: a hairline ring around the number.
   upcoming,
+
+  /// Finished, but the latest answers include mistakes: an amber ring with
+  /// a refresh mark — something to revisit, not a failure.
+  review,
 
   /// A milestone at the end of a stretch (missions, the level's finish): a
   /// solid ink circle with a flag.
@@ -70,6 +75,12 @@ class PathNode extends StatelessWidget {
         2.0,
         tokens.onPrimaryInk,
       ),
+      PathNodeKind.review => (
+        tokens.card,
+        theme.extension<GamificationTheme>()!.streakAccent,
+        3.0,
+        theme.extension<GamificationTheme>()!.streakAccent,
+      ),
     };
 
     return Semantics(
@@ -93,6 +104,11 @@ class PathNode extends StatelessWidget {
             ),
             PathNodeKind.flag => Icon(
               Icons.flag_rounded,
+              size: 22,
+              color: foreground,
+            ),
+            PathNodeKind.review => Icon(
+              Icons.refresh_rounded,
               size: 22,
               color: foreground,
             ),

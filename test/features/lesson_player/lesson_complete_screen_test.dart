@@ -13,7 +13,6 @@ import 'package:mohingo/core/l10n/generated/app_localizations.dart';
 import 'package:mohingo/core/preferences/shared_preferences_provider.dart';
 import 'package:mohingo/core/theme/app_theme.dart';
 import 'package:mohingo/core/theme/color_seed.dart';
-import 'package:mohingo/core/widgets/status_indicator.dart';
 import 'package:mohingo/data/local/database.dart';
 import 'package:mohingo/data/local/database_provider.dart';
 import 'package:mohingo/features/learning_path/presentation/unit_overview_screen.dart';
@@ -159,9 +158,16 @@ void main() {
       final lessonRow = index.unitsById['A1-U0']!.lessons.indexWhere(
         (l) => l.id == 'A1-U0-L1',
       );
-      StatusIndicator lessonIndicator() => tester
-          .widgetList<StatusIndicator>(find.byType(StatusIndicator))
-          .elementAt(lessonRow);
+      // The lesson's node on the unit page's path, announced with its
+      // number and state.
+      Finder lessonNode(String Function(AppLocalizations l10n) state) {
+        final l10n = AppLocalizations.of(
+          tester.element(find.byType(UnitOverviewScreen)),
+        )!;
+        return find.bySemanticsLabel(
+          l10n.learnLessonNodeSemantics(lessonRow + 1, state(l10n)),
+        );
+      }
 
       // Pump the unit overview FIRST, so `lessonProgressForUnitProvider`
       // gets watched and cached with the "not started" baseline — this is
@@ -180,7 +186,7 @@ void main() {
         ),
       );
       await tester.pumpAndSettle();
-      expect(lessonIndicator().state, ProgressState.notStarted);
+      expect(lessonNode((l) => l.unitStateNotStarted), findsOneWidget);
 
       // Same container, switch to the lesson player and answer only the
       // first activity — the lesson stays unfinished.
@@ -219,7 +225,7 @@ void main() {
         ),
       );
       await tester.pumpAndSettle();
-      expect(lessonIndicator().state, ProgressState.inProgress);
+      expect(lessonNode((l) => l.unitStateInProgress), findsOneWidget);
     },
   );
 

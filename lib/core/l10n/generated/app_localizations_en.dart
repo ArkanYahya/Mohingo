@@ -398,6 +398,42 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String learnUnitOverline(int unit) {
+    return 'Unit $unit';
+  }
+
+  @override
+  String learnLessonInProgressOverline(int lesson) {
+    return 'Lesson $lesson · In progress';
+  }
+
+  @override
+  String learnLessonStartHereOverline(int lesson) {
+    return 'Lesson $lesson · Start here';
+  }
+
+  @override
+  String get learnMissionOverline => 'Unit mission';
+
+  @override
+  String get learnMissionBody => 'Shows you\'ve mastered the unit';
+
+  @override
+  String get learnLessonCompletedReview => 'Completed · review answers';
+
+  @override
+  String get learnLessonNeedsReviewReview =>
+      'Some answers to revisit · review answers';
+
+  @override
+  String learnLessonNodeSemantics(int lesson, String state) {
+    return 'Lesson $lesson: $state';
+  }
+
+  @override
+  String get learnLessonHasConversation => 'Opens with a conversation';
+
+  @override
   String get learnFinishOverline => 'Finish A1';
 
   @override

@@ -680,6 +680,60 @@ abstract class AppLocalizations {
   /// **'Unit {unit}: {state}'**
   String learnUnitNodeSemantics(int unit, String state);
 
+  /// Overline above the unit title on a unit page.
+  ///
+  /// In en, this message translates to:
+  /// **'Unit {unit}'**
+  String learnUnitOverline(int unit);
+
+  /// Overline on the highlighted card for the lesson the learner is part-way through.
+  ///
+  /// In en, this message translates to:
+  /// **'Lesson {lesson} · In progress'**
+  String learnLessonInProgressOverline(int lesson);
+
+  /// Overline on the highlighted card for the next lesson to start.
+  ///
+  /// In en, this message translates to:
+  /// **'Lesson {lesson} · Start here'**
+  String learnLessonStartHereOverline(int lesson);
+
+  /// Overline on a unit's mission lesson.
+  ///
+  /// In en, this message translates to:
+  /// **'Unit mission'**
+  String get learnMissionOverline;
+
+  /// Line on a unit's mission lesson explaining what it's for.
+  ///
+  /// In en, this message translates to:
+  /// **'Shows you\'ve mastered the unit'**
+  String get learnMissionBody;
+
+  /// Status line on a finished lesson, which opens its answer review when tapped.
+  ///
+  /// In en, this message translates to:
+  /// **'Completed · review answers'**
+  String get learnLessonCompletedReview;
+
+  /// Status line on a finished lesson whose latest answers include mistakes; tapping opens its answer review.
+  ///
+  /// In en, this message translates to:
+  /// **'Some answers to revisit · review answers'**
+  String get learnLessonNeedsReviewReview;
+
+  /// Screen-reader label of a lesson's circle on the unit page.
+  ///
+  /// In en, this message translates to:
+  /// **'Lesson {lesson}: {state}'**
+  String learnLessonNodeSemantics(int lesson, String state);
+
+  /// Accessibility label of the small icon on lessons that open with an encounter conversation.
+  ///
+  /// In en, this message translates to:
+  /// **'Opens with a conversation'**
+  String get learnLessonHasConversation;
+
   /// Overline on the card at the end of the unit path.
   ///
   /// In en, this message translates to:
