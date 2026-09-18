@@ -8,6 +8,7 @@ import '../../../content/models/activity.dart';
 import '../../../content/models/curriculum_structure.dart';
 import '../../../content/models/domain_definitions.dart';
 import '../../../content/models/media_specification.dart';
+import '../../../content/models/registry_items.dart';
 import '../../../content/providers/course_content_providers.dart';
 import '../../../core/l10n/generated/app_localizations.dart';
 import '../../../data/local/database.dart';
@@ -24,12 +25,20 @@ import '../../progress/providers/progress_providers.dart';
 import '../domain/lesson_phases.dart';
 import 'lesson_review_screen.dart' show lessonReviewAttemptsProvider;
 import 'widgets/activity_eyebrow.dart';
+import 'widgets/lesson_conversation_step.dart';
+import 'widgets/lesson_key_phrases_step.dart';
 import 'widgets/lesson_progress_bar.dart';
 import 'widgets/lesson_top_bar.dart';
 
 /// Sequences through one lesson's activities, rendering each via the
 /// activity-engine registry, recording every submission, and refreshing
 /// unit mastery once the lesson is complete.
+///
+/// A lesson with an encounter conversation opens on two intro screens —
+/// [LessonConversationStep], then [LessonKeyPhrasesStep] when the lesson
+/// lists phrases or grammar — before its first activity. They're steps in
+/// the progress bar (its first group), shown when the lesson starts from
+/// the beginning and skipped on a mid-lesson resume.
 ///
 /// Each activity is hosted in an [ActivityFrameScope]: a slim top bar
 /// (close + [LessonProgressBar]), the phase · skill line, the question,
@@ -80,6 +89,10 @@ class LessonPlayerScreen extends ConsumerWidget {
             learnerName: learner.name,
             masteryPolicy: index.bundle.domain.masteryPolicy,
             mediaByKey: index.bundle.mediaSpecifications,
+            unitNumber:
+                index.bundle.units.indexWhere((u) => u.id == unitId) + 1,
+            phrases: [for (final id in lesson.chunks) ?index.chunkById[id]],
+            grammar: [for (final id in lesson.grammar) ?index.grammarById[id]],
           ),
         );
       },
@@ -111,6 +124,9 @@ class _LessonPlayerBody extends ConsumerStatefulWidget {
     required this.learnerName,
     required this.masteryPolicy,
     required this.mediaByKey,
+    required this.unitNumber,
+    required this.phrases,
+    required this.grammar,
   });
 
   final String unitId;
@@ -120,6 +136,13 @@ class _LessonPlayerBody extends ConsumerStatefulWidget {
   final String? learnerName;
   final MasteryPolicy masteryPolicy;
   final Map<String, MediaSpecification> mediaByKey;
+
+  /// 1-based position of the unit in its level, as Home numbers it.
+  final int unitNumber;
+
+  /// The lesson's chunk-registry phrases and grammar, in lesson order.
+  final List<ChunkItem> phrases;
+  final List<GrammarItem> grammar;
 
   @override
   ConsumerState<_LessonPlayerBody> createState() => _LessonPlayerBodyState();
@@ -138,6 +161,16 @@ class _LessonPlayerBodyState extends ConsumerState<_LessonPlayerBody> {
   /// Set while [_next] runs, so a double tap on Continue can't skip an
   /// activity.
   bool _advancing = false;
+
+  /// The intro screen showing (0 = conversation, 1 = key phrases), or
+  /// null once the activities have started.
+  int? _introIndex;
+
+  /// How many intro screens this lesson has: none without an encounter
+  /// conversation; key phrases only when there are phrases or grammar.
+  late final int _introCount = widget.lesson.encounterDialogue.isEmpty
+      ? 0
+      : (widget.phrases.isEmpty && widget.grammar.isEmpty ? 1 : 2);
   final List<ActivityCorrectness> _results = [];
   final Map<String, String> _previousAnswers = {};
 
@@ -167,7 +200,12 @@ class _LessonPlayerBodyState extends ConsumerState<_LessonPlayerBody> {
     if (startIndex > 0) {
       await _rehydratePreviousAnswers(skippedCount: startIndex);
     }
-    if (mounted) setState(() => _currentIndex = startIndex);
+    if (mounted) {
+      setState(() {
+        _currentIndex = startIndex;
+        _introIndex = startIndex == 0 && _introCount > 0 ? 0 : null;
+      });
+    }
   }
 
   /// Refills [_previousAnswers] from already-recorded attempts before
@@ -423,7 +461,16 @@ class _LessonPlayerBodyState extends ConsumerState<_LessonPlayerBody> {
     }
 
     final activities = widget.lesson.activities;
-    final activity = activities[_currentIndex!];
+    final introIndex = _introIndex;
+    final progress = LessonProgressBar(
+      groupSizes: [
+        if (_introCount > 0) _introCount,
+        ...phaseGroupSizes([for (final a in activities) a.mode]),
+      ],
+      completed:
+          introIndex ??
+          _introCount + _currentIndex! + (_lastSubmission == null ? 0 : 1),
+    );
 
     return Scaffold(
       body: SafeArea(
@@ -434,35 +481,75 @@ class _LessonPlayerBodyState extends ConsumerState<_LessonPlayerBody> {
           children: [
             LessonTopBar(
               onClose: () => Navigator.of(context).maybePop(),
-              progress: LessonProgressBar(
-                groupSizes: phaseGroupSizes([
-                  for (final a in activities) a.mode,
-                ]),
-                completed: _currentIndex! + (_lastSubmission == null ? 0 : 1),
-              ),
+              progress: progress,
             ),
             Expanded(
-              child: ActivityFrameScope(
-                onContinue: _next,
-                header: ActivityEyebrow(
-                  mode: activity.mode,
-                  skill: activity.skill,
-                ),
-                child: buildActivityView(
-                  key: ValueKey(activity.id),
-                  activity,
-                  learnerId: widget.learnerId,
-                  onSubmitted: (submission) =>
-                      _onSubmitted(activity, submission),
-                  mediaByKey: widget.mediaByKey,
-                  evaluationContext: EvaluationContext(
-                    profileName: widget.learnerName,
-                    previousAnswers: Map.unmodifiable(_previousAnswers),
-                  ),
-                ),
-              ),
+              child: introIndex != null
+                  ? _buildIntro(context, introIndex)
+                  : _buildActivity(activities[_currentIndex!]),
             ),
           ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildIntro(BuildContext context, int introIndex) {
+    final l10n = AppLocalizations.of(context)!;
+    final lesson = widget.lesson;
+    final overline = l10n.homeUnitLessonOverline(
+      widget.unitNumber,
+      widget.unit.lessons.indexWhere((l) => l.id == lesson.id) + 1,
+    );
+    final isLast = introIndex == _introCount - 1;
+    final continueLabel = isLast
+        ? l10n.lessonIntroStartPractice
+        : l10n.activityContinue;
+    void onContinue() => setState(() {
+      _introIndex = isLast ? null : introIndex + 1;
+    });
+
+    return introIndex == 0
+        ? LessonConversationStep(
+            key: const ValueKey('intro-conversation'),
+            overline: overline,
+            title: lesson.title,
+            titleAr: lesson.titleAr,
+            lines: lesson.encounterDialogue,
+            sceneAr:
+                (lesson.raw['encounter'] as Map<String, dynamic>?)?['sceneAr']
+                    as String?,
+            continueLabel: continueLabel,
+            onContinue: onContinue,
+          )
+        : LessonKeyPhrasesStep(
+            key: const ValueKey('intro-key-phrases'),
+            overline: overline,
+            lessonId: lesson.id,
+            phrases: widget.phrases,
+            grammar: widget.grammar,
+            continueLabel: continueLabel,
+            onContinue: onContinue,
+          );
+  }
+
+  Widget _buildActivity(Activity activity) {
+    return ActivityFrameScope(
+      onContinue: _next,
+      header: ActivityEyebrow(mode: activity.mode, skill: activity.skill),
+      usefulPhrases: [
+        for (final phrase in widget.phrases)
+          if (phrase.productive) phrase.text,
+      ],
+      child: buildActivityView(
+        key: ValueKey(activity.id),
+        activity,
+        learnerId: widget.learnerId,
+        onSubmitted: (submission) => _onSubmitted(activity, submission),
+        mediaByKey: widget.mediaByKey,
+        evaluationContext: EvaluationContext(
+          profileName: widget.learnerName,
+          previousAnswers: Map.unmodifiable(_previousAnswers),
         ),
       ),
     );

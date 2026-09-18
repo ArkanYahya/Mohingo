@@ -21,6 +21,7 @@ import '../../providers/online_refinement_providers.dart';
 import '../../providers/sound_effects_providers.dart';
 import '../activity_chrome.dart';
 import '../widgets/activity_text_field.dart';
+import '../widgets/phrase_text.dart';
 
 enum _SpeakMode {
   checkingCapability,
@@ -361,7 +362,7 @@ class _SpeakActivityViewState extends ConsumerState<SpeakActivityView> {
               ),
             )
           : null,
-      body: _buildBody(context, l10n),
+      body: _withUsefulPhrases(context, _buildBody(context, l10n)),
       feedback: ActivitySubmitOrFeedback(
         submission: displaySubmission,
         canSubmit: _canSubmit,
@@ -403,6 +404,27 @@ class _SpeakActivityViewState extends ConsumerState<SpeakActivityView> {
     ),
     _ => null,
   };
+
+  /// Adds the lesson's own phrases under [body] as optional help, hidden
+  /// until asked for — only inside the lesson player (which supplies them
+  /// via [ActivityFrameScope.usefulPhrases]) and only before submission.
+  Widget _withUsefulPhrases(BuildContext context, Widget body) {
+    final phrases =
+        ActivityFrameScope.maybeOf(context)?.usefulPhrases ?? const [];
+    if (phrases.isEmpty ||
+        _submission != null ||
+        _mode == _SpeakMode.checkingCapability) {
+      return body;
+    }
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        body,
+        const SizedBox(height: AppSpace.md),
+        _UsefulPhrases(phrases: phrases),
+      ],
+    );
+  }
 
   Widget _buildBody(BuildContext context, AppLocalizations l10n) {
     final theme = Theme.of(context);
@@ -629,6 +651,78 @@ class _RoundMicButton extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+/// A collapsed "Show useful phrases" toggle that reveals the lesson's
+/// phrases — help the learner opts into, never shown by default, so a
+/// speaking answer isn't scaffolded unless they ask.
+class _UsefulPhrases extends StatefulWidget {
+  const _UsefulPhrases({required this.phrases});
+
+  final List<String> phrases;
+
+  @override
+  State<_UsefulPhrases> createState() => _UsefulPhrasesState();
+}
+
+class _UsefulPhrasesState extends State<_UsefulPhrases> {
+  bool _open = false;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final tokens = theme.extension<AppTokens>()!;
+    final l10n = AppLocalizations.of(context)!;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Align(
+          alignment: AlignmentDirectional.centerStart,
+          child: TextButton.icon(
+            onPressed: () => setState(() => _open = !_open),
+            icon: Icon(
+              _open
+                  ? Icons.expand_less_rounded
+                  : Icons.lightbulb_outline_rounded,
+            ),
+            label: Text(
+              _open ? l10n.speakHideUsefulPhrases : l10n.speakShowUsefulPhrases,
+            ),
+          ),
+        ),
+        if (_open)
+          DecoratedBox(
+            decoration: BoxDecoration(
+              color: tokens.card,
+              borderRadius: BorderRadius.circular(AppRadius.card),
+              border: Border.all(color: tokens.border),
+            ),
+            child: Column(
+              children: [
+                for (var i = 0; i < widget.phrases.length; i++) ...[
+                  if (i > 0) Divider(height: 1, color: tokens.border),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: AppSpace.md,
+                      vertical: AppSpace.sm,
+                    ),
+                    child: Align(
+                      alignment: AlignmentDirectional.centerStart,
+                      child: PhraseText(
+                        widget.phrases[i],
+                        style: theme.textTheme.bodyLarge?.copyWith(
+                          color: tokens.textPrimary,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ],
+            ),
+          ),
+      ],
     );
   }
 }

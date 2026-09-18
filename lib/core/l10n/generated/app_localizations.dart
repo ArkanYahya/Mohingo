@@ -578,6 +578,66 @@ abstract class AppLocalizations {
   /// **'{phase} · {skill}'**
   String lessonPlayerEyebrow(String phase, String skill);
 
+  /// Title of the conversation card at the start of a lesson.
+  ///
+  /// In en, this message translates to:
+  /// **'Listen to the conversation'**
+  String get lessonIntroListenTitle;
+
+  /// Hint under the conversation card title: each line is tappable.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap any line to hear it again'**
+  String get lessonIntroListenHint;
+
+  /// Accessibility label of the button that plays every line of the lesson conversation.
+  ///
+  /// In en, this message translates to:
+  /// **'Play the conversation'**
+  String get lessonIntroPlayConversation;
+
+  /// Accessibility label of the same button while the conversation is playing.
+  ///
+  /// In en, this message translates to:
+  /// **'Stop the conversation'**
+  String get lessonIntroStopConversation;
+
+  /// Switch that shows or hides the Arabic translation under each conversation line.
+  ///
+  /// In en, this message translates to:
+  /// **'Arabic translation'**
+  String get lessonIntroArabicToggle;
+
+  /// Small label next to the speaker name on the conversation line being read aloud.
+  ///
+  /// In en, this message translates to:
+  /// **'Playing'**
+  String get lessonIntroPlaying;
+
+  /// Title of the lesson's key phrases screen, shown after the conversation.
+  ///
+  /// In en, this message translates to:
+  /// **'Key phrases'**
+  String get lessonIntroKeyPhrasesTitle;
+
+  /// Section title for the lesson's grammar forms on the key phrases screen.
+  ///
+  /// In en, this message translates to:
+  /// **'Grammar'**
+  String get lessonIntroGrammarTitle;
+
+  /// Badge on a key phrase this lesson introduces for the first time.
+  ///
+  /// In en, this message translates to:
+  /// **'New'**
+  String get lessonIntroNew;
+
+  /// Button that leaves the lesson intro for its first question.
+  ///
+  /// In en, this message translates to:
+  /// **'Start practice'**
+  String get lessonIntroStartPractice;
+
   /// Button to advance to the next activity after seeing feedback.
   ///
   /// In en, this message translates to:
@@ -799,6 +859,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'We only listen while you record.'**
   String get speakEnableMicrophoneHint;
+
+  /// Toggle under a speaking question that reveals the lesson's phrases as optional help.
+  ///
+  /// In en, this message translates to:
+  /// **'Show useful phrases'**
+  String get speakShowUsefulPhrases;
+
+  /// The same toggle once the phrases are showing.
+  ///
+  /// In en, this message translates to:
+  /// **'Hide useful phrases'**
+  String get speakHideUsefulPhrases;
 
   /// Button shown when speech recognition is available but microphone permission hasn't been granted yet.
   ///

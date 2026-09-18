@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/l10n/generated/app_localizations.dart';
@@ -24,6 +25,7 @@ class ActivityFrameScope extends InheritedWidget {
   const ActivityFrameScope({
     required this.onContinue,
     this.header,
+    this.usefulPhrases = const [],
     required super.child,
     super.key,
   });
@@ -34,12 +36,19 @@ class ActivityFrameScope extends InheritedWidget {
   /// Shown above the prompt — the lesson player's phase · skill line.
   final Widget? header;
 
+  /// The lesson's own phrases (chunk-registry text, `{slot}`s and all),
+  /// offered as optional, hidden-until-asked help on production
+  /// questions — see `SpeakActivityView`.
+  final List<String> usefulPhrases;
+
   static ActivityFrameScope? maybeOf(BuildContext context) =>
       context.dependOnInheritedWidgetOfExactType<ActivityFrameScope>();
 
   @override
   bool updateShouldNotify(ActivityFrameScope oldWidget) =>
-      onContinue != oldWidget.onContinue || header != oldWidget.header;
+      onContinue != oldWidget.onContinue ||
+      header != oldWidget.header ||
+      !listEquals(usefulPhrases, oldWidget.usefulPhrases);
 }
 
 /// The shared shell every activity view renders inside: prompt, an optional

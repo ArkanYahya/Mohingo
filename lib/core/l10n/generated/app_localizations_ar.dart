@@ -347,6 +347,36 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
+  String get lessonIntroListenTitle => 'استمع إلى المحادثة';
+
+  @override
+  String get lessonIntroListenHint => 'اضغط على أي سطر لتسمعه مرة أخرى';
+
+  @override
+  String get lessonIntroPlayConversation => 'شغّل المحادثة';
+
+  @override
+  String get lessonIntroStopConversation => 'أوقف المحادثة';
+
+  @override
+  String get lessonIntroArabicToggle => 'الترجمة العربية';
+
+  @override
+  String get lessonIntroPlaying => 'يُقرأ الآن';
+
+  @override
+  String get lessonIntroKeyPhrasesTitle => 'عبارات أساسية';
+
+  @override
+  String get lessonIntroGrammarTitle => 'القواعد';
+
+  @override
+  String get lessonIntroNew => 'جديد';
+
+  @override
+  String get lessonIntroStartPractice => 'ابدأ التدريب';
+
+  @override
   String get lessonPlayerNext => 'التالي';
 
   @override
@@ -462,6 +492,12 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get speakEnableMicrophoneHint => 'لا نستمع إليك إلا أثناء التسجيل.';
+
+  @override
+  String get speakShowUsefulPhrases => 'اعرض عبارات مفيدة';
+
+  @override
+  String get speakHideUsefulPhrases => 'أخفِ العبارات المفيدة';
 
   @override
   String get speakEnableMicrophone => 'تفعيل الميكروفون';

@@ -25,6 +25,10 @@ abstract interface class TextToSpeechService {
   /// callers must treat an empty list as "use the OS default", not an error.
   Future<List<TtsVoice>> availableVoicesForLocale(String localeCode);
 
+  /// Reads [text] aloud. Completes when the utterance has finished — or
+  /// failed, or been [stop]ped — not when it starts, so callers can play
+  /// several lines in sequence and show a playing state for exactly as
+  /// long as the speech lasts.
   Future<void> speak(
     String text, {
     required String localeCode,

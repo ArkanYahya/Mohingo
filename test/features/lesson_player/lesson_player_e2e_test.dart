@@ -28,6 +28,7 @@ import '../activity_engine/answer_activity.dart';
 import '../activity_engine/fake_connectivity_service.dart';
 import '../activity_engine/fake_grammar_check_service.dart';
 import '../speech/fake_speech_services.dart';
+import 'lesson_player_test_helpers.dart';
 
 /// A full, offline, end-to-end pass through **real** A1-U0-L1 content —
 /// the actual copied bundle asset, not a fixture — driven entirely through
@@ -150,7 +151,7 @@ void main() {
           ),
         ),
       );
-      await tester.pumpAndSettle();
+      await passLessonIntro(tester);
 
       for (final activity in lesson.activities) {
         await answerCheckAndAdvance(tester, activity);
@@ -212,7 +213,7 @@ void main() {
       final lesson = index.lessonsById['A1-U0-L1']!;
 
       await tester.pumpWidget(await _playerApp(db: db, index: index));
-      await tester.pumpAndSettle();
+      await passLessonIntro(tester);
 
       // A01, A02 — answer correctly with the shared helper.
       await answerCheckAndAdvance(tester, lesson.activities[0]);
@@ -248,7 +249,7 @@ void main() {
       // announces the 4th activity.
       expect(find.byType(ActivityFeedbackPanel), findsNothing);
       expect(
-        find.bySemanticsLabel(l10n.lessonPlayerProgress(4, 4)),
+        find.bySemanticsLabel(l10n.lessonPlayerProgress(6, 6)),
         findsOneWidget,
       );
 
@@ -258,13 +259,13 @@ void main() {
 
   testWidgets(
     'each question opens with its lesson phase and skill, and the progress '
-    'bar has one segment per activity, grouped by phase',
+    'bar has one segment per activity, grouped by phase, after the intro',
     (tester) async {
       final db = AppDatabase(NativeDatabase.memory());
       final index = _realA1Index();
 
       await tester.pumpWidget(await _playerApp(db: db, index: index));
-      await tester.pumpAndSettle();
+      await passLessonIntro(tester);
       final l10n = AppLocalizations.of(
         tester.element(find.byType(LessonPlayerScreen)),
       )!;
@@ -281,13 +282,14 @@ void main() {
         ),
         findsOneWidget,
       );
-      // encounter · practice · mastery ×2 → groups of 1, 1 and 2.
+      // The intro (conversation + key phrases), then encounter ·
+      // practice · mastery ×2 → groups of 2, 1, 1 and 2.
       final bar = tester.widget<LessonProgressBar>(
         find.byType(LessonProgressBar),
       );
-      expect(bar.groupSizes, [1, 1, 2]);
+      expect(bar.groupSizes, [2, 1, 1, 2]);
       expect(
-        find.bySemanticsLabel(l10n.lessonPlayerProgress(1, 4)),
+        find.bySemanticsLabel(l10n.lessonPlayerProgress(3, 6)),
         findsOneWidget,
       );
 
@@ -375,7 +377,7 @@ void main() {
           ),
         ),
       );
-      await tester.pumpAndSettle();
+      await passLessonIntro(tester);
 
       // A01, A02, A03 — drive with the file's existing generic helper.
       for (final activity in lesson.activities.take(3)) {

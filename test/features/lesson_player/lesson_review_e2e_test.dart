@@ -26,6 +26,7 @@ import 'package:mohingo/features/speech/providers/speech_providers.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../speech/fake_speech_services.dart';
+import 'lesson_player_test_helpers.dart';
 
 /// A full, real pass through A1-U0-L1's 3 `audioChoice` + 1 `speak`
 /// activities: A01's answer is [a01Answer] (varied between passes to
@@ -41,7 +42,8 @@ Future<void> _playLessonOnce(WidgetTester tester, String a01Answer) async {
     await tester.pumpAndSettle();
   }
 
-  await tester.pumpAndSettle();
+  // A1-U0-L1 opens on its conversation and key phrases.
+  await passLessonIntro(tester);
   await tester.tap(find.text(a01Answer).last);
   await tester.pump();
   await checkAndContinue();

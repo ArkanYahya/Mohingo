@@ -330,6 +330,36 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String get lessonIntroListenTitle => 'Listen to the conversation';
+
+  @override
+  String get lessonIntroListenHint => 'Tap any line to hear it again';
+
+  @override
+  String get lessonIntroPlayConversation => 'Play the conversation';
+
+  @override
+  String get lessonIntroStopConversation => 'Stop the conversation';
+
+  @override
+  String get lessonIntroArabicToggle => 'Arabic translation';
+
+  @override
+  String get lessonIntroPlaying => 'Playing';
+
+  @override
+  String get lessonIntroKeyPhrasesTitle => 'Key phrases';
+
+  @override
+  String get lessonIntroGrammarTitle => 'Grammar';
+
+  @override
+  String get lessonIntroNew => 'New';
+
+  @override
+  String get lessonIntroStartPractice => 'Start practice';
+
+  @override
   String get lessonPlayerNext => 'Next';
 
   @override
@@ -445,6 +475,12 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get speakEnableMicrophoneHint => 'We only listen while you record.';
+
+  @override
+  String get speakShowUsefulPhrases => 'Show useful phrases';
+
+  @override
+  String get speakHideUsefulPhrases => 'Hide useful phrases';
 
   @override
   String get speakEnableMicrophone => 'Enable microphone';

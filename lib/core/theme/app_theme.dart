@@ -129,6 +129,17 @@ abstract final class AppTheme {
       progressIndicatorTheme: ProgressIndicatorThemeData(
         color: tokens.primaryInk,
       ),
+      switchTheme: SwitchThemeData(
+        trackColor: WidgetStateProperty.resolveWith(
+          (states) =>
+              states.contains(WidgetState.selected) ? tokens.primaryInk : null,
+        ),
+        thumbColor: WidgetStateProperty.resolveWith(
+          (states) => states.contains(WidgetState.selected)
+              ? tokens.onPrimaryInk
+              : null,
+        ),
+      ),
       navigationBarTheme: NavigationBarThemeData(
         height: 64,
         backgroundColor: tokens.card,

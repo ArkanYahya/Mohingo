@@ -141,8 +141,8 @@ void main() {
       }
     });
 
-    test('text buttons, outlined buttons, the text cursor and progress '
-        'indicators draw in primaryInk — Material defaults them to '
+    test('text buttons, outlined buttons, the text cursor, progress '
+        'indicators and switches draw in primaryInk — Material defaults them to '
         "colorScheme.primary, and calmTeal's vivid cyan fails contrast as "
         'text or a thin line on the page', () {
       for (final entry in _themes.entries) {
@@ -167,6 +167,17 @@ void main() {
           theme.progressIndicatorTheme.color,
           t.primaryInk,
           reason: entry.key,
+        );
+        const on = {WidgetState.selected};
+        expect(
+          theme.switchTheme.trackColor!.resolve(on),
+          t.primaryInk,
+          reason: '${entry.key} switch track',
+        );
+        expect(
+          theme.switchTheme.thumbColor!.resolve(on),
+          t.onPrimaryInk,
+          reason: '${entry.key} switch thumb',
         );
       }
     });

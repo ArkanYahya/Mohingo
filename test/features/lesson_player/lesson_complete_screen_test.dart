@@ -24,6 +24,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../activity_engine/answer_activity.dart';
 import '../speech/fake_speech_services.dart';
+import 'lesson_player_test_helpers.dart';
 
 /// Real A1-U0-L1 content, indexed the same way `courseContentProvider('a1')`
 /// indexes it at runtime — `CourseContentIndex.build`, not the raw
@@ -78,7 +79,7 @@ void main() {
         ),
       ),
     );
-    await tester.pumpAndSettle();
+    await passLessonIntro(tester);
 
     for (final activity in lesson.activities) {
       await answerCheckAndAdvance(tester, activity);
@@ -181,7 +182,7 @@ void main() {
           ),
         ),
       );
-      await tester.pumpAndSettle();
+      await passLessonIntro(tester);
       await answerCheckAndAdvance(tester, lesson.activities.first);
       await tester.pumpAndSettle();
       expect(find.byIcon(Icons.celebration), findsNothing);

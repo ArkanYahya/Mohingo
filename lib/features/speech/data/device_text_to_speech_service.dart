@@ -21,7 +21,18 @@ class DeviceTextToSpeechService implements TextToSpeechService {
     );
     _tts.setCancelHandler(() => _stateController.add(TtsPlaybackState.stopped));
     _tts.setErrorHandler((_) => _stateController.add(TtsPlaybackState.error));
+    // speak() then completes when the utterance finishes (or errors, or is
+    // stopped) rather than when it starts — so callers can play a
+    // conversation line by line, and a play button stays "playing" for
+    // exactly as long as the speech does.
+    unawaited(_tts.awaitSpeakCompletion(true));
   }
+
+  /// An upper bound on one utterance, so an engine that never reports
+  /// completion can't leave a caller waiting forever: 5s plus ~8 characters
+  /// a second, far slower than any real speaking rate.
+  static Duration _speakTimeout(String text) =>
+      Duration(seconds: 5 + text.length ~/ 8);
 
   final FlutterTts _tts;
   final _stateController = StreamController<TtsPlaybackState>.broadcast();
@@ -63,7 +74,7 @@ class DeviceTextToSpeechService implements TextToSpeechService {
     if (voiceName != null) {
       await _tts.setVoice({'name': voiceName, 'locale': localeCode});
     }
-    await _tts.speak(text);
+    await _tts.speak(text).timeout(_speakTimeout(text), onTimeout: () => null);
   }
 
   @override
