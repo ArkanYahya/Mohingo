@@ -1022,17 +1022,29 @@ abstract class AppLocalizations {
   /// **'Easy'**
   String get reviewQualityEasy;
 
-  /// Grammar detail screen field label.
+  /// Grammar list when the search matches nothing.
   ///
   /// In en, this message translates to:
-  /// **'Form'**
-  String get grammarDetailForm;
+  /// **'No grammar matches your search.'**
+  String get grammarEmptyResults;
 
-  /// Grammar detail screen — lessons that teach/use this structure.
+  /// Overline on a grammar page: the unit that introduces the form.
   ///
   /// In en, this message translates to:
-  /// **'Practiced in'**
-  String get grammarDetailLinkedLessons;
+  /// **'Grammar · Unit {unit}'**
+  String grammarOverline(int unit);
+
+  /// Under a grammar form: its contracted form.
+  ///
+  /// In en, this message translates to:
+  /// **'Short form: {form}'**
+  String grammarShortForm(String form);
+
+  /// Grammar page: heading above the lessons that practise the form.
+  ///
+  /// In en, this message translates to:
+  /// **'Where you practise it'**
+  String get grammarPractisedInOverline;
 
   /// Button on grammar detail screen.
   ///
@@ -1693,12 +1705,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Grammar'**
   String get grammarSectionTitle;
-
-  /// Grammar list screen's unit-filter chip that clears the filter and shows every unit's grammar.
-  ///
-  /// In en, this message translates to:
-  /// **'All'**
-  String get grammarFilterAllUnits;
 
   /// Screen-reader label/tooltip for the star toggle button when the item is not currently a favorite.
   ///

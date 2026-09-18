@@ -2,12 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../content/models/registry_items.dart';
 import '../../../content/providers/course_content_providers.dart';
 import '../../../core/l10n/generated/app_localizations.dart';
+import '../../../core/theme/app_tokens.dart';
+import '../../../core/theme/gamification_theme_extension.dart';
+import '../../../core/theme/overline_style.dart';
+import '../../../core/widgets/search_field.dart';
+import '../providers/grammar_providers.dart';
 
-/// Browses the A1 grammar registry — searchable by form/Arabic meaning,
-/// filterable by the unit that introduced it (the closest available
-/// structure to "topic" in the real data). See docs/ARCHITECTURE.md.
+/// Browses the A1 grammar registry, grouped by the unit that introduces
+/// each form ("UNIT 2 · HELLO, I'M…") — the closest structure to "topic" in
+/// the real data — and searchable by form or Arabic meaning. Units with no
+/// match drop out. See docs/ARCHITECTURE.md.
 class GrammarListScreen extends ConsumerStatefulWidget {
   const GrammarListScreen({super.key});
 
@@ -17,7 +24,6 @@ class GrammarListScreen extends ConsumerStatefulWidget {
 
 class _GrammarListScreenState extends ConsumerState<GrammarListScreen> {
   final _searchController = TextEditingController();
-  String? _unitFilter;
 
   @override
   void dispose() {
@@ -27,8 +33,14 @@ class _GrammarListScreenState extends ConsumerState<GrammarListScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final tokens = theme.extension<AppTokens>()!;
     final l10n = AppLocalizations.of(context)!;
     final contentAsync = ref.watch(courseContentProvider('a1'));
+    final saved = {
+      for (final s in ref.watch(allGrammarReviewStateProvider).value ?? [])
+        if (s.isFavorite) s.grammarId,
+    };
 
     return Scaffold(
       appBar: AppBar(title: Text(l10n.grammarSectionTitle)),
@@ -37,88 +49,149 @@ class _GrammarListScreenState extends ConsumerState<GrammarListScreen> {
         error: (error, _) => Center(child: Text('$error')),
         data: (index) {
           final query = _searchController.text.trim().toLowerCase();
-          final items = index.bundle.grammar.where((g) {
-            if (query.isNotEmpty &&
-                !g.form.toLowerCase().contains(query) &&
-                !g.meaningAr.contains(_searchController.text.trim())) {
-              return false;
-            }
-            if (_unitFilter != null &&
-                index.unitIdByLessonId[g.introducedIn] != _unitFilter) {
-              return false;
-            }
-            return true;
-          }).toList();
+          bool matches(GrammarItem g) =>
+              query.isEmpty ||
+              g.form.toLowerCase().contains(query) ||
+              g.meaningAr.contains(query);
+
+          final sections = <Widget>[];
+          for (final (u, unit) in index.bundle.units.indexed) {
+            final lessonIds = {for (final l in unit.lessons) l.id};
+            final items = index.bundle.grammar
+                .where((g) => lessonIds.contains(g.introducedIn))
+                .where(matches)
+                .toList();
+            if (items.isEmpty) continue;
+            sections.add(
+              Padding(
+                padding: const EdgeInsets.only(
+                  top: AppSpace.md,
+                  bottom: AppSpace.xs,
+                ),
+                child: Text(
+                  '${l10n.learnUnitOverline(u + 1)} · '
+                          '\u2068${unit.title}\u2069'
+                      .toUpperCase(),
+                  style: overlineStyle(context, color: tokens.textSecondary),
+                ),
+              ),
+            );
+            sections.add(
+              Material(
+                color: tokens.card,
+                clipBehavior: Clip.antiAlias,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(AppRadius.card),
+                ),
+                child: Column(
+                  children: [
+                    for (final (i, item) in items.indexed) ...[
+                      if (i > 0) Divider(height: 1, color: tokens.border),
+                      _GrammarRow(item: item, saved: saved.contains(item.id)),
+                    ],
+                  ],
+                ),
+              ),
+            );
+          }
 
           return Column(
             children: [
               Padding(
-                padding: const EdgeInsets.all(16),
-                child: Column(
-                  children: [
-                    TextField(
-                      controller: _searchController,
-                      decoration: InputDecoration(
-                        hintText: l10n.vocabularySearchHint,
-                        prefixIcon: const Icon(Icons.search),
-                        border: const OutlineInputBorder(),
-                      ),
-                      onChanged: (_) => setState(() {}),
-                    ),
-                    const SizedBox(height: 8),
-                    SizedBox(
-                      height: 40,
-                      child: ListView(
-                        scrollDirection: Axis.horizontal,
-                        children: [
-                          ChoiceChip(
-                            label: Text(l10n.grammarFilterAllUnits),
-                            selected: _unitFilter == null,
-                            onSelected: (_) =>
-                                setState(() => _unitFilter = null),
-                          ),
-                          const SizedBox(width: 8),
-                          for (final unit in index.bundle.units)
-                            Padding(
-                              padding: const EdgeInsets.only(right: 8),
-                              child: ChoiceChip(
-                                label: Text(unit.id),
-                                selected: _unitFilter == unit.id,
-                                onSelected: (_) =>
-                                    setState(() => _unitFilter = unit.id),
-                              ),
-                            ),
-                        ],
-                      ),
-                    ),
-                  ],
+                padding: const EdgeInsets.fromLTRB(
+                  AppSpace.md,
+                  AppSpace.xxs,
+                  AppSpace.md,
+                  AppSpace.xs,
+                ),
+                child: SearchField(
+                  controller: _searchController,
+                  hintText: l10n.vocabularySearchHint,
+                  onChanged: (_) => setState(() {}),
                 ),
               ),
               Expanded(
-                child: items.isEmpty
-                    ? Center(child: Text(l10n.vocabularyEmptyResults))
-                    : ListView.builder(
-                        itemCount: items.length,
-                        itemBuilder: (context, i) {
-                          final item = items[i];
-                          return ListTile(
-                            title: Text(
-                              item.form,
-                              textDirection: TextDirection.ltr,
-                            ),
-                            subtitle: Text(
-                              item.meaningAr,
-                              textDirection: TextDirection.rtl,
-                            ),
-                            onTap: () =>
-                                context.push('/review/grammar/${item.id}'),
-                          );
-                        },
+                child: sections.isEmpty
+                    ? Center(child: Text(l10n.grammarEmptyResults))
+                    : ListView(
+                        padding: const EdgeInsets.fromLTRB(
+                          AppSpace.md,
+                          0,
+                          AppSpace.md,
+                          AppSpace.lg,
+                        ),
+                        children: sections,
                       ),
               ),
             ],
           );
         },
+      ),
+    );
+  }
+}
+
+/// A form (LTR) over its Arabic meaning, a star when saved, a chevron.
+class _GrammarRow extends StatelessWidget {
+  const _GrammarRow({required this.item, required this.saved});
+
+  final GrammarItem item;
+  final bool saved;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final tokens = theme.extension<AppTokens>()!;
+    final l10n = AppLocalizations.of(context)!;
+    return InkWell(
+      onTap: () => context.push('/review/grammar/${item.id}'),
+      child: Padding(
+        padding: const EdgeInsetsDirectional.fromSTEB(
+          AppSpace.md - 2,
+          AppSpace.sm - 2,
+          AppSpace.xs,
+          AppSpace.sm - 2,
+        ),
+        child: Row(
+          children: [
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Align(
+                    alignment: AlignmentDirectional.centerStart,
+                    child: Text(
+                      item.form,
+                      textDirection: TextDirection.ltr,
+                      style: theme.textTheme.titleMedium?.copyWith(
+                        color: tokens.textPrimary,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
+                  Align(
+                    alignment: AlignmentDirectional.centerStart,
+                    child: Text(
+                      item.meaningAr,
+                      textDirection: TextDirection.rtl,
+                      style: theme.textTheme.bodyMedium?.copyWith(
+                        color: tokens.textSecondary,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            if (saved)
+              Icon(
+                Icons.star_rounded,
+                size: 18,
+                semanticLabel: l10n.vocabularyFilterSaved,
+                color: theme.extension<GamificationTheme>()!.streakAccent,
+              ),
+            Icon(Icons.chevron_right_rounded, color: tokens.textSecondary),
+          ],
+        ),
       ),
     );
   }

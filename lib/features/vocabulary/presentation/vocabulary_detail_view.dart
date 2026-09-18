@@ -5,6 +5,9 @@ import '../../../content/index/course_content_index.dart';
 import '../../../core/l10n/generated/app_localizations.dart';
 import '../../../core/theme/app_tokens.dart';
 import '../../../core/theme/overline_style.dart';
+import '../../../core/widgets/hairline_card.dart';
+import '../../../core/widgets/lesson_reference_list.dart';
+import '../../../core/widgets/section_heading.dart';
 import '../../progress/providers/current_learner_provider.dart';
 import '../../progress/providers/progress_providers.dart';
 import '../../review/domain/next_review.dart';
@@ -182,7 +185,7 @@ class _VocabularyDetailViewState extends ConsumerState<VocabularyDetailView> {
           Semantics(
             liveRegion: true,
             container: true,
-            child: _Box(
+            child: HairlineCard(
               child: Row(
                 children: [
                   if (status != VocabularyStatus.newItem) ...[
@@ -202,9 +205,9 @@ class _VocabularyDetailViewState extends ConsumerState<VocabularyDetailView> {
             ),
           ),
           if (widget.examples.isNotEmpty) ...[
-            _Heading(l10n.wordDetailExamples),
+            SectionHeading(l10n.wordDetailExamples),
             for (final example in widget.examples) ...[
-              _Box(
+              HairlineCard(
                 padding: const EdgeInsetsDirectional.fromSTEB(
                   AppSpace.md,
                   AppSpace.xxs,
@@ -242,93 +245,12 @@ class _VocabularyDetailViewState extends ConsumerState<VocabularyDetailView> {
   }
 
   List<Widget> _metIn(BuildContext context) {
-    final theme = Theme.of(context);
-    final tokens = theme.extension<AppTokens>()!;
     final l10n = AppLocalizations.of(context)!;
     final lesson = widget.index.lessonsById[widget.introducedIn];
-    final unit = widget
-        .index
-        .unitsById[widget.index.unitIdByLessonId[widget.introducedIn]];
-    if (lesson == null || unit == null) return const [];
-    final unitNumber = widget.index.bundle.units.indexOf(unit) + 1;
-    final lessonNumber = unit.lessons.indexOf(lesson) + 1;
+    if (lesson == null) return const [];
     return [
-      _Heading(l10n.wordMetInOverline),
-      _Box(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Align(
-              alignment: AlignmentDirectional.centerStart,
-              child: Text(
-                lesson.title,
-                textDirection: TextDirection.ltr,
-                style: theme.textTheme.titleMedium?.copyWith(
-                  color: tokens.textPrimary,
-                ),
-              ),
-            ),
-            Align(
-              alignment: AlignmentDirectional.centerStart,
-              child: Text(
-                lesson.titleAr,
-                textDirection: TextDirection.rtl,
-                style: theme.textTheme.bodyMedium?.copyWith(
-                  color: tokens.textSecondary,
-                ),
-              ),
-            ),
-            Text(
-              l10n.wordMetInMeta(unitNumber, lessonNumber),
-              style: theme.textTheme.bodySmall?.copyWith(
-                color: tokens.textSecondary,
-              ),
-            ),
-          ],
-        ),
-      ),
+      SectionHeading(l10n.wordMetInOverline),
+      LessonReferenceList(index: widget.index, lessons: [lesson]),
     ];
-  }
-}
-
-class _Heading extends StatelessWidget {
-  const _Heading(this.text);
-
-  final String text;
-
-  @override
-  Widget build(BuildContext context) {
-    final tokens = Theme.of(context).extension<AppTokens>()!;
-    return Padding(
-      padding: const EdgeInsets.only(top: AppSpace.lg, bottom: AppSpace.xs),
-      child: Text(
-        text.toUpperCase(),
-        style: overlineStyle(context, color: tokens.textSecondary),
-      ),
-    );
-  }
-}
-
-/// A hairline card.
-class _Box extends StatelessWidget {
-  const _Box({
-    required this.child,
-    this.padding = const EdgeInsets.all(AppSpace.md - 2),
-  });
-
-  final Widget child;
-  final EdgeInsetsGeometry padding;
-
-  @override
-  Widget build(BuildContext context) {
-    final tokens = Theme.of(context).extension<AppTokens>()!;
-    return DecoratedBox(
-      decoration: BoxDecoration(
-        color: tokens.card,
-        borderRadius: BorderRadius.circular(AppRadius.card),
-        border: Border.all(color: tokens.border),
-      ),
-      child: Padding(padding: padding, child: child),
-    );
   }
 }

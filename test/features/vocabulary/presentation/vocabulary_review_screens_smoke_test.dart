@@ -86,7 +86,6 @@ void main() {
     await tester.pumpWidget(await _wrapped(tester, const GrammarListScreen()));
     await tester.pumpAndSettle();
 
-    expect(find.text('A1-U0'), findsOneWidget); // unit filter chip
     expect(find.text('I am'), findsOneWidget); // a real grammar form
   });
 

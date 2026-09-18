@@ -611,10 +611,20 @@ class AppLocalizationsAr extends AppLocalizations {
   String get reviewQualityEasy => 'سهل';
 
   @override
-  String get grammarDetailForm => 'الصيغة';
+  String get grammarEmptyResults => 'لا توجد قواعد تطابق بحثك.';
 
   @override
-  String get grammarDetailLinkedLessons => 'تُمارس في';
+  String grammarOverline(int unit) {
+    return 'قواعد · الوحدة $unit';
+  }
+
+  @override
+  String grammarShortForm(String form) {
+    return 'الصيغة المختصرة: $form';
+  }
+
+  @override
+  String get grammarPractisedInOverline => 'أين تتدرّب عليها';
 
   @override
   String get grammarMarkReviewed => 'ضعها كمُراجَعة';
@@ -1044,9 +1054,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get grammarSectionTitle => 'القواعد';
-
-  @override
-  String get grammarFilterAllUnits => 'الكل';
 
   @override
   String get favoriteAddTooltip => 'أضف إلى المفضلة';

@@ -591,10 +591,20 @@ class AppLocalizationsEn extends AppLocalizations {
   String get reviewQualityEasy => 'Easy';
 
   @override
-  String get grammarDetailForm => 'Form';
+  String get grammarEmptyResults => 'No grammar matches your search.';
 
   @override
-  String get grammarDetailLinkedLessons => 'Practiced in';
+  String grammarOverline(int unit) {
+    return 'Grammar · Unit $unit';
+  }
+
+  @override
+  String grammarShortForm(String form) {
+    return 'Short form: $form';
+  }
+
+  @override
+  String get grammarPractisedInOverline => 'Where you practise it';
 
   @override
   String get grammarMarkReviewed => 'Mark as reviewed';
@@ -1013,9 +1023,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get grammarSectionTitle => 'Grammar';
-
-  @override
-  String get grammarFilterAllUnits => 'All';
 
   @override
   String get favoriteAddTooltip => 'Add to favorites';

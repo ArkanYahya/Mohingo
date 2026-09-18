@@ -7,6 +7,7 @@ import '../../../content/providers/course_content_providers.dart';
 import '../../../core/l10n/generated/app_localizations.dart';
 import '../../../core/theme/app_tokens.dart';
 import '../../../core/theme/gamification_theme_extension.dart';
+import '../../../core/widgets/search_field.dart';
 import '../../../data/local/database.dart';
 import '../domain/vocabulary_status.dart';
 import '../providers/vocabulary_providers.dart';
@@ -276,23 +277,10 @@ class _Controls extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          TextField(
+          SearchField(
             controller: searchController,
+            hintText: l10n.vocabularySearchHint,
             onChanged: (_) => onSearch(),
-            decoration: InputDecoration(
-              hintText: l10n.vocabularySearchHint,
-              prefixIcon: const Icon(Icons.search_rounded),
-              filled: true,
-              fillColor: tokens.cardMuted,
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(24),
-                borderSide: BorderSide.none,
-              ),
-              enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(24),
-                borderSide: BorderSide.none,
-              ),
-            ),
           ),
           const SizedBox(height: AppSpace.sm),
           SegmentedButton<bool>(
