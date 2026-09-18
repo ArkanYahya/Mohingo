@@ -17,6 +17,7 @@ enum AppColorSeed {
     onBrandPrimary: Color(0xFF00363C),
     brandPrimaryContainer: Color(0xFF3DE8FF),
     onBrandPrimaryContainer: Color(0xFF00363C),
+    brandInk: Color(0xFF007A87),
   ),
   slateIndigo(
     seedColor: Color(0xFF3F4A7A),
@@ -26,6 +27,7 @@ enum AppColorSeed {
     onBrandPrimary: Color(0xFFFFFFFF),
     brandPrimaryContainer: Color(0xFF9DA4F1),
     onBrandPrimaryContainer: Color(0xFF1F2C61),
+    brandInk: Color(0xFF3645E2),
   ),
   warmTerracotta(
     seedColor: Color(0xFF8A5238),
@@ -35,6 +37,7 @@ enum AppColorSeed {
     onBrandPrimary: Color(0xFFFFFFFF),
     brandPrimaryContainer: Color(0xFFFBA174),
     onBrandPrimaryContainer: Color(0xFF542105),
+    brandInk: Color(0xFFC74605),
   );
 
   const AppColorSeed({
@@ -45,6 +48,7 @@ enum AppColorSeed {
     required this.onBrandPrimary,
     required this.brandPrimaryContainer,
     required this.onBrandPrimaryContainer,
+    required this.brandInk,
   });
 
   final Color seedColor;
@@ -82,4 +86,11 @@ enum AppColorSeed {
 
   /// Foreground colour for content drawn on [brandPrimaryContainer].
   final Color onBrandPrimaryContainer;
+
+  /// Light-mode accent for text, icons and progress fills drawn *on* a
+  /// neutral surface (`AppTokens.primaryInk`). Equal to [brandPrimary]
+  /// wherever that already meets 4.5:1 on white ([slateIndigo] 6.8:1,
+  /// [warmTerracotta] 4.9:1); [calmTeal]'s vivid cyan only reaches ~1.9:1,
+  /// so it gets a deeper tone in the same hue (5.1:1).
+  final Color brandInk;
 }

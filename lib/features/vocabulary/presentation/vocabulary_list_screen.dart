@@ -188,8 +188,7 @@ class _VocabularyStatsHeader extends ConsumerWidget {
           // IntrinsicHeight, not Row(crossAxisAlignment: stretch) — this
           // Row sits in an unbounded-height context (a plain, non-Expanded
           // Column child), and `stretch` there asks its flex children for
-          // infinite height. See home_screen.dart's _TasksTodayRow, which
-          // hit the same crash first.
+          // infinite height.
           IntrinsicHeight(
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.stretch,

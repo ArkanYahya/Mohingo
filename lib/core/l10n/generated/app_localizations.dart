@@ -278,41 +278,11 @@ abstract class AppLocalizations {
   /// **'This level isn\'t available yet. A1 is ready now — start there.'**
   String get comingSoonLevelBody;
 
-  /// Home screen card title for the next recommended unit.
-  ///
-  /// In en, this message translates to:
-  /// **'Continue learning'**
-  String get continueLearningTitle;
-
-  /// Button label on the Continue learning card.
-  ///
-  /// In en, this message translates to:
-  /// **'Continue'**
-  String get continueLearningCta;
-
   /// Shown on Home when there is no next unit to recommend.
   ///
   /// In en, this message translates to:
   /// **'You\'ve mastered every A1 unit so far!'**
   String get homeAllUnitsMastered;
-
-  /// Home streak card title.
-  ///
-  /// In en, this message translates to:
-  /// **'{days, plural, =0{No streak yet} =1{1-day streak} other{{days}-day streak}}'**
-  String homeStreakTitle(int days);
-
-  /// Home streak card subtitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Keep it going today'**
-  String get homeStreakEncouragement;
-
-  /// Home level-progress card title.
-  ///
-  /// In en, this message translates to:
-  /// **'A1 progress'**
-  String get homeLevelProgressTitle;
 
   /// Home level-progress card caption.
   ///
@@ -326,11 +296,161 @@ abstract class AppLocalizations {
   /// **'{count, plural, =0{Nothing due for review} =1{1 item due for review} other{{count} items due for review}}'**
   String homeReviewDueTitle(int count);
 
-  /// Home screen section title above the 3 daily-task tiles.
+  /// Home header greeting, 05:00–11:59.
   ///
   /// In en, this message translates to:
-  /// **'Tasks today'**
-  String get homeTasksTodayTitle;
+  /// **'Good morning'**
+  String get homeGreetingMorning;
+
+  /// Home header greeting, 12:00–16:59.
+  ///
+  /// In en, this message translates to:
+  /// **'Good afternoon'**
+  String get homeGreetingAfternoon;
+
+  /// Home header greeting, 17:00–04:59.
+  ///
+  /// In en, this message translates to:
+  /// **'Good evening'**
+  String get homeGreetingEvening;
+
+  /// Home header chip: the learner's current CEFR level and its plain-language descriptor.
+  ///
+  /// In en, this message translates to:
+  /// **'{cefr} · Beginner'**
+  String homeLevelBadge(String cefr);
+
+  /// Home header streak chip, next to a flame icon.
+  ///
+  /// In en, this message translates to:
+  /// **'{days, plural, =0{No streak} =1{1 day} other{{days} days}}'**
+  String homeStreakChip(int days);
+
+  /// Overline on the continue-lesson hero card.
+  ///
+  /// In en, this message translates to:
+  /// **'Unit {unit} · Lesson {lesson}'**
+  String homeUnitLessonOverline(int unit, int lesson);
+
+  /// Overline on the hero card when every lesson in the unit has been played but the unit isn't mastered yet.
+  ///
+  /// In en, this message translates to:
+  /// **'Unit {unit} · Review'**
+  String homeUnitReviewOverline(int unit);
+
+  /// Hero card body when the current unit's lessons are all played but it isn't mastered.
+  ///
+  /// In en, this message translates to:
+  /// **'Every lesson played — review this unit to master it.'**
+  String get homeUnitAllLessonsDone;
+
+  /// Hero card meta line — how many activities the current lesson has.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 activity} other{{count} activities}}'**
+  String homeActivityCount(int count);
+
+  /// Hero card meta: lessonType encounter-focus-practice (a presented model, then focused practice).
+  ///
+  /// In en, this message translates to:
+  /// **'Guided lesson'**
+  String get homeLessonTypeGuided;
+
+  /// Hero card meta: lessonType focus-practice.
+  ///
+  /// In en, this message translates to:
+  /// **'Practice'**
+  String get homeLessonTypePractice;
+
+  /// Hero card meta: lessonType communication.
+  ///
+  /// In en, this message translates to:
+  /// **'Conversation'**
+  String get homeLessonTypeConversation;
+
+  /// Hero card meta: lessonType mission (a unit's capstone task).
+  ///
+  /// In en, this message translates to:
+  /// **'Mission'**
+  String get homeLessonTypeMission;
+
+  /// Label above the hero card's lesson progress bar.
+  ///
+  /// In en, this message translates to:
+  /// **'Lesson progress'**
+  String get homeLessonProgressLabel;
+
+  /// Shown in place of a percentage when the current lesson hasn't been started.
+  ///
+  /// In en, this message translates to:
+  /// **'New lesson'**
+  String get homeLessonNew;
+
+  /// Lesson progress percentage on the hero card.
+  ///
+  /// In en, this message translates to:
+  /// **'{percent}%'**
+  String homeLessonPercent(int percent);
+
+  /// Hero card primary button when the current lesson hasn't been started.
+  ///
+  /// In en, this message translates to:
+  /// **'Start lesson'**
+  String get homeStartLessonCta;
+
+  /// Hero card primary button when the current lesson is part-way through.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue lesson'**
+  String get homeContinueLessonCta;
+
+  /// Hero card primary button when every lesson is played but the unit isn't mastered.
+  ///
+  /// In en, this message translates to:
+  /// **'Open unit'**
+  String get homeOpenUnitCta;
+
+  /// Section title above the three daily-goal rows.
+  ///
+  /// In en, this message translates to:
+  /// **'Today\'s goal'**
+  String get homeTodaysGoalTitle;
+
+  /// Summary next to the Today's goal title.
+  ///
+  /// In en, this message translates to:
+  /// **'{done} of {total} done'**
+  String homeGoalsDone(int done, int total);
+
+  /// Title of the level-progress card.
+  ///
+  /// In en, this message translates to:
+  /// **'Your journey'**
+  String get homeJourneyTitle;
+
+  /// Level-progress card: the learner's position in the level's unit sequence.
+  ///
+  /// In en, this message translates to:
+  /// **'Unit {current} of {total}'**
+  String homeJourneyUnitOf(int current, int total);
+
+  /// Level-progress card: the unit the learner is on.
+  ///
+  /// In en, this message translates to:
+  /// **'Now · {title}'**
+  String homeJourneyNow(String title);
+
+  /// Level-progress card: the unit (or final mission) that comes after the current one.
+  ///
+  /// In en, this message translates to:
+  /// **'Next · {title}'**
+  String homeJourneyNext(String title);
+
+  /// Button on the review-due card when items are due.
+  ///
+  /// In en, this message translates to:
+  /// **'Review now'**
+  String get homeReviewNowCta;
 
   /// Home daily-task tile label — finish 1 lesson today.
   ///

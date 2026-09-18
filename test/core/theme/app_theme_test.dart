@@ -1,9 +1,176 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mohingo/core/theme/app_theme.dart';
+import 'package:mohingo/core/theme/app_tokens.dart';
 import 'package:mohingo/core/theme/color_seed.dart';
 
+/// WCAG 2.1 contrast ratio between two opaque colours.
+double _contrast(Color a, Color b) {
+  final la = a.computeLuminance();
+  final lb = b.computeLuminance();
+  return (math.max(la, lb) + 0.05) / (math.min(la, lb) + 0.05);
+}
+
+final _themes = <String, ThemeData>{
+  for (final seed in AppColorSeed.values) ...{
+    '${seed.name}/light': AppTheme.light(seed),
+    '${seed.name}/dark': AppTheme.dark(seed),
+  },
+};
+
 void main() {
+  group('AppTokens (semantic neutral tokens)', () {
+    test('are registered on every theme, light and dark', () {
+      for (final entry in _themes.entries) {
+        expect(
+          entry.value.extension<AppTokens>(),
+          isNotNull,
+          reason: entry.key,
+        );
+      }
+    });
+
+    test('surfaces are neutral, not seed-tinted — picking a colour theme '
+        'changes the accent, never the page/card/text greys', () {
+      for (final brightness in Brightness.values) {
+        final tokens = AppColorSeed.values
+            .map(
+              (seed) =>
+                  (brightness == Brightness.light
+                          ? AppTheme.light(seed)
+                          : AppTheme.dark(seed))
+                      .extension<AppTokens>()!,
+            )
+            .toList();
+        for (final t in tokens.skip(1)) {
+          expect(t.page, tokens.first.page, reason: '$brightness page');
+          expect(t.card, tokens.first.card, reason: '$brightness card');
+          expect(t.textPrimary, tokens.first.textPrimary);
+          expect(t.textSecondary, tokens.first.textSecondary);
+          expect(t.border, tokens.first.border);
+        }
+      }
+    });
+
+    test('ColorScheme neutral roles and the scaffold follow the tokens, so '
+        'every stock Material widget inherits the same surfaces', () {
+      for (final entry in _themes.entries) {
+        final theme = entry.value;
+        final t = theme.extension<AppTokens>()!;
+        expect(theme.colorScheme.surface, t.page, reason: entry.key);
+        expect(theme.scaffoldBackgroundColor, t.page, reason: entry.key);
+        expect(theme.colorScheme.onSurface, t.textPrimary, reason: entry.key);
+        expect(
+          theme.colorScheme.onSurfaceVariant,
+          t.textSecondary,
+          reason: entry.key,
+        );
+        expect(theme.colorScheme.outlineVariant, t.border, reason: entry.key);
+      }
+    });
+
+    test('a card separates from the page in both modes — lighter than the '
+        'page in light AND in dark (never a darker "sunken" card in dark)', () {
+      for (final entry in _themes.entries) {
+        final t = entry.value.extension<AppTokens>()!;
+        final isDark = entry.key.endsWith('/dark');
+        if (isDark) {
+          expect(
+            t.card.computeLuminance(),
+            greaterThan(t.page.computeLuminance()),
+            reason: entry.key,
+          );
+        } else {
+          expect(
+            t.card.computeLuminance(),
+            greaterThanOrEqualTo(t.page.computeLuminance()),
+            reason: entry.key,
+          );
+        }
+      }
+    });
+
+    test('text tokens meet WCAG AA (4.5:1) on both the page and a card', () {
+      for (final entry in _themes.entries) {
+        final t = entry.value.extension<AppTokens>()!;
+        for (final ground in [t.page, t.card, t.cardMuted]) {
+          expect(
+            _contrast(t.textPrimary, ground),
+            greaterThanOrEqualTo(4.5),
+            reason: '${entry.key} textPrimary',
+          );
+          expect(
+            _contrast(t.textSecondary, ground),
+            greaterThanOrEqualTo(4.5),
+            reason: '${entry.key} textSecondary',
+          );
+        }
+      }
+    });
+
+    test('primaryInk — the accent used for text, icons and progress on a '
+        'neutral surface — meets 4.5:1 on a card for every seed and mode '
+        "(calmTeal's cyan brandPrimary alone does not)", () {
+      for (final entry in _themes.entries) {
+        final t = entry.value.extension<AppTokens>()!;
+        expect(
+          _contrast(t.primaryInk, t.card),
+          greaterThanOrEqualTo(4.5),
+          reason: entry.key,
+        );
+      }
+    });
+  });
+
+  group('AppTheme typography', () {
+    test('defines the deliberate text hierarchy (header / section / card '
+        'title / body / meta) rather than stock M3 sizes', () {
+      final text = AppTheme.light(AppColorSeed.calmTeal).textTheme;
+      expect(text.headlineSmall!.fontSize, 24);
+      expect(text.headlineSmall!.fontWeight, FontWeight.w700);
+      expect(text.titleLarge!.fontSize, 20);
+      expect(text.titleLarge!.fontWeight, FontWeight.w700);
+      expect(text.titleSmall!.fontSize, 15);
+      expect(text.titleSmall!.fontWeight, FontWeight.w600);
+      expect(text.bodyMedium!.fontSize, 14);
+      expect(text.labelSmall!.fontWeight, FontWeight.w700);
+    });
+  });
+
+  group('AppTheme filled button', () {
+    test('its label meets 4.5:1 on its fill for every seed and mode — '
+        'including calmTeal, whose raw cyan brand fill cannot carry white '
+        'text', () {
+      for (final entry in _themes.entries) {
+        final style = entry.value.filledButtonTheme.style!;
+        final bg = style.backgroundColor!.resolve({})!;
+        final fg = style.foregroundColor!.resolve({})!;
+        expect(_contrast(fg, bg), greaterThanOrEqualTo(4.5), reason: entry.key);
+      }
+    });
+  });
+
+  group('AppTheme navigation bar', () {
+    test('is a light, 64px bar on the card surface with a visible selected '
+        'indicator whose icon colour passes 3:1 against it (WCAG 1.4.11)', () {
+      for (final entry in _themes.entries) {
+        final theme = entry.value;
+        final nav = theme.navigationBarTheme;
+        final t = theme.extension<AppTokens>()!;
+        expect(nav.height, 64, reason: entry.key);
+        expect(nav.backgroundColor, t.card, reason: entry.key);
+        expect(nav.indicatorColor, isNotNull, reason: entry.key);
+        final selectedIcon = nav.iconTheme!.resolve({WidgetState.selected})!;
+        expect(
+          _contrast(selectedIcon.color!, nav.indicatorColor!),
+          greaterThanOrEqualTo(3),
+          reason: entry.key,
+        );
+      }
+    });
+  });
   group('AppTheme.light', () {
     test("overrides primary/onPrimary with the seed's flat brand accent, not "
         'the algorithm-derived tone — see docs/DESIGN_SYSTEM.md', () {
@@ -29,16 +196,14 @@ void main() {
       );
     });
 
-    test('leaves every other role exactly as ColorScheme.fromSeed derives it — '
-        'only primary/onPrimary/primaryContainer/onPrimaryContainer are '
+    test('leaves secondary/tertiary/error exactly as ColorScheme.fromSeed '
+        'derives them — only primary roles and the neutral surfaces are '
         'hand-picked', () {
       final generated = ColorScheme.fromSeed(
         seedColor: AppColorSeed.calmTeal.seedColor,
         brightness: Brightness.light,
       );
       final theme = AppTheme.light(AppColorSeed.calmTeal);
-      expect(theme.colorScheme.surface, generated.surface);
-      expect(theme.colorScheme.surfaceContainer, generated.surfaceContainer);
       expect(theme.colorScheme.secondary, generated.secondary);
       expect(theme.colorScheme.tertiary, generated.tertiary);
       expect(theme.colorScheme.error, generated.error);

@@ -115,31 +115,7 @@ class AppLocalizationsEn extends AppLocalizations {
       'This level isn\'t available yet. A1 is ready now — start there.';
 
   @override
-  String get continueLearningTitle => 'Continue learning';
-
-  @override
-  String get continueLearningCta => 'Continue';
-
-  @override
   String get homeAllUnitsMastered => 'You\'ve mastered every A1 unit so far!';
-
-  @override
-  String homeStreakTitle(int days) {
-    String _temp0 = intl.Intl.pluralLogic(
-      days,
-      locale: localeName,
-      other: '$days-day streak',
-      one: '1-day streak',
-      zero: 'No streak yet',
-    );
-    return '$_temp0';
-  }
-
-  @override
-  String get homeStreakEncouragement => 'Keep it going today';
-
-  @override
-  String get homeLevelProgressTitle => 'A1 progress';
 
   @override
   String homeLevelProgressCaption(int mastered, int total) {
@@ -159,7 +135,116 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get homeTasksTodayTitle => 'Tasks today';
+  String get homeGreetingMorning => 'Good morning';
+
+  @override
+  String get homeGreetingAfternoon => 'Good afternoon';
+
+  @override
+  String get homeGreetingEvening => 'Good evening';
+
+  @override
+  String homeLevelBadge(String cefr) {
+    return '$cefr · Beginner';
+  }
+
+  @override
+  String homeStreakChip(int days) {
+    String _temp0 = intl.Intl.pluralLogic(
+      days,
+      locale: localeName,
+      other: '$days days',
+      one: '1 day',
+      zero: 'No streak',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String homeUnitLessonOverline(int unit, int lesson) {
+    return 'Unit $unit · Lesson $lesson';
+  }
+
+  @override
+  String homeUnitReviewOverline(int unit) {
+    return 'Unit $unit · Review';
+  }
+
+  @override
+  String get homeUnitAllLessonsDone =>
+      'Every lesson played — review this unit to master it.';
+
+  @override
+  String homeActivityCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count activities',
+      one: '1 activity',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get homeLessonTypeGuided => 'Guided lesson';
+
+  @override
+  String get homeLessonTypePractice => 'Practice';
+
+  @override
+  String get homeLessonTypeConversation => 'Conversation';
+
+  @override
+  String get homeLessonTypeMission => 'Mission';
+
+  @override
+  String get homeLessonProgressLabel => 'Lesson progress';
+
+  @override
+  String get homeLessonNew => 'New lesson';
+
+  @override
+  String homeLessonPercent(int percent) {
+    return '$percent%';
+  }
+
+  @override
+  String get homeStartLessonCta => 'Start lesson';
+
+  @override
+  String get homeContinueLessonCta => 'Continue lesson';
+
+  @override
+  String get homeOpenUnitCta => 'Open unit';
+
+  @override
+  String get homeTodaysGoalTitle => 'Today\'s goal';
+
+  @override
+  String homeGoalsDone(int done, int total) {
+    return '$done of $total done';
+  }
+
+  @override
+  String get homeJourneyTitle => 'Your journey';
+
+  @override
+  String homeJourneyUnitOf(int current, int total) {
+    return 'Unit $current of $total';
+  }
+
+  @override
+  String homeJourneyNow(String title) {
+    return 'Now · $title';
+  }
+
+  @override
+  String homeJourneyNext(String title) {
+    return 'Next · $title';
+  }
+
+  @override
+  String get homeReviewNowCta => 'Review now';
 
   @override
   String get homeTaskFinishLesson => 'Finish a lesson';

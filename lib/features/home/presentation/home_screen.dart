@@ -2,380 +2,256 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../content/index/course_content_index.dart';
+import '../../../content/models/curriculum_structure.dart';
 import '../../../content/providers/course_content_providers.dart';
 import '../../../core/l10n/generated/app_localizations.dart';
-import '../../../core/theme/feedback_theme_extension.dart';
-import '../../../core/theme/gamification_theme_extension.dart';
+import '../../../core/theme/app_tokens.dart';
+import '../../../data/local/database.dart';
 import '../../learning_path/domain/current_unit_selector.dart';
 import '../../learning_path/providers/unit_progress_providers.dart';
-import '../../progress/domain/repositories/daily_task_event_repository.dart';
 import '../../progress/providers/current_learner_provider.dart';
 import '../../review/providers/review_providers.dart';
+import '../domain/day_part.dart';
+import '../domain/lesson_resume.dart';
+import 'widgets/continue_lesson_card.dart';
+import 'widgets/daily_goal_section.dart';
+import 'widgets/home_header.dart';
+import 'widgets/journey_card.dart';
+import 'widgets/review_status.dart';
 
-/// Home tab landing screen: a streak card, the "Continue learning" card, an
-/// A1 level-progress card, and a review-due card. See
-/// docs/superpowers/specs/2026-09-04-ui-navigation-redesign-design.md.
+/// Home: where am I, what should I do now, how am I doing.
+///
+/// Reading order follows priority — header (greeting, level, streak), the
+/// continue-lesson hero (the one primary action), today's goal, the level
+/// journey, then review status. Review moves up beside today's goal and
+/// becomes a card only when something is actually due. All state comes
+/// from existing providers; this screen only arranges it. See
+/// docs/DESIGN_SYSTEM.md.
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final l10n = AppLocalizations.of(context)!;
     final contentAsync = ref.watch(courseContentProvider('a1'));
-    final progressAsync = ref.watch(allUnitProgressProvider);
-    final lessonProgressAsync = ref.watch(allLessonProgressProvider);
-    final streakAsync = ref.watch(currentStreakDaysProvider);
-    final dueCountAsync = ref.watch(dueVocabularyCountProvider);
-    final taskCountsAsync = ref.watch(dailyTaskCountsProvider);
 
     return Scaffold(
-      appBar: AppBar(title: Text(l10n.navHome)),
-      body: contentAsync.when(
-        loading: () => const Center(child: CircularProgressIndicator()),
-        error: (error, _) => Center(child: Text('$error')),
-        data: (index) {
-          final masteredUnitIds = <String>{
-            for (final p in progressAsync.value ?? const [])
-              if (p.state == 'mastered') p.unitId,
-          };
-          final totalUnits = index.bundle.units.length;
-          final masteredCount = masteredUnitIds.length;
-          final currentUnit = currentUnitId(
-            units: index.bundle.units,
-            masteredUnitIds: masteredUnitIds,
-            allLessonProgress: lessonProgressAsync.value ?? const [],
-          );
-          final nextUnit = currentUnit == null
-              ? null
-              : index.unitsById[currentUnit];
-
-          return ListView(
-            padding: const EdgeInsets.all(16),
-            children: [
-              _StreakCard(days: streakAsync.value ?? 0),
-              const SizedBox(height: 12),
-              _TasksTodayRow(
-                counts:
-                    taskCountsAsync.value ??
-                    (lesson: 0, vocabularyReview: 0, speaking: 0),
-              ),
-              const SizedBox(height: 12),
-              if (nextUnit == null)
-                Card(
-                  child: Padding(
-                    padding: const EdgeInsets.all(16),
-                    child: Text(l10n.homeAllUnitsMastered),
-                  ),
-                )
-              else
-                _ContinueLearningCard(
-                  title: nextUnit.title,
-                  titleAr: nextUnit.titleAr,
-                  onContinue: () => context.go('/learn/a1/unit/${nextUnit.id}'),
-                ),
-              const SizedBox(height: 12),
-              _LevelProgressCard(mastered: masteredCount, total: totalUnits),
-              const SizedBox(height: 12),
-              _ReviewDueCard(
-                count: dueCountAsync.value ?? 0,
-                onTap: () => context.go('/review'),
-              ),
-            ],
-          );
-        },
-      ),
-    );
-  }
-}
-
-class _StreakCard extends StatelessWidget {
-  const _StreakCard({required this.days});
-
-  final int days;
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
-    final gamification = Theme.of(context).extension<GamificationTheme>()!;
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Row(
-          children: [
-            CircleAvatar(
-              backgroundColor: gamification.streakAccent,
-              child: Text(
-                '$days',
-                style: TextStyle(
-                  // Not colorScheme.onPrimary — that is white in the light
-                  // theme and only 3.64:1 on this ground. See
-                  // [GamificationTheme.onStreakAccent].
-                  color: gamification.onStreakAccent,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-            const SizedBox(width: 12),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    l10n.homeStreakTitle(days),
-                    style: Theme.of(context).textTheme.titleMedium,
-                  ),
-                  Text(
-                    l10n.homeStreakEncouragement,
-                    style: Theme.of(context).textTheme.bodySmall,
-                  ),
-                ],
-              ),
-            ),
-          ],
+      body: SafeArea(
+        bottom: false,
+        child: contentAsync.when(
+          loading: () => const Center(child: CircularProgressIndicator()),
+          error: (error, _) => Center(child: Text('$error')),
+          data: (index) => _HomeBody(index: index),
         ),
       ),
     );
   }
 }
 
-class _ContinueLearningCard extends StatelessWidget {
-  const _ContinueLearningCard({
-    required this.title,
-    required this.titleAr,
-    required this.onContinue,
-  });
+class _HomeBody extends ConsumerWidget {
+  const _HomeBody({required this.index});
 
-  final String title;
-  final String titleAr;
-  final VoidCallback onContinue;
+  final CourseContentIndex index;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context)!;
-    final colorScheme = Theme.of(context).colorScheme;
-    // A full-bleed vivid fill, not the paler primaryContainer — this is
-    // Home's one "hero" element, and the "full energy" redesign direction
-    // asked for it to read as vivid, not calm-and-muted like an ordinary
-    // card. See docs/DESIGN_SYSTEM.md.
-    return Card(
-      color: colorScheme.primary,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
-      child: Padding(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              l10n.continueLearningTitle,
-              style: Theme.of(context).textTheme.labelLarge
-                  ?.copyWith(color: colorScheme.onPrimary),
-            ),
-            const SizedBox(height: 8),
-            Text(
-              title,
-              textDirection: TextDirection.ltr,
-              style: Theme.of(context).textTheme.titleLarge
-                  ?.copyWith(color: colorScheme.onPrimary),
-            ),
-            Text(
-              titleAr,
-              textDirection: TextDirection.rtl,
-              style: Theme.of(context).textTheme.bodyMedium
-                  ?.copyWith(color: colorScheme.onPrimary),
-            ),
-            const SizedBox(height: 16),
-            FilledButton(
-              style: FilledButton.styleFrom(
-                backgroundColor: colorScheme.onPrimary,
-                foregroundColor: colorScheme.primary,
-              ),
-              onPressed: onContinue,
-              child: Text(l10n.continueLearningCta),
-            ),
-          ],
-        ),
-      ),
+    final isArabic = Localizations.localeOf(context).languageCode == 'ar';
+
+    final unitProgress = ref.watch(allUnitProgressProvider).value ?? const [];
+    final lessonProgress =
+        ref.watch(allLessonProgressProvider).value ?? const [];
+    final streakDays = ref.watch(currentStreakDaysProvider).value ?? 0;
+    final dueCount = ref.watch(dueVocabularyCountProvider).value ?? 0;
+    final taskCounts =
+        ref.watch(dailyTaskCountsProvider).value ??
+        (lesson: 0, vocabularyReview: 0, speaking: 0);
+    final learnerName = ref.watch(currentLearnerProvider).value?.name?.trim();
+
+    final units = index.bundle.units;
+    final masteredUnitIds = <String>{
+      for (final p in unitProgress)
+        if (p.state == 'mastered') p.unitId,
+    };
+    final currentId = currentUnitId(
+      units: units,
+      masteredUnitIds: masteredUnitIds,
+      allLessonProgress: lessonProgress,
     );
-  }
-}
+    final currentUnit = currentId == null ? null : index.unitsById[currentId];
+    final currentPosition = currentUnit == null
+        ? null
+        : units.indexOf(currentUnit);
 
-/// The 3 daily-task tiles ("Finish a lesson", "Review 5 words", "Speak
-/// once") — each fills with the brand accent until its target is reached
-/// today, then turns [FeedbackTheme.success] (the same semantic green a
-/// correct answer uses), regardless of colour theme. See
-/// docs/DESIGN_SYSTEM.md.
-class _TasksTodayRow extends StatelessWidget {
-  const _TasksTodayRow({required this.counts});
+    String unitTitle(Unit unit) =>
+        _isolate(isArabic ? unit.titleAr : unit.title);
 
-  final DailyTaskCounts counts;
+    void resume(Unit unit, LessonResume? lessonResume) {
+      if (lessonResume != null) {
+        context.push('/lesson-player/${unit.id}/${lessonResume.lesson.id}');
+      } else {
+        context.go('/learn/a1/unit/${unit.id}');
+      }
+    }
 
-  @override
-  Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          l10n.homeTasksTodayTitle,
-          style: Theme.of(context).textTheme.labelLarge,
+    final hero = _hero(
+      context,
+      l10n,
+      unit: currentUnit,
+      position: currentPosition,
+      lessonProgress: lessonProgress,
+      onResume: resume,
+    );
+
+    final goals = DailyGoalSection(
+      goals: [
+        DailyGoal(
+          icon: Icons.menu_book_outlined,
+          label: l10n.homeTaskFinishLesson,
+          done: taskCounts.lesson,
+          target: 1,
         ),
-        const SizedBox(height: 8),
-        // IntrinsicHeight, not Row(crossAxisAlignment: stretch) — this Row
-        // sits in unbounded-height ListView context, and `stretch` there
-        // asks the flex children for infinite height (a real crash, not
-        // just a lint). IntrinsicHeight measures the tallest tile first,
-        // giving every tile that same finite height instead.
-        IntrinsicHeight(
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Expanded(
-                child: _TaskTile(
-                  icon: Icons.menu_book_outlined,
-                  label: l10n.homeTaskFinishLesson,
-                  done: counts.lesson,
-                  target: 1,
-                ),
-              ),
-              const SizedBox(width: 10),
-              Expanded(
-                child: _TaskTile(
-                  icon: Icons.style_outlined,
-                  label: l10n.homeTaskReviewWords,
-                  done: counts.vocabularyReview,
-                  target: 5,
-                ),
-              ),
-              const SizedBox(width: 10),
-              Expanded(
-                child: _TaskTile(
-                  icon: Icons.mic_none,
-                  label: l10n.homeTaskSpeakOnce,
-                  done: counts.speaking,
-                  target: 1,
-                ),
-              ),
-            ],
-          ),
+        DailyGoal(
+          icon: Icons.style_outlined,
+          label: l10n.homeTaskReviewWords,
+          done: taskCounts.vocabularyReview,
+          target: 5,
+        ),
+        DailyGoal(
+          icon: Icons.mic_none_rounded,
+          label: l10n.homeTaskSpeakOnce,
+          done: taskCounts.speaking,
+          target: 1,
         ),
       ],
     );
-  }
-}
 
-class _TaskTile extends StatelessWidget {
-  const _TaskTile({
-    required this.icon,
-    required this.label,
-    required this.done,
-    required this.target,
-  });
-
-  final IconData icon;
-  final String label;
-  final int done;
-  final int target;
-
-  @override
-  Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).colorScheme;
-    final feedbackTheme = Theme.of(context).extension<FeedbackTheme>()!;
-    final complete = done >= target;
-    final fill = complete ? feedbackTheme.success : colorScheme.primary;
-    final onFill = complete ? feedbackTheme.onSuccess : colorScheme.onPrimary;
-    return Container(
-      constraints: const BoxConstraints(minHeight: 104),
-      padding: const EdgeInsets.all(12),
-      decoration: BoxDecoration(
-        color: fill,
-        borderRadius: BorderRadius.circular(18),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            label,
-            maxLines: 2,
-            overflow: TextOverflow.ellipsis,
-            style: Theme.of(context).textTheme.labelMedium
-                ?.copyWith(color: onFill, fontWeight: FontWeight.bold),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                '${done.clamp(0, target)}/$target',
-                style: Theme.of(context).textTheme.labelMedium
-                    ?.copyWith(color: onFill, fontWeight: FontWeight.bold),
-              ),
-              Icon(complete ? Icons.check : icon, color: onFill, size: 18),
-            ],
-          ),
-        ],
-      ),
+    final journey = JourneyCard(
+      steps: [
+        for (final unit in units)
+          masteredUnitIds.contains(unit.id)
+              ? JourneyStep.mastered
+              : unit.id == currentId
+              ? JourneyStep.current
+              : JourneyStep.ahead,
+      ],
+      position: currentPosition == null ? null : currentPosition + 1,
+      nowTitle: currentUnit == null
+          ? l10n.homeAllUnitsMastered
+          : l10n.homeJourneyNow(unitTitle(currentUnit)),
+      nextTitle: currentPosition == null
+          ? null
+          : l10n.homeJourneyNext(
+              currentPosition + 1 < units.length
+                  ? unitTitle(units[currentPosition + 1])
+                  : l10n.testsHomeFinalMissionTitle,
+            ),
+      onTap: () => context.go('/learn/a1'),
     );
-  }
-}
 
-class _LevelProgressCard extends StatelessWidget {
-  const _LevelProgressCard({required this.mastered, required this.total});
+    final review = ReviewStatus(
+      dueCount: dueCount,
+      onReview: () => context.go('/review'),
+    );
 
-  final int mastered;
-  final int total;
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
-    final colorScheme = Theme.of(context).colorScheme;
-    final fraction = total == 0 ? 0.0 : mastered / total;
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              l10n.homeLevelProgressTitle,
-              style: Theme.of(context).textTheme.titleMedium,
-            ),
-            const SizedBox(height: 8),
-            ClipRRect(
-              borderRadius: BorderRadius.circular(4),
-              child: LinearProgressIndicator(
-                value: fraction,
-                minHeight: 6,
-                backgroundColor: colorScheme.surfaceContainerHighest,
-                valueColor: AlwaysStoppedAnimation(colorScheme.primary),
-              ),
-            ),
-            const SizedBox(height: 8),
-            Text(
-              l10n.homeLevelProgressCaption(mastered, total),
-              style: Theme.of(context).textTheme.bodySmall,
-            ),
-          ],
+    return ListView(
+      padding: const EdgeInsets.fromLTRB(
+        AppSpace.md,
+        AppSpace.md,
+        AppSpace.md,
+        AppSpace.lg,
+      ),
+      children: [
+        HomeHeader(
+          dayPart: dayPartFor(DateTime.now().hour),
+          name: (learnerName?.isEmpty ?? true) ? null : learnerName,
+          levelCode: 'A1',
+          streakDays: streakDays,
         ),
-      ),
+        const SizedBox(height: AppSpace.lg),
+        hero,
+        const SizedBox(height: AppSpace.md),
+        goals,
+        if (dueCount > 0) ...[const SizedBox(height: AppSpace.md), review],
+        const SizedBox(height: AppSpace.md),
+        journey,
+        if (dueCount <= 0) ...[const SizedBox(height: AppSpace.xs), review],
+      ],
     );
+  }
+
+  Widget _hero(
+    BuildContext context,
+    AppLocalizations l10n, {
+    required Unit? unit,
+    required int? position,
+    required List<LessonProgressData> lessonProgress,
+    required void Function(Unit, LessonResume?) onResume,
+  }) {
+    if (unit == null || position == null) {
+      return ContinueLessonCard(
+        badge: const Icon(Icons.emoji_events_rounded),
+        overline: 'A1',
+        title: l10n.homeAllUnitsMastered,
+        ctaLabel: l10n.navTests,
+        onPressed: () => context.go('/tests'),
+      );
+    }
+
+    final lessonResume = lessonResumeFor(
+      unit: unit,
+      unitLessonProgress: [
+        for (final row in lessonProgress)
+          if (row.unitId == unit.id) row,
+      ],
+    );
+    if (lessonResume == null) {
+      return ContinueLessonCard(
+        badge: const Icon(Icons.replay_rounded),
+        overline: l10n.homeUnitReviewOverline(position + 1),
+        title: unit.title,
+        titleAr: unit.titleAr,
+        body: l10n.homeUnitAllLessonsDone,
+        ctaLabel: l10n.homeOpenUnitCta,
+        onPressed: () => onResume(unit, null),
+      );
+    }
+
+    final lesson = lessonResume.lesson;
+    final started = lessonResume.activitiesDone > 0;
+    final type = _lessonTypeLabel(l10n, lesson.lessonType);
+    final count = l10n.homeActivityCount(lessonResume.activityCount);
+    return ContinueLessonCard(
+      badge: Text('${lessonResume.lessonIndex + 1}'),
+      overline: l10n.homeUnitLessonOverline(
+        position + 1,
+        lessonResume.lessonIndex + 1,
+      ),
+      title: lesson.title,
+      titleAr: lesson.titleAr,
+      meta: type == null ? count : '$type · $count',
+      progress: lessonResume.fraction,
+      progressLabel: l10n.homeLessonProgressLabel,
+      progressValueLabel: started
+          ? l10n.homeLessonPercent((lessonResume.fraction * 100).round())
+          : l10n.homeLessonNew,
+      ctaLabel: started ? l10n.homeContinueLessonCta : l10n.homeStartLessonCta,
+      onPressed: () => onResume(unit, lessonResume),
+    );
+  }
+
+  String? _lessonTypeLabel(AppLocalizations l10n, String lessonType) {
+    return switch (lessonType) {
+      'encounter-focus-practice' => l10n.homeLessonTypeGuided,
+      'focus-practice' => l10n.homeLessonTypePractice,
+      'communication' => l10n.homeLessonTypeConversation,
+      'mission' => l10n.homeLessonTypeMission,
+      _ => null,
+    };
   }
 }
 
-class _ReviewDueCard extends StatelessWidget {
-  const _ReviewDueCard({required this.count, required this.onTap});
-
-  final int count;
-  final VoidCallback onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
-    return Card(
-      child: ListTile(
-        leading: const Icon(Icons.style_outlined),
-        title: Text(l10n.homeReviewDueTitle(count)),
-        onTap: onTap,
-      ),
-    );
-  }
-}
+/// Wraps a curriculum title in Unicode first-strong isolates so an English
+/// title embedded in an Arabic sentence (or vice versa) keeps its own
+/// direction — trailing punctuation like "Hello, I'm…" stays put.
+String _isolate(String s) => '\u2068$s\u2069';

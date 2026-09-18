@@ -133,27 +133,10 @@
   "@comingSoonLevelBody": {
     "description": "Shown when a learner opens an A2-C2 level card."
   },
-  "continueLearningTitle": "Continue learning",
-  "@continueLearningTitle": {
-    "description": "Home screen card title for the next recommended unit."
-  },
-  "continueLearningCta": "Continue",
-  "@continueLearningCta": {
-    "description": "Button label on the Continue learning card."
-  },
   "homeAllUnitsMastered": "You've mastered every A1 unit so far!",
   "@homeAllUnitsMastered": {
     "description": "Shown on Home when there is no next unit to recommend."
   },
-  "homeStreakTitle": "{days, plural, =0{No streak yet} =1{1-day streak} other{{days}-day streak}}",
-  "@homeStreakTitle": {
-    "description": "Home streak card title.",
-    "placeholders": {"days": {"type": "int"}}
-  },
-  "homeStreakEncouragement": "Keep it going today",
-  "@homeStreakEncouragement": {"description": "Home streak card subtitle."},
-  "homeLevelProgressTitle": "A1 progress",
-  "@homeLevelProgressTitle": {"description": "Home level-progress card title."},
   "homeLevelProgressCaption": "{mastered} of {total} units mastered",
   "@homeLevelProgressCaption": {
     "description": "Home level-progress card caption.",
@@ -167,10 +150,88 @@
     "description": "Home review-due card title.",
     "placeholders": {"count": {"type": "int"}}
   },
-  "homeTasksTodayTitle": "Tasks today",
-  "@homeTasksTodayTitle": {
-    "description": "Home screen section title above the 3 daily-task tiles."
+  "homeGreetingMorning": "Good morning",
+  "@homeGreetingMorning": {"description": "Home header greeting, 05:00–11:59."},
+  "homeGreetingAfternoon": "Good afternoon",
+  "@homeGreetingAfternoon": {"description": "Home header greeting, 12:00–16:59."},
+  "homeGreetingEvening": "Good evening",
+  "@homeGreetingEvening": {"description": "Home header greeting, 17:00–04:59."},
+  "homeLevelBadge": "{cefr} · Beginner",
+  "@homeLevelBadge": {
+    "description": "Home header chip: the learner's current CEFR level and its plain-language descriptor.",
+    "placeholders": {"cefr": {"type": "String"}}
   },
+  "homeStreakChip": "{days, plural, =0{No streak} =1{1 day} other{{days} days}}",
+  "@homeStreakChip": {
+    "description": "Home header streak chip, next to a flame icon.",
+    "placeholders": {"days": {"type": "int"}}
+  },
+  "homeUnitLessonOverline": "Unit {unit} · Lesson {lesson}",
+  "@homeUnitLessonOverline": {
+    "description": "Overline on the continue-lesson hero card.",
+    "placeholders": {"unit": {"type": "int"}, "lesson": {"type": "int"}}
+  },
+  "homeUnitReviewOverline": "Unit {unit} · Review",
+  "@homeUnitReviewOverline": {
+    "description": "Overline on the hero card when every lesson in the unit has been played but the unit isn't mastered yet.",
+    "placeholders": {"unit": {"type": "int"}}
+  },
+  "homeUnitAllLessonsDone": "Every lesson played — review this unit to master it.",
+  "@homeUnitAllLessonsDone": {"description": "Hero card body when the current unit's lessons are all played but it isn't mastered."},
+  "homeActivityCount": "{count, plural, =1{1 activity} other{{count} activities}}",
+  "@homeActivityCount": {
+    "description": "Hero card meta line — how many activities the current lesson has.",
+    "placeholders": {"count": {"type": "int"}}
+  },
+  "homeLessonTypeGuided": "Guided lesson",
+  "@homeLessonTypeGuided": {"description": "Hero card meta: lessonType encounter-focus-practice (a presented model, then focused practice)."},
+  "homeLessonTypePractice": "Practice",
+  "@homeLessonTypePractice": {"description": "Hero card meta: lessonType focus-practice."},
+  "homeLessonTypeConversation": "Conversation",
+  "@homeLessonTypeConversation": {"description": "Hero card meta: lessonType communication."},
+  "homeLessonTypeMission": "Mission",
+  "@homeLessonTypeMission": {"description": "Hero card meta: lessonType mission (a unit's capstone task)."},
+  "homeLessonProgressLabel": "Lesson progress",
+  "@homeLessonProgressLabel": {"description": "Label above the hero card's lesson progress bar."},
+  "homeLessonNew": "New lesson",
+  "@homeLessonNew": {"description": "Shown in place of a percentage when the current lesson hasn't been started."},
+  "homeLessonPercent": "{percent}%",
+  "@homeLessonPercent": {
+    "description": "Lesson progress percentage on the hero card.",
+    "placeholders": {"percent": {"type": "int"}}
+  },
+  "homeStartLessonCta": "Start lesson",
+  "@homeStartLessonCta": {"description": "Hero card primary button when the current lesson hasn't been started."},
+  "homeContinueLessonCta": "Continue lesson",
+  "@homeContinueLessonCta": {"description": "Hero card primary button when the current lesson is part-way through."},
+  "homeOpenUnitCta": "Open unit",
+  "@homeOpenUnitCta": {"description": "Hero card primary button when every lesson is played but the unit isn't mastered."},
+  "homeTodaysGoalTitle": "Today's goal",
+  "@homeTodaysGoalTitle": {"description": "Section title above the three daily-goal rows."},
+  "homeGoalsDone": "{done} of {total} done",
+  "@homeGoalsDone": {
+    "description": "Summary next to the Today's goal title.",
+    "placeholders": {"done": {"type": "int"}, "total": {"type": "int"}}
+  },
+  "homeJourneyTitle": "Your journey",
+  "@homeJourneyTitle": {"description": "Title of the level-progress card."},
+  "homeJourneyUnitOf": "Unit {current} of {total}",
+  "@homeJourneyUnitOf": {
+    "description": "Level-progress card: the learner's position in the level's unit sequence.",
+    "placeholders": {"current": {"type": "int"}, "total": {"type": "int"}}
+  },
+  "homeJourneyNow": "Now · {title}",
+  "@homeJourneyNow": {
+    "description": "Level-progress card: the unit the learner is on.",
+    "placeholders": {"title": {"type": "String"}}
+  },
+  "homeJourneyNext": "Next · {title}",
+  "@homeJourneyNext": {
+    "description": "Level-progress card: the unit (or final mission) that comes after the current one.",
+    "placeholders": {"title": {"type": "String"}}
+  },
+  "homeReviewNowCta": "Review now",
+  "@homeReviewNowCta": {"description": "Button on the review-due card when items are due."},
   "homeTaskFinishLesson": "Finish a lesson",
   "@homeTaskFinishLesson": {
     "description": "Home daily-task tile label — finish 1 lesson today."

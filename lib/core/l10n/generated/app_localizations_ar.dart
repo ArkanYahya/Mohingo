@@ -115,34 +115,7 @@ class AppLocalizationsAr extends AppLocalizations {
       'هذا المستوى غير متاح بعد. المستوى A1 جاهز الآن — ابدأ منه.';
 
   @override
-  String get continueLearningTitle => 'أكمل التعلّم';
-
-  @override
-  String get continueLearningCta => 'متابعة';
-
-  @override
   String get homeAllUnitsMastered => 'أتقنت جميع وحدات A1 حتى الآن!';
-
-  @override
-  String homeStreakTitle(int days) {
-    String _temp0 = intl.Intl.pluralLogic(
-      days,
-      locale: localeName,
-      other: 'تتابع $days يوم',
-      many: 'تتابع $days يوماً',
-      few: 'تتابع $days أيام',
-      two: 'تتابع يومين',
-      one: 'تتابع يوم واحد',
-      zero: 'لا يوجد تتابع بعد',
-    );
-    return '$_temp0';
-  }
-
-  @override
-  String get homeStreakEncouragement => 'واصل اليوم أيضاً';
-
-  @override
-  String get homeLevelProgressTitle => 'تقدّم A1';
 
   @override
   String homeLevelProgressCaption(int mastered, int total) {
@@ -165,7 +138,122 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get homeTasksTodayTitle => 'مهام اليوم';
+  String get homeGreetingMorning => 'صباح الخير';
+
+  @override
+  String get homeGreetingAfternoon => 'مساء الخير';
+
+  @override
+  String get homeGreetingEvening => 'مساء الخير';
+
+  @override
+  String homeLevelBadge(String cefr) {
+    return '$cefr · مبتدئ';
+  }
+
+  @override
+  String homeStreakChip(int days) {
+    String _temp0 = intl.Intl.pluralLogic(
+      days,
+      locale: localeName,
+      other: '$days يوم',
+      many: '$days يوماً',
+      few: '$days أيام',
+      two: 'يومان',
+      one: 'يوم واحد',
+      zero: 'لا يوجد تتابع',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String homeUnitLessonOverline(int unit, int lesson) {
+    return 'الوحدة $unit · الدرس $lesson';
+  }
+
+  @override
+  String homeUnitReviewOverline(int unit) {
+    return 'الوحدة $unit · مراجعة';
+  }
+
+  @override
+  String get homeUnitAllLessonsDone =>
+      'أنهيت كل الدروس — راجع هذه الوحدة لإتقانها.';
+
+  @override
+  String homeActivityCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count نشاط',
+      many: '$count نشاطاً',
+      few: '$count أنشطة',
+      two: 'نشاطان',
+      one: 'نشاط واحد',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get homeLessonTypeGuided => 'درس موجَّه';
+
+  @override
+  String get homeLessonTypePractice => 'تدريب';
+
+  @override
+  String get homeLessonTypeConversation => 'محادثة';
+
+  @override
+  String get homeLessonTypeMission => 'مهمة';
+
+  @override
+  String get homeLessonProgressLabel => 'تقدّم الدرس';
+
+  @override
+  String get homeLessonNew => 'درس جديد';
+
+  @override
+  String homeLessonPercent(int percent) {
+    return '$percent٪';
+  }
+
+  @override
+  String get homeStartLessonCta => 'ابدأ الدرس';
+
+  @override
+  String get homeContinueLessonCta => 'أكمل الدرس';
+
+  @override
+  String get homeOpenUnitCta => 'افتح الوحدة';
+
+  @override
+  String get homeTodaysGoalTitle => 'هدف اليوم';
+
+  @override
+  String homeGoalsDone(int done, int total) {
+    return 'أنجزت $done من $total';
+  }
+
+  @override
+  String get homeJourneyTitle => 'رحلتك';
+
+  @override
+  String homeJourneyUnitOf(int current, int total) {
+    return 'الوحدة $current من $total';
+  }
+
+  @override
+  String homeJourneyNow(String title) {
+    return 'الآن · $title';
+  }
+
+  @override
+  String homeJourneyNext(String title) {
+    return 'التالي · $title';
+  }
+
+  @override
+  String get homeReviewNowCta => 'راجع الآن';
 
   @override
   String get homeTaskFinishLesson => 'أنهِ درساً';
