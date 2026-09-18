@@ -22,6 +22,7 @@ import 'package:mohingo/features/speech/domain/speech_recognition_service.dart';
 import 'package:mohingo/features/speech/providers/speech_providers.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../activity_engine/answer_activity.dart';
 import '../speech/fake_speech_services.dart';
 
 /// An end-to-end pass through the A1 Gateway Placement Test against **real**
@@ -38,72 +39,6 @@ CourseContentIndex _realA1Index() {
   final raw = File('assets/content/en/A1/a1-course-bundle.json')
       .readAsStringSync();
   return CourseContentIndex.build(CourseBundleParser.parse(raw));
-}
-
-Future<void> _answerCorrectly(WidgetTester tester, Activity activity) async {
-  await tester.pumpAndSettle();
-
-  // Choice/Gap/Order/Match submit the instant a complete answer is given —
-  // no separate Check tap. Speak/Write/Form/Dialogue still show one.
-  var needsExplicitCheck = true;
-
-  switch (activity) {
-    case AudioChoiceActivity a:
-      await tester.tap(find.text(a.answer).last);
-      needsExplicitCheck = false;
-    case TextChoiceActivity a:
-      await tester.tap(find.text(a.answer).last);
-      needsExplicitCheck = false;
-    case GapActivity a:
-      // `.first`: a gap activity's own distractor options can coincidentally
-      // repeat the same word twice (a real content quirk, not a bug in this
-      // test) — either duplicate chip represents the same choice.
-      await tester.tap(find.widgetWithText(ChoiceChip, a.answer).first);
-      needsExplicitCheck = false;
-    case OrderActivity a:
-      for (final token in a.answer) {
-        await tester.tap(find.text(token).first);
-        await tester.pump();
-      }
-      needsExplicitCheck = false;
-    case MatchActivity a:
-      // `.first`: across the whole curriculum, a match activity's left/right
-      // option pool can coincidentally repeat the same word (e.g. "Do"
-      // pairing with more than one prompt) — any matching duplicate resolves
-      // the pair the same way.
-      for (final pair in a.pairs) {
-        await tester.tap(find.text(pair[0]).first);
-        await tester.pump();
-        await tester.tap(find.text(pair[1]).first);
-        await tester.pump();
-      }
-      needsExplicitCheck = false;
-    case SpeakActivity a:
-      await tester.enterText(
-        find.byType(TextField),
-        a.accepted.isNotEmpty ? a.accepted.first : 'an answer',
-      );
-    case WriteActivity a:
-      await tester.enterText(
-        find.byType(TextField),
-        a.accepted.isNotEmpty ? a.accepted.first : 'an answer',
-      );
-    case FormActivity a:
-      final fields = find.byType(TextField);
-      for (var i = 0; i < a.fields.length; i++) {
-        await tester.enterText(fields.at(i), 'an answer');
-      }
-    case DialogueActivity _:
-      break;
-  }
-  await tester.pump();
-
-  if (needsExplicitCheck) {
-    await tester.tap(find.byType(FilledButton)); // Check
-    await tester.pump();
-  }
-  await tester.tap(find.byType(FilledButton)); // Next
-  await tester.pump();
 }
 
 void main() {
@@ -172,7 +107,7 @@ void main() {
       await tester.pumpAndSettle();
 
       for (final activity in expectedSequence) {
-        await _answerCorrectly(tester, activity);
+        await answerCheckAndAdvance(tester, activity);
       }
       await tester.pumpAndSettle();
 

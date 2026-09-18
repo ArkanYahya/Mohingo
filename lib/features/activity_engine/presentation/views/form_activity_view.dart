@@ -5,7 +5,9 @@ import 'package:flutter/material.dart';
 import '../../../../content/models/activity.dart';
 import '../../../../data/local/database.dart' show ActivityAttempt;
 import '../../domain/activity_submission.dart';
+import '../../../../core/theme/app_tokens.dart';
 import '../activity_chrome.dart';
+import '../widgets/activity_text_field.dart';
 
 /// Renders a `form` activity: one text field per declared field name.
 ///
@@ -23,7 +25,6 @@ class FormActivityView extends StatefulWidget {
     required this.activity,
     required this.onSubmitted,
     this.reviewAttempt,
-    this.suppressIncorrectBanner = false,
     super.key,
   });
 
@@ -36,11 +37,6 @@ class FormActivityView extends StatefulWidget {
   /// submission — forms are never auto-graded. See docs/superpowers/specs/
   /// 2026-09-09-lesson-answer-review-design.md.
   final ActivityAttempt? reviewAttempt;
-
-  /// Unused here — a `form` activity is always `notAutoGraded`, never
-  /// `incorrect` — but accepted for the uniform interface every activity
-  /// view shares. See [ActivitySubmitOrFeedback.suppressIncorrectBanner].
-  final bool suppressIncorrectBanner;
 
   @override
   State<FormActivityView> createState() => _FormActivityViewState();
@@ -117,14 +113,11 @@ class _FormActivityViewState extends State<FormActivityView> {
         children: [
           for (final field in widget.activity.fields)
             Padding(
-              padding: const EdgeInsets.only(bottom: 12),
+              padding: const EdgeInsets.only(bottom: AppSpace.sm),
               child: TextField(
                 controller: _controllers[field],
                 enabled: _submission == null,
-                decoration: InputDecoration(
-                  labelText: field,
-                  border: const OutlineInputBorder(),
-                ),
+                decoration: activityInputDecoration(context, labelText: field),
                 onChanged: (_) => setState(() {}),
               ),
             ),
@@ -134,7 +127,6 @@ class _FormActivityViewState extends State<FormActivityView> {
         submission: _submission,
         canSubmit: _allFilled,
         onSubmit: _submit,
-        suppressIncorrectBanner: widget.suppressIncorrectBanner,
       ),
     );
   }

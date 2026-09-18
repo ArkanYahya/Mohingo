@@ -1,22 +1,64 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/l10n/generated/app_localizations.dart';
+import '../../../core/theme/app_tokens.dart';
 import '../../../core/theme/feedback_theme_extension.dart';
 import '../domain/activity_submission.dart';
+import 'activity_feedback_panel.dart';
+
+export 'activity_feedback_panel.dart';
+
+/// Marks an activity as hosted full-screen by the lesson player.
+///
+/// Inside this scope [ActivityChrome] becomes the lesson player's question
+/// frame — [header] above the prompt, the question scrolling, and the
+/// feedback slot pinned to the bottom of the screen — and
+/// [ActivitySubmitOrFeedback] renders the pinned [ActivityCheckBar] and
+/// then the [ActivityFeedbackPanel], whose Continue calls [onContinue].
+///
+/// Every other host (answer review, quick practice, placement test, final
+/// mission/assessment) renders activities in its own scrolling list and
+/// never provides this scope, so they keep the inline Check button and
+/// [ActivityFeedbackBanner]. See docs/ARCHITECTURE.md.
+class ActivityFrameScope extends InheritedWidget {
+  const ActivityFrameScope({
+    required this.onContinue,
+    this.header,
+    required super.child,
+    super.key,
+  });
+
+  /// Moves on from the current activity once its feedback is shown.
+  final VoidCallback onContinue;
+
+  /// Shown above the prompt — the lesson player's phase · skill line.
+  final Widget? header;
+
+  static ActivityFrameScope? maybeOf(BuildContext context) =>
+      context.dependOnInheritedWidgetOfExactType<ActivityFrameScope>();
+
+  @override
+  bool updateShouldNotify(ActivityFrameScope oldWidget) =>
+      onContinue != oldWidget.onContinue || header != oldWidget.header;
+}
 
 /// The shared shell every activity view renders inside: prompt, an optional
-/// help area, the type-specific interaction body, and post-submission
-/// feedback — consistent across all 9 activity types. See
+/// help area, the type-specific interaction body, and the submit/feedback
+/// slot — consistent across all 9 activity types. See
 /// docs/ARCHITECTURE.md's lesson-player requirements.
 ///
 /// [prompt] (English) and [promptAr] (Arabic) are rendered as two separate
 /// `Text` widgets, each given its own explicit `textDirection` — this is
 /// deliberate: it avoids ever concatenating the two languages into one
 /// string, which is what "preserve English punctuation and text direction
-/// inside Arabic screens" is actually protecting against. Within
-/// [promptAr] itself, an embedded Latin word/phrase (e.g. quoting an English
-/// term) is handled correctly by Flutter's built-in Unicode Bidi Algorithm
-/// support — no manual span-splitting needed or attempted here.
+/// inside Arabic screens" is actually protecting against. Both start at the
+/// layout's start edge, so the pair reads as one block in either interface
+/// language. Within [promptAr] itself, an embedded Latin word/phrase (e.g.
+/// quoting an English term) is handled correctly by Flutter's built-in
+/// Unicode Bidi Algorithm support — no manual span-splitting needed.
+///
+/// Inside an [ActivityFrameScope] the question scrolls and [feedback] is
+/// pinned below it; elsewhere everything flows inline in one column.
 class ActivityChrome extends StatelessWidget {
   const ActivityChrome({
     required this.prompt,
@@ -36,37 +78,82 @@ class ActivityChrome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    return Padding(
-      padding: const EdgeInsets.all(16),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Text(
-            prompt,
-            style: theme.textTheme.titleMedium,
-            textDirection: TextDirection.ltr,
-          ),
-          if (promptAr != null) ...[
-            const SizedBox(height: 4),
-            Text(
-              promptAr!,
-              style: theme.textTheme.bodyMedium,
-              textDirection: TextDirection.rtl,
-            ),
-          ],
-          if (help != null) ...[const SizedBox(height: 8), help!],
-          const SizedBox(height: 16),
-          body,
-          if (feedback != null) ...[const SizedBox(height: 16), feedback!],
+    final tokens = theme.extension<AppTokens>()!;
+    final frame = ActivityFrameScope.maybeOf(context);
+    final framed = frame != null;
+
+    final question = Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        if (frame?.header != null) ...[
+          frame!.header!,
+          const SizedBox(height: AppSpace.xs),
         ],
-      ),
+        Align(
+          alignment: AlignmentDirectional.centerStart,
+          child: Text(
+            prompt,
+            textDirection: TextDirection.ltr,
+            style:
+                (framed
+                        ? theme.textTheme.titleLarge
+                        : theme.textTheme.titleMedium)
+                    ?.copyWith(color: tokens.textPrimary),
+          ),
+        ),
+        if (promptAr != null) ...[
+          const SizedBox(height: AppSpace.xxs),
+          Align(
+            alignment: AlignmentDirectional.centerStart,
+            child: Text(
+              promptAr!,
+              textDirection: TextDirection.rtl,
+              style:
+                  (framed
+                          ? theme.textTheme.bodyLarge
+                          : theme.textTheme.bodyMedium)
+                      ?.copyWith(color: tokens.textSecondary),
+            ),
+          ),
+        ],
+        if (help != null) ...[const SizedBox(height: AppSpace.sm), help!],
+        SizedBox(height: framed ? AppSpace.lg : AppSpace.md),
+        body,
+        if (!framed && feedback != null) ...[
+          const SizedBox(height: AppSpace.md),
+          feedback!,
+        ],
+      ],
+    );
+
+    if (!framed) {
+      return Padding(
+        padding: const EdgeInsets.all(AppSpace.md),
+        child: question,
+      );
+    }
+    return Column(
+      children: [
+        Expanded(
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.fromLTRB(
+              AppSpace.md,
+              AppSpace.xs,
+              AppSpace.md,
+              AppSpace.lg,
+            ),
+            child: question,
+          ),
+        ),
+        ?feedback,
+      ],
     );
   }
 }
 
-/// The correct/incorrect/saved-for-review banner — never colour alone, per
-/// docs/DESIGN_SYSTEM.md: every state pairs a `colorScheme` role with an
-/// icon and text.
+/// The inline correct/incorrect/saved-for-review banner used outside the
+/// lesson player — never colour alone, per docs/DESIGN_SYSTEM.md: every
+/// state pairs a colour role with an icon and text.
 class ActivityFeedbackBanner extends StatelessWidget {
   const ActivityFeedbackBanner({
     required this.submission,
@@ -130,15 +217,15 @@ class ActivityFeedbackBanner extends StatelessWidget {
     return Semantics(
       liveRegion: true,
       child: Container(
-        padding: const EdgeInsets.all(12),
+        padding: const EdgeInsets.all(AppSpace.sm),
         decoration: BoxDecoration(
           color: background,
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(AppRadius.control),
         ),
         child: Row(
           children: [
             Icon(icon, color: onColor),
-            const SizedBox(width: 8),
+            const SizedBox(width: AppSpace.xs),
             Expanded(
               child: Text(label, style: TextStyle(color: onColor)),
             ),
@@ -149,56 +236,97 @@ class ActivityFeedbackBanner extends StatelessWidget {
   }
 }
 
-/// The [ActivityChrome.feedback] slot's standard content: a disabled-until-
-/// ready submit button before submission, the [ActivityFeedbackBanner]
-/// after. Shared across every activity view so the submit/feedback
-/// transition is consistent, per docs/ARCHITECTURE.md.
+/// The [ActivityChrome.feedback] slot's standard content, shared by every
+/// activity view so the submit → feedback transition is the same
+/// everywhere, per docs/ARCHITECTURE.md.
+///
+/// Inside an [ActivityFrameScope] (the lesson player): the pinned
+/// [ActivityCheckBar] before submission, then the [ActivityFeedbackPanel]
+/// sliding up in its place. Elsewhere: an inline Check button, then the
+/// [ActivityFeedbackBanner].
 class ActivitySubmitOrFeedback extends StatelessWidget {
   const ActivitySubmitOrFeedback({
     required this.submission,
     required this.canSubmit,
     required this.onSubmit,
     this.correctAnswerLabel,
-    this.suppressIncorrectBanner = false,
+    this.secondaryAction,
     super.key,
   });
 
   /// Null before the learner has submitted an answer.
   final ActivitySubmission? submission;
 
-  /// Whether the submit button is currently enabled (e.g. an option is
-  /// selected, or a text field is non-empty).
+  /// Whether Check is currently enabled (e.g. an option is selected, or a
+  /// text field is non-empty).
   final bool canSubmit;
   final VoidCallback onSubmit;
   final String? correctAnswerLabel;
 
-  /// When true, an incorrect [submission] renders nothing here instead of
-  /// the inline [ActivityFeedbackBanner] — used only during live lesson
-  /// play, where `LessonPlayerScreen` shows a modal bottom sheet instead so
-  /// the two don't duplicate each other. Review mode never passes this
-  /// (defaults false), so it keeps the plain inline banner, since a review
-  /// screen can show several past answers at once and a popping modal per
-  /// row would make no sense there. `correct`/`notAutoGraded`/
-  /// pending-online-refinement submissions are never affected.
-  final bool suppressIncorrectBanner;
+  /// An optional quieter action under Check before submission — e.g. a
+  /// speaking question's "Type my answer instead".
+  final Widget? secondaryAction;
 
   @override
   Widget build(BuildContext context) {
     final submission = this.submission;
+    final frame = ActivityFrameScope.maybeOf(context);
+
+    if (frame != null) {
+      final reduceMotion =
+          MediaQuery.maybeDisableAnimationsOf(context) ?? false;
+      return AnimatedSwitcher(
+        duration: reduceMotion
+            ? Duration.zero
+            : const Duration(milliseconds: 220),
+        switchInCurve: Curves.easeOutCubic,
+        // Only the incoming child is laid out: the Check bar leaves at
+        // once and the panel slides up into its place.
+        layoutBuilder: (current, previous) => current ?? const SizedBox(),
+        transitionBuilder: (child, animation) => FadeTransition(
+          opacity: animation,
+          child: SlideTransition(
+            position: Tween(
+              begin: const Offset(0, 0.15),
+              end: Offset.zero,
+            ).animate(animation),
+            child: child,
+          ),
+        ),
+        child: submission == null
+            ? ActivityCheckBar(
+                key: const ValueKey('check'),
+                canSubmit: canSubmit,
+                onSubmit: onSubmit,
+                secondaryAction: secondaryAction,
+              )
+            : ActivityFeedbackPanel(
+                key: const ValueKey('feedback'),
+                submission: submission,
+                correctAnswerLabel: correctAnswerLabel,
+                onContinue: frame.onContinue,
+              ),
+      );
+    }
+
     if (submission != null) {
-      final isLiveIncorrect =
-          suppressIncorrectBanner &&
-          !submission.pendingOnlineRefinement &&
-          submission.correctness == ActivityCorrectness.incorrect;
-      if (isLiveIncorrect) return const SizedBox.shrink();
       return ActivityFeedbackBanner(
         submission: submission,
         correctAnswerLabel: correctAnswerLabel,
       );
     }
-    return FilledButton(
-      onPressed: canSubmit ? onSubmit : null,
-      child: Text(AppLocalizations.of(context)!.activitySubmitButton),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        FilledButton(
+          onPressed: canSubmit ? onSubmit : null,
+          child: Text(AppLocalizations.of(context)!.activitySubmitButton),
+        ),
+        if (secondaryAction != null) ...[
+          const SizedBox(height: AppSpace.xxs),
+          secondaryAction!,
+        ],
+      ],
     );
   }
 }

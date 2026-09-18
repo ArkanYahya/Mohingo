@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mohingo/content/index/course_content_index.dart';
-import 'package:mohingo/content/models/activity.dart';
 import 'package:mohingo/content/parsing/course_bundle_parser.dart';
 import 'package:mohingo/content/providers/course_content_providers.dart';
 import 'package:mohingo/core/l10n/generated/app_localizations.dart';
@@ -19,18 +18,20 @@ import 'package:mohingo/features/activity_engine/domain/evaluation/grammar_check
 import 'package:mohingo/features/activity_engine/presentation/activity_chrome.dart';
 import 'package:mohingo/features/activity_engine/providers/online_refinement_providers.dart';
 import 'package:mohingo/features/lesson_player/presentation/lesson_player_screen.dart';
+import 'package:mohingo/features/lesson_player/presentation/widgets/lesson_progress_bar.dart';
 import 'package:mohingo/features/speech/domain/speech_capability_service.dart';
 import 'package:mohingo/features/speech/domain/speech_recognition_service.dart';
 import 'package:mohingo/features/speech/providers/speech_providers.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../activity_engine/answer_activity.dart';
 import '../activity_engine/fake_connectivity_service.dart';
 import '../activity_engine/fake_grammar_check_service.dart';
 import '../speech/fake_speech_services.dart';
 
 /// A full, offline, end-to-end pass through **real** A1-U0-L1 content —
 /// the actual copied bundle asset, not a fixture — driven entirely through
-/// real widget interaction (tap options, type text, tap Check/Next), the
+/// real widget interaction (tap options, type text, tap Check/Continue), the
 /// same code path a learner uses. No network call is made or possible: v1
 /// has none to make, so "airplane mode" per docs/TESTING.md is trivially
 /// satisfied by the architecture itself, not something this test needs to
@@ -47,79 +48,52 @@ CourseContentIndex _realA1Index() {
   return CourseContentIndex.build(CourseBundleParser.parse(raw));
 }
 
-/// Answers [activity] the way a learner would, then taps Next (and, for the
-/// activity types that still require one, Check first) — using each
-/// activity's own real answer key, since (unlike a learner) the test driver
-/// is allowed to know it.
-Future<void> _answerAndAdvance(WidgetTester tester, Activity activity) async {
-  // Some activity views (e.g. SpeakActivityView) do an async capability
-  // check in initState before their real body renders — settle that first.
-  await tester.pumpAndSettle();
-
-  // Choice/Gap/Order/Match submit the instant a complete answer is given —
-  // no separate Check tap. Speak/Write/Form/Dialogue still show one.
-  var needsExplicitCheck = true;
-
-  switch (activity) {
-    case AudioChoiceActivity a:
-      // `.last`: some answers coincide with their own audioTranscript text
-      // (e.g. A1-U0-L1-A03's answer and transcript are both "Good
-      // morning."), which renders twice — the transcript help card first,
-      // the tappable option second, in that tree order.
-      await tester.tap(find.text(a.answer).last);
-      needsExplicitCheck = false;
-    case TextChoiceActivity a:
-      await tester.tap(find.text(a.answer).last);
-      needsExplicitCheck = false;
-    case GapActivity a:
-      // `.first`: a gap activity's own distractor options can coincidentally
-      // repeat the same word twice (a real content quirk, not a bug in this
-      // test) — either duplicate chip represents the same choice.
-      await tester.tap(find.widgetWithText(ChoiceChip, a.answer).first);
-      needsExplicitCheck = false;
-    case OrderActivity a:
-      for (final token in a.answer) {
-        await tester.tap(find.text(token).first);
-        await tester.pump();
-      }
-      needsExplicitCheck = false;
-    case MatchActivity a:
-      // `.first`: a match activity's left/right option pool can
-      // coincidentally repeat the same word — either duplicate resolves the
-      // pair the same way.
-      for (final pair in a.pairs) {
-        await tester.tap(find.text(pair[0]).first);
-        await tester.pump();
-        await tester.tap(find.text(pair[1]).first);
-        await tester.pump();
-      }
-      needsExplicitCheck = false;
-    case SpeakActivity a:
-      await tester.enterText(
-        find.byType(TextField),
-        a.accepted.isNotEmpty ? a.accepted.first : 'an answer',
-      );
-    case WriteActivity a:
-      await tester.enterText(
-        find.byType(TextField),
-        a.accepted.isNotEmpty ? a.accepted.first : 'an answer',
-      );
-    case FormActivity a:
-      final fields = find.byType(TextField);
-      for (var i = 0; i < a.fields.length; i++) {
-        await tester.enterText(fields.at(i), 'an answer');
-      }
-    case DialogueActivity _:
-      break; // no input required
-  }
-  await tester.pump();
-
-  if (needsExplicitCheck) {
-    await tester.tap(find.byType(FilledButton)); // Check
-    await tester.pump();
-  }
-  await tester.tap(find.byType(FilledButton)); // Next (or finish)
-  await tester.pump();
+/// The lesson player on real A1-U0-L1 content, fully offline — speech
+/// forced to its typed fallback. With [pushedFromHost] the player is
+/// pushed from a plain page with an "open" button instead of being home.
+Future<Widget> _playerApp({
+  required AppDatabase db,
+  required CourseContentIndex index,
+  bool pushedFromHost = false,
+}) async {
+  SharedPreferences.setMockInitialValues({});
+  final prefs = await SharedPreferences.getInstance();
+  const player = LessonPlayerScreen(unitId: 'A1-U0', lessonId: 'A1-U0-L1');
+  return ProviderScope(
+    overrides: [
+      sharedPreferencesProvider.overrideWithValue(prefs),
+      appDatabaseProvider.overrideWithValue(db),
+      courseContentProvider('a1').overrideWith((ref) async => index),
+      textToSpeechServiceProvider.overrideWithValue(FakeTextToSpeechService()),
+      speechCapabilityServiceProvider.overrideWithValue(
+        FakeSpeechCapabilityService(
+          const DeviceSpeechCapabilities(
+            sttAvailableForLocale: false,
+            micPermission: SpeechPermissionStatus.notDetermined,
+          ),
+        ),
+      ),
+    ],
+    child: MaterialApp(
+      theme: AppTheme.light(AppColorSeed.calmTeal),
+      locale: const Locale('en'),
+      supportedLocales: AppLocalizations.supportedLocales,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      home: pushedFromHost
+          ? Builder(
+              builder: (context) => Scaffold(
+                body: Center(
+                  child: TextButton(
+                    onPressed: () => Navigator.of(context)
+                        .push(MaterialPageRoute<void>(builder: (_) => player)),
+                    child: const Text('open'),
+                  ),
+                ),
+              ),
+            )
+          : player,
+    ),
+  );
 }
 
 void main() {
@@ -179,7 +153,7 @@ void main() {
       await tester.pumpAndSettle();
 
       for (final activity in lesson.activities) {
-        await _answerAndAdvance(tester, activity);
+        await answerCheckAndAdvance(tester, activity);
       }
       await tester.pumpAndSettle();
 
@@ -229,84 +203,120 @@ void main() {
   );
 
   testWidgets(
-    'answering an activity incorrectly during live play shows a modal '
-    "bottom sheet with the correct answer, not the inline banner — and "
-    "its Continue button both dismisses the sheet and advances to the "
-    'next activity',
+    'a wrong answer during live play turns the bottom bar into the "Not '
+    'quite" panel with the correct answer — no modal sheet, the question '
+    'stays visible — and its Continue advances to the next activity',
     (tester) async {
       final db = AppDatabase(NativeDatabase.memory());
       final index = _realA1Index();
       final lesson = index.lessonsById['A1-U0-L1']!;
 
-      SharedPreferences.setMockInitialValues({});
-      final prefs = await SharedPreferences.getInstance();
-
-      await tester.pumpWidget(
-        ProviderScope(
-          overrides: [
-            sharedPreferencesProvider.overrideWithValue(prefs),
-            appDatabaseProvider.overrideWithValue(db),
-            courseContentProvider('a1').overrideWith((ref) async => index),
-            textToSpeechServiceProvider.overrideWithValue(
-              FakeTextToSpeechService(),
-            ),
-            speechCapabilityServiceProvider.overrideWithValue(
-              FakeSpeechCapabilityService(
-                const DeviceSpeechCapabilities(
-                  sttAvailableForLocale: false,
-                  micPermission: SpeechPermissionStatus.notDetermined,
-                ),
-              ),
-            ),
-          ],
-          child: MaterialApp(
-            theme: AppTheme.light(AppColorSeed.calmTeal),
-            locale: const Locale('en'),
-            supportedLocales: AppLocalizations.supportedLocales,
-            localizationsDelegates: AppLocalizations.localizationsDelegates,
-            home: const LessonPlayerScreen(
-              unitId: 'A1-U0',
-              lessonId: 'A1-U0-L1',
-            ),
-          ),
-        ),
-      );
+      await tester.pumpWidget(await _playerApp(db: db, index: index));
       await tester.pumpAndSettle();
 
       // A01, A02 — answer correctly with the shared helper.
-      await _answerAndAdvance(tester, lesson.activities[0]);
-      await _answerAndAdvance(tester, lesson.activities[1]);
-      await tester.pumpAndSettle();
+      await answerCheckAndAdvance(tester, lesson.activities[0]);
+      await answerCheckAndAdvance(tester, lesson.activities[1]);
 
       // A03 ("What is the natural reply?", answer "Good morning.") —
       // answer WRONG.
       final l10n = AppLocalizations.of(
         tester.element(find.byType(LessonPlayerScreen)),
       )!;
-      expect(find.text('Thank you.'), findsOneWidget);
       await tester.tap(find.text('Thank you.'));
+      await tester.pump();
+      await tester.tap(find.byType(FilledButton)); // Check
       await tester.pumpAndSettle();
 
-      // The bottom sheet is showing, the inline banner/Next button are not.
-      expect(find.text(l10n.activityIncorrectSheetTitle), findsOneWidget);
+      expect(find.byType(ActivityFeedbackPanel), findsOneWidget);
+      expect(find.text(l10n.activityFeedbackIncorrectTitle), findsOneWidget);
       expect(
-        find.text(l10n.activityIncorrectSheetBody('Good morning.')),
+        find.descendant(
+          of: find.byType(ActivityFeedbackPanel),
+          matching: find.text('Good morning.'),
+        ),
         findsOneWidget,
       );
-      expect(find.byType(ActivityFeedbackBanner), findsNothing);
-      expect(find.text(l10n.lessonPlayerNext), findsNothing);
+      expect(find.byType(BottomSheet), findsNothing);
+      // The question is still on screen behind the panel.
+      expect(find.text('Thank you.'), findsOneWidget);
 
-      await tester.tap(find.text(l10n.activityIncorrectSheetContinue));
+      await tester.tap(find.text(l10n.activityContinue));
       await tester.pumpAndSettle();
 
-      // Advanced to A04 (speak) — the sheet is gone and the progress
-      // header reflects the 4th activity.
-      expect(find.text(l10n.activityIncorrectSheetTitle), findsNothing);
-      expect(find.text(l10n.lessonPlayerProgress(4, 4)), findsOneWidget);
+      // Advanced to A04 (speak) — the panel is gone and the progress bar
+      // announces the 4th activity.
+      expect(find.byType(ActivityFeedbackPanel), findsNothing);
+      expect(
+        find.bySemanticsLabel(l10n.lessonPlayerProgress(4, 4)),
+        findsOneWidget,
+      );
 
       await db.close();
     },
   );
+
+  testWidgets(
+    'each question opens with its lesson phase and skill, and the progress '
+    'bar has one segment per activity, grouped by phase',
+    (tester) async {
+      final db = AppDatabase(NativeDatabase.memory());
+      final index = _realA1Index();
+
+      await tester.pumpWidget(await _playerApp(db: db, index: index));
+      await tester.pumpAndSettle();
+      final l10n = AppLocalizations.of(
+        tester.element(find.byType(LessonPlayerScreen)),
+      )!;
+
+      // A1-U0-L1-A01 is an encounter-mode listening question.
+      expect(
+        find.text(
+          l10n
+              .lessonPlayerEyebrow(
+                l10n.lessonPlayerPhaseWarmUp,
+                l10n.skillListening,
+              )
+              .toUpperCase(),
+        ),
+        findsOneWidget,
+      );
+      // encounter · practice · mastery ×2 → groups of 1, 1 and 2.
+      final bar = tester.widget<LessonProgressBar>(
+        find.byType(LessonProgressBar),
+      );
+      expect(bar.groupSizes, [1, 1, 2]);
+      expect(
+        find.bySemanticsLabel(l10n.lessonPlayerProgress(1, 4)),
+        findsOneWidget,
+      );
+
+      await db.close();
+    },
+  );
+
+  testWidgets('the close button leaves the lesson', (tester) async {
+    final db = AppDatabase(NativeDatabase.memory());
+    final index = _realA1Index();
+
+    await tester.pumpWidget(
+      await _playerApp(db: db, index: index, pushedFromHost: true),
+    );
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('open'));
+    await tester.pumpAndSettle();
+    final l10n = AppLocalizations.of(
+      tester.element(find.byType(LessonPlayerScreen)),
+    )!;
+
+    await tester.tap(find.byTooltip(l10n.lessonPlayerClose));
+    await tester.pumpAndSettle();
+
+    expect(find.byType(LessonPlayerScreen), findsNothing);
+    expect(find.text('open'), findsOneWidget);
+
+    await db.close();
+  });
 
   testWidgets(
     'a letterSequence/profileName activity (A1-U0-L3-A04, "Spell your '
@@ -369,7 +379,7 @@ void main() {
 
       // A01, A02, A03 — drive with the file's existing generic helper.
       for (final activity in lesson.activities.take(3)) {
-        await _answerAndAdvance(tester, activity);
+        await answerCheckAndAdvance(tester, activity);
       }
 
       // A04 ("Spell your name.") — answer manually to assert on its grading.
@@ -377,9 +387,12 @@ void main() {
       await tester.enterText(find.byType(TextField), 'a l i');
       await tester.pump();
       await tester.tap(find.byType(FilledButton)); // Check
-      await tester.pump();
+      await tester.pumpAndSettle();
 
-      expect(find.byIcon(Icons.check_circle), findsOneWidget);
+      final l10n = AppLocalizations.of(
+        tester.element(find.byType(LessonPlayerScreen)),
+      )!;
+      expect(find.text(l10n.activityFeedbackCorrect), findsOneWidget);
 
       await db.close();
     },
@@ -440,12 +453,12 @@ void main() {
         0,
         lesson.activities.length - 1,
       )) {
-        await _answerAndAdvance(tester, activity);
+        await answerCheckAndAdvance(tester, activity);
       }
 
       // A1-U5-L6-A05 — a `write` activity with wordGuide [35, 55]; drive it
       // manually, since a wordGuide-shaped answer isn't what
-      // _answerAndAdvance's generic "an answer" text produces.
+      // answerCheckAndAdvance's generic "an answer" text produces.
       await tester.enterText(
         find.byType(TextField),
         'Hello! I love hiking and reading on weekends. Would you like to join '
@@ -546,7 +559,7 @@ void main() {
         0,
         lesson.activities.length - 1,
       )) {
-        await _answerAndAdvance(tester, activity);
+        await answerCheckAndAdvance(tester, activity);
       }
 
       // A1-U5-L6-A05 — submit the onlineRefinement write activity.

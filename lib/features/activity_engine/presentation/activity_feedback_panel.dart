@@ -1,0 +1,235 @@
+import 'package:flutter/material.dart';
+
+import '../../../core/l10n/generated/app_localizations.dart';
+import '../../../core/theme/app_tokens.dart';
+import '../../../core/theme/feedback_theme_extension.dart';
+import '../../../core/theme/overline_style.dart';
+import '../domain/activity_submission.dart';
+
+/// The lesson player's bottom bar before an answer is submitted: a
+/// full-width Check button pinned to the bottom of the screen, in the
+/// thumb zone, with an optional quieter [secondaryAction] under it.
+class ActivityCheckBar extends StatelessWidget {
+  const ActivityCheckBar({
+    required this.canSubmit,
+    required this.onSubmit,
+    this.secondaryAction,
+    super.key,
+  });
+
+  final bool canSubmit;
+  final VoidCallback onSubmit;
+  final Widget? secondaryAction;
+
+  @override
+  Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppTokens>()!;
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        color: tokens.page,
+        border: Border(top: BorderSide(color: tokens.border)),
+      ),
+      child: Padding(
+        padding: EdgeInsets.fromLTRB(
+          AppSpace.md,
+          AppSpace.sm,
+          AppSpace.md,
+          AppSpace.md + MediaQuery.paddingOf(context).bottom,
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            FilledButton(
+              style: FilledButton.styleFrom(
+                minimumSize: const Size.fromHeight(52),
+              ),
+              onPressed: canSubmit ? onSubmit : null,
+              child: Text(AppLocalizations.of(context)!.activitySubmitButton),
+            ),
+            if (secondaryAction != null) ...[
+              const SizedBox(height: AppSpace.xxs),
+              secondaryAction!,
+            ],
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/// The lesson player's feedback after Check: the bottom bar becomes this
+/// panel, the same shape and place for every outcome, so the question
+/// above stays visible with its right answer marked.
+///
+/// Correct is the semantic green and incorrect the error red — never the
+/// brand colour, so "correct" reads the same whichever colour theme the
+/// learner picked — and an answer that is saved rather than graded right
+/// away gets a neutral panel. Every state pairs its colour with an icon
+/// and a title, per docs/DESIGN_SYSTEM.md. The correct answer is only ever
+/// shown here, after submission, for this activity. See
+/// docs/ARCHITECTURE.md's non-negotiable rules.
+class ActivityFeedbackPanel extends StatelessWidget {
+  const ActivityFeedbackPanel({
+    required this.submission,
+    required this.onContinue,
+    this.correctAnswerLabel,
+    super.key,
+  });
+
+  final ActivitySubmission submission;
+  final VoidCallback onContinue;
+
+  /// Shown under "Not quite" when the activity has a fixed answer to
+  /// reveal; open-ended rubrics have none, and the row is left out.
+  final String? correctAnswerLabel;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final tokens = theme.extension<AppTokens>()!;
+    final feedback = theme.extension<FeedbackTheme>()!;
+    final colorScheme = theme.colorScheme;
+    final l10n = AppLocalizations.of(context)!;
+
+    final correctness = submission.pendingOnlineRefinement
+        ? ActivityCorrectness.notAutoGraded
+        : submission.correctness;
+    final (
+      Color background,
+      Color foreground,
+      Color badge,
+      Color onBadge,
+      IconData icon,
+      String title,
+      String? body,
+    ) = switch (correctness) {
+      ActivityCorrectness.correct => (
+        feedback.successContainer,
+        feedback.onSuccessContainer,
+        feedback.success,
+        feedback.onSuccess,
+        Icons.check_rounded,
+        l10n.activityFeedbackCorrect,
+        null,
+      ),
+      ActivityCorrectness.incorrect => (
+        colorScheme.errorContainer,
+        colorScheme.onErrorContainer,
+        colorScheme.error,
+        colorScheme.onError,
+        Icons.close_rounded,
+        l10n.activityFeedbackIncorrectTitle,
+        null,
+      ),
+      ActivityCorrectness.notAutoGraded => (
+        tokens.cardMuted,
+        tokens.textPrimary,
+        tokens.primaryInk,
+        tokens.onPrimaryInk,
+        submission.pendingOnlineRefinement
+            ? Icons.cloud_sync_rounded
+            : Icons.hourglass_top_rounded,
+        l10n.activityFeedbackSavedTitle,
+        submission.pendingOnlineRefinement
+            ? l10n.activityFeedbackPendingOnlineRefinement
+            : l10n.activityFeedbackSavedForReview,
+      ),
+    };
+    final answer = correctness == ActivityCorrectness.incorrect
+        ? correctAnswerLabel
+        : null;
+
+    return Semantics(
+      liveRegion: true,
+      container: true,
+      child: Material(
+        color: background,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            top: Radius.circular(AppRadius.hero),
+          ),
+        ),
+        child: Padding(
+          padding: EdgeInsets.fromLTRB(
+            AppSpace.md,
+            AppSpace.md + AppSpace.xxs,
+            AppSpace.md,
+            AppSpace.md + MediaQuery.paddingOf(context).bottom,
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Row(
+                children: [
+                  Container(
+                    width: 36,
+                    height: 36,
+                    decoration: BoxDecoration(
+                      color: badge,
+                      shape: BoxShape.circle,
+                    ),
+                    child: Icon(icon, color: onBadge, size: 22),
+                  ),
+                  const SizedBox(width: AppSpace.sm),
+                  Expanded(
+                    child: Text(
+                      title,
+                      style: theme.textTheme.titleLarge?.copyWith(
+                        color: foreground,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              if (answer != null && answer.isNotEmpty) ...[
+                const SizedBox(height: AppSpace.md),
+                Text(
+                  l10n.activityFeedbackCorrectAnswerLabel.toUpperCase(),
+                  style: overlineStyle(context, color: foreground),
+                ),
+                const SizedBox(height: 2),
+                Align(
+                  alignment: AlignmentDirectional.centerStart,
+                  child: Text(
+                    answer,
+                    textDirection: TextDirection.ltr,
+                    style: theme.textTheme.titleMedium?.copyWith(
+                      color: foreground,
+                    ),
+                  ),
+                ),
+              ],
+              if (body != null) ...[
+                const SizedBox(height: AppSpace.sm),
+                Text(
+                  body,
+                  style: theme.textTheme.bodyMedium?.copyWith(
+                    color: foreground,
+                  ),
+                ),
+              ],
+              const SizedBox(height: AppSpace.md),
+              FilledButton(
+                style: FilledButton.styleFrom(
+                  minimumSize: const Size.fromHeight(52),
+                  backgroundColor:
+                      correctness == ActivityCorrectness.notAutoGraded
+                      ? null
+                      : badge,
+                  foregroundColor:
+                      correctness == ActivityCorrectness.notAutoGraded
+                      ? null
+                      : onBadge,
+                ),
+                onPressed: onContinue,
+                child: Text(l10n.activityContinue),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}

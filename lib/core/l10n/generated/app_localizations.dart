@@ -164,24 +164,6 @@ abstract class AppLocalizations {
   /// **'Not quite — the correct answer is: {correctAnswer}'**
   String activityFeedbackIncorrectWithAnswer(String correctAnswer);
 
-  /// Title of the modal bottom sheet shown during live lesson-play when an answer is wrong.
-  ///
-  /// In en, this message translates to:
-  /// **'Not quite'**
-  String get activityIncorrectSheetTitle;
-
-  /// Body text of the incorrect-answer bottom sheet, revealing the correct answer for this activity only.
-  ///
-  /// In en, this message translates to:
-  /// **'The correct answer is: {correctAnswer}'**
-  String activityIncorrectSheetBody(String correctAnswer);
-
-  /// Button on the incorrect-answer bottom sheet that dismisses it and advances to the next activity.
-  ///
-  /// In en, this message translates to:
-  /// **'Continue'**
-  String get activityIncorrectSheetContinue;
-
   /// Feedback shown for writing/speaking activities, which need a task-specific rubric rather than an automatic right/wrong check.
   ///
   /// In en, this message translates to:
@@ -200,17 +182,83 @@ abstract class AppLocalizations {
   /// **'Speaking practice isn\'t available on this device yet — type your answer instead.'**
   String get activitySpeechUnavailableUseWriting;
 
+  /// Button in the lesson player's feedback panel that moves on to the next question.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue'**
+  String get activityContinue;
+
+  /// Title of the lesson player's feedback panel after a wrong answer.
+  ///
+  /// In en, this message translates to:
+  /// **'Not quite'**
+  String get activityFeedbackIncorrectTitle;
+
+  /// Small label above the correct answer in the lesson player's feedback panel after a wrong answer.
+  ///
+  /// In en, this message translates to:
+  /// **'Correct answer'**
+  String get activityFeedbackCorrectAnswerLabel;
+
+  /// Title of the lesson player's feedback panel for an answer that is saved rather than graded right away.
+  ///
+  /// In en, this message translates to:
+  /// **'Answer saved'**
+  String get activityFeedbackSavedTitle;
+
+  /// Title on the audio card of a listening question.
+  ///
+  /// In en, this message translates to:
+  /// **'Listen'**
+  String get activityListenTitle;
+
+  /// Hint under the audio card title of a listening question.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to play again'**
+  String get activityListenHint;
+
+  /// Button on the audio card that replays the audio at a slower speed.
+  ///
+  /// In en, this message translates to:
+  /// **'Slower'**
+  String get activityListenSlower;
+
+  /// Live word count under a writing answer.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 word} other{{count} words}}'**
+  String activityWordCount(int count);
+
+  /// Suggested length shown next to the live word count of a writing answer.
+  ///
+  /// In en, this message translates to:
+  /// **'Aim for {min}–{max}'**
+  String activityWordGuideTarget(int min, int max);
+
+  /// Progress line under a matching question.
+  ///
+  /// In en, this message translates to:
+  /// **'{matched} of {total} matched'**
+  String activityMatchProgress(int matched, int total);
+
+  /// Placeholder in the empty answer area of a build-the-sentence question.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap the words in order'**
+  String get activityOrderEmptyHint;
+
+  /// Placeholder inside a typed-answer field.
+  ///
+  /// In en, this message translates to:
+  /// **'Type your answer'**
+  String get activityAnswerFieldHint;
+
   /// Button on a listening activity's audio card that reveals the hidden transcript text on demand.
   ///
   /// In en, this message translates to:
   /// **'Show transcript'**
   String get activityShowTranscript;
-
-  /// Suggested word count range for a writing activity.
-  ///
-  /// In en, this message translates to:
-  /// **'About {min}-{max} words'**
-  String activityWordGuide(int min, int max);
 
   /// Title shown when the curriculum bundle fails to parse or has an unsupported schema version.
   ///
@@ -500,6 +548,36 @@ abstract class AppLocalizations {
   /// **'Back to unit'**
   String get lessonCompleteBackToUnit;
 
+  /// Accessibility label of the close button at the top of the lesson player.
+  ///
+  /// In en, this message translates to:
+  /// **'Close lesson'**
+  String get lessonPlayerClose;
+
+  /// Lesson phase for first-exposure (encounter) questions.
+  ///
+  /// In en, this message translates to:
+  /// **'Warm-up'**
+  String get lessonPlayerPhaseWarmUp;
+
+  /// Lesson phase for practice questions.
+  ///
+  /// In en, this message translates to:
+  /// **'Practice'**
+  String get lessonPlayerPhasePractice;
+
+  /// Lesson phase for mastery questions, where the learner uses what they learned.
+  ///
+  /// In en, this message translates to:
+  /// **'Use it'**
+  String get lessonPlayerPhaseUseIt;
+
+  /// Line above each question naming its lesson phase and skill, e.g. 'Practice · Reading'.
+  ///
+  /// In en, this message translates to:
+  /// **'{phase} · {skill}'**
+  String lessonPlayerEyebrow(String phase, String skill);
+
   /// Button to advance to the next activity after seeing feedback.
   ///
   /// In en, this message translates to:
@@ -697,6 +775,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Nothing flagged — keep going!'**
   String get reviewNoWeakObjectives;
+
+  /// Caption under the microphone button of a speaking question.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to record'**
+  String get speakTapToRecord;
+
+  /// Reassurance under the record caption: nothing is submitted without review.
+  ///
+  /// In en, this message translates to:
+  /// **'You can check what we heard before you submit.'**
+  String get speakTapToRecordHint;
+
+  /// Caption under the stop button while a speaking answer is being recorded.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to stop'**
+  String get speakTapToStop;
+
+  /// Privacy reassurance under the enable-microphone caption.
+  ///
+  /// In en, this message translates to:
+  /// **'We only listen while you record.'**
+  String get speakEnableMicrophoneHint;
 
   /// Button shown when speech recognition is available but microphone permission hasn't been granted yet.
   ///

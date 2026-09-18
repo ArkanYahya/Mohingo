@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mohingo/content/index/course_content_index.dart';
-import 'package:mohingo/content/models/activity.dart';
 import 'package:mohingo/content/parsing/course_bundle_parser.dart';
 import 'package:mohingo/content/providers/course_content_providers.dart';
 import 'package:mohingo/core/l10n/generated/app_localizations.dart';
@@ -23,6 +22,7 @@ import 'package:mohingo/features/speech/domain/speech_recognition_service.dart';
 import 'package:mohingo/features/speech/providers/speech_providers.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../activity_engine/answer_activity.dart';
 import '../speech/fake_speech_services.dart';
 
 /// Real A1-U0-L1 content, indexed the same way `courseContentProvider('a1')`
@@ -32,75 +32,6 @@ CourseContentIndex _realA1Index() {
   final raw = File('assets/content/en/A1/a1-course-bundle.json')
       .readAsStringSync();
   return CourseContentIndex.build(CourseBundleParser.parse(raw));
-}
-
-/// Answers [activity] with its own real answer key, then taps Check
-/// followed by Next — copied from `lesson_player_e2e_test.dart`'s
-/// `_answerAndAdvance` so this test drives the exact same real interaction
-/// pattern per activity type rather than a simplified guess (a `choice`
-/// activity needs a text tap, a `gap` activity needs a `ChoiceChip` tap, a
-/// `speak` activity needs its typed-answer fallback field, etc. — using a
-/// generic "find any RadioListTile/TextField" helper would not actually
-/// reach the completion screen for this content).
-Future<void> _answerAndAdvance(WidgetTester tester, Activity activity) async {
-  // Some activity views (e.g. SpeakActivityView) do an async capability
-  // check in initState before their real body renders — settle that first.
-  await tester.pumpAndSettle();
-
-  // Choice/Gap/Order/Match submit the instant a complete answer is given —
-  // no separate Check tap. Speak/Write/Form/Dialogue still show one.
-  var needsExplicitCheck = true;
-
-  switch (activity) {
-    case AudioChoiceActivity a:
-      await tester.tap(find.text(a.answer).last);
-      needsExplicitCheck = false;
-    case TextChoiceActivity a:
-      await tester.tap(find.text(a.answer).last);
-      needsExplicitCheck = false;
-    case GapActivity a:
-      await tester.tap(find.widgetWithText(ChoiceChip, a.answer).first);
-      needsExplicitCheck = false;
-    case OrderActivity a:
-      for (final token in a.answer) {
-        await tester.tap(find.text(token).first);
-        await tester.pump();
-      }
-      needsExplicitCheck = false;
-    case MatchActivity a:
-      for (final pair in a.pairs) {
-        await tester.tap(find.text(pair[0]).first);
-        await tester.pump();
-        await tester.tap(find.text(pair[1]).first);
-        await tester.pump();
-      }
-      needsExplicitCheck = false;
-    case SpeakActivity a:
-      await tester.enterText(
-        find.byType(TextField),
-        a.accepted.isNotEmpty ? a.accepted.first : 'an answer',
-      );
-    case WriteActivity a:
-      await tester.enterText(
-        find.byType(TextField),
-        a.accepted.isNotEmpty ? a.accepted.first : 'an answer',
-      );
-    case FormActivity a:
-      final fields = find.byType(TextField);
-      for (var i = 0; i < a.fields.length; i++) {
-        await tester.enterText(fields.at(i), 'an answer');
-      }
-    case DialogueActivity _:
-      break; // no input required
-  }
-  await tester.pump();
-
-  if (needsExplicitCheck) {
-    await tester.tap(find.byType(FilledButton)); // Check
-    await tester.pump();
-  }
-  await tester.tap(find.byType(FilledButton)); // Next (or finish)
-  await tester.pump();
 }
 
 void main() {
@@ -150,7 +81,7 @@ void main() {
     await tester.pumpAndSettle();
 
     for (final activity in lesson.activities) {
-      await _answerAndAdvance(tester, activity);
+      await answerCheckAndAdvance(tester, activity);
     }
     await tester.pumpAndSettle();
 
@@ -251,7 +182,7 @@ void main() {
         ),
       );
       await tester.pumpAndSettle();
-      await _answerAndAdvance(tester, lesson.activities.first);
+      await answerCheckAndAdvance(tester, lesson.activities.first);
       await tester.pumpAndSettle();
       expect(find.byIcon(Icons.celebration), findsNothing);
 

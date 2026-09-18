@@ -20,17 +20,11 @@ class DialogueActivityView extends StatefulWidget {
   const DialogueActivityView({
     required this.activity,
     required this.onSubmitted,
-    this.suppressIncorrectBanner = false,
     super.key,
   });
 
   final DialogueActivity activity;
   final OnActivitySubmitted onSubmitted;
-
-  /// Unused here — a `dialogue` activity is always `notAutoGraded`, never
-  /// `incorrect` — but accepted for the uniform interface every activity
-  /// view shares. See [ActivitySubmitOrFeedback.suppressIncorrectBanner].
-  final bool suppressIncorrectBanner;
 
   @override
   State<DialogueActivityView> createState() => _DialogueActivityViewState();
@@ -62,7 +56,6 @@ class _DialogueActivityViewState extends State<DialogueActivityView> {
         submission: _submission,
         canSubmit: true,
         onSubmit: _submit,
-        suppressIncorrectBanner: widget.suppressIncorrectBanner,
       ),
     );
   }

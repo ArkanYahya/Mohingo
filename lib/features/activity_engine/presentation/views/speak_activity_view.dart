@@ -7,6 +7,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../content/models/activity.dart';
 import '../../../../content/models/evaluation_spec.dart';
 import '../../../../core/l10n/generated/app_localizations.dart';
+import '../../../../core/theme/app_tokens.dart';
 import '../../../../data/local/database.dart' show ActivityAttempt;
 import '../../../speech/domain/speech_capability_service.dart';
 import '../../../speech/domain/speech_recognition_service.dart';
@@ -19,6 +20,7 @@ import '../../domain/sound_effects_service.dart';
 import '../../providers/online_refinement_providers.dart';
 import '../../providers/sound_effects_providers.dart';
 import '../activity_chrome.dart';
+import '../widgets/activity_text_field.dart';
 
 enum _SpeakMode {
   checkingCapability,
@@ -40,10 +42,14 @@ enum _SpeakMode {
 /// docs/DATA_MODEL.md.
 ///
 /// The microphone is never touched until the learner deliberately taps
-/// "Record" — capability/permission are only *checked*, never requested, on
-/// mount. A temporary transcript is always shown for review before
-/// submission; nothing is auto-submitted, and no raw audio is ever
+/// the record button — capability/permission are only *checked*, never
+/// requested, on mount. A temporary transcript is always shown for review
+/// before submission; nothing is auto-submitted, and no raw audio is ever
 /// retained. See docs/SECURITY.md.
+///
+/// Check lives in the shared [ActivitySubmitOrFeedback] slot like every
+/// other activity type; it enables once there's a transcript to review or
+/// a typed answer.
 class SpeakActivityView extends ConsumerStatefulWidget {
   const SpeakActivityView({
     required this.activity,
@@ -51,7 +57,6 @@ class SpeakActivityView extends ConsumerStatefulWidget {
     required this.onSubmitted,
     this.evaluationContext = const EvaluationContext.empty(),
     this.reviewAttempt,
-    this.suppressIncorrectBanner = false,
     super.key,
   });
 
@@ -66,13 +71,6 @@ class SpeakActivityView extends ConsumerStatefulWidget {
   /// are trusted verbatim, never recomputed. See docs/superpowers/specs/
   /// 2026-09-09-lesson-answer-review-design.md.
   final ActivityAttempt? reviewAttempt;
-
-  /// True only when rendered by the live lesson player — see
-  /// [ActivitySubmitOrFeedback.suppressIncorrectBanner]. This view renders
-  /// [ActivityFeedbackBanner] directly (no submit button of its own to
-  /// share via [ActivitySubmitOrFeedback]), so the same suppression is
-  /// applied manually in [build].
-  final bool suppressIncorrectBanner;
 
   @override
   ConsumerState<SpeakActivityView> createState() => _SpeakActivityViewState();
@@ -331,6 +329,8 @@ class _SpeakActivityViewState extends ConsumerState<SpeakActivityView> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    final tokens = theme.extension<AppTokens>()!;
     final submission = _submission;
     final displaySubmission =
         (submission != null && submission.pendingOnlineRefinement)
@@ -356,96 +356,101 @@ class _SpeakActivityViewState extends ConsumerState<SpeakActivityView> {
                       SpeechPermissionStatus.permanentlyDenied
                   ? l10n.speakPermissionPermanentlyDenied
                   : l10n.activitySpeechUnavailableUseWriting,
-              style: Theme.of(context).textTheme.labelSmall,
+              style: theme.textTheme.bodyMedium?.copyWith(
+                color: tokens.textSecondary,
+              ),
             )
           : null,
       body: _buildBody(context, l10n),
-      feedback: _buildFeedback(displaySubmission),
+      feedback: ActivitySubmitOrFeedback(
+        submission: displaySubmission,
+        canSubmit: _canSubmit,
+        onSubmit: _submitCurrent,
+        correctAnswerLabel: _correctAnswerLabel(),
+        secondaryAction: _secondaryAction(l10n),
+      ),
     );
   }
 
-  /// Mirrors [ActivitySubmitOrFeedback.suppressIncorrectBanner]'s logic —
-  /// this view has no submit button to share that widget with, so the same
-  /// suppression is applied here by hand.
-  Widget? _buildFeedback(ActivitySubmission? displaySubmission) {
-    if (displaySubmission == null) return null;
-    final isLiveIncorrect =
-        widget.suppressIncorrectBanner &&
-        !displaySubmission.pendingOnlineRefinement &&
-        displaySubmission.correctness == ActivityCorrectness.incorrect;
-    if (isLiveIncorrect) return null;
-    return ActivityFeedbackBanner(
-      submission: displaySubmission,
-      correctAnswerLabel: _correctAnswerLabel(),
-    );
+  bool get _canSubmit => switch (_mode) {
+    _SpeakMode.reviewTranscript => _liveTranscript.trim().isNotEmpty,
+    _SpeakMode.typedFallback => _typedController.text.trim().isNotEmpty,
+    _ => false,
+  };
+
+  void _submitCurrent() {
+    switch (_mode) {
+      case _SpeakMode.reviewTranscript:
+        _submitTranscript();
+      case _SpeakMode.typedFallback:
+        _submitTyped();
+      default:
+        break;
+    }
   }
+
+  Widget? _secondaryAction(AppLocalizations l10n) => switch (_mode) {
+    _SpeakMode.requestingPermission ||
+    _SpeakMode.recordAvailable => TextButton.icon(
+      icon: const Icon(Icons.keyboard_rounded),
+      label: Text(l10n.speakUseTypedAnswerInstead),
+      onPressed: () => setState(() => _mode = _SpeakMode.typedFallback),
+    ),
+    _SpeakMode.reviewTranscript => TextButton.icon(
+      icon: const Icon(Icons.replay_rounded),
+      label: Text(l10n.speakRerecord),
+      onPressed: () => setState(() => _mode = _SpeakMode.recordAvailable),
+    ),
+    _ => null,
+  };
 
   Widget _buildBody(BuildContext context, AppLocalizations l10n) {
+    final theme = Theme.of(context);
+    final tokens = theme.extension<AppTokens>()!;
+    final colorScheme = theme.colorScheme;
+
     switch (_mode) {
       case _SpeakMode.checkingCapability:
-        return const Center(child: CircularProgressIndicator());
+        return const SizedBox(
+          height: 160,
+          child: Center(child: CircularProgressIndicator()),
+        );
 
       case _SpeakMode.requestingPermission:
-        return Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            FilledButton.icon(
-              icon: const Icon(Icons.mic),
-              onPressed: _requestPermission,
-              label: Text(l10n.speakEnableMicrophone),
-            ),
-            const SizedBox(height: 8),
-            TextButton(
-              onPressed: () => setState(() => _mode = _SpeakMode.typedFallback),
-              child: Text(l10n.speakUseTypedAnswerInstead),
-            ),
-          ],
+        return _MicCard(
+          button: _RoundMicButton(
+            icon: Icons.mic_rounded,
+            tooltip: l10n.speakEnableMicrophone,
+            onTap: _requestPermission,
+          ),
+          title: l10n.speakEnableMicrophone,
+          subtitle: l10n.speakEnableMicrophoneHint,
         );
 
       case _SpeakMode.recordAvailable:
-        return Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            FilledButton.icon(
-              icon: const Icon(Icons.mic),
-              onPressed: _startRecording,
-              label: Text(l10n.speakStartRecording),
-            ),
-            const SizedBox(height: 8),
-            TextButton(
-              onPressed: () => setState(() => _mode = _SpeakMode.typedFallback),
-              child: Text(l10n.speakUseTypedAnswerInstead),
-            ),
-          ],
+        return _MicCard(
+          button: _RoundMicButton(
+            icon: Icons.mic_rounded,
+            tooltip: l10n.speakStartRecording,
+            onTap: _startRecording,
+          ),
+          title: l10n.speakTapToRecord,
+          subtitle: l10n.speakTapToRecordHint,
         );
 
       case _SpeakMode.recording:
-        return Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Icon(Icons.mic, color: Colors.red),
-                const SizedBox(width: 8),
-                Text(l10n.speakListening),
-              ],
-            ),
-            if (_liveTranscript.isNotEmpty)
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 8),
-                child: Text(
-                  _liveTranscript,
-                  textDirection: TextDirection.ltr,
-                  textAlign: TextAlign.center,
-                ),
-              ),
-            const SizedBox(height: 8),
-            OutlinedButton(
-              onPressed: _stopRecording,
-              child: Text(l10n.speakStopRecording),
-            ),
-          ],
+        return _MicCard(
+          button: _RoundMicButton(
+            icon: Icons.stop_rounded,
+            tooltip: l10n.speakStopRecording,
+            onTap: _stopRecording,
+            color: colorScheme.error,
+            onColor: colorScheme.onError,
+            halo: colorScheme.errorContainer,
+          ),
+          title: l10n.speakListening,
+          subtitle: _liveTranscript.isEmpty ? l10n.speakTapToStop : null,
+          transcript: _liveTranscript.isEmpty ? null : _liveTranscript,
         );
 
       case _SpeakMode.reviewTranscript:
@@ -458,54 +463,172 @@ class _SpeakActivityViewState extends ConsumerState<SpeakActivityView> {
             // "before submitting" would be misleading (doubly so for a
             // typed-fallback attempt, where nothing was ever heard at all).
             if (_submission == null) ...[
-              Text(l10n.speakReviewTranscript),
-              const SizedBox(height: 4),
+              Text(
+                l10n.speakReviewTranscript,
+                style: theme.textTheme.bodyMedium?.copyWith(
+                  color: tokens.textSecondary,
+                ),
+              ),
+              const SizedBox(height: AppSpace.xs),
             ],
-            Container(
-              padding: const EdgeInsets.all(12),
+            DecoratedBox(
               decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.surfaceContainer,
-                borderRadius: BorderRadius.circular(12),
+                color: tokens.card,
+                borderRadius: BorderRadius.circular(AppRadius.card),
+                border: Border.all(color: tokens.border),
               ),
-              child: Text(_liveTranscript, textDirection: TextDirection.ltr),
+              child: Padding(
+                padding: const EdgeInsets.all(AppSpace.md),
+                child: Text(
+                  _liveTranscript,
+                  textDirection: TextDirection.ltr,
+                  style: theme.textTheme.bodyLarge?.copyWith(
+                    color: tokens.textPrimary,
+                  ),
+                ),
+              ),
             ),
-            const SizedBox(height: 8),
-            if (_submission == null) ...[
-              FilledButton(
-                onPressed: _submitTranscript,
-                child: Text(AppLocalizations.of(context)!.activitySubmitButton),
-              ),
-              const SizedBox(height: 4),
-              TextButton(
-                onPressed: () =>
-                    setState(() => _mode = _SpeakMode.recordAvailable),
-                child: Text(l10n.speakRerecord),
-              ),
-            ],
           ],
         );
 
       case _SpeakMode.typedFallback:
-        return Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            TextField(
-              controller: _typedController,
-              enabled: _submission == null,
-              maxLines: 2,
-              decoration: const InputDecoration(border: OutlineInputBorder()),
-              onChanged: (_) => setState(() {}),
-            ),
-            const SizedBox(height: 8),
-            if (_submission == null)
-              FilledButton(
-                onPressed: _typedController.text.trim().isEmpty
-                    ? null
-                    : _submitTyped,
-                child: Text(l10n.activitySubmitButton),
-              ),
-          ],
+        return TextField(
+          controller: _typedController,
+          enabled: _submission == null,
+          minLines: 2,
+          maxLines: 4,
+          decoration: activityInputDecoration(context),
+          onChanged: (_) => setState(() {}),
         );
     }
+  }
+}
+
+/// The speaking question's centrepiece: one large round button, a caption
+/// and a quieter line under it, on a card.
+class _MicCard extends StatelessWidget {
+  const _MicCard({
+    required this.button,
+    required this.title,
+    this.subtitle,
+    this.transcript,
+  });
+
+  final Widget button;
+  final String title;
+  final String? subtitle;
+
+  /// What's been heard so far, while recording.
+  final String? transcript;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final tokens = theme.extension<AppTokens>()!;
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        color: tokens.card,
+        borderRadius: BorderRadius.circular(AppRadius.card),
+        border: Border.all(color: tokens.border),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(
+          AppSpace.md,
+          AppSpace.lg,
+          AppSpace.md,
+          AppSpace.md + AppSpace.xxs,
+        ),
+        child: Column(
+          children: [
+            button,
+            const SizedBox(height: AppSpace.md),
+            Text(
+              title,
+              textAlign: TextAlign.center,
+              style: theme.textTheme.titleSmall?.copyWith(
+                color: tokens.textPrimary,
+              ),
+            ),
+            if (subtitle != null) ...[
+              const SizedBox(height: AppSpace.xxs),
+              Text(
+                subtitle!,
+                textAlign: TextAlign.center,
+                style: theme.textTheme.bodySmall?.copyWith(
+                  color: tokens.textSecondary,
+                ),
+              ),
+            ],
+            if (transcript != null) ...[
+              const SizedBox(height: AppSpace.xs),
+              Text(
+                transcript!,
+                textDirection: TextDirection.ltr,
+                textAlign: TextAlign.center,
+                style: theme.textTheme.bodyLarge?.copyWith(
+                  color: tokens.textPrimary,
+                ),
+              ),
+            ],
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/// An 80dp round button with a soft halo — record, stop, or enable the
+/// microphone. [tooltip] is also its accessibility label.
+class _RoundMicButton extends StatelessWidget {
+  const _RoundMicButton({
+    required this.icon,
+    required this.tooltip,
+    required this.onTap,
+    this.color,
+    this.onColor,
+    this.halo,
+  });
+
+  final IconData icon;
+  final String tooltip;
+  final VoidCallback onTap;
+  final Color? color;
+  final Color? onColor;
+  final Color? halo;
+
+  @override
+  Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppTokens>()!;
+    return Tooltip(
+      message: tooltip,
+      child: Semantics(
+        button: true,
+        child: DecoratedBox(
+          decoration: BoxDecoration(
+            color: halo ?? tokens.primaryInkTint,
+            shape: BoxShape.circle,
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(10),
+            child: Material(
+              color: color ?? tokens.primaryInk,
+              shape: const CircleBorder(),
+              clipBehavior: Clip.antiAlias,
+              child: InkWell(
+                onTap: onTap,
+                child: SizedBox.square(
+                  dimension: 80,
+                  child: Icon(
+                    icon,
+                    size: 36,
+                    color: onColor ?? tokens.onPrimaryInk,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }

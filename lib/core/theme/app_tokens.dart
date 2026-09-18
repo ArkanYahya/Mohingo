@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 /// The app's semantic neutral tokens — the page, card, text and border
-/// colours every screen is built from, plus [primaryInk] for accent text.
+/// colours every screen is built from, plus [primaryInk] for accent text
+/// and the two colours derived from it ([onPrimaryInk], [primaryInkTint]).
 ///
 /// Deliberately *not* derived from the colour-theme seed: picking a colour
 /// theme in Settings changes the accent, never the greys. `ColorScheme`'s
@@ -19,6 +20,8 @@ class AppTokens extends ThemeExtension<AppTokens> {
     required this.textPrimary,
     required this.textSecondary,
     required this.primaryInk,
+    required this.onPrimaryInk,
+    required this.primaryInkTint,
   });
 
   /// Screen background.
@@ -45,6 +48,18 @@ class AppTokens extends ThemeExtension<AppTokens> {
   /// is for buttons; this is for everything drawn *on* a neutral surface.
   final Color primaryInk;
 
+  /// Text and icons on a solid [primaryInk] fill — filled buttons, the
+  /// lesson player's play and microphone buttons. 4.5:1 on [primaryInk].
+  final Color onPrimaryInk;
+
+  /// The selected-state fill: a quiet wash of [primaryInk] over [card]
+  /// (a chosen answer, a paired tile, the navigation indicator). Text in
+  /// [textPrimary] stays at 4.5:1 on it.
+  final Color primaryInkTint;
+
+  static Color _tint(Color ink, Color card, double alpha) =>
+      Color.alphaBlend(ink.withValues(alpha: alpha), card);
+
   static const _lightNeutrals = (
     page: Color(0xFFF5F3F0),
     card: Color(0xFFFFFFFF),
@@ -63,7 +78,10 @@ class AppTokens extends ThemeExtension<AppTokens> {
     textSecondary: Color(0xFFABA49C),
   );
 
-  factory AppTokens.light({required Color primaryInk}) => AppTokens(
+  factory AppTokens.light({
+    required Color primaryInk,
+    Color onPrimaryInk = const Color(0xFFFFFFFF),
+  }) => AppTokens(
     page: _lightNeutrals.page,
     card: _lightNeutrals.card,
     cardMuted: _lightNeutrals.cardMuted,
@@ -71,9 +89,14 @@ class AppTokens extends ThemeExtension<AppTokens> {
     textPrimary: _lightNeutrals.textPrimary,
     textSecondary: _lightNeutrals.textSecondary,
     primaryInk: primaryInk,
+    onPrimaryInk: onPrimaryInk,
+    primaryInkTint: _tint(primaryInk, _lightNeutrals.card, 0.12),
   );
 
-  factory AppTokens.dark({required Color primaryInk}) => AppTokens(
+  factory AppTokens.dark({
+    required Color primaryInk,
+    required Color onPrimaryInk,
+  }) => AppTokens(
     page: _darkNeutrals.page,
     card: _darkNeutrals.card,
     cardMuted: _darkNeutrals.cardMuted,
@@ -81,6 +104,8 @@ class AppTokens extends ThemeExtension<AppTokens> {
     textPrimary: _darkNeutrals.textPrimary,
     textSecondary: _darkNeutrals.textSecondary,
     primaryInk: primaryInk,
+    onPrimaryInk: onPrimaryInk,
+    primaryInkTint: _tint(primaryInk, _darkNeutrals.card, 0.2),
   );
 
   @override
@@ -92,6 +117,8 @@ class AppTokens extends ThemeExtension<AppTokens> {
     Color? textPrimary,
     Color? textSecondary,
     Color? primaryInk,
+    Color? onPrimaryInk,
+    Color? primaryInkTint,
   }) {
     return AppTokens(
       page: page ?? this.page,
@@ -101,6 +128,8 @@ class AppTokens extends ThemeExtension<AppTokens> {
       textPrimary: textPrimary ?? this.textPrimary,
       textSecondary: textSecondary ?? this.textSecondary,
       primaryInk: primaryInk ?? this.primaryInk,
+      onPrimaryInk: onPrimaryInk ?? this.onPrimaryInk,
+      primaryInkTint: primaryInkTint ?? this.primaryInkTint,
     );
   }
 
@@ -115,6 +144,8 @@ class AppTokens extends ThemeExtension<AppTokens> {
       textPrimary: Color.lerp(textPrimary, other.textPrimary, t)!,
       textSecondary: Color.lerp(textSecondary, other.textSecondary, t)!,
       primaryInk: Color.lerp(primaryInk, other.primaryInk, t)!,
+      onPrimaryInk: Color.lerp(onPrimaryInk, other.onPrimaryInk, t)!,
+      primaryInkTint: Color.lerp(primaryInkTint, other.primaryInkTint, t)!,
     );
   }
 }

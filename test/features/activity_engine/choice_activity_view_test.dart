@@ -55,9 +55,9 @@ void main() {
     expect(find.text("Hi, I'm Omar."), findsNothing);
   });
 
-  testWidgets('the correct option fills with the semantic success colour, not '
-      "colorScheme.primary — 'correct' must read as green regardless of "
-      "the learner's chosen theme", (tester) async {
+  testWidgets('after Check, the correct option fills with the semantic '
+      "success colour, not colorScheme.primary — 'correct' must read as "
+      "green regardless of the learner's chosen theme", (tester) async {
     await tester.pumpActivityView(
       ChoiceActivityView.audioChoice(
         activity: _audioChoice(),
@@ -66,6 +66,8 @@ void main() {
     );
 
     await tester.tap(find.text('Omar'));
+    await tester.pump();
+    await tester.tap(find.byType(FilledButton));
     await tester.pump();
 
     final context = tester.element(find.text('Omar'));
@@ -77,7 +79,11 @@ void main() {
           find.ancestor(of: find.text('Omar'), matching: find.byType(Material)),
         )
         .first;
-    expect(material.color, feedbackTheme.success);
+    expect(material.color, feedbackTheme.successContainer);
+    expect(
+      (material.shape! as RoundedRectangleBorder).side.color,
+      feedbackTheme.success,
+    );
     expect(material.color, isNot(equals(colorScheme.primary)));
   });
 
@@ -281,8 +287,8 @@ void main() {
   });
 
   testWidgets(
-    'selecting the correct option submits immediately — no separate Check '
-    'tap needed — and reveals the answer only once submitted',
+    'tapping an option only selects it — nothing is graded or revealed '
+    'until Check, so a mis-tap can be changed',
     (tester) async {
       ActivitySubmission? reported;
       await tester.pumpActivityView(
@@ -292,24 +298,63 @@ void main() {
         ),
       );
 
-      // Before selection: no feedback banner, no "Correct!" text anywhere.
-      expect(find.text('Correct!'), findsNothing);
-
+      await tester.tap(find.text('Maya'));
+      await tester.pump();
       await tester.tap(find.text('Omar'));
       await tester.pump();
 
-      expect(reported?.correctness, ActivityCorrectness.correct);
-      expect(reported?.score, 1.0);
-      expect(find.text('Correct!'), findsOneWidget);
+      expect(reported, isNull);
+      expect(find.text('Correct!'), findsNothing);
+      expect(find.byIcon(Icons.check_circle_rounded), findsNothing);
       expect(
-        find.byType(FilledButton),
-        findsNothing,
-        reason:
-            'the Check button never appears — a single-tap selection is '
-            'a complete answer on its own',
+        tester.widget<FilledButton>(find.byType(FilledButton)).onPressed,
+        isNotNull,
       );
     },
   );
+
+  testWidgets('Check submits the selected option and only then reveals the '
+      'result', (tester) async {
+    ActivitySubmission? reported;
+    await tester.pumpActivityView(
+      ChoiceActivityView.audioChoice(
+        activity: _audioChoice(),
+        onSubmitted: (s) => reported = s,
+      ),
+    );
+
+    await tester.tap(find.text('Omar'));
+    await tester.pump();
+    await tester.tap(find.byType(FilledButton));
+    await tester.pump();
+
+    expect(reported?.correctness, ActivityCorrectness.correct);
+    expect(reported?.score, 1.0);
+    expect(find.text('Correct!'), findsOneWidget);
+    expect(find.byType(FilledButton), findsNothing);
+  });
+
+  testWidgets('"Slower" replays the audio at a slower speaking rate', (
+    tester,
+  ) async {
+    final fakeTts = FakeTextToSpeechService();
+    await tester.pumpActivityView(
+      ChoiceActivityView.audioChoice(
+        activity: _audioChoice(),
+        onSubmitted: (_) {},
+      ),
+      textToSpeechService: fakeTts,
+    );
+    final l10n = AppLocalizations.of(tester.element(find.byType(Scaffold)))!;
+    // Let the auto-play finish — both buttons are disabled while playing.
+    await tester.pump();
+
+    await tester.tap(find.text(l10n.activityListenSlower));
+    await tester.pump();
+
+    expect(fakeTts.spoken, ["Hi, I'm Omar.", "Hi, I'm Omar."]);
+    expect(fakeTts.rates[1]!, lessThan(fakeTts.rates[0]!));
+  });
 
   testWidgets('plays the correct sound when submitting the right answer', (
     tester,
@@ -324,6 +369,8 @@ void main() {
     );
 
     await tester.tap(find.text('Omar'));
+    await tester.pump();
+    await tester.tap(find.byType(FilledButton));
     await tester.pump();
 
     expect(fakeSound.played, [ActivityFeedbackSound.correct]);
@@ -342,6 +389,8 @@ void main() {
     );
 
     await tester.tap(find.text('Maya'));
+    await tester.pump();
+    await tester.tap(find.byType(FilledButton));
     await tester.pump();
 
     expect(fakeSound.played, [ActivityFeedbackSound.incorrect]);
@@ -377,8 +426,8 @@ void main() {
     expect(fakeSound.played, isEmpty);
   });
 
-  testWidgets('selecting the wrong option submits immediately and reveals the '
-      'correct answer for this activity', (tester) async {
+  testWidgets('checking the wrong option reveals the correct answer for this '
+      'activity', (tester) async {
     ActivitySubmission? reported;
     await tester.pumpActivityView(
       ChoiceActivityView.audioChoice(
@@ -388,6 +437,8 @@ void main() {
     );
 
     await tester.tap(find.text('Maya'));
+    await tester.pump();
+    await tester.tap(find.byType(FilledButton));
     await tester.pump();
 
     expect(reported?.correctness, ActivityCorrectness.incorrect);

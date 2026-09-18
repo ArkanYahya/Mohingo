@@ -53,7 +53,9 @@ WriteActivity _closedFormWrite() {
 }
 
 void main() {
-  testWidgets('shows the word-count guide when declared', (tester) async {
+  testWidgets("counts words live against the question's word guide", (
+    tester,
+  ) async {
     await tester.pumpActivityView(
       WriteActivityView(
         activity: _openEndedWrite(),
@@ -61,8 +63,31 @@ void main() {
         onSubmitted: (_) {},
       ),
     );
-    expect(find.textContaining('25'), findsOneWidget);
-    expect(find.textContaining('45'), findsOneWidget);
+    final l10n = AppLocalizations.of(tester.element(find.byType(Scaffold)))!;
+
+    expect(find.text(l10n.activityWordCount(0)), findsOneWidget);
+    expect(find.text(l10n.activityWordGuideTarget(25, 45)), findsOneWidget);
+
+    await tester.enterText(
+      find.byType(TextField),
+      '  This is my  sister,\nNoor. ',
+    );
+    await tester.pump();
+
+    expect(find.text(l10n.activityWordCount(5)), findsOneWidget);
+  });
+
+  testWidgets('a write with no word guide shows no counter', (tester) async {
+    await tester.pumpActivityView(
+      WriteActivityView(
+        activity: _closedFormWrite(),
+        learnerId: 1,
+        onSubmitted: (_) {},
+      ),
+    );
+    final l10n = AppLocalizations.of(tester.element(find.byType(Scaffold)))!;
+
+    expect(find.text(l10n.activityWordCount(0)), findsNothing);
   });
 
   testWidgets('an open-ended write (no accepted list) is notAutoGraded', (

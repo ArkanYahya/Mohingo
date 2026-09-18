@@ -47,17 +47,6 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get activityIncorrectSheetTitle => 'ليست صحيحة';
-
-  @override
-  String activityIncorrectSheetBody(String correctAnswer) {
-    return 'الإجابة الصحيحة هي: $correctAnswer';
-  }
-
-  @override
-  String get activityIncorrectSheetContinue => 'متابعة';
-
-  @override
   String get activityFeedbackSavedForReview =>
       'تم الحفظ — سيُراجَع لاحقاً ولن يُصحَّح تلقائياً.';
 
@@ -70,12 +59,59 @@ class AppLocalizationsAr extends AppLocalizations {
       'التحدث غير متاح على هذا الجهاز حالياً — اكتب إجابتك بدلاً من ذلك.';
 
   @override
-  String get activityShowTranscript => 'عرض النص';
+  String get activityContinue => 'متابعة';
 
   @override
-  String activityWordGuide(int min, int max) {
-    return 'من $min إلى $max كلمة تقريباً';
+  String get activityFeedbackIncorrectTitle => 'ليست صحيحة';
+
+  @override
+  String get activityFeedbackCorrectAnswerLabel => 'الإجابة الصحيحة';
+
+  @override
+  String get activityFeedbackSavedTitle => 'حُفظت إجابتك';
+
+  @override
+  String get activityListenTitle => 'استمع';
+
+  @override
+  String get activityListenHint => 'اضغط للاستماع مرة أخرى';
+
+  @override
+  String get activityListenSlower => 'أبطأ';
+
+  @override
+  String activityWordCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count كلمة',
+      many: '$count كلمة',
+      few: '$count كلمات',
+      two: 'كلمتان',
+      one: 'كلمة واحدة',
+      zero: 'لا كلمات',
+    );
+    return '$_temp0';
   }
+
+  @override
+  String activityWordGuideTarget(int min, int max) {
+    return 'المطلوب: $min–$max كلمة';
+  }
+
+  @override
+  String activityMatchProgress(int matched, int total) {
+    return 'تمت مطابقة $matched من $total';
+  }
+
+  @override
+  String get activityOrderEmptyHint => 'اضغط على الكلمات بالترتيب';
+
+  @override
+  String get activityAnswerFieldHint => 'اكتب إجابتك';
+
+  @override
+  String get activityShowTranscript => 'عرض النص';
 
   @override
   String get contentErrorTitle => 'تعذّر تحميل الدروس';
@@ -294,6 +330,23 @@ class AppLocalizationsAr extends AppLocalizations {
   String get lessonCompleteBackToUnit => 'العودة إلى الوحدة';
 
   @override
+  String get lessonPlayerClose => 'إغلاق الدرس';
+
+  @override
+  String get lessonPlayerPhaseWarmUp => 'إحماء';
+
+  @override
+  String get lessonPlayerPhasePractice => 'تدريب';
+
+  @override
+  String get lessonPlayerPhaseUseIt => 'تطبيق';
+
+  @override
+  String lessonPlayerEyebrow(String phase, String skill) {
+    return '$phase · $skill';
+  }
+
+  @override
   String get lessonPlayerNext => 'التالي';
 
   @override
@@ -397,6 +450,18 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get reviewNoWeakObjectives =>
       'لا يوجد شيء بحاجة لانتباه — واصل التقدم!';
+
+  @override
+  String get speakTapToRecord => 'اضغط للتسجيل';
+
+  @override
+  String get speakTapToRecordHint => 'ستتمكن من مراجعة ما سمعناه قبل الإرسال.';
+
+  @override
+  String get speakTapToStop => 'اضغط للإيقاف';
+
+  @override
+  String get speakEnableMicrophoneHint => 'لا نستمع إليك إلا أثناء التسجيل.';
 
   @override
   String get speakEnableMicrophone => 'تفعيل الميكروفون';

@@ -47,17 +47,6 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get activityIncorrectSheetTitle => 'Not quite';
-
-  @override
-  String activityIncorrectSheetBody(String correctAnswer) {
-    return 'The correct answer is: $correctAnswer';
-  }
-
-  @override
-  String get activityIncorrectSheetContinue => 'Continue';
-
-  @override
   String get activityFeedbackSavedForReview =>
       'Saved — this will be reviewed, not auto-graded.';
 
@@ -70,12 +59,55 @@ class AppLocalizationsEn extends AppLocalizations {
       'Speaking practice isn\'t available on this device yet — type your answer instead.';
 
   @override
-  String get activityShowTranscript => 'Show transcript';
+  String get activityContinue => 'Continue';
 
   @override
-  String activityWordGuide(int min, int max) {
-    return 'About $min-$max words';
+  String get activityFeedbackIncorrectTitle => 'Not quite';
+
+  @override
+  String get activityFeedbackCorrectAnswerLabel => 'Correct answer';
+
+  @override
+  String get activityFeedbackSavedTitle => 'Answer saved';
+
+  @override
+  String get activityListenTitle => 'Listen';
+
+  @override
+  String get activityListenHint => 'Tap to play again';
+
+  @override
+  String get activityListenSlower => 'Slower';
+
+  @override
+  String activityWordCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count words',
+      one: '1 word',
+    );
+    return '$_temp0';
   }
+
+  @override
+  String activityWordGuideTarget(int min, int max) {
+    return 'Aim for $min–$max';
+  }
+
+  @override
+  String activityMatchProgress(int matched, int total) {
+    return '$matched of $total matched';
+  }
+
+  @override
+  String get activityOrderEmptyHint => 'Tap the words in order';
+
+  @override
+  String get activityAnswerFieldHint => 'Type your answer';
+
+  @override
+  String get activityShowTranscript => 'Show transcript';
 
   @override
   String get contentErrorTitle => 'Couldn\'t load your lessons';
@@ -281,6 +313,23 @@ class AppLocalizationsEn extends AppLocalizations {
   String get lessonCompleteBackToUnit => 'Back to unit';
 
   @override
+  String get lessonPlayerClose => 'Close lesson';
+
+  @override
+  String get lessonPlayerPhaseWarmUp => 'Warm-up';
+
+  @override
+  String get lessonPlayerPhasePractice => 'Practice';
+
+  @override
+  String get lessonPlayerPhaseUseIt => 'Use it';
+
+  @override
+  String lessonPlayerEyebrow(String phase, String skill) {
+    return '$phase · $skill';
+  }
+
+  @override
   String get lessonPlayerNext => 'Next';
 
   @override
@@ -383,6 +432,19 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get reviewNoWeakObjectives => 'Nothing flagged — keep going!';
+
+  @override
+  String get speakTapToRecord => 'Tap to record';
+
+  @override
+  String get speakTapToRecordHint =>
+      'You can check what we heard before you submit.';
+
+  @override
+  String get speakTapToStop => 'Tap to stop';
+
+  @override
+  String get speakEnableMicrophoneHint => 'We only listen while you record.';
 
   @override
   String get speakEnableMicrophone => 'Enable microphone';

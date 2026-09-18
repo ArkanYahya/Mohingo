@@ -122,6 +122,78 @@ void main() {
         );
       }
     });
+
+    test('onPrimaryInk — text and icons drawn on a solid primaryInk fill '
+        '(play/mic buttons, filled buttons) — meets 4.5:1 on it for every '
+        'seed and mode, and is what FilledButton paints', () {
+      for (final entry in _themes.entries) {
+        final t = entry.value.extension<AppTokens>()!;
+        expect(
+          _contrast(t.onPrimaryInk, t.primaryInk),
+          greaterThanOrEqualTo(4.5),
+          reason: entry.key,
+        );
+        expect(
+          entry.value.filledButtonTheme.style!.foregroundColor!.resolve({}),
+          t.onPrimaryInk,
+          reason: entry.key,
+        );
+      }
+    });
+
+    test('text buttons, outlined buttons, the text cursor and progress '
+        'indicators draw in primaryInk — Material defaults them to '
+        "colorScheme.primary, and calmTeal's vivid cyan fails contrast as "
+        'text or a thin line on the page', () {
+      for (final entry in _themes.entries) {
+        final theme = entry.value;
+        final t = theme.extension<AppTokens>()!;
+        expect(
+          theme.textButtonTheme.style!.foregroundColor!.resolve({}),
+          t.primaryInk,
+          reason: entry.key,
+        );
+        expect(
+          theme.outlinedButtonTheme.style!.foregroundColor!.resolve({}),
+          t.primaryInk,
+          reason: entry.key,
+        );
+        expect(
+          theme.textSelectionTheme.cursorColor,
+          t.primaryInk,
+          reason: entry.key,
+        );
+        expect(
+          theme.progressIndicatorTheme.color,
+          t.primaryInk,
+          reason: entry.key,
+        );
+      }
+    });
+
+    test('primaryInkTint — the selected-state fill — is a quiet wash of '
+        'primaryInk over a card that textPrimary still reads on at 4.5:1, '
+        'and is the navigation bar indicator too', () {
+      for (final entry in _themes.entries) {
+        final t = entry.value.extension<AppTokens>()!;
+        expect(t.primaryInkTint, isNot(t.card), reason: entry.key);
+        expect(
+          _contrast(t.textPrimary, t.primaryInkTint),
+          greaterThanOrEqualTo(4.5),
+          reason: entry.key,
+        );
+        expect(
+          _contrast(t.primaryInk, t.primaryInkTint),
+          greaterThanOrEqualTo(3),
+          reason: '${entry.key}: a selected border must still show',
+        );
+        expect(
+          entry.value.navigationBarTheme.indicatorColor,
+          t.primaryInkTint,
+          reason: entry.key,
+        );
+      }
+    });
   });
 
   group('AppTheme typography', () {

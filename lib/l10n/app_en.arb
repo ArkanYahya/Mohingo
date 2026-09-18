@@ -54,23 +54,6 @@
       }
     }
   },
-  "activityIncorrectSheetTitle": "Not quite",
-  "@activityIncorrectSheetTitle": {
-    "description": "Title of the modal bottom sheet shown during live lesson-play when an answer is wrong."
-  },
-  "activityIncorrectSheetBody": "The correct answer is: {correctAnswer}",
-  "@activityIncorrectSheetBody": {
-    "description": "Body text of the incorrect-answer bottom sheet, revealing the correct answer for this activity only.",
-    "placeholders": {
-      "correctAnswer": {
-        "type": "String"
-      }
-    }
-  },
-  "activityIncorrectSheetContinue": "Continue",
-  "@activityIncorrectSheetContinue": {
-    "description": "Button on the incorrect-answer bottom sheet that dismisses it and advances to the next activity."
-  },
   "activityFeedbackSavedForReview": "Saved — this will be reviewed, not auto-graded.",
   "@activityFeedbackSavedForReview": {
     "description": "Feedback shown for writing/speaking activities, which need a task-specific rubric rather than an automatic right/wrong check."
@@ -83,17 +66,42 @@
   "@activitySpeechUnavailableUseWriting": {
     "description": "Shown on a speak activity's typed-answer accessibility fallback. Never phrased as a permanent limitation of the learner's ability, only the device/build."
   },
+  "activityContinue": "Continue",
+  "@activityContinue": {"description": "Button in the lesson player's feedback panel that moves on to the next question."},
+  "activityFeedbackIncorrectTitle": "Not quite",
+  "@activityFeedbackIncorrectTitle": {"description": "Title of the lesson player's feedback panel after a wrong answer."},
+  "activityFeedbackCorrectAnswerLabel": "Correct answer",
+  "@activityFeedbackCorrectAnswerLabel": {"description": "Small label above the correct answer in the lesson player's feedback panel after a wrong answer."},
+  "activityFeedbackSavedTitle": "Answer saved",
+  "@activityFeedbackSavedTitle": {"description": "Title of the lesson player's feedback panel for an answer that is saved rather than graded right away."},
+  "activityListenTitle": "Listen",
+  "@activityListenTitle": {"description": "Title on the audio card of a listening question."},
+  "activityListenHint": "Tap to play again",
+  "@activityListenHint": {"description": "Hint under the audio card title of a listening question."},
+  "activityListenSlower": "Slower",
+  "@activityListenSlower": {"description": "Button on the audio card that replays the audio at a slower speed."},
+  "activityWordCount": "{count, plural, =1{1 word} other{{count} words}}",
+  "@activityWordCount": {
+    "description": "Live word count under a writing answer.",
+    "placeholders": {"count": {"type": "int"}}
+  },
+  "activityWordGuideTarget": "Aim for {min}–{max}",
+  "@activityWordGuideTarget": {
+    "description": "Suggested length shown next to the live word count of a writing answer.",
+    "placeholders": {"min": {"type": "int"}, "max": {"type": "int"}}
+  },
+  "activityMatchProgress": "{matched} of {total} matched",
+  "@activityMatchProgress": {
+    "description": "Progress line under a matching question.",
+    "placeholders": {"matched": {"type": "int"}, "total": {"type": "int"}}
+  },
+  "activityOrderEmptyHint": "Tap the words in order",
+  "@activityOrderEmptyHint": {"description": "Placeholder in the empty answer area of a build-the-sentence question."},
+  "activityAnswerFieldHint": "Type your answer",
+  "@activityAnswerFieldHint": {"description": "Placeholder inside a typed-answer field."},
   "activityShowTranscript": "Show transcript",
   "@activityShowTranscript": {
     "description": "Button on a listening activity's audio card that reveals the hidden transcript text on demand."
-  },
-  "activityWordGuide": "About {min}-{max} words",
-  "@activityWordGuide": {
-    "description": "Suggested word count range for a writing activity.",
-    "placeholders": {
-      "min": {"type": "int"},
-      "max": {"type": "int"}
-    }
   },
   "contentErrorTitle": "Couldn't load your lessons",
   "@contentErrorTitle": {
@@ -265,6 +273,19 @@
   "@lessonCompleteNextLesson": {"description": "Lesson-complete screen CTA when more lessons remain in the unit."},
   "lessonCompleteBackToUnit": "Back to unit",
   "@lessonCompleteBackToUnit": {"description": "Lesson-complete screen CTA when this was the unit's last lesson."},
+  "lessonPlayerClose": "Close lesson",
+  "@lessonPlayerClose": {"description": "Accessibility label of the close button at the top of the lesson player."},
+  "lessonPlayerPhaseWarmUp": "Warm-up",
+  "@lessonPlayerPhaseWarmUp": {"description": "Lesson phase for first-exposure (encounter) questions."},
+  "lessonPlayerPhasePractice": "Practice",
+  "@lessonPlayerPhasePractice": {"description": "Lesson phase for practice questions."},
+  "lessonPlayerPhaseUseIt": "Use it",
+  "@lessonPlayerPhaseUseIt": {"description": "Lesson phase for mastery questions, where the learner uses what they learned."},
+  "lessonPlayerEyebrow": "{phase} · {skill}",
+  "@lessonPlayerEyebrow": {
+    "description": "Line above each question naming its lesson phase and skill, e.g. 'Practice · Reading'.",
+    "placeholders": {"phase": {"type": "String"}, "skill": {"type": "String"}}
+  },
   "lessonPlayerNext": "Next",
   "@lessonPlayerNext": {
     "description": "Button to advance to the next activity after seeing feedback."
@@ -352,6 +373,14 @@
   "@reviewNoFavorites": {"description": "Empty state for the favourites section."},
   "reviewNoWeakObjectives": "Nothing flagged — keep going!",
   "@reviewNoWeakObjectives": {"description": "Empty state for the weak-objectives section."},
+  "speakTapToRecord": "Tap to record",
+  "@speakTapToRecord": {"description": "Caption under the microphone button of a speaking question."},
+  "speakTapToRecordHint": "You can check what we heard before you submit.",
+  "@speakTapToRecordHint": {"description": "Reassurance under the record caption: nothing is submitted without review."},
+  "speakTapToStop": "Tap to stop",
+  "@speakTapToStop": {"description": "Caption under the stop button while a speaking answer is being recorded."},
+  "speakEnableMicrophoneHint": "We only listen while you record.",
+  "@speakEnableMicrophoneHint": {"description": "Privacy reassurance under the enable-microphone caption."},
   "speakEnableMicrophone": "Enable microphone",
   "@speakEnableMicrophone": {"description": "Button shown when speech recognition is available but microphone permission hasn't been granted yet."},
   "speakStartRecording": "Record",

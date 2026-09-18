@@ -14,17 +14,27 @@ import '../../../data/local/database.dart';
 import '../../activity_engine/domain/activity_submission.dart';
 import '../../activity_engine/domain/evaluation/evaluation_context.dart';
 import '../../activity_engine/domain/evidence_skill_resolver.dart';
+import '../../activity_engine/presentation/activity_chrome.dart';
 import '../../activity_engine/presentation/activity_view_registry.dart';
 import '../../activity_engine/providers/online_refinement_providers.dart';
 import '../../learning_path/providers/unit_progress_providers.dart';
 import '../../progress/domain/repositories/daily_task_event_repository.dart';
 import '../../progress/providers/current_learner_provider.dart';
 import '../../progress/providers/progress_providers.dart';
+import '../domain/lesson_phases.dart';
 import 'lesson_review_screen.dart' show lessonReviewAttemptsProvider;
+import 'widgets/activity_eyebrow.dart';
+import 'widgets/lesson_progress_bar.dart';
+import 'widgets/lesson_top_bar.dart';
 
 /// Sequences through one lesson's activities, rendering each via the
 /// activity-engine registry, recording every submission, and refreshing
 /// unit mastery once the lesson is complete.
+///
+/// Each activity is hosted in an [ActivityFrameScope]: a slim top bar
+/// (close + [LessonProgressBar]), the phase · skill line, the question,
+/// and Check pinned to the bottom, which becomes the feedback panel whose
+/// Continue moves on. See docs/DESIGN_SYSTEM.md.
 ///
 /// Resume behaviour: if [LessonProgressData.lastActivityId] exists and
 /// isn't the lesson's final activity, playback resumes right after it
@@ -119,6 +129,15 @@ class _LessonPlayerBodyState extends ConsumerState<_LessonPlayerBody> {
   int? _currentIndex;
   ActivitySubmission? _lastSubmission;
   bool _finished = false;
+
+  /// The current activity's submission being recorded — Continue waits
+  /// for it, so finishing the lesson never refreshes mastery before the
+  /// last attempt is saved.
+  Future<void>? _recording;
+
+  /// Set while [_next] runs, so a double tap on Continue can't skip an
+  /// activity.
+  bool _advancing = false;
   final List<ActivityCorrectness> _results = [];
   final Map<String, String> _previousAnswers = {};
 
@@ -312,100 +331,34 @@ class _LessonPlayerBodyState extends ConsumerState<_LessonPlayerBody> {
         lessonId: widget.lesson.id,
       )),
     );
-    if (mounted) setState(() => _lastSubmission = submission);
-
-    // Live incorrect answers get a modal bottom sheet, not the inline
-    // banner (which buildActivityView already suppressed for this
-    // submission via suppressIncorrectBanner) — see _showIncorrectSheet.
-    if (mounted && _isLiveIncorrect(submission)) {
-      _showIncorrectSheet(submission);
-    }
   }
 
-  bool _isLiveIncorrect(ActivitySubmission submission) =>
-      !submission.pendingOnlineRefinement &&
-      submission.correctness == ActivityCorrectness.incorrect;
-
-  /// The mockup's asymmetric feedback treatment: a correct answer stays an
-  /// inline banner with its own "Next" button, but a wrong answer instead
-  /// slides up this modal sheet — "Not quite" + the correct answer + a
-  /// "Continue" button that both dismisses the sheet and calls [_next].
-  /// Not dismissible by tapping outside or dragging down: the learner must
-  /// acknowledge the correction via Continue, matching the mockup's
-  /// deliberate flow. See docs/DESIGN_SYSTEM.md.
-  void _showIncorrectSheet(ActivitySubmission submission) {
-    final l10n = AppLocalizations.of(context)!;
-    final colorScheme = Theme.of(context).colorScheme;
-    showModalBottomSheet<void>(
-      context: context,
-      isDismissible: false,
-      enableDrag: false,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(28)),
-      ),
-      builder: (sheetContext) => Padding(
-        padding: const EdgeInsets.fromLTRB(22, 22, 22, 28),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                CircleAvatar(
-                  radius: 17,
-                  backgroundColor: colorScheme.errorContainer,
-                  child: Icon(
-                    Icons.close,
-                    color: colorScheme.onErrorContainer,
-                    size: 17,
-                  ),
-                ),
-                const SizedBox(width: 10),
-                Text(
-                  l10n.activityIncorrectSheetTitle,
-                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    color: colorScheme.error,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 14),
-            Text(
-              l10n.activityIncorrectSheetBody(
-                submission.correctAnswerLabel ?? '',
-              ),
-              textDirection: TextDirection.ltr,
-            ),
-            const SizedBox(height: 20),
-            SizedBox(
-              width: double.infinity,
-              child: FilledButton(
-                style: FilledButton.styleFrom(
-                  backgroundColor: colorScheme.error,
-                  foregroundColor: colorScheme.onError,
-                ),
-                onPressed: () {
-                  Navigator.of(sheetContext).pop();
-                  _next();
-                },
-                child: Text(l10n.activityIncorrectSheetContinue),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
+  void _onSubmitted(Activity activity, ActivitySubmission submission) {
+    setState(() => _lastSubmission = submission);
+    _recording = _handleSubmitted(activity, submission);
   }
 
   Future<void> _next() async {
+    if (_advancing) return;
+    _advancing = true;
+    try {
+      await _recording;
+      await _advance();
+    } finally {
+      _advancing = false;
+    }
+  }
+
+  Future<void> _advance() async {
     final activities = widget.lesson.activities;
     final isLastActivity = _currentIndex! >= activities.length - 1;
 
     if (!isLastActivity) {
+      if (!mounted) return;
       setState(() {
         _currentIndex = _currentIndex! + 1;
         _lastSubmission = null;
+        _recording = null;
       });
       return;
     }
@@ -469,56 +422,47 @@ class _LessonPlayerBodyState extends ConsumerState<_LessonPlayerBody> {
       );
     }
 
-    final l10n = AppLocalizations.of(context)!;
     final activities = widget.lesson.activities;
     final activity = activities[_currentIndex!];
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          l10n.lessonPlayerProgress(_currentIndex! + 1, activities.length),
-        ),
-        bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(4),
-          child: LinearProgressIndicator(
-            value: (_currentIndex! + 1) / activities.length,
-            minHeight: 4,
-          ),
-        ),
-      ),
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              buildActivityView(
-                key: ValueKey(activity.id),
-                activity,
-                learnerId: widget.learnerId,
-                onSubmitted: (submission) =>
-                    _handleSubmitted(activity, submission),
-                mediaByKey: widget.mediaByKey,
-                evaluationContext: EvaluationContext(
-                  profileName: widget.learnerName,
-                  previousAnswers: Map.unmodifiable(_previousAnswers),
-                ),
-                suppressIncorrectBanner: true,
+        // The bottom bar pads itself for the system inset, so its colour
+        // runs to the bottom edge of the screen.
+        bottom: false,
+        child: Column(
+          children: [
+            LessonTopBar(
+              onClose: () => Navigator.of(context).maybePop(),
+              progress: LessonProgressBar(
+                groupSizes: phaseGroupSizes([
+                  for (final a in activities) a.mode,
+                ]),
+                completed: _currentIndex! + (_lastSubmission == null ? 0 : 1),
               ),
-              // Not shown for a live-incorrect answer: the bottom sheet's
-              // own Continue button (see _showIncorrectSheet) is the only
-              // way to advance in that case, so this would just duplicate
-              // it.
-              if (_lastSubmission != null &&
-                  !_isLiveIncorrect(_lastSubmission!))
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
-                  child: FilledButton(
-                    onPressed: _next,
-                    child: Text(l10n.lessonPlayerNext),
+            ),
+            Expanded(
+              child: ActivityFrameScope(
+                onContinue: _next,
+                header: ActivityEyebrow(
+                  mode: activity.mode,
+                  skill: activity.skill,
+                ),
+                child: buildActivityView(
+                  key: ValueKey(activity.id),
+                  activity,
+                  learnerId: widget.learnerId,
+                  onSubmitted: (submission) =>
+                      _onSubmitted(activity, submission),
+                  mediaByKey: widget.mediaByKey,
+                  evaluationContext: EvaluationContext(
+                    profileName: widget.learnerName,
+                    previousAnswers: Map.unmodifiable(_previousAnswers),
                   ),
                 ),
-            ],
-          ),
+              ),
+            ),
+          ],
         ),
       ),
     );

@@ -79,6 +79,9 @@ class FakeSpeechRecognitionService implements SpeechRecognitionService {
 
 class FakeTextToSpeechService implements TextToSpeechService {
   final List<String> spoken = [];
+
+  /// The `rate` each [spoken] entry was requested at, index for index.
+  final List<double?> rates = [];
   final _playbackStateController =
       StreamController<TtsPlaybackState>.broadcast();
 
@@ -95,6 +98,7 @@ class FakeTextToSpeechService implements TextToSpeechService {
     String? voiceName,
   }) async {
     spoken.add(text);
+    rates.add(rate);
   }
 
   @override

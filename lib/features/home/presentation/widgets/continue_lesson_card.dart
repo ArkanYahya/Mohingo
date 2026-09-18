@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../../../../core/theme/app_tokens.dart';
+import '../../../../core/theme/overline_style.dart';
 
 /// Home's one primary action: resume the lesson the learner should be on.
 ///
@@ -102,7 +103,8 @@ class ContinueLessonCard extends StatelessWidget {
                         children: [
                           Text(
                             overline.toUpperCase(),
-                            style: text.labelSmall?.copyWith(
+                            style: overlineStyle(
+                              context,
                               color: tokens.primaryInk,
                             ),
                           ),

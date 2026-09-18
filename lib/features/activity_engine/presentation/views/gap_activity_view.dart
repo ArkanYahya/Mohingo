@@ -9,16 +9,18 @@ import '../../../../data/local/database.dart' show ActivityAttempt;
 import '../../domain/activity_submission.dart';
 import '../../domain/sound_effects_service.dart';
 import '../../providers/sound_effects_providers.dart';
+import '../../../../core/theme/app_tokens.dart';
 import '../activity_chrome.dart';
+import '../widgets/activity_word_tile.dart';
+import '../widgets/answer_tile_state.dart';
 
 /// Renders a `gap` activity: a sentence with a `___` blank, filled by
-/// picking one of [GapActivity.options].
+/// picking one of [GapActivity.options]; Check submits the pick.
 class GapActivityView extends ConsumerStatefulWidget {
   GapActivityView({
     required this.activity,
     required this.onSubmitted,
     this.reviewAttempt,
-    this.suppressIncorrectBanner = false,
     Random? random,
     super.key,
   }) : _random = random ?? Random();
@@ -33,10 +35,6 @@ class GapActivityView extends ConsumerStatefulWidget {
   /// 2026-09-09-lesson-answer-review-design.md.
   final ActivityAttempt? reviewAttempt;
 
-  /// True only when rendered by the live lesson player — see
-  /// [ActivitySubmitOrFeedback.suppressIncorrectBanner].
-  final bool suppressIncorrectBanner;
-
   /// Used once, at first build, to shuffle [GapActivity.options] for
   /// display — see [_GapActivityViewState._displayOptions]. Injectable so a
   /// test can assert on a deterministic shuffle order; production call
@@ -48,8 +46,14 @@ class GapActivityView extends ConsumerStatefulWidget {
 }
 
 class _GapActivityViewState extends ConsumerState<GapActivityView> {
-  String? _selected;
+  /// Index into [_displayOptions] — options can repeat a word (a real
+  /// content quirk), so a label alone doesn't identify which tile was
+  /// picked.
+  int? _selectedIndex;
   ActivitySubmission? _submission;
+
+  String? get _selected =>
+      _selectedIndex == null ? null : _displayOptions[_selectedIndex!];
 
   /// [GapActivity.options] shuffled once per mount — same rationale as
   /// `ChoiceActivityView._displayOptions`: real A1 content overwhelmingly
@@ -65,7 +69,9 @@ class _GapActivityViewState extends ConsumerState<GapActivityView> {
     super.initState();
     final reviewAttempt = widget.reviewAttempt;
     if (reviewAttempt == null) return;
-    _selected = _decodeSelection(reviewAttempt.rawAnswer);
+    final recorded = _decodeSelection(reviewAttempt.rawAnswer);
+    final index = recorded == null ? -1 : _displayOptions.indexOf(recorded);
+    _selectedIndex = index == -1 ? null : index;
     _submission = ActivitySubmission(
       correctness: switch (reviewAttempt.isCorrect) {
         true => ActivityCorrectness.correct,
@@ -87,12 +93,7 @@ class _GapActivityViewState extends ConsumerState<GapActivityView> {
     }
   }
 
-  /// A single tap is a complete answer for this activity type, so
-  /// selecting an option submits it immediately — no separate Check tap.
-  void _selectAndSubmit(String option) {
-    setState(() => _selected = option);
-    _submit();
-  }
+  void _select(int index) => setState(() => _selectedIndex = index);
 
   void _submit() {
     if (_selected == null || _submission != null) return;
@@ -117,11 +118,23 @@ class _GapActivityViewState extends ConsumerState<GapActivityView> {
 
   @override
   Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).colorScheme;
-    final displayText = widget.activity.text.replaceFirst(
-      '___',
-      _selected ?? '___',
+    final theme = Theme.of(context);
+    final tokens = theme.extension<AppTokens>()!;
+    final submitted = _submission != null;
+    final parts = widget.activity.text.split('___');
+    final sentenceStyle = theme.textTheme.titleMedium?.copyWith(
+      color: tokens.textPrimary,
+      fontSize: 18,
+      height: 1.5,
     );
+    final blankColor = switch (submitted) {
+      false => tokens.primaryInk,
+      true when _selected == widget.activity.answer => answerTileColors(
+        context,
+        AnswerTileState.correct,
+      ).outline,
+      true => answerTileColors(context, AnswerTileState.incorrect).outline,
+    };
 
     return ActivityChrome(
       prompt: widget.activity.prompt,
@@ -129,45 +142,63 @@ class _GapActivityViewState extends ConsumerState<GapActivityView> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Container(
-            padding: const EdgeInsets.all(12),
+          DecoratedBox(
             decoration: BoxDecoration(
-              color: colorScheme.surfaceContainer,
-              borderRadius: BorderRadius.circular(12),
+              color: tokens.card,
+              borderRadius: BorderRadius.circular(AppRadius.card),
+              border: Border.all(color: tokens.border),
             ),
-            child: Text(
-              displayText,
-              textDirection: TextDirection.ltr,
-              style: Theme.of(context).textTheme.titleMedium,
+            child: Padding(
+              padding: const EdgeInsets.all(AppSpace.md),
+              child: Text.rich(
+                TextSpan(
+                  children: [
+                    TextSpan(text: parts.first),
+                    TextSpan(
+                      text: _selected ?? '___',
+                      style: _selected == null
+                          ? TextStyle(color: tokens.textSecondary)
+                          : TextStyle(
+                              color: blankColor,
+                              fontWeight: FontWeight.w700,
+                              decoration: TextDecoration.underline,
+                              decorationColor: blankColor,
+                              decorationThickness: 2,
+                            ),
+                    ),
+                    if (parts.length > 1)
+                      TextSpan(text: parts.skip(1).join('___')),
+                  ],
+                ),
+                textDirection: TextDirection.ltr,
+                style: sentenceStyle,
+              ),
             ),
           ),
-          const SizedBox(height: 12),
+          const SizedBox(height: AppSpace.lg),
           Wrap(
-            spacing: 8,
-            runSpacing: 8,
+            spacing: AppSpace.xs,
+            runSpacing: AppSpace.xs,
             children: [
-              for (final option in _displayOptions)
-                ChoiceChip(
-                  label: Text(option),
-                  selected: _selected == option,
-                  onSelected: _submission == null
-                      ? (_) => _selectAndSubmit(option)
-                      : null,
+              for (var i = 0; i < _displayOptions.length; i++)
+                ActivityWordTile(
+                  label: _displayOptions[i],
+                  state: singleChoiceState(
+                    submitted: submitted,
+                    isSelected: i == _selectedIndex,
+                    isCorrect: _displayOptions[i] == widget.activity.answer,
+                  ),
+                  onTap: submitted ? null : () => _select(i),
                 ),
             ],
           ),
         ],
       ),
-      // No Check button is ever reached in practice — a single tap
-      // (_selectAndSubmit) always submits before this would render; kept
-      // as a safety net, matching the shared ActivitySubmitOrFeedback
-      // contract every activity view uses.
       feedback: ActivitySubmitOrFeedback(
         submission: _submission,
-        canSubmit: _selected != null,
+        canSubmit: _selectedIndex != null,
         onSubmit: _submit,
         correctAnswerLabel: widget.activity.answer,
-        suppressIncorrectBanner: widget.suppressIncorrectBanner,
       ),
     );
   }

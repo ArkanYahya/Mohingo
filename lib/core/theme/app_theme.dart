@@ -26,7 +26,10 @@ abstract final class AppTheme {
     );
     final tokens = isLight
         ? AppTokens.light(primaryInk: seed.brandInk)
-        : AppTokens.dark(primaryInk: generated.primary);
+        : AppTokens.dark(
+            primaryInk: generated.primary,
+            onPrimaryInk: generated.onPrimary,
+          );
 
     final accented = isLight
         ? generated.copyWith(
@@ -59,11 +62,6 @@ abstract final class AppTheme {
       surfaceContainerHighest: isLight
           ? const Color(0xFFE6E2DD)
           : const Color(0xFF2F2B28),
-    );
-
-    final navIndicator = Color.alphaBlend(
-      tokens.primaryInk.withValues(alpha: isLight ? 0.12 : 0.2),
-      tokens.card,
     );
 
     // Base first, so component themes derive from the *merged* text theme
@@ -102,11 +100,34 @@ abstract final class AppTheme {
       filledButtonTheme: FilledButtonThemeData(
         style: FilledButton.styleFrom(
           backgroundColor: tokens.primaryInk,
-          foregroundColor: isLight ? Colors.white : generated.onPrimary,
+          foregroundColor: tokens.onPrimaryInk,
           minimumSize: const Size(64, 48),
           padding: const EdgeInsets.symmetric(horizontal: AppSpace.lg),
           textStyle: text.labelLarge,
         ),
+      ),
+      // Everything else Material draws in colorScheme.primary as text or a
+      // thin line uses the ink tone too, for the same contrast reason.
+      textButtonTheme: TextButtonThemeData(
+        style: TextButton.styleFrom(
+          foregroundColor: tokens.primaryInk,
+          textStyle: text.labelLarge,
+        ),
+      ),
+      outlinedButtonTheme: OutlinedButtonThemeData(
+        style: OutlinedButton.styleFrom(
+          foregroundColor: tokens.primaryInk,
+          side: BorderSide(color: tokens.border),
+          textStyle: text.labelLarge,
+        ),
+      ),
+      textSelectionTheme: TextSelectionThemeData(
+        cursorColor: tokens.primaryInk,
+        selectionHandleColor: tokens.primaryInk,
+        selectionColor: tokens.primaryInk.withValues(alpha: 0.25),
+      ),
+      progressIndicatorTheme: ProgressIndicatorThemeData(
+        color: tokens.primaryInk,
       ),
       navigationBarTheme: NavigationBarThemeData(
         height: 64,
@@ -114,7 +135,7 @@ abstract final class AppTheme {
         surfaceTintColor: Colors.transparent,
         shadowColor: Colors.transparent,
         elevation: 0,
-        indicatorColor: navIndicator,
+        indicatorColor: tokens.primaryInkTint,
         labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
         iconTheme: WidgetStateProperty.resolveWith(
           (states) => IconThemeData(

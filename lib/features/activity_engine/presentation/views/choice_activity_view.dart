@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'dart:convert';
 import 'dart:math';
 
@@ -7,23 +6,24 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../content/models/activity.dart';
 import '../../../../content/models/media_specification.dart';
-import '../../../../core/l10n/generated/app_localizations.dart';
 import '../../../../core/media/scene_diagram.dart';
-import '../../../../core/theme/feedback_theme_extension.dart';
+import '../../../../core/theme/app_tokens.dart';
 import '../../../../data/local/database.dart' show ActivityAttempt;
-import '../../../speech/domain/text_to_speech_service.dart';
-import '../../../speech/presentation/listen_button.dart';
-import '../../../speech/providers/speech_providers.dart';
 import '../../domain/activity_submission.dart';
 import '../../domain/sound_effects_service.dart';
 import '../../providers/sound_effects_providers.dart';
 import '../activity_chrome.dart';
+import '../widgets/activity_audio_card.dart';
+import '../widgets/activity_option_tile.dart';
+import '../widgets/answer_tile_state.dart';
 
 /// Renders `audioChoice` and `textChoice` activities — a prompt plus a
 /// single-answer option list. Both types share this widget since their
-/// shapes only differ in whether audio (read via on-device TTS once
-/// Phase 8's speech layer exists — see [_AudioTranscriptCard]) or source
-/// text backs the prompt.
+/// shapes only differ in whether audio (read via on-device TTS — see
+/// [ActivityAudioCard]) or source text backs the prompt.
+///
+/// Tapping an option selects it; Check submits. The learner can change a
+/// mis-tap before committing, the same as every other activity type.
 ///
 /// When the bundle marks `optionMode: "media"` (verified present in the
 /// real A1-U2 data — picture-choice items), each option string is a
@@ -35,7 +35,6 @@ class ChoiceActivityView extends ConsumerStatefulWidget {
     required this.onSubmitted,
     this.mediaByKey = const {},
     this.reviewAttempt,
-    this.suppressIncorrectBanner = false,
     Random? random,
     super.key,
   }) : prompt = activity.prompt,
@@ -51,7 +50,6 @@ class ChoiceActivityView extends ConsumerStatefulWidget {
     required this.onSubmitted,
     this.mediaByKey = const {},
     this.reviewAttempt,
-    this.suppressIncorrectBanner = false,
     Random? random,
     super.key,
   }) : prompt = activity.prompt,
@@ -84,10 +82,6 @@ class ChoiceActivityView extends ConsumerStatefulWidget {
   /// recomputed. See docs/superpowers/specs/
   /// 2026-09-09-lesson-answer-review-design.md.
   final ActivityAttempt? reviewAttempt;
-
-  /// True only when rendered by the live lesson player — see
-  /// [ActivitySubmitOrFeedback.suppressIncorrectBanner].
-  final bool suppressIncorrectBanner;
 
   @override
   ConsumerState<ChoiceActivityView> createState() => _ChoiceActivityViewState();
@@ -134,12 +128,7 @@ class _ChoiceActivityViewState extends ConsumerState<ChoiceActivityView> {
     }
   }
 
-  /// A single tap is a complete answer for this activity type, so
-  /// selecting an option submits it immediately — no separate Check tap.
-  void _selectAndSubmit(String option) {
-    setState(() => _selected = option);
-    _submit();
-  }
+  void _select(String option) => setState(() => _selected = option);
 
   void _submit() {
     if (_selected == null || _submission != null) return;
@@ -164,11 +153,12 @@ class _ChoiceActivityViewState extends ConsumerState<ChoiceActivityView> {
 
   @override
   Widget build(BuildContext context) {
+    final submitted = _submission != null;
     return ActivityChrome(
       prompt: widget.prompt,
       promptAr: widget.promptAr,
       help: widget.audioTranscript != null
-          ? _AudioTranscriptCard(
+          ? ActivityAudioCard(
               transcript: widget.audioTranscript!,
               // Never in review mode: a review screen can show several of
               // these at once, and none of them is a live listening
@@ -177,334 +167,101 @@ class _ChoiceActivityViewState extends ConsumerState<ChoiceActivityView> {
             )
           : null,
       body: widget.isMediaOptions
-          ? _MediaOptionGrid(
-              options: _displayOptions,
-              mediaByKey: widget.mediaByKey,
-              selected: _selected,
-              submitted: _submission != null,
-              correctOption: widget.answer,
-              onSelected: _submission == null ? _selectAndSubmit : null,
+          ? Wrap(
+              spacing: AppSpace.xs,
+              runSpacing: AppSpace.xs,
+              children: [
+                for (final option in _displayOptions)
+                  _MediaOptionCard(
+                    mediaKey: option,
+                    spec: widget.mediaByKey[option],
+                    state: _stateOf(option),
+                    onTap: submitted ? null : () => _select(option),
+                  ),
+              ],
             )
-          : _TextOptionList(
-              options: _displayOptions,
-              selected: _selected,
-              submitted: _submission != null,
-              correctOption: widget.answer,
-              onSelected: _submission == null ? _selectAndSubmit : null,
+          : Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                for (final option in _displayOptions)
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: AppSpace.xs),
+                    child: ActivityOptionTile(
+                      label: option,
+                      state: _stateOf(option),
+                      onTap: submitted ? null : () => _select(option),
+                    ),
+                  ),
+              ],
             ),
-      // No Check button is ever reached in practice: a single tap is a
-      // complete answer, so `_selectAndSubmit` above always submits before
-      // this would render — kept as a safety net, matching the shared
-      // ActivitySubmitOrFeedback contract every activity view uses.
       feedback: ActivitySubmitOrFeedback(
         submission: _submission,
         canSubmit: _selected != null,
         onSubmit: _submit,
         correctAnswerLabel: widget.answer,
-        suppressIncorrectBanner: widget.suppressIncorrectBanner,
       ),
     );
   }
+
+  /// Never reveals correctness before submission — see
+  /// docs/ARCHITECTURE.md's non-negotiable rules.
+  AnswerTileState _stateOf(String option) => singleChoiceState(
+    submitted: _submission != null,
+    isSelected: option == _selected,
+    isCorrect: option == widget.answer,
+  );
 }
 
-/// Plays [transcript] aloud via on-device TTS ([ListenButton]) — the
-/// bundle ships no pre-recorded audio, so this transcript is the only
-/// source for what a listening activity's audio actually says.
-///
-/// The transcript text stays hidden by default — showing it defeats the
-/// point of a listening exercise — but the learner can reveal it manually
-/// at any time via [AppLocalizations.activityShowTranscript]. It also
-/// auto-reveals the moment the TTS engine reports a playback error: an
-/// unavailable/silent TTS engine (see docs/TESTING.md — not verified on a
-/// real device) must never leave the activity unusable.
-class _AudioTranscriptCard extends ConsumerStatefulWidget {
-  const _AudioTranscriptCard({required this.transcript, this.autoPlay = false});
-
-  final String transcript;
-  final bool autoPlay;
-
-  @override
-  ConsumerState<_AudioTranscriptCard> createState() =>
-      _AudioTranscriptCardState();
-}
-
-class _AudioTranscriptCardState extends ConsumerState<_AudioTranscriptCard> {
-  bool _revealed = false;
-  StreamSubscription<TtsPlaybackState>? _playbackSubscription;
-
-  @override
-  void initState() {
-    super.initState();
-    _playbackSubscription = ref
-        .read(textToSpeechServiceProvider)
-        .playbackState
-        .listen((state) {
-          if (state == TtsPlaybackState.error && mounted) {
-            setState(() => _revealed = true);
-          }
-        });
-  }
-
-  @override
-  void dispose() {
-    _playbackSubscription?.cancel();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
-    final colorScheme = Theme.of(context).colorScheme;
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 4),
-      decoration: BoxDecoration(
-        color: colorScheme.surfaceContainer,
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: Row(
-        children: [
-          const SizedBox(width: 8),
-          ListenButton(text: widget.transcript, autoPlay: widget.autoPlay),
-          const SizedBox(width: 4),
-          Expanded(
-            child: _revealed
-                ? Text(
-                    widget.transcript,
-                    textDirection: TextDirection.ltr,
-                    style: Theme.of(context).textTheme.bodyMedium,
-                  )
-                : TextButton(
-                    onPressed: () => setState(() => _revealed = true),
-                    child: Text(l10n.activityShowTranscript),
-                  ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _TextOptionList extends StatelessWidget {
-  const _TextOptionList({
-    required this.options,
-    required this.selected,
-    required this.submitted,
-    required this.correctOption,
-    required this.onSelected,
-  });
-
-  final List<String> options;
-  final String? selected;
-  final bool submitted;
-  final String correctOption;
-  final ValueChanged<String>? onSelected;
-
-  @override
-  Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).colorScheme;
-    final feedbackTheme = Theme.of(context).extension<FeedbackTheme>()!;
-    return Column(
-      children: [
-        for (final option in options)
-          Padding(
-            padding: const EdgeInsets.only(bottom: 8),
-            child: _OptionTile(
-              label: option,
-              selected: selected == option,
-              // Never reveal correctness before submission — see
-              // docs/ARCHITECTURE.md's non-negotiable rules.
-              state: !submitted
-                  ? _OptionState.neutral
-                  : option == correctOption
-                  ? _OptionState.correct
-                  : (option == selected
-                        ? _OptionState.incorrect
-                        : _OptionState.neutral),
-              colorScheme: colorScheme,
-              feedbackTheme: feedbackTheme,
-              onTap: onSelected == null ? null : () => onSelected!(option),
-            ),
-          ),
-      ],
-    );
-  }
-}
-
-class _MediaOptionGrid extends StatelessWidget {
-  const _MediaOptionGrid({
-    required this.options,
-    required this.mediaByKey,
-    required this.selected,
-    required this.submitted,
-    required this.correctOption,
-    required this.onSelected,
-  });
-
-  final List<String> options;
-  final Map<String, MediaSpecification> mediaByKey;
-  final String? selected;
-  final bool submitted;
-  final String correctOption;
-  final ValueChanged<String>? onSelected;
-
-  @override
-  Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).colorScheme;
-    final feedbackTheme = Theme.of(context).extension<FeedbackTheme>()!;
-    return Wrap(
-      spacing: 8,
-      runSpacing: 8,
-      children: [
-        for (final option in options)
-          _MediaOptionCard(
-            mediaKey: option,
-            spec: mediaByKey[option],
-            selected: selected == option,
-            state: !submitted
-                ? _OptionState.neutral
-                : option == correctOption
-                ? _OptionState.correct
-                : (option == selected
-                      ? _OptionState.incorrect
-                      : _OptionState.neutral),
-            colorScheme: colorScheme,
-            feedbackTheme: feedbackTheme,
-            onTap: onSelected == null ? null : () => onSelected!(option),
-          ),
-      ],
-    );
-  }
-}
-
+/// A picture option — a [SceneDiagram] drawn from the option's
+/// [MediaSpecification] — framed like [ActivityOptionTile].
 class _MediaOptionCard extends StatelessWidget {
   const _MediaOptionCard({
     required this.mediaKey,
     required this.spec,
-    required this.selected,
     required this.state,
-    required this.colorScheme,
-    required this.feedbackTheme,
     required this.onTap,
   });
 
   final String mediaKey;
   final MediaSpecification? spec;
-  final bool selected;
-  final _OptionState state;
-  final ColorScheme colorScheme;
-  final FeedbackTheme feedbackTheme;
+  final AnswerTileState state;
   final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      borderRadius: BorderRadius.circular(12),
-      child: Container(
-        width: 140,
-        padding: const EdgeInsets.all(8),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: _borderColor(colorScheme), width: 2),
-          color: colorScheme.surfaceContainer,
-        ),
-        child: spec != null
-            ? SceneDiagram(spec: spec!)
-            : Center(
-                child: Text(
-                  mediaKey,
-                  textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.bodySmall,
-                ),
-              ),
+    final colors = answerTileColors(context, state);
+    final card = Material(
+      color: colors.fill,
+      clipBehavior: Clip.antiAlias,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(AppRadius.card),
+        side: BorderSide(color: colors.outline, width: colors.outlineWidth),
       ),
-    );
-  }
-
-  Color _borderColor(ColorScheme colorScheme) => switch (state) {
-    // "Correct" reads as the universal semantic green, not the learner's
-    // chosen brand colour — see FeedbackTheme.
-    _OptionState.correct => feedbackTheme.success,
-    _OptionState.incorrect => colorScheme.error,
-    _OptionState.neutral =>
-      selected ? colorScheme.primary : colorScheme.outlineVariant,
-  };
-}
-
-enum _OptionState { neutral, correct, incorrect }
-
-class _OptionTile extends StatelessWidget {
-  const _OptionTile({
-    required this.label,
-    required this.selected,
-    required this.state,
-    required this.colorScheme,
-    required this.feedbackTheme,
-    required this.onTap,
-  });
-
-  final String label;
-  final bool selected;
-  final _OptionState state;
-  final ColorScheme colorScheme;
-  final FeedbackTheme feedbackTheme;
-  final VoidCallback? onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    final (Color fill, Color onFill, IconData? icon) = switch (state) {
-      // "Correct" reads as the universal semantic green, not the learner's
-      // chosen brand colour — see FeedbackTheme.
-      _OptionState.correct => (
-        feedbackTheme.success,
-        feedbackTheme.onSuccess,
-        Icons.check,
-      ),
-      _OptionState.incorrect => (
-        colorScheme.error,
-        colorScheme.onError,
-        Icons.close,
-      ),
-      _OptionState.neutral => (
-        selected
-            ? colorScheme.surfaceContainerHighest
-            : colorScheme.surfaceContainer,
-        colorScheme.onSurface,
-        null,
-      ),
-    };
-
-    return Material(
-      color: fill,
-      borderRadius: BorderRadius.circular(8),
       child: InkWell(
         onTap: onTap,
-        borderRadius: BorderRadius.circular(8),
-        child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8),
-            border: Border.all(
-              color: selected && state == _OptionState.neutral
-                  ? colorScheme.primary
-                  : Colors.transparent,
-              width: 2,
-            ),
-          ),
-          child: Row(
-            children: [
-              Expanded(
-                child: Text(
-                  label,
-                  textDirection: TextDirection.ltr,
-                  style: TextStyle(color: onFill),
-                ),
-              ),
-              if (icon != null) Icon(icon, color: onFill, size: 20),
-            ],
+        child: SizedBox(
+          width: 148,
+          child: Padding(
+            padding: const EdgeInsets.all(AppSpace.xs),
+            child: spec != null
+                ? SceneDiagram(spec: spec!)
+                : Center(
+                    child: Text(
+                      mediaKey,
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.bodySmall,
+                    ),
+                  ),
           ),
         ),
       ),
+    );
+    return Semantics(
+      selected: state == AnswerTileState.selected,
+      inMutuallyExclusiveGroup: true,
+      child: state == AnswerTileState.dimmed
+          ? Opacity(opacity: 0.5, child: card)
+          : card,
     );
   }
 }

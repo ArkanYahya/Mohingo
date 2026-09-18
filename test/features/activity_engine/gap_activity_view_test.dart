@@ -9,6 +9,8 @@ import 'package:mohingo/data/local/database.dart' show ActivityAttempt;
 import 'package:mohingo/features/activity_engine/domain/activity_submission.dart';
 import 'package:mohingo/features/activity_engine/domain/sound_effects_service.dart';
 import 'package:mohingo/features/activity_engine/presentation/views/gap_activity_view.dart';
+import 'package:mohingo/features/activity_engine/presentation/widgets/activity_word_tile.dart';
+import 'package:mohingo/features/activity_engine/presentation/widgets/answer_tile_state.dart';
 import 'package:mohingo/features/activity_engine/providers/sound_effects_providers.dart';
 
 import 'fake_sound_effects_service.dart';
@@ -38,7 +40,7 @@ void main() {
 
     expect(find.textContaining('___'), findsOneWidget);
     for (final option in ['have', 'has', 'is']) {
-      expect(find.widgetWithText(ChoiceChip, option), findsOneWidget);
+      expect(find.widgetWithText(ActivityWordTile, option), findsOneWidget);
     }
   });
 
@@ -49,30 +51,51 @@ void main() {
       GapActivityView(activity: _gapActivity(), onSubmitted: (_) {}),
     );
 
-    await tester.tap(find.widgetWithText(ChoiceChip, 'has'));
+    await tester.tap(find.widgetWithText(ActivityWordTile, 'has'));
     await tester.pump();
 
     expect(find.text('She has one sister.'), findsOneWidget);
   });
 
-  testWidgets(
-    'choosing an option submits immediately — no separate Check tap needed',
-    (tester) async {
-      ActivitySubmission? reported;
-      await tester.pumpActivityView(
-        GapActivityView(
-          activity: _gapActivity(),
-          onSubmitted: (s) => reported = s,
-        ),
-      );
+  testWidgets('choosing an option only fills the gap; Check submits it', (
+    tester,
+  ) async {
+    ActivitySubmission? reported;
+    await tester.pumpActivityView(
+      GapActivityView(
+        activity: _gapActivity(),
+        onSubmitted: (s) => reported = s,
+      ),
+    );
 
-      await tester.tap(find.widgetWithText(ChoiceChip, 'has'));
-      await tester.pump();
+    await tester.tap(find.widgetWithText(ActivityWordTile, 'has'));
+    await tester.pump();
+    expect(reported, isNull);
 
-      expect(reported?.correctness, ActivityCorrectness.correct);
-      expect(find.byType(FilledButton), findsNothing);
-    },
-  );
+    await tester.tap(find.byType(FilledButton));
+    await tester.pump();
+    expect(reported?.correctness, ActivityCorrectness.correct);
+    expect(find.byType(FilledButton), findsNothing);
+  });
+
+  testWidgets('after Check, the right option is marked correct, a wrong pick '
+      'incorrect, and the rest dimmed', (tester) async {
+    await tester.pumpActivityView(
+      GapActivityView(activity: _gapActivity(), onSubmitted: (_) {}),
+    );
+
+    await tester.tap(find.widgetWithText(ActivityWordTile, 'have'));
+    await tester.pump();
+    await tester.tap(find.byType(FilledButton));
+    await tester.pump();
+
+    AnswerTileState stateOf(String label) => tester
+        .widget<ActivityWordTile>(find.widgetWithText(ActivityWordTile, label))
+        .state;
+    expect(stateOf('has'), AnswerTileState.correct);
+    expect(stateOf('have'), AnswerTileState.incorrect);
+    expect(stateOf('is'), AnswerTileState.dimmed);
+  });
 
   testWidgets('plays the correct/incorrect sound on submit, never in review '
       'mode', (tester) async {
@@ -82,7 +105,9 @@ void main() {
       overrides: [soundEffectsServiceProvider.overrideWithValue(fakeSound)],
     );
 
-    await tester.tap(find.widgetWithText(ChoiceChip, 'have')); // wrong
+    await tester.tap(find.widgetWithText(ActivityWordTile, 'have')); // wrong
+    await tester.pump();
+    await tester.tap(find.byType(FilledButton));
     await tester.pump();
 
     expect(fakeSound.played, [ActivityFeedbackSound.incorrect]);
@@ -115,10 +140,10 @@ void main() {
 
       // Random(0).shuffle() on ['v','w','x','y','z'] deterministically
       // produces ['z','x','y','w','v']. Sorted by (row, then column) since
-      // these chips flow left-to-right within a Wrap — several can share
+      // these tiles flow left-to-right within a Wrap — several can share
       // the same vertical position, so dy alone can't recover list order.
       Offset topLeft(String option) =>
-          tester.getTopLeft(find.widgetWithText(ChoiceChip, option));
+          tester.getTopLeft(find.widgetWithText(ActivityWordTile, option));
       final sortedByPosition =
           [
             for (final option in ['v', 'w', 'x', 'y', 'z']) option,

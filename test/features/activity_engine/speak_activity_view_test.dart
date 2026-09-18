@@ -97,7 +97,7 @@ void main() {
           ),
         );
 
-        expect(find.widgetWithText(FilledButton, 'Record'), findsOneWidget);
+        expect(find.byTooltip('Record'), findsOneWidget);
         expect(find.byType(TextField), findsNothing);
       },
     );
@@ -114,10 +114,7 @@ void main() {
           ),
         );
 
-        expect(
-          find.widgetWithText(FilledButton, 'Enable microphone'),
-          findsOneWidget,
-        );
+        expect(find.byTooltip('Enable microphone'), findsOneWidget);
       },
     );
 
@@ -158,6 +155,63 @@ void main() {
     });
   });
 
+  group('microphone card', () {
+    testWidgets(
+      'before anything is recorded, Check is disabled and "Type my answer '
+      'instead" sits under it',
+      (tester) async {
+        await _pumpSpeak(
+          tester,
+          capabilities: const DeviceSpeechCapabilities(
+            sttAvailableForLocale: true,
+            micPermission: SpeechPermissionStatus.granted,
+          ),
+        );
+
+        expect(
+          tester.widget<FilledButton>(find.byType(FilledButton)).onPressed,
+          isNull,
+        );
+        expect(
+          find.widgetWithText(TextButton, 'Type my answer instead'),
+          findsOneWidget,
+        );
+      },
+    );
+
+    testWidgets('after recording, the transcript is shown for review, Check '
+        'is enabled, and "Record again" goes back to the microphone', (
+      tester,
+    ) async {
+      await _pumpSpeak(
+        tester,
+        capabilities: const DeviceSpeechCapabilities(
+          sttAvailableForLocale: true,
+          micPermission: SpeechPermissionStatus.granted,
+        ),
+        recognitionService: FakeSpeechRecognitionService(
+          results: const [
+            SpeechRecognitionResult(transcript: 'Thank you.', isFinal: true),
+          ],
+        ),
+      );
+
+      await tester.tap(find.byTooltip('Record'));
+      await tester.pumpAndSettle();
+
+      expect(find.text('Thank you.'), findsOneWidget);
+      expect(
+        tester.widget<FilledButton>(find.byType(FilledButton)).onPressed,
+        isNotNull,
+      );
+
+      await tester.tap(find.widgetWithText(TextButton, 'Record again'));
+      await tester.pumpAndSettle();
+
+      expect(find.byTooltip('Record'), findsOneWidget);
+    });
+  });
+
   group('stop recording', () {
     testWidgets(
       'tapping Stop with nothing recognized yet returns to the Record '
@@ -176,21 +230,21 @@ void main() {
           recognitionService: FakeSpeechRecognitionService(),
         );
 
-        await tester.tap(find.widgetWithText(FilledButton, 'Record'));
+        await tester.tap(find.byTooltip('Record'));
         await tester.pump();
-        expect(find.widgetWithText(OutlinedButton, 'Stop'), findsOneWidget);
+        expect(find.byTooltip('Stop'), findsOneWidget);
 
-        await tester.tap(find.widgetWithText(OutlinedButton, 'Stop'));
+        await tester.tap(find.byTooltip('Stop'));
         await tester.pump();
 
         expect(
-          find.widgetWithText(FilledButton, 'Record'),
+          find.byTooltip('Record'),
           findsOneWidget,
           reason:
               'must return to the recordAvailable state, not hang in '
               'the recording state',
         );
-        expect(find.widgetWithText(OutlinedButton, 'Stop'), findsNothing);
+        expect(find.byTooltip('Stop'), findsNothing);
       },
     );
   });
@@ -213,13 +267,11 @@ void main() {
           recognitionService: recognition,
         );
 
-        await tester.tap(
-          find.widgetWithText(FilledButton, 'Enable microphone'),
-        );
+        await tester.tap(find.byTooltip('Enable microphone'));
         await tester.pumpAndSettle();
 
         expect(find.byType(TextField), findsOneWidget);
-        expect(find.widgetWithText(FilledButton, 'Record'), findsNothing);
+        expect(find.byTooltip('Record'), findsNothing);
       },
     );
 
@@ -330,7 +382,7 @@ void main() {
           onSubmitted: (s) => reported = s,
         );
 
-        await tester.tap(find.widgetWithText(FilledButton, 'Record'));
+        await tester.tap(find.byTooltip('Record'));
         await tester.pumpAndSettle();
 
         // The recognized transcript is shown for review before submission.
@@ -603,7 +655,7 @@ void main() {
       // No capability check ever ran: no spinner, no mic/typed controls.
       expect(find.byType(CircularProgressIndicator), findsNothing);
       expect(find.byType(TextField), findsNothing);
-      expect(find.byIcon(Icons.mic), findsNothing);
+      expect(find.byIcon(Icons.mic_rounded), findsNothing);
     });
 
     testWidgets('a never-graded (isCorrect: null) attempt renders the neutral '

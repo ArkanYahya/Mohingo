@@ -8,6 +8,7 @@ import 'package:mohingo/data/local/database.dart' show ActivityAttempt;
 import 'package:mohingo/features/activity_engine/domain/activity_submission.dart';
 import 'package:mohingo/features/activity_engine/domain/sound_effects_service.dart';
 import 'package:mohingo/features/activity_engine/presentation/views/order_activity_view.dart';
+import 'package:mohingo/features/activity_engine/presentation/widgets/activity_word_tile.dart';
 import 'package:mohingo/features/activity_engine/providers/sound_effects_providers.dart';
 
 import 'fake_sound_effects_service.dart';
@@ -29,40 +30,71 @@ OrderActivity _orderActivity() {
 }
 
 void main() {
-  testWidgets('renders every token as a tappable chip', (tester) async {
+  /// Taps [token] in the word bank — the bank is laid out after the answer
+  /// area, so `.last` is the bank's tile once the word is also placed.
+  Future<void> placeToken(WidgetTester tester, String token) async {
+    await tester.tap(find.widgetWithText(ActivityWordTile, token).last);
+    await tester.pump();
+  }
+
+  testWidgets('renders every token as a tappable tile', (tester) async {
     await tester.pumpActivityView(
       OrderActivityView(activity: _orderActivity(), onSubmitted: (_) {}),
     );
 
     for (final token in ['is', 'This', 'mother', 'my']) {
-      expect(find.text(token), findsOneWidget);
+      expect(find.widgetWithText(ActivityWordTile, token), findsOneWidget);
     }
   });
 
-  testWidgets(
-    'placing the last token in the correct order submits immediately — no '
-    'separate Check tap needed',
-    (tester) async {
-      ActivitySubmission? reported;
-      await tester.pumpActivityView(
-        OrderActivityView(
-          activity: _orderActivity(),
-          onSubmitted: (s) => reported = s,
-        ),
-      );
+  testWidgets('a placed word leaves a same-size empty slot in the bank, so '
+      "the other words don't move", (tester) async {
+    await tester.pumpActivityView(
+      OrderActivityView(activity: _orderActivity(), onSubmitted: (_) {}),
+    );
+    final motherBefore = tester.getTopLeft(
+      find.widgetWithText(ActivityWordTile, 'mother'),
+    );
+    final thisSize = tester.getSize(
+      find.widgetWithText(ActivityWordTile, 'This'),
+    );
 
-      for (final token in ['This', 'is', 'my', 'mother']) {
-        await tester.tap(find.text(token));
-        await tester.pump();
-      }
+    await placeToken(tester, 'This');
 
-      expect(reported?.correctness, ActivityCorrectness.correct);
-      expect(find.byType(FilledButton), findsNothing);
-    },
-  );
+    expect(find.byType(ActivityWordTileGhost), findsOneWidget);
+    expect(tester.getSize(find.byType(ActivityWordTileGhost)), thisSize);
+    expect(
+      tester.getTopLeft(find.widgetWithText(ActivityWordTile, 'mother').last),
+      motherBefore,
+    );
+  });
 
-  testWidgets('plays the correct sound when the last token completes a '
-      'correct order', (tester) async {
+  testWidgets('placing every word only fills the sentence; Check submits it', (
+    tester,
+  ) async {
+    ActivitySubmission? reported;
+    await tester.pumpActivityView(
+      OrderActivityView(
+        activity: _orderActivity(),
+        onSubmitted: (s) => reported = s,
+      ),
+    );
+
+    for (final token in ['This', 'is', 'my', 'mother']) {
+      await placeToken(tester, token);
+    }
+    expect(reported, isNull);
+
+    await tester.tap(find.byType(FilledButton));
+    await tester.pump();
+
+    expect(reported?.correctness, ActivityCorrectness.correct);
+    expect(find.byType(FilledButton), findsNothing);
+  });
+
+  testWidgets('plays the correct sound when a correct order is checked', (
+    tester,
+  ) async {
     final fakeSound = FakeSoundEffectsService();
     await tester.pumpActivityView(
       OrderActivityView(activity: _orderActivity(), onSubmitted: (_) {}),
@@ -70,49 +102,85 @@ void main() {
     );
 
     for (final token in ['This', 'is', 'my', 'mother']) {
-      await tester.tap(find.text(token));
-      await tester.pump();
+      await placeToken(tester, token);
     }
+    await tester.tap(find.byType(FilledButton));
+    await tester.pump();
 
     expect(fakeSound.played, [ActivityFeedbackSound.correct]);
   });
 
-  testWidgets(
-    'placing the last token in the wrong order submits immediately and '
-    'reports incorrect',
-    (tester) async {
-      ActivitySubmission? reported;
-      await tester.pumpActivityView(
-        OrderActivityView(
-          activity: _orderActivity(),
-          onSubmitted: (s) => reported = s,
-        ),
-      );
+  testWidgets('checking a wrong order reports incorrect', (tester) async {
+    ActivitySubmission? reported;
+    await tester.pumpActivityView(
+      OrderActivityView(
+        activity: _orderActivity(),
+        onSubmitted: (s) => reported = s,
+      ),
+    );
 
-      for (final token in ['is', 'This', 'my', 'mother']) {
-        await tester.tap(find.text(token));
-        await tester.pump();
-      }
+    for (final token in ['is', 'This', 'my', 'mother']) {
+      await placeToken(tester, token);
+    }
+    await tester.tap(find.byType(FilledButton));
+    await tester.pump();
 
-      expect(reported?.correctness, ActivityCorrectness.incorrect);
-    },
-  );
+    expect(reported?.correctness, ActivityCorrectness.incorrect);
+  });
 
-  testWidgets('tapping a placed token removes it, allowing re-order', (
+  testWidgets('tapping a placed word sends that word — not just the last '
+      'one — back to the bank', (tester) async {
+    ActivitySubmission? reported;
+    await tester.pumpActivityView(
+      OrderActivityView(
+        activity: _orderActivity(),
+        onSubmitted: (s) => reported = s,
+      ),
+    );
+
+    await placeToken(tester, 'is'); // wrong start
+    await placeToken(tester, 'This');
+    // Take "is" back out of the sentence (the first tile in tree order).
+    await tester.tap(find.widgetWithText(ActivityWordTile, 'is').first);
+    await tester.pump();
+    for (final token in ['is', 'my', 'mother']) {
+      await placeToken(tester, token);
+    }
+    await tester.tap(find.byType(FilledButton));
+    await tester.pump();
+
+    expect(reported?.correctness, ActivityCorrectness.correct);
+    expect(reported?.rawAnswerJson, jsonEncode(['This', 'is', 'my', 'mother']));
+  });
+
+  testWidgets('after Check the spent word bank (all empty slots) is gone', (
     tester,
   ) async {
     await tester.pumpActivityView(
       OrderActivityView(activity: _orderActivity(), onSubmitted: (_) {}),
     );
 
-    await tester.tap(find.text('is')); // place "is" first (wrong start)
-    await tester.pump();
-    // "is" now appears once in the placed row (as an ActionChip) — tap it
-    // to remove it again.
-    await tester.tap(find.text('is'));
+    for (final token in ['This', 'is', 'my', 'mother']) {
+      await placeToken(tester, token);
+    }
+    expect(find.byType(ActivityWordTileGhost), findsNWidgets(4));
+
+    await tester.tap(find.byType(FilledButton));
     await tester.pump();
 
-    // Submit should still be disabled — nothing is placed.
+    expect(find.byType(ActivityWordTileGhost), findsNothing);
+  });
+
+  testWidgets('Check stays disabled until every word is placed', (
+    tester,
+  ) async {
+    await tester.pumpActivityView(
+      OrderActivityView(activity: _orderActivity(), onSubmitted: (_) {}),
+    );
+
+    await placeToken(tester, 'This');
+    await placeToken(tester, 'is');
+
     expect(
       tester.widget<FilledButton>(find.byType(FilledButton)).onPressed,
       isNull,

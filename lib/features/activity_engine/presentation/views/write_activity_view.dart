@@ -6,6 +6,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../content/models/activity.dart';
 import '../../../../content/models/evaluation_spec.dart';
 import '../../../../core/l10n/generated/app_localizations.dart';
+import '../../../../core/theme/app_tokens.dart';
+import '../../../../core/theme/feedback_theme_extension.dart';
 import '../../../../data/local/database.dart' show ActivityAttempt;
 import '../../domain/activity_submission.dart';
 import '../../domain/answer_matching.dart';
@@ -15,9 +17,10 @@ import '../../domain/sound_effects_service.dart';
 import '../../providers/online_refinement_providers.dart';
 import '../../providers/sound_effects_providers.dart';
 import '../activity_chrome.dart';
+import '../widgets/activity_text_field.dart';
 
-/// Renders a `write` activity: a free-text response, with a suggested word
-/// count when [WriteActivity.wordGuide] is declared.
+/// Renders a `write` activity: a free-text response, with a live word count
+/// against [WriteActivity.wordGuide] when one is declared.
 ///
 /// When [WriteActivity.accepted] lists specific acceptable answers (short,
 /// closed-form writing tasks), the response is checked against them via
@@ -37,7 +40,6 @@ class WriteActivityView extends ConsumerStatefulWidget {
     required this.onSubmitted,
     this.evaluationContext = const EvaluationContext.empty(),
     this.reviewAttempt,
-    this.suppressIncorrectBanner = false,
     super.key,
   });
 
@@ -52,10 +54,6 @@ class WriteActivityView extends ConsumerStatefulWidget {
   /// recomputed (and never sent through the online-refinement queue). See
   /// docs/superpowers/specs/2026-09-09-lesson-answer-review-design.md.
   final ActivityAttempt? reviewAttempt;
-
-  /// True only when rendered by the live lesson player — see
-  /// [ActivitySubmitOrFeedback.suppressIncorrectBanner].
-  final bool suppressIncorrectBanner;
 
   @override
   ConsumerState<WriteActivityView> createState() => _WriteActivityViewState();
@@ -232,26 +230,121 @@ class _WriteActivityViewState extends ConsumerState<WriteActivityView> {
     return ActivityChrome(
       prompt: widget.activity.prompt,
       promptAr: widget.activity.promptAr,
-      help: wordGuide != null && wordGuide.length == 2
-          ? Text(
-              AppLocalizations.of(context)!
-                  .activityWordGuide(wordGuide[0], wordGuide[1]),
-              style: Theme.of(context).textTheme.labelSmall,
-            )
-          : null,
-      body: TextField(
-        controller: _controller,
-        enabled: _submission == null,
-        maxLines: 4,
-        decoration: const InputDecoration(border: OutlineInputBorder()),
-        onChanged: (_) => setState(() {}),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          TextField(
+            controller: _controller,
+            enabled: _submission == null,
+            minLines: 5,
+            maxLines: null,
+            keyboardType: TextInputType.multiline,
+            decoration: activityInputDecoration(context),
+            onChanged: (_) => setState(() {}),
+          ),
+          if (wordGuide != null && wordGuide.length == 2) ...[
+            const SizedBox(height: AppSpace.sm),
+            _WordGuideMeter(
+              count: countWords(_controller.text),
+              min: wordGuide[0],
+              max: wordGuide[1],
+            ),
+          ],
+        ],
       ),
       feedback: ActivitySubmitOrFeedback(
         submission: displaySubmission,
         canSubmit: _controller.text.trim().isNotEmpty,
         onSubmit: _submit,
         correctAnswerLabel: _correctAnswerLabel(),
-        suppressIncorrectBanner: widget.suppressIncorrectBanner,
+      ),
+    );
+  }
+}
+
+/// The live word count against the question's suggested range: a track
+/// that fills towards [max], with the target band from [min] to [max]
+/// marked, turning green once the answer is long enough.
+class _WordGuideMeter extends StatelessWidget {
+  const _WordGuideMeter({
+    required this.count,
+    required this.min,
+    required this.max,
+  });
+
+  final int count;
+  final int min;
+  final int max;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final tokens = theme.extension<AppTokens>()!;
+    final success = theme.extension<FeedbackTheme>()!.success;
+    final l10n = AppLocalizations.of(context)!;
+    final inRange = count >= min;
+    final meta = theme.textTheme.bodySmall?.copyWith(
+      color: tokens.textSecondary,
+    );
+
+    return Semantics(
+      container: true,
+      liveRegion: true,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Row(
+            children: [
+              Expanded(
+                child: Text(
+                  l10n.activityWordCount(count),
+                  style: meta?.copyWith(
+                    color: tokens.textPrimary,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+              Text(l10n.activityWordGuideTarget(min, max), style: meta),
+            ],
+          ),
+          const SizedBox(height: AppSpace.xs),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(3),
+            child: SizedBox(
+              height: 6,
+              child: LayoutBuilder(
+                builder: (context, constraints) {
+                  final width = constraints.maxWidth;
+                  return Stack(
+                    children: [
+                      Positioned.fill(
+                        child: ColoredBox(color: tokens.cardMuted),
+                      ),
+                      PositionedDirectional(
+                        start: width * min / max,
+                        top: 0,
+                        bottom: 0,
+                        end: 0,
+                        child: ColoredBox(
+                          color: success.withValues(alpha: 0.2),
+                        ),
+                      ),
+                      PositionedDirectional(
+                        start: 0,
+                        top: 0,
+                        bottom: 0,
+                        width: width * (count.clamp(0, max) / max),
+                        child: ColoredBox(
+                          color: inRange ? success : tokens.primaryInk,
+                        ),
+                      ),
+                    ],
+                  );
+                },
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
