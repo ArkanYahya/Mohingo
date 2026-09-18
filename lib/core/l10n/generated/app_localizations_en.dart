@@ -562,16 +562,152 @@ class AppLocalizationsEn extends AppLocalizations {
   String get quickPracticeDone => 'Done';
 
   @override
-  String get reviewSectionDue => 'Due for review';
+  String get reviewHubSubtitle => 'Keep words fresh and strengthen weak spots.';
 
   @override
-  String get reviewSectionFavorites => 'Favourites';
+  String get reviewDueOverline => 'Due now';
 
   @override
-  String get reviewSectionWeakObjectives => 'Needs more practice';
+  String reviewDueCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count words and phrases',
+      one: '1 word or phrase',
+    );
+    return '$_temp0';
+  }
 
   @override
-  String get reviewNothingDue => 'Nothing due right now.';
+  String reviewDueMore(int count) {
+    return 'and $count more';
+  }
+
+  @override
+  String reviewDueMinutes(int minutes) {
+    String _temp0 = intl.Intl.pluralLogic(
+      minutes,
+      locale: localeName,
+      other: 'about $minutes min',
+      one: 'about 1 min',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get reviewStartCta => 'Start review';
+
+  @override
+  String get reviewCaughtUpTitle => 'All caught up';
+
+  @override
+  String reviewNextIn(int days) {
+    String _temp0 = intl.Intl.pluralLogic(
+      days,
+      locale: localeName,
+      other: 'Next review in $days days',
+      one: 'Next review tomorrow',
+      zero: 'Next review later today',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get reviewCaughtUpEmpty =>
+      'Words and phrases from your lessons will come back here to review.';
+
+  @override
+  String get reviewWeakSpotsOverline => 'Practise weak spots';
+
+  @override
+  String get reviewWeakSpotsBody =>
+      'Goals in the units you\'re working on that need more practice';
+
+  @override
+  String reviewWeakSpotMeta(int unit, String skills) {
+    return 'Unit $unit · $skills';
+  }
+
+  @override
+  String reviewShowAll(int count) {
+    return 'All $count';
+  }
+
+  @override
+  String get reviewShowFewer => 'Show fewer';
+
+  @override
+  String get reviewBrowseOverline => 'Browse';
+
+  @override
+  String get reviewWordsTile => 'Words & phrases';
+
+  @override
+  String reviewWordsTileMeta(int inReview, int total) {
+    return '$inReview of $total in review';
+  }
+
+  @override
+  String reviewGrammarTileMeta(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count forms',
+      one: '1 form',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get reviewSavedOverline => 'Saved';
+
+  @override
+  String get reviewSessionWord => 'Word';
+
+  @override
+  String get reviewSessionPhrase => 'Phrase';
+
+  @override
+  String get reviewSessionPrompt => 'Say what it means, then check.';
+
+  @override
+  String get reviewShowAnswer => 'Show answer';
+
+  @override
+  String reviewSeeAgain(int days) {
+    String _temp0 = intl.Intl.pluralLogic(
+      days,
+      locale: localeName,
+      other: 'in $days days',
+      one: 'tomorrow',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String reviewSessionProgress(int current, int total) {
+    return '$current of $total';
+  }
+
+  @override
+  String get reviewSessionDoneTitle => 'Review done';
+
+  @override
+  String reviewSessionDoneBody(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count words and phrases reviewed',
+      one: '1 word or phrase reviewed',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get reviewSessionDoneCta => 'Done';
+
+  @override
+  String get reviewSessionEmpty => 'Nothing to review right now.';
 
   @override
   String get reviewNoFavorites =>

@@ -18,6 +18,7 @@ import '../../features/lesson_player/presentation/lesson_review_screen.dart';
 import '../../features/placement_test/presentation/placement_test_screen.dart';
 import '../../features/review/presentation/quick_practice_screen.dart';
 import '../../features/review/presentation/review_home_screen.dart';
+import '../../features/review/presentation/review_session_screen.dart';
 import '../../features/settings/presentation/settings_screen.dart';
 import '../../features/tests_home/presentation/tests_home_screen.dart';
 import '../../features/vocabulary/presentation/chunk_detail_screen.dart';
@@ -192,6 +193,11 @@ GoRouter appRouter(Ref ref) {
         path: '/review/practice',
         builder: (_, state) =>
             QuickPracticeScreen(activity: state.extra! as Activity),
+      ),
+      GoRoute(
+        // Full screen, above the tab bar, like the lesson player.
+        path: '/review/session',
+        builder: (_, _) => const ReviewSessionScreen(),
       ),
       GoRoute(
         path: '/tests/placement',

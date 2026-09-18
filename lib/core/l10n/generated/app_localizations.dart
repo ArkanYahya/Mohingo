@@ -974,29 +974,179 @@ abstract class AppLocalizations {
   /// **'Done'**
   String get quickPracticeDone;
 
-  /// Review tab section heading — vocabulary/chunks due per the spaced-review schedule.
+  /// Line under the Review tab's title.
   ///
   /// In en, this message translates to:
-  /// **'Due for review'**
-  String get reviewSectionDue;
+  /// **'Keep words fresh and strengthen weak spots.'**
+  String get reviewHubSubtitle;
 
-  /// Review tab section heading.
+  /// Overline on the Review tab's card of words and phrases due for review.
   ///
   /// In en, this message translates to:
-  /// **'Favourites'**
-  String get reviewSectionFavorites;
+  /// **'Due now'**
+  String get reviewDueOverline;
 
-  /// Review tab section heading — Can-Do objectives with evidence that doesn't yet meet the mastery threshold.
+  /// How many words and phrases are due for review.
   ///
   /// In en, this message translates to:
-  /// **'Needs more practice'**
-  String get reviewSectionWeakObjectives;
+  /// **'{count, plural, =1{1 word or phrase} other{{count} words and phrases}}'**
+  String reviewDueCount(int count);
 
-  /// Empty state for the due-for-review section.
+  /// After the first few due words: how many others are due.
   ///
   /// In en, this message translates to:
-  /// **'Nothing due right now.'**
-  String get reviewNothingDue;
+  /// **'and {count} more'**
+  String reviewDueMore(int count);
+
+  /// Rough time a review session will take.
+  ///
+  /// In en, this message translates to:
+  /// **'{minutes, plural, =1{about 1 min} other{about {minutes} min}}'**
+  String reviewDueMinutes(int minutes);
+
+  /// Button that starts a review session of the due words and phrases.
+  ///
+  /// In en, this message translates to:
+  /// **'Start review'**
+  String get reviewStartCta;
+
+  /// Review tab card when nothing is due for review.
+  ///
+  /// In en, this message translates to:
+  /// **'All caught up'**
+  String get reviewCaughtUpTitle;
+
+  /// When the next word or phrase comes due, in calendar days from today.
+  ///
+  /// In en, this message translates to:
+  /// **'{days, plural, =0{Next review later today} =1{Next review tomorrow} other{Next review in {days} days}}'**
+  String reviewNextIn(int days);
+
+  /// Review tab card when the learner has nothing in spaced review yet.
+  ///
+  /// In en, this message translates to:
+  /// **'Words and phrases from your lessons will come back here to review.'**
+  String get reviewCaughtUpEmpty;
+
+  /// Review tab section of Can-Do goals that need more practice.
+  ///
+  /// In en, this message translates to:
+  /// **'Practise weak spots'**
+  String get reviewWeakSpotsOverline;
+
+  /// Line under the weak-spots section heading.
+  ///
+  /// In en, this message translates to:
+  /// **'Goals in the units you\'re working on that need more practice'**
+  String get reviewWeakSpotsBody;
+
+  /// Under a weak spot's lesson title: its unit and the skills it practises.
+  ///
+  /// In en, this message translates to:
+  /// **'Unit {unit} · {skills}'**
+  String reviewWeakSpotMeta(int unit, String skills);
+
+  /// Expands a shortened Review tab list to show every item.
+  ///
+  /// In en, this message translates to:
+  /// **'All {count}'**
+  String reviewShowAll(int count);
+
+  /// Collapses an expanded Review tab list.
+  ///
+  /// In en, this message translates to:
+  /// **'Show fewer'**
+  String get reviewShowFewer;
+
+  /// Review tab section linking to the words and grammar lists.
+  ///
+  /// In en, this message translates to:
+  /// **'Browse'**
+  String get reviewBrowseOverline;
+
+  /// Review tab tile that opens the words and phrases list.
+  ///
+  /// In en, this message translates to:
+  /// **'Words & phrases'**
+  String get reviewWordsTile;
+
+  /// Under the Words & phrases tile: how many are in spaced review out of all.
+  ///
+  /// In en, this message translates to:
+  /// **'{inReview} of {total} in review'**
+  String reviewWordsTileMeta(int inReview, int total);
+
+  /// Under the Grammar tile: how many grammar forms the course has.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 form} other{{count} forms}}'**
+  String reviewGrammarTileMeta(int count);
+
+  /// Review tab section of starred words, phrases and grammar.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved'**
+  String get reviewSavedOverline;
+
+  /// Overline on a review card for a single word.
+  ///
+  /// In en, this message translates to:
+  /// **'Word'**
+  String get reviewSessionWord;
+
+  /// Overline on a review card for a phrase.
+  ///
+  /// In en, this message translates to:
+  /// **'Phrase'**
+  String get reviewSessionPhrase;
+
+  /// Hint on the front of a review card.
+  ///
+  /// In en, this message translates to:
+  /// **'Say what it means, then check.'**
+  String get reviewSessionPrompt;
+
+  /// Button that reveals a review card's meaning.
+  ///
+  /// In en, this message translates to:
+  /// **'Show answer'**
+  String get reviewShowAnswer;
+
+  /// Under each rating button: when the item will come back.
+  ///
+  /// In en, this message translates to:
+  /// **'{days, plural, =1{tomorrow} other{in {days} days}}'**
+  String reviewSeeAgain(int days);
+
+  /// Position in the review session.
+  ///
+  /// In en, this message translates to:
+  /// **'{current} of {total}'**
+  String reviewSessionProgress(int current, int total);
+
+  /// Title at the end of a review session.
+  ///
+  /// In en, this message translates to:
+  /// **'Review done'**
+  String get reviewSessionDoneTitle;
+
+  /// How many items the session reviewed.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 word or phrase reviewed} other{{count} words and phrases reviewed}}'**
+  String reviewSessionDoneBody(int count);
+
+  /// Closes the finished review session.
+  ///
+  /// In en, this message translates to:
+  /// **'Done'**
+  String get reviewSessionDoneCta;
+
+  /// Review session opened with nothing due.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing to review right now.'**
+  String get reviewSessionEmpty;
 
   /// Empty state for the favourites section.
   ///

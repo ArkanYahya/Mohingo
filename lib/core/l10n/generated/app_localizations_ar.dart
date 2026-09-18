@@ -583,16 +583,164 @@ class AppLocalizationsAr extends AppLocalizations {
   String get quickPracticeDone => 'تم';
 
   @override
-  String get reviewSectionDue => 'بحاجة للمراجعة';
+  String get reviewHubSubtitle => 'حافظ على ما تعلّمته وقوِّ نقاط ضعفك.';
 
   @override
-  String get reviewSectionFavorites => 'المفضلة';
+  String get reviewDueOverline => 'حان وقت مراجعتها';
 
   @override
-  String get reviewSectionWeakObjectives => 'بحاجة لمزيد من التدريب';
+  String reviewDueCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count كلمة وعبارة',
+      few: '$count كلمات وعبارات',
+      two: 'كلمتان أو عبارتان',
+      one: 'كلمة أو عبارة واحدة',
+    );
+    return '$_temp0';
+  }
 
   @override
-  String get reviewNothingDue => 'لا يوجد شيء بحاجة للمراجعة الآن.';
+  String reviewDueMore(int count) {
+    return 'و$count غيرها';
+  }
+
+  @override
+  String reviewDueMinutes(int minutes) {
+    String _temp0 = intl.Intl.pluralLogic(
+      minutes,
+      locale: localeName,
+      other: 'نحو $minutes دقيقة',
+      few: 'نحو $minutes دقائق',
+      two: 'نحو دقيقتين',
+      one: 'نحو دقيقة واحدة',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get reviewStartCta => 'ابدأ المراجعة';
+
+  @override
+  String get reviewCaughtUpTitle => 'أنهيت كل المراجعات';
+
+  @override
+  String reviewNextIn(int days) {
+    String _temp0 = intl.Intl.pluralLogic(
+      days,
+      locale: localeName,
+      other: 'المراجعة التالية بعد $days يوماً',
+      few: 'المراجعة التالية بعد $days أيام',
+      two: 'المراجعة التالية بعد يومين',
+      one: 'المراجعة التالية غداً',
+      zero: 'المراجعة التالية لاحقاً اليوم',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get reviewCaughtUpEmpty =>
+      'ستعود إليك هنا الكلمات والعبارات من دروسك لتراجعها.';
+
+  @override
+  String get reviewWeakSpotsOverline => 'تدرّب على نقاط ضعفك';
+
+  @override
+  String get reviewWeakSpotsBody =>
+      'أهداف في الوحدات التي تدرسها تحتاج إلى مزيد من التدريب';
+
+  @override
+  String reviewWeakSpotMeta(int unit, String skills) {
+    return 'الوحدة $unit · $skills';
+  }
+
+  @override
+  String reviewShowAll(int count) {
+    return 'الكل ($count)';
+  }
+
+  @override
+  String get reviewShowFewer => 'عرض أقل';
+
+  @override
+  String get reviewBrowseOverline => 'تصفّح';
+
+  @override
+  String get reviewWordsTile => 'الكلمات والعبارات';
+
+  @override
+  String reviewWordsTileMeta(int inReview, int total) {
+    return '$inReview من $total قيد المراجعة';
+  }
+
+  @override
+  String reviewGrammarTileMeta(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count صيغة',
+      few: '$count صيغ',
+      two: 'صيغتان',
+      one: 'صيغة واحدة',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get reviewSavedOverline => 'المحفوظة';
+
+  @override
+  String get reviewSessionWord => 'كلمة';
+
+  @override
+  String get reviewSessionPhrase => 'عبارة';
+
+  @override
+  String get reviewSessionPrompt => 'قل معناها، ثم تحقّق.';
+
+  @override
+  String get reviewShowAnswer => 'اعرض الإجابة';
+
+  @override
+  String reviewSeeAgain(int days) {
+    String _temp0 = intl.Intl.pluralLogic(
+      days,
+      locale: localeName,
+      other: 'بعد $days يوماً',
+      few: 'بعد $days أيام',
+      two: 'بعد يومين',
+      one: 'غداً',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String reviewSessionProgress(int current, int total) {
+    return '$current من $total';
+  }
+
+  @override
+  String get reviewSessionDoneTitle => 'انتهت المراجعة';
+
+  @override
+  String reviewSessionDoneBody(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'راجعت $count كلمة وعبارة',
+      few: 'راجعت $count كلمات وعبارات',
+      two: 'راجعت كلمتين أو عبارتين',
+      one: 'راجعت كلمة أو عبارة واحدة',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get reviewSessionDoneCta => 'تم';
+
+  @override
+  String get reviewSessionEmpty => 'لا شيء للمراجعة الآن.';
 
   @override
   String get reviewNoFavorites =>
