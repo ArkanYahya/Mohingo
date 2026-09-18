@@ -113,7 +113,7 @@ class LessonKeyPhrasesStep extends ConsumerWidget {
             ),
           ),
         ),
-        LessonIntroBar(label: continueLabel, onPressed: onContinue),
+        LessonActionBar(label: continueLabel, onPressed: onContinue),
       ],
     );
   }

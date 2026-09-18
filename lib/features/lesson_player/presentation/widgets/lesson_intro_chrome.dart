@@ -57,17 +57,24 @@ class LessonIntroHeader extends StatelessWidget {
   }
 }
 
-/// The bottom bar of a lesson-intro screen: one full-width button with a
-/// forward arrow, pinned like the question frame's Check bar.
-class LessonIntroBar extends StatelessWidget {
-  const LessonIntroBar({
+/// The bottom bar of the lesson intro and lesson-complete screens: one
+/// full-width button with a forward arrow, pinned like the question
+/// frame's Check bar, and an optional quieter [secondary] action under it.
+class LessonActionBar extends StatelessWidget {
+  const LessonActionBar({
     required this.label,
     required this.onPressed,
+    this.secondary,
+    this.showArrow = true,
     super.key,
   });
 
   final String label;
   final VoidCallback onPressed;
+  final Widget? secondary;
+
+  /// False for a button that goes back rather than on ("Back to unit").
+  final bool showArrow;
 
   @override
   Widget build(BuildContext context) {
@@ -84,18 +91,32 @@ class LessonIntroBar extends StatelessWidget {
           AppSpace.md,
           AppSpace.md + MediaQuery.paddingOf(context).bottom,
         ),
-        child: FilledButton(
-          style: FilledButton.styleFrom(minimumSize: const Size.fromHeight(52)),
-          onPressed: onPressed,
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Flexible(child: Text(label)),
-              const SizedBox(width: AppSpace.xs),
-              // arrow_forward mirrors itself in right-to-left layouts.
-              const Icon(Icons.arrow_forward_rounded, size: 20),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            FilledButton(
+              style: FilledButton.styleFrom(
+                minimumSize: const Size.fromHeight(52),
+              ),
+              onPressed: onPressed,
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Flexible(child: Text(label)),
+                  if (showArrow) ...[
+                    const SizedBox(width: AppSpace.xs),
+                    // arrow_forward mirrors itself in right-to-left layouts.
+                    const Icon(Icons.arrow_forward_rounded, size: 20),
+                  ],
+                ],
+              ),
+            ),
+            if (secondary != null) ...[
+              const SizedBox(height: AppSpace.xxs),
+              secondary!,
             ],
-          ),
+          ],
         ),
       ),
     );

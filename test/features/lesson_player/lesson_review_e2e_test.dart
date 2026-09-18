@@ -17,6 +17,7 @@ import 'package:mohingo/core/theme/color_seed.dart';
 import 'package:mohingo/data/local/database.dart';
 import 'package:mohingo/data/local/database_provider.dart';
 import 'package:mohingo/features/lesson_player/presentation/lesson_player_screen.dart';
+import 'package:mohingo/features/lesson_player/presentation/widgets/lesson_complete_view.dart';
 import 'package:mohingo/features/lesson_player/presentation/lesson_review_screen.dart';
 import 'package:mohingo/features/progress/providers/current_learner_provider.dart';
 import 'package:mohingo/features/progress/providers/progress_providers.dart';
@@ -115,7 +116,7 @@ void main() {
       );
       await _playLessonOnce(tester, 'morning-office');
       await tester.pumpAndSettle();
-      expect(find.byIcon(Icons.celebration), findsOneWidget);
+      expect(find.byType(LessonCompleteView), findsOneWidget);
 
       // Real navigation back into the lesson player (e.g. "Practice again",
       // or tapping the lesson node again) always goes through
@@ -149,7 +150,7 @@ void main() {
       );
       await _playLessonOnce(tester, 'night-bedroom');
       await tester.pumpAndSettle();
-      expect(find.byIcon(Icons.celebration), findsOneWidget);
+      expect(find.byType(LessonCompleteView), findsOneWidget);
 
       final a01Attempts = await (db.select(
         db.activityAttempts,
@@ -262,7 +263,7 @@ void main() {
       );
       await _playLessonOnce(tester, 'morning-office');
       await tester.pumpAndSettle();
-      expect(find.byIcon(Icons.celebration), findsOneWidget);
+      expect(find.byType(LessonCompleteView), findsOneWidget);
 
       // Open review on the SAME container — this both proves the first
       // attempt is visible and, crucially, establishes
@@ -285,7 +286,7 @@ void main() {
       );
       await _playLessonOnce(tester, 'night-bedroom');
       await tester.pumpAndSettle();
-      expect(find.byIcon(Icons.celebration), findsOneWidget);
+      expect(find.byType(LessonCompleteView), findsOneWidget);
 
       // `_handleSubmitted` invalidates `lessonReviewAttemptsProvider` on
       // this container for every one of the 4 activities just replayed, but
@@ -442,7 +443,7 @@ void main() {
       // time.
       await _playLessonOnce(tester, 'morning-office');
       await tester.pumpAndSettle();
-      expect(find.byIcon(Icons.celebration), findsOneWidget);
+      expect(find.byType(LessonCompleteView), findsOneWidget);
 
       // The device Back button, not the "Next lesson"/"Back to unit"
       // footer button — a plain Navigator.pop() on the same Navigator

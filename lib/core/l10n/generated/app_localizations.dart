@@ -638,6 +638,54 @@ abstract class AppLocalizations {
   /// **'Start practice'**
   String get lessonIntroStartPractice;
 
+  /// Small word under the correct/total fraction inside the lesson-complete score ring, e.g. '3/4' over 'correct'.
+  ///
+  /// In en, this message translates to:
+  /// **'correct'**
+  String get lessonCompleteCorrectCaption;
+
+  /// Label of the streak figure on the lesson-complete screen.
+  ///
+  /// In en, this message translates to:
+  /// **'Streak'**
+  String get lessonCompleteStreakLabel;
+
+  /// Label of the percentage-correct figure on the lesson-complete screen.
+  ///
+  /// In en, this message translates to:
+  /// **'Accuracy'**
+  String get lessonCompleteAccuracyLabel;
+
+  /// Label of the count of the lesson's key phrases on the lesson-complete screen.
+  ///
+  /// In en, this message translates to:
+  /// **'Phrases'**
+  String get lessonCompletePhrasesLabel;
+
+  /// Label of the count of questions answered, used on the lesson-complete screen when the lesson has no key phrases.
+  ///
+  /// In en, this message translates to:
+  /// **'Questions'**
+  String get lessonCompleteQuestionsLabel;
+
+  /// Section title above the skills the lesson's questions trained.
+  ///
+  /// In en, this message translates to:
+  /// **'Skills practised'**
+  String get lessonCompleteSkillsTitle;
+
+  /// Overline on the card previewing the next lesson in the unit.
+  ///
+  /// In en, this message translates to:
+  /// **'Up next · Lesson {lesson}'**
+  String lessonCompleteUpNext(int lesson);
+
+  /// Secondary action on the lesson-complete screen that opens the lesson's answer review.
+  ///
+  /// In en, this message translates to:
+  /// **'Review answers'**
+  String get lessonCompleteReviewAnswers;
+
   /// Button to advance to the next activity after seeing feedback.
   ///
   /// In en, this message translates to:

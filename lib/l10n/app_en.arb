@@ -306,6 +306,25 @@
   "@lessonIntroNew": {"description": "Badge on a key phrase this lesson introduces for the first time."},
   "lessonIntroStartPractice": "Start practice",
   "@lessonIntroStartPractice": {"description": "Button that leaves the lesson intro for its first question."},
+  "lessonCompleteCorrectCaption": "correct",
+  "@lessonCompleteCorrectCaption": {"description": "Small word under the correct/total fraction inside the lesson-complete score ring, e.g. '3/4' over 'correct'."},
+  "lessonCompleteStreakLabel": "Streak",
+  "@lessonCompleteStreakLabel": {"description": "Label of the streak figure on the lesson-complete screen."},
+  "lessonCompleteAccuracyLabel": "Accuracy",
+  "@lessonCompleteAccuracyLabel": {"description": "Label of the percentage-correct figure on the lesson-complete screen."},
+  "lessonCompletePhrasesLabel": "Phrases",
+  "@lessonCompletePhrasesLabel": {"description": "Label of the count of the lesson's key phrases on the lesson-complete screen."},
+  "lessonCompleteQuestionsLabel": "Questions",
+  "@lessonCompleteQuestionsLabel": {"description": "Label of the count of questions answered, used on the lesson-complete screen when the lesson has no key phrases."},
+  "lessonCompleteSkillsTitle": "Skills practised",
+  "@lessonCompleteSkillsTitle": {"description": "Section title above the skills the lesson's questions trained."},
+  "lessonCompleteUpNext": "Up next · Lesson {lesson}",
+  "@lessonCompleteUpNext": {
+    "description": "Overline on the card previewing the next lesson in the unit.",
+    "placeholders": {"lesson": {"type": "int"}}
+  },
+  "lessonCompleteReviewAnswers": "Review answers",
+  "@lessonCompleteReviewAnswers": {"description": "Secondary action on the lesson-complete screen that opens the lesson's answer review."},
   "lessonPlayerNext": "Next",
   "@lessonPlayerNext": {
     "description": "Button to advance to the next activity after seeing feedback."

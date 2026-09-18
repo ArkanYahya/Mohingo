@@ -277,7 +277,7 @@ class _LessonConversationStepState
             ),
           ),
         ),
-        LessonIntroBar(
+        LessonActionBar(
           label: widget.continueLabel,
           onPressed: widget.onContinue,
         ),

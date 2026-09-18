@@ -18,6 +18,7 @@ import 'package:mohingo/features/activity_engine/domain/evaluation/grammar_check
 import 'package:mohingo/features/activity_engine/presentation/activity_chrome.dart';
 import 'package:mohingo/features/activity_engine/providers/online_refinement_providers.dart';
 import 'package:mohingo/features/lesson_player/presentation/lesson_player_screen.dart';
+import 'package:mohingo/features/lesson_player/presentation/widgets/lesson_complete_view.dart';
 import 'package:mohingo/features/lesson_player/presentation/widgets/lesson_progress_bar.dart';
 import 'package:mohingo/features/speech/domain/speech_capability_service.dart';
 import 'package:mohingo/features/speech/domain/speech_recognition_service.dart';
@@ -159,7 +160,7 @@ void main() {
       await tester.pumpAndSettle();
 
       // Reached the lesson-complete screen.
-      expect(find.byIcon(Icons.celebration), findsOneWidget);
+      expect(find.byType(LessonCompleteView), findsOneWidget);
 
       // Every activity recorded exactly once — insert-only, no duplicates,
       // nothing lost.

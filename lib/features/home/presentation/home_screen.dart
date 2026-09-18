@@ -6,6 +6,7 @@ import '../../../content/index/course_content_index.dart';
 import '../../../content/models/curriculum_structure.dart';
 import '../../../content/providers/course_content_providers.dart';
 import '../../../core/l10n/generated/app_localizations.dart';
+import '../../../core/l10n/lesson_type_label.dart';
 import '../../../core/theme/app_tokens.dart';
 import '../../../data/local/database.dart';
 import '../../learning_path/domain/current_unit_selector.dart';
@@ -219,7 +220,7 @@ class _HomeBody extends ConsumerWidget {
 
     final lesson = lessonResume.lesson;
     final started = lessonResume.activitiesDone > 0;
-    final type = _lessonTypeLabel(l10n, lesson.lessonType);
+    final type = lessonTypeLabel(l10n, lesson.lessonType);
     final count = l10n.homeActivityCount(lessonResume.activityCount);
     return ContinueLessonCard(
       badge: Text('${lessonResume.lessonIndex + 1}'),
@@ -238,16 +239,6 @@ class _HomeBody extends ConsumerWidget {
       ctaLabel: started ? l10n.homeContinueLessonCta : l10n.homeStartLessonCta,
       onPressed: () => onResume(unit, lessonResume),
     );
-  }
-
-  String? _lessonTypeLabel(AppLocalizations l10n, String lessonType) {
-    return switch (lessonType) {
-      'encounter-focus-practice' => l10n.homeLessonTypeGuided,
-      'focus-practice' => l10n.homeLessonTypePractice,
-      'communication' => l10n.homeLessonTypeConversation,
-      'mission' => l10n.homeLessonTypeMission,
-      _ => null,
-    };
   }
 }
 

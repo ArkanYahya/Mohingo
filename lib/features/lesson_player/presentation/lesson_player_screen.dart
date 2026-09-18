@@ -25,6 +25,7 @@ import '../../progress/providers/progress_providers.dart';
 import '../domain/lesson_phases.dart';
 import 'lesson_review_screen.dart' show lessonReviewAttemptsProvider;
 import 'widgets/activity_eyebrow.dart';
+import 'widgets/lesson_complete_view.dart';
 import 'widgets/lesson_conversation_step.dart';
 import 'widgets/lesson_key_phrases_step.dart';
 import 'widgets/lesson_progress_bar.dart';
@@ -172,6 +173,10 @@ class _LessonPlayerBodyState extends ConsumerState<_LessonPlayerBody> {
       ? 0
       : (widget.phrases.isEmpty && widget.grammar.isEmpty ? 1 : 2);
   final List<ActivityCorrectness> _results = [];
+
+  /// The skill of each activity answered this session, in order — the
+  /// lesson-complete screen's "Skills practised".
+  final List<Skill> _skills = [];
   final Map<String, String> _previousAnswers = {};
 
   @override
@@ -225,6 +230,11 @@ class _LessonPlayerBodyState extends ConsumerState<_LessonPlayerBody> {
   /// stale answer from an older replay of a *later* activity out of the
   /// map. Answers are stored exactly as [_handleSubmitted] writes them:
   /// JSON-encoded, and only kept when they decode to a plain string.
+  ///
+  /// The same latest attempts also seed [_results] and [_skills], so the
+  /// lesson-complete screen sums up the whole lesson rather than only the
+  /// activities answered in this sitting. (An answer still queued for
+  /// online checking has no attempt row yet, and is left out.)
   Future<void> _rehydratePreviousAnswers({required int skippedCount}) async {
     final answered = widget.lesson.activities
         .take(skippedCount)
@@ -255,6 +265,17 @@ class _LessonPlayerBodyState extends ConsumerState<_LessonPlayerBody> {
       if (rawAnswer == null) continue;
       final decoded = _decodeRawAnswer(rawAnswer);
       if (decoded != null) _previousAnswers[entry.key] = decoded;
+    }
+
+    for (final activity in widget.lesson.activities.take(skippedCount)) {
+      final attempt = latestByActivity[activity.id];
+      if (attempt == null) continue;
+      _results.add(switch (attempt.isCorrect) {
+        true => ActivityCorrectness.correct,
+        false => ActivityCorrectness.incorrect,
+        null => ActivityCorrectness.notAutoGraded,
+      });
+      _skills.add(activity.skill);
     }
   }
 
@@ -336,6 +357,7 @@ class _LessonPlayerBodyState extends ConsumerState<_LessonPlayerBody> {
         );
 
     _results.add(submission.correctness);
+    _skills.add(activity.skill);
     // Invalidated here too, not just in _next()'s finish branch: a learner
     // who answers some activities and backs out without finishing the
     // lesson still moves it from "not started" to "in progress" in the
@@ -445,28 +467,43 @@ class _LessonPlayerBodyState extends ConsumerState<_LessonPlayerBody> {
     }
     if (_finished) {
       final lessons = widget.unit.lessons;
-      final currentIndex = lessons.indexWhere((l) => l.id == widget.lesson.id);
-      final nextLesson = currentIndex >= 0 && currentIndex < lessons.length - 1
-          ? lessons[currentIndex + 1]
+      final position = lessons.indexWhere((l) => l.id == widget.lesson.id);
+      final nextLesson = position >= 0 && position < lessons.length - 1
+          ? lessons[position + 1]
           : null;
-      return _LessonCompleteScreen(
-        results: _results,
-        hasNextLesson: nextLesson != null,
-        onNext: nextLesson != null
-            ? () => context.pushReplacement(
-                '/lesson-player/${widget.unitId}/${nextLesson.id}',
-              )
-            : () => context.pop(),
+      return Scaffold(
+        body: SafeArea(
+          bottom: false,
+          child: LessonCompleteView(
+            lesson: widget.lesson,
+            results: _results,
+            skills: _skills,
+            phraseCount: widget.phrases.length,
+            streakDays: ref.watch(currentStreakDaysProvider).value,
+            nextLesson: nextLesson,
+            nextLessonNumber: position + 2,
+            progress: LessonProgressBar(
+              groupSizes: _groupSizes,
+              completed: _introCount + widget.lesson.activities.length,
+            ),
+            onNext: nextLesson != null
+                ? () => context.pushReplacement(
+                    '/lesson-player/${widget.unitId}/${nextLesson.id}',
+                  )
+                : () => context.pop(),
+            onReviewAnswers: () => context.pushReplacement(
+              '/lesson-review/${widget.unitId}/${widget.lesson.id}',
+            ),
+            onClose: () => Navigator.of(context).maybePop(),
+          ),
+        ),
       );
     }
 
     final activities = widget.lesson.activities;
     final introIndex = _introIndex;
     final progress = LessonProgressBar(
-      groupSizes: [
-        if (_introCount > 0) _introCount,
-        ...phaseGroupSizes([for (final a in activities) a.mode]),
-      ],
+      groupSizes: _groupSizes,
       completed:
           introIndex ??
           _introCount + _currentIndex! + (_lastSubmission == null ? 0 : 1),
@@ -493,6 +530,13 @@ class _LessonPlayerBodyState extends ConsumerState<_LessonPlayerBody> {
       ),
     );
   }
+
+  /// The progress bar's groups: the intro (when there is one), then one
+  /// per run of same-mode activities.
+  List<int> get _groupSizes => [
+    if (_introCount > 0) _introCount,
+    ...phaseGroupSizes([for (final a in widget.lesson.activities) a.mode]),
+  ];
 
   Widget _buildIntro(BuildContext context, int introIndex) {
     final l10n = AppLocalizations.of(context)!;
@@ -550,72 +594,6 @@ class _LessonPlayerBodyState extends ConsumerState<_LessonPlayerBody> {
         evaluationContext: EvaluationContext(
           profileName: widget.learnerName,
           previousAnswers: Map.unmodifiable(_previousAnswers),
-        ),
-      ),
-    );
-  }
-}
-
-class _LessonCompleteScreen extends StatelessWidget {
-  const _LessonCompleteScreen({
-    required this.results,
-    required this.hasNextLesson,
-    required this.onNext,
-  });
-
-  final List<ActivityCorrectness> results;
-  final bool hasNextLesson;
-  final VoidCallback onNext;
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
-    final colorScheme = Theme.of(context).colorScheme;
-    final correct = results
-        .where((r) => r == ActivityCorrectness.correct)
-        .length;
-    final incorrect = results
-        .where((r) => r == ActivityCorrectness.incorrect)
-        .length;
-    final pending = results
-        .where((r) => r == ActivityCorrectness.notAutoGraded)
-        .length;
-    final scored = correct + incorrect;
-
-    return Scaffold(
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(24),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Icon(Icons.celebration, size: 48, color: colorScheme.primary),
-              const SizedBox(height: 16),
-              Text(
-                l10n.lessonCompleteTitle,
-                style: Theme.of(context).textTheme.titleLarge,
-              ),
-              const SizedBox(height: 8),
-              if (scored > 0) Text(l10n.lessonCompleteTally(correct, scored)),
-              if (pending > 0)
-                Padding(
-                  padding: const EdgeInsets.only(top: 4),
-                  child: Text(
-                    l10n.lessonCompletePendingReview(pending),
-                    style: Theme.of(context).textTheme.bodySmall,
-                  ),
-                ),
-              const SizedBox(height: 24),
-              FilledButton(
-                onPressed: onNext,
-                child: Text(
-                  hasNextLesson
-                      ? l10n.lessonCompleteNextLesson
-                      : l10n.lessonCompleteBackToUnit,
-                ),
-              ),
-            ],
-          ),
         ),
       ),
     );

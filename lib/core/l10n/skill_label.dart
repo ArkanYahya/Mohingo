@@ -16,6 +16,16 @@ String skillLabel(AppLocalizations l10n, Skill skill) {
   };
 }
 
+/// The label a learner sees mid-lesson: [skillLabel], except both speaking
+/// skills read "Speaking" — the interaction/production split matters to
+/// mastery tracking, not to someone answering a question.
+String learnerSkillLabel(AppLocalizations l10n, Skill skill) {
+  return switch (skill) {
+    Skill.spokenInteraction || Skill.spokenProduction => l10n.skillSpeaking,
+    _ => skillLabel(l10n, skill),
+  };
+}
+
 /// Same, but for a final-assessment section key (`"listening"`, `"reading"`,
 /// `"writing"`, `"speaking"`, `"mediation"`) — the assessment merges
 /// `spokenInteraction`/`spokenProduction` into one `"speaking"` bucket, so

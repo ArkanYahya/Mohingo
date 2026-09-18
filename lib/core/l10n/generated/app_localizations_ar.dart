@@ -377,6 +377,32 @@ class AppLocalizationsAr extends AppLocalizations {
   String get lessonIntroStartPractice => 'ابدأ التدريب';
 
   @override
+  String get lessonCompleteCorrectCaption => 'صحيحة';
+
+  @override
+  String get lessonCompleteStreakLabel => 'التتابع';
+
+  @override
+  String get lessonCompleteAccuracyLabel => 'الدقة';
+
+  @override
+  String get lessonCompletePhrasesLabel => 'عبارات';
+
+  @override
+  String get lessonCompleteQuestionsLabel => 'أسئلة';
+
+  @override
+  String get lessonCompleteSkillsTitle => 'مهارات تدرّبت عليها';
+
+  @override
+  String lessonCompleteUpNext(int lesson) {
+    return 'التالي · الدرس $lesson';
+  }
+
+  @override
+  String get lessonCompleteReviewAnswers => 'راجع إجاباتك';
+
+  @override
   String get lessonPlayerNext => 'التالي';
 
   @override

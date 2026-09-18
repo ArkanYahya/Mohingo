@@ -360,6 +360,32 @@ class AppLocalizationsEn extends AppLocalizations {
   String get lessonIntroStartPractice => 'Start practice';
 
   @override
+  String get lessonCompleteCorrectCaption => 'correct';
+
+  @override
+  String get lessonCompleteStreakLabel => 'Streak';
+
+  @override
+  String get lessonCompleteAccuracyLabel => 'Accuracy';
+
+  @override
+  String get lessonCompletePhrasesLabel => 'Phrases';
+
+  @override
+  String get lessonCompleteQuestionsLabel => 'Questions';
+
+  @override
+  String get lessonCompleteSkillsTitle => 'Skills practised';
+
+  @override
+  String lessonCompleteUpNext(int lesson) {
+    return 'Up next · Lesson $lesson';
+  }
+
+  @override
+  String get lessonCompleteReviewAnswers => 'Review answers';
+
+  @override
   String get lessonPlayerNext => 'Next';
 
   @override
