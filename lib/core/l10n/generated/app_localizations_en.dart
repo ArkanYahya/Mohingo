@@ -661,6 +661,23 @@ class AppLocalizationsEn extends AppLocalizations {
   String get grammarNoLinkedPractice => 'No linked practice activity yet.';
 
   @override
+  String practiceEyebrow(String title, int n, int total) {
+    return 'Practice · $title · $n of $total';
+  }
+
+  @override
+  String practiceOverline(String title) {
+    return 'Practice · $title';
+  }
+
+  @override
+  String get practiceNoMastery =>
+      'Practice here doesn\'t count towards mastery — the lesson and its unit mission do.';
+
+  @override
+  String get practiceAgain => 'Practise again';
+
+  @override
   String get quickPracticeDone => 'Done';
 
   @override

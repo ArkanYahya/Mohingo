@@ -8,16 +8,19 @@ import 'hairline_card.dart';
 
 /// One hairline card listing [lessons] — each its English title, Arabic,
 /// and "Unit 2 · Lesson 1" — separated by dividers. Used where a word,
-/// phrase or grammar form points back to the lessons that teach it.
+/// phrase or grammar form points back to the lessons that teach it. With
+/// [onTap] each row opens its lesson and shows a chevron.
 class LessonReferenceList extends StatelessWidget {
   const LessonReferenceList({
     required this.index,
     required this.lessons,
+    this.onTap,
     super.key,
   });
 
   final CourseContentIndex index;
   final List<Lesson> lessons;
+  final ValueChanged<Lesson>? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +34,7 @@ class LessonReferenceList extends StatelessWidget {
           ? 0
           : index.bundle.units.indexOf(unit) + 1;
       final lessonNumber = unit == null ? 0 : unit.lessons.indexOf(lesson) + 1;
-      return Padding(
+      final content = Padding(
         padding: const EdgeInsets.all(AppSpace.md - 2),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -59,6 +62,23 @@ class LessonReferenceList extends StatelessWidget {
             Text(
               l10n.wordMetInMeta(unitNumber, lessonNumber),
               style: theme.textTheme.bodySmall?.copyWith(
+                color: tokens.textSecondary,
+              ),
+            ),
+          ],
+        ),
+      );
+      final onTap = this.onTap;
+      if (onTap == null) return content;
+      return InkWell(
+        onTap: () => onTap(lesson),
+        child: Row(
+          children: [
+            Expanded(child: content),
+            Padding(
+              padding: const EdgeInsetsDirectional.only(end: AppSpace.sm),
+              child: Icon(
+                Icons.chevron_right_rounded,
                 color: tokens.textSecondary,
               ),
             ),

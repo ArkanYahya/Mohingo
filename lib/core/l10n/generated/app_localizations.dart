@@ -1136,6 +1136,30 @@ abstract class AppLocalizations {
   /// **'No linked practice activity yet.'**
   String get grammarNoLinkedPractice;
 
+  /// Above a quick-practice question: what is practised and which question.
+  ///
+  /// In en, this message translates to:
+  /// **'Practice · {title} · {n} of {total}'**
+  String practiceEyebrow(String title, int n, int total);
+
+  /// Overline on the quick-practice summary.
+  ///
+  /// In en, this message translates to:
+  /// **'Practice · {title}'**
+  String practiceOverline(String title);
+
+  /// Quick-practice summary: why the weak spot may remain.
+  ///
+  /// In en, this message translates to:
+  /// **'Practice here doesn\'t count towards mastery — the lesson and its unit mission do.'**
+  String get practiceNoMastery;
+
+  /// Restarts a quick-practice set.
+  ///
+  /// In en, this message translates to:
+  /// **'Practise again'**
+  String get practiceAgain;
+
   /// Button to leave the quick-practice screen.
   ///
   /// In en, this message translates to:

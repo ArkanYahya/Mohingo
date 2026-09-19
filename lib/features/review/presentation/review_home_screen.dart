@@ -15,6 +15,7 @@ import '../../grammar/providers/grammar_providers.dart';
 import '../../lesson_player/presentation/widgets/activity_eyebrow.dart';
 import '../../vocabulary/providers/vocabulary_providers.dart';
 import '../domain/next_review.dart';
+import '../domain/practice_set.dart';
 import '../domain/weak_spots.dart';
 import '../providers/review_providers.dart';
 
@@ -400,15 +401,15 @@ class _WeakSpotRow extends StatelessWidget {
     final theme = Theme.of(context);
     final tokens = theme.extension<AppTokens>()!;
     final l10n = AppLocalizations.of(context)!;
-    final activity = spot.practiceActivity;
+    final practice = practiceSetForWeakSpot(spot);
     final skills = spot.skills
         .map((s) => learnerSkillLabel(l10n, s))
         .join(' · ');
 
     return InkWell(
-      onTap: activity == null
+      onTap: practice.activities.isEmpty
           ? null
-          : () => context.push('/review/practice', extra: activity),
+          : () => context.push('/review/practice', extra: practice),
       child: Padding(
         padding: const EdgeInsets.symmetric(
           horizontal: AppSpace.md - 2,
@@ -437,7 +438,7 @@ class _WeakSpotRow extends StatelessWidget {
                 meta: l10n.reviewWeakSpotMeta(spot.unitNumber, skills),
               ),
             ),
-            if (activity != null)
+            if (practice.activities.isNotEmpty)
               Icon(Icons.chevron_right_rounded, color: tokens.textSecondary),
           ],
         ),

@@ -50,7 +50,7 @@ void main() {
     expect(spots.single.canDoIds, hasLength(2));
   });
 
-  test('the practice activity comes from the lesson the spot is named by', () {
+  test('listening-only goals name their lesson and skill', () {
     final spot = weakSpotsFor(
       index: _index,
       canDoIds: const ['A1.U1.LISTENING.UNDERSTAND_PERSONAL_INFO'],
@@ -58,8 +58,6 @@ void main() {
 
     expect(spot.lesson.title, 'Where Are You From?');
     expect(spot.skills, [Skill.listening]);
-    expect(spot.practiceActivity, isNotNull);
-    expect(spot.lesson.activities, contains(spot.practiceActivity));
   });
 
   test('an id no lesson teaches is left out rather than shown raw', () {

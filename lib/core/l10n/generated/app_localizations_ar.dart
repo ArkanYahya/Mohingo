@@ -681,6 +681,23 @@ class AppLocalizationsAr extends AppLocalizations {
   String get grammarNoLinkedPractice => 'لا يوجد تمرين مرتبط بعد.';
 
   @override
+  String practiceEyebrow(String title, int n, int total) {
+    return 'تدريب · $title · $n من $total';
+  }
+
+  @override
+  String practiceOverline(String title) {
+    return 'تدريب · $title';
+  }
+
+  @override
+  String get practiceNoMastery =>
+      'لا يُحتسب هذا التدريب في الإتقان — الدرس ومهمة وحدته هما ما يُحتسب.';
+
+  @override
+  String get practiceAgain => 'تدرّب مجدداً';
+
+  @override
   String get quickPracticeDone => 'تم';
 
   @override

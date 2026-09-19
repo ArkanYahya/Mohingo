@@ -9,7 +9,6 @@ import 'package:go_router/go_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:mohingo/content/index/course_content_index.dart';
-import 'package:mohingo/content/models/activity.dart';
 import 'package:mohingo/content/parsing/course_bundle_parser.dart';
 import 'package:mohingo/content/providers/course_content_providers.dart';
 import 'package:mohingo/core/l10n/generated/app_localizations.dart';
@@ -18,6 +17,7 @@ import 'package:mohingo/core/theme/app_theme.dart';
 import 'package:mohingo/core/theme/color_seed.dart';
 import 'package:mohingo/data/local/database.dart';
 import 'package:mohingo/data/local/database_provider.dart';
+import 'package:mohingo/features/review/domain/practice_set.dart';
 import 'package:mohingo/features/progress/providers/current_learner_provider.dart';
 import 'package:mohingo/features/review/presentation/review_home_screen.dart';
 import 'package:mohingo/features/review/presentation/review_session_screen.dart';
@@ -125,7 +125,8 @@ Future<(ProviderContainer, AppDatabase, AppLocalizations)> pumpReview(
       ),
       GoRoute(
         path: '/review/practice',
-        builder: (_, s) => Text('PRACTICE ${(s.extra! as Activity).id}'),
+        builder: (_, s) =>
+            Text('PRACTICE ${(s.extra! as PracticeSet).activities.first.id}'),
       ),
     ],
   );

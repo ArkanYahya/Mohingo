@@ -14,6 +14,7 @@ import '../../../core/widgets/section_heading.dart';
 import '../../progress/providers/current_learner_provider.dart';
 import '../../progress/providers/progress_providers.dart';
 import '../../speech/presentation/listen_button.dart';
+import '../../review/domain/practice_set.dart';
 import '../providers/grammar_providers.dart';
 
 /// One grammar form's page: "GRAMMAR · UNIT 2", the form with audio, its
@@ -232,7 +233,7 @@ class GrammarDetailScreen extends ConsumerWidget {
                         ? null
                         : () => context.push(
                             '/review/practice',
-                            extra: practiceActivities.first,
+                            extra: practiceSetForGrammar(index, grammarId),
                           ),
                     child: Text(l10n.grammarQuickPractice),
                   ),

@@ -5,7 +5,6 @@ import '../../content/providers/course_content_providers.dart';
 import '../../features/app_shell/presentation/app_shell_scaffold.dart';
 import '../../features/app_shell/presentation/content_error_screen.dart';
 import '../../features/app_shell/presentation/splash_screen.dart';
-import '../../content/models/activity.dart';
 import '../../features/final_assessment/presentation/final_assessment_screen.dart';
 import '../../features/final_mission/presentation/final_mission_screen.dart';
 import '../../features/grammar/presentation/grammar_detail_screen.dart';
@@ -16,6 +15,7 @@ import '../../features/learning_path/presentation/unit_overview_screen.dart';
 import '../../features/lesson_player/presentation/lesson_player_screen.dart';
 import '../../features/lesson_player/presentation/lesson_review_screen.dart';
 import '../../features/placement_test/presentation/placement_test_screen.dart';
+import '../../features/review/domain/practice_set.dart';
 import '../../features/review/presentation/quick_practice_screen.dart';
 import '../../features/review/presentation/review_home_screen.dart';
 import '../../features/review/presentation/review_session_screen.dart';
@@ -186,13 +186,12 @@ GoRouter appRouter(Ref ref) {
         ),
       ),
       GoRoute(
-        // Pushed with `extra: <Activity>` from Grammar's "Quick practice"
-        // and Review's "weak objective -> practice this" links — the
-        // activity itself is looked up from the already-loaded
-        // CourseContentIndex at the call site, not re-fetched by id here.
+        // Pushed with `extra: <PracticeSet>` from a grammar page's Quick
+        // practice and the Review tab's weak spots — built from the
+        // already-loaded CourseContentIndex at the call site.
         path: '/review/practice',
         builder: (_, state) =>
-            QuickPracticeScreen(activity: state.extra! as Activity),
+            QuickPracticeScreen(set: state.extra! as PracticeSet),
       ),
       GoRoute(
         // Full screen, above the tab bar, like the lesson player.

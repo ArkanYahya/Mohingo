@@ -1,5 +1,4 @@
 import '../../../content/index/course_content_index.dart';
-import '../../../content/models/activity.dart';
 import '../../../content/models/curriculum_structure.dart';
 import '../../../content/models/domain_definitions.dart';
 
@@ -13,7 +12,6 @@ class WeakSpot {
     required this.unitNumber,
     required this.canDoIds,
     required this.skills,
-    required this.practiceActivity,
   });
 
   /// The first non-mission lesson that teaches the goals.
@@ -28,9 +26,6 @@ class WeakSpot {
   /// spoken interaction and spoken production counted once (a learner
   /// sees both as "Speaking").
   final List<Skill> skills;
-
-  /// An activity for these goals from [lesson], for quick practice.
-  final Activity? practiceActivity;
 }
 
 bool _isSpeaking(Skill s) =>
@@ -89,12 +84,10 @@ WeakSpot _spot(
     );
     if (!seen) skills.add(a.skill);
   }
-  final practice = activities.where(lesson.activities.contains).firstOrNull;
   return WeakSpot(
     lesson: lesson,
     unitNumber: unitNumber,
     canDoIds: canDoIds,
     skills: skills,
-    practiceActivity: practice ?? activities.firstOrNull,
   );
 }
