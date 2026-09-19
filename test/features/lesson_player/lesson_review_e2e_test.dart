@@ -114,7 +114,7 @@ void main() {
           ),
         ),
       );
-      await _playLessonOnce(tester, 'morning-office');
+      await _playLessonOnce(tester, 'In the morning');
       await tester.pumpAndSettle();
       expect(find.byType(LessonCompleteView), findsOneWidget);
 
@@ -148,7 +148,7 @@ void main() {
           ),
         ),
       );
-      await _playLessonOnce(tester, 'night-bedroom');
+      await _playLessonOnce(tester, 'At night');
       await tester.pumpAndSettle();
       expect(find.byType(LessonCompleteView), findsOneWidget);
 
@@ -261,7 +261,7 @@ void main() {
       await pump(
         const LessonPlayerScreen(unitId: 'A1-U0', lessonId: 'A1-U0-L1'),
       );
-      await _playLessonOnce(tester, 'morning-office');
+      await _playLessonOnce(tester, 'In the morning');
       await tester.pumpAndSettle();
       expect(find.byType(LessonCompleteView), findsOneWidget);
 
@@ -284,7 +284,7 @@ void main() {
       await pump(
         const LessonPlayerScreen(unitId: 'A1-U0', lessonId: 'A1-U0-L1'),
       );
-      await _playLessonOnce(tester, 'night-bedroom');
+      await _playLessonOnce(tester, 'At night');
       await tester.pumpAndSettle();
       expect(find.byType(LessonCompleteView), findsOneWidget);
 
@@ -378,7 +378,7 @@ void main() {
             mode: ActivityMode.encounter,
             evidenceSkill: Skill.listening,
             canDoIds: const [],
-            rawAnswer: '"night-bedroom"',
+            rawAnswer: '"At night"',
             isCorrect: false,
             score: 0.0,
           );
@@ -441,7 +441,7 @@ void main() {
 
       // Replay: every activity, including A01, answered correctly this
       // time.
-      await _playLessonOnce(tester, 'morning-office');
+      await _playLessonOnce(tester, 'In the morning');
       await tester.pumpAndSettle();
       expect(find.byType(LessonCompleteView), findsOneWidget);
 

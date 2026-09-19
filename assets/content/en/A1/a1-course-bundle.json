@@ -271,7 +271,7 @@
     {
       "id": "A1.G.CHUNK.WHERE_DO_YOU_LIVE",
       "form": "Where do you live?",
-      "meaningAr": "أين تسكن؟ تعامل كعبارة ثابتة الآن؛ تحليل do مؤجل",
+      "meaningAr": "أين تسكن؟",
       "introducedIn": "A1-U1-L3",
       "deferAnalysisUntil": "A1-U5"
     },
@@ -363,7 +363,7 @@
     {
       "id": "A1.G.CHUNK.DO_YOU_HAVE",
       "form": "Do you have ...?",
-      "meaningAr": "هل لديك...؟ تعامل كعبارة وظيفية؛ تحليل do/does الكامل مؤجل إلى U5",
+      "meaningAr": "هل لديك...؟",
       "introducedIn": "A1-U2-L2",
       "deferAnalysisUntil": "A1-U5"
     },
@@ -634,7 +634,7 @@
     {
       "id": "A1.G.PRESENT_SIMPLE.ROUTINE_QUESTION_CHUNK",
       "form": "What time do/does + subject + base verb?",
-      "meaningAr": "سؤال وظيفي عن وقت الروتين؛ التحليل الكامل في U5",
+      "meaningAr": "السؤال عن موعد عادة يومية",
       "introducedIn": "A1-U4-L4",
       "examples": [
         {
@@ -719,7 +719,7 @@
     {
       "id": "A1.G.INVITATION.WOULD_LIKE_CHUNK",
       "form": "Would you like to + verb?",
-      "meaningAr": "عبارة دعوة مهذبة؛ تحليل would مؤجل",
+      "meaningAr": "دعوة مهذبة إلى فعل شيء",
       "introducedIn": "A1-U5-L5",
       "examples": [
         {
@@ -805,7 +805,7 @@
     {
       "id": "A1.G.BE.THIS_ISNT_CORRECTION",
       "form": "This isn't + noun; I ordered X, not Y",
-      "meaningAr": "تصحيح طلب خاطئ بعبارة وظيفية",
+      "meaningAr": "تصحيح طلب خاطئ",
       "introducedIn": "A1-U6-L5",
       "examples": [
         {
@@ -1021,7 +1021,7 @@
     {
       "id": "A1.G.ADVICE.SHOULD_CHUNK",
       "form": "You should/shouldn't + base verb",
-      "meaningAr": "نصيحة صحية بسيطة؛ التوسع مؤجل",
+      "meaningAr": "تقديم نصيحة صحية بسيطة",
       "introducedIn": "A1-U10-L3",
       "examples": [
         {
@@ -1118,7 +1118,7 @@
     {
       "id": "A1.G.FORECAST.WILL_BE_RECEPTIVE",
       "form": "It will be + weather adjective",
-      "meaningAr": "فهم صيغة التوقع الشائعة دون إنتاج إلزامي",
+      "meaningAr": "توقّع حالة الطقس",
       "introducedIn": "A1-U11-L5",
       "examples": [
         {
@@ -8332,13 +8332,14 @@
               "canDo": [
                 "A1.U0.INTERACTION.RESPOND_GREETING"
               ],
-              "prompt": "اختر المشهد المناسب لما تسمعه.",
+              "prompt": "Choose the time that matches what you hear.",
+              "promptAr": "اختر الوقت المناسب لما تسمعه.",
               "options": [
-                "morning-office",
-                "night-bedroom",
-                "busy-street"
+                "In the morning",
+                "At night",
+                "In the evening"
               ],
-              "answer": "morning-office",
+              "answer": "In the morning",
               "audioTranscript": "Good morning."
             },
             {
@@ -8439,13 +8440,14 @@
               "canDo": [
                 "A1.U0.LISTENING.FOLLOW_APP_INSTRUCTION"
               ],
-              "prompt": "نفّذ التعليمة.",
+              "prompt": "Do what you hear.",
+              "promptAr": "نفّذ التعليمة.",
               "options": [
-                "picture-cat",
-                "text-cat",
-                "audio-button"
+                "Picture",
+                "Word",
+                "Sound"
               ],
-              "answer": "picture-cat",
+              "answer": "Picture",
               "audioTranscript": "Choose the picture."
             },
             {
@@ -8474,13 +8476,14 @@
               "canDo": [
                 "A1.U0.LISTENING.FOLLOW_APP_INSTRUCTION"
               ],
-              "prompt": "نفّذ التعليمة دون ترجمة.",
+              "prompt": "Do what you hear. Don't translate.",
+              "promptAr": "نفّذ التعليمة دون ترجمة.",
               "options": [
-                "repeat-control",
-                "write-control",
-                "match-control"
+                "Repeat",
+                "Write",
+                "Match"
               ],
-              "answer": "repeat-control",
+              "answer": "Repeat",
               "audioTranscript": "Listen and repeat."
             },
             {
@@ -8492,13 +8495,14 @@
               "canDo": [
                 "A1.U0.LISTENING.FOLLOW_APP_INSTRUCTION"
               ],
-              "prompt": "نفّذ التعليمة دون ترجمة.",
+              "prompt": "Do what you hear. Don't translate.",
+              "promptAr": "نفّذ التعليمة دون ترجمة.",
               "options": [
-                "match-control",
-                "speak-control",
-                "read-control"
+                "Match",
+                "Speak",
+                "Read"
               ],
-              "answer": "match-control",
+              "answer": "Match",
               "audioTranscript": "Match the words."
             }
           ]
@@ -8811,7 +8815,8 @@
               "canDo": [
                 "A1.U0.LISTENING.FOLLOW_APP_INSTRUCTION"
               ],
-              "prompt": "نفّذ التعليمة.",
+              "prompt": "Do what you hear.",
+              "promptAr": "نفّذ التعليمة.",
               "options": [
                 "Iraq",
                 "Italy",
@@ -9386,11 +9391,11 @@
               ],
               "prompt": "Choose the person.",
               "options": [
-                "woman-doctor",
-                "man-driver",
-                "woman-teacher"
+                "She's a doctor.",
+                "He's a driver.",
+                "She's a teacher."
               ],
-              "answer": "woman-doctor",
+              "answer": "She's a doctor.",
               "audioTranscript": "Her name is Lina. She's a doctor."
             },
             {

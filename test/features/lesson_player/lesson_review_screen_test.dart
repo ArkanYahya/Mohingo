@@ -57,7 +57,7 @@ void main() {
       final learner = await container.read(currentLearnerProvider.future);
 
       // A1-U0-L1 has 4 activities: A01 (audioChoice, answer
-      // "morning-office"), A02/A03 (audioChoice), A04 (speak). Only A01 is
+      // "In the morning"), A02/A03 (audioChoice), A04 (speak). Only A01 is
       // answered here (correctly); A02, A03, A04 are left entirely
       // unattempted, so all three should render the "not answered"
       // placeholder — A04 in particular (a speak activity) must not fall
@@ -72,7 +72,7 @@ void main() {
             mode: ActivityMode.encounter,
             evidenceSkill: Skill.listening,
             canDoIds: const [],
-            rawAnswer: '"morning-office"',
+            rawAnswer: '"In the morning"',
             isCorrect: true,
             score: 1.0,
           );

@@ -43,7 +43,7 @@ Future<AppLocalizations> _pump(WidgetTester tester) async {
   addTearDown(container.dispose);
   final learner = await container.read(currentLearnerProvider.future);
   for (final (id, answer, correct) in [
-    ('A1-U0-L1-A01', '"morning-office"', true),
+    ('A1-U0-L1-A01', '"In the morning"', true),
     ('A1-U0-L1-A02', '"Goodbye."', false),
   ]) {
     await container
