@@ -968,14 +968,78 @@ class AppLocalizationsEn extends AppLocalizations {
       'Each unit is checked as you go — its mission is on the Learn tab.';
 
   @override
+  String get testAnswerSaved => 'Answer saved';
+
+  @override
+  String get testAnswerSavedBody => 'You\'ll see your results at the end.';
+
+  @override
+  String get testNextQuestion => 'Next question';
+
+  @override
+  String get testRulesNote =>
+      'Answers aren\'t marked as you go and transcripts are hidden. You\'ll see your results at the end.';
+
+  @override
+  String get testIntroCoversHeading => 'What it covers';
+
+  @override
+  String get testIntroStagesHeading => 'The stages';
+
+  @override
+  String testIntroQuestionCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count questions',
+      one: '1 question',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String testIntroTaskCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count tasks',
+      one: '1 task',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String testQuestionEyebrow(String section, int n, int total) {
+    return '$section · $n of $total';
+  }
+
+  @override
+  String get testsMissionOverline => 'Final mission';
+
+  @override
+  String get testsAssessmentOverline => 'Final assessment';
+
+  @override
+  String get placementCoversReceptive =>
+      'Listening and reading questions from each unit, easiest first';
+
+  @override
+  String get placementCoversProductive =>
+      'One writing or speaking task at the end';
+
+  @override
+  String get placementCoversStops =>
+      'Stops at the first unit that\'s new to you';
+
+  @override
   String get placementIntroTitle => 'A1 Gateway Placement Test';
 
   @override
   String get placementIntroBody =>
-      'A few quick questions across the A1 units, from easiest to hardest. We\'ll stop as soon as we find your starting point — most people finish in a few minutes.';
+      'A few questions from each A1 unit, easiest first. It stops at the first unit that\'s new to you — so the more you already know, the longer it runs.';
 
   @override
-  String get placementStartButton => 'Start';
+  String get placementStartButton => 'Start the placement test';
 
   @override
   String get placementConfidenceQuestion =>
@@ -1014,7 +1078,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get placementResultDone => 'Done';
 
   @override
-  String get finalMissionStartButton => 'Begin';
+  String get finalMissionStartButton => 'Begin the mission';
 
   @override
   String get finalMissionResultTitle => 'Mission result';
@@ -1031,10 +1095,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get finalAssessmentIntroBody =>
-      'A short exit test covering every skill from A1. Each skill is scored on its own — a strong score in one never covers for a weak one in another.';
+      'The exit test for A1. Each skill is scored on its own — a strong score in one never covers for a weak one in another.';
 
   @override
-  String get finalAssessmentStartButton => 'Begin';
+  String get finalAssessmentStartButton => 'Start the assessment';
 
   @override
   String get finalAssessmentResultTitle => 'Assessment result';

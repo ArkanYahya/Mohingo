@@ -163,12 +163,14 @@ class _WriteActivityViewState extends ConsumerState<WriteActivityView> {
     // yet, whether it's a form-style "no automatic check exists" answer or
     // one still queued for deferred online-refinement grading.
     if (submission.correctness != ActivityCorrectness.notAutoGraded) {
-      playFeedbackSoundSafely(
-        ref.read(soundEffectsServiceProvider),
-        submission.correctness == ActivityCorrectness.correct
-            ? ActivityFeedbackSound.correct
-            : ActivityFeedbackSound.incorrect,
-      );
+      if (marksAnswers(context)) {
+        playFeedbackSoundSafely(
+          ref.read(soundEffectsServiceProvider),
+          submission.correctness == ActivityCorrectness.correct
+              ? ActivityFeedbackSound.correct
+              : ActivityFeedbackSound.incorrect,
+        );
+      }
     }
   }
 

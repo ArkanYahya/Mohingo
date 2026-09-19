@@ -1592,6 +1592,90 @@ abstract class AppLocalizations {
   /// **'Each unit is checked as you go — its mission is on the Learn tab.'**
   String get testsUnitChecksNote;
 
+  /// After Check in a test (placement, final assessment): the answer is saved, not marked.
+  ///
+  /// In en, this message translates to:
+  /// **'Answer saved'**
+  String get testAnswerSaved;
+
+  /// Under "Answer saved" in a test.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'ll see your results at the end.'**
+  String get testAnswerSavedBody;
+
+  /// Button after an answer is saved in a test.
+  ///
+  /// In en, this message translates to:
+  /// **'Next question'**
+  String get testNextQuestion;
+
+  /// Test intro: how a no-marking test works.
+  ///
+  /// In en, this message translates to:
+  /// **'Answers aren\'t marked as you go and transcripts are hidden. You\'ll see your results at the end.'**
+  String get testRulesNote;
+
+  /// Test intro: heading above the sections.
+  ///
+  /// In en, this message translates to:
+  /// **'What it covers'**
+  String get testIntroCoversHeading;
+
+  /// Final mission intro: heading above its stages.
+  ///
+  /// In en, this message translates to:
+  /// **'The stages'**
+  String get testIntroStagesHeading;
+
+  /// Test intro: how many questions a section has.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 question} other{{count} questions}}'**
+  String testIntroQuestionCount(int count);
+
+  /// Final mission intro: how many tasks a stage has.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 task} other{{count} tasks}}'**
+  String testIntroTaskCount(int count);
+
+  /// Above a test question: its section and position in it.
+  ///
+  /// In en, this message translates to:
+  /// **'{section} · {n} of {total}'**
+  String testQuestionEyebrow(String section, int n, int total);
+
+  /// Overline on the final mission's intro.
+  ///
+  /// In en, this message translates to:
+  /// **'Final mission'**
+  String get testsMissionOverline;
+
+  /// Overline on the final assessment's intro.
+  ///
+  /// In en, this message translates to:
+  /// **'Final assessment'**
+  String get testsAssessmentOverline;
+
+  /// Placement intro: what the test asks.
+  ///
+  /// In en, this message translates to:
+  /// **'Listening and reading questions from each unit, easiest first'**
+  String get placementCoversReceptive;
+
+  /// Placement intro: the productive task.
+  ///
+  /// In en, this message translates to:
+  /// **'One writing or speaking task at the end'**
+  String get placementCoversProductive;
+
+  /// Placement intro: why its length varies.
+  ///
+  /// In en, this message translates to:
+  /// **'Stops at the first unit that\'s new to you'**
+  String get placementCoversStops;
+
   /// Placement test intro screen app bar title.
   ///
   /// In en, this message translates to:
@@ -1601,13 +1685,13 @@ abstract class AppLocalizations {
   /// Placement test intro screen body text.
   ///
   /// In en, this message translates to:
-  /// **'A few quick questions across the A1 units, from easiest to hardest. We\'ll stop as soon as we find your starting point — most people finish in a few minutes.'**
+  /// **'A few questions from each A1 unit, easiest first. It stops at the first unit that\'s new to you — so the more you already know, the longer it runs.'**
   String get placementIntroBody;
 
   /// Placement test intro screen start button.
   ///
   /// In en, this message translates to:
-  /// **'Start'**
+  /// **'Start the placement test'**
   String get placementStartButton;
 
   /// Placement test confidence self-report screen question — supporting info only, never affects the result.
@@ -1673,7 +1757,7 @@ abstract class AppLocalizations {
   /// Final Mission intro screen start button.
   ///
   /// In en, this message translates to:
-  /// **'Begin'**
+  /// **'Begin the mission'**
   String get finalMissionStartButton;
 
   /// Final Mission result screen app bar title.
@@ -1703,13 +1787,13 @@ abstract class AppLocalizations {
   /// Final Assessment intro screen body text.
   ///
   /// In en, this message translates to:
-  /// **'A short exit test covering every skill from A1. Each skill is scored on its own — a strong score in one never covers for a weak one in another.'**
+  /// **'The exit test for A1. Each skill is scored on its own — a strong score in one never covers for a weak one in another.'**
   String get finalAssessmentIntroBody;
 
   /// Final Assessment intro screen start button.
   ///
   /// In en, this message translates to:
-  /// **'Begin'**
+  /// **'Start the assessment'**
   String get finalAssessmentStartButton;
 
   /// Final Assessment result screen app bar title.

@@ -9,23 +9,26 @@ import 'activity_feedback_panel.dart';
 
 export 'activity_feedback_panel.dart';
 
-/// Marks an activity as hosted full-screen by the lesson player.
+/// Marks an activity as hosted full-screen in the question frame — by the
+/// lesson player, and by the placement test, final mission and final
+/// assessment (through `TestQuestionFrame`).
 ///
-/// Inside this scope [ActivityChrome] becomes the lesson player's question
-/// frame — [header] above the prompt, the question scrolling, and the
-/// feedback slot pinned to the bottom of the screen — and
-/// [ActivitySubmitOrFeedback] renders the pinned [ActivityCheckBar] and
-/// then the [ActivityFeedbackPanel], whose Continue calls [onContinue].
+/// Inside this scope [ActivityChrome] becomes the question frame —
+/// [header] above the prompt, the question scrolling, and the feedback
+/// slot pinned to the bottom of the screen — and [ActivitySubmitOrFeedback]
+/// renders the pinned [ActivityCheckBar] and then the
+/// [ActivityFeedbackPanel], whose Continue calls [onContinue].
 ///
-/// Every other host (answer review, quick practice, placement test, final
-/// mission/assessment) renders activities in its own scrolling list and
-/// never provides this scope, so they keep the inline Check button and
-/// [ActivityFeedbackBanner]. See docs/ARCHITECTURE.md.
+/// The other hosts (answer review, quick practice) render activities in
+/// their own scrolling list and never provide this scope, so they keep the
+/// inline Check button and [ActivityFeedbackBanner]. See
+/// docs/ARCHITECTURE.md.
 class ActivityFrameScope extends InheritedWidget {
   const ActivityFrameScope({
     required this.onContinue,
     this.header,
     this.usefulPhrases = const [],
+    this.testMode = false,
     required super.child,
     super.key,
   });
@@ -41,6 +44,13 @@ class ActivityFrameScope extends InheritedWidget {
   /// questions — see `SpeakActivityView`.
   final List<String> usefulPhrases;
 
+  /// A test that must not give answers away (the placement test and the
+  /// final assessment): after Check the answer is saved but not marked —
+  /// the learner's pick stays shown as selected, the panel says "Answer
+  /// saved" with no right answer, no right/wrong sound plays — and
+  /// listening questions offer no transcript. See [marksAnswers].
+  final bool testMode;
+
   static ActivityFrameScope? maybeOf(BuildContext context) =>
       context.dependOnInheritedWidgetOfExactType<ActivityFrameScope>();
 
@@ -48,8 +58,14 @@ class ActivityFrameScope extends InheritedWidget {
   bool updateShouldNotify(ActivityFrameScope oldWidget) =>
       onContinue != oldWidget.onContinue ||
       header != oldWidget.header ||
+      testMode != oldWidget.testMode ||
       !listEquals(usefulPhrases, oldWidget.usefulPhrases);
 }
+
+/// Whether this activity may mark answers right or wrong once checked —
+/// false only inside an [ActivityFrameScope] in [ActivityFrameScope.testMode].
+bool marksAnswers(BuildContext context) =>
+    !(ActivityFrameScope.maybeOf(context)?.testMode ?? false);
 
 /// The shared shell every activity view renders inside: prompt, an optional
 /// help area, the type-specific interaction body, and the submit/feedback
@@ -314,6 +330,7 @@ class ActivitySubmitOrFeedback extends StatelessWidget {
                 submission: submission,
                 correctAnswerLabel: correctAnswerLabel,
                 onContinue: frame.onContinue,
+                testMode: frame.testMode,
               ),
       );
     }

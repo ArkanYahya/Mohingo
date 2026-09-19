@@ -162,16 +162,19 @@ class _MatchActivityViewState extends ConsumerState<MatchActivityView> {
     );
     setState(() => _submission = submission);
     widget.onSubmitted(submission);
-    playFeedbackSoundSafely(
-      ref.read(soundEffectsServiceProvider),
-      allCorrect
-          ? ActivityFeedbackSound.correct
-          : ActivityFeedbackSound.incorrect,
-    );
+    if (marksAnswers(context)) {
+      playFeedbackSoundSafely(
+        ref.read(soundEffectsServiceProvider),
+        allCorrect
+            ? ActivityFeedbackSound.correct
+            : ActivityFeedbackSound.incorrect,
+      );
+    }
   }
 
   AnswerTileState _stateFor({required int? pairedLeft, required bool pending}) {
-    if (_submission != null) {
+    // In a test the pairs stay as the learner made them — never marked.
+    if (_submission != null && marksAnswers(context)) {
       if (pairedLeft == null) return AnswerTileState.dimmed;
       return _isRightPair(pairedLeft)
           ? AnswerTileState.correct

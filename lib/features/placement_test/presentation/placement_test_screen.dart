@@ -17,6 +17,8 @@ import '../../activity_engine/domain/evidence_skill_resolver.dart';
 import '../../activity_engine/presentation/activity_view_registry.dart';
 import '../../progress/providers/current_learner_provider.dart';
 import '../../progress/providers/progress_providers.dart';
+import '../../tests_home/presentation/widgets/test_intro_view.dart';
+import '../../tests_home/presentation/widgets/test_question_frame.dart';
 import '../../tests_home/providers/tests_home_providers.dart';
 import '../domain/placement_classifier.dart';
 import '../domain/placement_item_sampler.dart';
@@ -123,8 +125,11 @@ class _PlacementTestBodyState extends ConsumerState<_PlacementTestBody> {
   final Map<Skill, _SkillTally> _skillTally = {};
 
   Activity? _productiveActivity;
-  ActivitySubmission? _lastSubmission;
   PlacementClassification? _classification;
+
+  /// The current answer's save, awaited before moving on — the feedback
+  /// panel (and its Next button) appears as soon as Check is tapped.
+  Future<void>? _recording;
 
   void _tallySkill(Skill skill, {required bool correct, required bool scored}) {
     if (!scored) return;
@@ -171,7 +176,6 @@ class _PlacementTestBodyState extends ConsumerState<_PlacementTestBody> {
       _unitItems = items;
       _itemIndex = 0;
       _unitCorrectness = [];
-      _lastSubmission = null;
       _phase = _Phase.item;
     });
   }
@@ -181,6 +185,13 @@ class _PlacementTestBodyState extends ConsumerState<_PlacementTestBody> {
     ActivitySubmission submission,
   ) async {
     final correct = submission.correctness == ActivityCorrectness.correct;
+    // Counted before the save so the unit's result can't miss it.
+    _tallySkill(
+      activity.skill,
+      correct: correct,
+      scored: submission.correctness != ActivityCorrectness.notAutoGraded,
+    );
+    _unitCorrectness.add(correct);
     await ref
         .read(activityAttemptRepositoryProvider)
         .recordAttempt(
@@ -199,20 +210,14 @@ class _PlacementTestBodyState extends ConsumerState<_PlacementTestBody> {
           },
           score: submission.score,
         );
-    _tallySkill(
-      activity.skill,
-      correct: correct,
-      scored: submission.correctness != ActivityCorrectness.notAutoGraded,
-    );
-    _unitCorrectness.add(correct);
-    if (mounted) setState(() => _lastSubmission = submission);
   }
 
-  void _nextItem() {
+  Future<void> _nextItem() async {
+    await _recording;
+    if (!mounted) return;
     if (_itemIndex < _unitItems.length - 1) {
       setState(() {
         _itemIndex++;
-        _lastSubmission = null;
       });
       return;
     }
@@ -237,7 +242,6 @@ class _PlacementTestBodyState extends ConsumerState<_PlacementTestBody> {
     }
     setState(() {
       _productiveActivity = productive;
-      _lastSubmission = null;
       _phase = _Phase.productive;
     });
   }
@@ -270,7 +274,6 @@ class _PlacementTestBodyState extends ConsumerState<_PlacementTestBody> {
       correct: correct,
       scored: submission.correctness != ActivityCorrectness.notAutoGraded,
     );
-    if (mounted) setState(() => _lastSubmission = submission);
   }
 
   Future<void> _submitConfidence(int value) async {
@@ -297,27 +300,72 @@ class _PlacementTestBodyState extends ConsumerState<_PlacementTestBody> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final units = widget.units;
     return switch (_phase) {
-      _Phase.intro => _IntroView(starting: _starting, onStart: _start),
-      _Phase.item => _ItemView(
-        unit: widget.units[_unitIndex],
-        progress: '${_itemIndex + 1} / ${_unitItems.length}',
-        activity: _unitItems[_itemIndex],
-        learnerId: widget.learnerId,
-        mediaByKey: widget.mediaByKey,
-        submission: _lastSubmission,
-        onSubmitted: (s) => _handleItemSubmitted(_unitItems[_itemIndex], s),
-        onNext: _nextItem,
+      _Phase.intro => TestIntroView(
+        overline: l10n.testsPlacementTitle,
+        title: l10n.testsPlacementHeroTitle,
+        lead: l10n.placementIntroBody,
+        heading: l10n.testIntroCoversHeading,
+        rows: [
+          TestIntroRow(
+            icon: Icons.headphones_rounded,
+            title: l10n.placementCoversReceptive,
+          ),
+          TestIntroRow(
+            icon: Icons.edit_note_rounded,
+            title: l10n.placementCoversProductive,
+          ),
+          TestIntroRow(
+            icon: Icons.flag_outlined,
+            title: l10n.placementCoversStops,
+          ),
+        ],
+        note: l10n.testRulesNote,
+        startLabel: l10n.placementStartButton,
+        starting: _starting,
+        onStart: _start,
       ),
-      _Phase.productive => _ItemView(
-        unit: widget.units[_unitIndex],
-        progress: null,
-        activity: _productiveActivity!,
-        learnerId: widget.learnerId,
-        mediaByKey: widget.mediaByKey,
-        submission: _lastSubmission,
-        onSubmitted: _handleProductiveSubmitted,
-        onNext: _nextAfterProductive,
+      _Phase.item => TestQuestionFrame(
+        // One segment per unit: the scan moves through the course.
+        groupSizes: [for (final _ in units) 1],
+        completed: _unitIndex,
+        eyebrow: TestEyebrow(
+          skill: _unitItems[_itemIndex].skill,
+          text: l10n.testQuestionEyebrow(
+            l10n.learnUnitOverline(_unitIndex + 1),
+            _itemIndex + 1,
+            _unitItems.length,
+          ),
+        ),
+        testMode: true,
+        onContinue: _nextItem,
+        child: buildActivityView(
+          key: ValueKey(_unitItems[_itemIndex].id),
+          _unitItems[_itemIndex],
+          learnerId: widget.learnerId,
+          onSubmitted: (s) =>
+              _recording = _handleItemSubmitted(_unitItems[_itemIndex], s),
+          mediaByKey: widget.mediaByKey,
+        ),
+      ),
+      _Phase.productive => TestQuestionFrame(
+        groupSizes: [for (final _ in units) 1],
+        completed: units.length,
+        eyebrow: TestEyebrow(
+          skill: _productiveActivity!.skill,
+          text: learnerSkillLabel(l10n, _productiveActivity!.skill),
+        ),
+        testMode: true,
+        onContinue: _nextAfterProductive,
+        child: buildActivityView(
+          key: ValueKey(_productiveActivity!.id),
+          _productiveActivity!,
+          learnerId: widget.learnerId,
+          onSubmitted: (s) => _recording = _handleProductiveSubmitted(s),
+          mediaByKey: widget.mediaByKey,
+        ),
       ),
       _Phase.confidence => _ConfidenceView(onSubmit: _submitConfidence),
       _Phase.result => _ResultView(
@@ -328,101 +376,9 @@ class _PlacementTestBodyState extends ConsumerState<_PlacementTestBody> {
     };
   }
 
-  void _nextAfterProductive() => setState(() => _phase = _Phase.confidence);
-}
-
-class _IntroView extends StatelessWidget {
-  const _IntroView({required this.starting, required this.onStart});
-
-  final bool starting;
-  final VoidCallback onStart;
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
-    return Scaffold(
-      appBar: AppBar(title: Text(l10n.placementIntroTitle)),
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(24),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(l10n.placementIntroBody, textAlign: TextAlign.center),
-              const SizedBox(height: 24),
-              FilledButton(
-                onPressed: starting ? null : onStart,
-                child: starting
-                    ? const SizedBox(
-                        height: 16,
-                        width: 16,
-                        child: CircularProgressIndicator(strokeWidth: 2),
-                      )
-                    : Text(l10n.placementStartButton),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class _ItemView extends StatelessWidget {
-  const _ItemView({
-    required this.unit,
-    required this.progress,
-    required this.activity,
-    required this.learnerId,
-    required this.mediaByKey,
-    required this.submission,
-    required this.onSubmitted,
-    required this.onNext,
-  });
-
-  final Unit unit;
-  final String? progress;
-  final Activity activity;
-  final int learnerId;
-  final Map<String, MediaSpecification> mediaByKey;
-  final ActivitySubmission? submission;
-  final void Function(ActivitySubmission submission) onSubmitted;
-  final VoidCallback onNext;
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          progress == null ? unit.title : '${unit.title} — $progress',
-        ),
-      ),
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              buildActivityView(
-                key: ValueKey(activity.id),
-                activity,
-                learnerId: learnerId,
-                onSubmitted: onSubmitted,
-                mediaByKey: mediaByKey,
-              ),
-              if (submission != null)
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
-                  child: FilledButton(
-                    onPressed: onNext,
-                    child: Text(l10n.lessonPlayerNext),
-                  ),
-                ),
-            ],
-          ),
-        ),
-      ),
-    );
+  Future<void> _nextAfterProductive() async {
+    await _recording;
+    if (mounted) setState(() => _phase = _Phase.confidence);
   }
 }
 

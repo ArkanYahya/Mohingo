@@ -115,17 +115,22 @@ class _OrderActivityViewState extends ConsumerState<OrderActivityView> {
     );
     setState(() => _submission = submission);
     widget.onSubmitted(submission);
-    playFeedbackSoundSafely(
-      ref.read(soundEffectsServiceProvider),
-      isCorrect
-          ? ActivityFeedbackSound.correct
-          : ActivityFeedbackSound.incorrect,
-    );
+    if (marksAnswers(context)) {
+      playFeedbackSoundSafely(
+        ref.read(soundEffectsServiceProvider),
+        isCorrect
+            ? ActivityFeedbackSound.correct
+            : ActivityFeedbackSound.incorrect,
+      );
+    }
   }
 
   /// After Check, each placed word shows whether it's in the right place.
   AnswerTileState _placedState(int position) {
-    if (_submission == null) return AnswerTileState.idle;
+    // In a test the sentence stays as built — never marked.
+    if (_submission == null || !marksAnswers(context)) {
+      return AnswerTileState.idle;
+    }
     final answer = widget.activity.answer;
     return position < answer.length &&
             _tokens[_placed[position]] == answer[position]

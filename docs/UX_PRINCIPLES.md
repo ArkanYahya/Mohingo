@@ -1,7 +1,7 @@
 > **What this file is:** How the app talks to and treats users — voice, tone, how it handles errors/empty states, and the accessibility bar it must clear. Keeps copy and interaction patterns from feeling like they were written by a different person on every screen.
 > **How to use it:** Reference when writing any user-facing copy or interaction (errors, empty states, confirmations). If a new pattern is needed, add it here once decided rather than inventing it locally each time.
 
-_Last verified: 2026-09-09 — added the "not answered" empty-state copy introduced by the Learn tab's lesson-answer-review feature; see docs/superpowers/specs/2026-09-09-lesson-answer-review-design.md._
+_Last verified: 2026-09-19 — added "Tests": the placement test and final assessment don't mark answers while running. Previously verified 2026-09-09 — added the "not answered" empty-state copy introduced by the Learn tab's lesson-answer-review feature; see docs/superpowers/specs/2026-09-09-lesson-answer-review-design.md._
 
 # UX Principles
 
@@ -28,6 +28,10 @@ Content downloads (new/updated lesson content) show progress, since they may tak
 ## Confirmations / destructive actions
 
 Confirmation required only for actions that lose progress or data (e.g. resetting progress in Settings, which erases all local mastery evidence and attempt history — see [DATA_MODEL.md](DATA_MODEL.md)). Confirmation copy states what will be lost, plainly, before the action is taken. Retaking the placement test is **not** destructive under the free-access model (see [PRODUCT.md](PRODUCT.md) flow 5) — it's advisory only and never erases existing unit progress, so it needs no confirmation.
+
+## Tests
+
+The placement test and final assessment never tell the learner whether an answer was right while the test is running — no colours, sounds or correct answers, and no listening transcripts — because both are there to measure, and the assessment's items must stay unseen for a retake. Say so before the test starts (the intro's rules note) and after each answer ("Answer saved · You'll see your results at the end"). The final mission is a scenario the learner works through, so it keeps normal right/wrong feedback.
 
 ## Accessibility baseline
 

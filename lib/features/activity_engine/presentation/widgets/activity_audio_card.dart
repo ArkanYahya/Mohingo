@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../core/l10n/generated/app_localizations.dart';
 import '../../../../core/theme/app_tokens.dart';
+import '../activity_chrome.dart';
 import '../../../speech/domain/text_to_speech_service.dart';
 import '../../../speech/providers/speech_providers.dart';
 import '../../../speech/providers/tts_preferences_provider.dart';
@@ -174,49 +175,52 @@ class _ActivityAudioCardState extends ConsumerState<ActivityAudioCard> {
               ],
             ),
           ),
-          Divider(height: 1, color: tokens.border),
-          if (_revealed)
-            Padding(
-              padding: const EdgeInsets.all(AppSpace.md),
-              child: Text(
-                widget.transcript,
-                textDirection: TextDirection.ltr,
-                style: theme.textTheme.bodyMedium?.copyWith(
-                  color: tokens.textPrimary,
-                ),
-              ),
-            )
-          else
-            InkWell(
-              onTap: () => setState(() => _revealed = true),
-              child: ConstrainedBox(
-                constraints: const BoxConstraints(minHeight: 48),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: AppSpace.md,
-                    vertical: AppSpace.sm,
+          // A test's listening question is the recording alone.
+          if (marksAnswers(context)) ...[
+            Divider(height: 1, color: tokens.border),
+            if (_revealed)
+              Padding(
+                padding: const EdgeInsets.all(AppSpace.md),
+                child: Text(
+                  widget.transcript,
+                  textDirection: TextDirection.ltr,
+                  style: theme.textTheme.bodyMedium?.copyWith(
+                    color: tokens.textPrimary,
                   ),
-                  child: Row(
-                    children: [
-                      Icon(
-                        Icons.subject_rounded,
-                        size: 20,
-                        color: tokens.primaryInk,
-                      ),
-                      const SizedBox(width: AppSpace.xs),
-                      Expanded(
-                        child: Text(
-                          l10n.activityShowTranscript,
-                          style: theme.textTheme.labelLarge?.copyWith(
-                            color: tokens.primaryInk,
+                ),
+              )
+            else
+              InkWell(
+                onTap: () => setState(() => _revealed = true),
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(minHeight: 48),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: AppSpace.md,
+                      vertical: AppSpace.sm,
+                    ),
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.subject_rounded,
+                          size: 20,
+                          color: tokens.primaryInk,
+                        ),
+                        const SizedBox(width: AppSpace.xs),
+                        Expanded(
+                          child: Text(
+                            l10n.activityShowTranscript,
+                            style: theme.textTheme.labelLarge?.copyWith(
+                              color: tokens.primaryInk,
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),
-            ),
+          ],
         ],
       ),
     );

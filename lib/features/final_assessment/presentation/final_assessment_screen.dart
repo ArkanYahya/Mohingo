@@ -15,6 +15,8 @@ import '../../activity_engine/domain/evidence_skill_resolver.dart';
 import '../../activity_engine/presentation/activity_view_registry.dart';
 import '../../progress/providers/current_learner_provider.dart';
 import '../../progress/providers/progress_providers.dart';
+import '../../tests_home/presentation/widgets/test_intro_view.dart';
+import '../../tests_home/presentation/widgets/test_question_frame.dart';
 import '../../tests_home/providers/tests_home_providers.dart';
 import '../domain/final_assessment_scoring.dart';
 
@@ -111,7 +113,10 @@ class _FinalAssessmentBodyState extends ConsumerState<_FinalAssessmentBody> {
   int? _attemptId;
   String? _sessionUuid;
   int _index = 0;
-  ActivitySubmission? _lastSubmission;
+
+  /// The current answer's save, awaited before moving on — the "Answer
+  /// saved" panel (and Next question) appears as soon as Check is tapped.
+  Future<void>? _recording;
   List<FinalAssessmentSectionResult>? _results;
   final Map<String, List<double?>> _scoresBySection = {};
   bool _started = false;
@@ -141,6 +146,10 @@ class _FinalAssessmentBodyState extends ConsumerState<_FinalAssessmentBody> {
     ActivitySubmission submission,
   ) async {
     final evidenceSkill = resolveEvidenceSkill(item.activity, submission);
+    // Counted before the save so the section's result can't miss it.
+    _scoresBySection
+        .putIfAbsent(item.sectionKey, () => [])
+        .add(submission.score);
     await ref
         .read(activityAttemptRepositoryProvider)
         .recordAttempt(
@@ -160,18 +169,13 @@ class _FinalAssessmentBodyState extends ConsumerState<_FinalAssessmentBody> {
           score: submission.score,
           wasFallback: submission.wasFallback,
         );
-    _scoresBySection
-        .putIfAbsent(item.sectionKey, () => [])
-        .add(submission.score);
-    if (mounted) setState(() => _lastSubmission = submission);
   }
 
   Future<void> _next() async {
+    await _recording;
+    if (!mounted) return;
     if (_index < _items.length - 1) {
-      setState(() {
-        _index++;
-        _lastSubmission = null;
-      });
+      setState(() => _index++);
       return;
     }
 
@@ -222,71 +226,77 @@ class _FinalAssessmentBodyState extends ConsumerState<_FinalAssessmentBody> {
       );
     }
 
+    final assessment = widget.assessment;
+    final sections = assessment.sections.entries.toList();
     if (!_started) {
-      return Scaffold(
-        appBar: AppBar(title: Text(widget.assessment.title)),
-        body: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.all(24),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  l10n.finalAssessmentIntroBody,
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(height: 24),
-                FilledButton(
-                  onPressed: _starting ? null : _start,
-                  child: _starting
-                      ? const SizedBox(
-                          height: 16,
-                          width: 16,
-                          child: CircularProgressIndicator(strokeWidth: 2),
-                        )
-                      : Text(l10n.finalAssessmentStartButton),
-                ),
-              ],
+      return TestIntroView(
+        overline: l10n.testsAssessmentOverline,
+        title: assessment.title,
+        titleAr: assessment.titleAr,
+        lead: l10n.finalAssessmentIntroBody,
+        meta: assessment.estimatedMinutes.length == 2
+            ? l10n.testsAssessmentMeta(
+                _items.length,
+                sections.length,
+                assessment.estimatedMinutes[0],
+                assessment.estimatedMinutes[1],
+              )
+            : null,
+        heading: l10n.testIntroCoversHeading,
+        rows: [
+          for (final MapEntry(:key, :value) in sections)
+            TestIntroRow(
+              icon: _sectionIcon(key),
+              title: sectionLabel(l10n, key),
+              trailing: l10n.testIntroQuestionCount(value.activities.length),
             ),
-          ),
-        ),
+        ],
+        note: l10n.testRulesNote,
+        startLabel: l10n.finalAssessmentStartButton,
+        starting: _starting,
+        onStart: _start,
       );
     }
 
     final item = _items[_index];
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          '${sectionLabel(l10n, item.sectionKey)} — ${_index + 1}/${_items.length}',
+    final sectionItems = [
+      for (final i in _items)
+        if (i.sectionKey == item.sectionKey) i,
+    ];
+    return TestQuestionFrame(
+      groupSizes: [for (final e in sections) e.value.activities.length],
+      completed: _index,
+      eyebrow: TestEyebrow(
+        skill: item.activity.skill,
+        text: l10n.testQuestionEyebrow(
+          sectionLabel(l10n, item.sectionKey),
+          sectionItems.indexOf(item) + 1,
+          sectionItems.length,
         ),
       ),
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              buildActivityView(
-                key: ValueKey(item.activity.id),
-                item.activity,
-                learnerId: widget.learnerId,
-                onSubmitted: (s) => _handleSubmitted(item, s),
-                mediaByKey: widget.mediaByKey,
-              ),
-              if (_lastSubmission != null)
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
-                  child: FilledButton(
-                    onPressed: _next,
-                    child: Text(l10n.lessonPlayerNext),
-                  ),
-                ),
-            ],
-          ),
-        ),
+      // A secure exit test: answers are saved, not marked, and listening
+      // has no transcript.
+      testMode: true,
+      onContinue: _next,
+      child: buildActivityView(
+        key: ValueKey(item.activity.id),
+        item.activity,
+        learnerId: widget.learnerId,
+        onSubmitted: (s) => _recording = _handleSubmitted(item, s),
+        mediaByKey: widget.mediaByKey,
       ),
     );
   }
 }
+
+/// The icon for an assessment section key.
+IconData _sectionIcon(String sectionKey) => switch (sectionKey) {
+  'listening' => Icons.headphones_rounded,
+  'reading' => Icons.menu_book_rounded,
+  'writing' => Icons.edit_note_rounded,
+  'speaking' => Icons.record_voice_over_rounded,
+  _ => Icons.translate_rounded,
+};
 
 class _AssessmentResultView extends StatelessWidget {
   const _AssessmentResultView({

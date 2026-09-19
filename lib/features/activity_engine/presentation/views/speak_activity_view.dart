@@ -286,12 +286,14 @@ class _SpeakActivityViewState extends ConsumerState<SpeakActivityView> {
     // yet, whether it's a "no automatic check exists" answer or one still
     // queued for deferred online-refinement grading.
     if (submission.correctness != ActivityCorrectness.notAutoGraded) {
-      playFeedbackSoundSafely(
-        ref.read(soundEffectsServiceProvider),
-        submission.correctness == ActivityCorrectness.correct
-            ? ActivityFeedbackSound.correct
-            : ActivityFeedbackSound.incorrect,
-      );
+      if (marksAnswers(context)) {
+        playFeedbackSoundSafely(
+          ref.read(soundEffectsServiceProvider),
+          submission.correctness == ActivityCorrectness.correct
+              ? ActivityFeedbackSound.correct
+              : ActivityFeedbackSound.incorrect,
+        );
+      }
     }
   }
 

@@ -143,12 +143,14 @@ class _ChoiceActivityViewState extends ConsumerState<ChoiceActivityView> {
     );
     setState(() => _submission = submission);
     widget.onSubmitted(submission);
-    playFeedbackSoundSafely(
-      ref.read(soundEffectsServiceProvider),
-      isCorrect
-          ? ActivityFeedbackSound.correct
-          : ActivityFeedbackSound.incorrect,
-    );
+    if (marksAnswers(context)) {
+      playFeedbackSoundSafely(
+        ref.read(soundEffectsServiceProvider),
+        isCorrect
+            ? ActivityFeedbackSound.correct
+            : ActivityFeedbackSound.incorrect,
+      );
+    }
   }
 
   @override
@@ -206,7 +208,8 @@ class _ChoiceActivityViewState extends ConsumerState<ChoiceActivityView> {
   /// Never reveals correctness before submission — see
   /// docs/ARCHITECTURE.md's non-negotiable rules.
   AnswerTileState _stateOf(String option) => singleChoiceState(
-    submitted: _submission != null,
+    // In a test the pick stays selected — never marked.
+    submitted: _submission != null && marksAnswers(context),
     isSelected: option == _selected,
     isCorrect: option == widget.answer,
   );

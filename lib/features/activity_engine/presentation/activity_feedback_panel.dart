@@ -74,6 +74,7 @@ class ActivityFeedbackPanel extends StatelessWidget {
     required this.submission,
     required this.onContinue,
     this.correctAnswerLabel,
+    this.testMode = false,
     super.key,
   });
 
@@ -84,6 +85,10 @@ class ActivityFeedbackPanel extends StatelessWidget {
   /// reveal; open-ended rubrics have none, and the row is left out.
   final String? correctAnswerLabel;
 
+  /// In a test the answer is saved, never marked: a neutral "Answer saved"
+  /// panel, no right answer, and "Next question".
+  final bool testMode;
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -92,7 +97,7 @@ class ActivityFeedbackPanel extends StatelessWidget {
     final colorScheme = theme.colorScheme;
     final l10n = AppLocalizations.of(context)!;
 
-    final correctness = submission.pendingOnlineRefinement
+    final correctness = submission.pendingOnlineRefinement || testMode
         ? ActivityCorrectness.notAutoGraded
         : submission.correctness;
     final (
@@ -127,11 +132,15 @@ class ActivityFeedbackPanel extends StatelessWidget {
         tokens.textPrimary,
         tokens.primaryInk,
         tokens.onPrimaryInk,
-        submission.pendingOnlineRefinement
+        testMode
+            ? Icons.check_rounded
+            : submission.pendingOnlineRefinement
             ? Icons.cloud_sync_rounded
             : Icons.hourglass_top_rounded,
-        l10n.activityFeedbackSavedTitle,
-        submission.pendingOnlineRefinement
+        testMode ? l10n.testAnswerSaved : l10n.activityFeedbackSavedTitle,
+        testMode
+            ? l10n.testAnswerSavedBody
+            : submission.pendingOnlineRefinement
             ? l10n.activityFeedbackPendingOnlineRefinement
             : l10n.activityFeedbackSavedForReview,
       ),
@@ -224,7 +233,9 @@ class ActivityFeedbackPanel extends StatelessWidget {
                       : onBadge,
                 ),
                 onPressed: onContinue,
-                child: Text(l10n.activityContinue),
+                child: Text(
+                  testMode ? l10n.testNextQuestion : l10n.activityContinue,
+                ),
               ),
             ],
           ),

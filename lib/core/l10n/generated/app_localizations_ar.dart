@@ -998,14 +998,80 @@ class AppLocalizationsAr extends AppLocalizations {
       'تُقيَّم كل وحدة أثناء تقدّمك — مهمتها في تبويب «تعلّم».';
 
   @override
+  String get testAnswerSaved => 'حُفظت إجابتك';
+
+  @override
+  String get testAnswerSavedBody => 'سترى نتائجك في النهاية.';
+
+  @override
+  String get testNextQuestion => 'السؤال التالي';
+
+  @override
+  String get testRulesNote =>
+      'لا تُصحَّح الإجابات أثناء الاختبار، ولا تظهر نصوص الاستماع. سترى نتائجك في النهاية.';
+
+  @override
+  String get testIntroCoversHeading => 'ما يشمله';
+
+  @override
+  String get testIntroStagesHeading => 'المراحل';
+
+  @override
+  String testIntroQuestionCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count سؤالاً',
+      few: '$count أسئلة',
+      two: 'سؤالان',
+      one: 'سؤال واحد',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String testIntroTaskCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count مهمة',
+      few: '$count مهام',
+      two: 'مهمتان',
+      one: 'مهمة واحدة',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String testQuestionEyebrow(String section, int n, int total) {
+    return '$section · $n من $total';
+  }
+
+  @override
+  String get testsMissionOverline => 'المهمة النهائية';
+
+  @override
+  String get testsAssessmentOverline => 'الاختبار النهائي';
+
+  @override
+  String get placementCoversReceptive =>
+      'أسئلة استماع وقراءة من كل وحدة، من الأسهل إلى الأصعب';
+
+  @override
+  String get placementCoversProductive => 'مهمة كتابة أو تحدث واحدة في النهاية';
+
+  @override
+  String get placementCoversStops => 'يتوقف عند أول وحدة جديدة عليك';
+
+  @override
   String get placementIntroTitle => 'اختبار تحديد المستوى لـ A1';
 
   @override
   String get placementIntroBody =>
-      'بضعة أسئلة سريعة عبر وحدات A1، من الأسهل إلى الأصعب. سنتوقف بمجرد أن نجد نقطة بدايتك — يُنهي معظم المستخدمين الاختبار خلال دقائق.';
+      'بضعة أسئلة من كل وحدة في A1، من الأسهل إلى الأصعب. يتوقف عند أول وحدة جديدة عليك — فكلما عرفت أكثر، طال الاختبار.';
 
   @override
-  String get placementStartButton => 'ابدأ';
+  String get placementStartButton => 'ابدأ اختبار تحديد المستوى';
 
   @override
   String get placementConfidenceQuestion =>
@@ -1044,7 +1110,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get placementResultDone => 'تم';
 
   @override
-  String get finalMissionStartButton => 'ابدأ';
+  String get finalMissionStartButton => 'ابدأ المهمة';
 
   @override
   String get finalMissionResultTitle => 'نتيجة المهمة';
@@ -1061,10 +1127,10 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get finalAssessmentIntroBody =>
-      'اختبار ختامي قصير يغطي كل مهارات مستوى A1. تُقيَّم كل مهارة على حدة — لا يعوّض تفوقك في مهارة عن ضعفك في أخرى.';
+      'الاختبار الختامي لمستوى A1. تُقيَّم كل مهارة على حدة — لا يعوّض تفوقك في مهارة ضعفك في أخرى.';
 
   @override
-  String get finalAssessmentStartButton => 'ابدأ';
+  String get finalAssessmentStartButton => 'ابدأ الاختبار';
 
   @override
   String get finalAssessmentResultTitle => 'نتيجة التقييم';

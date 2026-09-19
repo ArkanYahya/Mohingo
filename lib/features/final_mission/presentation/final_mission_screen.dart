@@ -15,6 +15,8 @@ import '../../activity_engine/domain/evidence_skill_resolver.dart';
 import '../../activity_engine/presentation/activity_view_registry.dart';
 import '../../progress/providers/current_learner_provider.dart';
 import '../../progress/providers/progress_providers.dart';
+import '../../tests_home/presentation/widgets/test_intro_view.dart';
+import '../../tests_home/presentation/widgets/test_question_frame.dart';
 import '../../tests_home/providers/tests_home_providers.dart';
 import '../domain/final_mission_scoring.dart';
 
@@ -83,7 +85,10 @@ class _FinalMissionBodyState extends ConsumerState<_FinalMissionBody> {
   int? _attemptId;
   String? _sessionUuid;
   int _index = 0;
-  ActivitySubmission? _lastSubmission;
+
+  /// The current answer's save, awaited before moving on — the feedback
+  /// panel (and its Continue) appears as soon as Check is tapped.
+  Future<void>? _recording;
   FinalMissionScoringResult? _result;
   final Map<String, List<double?>> _scoresBySkill = {};
   bool _started = false;
@@ -113,6 +118,21 @@ class _FinalMissionBodyState extends ConsumerState<_FinalMissionBody> {
     ActivitySubmission submission,
   ) async {
     final evidenceSkill = resolveEvidenceSkill(activity, submission);
+    // `form` activities are recorded below for progress/audit purposes but
+    // never counted as scoring evidence: FormActivityView always submits
+    // notAutoGraded (see its doc comment — multi-field form grading isn't
+    // wired up), so a form activity's null score would otherwise permanently
+    // stick its skill group's pendingReviewCount above zero and make the
+    // mission un-passable regardless of every other answer. Every other
+    // notAutoGraded submission (a still-unmigrated rubric, an unresolved
+    // online refinement) still counts, so the honest pending-review signal
+    // final_mission_scoring.dart documents is preserved for real gaps.
+    // Counted before the save so the result can't miss it.
+    if (activity is! FormActivity) {
+      _scoresBySkill
+          .putIfAbsent(evidenceSkill.name, () => [])
+          .add(submission.score);
+    }
     await ref
         .read(activityAttemptRepositoryProvider)
         .recordAttempt(
@@ -132,30 +152,14 @@ class _FinalMissionBodyState extends ConsumerState<_FinalMissionBody> {
           score: submission.score,
           wasFallback: submission.wasFallback,
         );
-    // `form` activities are recorded above for progress/audit purposes but
-    // never counted as scoring evidence: FormActivityView always submits
-    // notAutoGraded (see its doc comment — multi-field form grading isn't
-    // wired up), so a form activity's null score would otherwise permanently
-    // stick its skill group's pendingReviewCount above zero and make the
-    // mission un-passable regardless of every other answer. Every other
-    // notAutoGraded submission (a still-unmigrated rubric, an unresolved
-    // online refinement) still counts, so the honest pending-review signal
-    // final_mission_scoring.dart documents is preserved for real gaps.
-    if (activity is! FormActivity) {
-      _scoresBySkill
-          .putIfAbsent(evidenceSkill.name, () => [])
-          .add(submission.score);
-    }
-    if (mounted) setState(() => _lastSubmission = submission);
   }
 
   Future<void> _next() async {
+    await _recording;
+    if (!mounted) return;
     final activities = widget.mission.activities;
     if (_index < activities.length - 1) {
-      setState(() {
-        _index++;
-        _lastSubmission = null;
-      });
+      setState(() => _index++);
       return;
     }
 
@@ -186,65 +190,64 @@ class _FinalMissionBodyState extends ConsumerState<_FinalMissionBody> {
       return _MissionResultView(result: _result!);
     }
 
+    final mission = widget.mission;
+    final isArabic = Localizations.localeOf(context).languageCode == 'ar';
     if (!_started) {
-      return Scaffold(
-        appBar: AppBar(title: Text(widget.mission.title)),
-        body: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.all(24),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(widget.mission.scenario, textAlign: TextAlign.center),
-                const SizedBox(height: 24),
-                FilledButton(
-                  onPressed: _starting ? null : _start,
-                  child: _starting
-                      ? const SizedBox(
-                          height: 16,
-                          width: 16,
-                          child: CircularProgressIndicator(strokeWidth: 2),
-                        )
-                      : Text(l10n.finalMissionStartButton),
-                ),
-              ],
+      return TestIntroView(
+        overline: l10n.testsMissionOverline,
+        title: mission.title,
+        titleAr: mission.titleAr,
+        lead: l10n.testsMissionBody,
+        meta: mission.estimatedMinutes.length == 2
+            ? l10n.testsMissionMeta(
+                mission.activities.length,
+                mission.stages.length,
+                mission.estimatedMinutes[0],
+                mission.estimatedMinutes[1],
+              )
+            : null,
+        heading: l10n.testIntroStagesHeading,
+        rows: [
+          for (final (i, stage) in mission.stages.indexed)
+            TestIntroRow(
+              number: i + 1,
+              title: stage.title,
+              titleAr: stage.titleAr,
+              trailing: l10n.testIntroTaskCount(stage.activityIds.length),
             ),
-          ),
-        ),
+        ],
+        startLabel: l10n.finalMissionStartButton,
+        starting: _starting,
+        onStart: _start,
       );
     }
 
-    final activities = widget.mission.activities;
-    final activity = activities[_index];
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          '${widget.mission.title} — ${_index + 1}/${activities.length}',
+    final activity = mission.activities[_index];
+    final stage = mission.stages.firstWhere(
+      (s) => s.activityIds.contains(activity.id),
+      orElse: () => mission.stages.last,
+    );
+    return TestQuestionFrame(
+      groupSizes: [for (final s in mission.stages) s.activityIds.length],
+      completed: _index,
+      eyebrow: TestEyebrow(
+        skill: activity.skill,
+        text: l10n.testQuestionEyebrow(
+          isArabic ? stage.titleAr : stage.title,
+          stage.activityIds.indexOf(activity.id) + 1,
+          stage.activityIds.length,
         ),
       ),
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              buildActivityView(
-                key: ValueKey(activity.id),
-                activity,
-                learnerId: widget.learnerId,
-                onSubmitted: (s) => _handleSubmitted(activity, s),
-                mediaByKey: widget.mediaByKey,
-              ),
-              if (_lastSubmission != null)
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
-                  child: FilledButton(
-                    onPressed: _next,
-                    child: Text(l10n.lessonPlayerNext),
-                  ),
-                ),
-            ],
-          ),
-        ),
+      // The mission is a scenario worked through with feedback, not a
+      // secure test — its answers stay marked.
+      testMode: false,
+      onContinue: _next,
+      child: buildActivityView(
+        key: ValueKey(activity.id),
+        activity,
+        learnerId: widget.learnerId,
+        onSubmitted: (s) => _recording = _handleSubmitted(activity, s),
+        mediaByKey: widget.mediaByKey,
       ),
     );
   }

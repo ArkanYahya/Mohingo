@@ -108,12 +108,14 @@ class _GapActivityViewState extends ConsumerState<GapActivityView> {
     );
     setState(() => _submission = submission);
     widget.onSubmitted(submission);
-    playFeedbackSoundSafely(
-      ref.read(soundEffectsServiceProvider),
-      isCorrect
-          ? ActivityFeedbackSound.correct
-          : ActivityFeedbackSound.incorrect,
-    );
+    if (marksAnswers(context)) {
+      playFeedbackSoundSafely(
+        ref.read(soundEffectsServiceProvider),
+        isCorrect
+            ? ActivityFeedbackSound.correct
+            : ActivityFeedbackSound.incorrect,
+      );
+    }
   }
 
   @override
@@ -127,7 +129,9 @@ class _GapActivityViewState extends ConsumerState<GapActivityView> {
       fontSize: 18,
       height: 1.5,
     );
-    final blankColor = switch (submitted) {
+    // In a test the choice stays selected — never marked.
+    final marked = submitted && marksAnswers(context);
+    final blankColor = switch (marked) {
       false => tokens.primaryInk,
       true when _selected == widget.activity.answer => answerTileColors(
         context,
@@ -184,7 +188,7 @@ class _GapActivityViewState extends ConsumerState<GapActivityView> {
                 ActivityWordTile(
                   label: _displayOptions[i],
                   state: singleChoiceState(
-                    submitted: submitted,
+                    submitted: marked,
                     isSelected: i == _selectedIndex,
                     isCorrect: _displayOptions[i] == widget.activity.answer,
                   ),
