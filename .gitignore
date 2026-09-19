@@ -49,3 +49,6 @@ app.*.map.json
 
 # Visual brainstorming companion sessions (local, ephemeral)
 .superpowers/
+
+# Local design mockups and preview screenshots (published as artifacts, not source)
+.scratch/
