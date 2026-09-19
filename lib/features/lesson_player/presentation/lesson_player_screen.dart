@@ -22,6 +22,8 @@ import '../../learning_path/providers/unit_progress_providers.dart';
 import '../../progress/domain/repositories/daily_task_event_repository.dart';
 import '../../progress/providers/current_learner_provider.dart';
 import '../../progress/providers/progress_providers.dart';
+import '../../review/providers/review_providers.dart';
+import '../../vocabulary/providers/vocabulary_providers.dart';
 import '../domain/lesson_phases.dart';
 import 'lesson_review_screen.dart' show lessonReviewAttemptsProvider;
 import 'widgets/activity_eyebrow.dart';
@@ -456,6 +458,13 @@ class _LessonPlayerBodyState extends ConsumerState<_LessonPlayerBody> {
           taskType: DailyTaskType.lesson,
         );
     ref.invalidate(dailyTaskCountsProvider);
+
+    // What this lesson taught comes back in the Review tab from tomorrow.
+    await ref
+        .read(vocabularyReviewServiceProvider)
+        .enrollLesson(learnerId: widget.learnerId, lesson: widget.lesson);
+    ref.invalidate(allVocabularyReviewStateProvider);
+    ref.invalidate(dueVocabularyProvider);
 
     if (mounted) setState(() => _finished = true);
   }

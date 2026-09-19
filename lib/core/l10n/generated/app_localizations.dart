@@ -1127,7 +1127,7 @@ abstract class AppLocalizations {
   /// Review tab card when the learner has nothing in spaced review yet.
   ///
   /// In en, this message translates to:
-  /// **'Open a word or phrase and rate how well you know it to add it to your reviews.'**
+  /// **'Words and phrases from your lessons come back here the day after you learn them.'**
   String get reviewCaughtUpEmpty;
 
   /// Review tab section of Can-Do goals that need more practice.

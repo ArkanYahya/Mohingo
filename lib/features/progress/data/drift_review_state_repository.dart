@@ -131,6 +131,51 @@ class DriftReviewStateRepository implements ReviewStateRepository {
   }
 
   @override
+  Future<void> enrollVocabulary({
+    required int learnerId,
+    required List<String> lexiconIds,
+    required List<String> chunkIds,
+    required DateTime dueAt,
+  }) async {
+    final now = DateTime.now();
+    await _db.transaction(() async {
+      for (final (lexiconId, chunkId) in [
+        for (final id in lexiconIds) (id, null),
+        for (final id in chunkIds) (null, id),
+      ]) {
+        final existing = await vocabularyState(
+          learnerId: learnerId,
+          lexiconId: lexiconId,
+          chunkId: chunkId,
+        );
+        if (existing == null) {
+          await _db
+              .into(_db.vocabularyReviewState)
+              .insert(
+                VocabularyReviewStateCompanion.insert(
+                  uuid: _uuid.v4(),
+                  learnerId: learnerId,
+                  lexiconId: Value(lexiconId),
+                  chunkId: Value(chunkId),
+                  dueAt: Value(dueAt),
+                  updatedAt: now,
+                ),
+              );
+        } else if (existing.dueAt == null) {
+          await (_db.update(
+            _db.vocabularyReviewState,
+          )..where((t) => t.id.equals(existing.id))).write(
+            VocabularyReviewStateCompanion(
+              dueAt: Value(dueAt),
+              updatedAt: Value(now),
+            ),
+          );
+        }
+      }
+    });
+  }
+
+  @override
   Future<List<VocabularyReviewStateData>> dueVocabulary({
     required int learnerId,
     required DateTime asOf,

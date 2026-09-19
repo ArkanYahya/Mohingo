@@ -88,4 +88,77 @@ void main() {
       expect(await db.select(db.unitProgress).get(), isEmpty);
     },
   );
+
+  group('enrollVocabulary', () {
+    final due = DateTime(2026, 9, 20);
+
+    test('adds each new word and phrase to review, not yet recalled, due at '
+        'the given time', () async {
+      await repo.enrollVocabulary(
+        learnerId: learnerId,
+        lexiconIds: const ['A1.LEX.NAME.N01'],
+        chunkIds: const ['A1.CHUNK.MY_NAME_IS'],
+        dueAt: due,
+      );
+
+      final rows = await repo.allVocabularyState(learnerId: learnerId);
+      expect(rows, hasLength(2));
+      for (final row in rows) {
+        expect(row.dueAt, due);
+        expect(row.repetitions, 0);
+        expect(row.isFavorite, isFalse);
+      }
+    });
+
+    test('schedules a word that was only saved as a favourite, keeping the '
+        'star', () async {
+      await repo.setVocabularyFavorite(
+        learnerId: learnerId,
+        lexiconId: 'A1.LEX.NAME.N01',
+        isFavorite: true,
+      );
+
+      await repo.enrollVocabulary(
+        learnerId: learnerId,
+        lexiconIds: const ['A1.LEX.NAME.N01'],
+        chunkIds: const [],
+        dueAt: due,
+      );
+
+      final row = await repo.vocabularyState(
+        learnerId: learnerId,
+        lexiconId: 'A1.LEX.NAME.N01',
+      );
+      expect(row!.dueAt, due);
+      expect(row.isFavorite, isTrue);
+    });
+
+    test('never touches a word already in review — replaying a lesson '
+        "doesn't reset its schedule", () async {
+      final later = DateTime(2026, 10, 1);
+      await repo.upsertVocabularyReviewOutcome(
+        learnerId: learnerId,
+        lexiconId: 'A1.LEX.NAME.N01',
+        easeFactor: 2.6,
+        intervalDays: 6,
+        repetitions: 2,
+        dueAt: later,
+        confidenceMarker: 'good',
+      );
+
+      await repo.enrollVocabulary(
+        learnerId: learnerId,
+        lexiconIds: const ['A1.LEX.NAME.N01'],
+        chunkIds: const [],
+        dueAt: due,
+      );
+
+      final row = await repo.vocabularyState(
+        learnerId: learnerId,
+        lexiconId: 'A1.LEX.NAME.N01',
+      );
+      expect(row!.dueAt, later);
+      expect(row.repetitions, 2);
+    });
+  });
 }

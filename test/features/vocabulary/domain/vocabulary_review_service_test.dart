@@ -32,6 +32,14 @@ class _FakeReviewStateRepository implements ReviewStateRepository {
   recordedOutcomes = [];
 
   @override
+  Future<void> enrollVocabulary({
+    required int learnerId,
+    required List<String> lexiconIds,
+    required List<String> chunkIds,
+    required DateTime dueAt,
+  }) async {}
+
+  @override
   Future<VocabularyReviewStateData?> vocabularyState({
     required int learnerId,
     String? lexiconId,

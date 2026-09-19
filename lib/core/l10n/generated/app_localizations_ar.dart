@@ -700,7 +700,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get reviewCaughtUpEmpty =>
-      'افتح كلمة أو عبارة وقيّم مدى معرفتك بها لتُضاف إلى مراجعاتك.';
+      'تعود إليك هنا الكلمات والعبارات من دروسك في اليوم التالي لتعلّمها.';
 
   @override
   String get reviewWeakSpotsOverline => 'تدرّب على نقاط ضعفك';

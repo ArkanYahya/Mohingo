@@ -674,7 +674,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get reviewCaughtUpEmpty =>
-      'Open a word or phrase and rate how well you know it to add it to your reviews.';
+      'Words and phrases from your lessons come back here the day after you learn them.';
 
   @override
   String get reviewWeakSpotsOverline => 'Practise weak spots';

@@ -44,6 +44,18 @@ abstract interface class ReviewStateRepository {
     required String confidenceMarker,
   });
 
+  /// Puts words and phrases the learner has just met into spaced review,
+  /// due at [dueAt] and not yet recalled (repetitions 0). An item already
+  /// scheduled is left exactly as it is — replaying a lesson never resets a
+  /// schedule; one only saved as a favourite gets its first due date and
+  /// keeps its star.
+  Future<void> enrollVocabulary({
+    required int learnerId,
+    required List<String> lexiconIds,
+    required List<String> chunkIds,
+    required DateTime dueAt,
+  });
+
   Future<List<VocabularyReviewStateData>> dueVocabulary({
     required int learnerId,
     required DateTime asOf,

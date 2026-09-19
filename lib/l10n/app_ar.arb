@@ -171,7 +171,7 @@
   "reviewStartCta": "ابدأ المراجعة",
   "reviewCaughtUpTitle": "أنهيت كل المراجعات",
   "reviewNextIn": "{days, plural, =0{المراجعة التالية لاحقاً اليوم} =1{المراجعة التالية غداً} =2{المراجعة التالية بعد يومين} few{المراجعة التالية بعد {days} أيام} other{المراجعة التالية بعد {days} يوماً}}",
-  "reviewCaughtUpEmpty": "افتح كلمة أو عبارة وقيّم مدى معرفتك بها لتُضاف إلى مراجعاتك.",
+  "reviewCaughtUpEmpty": "تعود إليك هنا الكلمات والعبارات من دروسك في اليوم التالي لتعلّمها.",
   "reviewWeakSpotsOverline": "تدرّب على نقاط ضعفك",
   "reviewWeakSpotsBody": "أهداف في الوحدات التي تدرسها تحتاج إلى مزيد من التدريب",
   "reviewWeakSpotMeta": "الوحدة {unit} · {skills}",

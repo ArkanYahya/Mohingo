@@ -485,7 +485,7 @@
   "@reviewCaughtUpTitle": {"description": "Review tab card when nothing is due for review."},
   "reviewNextIn": "{days, plural, =0{Next review later today} =1{Next review tomorrow} other{Next review in {days} days}}",
   "@reviewNextIn": {"description": "When the next word or phrase comes due, in calendar days from today.", "placeholders": {"days": {"type": "int"}}},
-  "reviewCaughtUpEmpty": "Open a word or phrase and rate how well you know it to add it to your reviews.",
+  "reviewCaughtUpEmpty": "Words and phrases from your lessons come back here the day after you learn them.",
   "@reviewCaughtUpEmpty": {"description": "Review tab card when the learner has nothing in spaced review yet."},
   "reviewWeakSpotsOverline": "Practise weak spots",
   "@reviewWeakSpotsOverline": {"description": "Review tab section of Can-Do goals that need more practice."},

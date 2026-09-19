@@ -3,6 +3,7 @@
 // formal would force the underscored field name into the public API.
 // ignore_for_file: prefer_initializing_formals
 
+import '../../../content/models/curriculum_structure.dart';
 import '../../progress/domain/repositories/daily_task_event_repository.dart';
 import '../../progress/domain/repositories/review_state_repository.dart';
 import 'spaced_review_scheduler.dart';
@@ -63,6 +64,24 @@ class VocabularyReviewService {
       learnerId: learnerId,
       taskType: DailyTaskType.vocabularyReview,
       occurredAt: effectiveNow,
+    );
+  }
+
+  /// Puts [lesson]'s words and phrases into spaced review once the learner
+  /// has finished it, first due at the start of the next day — so what a
+  /// lesson taught comes back in the Review tab without the learner having
+  /// to find each word. Items already in review keep their schedule.
+  Future<void> enrollLesson({
+    required int learnerId,
+    required Lesson lesson,
+    DateTime? now,
+  }) {
+    final today = now ?? DateTime.now();
+    return _repository.enrollVocabulary(
+      learnerId: learnerId,
+      lexiconIds: lesson.lexicon,
+      chunkIds: lesson.chunks,
+      dueAt: DateTime(today.year, today.month, today.day + 1),
     );
   }
 }

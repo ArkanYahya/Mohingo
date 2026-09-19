@@ -118,6 +118,17 @@ void main() {
     // reads "Next lesson", not "Back to unit".
     expect(find.text(l10n.lessonCompleteNextLesson), findsOneWidget);
     expect(find.text(l10n.lessonCompleteBackToUnit), findsNothing);
+
+    // The lesson's words and phrases are now in spaced review, due from the
+    // start of tomorrow.
+    final reviewRows = await db.select(db.vocabularyReviewState).get();
+    expect(
+      {for (final r in reviewRows) r.lexiconId ?? r.chunkId},
+      {...lesson.lexicon, ...lesson.chunks},
+    );
+    final now = DateTime.now();
+    final tomorrow = DateTime(now.year, now.month, now.day + 1);
+    expect(reviewRows.map((r) => r.dueAt).toSet(), {tomorrow});
   });
 
   testWidgets(
