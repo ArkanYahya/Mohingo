@@ -822,35 +822,13 @@ class AppLocalizationsEn extends AppLocalizations {
       'Microphone access is turned off for this app. You can still type your answer, or enable it in your device settings.';
 
   @override
-  String get settingsSpeechTitle => 'Speech';
+  String get settingsSpeechTitle => 'Listening & speaking';
 
   @override
-  String get settingsSpeechRate => 'Speaking rate';
+  String get settingsSpeechRate => 'Voice speed';
 
   @override
   String get settingsSpeechPitch => 'Voice pitch';
-
-  @override
-  String get settingsMicPermissionGranted => 'Microphone access: allowed';
-
-  @override
-  String get settingsMicPermissionDenied => 'Microphone access: not allowed';
-
-  @override
-  String get settingsMicPermissionPermanentlyDenied =>
-      'Microphone access: blocked — enable it in device settings';
-
-  @override
-  String get settingsMicPermissionNotDetermined =>
-      'Microphone access: not yet requested';
-
-  @override
-  String get settingsSttAvailable =>
-      'On-device speech recognition: available for English';
-
-  @override
-  String get settingsSttUnavailable =>
-      'On-device speech recognition: not available on this device — you can still type answers to speaking tasks';
 
   @override
   String get speechListen => 'Listen';
@@ -1183,7 +1161,89 @@ class AppLocalizationsEn extends AppLocalizations {
   String get favoriteRemoveTooltip => 'Remove from favorites';
 
   @override
-  String get settingsInterfaceLanguageTitle => 'Interface language';
+  String get settingsAppearanceOverline => 'Appearance';
+
+  @override
+  String get settingsLanguageBody =>
+      'Lessons stay in English; this changes menus and help.';
+
+  @override
+  String get settingsSlower => 'Slower';
+
+  @override
+  String get settingsFaster => 'Faster';
+
+  @override
+  String get settingsLower => 'Lower';
+
+  @override
+  String get settingsHigher => 'Higher';
+
+  @override
+  String get settingsTryVoice => 'Try it';
+
+  @override
+  String get settingsMicTitle => 'Microphone';
+
+  @override
+  String get settingsMicAllowed =>
+      'Allowed — you can answer speaking tasks aloud.';
+
+  @override
+  String get settingsMicNotYet =>
+      'Not allowed yet — needed to answer speaking tasks aloud.';
+
+  @override
+  String get settingsMicDenied =>
+      'Not allowed — needed to answer speaking tasks aloud.';
+
+  @override
+  String get settingsMicBlocked =>
+      'Blocked — turn it on in your phone\'s settings for Mohingo.';
+
+  @override
+  String get settingsMicAllow => 'Allow';
+
+  @override
+  String get settingsSttTitle => 'Speech recognition';
+
+  @override
+  String get settingsSttOn => 'Available for English on this device.';
+
+  @override
+  String get settingsSttOff =>
+      'Not available on this device. You can type your speaking answers instead.';
+
+  @override
+  String get settingsDataOverline => 'Your data';
+
+  @override
+  String get settingsOfflineTitle => 'Stays on this device';
+
+  @override
+  String get settingsOfflineBody =>
+      'Works fully offline. Nothing is uploaded and there is no account.';
+
+  @override
+  String get settingsResetProgressBody =>
+      'Erase every lesson, test result and review on this device.';
+
+  @override
+  String settingsVersion(String version) {
+    return 'Mohingo · version $version';
+  }
+
+  @override
+  String get settingsNameEmpty => 'Add your name';
+
+  @override
+  String get settingsProfileMeta => 'Learning English · A1';
+
+  @override
+  String get settingsEdit => 'Edit';
+
+  @override
+  String get settingsInterfaceLanguageTitle => 'App language';
 
   @override
   String get settingsThemeModeTitle => 'Theme';
@@ -1195,16 +1255,17 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settingsThemeModeDark => 'Dark';
 
   @override
-  String get settingsThemeModeSystem => 'System';
+  String get settingsThemeModeSystem => 'Automatic';
 
   @override
-  String get settingsColorThemeTitle => 'Colour theme';
+  String get settingsColorThemeTitle => 'Colour';
 
   @override
   String get settingsNameTitle => 'Your name';
 
   @override
-  String get settingsNameHint => 'Used by a few spelling exercises';
+  String get settingsNameHint =>
+      'Used on Home and in a few spelling exercises.';
 
   @override
   String get settingsNameSaveButton => 'Save';
@@ -1213,24 +1274,14 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settingsNameSaved => 'Name saved';
 
   @override
-  String get settingsAboutTitle => 'About';
-
-  @override
-  String get settingsAboutBody =>
-      'Mohingo works fully offline — your lessons, progress, and any speaking answers stay on this device. Nothing is uploaded anywhere, and there\'s no account to create.';
-
-  @override
   String get settingsResetProgressTitle => 'Reset progress';
-
-  @override
-  String get settingsResetProgressButton => 'Reset progress';
 
   @override
   String get settingsResetProgressConfirmTitle => 'Reset all progress?';
 
   @override
   String get settingsResetProgressConfirmBody =>
-      'This erases every unit\'s progress, mastery evidence, placement/mission/assessment results, and vocabulary/grammar favourites on this device. This can\'t be undone.';
+      'This erases every lesson and unit, test result, review schedule and saved word on this device. It can\'t be undone.';
 
   @override
   String get settingsResetProgressConfirmAction => 'Reset';
@@ -1246,5 +1297,5 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get settingsBackupBody =>
-      'Coming soon. For now, your progress stays on this device only — reinstalling the app or switching devices starts fresh.';
+      'Reinstalling the app or changing phones starts fresh for now.';
 }

@@ -1,7 +1,7 @@
 > **What this file is:** The boring-but-expensive-if-inconsistent rules — naming, file layout, error handling shape, commit/branch format. The stuff that's cheap to follow if written down and expensive to reconcile if not.
 > **How to use it:** Follow as default behavior in every session, no exceptions unless the code being touched already established a different local pattern (match it, then flag the inconsistency here).
 
-_Last verified: 2026-09-01 — initial conventions established via brainstorming session._
+_Last verified: 2026-09-19 — added Versioning (`kAppVersion` kept in step with pubspec.yaml). Previously verified 2026-09-01 — initial conventions established via brainstorming session._
 
 # Conventions
 
@@ -31,6 +31,10 @@ Feature-first, per [ARCHITECTURE.md](ARCHITECTURE.md)'s folder structure: new co
 - Branch naming: `feature/<short-desc>`, `fix/<short-desc>` — optional, since this is a solo project (direct commits to `main` are also fine for small changes).
 - Commit message format: short imperative summary line (e.g. "Add unit progress gating"); no strict conventional-commits requirement.
 - PR requirements: none — solo project, no review process. (Revisit if a second contributor joins.)
+
+## Versioning
+
+The app version lives in `pubspec.yaml` and is shown in Settings from `kAppVersion` (`lib/core/app_version.dart`). Bump both together — `test/core/app_version_test.dart` fails if they differ.
 
 ## Dependencies
 

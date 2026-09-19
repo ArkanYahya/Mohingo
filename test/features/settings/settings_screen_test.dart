@@ -3,6 +3,7 @@ import 'package:drift/native.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mohingo/core/app_version.dart';
 import 'package:mohingo/core/l10n/generated/app_localizations.dart';
 import 'package:mohingo/core/l10n/locale_preference_provider.dart';
 import 'package:mohingo/core/preferences/shared_preferences_provider.dart';
@@ -94,7 +95,9 @@ Future<(AppDatabase, SharedPreferences)> _setupBacking() async {
 void main() {
   driftRuntimeOptions.dontWarnAboutMultipleDatabases = true;
 
-  testWidgets('renders every settings section', (tester) async {
+  testWidgets('groups settings under Appearance, Listening & speaking and '
+      'Your data, names the colours, labels the slider ends, and shows the '
+      'app version', (tester) async {
     _useTallViewport(tester);
     final (db, prefs) = await _setupBacking();
 
@@ -102,6 +105,8 @@ void main() {
       ProviderScope(
         overrides: _baseOverrides(prefs, db),
         child: MaterialApp(
+          theme: AppTheme.light(AppColorSeed.calmTeal),
+          locale: const Locale('en'),
           supportedLocales: AppLocalizations.supportedLocales,
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           home: const SettingsScreen(),
@@ -109,16 +114,95 @@ void main() {
       ),
     );
     await tester.pumpAndSettle();
+    final l10n = AppLocalizations.of(
+      tester.element(find.byType(SettingsScreen)),
+    )!;
 
+    expect(find.text(l10n.settingsNameEmpty), findsOneWidget);
+    for (final overline in [
+      l10n.settingsAppearanceOverline,
+      l10n.settingsSpeechTitle,
+      l10n.settingsDataOverline,
+    ]) {
+      expect(find.text(overline.toUpperCase()), findsOneWidget);
+    }
     expect(find.text('العربية'), findsOneWidget);
     expect(find.text('English'), findsOneWidget);
-    expect(find.byType(SegmentedButton<ThemeMode>), findsOneWidget);
-    expect(find.byType(CircleAvatar), findsNWidgets(3)); // 3 colour seeds
-    expect(find.byType(Slider), findsNWidgets(2)); // TTS rate + pitch
-    expect(
-      find.widgetWithText(OutlinedButton, 'Reset progress'),
-      findsOneWidget,
+    for (final seed in AppColorSeed.values) {
+      expect(find.text(seed.labelEn), findsOneWidget);
+    }
+    expect(find.byType(Slider), findsNWidgets(2));
+    expect(find.text(l10n.settingsSlower), findsOneWidget);
+    expect(find.text(l10n.settingsHigher), findsOneWidget);
+    expect(find.text(l10n.settingsVersion(kAppVersion)), findsOneWidget);
+    expect(find.text(l10n.settingsResetProgressTitle), findsOneWidget);
+  });
+
+  testWidgets('Try it plays a sample in the chosen voice', (tester) async {
+    _useTallViewport(tester);
+    final (db, prefs) = await _setupBacking();
+    final tts = FakeTextToSpeechService();
+
+    await tester.pumpWidget(
+      ProviderScope(
+        overrides: [
+          ..._baseOverrides(prefs, db).skip(3),
+          sharedPreferencesProvider.overrideWithValue(prefs),
+          appDatabaseProvider.overrideWithValue(db),
+          textToSpeechServiceProvider.overrideWithValue(tts),
+        ],
+        child: MaterialApp(
+          theme: AppTheme.light(AppColorSeed.calmTeal),
+          locale: const Locale('en'),
+          supportedLocales: AppLocalizations.supportedLocales,
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          home: const SettingsScreen(),
+        ),
+      ),
     );
+    await tester.pumpAndSettle();
+    final l10n = AppLocalizations.of(
+      tester.element(find.byType(SettingsScreen)),
+    )!;
+
+    await tester.tap(find.text(l10n.settingsTryVoice));
+    await tester.pumpAndSettle();
+    expect(tts.spoken, isNotEmpty);
+  });
+
+  testWidgets('Allow asks for the microphone when it has not been asked yet', (
+    tester,
+  ) async {
+    _useTallViewport(tester);
+    final (db, prefs) = await _setupBacking();
+    final recognition = FakeSpeechRecognitionService(
+      initialPermission: SpeechPermissionStatus.notDetermined,
+    );
+
+    await tester.pumpWidget(
+      ProviderScope(
+        overrides: [
+          ..._baseOverrides(prefs, db),
+          speechRecognitionServiceProvider.overrideWithValue(recognition),
+        ],
+        child: MaterialApp(
+          theme: AppTheme.light(AppColorSeed.calmTeal),
+          locale: const Locale('en'),
+          supportedLocales: AppLocalizations.supportedLocales,
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          home: const SettingsScreen(),
+        ),
+      ),
+    );
+    await tester.pumpAndSettle();
+    final l10n = AppLocalizations.of(
+      tester.element(find.byType(SettingsScreen)),
+    )!;
+
+    expect(find.text(l10n.settingsMicNotYet), findsOneWidget);
+    await tester.tap(find.text(l10n.settingsMicAllow));
+    await tester.pumpAndSettle();
+    expect(recognition.initialPermission, SpeechPermissionStatus.granted);
   });
 
   testWidgets(
@@ -134,6 +218,7 @@ void main() {
         ProviderScope(
           overrides: _baseOverrides(prefs, db),
           child: MaterialApp(
+            theme: AppTheme.light(AppColorSeed.calmTeal),
             supportedLocales: AppLocalizations.supportedLocales,
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             home: const SettingsScreen(),
@@ -219,6 +304,7 @@ void main() {
         ProviderScope(
           overrides: _baseOverrides(prefs, db),
           child: MaterialApp(
+            theme: AppTheme.light(AppColorSeed.calmTeal),
             supportedLocales: AppLocalizations.supportedLocales,
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             home: const SettingsScreen(),
@@ -241,11 +327,7 @@ void main() {
           );
       expect(await db.select(db.unitProgress).get(), hasLength(1));
 
-      final resetButtonFinder = find.widgetWithText(
-        OutlinedButton,
-        'Reset progress',
-      );
-      await tester.tap(resetButtonFinder);
+      await tester.tap(find.text('Reset progress'));
       await tester.pumpAndSettle();
 
       // Confirmation dialog appeared with the destructive-action copy.
@@ -274,6 +356,7 @@ void main() {
         ProviderScope(
           overrides: _baseOverrides(prefs, db),
           child: MaterialApp(
+            theme: AppTheme.light(AppColorSeed.calmTeal),
             supportedLocales: AppLocalizations.supportedLocales,
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             home: const SettingsScreen(),
@@ -282,11 +365,15 @@ void main() {
       );
       await tester.pumpAndSettle();
 
+      await tester.tap(find.text('Edit'));
+      await tester.pumpAndSettle();
       await tester.enterText(find.byType(TextField), 'Ali');
       await tester.tap(find.text('Save'));
       await tester.pumpAndSettle();
 
       expect(find.text('Name saved'), findsOneWidget);
+      // The profile card now shows it.
+      expect(find.text('Ali'), findsOneWidget);
 
       final row = await db.select(db.learners).getSingle();
       expect(row.name, 'Ali');

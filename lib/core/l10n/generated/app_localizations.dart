@@ -1349,13 +1349,13 @@ abstract class AppLocalizations {
   /// Settings section/screen title for TTS/STT options.
   ///
   /// In en, this message translates to:
-  /// **'Speech'**
+  /// **'Listening & speaking'**
   String get settingsSpeechTitle;
 
   /// Settings slider label for TTS playback speed.
   ///
   /// In en, this message translates to:
-  /// **'Speaking rate'**
+  /// **'Voice speed'**
   String get settingsSpeechRate;
 
   /// Settings slider label for TTS pitch.
@@ -1363,42 +1363,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Voice pitch'**
   String get settingsSpeechPitch;
-
-  /// Settings speech section status line.
-  ///
-  /// In en, this message translates to:
-  /// **'Microphone access: allowed'**
-  String get settingsMicPermissionGranted;
-
-  /// Settings speech section status line.
-  ///
-  /// In en, this message translates to:
-  /// **'Microphone access: not allowed'**
-  String get settingsMicPermissionDenied;
-
-  /// Settings speech section status line.
-  ///
-  /// In en, this message translates to:
-  /// **'Microphone access: blocked — enable it in device settings'**
-  String get settingsMicPermissionPermanentlyDenied;
-
-  /// Settings speech section status line.
-  ///
-  /// In en, this message translates to:
-  /// **'Microphone access: not yet requested'**
-  String get settingsMicPermissionNotDetermined;
-
-  /// Settings speech section status line.
-  ///
-  /// In en, this message translates to:
-  /// **'On-device speech recognition: available for English'**
-  String get settingsSttAvailable;
-
-  /// Settings speech section status line.
-  ///
-  /// In en, this message translates to:
-  /// **'On-device speech recognition: not available on this device — you can still type answers to speaking tasks'**
-  String get settingsSttUnavailable;
 
   /// Accessible label/tooltip for the icon button that plays text aloud via on-device TTS.
   ///
@@ -1934,10 +1898,154 @@ abstract class AppLocalizations {
   /// **'Remove from favorites'**
   String get favoriteRemoveTooltip;
 
+  /// Settings section heading: language, theme, colour.
+  ///
+  /// In en, this message translates to:
+  /// **'Appearance'**
+  String get settingsAppearanceOverline;
+
+  /// Under the app-language setting.
+  ///
+  /// In en, this message translates to:
+  /// **'Lessons stay in English; this changes menus and help.'**
+  String get settingsLanguageBody;
+
+  /// Voice speed slider: the slow end.
+  ///
+  /// In en, this message translates to:
+  /// **'Slower'**
+  String get settingsSlower;
+
+  /// Voice speed slider: the fast end.
+  ///
+  /// In en, this message translates to:
+  /// **'Faster'**
+  String get settingsFaster;
+
+  /// Voice pitch slider: the low end.
+  ///
+  /// In en, this message translates to:
+  /// **'Lower'**
+  String get settingsLower;
+
+  /// Voice pitch slider: the high end.
+  ///
+  /// In en, this message translates to:
+  /// **'Higher'**
+  String get settingsHigher;
+
+  /// Plays a short sample in the chosen voice settings.
+  ///
+  /// In en, this message translates to:
+  /// **'Try it'**
+  String get settingsTryVoice;
+
+  /// Settings row title for microphone access.
+  ///
+  /// In en, this message translates to:
+  /// **'Microphone'**
+  String get settingsMicTitle;
+
+  /// Microphone access granted.
+  ///
+  /// In en, this message translates to:
+  /// **'Allowed — you can answer speaking tasks aloud.'**
+  String get settingsMicAllowed;
+
+  /// Microphone access never requested.
+  ///
+  /// In en, this message translates to:
+  /// **'Not allowed yet — needed to answer speaking tasks aloud.'**
+  String get settingsMicNotYet;
+
+  /// Microphone access denied (can ask again).
+  ///
+  /// In en, this message translates to:
+  /// **'Not allowed — needed to answer speaking tasks aloud.'**
+  String get settingsMicDenied;
+
+  /// Microphone access permanently denied.
+  ///
+  /// In en, this message translates to:
+  /// **'Blocked — turn it on in your phone\'s settings for Mohingo.'**
+  String get settingsMicBlocked;
+
+  /// Button that asks for microphone access.
+  ///
+  /// In en, this message translates to:
+  /// **'Allow'**
+  String get settingsMicAllow;
+
+  /// Settings row title for on-device speech recognition.
+  ///
+  /// In en, this message translates to:
+  /// **'Speech recognition'**
+  String get settingsSttTitle;
+
+  /// Speech recognition available.
+  ///
+  /// In en, this message translates to:
+  /// **'Available for English on this device.'**
+  String get settingsSttOn;
+
+  /// Speech recognition unavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Not available on this device. You can type your speaking answers instead.'**
+  String get settingsSttOff;
+
+  /// Settings section heading: privacy, backup, reset.
+  ///
+  /// In en, this message translates to:
+  /// **'Your data'**
+  String get settingsDataOverline;
+
+  /// Settings row title: privacy.
+  ///
+  /// In en, this message translates to:
+  /// **'Stays on this device'**
+  String get settingsOfflineTitle;
+
+  /// Settings row body: privacy.
+  ///
+  /// In en, this message translates to:
+  /// **'Works fully offline. Nothing is uploaded and there is no account.'**
+  String get settingsOfflineBody;
+
+  /// Under the Reset progress row.
+  ///
+  /// In en, this message translates to:
+  /// **'Erase every lesson, test result and review on this device.'**
+  String get settingsResetProgressBody;
+
+  /// The app version at the foot of Settings.
+  ///
+  /// In en, this message translates to:
+  /// **'Mohingo · version {version}'**
+  String settingsVersion(String version);
+
+  /// Profile card when the learner has no name yet.
+  ///
+  /// In en, this message translates to:
+  /// **'Add your name'**
+  String get settingsNameEmpty;
+
+  /// Profile card line under the name.
+  ///
+  /// In en, this message translates to:
+  /// **'Learning English · A1'**
+  String get settingsProfileMeta;
+
+  /// Profile card button that edits the name.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit'**
+  String get settingsEdit;
+
   /// Settings section title for the Arabic/English interface-language picker.
   ///
   /// In en, this message translates to:
-  /// **'Interface language'**
+  /// **'App language'**
   String get settingsInterfaceLanguageTitle;
 
   /// Settings section title for the light/dark/system theme-mode picker.
@@ -1961,13 +2069,13 @@ abstract class AppLocalizations {
   /// Theme-mode option label — follows the device's own light/dark setting.
   ///
   /// In en, this message translates to:
-  /// **'System'**
+  /// **'Automatic'**
   String get settingsThemeModeSystem;
 
   /// Settings section title for the colour-seed picker (see AppColorSeed).
   ///
   /// In en, this message translates to:
-  /// **'Colour theme'**
+  /// **'Colour'**
   String get settingsColorThemeTitle;
 
   /// Section title on Settings for the learner's name field.
@@ -1979,7 +2087,7 @@ abstract class AppLocalizations {
   /// Helper text under the Settings name field explaining why it's asked.
   ///
   /// In en, this message translates to:
-  /// **'Used by a few spelling exercises'**
+  /// **'Used on Home and in a few spelling exercises.'**
   String get settingsNameHint;
 
   /// Button to save the learner's name in Settings.
@@ -1994,29 +2102,11 @@ abstract class AppLocalizations {
   /// **'Name saved'**
   String get settingsNameSaved;
 
-  /// Settings section title for app/privacy information.
-  ///
-  /// In en, this message translates to:
-  /// **'About'**
-  String get settingsAboutTitle;
-
-  /// Settings About section body — a plain-language privacy summary, not a full legal privacy policy (v1 has none published yet).
-  ///
-  /// In en, this message translates to:
-  /// **'Mohingo works fully offline — your lessons, progress, and any speaking answers stay on this device. Nothing is uploaded anywhere, and there\'s no account to create.'**
-  String get settingsAboutBody;
-
   /// Settings section title for the destructive reset-progress action.
   ///
   /// In en, this message translates to:
   /// **'Reset progress'**
   String get settingsResetProgressTitle;
-
-  /// Button that opens the reset-progress confirmation dialog.
-  ///
-  /// In en, this message translates to:
-  /// **'Reset progress'**
-  String get settingsResetProgressButton;
 
   /// Confirmation dialog title before erasing progress.
   ///
@@ -2027,7 +2117,7 @@ abstract class AppLocalizations {
   /// Confirmation dialog body — states plainly what will be lost before the action is taken, per docs/UX_PRINCIPLES.md.
   ///
   /// In en, this message translates to:
-  /// **'This erases every unit\'s progress, mastery evidence, placement/mission/assessment results, and vocabulary/grammar favourites on this device. This can\'t be undone.'**
+  /// **'This erases every lesson and unit, test result, review schedule and saved word on this device. It can\'t be undone.'**
   String get settingsResetProgressConfirmBody;
 
   /// Confirmation dialog's destructive confirm button.
@@ -2057,7 +2147,7 @@ abstract class AppLocalizations {
   /// Settings Backup & sync section body — an honest coming-soon placeholder, not a working feature.
   ///
   /// In en, this message translates to:
-  /// **'Coming soon. For now, your progress stays on this device only — reinstalling the app or switching devices starts fresh.'**
+  /// **'Reinstalling the app or changing phones starts fresh for now.'**
   String get settingsBackupBody;
 }
 

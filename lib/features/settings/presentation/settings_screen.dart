@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../core/app_version.dart';
 import '../../../core/l10n/generated/app_localizations.dart';
 import '../../../core/l10n/locale_preference_provider.dart';
+import '../../../core/theme/app_tokens.dart';
 import '../../../core/theme/color_seed.dart';
 import '../../../core/theme/theme_preferences_provider.dart';
+import '../../../core/widgets/section_heading.dart';
+import '../../../core/widgets/status_pill.dart';
 import '../../../data/local/database_provider.dart';
 import '../../grammar/providers/grammar_providers.dart';
 import '../../learning_path/providers/unit_progress_providers.dart';
@@ -18,79 +22,454 @@ import '../../speech/providers/tts_preferences_provider.dart';
 import '../../tests_home/providers/tests_home_providers.dart';
 import '../../vocabulary/providers/vocabulary_providers.dart';
 
-/// Settings tab landing screen.
+/// The Settings tab.
 ///
-/// Interface language, theme mode, and colour theme all read/write
-/// preferences that were already wired at the app root in earlier phases
-/// (`localePreferenceProvider`/`themeModePreferenceProvider`/
-/// `colorSeedPreferenceProvider`) — this screen is the first UI that
-/// actually exposes them to a learner, per docs/DESIGN_SYSTEM.md's
-/// "changes apply immediately, no restart" rule. Speech, About, Reset
-/// progress, and Backup & sync round out the full Settings surface for v1.
+/// A profile card (name, what the learner is learning, streak; Edit opens a
+/// sheet), then grouped cards: Appearance (app language, theme, colour —
+/// each applies immediately, per docs/DESIGN_SYSTEM.md), Listening &
+/// speaking (voice speed and pitch with a sample to hear them, microphone
+/// access with an Allow button, speech-recognition availability), and Your
+/// data (offline privacy, backup coming soon, and — last — reset
+/// progress). The app version sits at the foot.
 class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final theme = Theme.of(context);
+    final tokens = theme.extension<AppTokens>()!;
     final l10n = AppLocalizations.of(context)!;
     return Scaffold(
-      appBar: AppBar(title: Text(l10n.navSettings)),
-      body: ListView(
-        padding: const EdgeInsets.all(16),
+      body: SafeArea(
+        bottom: false,
+        child: ListView(
+          padding: const EdgeInsets.fromLTRB(
+            AppSpace.md,
+            AppSpace.lg,
+            AppSpace.md,
+            AppSpace.lg,
+          ),
+          children: [
+            Text(
+              l10n.navSettings,
+              style: theme.textTheme.headlineSmall?.copyWith(
+                color: tokens.textPrimary,
+              ),
+            ),
+            const SizedBox(height: AppSpace.md),
+            const _ProfileCard(),
+            SectionHeading(l10n.settingsAppearanceOverline),
+            _Group(
+              children: [
+                _Block(
+                  title: l10n.settingsInterfaceLanguageTitle,
+                  subtitle: l10n.settingsLanguageBody,
+                  child: const _InterfaceLanguagePicker(),
+                ),
+                _Block(
+                  title: l10n.settingsThemeModeTitle,
+                  child: const _ThemeModePicker(),
+                ),
+                _Block(
+                  title: l10n.settingsColorThemeTitle,
+                  child: const _ColorThemePicker(),
+                ),
+              ],
+            ),
+            SectionHeading(l10n.settingsSpeechTitle),
+            _Group(
+              children: [
+                const _TtsRateBlock(),
+                _Block(
+                  title: l10n.settingsSpeechPitch,
+                  child: const _TtsPitchSlider(),
+                ),
+                const _MicrophoneRow(),
+                const _SpeechRecognitionRow(),
+              ],
+            ),
+            SectionHeading(l10n.settingsDataOverline),
+            _Group(
+              children: [
+                _Row(
+                  icon: Icons.lock_outline_rounded,
+                  title: l10n.settingsOfflineTitle,
+                  subtitle: l10n.settingsOfflineBody,
+                ),
+                _Row(
+                  icon: Icons.cloud_sync_outlined,
+                  title: l10n.settingsBackupTitle,
+                  subtitle: l10n.settingsBackupBody,
+                  trailing: StatusPill(label: l10n.comingSoon),
+                ),
+                const _ResetProgressRow(),
+              ],
+            ),
+            const SizedBox(height: AppSpace.lg),
+            Text(
+              l10n.settingsVersion(kAppVersion),
+              textAlign: TextAlign.center,
+              style: theme.textTheme.bodySmall?.copyWith(
+                color: tokens.textSecondary,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/// True when the screen is narrow for the text size — then a row's
+/// trailing action goes under its text rather than squeezing it.
+bool _isNarrow(BuildContext context) =>
+    MediaQuery.sizeOf(context).width /
+        MediaQuery.textScalerOf(context).scale(1) <
+    340;
+
+/// A hairline card of settings, separated by dividers.
+class _Group extends StatelessWidget {
+  const _Group({required this.children});
+
+  final List<Widget> children;
+
+  @override
+  Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppTokens>()!;
+    return Material(
+      color: tokens.card,
+      clipBehavior: Clip.antiAlias,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(AppRadius.card),
+        side: BorderSide(color: tokens.border),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          _SectionTitle(l10n.settingsInterfaceLanguageTitle),
-          const _InterfaceLanguagePicker(),
-          const SizedBox(height: 24),
-          _SectionTitle(l10n.settingsThemeModeTitle),
-          const _ThemeModePicker(),
-          const SizedBox(height: 24),
-          _SectionTitle(l10n.settingsColorThemeTitle),
-          const _ColorThemePicker(),
-          const SizedBox(height: 24),
-          _SectionTitle(l10n.settingsNameTitle),
-          const _NameField(),
-          const SizedBox(height: 24),
-          _SectionTitle(l10n.settingsSpeechTitle),
-          const _SpeechStatusCard(),
-          const SizedBox(height: 16),
-          const _TtsRateSlider(),
-          const _TtsPitchSlider(),
-          const SizedBox(height: 24),
-          _SectionTitle(l10n.settingsAboutTitle),
-          _InfoCard(l10n.settingsAboutBody),
-          const SizedBox(height: 24),
-          _SectionTitle(l10n.settingsResetProgressTitle),
-          const _ResetProgressButton(),
-          const SizedBox(height: 24),
-          _SectionTitle(l10n.settingsBackupTitle),
-          _InfoCard(l10n.settingsBackupBody),
+          for (final (i, child) in children.indexed) ...[
+            if (i > 0) Divider(height: 1, color: tokens.border),
+            child,
+          ],
         ],
       ),
     );
   }
 }
 
-class _SectionTitle extends StatelessWidget {
-  const _SectionTitle(this.text);
-  final String text;
+/// A setting with its control under its title.
+class _Block extends StatelessWidget {
+  const _Block({
+    required this.title,
+    required this.child,
+    this.subtitle,
+    this.trailing,
+  });
+
+  final String title;
+  final String? subtitle;
+  final Widget? trailing;
+  final Widget child;
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final tokens = theme.extension<AppTokens>()!;
     return Padding(
-      padding: const EdgeInsets.only(bottom: 8),
-      child: Text(text, style: Theme.of(context).textTheme.titleMedium),
+      padding: const EdgeInsets.all(AppSpace.md - 2),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Row(
+            children: [
+              Expanded(
+                child: Text(
+                  title,
+                  style: theme.textTheme.titleMedium?.copyWith(
+                    color: tokens.textPrimary,
+                  ),
+                ),
+              ),
+              ?trailing,
+            ],
+          ),
+          if (subtitle != null)
+            Padding(
+              padding: const EdgeInsets.only(top: 2),
+              child: Text(
+                subtitle!,
+                style: theme.textTheme.bodySmall?.copyWith(
+                  color: tokens.textSecondary,
+                ),
+              ),
+            ),
+          const SizedBox(height: AppSpace.sm - 2),
+          child,
+        ],
+      ),
     );
   }
 }
 
-class _InfoCard extends StatelessWidget {
-  const _InfoCard(this.text);
-  final String text;
+/// A one-line setting: icon, title, explanation, and an optional trailing
+/// widget; tappable when [onTap] is set.
+class _Row extends StatelessWidget {
+  const _Row({
+    required this.icon,
+    required this.title,
+    required this.subtitle,
+    this.trailing,
+    this.onTap,
+    this.destructive = false,
+  });
+
+  final IconData icon;
+  final String title;
+  final String subtitle;
+  final Widget? trailing;
+  final VoidCallback? onTap;
+  final bool destructive;
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: Padding(padding: const EdgeInsets.all(16), child: Text(text)),
+    final theme = Theme.of(context);
+    final tokens = theme.extension<AppTokens>()!;
+    final accent = destructive ? theme.colorScheme.error : null;
+    final narrow = _isNarrow(context);
+    return InkWell(
+      onTap: onTap,
+      child: Padding(
+        padding: const EdgeInsets.all(AppSpace.md - 2),
+        child: Row(
+          children: [
+            ExcludeSemantics(
+              child: Icon(icon, color: accent ?? tokens.textSecondary),
+            ),
+            const SizedBox(width: AppSpace.sm),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: theme.textTheme.titleMedium?.copyWith(
+                      color: accent ?? tokens.textPrimary,
+                    ),
+                  ),
+                  const SizedBox(height: 2),
+                  Text(
+                    subtitle,
+                    style: theme.textTheme.bodySmall?.copyWith(
+                      color: tokens.textSecondary,
+                    ),
+                  ),
+                  if (trailing != null && narrow) ...[
+                    const SizedBox(height: AppSpace.xs),
+                    trailing!,
+                  ],
+                ],
+              ),
+            ),
+            if (trailing != null && !narrow) ...[
+              const SizedBox(width: AppSpace.xs),
+              trailing!,
+            ],
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/// A small outlined action inside a settings row ("Edit", "Allow").
+class _SmallAction extends StatelessWidget {
+  const _SmallAction({required this.label, required this.onPressed, this.icon});
+
+  final String label;
+  final IconData? icon;
+  final VoidCallback onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    final style = OutlinedButton.styleFrom(
+      visualDensity: VisualDensity.compact,
+      padding: const EdgeInsets.symmetric(horizontal: AppSpace.sm),
+    );
+    return icon == null
+        ? OutlinedButton(style: style, onPressed: onPressed, child: Text(label))
+        : OutlinedButton.icon(
+            style: style,
+            onPressed: onPressed,
+            icon: Icon(icon, size: 18),
+            label: Text(label),
+          );
+  }
+}
+
+/// Who's learning: an initial, the name (or "Add your name"), what they're
+/// learning and their streak; Edit opens a sheet to change the name.
+class _ProfileCard extends ConsumerWidget {
+  const _ProfileCard();
+
+  Future<void> _editName(BuildContext context, String? current) async {
+    await showModalBottomSheet<void>(
+      context: context,
+      isScrollControlled: true,
+      showDragHandle: true,
+      builder: (_) => _NameSheet(initial: current ?? ''),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final theme = Theme.of(context);
+    final tokens = theme.extension<AppTokens>()!;
+    final l10n = AppLocalizations.of(context)!;
+    final learner = ref.watch(currentLearnerProvider).value;
+    final streak = ref.watch(currentStreakDaysProvider).value ?? 0;
+    final name = learner?.name?.trim();
+    final hasName = name != null && name.isNotEmpty;
+    final narrow = _isNarrow(context);
+    final edit = _SmallAction(
+      label: l10n.settingsEdit,
+      icon: Icons.edit_outlined,
+      onPressed: () => _editName(context, name),
+    );
+
+    return _Group(
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(AppSpace.md - 2),
+          child: Row(
+            children: [
+              ExcludeSemantics(
+                child: CircleAvatar(
+                  radius: 26,
+                  backgroundColor: tokens.primaryInkTint,
+                  child: hasName
+                      ? Text(
+                          name.characters.first.toUpperCase(),
+                          style: theme.textTheme.titleLarge?.copyWith(
+                            color: tokens.primaryInk,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        )
+                      : Icon(Icons.person_rounded, color: tokens.primaryInk),
+                ),
+              ),
+              const SizedBox(width: AppSpace.sm),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      hasName ? name : l10n.settingsNameEmpty,
+                      style: theme.textTheme.titleMedium?.copyWith(
+                        color: hasName
+                            ? tokens.textPrimary
+                            : tokens.textSecondary,
+                      ),
+                    ),
+                    const SizedBox(height: 2),
+                    Text(
+                      streak > 0
+                          ? '${l10n.settingsProfileMeta} · '
+                                '${l10n.homeStreakChip(streak)}'
+                          : l10n.settingsProfileMeta,
+                      style: theme.textTheme.bodySmall?.copyWith(
+                        color: tokens.textSecondary,
+                      ),
+                    ),
+                    if (narrow) ...[const SizedBox(height: AppSpace.xs), edit],
+                  ],
+                ),
+              ),
+              if (!narrow) ...[const SizedBox(width: AppSpace.xs), edit],
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _NameSheet extends ConsumerStatefulWidget {
+  const _NameSheet({required this.initial});
+
+  final String initial;
+
+  @override
+  ConsumerState<_NameSheet> createState() => _NameSheetState();
+}
+
+class _NameSheetState extends ConsumerState<_NameSheet> {
+  late final _controller = TextEditingController(text: widget.initial);
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  Future<void> _save() async {
+    final l10n = AppLocalizations.of(context)!;
+    final messenger = ScaffoldMessenger.of(context);
+    final navigator = Navigator.of(context);
+    final learner = await ref.read(currentLearnerProvider.future);
+    await ref
+        .read(learnerRepositoryProvider)
+        .updateName(learnerId: learner.id, name: _controller.text.trim());
+    ref.invalidate(currentLearnerProvider);
+    navigator.pop();
+    messenger.showSnackBar(SnackBar(content: Text(l10n.settingsNameSaved)));
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final tokens = theme.extension<AppTokens>()!;
+    final l10n = AppLocalizations.of(context)!;
+    return Padding(
+      padding: EdgeInsets.fromLTRB(
+        AppSpace.md,
+        0,
+        AppSpace.md,
+        AppSpace.md + MediaQuery.viewInsetsOf(context).bottom,
+      ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Text(
+            l10n.settingsNameTitle,
+            style: theme.textTheme.titleLarge?.copyWith(
+              color: tokens.textPrimary,
+            ),
+          ),
+          const SizedBox(height: 2),
+          Text(
+            l10n.settingsNameHint,
+            style: theme.textTheme.bodyMedium?.copyWith(
+              color: tokens.textSecondary,
+            ),
+          ),
+          const SizedBox(height: AppSpace.md),
+          TextField(
+            controller: _controller,
+            autofocus: true,
+            textInputAction: TextInputAction.done,
+            onSubmitted: (_) => _save(),
+            decoration: const InputDecoration(border: OutlineInputBorder()),
+          ),
+          const SizedBox(height: AppSpace.md),
+          FilledButton(
+            style: FilledButton.styleFrom(
+              minimumSize: const Size.fromHeight(48),
+            ),
+            onPressed: _save,
+            child: Text(l10n.settingsNameSaveButton),
+          ),
+        ],
+      ),
     );
   }
 }
@@ -102,6 +481,7 @@ class _InterfaceLanguagePicker extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final locale = ref.watch(localePreferenceProvider);
     return SegmentedButton<Locale>(
+      showSelectedIcon: false,
       segments: const [
         // Each language's own name is shown in its own script regardless of
         // the current interface language — a language picker's own labels
@@ -123,22 +503,45 @@ class _ThemeModePicker extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context)!;
     final mode = ref.watch(themeModePreferenceProvider);
+
+    // Icon over label, scaled down to fit, so a label never breaks mid-word
+    // on a narrow screen with large text.
+    ButtonSegment<ThemeMode> segment(
+      ThemeMode value,
+      IconData icon,
+      String label,
+    ) => ButtonSegment(
+      value: value,
+      label: Padding(
+        padding: const EdgeInsets.symmetric(vertical: AppSpace.xs - 2),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(icon, size: 20),
+            const SizedBox(height: 2),
+            FittedBox(fit: BoxFit.scaleDown, child: Text(label)),
+          ],
+        ),
+      ),
+    );
+
     return SegmentedButton<ThemeMode>(
+      showSelectedIcon: false,
       segments: [
-        ButtonSegment(
-          value: ThemeMode.light,
-          label: Text(l10n.settingsThemeModeLight),
-          icon: const Icon(Icons.light_mode_outlined),
+        segment(
+          ThemeMode.light,
+          Icons.light_mode_outlined,
+          l10n.settingsThemeModeLight,
         ),
-        ButtonSegment(
-          value: ThemeMode.dark,
-          label: Text(l10n.settingsThemeModeDark),
-          icon: const Icon(Icons.dark_mode_outlined),
+        segment(
+          ThemeMode.dark,
+          Icons.dark_mode_outlined,
+          l10n.settingsThemeModeDark,
         ),
-        ButtonSegment(
-          value: ThemeMode.system,
-          label: Text(l10n.settingsThemeModeSystem),
-          icon: const Icon(Icons.brightness_auto_outlined),
+        segment(
+          ThemeMode.system,
+          Icons.brightness_auto_outlined,
+          l10n.settingsThemeModeSystem,
         ),
       ],
       selected: {mode},
@@ -153,30 +556,78 @@ class _ColorThemePicker extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final theme = Theme.of(context);
+    final tokens = theme.extension<AppTokens>()!;
     final selected = ref.watch(colorSeedPreferenceProvider);
     final isArabic = Localizations.localeOf(context).languageCode == 'ar';
+    final narrow = _isNarrow(context);
     return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         for (final seed in AppColorSeed.values)
-          Padding(
-            padding: const EdgeInsetsDirectional.only(end: 12),
+          Expanded(
             child: Semantics(
-              label: isArabic ? seed.labelAr : seed.labelEn,
               button: true,
               selected: seed == selected,
               child: InkWell(
-                customBorder: const CircleBorder(),
+                borderRadius: BorderRadius.circular(AppRadius.control),
                 onTap: () =>
                     ref.read(colorSeedPreferenceProvider.notifier).set(seed),
-                child: CircleAvatar(
-                  radius: 20,
-                  // The seed's *applied* accent, not the raw seed — see
-                  // AppColorSeed.brandPrimary's doc comment. The picker must
-                  // preview what selecting this theme actually produces.
-                  backgroundColor: seed.brandPrimary,
-                  child: seed == selected
-                      ? const Icon(Icons.check, color: Colors.white)
-                      : null,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: AppSpace.xs),
+                  child: Column(
+                    children: [
+                      DecoratedBox(
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: seed == selected
+                                ? tokens.textPrimary
+                                : Colors.transparent,
+                            width: 2,
+                          ),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(3),
+                          child: CircleAvatar(
+                            radius: 18,
+                            // The seed's *applied* accent, not the raw seed
+                            // — see AppColorSeed.brandPrimary's doc comment.
+                            // The picker must preview what selecting this
+                            // theme actually produces.
+                            backgroundColor: seed.brandPrimary,
+                            child: seed == selected
+                                ? Icon(
+                                    Icons.check_rounded,
+                                    color: seed.onBrandPrimary,
+                                  )
+                                : null,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: AppSpace.xs - 2),
+                      // Scales down rather than breaking a long word.
+                      FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          // On a narrow screen, one word per line first.
+                          narrow
+                              ? (isArabic ? seed.labelAr : seed.labelEn)
+                                    .replaceAll(' ', '\n')
+                              : (isArabic ? seed.labelAr : seed.labelEn),
+                          textAlign: TextAlign.center,
+                          style: theme.textTheme.bodySmall?.copyWith(
+                            color: seed == selected
+                                ? tokens.textPrimary
+                                : tokens.textSecondary,
+                            fontWeight: seed == selected
+                                ? FontWeight.w600
+                                : FontWeight.w400,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -186,98 +637,198 @@ class _ColorThemePicker extends ConsumerWidget {
   }
 }
 
-class _NameField extends ConsumerStatefulWidget {
-  const _NameField();
+/// Voice speed, with a sample to hear it.
+class _TtsRateBlock extends ConsumerWidget {
+  const _TtsRateBlock();
+
+  /// Spoken by Try it — ordinary A1 English, so the learner hears the
+  /// voice as lessons use it.
+  static const _sample = "Hello! I'm Maya. Nice to meet you.";
 
   @override
-  ConsumerState<_NameField> createState() => _NameFieldState();
-}
-
-class _NameFieldState extends ConsumerState<_NameField> {
-  final _controller = TextEditingController();
-  bool _initialized = false;
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
-  Future<void> _save(BuildContext context, WidgetRef ref) async {
+  Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context)!;
-    final learner = await ref.read(currentLearnerProvider.future);
-    await ref
-        .read(learnerRepositoryProvider)
-        .updateName(learnerId: learner.id, name: _controller.text.trim());
-    ref.invalidate(currentLearnerProvider);
-    if (context.mounted) {
-      ScaffoldMessenger.of(context)
-          .showSnackBar(SnackBar(content: Text(l10n.settingsNameSaved)));
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
-    final learnerAsync = ref.watch(currentLearnerProvider);
-    return learnerAsync.when(
-      loading: () => const LinearProgressIndicator(),
-      error: (error, _) => Text('$error'),
-      data: (learner) {
-        if (!_initialized) {
-          _controller.text = learner.name ?? '';
-          _initialized = true;
-        }
-        return Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            TextField(
-              controller: _controller,
-              decoration: InputDecoration(
-                border: const OutlineInputBorder(),
-                helperText: l10n.settingsNameHint,
-              ),
-            ),
-            const SizedBox(height: 8),
-            Align(
-              alignment: AlignmentDirectional.centerEnd,
-              child: FilledButton(
-                onPressed: () => _save(context, ref),
-                child: Text(l10n.settingsNameSaveButton),
-              ),
-            ),
-          ],
-        );
-      },
+    final rate = ref.watch(ttsRatePreferenceProvider);
+    final pitch = ref.watch(ttsPitchPreferenceProvider);
+    return _Block(
+      title: l10n.settingsSpeechRate,
+      trailing: _SmallAction(
+        label: l10n.settingsTryVoice,
+        icon: Icons.volume_up_rounded,
+        onPressed: () => ref
+            .read(textToSpeechServiceProvider)
+            .speak(_sample, localeCode: 'en', rate: rate, pitch: pitch),
+      ),
+      child: _LabelledSlider(
+        value: rate,
+        min: 0.25,
+        max: 1.0,
+        low: l10n.settingsSlower,
+        high: l10n.settingsFaster,
+        onChanged: (v) => ref.read(ttsRatePreferenceProvider.notifier).set(v),
+      ),
     );
   }
 }
 
-class _ResetProgressButton extends ConsumerWidget {
-  const _ResetProgressButton();
+class _TtsPitchSlider extends ConsumerWidget {
+  const _TtsPitchSlider();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
+    final pitch = ref.watch(ttsPitchPreferenceProvider);
+    return _LabelledSlider(
+      value: pitch,
+      min: 0.5,
+      max: 2.0,
+      low: l10n.settingsLower,
+      high: l10n.settingsHigher,
+      onChanged: (v) => ref.read(ttsPitchPreferenceProvider.notifier).set(v),
+    );
+  }
+}
+
+/// A slider with its two ends named under it.
+class _LabelledSlider extends StatelessWidget {
+  const _LabelledSlider({
+    required this.value,
+    required this.min,
+    required this.max,
+    required this.low,
+    required this.high,
+    required this.onChanged,
+  });
+
+  final double value;
+  final double min;
+  final double max;
+  final String low;
+  final String high;
+  final ValueChanged<double> onChanged;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final tokens = theme.extension<AppTokens>()!;
+    final endStyle = theme.textTheme.bodySmall?.copyWith(
+      color: tokens.textSecondary,
+    );
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Slider(
+          value: value.clamp(min, max),
+          min: min,
+          max: max,
+          onChanged: onChanged,
+        ),
+        ExcludeSemantics(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: AppSpace.xs),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(low, style: endStyle),
+                Text(high, style: endStyle),
+              ],
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+/// Microphone access in plain words, with Allow when it can still be asked.
+class _MicrophoneRow extends ConsumerWidget {
+  const _MicrophoneRow();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
+    final capabilities = ref.watch(currentSpeechCapabilitiesProvider).value;
+    final status = capabilities?.micPermission;
+    final canAsk =
+        status == SpeechPermissionStatus.notDetermined ||
+        status == SpeechPermissionStatus.denied;
+    return _Row(
+      icon: status == SpeechPermissionStatus.granted
+          ? Icons.mic_none_rounded
+          : Icons.mic_off_outlined,
+      title: l10n.settingsMicTitle,
+      subtitle: switch (status) {
+        SpeechPermissionStatus.granted => l10n.settingsMicAllowed,
+        SpeechPermissionStatus.denied => l10n.settingsMicDenied,
+        SpeechPermissionStatus.permanentlyDenied => l10n.settingsMicBlocked,
+        SpeechPermissionStatus.notDetermined || null => l10n.settingsMicNotYet,
+      },
+      trailing: canAsk
+          ? _SmallAction(
+              label: l10n.settingsMicAllow,
+              onPressed: () async {
+                await ref
+                    .read(speechRecognitionServiceProvider)
+                    .requestPermission();
+                ref.invalidate(currentSpeechCapabilitiesProvider);
+              },
+            )
+          : null,
+    );
+  }
+}
+
+class _SpeechRecognitionRow extends ConsumerWidget {
+  const _SpeechRecognitionRow();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
+    final available =
+        ref
+            .watch(currentSpeechCapabilitiesProvider)
+            .value
+            ?.sttAvailableForLocale ??
+        false;
+    return _Row(
+      icon: Icons.record_voice_over_outlined,
+      title: l10n.settingsSttTitle,
+      subtitle: available ? l10n.settingsSttOn : l10n.settingsSttOff,
+    );
+  }
+}
+
+/// The last setting on the page: erase this learner's progress, after a
+/// confirmation. The learner row itself survives.
+class _ResetProgressRow extends ConsumerWidget {
+  const _ResetProgressRow();
 
   Future<void> _confirmAndReset(BuildContext context, WidgetRef ref) async {
     final l10n = AppLocalizations.of(context)!;
     final confirmed = await showDialog<bool>(
       context: context,
-      builder: (dialogContext) => AlertDialog(
-        title: Text(l10n.settingsResetProgressConfirmTitle),
-        content: Text(l10n.settingsResetProgressConfirmBody),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.of(dialogContext).pop(false),
-            child: Text(l10n.settingsResetProgressCancel),
-          ),
-          FilledButton(
-            style: FilledButton.styleFrom(
-              backgroundColor: Theme.of(dialogContext).colorScheme.error,
-              foregroundColor: Theme.of(dialogContext).colorScheme.onError,
+      builder: (dialogContext) {
+        final colorScheme = Theme.of(dialogContext).colorScheme;
+        return AlertDialog(
+          icon: Icon(Icons.restart_alt_rounded, color: colorScheme.error),
+          title: Text(l10n.settingsResetProgressConfirmTitle),
+          content: Text(l10n.settingsResetProgressConfirmBody),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(dialogContext).pop(false),
+              child: Text(l10n.settingsResetProgressCancel),
             ),
-            onPressed: () => Navigator.of(dialogContext).pop(true),
-            child: Text(l10n.settingsResetProgressConfirmAction),
-          ),
-        ],
-      ),
+            FilledButton(
+              style: FilledButton.styleFrom(
+                backgroundColor: colorScheme.error,
+                foregroundColor: colorScheme.onError,
+              ),
+              onPressed: () => Navigator.of(dialogContext).pop(true),
+              child: Text(l10n.settingsResetProgressConfirmAction),
+            ),
+          ],
+        );
+      },
     );
     if (confirmed != true) return;
 
@@ -286,6 +837,7 @@ class _ResetProgressButton extends ConsumerWidget {
     await db.resetProgressForLearner(learner.id);
 
     ref.invalidate(allUnitProgressProvider);
+    ref.invalidate(allLessonProgressProvider);
     ref.invalidate(allVocabularyReviewStateProvider);
     ref.invalidate(allGrammarReviewStateProvider);
     ref.invalidate(weakObjectivesProvider);
@@ -309,138 +861,18 @@ class _ResetProgressButton extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context)!;
-    return OutlinedButton(
-      style: OutlinedButton.styleFrom(
-        foregroundColor: Theme.of(context).colorScheme.error,
-        side: BorderSide(color: Theme.of(context).colorScheme.error),
-      ),
-      onPressed: () => _confirmAndReset(context, ref),
-      child: Text(l10n.settingsResetProgressButton),
-    );
-  }
-}
-
-class _SpeechStatusCard extends ConsumerWidget {
-  const _SpeechStatusCard();
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final l10n = AppLocalizations.of(context)!;
-    final capabilitiesAsync = ref.watch(currentSpeechCapabilitiesProvider);
-
-    return capabilitiesAsync.when(
-      loading: () => const Padding(
-        padding: EdgeInsets.symmetric(vertical: 8),
-        child: LinearProgressIndicator(),
-      ),
-      error: (error, _) => Text('$error'),
-      data: (capabilities) {
-        final micLine = switch (capabilities.micPermission) {
-          SpeechPermissionStatus.granted => l10n.settingsMicPermissionGranted,
-          SpeechPermissionStatus.denied => l10n.settingsMicPermissionDenied,
-          SpeechPermissionStatus.permanentlyDenied =>
-            l10n.settingsMicPermissionPermanentlyDenied,
-          SpeechPermissionStatus.notDetermined =>
-            l10n.settingsMicPermissionNotDetermined,
-        };
-        final sttLine = capabilities.sttAvailableForLocale
-            ? l10n.settingsSttAvailable
-            : l10n.settingsSttUnavailable;
-
-        return Card(
-          child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                _StatusRow(
-                  icon:
-                      capabilities.micPermission ==
-                          SpeechPermissionStatus.granted
-                      ? Icons.mic
-                      : Icons.mic_off,
-                  text: micLine,
-                ),
-                const SizedBox(height: 8),
-                _StatusRow(
-                  icon: capabilities.sttAvailableForLocale
-                      ? Icons.check_circle_outline
-                      : Icons.info_outline,
-                  text: sttLine,
-                ),
-              ],
+    return _Row(
+      icon: Icons.restart_alt_rounded,
+      title: l10n.settingsResetProgressTitle,
+      subtitle: l10n.settingsResetProgressBody,
+      destructive: true,
+      trailing: _isNarrow(context)
+          ? null
+          : Icon(
+              Icons.chevron_right_rounded,
+              color: Theme.of(context).extension<AppTokens>()!.textSecondary,
             ),
-          ),
-        );
-      },
-    );
-  }
-}
-
-class _StatusRow extends StatelessWidget {
-  const _StatusRow({required this.icon, required this.text});
-
-  final IconData icon;
-  final String text;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Icon(
-          icon,
-          size: 20,
-          color: Theme.of(context).colorScheme.onSurfaceVariant,
-        ),
-        const SizedBox(width: 8),
-        Expanded(child: Text(text)),
-      ],
-    );
-  }
-}
-
-class _TtsRateSlider extends ConsumerWidget {
-  const _TtsRateSlider();
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final l10n = AppLocalizations.of(context)!;
-    final rate = ref.watch(ttsRatePreferenceProvider);
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(l10n.settingsSpeechRate),
-        Slider(
-          value: rate,
-          min: 0.25,
-          max: 1.0,
-          onChanged: (v) => ref.read(ttsRatePreferenceProvider.notifier).set(v),
-        ),
-      ],
-    );
-  }
-}
-
-class _TtsPitchSlider extends ConsumerWidget {
-  const _TtsPitchSlider();
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final l10n = AppLocalizations.of(context)!;
-    final pitch = ref.watch(ttsPitchPreferenceProvider);
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(l10n.settingsSpeechPitch),
-        Slider(
-          value: pitch,
-          min: 0.5,
-          max: 2.0,
-          onChanged: (v) =>
-              ref.read(ttsPitchPreferenceProvider.notifier).set(v),
-        ),
-      ],
+      onTap: () => _confirmAndReset(context, ref),
     );
   }
 }

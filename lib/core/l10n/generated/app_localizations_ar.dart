@@ -853,35 +853,13 @@ class AppLocalizationsAr extends AppLocalizations {
       'تم إيقاف الوصول إلى الميكروفون لهذا التطبيق. يمكنك كتابة إجابتك، أو تفعيله من إعدادات جهازك.';
 
   @override
-  String get settingsSpeechTitle => 'الصوت';
+  String get settingsSpeechTitle => 'الاستماع والتحدث';
 
   @override
-  String get settingsSpeechRate => 'سرعة الكلام';
+  String get settingsSpeechRate => 'سرعة الصوت';
 
   @override
-  String get settingsSpeechPitch => 'حدة الصوت';
-
-  @override
-  String get settingsMicPermissionGranted => 'الوصول إلى الميكروفون: مسموح';
-
-  @override
-  String get settingsMicPermissionDenied => 'الوصول إلى الميكروفون: غير مسموح';
-
-  @override
-  String get settingsMicPermissionPermanentlyDenied =>
-      'الوصول إلى الميكروفون: محظور — فعّله من إعدادات الجهاز';
-
-  @override
-  String get settingsMicPermissionNotDetermined =>
-      'الوصول إلى الميكروفون: لم يُطلب بعد';
-
-  @override
-  String get settingsSttAvailable =>
-      'التعرف على الكلام على الجهاز: متاح للإنجليزية';
-
-  @override
-  String get settingsSttUnavailable =>
-      'التعرف على الكلام على الجهاز: غير متاح على هذا الجهاز — يمكنك كتابة إجابات مهام التحدث';
+  String get settingsSpeechPitch => 'طبقة الصوت';
 
   @override
   String get speechListen => 'استمع';
@@ -1214,10 +1192,92 @@ class AppLocalizationsAr extends AppLocalizations {
   String get favoriteRemoveTooltip => 'أزل من المفضلة';
 
   @override
-  String get settingsInterfaceLanguageTitle => 'لغة الواجهة';
+  String get settingsAppearanceOverline => 'المظهر';
 
   @override
-  String get settingsThemeModeTitle => 'المظهر';
+  String get settingsLanguageBody =>
+      'تبقى الدروس بالإنجليزية؛ هذا يغيّر القوائم والمساعدة.';
+
+  @override
+  String get settingsSlower => 'أبطأ';
+
+  @override
+  String get settingsFaster => 'أسرع';
+
+  @override
+  String get settingsLower => 'أخفض';
+
+  @override
+  String get settingsHigher => 'أعلى';
+
+  @override
+  String get settingsTryVoice => 'جرّب';
+
+  @override
+  String get settingsMicTitle => 'الميكروفون';
+
+  @override
+  String get settingsMicAllowed =>
+      'مسموح — يمكنك الإجابة على مهام التحدث بصوتك.';
+
+  @override
+  String get settingsMicNotYet =>
+      'غير مسموح بعد — تحتاجه للإجابة على مهام التحدث بصوتك.';
+
+  @override
+  String get settingsMicDenied =>
+      'غير مسموح — تحتاجه للإجابة على مهام التحدث بصوتك.';
+
+  @override
+  String get settingsMicBlocked =>
+      'محظور — فعّله من إعدادات هاتفك لتطبيق Mohingo.';
+
+  @override
+  String get settingsMicAllow => 'اسمح';
+
+  @override
+  String get settingsSttTitle => 'التعرف على الكلام';
+
+  @override
+  String get settingsSttOn => 'متاح للإنجليزية على هذا الجهاز.';
+
+  @override
+  String get settingsSttOff =>
+      'غير متاح على هذا الجهاز. يمكنك كتابة إجابات التحدث بدلاً من ذلك.';
+
+  @override
+  String get settingsDataOverline => 'بياناتك';
+
+  @override
+  String get settingsOfflineTitle => 'تبقى على هذا الجهاز';
+
+  @override
+  String get settingsOfflineBody =>
+      'يعمل دون إنترنت بالكامل. لا يُرفع شيء ولا يوجد حساب.';
+
+  @override
+  String get settingsResetProgressBody =>
+      'امسح كل الدروس ونتائج الاختبارات والمراجعات على هذا الجهاز.';
+
+  @override
+  String settingsVersion(String version) {
+    return 'Mohingo · الإصدار $version';
+  }
+
+  @override
+  String get settingsNameEmpty => 'أضف اسمك';
+
+  @override
+  String get settingsProfileMeta => 'تتعلّم الإنجليزية · A1';
+
+  @override
+  String get settingsEdit => 'تعديل';
+
+  @override
+  String get settingsInterfaceLanguageTitle => 'لغة التطبيق';
+
+  @override
+  String get settingsThemeModeTitle => 'السمة';
 
   @override
   String get settingsThemeModeLight => 'فاتح';
@@ -1226,16 +1286,17 @@ class AppLocalizationsAr extends AppLocalizations {
   String get settingsThemeModeDark => 'داكن';
 
   @override
-  String get settingsThemeModeSystem => 'حسب النظام';
+  String get settingsThemeModeSystem => 'تلقائي';
 
   @override
-  String get settingsColorThemeTitle => 'لون الواجهة';
+  String get settingsColorThemeTitle => 'اللون';
 
   @override
   String get settingsNameTitle => 'اسمك';
 
   @override
-  String get settingsNameHint => 'يُستخدم في بعض تمارين التهجئة';
+  String get settingsNameHint =>
+      'يُستخدم في الصفحة الرئيسية وفي بعض تمارين التهجئة.';
 
   @override
   String get settingsNameSaveButton => 'حفظ';
@@ -1244,24 +1305,14 @@ class AppLocalizationsAr extends AppLocalizations {
   String get settingsNameSaved => 'تم حفظ الاسم';
 
   @override
-  String get settingsAboutTitle => 'حول التطبيق';
-
-  @override
-  String get settingsAboutBody =>
-      'يعمل Mohingo دون اتصال بالإنترنت بالكامل — تبقى دروسك وتقدّمك وأي إجابات صوتية على هذا الجهاز فقط. لا شيء يُرفَع إلى أي مكان، ولا حاجة لإنشاء حساب.';
-
-  @override
   String get settingsResetProgressTitle => 'إعادة تعيين التقدّم';
-
-  @override
-  String get settingsResetProgressButton => 'إعادة تعيين التقدّم';
 
   @override
   String get settingsResetProgressConfirmTitle => 'إعادة تعيين كل التقدّم؟';
 
   @override
   String get settingsResetProgressConfirmBody =>
-      'سيؤدي هذا إلى محو تقدّمك في جميع الوحدات، وأدلة الإتقان، ونتائج اختبار تحديد المستوى والمهمة والتقييم الختاميين، والكلمات والقواعد المفضّلة على هذا الجهاز. لا يمكن التراجع عن هذا الإجراء.';
+      'سيُمسح كل تقدّمك في الدروس والوحدات ونتائج الاختبارات وجداول المراجعة والكلمات المحفوظة على هذا الجهاز. لا يمكن التراجع عن ذلك.';
 
   @override
   String get settingsResetProgressConfirmAction => 'إعادة التعيين';
@@ -1277,5 +1328,5 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get settingsBackupBody =>
-      'قريباً. حالياً يبقى تقدّمك على هذا الجهاز فقط — إعادة تثبيت التطبيق أو الانتقال لجهاز آخر يبدأ من جديد.';
+      'إعادة تثبيت التطبيق أو تغيير الهاتف يبدأ من جديد حالياً.';
 }
