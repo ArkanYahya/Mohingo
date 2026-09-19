@@ -1,0 +1,79 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-U1",
+  "kind": "grammar",
+  "records": [
+    {
+      "id": "A2.G.PRESENT_SIMPLE_REVIEW",
+      "form": "present simple for routines",
+      "meaningAr": "المضارع البسيط للروتين",
+      "introducedIn": "A2-U1-L1",
+      "examples": [
+        {
+          "en": "I usually walk to work.",
+          "ar": "أمشي عادةً إلى العمل."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.PRESENT_CONTINUOUS_NOW",
+      "form": "be + verb-ing for now",
+      "meaningAr": "المضارع المستمر لما يحدث الآن",
+      "introducedIn": "A2-U1-L2",
+      "examples": [
+        {
+          "en": "I am staying with my aunt this week.",
+          "ar": "أقيم مع عمتي هذا الأسبوع."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.PRESENT_SIMPLE_VS_CONTINUOUS",
+      "form": "routine vs temporary action",
+      "meaningAr": "الفرق بين المعتاد والمؤقت",
+      "introducedIn": "A2-U1-L2",
+      "examples": [
+        {
+          "en": "I work in Basra, but I am working from home today.",
+          "ar": "أعمل في البصرة، لكنني أعمل من المنزل اليوم."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.WH_FOLLOW_UP",
+      "form": "Wh- follow-up questions",
+      "meaningAr": "أسئلة المتابعة بأدوات الاستفهام",
+      "introducedIn": "A2-U1-L3",
+      "examples": [
+        {
+          "en": "What do you do after work?",
+          "ar": "ماذا تفعل بعد العمل؟"
+        }
+      ]
+    },
+    {
+      "id": "A2.G.QUESTION_AUXILIARY_REVIEW",
+      "form": "do/does and be in questions",
+      "meaningAr": "مراجعة أدوات السؤال",
+      "introducedIn": "A2-U1-L4",
+      "examples": [
+        {
+          "en": "Are you enjoying the course?",
+          "ar": "هل تستمتع بالدورة؟"
+        }
+      ]
+    },
+    {
+      "id": "A2.G.LINKERS_AND_BUT_BECAUSE",
+      "form": "and, but, because",
+      "meaningAr": "الربط بـ and وbut وbecause",
+      "introducedIn": "A2-U1-L6",
+      "examples": [
+        {
+          "en": "I like my job because it is useful.",
+          "ar": "أحب عملي لأنه مفيد."
+        }
+      ]
+    }
+  ]
+}

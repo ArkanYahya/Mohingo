@@ -1,0 +1,367 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-U11",
+  "kind": "lexicon",
+  "records": [
+    {
+      "id": "A2.LEX.FORECAST_N01",
+      "headword": "forecast",
+      "partOfSpeech": "noun",
+      "arabic": "توقعات الطقس",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "forecast",
+      "examples": [
+        {
+          "en": "The forecast says heavy rain.",
+          "ar": "تقول التوقعات إن المطر غزير."
+        }
+      ],
+      "introducedIn": "A2-U11-L1",
+      "recycledIn": [
+        "A2-U12-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.STORM_N01",
+      "headword": "storm",
+      "partOfSpeech": "noun",
+      "arabic": "عاصفة",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "storm",
+      "examples": [
+        {
+          "en": "The storm damaged a tree.",
+          "ar": "أتلفت العاصفة شجرة."
+        }
+      ],
+      "introducedIn": "A2-U11-L1",
+      "recycledIn": [
+        "A2-U12-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.FLOOD_N01",
+      "headword": "flood",
+      "partOfSpeech": "noun",
+      "arabic": "فيضان",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "flood",
+      "examples": [
+        {
+          "en": "The road closed after a flood.",
+          "ar": "أُغلق الطريق بعد فيضان."
+        }
+      ],
+      "introducedIn": "A2-U11-L1",
+      "recycledIn": [
+        "A2-U12-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.RISE_V01",
+      "headword": "rise",
+      "partOfSpeech": "verb",
+      "arabic": "يرتفع",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "rise",
+      "examples": [
+        {
+          "en": "The river may rise.",
+          "ar": "قد يرتفع النهر."
+        }
+      ],
+      "introducedIn": "A2-U11-L2",
+      "recycledIn": [
+        "A2-U12-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.CLOSE_V01",
+      "headword": "close",
+      "partOfSpeech": "verb",
+      "arabic": "يغلق",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "close",
+      "examples": [
+        {
+          "en": "The park will close at six.",
+          "ar": "ستغلق الحديقة في السادسة."
+        }
+      ],
+      "introducedIn": "A2-U11-L2",
+      "recycledIn": [
+        "A2-U12-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.SAFE_ADJ01",
+      "headword": "safe",
+      "partOfSpeech": "adjective",
+      "arabic": "آمن",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "safe",
+      "examples": [
+        {
+          "en": "The indoor route is safe.",
+          "ar": "المسار الداخلي آمن."
+        }
+      ],
+      "introducedIn": "A2-U11-L2",
+      "recycledIn": [
+        "A2-U12-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.FOG_N01",
+      "headword": "fog",
+      "partOfSpeech": "noun",
+      "arabic": "ضباب",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "fog",
+      "examples": [
+        {
+          "en": "There may be fog early.",
+          "ar": "قد يكون هناك ضباب مبكراً."
+        }
+      ],
+      "introducedIn": "A2-U11-L3",
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.LEX.THUNDER_N01",
+      "headword": "thunder",
+      "partOfSpeech": "noun",
+      "arabic": "رعد",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "thunder",
+      "examples": [
+        {
+          "en": "We heard thunder.",
+          "ar": "سمعنا الرعد."
+        }
+      ],
+      "introducedIn": "A2-U11-L3",
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.LEX.CLEAR_V01",
+      "headword": "clear",
+      "partOfSpeech": "verb",
+      "arabic": "ينقشع",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "clear",
+      "examples": [
+        {
+          "en": "The sky might clear later.",
+          "ar": "قد تنقشع السماء لاحقاً."
+        }
+      ],
+      "introducedIn": "A2-U11-L3",
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.LEX.PATH_N01",
+      "headword": "path",
+      "partOfSpeech": "noun",
+      "arabic": "ممر",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "path",
+      "examples": [
+        {
+          "en": "Something is blocking the path.",
+          "ar": "شيء ما يسد الممر."
+        }
+      ],
+      "introducedIn": "A2-U11-L4",
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.LEX.RUBBISH_N01",
+      "headword": "rubbish",
+      "partOfSpeech": "noun",
+      "arabic": "نفايات",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "rubbish",
+      "examples": [
+        {
+          "en": "Someone left rubbish here.",
+          "ar": "ترك شخص نفايات هنا."
+        }
+      ],
+      "introducedIn": "A2-U11-L4",
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.LEX.DAMAGE_N01",
+      "headword": "damage",
+      "partOfSpeech": "noun",
+      "arabic": "ضرر",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "damage",
+      "examples": [
+        {
+          "en": "Report any damage.",
+          "ar": "أبلغ عن أي ضرر."
+        }
+      ],
+      "introducedIn": "A2-U11-L4",
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.LEX.SHELTER_N01",
+      "headword": "shelter",
+      "partOfSpeech": "noun",
+      "arabic": "مأوى",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "shelter",
+      "examples": [
+        {
+          "en": "Use the picnic shelter.",
+          "ar": "استخدم مأوى النزهة."
+        }
+      ],
+      "introducedIn": "A2-U11-L5",
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.LEX.POSTPONE_V01",
+      "headword": "postpone",
+      "partOfSpeech": "verb",
+      "arabic": "يؤجل",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "postpone",
+      "examples": [
+        {
+          "en": "We could postpone the walk.",
+          "ar": "يمكننا تأجيل المشي."
+        }
+      ],
+      "introducedIn": "A2-U11-L5",
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.LEX.INDOORS_ADV01",
+      "headword": "indoors",
+      "partOfSpeech": "adverb",
+      "arabic": "في الداخل",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "indoors",
+      "examples": [
+        {
+          "en": "Move the activity indoors.",
+          "ar": "انقل النشاط إلى الداخل."
+        }
+      ],
+      "introducedIn": "A2-U11-L5",
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.LEX.ACTION_N01",
+      "headword": "action",
+      "partOfSpeech": "noun",
+      "arabic": "إجراء",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "action",
+      "examples": [
+        {
+          "en": "Choose the safest action.",
+          "ar": "اختر الإجراء الأكثر أماناً."
+        }
+      ],
+      "introducedIn": "A2-U11-L6",
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.LEX.EMERGENCY_N01",
+      "headword": "emergency",
+      "partOfSpeech": "noun",
+      "arabic": "طوارئ",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "emergency",
+      "examples": [
+        {
+          "en": "Use the emergency number only if needed.",
+          "ar": "استخدم رقم الطوارئ فقط عند الحاجة."
+        }
+      ],
+      "introducedIn": "A2-U11-L6",
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.LEX.SUPPLY_N01",
+      "headword": "supply",
+      "partOfSpeech": "noun",
+      "arabic": "مؤونة",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "supply",
+      "examples": [
+        {
+          "en": "Carry basic supplies.",
+          "ar": "احمل مؤونة أساسية."
+        }
+      ],
+      "introducedIn": "A2-U11-L6",
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    }
+  ]
+}

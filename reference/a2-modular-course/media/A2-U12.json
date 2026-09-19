@@ -1,0 +1,56 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-U12",
+  "kind": "media",
+  "records": {
+    "audio-a2-u12-l1-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "A: Are you free on Friday evening? We're having a small celebration. Would you like to join us? B: Yes, thank you.",
+      "activityId": "A2-U12-L1-A01"
+    },
+    "audio-a2-u12-l1-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "We're meeting at the park on Sunday at eleven. Would you like to come for a picnic?",
+      "activityId": "A2-U12-L1-A04"
+    },
+    "audio-a2-u12-l2-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "A: Could you bring the decorations to the venue at four? B: Sure. Would you send me the address?",
+      "activityId": "A2-U12-L2-A01"
+    },
+    "audio-a2-u12-l2-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "Could you collect the key at noon? I will prepare the food, and Dana will bring extra chairs.",
+      "activityId": "A2-U12-L2-A04"
+    },
+    "audio-a2-u12-l4-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "A: Would you like to come on Saturday? B: I'd love to, but I'm working until seven. Could I join later?",
+      "activityId": "A2-U12-L4-A01"
+    },
+    "audio-a2-u12-l4-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "Thanks for inviting me. Unfortunately, I can't make it because I am travelling that day. I hope you have a great time.",
+      "activityId": "A2-U12-L4-A04"
+    },
+    "audio-a2-u12-l7-a02": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "I can come at five and bring the drinks, but I can't collect the key because I am working until four thirty. Could someone else do that?",
+      "activityId": "A2-U12-L7-A02"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-U8",
+  "kind": "media",
+  "records": {
+    "audio-a2-u8-l1-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "I work the morning shift. I have to open the shop, check deliveries and send the daily report before three.",
+      "activityId": "A2-U8-L1-A01"
+    },
+    "audio-a2-u8-l1-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "Nadia is responsible for the reception desk. She has to answer calls, but she doesn't have to manage payments.",
+      "activityId": "A2-U8-L1-A04"
+    },
+    "audio-a2-u8-l2-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "I can use spreadsheets and operate the printer. At my previous job, I could also speak to customers in two languages.",
+      "activityId": "A2-U8-L2-A01"
+    },
+    "audio-a2-u8-l2-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "Hassan can design simple posters, but he can't edit video yet. He could draw well before he learned digital design.",
+      "activityId": "A2-U8-L2-A04"
+    },
+    "audio-a2-u8-l7-a02": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "The evening course begins on 6 October and runs twice a week. The fee is ninety dollars, including materials. Enrolment closes this Friday.",
+      "activityId": "A2-U8-L7-A02"
+    }
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-U6",
+  "kind": "grammar",
+  "records": [
+    {
+      "id": "A2.G.GOING_TO_PLANS",
+      "form": "be going to for intentions",
+      "meaningAr": "going to للنوايا",
+      "introducedIn": "A2-U6-L1",
+      "examples": [
+        {
+          "en": "We are going to visit the old town.",
+          "ar": "سنزور البلدة القديمة."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.PRESENT_CONTINUOUS_ARRANGEMENTS",
+      "form": "present continuous for fixed arrangements",
+      "meaningAr": "المضارع المستمر للترتيبات الثابتة",
+      "introducedIn": "A2-U6-L2",
+      "examples": [
+        {
+          "en": "We are meeting the guide at nine.",
+          "ar": "سنلتقي المرشد في التاسعة."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.WILL_DECISION_OFFER",
+      "form": "will for instant decisions and offers",
+      "meaningAr": "will للقرار اللحظي والعرض",
+      "introducedIn": "A2-U6-L3",
+      "examples": [
+        {
+          "en": "I'll take the later train.",
+          "ar": "سآخذ القطار اللاحق."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.FUTURE_CONTRAST",
+      "form": "going to vs present continuous vs will",
+      "meaningAr": "المقارنة بين صيغ المستقبل",
+      "introducedIn": "A2-U6-L3",
+      "examples": [
+        {
+          "en": "I'm going to travel; I'm leaving Friday; I'll book now.",
+          "ar": "أنوي السفر؛ سأغادر الجمعة؛ سأحجز الآن."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.FIRST_CONDITIONAL_INTRO",
+      "form": "if + present, will + verb",
+      "meaningAr": "مقدمة الشرط الأول",
+      "introducedIn": "A2-U6-L4",
+      "examples": [
+        {
+          "en": "If it rains, we'll visit the museum.",
+          "ar": "إذا أمطرت فسنزور المتحف."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.FUTURE_TIME_CLAUSE",
+      "form": "when/after/before + present",
+      "meaningAr": "عبارات الزمن المستقبلية",
+      "introducedIn": "A2-U6-L5",
+      "examples": [
+        {
+          "en": "Call me when you arrive.",
+          "ar": "اتصل بي عندما تصل."
+        }
+      ]
+    }
+  ]
+}

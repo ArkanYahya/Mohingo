@@ -1,0 +1,121 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "curriculumId": "EN-A2-V1",
+  "sourceContentVersion": "A2-COMPLETE-A1-CONTRACT-2026.09.19",
+  "entry": {
+    "course": "course.json",
+    "domain": "domain.json"
+  },
+  "registries": {
+    "grammar": [
+      "registries/grammar/A2-U1.json",
+      "registries/grammar/A2-U2.json",
+      "registries/grammar/A2-U3.json",
+      "registries/grammar/A2-U4.json",
+      "registries/grammar/A2-U5.json",
+      "registries/grammar/A2-U6.json",
+      "registries/grammar/A2-U7.json",
+      "registries/grammar/A2-U8.json",
+      "registries/grammar/A2-U9.json",
+      "registries/grammar/A2-U10.json",
+      "registries/grammar/A2-U11.json",
+      "registries/grammar/A2-U12.json"
+    ],
+    "lexicon": [
+      "registries/lexicon/A2-U1.json",
+      "registries/lexicon/A2-U2.json",
+      "registries/lexicon/A2-U3.json",
+      "registries/lexicon/A2-U4.json",
+      "registries/lexicon/A2-U5.json",
+      "registries/lexicon/A2-U6.json",
+      "registries/lexicon/A2-U7.json",
+      "registries/lexicon/A2-U8.json",
+      "registries/lexicon/A2-U9.json",
+      "registries/lexicon/A2-U10.json",
+      "registries/lexicon/A2-U11.json",
+      "registries/lexicon/A2-U12.json"
+    ],
+    "chunks": [
+      "registries/chunks/A2-U1.json",
+      "registries/chunks/A2-U2.json",
+      "registries/chunks/A2-U3.json",
+      "registries/chunks/A2-U4.json",
+      "registries/chunks/A2-U5.json",
+      "registries/chunks/A2-U6.json",
+      "registries/chunks/A2-U7.json",
+      "registries/chunks/A2-U8.json",
+      "registries/chunks/A2-U9.json",
+      "registries/chunks/A2-U10.json",
+      "registries/chunks/A2-U11.json",
+      "registries/chunks/A2-U12.json"
+    ]
+  },
+  "units": [
+    "units/A2-U1.json",
+    "units/A2-U2.json",
+    "units/A2-U3.json",
+    "units/A2-U4.json",
+    "units/A2-U5.json",
+    "units/A2-U6.json",
+    "units/A2-U7.json",
+    "units/A2-U8.json",
+    "units/A2-U9.json",
+    "units/A2-U10.json",
+    "units/A2-U11.json",
+    "units/A2-U12.json"
+  ],
+  "media": [
+    "media/A2-U1.json",
+    "media/A2-U2.json",
+    "media/A2-U3.json",
+    "media/A2-U4.json",
+    "media/A2-U5.json",
+    "media/A2-U6.json",
+    "media/A2-U7.json",
+    "media/A2-U8.json",
+    "media/A2-U9.json",
+    "media/A2-U10.json",
+    "media/A2-U11.json",
+    "media/A2-U12.json",
+    "media/A2-FINAL.json"
+  ],
+  "finalMission": "final/A2-FINAL-MISSION.json",
+  "finalAssessment": "assessment/A2-FINAL-ASSESSMENT.json",
+  "output": "dist/a2-course-bundle.json",
+  "policies": {
+    "authoringSource": "modules",
+    "generatedBundleEditable": false,
+    "stableIdsRequired": true,
+    "duplicateIdsForbidden": true,
+    "unresolvedReferencesForbidden": true,
+    "practiceCountsAsMastery": false
+  },
+  "qualityExpectations": {
+    "unitCount": 12,
+    "lessonCount": 84,
+    "coreUnitIds": [
+      "A2-U1",
+      "A2-U2",
+      "A2-U3",
+      "A2-U4",
+      "A2-U5",
+      "A2-U6",
+      "A2-U7",
+      "A2-U8",
+      "A2-U9",
+      "A2-U10",
+      "A2-U11",
+      "A2-U12"
+    ],
+    "coreLessonsPerUnit": 7,
+    "coreActivitiesPerUnit": 36,
+    "finalMissionActivities": 12,
+    "assessment": {
+      "listening": 18,
+      "reading": 18,
+      "writing": 2,
+      "speaking": 4,
+      "mediation": 2
+    }
+  }
+}

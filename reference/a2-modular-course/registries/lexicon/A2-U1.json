@@ -1,0 +1,367 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-U1",
+  "kind": "lexicon",
+  "records": [
+    {
+      "id": "A2.LEX.ROUTINE_N01",
+      "headword": "routine",
+      "partOfSpeech": "noun",
+      "arabic": "روتين",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "routine",
+      "examples": [
+        {
+          "en": "My morning routine is simple.",
+          "ar": "روتيني الصباحي بسيط."
+        }
+      ],
+      "introducedIn": "A2-U1-L1",
+      "recycledIn": [
+        "A2-U2-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.NORMALLY_ADV01",
+      "headword": "normally",
+      "partOfSpeech": "adverb",
+      "arabic": "عادةً",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "normally",
+      "examples": [
+        {
+          "en": "I normally start at eight.",
+          "ar": "أبدأ عادةً في الثامنة."
+        }
+      ],
+      "introducedIn": "A2-U1-L1",
+      "recycledIn": [
+        "A2-U2-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.WEEKDAY_N01",
+      "headword": "weekday",
+      "partOfSpeech": "noun",
+      "arabic": "يوم عمل",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "weekday",
+      "examples": [
+        {
+          "en": "I study on weekdays.",
+          "ar": "أدرس في أيام العمل."
+        }
+      ],
+      "introducedIn": "A2-U1-L1",
+      "recycledIn": [
+        "A2-U2-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.TEMPORARY_ADJ01",
+      "headword": "temporary",
+      "partOfSpeech": "adjective",
+      "arabic": "مؤقت",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "temporary",
+      "examples": [
+        {
+          "en": "This is a temporary job.",
+          "ar": "هذه وظيفة مؤقتة."
+        }
+      ],
+      "introducedIn": "A2-U1-L2",
+      "recycledIn": [
+        "A2-U2-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.CURRENTLY_ADV01",
+      "headword": "currently",
+      "partOfSpeech": "adverb",
+      "arabic": "حالياً",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "currently",
+      "examples": [
+        {
+          "en": "I am currently living in Amman.",
+          "ar": "أعيش حالياً في عمّان."
+        }
+      ],
+      "introducedIn": "A2-U1-L2",
+      "recycledIn": [
+        "A2-U2-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.STAY_V01",
+      "headword": "stay",
+      "partOfSpeech": "verb",
+      "arabic": "يقيم",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "stay",
+      "examples": [
+        {
+          "en": "We are staying near the centre.",
+          "ar": "نقيم قرب المركز."
+        }
+      ],
+      "introducedIn": "A2-U1-L2",
+      "recycledIn": [
+        "A2-U2-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.FOLLOW_UP_N01",
+      "headword": "follow-up",
+      "partOfSpeech": "noun",
+      "arabic": "متابعة",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "follow-up",
+      "examples": [
+        {
+          "en": "Ask one follow-up question.",
+          "ar": "اسأل سؤال متابعة واحداً."
+        }
+      ],
+      "introducedIn": "A2-U1-L3",
+      "recycledIn": [
+        "A2-U3-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.DETAIL_N01",
+      "headword": "detail",
+      "partOfSpeech": "noun",
+      "arabic": "تفصيل",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "detail",
+      "examples": [
+        {
+          "en": "Tell me one more detail.",
+          "ar": "أخبرني بتفصيل آخر."
+        }
+      ],
+      "introducedIn": "A2-U1-L3",
+      "recycledIn": [
+        "A2-U3-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.RECENTLY_ADV01",
+      "headword": "recently",
+      "partOfSpeech": "adverb",
+      "arabic": "مؤخراً",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "recently",
+      "examples": [
+        {
+          "en": "What are you doing recently?",
+          "ar": "ماذا تفعل مؤخراً؟"
+        }
+      ],
+      "introducedIn": "A2-U1-L3",
+      "recycledIn": [
+        "A2-U3-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.INTERESTED_ADJ01",
+      "headword": "interested",
+      "partOfSpeech": "adjective",
+      "arabic": "مهتم",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "interested",
+      "examples": [
+        {
+          "en": "I am interested in languages.",
+          "ar": "أنا مهتم باللغات."
+        }
+      ],
+      "introducedIn": "A2-U1-L4",
+      "recycledIn": [
+        "A2-U3-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.BUSY_ADJ01",
+      "headword": "busy",
+      "partOfSpeech": "adjective",
+      "arabic": "مشغول",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "busy",
+      "examples": [
+        {
+          "en": "She is busy this month.",
+          "ar": "هي مشغولة هذا الشهر."
+        }
+      ],
+      "introducedIn": "A2-U1-L4",
+      "recycledIn": [
+        "A2-U3-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.ENJOY_V01",
+      "headword": "enjoy",
+      "partOfSpeech": "verb",
+      "arabic": "يستمتع",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "enjoy",
+      "examples": [
+        {
+          "en": "I enjoy meeting people.",
+          "ar": "أستمتع بلقاء الناس."
+        }
+      ],
+      "introducedIn": "A2-U1-L4",
+      "recycledIn": [
+        "A2-U3-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.PROFILE_N01",
+      "headword": "profile",
+      "partOfSpeech": "noun",
+      "arabic": "ملف شخصي",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "profile",
+      "examples": [
+        {
+          "en": "Read the student profile.",
+          "ar": "اقرأ الملف الشخصي للطالب."
+        }
+      ],
+      "introducedIn": "A2-U1-L5",
+      "recycledIn": [
+        "A2-U4-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.BACKGROUND_N01",
+      "headword": "background",
+      "partOfSpeech": "noun",
+      "arabic": "خلفية",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "background",
+      "examples": [
+        {
+          "en": "His background is in design.",
+          "ar": "خلفيته في التصميم."
+        }
+      ],
+      "introducedIn": "A2-U1-L5",
+      "recycledIn": [
+        "A2-U4-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.SIMILAR_ADJ01",
+      "headword": "similar",
+      "partOfSpeech": "adjective",
+      "arabic": "مشابه",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "similar",
+      "examples": [
+        {
+          "en": "Our routines are similar.",
+          "ar": "روتينانا متشابهان."
+        }
+      ],
+      "introducedIn": "A2-U1-L5",
+      "recycledIn": [
+        "A2-U4-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.UPDATE_N01",
+      "headword": "update",
+      "partOfSpeech": "noun",
+      "arabic": "تحديث",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "update",
+      "examples": [
+        {
+          "en": "Send me a short update.",
+          "ar": "أرسل لي تحديثاً قصيراً."
+        }
+      ],
+      "introducedIn": "A2-U1-L6",
+      "recycledIn": [
+        "A2-U4-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.CHANGE_N01",
+      "headword": "change",
+      "partOfSpeech": "noun",
+      "arabic": "تغيير",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "change",
+      "examples": [
+        {
+          "en": "There is one big change.",
+          "ar": "يوجد تغيير كبير واحد."
+        }
+      ],
+      "introducedIn": "A2-U1-L6",
+      "recycledIn": [
+        "A2-U4-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.SITUATION_N01",
+      "headword": "situation",
+      "partOfSpeech": "noun",
+      "arabic": "وضع",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "situation",
+      "examples": [
+        {
+          "en": "Describe your current situation.",
+          "ar": "صف وضعك الحالي."
+        }
+      ],
+      "introducedIn": "A2-U1-L6",
+      "recycledIn": [
+        "A2-U4-L5"
+      ]
+    }
+  ]
+}

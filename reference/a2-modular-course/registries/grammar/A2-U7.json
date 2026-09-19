@@ -1,0 +1,79 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-U7",
+  "kind": "grammar",
+  "records": [
+    {
+      "id": "A2.G.SHOULD_ADVICE",
+      "form": "should / shouldn't for advice",
+      "meaningAr": "should وshouldn't للنصيحة",
+      "introducedIn": "A2-U7-L1",
+      "examples": [
+        {
+          "en": "You should rest today.",
+          "ar": "ينبغي أن ترتاح اليوم."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.HAVE_TO_OBLIGATION",
+      "form": "have to / don't have to",
+      "meaningAr": "الوجوب وعدم الوجوب",
+      "introducedIn": "A2-U7-L2",
+      "examples": [
+        {
+          "en": "You have to take this medicine with food.",
+          "ar": "عليك تناول هذا الدواء مع الطعام."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.MUST_WARNING",
+      "form": "must / mustn't for strong rules",
+      "meaningAr": "must وmustn't للتحذير القوي",
+      "introducedIn": "A2-U7-L3",
+      "examples": [
+        {
+          "en": "You mustn't drive after this medicine.",
+          "ar": "يجب ألا تقود بعد هذا الدواء."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.INFINITIVE_PURPOSE",
+      "form": "to + verb for purpose",
+      "meaningAr": "المصدر للتعبير عن الغرض",
+      "introducedIn": "A2-U7-L4",
+      "examples": [
+        {
+          "en": "Drink water to avoid dehydration.",
+          "ar": "اشرب الماء لتجنب الجفاف."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.HEALTH_DURATION_FOR_SINCE",
+      "form": "for / since in health chunks",
+      "meaningAr": "for وsince في وصف مدة الأعراض",
+      "introducedIn": "A2-U7-L5",
+      "examples": [
+        {
+          "en": "I've had it for two days.",
+          "ar": "أعاني منه منذ يومين."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.ADVICE_LINKERS",
+      "form": "because / so / if in health guidance",
+      "meaningAr": "روابط السبب والنتيجة والشرط للصحة",
+      "introducedIn": "A2-U7-L6",
+      "examples": [
+        {
+          "en": "Rest because you are tired, and call if it gets worse.",
+          "ar": "استرح لأنك متعب واتصل إذا ساء الأمر."
+        }
+      ]
+    }
+  ]
+}

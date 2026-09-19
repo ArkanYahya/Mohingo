@@ -1,0 +1,367 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-U12",
+  "kind": "lexicon",
+  "records": [
+    {
+      "id": "A2.LEX.INVITATION_N01",
+      "headword": "invitation",
+      "partOfSpeech": "noun",
+      "arabic": "دعوة",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "invitation",
+      "examples": [
+        {
+          "en": "Thanks for the invitation.",
+          "ar": "شكراً على الدعوة."
+        }
+      ],
+      "introducedIn": "A2-U12-L1",
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.LEX.CELEBRATION_N01",
+      "headword": "celebration",
+      "partOfSpeech": "noun",
+      "arabic": "احتفال",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "celebration",
+      "examples": [
+        {
+          "en": "The celebration starts at seven.",
+          "ar": "يبدأ الاحتفال في السابعة."
+        }
+      ],
+      "introducedIn": "A2-U12-L1",
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.LEX.JOIN_V01",
+      "headword": "join",
+      "partOfSpeech": "verb",
+      "arabic": "ينضم",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "join",
+      "examples": [
+        {
+          "en": "Can you join us?",
+          "ar": "هل يمكنك الانضمام إلينا؟"
+        }
+      ],
+      "introducedIn": "A2-U12-L1",
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.LEX.DECORATION_N01",
+      "headword": "decoration",
+      "partOfSpeech": "noun",
+      "arabic": "زينة",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "decoration",
+      "examples": [
+        {
+          "en": "We need simple decorations.",
+          "ar": "نحتاج زينة بسيطة."
+        }
+      ],
+      "introducedIn": "A2-U12-L2",
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.LEX.VENUE_N01",
+      "headword": "venue",
+      "partOfSpeech": "noun",
+      "arabic": "مكان الفعالية",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "venue",
+      "examples": [
+        {
+          "en": "The venue has a kitchen.",
+          "ar": "في مكان الفعالية مطبخ."
+        }
+      ],
+      "introducedIn": "A2-U12-L2",
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.LEX.ORGANISE_V01",
+      "headword": "organise",
+      "partOfSpeech": "verb",
+      "arabic": "ينظم",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "organise",
+      "examples": [
+        {
+          "en": "We are organising a small event.",
+          "ar": "ننظم فعالية صغيرة."
+        }
+      ],
+      "introducedIn": "A2-U12-L2",
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.LEX.ATTENDANCE_N01",
+      "headword": "attendance",
+      "partOfSpeech": "noun",
+      "arabic": "حضور",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "attendance",
+      "examples": [
+        {
+          "en": "Please confirm your attendance by Thursday.",
+          "ar": "يرجى تأكيد حضورك بحلول الخميس."
+        }
+      ],
+      "introducedIn": "A2-U12-L3",
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.LEX.GUEST_N01",
+      "headword": "guest",
+      "partOfSpeech": "noun",
+      "arabic": "ضيف",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "guest",
+      "examples": [
+        {
+          "en": "Twenty guests are coming.",
+          "ar": "سيأتي عشرون ضيفاً."
+        }
+      ],
+      "introducedIn": "A2-U12-L3",
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.LEX.ARRANGEMENT_N01",
+      "headword": "arrangement",
+      "partOfSpeech": "noun",
+      "arabic": "ترتيب",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "arrangement",
+      "examples": [
+        {
+          "en": "The transport arrangement is fixed.",
+          "ar": "ترتيب النقل ثابت."
+        }
+      ],
+      "introducedIn": "A2-U12-L3",
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.LEX.ACCEPT_V01",
+      "headword": "accept",
+      "partOfSpeech": "verb",
+      "arabic": "يقبل",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "accept",
+      "examples": [
+        {
+          "en": "I am happy to accept.",
+          "ar": "يسعدني أن أقبل."
+        }
+      ],
+      "introducedIn": "A2-U12-L4",
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.LEX.DECLINE_V01",
+      "headword": "decline",
+      "partOfSpeech": "verb",
+      "arabic": "يرفض بأدب",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "decline",
+      "examples": [
+        {
+          "en": "She declined the invitation politely.",
+          "ar": "رفضت الدعوة بأدب."
+        }
+      ],
+      "introducedIn": "A2-U12-L4",
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.LEX.FREE_ADJ02",
+      "headword": "free",
+      "partOfSpeech": "adjective",
+      "arabic": "متفرغ",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "free",
+      "examples": [
+        {
+          "en": "Are you free on Saturday?",
+          "ar": "هل أنت متفرغ السبت؟"
+        }
+      ],
+      "introducedIn": "A2-U12-L4",
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.LEX.UNFORTUNATELY_ADV01",
+      "headword": "unfortunately",
+      "partOfSpeech": "adverb",
+      "arabic": "للأسف",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "unfortunately",
+      "examples": [
+        {
+          "en": "Unfortunately, the room is unavailable.",
+          "ar": "للأسف الغرفة غير متاحة."
+        }
+      ],
+      "introducedIn": "A2-U12-L5",
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.LEX.CHANGE_V02",
+      "headword": "change",
+      "partOfSpeech": "verb",
+      "arabic": "يغيّر",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "change",
+      "examples": [
+        {
+          "en": "We need to change the time.",
+          "ar": "نحتاج إلى تغيير الوقت."
+        }
+      ],
+      "introducedIn": "A2-U12-L5",
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.LEX.INSTEAD_ADV01",
+      "headword": "instead",
+      "partOfSpeech": "adverb",
+      "arabic": "بدلاً من ذلك",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "instead",
+      "examples": [
+        {
+          "en": "Let's meet on Sunday instead.",
+          "ar": "لنلتقِ يوم الأحد بدلاً من ذلك."
+        }
+      ],
+      "introducedIn": "A2-U12-L5",
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.LEX.EVENT_DETAIL_N01",
+      "headword": "event detail",
+      "partOfSpeech": "noun",
+      "arabic": "تفصيل فعالية",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "event detail",
+      "examples": [
+        {
+          "en": "Check every event detail.",
+          "ar": "تحقق من كل تفاصيل الفعالية."
+        }
+      ],
+      "introducedIn": "A2-U12-L6",
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.LEX.REPLY_N01",
+      "headword": "reply",
+      "partOfSpeech": "noun",
+      "arabic": "رد",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "reply",
+      "examples": [
+        {
+          "en": "Send your reply by Friday.",
+          "ar": "أرسل ردك بحلول الجمعة."
+        }
+      ],
+      "introducedIn": "A2-U12-L6",
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.LEX.DIETARY_ADJ01",
+      "headword": "dietary",
+      "partOfSpeech": "adjective",
+      "arabic": "غذائي",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "dietary",
+      "examples": [
+        {
+          "en": "Tell us about dietary needs.",
+          "ar": "أخبرنا بالاحتياجات الغذائية."
+        }
+      ],
+      "introducedIn": "A2-U12-L6",
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    }
+  ]
+}

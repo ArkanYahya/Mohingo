@@ -1,0 +1,1062 @@
+{
+  "id": "A2-U3",
+  "title": "People and Relationships",
+  "titleAr": "الناس والعلاقات",
+  "levelRole": "core",
+  "estimatedMinutes": [
+    95,
+    130
+  ],
+  "lessons": [
+    {
+      "id": "A2-U3-L1",
+      "title": "What Do They Look Like?",
+      "titleAr": "كيف يبدون؟",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION",
+        "A2.U3.PRODUCTION.DESCRIBE_PERSON"
+      ],
+      "grammar": [
+        "A2.G.LOOK_LIKE",
+        "A2.G.BE_PAST",
+        "A2.G.PAST_REGULAR"
+      ],
+      "lexicon": [
+        "A2.LEX.TALL_ADJ01",
+        "A2.LEX.CURLY_ADJ01",
+        "A2.LEX.APPEARANCE_N01",
+        "A2.LEX.MEMORABLE_ADJ01",
+        "A2.LEX.TRIP_N01",
+        "A2.LEX.YESTERDAY_ADV01",
+        "A2.LEX.VISIT_V01",
+        "A2.LEX.ARRIVE_V01",
+        "A2.LEX.DECIDE_V01"
+      ],
+      "chunks": [
+        "A2.CHUNK.WHAT_DOES_LOOK_LIKE",
+        "A2.CHUNK.LAST_WEEKEND",
+        "A2.CHUNK.LAST_YEAR",
+        "A2.CHUNK.TWO_DAYS_AGO"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "My cousin is tall and has short curly hair. He wears glasses.",
+            "ar": "ابن عمي طويل وله شعر قصير مجعد. يرتدي نظارة."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U3-L1-A01",
+          "lessonId": "A2-U3-L1",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION",
+            "A2.U3.PRODUCTION.DESCRIBE_PERSON"
+          ],
+          "prompt": "Which description is correct?",
+          "promptAr": "أي وصف صحيح؟",
+          "options": [
+            "Tall with curly hair",
+            "Short with straight hair",
+            "Tall without glasses"
+          ],
+          "answer": "Tall with curly hair",
+          "audioTranscript": "My cousin is tall and has short curly hair. He wears glasses."
+        },
+        {
+          "id": "A2-U3-L1-A02",
+          "lessonId": "A2-U3-L1",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION",
+            "A2.U3.PRODUCTION.DESCRIBE_PERSON"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "tall",
+              "طويل القامة"
+            ],
+            [
+              "curly",
+              "مجعد"
+            ],
+            [
+              "appearance",
+              "مظهر"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U3-L1-A03",
+          "lessonId": "A2-U3-L1",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION",
+            "A2.U3.PRODUCTION.DESCRIBE_PERSON"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "What does your sister look ___?",
+          "options": [
+            "like",
+            "as",
+            "than"
+          ],
+          "answer": "like"
+        },
+        {
+          "id": "A2-U3-L1-A04",
+          "lessonId": "A2-U3-L1",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION",
+            "A2.U3.PRODUCTION.DESCRIBE_PERSON"
+          ],
+          "prompt": "What colour jacket does she usually wear?",
+          "promptAr": "ما لون السترة التي ترتديها عادةً؟",
+          "options": [
+            "Blue",
+            "Black",
+            "Green"
+          ],
+          "answer": "Blue",
+          "audioTranscript": "The new manager is medium height with long dark hair. She usually wears a blue jacket."
+        },
+        {
+          "id": "A2-U3-L1-A05",
+          "lessonId": "A2-U3-L1",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION",
+            "A2.U3.PRODUCTION.DESCRIBE_PERSON"
+          ],
+          "prompt": "Describe a real or fictional person’s appearance in three or four details.",
+          "promptAr": "صف مظهر شخص حقيقي أو خيالي في ثلاثة أو أربعة تفاصيل.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U3-L2",
+      "title": "What Are They Like?",
+      "titleAr": "كيف هي شخصياتهم؟",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION",
+        "A2.U3.INTERACTION.DISCUSS_PEOPLE"
+      ],
+      "grammar": [
+        "A2.G.BE_LIKE"
+      ],
+      "lexicon": [
+        "A2.LEX.PATIENT_ADJ01",
+        "A2.LEX.RELIABLE_ADJ01",
+        "A2.LEX.OUTGOING_ADJ01"
+      ],
+      "chunks": [
+        "A2.CHUNK.WHAT_IS_LIKE"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "A: What is Dalia like? B: She is outgoing and kind. She talks to everyone, but she is also a patient listener.",
+            "ar": "أ: كيف هي شخصية داليا؟ ب: اجتماعية ولطيفة. تتحدث مع الجميع، لكنها أيضاً مستمعة صبورة."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U3-L2-A01",
+          "lessonId": "A2-U3-L2",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION",
+            "A2.U3.INTERACTION.DISCUSS_PEOPLE"
+          ],
+          "prompt": "Which quality is mentioned?",
+          "promptAr": "أي صفة ذُكرت؟",
+          "options": [
+            "Patient",
+            "Careless",
+            "Quiet"
+          ],
+          "answer": "Patient",
+          "audioTranscript": "A: What is Dalia like? B: She is outgoing and kind. She talks to everyone, but she is also a patient listener."
+        },
+        {
+          "id": "A2-U3-L2-A02",
+          "lessonId": "A2-U3-L2",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION",
+            "A2.U3.INTERACTION.DISCUSS_PEOPLE"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "patient",
+              "صبور"
+            ],
+            [
+              "reliable",
+              "موثوق"
+            ],
+            [
+              "outgoing",
+              "اجتماعي"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U3-L2-A03",
+          "lessonId": "A2-U3-L2",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION",
+            "A2.U3.INTERACTION.DISCUSS_PEOPLE"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "What ___ your new colleague like?",
+          "options": [
+            "is",
+            "does",
+            "has"
+          ],
+          "answer": "is"
+        },
+        {
+          "id": "A2-U3-L2-A04",
+          "lessonId": "A2-U3-L2",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION",
+            "A2.U3.INTERACTION.DISCUSS_PEOPLE"
+          ],
+          "prompt": "What shows that Fadi is reliable?",
+          "promptAr": "ما الذي يدل على أن فادي موثوق؟",
+          "options": [
+            "He keeps his promises.",
+            "He talks a lot.",
+            "He works alone."
+          ],
+          "answer": "He keeps his promises.",
+          "audioTranscript": "Fadi is reliable. When he says he will help, he always comes on time."
+        },
+        {
+          "id": "A2-U3-L2-A05",
+          "lessonId": "A2-U3-L2",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION",
+            "A2.U3.INTERACTION.DISCUSS_PEOPLE"
+          ],
+          "prompt": "Ask about someone’s character and respond with two qualities plus an example.",
+          "promptAr": "اسأل عن شخصية شخص وأجب بصفتين مع مثال.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U3-L3",
+      "title": "Compare People",
+      "titleAr": "قارن بين الناس",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U3.READING.COMPARE_PEOPLE",
+        "A2.U3.PRODUCTION.DESCRIBE_PERSON"
+      ],
+      "grammar": [
+        "A2.G.COMPARATIVE_ADJECTIVES",
+        "A2.G.PRESENT_SIMPLE_VS_CONTINUOUS",
+        "A2.G.WH_FOLLOW_UP"
+      ],
+      "lexicon": [
+        "A2.LEX.CALM_ADJ01",
+        "A2.LEX.ORGANISED_ADJ01",
+        "A2.LEX.CONFIDENT_ADJ01",
+        "A2.LEX.FOLLOW_UP_N01",
+        "A2.LEX.DETAIL_N01",
+        "A2.LEX.RECENTLY_ADV01",
+        "A2.LEX.INTERESTED_ADJ01",
+        "A2.LEX.BUSY_ADJ01",
+        "A2.LEX.ENJOY_V01"
+      ],
+      "chunks": [
+        "A2.CHUNK.MORE_THAN",
+        "A2.CHUNK.WHAT_ABOUT_YOU",
+        "A2.CHUNK.TELL_ME_MORE",
+        "A2.CHUNK.THAT_SOUNDS_INTERESTING"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "Rami and Hadi are both friendly. Rami is calmer, but Hadi is more confident when speaking to a group.",
+            "ar": ""
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U3-L3-A01",
+          "lessonId": "A2-U3-L3",
+          "type": "textChoice",
+          "mode": "encounter",
+          "skill": "reading",
+          "canDo": [
+            "A2.U3.READING.COMPARE_PEOPLE",
+            "A2.U3.PRODUCTION.DESCRIBE_PERSON"
+          ],
+          "prompt": "Who is more confident in a group?",
+          "promptAr": "من الأكثر ثقة أمام مجموعة؟",
+          "options": [
+            "Hadi",
+            "Rami",
+            "Both equally"
+          ],
+          "answer": "Hadi",
+          "sourceText": "Rami and Hadi are both friendly. Rami is calmer, but Hadi is more confident when speaking to a group."
+        },
+        {
+          "id": "A2-U3-L3-A02",
+          "lessonId": "A2-U3-L3",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U3.READING.COMPARE_PEOPLE",
+            "A2.U3.PRODUCTION.DESCRIBE_PERSON"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "calm",
+              "هادئ"
+            ],
+            [
+              "organised",
+              "منظم"
+            ],
+            [
+              "confident",
+              "واثق"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U3-L3-A03",
+          "lessonId": "A2-U3-L3",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U3.READING.COMPARE_PEOPLE",
+            "A2.U3.PRODUCTION.DESCRIBE_PERSON"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "Salma is more organised ___ her brother.",
+          "options": [
+            "than",
+            "that",
+            "then"
+          ],
+          "answer": "than"
+        },
+        {
+          "id": "A2-U3-L3-A04",
+          "lessonId": "A2-U3-L3",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A2.U3.READING.COMPARE_PEOPLE",
+            "A2.U3.PRODUCTION.DESCRIBE_PERSON"
+          ],
+          "prompt": "Why is Lina described as more organised?",
+          "promptAr": "لماذا توصف لينا بأنها أكثر تنظيماً؟",
+          "options": [
+            "She finishes tasks early.",
+            "She forgets deadlines.",
+            "She works fewer hours."
+          ],
+          "answer": "She finishes tasks early.",
+          "sourceText": "Lina finishes tasks early. Noor sometimes forgets deadlines. Lina is more organised than Noor."
+        },
+        {
+          "id": "A2-U3-L3-A05",
+          "lessonId": "A2-U3-L3",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A2.U3.READING.COMPARE_PEOPLE",
+            "A2.U3.PRODUCTION.DESCRIBE_PERSON"
+          ],
+          "prompt": "Compare two people using at least two comparative forms and fair evidence.",
+          "promptAr": "قارن بين شخصين مستخدماً صيغتي مقارنة على الأقل ودليلاً عادلاً.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U3-L4",
+      "title": "The Best for the Role",
+      "titleAr": "الأفضل للدور",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U3.READING.COMPARE_PEOPLE",
+        "A2.U3.INTERACTION.DISCUSS_PEOPLE"
+      ],
+      "grammar": [
+        "A2.G.SUPERLATIVE_ADJECTIVES"
+      ],
+      "lexicon": [
+        "A2.LEX.FUNNIEST_ADJ01",
+        "A2.LEX.KIND_ADJ01",
+        "A2.LEX.ACTIVE_ADJ01"
+      ],
+      "chunks": [
+        "A2.CHUNK.THE_MOST",
+        "A2.CHUNK.BEST_CHOICE"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "Three volunteers can lead the activity. Sami has the most experience, Reem is the most organised, and Amal is the most creative.",
+            "ar": ""
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U3-L4-A01",
+          "lessonId": "A2-U3-L4",
+          "type": "textChoice",
+          "mode": "encounter",
+          "skill": "reading",
+          "canDo": [
+            "A2.U3.READING.COMPARE_PEOPLE",
+            "A2.U3.INTERACTION.DISCUSS_PEOPLE"
+          ],
+          "prompt": "Who is the most organised?",
+          "promptAr": "من الأكثر تنظيماً؟",
+          "options": [
+            "Reem",
+            "Sami",
+            "Amal"
+          ],
+          "answer": "Reem",
+          "sourceText": "Three volunteers can lead the activity. Sami has the most experience, Reem is the most organised, and Amal is the most creative."
+        },
+        {
+          "id": "A2-U3-L4-A02",
+          "lessonId": "A2-U3-L4",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U3.READING.COMPARE_PEOPLE",
+            "A2.U3.INTERACTION.DISCUSS_PEOPLE"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "funny",
+              "مضحك"
+            ],
+            [
+              "kind",
+              "لطيف"
+            ],
+            [
+              "active",
+              "نشيط"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U3-L4-A03",
+          "lessonId": "A2-U3-L4",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U3.READING.COMPARE_PEOPLE",
+            "A2.U3.INTERACTION.DISCUSS_PEOPLE"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "He is the ___ patient person on the team.",
+          "options": [
+            "most",
+            "more",
+            "much"
+          ],
+          "answer": "most"
+        },
+        {
+          "id": "A2-U3-L4-A04",
+          "lessonId": "A2-U3-L4",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A2.U3.READING.COMPARE_PEOPLE",
+            "A2.U3.INTERACTION.DISCUSS_PEOPLE"
+          ],
+          "prompt": "What supports the description of Nora?",
+          "promptAr": "ما الذي يدعم وصف نورا؟",
+          "options": [
+            "Her frequent exercise",
+            "Her quiet personality",
+            "Her job"
+          ],
+          "answer": "Her frequent exercise",
+          "sourceText": "Nora runs every day and plays two sports. Huda walks twice a week. Nora is the most active person in the group."
+        },
+        {
+          "id": "A2-U3-L4-A05",
+          "lessonId": "A2-U3-L4",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A2.U3.READING.COMPARE_PEOPLE",
+            "A2.U3.INTERACTION.DISCUSS_PEOPLE"
+          ],
+          "prompt": "Discuss three candidates and agree who is the best for a simple role, giving reasons.",
+          "promptAr": "ناقش ثلاثة مرشحين واتفق على الأفضل لدور بسيط مع ذكر الأسباب.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U3-L5",
+      "title": "People in My Community",
+      "titleAr": "الناس في مجتمعي",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U3.READING.COMPARE_PEOPLE",
+        "A2.U3.MEDIATION.RELAY_PERSON_MATCH"
+      ],
+      "grammar": [
+        "A2.G.RELATIVE_WHO_CHUNK"
+      ],
+      "lexicon": [
+        "A2.LEX.COLLEAGUE_N01",
+        "A2.LEX.NEIGHBOUR_N01",
+        "A2.LEX.RELATIONSHIP_N01"
+      ],
+      "chunks": [
+        "A2.CHUNK.GET_ON_WELL",
+        "A2.CHUNK.A_PERSON_WHO"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "My neighbour is a person who helps older people in our street. My colleague is someone who always shares useful information.",
+            "ar": ""
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U3-L5-A01",
+          "lessonId": "A2-U3-L5",
+          "type": "textChoice",
+          "mode": "encounter",
+          "skill": "reading",
+          "canDo": [
+            "A2.U3.READING.COMPARE_PEOPLE",
+            "A2.U3.MEDIATION.RELAY_PERSON_MATCH"
+          ],
+          "prompt": "Who helps older people?",
+          "promptAr": "من يساعد كبار السن؟",
+          "options": [
+            "The neighbour",
+            "The colleague",
+            "The writer"
+          ],
+          "answer": "The neighbour",
+          "sourceText": "My neighbour is a person who helps older people in our street. My colleague is someone who always shares useful information."
+        },
+        {
+          "id": "A2-U3-L5-A02",
+          "lessonId": "A2-U3-L5",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U3.READING.COMPARE_PEOPLE",
+            "A2.U3.MEDIATION.RELAY_PERSON_MATCH"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "colleague",
+              "زميل عمل"
+            ],
+            [
+              "neighbour",
+              "جار"
+            ],
+            [
+              "relationship",
+              "علاقة"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U3-L5-A03",
+          "lessonId": "A2-U3-L5",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U3.READING.COMPARE_PEOPLE",
+            "A2.U3.MEDIATION.RELAY_PERSON_MATCH"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "We need someone ___ listens carefully.",
+          "options": [
+            "who",
+            "where",
+            "what"
+          ],
+          "answer": "who"
+        },
+        {
+          "id": "A2-U3-L5-A04",
+          "lessonId": "A2-U3-L5",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A2.U3.READING.COMPARE_PEOPLE",
+            "A2.U3.MEDIATION.RELAY_PERSON_MATCH"
+          ],
+          "prompt": "Why does Mazen get on well with his manager?",
+          "promptAr": "لماذا ينسجم مازن مع مديره؟",
+          "options": [
+            "They communicate clearly.",
+            "They are neighbours.",
+            "They have the same job."
+          ],
+          "answer": "They communicate clearly.",
+          "sourceText": "Mazen gets on well with his manager because they communicate clearly. He also supports a new colleague who is learning the job."
+        },
+        {
+          "id": "A2-U3-L5-A05",
+          "lessonId": "A2-U3-L5",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "mediation",
+          "canDo": [
+            "A2.U3.READING.COMPARE_PEOPLE",
+            "A2.U3.MEDIATION.RELAY_PERSON_MATCH"
+          ],
+          "prompt": "Read three short relationship notes and relay who can help with a stated need.",
+          "promptAr": "اقرأ ثلاث ملاحظات قصيرة عن العلاقات وانقل من يستطيع المساعدة في حاجة محددة.",
+          "evaluation": [
+            "selectRelevantInformation",
+            "clarity",
+            "audienceAwareness",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U3-L6",
+      "title": "Build a Balanced Team",
+      "titleAr": "كوّن فريقاً متوازناً",
+      "lessonType": "integrated-production",
+      "canDo": [
+        "A2.U3.WRITING.WRITE_PERSON_PROFILE",
+        "A2.U3.PRODUCTION.DESCRIBE_PERSON"
+      ],
+      "grammar": [
+        "A2.G.TOO_ALSO_RELATION",
+        "A2.G.COMPARATIVE_ADJECTIVES",
+        "A2.G.SUPERLATIVE_ADJECTIVES"
+      ],
+      "lexicon": [
+        "A2.LEX.TEAM_N01",
+        "A2.LEX.MEMBER_N01",
+        "A2.LEX.SUITABLE_ADJ01"
+      ],
+      "chunks": [
+        "A2.CHUNK.GOOD_AT",
+        "A2.CHUNK.BEST_CHOICE"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "A team needs an organiser and a presenter. Layla is good at planning, while Faris is the most confident speaker. Together, they are a suitable pair.",
+            "ar": ""
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U3-L6-A01",
+          "lessonId": "A2-U3-L6",
+          "type": "textChoice",
+          "mode": "encounter",
+          "skill": "reading",
+          "canDo": [
+            "A2.U3.WRITING.WRITE_PERSON_PROFILE",
+            "A2.U3.PRODUCTION.DESCRIBE_PERSON"
+          ],
+          "prompt": "Why are Layla and Faris a suitable pair?",
+          "promptAr": "لماذا ليلى وفارس ثنائي مناسب؟",
+          "options": [
+            "They have different useful strengths.",
+            "They are both presenters.",
+            "They are the oldest members."
+          ],
+          "answer": "They have different useful strengths.",
+          "sourceText": "A team needs an organiser and a presenter. Layla is good at planning, while Faris is the most confident speaker. Together, they are a suitable pair."
+        },
+        {
+          "id": "A2-U3-L6-A02",
+          "lessonId": "A2-U3-L6",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U3.WRITING.WRITE_PERSON_PROFILE",
+            "A2.U3.PRODUCTION.DESCRIBE_PERSON"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "team",
+              "فريق"
+            ],
+            [
+              "member",
+              "عضو"
+            ],
+            [
+              "suitable",
+              "مناسب"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U3-L6-A03",
+          "lessonId": "A2-U3-L6",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U3.WRITING.WRITE_PERSON_PROFILE",
+            "A2.U3.PRODUCTION.DESCRIBE_PERSON"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "Rana is good ___ solving practical problems.",
+          "options": [
+            "at",
+            "in",
+            "for"
+          ],
+          "answer": "at"
+        },
+        {
+          "id": "A2-U3-L6-A04",
+          "lessonId": "A2-U3-L6",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A2.U3.WRITING.WRITE_PERSON_PROFILE",
+            "A2.U3.PRODUCTION.DESCRIBE_PERSON"
+          ],
+          "prompt": "Who is the best choice for keeping records?",
+          "promptAr": "من الخيار الأفضل لحفظ السجلات؟",
+          "options": [
+            "Zain",
+            "The least organised member",
+            "No one"
+          ],
+          "answer": "Zain",
+          "sourceText": "The project needs careful records. Zain is more organised than the others and checks every detail."
+        },
+        {
+          "id": "A2-U3-L6-A05",
+          "lessonId": "A2-U3-L6",
+          "type": "write",
+          "mode": "mastery",
+          "skill": "writing",
+          "canDo": [
+            "A2.U3.WRITING.WRITE_PERSON_PROFILE",
+            "A2.U3.PRODUCTION.DESCRIBE_PERSON"
+          ],
+          "prompt": "Recommend two people for a small team. Compare their qualities and explain each role.",
+          "promptAr": "رشّح شخصين لفريق صغير. قارن صفاتهما واشرح دور كل منهما.",
+          "evaluation": [
+            "taskCompletion",
+            "clarity",
+            "organisation",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "wordGuide": [
+            70,
+            100
+          ]
+        }
+      ]
+    },
+    {
+      "id": "A2-U3-L7",
+      "title": "Mission: Choose the Best Person for a Team",
+      "titleAr": "المهمة: اختر أفضل شخص لفريق",
+      "lessonType": "mission",
+      "canDo": [
+        "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION",
+        "A2.U3.READING.COMPARE_PEOPLE",
+        "A2.U3.PRODUCTION.DESCRIBE_PERSON",
+        "A2.U3.INTERACTION.DISCUSS_PEOPLE",
+        "A2.U3.WRITING.WRITE_PERSON_PROFILE",
+        "A2.U3.MEDIATION.RELAY_PERSON_MATCH",
+        "A2.U3.ACTION.CHOOSE_TEAM_MEMBER"
+      ],
+      "grammar": [],
+      "lexicon": [],
+      "chunks": [],
+      "scenario": "A community project needs two new members. Understand the profiles, discuss the candidates, make a choice and explain it.",
+      "activities": [
+        {
+          "id": "A2-U3-L7-A01",
+          "lessonId": "A2-U3-L7",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A2.U3.READING.COMPARE_PEOPLE",
+            "A2.U3.ACTION.CHOOSE_TEAM_MEMBER"
+          ],
+          "prompt": "Who has more experience with children?",
+          "promptAr": "من لديه خبرة أكبر مع الأطفال؟",
+          "options": [
+            "Rasha",
+            "Tarek",
+            "Both"
+          ],
+          "answer": "Rasha",
+          "sourceText": "Rasha is patient and reliable, and she has the most experience with children. Tarek is creative and confident, but he is new to the area."
+        },
+        {
+          "id": "A2-U3-L7-A02",
+          "lessonId": "A2-U3-L7",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION",
+            "A2.U3.ACTION.CHOOSE_TEAM_MEMBER"
+          ],
+          "prompt": "What is Bilal's strongest stated quality?",
+          "promptAr": "ما أقوى صفة مذكورة لبلال؟",
+          "options": [
+            "Organisation",
+            "Confidence",
+            "Creativity"
+          ],
+          "answer": "Organisation",
+          "audioTranscript": "Bilal is quieter than the other candidates, but he is the most organised and always finishes tasks on time."
+        },
+        {
+          "id": "A2-U3-L7-A03",
+          "lessonId": "A2-U3-L7",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A2.U3.INTERACTION.DISCUSS_PEOPLE",
+            "A2.U3.ACTION.CHOOSE_TEAM_MEMBER"
+          ],
+          "prompt": "Discuss at least three candidates and agree on two team members.",
+          "promptAr": "ناقش ثلاثة مرشحين على الأقل واتفق على عضوين للفريق.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A2-U3-L7-A04",
+          "lessonId": "A2-U3-L7",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A2.U3.PRODUCTION.DESCRIBE_PERSON",
+            "A2.U3.ACTION.CHOOSE_TEAM_MEMBER"
+          ],
+          "prompt": "Describe the chosen people and compare their useful qualities.",
+          "promptAr": "صف الشخصين المختارين وقارن صفاتهما المفيدة.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A2-U3-L7-A05",
+          "lessonId": "A2-U3-L7",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "mediation",
+          "canDo": [
+            "A2.U3.MEDIATION.RELAY_PERSON_MATCH",
+            "A2.U3.ACTION.CHOOSE_TEAM_MEMBER"
+          ],
+          "prompt": "Relay the essential strengths and limitations from the candidate profiles to the team leader.",
+          "promptAr": "انقل نقاط القوة والقيود الأساسية من ملفات المرشحين إلى قائد الفريق.",
+          "evaluation": [
+            "selectRelevantInformation",
+            "clarity",
+            "audienceAwareness",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A2-U3-L7-A06",
+          "lessonId": "A2-U3-L7",
+          "type": "write",
+          "mode": "mastery",
+          "skill": "writing",
+          "canDo": [
+            "A2.U3.WRITING.WRITE_PERSON_PROFILE",
+            "A2.U3.ACTION.CHOOSE_TEAM_MEMBER"
+          ],
+          "prompt": "Write a recommendation naming the best choices, their roles and clear reasons.",
+          "promptAr": "اكتب توصية تذكر أفضل الخيارات وأدوارهم وأسباباً واضحة.",
+          "evaluation": [
+            "taskCompletion",
+            "clarity",
+            "organisation",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "wordGuide": [
+            80,
+            110
+          ],
+          "accepted": []
+        }
+      ]
+    }
+  ],
+  "mastery": {
+    "requiredObjectives": [
+      "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION",
+      "A2.U3.READING.COMPARE_PEOPLE",
+      "A2.U3.PRODUCTION.DESCRIBE_PERSON",
+      "A2.U3.INTERACTION.DISCUSS_PEOPLE",
+      "A2.U3.WRITING.WRITE_PERSON_PROFILE",
+      "A2.U3.MEDIATION.RELAY_PERSON_MATCH",
+      "A2.U3.ACTION.CHOOSE_TEAM_MEMBER"
+    ],
+    "requiredSkillGroups": [
+      [
+        "listening",
+        "reading"
+      ],
+      [
+        "spokenInteraction",
+        "spokenProduction",
+        "writing"
+      ],
+      [
+        "mediation"
+      ]
+    ],
+    "minimumObjectiveScore": 0.75,
+    "missionRequired": true,
+    "retry": "targeted-by-objective",
+    "unlocks": "A2-U4"
+  },
+  "countsTowardA1Mastery": true
+}

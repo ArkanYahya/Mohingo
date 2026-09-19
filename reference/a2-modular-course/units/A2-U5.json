@@ -1,0 +1,1076 @@
+{
+  "id": "A2-U5",
+  "title": "Food, Cooking and Services",
+  "titleAr": "الطعام والطبخ والخدمات",
+  "levelRole": "core",
+  "estimatedMinutes": [
+    95,
+    130
+  ],
+  "lessons": [
+    {
+      "id": "A2-U5-L1",
+      "title": "Ingredients and Amounts",
+      "titleAr": "المكونات والكميات",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE",
+        "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
+      ],
+      "grammar": [
+        "A2.G.QUANTITY_MUCH_MANY",
+        "A2.G.QUANTITY_A_LOT_OF",
+        "A2.G.THERE_WAS_WERE",
+        "A2.G.QUANTIFIERS_AREA"
+      ],
+      "lexicon": [
+        "A2.LEX.INGREDIENT_N01",
+        "A2.LEX.FLOUR_N01",
+        "A2.LEX.GRAM_N01",
+        "A2.LEX.BALCONY_N01",
+        "A2.LEX.HEATING_N01",
+        "A2.LEX.MOVE_V01",
+        "A2.LEX.NEARBY_ADV01",
+        "A2.LEX.FACILITY_N01",
+        "A2.LEX.CONVENIENT_ADJ01"
+      ],
+      "chunks": [
+        "A2.CHUNK.HOW_MUCH_NEED",
+        "A2.CHUNK.HOW_MANY_NEED",
+        "A2.CHUNK.USED_TO_BE_THERE",
+        "A2.CHUNK.WITHIN_WALKING_DISTANCE",
+        "A2.CHUNK.CLOSE_TO"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "For the bread, we need 500 grams of flour, a lot of water and two small spoons of salt.",
+            "ar": "للخبز نحتاج 500 غرام من الطحين وكمية كبيرة من الماء وملعقتين صغيرتين من الملح."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U5-L1-A01",
+          "lessonId": "A2-U5-L1",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE",
+            "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
+          ],
+          "prompt": "How much flour is needed?",
+          "promptAr": "كم نحتاج من الطحين؟",
+          "options": [
+            "500 grams",
+            "200 grams",
+            "Two spoons"
+          ],
+          "answer": "500 grams",
+          "audioTranscript": "For the bread, we need 500 grams of flour, a lot of water and two small spoons of salt."
+        },
+        {
+          "id": "A2-U5-L1-A02",
+          "lessonId": "A2-U5-L1",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE",
+            "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "ingredient",
+              "مكوّن"
+            ],
+            [
+              "flour",
+              "طحين"
+            ],
+            [
+              "gram",
+              "غرام"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U5-L1-A03",
+          "lessonId": "A2-U5-L1",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE",
+            "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "How ___ onions do we need?",
+          "options": [
+            "many",
+            "much",
+            "a lot"
+          ],
+          "answer": "many"
+        },
+        {
+          "id": "A2-U5-L1-A04",
+          "lessonId": "A2-U5-L1",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE",
+            "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
+          ],
+          "prompt": "Which ingredient is used in a small amount?",
+          "promptAr": "أي مكوّن يُستخدم بكمية قليلة؟",
+          "options": [
+            "Oil",
+            "Tomatoes",
+            "Cheese"
+          ],
+          "answer": "Oil",
+          "audioTranscript": "The salad needs many tomatoes but not much oil. It also needs 100 grams of cheese."
+        },
+        {
+          "id": "A2-U5-L1-A05",
+          "lessonId": "A2-U5-L1",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE",
+            "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
+          ],
+          "prompt": "List ingredients and sensible amounts for a simple dish.",
+          "promptAr": "اذكر مكونات وكميات معقولة لطبق بسيط.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U5-L2",
+      "title": "Follow a Recipe",
+      "titleAr": "اتبع وصفة",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE",
+        "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
+      ],
+      "grammar": [
+        "A2.G.RECIPE_IMPERATIVES"
+      ],
+      "lexicon": [
+        "A2.LEX.CHOP_V01",
+        "A2.LEX.BOIL_V01",
+        "A2.LEX.STIR_V01"
+      ],
+      "chunks": [
+        "A2.CHUNK.FIRST_THEN_FINALLY"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "First, boil the water. Then add the pasta. Stir it twice and cook for ten minutes.",
+            "ar": "أولاً اغلِ الماء. ثم أضف المعكرونة. حرّكها مرتين واطبخها عشر دقائق."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U5-L2-A01",
+          "lessonId": "A2-U5-L2",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE",
+            "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
+          ],
+          "prompt": "What happens after the water boils?",
+          "promptAr": "ماذا يحدث بعد غلي الماء؟",
+          "options": [
+            "Add the pasta",
+            "Stir the cold water",
+            "Serve immediately"
+          ],
+          "answer": "Add the pasta",
+          "audioTranscript": "First, boil the water. Then add the pasta. Stir it twice and cook for ten minutes."
+        },
+        {
+          "id": "A2-U5-L2-A02",
+          "lessonId": "A2-U5-L2",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE",
+            "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "chop",
+              "يفرم"
+            ],
+            [
+              "boil",
+              "يغلي"
+            ],
+            [
+              "stir",
+              "يحرّك"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U5-L2-A03",
+          "lessonId": "A2-U5-L2",
+          "type": "order",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE",
+            "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
+          ],
+          "prompt": "Put the language in the best order.",
+          "promptAr": "رتب اللغة بالترتيب الأفضل.",
+          "tokens": [
+            "the onion.",
+            "First,",
+            "chop"
+          ],
+          "answer": [
+            "First,",
+            "chop",
+            "the onion."
+          ]
+        },
+        {
+          "id": "A2-U5-L2-A04",
+          "lessonId": "A2-U5-L2",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE",
+            "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
+          ],
+          "prompt": "When is the rice added?",
+          "promptAr": "متى يُضاف الأرز؟",
+          "options": [
+            "At the end",
+            "Before the oil",
+            "With the raw vegetables"
+          ],
+          "answer": "At the end",
+          "audioTranscript": "Heat the oil, add the vegetables and stir for five minutes. Finally, add the cooked rice."
+        },
+        {
+          "id": "A2-U5-L2-A05",
+          "lessonId": "A2-U5-L2",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE",
+            "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
+          ],
+          "prompt": "Explain four ordered steps for making a simple food or drink.",
+          "promptAr": "اشرح أربع خطوات مرتبة لإعداد طعام أو شراب بسيط.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U5-L3",
+      "title": "A Few or a Little",
+      "titleAr": "بضع أم قليل؟",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U5.READING.FOLLOW_RECIPE_MENU",
+        "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
+      ],
+      "grammar": [
+        "A2.G.FEW_LITTLE",
+        "A2.G.COMPARATIVE_ADJECTIVES",
+        "A2.G.SUPERLATIVE_ADJECTIVES"
+      ],
+      "lexicon": [
+        "A2.LEX.OLIVE_N01",
+        "A2.LEX.SALT_N01",
+        "A2.LEX.SAUCE_N01",
+        "A2.LEX.CALM_ADJ01",
+        "A2.LEX.ORGANISED_ADJ01",
+        "A2.LEX.CONFIDENT_ADJ01",
+        "A2.LEX.FUNNIEST_ADJ01",
+        "A2.LEX.KIND_ADJ01",
+        "A2.LEX.ACTIVE_ADJ01"
+      ],
+      "chunks": [
+        "A2.CHUNK.A_LITTLE_BIT",
+        "A2.CHUNK.THE_MOST",
+        "A2.CHUNK.GET_ON_WELL",
+        "A2.CHUNK.A_PERSON_WHO"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "For the sauce, use a little oil, a few tomatoes and a little bit of salt. Add a few olives at the end.",
+            "ar": ""
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U5-L3-A01",
+          "lessonId": "A2-U5-L3",
+          "type": "textChoice",
+          "mode": "encounter",
+          "skill": "reading",
+          "canDo": [
+            "A2.U5.READING.FOLLOW_RECIPE_MENU",
+            "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
+          ],
+          "prompt": "Which countable ingredient is added at the end?",
+          "promptAr": "أي مكوّن معدود يُضاف في النهاية؟",
+          "options": [
+            "Olives",
+            "Oil",
+            "Salt"
+          ],
+          "answer": "Olives",
+          "sourceText": "For the sauce, use a little oil, a few tomatoes and a little bit of salt. Add a few olives at the end."
+        },
+        {
+          "id": "A2-U5-L3-A02",
+          "lessonId": "A2-U5-L3",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U5.READING.FOLLOW_RECIPE_MENU",
+            "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "olive",
+              "زيتونة"
+            ],
+            [
+              "salt",
+              "ملح"
+            ],
+            [
+              "sauce",
+              "صلصة"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U5-L3-A03",
+          "lessonId": "A2-U5-L3",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U5.READING.FOLLOW_RECIPE_MENU",
+            "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "Add ___ sugar, but not too much.",
+          "options": [
+            "a little",
+            "a few",
+            "many"
+          ],
+          "answer": "a little"
+        },
+        {
+          "id": "A2-U5-L3-A04",
+          "lessonId": "A2-U5-L3",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A2.U5.READING.FOLLOW_RECIPE_MENU",
+            "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
+          ],
+          "prompt": "How many portions can they make?",
+          "promptAr": "كم حصة يمكنهم إعدادها؟",
+          "options": [
+            "Two",
+            "A few",
+            "One egg"
+          ],
+          "answer": "Two",
+          "sourceText": "We have a little cheese and a few eggs. That is enough for two portions."
+        },
+        {
+          "id": "A2-U5-L3-A05",
+          "lessonId": "A2-U5-L3",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A2.U5.READING.FOLLOW_RECIPE_MENU",
+            "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
+          ],
+          "prompt": "Describe small quantities for a recipe using a few and a little accurately.",
+          "promptAr": "صف كميات صغيرة لوصفة مستخدماً a few وa little بدقة.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U5-L4",
+      "title": "The Wrong Order",
+      "titleAr": "الطلب الخطأ",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE",
+        "A2.U5.INTERACTION.MANAGE_FOOD_SERVICE"
+      ],
+      "grammar": [
+        "A2.G.OBJECT_PRONOUNS_SERVICE"
+      ],
+      "lexicon": [
+        "A2.LEX.ORDER_N02",
+        "A2.LEX.MISSING_ADJ01",
+        "A2.LEX.WRONG_ADJ01"
+      ],
+      "chunks": [
+        "A2.CHUNK.SOMETHING_IS_MISSING",
+        "A2.CHUNK.THIS_IS_NOT_WHAT_ORDERED"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "Customer: Excuse me, this isn't what I ordered. I asked for vegetable soup, but this has chicken in it. Server: I'm sorry. I'll change it.",
+            "ar": "الزبون: عفواً، هذا ليس ما طلبته. طلبت حساء خضار، لكن فيه دجاج. النادل: أنا آسف. سأستبدله."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U5-L4-A01",
+          "lessonId": "A2-U5-L4",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE",
+            "A2.U5.INTERACTION.MANAGE_FOOD_SERVICE"
+          ],
+          "prompt": "What is wrong with the soup?",
+          "promptAr": "ما الخطأ في الحساء؟",
+          "options": [
+            "It contains chicken.",
+            "It is missing vegetables.",
+            "It is too cold."
+          ],
+          "answer": "It contains chicken.",
+          "audioTranscript": "Customer: Excuse me, this isn't what I ordered. I asked for vegetable soup, but this has chicken in it. Server: I'm sorry. I'll change it."
+        },
+        {
+          "id": "A2-U5-L4-A02",
+          "lessonId": "A2-U5-L4",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE",
+            "A2.U5.INTERACTION.MANAGE_FOOD_SERVICE"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "order",
+              "طلب"
+            ],
+            [
+              "missing",
+              "مفقود"
+            ],
+            [
+              "wrong",
+              "خطأ"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U5-L4-A03",
+          "lessonId": "A2-U5-L4",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE",
+            "A2.U5.INTERACTION.MANAGE_FOOD_SERVICE"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "We ordered two juices, but they didn't bring ___.",
+          "options": [
+            "them",
+            "it",
+            "us"
+          ],
+          "answer": "them"
+        },
+        {
+          "id": "A2-U5-L4-A04",
+          "lessonId": "A2-U5-L4",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE",
+            "A2.U5.INTERACTION.MANAGE_FOOD_SERVICE"
+          ],
+          "prompt": "What extra item arrived?",
+          "promptAr": "ما العنصر الإضافي الذي وصل؟",
+          "options": [
+            "One coffee",
+            "One dessert",
+            "Two juices"
+          ],
+          "answer": "One coffee",
+          "audioTranscript": "Customer: One dessert is missing, and you brought us three coffees instead of two. Server: I'll correct the order now."
+        },
+        {
+          "id": "A2-U5-L4-A05",
+          "lessonId": "A2-U5-L4",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE",
+            "A2.U5.INTERACTION.MANAGE_FOOD_SERVICE"
+          ],
+          "prompt": "Explain a wrong or incomplete order clearly and politely.",
+          "promptAr": "اشرح طلباً خاطئاً أو ناقصاً بوضوح وأدب.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U5-L5",
+      "title": "Resolve a Service Problem",
+      "titleAr": "حل مشكلة خدمة",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U5.READING.FOLLOW_RECIPE_MENU",
+        "A2.U5.MEDIATION.RELAY_ORDER_RECIPE"
+      ],
+      "grammar": [
+        "A2.G.POLITE_FOOD_REQUESTS",
+        "A2.G.PAST_NEGATIVE",
+        "A2.G.PAST_TIME_LINKERS"
+      ],
+      "lexicon": [
+        "A2.LEX.REPLACE_V01",
+        "A2.LEX.BILL_N01",
+        "A2.LEX.SERVICE_N01",
+        "A2.LEX.SUDDENLY_ADV01",
+        "A2.LEX.FINALLY_ADV01",
+        "A2.LEX.SEQUENCE_N01",
+        "A2.LEX.STORY_N01",
+        "A2.LEX.EVENT_N01",
+        "A2.LEX.SURPRISED_ADJ01"
+      ],
+      "chunks": [
+        "A2.CHUNK.COULD_REPLACE",
+        "A2.CHUNK.IN_THE_END",
+        "A2.CHUNK.A_GREAT_TIME"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "Hello, the meal was good, but the bill includes two salads and we only had one. Could you correct it, please?",
+            "ar": ""
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U5-L5-A01",
+          "lessonId": "A2-U5-L5",
+          "type": "textChoice",
+          "mode": "encounter",
+          "skill": "reading",
+          "canDo": [
+            "A2.U5.READING.FOLLOW_RECIPE_MENU",
+            "A2.U5.MEDIATION.RELAY_ORDER_RECIPE"
+          ],
+          "prompt": "What needs correcting?",
+          "promptAr": "ما الذي يحتاج إلى تصحيح؟",
+          "options": [
+            "The number of salads on the bill",
+            "The meal itself",
+            "The table number"
+          ],
+          "answer": "The number of salads on the bill",
+          "sourceText": "Hello, the meal was good, but the bill includes two salads and we only had one. Could you correct it, please?"
+        },
+        {
+          "id": "A2-U5-L5-A02",
+          "lessonId": "A2-U5-L5",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U5.READING.FOLLOW_RECIPE_MENU",
+            "A2.U5.MEDIATION.RELAY_ORDER_RECIPE"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "replace",
+              "يستبدل"
+            ],
+            [
+              "bill",
+              "فاتورة"
+            ],
+            [
+              "service",
+              "خدمة"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U5-L5-A03",
+          "lessonId": "A2-U5-L5",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U5.READING.FOLLOW_RECIPE_MENU",
+            "A2.U5.MEDIATION.RELAY_ORDER_RECIPE"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "Could you ___ this cold drink, please?",
+          "options": [
+            "replace",
+            "replaces",
+            "replaced"
+          ],
+          "answer": "replace"
+        },
+        {
+          "id": "A2-U5-L5-A04",
+          "lessonId": "A2-U5-L5",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A2.U5.READING.FOLLOW_RECIPE_MENU",
+            "A2.U5.MEDIATION.RELAY_ORDER_RECIPE"
+          ],
+          "prompt": "What solution does the server offer?",
+          "promptAr": "ما الحل الذي يقدمه النادل؟",
+          "options": [
+            "Fruit",
+            "A different bill",
+            "More nuts"
+          ],
+          "answer": "Fruit",
+          "sourceText": "A guest cannot eat nuts, but the dessert contains them. The server offers fruit instead."
+        },
+        {
+          "id": "A2-U5-L5-A05",
+          "lessonId": "A2-U5-L5",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "mediation",
+          "canDo": [
+            "A2.U5.READING.FOLLOW_RECIPE_MENU",
+            "A2.U5.MEDIATION.RELAY_ORDER_RECIPE"
+          ],
+          "prompt": "Read the customer's problem and relay it to the server with the requested solution.",
+          "promptAr": "اقرأ مشكلة الزبون وانقلها إلى النادل مع الحل المطلوب.",
+          "evaluation": [
+            "selectRelevantInformation",
+            "clarity",
+            "audienceAwareness",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U5-L6",
+      "title": "Share a Recipe",
+      "titleAr": "شارك وصفة",
+      "lessonType": "integrated-production",
+      "canDo": [
+        "A2.U5.WRITING.WRITE_RECIPE_MESSAGE",
+        "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
+      ],
+      "grammar": [
+        "A2.G.QUANTITY_MUCH_MANY",
+        "A2.G.RECIPE_IMPERATIVES",
+        "A2.G.FEW_LITTLE"
+      ],
+      "lexicon": [
+        "A2.LEX.RECIPE_N01",
+        "A2.LEX.PORTION_N01",
+        "A2.LEX.METHOD_N01"
+      ],
+      "chunks": [
+        "A2.CHUNK.SERVES_FOUR",
+        "A2.CHUNK.FIRST_THEN_FINALLY"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "Bean soup — serves four. Use two cups of beans, a few carrots and a little oil. Boil the beans, add the carrots, and finally cook everything for twenty minutes.",
+            "ar": ""
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U5-L6-A01",
+          "lessonId": "A2-U5-L6",
+          "type": "textChoice",
+          "mode": "encounter",
+          "skill": "reading",
+          "canDo": [
+            "A2.U5.WRITING.WRITE_RECIPE_MESSAGE",
+            "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
+          ],
+          "prompt": "How many people does the recipe serve?",
+          "promptAr": "كم شخصاً تكفي الوصفة؟",
+          "options": [
+            "Four",
+            "Two",
+            "Twenty"
+          ],
+          "answer": "Four",
+          "sourceText": "Bean soup — serves four. Use two cups of beans, a few carrots and a little oil. Boil the beans, add the carrots, and finally cook everything for twenty minutes."
+        },
+        {
+          "id": "A2-U5-L6-A02",
+          "lessonId": "A2-U5-L6",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U5.WRITING.WRITE_RECIPE_MESSAGE",
+            "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "recipe",
+              "وصفة"
+            ],
+            [
+              "portion",
+              "حصة طعام"
+            ],
+            [
+              "method",
+              "طريقة"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U5-L6-A03",
+          "lessonId": "A2-U5-L6",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U5.WRITING.WRITE_RECIPE_MESSAGE",
+            "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "This recipe ___ six people.",
+          "options": [
+            "serves",
+            "service",
+            "serve"
+          ],
+          "answer": "serves"
+        },
+        {
+          "id": "A2-U5-L6-A04",
+          "lessonId": "A2-U5-L6",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A2.U5.WRITING.WRITE_RECIPE_MESSAGE",
+            "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
+          ],
+          "prompt": "What should be mixed with the fruit?",
+          "promptAr": "ما الذي يُخلط مع الفاكهة؟",
+          "options": [
+            "A little water",
+            "A lot of salt",
+            "Two portions"
+          ],
+          "answer": "A little water",
+          "sourceText": "Fruit drink — serves two. Chop one apple and a few strawberries. Add a little water and mix well."
+        },
+        {
+          "id": "A2-U5-L6-A05",
+          "lessonId": "A2-U5-L6",
+          "type": "write",
+          "mode": "mastery",
+          "skill": "writing",
+          "canDo": [
+            "A2.U5.WRITING.WRITE_RECIPE_MESSAGE",
+            "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
+          ],
+          "prompt": "Write a simple recipe with a title, portions, ingredients and ordered method.",
+          "promptAr": "اكتب وصفة بسيطة تتضمن عنواناً وعدد الحصص والمكونات وطريقة مرتبة.",
+          "evaluation": [
+            "taskCompletion",
+            "clarity",
+            "organisation",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "wordGuide": [
+            75,
+            105
+          ]
+        }
+      ]
+    },
+    {
+      "id": "A2-U5-L7",
+      "title": "Mission: Cook and Resolve an Order Error",
+      "titleAr": "المهمة: اطبخ وحل خطأ في الطلب",
+      "lessonType": "mission",
+      "canDo": [
+        "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE",
+        "A2.U5.READING.FOLLOW_RECIPE_MENU",
+        "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM",
+        "A2.U5.INTERACTION.MANAGE_FOOD_SERVICE",
+        "A2.U5.WRITING.WRITE_RECIPE_MESSAGE",
+        "A2.U5.MEDIATION.RELAY_ORDER_RECIPE",
+        "A2.U5.ACTION.COOK_AND_RESOLVE_ORDER"
+      ],
+      "grammar": [],
+      "lexicon": [],
+      "chunks": [],
+      "scenario": "Plan a simple meal from a recipe, explain its method, then handle an unexpected restaurant order problem.",
+      "activities": [
+        {
+          "id": "A2-U5-L7-A01",
+          "lessonId": "A2-U5-L7",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A2.U5.READING.FOLLOW_RECIPE_MENU",
+            "A2.U5.ACTION.COOK_AND_RESOLVE_ORDER"
+          ],
+          "prompt": "What must be cooked?",
+          "promptAr": "ما الذي يجب طبخه؟",
+          "options": [
+            "The rice",
+            "The tomatoes",
+            "The oil"
+          ],
+          "answer": "The rice",
+          "sourceText": "Rice salad — serves three. Use 250 grams of rice, a few tomatoes and a little oil. Cook the rice, chop the tomatoes, then mix everything."
+        },
+        {
+          "id": "A2-U5-L7-A02",
+          "lessonId": "A2-U5-L7",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE",
+            "A2.U5.ACTION.COOK_AND_RESOLVE_ORDER"
+          ],
+          "prompt": "What solution is requested?",
+          "promptAr": "ما الحل المطلوب؟",
+          "options": [
+            "Send two correct vegetable meals",
+            "Cancel every meal",
+            "Add one meat meal"
+          ],
+          "answer": "Send two correct vegetable meals",
+          "audioTranscript": "We ordered three vegetable meals, but only two arrived, and one of them has meat. Please send two correct vegetable meals."
+        },
+        {
+          "id": "A2-U5-L7-A03",
+          "lessonId": "A2-U5-L7",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A2.U5.INTERACTION.MANAGE_FOOD_SERVICE",
+            "A2.U5.ACTION.COOK_AND_RESOLVE_ORDER"
+          ],
+          "prompt": "Role-play the order problem: explain the error, answer a question and agree on a solution.",
+          "promptAr": "مثّل مشكلة الطلب: اشرح الخطأ وأجب عن سؤال واتفق على حل.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A2-U5-L7-A04",
+          "lessonId": "A2-U5-L7",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM",
+            "A2.U5.ACTION.COOK_AND_RESOLVE_ORDER"
+          ],
+          "prompt": "Explain the recipe ingredients, quantities and steps in a clear order.",
+          "promptAr": "اشرح مكونات الوصفة وكمياتها وخطواتها بترتيب واضح.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A2-U5-L7-A05",
+          "lessonId": "A2-U5-L7",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "mediation",
+          "canDo": [
+            "A2.U5.MEDIATION.RELAY_ORDER_RECIPE",
+            "A2.U5.ACTION.COOK_AND_RESOLVE_ORDER"
+          ],
+          "prompt": "Relay a diner’s dietary need and exact order correction to the server.",
+          "promptAr": "انقل حاجة غذائية لزبون وتصحيح الطلب بدقة إلى النادل.",
+          "evaluation": [
+            "selectRelevantInformation",
+            "clarity",
+            "audienceAwareness",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A2-U5-L7-A06",
+          "lessonId": "A2-U5-L7",
+          "type": "write",
+          "mode": "mastery",
+          "skill": "writing",
+          "canDo": [
+            "A2.U5.WRITING.WRITE_RECIPE_MESSAGE",
+            "A2.U5.ACTION.COOK_AND_RESOLVE_ORDER"
+          ],
+          "prompt": "Write the recipe and a short polite message about the order error.",
+          "promptAr": "اكتب الوصفة ورسالة قصيرة مهذبة عن خطأ الطلب.",
+          "evaluation": [
+            "taskCompletion",
+            "clarity",
+            "organisation",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "wordGuide": [
+            85,
+            115
+          ],
+          "accepted": []
+        }
+      ]
+    }
+  ],
+  "mastery": {
+    "requiredObjectives": [
+      "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE",
+      "A2.U5.READING.FOLLOW_RECIPE_MENU",
+      "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM",
+      "A2.U5.INTERACTION.MANAGE_FOOD_SERVICE",
+      "A2.U5.WRITING.WRITE_RECIPE_MESSAGE",
+      "A2.U5.MEDIATION.RELAY_ORDER_RECIPE",
+      "A2.U5.ACTION.COOK_AND_RESOLVE_ORDER"
+    ],
+    "requiredSkillGroups": [
+      [
+        "listening",
+        "reading"
+      ],
+      [
+        "spokenInteraction",
+        "spokenProduction",
+        "writing"
+      ],
+      [
+        "mediation"
+      ]
+    ],
+    "minimumObjectiveScore": 0.75,
+    "missionRequired": true,
+    "retry": "targeted-by-objective",
+    "unlocks": "A2-U6"
+  },
+  "countsTowardA1Mastery": true
+}

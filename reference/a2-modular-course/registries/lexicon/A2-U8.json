@@ -1,0 +1,367 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-U8",
+  "kind": "lexicon",
+  "records": [
+    {
+      "id": "A2.LEX.DUTY_N01",
+      "headword": "duty",
+      "partOfSpeech": "noun",
+      "arabic": "واجب",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "duty",
+      "examples": [
+        {
+          "en": "My main duty is answering calls.",
+          "ar": "واجبي الرئيسي الرد على المكالمات."
+        }
+      ],
+      "introducedIn": "A2-U8-L1",
+      "recycledIn": [
+        "A2-U9-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.SHIFT_N01",
+      "headword": "shift",
+      "partOfSpeech": "noun",
+      "arabic": "نوبة عمل",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "shift",
+      "examples": [
+        {
+          "en": "The morning shift starts at seven.",
+          "ar": "تبدأ النوبة الصباحية في السابعة."
+        }
+      ],
+      "introducedIn": "A2-U8-L1",
+      "recycledIn": [
+        "A2-U9-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.DEADLINE_N01",
+      "headword": "deadline",
+      "partOfSpeech": "noun",
+      "arabic": "موعد نهائي",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "deadline",
+      "examples": [
+        {
+          "en": "The deadline is Friday.",
+          "ar": "الموعد النهائي الجمعة."
+        }
+      ],
+      "introducedIn": "A2-U8-L1",
+      "recycledIn": [
+        "A2-U9-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.SKILL_N01",
+      "headword": "skill",
+      "partOfSpeech": "noun",
+      "arabic": "مهارة",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "skill",
+      "examples": [
+        {
+          "en": "Communication is a useful skill.",
+          "ar": "التواصل مهارة مفيدة."
+        }
+      ],
+      "introducedIn": "A2-U8-L2",
+      "recycledIn": [
+        "A2-U9-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.SPREADSHEET_N01",
+      "headword": "spreadsheet",
+      "partOfSpeech": "noun",
+      "arabic": "جدول بيانات",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "spreadsheet",
+      "examples": [
+        {
+          "en": "I can create a simple spreadsheet.",
+          "ar": "أستطيع إنشاء جدول بيانات بسيط."
+        }
+      ],
+      "introducedIn": "A2-U8-L2",
+      "recycledIn": [
+        "A2-U9-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.OPERATE_V01",
+      "headword": "operate",
+      "partOfSpeech": "verb",
+      "arabic": "يشغّل",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "operate",
+      "examples": [
+        {
+          "en": "Can you operate this machine?",
+          "ar": "هل تستطيع تشغيل هذه الآلة؟"
+        }
+      ],
+      "introducedIn": "A2-U8-L2",
+      "recycledIn": [
+        "A2-U9-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.CAREFULLY_ADV01",
+      "headword": "carefully",
+      "partOfSpeech": "adverb",
+      "arabic": "بعناية",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "carefully",
+      "examples": [
+        {
+          "en": "Check the form carefully.",
+          "ar": "تحقق من النموذج بعناية."
+        }
+      ],
+      "introducedIn": "A2-U8-L3",
+      "recycledIn": [
+        "A2-U10-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.CLEARLY_ADV01",
+      "headword": "clearly",
+      "partOfSpeech": "adverb",
+      "arabic": "بوضوح",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "clearly",
+      "examples": [
+        {
+          "en": "Write your name clearly.",
+          "ar": "اكتب اسمك بوضوح."
+        }
+      ],
+      "introducedIn": "A2-U8-L3",
+      "recycledIn": [
+        "A2-U10-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.EFFICIENTLY_ADV01",
+      "headword": "efficiently",
+      "partOfSpeech": "adverb",
+      "arabic": "بكفاءة",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "efficiently",
+      "examples": [
+        {
+          "en": "The team works efficiently.",
+          "ar": "يعمل الفريق بكفاءة."
+        }
+      ],
+      "introducedIn": "A2-U8-L3",
+      "recycledIn": [
+        "A2-U10-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.PRACTICAL_ADJ01",
+      "headword": "practical",
+      "partOfSpeech": "adjective",
+      "arabic": "عملي",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "practical",
+      "examples": [
+        {
+          "en": "The course includes practical tasks.",
+          "ar": "تتضمن الدورة مهام عملية."
+        }
+      ],
+      "introducedIn": "A2-U8-L4",
+      "recycledIn": [
+        "A2-U10-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.QUALIFICATION_N01",
+      "headword": "qualification",
+      "partOfSpeech": "noun",
+      "arabic": "مؤهل",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "qualification",
+      "examples": [
+        {
+          "en": "No formal qualification is required.",
+          "ar": "لا يُطلب مؤهل رسمي."
+        }
+      ],
+      "introducedIn": "A2-U8-L4",
+      "recycledIn": [
+        "A2-U10-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.WORK_EXPERIENCE_N01",
+      "headword": "work experience",
+      "partOfSpeech": "noun",
+      "arabic": "خبرة عملية",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "work experience",
+      "examples": [
+        {
+          "en": "I have customer service work experience.",
+          "ar": "لدي خبرة عملية في خدمة العملاء."
+        }
+      ],
+      "introducedIn": "A2-U8-L4",
+      "recycledIn": [
+        "A2-U10-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.INFORMATION_N01",
+      "headword": "information",
+      "partOfSpeech": "noun",
+      "arabic": "معلومات",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "information",
+      "examples": [
+        {
+          "en": "Could you send more information?",
+          "ar": "هل يمكنك إرسال مزيد من المعلومات؟"
+        }
+      ],
+      "introducedIn": "A2-U8-L5",
+      "recycledIn": [
+        "A2-U11-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.ENROL_V01",
+      "headword": "enrol",
+      "partOfSpeech": "verb",
+      "arabic": "يسجل",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "enrol",
+      "examples": [
+        {
+          "en": "I want to enrol in the evening class.",
+          "ar": "أريد التسجيل في الصف المسائي."
+        }
+      ],
+      "introducedIn": "A2-U8-L5",
+      "recycledIn": [
+        "A2-U11-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.FEE_N01",
+      "headword": "fee",
+      "partOfSpeech": "noun",
+      "arabic": "رسم",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "fee",
+      "examples": [
+        {
+          "en": "What is the course fee?",
+          "ar": "ما رسم الدورة؟"
+        }
+      ],
+      "introducedIn": "A2-U8-L5",
+      "recycledIn": [
+        "A2-U11-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.APPLY_V01",
+      "headword": "apply",
+      "partOfSpeech": "verb",
+      "arabic": "يتقدم",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "apply",
+      "examples": [
+        {
+          "en": "I am applying for the assistant role.",
+          "ar": "أتقدم لوظيفة مساعد."
+        }
+      ],
+      "introducedIn": "A2-U8-L6",
+      "recycledIn": [
+        "A2-U11-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.APPLICANT_N01",
+      "headword": "applicant",
+      "partOfSpeech": "noun",
+      "arabic": "متقدم",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "applicant",
+      "examples": [
+        {
+          "en": "Each applicant completes a form.",
+          "ar": "يكمل كل متقدم نموذجاً."
+        }
+      ],
+      "introducedIn": "A2-U8-L6",
+      "recycledIn": [
+        "A2-U11-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.REFERENCE_N01",
+      "headword": "reference",
+      "partOfSpeech": "noun",
+      "arabic": "مرجع / تزكية",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "reference",
+      "examples": [
+        {
+          "en": "The job asks for one reference.",
+          "ar": "تطلب الوظيفة مرجعاً واحداً."
+        }
+      ],
+      "introducedIn": "A2-U8-L6",
+      "recycledIn": [
+        "A2-U11-L5"
+      ]
+    }
+  ]
+}

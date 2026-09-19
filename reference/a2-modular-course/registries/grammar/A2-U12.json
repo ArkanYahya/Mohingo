@@ -1,0 +1,79 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-U12",
+  "kind": "grammar",
+  "records": [
+    {
+      "id": "A2.G.INVITATION_WOULD_LIKE",
+      "form": "Would you like to ...?",
+      "meaningAr": "Would you like لدعوة مهذبة",
+      "introducedIn": "A2-U12-L1",
+      "examples": [
+        {
+          "en": "Would you like to join us?",
+          "ar": "هل ترغب في الانضمام إلينا؟"
+        }
+      ]
+    },
+    {
+      "id": "A2.G.COULD_WOULD_REQUESTS",
+      "form": "could / would for polite event requests",
+      "meaningAr": "could وwould لطلبات الفعالية",
+      "introducedIn": "A2-U12-L2",
+      "examples": [
+        {
+          "en": "Could you bring some chairs?",
+          "ar": "هل يمكنك إحضار بعض الكراسي؟"
+        }
+      ]
+    },
+    {
+      "id": "A2.G.FUTURE_EVENT_REVIEW",
+      "form": "will / going to / present continuous review",
+      "meaningAr": "مراجعة صيغ المستقبل للفعاليات",
+      "introducedIn": "A2-U12-L3",
+      "examples": [
+        {
+          "en": "We're meeting at six, and I'll bring drinks.",
+          "ar": "سنلتقي في السادسة وسأحضر المشروبات."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.ACCEPT_DECLINE_REASONS",
+      "form": "accepting and declining with because / but",
+      "meaningAr": "قبول الدعوة ورفضها مع سبب",
+      "introducedIn": "A2-U12-L4",
+      "examples": [
+        {
+          "en": "I'd love to, but I'm working.",
+          "ar": "يسعدني ذلك، لكنني أعمل."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.CHANGE_APOLOGY",
+      "form": "because / so / instead / unfortunately",
+      "meaningAr": "روابط التغيير والاعتذار",
+      "introducedIn": "A2-U12-L5",
+      "examples": [
+        {
+          "en": "The hall is closed, so we'll meet outside instead.",
+          "ar": "القاعة مغلقة، لذا سنلتقي في الخارج بدلاً منها."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.EVENT_MESSAGE_LINKERS",
+      "form": "first, also, however, finally",
+      "meaningAr": "روابط رسالة الفعالية",
+      "introducedIn": "A2-U12-L6",
+      "examples": [
+        {
+          "en": "First confirm the time; also tell us about food needs.",
+          "ar": "أكد الوقت أولاً؛ وأخبرنا أيضاً بالاحتياجات الغذائية."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1047 @@
+{
+  "id": "A2-U1",
+  "title": "Life Now",
+  "titleAr": "حياتي الآن",
+  "levelRole": "core",
+  "estimatedMinutes": [
+    95,
+    130
+  ],
+  "lessons": [
+    {
+      "id": "A2-U1-L1",
+      "title": "A Regular Week",
+      "titleAr": "أسبوع معتاد",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE",
+        "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE"
+      ],
+      "grammar": [
+        "A2.G.PRESENT_SIMPLE_REVIEW"
+      ],
+      "lexicon": [
+        "A2.LEX.ROUTINE_N01",
+        "A2.LEX.NORMALLY_ADV01",
+        "A2.LEX.WEEKDAY_N01"
+      ],
+      "chunks": [
+        "A2.CHUNK.ON_WEEKDAYS"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "I normally get up at seven on weekdays. I take the bus to work and play football on Thursday.",
+            "ar": "أستيقظ عادةً في السابعة في أيام العمل. أستقل الحافلة إلى العمل وألعب كرة القدم يوم الخميس."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U1-L1-A01",
+          "lessonId": "A2-U1-L1",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE",
+            "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE"
+          ],
+          "prompt": "How does the speaker travel to work?",
+          "promptAr": "كيف يذهب المتحدث إلى العمل؟",
+          "options": [
+            "By bus",
+            "By car",
+            "On foot"
+          ],
+          "answer": "By bus",
+          "audioTranscript": "I normally get up at seven on weekdays. I take the bus to work and play football on Thursday."
+        },
+        {
+          "id": "A2-U1-L1-A02",
+          "lessonId": "A2-U1-L1",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE",
+            "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "routine",
+              "روتين"
+            ],
+            [
+              "normally",
+              "عادةً"
+            ],
+            [
+              "weekday",
+              "يوم عمل"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U1-L1-A03",
+          "lessonId": "A2-U1-L1",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE",
+            "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "Mina ___ studies after dinner.",
+          "options": [
+            "normally",
+            "now",
+            "temporary"
+          ],
+          "answer": "normally"
+        },
+        {
+          "id": "A2-U1-L1-A04",
+          "lessonId": "A2-U1-L1",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE",
+            "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE"
+          ],
+          "prompt": "What does Karim do on Friday?",
+          "promptAr": "ماذا يفعل كريم يوم الجمعة؟",
+          "options": [
+            "He visits his parents.",
+            "He works in the shop.",
+            "He studies."
+          ],
+          "answer": "He visits his parents.",
+          "audioTranscript": "Karim works in a shop from Sunday to Thursday. On Friday, he visits his parents."
+        },
+        {
+          "id": "A2-U1-L1-A05",
+          "lessonId": "A2-U1-L1",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE",
+            "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE"
+          ],
+          "prompt": "Describe three things in your usual week.",
+          "promptAr": "صف ثلاثة أشياء في أسبوعك المعتاد.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U1-L2",
+      "title": "A Temporary Change",
+      "titleAr": "تغيير مؤقت",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE",
+        "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE"
+      ],
+      "grammar": [
+        "A2.G.PRESENT_CONTINUOUS_NOW",
+        "A2.G.PRESENT_SIMPLE_VS_CONTINUOUS"
+      ],
+      "lexicon": [
+        "A2.LEX.TEMPORARY_ADJ01",
+        "A2.LEX.CURRENTLY_ADV01",
+        "A2.LEX.STAY_V01"
+      ],
+      "chunks": [
+        "A2.CHUNK.AT_THE_MOMENT",
+        "A2.CHUNK.THIS_WEEK"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "I usually live in Mosul, but this month I am staying with my brother in Erbil. I am taking an evening course there.",
+            "ar": "أعيش عادةً في الموصل، لكنني أقيم هذا الشهر مع أخي في أربيل. أحضر دورة مسائية هناك."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U1-L2-A01",
+          "lessonId": "A2-U1-L2",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE",
+            "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE"
+          ],
+          "prompt": "Where is the speaker staying this month?",
+          "promptAr": "أين يقيم المتحدث هذا الشهر؟",
+          "options": [
+            "In Erbil",
+            "In Mosul",
+            "In Baghdad"
+          ],
+          "answer": "In Erbil",
+          "audioTranscript": "I usually live in Mosul, but this month I am staying with my brother in Erbil. I am taking an evening course there."
+        },
+        {
+          "id": "A2-U1-L2-A02",
+          "lessonId": "A2-U1-L2",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE",
+            "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "temporary",
+              "مؤقت"
+            ],
+            [
+              "currently",
+              "حالياً"
+            ],
+            [
+              "stay",
+              "يقيم"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U1-L2-A03",
+          "lessonId": "A2-U1-L2",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE",
+            "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "I work at the office, but today I ___ from home.",
+          "options": [
+            "am working",
+            "work",
+            "worked"
+          ],
+          "answer": "am working"
+        },
+        {
+          "id": "A2-U1-L2-A04",
+          "lessonId": "A2-U1-L2",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE",
+            "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE"
+          ],
+          "prompt": "What is temporary?",
+          "promptAr": "ما الأمر المؤقت؟",
+          "options": [
+            "Helping at a sports camp",
+            "Teaching children",
+            "Living with children"
+          ],
+          "answer": "Helping at a sports camp",
+          "audioTranscript": "Lina normally teaches children. This week, she is helping at a sports camp."
+        },
+        {
+          "id": "A2-U1-L2-A05",
+          "lessonId": "A2-U1-L2",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE",
+            "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE"
+          ],
+          "prompt": "Say one usual fact and one temporary fact about your life now.",
+          "promptAr": "اذكر حقيقة معتادة وحقيقة مؤقتة عن حياتك الآن.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U1-L3",
+      "title": "Ask a Better Question",
+      "titleAr": "اسأل سؤالاً أفضل",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U1.READING.UNDERSTAND_PROFILE",
+        "A2.U1.INTERACTION.ASK_FOLLOW_UP"
+      ],
+      "grammar": [
+        "A2.G.WH_FOLLOW_UP"
+      ],
+      "lexicon": [
+        "A2.LEX.FOLLOW_UP_N01",
+        "A2.LEX.DETAIL_N01",
+        "A2.LEX.RECENTLY_ADV01"
+      ],
+      "chunks": [
+        "A2.CHUNK.WHAT_ABOUT_YOU",
+        "A2.CHUNK.TELL_ME_MORE"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "Nora: I am learning to drive. Sami: Really? When do you practise? Nora: On Saturday mornings.",
+            "ar": ""
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U1-L3-A01",
+          "lessonId": "A2-U1-L3",
+          "type": "textChoice",
+          "mode": "encounter",
+          "skill": "reading",
+          "canDo": [
+            "A2.U1.READING.UNDERSTAND_PROFILE",
+            "A2.U1.INTERACTION.ASK_FOLLOW_UP"
+          ],
+          "prompt": "When does Nora practise driving?",
+          "promptAr": "متى تتدرب نورا على القيادة؟",
+          "options": [
+            "On Saturday mornings",
+            "Every evening",
+            "On Monday"
+          ],
+          "answer": "On Saturday mornings",
+          "sourceText": "Nora: I am learning to drive. Sami: Really? When do you practise? Nora: On Saturday mornings."
+        },
+        {
+          "id": "A2-U1-L3-A02",
+          "lessonId": "A2-U1-L3",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U1.READING.UNDERSTAND_PROFILE",
+            "A2.U1.INTERACTION.ASK_FOLLOW_UP"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "follow-up",
+              "متابعة"
+            ],
+            [
+              "detail",
+              "تفصيل"
+            ],
+            [
+              "recently",
+              "مؤخراً"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U1-L3-A03",
+          "lessonId": "A2-U1-L3",
+          "type": "order",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U1.READING.UNDERSTAND_PROFILE",
+            "A2.U1.INTERACTION.ASK_FOLLOW_UP"
+          ],
+          "prompt": "Put the language in the best order.",
+          "promptAr": "رتب اللغة بالترتيب الأفضل.",
+          "tokens": [
+            "do",
+            "What",
+            "after work?",
+            "you",
+            "do"
+          ],
+          "answer": [
+            "What",
+            "do",
+            "you",
+            "do",
+            "after work?"
+          ]
+        },
+        {
+          "id": "A2-U1-L3-A04",
+          "lessonId": "A2-U1-L3",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A2.U1.READING.UNDERSTAND_PROFILE",
+            "A2.U1.INTERACTION.ASK_FOLLOW_UP"
+          ],
+          "prompt": "Which question asks for more detail?",
+          "promptAr": "أي سؤال يطلب تفصيلاً إضافياً؟",
+          "options": [
+            "Where do you work?",
+            "Do you work?",
+            "Is it a job?"
+          ],
+          "answer": "Where do you work?",
+          "sourceText": "Adel: I have a new job. Rana: Where do you work? Adel: At the city hospital."
+        },
+        {
+          "id": "A2-U1-L3-A05",
+          "lessonId": "A2-U1-L3",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A2.U1.READING.UNDERSTAND_PROFILE",
+            "A2.U1.INTERACTION.ASK_FOLLOW_UP"
+          ],
+          "prompt": "A partner says, ‘I am taking a new course.’ Ask two relevant follow-up questions.",
+          "promptAr": "يقول شريك: «أحضر دورة جديدة». اسأل سؤالَي متابعة مناسبين.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U1-L4",
+      "title": "Show Interest",
+      "titleAr": "أظهر الاهتمام",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE",
+        "A2.U1.INTERACTION.ASK_FOLLOW_UP"
+      ],
+      "grammar": [
+        "A2.G.QUESTION_AUXILIARY_REVIEW"
+      ],
+      "lexicon": [
+        "A2.LEX.INTERESTED_ADJ01",
+        "A2.LEX.BUSY_ADJ01",
+        "A2.LEX.ENJOY_V01"
+      ],
+      "chunks": [
+        "A2.CHUNK.THAT_SOUNDS_INTERESTING",
+        "A2.CHUNK.TELL_ME_MORE"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "A: I am working on a new project. B: That sounds interesting. Are you enjoying it? A: Yes, very much.",
+            "ar": "أ: أعمل على مشروع جديد. ب: يبدو ذلك ممتعاً. هل تستمتع به؟ أ: نعم، كثيراً."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U1-L4-A01",
+          "lessonId": "A2-U1-L4",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE",
+            "A2.U1.INTERACTION.ASK_FOLLOW_UP"
+          ],
+          "prompt": "What does B do?",
+          "promptAr": "ماذا يفعل ب؟",
+          "options": [
+            "Shows interest and asks a question",
+            "Changes the subject",
+            "Ends the conversation"
+          ],
+          "answer": "Shows interest and asks a question",
+          "audioTranscript": "A: I am working on a new project. B: That sounds interesting. Are you enjoying it? A: Yes, very much."
+        },
+        {
+          "id": "A2-U1-L4-A02",
+          "lessonId": "A2-U1-L4",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE",
+            "A2.U1.INTERACTION.ASK_FOLLOW_UP"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "interested",
+              "مهتم"
+            ],
+            [
+              "busy",
+              "مشغول"
+            ],
+            [
+              "enjoy",
+              "يستمتع"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U1-L4-A03",
+          "lessonId": "A2-U1-L4",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE",
+            "A2.U1.INTERACTION.ASK_FOLLOW_UP"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "___ you enjoying your new class?",
+          "options": [
+            "Are",
+            "Do",
+            "Is"
+          ],
+          "answer": "Are"
+        },
+        {
+          "id": "A2-U1-L4-A04",
+          "lessonId": "A2-U1-L4",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE",
+            "A2.U1.INTERACTION.ASK_FOLLOW_UP"
+          ],
+          "prompt": "Which phrase shows interest?",
+          "promptAr": "أي عبارة تظهر الاهتمام؟",
+          "options": [
+            "Tell me more.",
+            "Where is it?",
+            "My sister"
+          ],
+          "answer": "Tell me more.",
+          "audioTranscript": "A: My sister is opening a café. B: Really? Tell me more. Where is it?"
+        },
+        {
+          "id": "A2-U1-L4-A05",
+          "lessonId": "A2-U1-L4",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE",
+            "A2.U1.INTERACTION.ASK_FOLLOW_UP"
+          ],
+          "prompt": "Respond with interest and ask a follow-up question about a new hobby.",
+          "promptAr": "استجب باهتمام واسأل سؤال متابعة عن هواية جديدة.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U1-L5",
+      "title": "Compare Two Profiles",
+      "titleAr": "قارن ملفين شخصيين",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U1.READING.UNDERSTAND_PROFILE",
+        "A2.U1.MEDIATION.RELAY_LIFE_UPDATE"
+      ],
+      "grammar": [
+        "A2.G.PRESENT_SIMPLE_VS_CONTINUOUS"
+      ],
+      "lexicon": [
+        "A2.LEX.PROFILE_N01",
+        "A2.LEX.BACKGROUND_N01",
+        "A2.LEX.SIMILAR_ADJ01"
+      ],
+      "chunks": [
+        "A2.CHUNK.HAVE_IN_COMMON"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "Maha is a nurse and works nights. Tia is studying nursing and is currently working at a bookshop. Both enjoy running.",
+            "ar": ""
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U1-L5-A01",
+          "lessonId": "A2-U1-L5",
+          "type": "textChoice",
+          "mode": "encounter",
+          "skill": "reading",
+          "canDo": [
+            "A2.U1.READING.UNDERSTAND_PROFILE",
+            "A2.U1.MEDIATION.RELAY_LIFE_UPDATE"
+          ],
+          "prompt": "What do Maha and Tia have in common?",
+          "promptAr": "ما الشيء المشترك بين مها وتيا؟",
+          "options": [
+            "They enjoy running.",
+            "They both work nights.",
+            "They both work at a bookshop."
+          ],
+          "answer": "They enjoy running.",
+          "sourceText": "Maha is a nurse and works nights. Tia is studying nursing and is currently working at a bookshop. Both enjoy running."
+        },
+        {
+          "id": "A2-U1-L5-A02",
+          "lessonId": "A2-U1-L5",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U1.READING.UNDERSTAND_PROFILE",
+            "A2.U1.MEDIATION.RELAY_LIFE_UPDATE"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "profile",
+              "ملف شخصي"
+            ],
+            [
+              "background",
+              "خلفية"
+            ],
+            [
+              "similar",
+              "مشابه"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U1-L5-A03",
+          "lessonId": "A2-U1-L5",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U1.READING.UNDERSTAND_PROFILE",
+            "A2.U1.MEDIATION.RELAY_LIFE_UPDATE"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "They both like music, so they have that ___ common.",
+          "options": [
+            "in",
+            "at",
+            "on"
+          ],
+          "answer": "in"
+        },
+        {
+          "id": "A2-U1-L5-A04",
+          "lessonId": "A2-U1-L5",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A2.U1.READING.UNDERSTAND_PROFILE",
+            "A2.U1.MEDIATION.RELAY_LIFE_UPDATE"
+          ],
+          "prompt": "Which fact is true?",
+          "promptAr": "أي حقيقة صحيحة؟",
+          "options": [
+            "Both are learning Arabic.",
+            "Both live in Cairo permanently.",
+            "Both work in IT."
+          ],
+          "answer": "Both are learning Arabic.",
+          "sourceText": "Omar usually lives in Cairo and works in IT. Ben lives in London and is visiting Cairo for a month. Both are learning Arabic."
+        },
+        {
+          "id": "A2-U1-L5-A05",
+          "lessonId": "A2-U1-L5",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "mediation",
+          "canDo": [
+            "A2.U1.READING.UNDERSTAND_PROFILE",
+            "A2.U1.MEDIATION.RELAY_LIFE_UPDATE"
+          ],
+          "prompt": "Read two short profiles provided by the app and relay one similarity and one difference in simple language.",
+          "promptAr": "اقرأ ملفين قصيرين يعرضهما التطبيق وانقل تشابهاً واحداً واختلافاً واحداً بلغة بسيطة.",
+          "evaluation": [
+            "selectRelevantInformation",
+            "clarity",
+            "audienceAwareness",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U1-L6",
+      "title": "My Life Update",
+      "titleAr": "تحديث عن حياتي",
+      "lessonType": "integrated-production",
+      "canDo": [
+        "A2.U1.WRITING.WRITE_LIFE_UPDATE",
+        "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE"
+      ],
+      "grammar": [
+        "A2.G.LINKERS_AND_BUT_BECAUSE"
+      ],
+      "lexicon": [
+        "A2.LEX.UPDATE_N01",
+        "A2.LEX.CHANGE_N01",
+        "A2.LEX.SITUATION_N01"
+      ],
+      "chunks": [
+        "A2.CHUNK.RIGHT_NOW",
+        "A2.CHUNK.AT_THE_MOMENT"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "Hi Salma, I still work at the bank, but I am taking a design course at the moment because I want a change. I am busy, but happy.",
+            "ar": ""
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U1-L6-A01",
+          "lessonId": "A2-U1-L6",
+          "type": "textChoice",
+          "mode": "encounter",
+          "skill": "reading",
+          "canDo": [
+            "A2.U1.WRITING.WRITE_LIFE_UPDATE",
+            "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE"
+          ],
+          "prompt": "Why is the writer taking a design course?",
+          "promptAr": "لماذا يحضر الكاتب دورة تصميم؟",
+          "options": [
+            "Because the writer wants a change.",
+            "Because the bank is closed.",
+            "Because Salma is a designer."
+          ],
+          "answer": "Because the writer wants a change.",
+          "sourceText": "Hi Salma, I still work at the bank, but I am taking a design course at the moment because I want a change. I am busy, but happy."
+        },
+        {
+          "id": "A2-U1-L6-A02",
+          "lessonId": "A2-U1-L6",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U1.WRITING.WRITE_LIFE_UPDATE",
+            "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "update",
+              "تحديث"
+            ],
+            [
+              "change",
+              "تغيير"
+            ],
+            [
+              "situation",
+              "وضع"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U1-L6-A03",
+          "lessonId": "A2-U1-L6",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U1.WRITING.WRITE_LIFE_UPDATE",
+            "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "I like the course ___ it is practical.",
+          "options": [
+            "because",
+            "but",
+            "and"
+          ],
+          "answer": "because"
+        },
+        {
+          "id": "A2-U1-L6-A04",
+          "lessonId": "A2-U1-L6",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A2.U1.WRITING.WRITE_LIFE_UPDATE",
+            "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE"
+          ],
+          "prompt": "What has changed this week?",
+          "promptAr": "ما الذي تغير هذا الأسبوع؟",
+          "options": [
+            "The study time",
+            "The usual city",
+            "The course subject"
+          ],
+          "answer": "The study time",
+          "sourceText": "I usually study in the morning, but this week I am studying at night because I have a temporary job."
+        },
+        {
+          "id": "A2-U1-L6-A05",
+          "lessonId": "A2-U1-L6",
+          "type": "write",
+          "mode": "mastery",
+          "skill": "writing",
+          "canDo": [
+            "A2.U1.WRITING.WRITE_LIFE_UPDATE",
+            "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE"
+          ],
+          "prompt": "Write a life update with two usual facts, one current change and a reason.",
+          "promptAr": "اكتب تحديثاً عن حياتك يتضمن حقيقتين معتادتين وتغييراً حالياً وسبباً.",
+          "evaluation": [
+            "taskCompletion",
+            "clarity",
+            "organisation",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "wordGuide": [
+            60,
+            90
+          ]
+        }
+      ]
+    },
+    {
+      "id": "A2-U1-L7",
+      "title": "Mission: A Two-Minute Life Update",
+      "titleAr": "المهمة: تحديث عن الحياة في دقيقتين",
+      "lessonType": "mission",
+      "canDo": [
+        "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE",
+        "A2.U1.READING.UNDERSTAND_PROFILE",
+        "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE",
+        "A2.U1.INTERACTION.ASK_FOLLOW_UP",
+        "A2.U1.WRITING.WRITE_LIFE_UPDATE",
+        "A2.U1.MEDIATION.RELAY_LIFE_UPDATE",
+        "A2.U1.ACTION.COMPLETE_LIFE_UPDATE"
+      ],
+      "grammar": [],
+      "lexicon": [],
+      "chunks": [],
+      "scenario": "You meet a former classmate online. Exchange updates, ask follow-up questions and relay one useful detail to another friend.",
+      "activities": [
+        {
+          "id": "A2-U1-L7-A01",
+          "lessonId": "A2-U1-L7",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A2.U1.READING.UNDERSTAND_PROFILE",
+            "A2.U1.ACTION.COMPLETE_LIFE_UPDATE"
+          ],
+          "prompt": "Why does Yara enjoy the training?",
+          "promptAr": "لماذا تستمتع يارا بالتدريب؟",
+          "options": [
+            "She meets international visitors.",
+            "She works fewer days.",
+            "The branch is near home."
+          ],
+          "answer": "She meets international visitors.",
+          "sourceText": "Yara works in a hotel, but this month she is training at a new branch. She enjoys it because she is meeting visitors from many countries."
+        },
+        {
+          "id": "A2-U1-L7-A02",
+          "lessonId": "A2-U1-L7",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE",
+            "A2.U1.ACTION.COMPLETE_LIFE_UPDATE"
+          ],
+          "prompt": "What is the speaker doing temporarily?",
+          "promptAr": "ماذا يفعل المتحدث مؤقتاً؟",
+          "options": [
+            "Working in a shop",
+            "Studying engineering",
+            "Visiting a school"
+          ],
+          "answer": "Working in a shop",
+          "audioTranscript": "I normally study engineering, but I am working in my uncle's shop during the holiday."
+        },
+        {
+          "id": "A2-U1-L7-A03",
+          "lessonId": "A2-U1-L7",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A2.U1.INTERACTION.ASK_FOLLOW_UP",
+            "A2.U1.ACTION.COMPLETE_LIFE_UPDATE"
+          ],
+          "prompt": "Exchange current-life updates and ask at least two connected follow-up questions.",
+          "promptAr": "تبادل تحديثات الحياة الحالية واسأل سؤالَي متابعة مترابطين على الأقل.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A2-U1-L7-A04",
+          "lessonId": "A2-U1-L7",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE",
+            "A2.U1.ACTION.COMPLETE_LIFE_UPDATE"
+          ],
+          "prompt": "Give a one-to-two-minute update about your routine and one current change.",
+          "promptAr": "قدّم تحديثاً من دقيقة إلى دقيقتين عن روتينك وتغيير حالي واحد.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A2-U1-L7-A05",
+          "lessonId": "A2-U1-L7",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "mediation",
+          "canDo": [
+            "A2.U1.MEDIATION.RELAY_LIFE_UPDATE",
+            "A2.U1.ACTION.COMPLETE_LIFE_UPDATE"
+          ],
+          "prompt": "Relay the classmate's routine, current change and reason to a third person.",
+          "promptAr": "انقل إلى شخص ثالث روتين زميلك وتغييره الحالي وسببه.",
+          "evaluation": [
+            "selectRelevantInformation",
+            "clarity",
+            "audienceAwareness",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A2-U1-L7-A06",
+          "lessonId": "A2-U1-L7",
+          "type": "write",
+          "mode": "mastery",
+          "skill": "writing",
+          "canDo": [
+            "A2.U1.WRITING.WRITE_LIFE_UPDATE",
+            "A2.U1.ACTION.COMPLETE_LIFE_UPDATE"
+          ],
+          "prompt": "Write a connected update to an old classmate using and, but and because.",
+          "promptAr": "اكتب تحديثاً مترابطاً إلى زميل قديم مستخدماً and وbut وbecause.",
+          "evaluation": [
+            "taskCompletion",
+            "clarity",
+            "organisation",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "wordGuide": [
+            80,
+            110
+          ],
+          "accepted": []
+        }
+      ]
+    }
+  ],
+  "mastery": {
+    "requiredObjectives": [
+      "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE",
+      "A2.U1.READING.UNDERSTAND_PROFILE",
+      "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE",
+      "A2.U1.INTERACTION.ASK_FOLLOW_UP",
+      "A2.U1.WRITING.WRITE_LIFE_UPDATE",
+      "A2.U1.MEDIATION.RELAY_LIFE_UPDATE",
+      "A2.U1.ACTION.COMPLETE_LIFE_UPDATE"
+    ],
+    "requiredSkillGroups": [
+      [
+        "listening",
+        "reading"
+      ],
+      [
+        "spokenInteraction",
+        "spokenProduction",
+        "writing"
+      ],
+      [
+        "mediation"
+      ]
+    ],
+    "minimumObjectiveScore": 0.75,
+    "missionRequired": true,
+    "retry": "targeted-by-objective",
+    "unlocks": "A2-U2"
+  },
+  "countsTowardA1Mastery": true
+}

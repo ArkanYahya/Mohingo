@@ -1,0 +1,367 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-U9",
+  "kind": "lexicon",
+  "records": [
+    {
+      "id": "A2.LEX.SCREEN_N01",
+      "headword": "screen",
+      "partOfSpeech": "noun",
+      "arabic": "شاشة",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "screen",
+      "examples": [
+        {
+          "en": "The screen is dark.",
+          "ar": "الشاشة مظلمة."
+        }
+      ],
+      "introducedIn": "A2-U9-L1",
+      "recycledIn": [
+        "A2-U10-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.BUTTON_N01",
+      "headword": "button",
+      "partOfSpeech": "noun",
+      "arabic": "زر",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "button",
+      "examples": [
+        {
+          "en": "Press the blue button.",
+          "ar": "اضغط الزر الأزرق."
+        }
+      ],
+      "introducedIn": "A2-U9-L1",
+      "recycledIn": [
+        "A2-U10-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.CHARGE_V01",
+      "headword": "charge",
+      "partOfSpeech": "verb",
+      "arabic": "يشحن",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "charge",
+      "examples": [
+        {
+          "en": "Charge the phone first.",
+          "ar": "اشحن الهاتف أولاً."
+        }
+      ],
+      "introducedIn": "A2-U9-L1",
+      "recycledIn": [
+        "A2-U10-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.SETTINGS_N01",
+      "headword": "settings",
+      "partOfSpeech": "noun",
+      "arabic": "إعدادات",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "settings",
+      "examples": [
+        {
+          "en": "Open the privacy settings.",
+          "ar": "افتح إعدادات الخصوصية."
+        }
+      ],
+      "introducedIn": "A2-U9-L2",
+      "recycledIn": [
+        "A2-U10-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.CONNECT_V01",
+      "headword": "connect",
+      "partOfSpeech": "verb",
+      "arabic": "يتصل",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "connect",
+      "examples": [
+        {
+          "en": "Connect to the network.",
+          "ar": "اتصل بالشبكة."
+        }
+      ],
+      "introducedIn": "A2-U9-L2",
+      "recycledIn": [
+        "A2-U10-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.DOWNLOAD_V01",
+      "headword": "download",
+      "partOfSpeech": "verb",
+      "arabic": "ينزّل",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "download",
+      "examples": [
+        {
+          "en": "Download the file.",
+          "ar": "نزّل الملف."
+        }
+      ],
+      "introducedIn": "A2-U9-L2",
+      "recycledIn": [
+        "A2-U10-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.PASSWORD_N01",
+      "headword": "password",
+      "partOfSpeech": "noun",
+      "arabic": "كلمة مرور",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "password",
+      "examples": [
+        {
+          "en": "Create a strong password.",
+          "ar": "أنشئ كلمة مرور قوية."
+        }
+      ],
+      "introducedIn": "A2-U9-L3",
+      "recycledIn": [
+        "A2-U11-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.NETWORK_N01",
+      "headword": "network",
+      "partOfSpeech": "noun",
+      "arabic": "شبكة",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "network",
+      "examples": [
+        {
+          "en": "The network is unavailable.",
+          "ar": "الشبكة غير متاحة."
+        }
+      ],
+      "introducedIn": "A2-U9-L3",
+      "recycledIn": [
+        "A2-U11-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.RESTART_V01",
+      "headword": "restart",
+      "partOfSpeech": "verb",
+      "arabic": "يعيد التشغيل",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "restart",
+      "examples": [
+        {
+          "en": "Restart the device.",
+          "ar": "أعد تشغيل الجهاز."
+        }
+      ],
+      "introducedIn": "A2-U9-L3",
+      "recycledIn": [
+        "A2-U11-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.LINK_N01",
+      "headword": "link",
+      "partOfSpeech": "noun",
+      "arabic": "رابط",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "link",
+      "examples": [
+        {
+          "en": "Send me the meeting link.",
+          "ar": "أرسل لي رابط الاجتماع."
+        }
+      ],
+      "introducedIn": "A2-U9-L4",
+      "recycledIn": [
+        "A2-U11-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.ATTACH_V01",
+      "headword": "attach",
+      "partOfSpeech": "verb",
+      "arabic": "يرفق",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "attach",
+      "examples": [
+        {
+          "en": "Attach the document.",
+          "ar": "أرفق المستند."
+        }
+      ],
+      "introducedIn": "A2-U9-L4",
+      "recycledIn": [
+        "A2-U11-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.ACCOUNT_N01",
+      "headword": "account",
+      "partOfSpeech": "noun",
+      "arabic": "حساب",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "account",
+      "examples": [
+        {
+          "en": "Sign in to your account.",
+          "ar": "سجل الدخول إلى حسابك."
+        }
+      ],
+      "introducedIn": "A2-U9-L4",
+      "recycledIn": [
+        "A2-U11-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.ERROR_N01",
+      "headword": "error",
+      "partOfSpeech": "noun",
+      "arabic": "خطأ",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "error",
+      "examples": [
+        {
+          "en": "An error message appears.",
+          "ar": "تظهر رسالة خطأ."
+        }
+      ],
+      "introducedIn": "A2-U9-L5",
+      "recycledIn": [
+        "A2-U12-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.FREEZE_V01",
+      "headword": "freeze",
+      "partOfSpeech": "verb",
+      "arabic": "يتجمد",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "freeze",
+      "examples": [
+        {
+          "en": "The app freezes after login.",
+          "ar": "يتجمد التطبيق بعد الدخول."
+        }
+      ],
+      "introducedIn": "A2-U9-L5",
+      "recycledIn": [
+        "A2-U12-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.SOLUTION_N01",
+      "headword": "solution",
+      "partOfSpeech": "noun",
+      "arabic": "حل",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "solution",
+      "examples": [
+        {
+          "en": "Try this simple solution.",
+          "ar": "جرّب هذا الحل البسيط."
+        }
+      ],
+      "introducedIn": "A2-U9-L5",
+      "recycledIn": [
+        "A2-U12-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.SECURE_ADJ01",
+      "headword": "secure",
+      "partOfSpeech": "adjective",
+      "arabic": "آمن",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "secure",
+      "examples": [
+        {
+          "en": "Keep the account secure.",
+          "ar": "حافظ على أمان الحساب."
+        }
+      ],
+      "introducedIn": "A2-U9-L6",
+      "recycledIn": [
+        "A2-U12-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.BACKUP_N01",
+      "headword": "backup",
+      "partOfSpeech": "noun",
+      "arabic": "نسخة احتياطية",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "backup",
+      "examples": [
+        {
+          "en": "Make a backup of the photos.",
+          "ar": "أنشئ نسخة احتياطية للصور."
+        }
+      ],
+      "introducedIn": "A2-U9-L6",
+      "recycledIn": [
+        "A2-U12-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.GUIDE_N01",
+      "headword": "guide",
+      "partOfSpeech": "noun",
+      "arabic": "دليل",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "guide",
+      "examples": [
+        {
+          "en": "Follow the quick guide.",
+          "ar": "اتبع الدليل السريع."
+        }
+      ],
+      "introducedIn": "A2-U9-L6",
+      "recycledIn": [
+        "A2-U12-L5"
+      ]
+    }
+  ]
+}

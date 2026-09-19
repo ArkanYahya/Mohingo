@@ -1,0 +1,1071 @@
+{
+  "id": "A2-U8",
+  "title": "Work and Study",
+  "titleAr": "العمل والدراسة",
+  "levelRole": "core",
+  "estimatedMinutes": [
+    95,
+    130
+  ],
+  "lessons": [
+    {
+      "id": "A2-U8-L1",
+      "title": "Duties and Schedules",
+      "titleAr": "الواجبات والجداول",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U8.LISTENING.UNDERSTAND_WORK_STUDY_INFO",
+        "A2.U8.PRODUCTION.DESCRIBE_DUTIES_SKILLS"
+      ],
+      "grammar": [
+        "A2.G.WORK_HAVE_TO",
+        "A2.G.SHOULD_ADVICE",
+        "A2.G.HAVE_TO_OBLIGATION"
+      ],
+      "lexicon": [
+        "A2.LEX.DUTY_N01",
+        "A2.LEX.SHIFT_N01",
+        "A2.LEX.DEADLINE_N01",
+        "A2.LEX.SORE_ADJ01",
+        "A2.LEX.COUGH_N01",
+        "A2.LEX.REST_N01",
+        "A2.LEX.MEDICINE_N01",
+        "A2.LEX.DOSE_N01",
+        "A2.LEX.APPOINTMENT_N01"
+      ],
+      "chunks": [
+        "A2.CHUNK.RESPONSIBLE_FOR",
+        "A2.CHUNK.WORK_A_SHIFT",
+        "A2.CHUNK.YOU_SHOULD",
+        "A2.CHUNK.HOW_OFTEN_TAKE",
+        "A2.CHUNK.TAKE_WITH_FOOD"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "I work the morning shift. I have to open the shop, check deliveries and send the daily report before three.",
+            "ar": "أعمل في النوبة الصباحية. عليّ فتح المتجر والتحقق من الشحنات وإرسال التقرير اليومي قبل الثالثة."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U8-L1-A01",
+          "lessonId": "A2-U8-L1",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A2.U8.LISTENING.UNDERSTAND_WORK_STUDY_INFO",
+            "A2.U8.PRODUCTION.DESCRIBE_DUTIES_SKILLS"
+          ],
+          "prompt": "What is the deadline for the report?",
+          "promptAr": "ما الموعد النهائي للتقرير؟",
+          "options": [
+            "Before three",
+            "At opening time",
+            "Tomorrow"
+          ],
+          "answer": "Before three",
+          "audioTranscript": "I work the morning shift. I have to open the shop, check deliveries and send the daily report before three."
+        },
+        {
+          "id": "A2-U8-L1-A02",
+          "lessonId": "A2-U8-L1",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U8.LISTENING.UNDERSTAND_WORK_STUDY_INFO",
+            "A2.U8.PRODUCTION.DESCRIBE_DUTIES_SKILLS"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "duty",
+              "واجب"
+            ],
+            [
+              "shift",
+              "نوبة عمل"
+            ],
+            [
+              "deadline",
+              "موعد نهائي"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U8-L1-A03",
+          "lessonId": "A2-U8-L1",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U8.LISTENING.UNDERSTAND_WORK_STUDY_INFO",
+            "A2.U8.PRODUCTION.DESCRIBE_DUTIES_SKILLS"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "We have to ___ the assignment by Monday.",
+          "options": [
+            "finish",
+            "finished",
+            "finishing"
+          ],
+          "answer": "finish"
+        },
+        {
+          "id": "A2-U8-L1-A04",
+          "lessonId": "A2-U8-L1",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A2.U8.LISTENING.UNDERSTAND_WORK_STUDY_INFO",
+            "A2.U8.PRODUCTION.DESCRIBE_DUTIES_SKILLS"
+          ],
+          "prompt": "Which task is not Nadia's duty?",
+          "promptAr": "أي مهمة ليست من واجبات نادية؟",
+          "options": [
+            "Managing payments",
+            "Answering calls",
+            "Working at reception"
+          ],
+          "answer": "Managing payments",
+          "audioTranscript": "Nadia is responsible for the reception desk. She has to answer calls, but she doesn't have to manage payments."
+        },
+        {
+          "id": "A2-U8-L1-A05",
+          "lessonId": "A2-U8-L1",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A2.U8.LISTENING.UNDERSTAND_WORK_STUDY_INFO",
+            "A2.U8.PRODUCTION.DESCRIBE_DUTIES_SKILLS"
+          ],
+          "prompt": "Describe three work or study duties and one thing you do not have to do.",
+          "promptAr": "صف ثلاثة واجبات في العمل أو الدراسة وشيئاً واحداً لا يلزمك فعله.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U8-L2",
+      "title": "Skills and Abilities",
+      "titleAr": "المهارات والقدرات",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U8.LISTENING.UNDERSTAND_WORK_STUDY_INFO",
+        "A2.U8.INTERACTION.MAKE_FORMAL_REQUEST"
+      ],
+      "grammar": [
+        "A2.G.CAN_COULD_ABILITY"
+      ],
+      "lexicon": [
+        "A2.LEX.SKILL_N01",
+        "A2.LEX.SPREADSHEET_N01",
+        "A2.LEX.OPERATE_V01"
+      ],
+      "chunks": [
+        "A2.CHUNK.BE_ABLE_TO"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "I can use spreadsheets and operate the printer. At my previous job, I could also speak to customers in two languages.",
+            "ar": "أستطيع استخدام جداول البيانات وتشغيل الطابعة. في وظيفتي السابقة كنت أستطيع أيضاً التحدث مع الزبائن بلغتين."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U8-L2-A01",
+          "lessonId": "A2-U8-L2",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A2.U8.LISTENING.UNDERSTAND_WORK_STUDY_INFO",
+            "A2.U8.INTERACTION.MAKE_FORMAL_REQUEST"
+          ],
+          "prompt": "Which past ability is mentioned?",
+          "promptAr": "أي قدرة سابقة ذُكرت؟",
+          "options": [
+            "Speaking to customers in two languages",
+            "Using no technology",
+            "Repairing printers"
+          ],
+          "answer": "Speaking to customers in two languages",
+          "audioTranscript": "I can use spreadsheets and operate the printer. At my previous job, I could also speak to customers in two languages."
+        },
+        {
+          "id": "A2-U8-L2-A02",
+          "lessonId": "A2-U8-L2",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U8.LISTENING.UNDERSTAND_WORK_STUDY_INFO",
+            "A2.U8.INTERACTION.MAKE_FORMAL_REQUEST"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "skill",
+              "مهارة"
+            ],
+            [
+              "spreadsheet",
+              "جدول بيانات"
+            ],
+            [
+              "operate",
+              "يشغّل"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U8-L2-A03",
+          "lessonId": "A2-U8-L2",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U8.LISTENING.UNDERSTAND_WORK_STUDY_INFO",
+            "A2.U8.INTERACTION.MAKE_FORMAL_REQUEST"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "When I was sixteen, I ___ type very quickly.",
+          "options": [
+            "could",
+            "can",
+            "am able"
+          ],
+          "answer": "could"
+        },
+        {
+          "id": "A2-U8-L2-A04",
+          "lessonId": "A2-U8-L2",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A2.U8.LISTENING.UNDERSTAND_WORK_STUDY_INFO",
+            "A2.U8.INTERACTION.MAKE_FORMAL_REQUEST"
+          ],
+          "prompt": "What can Hassan not do yet?",
+          "promptAr": "ما الذي لا يستطيع حسن فعله بعد؟",
+          "options": [
+            "Edit video",
+            "Design posters",
+            "Draw"
+          ],
+          "answer": "Edit video",
+          "audioTranscript": "Hassan can design simple posters, but he can't edit video yet. He could draw well before he learned digital design."
+        },
+        {
+          "id": "A2-U8-L2-A05",
+          "lessonId": "A2-U8-L2",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A2.U8.LISTENING.UNDERSTAND_WORK_STUDY_INFO",
+            "A2.U8.INTERACTION.MAKE_FORMAL_REQUEST"
+          ],
+          "prompt": "Ask about three practical abilities and answer with can, can't or could plus examples.",
+          "promptAr": "اسأل عن ثلاث قدرات عملية وأجب بـ can أو can't أو could مع أمثلة.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U8-L3",
+      "title": "Follow Instructions Well",
+      "titleAr": "اتبع التعليمات جيداً",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U8.READING.FOLLOW_COURSE_JOB_TEXT",
+        "A2.U8.MEDIATION.RELAY_REQUIREMENTS"
+      ],
+      "grammar": [
+        "A2.G.MANNER_ADVERBS",
+        "A2.G.WILL_DECISION_OFFER",
+        "A2.G.FUTURE_CONTRAST"
+      ],
+      "lexicon": [
+        "A2.LEX.CAREFULLY_ADV01",
+        "A2.LEX.CLEARLY_ADV01",
+        "A2.LEX.EFFICIENTLY_ADV01",
+        "A2.LEX.DEPARTURE_N01",
+        "A2.LEX.DIRECT_ADJ01",
+        "A2.LEX.FARE_N01",
+        "A2.LEX.CANCEL_V01",
+        "A2.LEX.DELAY_N01",
+        "A2.LEX.ALTERNATIVE_N01"
+      ],
+      "chunks": [
+        "A2.CHUNK.WORK_WELL_WITH",
+        "A2.CHUNK.ILL_TAKE_IT",
+        "A2.CHUNK.IF_WEATHER_BAD",
+        "A2.CHUNK.PLAN_B"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "Complete the form carefully. Write all dates clearly and send it electronically. The office processes correct forms more efficiently.",
+            "ar": ""
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U8-L3-A01",
+          "lessonId": "A2-U8-L3",
+          "type": "textChoice",
+          "mode": "encounter",
+          "skill": "reading",
+          "canDo": [
+            "A2.U8.READING.FOLLOW_COURSE_JOB_TEXT",
+            "A2.U8.MEDIATION.RELAY_REQUIREMENTS"
+          ],
+          "prompt": "How should dates be written?",
+          "promptAr": "كيف ينبغي كتابة التواريخ؟",
+          "options": [
+            "Clearly",
+            "Electronically",
+            "Slowly"
+          ],
+          "answer": "Clearly",
+          "sourceText": "Complete the form carefully. Write all dates clearly and send it electronically. The office processes correct forms more efficiently."
+        },
+        {
+          "id": "A2-U8-L3-A02",
+          "lessonId": "A2-U8-L3",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U8.READING.FOLLOW_COURSE_JOB_TEXT",
+            "A2.U8.MEDIATION.RELAY_REQUIREMENTS"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "carefully",
+              "بعناية"
+            ],
+            [
+              "clearly",
+              "بوضوح"
+            ],
+            [
+              "efficiently",
+              "بكفاءة"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U8-L3-A03",
+          "lessonId": "A2-U8-L3",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U8.READING.FOLLOW_COURSE_JOB_TEXT",
+            "A2.U8.MEDIATION.RELAY_REQUIREMENTS"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "Please read the safety note ___.",
+          "options": [
+            "carefully",
+            "careful",
+            "care"
+          ],
+          "answer": "carefully"
+        },
+        {
+          "id": "A2-U8-L3-A04",
+          "lessonId": "A2-U8-L3",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A2.U8.READING.FOLLOW_COURSE_JOB_TEXT",
+            "A2.U8.MEDIATION.RELAY_REQUIREMENTS"
+          ],
+          "prompt": "What should happen before submission?",
+          "promptAr": "ما الذي ينبغي أن يحدث قبل التسليم؟",
+          "options": [
+            "Check each answer carefully",
+            "Leave the room",
+            "Talk to others"
+          ],
+          "answer": "Check each answer carefully",
+          "sourceText": "Work quietly during the test, check each answer carefully and submit the file correctly before leaving."
+        },
+        {
+          "id": "A2-U8-L3-A05",
+          "lessonId": "A2-U8-L3",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "mediation",
+          "canDo": [
+            "A2.U8.READING.FOLLOW_COURSE_JOB_TEXT",
+            "A2.U8.MEDIATION.RELAY_REQUIREMENTS"
+          ],
+          "prompt": "Relay a short set of workplace or course instructions, including how tasks must be done.",
+          "promptAr": "انقل مجموعة قصيرة من تعليمات العمل أو الدورة، بما في ذلك كيفية تنفيذ المهام.",
+          "evaluation": [
+            "selectRelevantInformation",
+            "clarity",
+            "audienceAwareness",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U8-L4",
+      "title": "Course and Job Preferences",
+      "titleAr": "تفضيلات الدورة والعمل",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U8.READING.FOLLOW_COURSE_JOB_TEXT",
+        "A2.U8.PRODUCTION.DESCRIBE_DUTIES_SKILLS"
+      ],
+      "grammar": [
+        "A2.G.COMMON_GERUND_INFINITIVE"
+      ],
+      "lexicon": [
+        "A2.LEX.PRACTICAL_ADJ01",
+        "A2.LEX.QUALIFICATION_N01",
+        "A2.LEX.WORK_EXPERIENCE_N01"
+      ],
+      "chunks": [
+        "A2.CHUNK.INTERESTED_IN_COURSE"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "Weekend photography course: Learn to use a camera through practical projects. No qualification is needed, but students should enjoy working outdoors.",
+            "ar": ""
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U8-L4-A01",
+          "lessonId": "A2-U8-L4",
+          "type": "textChoice",
+          "mode": "encounter",
+          "skill": "reading",
+          "canDo": [
+            "A2.U8.READING.FOLLOW_COURSE_JOB_TEXT",
+            "A2.U8.PRODUCTION.DESCRIBE_DUTIES_SKILLS"
+          ],
+          "prompt": "What kind of learning does the course use?",
+          "promptAr": "ما نوع التعلم الذي تستخدمه الدورة؟",
+          "options": [
+            "Practical projects",
+            "Long examinations",
+            "Only lectures"
+          ],
+          "answer": "Practical projects",
+          "sourceText": "Weekend photography course: Learn to use a camera through practical projects. No qualification is needed, but students should enjoy working outdoors."
+        },
+        {
+          "id": "A2-U8-L4-A02",
+          "lessonId": "A2-U8-L4",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U8.READING.FOLLOW_COURSE_JOB_TEXT",
+            "A2.U8.PRODUCTION.DESCRIBE_DUTIES_SKILLS"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "practical",
+              "عملي"
+            ],
+            [
+              "qualification",
+              "مؤهل"
+            ],
+            [
+              "work experience",
+              "خبرة عملية"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U8-L4-A03",
+          "lessonId": "A2-U8-L4",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U8.READING.FOLLOW_COURSE_JOB_TEXT",
+            "A2.U8.PRODUCTION.DESCRIBE_DUTIES_SKILLS"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "I enjoy ___ with customers.",
+          "options": [
+            "working",
+            "work",
+            "to worked"
+          ],
+          "answer": "working"
+        },
+        {
+          "id": "A2-U8-L4-A04",
+          "lessonId": "A2-U8-L4",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A2.U8.READING.FOLLOW_COURSE_JOB_TEXT",
+            "A2.U8.PRODUCTION.DESCRIBE_DUTIES_SKILLS"
+          ],
+          "prompt": "What is required?",
+          "promptAr": "ما المطلوب؟",
+          "options": [
+            "A willingness to meet people and learn",
+            "A formal qualification",
+            "Five years of experience"
+          ],
+          "answer": "A willingness to meet people and learn",
+          "sourceText": "The café wants someone who likes meeting people and wants to learn. Experience is useful but not required."
+        },
+        {
+          "id": "A2-U8-L4-A05",
+          "lessonId": "A2-U8-L4",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A2.U8.READING.FOLLOW_COURSE_JOB_TEXT",
+            "A2.U8.PRODUCTION.DESCRIBE_DUTIES_SKILLS"
+          ],
+          "prompt": "Describe the kind of course or work you enjoy and what you want to learn.",
+          "promptAr": "صف نوع الدورة أو العمل الذي تستمتع به وما تريد تعلمه.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U8-L5",
+      "title": "Request Information",
+      "titleAr": "اطلب معلومات",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U8.READING.FOLLOW_COURSE_JOB_TEXT",
+        "A2.U8.INTERACTION.MAKE_FORMAL_REQUEST"
+      ],
+      "grammar": [
+        "A2.G.POLITE_FORMAL_REQUEST",
+        "A2.G.OBJECT_PRONOUNS_SERVICE",
+        "A2.G.POLITE_FOOD_REQUESTS"
+      ],
+      "lexicon": [
+        "A2.LEX.INFORMATION_N01",
+        "A2.LEX.ENROL_V01",
+        "A2.LEX.FEE_N01",
+        "A2.LEX.REPLACE_V01",
+        "A2.LEX.BILL_N01",
+        "A2.LEX.SERVICE_N01",
+        "A2.LEX.RECIPE_N01",
+        "A2.LEX.PORTION_N01",
+        "A2.LEX.METHOD_N01"
+      ],
+      "chunks": [
+        "A2.CHUNK.COULD_YOU_TELL_ME",
+        "A2.CHUNK.I_AM_WRITING_TO",
+        "A2.CHUNK.COULD_REPLACE",
+        "A2.CHUNK.SERVES_FOUR"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "Dear Sir or Madam, I am writing to ask about the evening computer course. Could you tell me the start date, weekly schedule and total fee?",
+            "ar": ""
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U8-L5-A01",
+          "lessonId": "A2-U8-L5",
+          "type": "textChoice",
+          "mode": "encounter",
+          "skill": "reading",
+          "canDo": [
+            "A2.U8.READING.FOLLOW_COURSE_JOB_TEXT",
+            "A2.U8.INTERACTION.MAKE_FORMAL_REQUEST"
+          ],
+          "prompt": "Which three details are requested?",
+          "promptAr": "ما التفاصيل الثلاثة المطلوبة؟",
+          "options": [
+            "Start date, schedule and fee",
+            "Teacher, books and room colour",
+            "Job, salary and uniform"
+          ],
+          "answer": "Start date, schedule and fee",
+          "sourceText": "Dear Sir or Madam, I am writing to ask about the evening computer course. Could you tell me the start date, weekly schedule and total fee?"
+        },
+        {
+          "id": "A2-U8-L5-A02",
+          "lessonId": "A2-U8-L5",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U8.READING.FOLLOW_COURSE_JOB_TEXT",
+            "A2.U8.INTERACTION.MAKE_FORMAL_REQUEST"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "information",
+              "معلومات"
+            ],
+            [
+              "enrol",
+              "يسجل"
+            ],
+            [
+              "fee",
+              "رسم"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U8-L5-A03",
+          "lessonId": "A2-U8-L5",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U8.READING.FOLLOW_COURSE_JOB_TEXT",
+            "A2.U8.INTERACTION.MAKE_FORMAL_REQUEST"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "Could you ___ me when enrolment closes?",
+          "options": [
+            "tell",
+            "told",
+            "telling"
+          ],
+          "answer": "tell"
+        },
+        {
+          "id": "A2-U8-L5-A04",
+          "lessonId": "A2-U8-L5",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A2.U8.READING.FOLLOW_COURSE_JOB_TEXT",
+            "A2.U8.INTERACTION.MAKE_FORMAL_REQUEST"
+          ],
+          "prompt": "What does the writer want to know?",
+          "promptAr": "ماذا يريد الكاتب أن يعرف؟",
+          "options": [
+            "Location and materials",
+            "The final results",
+            "A job salary"
+          ],
+          "answer": "Location and materials",
+          "sourceText": "Hello, I am interested in the customer service workshop. Would you mind sending information about the location and materials?"
+        },
+        {
+          "id": "A2-U8-L5-A05",
+          "lessonId": "A2-U8-L5",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A2.U8.READING.FOLLOW_COURSE_JOB_TEXT",
+            "A2.U8.INTERACTION.MAKE_FORMAL_REQUEST"
+          ],
+          "prompt": "Make a polite formal enquiry about dates, requirements, fees and enrolment.",
+          "promptAr": "قدّم استفساراً رسمياً مهذباً عن المواعيد والمتطلبات والرسوم والتسجيل.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U8-L6",
+      "title": "Apply for a Course or Job",
+      "titleAr": "تقدم لدورة أو عمل",
+      "lessonType": "integrated-production",
+      "canDo": [
+        "A2.U8.WRITING.WRITE_APPLICATION_REQUEST",
+        "A2.U8.PRODUCTION.DESCRIBE_DUTIES_SKILLS"
+      ],
+      "grammar": [
+        "A2.G.PURPOSE_APPLICATION",
+        "A2.G.COMMON_GERUND_INFINITIVE"
+      ],
+      "lexicon": [
+        "A2.LEX.APPLY_V01",
+        "A2.LEX.APPLICANT_N01",
+        "A2.LEX.REFERENCE_N01"
+      ],
+      "chunks": [
+        "A2.CHUNK.APPLY_FOR",
+        "A2.CHUNK.I_AM_WRITING_TO"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "I am writing to apply for the weekend assistant role. I can work Saturdays, use office software and communicate clearly. I want the role to gain practical experience.",
+            "ar": ""
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U8-L6-A01",
+          "lessonId": "A2-U8-L6",
+          "type": "textChoice",
+          "mode": "encounter",
+          "skill": "reading",
+          "canDo": [
+            "A2.U8.WRITING.WRITE_APPLICATION_REQUEST",
+            "A2.U8.PRODUCTION.DESCRIBE_DUTIES_SKILLS"
+          ],
+          "prompt": "Why does the applicant want the role?",
+          "promptAr": "لماذا يريد المتقدم الوظيفة؟",
+          "options": [
+            "To gain practical experience",
+            "To avoid weekend work",
+            "To learn to read"
+          ],
+          "answer": "To gain practical experience",
+          "sourceText": "I am writing to apply for the weekend assistant role. I can work Saturdays, use office software and communicate clearly. I want the role to gain practical experience."
+        },
+        {
+          "id": "A2-U8-L6-A02",
+          "lessonId": "A2-U8-L6",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U8.WRITING.WRITE_APPLICATION_REQUEST",
+            "A2.U8.PRODUCTION.DESCRIBE_DUTIES_SKILLS"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "apply",
+              "يتقدم"
+            ],
+            [
+              "applicant",
+              "متقدم"
+            ],
+            [
+              "reference",
+              "مرجع / تزكية"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U8-L6-A03",
+          "lessonId": "A2-U8-L6",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U8.WRITING.WRITE_APPLICATION_REQUEST",
+            "A2.U8.PRODUCTION.DESCRIBE_DUTIES_SKILLS"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "I am applying ___ improve my skills.",
+          "options": [
+            "to",
+            "for",
+            "because"
+          ],
+          "answer": "to"
+        },
+        {
+          "id": "A2-U8-L6-A04",
+          "lessonId": "A2-U8-L6",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A2.U8.WRITING.WRITE_APPLICATION_REQUEST",
+            "A2.U8.PRODUCTION.DESCRIBE_DUTIES_SKILLS"
+          ],
+          "prompt": "What must accompany the experience description?",
+          "promptAr": "ما الذي يجب أن يرافق وصف الخبرة؟",
+          "options": [
+            "One reference",
+            "A course fee",
+            "A uniform"
+          ],
+          "answer": "One reference",
+          "sourceText": "The course asks applicants to describe relevant experience and provide one reference. The closing date is 18 June."
+        },
+        {
+          "id": "A2-U8-L6-A05",
+          "lessonId": "A2-U8-L6",
+          "type": "write",
+          "mode": "mastery",
+          "skill": "writing",
+          "canDo": [
+            "A2.U8.WRITING.WRITE_APPLICATION_REQUEST",
+            "A2.U8.PRODUCTION.DESCRIBE_DUTIES_SKILLS"
+          ],
+          "prompt": "Write a short application stating the role or course, abilities, availability and purpose.",
+          "promptAr": "اكتب طلباً قصيراً يذكر الوظيفة أو الدورة والقدرات والتوفر والغرض.",
+          "evaluation": [
+            "taskCompletion",
+            "clarity",
+            "organisation",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "wordGuide": [
+            85,
+            115
+          ]
+        }
+      ]
+    },
+    {
+      "id": "A2-U8-L7",
+      "title": "Mission: Complete a Course or Job Application",
+      "titleAr": "المهمة: أكمل طلب دورة أو عمل",
+      "lessonType": "mission",
+      "canDo": [
+        "A2.U8.LISTENING.UNDERSTAND_WORK_STUDY_INFO",
+        "A2.U8.READING.FOLLOW_COURSE_JOB_TEXT",
+        "A2.U8.PRODUCTION.DESCRIBE_DUTIES_SKILLS",
+        "A2.U8.INTERACTION.MAKE_FORMAL_REQUEST",
+        "A2.U8.WRITING.WRITE_APPLICATION_REQUEST",
+        "A2.U8.MEDIATION.RELAY_REQUIREMENTS",
+        "A2.U8.ACTION.COMPLETE_APPLICATION"
+      ],
+      "grammar": [],
+      "lexicon": [],
+      "chunks": [],
+      "scenario": "Choose an unseen course or entry-level role, understand its requirements, ask for missing information and submit a short application.",
+      "activities": [
+        {
+          "id": "A2-U8-L7-A01",
+          "lessonId": "A2-U8-L7",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A2.U8.READING.FOLLOW_COURSE_JOB_TEXT",
+            "A2.U8.ACTION.COMPLETE_APPLICATION"
+          ],
+          "prompt": "Which digital ability is required?",
+          "promptAr": "ما القدرة الرقمية المطلوبة؟",
+          "options": [
+            "Using email",
+            "Editing video",
+            "Programming"
+          ],
+          "answer": "Using email",
+          "sourceText": "Community assistant: Saturday mornings, 9–1. Duties: welcome visitors and update simple records. Applicants must communicate clearly and be able to use email. Apply by 12 May."
+        },
+        {
+          "id": "A2-U8-L7-A02",
+          "lessonId": "A2-U8-L7",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A2.U8.LISTENING.UNDERSTAND_WORK_STUDY_INFO",
+            "A2.U8.ACTION.COMPLETE_APPLICATION"
+          ],
+          "prompt": "What is included in the fee?",
+          "promptAr": "ما الذي يشمله الرسم؟",
+          "options": [
+            "Materials",
+            "Transport",
+            "Meals"
+          ],
+          "answer": "Materials",
+          "audioTranscript": "The evening course begins on 6 October and runs twice a week. The fee is ninety dollars, including materials. Enrolment closes this Friday."
+        },
+        {
+          "id": "A2-U8-L7-A03",
+          "lessonId": "A2-U8-L7",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A2.U8.INTERACTION.MAKE_FORMAL_REQUEST",
+            "A2.U8.ACTION.COMPLETE_APPLICATION"
+          ],
+          "prompt": "Ask for two missing details and answer questions about your abilities and availability.",
+          "promptAr": "اسأل عن تفصيلين مفقودين وأجب عن أسئلة حول قدراتك وتوفرك.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A2-U8-L7-A04",
+          "lessonId": "A2-U8-L7",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A2.U8.PRODUCTION.DESCRIBE_DUTIES_SKILLS",
+            "A2.U8.ACTION.COMPLETE_APPLICATION"
+          ],
+          "prompt": "Explain why you are suitable, using duties, abilities and one example.",
+          "promptAr": "اشرح سبب ملاءمتك مستخدماً الواجبات والقدرات ومثالاً واحداً.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A2-U8-L7-A05",
+          "lessonId": "A2-U8-L7",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "mediation",
+          "canDo": [
+            "A2.U8.MEDIATION.RELAY_REQUIREMENTS",
+            "A2.U8.ACTION.COMPLETE_APPLICATION"
+          ],
+          "prompt": "Relay the schedule, fee or duty requirements to another applicant accurately.",
+          "promptAr": "انقل متطلبات الجدول أو الرسم أو الواجبات إلى متقدم آخر بدقة.",
+          "evaluation": [
+            "selectRelevantInformation",
+            "clarity",
+            "audienceAwareness",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A2-U8-L7-A06",
+          "lessonId": "A2-U8-L7",
+          "type": "write",
+          "mode": "mastery",
+          "skill": "writing",
+          "canDo": [
+            "A2.U8.WRITING.WRITE_APPLICATION_REQUEST",
+            "A2.U8.ACTION.COMPLETE_APPLICATION"
+          ],
+          "prompt": "Write the application or enrolment request with purpose, relevant skills, availability and a polite close.",
+          "promptAr": "اكتب طلب التقديم أو التسجيل متضمناً الغرض والمهارات ذات الصلة والتوفر وخاتمة مهذبة.",
+          "evaluation": [
+            "taskCompletion",
+            "clarity",
+            "organisation",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "wordGuide": [
+            90,
+            120
+          ],
+          "accepted": []
+        }
+      ]
+    }
+  ],
+  "mastery": {
+    "requiredObjectives": [
+      "A2.U8.LISTENING.UNDERSTAND_WORK_STUDY_INFO",
+      "A2.U8.READING.FOLLOW_COURSE_JOB_TEXT",
+      "A2.U8.PRODUCTION.DESCRIBE_DUTIES_SKILLS",
+      "A2.U8.INTERACTION.MAKE_FORMAL_REQUEST",
+      "A2.U8.WRITING.WRITE_APPLICATION_REQUEST",
+      "A2.U8.MEDIATION.RELAY_REQUIREMENTS",
+      "A2.U8.ACTION.COMPLETE_APPLICATION"
+    ],
+    "requiredSkillGroups": [
+      [
+        "listening",
+        "reading"
+      ],
+      [
+        "spokenInteraction",
+        "spokenProduction",
+        "writing"
+      ],
+      [
+        "mediation"
+      ]
+    ],
+    "minimumObjectiveScore": 0.75,
+    "missionRequired": true,
+    "retry": "targeted-by-objective",
+    "unlocks": "A2-U9"
+  },
+  "countsTowardA1Mastery": true
+}

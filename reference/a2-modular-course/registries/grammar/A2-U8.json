@@ -1,0 +1,79 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-U8",
+  "kind": "grammar",
+  "records": [
+    {
+      "id": "A2.G.WORK_HAVE_TO",
+      "form": "have to for duties",
+      "meaningAr": "have to لواجبات العمل والدراسة",
+      "introducedIn": "A2-U8-L1",
+      "examples": [
+        {
+          "en": "I have to open the office at eight.",
+          "ar": "عليّ فتح المكتب في الثامنة."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.CAN_COULD_ABILITY",
+      "form": "can / could for present and past ability",
+      "meaningAr": "can وcould للقدرة الحالية والسابقة",
+      "introducedIn": "A2-U8-L2",
+      "examples": [
+        {
+          "en": "I can use spreadsheets, and I could type quickly at school.",
+          "ar": "أستطيع استخدام الجداول، وكنت أستطيع الطباعة بسرعة في المدرسة."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.MANNER_ADVERBS",
+      "form": "adverbs of manner",
+      "meaningAr": "ظروف الطريقة",
+      "introducedIn": "A2-U8-L3",
+      "examples": [
+        {
+          "en": "Please speak clearly and work carefully.",
+          "ar": "تحدث بوضوح واعمل بعناية."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.COMMON_GERUND_INFINITIVE",
+      "form": "common verb + -ing / to-infinitive chunks",
+      "meaningAr": "تراكيب شائعة مع -ing والمصدر",
+      "introducedIn": "A2-U8-L4",
+      "examples": [
+        {
+          "en": "I enjoy working with people and want to learn design.",
+          "ar": "أستمتع بالعمل مع الناس وأريد تعلم التصميم."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.POLITE_FORMAL_REQUEST",
+      "form": "Could you / Would you mind + -ing",
+      "meaningAr": "طلب رسمي مهذب",
+      "introducedIn": "A2-U8-L5",
+      "examples": [
+        {
+          "en": "Could you send me the course dates?",
+          "ar": "هل يمكنك إرسال مواعيد الدورة؟"
+        }
+      ]
+    },
+    {
+      "id": "A2.G.PURPOSE_APPLICATION",
+      "form": "to + verb for application purpose",
+      "meaningAr": "المصدر لبيان غرض التقديم",
+      "introducedIn": "A2-U8-L6",
+      "examples": [
+        {
+          "en": "I am applying to improve my skills.",
+          "ar": "أتقدم لتحسين مهاراتي."
+        }
+      ]
+    }
+  ]
+}

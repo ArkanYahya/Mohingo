@@ -1,0 +1,56 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-U9",
+  "kind": "media",
+  "records": {
+    "audio-a2-u9-l1-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "Press and hold the side button for three seconds. If the screen stays dark, connect the charger.",
+      "activityId": "A2-U9-L1-A01"
+    },
+    "audio-a2-u9-l1-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "Tap the green button to answer. To end the call, tap the red button once.",
+      "activityId": "A2-U9-L1-A04"
+    },
+    "audio-a2-u9-l2-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "First go to settings. Next choose Wi-Fi and select the library network. Then enter the code and finally download the file.",
+      "activityId": "A2-U9-L2-A01"
+    },
+    "audio-a2-u9-l2-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "Open the message, tap the document name and choose ‘save’. Finally, check the downloads folder.",
+      "activityId": "A2-U9-L2-A04"
+    },
+    "audio-a2-u9-l5-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "Support: What happens when you open the app? User: It freezes after I sign in. Support: Do you see an error message? User: Yes, code 204.",
+      "activityId": "A2-U9-L5-A01"
+    },
+    "audio-a2-u9-l5-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "User: The sound works in music apps, but not during video calls. Support: Does the microphone icon show a line across it?",
+      "activityId": "A2-U9-L5-A04"
+    },
+    "audio-a2-u9-l7-a02": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "If the video freezes, turn the camera off for ten seconds. If the sound continues, stay in the meeting and switch the camera on again.",
+      "activityId": "A2-U9-L7-A02"
+    }
+  }
+}

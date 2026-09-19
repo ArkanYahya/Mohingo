@@ -1,0 +1,95 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-U3",
+  "kind": "chunks",
+  "records": [
+    {
+      "id": "A2.CHUNK.WHAT_DOES_LOOK_LIKE",
+      "text": "What does ... look like?",
+      "arabic": "كيف يبدو...؟",
+      "cefr": "A2",
+      "introducedIn": "A2-U3-L1",
+      "productive": true,
+      "recycledIn": [
+        "A2-U4-L1"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.WHAT_IS_LIKE",
+      "text": "What is ... like?",
+      "arabic": "كيف هي شخصية...؟",
+      "cefr": "A2",
+      "introducedIn": "A2-U3-L2",
+      "productive": true,
+      "recycledIn": [
+        "A2-U4-L1"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.MORE_THAN",
+      "text": "more ... than",
+      "arabic": "أكثر ... من",
+      "cefr": "A2",
+      "introducedIn": "A2-U3-L3",
+      "productive": true,
+      "recycledIn": [
+        "A2-U4-L1"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.THE_MOST",
+      "text": "the most ...",
+      "arabic": "الأكثر ...",
+      "cefr": "A2",
+      "introducedIn": "A2-U3-L4",
+      "productive": true,
+      "recycledIn": [
+        "A2-U5-L3"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.GET_ON_WELL",
+      "text": "get on well",
+      "arabic": "ينسجم جيداً",
+      "cefr": "A2",
+      "introducedIn": "A2-U3-L5",
+      "productive": true,
+      "recycledIn": [
+        "A2-U5-L3"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.A_PERSON_WHO",
+      "text": "a person who ...",
+      "arabic": "شخص يقوم بـ...",
+      "cefr": "A2",
+      "introducedIn": "A2-U3-L5",
+      "productive": true,
+      "recycledIn": [
+        "A2-U5-L3"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.GOOD_AT",
+      "text": "be good at",
+      "arabic": "يجيد",
+      "cefr": "A2",
+      "introducedIn": "A2-U3-L6",
+      "productive": true,
+      "recycledIn": [
+        "A2-U6-L5"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.BEST_CHOICE",
+      "text": "the best choice",
+      "arabic": "الخيار الأفضل",
+      "cefr": "A2",
+      "introducedIn": "A2-U3-L4",
+      "productive": true,
+      "recycledIn": [
+        "A2-U6-L5"
+      ]
+    }
+  ]
+}

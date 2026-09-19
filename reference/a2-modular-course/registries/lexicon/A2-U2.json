@@ -1,0 +1,367 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-U2",
+  "kind": "lexicon",
+  "records": [
+    {
+      "id": "A2.LEX.MEMORABLE_ADJ01",
+      "headword": "memorable",
+      "partOfSpeech": "adjective",
+      "arabic": "لا يُنسى",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "memorable",
+      "examples": [
+        {
+          "en": "It was a memorable day.",
+          "ar": "كان يوماً لا يُنسى."
+        }
+      ],
+      "introducedIn": "A2-U2-L1",
+      "recycledIn": [
+        "A2-U3-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.TRIP_N01",
+      "headword": "trip",
+      "partOfSpeech": "noun",
+      "arabic": "رحلة",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "trip",
+      "examples": [
+        {
+          "en": "The trip was short.",
+          "ar": "كانت الرحلة قصيرة."
+        }
+      ],
+      "introducedIn": "A2-U2-L1",
+      "recycledIn": [
+        "A2-U3-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.YESTERDAY_ADV01",
+      "headword": "yesterday",
+      "partOfSpeech": "adverb",
+      "arabic": "أمس",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "yesterday",
+      "examples": [
+        {
+          "en": "I was busy yesterday.",
+          "ar": "كنت مشغولاً أمس."
+        }
+      ],
+      "introducedIn": "A2-U2-L1",
+      "recycledIn": [
+        "A2-U3-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.VISIT_V01",
+      "headword": "visit",
+      "partOfSpeech": "verb",
+      "arabic": "يزور",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "visit",
+      "examples": [
+        {
+          "en": "We visited a museum.",
+          "ar": "زرنا متحفاً."
+        }
+      ],
+      "introducedIn": "A2-U2-L2",
+      "recycledIn": [
+        "A2-U3-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.ARRIVE_V01",
+      "headword": "arrive",
+      "partOfSpeech": "verb",
+      "arabic": "يصل",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "arrive",
+      "examples": [
+        {
+          "en": "They arrived at noon.",
+          "ar": "وصلوا ظهراً."
+        }
+      ],
+      "introducedIn": "A2-U2-L2",
+      "recycledIn": [
+        "A2-U3-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.DECIDE_V01",
+      "headword": "decide",
+      "partOfSpeech": "verb",
+      "arabic": "يقرر",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "decide",
+      "examples": [
+        {
+          "en": "I decided to walk.",
+          "ar": "قررت أن أمشي."
+        }
+      ],
+      "introducedIn": "A2-U2-L2",
+      "recycledIn": [
+        "A2-U3-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.GO_V02",
+      "headword": "go",
+      "partOfSpeech": "verb",
+      "arabic": "يذهب (ماضٍ: went)",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "go",
+      "examples": [
+        {
+          "en": "She went to the beach.",
+          "ar": "ذهبت إلى الشاطئ."
+        }
+      ],
+      "introducedIn": "A2-U2-L3",
+      "recycledIn": [
+        "A2-U4-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.BUY_V02",
+      "headword": "buy",
+      "partOfSpeech": "verb",
+      "arabic": "يشتري (ماضٍ: bought)",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "buy",
+      "examples": [
+        {
+          "en": "He bought a ticket.",
+          "ar": "اشترى تذكرة."
+        }
+      ],
+      "introducedIn": "A2-U2-L3",
+      "recycledIn": [
+        "A2-U4-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.MEET_V02",
+      "headword": "meet",
+      "partOfSpeech": "verb",
+      "arabic": "يلتقي (ماضٍ: met)",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "meet",
+      "examples": [
+        {
+          "en": "I met an old friend.",
+          "ar": "التقيت صديقاً قديماً."
+        }
+      ],
+      "introducedIn": "A2-U2-L3",
+      "recycledIn": [
+        "A2-U4-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.HAPPEN_V01",
+      "headword": "happen",
+      "partOfSpeech": "verb",
+      "arabic": "يحدث",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "happen",
+      "examples": [
+        {
+          "en": "What happened next?",
+          "ar": "ماذا حدث بعد ذلك؟"
+        }
+      ],
+      "introducedIn": "A2-U2-L4",
+      "recycledIn": [
+        "A2-U4-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.EXPERIENCE_N01",
+      "headword": "experience",
+      "partOfSpeech": "noun",
+      "arabic": "تجربة",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "experience",
+      "examples": [
+        {
+          "en": "Tell me about the experience.",
+          "ar": "حدثني عن التجربة."
+        }
+      ],
+      "introducedIn": "A2-U2-L4",
+      "recycledIn": [
+        "A2-U4-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.AGO_ADV01",
+      "headword": "ago",
+      "partOfSpeech": "adverb",
+      "arabic": "منذ",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "ago",
+      "examples": [
+        {
+          "en": "It happened two years ago.",
+          "ar": "حدث ذلك منذ سنتين."
+        }
+      ],
+      "introducedIn": "A2-U2-L4",
+      "recycledIn": [
+        "A2-U4-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.SUDDENLY_ADV01",
+      "headword": "suddenly",
+      "partOfSpeech": "adverb",
+      "arabic": "فجأة",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "suddenly",
+      "examples": [
+        {
+          "en": "Suddenly, the lights went out.",
+          "ar": "فجأة انطفأت الأضواء."
+        }
+      ],
+      "introducedIn": "A2-U2-L5",
+      "recycledIn": [
+        "A2-U5-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.FINALLY_ADV01",
+      "headword": "finally",
+      "partOfSpeech": "adverb",
+      "arabic": "أخيراً",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "finally",
+      "examples": [
+        {
+          "en": "Finally, we found the hotel.",
+          "ar": "أخيراً وجدنا الفندق."
+        }
+      ],
+      "introducedIn": "A2-U2-L5",
+      "recycledIn": [
+        "A2-U5-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.SEQUENCE_N01",
+      "headword": "sequence",
+      "partOfSpeech": "noun",
+      "arabic": "تسلسل",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "sequence",
+      "examples": [
+        {
+          "en": "Put the events in sequence.",
+          "ar": "رتب الأحداث بالتسلسل."
+        }
+      ],
+      "introducedIn": "A2-U2-L5",
+      "recycledIn": [
+        "A2-U5-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.STORY_N01",
+      "headword": "story",
+      "partOfSpeech": "noun",
+      "arabic": "قصة",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "story",
+      "examples": [
+        {
+          "en": "Write a short story.",
+          "ar": "اكتب قصة قصيرة."
+        }
+      ],
+      "introducedIn": "A2-U2-L6",
+      "recycledIn": [
+        "A2-U5-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.EVENT_N01",
+      "headword": "event",
+      "partOfSpeech": "noun",
+      "arabic": "حدث",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "event",
+      "examples": [
+        {
+          "en": "Describe the main event.",
+          "ar": "صف الحدث الرئيسي."
+        }
+      ],
+      "introducedIn": "A2-U2-L6",
+      "recycledIn": [
+        "A2-U5-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.SURPRISED_ADJ01",
+      "headword": "surprised",
+      "partOfSpeech": "adjective",
+      "arabic": "متفاجئ",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "surprised",
+      "examples": [
+        {
+          "en": "We were surprised.",
+          "ar": "كنا متفاجئين."
+        }
+      ],
+      "introducedIn": "A2-U2-L6",
+      "recycledIn": [
+        "A2-U5-L5"
+      ]
+    }
+  ]
+}

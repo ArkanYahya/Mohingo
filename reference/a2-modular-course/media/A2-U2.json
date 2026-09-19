@@ -1,0 +1,56 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-U2",
+  "kind": "media",
+  "records": {
+    "audio-a2-u2-l1-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "Last weekend, I was in Najaf with my cousins. The streets were busy, but the visit was memorable.",
+      "activityId": "A2-U2-L1-A01"
+    },
+    "audio-a2-u2-l1-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "Rita was at a family party yesterday. Her parents were there too.",
+      "activityId": "A2-U2-L1-A04"
+    },
+    "audio-a2-u2-l2-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "We arrived early, visited the castle and decided to eat near the river.",
+      "activityId": "A2-U2-L2-A01"
+    },
+    "audio-a2-u2-l2-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "Ali planned a picnic, packed lunch and walked to the park. Rain started at noon.",
+      "activityId": "A2-U2-L2-A04"
+    },
+    "audio-a2-u2-l4-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "A: How was the concert? B: Great. A: Who did you go with? B: My sister. We didn't stay for the last song.",
+      "activityId": "A2-U2-L4-A01"
+    },
+    "audio-a2-u2-l4-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "A: What happened yesterday? B: I missed the bus. A: Did you arrive late? B: No, I took a taxi.",
+      "activityId": "A2-U2-L4-A04"
+    },
+    "audio-a2-u2-l7-a02": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "First we visited the market. Then we ate by the river. Suddenly it rained, so we ran into a small café.",
+      "activityId": "A2-U2-L7-A02"
+    }
+  }
+}

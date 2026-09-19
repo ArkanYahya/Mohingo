@@ -1,0 +1,95 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-U1",
+  "kind": "chunks",
+  "records": [
+    {
+      "id": "A2.CHUNK.ON_WEEKDAYS",
+      "text": "on weekdays",
+      "arabic": "في أيام العمل",
+      "cefr": "A2",
+      "introducedIn": "A2-U1-L1",
+      "productive": true,
+      "recycledIn": [
+        "A2-U2-L1"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.AT_THE_MOMENT",
+      "text": "at the moment",
+      "arabic": "في الوقت الحالي",
+      "cefr": "A2",
+      "introducedIn": "A2-U1-L2",
+      "productive": true,
+      "recycledIn": [
+        "A2-U2-L1"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.THIS_WEEK",
+      "text": "this week",
+      "arabic": "هذا الأسبوع",
+      "cefr": "A2",
+      "introducedIn": "A2-U1-L2",
+      "productive": true,
+      "recycledIn": [
+        "A2-U2-L1"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.WHAT_ABOUT_YOU",
+      "text": "What about you?",
+      "arabic": "ماذا عنك؟",
+      "cefr": "A2",
+      "introducedIn": "A2-U1-L3",
+      "productive": true,
+      "recycledIn": [
+        "A2-U3-L3"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.TELL_ME_MORE",
+      "text": "Tell me more.",
+      "arabic": "أخبرني بالمزيد.",
+      "cefr": "A2",
+      "introducedIn": "A2-U1-L3",
+      "productive": true,
+      "recycledIn": [
+        "A2-U3-L3"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.THAT_SOUNDS_INTERESTING",
+      "text": "That sounds interesting.",
+      "arabic": "يبدو ذلك ممتعاً.",
+      "cefr": "A2",
+      "introducedIn": "A2-U1-L4",
+      "productive": true,
+      "recycledIn": [
+        "A2-U3-L3"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.HAVE_IN_COMMON",
+      "text": "have ... in common",
+      "arabic": "لديهما ... مشترك",
+      "cefr": "A2",
+      "introducedIn": "A2-U1-L5",
+      "productive": true,
+      "recycledIn": [
+        "A2-U4-L5"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.RIGHT_NOW",
+      "text": "right now",
+      "arabic": "الآن",
+      "cefr": "A2",
+      "introducedIn": "A2-U1-L6",
+      "productive": true,
+      "recycledIn": [
+        "A2-U4-L5"
+      ]
+    }
+  ]
+}

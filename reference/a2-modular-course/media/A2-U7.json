@@ -1,0 +1,56 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-U7",
+  "kind": "media",
+  "records": {
+    "audio-a2-u7-l1-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "I have a sore throat and a cough. You should drink warm water and rest, but you shouldn't go to work today.",
+      "activityId": "A2-U7-L1-A01"
+    },
+    "audio-a2-u7-l1-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "My back hurts after sitting all day. You should walk for a few minutes and change your chair position.",
+      "activityId": "A2-U7-L1-A04"
+    },
+    "audio-a2-u7-l2-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "Take one dose twice a day with food. You don't have to take it at an exact minute, but leave about twelve hours between doses.",
+      "activityId": "A2-U7-L2-A01"
+    },
+    "audio-a2-u7-l2-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "Your appointment is at four. You have to arrive ten minutes early, but you don't have to bring the medicine box.",
+      "activityId": "A2-U7-L2-A04"
+    },
+    "audio-a2-u7-l4-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "Drink water to stay hydrated. Stand up every hour to stretch your legs, and avoid screens late at night to sleep better.",
+      "activityId": "A2-U7-L4-A01"
+    },
+    "audio-a2-u7-l4-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "Use a smaller bag to reduce shoulder pain, and take short breaks to relax your eyes.",
+      "activityId": "A2-U7-L4-A04"
+    },
+    "audio-a2-u7-l7-a02": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "I've had a sore back since Tuesday. It started after moving furniture, and today the pain is worse when I sit.",
+      "activityId": "A2-U7-L7-A02"
+    }
+  }
+}

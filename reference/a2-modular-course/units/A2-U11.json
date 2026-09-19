@@ -1,0 +1,1071 @@
+{
+  "id": "A2-U11",
+  "title": "Nature and Everyday Problems",
+  "titleAr": "الطبيعة والمشكلات اليومية",
+  "levelRole": "core",
+  "estimatedMinutes": [
+    95,
+    130
+  ],
+  "lessons": [
+    {
+      "id": "A2-U11-L1",
+      "title": "Weather Causes and Results",
+      "titleAr": "أسباب الطقس ونتائجه",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U11.LISTENING.UNDERSTAND_WEATHER_PROBLEM",
+        "A2.U11.PRODUCTION.DESCRIBE_PLACE_PROBLEM"
+      ],
+      "grammar": [
+        "A2.G.BECAUSE_SO_CAUSE",
+        "A2.G.PAST_CONTINUOUS",
+        "A2.G.PAST_SIMPLE_INTERRUPT"
+      ],
+      "lexicon": [
+        "A2.LEX.FORECAST_N01",
+        "A2.LEX.STORM_N01",
+        "A2.LEX.FLOOD_N01",
+        "A2.LEX.SCENE_N01",
+        "A2.LEX.CHARACTER_N01",
+        "A2.LEX.PLOT_N01",
+        "A2.LEX.INTERRUPT_V01",
+        "A2.LEX.DISAPPEAR_V01",
+        "A2.LEX.DISCOVER_V01"
+      ],
+      "chunks": [
+        "A2.CHUNK.BECAUSE_OF_RAIN",
+        "A2.CHUNK.AT_THE_BEGINNING",
+        "A2.CHUNK.WAS_HAPPENING_WHEN",
+        "A2.CHUNK.WHILE_THEY_WERE"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "The forecast says a storm is coming, so the outdoor market will close early. Some roads are wet because of last night's rain.",
+            "ar": "تقول التوقعات إن عاصفة قادمة، لذا سيغلق السوق الخارجي مبكراً. بعض الطرق مبتلة بسبب مطر الليلة الماضية."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U11-L1-A01",
+          "lessonId": "A2-U11-L1",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A2.U11.LISTENING.UNDERSTAND_WEATHER_PROBLEM",
+            "A2.U11.PRODUCTION.DESCRIBE_PLACE_PROBLEM"
+          ],
+          "prompt": "Why will the market close early?",
+          "promptAr": "لماذا سيغلق السوق مبكراً؟",
+          "options": [
+            "A storm is coming.",
+            "The market is empty.",
+            "The roads are open."
+          ],
+          "answer": "A storm is coming.",
+          "audioTranscript": "The forecast says a storm is coming, so the outdoor market will close early. Some roads are wet because of last night's rain."
+        },
+        {
+          "id": "A2-U11-L1-A02",
+          "lessonId": "A2-U11-L1",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U11.LISTENING.UNDERSTAND_WEATHER_PROBLEM",
+            "A2.U11.PRODUCTION.DESCRIBE_PLACE_PROBLEM"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "forecast",
+              "توقعات الطقس"
+            ],
+            [
+              "storm",
+              "عاصفة"
+            ],
+            [
+              "flood",
+              "فيضان"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U11-L1-A03",
+          "lessonId": "A2-U11-L1",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U11.LISTENING.UNDERSTAND_WEATHER_PROBLEM",
+            "A2.U11.PRODUCTION.DESCRIBE_PLACE_PROBLEM"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "It rained heavily, ___ the field is wet.",
+          "options": [
+            "so",
+            "because",
+            "but"
+          ],
+          "answer": "so"
+        },
+        {
+          "id": "A2-U11-L1-A04",
+          "lessonId": "A2-U11-L1",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A2.U11.LISTENING.UNDERSTAND_WEATHER_PROBLEM",
+            "A2.U11.PRODUCTION.DESCRIBE_PLACE_PROBLEM"
+          ],
+          "prompt": "What is the transport result?",
+          "promptAr": "ما نتيجة النقل؟",
+          "options": [
+            "Buses are using another road.",
+            "The wind stopped.",
+            "The tree was repaired."
+          ],
+          "answer": "Buses are using another road.",
+          "audioTranscript": "A tree fell because the wind was strong, so buses are using another road."
+        },
+        {
+          "id": "A2-U11-L1-A05",
+          "lessonId": "A2-U11-L1",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A2.U11.LISTENING.UNDERSTAND_WEATHER_PROBLEM",
+            "A2.U11.PRODUCTION.DESCRIBE_PLACE_PROBLEM"
+          ],
+          "prompt": "Describe two weather causes and their everyday results.",
+          "promptAr": "صف سببين متعلقين بالطقس ونتيجتيهما اليومية.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U11-L2",
+      "title": "Likely Nature Problems",
+      "titleAr": "مشكلات طبيعية محتملة",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U11.LISTENING.UNDERSTAND_WEATHER_PROBLEM",
+        "A2.U11.PRODUCTION.DESCRIBE_PLACE_PROBLEM"
+      ],
+      "grammar": [
+        "A2.G.FIRST_CONDITIONAL_NATURE"
+      ],
+      "lexicon": [
+        "A2.LEX.RISE_V01",
+        "A2.LEX.CLOSE_V01",
+        "A2.LEX.SAFE_ADJ01"
+      ],
+      "chunks": [
+        "A2.CHUNK.IF_RIVER_RISES"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "If the river rises another twenty centimetres, the park will close. Visitors will use the higher road because it is safer.",
+            "ar": "إذا ارتفع النهر عشرين سنتيمتراً أخرى ستغلق الحديقة. سيستخدم الزوار الطريق الأعلى لأنه أكثر أماناً."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U11-L2-A01",
+          "lessonId": "A2-U11-L2",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A2.U11.LISTENING.UNDERSTAND_WEATHER_PROBLEM",
+            "A2.U11.PRODUCTION.DESCRIBE_PLACE_PROBLEM"
+          ],
+          "prompt": "What will happen after another rise?",
+          "promptAr": "ماذا سيحدث بعد ارتفاع آخر؟",
+          "options": [
+            "The park will close.",
+            "The river will disappear.",
+            "The lower road will become safer."
+          ],
+          "answer": "The park will close.",
+          "audioTranscript": "If the river rises another twenty centimetres, the park will close. Visitors will use the higher road because it is safer."
+        },
+        {
+          "id": "A2-U11-L2-A02",
+          "lessonId": "A2-U11-L2",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U11.LISTENING.UNDERSTAND_WEATHER_PROBLEM",
+            "A2.U11.PRODUCTION.DESCRIBE_PLACE_PROBLEM"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "rise",
+              "يرتفع"
+            ],
+            [
+              "close",
+              "يغلق"
+            ],
+            [
+              "safe",
+              "آمن"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U11-L2-A03",
+          "lessonId": "A2-U11-L2",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U11.LISTENING.UNDERSTAND_WEATHER_PROBLEM",
+            "A2.U11.PRODUCTION.DESCRIBE_PLACE_PROBLEM"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "If the path is unsafe, we ___ turn back.",
+          "options": [
+            "will",
+            "did",
+            "are"
+          ],
+          "answer": "will"
+        },
+        {
+          "id": "A2-U11-L2-A04",
+          "lessonId": "A2-U11-L2",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A2.U11.LISTENING.UNDERSTAND_WEATHER_PROBLEM",
+            "A2.U11.PRODUCTION.DESCRIBE_PLACE_PROBLEM"
+          ],
+          "prompt": "What may be icy?",
+          "promptAr": "ما الذي قد يكون جليدياً؟",
+          "options": [
+            "The bridge",
+            "The river",
+            "The park"
+          ],
+          "answer": "The bridge",
+          "audioTranscript": "If temperatures fall tonight, the bridge will be icy in the morning. Drivers will need to slow down."
+        },
+        {
+          "id": "A2-U11-L2-A05",
+          "lessonId": "A2-U11-L2",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A2.U11.LISTENING.UNDERSTAND_WEATHER_PROBLEM",
+            "A2.U11.PRODUCTION.DESCRIBE_PLACE_PROBLEM"
+          ],
+          "prompt": "Give two likely outdoor conditions and the safe result or response for each.",
+          "promptAr": "اذكر حالتين محتملتين في الخارج والنتيجة أو الاستجابة الآمنة لكل منهما.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U11-L3",
+      "title": "Weather Possibilities",
+      "titleAr": "احتمالات الطقس",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U11.READING.FOLLOW_NATURE_NOTICE",
+        "A2.U11.INTERACTION.SUGGEST_ACTION"
+      ],
+      "grammar": [
+        "A2.G.MAY_MIGHT_POSSIBILITY",
+        "A2.G.ZERO_CONDITIONAL_PROCEDURE",
+        "A2.G.PRONOUN_REFERENCE"
+      ],
+      "lexicon": [
+        "A2.LEX.FOG_N01",
+        "A2.LEX.THUNDER_N01",
+        "A2.LEX.CLEAR_V01",
+        "A2.LEX.PASSWORD_N01",
+        "A2.LEX.NETWORK_N01",
+        "A2.LEX.RESTART_V01",
+        "A2.LEX.LINK_N01",
+        "A2.LEX.ATTACH_V01",
+        "A2.LEX.ACCOUNT_N01"
+      ],
+      "chunks": [
+        "A2.CHUNK.THERE_MAY_BE",
+        "A2.CHUNK.IF_DOES_NOT_WORK",
+        "A2.CHUNK.SIGN_IN_TO",
+        "A2.CHUNK.SEND_AS_ATTACHMENT"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "There may be fog before eight, and drivers might have poor visibility. The sky should clear later, but there could be thunder in the evening.",
+            "ar": ""
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U11-L3-A01",
+          "lessonId": "A2-U11-L3",
+          "type": "textChoice",
+          "mode": "encounter",
+          "skill": "reading",
+          "canDo": [
+            "A2.U11.READING.FOLLOW_NATURE_NOTICE",
+            "A2.U11.INTERACTION.SUGGEST_ACTION"
+          ],
+          "prompt": "When may visibility be poor?",
+          "promptAr": "متى قد تكون الرؤية ضعيفة؟",
+          "options": [
+            "Before eight",
+            "At midday",
+            "Only after thunder"
+          ],
+          "answer": "Before eight",
+          "sourceText": "There may be fog before eight, and drivers might have poor visibility. The sky should clear later, but there could be thunder in the evening."
+        },
+        {
+          "id": "A2-U11-L3-A02",
+          "lessonId": "A2-U11-L3",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U11.READING.FOLLOW_NATURE_NOTICE",
+            "A2.U11.INTERACTION.SUGGEST_ACTION"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "fog",
+              "ضباب"
+            ],
+            [
+              "thunder",
+              "رعد"
+            ],
+            [
+              "clear",
+              "ينقشع"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U11-L3-A03",
+          "lessonId": "A2-U11-L3",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U11.READING.FOLLOW_NATURE_NOTICE",
+            "A2.U11.INTERACTION.SUGGEST_ACTION"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "It ___ rain later, so take a jacket.",
+          "options": [
+            "might",
+            "does",
+            "will to"
+          ],
+          "answer": "might"
+        },
+        {
+          "id": "A2-U11-L3-A04",
+          "lessonId": "A2-U11-L3",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A2.U11.READING.FOLLOW_NATURE_NOTICE",
+            "A2.U11.INTERACTION.SUGGEST_ACTION"
+          ],
+          "prompt": "Which condition is unlikely?",
+          "promptAr": "أي حالة غير مرجحة؟",
+          "options": [
+            "Strong wind",
+            "Afternoon showers",
+            "A dry morning"
+          ],
+          "answer": "Strong wind",
+          "sourceText": "The morning may stay dry, but showers might develop after lunch. Strong wind is unlikely."
+        },
+        {
+          "id": "A2-U11-L3-A05",
+          "lessonId": "A2-U11-L3",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A2.U11.READING.FOLLOW_NATURE_NOTICE",
+            "A2.U11.INTERACTION.SUGGEST_ACTION"
+          ],
+          "prompt": "Discuss an uncertain forecast and agree what to take or change.",
+          "promptAr": "ناقش توقعات غير مؤكدة واتفق على ما ينبغي أخذه أو تغييره.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U11-L4",
+      "title": "Report an Outdoor Problem",
+      "titleAr": "أبلغ عن مشكلة خارجية",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U11.READING.FOLLOW_NATURE_NOTICE",
+        "A2.U11.MEDIATION.RELAY_SAFETY_INFORMATION"
+      ],
+      "grammar": [
+        "A2.G.INDEFINITE_PRONOUNS"
+      ],
+      "lexicon": [
+        "A2.LEX.PATH_N01",
+        "A2.LEX.RUBBISH_N01",
+        "A2.LEX.DAMAGE_N01"
+      ],
+      "chunks": [
+        "A2.CHUNK.SOMETHING_BLOCKING",
+        "A2.CHUNK.IS_ANYONE_THERE"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "Someone has left rubbish beside the lake, and something is blocking the west path. There isn't anyone at the information point, so please report it online.",
+            "ar": ""
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U11-L4-A01",
+          "lessonId": "A2-U11-L4",
+          "type": "textChoice",
+          "mode": "encounter",
+          "skill": "reading",
+          "canDo": [
+            "A2.U11.READING.FOLLOW_NATURE_NOTICE",
+            "A2.U11.MEDIATION.RELAY_SAFETY_INFORMATION"
+          ],
+          "prompt": "How should the problem be reported?",
+          "promptAr": "كيف ينبغي الإبلاغ عن المشكلة؟",
+          "options": [
+            "Online",
+            "At the empty information point",
+            "By moving everything alone"
+          ],
+          "answer": "Online",
+          "sourceText": "Someone has left rubbish beside the lake, and something is blocking the west path. There isn't anyone at the information point, so please report it online."
+        },
+        {
+          "id": "A2-U11-L4-A02",
+          "lessonId": "A2-U11-L4",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U11.READING.FOLLOW_NATURE_NOTICE",
+            "A2.U11.MEDIATION.RELAY_SAFETY_INFORMATION"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "path",
+              "ممر"
+            ],
+            [
+              "rubbish",
+              "نفايات"
+            ],
+            [
+              "damage",
+              "ضرر"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U11-L4-A03",
+          "lessonId": "A2-U11-L4",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U11.READING.FOLLOW_NATURE_NOTICE",
+            "A2.U11.MEDIATION.RELAY_SAFETY_INFORMATION"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "Is there ___ who can help?",
+          "options": [
+            "anyone",
+            "something",
+            "nowhere"
+          ],
+          "answer": "anyone"
+        },
+        {
+          "id": "A2-U11-L4-A04",
+          "lessonId": "A2-U11-L4",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A2.U11.READING.FOLLOW_NATURE_NOTICE",
+            "A2.U11.MEDIATION.RELAY_SAFETY_INFORMATION"
+          ],
+          "prompt": "Which route should visitors use?",
+          "promptAr": "أي مسار ينبغي للزوار استخدامه؟",
+          "options": [
+            "The east path",
+            "The damaged bridge",
+            "No route"
+          ],
+          "answer": "The east path",
+          "sourceText": "There is damage to a bridge, but nobody is nearby. Do not cross it. Use the east path and tell someone at the visitor centre."
+        },
+        {
+          "id": "A2-U11-L4-A05",
+          "lessonId": "A2-U11-L4",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "mediation",
+          "canDo": [
+            "A2.U11.READING.FOLLOW_NATURE_NOTICE",
+            "A2.U11.MEDIATION.RELAY_SAFETY_INFORMATION"
+          ],
+          "prompt": "Relay the location, type and safe reporting action for an outdoor problem.",
+          "promptAr": "انقل موقع مشكلة خارجية ونوعها وإجراء الإبلاغ الآمن عنها.",
+          "evaluation": [
+            "selectRelevantInformation",
+            "clarity",
+            "audienceAwareness",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U11-L5",
+      "title": "Suggest an Alternative",
+      "titleAr": "اقترح بديلاً",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U11.LISTENING.UNDERSTAND_WEATHER_PROBLEM",
+        "A2.U11.INTERACTION.SUGGEST_ACTION"
+      ],
+      "grammar": [
+        "A2.G.SUGGESTION_FORMS",
+        "A2.G.POLITE_FORMAL_REQUEST",
+        "A2.G.PURPOSE_APPLICATION"
+      ],
+      "lexicon": [
+        "A2.LEX.SHELTER_N01",
+        "A2.LEX.POSTPONE_V01",
+        "A2.LEX.INDOORS_ADV01",
+        "A2.LEX.INFORMATION_N01",
+        "A2.LEX.ENROL_V01",
+        "A2.LEX.FEE_N01",
+        "A2.LEX.APPLY_V01",
+        "A2.LEX.APPLICANT_N01",
+        "A2.LEX.REFERENCE_N01"
+      ],
+      "chunks": [
+        "A2.CHUNK.WE_COULD",
+        "A2.CHUNK.I_AM_WRITING_TO",
+        "A2.CHUNK.APPLY_FOR"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "A: The picnic area is flooded. B: We could use the shelter near the café. A: It might be crowded. Let's move the lunch indoors instead.",
+            "ar": "أ: منطقة النزهة مغمورة. ب: يمكننا استخدام المأوى قرب المقهى. أ: قد يكون مزدحماً. لننقل الغداء إلى الداخل بدلاً من ذلك."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U11-L5-A01",
+          "lessonId": "A2-U11-L5",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A2.U11.LISTENING.UNDERSTAND_WEATHER_PROBLEM",
+            "A2.U11.INTERACTION.SUGGEST_ACTION"
+          ],
+          "prompt": "What is the final suggestion?",
+          "promptAr": "ما الاقتراح النهائي؟",
+          "options": [
+            "Move lunch indoors",
+            "Use the flooded area",
+            "Cancel all food"
+          ],
+          "answer": "Move lunch indoors",
+          "audioTranscript": "A: The picnic area is flooded. B: We could use the shelter near the café. A: It might be crowded. Let's move the lunch indoors instead."
+        },
+        {
+          "id": "A2-U11-L5-A02",
+          "lessonId": "A2-U11-L5",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U11.LISTENING.UNDERSTAND_WEATHER_PROBLEM",
+            "A2.U11.INTERACTION.SUGGEST_ACTION"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "shelter",
+              "مأوى"
+            ],
+            [
+              "postpone",
+              "يؤجل"
+            ],
+            [
+              "indoors",
+              "في الداخل"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U11-L5-A03",
+          "lessonId": "A2-U11-L5",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U11.LISTENING.UNDERSTAND_WEATHER_PROBLEM",
+            "A2.U11.INTERACTION.SUGGEST_ACTION"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "We could ___ the walk until tomorrow.",
+          "options": [
+            "postpone",
+            "postponed",
+            "postponing"
+          ],
+          "answer": "postpone"
+        },
+        {
+          "id": "A2-U11-L5-A04",
+          "lessonId": "A2-U11-L5",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A2.U11.LISTENING.UNDERSTAND_WEATHER_PROBLEM",
+            "A2.U11.INTERACTION.SUGGEST_ACTION"
+          ],
+          "prompt": "Which indoor alternative is offered?",
+          "promptAr": "ما البديل الداخلي المعروض؟",
+          "options": [
+            "The nature centre",
+            "The paved route",
+            "The muddy path"
+          ],
+          "answer": "The nature centre",
+          "audioTranscript": "The path is too muddy. We should choose the paved route, or we could visit the nature centre until it dries."
+        },
+        {
+          "id": "A2-U11-L5-A05",
+          "lessonId": "A2-U11-L5",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A2.U11.LISTENING.UNDERSTAND_WEATHER_PROBLEM",
+            "A2.U11.INTERACTION.SUGGEST_ACTION"
+          ],
+          "prompt": "Offer two alternatives for a weather problem and agree on the safest practical choice.",
+          "promptAr": "قدّم بديلين لمشكلة طقس واتفق على الخيار العملي الأكثر أماناً.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U11-L6",
+      "title": "A Safe Action Plan",
+      "titleAr": "خطة عمل آمنة",
+      "lessonType": "integrated-production",
+      "canDo": [
+        "A2.U11.WRITING.WRITE_ACTION_PLAN",
+        "A2.U11.PRODUCTION.DESCRIBE_PLACE_PROBLEM"
+      ],
+      "grammar": [
+        "A2.G.PLAN_LINKERS",
+        "A2.G.FIRST_CONDITIONAL_NATURE",
+        "A2.G.MAY_MIGHT_POSSIBILITY"
+      ],
+      "lexicon": [
+        "A2.LEX.ACTION_N01",
+        "A2.LEX.EMERGENCY_N01",
+        "A2.LEX.SUPPLY_N01"
+      ],
+      "chunks": [
+        "A2.CHUNK.SAFEST_OPTION",
+        "A2.CHUNK.IN_AN_EMERGENCY"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "Plan: The event will move indoors because heavy rain is likely. If the power fails, staff will use battery lights. Keep the emergency exit clear and bring drinking water.",
+            "ar": ""
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U11-L6-A01",
+          "lessonId": "A2-U11-L6",
+          "type": "textChoice",
+          "mode": "encounter",
+          "skill": "reading",
+          "canDo": [
+            "A2.U11.WRITING.WRITE_ACTION_PLAN",
+            "A2.U11.PRODUCTION.DESCRIBE_PLACE_PROBLEM"
+          ],
+          "prompt": "What must remain clear?",
+          "promptAr": "ما الذي يجب أن يبقى خالياً؟",
+          "options": [
+            "The emergency exit",
+            "The indoor room",
+            "The rain"
+          ],
+          "answer": "The emergency exit",
+          "sourceText": "Plan: The event will move indoors because heavy rain is likely. If the power fails, staff will use battery lights. Keep the emergency exit clear and bring drinking water."
+        },
+        {
+          "id": "A2-U11-L6-A02",
+          "lessonId": "A2-U11-L6",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U11.WRITING.WRITE_ACTION_PLAN",
+            "A2.U11.PRODUCTION.DESCRIBE_PLACE_PROBLEM"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "action",
+              "إجراء"
+            ],
+            [
+              "emergency",
+              "طوارئ"
+            ],
+            [
+              "supply",
+              "مؤونة"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U11-L6-A03",
+          "lessonId": "A2-U11-L6",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U11.WRITING.WRITE_ACTION_PLAN",
+            "A2.U11.PRODUCTION.DESCRIBE_PLACE_PROBLEM"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "If the power fails, we ___ use battery lights.",
+          "options": [
+            "will",
+            "might to",
+            "were"
+          ],
+          "answer": "will"
+        },
+        {
+          "id": "A2-U11-L6-A04",
+          "lessonId": "A2-U11-L6",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A2.U11.WRITING.WRITE_ACTION_PLAN",
+            "A2.U11.PRODUCTION.DESCRIBE_PLACE_PROBLEM"
+          ],
+          "prompt": "When should the forecast be checked?",
+          "promptAr": "متى ينبغي التحقق من التوقعات؟",
+          "options": [
+            "At 7:00",
+            "After visitors leave",
+            "Only in strong wind"
+          ],
+          "answer": "At 7:00",
+          "sourceText": "The forecast may change, so check it at 7:00. If the wind is strong, cancel the outdoor signs and direct visitors to the hall."
+        },
+        {
+          "id": "A2-U11-L6-A05",
+          "lessonId": "A2-U11-L6",
+          "type": "write",
+          "mode": "mastery",
+          "skill": "writing",
+          "canDo": [
+            "A2.U11.WRITING.WRITE_ACTION_PLAN",
+            "A2.U11.PRODUCTION.DESCRIBE_PLACE_PROBLEM"
+          ],
+          "prompt": "Write a simple action plan with a forecast, cause, likely condition, alternative and safety instruction.",
+          "promptAr": "اكتب خطة عمل بسيطة تتضمن توقعاً وسبباً وشرطاً محتملاً وبديلاً وتعليمة سلامة.",
+          "evaluation": [
+            "taskCompletion",
+            "clarity",
+            "organisation",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "wordGuide": [
+            85,
+            115
+          ]
+        }
+      ]
+    },
+    {
+      "id": "A2-U11-L7",
+      "title": "Mission: A Bad-Weather Action Plan",
+      "titleAr": "المهمة: خطة عمل للطقس السيئ",
+      "lessonType": "mission",
+      "canDo": [
+        "A2.U11.LISTENING.UNDERSTAND_WEATHER_PROBLEM",
+        "A2.U11.READING.FOLLOW_NATURE_NOTICE",
+        "A2.U11.PRODUCTION.DESCRIBE_PLACE_PROBLEM",
+        "A2.U11.INTERACTION.SUGGEST_ACTION",
+        "A2.U11.WRITING.WRITE_ACTION_PLAN",
+        "A2.U11.MEDIATION.RELAY_SAFETY_INFORMATION",
+        "A2.U11.ACTION.BUILD_BAD_WEATHER_PLAN"
+      ],
+      "grammar": [],
+      "lexicon": [],
+      "chunks": [],
+      "scenario": "An outdoor community event faces changing weather. Interpret the notice and forecast, agree on changes and communicate a safe plan.",
+      "activities": [
+        {
+          "id": "A2-U11-L7-A01",
+          "lessonId": "A2-U11-L7",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A2.U11.READING.FOLLOW_NATURE_NOTICE",
+            "A2.U11.ACTION.BUILD_BAD_WEATHER_PLAN"
+          ],
+          "prompt": "Which entrance remains open?",
+          "promptAr": "أي مدخل يبقى مفتوحاً؟",
+          "options": [
+            "The east entrance",
+            "The riverside path",
+            "No entrance"
+          ],
+          "answer": "The east entrance",
+          "sourceText": "Park notice: The riverside path is closed because of flood damage. The visitor centre and east entrance remain open. Do not move the barrier."
+        },
+        {
+          "id": "A2-U11-L7-A02",
+          "lessonId": "A2-U11-L7",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A2.U11.LISTENING.UNDERSTAND_WEATHER_PROBLEM",
+            "A2.U11.ACTION.BUILD_BAD_WEATHER_PLAN"
+          ],
+          "prompt": "What triggers the move indoors?",
+          "promptAr": "ما الذي يؤدي إلى الانتقال للداخل؟",
+          "options": [
+            "Thunder starting",
+            "The time reaching three",
+            "The east entrance opening"
+          ],
+          "answer": "Thunder starting",
+          "audioTranscript": "Heavy rain may begin after three, and there might be thunder at five. If thunder starts, all activities will move into the sports hall."
+        },
+        {
+          "id": "A2-U11-L7-A03",
+          "lessonId": "A2-U11-L7",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A2.U11.INTERACTION.SUGGEST_ACTION",
+            "A2.U11.ACTION.BUILD_BAD_WEATHER_PLAN"
+          ],
+          "prompt": "Discuss the risks, propose alternatives and agree on a safe event plan.",
+          "promptAr": "ناقش المخاطر واقترح بدائل واتفق على خطة فعالية آمنة.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A2-U11-L7-A04",
+          "lessonId": "A2-U11-L7",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A2.U11.PRODUCTION.DESCRIBE_PLACE_PROBLEM",
+            "A2.U11.ACTION.BUILD_BAD_WEATHER_PLAN"
+          ],
+          "prompt": "Present the action plan with reasons, likely conditions and clear responses.",
+          "promptAr": "قدّم خطة العمل مع الأسباب والظروف المحتملة والاستجابات الواضحة.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A2-U11-L7-A05",
+          "lessonId": "A2-U11-L7",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "mediation",
+          "canDo": [
+            "A2.U11.MEDIATION.RELAY_SAFETY_INFORMATION",
+            "A2.U11.ACTION.BUILD_BAD_WEATHER_PLAN"
+          ],
+          "prompt": "Relay the closure, open access point, forecast and emergency condition without adding advice.",
+          "promptAr": "انقل الإغلاق ونقطة الدخول المفتوحة والتوقع وشرط الطوارئ من دون إضافة نصيحة.",
+          "evaluation": [
+            "selectRelevantInformation",
+            "clarity",
+            "audienceAwareness",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A2-U11-L7-A06",
+          "lessonId": "A2-U11-L7",
+          "type": "write",
+          "mode": "mastery",
+          "skill": "writing",
+          "canDo": [
+            "A2.U11.WRITING.WRITE_ACTION_PLAN",
+            "A2.U11.ACTION.BUILD_BAD_WEATHER_PLAN"
+          ],
+          "prompt": "Write the public update with what changed, why, what may happen and what visitors should do.",
+          "promptAr": "اكتب التحديث العام موضحاً ما تغير ولماذا وما قد يحدث وما ينبغي للزوار فعله.",
+          "evaluation": [
+            "taskCompletion",
+            "clarity",
+            "organisation",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "wordGuide": [
+            90,
+            120
+          ],
+          "accepted": []
+        }
+      ]
+    }
+  ],
+  "mastery": {
+    "requiredObjectives": [
+      "A2.U11.LISTENING.UNDERSTAND_WEATHER_PROBLEM",
+      "A2.U11.READING.FOLLOW_NATURE_NOTICE",
+      "A2.U11.PRODUCTION.DESCRIBE_PLACE_PROBLEM",
+      "A2.U11.INTERACTION.SUGGEST_ACTION",
+      "A2.U11.WRITING.WRITE_ACTION_PLAN",
+      "A2.U11.MEDIATION.RELAY_SAFETY_INFORMATION",
+      "A2.U11.ACTION.BUILD_BAD_WEATHER_PLAN"
+    ],
+    "requiredSkillGroups": [
+      [
+        "listening",
+        "reading"
+      ],
+      [
+        "spokenInteraction",
+        "spokenProduction",
+        "writing"
+      ],
+      [
+        "mediation"
+      ]
+    ],
+    "minimumObjectiveScore": 0.75,
+    "missionRequired": true,
+    "retry": "targeted-by-objective",
+    "unlocks": "A2-U12"
+  },
+  "countsTowardA1Mastery": true
+}

@@ -1,0 +1,79 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-U10",
+  "kind": "grammar",
+  "records": [
+    {
+      "id": "A2.G.PAST_CONTINUOUS",
+      "form": "was/were + verb-ing",
+      "meaningAr": "الماضي المستمر",
+      "introducedIn": "A2-U10-L1",
+      "examples": [
+        {
+          "en": "They were walking home.",
+          "ar": "كانوا يمشون إلى المنزل."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.PAST_SIMPLE_INTERRUPT",
+      "form": "past continuous + when + past simple",
+      "meaningAr": "حدث مستمر قاطعه حدث قصير",
+      "introducedIn": "A2-U10-L2",
+      "examples": [
+        {
+          "en": "I was reading when the lights went out.",
+          "ar": "كنت أقرأ عندما انطفأت الأضواء."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.WHILE_PAST",
+      "form": "while + past continuous",
+      "meaningAr": "while مع الماضي المستمر",
+      "introducedIn": "A2-U10-L3",
+      "examples": [
+        {
+          "en": "While we were waiting, we heard music.",
+          "ar": "بينما كنا ننتظر سمعنا موسيقى."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.RELATIVE_CLAUSES_BASIC",
+      "form": "who / which / that in descriptions",
+      "meaningAr": "جمل الوصل الأساسية",
+      "introducedIn": "A2-U10-L4",
+      "examples": [
+        {
+          "en": "It's a film that makes you think.",
+          "ar": "إنه فيلم يجعلك تفكر."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.OPINION_LINKERS",
+      "form": "because, although, but, so",
+      "meaningAr": "روابط الرأي البسيطة",
+      "introducedIn": "A2-U10-L5",
+      "examples": [
+        {
+          "en": "Although it was slow, I liked the ending.",
+          "ar": "مع أنه كان بطيئاً، أحببت النهاية."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.RECOMMEND_GERUND",
+      "form": "recommend + noun / -ing chunks",
+      "meaningAr": "تراكيب التوصية",
+      "introducedIn": "A2-U10-L6",
+      "examples": [
+        {
+          "en": "I recommend watching it with friends.",
+          "ar": "أوصي بمشاهدته مع الأصدقاء."
+        }
+      ]
+    }
+  ]
+}

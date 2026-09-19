@@ -1,0 +1,1071 @@
+{
+  "id": "A2-U12",
+  "title": "Invitations and Events",
+  "titleAr": "الدعوات والفعاليات",
+  "levelRole": "core",
+  "estimatedMinutes": [
+    95,
+    130
+  ],
+  "lessons": [
+    {
+      "id": "A2-U12-L1",
+      "title": "Make an Invitation",
+      "titleAr": "قدّم دعوة",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE",
+        "A2.U12.INTERACTION.INVITE_ACCEPT_DECLINE"
+      ],
+      "grammar": [
+        "A2.G.INVITATION_WOULD_LIKE",
+        "A2.G.BECAUSE_SO_CAUSE",
+        "A2.G.FIRST_CONDITIONAL_NATURE"
+      ],
+      "lexicon": [
+        "A2.LEX.INVITATION_N01",
+        "A2.LEX.CELEBRATION_N01",
+        "A2.LEX.JOIN_V01",
+        "A2.LEX.FORECAST_N01",
+        "A2.LEX.STORM_N01",
+        "A2.LEX.FLOOD_N01",
+        "A2.LEX.RISE_V01",
+        "A2.LEX.CLOSE_V01",
+        "A2.LEX.SAFE_ADJ01"
+      ],
+      "chunks": [
+        "A2.CHUNK.WOULD_LIKE_TO_JOIN",
+        "A2.CHUNK.ARE_YOU_FREE",
+        "A2.CHUNK.BECAUSE_OF_RAIN",
+        "A2.CHUNK.IF_RIVER_RISES",
+        "A2.CHUNK.THERE_MAY_BE"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "A: Are you free on Friday evening? We're having a small celebration. Would you like to join us? B: Yes, thank you.",
+            "ar": "أ: هل أنت متفرغ مساء الجمعة؟ سنقيم احتفالاً صغيراً. هل ترغب في الانضمام إلينا؟ ب: نعم، شكراً."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U12-L1-A01",
+          "lessonId": "A2-U12-L1",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE",
+            "A2.U12.INTERACTION.INVITE_ACCEPT_DECLINE"
+          ],
+          "prompt": "When is the celebration?",
+          "promptAr": "متى الاحتفال؟",
+          "options": [
+            "Friday evening",
+            "Saturday morning",
+            "Thursday evening"
+          ],
+          "answer": "Friday evening",
+          "audioTranscript": "A: Are you free on Friday evening? We're having a small celebration. Would you like to join us? B: Yes, thank you."
+        },
+        {
+          "id": "A2-U12-L1-A02",
+          "lessonId": "A2-U12-L1",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE",
+            "A2.U12.INTERACTION.INVITE_ACCEPT_DECLINE"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "invitation",
+              "دعوة"
+            ],
+            [
+              "celebration",
+              "احتفال"
+            ],
+            [
+              "join",
+              "ينضم"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U12-L1-A03",
+          "lessonId": "A2-U12-L1",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE",
+            "A2.U12.INTERACTION.INVITE_ACCEPT_DECLINE"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "Would you like to ___ us for dinner?",
+          "options": [
+            "join",
+            "joined",
+            "joining"
+          ],
+          "answer": "join"
+        },
+        {
+          "id": "A2-U12-L1-A04",
+          "lessonId": "A2-U12-L1",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE",
+            "A2.U12.INTERACTION.INVITE_ACCEPT_DECLINE"
+          ],
+          "prompt": "What event is proposed?",
+          "promptAr": "ما الفعالية المقترحة؟",
+          "options": [
+            "A picnic",
+            "A concert",
+            "A course"
+          ],
+          "answer": "A picnic",
+          "audioTranscript": "We're meeting at the park on Sunday at eleven. Would you like to come for a picnic?"
+        },
+        {
+          "id": "A2-U12-L1-A05",
+          "lessonId": "A2-U12-L1",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE",
+            "A2.U12.INTERACTION.INVITE_ACCEPT_DECLINE"
+          ],
+          "prompt": "Invite someone to a small event, giving type, date, time and place.",
+          "promptAr": "ادعُ شخصاً إلى فعالية صغيرة مع ذكر النوع والتاريخ والوقت والمكان.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U12-L2",
+      "title": "Share Event Tasks",
+      "titleAr": "وزع مهام الفعالية",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE",
+        "A2.U12.INTERACTION.INVITE_ACCEPT_DECLINE"
+      ],
+      "grammar": [
+        "A2.G.COULD_WOULD_REQUESTS"
+      ],
+      "lexicon": [
+        "A2.LEX.DECORATION_N01",
+        "A2.LEX.VENUE_N01",
+        "A2.LEX.ORGANISE_V01"
+      ],
+      "chunks": [
+        "A2.CHUNK.COULD_YOU_BRING"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "A: Could you bring the decorations to the venue at four? B: Sure. Would you send me the address?",
+            "ar": "أ: هل يمكنك إحضار الزينة إلى مكان الفعالية في الرابعة؟ ب: بالتأكيد. هل ترسل لي العنوان؟"
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U12-L2-A01",
+          "lessonId": "A2-U12-L2",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE",
+            "A2.U12.INTERACTION.INVITE_ACCEPT_DECLINE"
+          ],
+          "prompt": "What information does B request?",
+          "promptAr": "ما المعلومة التي يطلبها ب؟",
+          "options": [
+            "The address",
+            "The guest list",
+            "The price"
+          ],
+          "answer": "The address",
+          "audioTranscript": "A: Could you bring the decorations to the venue at four? B: Sure. Would you send me the address?"
+        },
+        {
+          "id": "A2-U12-L2-A02",
+          "lessonId": "A2-U12-L2",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE",
+            "A2.U12.INTERACTION.INVITE_ACCEPT_DECLINE"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "decoration",
+              "زينة"
+            ],
+            [
+              "venue",
+              "مكان الفعالية"
+            ],
+            [
+              "organise",
+              "ينظم"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U12-L2-A03",
+          "lessonId": "A2-U12-L2",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE",
+            "A2.U12.INTERACTION.INVITE_ACCEPT_DECLINE"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "Could you ___ the tables, please?",
+          "options": [
+            "organise",
+            "organised",
+            "organising"
+          ],
+          "answer": "organise"
+        },
+        {
+          "id": "A2-U12-L2-A04",
+          "lessonId": "A2-U12-L2",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE",
+            "A2.U12.INTERACTION.INVITE_ACCEPT_DECLINE"
+          ],
+          "prompt": "Who will bring chairs?",
+          "promptAr": "من سيحضر الكراسي؟",
+          "options": [
+            "Dana",
+            "The listener",
+            "The speaker"
+          ],
+          "answer": "Dana",
+          "audioTranscript": "Could you collect the key at noon? I will prepare the food, and Dana will bring extra chairs."
+        },
+        {
+          "id": "A2-U12-L2-A05",
+          "lessonId": "A2-U12-L2",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE",
+            "A2.U12.INTERACTION.INVITE_ACCEPT_DECLINE"
+          ],
+          "prompt": "Divide three event tasks using polite requests and confirm who will do each one.",
+          "promptAr": "وزع ثلاث مهام للفعالية باستخدام طلبات مهذبة وأكد من سينفذ كل مهمة.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U12-L3",
+      "title": "Confirm Arrangements",
+      "titleAr": "أكد الترتيبات",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U12.READING.FOLLOW_INVITATION_MESSAGE",
+        "A2.U12.PRODUCTION.EXPLAIN_EVENT_PLAN"
+      ],
+      "grammar": [
+        "A2.G.FUTURE_EVENT_REVIEW",
+        "A2.G.WHILE_PAST",
+        "A2.G.RELATIVE_CLAUSES_BASIC"
+      ],
+      "lexicon": [
+        "A2.LEX.ATTENDANCE_N01",
+        "A2.LEX.GUEST_N01",
+        "A2.LEX.ARRANGEMENT_N01",
+        "A2.LEX.AUDIENCE_N01",
+        "A2.LEX.PERFORM_V01",
+        "A2.LEX.STAGE_N01",
+        "A2.LEX.COMEDY_N01",
+        "A2.LEX.DOCUMENTARY_N01",
+        "A2.LEX.ENDING_N01"
+      ],
+      "chunks": [
+        "A2.CHUNK.LOOKING_FORWARD",
+        "A2.CHUNK.THE_MAIN_CHARACTER",
+        "A2.CHUNK.IN_MY_OPINION",
+        "A2.CHUNK.WHAT_I_LIKED"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "Confirmed: We are meeting outside the library at 5:30. The bus is leaving at 5:45, and I will check the guest list before we go.",
+            "ar": ""
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U12-L3-A01",
+          "lessonId": "A2-U12-L3",
+          "type": "textChoice",
+          "mode": "encounter",
+          "skill": "reading",
+          "canDo": [
+            "A2.U12.READING.FOLLOW_INVITATION_MESSAGE",
+            "A2.U12.PRODUCTION.EXPLAIN_EVENT_PLAN"
+          ],
+          "prompt": "What time does the bus leave?",
+          "promptAr": "في أي وقت تغادر الحافلة؟",
+          "options": [
+            "5:45",
+            "5:30",
+            "Before five"
+          ],
+          "answer": "5:45",
+          "sourceText": "Confirmed: We are meeting outside the library at 5:30. The bus is leaving at 5:45, and I will check the guest list before we go."
+        },
+        {
+          "id": "A2-U12-L3-A02",
+          "lessonId": "A2-U12-L3",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U12.READING.FOLLOW_INVITATION_MESSAGE",
+            "A2.U12.PRODUCTION.EXPLAIN_EVENT_PLAN"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "attendance",
+              "حضور"
+            ],
+            [
+              "guest",
+              "ضيف"
+            ],
+            [
+              "arrangement",
+              "ترتيب"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U12-L3-A03",
+          "lessonId": "A2-U12-L3",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U12.READING.FOLLOW_INVITATION_MESSAGE",
+            "A2.U12.PRODUCTION.EXPLAIN_EVENT_PLAN"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "We ___ meeting the guests at six.",
+          "options": [
+            "are",
+            "will to",
+            "do"
+          ],
+          "answer": "are"
+        },
+        {
+          "id": "A2-U12-L3-A04",
+          "lessonId": "A2-U12-L3",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A2.U12.READING.FOLLOW_INVITATION_MESSAGE",
+            "A2.U12.PRODUCTION.EXPLAIN_EVENT_PLAN"
+          ],
+          "prompt": "What is Salma's plan?",
+          "promptAr": "ما خطة سلمى؟",
+          "options": [
+            "Prepare name cards",
+            "Help late guests",
+            "Count buses"
+          ],
+          "answer": "Prepare name cards",
+          "sourceText": "Ten guests are coming. Salma is going to prepare name cards, and Omar will help anyone who arrives late."
+        },
+        {
+          "id": "A2-U12-L3-A05",
+          "lessonId": "A2-U12-L3",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A2.U12.READING.FOLLOW_INVITATION_MESSAGE",
+            "A2.U12.PRODUCTION.EXPLAIN_EVENT_PLAN"
+          ],
+          "prompt": "Confirm the fixed arrangements, intentions and last-minute decisions for an event.",
+          "promptAr": "أكد الترتيبات الثابتة والنوايا والقرارات اللحظية لفعالية.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U12-L4",
+      "title": "Accept or Decline",
+      "titleAr": "اقبل أو ارفض",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE",
+        "A2.U12.INTERACTION.INVITE_ACCEPT_DECLINE"
+      ],
+      "grammar": [
+        "A2.G.ACCEPT_DECLINE_REASONS"
+      ],
+      "lexicon": [
+        "A2.LEX.ACCEPT_V01",
+        "A2.LEX.DECLINE_V01",
+        "A2.LEX.FREE_ADJ02"
+      ],
+      "chunks": [
+        "A2.CHUNK.ID_LOVE_TO_BUT",
+        "A2.CHUNK.SORRY_CANT_MAKE_IT"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "A: Would you like to come on Saturday? B: I'd love to, but I'm working until seven. Could I join later?",
+            "ar": "أ: هل ترغب في الحضور السبت؟ ب: يسعدني، لكنني أعمل حتى السابعة. هل يمكنني الانضمام لاحقاً؟"
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U12-L4-A01",
+          "lessonId": "A2-U12-L4",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE",
+            "A2.U12.INTERACTION.INVITE_ACCEPT_DECLINE"
+          ],
+          "prompt": "Does B completely decline?",
+          "promptAr": "هل يرفض ب تماماً؟",
+          "options": [
+            "No, B asks to join later.",
+            "Yes, without a reason.",
+            "No, B will arrive before seven."
+          ],
+          "answer": "No, B asks to join later.",
+          "audioTranscript": "A: Would you like to come on Saturday? B: I'd love to, but I'm working until seven. Could I join later?"
+        },
+        {
+          "id": "A2-U12-L4-A02",
+          "lessonId": "A2-U12-L4",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE",
+            "A2.U12.INTERACTION.INVITE_ACCEPT_DECLINE"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "accept",
+              "يقبل"
+            ],
+            [
+              "decline",
+              "يرفض بأدب"
+            ],
+            [
+              "free",
+              "متفرغ"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U12-L4-A03",
+          "lessonId": "A2-U12-L4",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE",
+            "A2.U12.INTERACTION.INVITE_ACCEPT_DECLINE"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "I'd love to come, ___ I am not available.",
+          "options": [
+            "but",
+            "because",
+            "so"
+          ],
+          "answer": "but"
+        },
+        {
+          "id": "A2-U12-L4-A04",
+          "lessonId": "A2-U12-L4",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE",
+            "A2.U12.INTERACTION.INVITE_ACCEPT_DECLINE"
+          ],
+          "prompt": "Why can't the speaker attend?",
+          "promptAr": "لماذا لا يستطيع المتحدث الحضور؟",
+          "options": [
+            "They are travelling.",
+            "They dislike the event.",
+            "The time changed."
+          ],
+          "answer": "They are travelling.",
+          "audioTranscript": "Thanks for inviting me. Unfortunately, I can't make it because I am travelling that day. I hope you have a great time."
+        },
+        {
+          "id": "A2-U12-L4-A05",
+          "lessonId": "A2-U12-L4",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE",
+            "A2.U12.INTERACTION.INVITE_ACCEPT_DECLINE"
+          ],
+          "prompt": "Accept one invitation warmly and decline another politely with a clear reason.",
+          "promptAr": "اقبل دعوة بحفاوة وارفض أخرى بأدب مع سبب واضح.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U12-L5",
+      "title": "Communicate a Change",
+      "titleAr": "أبلغ عن تغيير",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U12.READING.FOLLOW_INVITATION_MESSAGE",
+        "A2.U12.MEDIATION.RELAY_EVENT_CHANGE"
+      ],
+      "grammar": [
+        "A2.G.CHANGE_APOLOGY",
+        "A2.G.TECH_QUESTIONS",
+        "A2.G.PURPOSE_TECH"
+      ],
+      "lexicon": [
+        "A2.LEX.UNFORTUNATELY_ADV01",
+        "A2.LEX.CHANGE_V02",
+        "A2.LEX.INSTEAD_ADV01",
+        "A2.LEX.ERROR_N01",
+        "A2.LEX.FREEZE_V01",
+        "A2.LEX.SOLUTION_N01",
+        "A2.LEX.SECURE_ADJ01",
+        "A2.LEX.BACKUP_N01",
+        "A2.LEX.GUIDE_N01"
+      ],
+      "chunks": [
+        "A2.CHUNK.CHANGE_OF_PLAN",
+        "A2.CHUNK.WHAT_ERROR_MESSAGE",
+        "A2.CHUNK.STEP_BY_STEP"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "There is a change of plan. Unfortunately, the community hall has a water problem, so the meeting will take place at the school instead. The time is still 6:00.",
+            "ar": ""
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U12-L5-A01",
+          "lessonId": "A2-U12-L5",
+          "type": "textChoice",
+          "mode": "encounter",
+          "skill": "reading",
+          "canDo": [
+            "A2.U12.READING.FOLLOW_INVITATION_MESSAGE",
+            "A2.U12.MEDIATION.RELAY_EVENT_CHANGE"
+          ],
+          "prompt": "What has not changed?",
+          "promptAr": "ما الذي لم يتغير؟",
+          "options": [
+            "The time",
+            "The place",
+            "The building"
+          ],
+          "answer": "The time",
+          "sourceText": "There is a change of plan. Unfortunately, the community hall has a water problem, so the meeting will take place at the school instead. The time is still 6:00."
+        },
+        {
+          "id": "A2-U12-L5-A02",
+          "lessonId": "A2-U12-L5",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U12.READING.FOLLOW_INVITATION_MESSAGE",
+            "A2.U12.MEDIATION.RELAY_EVENT_CHANGE"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "unfortunately",
+              "للأسف"
+            ],
+            [
+              "change",
+              "يغيّر"
+            ],
+            [
+              "instead",
+              "بدلاً من ذلك"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U12-L5-A03",
+          "lessonId": "A2-U12-L5",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U12.READING.FOLLOW_INVITATION_MESSAGE",
+            "A2.U12.MEDIATION.RELAY_EVENT_CHANGE"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "The café is closed, so we'll meet at the library ___.",
+          "options": [
+            "instead",
+            "unfortunately",
+            "because"
+          ],
+          "answer": "instead"
+        },
+        {
+          "id": "A2-U12-L5-A04",
+          "lessonId": "A2-U12-L5",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A2.U12.READING.FOLLOW_INVITATION_MESSAGE",
+            "A2.U12.MEDIATION.RELAY_EVENT_CHANGE"
+          ],
+          "prompt": "Which detail remains usable?",
+          "promptAr": "أي تفصيل يبقى قابلاً للاستخدام؟",
+          "options": [
+            "The same link",
+            "Friday's date",
+            "The physical room"
+          ],
+          "answer": "The same link",
+          "sourceText": "Because the speaker is ill, Friday's talk is postponed. It will happen online on Monday at 7:30 instead. The same link will work."
+        },
+        {
+          "id": "A2-U12-L5-A05",
+          "lessonId": "A2-U12-L5",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "mediation",
+          "canDo": [
+            "A2.U12.READING.FOLLOW_INVITATION_MESSAGE",
+            "A2.U12.MEDIATION.RELAY_EVENT_CHANGE"
+          ],
+          "prompt": "Relay an event change with reason, replacement arrangement and any detail that stays the same.",
+          "promptAr": "انقل تغيير فعالية مع السبب والترتيب البديل وأي تفصيل بقي كما هو.",
+          "evaluation": [
+            "selectRelevantInformation",
+            "clarity",
+            "audienceAwareness",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U12-L6",
+      "title": "Write a Complete Event Message",
+      "titleAr": "اكتب رسالة فعالية كاملة",
+      "lessonType": "integrated-production",
+      "canDo": [
+        "A2.U12.WRITING.WRITE_CONNECTED_EVENT_MESSAGE",
+        "A2.U12.PRODUCTION.EXPLAIN_EVENT_PLAN"
+      ],
+      "grammar": [
+        "A2.G.EVENT_MESSAGE_LINKERS",
+        "A2.G.FUTURE_EVENT_REVIEW"
+      ],
+      "lexicon": [
+        "A2.LEX.EVENT_DETAIL_N01",
+        "A2.LEX.REPLY_N01",
+        "A2.LEX.DIETARY_ADJ01"
+      ],
+      "chunks": [
+        "A2.CHUNK.PLEASE_LET_US_KNOW",
+        "A2.CHUNK.LOOKING_FORWARD"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "Hello everyone, our meal is on 14 August at 6:30 in Garden Hall. Please reply by Monday and let us know about any dietary needs. Also, bring a reusable cup. We're looking forward to seeing you.",
+            "ar": ""
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U12-L6-A01",
+          "lessonId": "A2-U12-L6",
+          "type": "textChoice",
+          "mode": "encounter",
+          "skill": "reading",
+          "canDo": [
+            "A2.U12.WRITING.WRITE_CONNECTED_EVENT_MESSAGE",
+            "A2.U12.PRODUCTION.EXPLAIN_EVENT_PLAN"
+          ],
+          "prompt": "What must guests report?",
+          "promptAr": "ماذا يجب على الضيوف الإبلاغ عنه؟",
+          "options": [
+            "Dietary needs",
+            "Their job history",
+            "The weather"
+          ],
+          "answer": "Dietary needs",
+          "sourceText": "Hello everyone, our meal is on 14 August at 6:30 in Garden Hall. Please reply by Monday and let us know about any dietary needs. Also, bring a reusable cup. We're looking forward to seeing you."
+        },
+        {
+          "id": "A2-U12-L6-A02",
+          "lessonId": "A2-U12-L6",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U12.WRITING.WRITE_CONNECTED_EVENT_MESSAGE",
+            "A2.U12.PRODUCTION.EXPLAIN_EVENT_PLAN"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "event detail",
+              "تفصيل فعالية"
+            ],
+            [
+              "reply",
+              "رد"
+            ],
+            [
+              "dietary",
+              "غذائي"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U12-L6-A03",
+          "lessonId": "A2-U12-L6",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U12.WRITING.WRITE_CONNECTED_EVENT_MESSAGE",
+            "A2.U12.PRODUCTION.EXPLAIN_EVENT_PLAN"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "Please let us ___ if you can attend.",
+          "options": [
+            "know",
+            "knew",
+            "knowing"
+          ],
+          "answer": "know"
+        },
+        {
+          "id": "A2-U12-L6-A04",
+          "lessonId": "A2-U12-L6",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A2.U12.WRITING.WRITE_CONNECTED_EVENT_MESSAGE",
+            "A2.U12.PRODUCTION.EXPLAIN_EVENT_PLAN"
+          ],
+          "prompt": "What is included?",
+          "promptAr": "ما الذي هو مشمول؟",
+          "options": [
+            "Lunch",
+            "A notebook",
+            "Transport"
+          ],
+          "answer": "Lunch",
+          "sourceText": "The workshop starts at ten. First, sign in at the desk. Also, bring a notebook. However, you do not need to bring food because lunch is included."
+        },
+        {
+          "id": "A2-U12-L6-A05",
+          "lessonId": "A2-U12-L6",
+          "type": "write",
+          "mode": "mastery",
+          "skill": "writing",
+          "canDo": [
+            "A2.U12.WRITING.WRITE_CONNECTED_EVENT_MESSAGE",
+            "A2.U12.PRODUCTION.EXPLAIN_EVENT_PLAN"
+          ],
+          "prompt": "Write a connected invitation with purpose, date, time, place, response request, practical detail and warm close.",
+          "promptAr": "اكتب دعوة مترابطة تتضمن الغرض والتاريخ والوقت والمكان وطلب الرد وتفصيلاً عملياً وخاتمة ودودة.",
+          "evaluation": [
+            "taskCompletion",
+            "clarity",
+            "organisation",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "wordGuide": [
+            90,
+            120
+          ]
+        }
+      ]
+    },
+    {
+      "id": "A2-U12-L7",
+      "title": "Mission: Organise an Event After Changes",
+      "titleAr": "المهمة: نظّم فعالية بعد تغييرات",
+      "lessonType": "mission",
+      "canDo": [
+        "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE",
+        "A2.U12.READING.FOLLOW_INVITATION_MESSAGE",
+        "A2.U12.PRODUCTION.EXPLAIN_EVENT_PLAN",
+        "A2.U12.INTERACTION.INVITE_ACCEPT_DECLINE",
+        "A2.U12.WRITING.WRITE_CONNECTED_EVENT_MESSAGE",
+        "A2.U12.MEDIATION.RELAY_EVENT_CHANGE",
+        "A2.U12.ACTION.ORGANISE_EVENT"
+      ],
+      "grammar": [],
+      "lexicon": [],
+      "chunks": [],
+      "scenario": "Organise a small event, invite people, distribute tasks, then respond to an unseen venue or schedule change and update everyone.",
+      "activities": [
+        {
+          "id": "A2-U12-L7-A01",
+          "lessonId": "A2-U12-L7",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A2.U12.READING.FOLLOW_INVITATION_MESSAGE",
+            "A2.U12.ACTION.ORGANISE_EVENT"
+          ],
+          "prompt": "Which activity is unchanged?",
+          "promptAr": "أي نشاط لم يتغير؟",
+          "options": [
+            "The cooking activity",
+            "The venue",
+            "The time"
+          ],
+          "answer": "The cooking activity",
+          "sourceText": "Original plan: Saturday 4:00, River Hall. Update: River Hall is unavailable, so the event will be at Oak Centre at 5:00. The cooking activity is unchanged. Confirm attendance by Thursday."
+        },
+        {
+          "id": "A2-U12-L7-A02",
+          "lessonId": "A2-U12-L7",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE",
+            "A2.U12.ACTION.ORGANISE_EVENT"
+          ],
+          "prompt": "Which task can the speaker do?",
+          "promptAr": "أي مهمة يستطيع المتحدث تنفيذها؟",
+          "options": [
+            "Bring the drinks",
+            "Collect the key",
+            "Open at four"
+          ],
+          "answer": "Bring the drinks",
+          "audioTranscript": "I can come at five and bring the drinks, but I can't collect the key because I am working until four thirty. Could someone else do that?"
+        },
+        {
+          "id": "A2-U12-L7-A03",
+          "lessonId": "A2-U12-L7",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A2.U12.INTERACTION.INVITE_ACCEPT_DECLINE",
+            "A2.U12.ACTION.ORGANISE_EVENT"
+          ],
+          "prompt": "Invite a guest, negotiate two tasks and respond to one availability problem.",
+          "promptAr": "ادعُ ضيفاً وتفاوض على مهمتين واستجب لمشكلة توفر واحدة.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A2-U12-L7-A04",
+          "lessonId": "A2-U12-L7",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A2.U12.PRODUCTION.EXPLAIN_EVENT_PLAN",
+            "A2.U12.ACTION.ORGANISE_EVENT"
+          ],
+          "prompt": "Present the final event plan, including arrangements, responsibilities and the change.",
+          "promptAr": "قدّم خطة الفعالية النهائية متضمنة الترتيبات والمسؤوليات والتغيير.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A2-U12-L7-A05",
+          "lessonId": "A2-U12-L7",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "mediation",
+          "canDo": [
+            "A2.U12.MEDIATION.RELAY_EVENT_CHANGE",
+            "A2.U12.ACTION.ORGANISE_EVENT"
+          ],
+          "prompt": "Relay the old and new details, unchanged activity and reply deadline accurately.",
+          "promptAr": "انقل التفاصيل القديمة والجديدة والنشاط غير المتغير وموعد الرد بدقة.",
+          "evaluation": [
+            "selectRelevantInformation",
+            "clarity",
+            "audienceAwareness",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A2-U12-L7-A06",
+          "lessonId": "A2-U12-L7",
+          "type": "write",
+          "mode": "mastery",
+          "skill": "writing",
+          "canDo": [
+            "A2.U12.WRITING.WRITE_CONNECTED_EVENT_MESSAGE",
+            "A2.U12.ACTION.ORGANISE_EVENT"
+          ],
+          "prompt": "Write the final update to all guests with apology, reason, replacement details, tasks and confirmation request.",
+          "promptAr": "اكتب التحديث النهائي لجميع الضيوف مع اعتذار وسبب وتفاصيل بديلة ومهام وطلب تأكيد.",
+          "evaluation": [
+            "taskCompletion",
+            "clarity",
+            "organisation",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "wordGuide": [
+            95,
+            125
+          ],
+          "accepted": []
+        }
+      ]
+    }
+  ],
+  "mastery": {
+    "requiredObjectives": [
+      "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE",
+      "A2.U12.READING.FOLLOW_INVITATION_MESSAGE",
+      "A2.U12.PRODUCTION.EXPLAIN_EVENT_PLAN",
+      "A2.U12.INTERACTION.INVITE_ACCEPT_DECLINE",
+      "A2.U12.WRITING.WRITE_CONNECTED_EVENT_MESSAGE",
+      "A2.U12.MEDIATION.RELAY_EVENT_CHANGE",
+      "A2.U12.ACTION.ORGANISE_EVENT"
+    ],
+    "requiredSkillGroups": [
+      [
+        "listening",
+        "reading"
+      ],
+      [
+        "spokenInteraction",
+        "spokenProduction",
+        "writing"
+      ],
+      [
+        "mediation"
+      ]
+    ],
+    "minimumObjectiveScore": 0.75,
+    "missionRequired": true,
+    "retry": "targeted-by-objective",
+    "unlocks": "A2-FINAL-MISSION"
+  },
+  "countsTowardA1Mastery": true
+}

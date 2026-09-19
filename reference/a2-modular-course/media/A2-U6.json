@@ -1,0 +1,56 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-U6",
+  "kind": "media",
+  "records": {
+    "audio-a2-u6-l1-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "We are going to spend the weekend in Aqaba. We plan to see the fort and take a boat trip.",
+      "activityId": "A2-U6-L1-A01"
+    },
+    "audio-a2-u6-l1-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "Mira is going to visit Cairo for three days. She plans to see the museum and walk by the river.",
+      "activityId": "A2-U6-L1-A04"
+    },
+    "audio-a2-u6-l2-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "Guest: Do you have a double room available for Friday? Clerk: Yes. What time are you arriving? Guest: We're arriving at six.",
+      "activityId": "A2-U6-L2-A01"
+    },
+    "audio-a2-u6-l2-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "Caller: I'm travelling alone and need a room for two nights. Reception: A single room is available, and breakfast is included.",
+      "activityId": "A2-U6-L2-A04"
+    },
+    "audio-a2-u6-l4-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "If the boat trip is cancelled, we'll visit the aquarium. If there is a train delay, we'll call the hotel.",
+      "activityId": "A2-U6-L4-A01"
+    },
+    "audio-a2-u6-l4-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "If the road is closed, the bus will use another route and arrive twenty minutes late.",
+      "activityId": "A2-U6-L4-A04"
+    },
+    "audio-a2-u6-l7-a02": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "The 8:15 train is cancelled. Your ticket is valid on the direct train at 9:05, which arrives at 11:20.",
+      "activityId": "A2-U6-L7-A02"
+    }
+  }
+}

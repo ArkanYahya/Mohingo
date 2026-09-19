@@ -1,0 +1,95 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-U12",
+  "kind": "chunks",
+  "records": [
+    {
+      "id": "A2.CHUNK.WOULD_LIKE_TO_JOIN",
+      "text": "Would you like to join us?",
+      "arabic": "هل ترغب في الانضمام إلينا؟",
+      "cefr": "A2",
+      "introducedIn": "A2-U12-L1",
+      "productive": true,
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.ARE_YOU_FREE",
+      "text": "Are you free on ...?",
+      "arabic": "هل أنت متفرغ يوم...؟",
+      "cefr": "A2",
+      "introducedIn": "A2-U12-L1",
+      "productive": true,
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.COULD_YOU_BRING",
+      "text": "Could you bring ...?",
+      "arabic": "هل يمكنك إحضار...؟",
+      "cefr": "A2",
+      "introducedIn": "A2-U12-L2",
+      "productive": true,
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.LOOKING_FORWARD",
+      "text": "I'm looking forward to it.",
+      "arabic": "أتطلع إليه.",
+      "cefr": "A2",
+      "introducedIn": "A2-U12-L3",
+      "productive": true,
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.ID_LOVE_TO_BUT",
+      "text": "I'd love to, but ...",
+      "arabic": "يسعدني، لكن...",
+      "cefr": "A2",
+      "introducedIn": "A2-U12-L4",
+      "productive": true,
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.SORRY_CANT_MAKE_IT",
+      "text": "Sorry, I can't make it.",
+      "arabic": "آسف، لا أستطيع الحضور.",
+      "cefr": "A2",
+      "introducedIn": "A2-U12-L4",
+      "productive": true,
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.CHANGE_OF_PLAN",
+      "text": "There is a change of plan.",
+      "arabic": "هناك تغيير في الخطة.",
+      "cefr": "A2",
+      "introducedIn": "A2-U12-L5",
+      "productive": true,
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.PLEASE_LET_US_KNOW",
+      "text": "Please let us know ...",
+      "arabic": "يرجى إبلاغنا...",
+      "cefr": "A2",
+      "introducedIn": "A2-U12-L6",
+      "productive": true,
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    }
+  ]
+}

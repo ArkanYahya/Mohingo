@@ -1,0 +1,367 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-U7",
+  "kind": "lexicon",
+  "records": [
+    {
+      "id": "A2.LEX.SORE_ADJ01",
+      "headword": "sore",
+      "partOfSpeech": "adjective",
+      "arabic": "مؤلم",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "sore",
+      "examples": [
+        {
+          "en": "My throat is sore.",
+          "ar": "حلقي مؤلم."
+        }
+      ],
+      "introducedIn": "A2-U7-L1",
+      "recycledIn": [
+        "A2-U8-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.COUGH_N01",
+      "headword": "cough",
+      "partOfSpeech": "noun",
+      "arabic": "سعال",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "cough",
+      "examples": [
+        {
+          "en": "I have a dry cough.",
+          "ar": "لدي سعال جاف."
+        }
+      ],
+      "introducedIn": "A2-U7-L1",
+      "recycledIn": [
+        "A2-U8-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.REST_N01",
+      "headword": "rest",
+      "partOfSpeech": "noun",
+      "arabic": "راحة",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "rest",
+      "examples": [
+        {
+          "en": "You need some rest.",
+          "ar": "تحتاج بعض الراحة."
+        }
+      ],
+      "introducedIn": "A2-U7-L1",
+      "recycledIn": [
+        "A2-U8-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.MEDICINE_N01",
+      "headword": "medicine",
+      "partOfSpeech": "noun",
+      "arabic": "دواء",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "medicine",
+      "examples": [
+        {
+          "en": "Take the medicine after food.",
+          "ar": "تناول الدواء بعد الطعام."
+        }
+      ],
+      "introducedIn": "A2-U7-L2",
+      "recycledIn": [
+        "A2-U8-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.DOSE_N01",
+      "headword": "dose",
+      "partOfSpeech": "noun",
+      "arabic": "جرعة",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "dose",
+      "examples": [
+        {
+          "en": "Take one dose every eight hours.",
+          "ar": "تناول جرعة كل ثماني ساعات."
+        }
+      ],
+      "introducedIn": "A2-U7-L2",
+      "recycledIn": [
+        "A2-U8-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.APPOINTMENT_N01",
+      "headword": "appointment",
+      "partOfSpeech": "noun",
+      "arabic": "موعد",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "appointment",
+      "examples": [
+        {
+          "en": "I need a doctor's appointment.",
+          "ar": "أحتاج موعداً مع الطبيب."
+        }
+      ],
+      "introducedIn": "A2-U7-L2",
+      "recycledIn": [
+        "A2-U8-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.ALLERGY_N01",
+      "headword": "allergy",
+      "partOfSpeech": "noun",
+      "arabic": "حساسية",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "allergy",
+      "examples": [
+        {
+          "en": "Tell us about any allergy.",
+          "ar": "أخبرنا عن أي حساسية."
+        }
+      ],
+      "introducedIn": "A2-U7-L3",
+      "recycledIn": [
+        "A2-U9-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.WARNING_N01",
+      "headword": "warning",
+      "partOfSpeech": "noun",
+      "arabic": "تحذير",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "warning",
+      "examples": [
+        {
+          "en": "Read the warning carefully.",
+          "ar": "اقرأ التحذير بعناية."
+        }
+      ],
+      "introducedIn": "A2-U7-L3",
+      "recycledIn": [
+        "A2-U9-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.DIZZY_ADJ01",
+      "headword": "dizzy",
+      "partOfSpeech": "adjective",
+      "arabic": "يشعر بالدوار",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "dizzy",
+      "examples": [
+        {
+          "en": "This medicine may make you dizzy.",
+          "ar": "قد يجعلك هذا الدواء تشعر بالدوار."
+        }
+      ],
+      "introducedIn": "A2-U7-L3",
+      "recycledIn": [
+        "A2-U9-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.HYDRATED_ADJ01",
+      "headword": "hydrated",
+      "partOfSpeech": "adjective",
+      "arabic": "مرطَّب",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "hydrated",
+      "examples": [
+        {
+          "en": "Drink water to stay hydrated.",
+          "ar": "اشرب الماء لتحافظ على الترطيب."
+        }
+      ],
+      "introducedIn": "A2-U7-L4",
+      "recycledIn": [
+        "A2-U9-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.STRETCH_V01",
+      "headword": "stretch",
+      "partOfSpeech": "verb",
+      "arabic": "يمدّد",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "stretch",
+      "examples": [
+        {
+          "en": "Stretch to relax your back.",
+          "ar": "مدّد جسمك لإراحة ظهرك."
+        }
+      ],
+      "introducedIn": "A2-U7-L4",
+      "recycledIn": [
+        "A2-U9-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.AVOID_V01",
+      "headword": "avoid",
+      "partOfSpeech": "verb",
+      "arabic": "يتجنب",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "avoid",
+      "examples": [
+        {
+          "en": "Avoid heavy food tonight.",
+          "ar": "تجنب الطعام الثقيل الليلة."
+        }
+      ],
+      "introducedIn": "A2-U7-L4",
+      "recycledIn": [
+        "A2-U9-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.SYMPTOM_N01",
+      "headword": "symptom",
+      "partOfSpeech": "noun",
+      "arabic": "عَرَض",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "symptom",
+      "examples": [
+        {
+          "en": "Describe each symptom.",
+          "ar": "صف كل عرض."
+        }
+      ],
+      "introducedIn": "A2-U7-L5",
+      "recycledIn": [
+        "A2-U10-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.PAIN_N01",
+      "headword": "pain",
+      "partOfSpeech": "noun",
+      "arabic": "ألم",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "pain",
+      "examples": [
+        {
+          "en": "Where is the pain?",
+          "ar": "أين الألم؟"
+        }
+      ],
+      "introducedIn": "A2-U7-L5",
+      "recycledIn": [
+        "A2-U10-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.WORSE_ADJ01",
+      "headword": "worse",
+      "partOfSpeech": "adjective",
+      "arabic": "أسوأ",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "worse",
+      "examples": [
+        {
+          "en": "The pain is worse today.",
+          "ar": "الألم أسوأ اليوم."
+        }
+      ],
+      "introducedIn": "A2-U7-L5",
+      "recycledIn": [
+        "A2-U10-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.WELL_BEING_N01",
+      "headword": "well-being",
+      "partOfSpeech": "noun",
+      "arabic": "عافية",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "well-being",
+      "examples": [
+        {
+          "en": "Sleep supports well-being.",
+          "ar": "النوم يدعم العافية."
+        }
+      ],
+      "introducedIn": "A2-U7-L6",
+      "recycledIn": [
+        "A2-U10-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.HABIT_N01",
+      "headword": "habit",
+      "partOfSpeech": "noun",
+      "arabic": "عادة",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "habit",
+      "examples": [
+        {
+          "en": "Build one healthy habit.",
+          "ar": "ابنِ عادة صحية واحدة."
+        }
+      ],
+      "introducedIn": "A2-U7-L6",
+      "recycledIn": [
+        "A2-U10-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.RECOVER_V01",
+      "headword": "recover",
+      "partOfSpeech": "verb",
+      "arabic": "يتعافى",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "recover",
+      "examples": [
+        {
+          "en": "You need time to recover.",
+          "ar": "تحتاج وقتاً للتعافي."
+        }
+      ],
+      "introducedIn": "A2-U7-L6",
+      "recycledIn": [
+        "A2-U10-L5"
+      ]
+    }
+  ]
+}

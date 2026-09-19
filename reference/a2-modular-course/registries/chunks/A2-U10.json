@@ -1,0 +1,95 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-U10",
+  "kind": "chunks",
+  "records": [
+    {
+      "id": "A2.CHUNK.AT_THE_BEGINNING",
+      "text": "at the beginning",
+      "arabic": "في البداية",
+      "cefr": "A2",
+      "introducedIn": "A2-U10-L1",
+      "productive": true,
+      "recycledIn": [
+        "A2-U11-L1"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.WAS_HAPPENING_WHEN",
+      "text": "was happening when ...",
+      "arabic": "كان يحدث عندما...",
+      "cefr": "A2",
+      "introducedIn": "A2-U10-L2",
+      "productive": true,
+      "recycledIn": [
+        "A2-U11-L1"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.WHILE_THEY_WERE",
+      "text": "while they were ...",
+      "arabic": "بينما كانوا...",
+      "cefr": "A2",
+      "introducedIn": "A2-U10-L3",
+      "productive": true,
+      "recycledIn": [
+        "A2-U11-L1"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.THE_MAIN_CHARACTER",
+      "text": "the main character",
+      "arabic": "الشخصية الرئيسية",
+      "cefr": "A2",
+      "introducedIn": "A2-U10-L4",
+      "productive": true,
+      "recycledIn": [
+        "A2-U12-L3"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.IN_MY_OPINION",
+      "text": "In my opinion, ...",
+      "arabic": "في رأيي...",
+      "cefr": "A2",
+      "introducedIn": "A2-U10-L5",
+      "productive": true,
+      "recycledIn": [
+        "A2-U12-L3"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.WHAT_I_LIKED",
+      "text": "What I liked was ...",
+      "arabic": "ما أعجبني هو...",
+      "cefr": "A2",
+      "introducedIn": "A2-U10-L5",
+      "productive": true,
+      "recycledIn": [
+        "A2-U12-L3"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.I_RECOMMEND_IT_TO",
+      "text": "I recommend it to ...",
+      "arabic": "أوصي به لـ...",
+      "cefr": "A2",
+      "introducedIn": "A2-U10-L6",
+      "productive": true,
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.OUT_OF_FIVE",
+      "text": "out of five",
+      "arabic": "من خمسة",
+      "cefr": "A2",
+      "introducedIn": "A2-U10-L6",
+      "productive": true,
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    }
+  ]
+}

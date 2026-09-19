@@ -1,0 +1,95 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-U6",
+  "kind": "chunks",
+  "records": [
+    {
+      "id": "A2.CHUNK.GOING_TO_STAY",
+      "text": "going to stay",
+      "arabic": "ينوي الإقامة",
+      "cefr": "A2",
+      "introducedIn": "A2-U6-L1",
+      "productive": true,
+      "recycledIn": [
+        "A2-U7-L1"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.BOOK_A_ROOM",
+      "text": "book a room",
+      "arabic": "يحجز غرفة",
+      "cefr": "A2",
+      "introducedIn": "A2-U6-L2",
+      "productive": true,
+      "recycledIn": [
+        "A2-U7-L1"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.DO_YOU_HAVE_AVAILABLE",
+      "text": "Do you have ... available?",
+      "arabic": "هل لديكم ... متاح؟",
+      "cefr": "A2",
+      "introducedIn": "A2-U6-L2",
+      "productive": true,
+      "recycledIn": [
+        "A2-U7-L1"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.ILL_TAKE_IT",
+      "text": "I'll take it.",
+      "arabic": "سآخذه.",
+      "cefr": "A2",
+      "introducedIn": "A2-U6-L3",
+      "productive": true,
+      "recycledIn": [
+        "A2-U8-L3"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.IF_WEATHER_BAD",
+      "text": "If the weather is bad, ...",
+      "arabic": "إذا كان الطقس سيئاً...",
+      "cefr": "A2",
+      "introducedIn": "A2-U6-L4",
+      "productive": true,
+      "recycledIn": [
+        "A2-U8-L3"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.PLAN_B",
+      "text": "Plan B",
+      "arabic": "الخطة البديلة",
+      "cefr": "A2",
+      "introducedIn": "A2-U6-L4",
+      "productive": true,
+      "recycledIn": [
+        "A2-U8-L3"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.WHEN_YOU_ARRIVE",
+      "text": "when you arrive",
+      "arabic": "عندما تصل",
+      "cefr": "A2",
+      "introducedIn": "A2-U6-L5",
+      "productive": true,
+      "recycledIn": [
+        "A2-U9-L5"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.RETURN_TICKET",
+      "text": "return ticket",
+      "arabic": "تذكرة ذهاب وعودة",
+      "cefr": "A2",
+      "introducedIn": "A2-U6-L3",
+      "productive": true,
+      "recycledIn": [
+        "A2-U9-L5"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "2.0.0",
+  "contentVersion": "A2-COMPLETE-A1-CONTRACT-2026.09.19",
+  "locale": {
+    "targetLanguage": "en",
+    "supportLanguage": "ar",
+    "direction": {
+      "target": "ltr",
+      "support": "rtl"
+    }
+  },
+  "course": {
+    "id": "EN-A2-V1",
+    "title": "English A2",
+    "titleAr": "اللغة الإنجليزية — المستوى A2",
+    "status": "complete-course",
+    "completedScope": [
+      "A2-U1",
+      "A2-U2",
+      "A2-U3",
+      "A2-U4",
+      "A2-U5",
+      "A2-U6",
+      "A2-U7",
+      "A2-U8",
+      "A2-U9",
+      "A2-U10",
+      "A2-U11",
+      "A2-U12",
+      "A2-FINAL-MISSION",
+      "A2-FINAL-ASSESSMENT"
+    ],
+    "pendingScope": [],
+    "authoredUnitCount": 12,
+    "authoredLessonCount": 84,
+    "finalMissionId": "A2-FINAL-MISSION",
+    "finalAssessmentId": "A2-FINAL-ASSESSMENT"
+  }
+}

@@ -1,0 +1,367 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-U5",
+  "kind": "lexicon",
+  "records": [
+    {
+      "id": "A2.LEX.INGREDIENT_N01",
+      "headword": "ingredient",
+      "partOfSpeech": "noun",
+      "arabic": "مكوّن",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "ingredient",
+      "examples": [
+        {
+          "en": "Check every ingredient.",
+          "ar": "تحقق من كل مكوّن."
+        }
+      ],
+      "introducedIn": "A2-U5-L1",
+      "recycledIn": [
+        "A2-U6-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.FLOUR_N01",
+      "headword": "flour",
+      "partOfSpeech": "noun",
+      "arabic": "طحين",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "flour",
+      "examples": [
+        {
+          "en": "We need some flour.",
+          "ar": "نحتاج بعض الطحين."
+        }
+      ],
+      "introducedIn": "A2-U5-L1",
+      "recycledIn": [
+        "A2-U6-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.GRAM_N01",
+      "headword": "gram",
+      "partOfSpeech": "noun",
+      "arabic": "غرام",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "gram",
+      "examples": [
+        {
+          "en": "Add 200 grams of rice.",
+          "ar": "أضف 200 غرام من الأرز."
+        }
+      ],
+      "introducedIn": "A2-U5-L1",
+      "recycledIn": [
+        "A2-U6-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.CHOP_V01",
+      "headword": "chop",
+      "partOfSpeech": "verb",
+      "arabic": "يفرم",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "chop",
+      "examples": [
+        {
+          "en": "Chop the onion.",
+          "ar": "افرُم البصل."
+        }
+      ],
+      "introducedIn": "A2-U5-L2",
+      "recycledIn": [
+        "A2-U6-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.BOIL_V01",
+      "headword": "boil",
+      "partOfSpeech": "verb",
+      "arabic": "يغلي",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "boil",
+      "examples": [
+        {
+          "en": "Boil the water first.",
+          "ar": "اغلِ الماء أولاً."
+        }
+      ],
+      "introducedIn": "A2-U5-L2",
+      "recycledIn": [
+        "A2-U6-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.STIR_V01",
+      "headword": "stir",
+      "partOfSpeech": "verb",
+      "arabic": "يحرّك",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "stir",
+      "examples": [
+        {
+          "en": "Stir the sauce slowly.",
+          "ar": "حرّك الصلصة ببطء."
+        }
+      ],
+      "introducedIn": "A2-U5-L2",
+      "recycledIn": [
+        "A2-U6-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.OLIVE_N01",
+      "headword": "olive",
+      "partOfSpeech": "noun",
+      "arabic": "زيتونة",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "olive",
+      "examples": [
+        {
+          "en": "Add a few olives.",
+          "ar": "أضف بعض حبات الزيتون."
+        }
+      ],
+      "introducedIn": "A2-U5-L3",
+      "recycledIn": [
+        "A2-U7-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.SALT_N01",
+      "headword": "salt",
+      "partOfSpeech": "noun",
+      "arabic": "ملح",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "salt",
+      "examples": [
+        {
+          "en": "Use a little salt.",
+          "ar": "استخدم قليلاً من الملح."
+        }
+      ],
+      "introducedIn": "A2-U5-L3",
+      "recycledIn": [
+        "A2-U7-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.SAUCE_N01",
+      "headword": "sauce",
+      "partOfSpeech": "noun",
+      "arabic": "صلصة",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "sauce",
+      "examples": [
+        {
+          "en": "The sauce is too thick.",
+          "ar": "الصلصة كثيفة جداً."
+        }
+      ],
+      "introducedIn": "A2-U5-L3",
+      "recycledIn": [
+        "A2-U7-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.ORDER_N02",
+      "headword": "order",
+      "partOfSpeech": "noun",
+      "arabic": "طلب",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "order",
+      "examples": [
+        {
+          "en": "Our order is incomplete.",
+          "ar": "طلبنا غير مكتمل."
+        }
+      ],
+      "introducedIn": "A2-U5-L4",
+      "recycledIn": [
+        "A2-U7-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.MISSING_ADJ01",
+      "headword": "missing",
+      "partOfSpeech": "adjective",
+      "arabic": "مفقود",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "missing",
+      "examples": [
+        {
+          "en": "One drink is missing.",
+          "ar": "مشروب واحد مفقود."
+        }
+      ],
+      "introducedIn": "A2-U5-L4",
+      "recycledIn": [
+        "A2-U7-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.WRONG_ADJ01",
+      "headword": "wrong",
+      "partOfSpeech": "adjective",
+      "arabic": "خطأ",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "wrong",
+      "examples": [
+        {
+          "en": "This is the wrong dish.",
+          "ar": "هذا الطبق الخطأ."
+        }
+      ],
+      "introducedIn": "A2-U5-L4",
+      "recycledIn": [
+        "A2-U7-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.REPLACE_V01",
+      "headword": "replace",
+      "partOfSpeech": "verb",
+      "arabic": "يستبدل",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "replace",
+      "examples": [
+        {
+          "en": "Could you replace the soup?",
+          "ar": "هل يمكنك استبدال الحساء؟"
+        }
+      ],
+      "introducedIn": "A2-U5-L5",
+      "recycledIn": [
+        "A2-U8-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.BILL_N01",
+      "headword": "bill",
+      "partOfSpeech": "noun",
+      "arabic": "فاتورة",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "bill",
+      "examples": [
+        {
+          "en": "There is an extra item on the bill.",
+          "ar": "يوجد عنصر إضافي في الفاتورة."
+        }
+      ],
+      "introducedIn": "A2-U5-L5",
+      "recycledIn": [
+        "A2-U8-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.SERVICE_N01",
+      "headword": "service",
+      "partOfSpeech": "noun",
+      "arabic": "خدمة",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "service",
+      "examples": [
+        {
+          "en": "The service was friendly.",
+          "ar": "كانت الخدمة ودودة."
+        }
+      ],
+      "introducedIn": "A2-U5-L5",
+      "recycledIn": [
+        "A2-U8-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.RECIPE_N01",
+      "headword": "recipe",
+      "partOfSpeech": "noun",
+      "arabic": "وصفة",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "recipe",
+      "examples": [
+        {
+          "en": "Share the recipe with me.",
+          "ar": "شارك الوصفة معي."
+        }
+      ],
+      "introducedIn": "A2-U5-L6",
+      "recycledIn": [
+        "A2-U8-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.PORTION_N01",
+      "headword": "portion",
+      "partOfSpeech": "noun",
+      "arabic": "حصة طعام",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "portion",
+      "examples": [
+        {
+          "en": "This recipe makes four portions.",
+          "ar": "تكفي هذه الوصفة أربع حصص."
+        }
+      ],
+      "introducedIn": "A2-U5-L6",
+      "recycledIn": [
+        "A2-U8-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.METHOD_N01",
+      "headword": "method",
+      "partOfSpeech": "noun",
+      "arabic": "طريقة",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "method",
+      "examples": [
+        {
+          "en": "The method has five steps.",
+          "ar": "تتضمن الطريقة خمس خطوات."
+        }
+      ],
+      "introducedIn": "A2-U5-L6",
+      "recycledIn": [
+        "A2-U8-L5"
+      ]
+    }
+  ]
+}

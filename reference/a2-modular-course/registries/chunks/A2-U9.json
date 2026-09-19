@@ -1,0 +1,95 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-U9",
+  "kind": "chunks",
+  "records": [
+    {
+      "id": "A2.CHUNK.PRESS_AND_HOLD",
+      "text": "press and hold",
+      "arabic": "اضغط مطولاً",
+      "cefr": "A2",
+      "introducedIn": "A2-U9-L1",
+      "productive": true,
+      "recycledIn": [
+        "A2-U10-L1"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.GO_TO_SETTINGS",
+      "text": "go to settings",
+      "arabic": "اذهب إلى الإعدادات",
+      "cefr": "A2",
+      "introducedIn": "A2-U9-L2",
+      "productive": true,
+      "recycledIn": [
+        "A2-U10-L1"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.CONNECT_TO_WIFI",
+      "text": "connect to Wi-Fi",
+      "arabic": "اتصل بالواي فاي",
+      "cefr": "A2",
+      "introducedIn": "A2-U9-L2",
+      "productive": true,
+      "recycledIn": [
+        "A2-U10-L1"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.IF_DOES_NOT_WORK",
+      "text": "If it doesn't work, ...",
+      "arabic": "إذا لم يعمل...",
+      "cefr": "A2",
+      "introducedIn": "A2-U9-L3",
+      "productive": true,
+      "recycledIn": [
+        "A2-U11-L3"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.SIGN_IN_TO",
+      "text": "sign in to",
+      "arabic": "يسجل الدخول إلى",
+      "cefr": "A2",
+      "introducedIn": "A2-U9-L4",
+      "productive": true,
+      "recycledIn": [
+        "A2-U11-L3"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.SEND_AS_ATTACHMENT",
+      "text": "send as an attachment",
+      "arabic": "يرسله كمرفق",
+      "cefr": "A2",
+      "introducedIn": "A2-U9-L4",
+      "productive": true,
+      "recycledIn": [
+        "A2-U11-L3"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.WHAT_ERROR_MESSAGE",
+      "text": "What error message do you see?",
+      "arabic": "ما رسالة الخطأ التي تراها؟",
+      "cefr": "A2",
+      "introducedIn": "A2-U9-L5",
+      "productive": true,
+      "recycledIn": [
+        "A2-U12-L5"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.STEP_BY_STEP",
+      "text": "step by step",
+      "arabic": "خطوة بخطوة",
+      "cefr": "A2",
+      "introducedIn": "A2-U9-L6",
+      "productive": true,
+      "recycledIn": [
+        "A2-U12-L5"
+      ]
+    }
+  ]
+}

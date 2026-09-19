@@ -1,0 +1,1072 @@
+{
+  "id": "A2-U4",
+  "title": "Home and Neighbourhood",
+  "titleAr": "المنزل والحي",
+  "levelRole": "core",
+  "estimatedMinutes": [
+    95,
+    130
+  ],
+  "lessons": [
+    {
+      "id": "A2-U4-L1",
+      "title": "The Old and New Home",
+      "titleAr": "المنزل القديم والجديد",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO",
+        "A2.U4.PRODUCTION.DESCRIBE_HOME_AREA"
+      ],
+      "grammar": [
+        "A2.G.THERE_WAS_WERE",
+        "A2.G.LOOK_LIKE",
+        "A2.G.BE_LIKE"
+      ],
+      "lexicon": [
+        "A2.LEX.BALCONY_N01",
+        "A2.LEX.HEATING_N01",
+        "A2.LEX.MOVE_V01",
+        "A2.LEX.TALL_ADJ01",
+        "A2.LEX.CURLY_ADJ01",
+        "A2.LEX.APPEARANCE_N01",
+        "A2.LEX.PATIENT_ADJ01",
+        "A2.LEX.RELIABLE_ADJ01",
+        "A2.LEX.OUTGOING_ADJ01"
+      ],
+      "chunks": [
+        "A2.CHUNK.USED_TO_BE_THERE",
+        "A2.CHUNK.WHAT_DOES_LOOK_LIKE",
+        "A2.CHUNK.WHAT_IS_LIKE",
+        "A2.CHUNK.MORE_THAN"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "Our old flat was small. There was one bedroom and there wasn't a balcony. We moved because the heating was unreliable.",
+            "ar": "كانت شقتنا القديمة صغيرة. كانت فيها غرفة نوم واحدة ولم تكن فيها شرفة. انتقلنا لأن التدفئة لم تكن موثوقة."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U4-L1-A01",
+          "lessonId": "A2-U4-L1",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO",
+            "A2.U4.PRODUCTION.DESCRIBE_HOME_AREA"
+          ],
+          "prompt": "Why did the family move?",
+          "promptAr": "لماذا انتقلت العائلة؟",
+          "options": [
+            "The heating was unreliable.",
+            "The balcony was large.",
+            "There were too many bedrooms."
+          ],
+          "answer": "The heating was unreliable.",
+          "audioTranscript": "Our old flat was small. There was one bedroom and there wasn't a balcony. We moved because the heating was unreliable."
+        },
+        {
+          "id": "A2-U4-L1-A02",
+          "lessonId": "A2-U4-L1",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO",
+            "A2.U4.PRODUCTION.DESCRIBE_HOME_AREA"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "balcony",
+              "شرفة"
+            ],
+            [
+              "heating",
+              "تدفئة"
+            ],
+            [
+              "move",
+              "ينتقل"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U4-L1-A03",
+          "lessonId": "A2-U4-L1",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO",
+            "A2.U4.PRODUCTION.DESCRIBE_HOME_AREA"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "There ___ two bathrooms in the old house.",
+          "options": [
+            "were",
+            "was",
+            "are"
+          ],
+          "answer": "were"
+        },
+        {
+          "id": "A2-U4-L1-A04",
+          "lessonId": "A2-U4-L1",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO",
+            "A2.U4.PRODUCTION.DESCRIBE_HOME_AREA"
+          ],
+          "prompt": "What was missing?",
+          "promptAr": "ما الذي كان مفقوداً؟",
+          "options": [
+            "A lift",
+            "Parks",
+            "Quiet rooms"
+          ],
+          "answer": "A lift",
+          "audioTranscript": "The building was quiet, and there were two parks nearby. There wasn't a lift."
+        },
+        {
+          "id": "A2-U4-L1-A05",
+          "lessonId": "A2-U4-L1",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO",
+            "A2.U4.PRODUCTION.DESCRIBE_HOME_AREA"
+          ],
+          "prompt": "Describe a previous home or a fictional old home using there was/were.",
+          "promptAr": "صف منزلاً سابقاً أو منزلاً قديماً خيالياً مستخدماً there was/were.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U4-L2",
+      "title": "What Is Nearby?",
+      "titleAr": "ماذا يوجد بالقرب؟",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO",
+        "A2.U4.PRODUCTION.DESCRIBE_HOME_AREA"
+      ],
+      "grammar": [
+        "A2.G.QUANTIFIERS_AREA"
+      ],
+      "lexicon": [
+        "A2.LEX.NEARBY_ADV01",
+        "A2.LEX.FACILITY_N01",
+        "A2.LEX.CONVENIENT_ADJ01"
+      ],
+      "chunks": [
+        "A2.CHUNK.WITHIN_WALKING_DISTANCE",
+        "A2.CHUNK.CLOSE_TO"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "The area is convenient. There are a lot of cafés and some small shops. There isn't much traffic at night.",
+            "ar": "المنطقة ملائمة. توجد مقاهٍ كثيرة وبعض المتاجر الصغيرة. لا توجد حركة مرور كثيرة ليلاً."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U4-L2-A01",
+          "lessonId": "A2-U4-L2",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO",
+            "A2.U4.PRODUCTION.DESCRIBE_HOME_AREA"
+          ],
+          "prompt": "What is the traffic like at night?",
+          "promptAr": "كيف هي حركة المرور ليلاً؟",
+          "options": [
+            "There isn't much.",
+            "There is a lot.",
+            "There is none at any time."
+          ],
+          "answer": "There isn't much.",
+          "audioTranscript": "The area is convenient. There are a lot of cafés and some small shops. There isn't much traffic at night."
+        },
+        {
+          "id": "A2-U4-L2-A02",
+          "lessonId": "A2-U4-L2",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO",
+            "A2.U4.PRODUCTION.DESCRIBE_HOME_AREA"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "nearby",
+              "قريب"
+            ],
+            [
+              "facility",
+              "مرفق"
+            ],
+            [
+              "convenient",
+              "مريح / ملائم"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U4-L2-A03",
+          "lessonId": "A2-U4-L2",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO",
+            "A2.U4.PRODUCTION.DESCRIBE_HOME_AREA"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "There are ___ good facilities near the flat.",
+          "options": [
+            "some",
+            "any",
+            "much"
+          ],
+          "answer": "some"
+        },
+        {
+          "id": "A2-U4-L2-A04",
+          "lessonId": "A2-U4-L2",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO",
+            "A2.U4.PRODUCTION.DESCRIBE_HOME_AREA"
+          ],
+          "prompt": "What transport limitation is mentioned?",
+          "promptAr": "ما قيد النقل المذكور؟",
+          "options": [
+            "Few late buses",
+            "No station",
+            "Heavy daytime traffic"
+          ],
+          "answer": "Few late buses",
+          "audioTranscript": "There aren't many buses after ten, but the station is within walking distance."
+        },
+        {
+          "id": "A2-U4-L2-A05",
+          "lessonId": "A2-U4-L2",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO",
+            "A2.U4.PRODUCTION.DESCRIBE_HOME_AREA"
+          ],
+          "prompt": "Describe the services and transport near your home or a fictional home.",
+          "promptAr": "صف الخدمات والنقل قرب منزلك أو منزل خيالي.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U4-L3",
+      "title": "Compare Two Areas",
+      "titleAr": "قارن منطقتين",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U4.READING.COMPARE_HOUSING",
+        "A2.U4.MEDIATION.RELAY_HOUSING_OPTIONS"
+      ],
+      "grammar": [
+        "A2.G.HOUSING_COMPARATIVES",
+        "A2.G.PAST_IRREGULAR",
+        "A2.G.PAST_QUESTIONS"
+      ],
+      "lexicon": [
+        "A2.LEX.SPACIOUS_ADJ01",
+        "A2.LEX.PEACEFUL_ADJ01",
+        "A2.LEX.CROWDED_ADJ01",
+        "A2.LEX.GO_V02",
+        "A2.LEX.BUY_V02",
+        "A2.LEX.MEET_V02",
+        "A2.LEX.HAPPEN_V01",
+        "A2.LEX.EXPERIENCE_N01",
+        "A2.LEX.AGO_ADV01"
+      ],
+      "chunks": [
+        "A2.CHUNK.COMPARED_WITH",
+        "A2.CHUNK.WHAT_HAPPENED",
+        "A2.CHUNK.HOW_WAS_IT",
+        "A2.CHUNK.AFTER_THAT"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "Green Street is quieter and cheaper than Central Road, but Central Road is closer to the university and has more shops.",
+            "ar": ""
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U4-L3-A01",
+          "lessonId": "A2-U4-L3",
+          "type": "textChoice",
+          "mode": "encounter",
+          "skill": "reading",
+          "canDo": [
+            "A2.U4.READING.COMPARE_HOUSING",
+            "A2.U4.MEDIATION.RELAY_HOUSING_OPTIONS"
+          ],
+          "prompt": "Which area is closer to the university?",
+          "promptAr": "أي منطقة أقرب إلى الجامعة؟",
+          "options": [
+            "Central Road",
+            "Green Street",
+            "Both"
+          ],
+          "answer": "Central Road",
+          "sourceText": "Green Street is quieter and cheaper than Central Road, but Central Road is closer to the university and has more shops."
+        },
+        {
+          "id": "A2-U4-L3-A02",
+          "lessonId": "A2-U4-L3",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U4.READING.COMPARE_HOUSING",
+            "A2.U4.MEDIATION.RELAY_HOUSING_OPTIONS"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "spacious",
+              "واسع"
+            ],
+            [
+              "peaceful",
+              "هادئ"
+            ],
+            [
+              "crowded",
+              "مزدحم"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U4-L3-A03",
+          "lessonId": "A2-U4-L3",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U4.READING.COMPARE_HOUSING",
+            "A2.U4.MEDIATION.RELAY_HOUSING_OPTIONS"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "The house is more spacious ___ the flat.",
+          "options": [
+            "than",
+            "then",
+            "that"
+          ],
+          "answer": "than"
+        },
+        {
+          "id": "A2-U4-L3-A04",
+          "lessonId": "A2-U4-L3",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A2.U4.READING.COMPARE_HOUSING",
+            "A2.U4.MEDIATION.RELAY_HOUSING_OPTIONS"
+          ],
+          "prompt": "Which area suits someone who values quiet?",
+          "promptAr": "أي منطقة تناسب من يقدّر الهدوء؟",
+          "options": [
+            "Area A",
+            "Area B",
+            "Both equally"
+          ],
+          "answer": "Area A",
+          "sourceText": "Area A is more peaceful, while Area B is more convenient for buses. Area B is also more crowded at weekends."
+        },
+        {
+          "id": "A2-U4-L3-A05",
+          "lessonId": "A2-U4-L3",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "mediation",
+          "canDo": [
+            "A2.U4.READING.COMPARE_HOUSING",
+            "A2.U4.MEDIATION.RELAY_HOUSING_OPTIONS"
+          ],
+          "prompt": "Read two neighbourhood cards and relay the main advantage and disadvantage of each.",
+          "promptAr": "اقرأ بطاقتي حيين وانقل الميزة والعيب الرئيسيين لكل منهما.",
+          "evaluation": [
+            "selectRelevantInformation",
+            "clarity",
+            "audienceAwareness",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U4-L4",
+      "title": "Too Small or Big Enough?",
+      "titleAr": "صغير جداً أم كبير بما يكفي؟",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO",
+        "A2.U4.INTERACTION.DISCUSS_HOUSING_PROBLEM"
+      ],
+      "grammar": [
+        "A2.G.TOO_ADJECTIVE",
+        "A2.G.ADJECTIVE_ENOUGH"
+      ],
+      "lexicon": [
+        "A2.LEX.NOISY_ADJ01",
+        "A2.LEX.BRIGHT_ADJ01",
+        "A2.LEX.SPACE_N01"
+      ],
+      "chunks": [
+        "A2.CHUNK.TOO_FAR_FROM",
+        "A2.CHUNK.ENOUGH_SPACE_FOR"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "The living room is bright enough, but the kitchen is too small for a family of five. The street is also too noisy at night.",
+            "ar": "غرفة المعيشة مضيئة بما يكفي، لكن المطبخ صغير جداً لعائلة من خمسة أشخاص. الشارع أيضاً صاخب جداً ليلاً."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U4-L4-A01",
+          "lessonId": "A2-U4-L4",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO",
+            "A2.U4.INTERACTION.DISCUSS_HOUSING_PROBLEM"
+          ],
+          "prompt": "What is acceptable?",
+          "promptAr": "ما الشيء المقبول؟",
+          "options": [
+            "The living room's light",
+            "The kitchen size",
+            "The night noise"
+          ],
+          "answer": "The living room's light",
+          "audioTranscript": "The living room is bright enough, but the kitchen is too small for a family of five. The street is also too noisy at night."
+        },
+        {
+          "id": "A2-U4-L4-A02",
+          "lessonId": "A2-U4-L4",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO",
+            "A2.U4.INTERACTION.DISCUSS_HOUSING_PROBLEM"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "noisy",
+              "صاخب"
+            ],
+            [
+              "bright",
+              "مضيء"
+            ],
+            [
+              "space",
+              "مساحة"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U4-L4-A03",
+          "lessonId": "A2-U4-L4",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO",
+            "A2.U4.INTERACTION.DISCUSS_HOUSING_PROBLEM"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "Is the room warm ___ for a baby?",
+          "options": [
+            "enough",
+            "too",
+            "more"
+          ],
+          "answer": "enough"
+        },
+        {
+          "id": "A2-U4-L4-A04",
+          "lessonId": "A2-U4-L4",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO",
+            "A2.U4.INTERACTION.DISCUSS_HOUSING_PROBLEM"
+          ],
+          "prompt": "Which problem is about money?",
+          "promptAr": "أي مشكلة تتعلق بالمال؟",
+          "options": [
+            "It is too expensive.",
+            "It is close to work.",
+            "It lacks storage."
+          ],
+          "answer": "It is too expensive.",
+          "audioTranscript": "The flat is close enough to work, but it is too expensive and there isn't enough storage space."
+        },
+        {
+          "id": "A2-U4-L4-A05",
+          "lessonId": "A2-U4-L4",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO",
+            "A2.U4.INTERACTION.DISCUSS_HOUSING_PROBLEM"
+          ],
+          "prompt": "Discuss whether a home is suitable, using too and enough with reasons.",
+          "promptAr": "ناقش ما إذا كان المنزل مناسباً مستخدماً too وenough مع الأسباب.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U4-L5",
+      "title": "Report a Housing Problem",
+      "titleAr": "أبلغ عن مشكلة سكن",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U4.READING.COMPARE_HOUSING",
+        "A2.U4.INTERACTION.DISCUSS_HOUSING_PROBLEM"
+      ],
+      "grammar": [
+        "A2.G.HOUSING_REQUESTS",
+        "A2.G.QUESTION_AUXILIARY_REVIEW",
+        "A2.G.LINKERS_AND_BUT_BECAUSE"
+      ],
+      "lexicon": [
+        "A2.LEX.LEAK_N01",
+        "A2.LEX.LANDLORD_N01",
+        "A2.LEX.REPAIR_V01",
+        "A2.LEX.PROFILE_N01",
+        "A2.LEX.BACKGROUND_N01",
+        "A2.LEX.SIMILAR_ADJ01",
+        "A2.LEX.UPDATE_N01",
+        "A2.LEX.CHANGE_N01",
+        "A2.LEX.SITUATION_N01"
+      ],
+      "chunks": [
+        "A2.CHUNK.THERE_IS_A_PROBLEM_WITH",
+        "A2.CHUNK.HAVE_IN_COMMON",
+        "A2.CHUNK.RIGHT_NOW"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "Hello, there is a problem with the kitchen tap. It has leaked since this morning. Could you send someone to check it today?",
+            "ar": ""
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U4-L5-A01",
+          "lessonId": "A2-U4-L5",
+          "type": "textChoice",
+          "mode": "encounter",
+          "skill": "reading",
+          "canDo": [
+            "A2.U4.READING.COMPARE_HOUSING",
+            "A2.U4.INTERACTION.DISCUSS_HOUSING_PROBLEM"
+          ],
+          "prompt": "What does the writer request?",
+          "promptAr": "ماذا يطلب الكاتب؟",
+          "options": [
+            "Someone to check the tap",
+            "A new kitchen",
+            "Lower rent"
+          ],
+          "answer": "Someone to check the tap",
+          "sourceText": "Hello, there is a problem with the kitchen tap. It has leaked since this morning. Could you send someone to check it today?"
+        },
+        {
+          "id": "A2-U4-L5-A02",
+          "lessonId": "A2-U4-L5",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U4.READING.COMPARE_HOUSING",
+            "A2.U4.INTERACTION.DISCUSS_HOUSING_PROBLEM"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "leak",
+              "تسرّب"
+            ],
+            [
+              "landlord",
+              "مالك العقار"
+            ],
+            [
+              "repair",
+              "يصلح"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U4-L5-A03",
+          "lessonId": "A2-U4-L5",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U4.READING.COMPARE_HOUSING",
+            "A2.U4.INTERACTION.DISCUSS_HOUSING_PROBLEM"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "Could you ___ the broken window?",
+          "options": [
+            "repair",
+            "repaired",
+            "repairing"
+          ],
+          "answer": "repair"
+        },
+        {
+          "id": "A2-U4-L5-A04",
+          "lessonId": "A2-U4-L5",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A2.U4.READING.COMPARE_HOUSING",
+            "A2.U4.INTERACTION.DISCUSS_HOUSING_PROBLEM"
+          ],
+          "prompt": "What information does the tenant need?",
+          "promptAr": "ما المعلومة التي يحتاجها المستأجر؟",
+          "options": [
+            "The technician's arrival time",
+            "The cost of a new flat",
+            "The landlord's address"
+          ],
+          "answer": "The technician's arrival time",
+          "sourceText": "The heating is not working, and the flat is very cold. Can you tell me when a technician can come?"
+        },
+        {
+          "id": "A2-U4-L5-A05",
+          "lessonId": "A2-U4-L5",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A2.U4.READING.COMPARE_HOUSING",
+            "A2.U4.INTERACTION.DISCUSS_HOUSING_PROBLEM"
+          ],
+          "prompt": "Report a housing problem politely, explain its effect and request action.",
+          "promptAr": "أبلغ عن مشكلة سكن بأدب واشرح أثرها واطلب إجراءً.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U4-L6",
+      "title": "Recommend a Home",
+      "titleAr": "أوصِ بمنزل",
+      "lessonType": "integrated-production",
+      "canDo": [
+        "A2.U4.WRITING.WRITE_HOUSING_RECOMMENDATION",
+        "A2.U4.PRODUCTION.DESCRIBE_HOME_AREA"
+      ],
+      "grammar": [
+        "A2.G.HOUSING_COMPARATIVES",
+        "A2.G.TOO_ADJECTIVE",
+        "A2.G.ADJECTIVE_ENOUGH"
+      ],
+      "lexicon": [
+        "A2.LEX.OPTION_N01",
+        "A2.LEX.RENT_N01",
+        "A2.LEX.RECOMMEND_V01"
+      ],
+      "chunks": [
+        "A2.CHUNK.BEST_VALUE"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "Flat A costs $500 and is close to work, but it is small. Flat B costs $560, has two bedrooms and includes heating. For a couple with a child, Flat B offers better value.",
+            "ar": ""
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U4-L6-A01",
+          "lessonId": "A2-U4-L6",
+          "type": "textChoice",
+          "mode": "encounter",
+          "skill": "reading",
+          "canDo": [
+            "A2.U4.WRITING.WRITE_HOUSING_RECOMMENDATION",
+            "A2.U4.PRODUCTION.DESCRIBE_HOME_AREA"
+          ],
+          "prompt": "Why is Flat B recommended?",
+          "promptAr": "لماذا يوصى بالشقة ب؟",
+          "options": [
+            "It has more suitable space and included heating.",
+            "It is cheaper.",
+            "It is closer to work."
+          ],
+          "answer": "It has more suitable space and included heating.",
+          "sourceText": "Flat A costs $500 and is close to work, but it is small. Flat B costs $560, has two bedrooms and includes heating. For a couple with a child, Flat B offers better value."
+        },
+        {
+          "id": "A2-U4-L6-A02",
+          "lessonId": "A2-U4-L6",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U4.WRITING.WRITE_HOUSING_RECOMMENDATION",
+            "A2.U4.PRODUCTION.DESCRIBE_HOME_AREA"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "option",
+              "خيار"
+            ],
+            [
+              "rent",
+              "إيجار"
+            ],
+            [
+              "recommend",
+              "يوصي"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U4-L6-A03",
+          "lessonId": "A2-U4-L6",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U4.WRITING.WRITE_HOUSING_RECOMMENDATION",
+            "A2.U4.PRODUCTION.DESCRIBE_HOME_AREA"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "This option offers the best ___ for a family.",
+          "options": [
+            "value",
+            "valuable",
+            "valued"
+          ],
+          "answer": "value"
+        },
+        {
+          "id": "A2-U4-L6-A04",
+          "lessonId": "A2-U4-L6",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A2.U4.WRITING.WRITE_HOUSING_RECOMMENDATION",
+            "A2.U4.PRODUCTION.DESCRIBE_HOME_AREA"
+          ],
+          "prompt": "Which option is more convenient for commuting?",
+          "promptAr": "أي خيار أنسب للتنقل؟",
+          "options": [
+            "Flat Y",
+            "House X",
+            "Neither"
+          ],
+          "answer": "Flat Y",
+          "sourceText": "House X has a garden but is far from transport. Flat Y has no garden, but it is cheaper and close enough to the station."
+        },
+        {
+          "id": "A2-U4-L6-A05",
+          "lessonId": "A2-U4-L6",
+          "type": "write",
+          "mode": "mastery",
+          "skill": "writing",
+          "canDo": [
+            "A2.U4.WRITING.WRITE_HOUSING_RECOMMENDATION",
+            "A2.U4.PRODUCTION.DESCRIBE_HOME_AREA"
+          ],
+          "prompt": "Compare two housing options and recommend one for a stated person's needs.",
+          "promptAr": "قارن خيارَي سكن وأوصِ بأحدهما وفق احتياجات شخص محدد.",
+          "evaluation": [
+            "taskCompletion",
+            "clarity",
+            "organisation",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "wordGuide": [
+            75,
+            105
+          ]
+        }
+      ]
+    },
+    {
+      "id": "A2-U4-L7",
+      "title": "Mission: Choose Between Two Homes",
+      "titleAr": "المهمة: اختر بين منزلين",
+      "lessonType": "mission",
+      "canDo": [
+        "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO",
+        "A2.U4.READING.COMPARE_HOUSING",
+        "A2.U4.PRODUCTION.DESCRIBE_HOME_AREA",
+        "A2.U4.INTERACTION.DISCUSS_HOUSING_PROBLEM",
+        "A2.U4.WRITING.WRITE_HOUSING_RECOMMENDATION",
+        "A2.U4.MEDIATION.RELAY_HOUSING_OPTIONS",
+        "A2.U4.ACTION.CHOOSE_HOME"
+      ],
+      "grammar": [],
+      "lexicon": [],
+      "chunks": [],
+      "scenario": "A friend is moving. Compare two unseen listings, discuss needs, identify a possible problem and recommend the better home.",
+      "activities": [
+        {
+          "id": "A2-U4-L7-A01",
+          "lessonId": "A2-U4-L7",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A2.U4.READING.COMPARE_HOUSING",
+            "A2.U4.ACTION.CHOOSE_HOME"
+          ],
+          "prompt": "Which home has two bedrooms?",
+          "promptAr": "أي منزل فيه غرفتا نوم؟",
+          "options": [
+            "Riverside Flat",
+            "Centre Studio",
+            "Both"
+          ],
+          "answer": "Riverside Flat",
+          "sourceText": "Riverside Flat: two bedrooms, quiet street, no lift, $620 monthly. Centre Studio: one room, near buses and shops, fifth floor with a lift, $510 monthly."
+        },
+        {
+          "id": "A2-U4-L7-A02",
+          "lessonId": "A2-U4-L7",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO",
+            "A2.U4.ACTION.CHOOSE_HOME"
+          ],
+          "prompt": "Which home is better for online meetings?",
+          "promptAr": "أي منزل أفضل للاجتماعات عبر الإنترنت؟",
+          "options": [
+            "Riverside Flat",
+            "Centre Studio",
+            "Both equally"
+          ],
+          "answer": "Riverside Flat",
+          "audioTranscript": "The studio is convenient, but it is too small for two people who work from home. The riverside flat is larger and quiet enough for online meetings."
+        },
+        {
+          "id": "A2-U4-L7-A03",
+          "lessonId": "A2-U4-L7",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A2.U4.INTERACTION.DISCUSS_HOUSING_PROBLEM",
+            "A2.U4.ACTION.CHOOSE_HOME"
+          ],
+          "prompt": "Ask about the mover's needs and discuss the advantages and disadvantages of both homes.",
+          "promptAr": "اسأل عن احتياجات الشخص المنتقل وناقش مزايا وعيوب المنزلين.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A2-U4-L7-A04",
+          "lessonId": "A2-U4-L7",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A2.U4.PRODUCTION.DESCRIBE_HOME_AREA",
+            "A2.U4.ACTION.CHOOSE_HOME"
+          ],
+          "prompt": "Present a clear recommendation with comparisons and a practical reason.",
+          "promptAr": "قدّم توصية واضحة تتضمن مقارنات وسبباً عملياً.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A2-U4-L7-A05",
+          "lessonId": "A2-U4-L7",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "mediation",
+          "canDo": [
+            "A2.U4.MEDIATION.RELAY_HOUSING_OPTIONS",
+            "A2.U4.ACTION.CHOOSE_HOME"
+          ],
+          "prompt": "Relay the rent, location, space and access details from both listings without adding facts.",
+          "promptAr": "انقل تفاصيل الإيجار والموقع والمساحة والوصول من الإعلانين من دون إضافة معلومات.",
+          "evaluation": [
+            "selectRelevantInformation",
+            "clarity",
+            "audienceAwareness",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A2-U4-L7-A06",
+          "lessonId": "A2-U4-L7",
+          "type": "write",
+          "mode": "mastery",
+          "skill": "writing",
+          "canDo": [
+            "A2.U4.WRITING.WRITE_HOUSING_RECOMMENDATION",
+            "A2.U4.ACTION.CHOOSE_HOME"
+          ],
+          "prompt": "Write the friend a recommendation comparing both homes and mentioning one possible problem.",
+          "promptAr": "اكتب لصديقك توصية تقارن المنزلين وتذكر مشكلة محتملة واحدة.",
+          "evaluation": [
+            "taskCompletion",
+            "clarity",
+            "organisation",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "wordGuide": [
+            85,
+            115
+          ],
+          "accepted": []
+        }
+      ]
+    }
+  ],
+  "mastery": {
+    "requiredObjectives": [
+      "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO",
+      "A2.U4.READING.COMPARE_HOUSING",
+      "A2.U4.PRODUCTION.DESCRIBE_HOME_AREA",
+      "A2.U4.INTERACTION.DISCUSS_HOUSING_PROBLEM",
+      "A2.U4.WRITING.WRITE_HOUSING_RECOMMENDATION",
+      "A2.U4.MEDIATION.RELAY_HOUSING_OPTIONS",
+      "A2.U4.ACTION.CHOOSE_HOME"
+    ],
+    "requiredSkillGroups": [
+      [
+        "listening",
+        "reading"
+      ],
+      [
+        "spokenInteraction",
+        "spokenProduction",
+        "writing"
+      ],
+      [
+        "mediation"
+      ]
+    ],
+    "minimumObjectiveScore": 0.75,
+    "missionRequired": true,
+    "retry": "targeted-by-objective",
+    "unlocks": "A2-U5"
+  },
+  "countsTowardA1Mastery": true
+}

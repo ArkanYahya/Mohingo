@@ -1,0 +1,359 @@
+{
+  "id": "A2-FINAL-MISSION",
+  "title": "Host a Visitor",
+  "titleAr": "استضافة زائر",
+  "status": "required-capstone",
+  "estimatedMinutes": [
+    35,
+    50
+  ],
+  "sourcePolicy": "All names, schedules, notices, service problems and visitor details are fictional and unseen in earlier lessons.",
+  "scenario": "A friend is visiting for two days. Build the plan from new messages and notices, explain the neighbourhood, handle food, health and technology problems, then write a follow-up.",
+  "canDo": [
+    "A2.FINAL.LISTENING.INTEGRATED_ROUTINE_INFO",
+    "A2.FINAL.READING.INTEGRATED_PRACTICAL_TEXTS",
+    "A2.FINAL.INTERACTION.MANAGE_ROUTINE_SITUATIONS",
+    "A2.FINAL.PRODUCTION.CONNECT_SHORT_DESCRIPTION",
+    "A2.FINAL.WRITING.CONNECTED_PRACTICAL_TEXT",
+    "A2.FINAL.MEDIATION.RELAY_PRACTICAL_INFORMATION",
+    "A2.FINAL.ACTION.HOST_VISITOR"
+  ],
+  "stages": [
+    {
+      "id": "A2-FINAL-MISSION-S1",
+      "title": "Read the Visitor's Needs",
+      "titleAr": "اقرأ احتياجات الزائر",
+      "activityIds": [
+        "A2-FINAL-MISSION-A01",
+        "A2-FINAL-MISSION-A02"
+      ]
+    },
+    {
+      "id": "A2-FINAL-MISSION-S2",
+      "title": "Understand the Changes",
+      "titleAr": "افهم التغييرات",
+      "activityIds": [
+        "A2-FINAL-MISSION-A03",
+        "A2-FINAL-MISSION-A04"
+      ]
+    },
+    {
+      "id": "A2-FINAL-MISSION-S3",
+      "title": "Welcome and Solve",
+      "titleAr": "رحّب وحل المشكلة",
+      "activityIds": [
+        "A2-FINAL-MISSION-A05",
+        "A2-FINAL-MISSION-A06"
+      ]
+    },
+    {
+      "id": "A2-FINAL-MISSION-S4",
+      "title": "Present the Visit",
+      "titleAr": "قدّم برنامج الزيارة",
+      "activityIds": [
+        "A2-FINAL-MISSION-A07",
+        "A2-FINAL-MISSION-A08"
+      ]
+    },
+    {
+      "id": "A2-FINAL-MISSION-S5",
+      "title": "Relay Essential Details",
+      "titleAr": "انقل التفاصيل الأساسية",
+      "activityIds": [
+        "A2-FINAL-MISSION-A09",
+        "A2-FINAL-MISSION-A10"
+      ]
+    },
+    {
+      "id": "A2-FINAL-MISSION-S6",
+      "title": "Write and Follow Up",
+      "titleAr": "اكتب وتابع",
+      "activityIds": [
+        "A2-FINAL-MISSION-A11",
+        "A2-FINAL-MISSION-A12"
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "A2-FINAL-MISSION-A01",
+      "type": "textChoice",
+      "mode": "mastery",
+      "skill": "reading",
+      "canDo": [
+        "A2.FINAL.READING.INTEGRATED_PRACTICAL_TEXTS",
+        "A2.FINAL.ACTION.HOST_VISITOR"
+      ],
+      "sourceText": "Visitor message: I arrive Friday at 17:40. I prefer a quiet room, cannot eat nuts, and need reliable Wi-Fi for a meeting Saturday at 09:00. I leave Sunday at 16:15.",
+      "prompt": "Which three needs affect the plan?",
+      "promptAr": "ما الاحتياجات الثلاثة التي تؤثر في الخطة؟",
+      "options": [
+        "Quiet room, nut-free food, reliable Wi-Fi",
+        "Late breakfast, a car, live music",
+        "A large party, seafood, no internet"
+      ],
+      "answer": "Quiet room, nut-free food, reliable Wi-Fi"
+    },
+    {
+      "id": "A2-FINAL-MISSION-A02",
+      "type": "textChoice",
+      "mode": "mastery",
+      "skill": "reading",
+      "canDo": [
+        "A2.FINAL.READING.INTEGRATED_PRACTICAL_TEXTS",
+        "A2.FINAL.ACTION.HOST_VISITOR"
+      ],
+      "sourceText": "Neighbourhood notice: The west bus stop is closed this weekend. Use the library stop instead. The pharmacy closes at 18:00 on Saturday; the urgent-care centre is open until 22:00.",
+      "prompt": "Where should the visitor take the bus?",
+      "promptAr": "من أين ينبغي للزائر ركوب الحافلة؟",
+      "options": [
+        "The library stop",
+        "The west stop",
+        "The pharmacy"
+      ],
+      "answer": "The library stop"
+    },
+    {
+      "id": "A2-FINAL-MISSION-A03",
+      "type": "audioChoice",
+      "mode": "mastery",
+      "skill": "listening",
+      "canDo": [
+        "A2.FINAL.LISTENING.INTEGRATED_ROUTINE_INFO",
+        "A2.FINAL.ACTION.HOST_VISITOR"
+      ],
+      "audioTranscript": "Your train is delayed by twenty-five minutes and will now arrive at eighteen oh five. The platform is unchanged.",
+      "prompt": "What is the revised arrival time?",
+      "promptAr": "ما وقت الوصول المعدل؟",
+      "options": [
+        "18:05",
+        "17:40",
+        "18:25"
+      ],
+      "answer": "18:05"
+    },
+    {
+      "id": "A2-FINAL-MISSION-A04",
+      "type": "audioChoice",
+      "mode": "mastery",
+      "skill": "listening",
+      "canDo": [
+        "A2.FINAL.LISTENING.INTEGRATED_ROUTINE_INFO",
+        "A2.FINAL.ACTION.HOST_VISITOR"
+      ],
+      "audioTranscript": "The café can prepare the vegetable dish without nuts, but you must order it before noon because the evening kitchen is very busy.",
+      "prompt": "What condition applies to the nut-free dish?",
+      "promptAr": "ما الشرط المتعلق بالطبق الخالي من المكسرات؟",
+      "options": [
+        "Order it before noon",
+        "Collect it after midnight",
+        "Choose a meat dish"
+      ],
+      "answer": "Order it before noon"
+    },
+    {
+      "id": "A2-FINAL-MISSION-A05",
+      "type": "speak",
+      "mode": "mastery",
+      "skill": "spokenInteraction",
+      "canDo": [
+        "A2.FINAL.INTERACTION.MANAGE_ROUTINE_SITUATIONS",
+        "A2.FINAL.ACTION.HOST_VISITOR"
+      ],
+      "prompt": "Welcome the visitor, confirm arrival and departure details, and ask at least three connected questions about needs or preferences.",
+      "promptAr": "رحّب بالزائر وأكد تفاصيل الوصول والمغادرة واسأل ثلاثة أسئلة مترابطة على الأقل عن الاحتياجات أو التفضيلات.",
+      "evaluation": [
+        "taskCompletion",
+        "intelligibility",
+        "appropriateLanguage",
+        "interaction",
+        "accuracy"
+      ],
+      "accepted": [],
+      "fallbackSkill": "writing",
+      "fallbackCountsFor": "accessOnly"
+    },
+    {
+      "id": "A2-FINAL-MISSION-A06",
+      "type": "speak",
+      "mode": "mastery",
+      "skill": "spokenInteraction",
+      "canDo": [
+        "A2.FINAL.INTERACTION.MANAGE_ROUTINE_SITUATIONS",
+        "A2.FINAL.ACTION.HOST_VISITOR"
+      ],
+      "prompt": "Role-play one problem: the restaurant order is unsafe, the Wi-Fi fails before the meeting, or the visitor feels unwell. Clarify the problem and agree on a practical solution using the supplied facts.",
+      "promptAr": "مثّل مشكلة واحدة: الطلب غير آمن أو تعطل الواي فاي قبل الاجتماع أو شعر الزائر بالتعب. وضّح المشكلة واتفق على حل عملي مستخدماً الحقائق المقدمة.",
+      "evaluation": [
+        "taskCompletion",
+        "intelligibility",
+        "appropriateLanguage",
+        "interaction",
+        "accuracy"
+      ],
+      "accepted": [],
+      "fallbackSkill": "writing",
+      "fallbackCountsFor": "accessOnly"
+    },
+    {
+      "id": "A2-FINAL-MISSION-A07",
+      "type": "speak",
+      "mode": "mastery",
+      "skill": "spokenProduction",
+      "canDo": [
+        "A2.FINAL.PRODUCTION.CONNECT_SHORT_DESCRIPTION",
+        "A2.FINAL.ACTION.HOST_VISITOR"
+      ],
+      "prompt": "Present the two-day itinerary in a clear order. Include transport, two activities, food arrangements and one Plan B.",
+      "promptAr": "قدّم برنامج اليومين بترتيب واضح. ضمّن النقل ونشاطين وترتيبات الطعام وخطة بديلة واحدة.",
+      "evaluation": [
+        "taskCompletion",
+        "organisation",
+        "intelligibility",
+        "appropriateLanguage",
+        "accuracy"
+      ],
+      "accepted": [],
+      "fallbackSkill": "writing",
+      "fallbackCountsFor": "accessOnly"
+    },
+    {
+      "id": "A2-FINAL-MISSION-A08",
+      "type": "speak",
+      "mode": "mastery",
+      "skill": "spokenProduction",
+      "canDo": [
+        "A2.FINAL.PRODUCTION.CONNECT_SHORT_DESCRIPTION",
+        "A2.FINAL.ACTION.HOST_VISITOR"
+      ],
+      "prompt": "Describe the neighbourhood to the visitor, comparing two areas and explaining the location of four useful services.",
+      "promptAr": "صف الحي للزائر وقارن منطقتين واشرح موقع أربع خدمات مفيدة.",
+      "evaluation": [
+        "taskCompletion",
+        "organisation",
+        "intelligibility",
+        "appropriateLanguage",
+        "accuracy"
+      ],
+      "accepted": [],
+      "fallbackSkill": "writing",
+      "fallbackCountsFor": "accessOnly"
+    },
+    {
+      "id": "A2-FINAL-MISSION-A09",
+      "type": "speak",
+      "mode": "mastery",
+      "skill": "mediation",
+      "canDo": [
+        "A2.FINAL.MEDIATION.RELAY_PRACTICAL_INFORMATION",
+        "A2.FINAL.ACTION.HOST_VISITOR"
+      ],
+      "prompt": "Relay the revised train time, unchanged platform and replacement bus stop from the notices. Preserve all numbers exactly.",
+      "promptAr": "انقل وقت القطار المعدل ورقم الرصيف غير المتغير ومحطة الحافلة البديلة من الإشعارات. حافظ على جميع الأرقام بدقة.",
+      "evaluation": [
+        "selectRelevantInformation",
+        "clarity",
+        "audienceAwareness",
+        "accuracy"
+      ],
+      "accepted": [],
+      "fallbackSkill": "writing",
+      "fallbackCountsFor": "accessOnly"
+    },
+    {
+      "id": "A2-FINAL-MISSION-A10",
+      "type": "speak",
+      "mode": "mastery",
+      "skill": "mediation",
+      "canDo": [
+        "A2.FINAL.MEDIATION.RELAY_PRACTICAL_INFORMATION",
+        "A2.FINAL.ACTION.HOST_VISITOR"
+      ],
+      "prompt": "Relay the visitor's food need and the café's ordering condition to another person without adding medical or dietary claims.",
+      "promptAr": "انقل حاجة الزائر الغذائية وشرط الطلب في المقهى إلى شخص آخر من دون إضافة ادعاءات طبية أو غذائية.",
+      "evaluation": [
+        "selectRelevantInformation",
+        "clarity",
+        "audienceAwareness",
+        "accuracy"
+      ],
+      "accepted": [],
+      "fallbackSkill": "writing",
+      "fallbackCountsFor": "accessOnly"
+    },
+    {
+      "id": "A2-FINAL-MISSION-A11",
+      "type": "write",
+      "mode": "mastery",
+      "skill": "writing",
+      "canDo": [
+        "A2.FINAL.WRITING.CONNECTED_PRACTICAL_TEXT",
+        "A2.FINAL.ACTION.HOST_VISITOR"
+      ],
+      "prompt": "Write the visitor the final practical plan: arrival, transport change, accommodation, activities, food arrangement and what to do if Wi-Fi fails.",
+      "promptAr": "اكتب للزائر الخطة العملية النهائية: الوصول وتغيير النقل والإقامة والأنشطة وترتيب الطعام وما ينبغي فعله إذا تعطل الواي فاي.",
+      "evaluation": [
+        "taskCompletion",
+        "clarity",
+        "organisation",
+        "appropriateLanguage",
+        "accuracy"
+      ],
+      "accepted": [],
+      "wordGuide": [
+        90,
+        120
+      ]
+    },
+    {
+      "id": "A2-FINAL-MISSION-A12",
+      "type": "write",
+      "mode": "mastery",
+      "skill": "writing",
+      "canDo": [
+        "A2.FINAL.WRITING.CONNECTED_PRACTICAL_TEXT",
+        "A2.FINAL.ACTION.HOST_VISITOR"
+      ],
+      "prompt": "After the visit, write a friendly follow-up message. Mention two past events, one opinion, thanks and a future invitation.",
+      "promptAr": "بعد الزيارة اكتب رسالة متابعة ودودة. اذكر حدثين ماضيين ورأياً واحداً وشكراً ودعوة مستقبلية.",
+      "evaluation": [
+        "taskCompletion",
+        "clarity",
+        "organisation",
+        "appropriateLanguage",
+        "accuracy"
+      ],
+      "accepted": [],
+      "wordGuide": [
+        80,
+        110
+      ]
+    }
+  ],
+  "scoring": {
+    "completionRequired": true,
+    "requiredSkillGroups": [
+      [
+        "listening",
+        "reading"
+      ],
+      [
+        "spokenInteraction",
+        "spokenProduction",
+        "writing"
+      ],
+      [
+        "mediation"
+      ]
+    ],
+    "criteria": [
+      "taskCompletion",
+      "meaningComprehensible",
+      "appropriateA2Language",
+      "informationAccuracy"
+    ],
+    "minimumCriterionScore": 0.75,
+    "speechAccuracyWeight": 0.2,
+    "noSingleAverageCompensation": true
+  }
+}

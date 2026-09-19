@@ -1,0 +1,95 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-U2",
+  "kind": "chunks",
+  "records": [
+    {
+      "id": "A2.CHUNK.LAST_WEEKEND",
+      "text": "last weekend",
+      "arabic": "عطلة نهاية الأسبوع الماضية",
+      "cefr": "A2",
+      "introducedIn": "A2-U2-L1",
+      "productive": true,
+      "recycledIn": [
+        "A2-U3-L1"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.LAST_YEAR",
+      "text": "last year",
+      "arabic": "العام الماضي",
+      "cefr": "A2",
+      "introducedIn": "A2-U2-L1",
+      "productive": true,
+      "recycledIn": [
+        "A2-U3-L1"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.TWO_DAYS_AGO",
+      "text": "two days ago",
+      "arabic": "منذ يومين",
+      "cefr": "A2",
+      "introducedIn": "A2-U2-L2",
+      "productive": true,
+      "recycledIn": [
+        "A2-U3-L1"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.WHAT_HAPPENED",
+      "text": "What happened?",
+      "arabic": "ماذا حدث؟",
+      "cefr": "A2",
+      "introducedIn": "A2-U2-L4",
+      "productive": true,
+      "recycledIn": [
+        "A2-U4-L3"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.HOW_WAS_IT",
+      "text": "How was it?",
+      "arabic": "كيف كان؟",
+      "cefr": "A2",
+      "introducedIn": "A2-U2-L4",
+      "productive": true,
+      "recycledIn": [
+        "A2-U4-L3"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.AFTER_THAT",
+      "text": "after that",
+      "arabic": "بعد ذلك",
+      "cefr": "A2",
+      "introducedIn": "A2-U2-L5",
+      "productive": true,
+      "recycledIn": [
+        "A2-U4-L3"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.IN_THE_END",
+      "text": "in the end",
+      "arabic": "في النهاية",
+      "cefr": "A2",
+      "introducedIn": "A2-U2-L5",
+      "productive": true,
+      "recycledIn": [
+        "A2-U5-L5"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.A_GREAT_TIME",
+      "text": "have a great time",
+      "arabic": "يقضي وقتاً رائعاً",
+      "cefr": "A2",
+      "introducedIn": "A2-U2-L3",
+      "productive": true,
+      "recycledIn": [
+        "A2-U5-L5"
+      ]
+    }
+  ]
+}

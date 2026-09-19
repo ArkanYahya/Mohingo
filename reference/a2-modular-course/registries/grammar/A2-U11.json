@@ -1,0 +1,79 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-U11",
+  "kind": "grammar",
+  "records": [
+    {
+      "id": "A2.G.BECAUSE_SO_CAUSE",
+      "form": "because / so for cause and result",
+      "meaningAr": "because وso للسبب والنتيجة",
+      "introducedIn": "A2-U11-L1",
+      "examples": [
+        {
+          "en": "The path is wet because it rained, so walk carefully.",
+          "ar": "الممر مبتل لأن المطر هطل، لذا امشِ بحذر."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.FIRST_CONDITIONAL_NATURE",
+      "form": "first conditional for likely situations",
+      "meaningAr": "الشرط الأول للمواقف المحتملة",
+      "introducedIn": "A2-U11-L2",
+      "examples": [
+        {
+          "en": "If the river rises, the road will close.",
+          "ar": "إذا ارتفع النهر سيُغلق الطريق."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.MAY_MIGHT_POSSIBILITY",
+      "form": "may / might for possibility",
+      "meaningAr": "may وmight للاحتمال",
+      "introducedIn": "A2-U11-L3",
+      "examples": [
+        {
+          "en": "It might snow tonight.",
+          "ar": "قد تثلج الليلة."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.INDEFINITE_PRONOUNS",
+      "form": "someone, anyone, something, nowhere",
+      "meaningAr": "الضمائر غير المحددة",
+      "introducedIn": "A2-U11-L4",
+      "examples": [
+        {
+          "en": "Someone left something on the path.",
+          "ar": "ترك شخص شيئاً على الممر."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.SUGGESTION_FORMS",
+      "form": "could / should / Let's for suggestions",
+      "meaningAr": "صيغ الاقتراح",
+      "introducedIn": "A2-U11-L5",
+      "examples": [
+        {
+          "en": "We could move the event indoors.",
+          "ar": "يمكننا نقل الفعالية إلى الداخل."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.PLAN_LINKERS",
+      "form": "if, because, so, but for action plans",
+      "meaningAr": "روابط خطة العمل",
+      "introducedIn": "A2-U11-L6",
+      "examples": [
+        {
+          "en": "If it rains, we'll stay inside because the path is unsafe.",
+          "ar": "إذا أمطرت فسنظل في الداخل لأن الممر غير آمن."
+        }
+      ]
+    }
+  ]
+}

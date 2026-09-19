@@ -1,0 +1,56 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-U1",
+  "kind": "media",
+  "records": {
+    "audio-a2-u1-l1-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "I normally get up at seven on weekdays. I take the bus to work and play football on Thursday.",
+      "activityId": "A2-U1-L1-A01"
+    },
+    "audio-a2-u1-l1-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "Karim works in a shop from Sunday to Thursday. On Friday, he visits his parents.",
+      "activityId": "A2-U1-L1-A04"
+    },
+    "audio-a2-u1-l2-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "I usually live in Mosul, but this month I am staying with my brother in Erbil. I am taking an evening course there.",
+      "activityId": "A2-U1-L2-A01"
+    },
+    "audio-a2-u1-l2-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "Lina normally teaches children. This week, she is helping at a sports camp.",
+      "activityId": "A2-U1-L2-A04"
+    },
+    "audio-a2-u1-l4-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "A: I am working on a new project. B: That sounds interesting. Are you enjoying it? A: Yes, very much.",
+      "activityId": "A2-U1-L4-A01"
+    },
+    "audio-a2-u1-l4-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "A: My sister is opening a café. B: Really? Tell me more. Where is it?",
+      "activityId": "A2-U1-L4-A04"
+    },
+    "audio-a2-u1-l7-a02": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "I normally study engineering, but I am working in my uncle's shop during the holiday.",
+      "activityId": "A2-U1-L7-A02"
+    }
+  }
+}

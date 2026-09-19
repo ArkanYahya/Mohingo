@@ -1,0 +1,147 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-FINAL",
+  "kind": "media",
+  "records": {
+    "audio-a2-final-mission-a03": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "Your train is delayed by twenty-five minutes and will now arrive at eighteen oh five. The platform is unchanged.",
+      "activityId": "A2-FINAL-MISSION-A03"
+    },
+    "audio-a2-final-mission-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "The café can prepare the vegetable dish without nuts, but you must order it before noon because the evening kitchen is very busy.",
+      "activityId": "A2-FINAL-MISSION-A04"
+    },
+    "audio-a2-fa-listen-01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "The 12:20 train now leaves at 12:50 from platform four.",
+      "activityId": "A2-FA-LISTEN-01"
+    },
+    "audio-a2-fa-listen-02": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "Take one tablet after dinner. Do not take a second tablet before morning.",
+      "activityId": "A2-FA-LISTEN-02"
+    },
+    "audio-a2-fa-listen-03": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "If the screen freezes, save your work before you restart the computer.",
+      "activityId": "A2-FA-LISTEN-03"
+    },
+    "audio-a2-fa-listen-04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "Rain is likely after five, so the football game will begin an hour earlier at three.",
+      "activityId": "A2-FA-LISTEN-04"
+    },
+    "audio-a2-fa-listen-05": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "I'd love to come, but I finish work at eight. Could I join for the last hour?",
+      "activityId": "A2-FA-LISTEN-05"
+    },
+    "audio-a2-fa-listen-06": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "We ordered four soups, but only three arrived, and the bill lists five.",
+      "activityId": "A2-FA-LISTEN-06"
+    },
+    "audio-a2-fa-listen-07": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "The flat is cheaper and closer to work, but the house is quieter and has more space.",
+      "activityId": "A2-FA-LISTEN-07"
+    },
+    "audio-a2-fa-listen-08": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "Leila is less experienced than Samir, but she is the most organised candidate.",
+      "activityId": "A2-FA-LISTEN-08"
+    },
+    "audio-a2-fa-listen-09": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "We were walking to the station when a neighbour offered us a lift.",
+      "activityId": "A2-FA-LISTEN-09"
+    },
+    "audio-a2-fa-listen-10": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "I normally work mornings, but this month I am taking the evening shift.",
+      "activityId": "A2-FA-LISTEN-10"
+    },
+    "audio-a2-fa-listen-11": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "The course meets Tuesday and Thursday. Materials are included, but transport is not.",
+      "activityId": "A2-FA-LISTEN-11"
+    },
+    "audio-a2-fa-listen-12": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "Although the plot was simple, the characters were moving and the ending was excellent.",
+      "activityId": "A2-FA-LISTEN-12"
+    },
+    "audio-a2-fa-listen-13": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "If the boat is cancelled, meet the guide at the museum entrance at ten.",
+      "activityId": "A2-FA-LISTEN-13"
+    },
+    "audio-a2-fa-listen-14": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "Open settings, choose notifications, and turn off the sound for this app only.",
+      "activityId": "A2-FA-LISTEN-14"
+    },
+    "audio-a2-fa-listen-15": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "I've had the cough since Friday, and it became worse last night.",
+      "activityId": "A2-FA-LISTEN-15"
+    },
+    "audio-a2-fa-listen-16": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "Because the hall is unavailable, the workshop will take place online. The date and time are unchanged.",
+      "activityId": "A2-FA-LISTEN-16"
+    },
+    "audio-a2-fa-listen-17": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "There might be fog early, but it should clear before the buses leave at nine.",
+      "activityId": "A2-FA-LISTEN-17"
+    },
+    "audio-a2-fa-listen-18": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "First chop the vegetables. Then heat the oil, and add the vegetables only when it is hot.",
+      "activityId": "A2-FA-LISTEN-18"
+    }
+  }
+}

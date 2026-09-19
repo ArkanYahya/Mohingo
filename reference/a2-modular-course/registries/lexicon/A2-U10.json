@@ -1,0 +1,367 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-U10",
+  "kind": "lexicon",
+  "records": [
+    {
+      "id": "A2.LEX.SCENE_N01",
+      "headword": "scene",
+      "partOfSpeech": "noun",
+      "arabic": "مشهد",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "scene",
+      "examples": [
+        {
+          "en": "The opening scene was quiet.",
+          "ar": "كان المشهد الافتتاحي هادئاً."
+        }
+      ],
+      "introducedIn": "A2-U10-L1",
+      "recycledIn": [
+        "A2-U11-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.CHARACTER_N01",
+      "headword": "character",
+      "partOfSpeech": "noun",
+      "arabic": "شخصية",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "character",
+      "examples": [
+        {
+          "en": "The main character lives alone.",
+          "ar": "تعيش الشخصية الرئيسية وحدها."
+        }
+      ],
+      "introducedIn": "A2-U10-L1",
+      "recycledIn": [
+        "A2-U11-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.PLOT_N01",
+      "headword": "plot",
+      "partOfSpeech": "noun",
+      "arabic": "حبكة",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "plot",
+      "examples": [
+        {
+          "en": "The plot is simple but effective.",
+          "ar": "الحبكة بسيطة لكنها مؤثرة."
+        }
+      ],
+      "introducedIn": "A2-U10-L1",
+      "recycledIn": [
+        "A2-U11-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.INTERRUPT_V01",
+      "headword": "interrupt",
+      "partOfSpeech": "verb",
+      "arabic": "يقاطع",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "interrupt",
+      "examples": [
+        {
+          "en": "A phone call interrupted the meal.",
+          "ar": "قاطعت مكالمة هاتفية الوجبة."
+        }
+      ],
+      "introducedIn": "A2-U10-L2",
+      "recycledIn": [
+        "A2-U11-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.DISAPPEAR_V01",
+      "headword": "disappear",
+      "partOfSpeech": "verb",
+      "arabic": "يختفي",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "disappear",
+      "examples": [
+        {
+          "en": "The lights suddenly disappeared.",
+          "ar": "اختفت الأضواء فجأة."
+        }
+      ],
+      "introducedIn": "A2-U10-L2",
+      "recycledIn": [
+        "A2-U11-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.DISCOVER_V01",
+      "headword": "discover",
+      "partOfSpeech": "verb",
+      "arabic": "يكتشف",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "discover",
+      "examples": [
+        {
+          "en": "They discovered a hidden room.",
+          "ar": "اكتشفوا غرفة مخفية."
+        }
+      ],
+      "introducedIn": "A2-U10-L2",
+      "recycledIn": [
+        "A2-U11-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.AUDIENCE_N01",
+      "headword": "audience",
+      "partOfSpeech": "noun",
+      "arabic": "جمهور",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "audience",
+      "examples": [
+        {
+          "en": "The audience was waiting quietly.",
+          "ar": "كان الجمهور ينتظر بهدوء."
+        }
+      ],
+      "introducedIn": "A2-U10-L3",
+      "recycledIn": [
+        "A2-U12-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.PERFORM_V01",
+      "headword": "perform",
+      "partOfSpeech": "verb",
+      "arabic": "يؤدي",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "perform",
+      "examples": [
+        {
+          "en": "The band performed outside.",
+          "ar": "أدت الفرقة في الخارج."
+        }
+      ],
+      "introducedIn": "A2-U10-L3",
+      "recycledIn": [
+        "A2-U12-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.STAGE_N01",
+      "headword": "stage",
+      "partOfSpeech": "noun",
+      "arabic": "مسرح",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "stage",
+      "examples": [
+        {
+          "en": "Someone ran onto the stage.",
+          "ar": "ركض شخص إلى المسرح."
+        }
+      ],
+      "introducedIn": "A2-U10-L3",
+      "recycledIn": [
+        "A2-U12-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.COMEDY_N01",
+      "headword": "comedy",
+      "partOfSpeech": "noun",
+      "arabic": "كوميديا",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "comedy",
+      "examples": [
+        {
+          "en": "It is a family comedy.",
+          "ar": "إنها كوميديا عائلية."
+        }
+      ],
+      "introducedIn": "A2-U10-L4",
+      "recycledIn": [
+        "A2-U12-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.DOCUMENTARY_N01",
+      "headword": "documentary",
+      "partOfSpeech": "noun",
+      "arabic": "فيلم وثائقي",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "documentary",
+      "examples": [
+        {
+          "en": "The documentary explains city life.",
+          "ar": "يشرح الوثائقي حياة المدينة."
+        }
+      ],
+      "introducedIn": "A2-U10-L4",
+      "recycledIn": [
+        "A2-U12-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.ENDING_N01",
+      "headword": "ending",
+      "partOfSpeech": "noun",
+      "arabic": "نهاية",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "ending",
+      "examples": [
+        {
+          "en": "The ending was surprising.",
+          "ar": "كانت النهاية مفاجئة."
+        }
+      ],
+      "introducedIn": "A2-U10-L4",
+      "recycledIn": [
+        "A2-U12-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.ENTERTAINING_ADJ01",
+      "headword": "entertaining",
+      "partOfSpeech": "adjective",
+      "arabic": "مسلٍّ",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "entertaining",
+      "examples": [
+        {
+          "en": "The show was entertaining.",
+          "ar": "كان العرض مسلياً."
+        }
+      ],
+      "introducedIn": "A2-U10-L5",
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.LEX.CONFUSING_ADJ01",
+      "headword": "confusing",
+      "partOfSpeech": "adjective",
+      "arabic": "مربك",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "confusing",
+      "examples": [
+        {
+          "en": "The middle was confusing.",
+          "ar": "كان الوسط مربكاً."
+        }
+      ],
+      "introducedIn": "A2-U10-L5",
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.LEX.MOVING_ADJ01",
+      "headword": "moving",
+      "partOfSpeech": "adjective",
+      "arabic": "مؤثر",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "moving",
+      "examples": [
+        {
+          "en": "It was a moving story.",
+          "ar": "كانت قصة مؤثرة."
+        }
+      ],
+      "introducedIn": "A2-U10-L5",
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.LEX.REVIEW_N01",
+      "headword": "review",
+      "partOfSpeech": "noun",
+      "arabic": "مراجعة",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "review",
+      "examples": [
+        {
+          "en": "Write a balanced review.",
+          "ar": "اكتب مراجعة متوازنة."
+        }
+      ],
+      "introducedIn": "A2-U10-L6",
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.LEX.RECOMMENDATION_N01",
+      "headword": "recommendation",
+      "partOfSpeech": "noun",
+      "arabic": "توصية",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "recommendation",
+      "examples": [
+        {
+          "en": "Thanks for the recommendation.",
+          "ar": "شكراً على التوصية."
+        }
+      ],
+      "introducedIn": "A2-U10-L6",
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.LEX.RATING_N01",
+      "headword": "rating",
+      "partOfSpeech": "noun",
+      "arabic": "تقييم",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "rating",
+      "examples": [
+        {
+          "en": "My rating is four stars.",
+          "ar": "تقييمي أربع نجوم."
+        }
+      ],
+      "introducedIn": "A2-U10-L6",
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    }
+  ]
+}

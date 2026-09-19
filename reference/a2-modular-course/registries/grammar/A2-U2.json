@@ -1,0 +1,79 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-U2",
+  "kind": "grammar",
+  "records": [
+    {
+      "id": "A2.G.BE_PAST",
+      "form": "was/were",
+      "meaningAr": "الماضي من be",
+      "introducedIn": "A2-U2-L1",
+      "examples": [
+        {
+          "en": "The trip was exciting.",
+          "ar": "كانت الرحلة ممتعة."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.PAST_REGULAR",
+      "form": "regular past -ed",
+      "meaningAr": "الماضي المنتظم",
+      "introducedIn": "A2-U2-L2",
+      "examples": [
+        {
+          "en": "We visited the old market.",
+          "ar": "زرنا السوق القديم."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.PAST_IRREGULAR",
+      "form": "common irregular past forms",
+      "meaningAr": "أفعال الماضي الشاذة الشائعة",
+      "introducedIn": "A2-U2-L3",
+      "examples": [
+        {
+          "en": "I went home and made dinner.",
+          "ar": "ذهبت إلى المنزل وأعددت العشاء."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.PAST_QUESTIONS",
+      "form": "did + subject + base verb",
+      "meaningAr": "أسئلة الماضي بـ did",
+      "introducedIn": "A2-U2-L4",
+      "examples": [
+        {
+          "en": "Where did you go?",
+          "ar": "أين ذهبت؟"
+        }
+      ]
+    },
+    {
+      "id": "A2.G.PAST_NEGATIVE",
+      "form": "did not + base verb",
+      "meaningAr": "نفي الماضي",
+      "introducedIn": "A2-U2-L4",
+      "examples": [
+        {
+          "en": "We didn't stay long.",
+          "ar": "لم نبق طويلاً."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.PAST_TIME_LINKERS",
+      "form": "first, then, after that, finally",
+      "meaningAr": "روابط تسلسل الماضي",
+      "introducedIn": "A2-U2-L5",
+      "examples": [
+        {
+          "en": "First we ate; then we walked.",
+          "ar": "أولاً أكلنا؛ ثم مشينا."
+        }
+      ]
+    }
+  ]
+}

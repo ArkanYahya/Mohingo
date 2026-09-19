@@ -1,0 +1,56 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-U4",
+  "kind": "media",
+  "records": {
+    "audio-a2-u4-l1-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "Our old flat was small. There was one bedroom and there wasn't a balcony. We moved because the heating was unreliable.",
+      "activityId": "A2-U4-L1-A01"
+    },
+    "audio-a2-u4-l1-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "The building was quiet, and there were two parks nearby. There wasn't a lift.",
+      "activityId": "A2-U4-L1-A04"
+    },
+    "audio-a2-u4-l2-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "The area is convenient. There are a lot of cafés and some small shops. There isn't much traffic at night.",
+      "activityId": "A2-U4-L2-A01"
+    },
+    "audio-a2-u4-l2-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "There aren't many buses after ten, but the station is within walking distance.",
+      "activityId": "A2-U4-L2-A04"
+    },
+    "audio-a2-u4-l4-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "The living room is bright enough, but the kitchen is too small for a family of five. The street is also too noisy at night.",
+      "activityId": "A2-U4-L4-A01"
+    },
+    "audio-a2-u4-l4-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "The flat is close enough to work, but it is too expensive and there isn't enough storage space.",
+      "activityId": "A2-U4-L4-A04"
+    },
+    "audio-a2-u4-l7-a02": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "The studio is convenient, but it is too small for two people who work from home. The riverside flat is larger and quiet enough for online meetings.",
+      "activityId": "A2-U4-L7-A02"
+    }
+  }
+}

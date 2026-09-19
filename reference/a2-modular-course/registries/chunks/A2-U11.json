@@ -1,0 +1,95 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-U11",
+  "kind": "chunks",
+  "records": [
+    {
+      "id": "A2.CHUNK.BECAUSE_OF_RAIN",
+      "text": "because of the rain",
+      "arabic": "بسبب المطر",
+      "cefr": "A2",
+      "introducedIn": "A2-U11-L1",
+      "productive": true,
+      "recycledIn": [
+        "A2-U12-L1"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.IF_RIVER_RISES",
+      "text": "If the river rises, ...",
+      "arabic": "إذا ارتفع النهر...",
+      "cefr": "A2",
+      "introducedIn": "A2-U11-L2",
+      "productive": true,
+      "recycledIn": [
+        "A2-U12-L1"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.THERE_MAY_BE",
+      "text": "There may be ...",
+      "arabic": "قد يكون هناك...",
+      "cefr": "A2",
+      "introducedIn": "A2-U11-L3",
+      "productive": true,
+      "recycledIn": [
+        "A2-U12-L1"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.SOMETHING_BLOCKING",
+      "text": "Something is blocking ...",
+      "arabic": "شيء ما يسد...",
+      "cefr": "A2",
+      "introducedIn": "A2-U11-L4",
+      "productive": true,
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.IS_ANYONE_THERE",
+      "text": "Is anyone there?",
+      "arabic": "هل يوجد أحد؟",
+      "cefr": "A2",
+      "introducedIn": "A2-U11-L4",
+      "productive": true,
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.WE_COULD",
+      "text": "We could ...",
+      "arabic": "يمكننا...",
+      "cefr": "A2",
+      "introducedIn": "A2-U11-L5",
+      "productive": true,
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.SAFEST_OPTION",
+      "text": "the safest option",
+      "arabic": "الخيار الأكثر أماناً",
+      "cefr": "A2",
+      "introducedIn": "A2-U11-L6",
+      "productive": true,
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.IN_AN_EMERGENCY",
+      "text": "in an emergency",
+      "arabic": "في حالة طوارئ",
+      "cefr": "A2",
+      "introducedIn": "A2-U11-L6",
+      "productive": true,
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-U5",
+  "kind": "grammar",
+  "records": [
+    {
+      "id": "A2.G.QUANTITY_MUCH_MANY",
+      "form": "much / many in questions and negatives",
+      "meaningAr": "much وmany للكمية",
+      "introducedIn": "A2-U5-L1",
+      "examples": [
+        {
+          "en": "How many tomatoes do we need?",
+          "ar": "كم حبة طماطم نحتاج؟"
+        }
+      ]
+    },
+    {
+      "id": "A2.G.QUANTITY_A_LOT_OF",
+      "form": "a lot of with countable and uncountable nouns",
+      "meaningAr": "a lot of مع المعدود وغير المعدود",
+      "introducedIn": "A2-U5-L1",
+      "examples": [
+        {
+          "en": "The soup has a lot of vegetables.",
+          "ar": "في الحساء خضروات كثيرة."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.RECIPE_IMPERATIVES",
+      "form": "imperatives for recipe steps",
+      "meaningAr": "صيغة الأمر لخطوات الوصفة",
+      "introducedIn": "A2-U5-L2",
+      "examples": [
+        {
+          "en": "Add the rice and stir.",
+          "ar": "أضف الأرز وحرّك."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.FEW_LITTLE",
+      "form": "a few / a little",
+      "meaningAr": "القليل من المعدود وغير المعدود",
+      "introducedIn": "A2-U5-L3",
+      "examples": [
+        {
+          "en": "Add a little salt and a few olives.",
+          "ar": "أضف قليلاً من الملح وبعض حبات الزيتون."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.OBJECT_PRONOUNS_SERVICE",
+      "form": "it / them / me / us in service exchanges",
+      "meaningAr": "ضمائر المفعول في الخدمة",
+      "introducedIn": "A2-U5-L4",
+      "examples": [
+        {
+          "en": "We ordered two drinks, but they didn't bring them.",
+          "ar": "طلبنا مشروبين، لكنهم لم يحضروهما."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.POLITE_FOOD_REQUESTS",
+      "form": "Could I have ...? / Could you ...?",
+      "meaningAr": "طلبات مهذبة للطعام",
+      "introducedIn": "A2-U5-L5",
+      "examples": [
+        {
+          "en": "Could you replace it, please?",
+          "ar": "هل يمكنك استبداله من فضلك؟"
+        }
+      ]
+    }
+  ]
+}

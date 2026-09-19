@@ -1,0 +1,1071 @@
+{
+  "id": "A2-U7",
+  "title": "Health and Well-being",
+  "titleAr": "الصحة والعافية",
+  "levelRole": "core",
+  "estimatedMinutes": [
+    95,
+    130
+  ],
+  "lessons": [
+    {
+      "id": "A2-U7-L1",
+      "title": "Symptoms and Advice",
+      "titleAr": "الأعراض والنصيحة",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE",
+        "A2.U7.PRODUCTION.DESCRIBE_HEALTH_PROBLEM"
+      ],
+      "grammar": [
+        "A2.G.SHOULD_ADVICE",
+        "A2.G.GOING_TO_PLANS",
+        "A2.G.PRESENT_CONTINUOUS_ARRANGEMENTS"
+      ],
+      "lexicon": [
+        "A2.LEX.SORE_ADJ01",
+        "A2.LEX.COUGH_N01",
+        "A2.LEX.REST_N01",
+        "A2.LEX.ITINERARY_N01",
+        "A2.LEX.SIGHT_N01",
+        "A2.LEX.PLAN_V01",
+        "A2.LEX.RESERVATION_N01",
+        "A2.LEX.CHECK_IN_V01",
+        "A2.LEX.AVAILABLE_ADJ01"
+      ],
+      "chunks": [
+        "A2.CHUNK.YOU_SHOULD",
+        "A2.CHUNK.GOING_TO_STAY",
+        "A2.CHUNK.BOOK_A_ROOM",
+        "A2.CHUNK.DO_YOU_HAVE_AVAILABLE"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "I have a sore throat and a cough. You should drink warm water and rest, but you shouldn't go to work today.",
+            "ar": "لدي التهاب حلق وسعال. ينبغي أن تشرب ماءً دافئاً وترتاح، ولا ينبغي أن تذهب إلى العمل اليوم."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U7-L1-A01",
+          "lessonId": "A2-U7-L1",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE",
+            "A2.U7.PRODUCTION.DESCRIBE_HEALTH_PROBLEM"
+          ],
+          "prompt": "What should the person avoid?",
+          "promptAr": "ما الذي ينبغي أن يتجنبه الشخص؟",
+          "options": [
+            "Going to work",
+            "Drinking warm water",
+            "Resting"
+          ],
+          "answer": "Going to work",
+          "audioTranscript": "I have a sore throat and a cough. You should drink warm water and rest, but you shouldn't go to work today."
+        },
+        {
+          "id": "A2-U7-L1-A02",
+          "lessonId": "A2-U7-L1",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE",
+            "A2.U7.PRODUCTION.DESCRIBE_HEALTH_PROBLEM"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "sore",
+              "مؤلم"
+            ],
+            [
+              "cough",
+              "سعال"
+            ],
+            [
+              "rest",
+              "راحة"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U7-L1-A03",
+          "lessonId": "A2-U7-L1",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE",
+            "A2.U7.PRODUCTION.DESCRIBE_HEALTH_PROBLEM"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "You ___ rest if you feel tired.",
+          "options": [
+            "should",
+            "mustn't",
+            "don't"
+          ],
+          "answer": "should"
+        },
+        {
+          "id": "A2-U7-L1-A04",
+          "lessonId": "A2-U7-L1",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE",
+            "A2.U7.PRODUCTION.DESCRIBE_HEALTH_PROBLEM"
+          ],
+          "prompt": "What advice is given?",
+          "promptAr": "ما النصيحة المقدمة؟",
+          "options": [
+            "Walk briefly and change position",
+            "Stay in the same position",
+            "Carry something heavy"
+          ],
+          "answer": "Walk briefly and change position",
+          "audioTranscript": "My back hurts after sitting all day. You should walk for a few minutes and change your chair position."
+        },
+        {
+          "id": "A2-U7-L1-A05",
+          "lessonId": "A2-U7-L1",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE",
+            "A2.U7.PRODUCTION.DESCRIBE_HEALTH_PROBLEM"
+          ],
+          "prompt": "Describe two simple symptoms and give safe, general self-care advice.",
+          "promptAr": "صف عرضين بسيطين وقدّم نصيحة عامة وآمنة للعناية الذاتية.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U7-L2",
+      "title": "Medicine Instructions",
+      "titleAr": "تعليمات الدواء",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE",
+        "A2.U7.INTERACTION.MANAGE_CLINIC_TALK"
+      ],
+      "grammar": [
+        "A2.G.HAVE_TO_OBLIGATION"
+      ],
+      "lexicon": [
+        "A2.LEX.MEDICINE_N01",
+        "A2.LEX.DOSE_N01",
+        "A2.LEX.APPOINTMENT_N01"
+      ],
+      "chunks": [
+        "A2.CHUNK.HOW_OFTEN_TAKE",
+        "A2.CHUNK.TAKE_WITH_FOOD"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "Take one dose twice a day with food. You don't have to take it at an exact minute, but leave about twelve hours between doses.",
+            "ar": "تناول جرعة مرتين يومياً مع الطعام. لا يلزم تناولها في دقيقة محددة، لكن اترك نحو اثنتي عشرة ساعة بين الجرعات."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U7-L2-A01",
+          "lessonId": "A2-U7-L2",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE",
+            "A2.U7.INTERACTION.MANAGE_CLINIC_TALK"
+          ],
+          "prompt": "How many doses are taken daily?",
+          "promptAr": "كم جرعة تُؤخذ يومياً؟",
+          "options": [
+            "Two",
+            "One",
+            "Twelve"
+          ],
+          "answer": "Two",
+          "audioTranscript": "Take one dose twice a day with food. You don't have to take it at an exact minute, but leave about twelve hours between doses."
+        },
+        {
+          "id": "A2-U7-L2-A02",
+          "lessonId": "A2-U7-L2",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE",
+            "A2.U7.INTERACTION.MANAGE_CLINIC_TALK"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "medicine",
+              "دواء"
+            ],
+            [
+              "dose",
+              "جرعة"
+            ],
+            [
+              "appointment",
+              "موعد"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U7-L2-A03",
+          "lessonId": "A2-U7-L2",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE",
+            "A2.U7.INTERACTION.MANAGE_CLINIC_TALK"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "You have to ___ this medicine with food.",
+          "options": [
+            "take",
+            "took",
+            "taking"
+          ],
+          "answer": "take"
+        },
+        {
+          "id": "A2-U7-L2-A04",
+          "lessonId": "A2-U7-L2",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE",
+            "A2.U7.INTERACTION.MANAGE_CLINIC_TALK"
+          ],
+          "prompt": "What must the patient do?",
+          "promptAr": "ماذا يجب على المريض أن يفعل؟",
+          "options": [
+            "Arrive ten minutes early",
+            "Bring the medicine box",
+            "Come at five"
+          ],
+          "answer": "Arrive ten minutes early",
+          "audioTranscript": "Your appointment is at four. You have to arrive ten minutes early, but you don't have to bring the medicine box."
+        },
+        {
+          "id": "A2-U7-L2-A05",
+          "lessonId": "A2-U7-L2",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE",
+            "A2.U7.INTERACTION.MANAGE_CLINIC_TALK"
+          ],
+          "prompt": "Ask and answer about dose, timing, food and appointment instructions.",
+          "promptAr": "اسأل وأجب عن الجرعة والتوقيت والطعام وتعليمات الموعد.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U7-L3",
+      "title": "Warnings and Allergies",
+      "titleAr": "التحذيرات والحساسية",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE",
+        "A2.U7.MEDIATION.RELAY_HEALTH_GUIDANCE"
+      ],
+      "grammar": [
+        "A2.G.MUST_WARNING",
+        "A2.G.RECIPE_IMPERATIVES",
+        "A2.G.FEW_LITTLE"
+      ],
+      "lexicon": [
+        "A2.LEX.ALLERGY_N01",
+        "A2.LEX.WARNING_N01",
+        "A2.LEX.DIZZY_ADJ01",
+        "A2.LEX.OLIVE_N01",
+        "A2.LEX.SALT_N01",
+        "A2.LEX.SAUCE_N01",
+        "A2.LEX.ORDER_N02",
+        "A2.LEX.MISSING_ADJ01",
+        "A2.LEX.WRONG_ADJ01"
+      ],
+      "chunks": [
+        "A2.CHUNK.MUST_NOT_DRIVE",
+        "A2.CHUNK.A_LITTLE_BIT",
+        "A2.CHUNK.SOMETHING_IS_MISSING",
+        "A2.CHUNK.THIS_IS_NOT_WHAT_ORDERED"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "Warning: This medicine may make you dizzy. You must not drive for six hours after taking it. Tell the pharmacist if you have a nut allergy.",
+            "ar": ""
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U7-L3-A01",
+          "lessonId": "A2-U7-L3",
+          "type": "textChoice",
+          "mode": "encounter",
+          "skill": "reading",
+          "canDo": [
+            "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE",
+            "A2.U7.MEDIATION.RELAY_HEALTH_GUIDANCE"
+          ],
+          "prompt": "What activity is prohibited?",
+          "promptAr": "ما النشاط الممنوع؟",
+          "options": [
+            "Driving for six hours",
+            "Eating any food",
+            "Talking to a pharmacist"
+          ],
+          "answer": "Driving for six hours",
+          "sourceText": "Warning: This medicine may make you dizzy. You must not drive for six hours after taking it. Tell the pharmacist if you have a nut allergy."
+        },
+        {
+          "id": "A2-U7-L3-A02",
+          "lessonId": "A2-U7-L3",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE",
+            "A2.U7.MEDIATION.RELAY_HEALTH_GUIDANCE"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "allergy",
+              "حساسية"
+            ],
+            [
+              "warning",
+              "تحذير"
+            ],
+            [
+              "dizzy",
+              "يشعر بالدوار"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U7-L3-A03",
+          "lessonId": "A2-U7-L3",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE",
+            "A2.U7.MEDIATION.RELAY_HEALTH_GUIDANCE"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "You ___ not take this if you are allergic to it.",
+          "options": [
+            "must",
+            "have",
+            "should to"
+          ],
+          "answer": "must"
+        },
+        {
+          "id": "A2-U7-L3-A04",
+          "lessonId": "A2-U7-L3",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE",
+            "A2.U7.MEDIATION.RELAY_HEALTH_GUIDANCE"
+          ],
+          "prompt": "What may patients drink?",
+          "promptAr": "ماذا يمكن للمرضى أن يشربوا؟",
+          "options": [
+            "Water",
+            "Milk",
+            "Nothing"
+          ],
+          "answer": "Water",
+          "sourceText": "Patients must show their allergy card before treatment. They mustn't eat for four hours before the test, but water is allowed."
+        },
+        {
+          "id": "A2-U7-L3-A05",
+          "lessonId": "A2-U7-L3",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "mediation",
+          "canDo": [
+            "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE",
+            "A2.U7.MEDIATION.RELAY_HEALTH_GUIDANCE"
+          ],
+          "prompt": "Relay the essential medicine warning and allergy information to a family member.",
+          "promptAr": "انقل التحذير الأساسي للدواء ومعلومات الحساسية إلى أحد أفراد الأسرة.",
+          "evaluation": [
+            "selectRelevantInformation",
+            "clarity",
+            "audienceAwareness",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U7-L4",
+      "title": "Healthy Purposes",
+      "titleAr": "أغراض صحية",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE",
+        "A2.U7.PRODUCTION.DESCRIBE_HEALTH_PROBLEM"
+      ],
+      "grammar": [
+        "A2.G.INFINITIVE_PURPOSE"
+      ],
+      "lexicon": [
+        "A2.LEX.HYDRATED_ADJ01",
+        "A2.LEX.STRETCH_V01",
+        "A2.LEX.AVOID_V01"
+      ],
+      "chunks": [
+        "A2.CHUNK.IN_ORDER_TO"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "Drink water to stay hydrated. Stand up every hour to stretch your legs, and avoid screens late at night to sleep better.",
+            "ar": "اشرب الماء لتحافظ على الترطيب. قف كل ساعة لتمدد ساقيك وتجنب الشاشات ليلاً لتنام أفضل."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U7-L4-A01",
+          "lessonId": "A2-U7-L4",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE",
+            "A2.U7.PRODUCTION.DESCRIBE_HEALTH_PROBLEM"
+          ],
+          "prompt": "Why should a person avoid late screens?",
+          "promptAr": "لماذا ينبغي تجنب الشاشات ليلاً؟",
+          "options": [
+            "To sleep better",
+            "To drink more",
+            "To stretch"
+          ],
+          "answer": "To sleep better",
+          "audioTranscript": "Drink water to stay hydrated. Stand up every hour to stretch your legs, and avoid screens late at night to sleep better."
+        },
+        {
+          "id": "A2-U7-L4-A02",
+          "lessonId": "A2-U7-L4",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE",
+            "A2.U7.PRODUCTION.DESCRIBE_HEALTH_PROBLEM"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "hydrated",
+              "مرطَّب"
+            ],
+            [
+              "stretch",
+              "يمدّد"
+            ],
+            [
+              "avoid",
+              "يتجنب"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U7-L4-A03",
+          "lessonId": "A2-U7-L4",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE",
+            "A2.U7.PRODUCTION.DESCRIBE_HEALTH_PROBLEM"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "Walk regularly ___ keep your body active.",
+          "options": [
+            "to",
+            "for",
+            "because"
+          ],
+          "answer": "to"
+        },
+        {
+          "id": "A2-U7-L4-A04",
+          "lessonId": "A2-U7-L4",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE",
+            "A2.U7.PRODUCTION.DESCRIBE_HEALTH_PROBLEM"
+          ],
+          "prompt": "What is the purpose of short breaks?",
+          "promptAr": "ما غرض الاستراحات القصيرة؟",
+          "options": [
+            "To relax the eyes",
+            "To carry a larger bag",
+            "To work longer without stopping"
+          ],
+          "answer": "To relax the eyes",
+          "audioTranscript": "Use a smaller bag to reduce shoulder pain, and take short breaks to relax your eyes."
+        },
+        {
+          "id": "A2-U7-L4-A05",
+          "lessonId": "A2-U7-L4",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE",
+            "A2.U7.PRODUCTION.DESCRIBE_HEALTH_PROBLEM"
+          ],
+          "prompt": "Suggest three healthy actions and state the purpose of each.",
+          "promptAr": "اقترح ثلاثة أفعال صحية واذكر غرض كل منها.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U7-L5",
+      "title": "At the Clinic",
+      "titleAr": "في العيادة",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE",
+        "A2.U7.INTERACTION.MANAGE_CLINIC_TALK"
+      ],
+      "grammar": [
+        "A2.G.HEALTH_DURATION_FOR_SINCE",
+        "A2.G.ADJECTIVE_ENOUGH",
+        "A2.G.HOUSING_REQUESTS"
+      ],
+      "lexicon": [
+        "A2.LEX.SYMPTOM_N01",
+        "A2.LEX.PAIN_N01",
+        "A2.LEX.WORSE_ADJ01",
+        "A2.LEX.LEAK_N01",
+        "A2.LEX.LANDLORD_N01",
+        "A2.LEX.REPAIR_V01",
+        "A2.LEX.OPTION_N01",
+        "A2.LEX.RENT_N01",
+        "A2.LEX.RECOMMEND_V01"
+      ],
+      "chunks": [
+        "A2.CHUNK.HOW_LONG_HAVE_HAD",
+        "A2.CHUNK.IT_STARTED",
+        "A2.CHUNK.THERE_IS_A_PROBLEM_WITH",
+        "A2.CHUNK.BEST_VALUE"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "Doctor: How long have you had the pain? Patient: For three days. It started after I lifted a heavy box, and it is worse this morning.",
+            "ar": ""
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U7-L5-A01",
+          "lessonId": "A2-U7-L5",
+          "type": "textChoice",
+          "mode": "encounter",
+          "skill": "reading",
+          "canDo": [
+            "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE",
+            "A2.U7.INTERACTION.MANAGE_CLINIC_TALK"
+          ],
+          "prompt": "When did the pain begin?",
+          "promptAr": "متى بدأ الألم؟",
+          "options": [
+            "Three days ago",
+            "This morning",
+            "After a meal"
+          ],
+          "answer": "Three days ago",
+          "sourceText": "Doctor: How long have you had the pain? Patient: For three days. It started after I lifted a heavy box, and it is worse this morning."
+        },
+        {
+          "id": "A2-U7-L5-A02",
+          "lessonId": "A2-U7-L5",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE",
+            "A2.U7.INTERACTION.MANAGE_CLINIC_TALK"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "symptom",
+              "عَرَض"
+            ],
+            [
+              "pain",
+              "ألم"
+            ],
+            [
+              "worse",
+              "أسوأ"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U7-L5-A03",
+          "lessonId": "A2-U7-L5",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE",
+            "A2.U7.INTERACTION.MANAGE_CLINIC_TALK"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "I've had this cough ___ Monday.",
+          "options": [
+            "since",
+            "for",
+            "ago"
+          ],
+          "answer": "since"
+        },
+        {
+          "id": "A2-U7-L5-A04",
+          "lessonId": "A2-U7-L5",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE",
+            "A2.U7.INTERACTION.MANAGE_CLINIC_TALK"
+          ],
+          "prompt": "How did the headache change?",
+          "promptAr": "كيف تغير الصداع؟",
+          "options": [
+            "It became worse.",
+            "It disappeared.",
+            "It moved to the back."
+          ],
+          "answer": "It became worse.",
+          "sourceText": "The headache started yesterday afternoon. It was mild at first, but it became worse during the night."
+        },
+        {
+          "id": "A2-U7-L5-A05",
+          "lessonId": "A2-U7-L5",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE",
+            "A2.U7.INTERACTION.MANAGE_CLINIC_TALK"
+          ],
+          "prompt": "Role-play a clinic consultation: describe location, duration, start and change of symptoms.",
+          "promptAr": "مثّل استشارة في عيادة: صف مكان الأعراض ومدتها وبدايتها وتغيرها.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U7-L6",
+      "title": "A Recovery Plan",
+      "titleAr": "خطة تعافٍ",
+      "lessonType": "integrated-production",
+      "canDo": [
+        "A2.U7.WRITING.WRITE_HEALTH_MESSAGE",
+        "A2.U7.PRODUCTION.DESCRIBE_HEALTH_PROBLEM"
+      ],
+      "grammar": [
+        "A2.G.ADVICE_LINKERS",
+        "A2.G.SHOULD_ADVICE",
+        "A2.G.HAVE_TO_OBLIGATION"
+      ],
+      "lexicon": [
+        "A2.LEX.WELL_BEING_N01",
+        "A2.LEX.HABIT_N01",
+        "A2.LEX.RECOVER_V01"
+      ],
+      "chunks": [
+        "A2.CHUNK.IF_GETS_WORSE"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "Rest for two days because your body needs time to recover. Drink water, and call the clinic if the fever gets worse. You don't have to stay in bed all day.",
+            "ar": ""
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U7-L6-A01",
+          "lessonId": "A2-U7-L6",
+          "type": "textChoice",
+          "mode": "encounter",
+          "skill": "reading",
+          "canDo": [
+            "A2.U7.WRITING.WRITE_HEALTH_MESSAGE",
+            "A2.U7.PRODUCTION.DESCRIBE_HEALTH_PROBLEM"
+          ],
+          "prompt": "When should the patient call?",
+          "promptAr": "متى ينبغي للمريض الاتصال؟",
+          "options": [
+            "If the fever gets worse",
+            "After every drink",
+            "Before resting"
+          ],
+          "answer": "If the fever gets worse",
+          "sourceText": "Rest for two days because your body needs time to recover. Drink water, and call the clinic if the fever gets worse. You don't have to stay in bed all day."
+        },
+        {
+          "id": "A2-U7-L6-A02",
+          "lessonId": "A2-U7-L6",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U7.WRITING.WRITE_HEALTH_MESSAGE",
+            "A2.U7.PRODUCTION.DESCRIBE_HEALTH_PROBLEM"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "well-being",
+              "عافية"
+            ],
+            [
+              "habit",
+              "عادة"
+            ],
+            [
+              "recover",
+              "يتعافى"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U7-L6-A03",
+          "lessonId": "A2-U7-L6",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U7.WRITING.WRITE_HEALTH_MESSAGE",
+            "A2.U7.PRODUCTION.DESCRIBE_HEALTH_PROBLEM"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "Call the clinic ___ the pain gets worse.",
+          "options": [
+            "if",
+            "because",
+            "so"
+          ],
+          "answer": "if"
+        },
+        {
+          "id": "A2-U7-L6-A04",
+          "lessonId": "A2-U7-L6",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A2.U7.WRITING.WRITE_HEALTH_MESSAGE",
+            "A2.U7.PRODUCTION.DESCRIBE_HEALTH_PROBLEM"
+          ],
+          "prompt": "What activity must Sami avoid?",
+          "promptAr": "ما النشاط الذي يجب أن يتجنبه سامي؟",
+          "options": [
+            "Sport before Friday",
+            "Sleeping enough",
+            "Taking medicine with food"
+          ],
+          "answer": "Sport before Friday",
+          "sourceText": "To recover well, Sami should sleep enough and take the medicine with food. He must not play sport until Friday."
+        },
+        {
+          "id": "A2-U7-L6-A05",
+          "lessonId": "A2-U7-L6",
+          "type": "write",
+          "mode": "mastery",
+          "skill": "writing",
+          "canDo": [
+            "A2.U7.WRITING.WRITE_HEALTH_MESSAGE",
+            "A2.U7.PRODUCTION.DESCRIBE_HEALTH_PROBLEM"
+          ],
+          "prompt": "Write a clear, general recovery plan with advice, obligations, purposes and a warning to seek professional help if needed.",
+          "promptAr": "اكتب خطة تعافٍ عامة وواضحة تتضمن نصائح وواجبات وأغراضاً وتحذيراً بطلب مساعدة مختصة عند الحاجة.",
+          "evaluation": [
+            "taskCompletion",
+            "clarity",
+            "organisation",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "wordGuide": [
+            80,
+            110
+          ]
+        }
+      ]
+    },
+    {
+      "id": "A2-U7-L7",
+      "title": "Mission: A Clinic Consultation",
+      "titleAr": "المهمة: استشارة في عيادة",
+      "lessonType": "mission",
+      "canDo": [
+        "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE",
+        "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE",
+        "A2.U7.PRODUCTION.DESCRIBE_HEALTH_PROBLEM",
+        "A2.U7.INTERACTION.MANAGE_CLINIC_TALK",
+        "A2.U7.WRITING.WRITE_HEALTH_MESSAGE",
+        "A2.U7.MEDIATION.RELAY_HEALTH_GUIDANCE",
+        "A2.U7.ACTION.COMPLETE_CLINIC_CONSULTATION"
+      ],
+      "grammar": [],
+      "lexicon": [],
+      "chunks": [],
+      "scenario": "Understand a patient's symptoms and written instructions, conduct a simple consultation and relay the safe action plan.",
+      "activities": [
+        {
+          "id": "A2-U7-L7-A01",
+          "lessonId": "A2-U7-L7",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE",
+            "A2.U7.ACTION.COMPLETE_CLINIC_CONSULTATION"
+          ],
+          "prompt": "When should the tablet be taken?",
+          "promptAr": "متى ينبغي تناول القرص؟",
+          "options": [
+            "After breakfast",
+            "Before any food",
+            "At midnight"
+          ],
+          "answer": "After breakfast",
+          "sourceText": "Clinic note: Take one tablet after breakfast for five days. Do not take it on an empty stomach. Call the clinic if you develop a rash."
+        },
+        {
+          "id": "A2-U7-L7-A02",
+          "lessonId": "A2-U7-L7",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE",
+            "A2.U7.ACTION.COMPLETE_CLINIC_CONSULTATION"
+          ],
+          "prompt": "What caused the problem?",
+          "promptAr": "ما سبب المشكلة؟",
+          "options": [
+            "Moving furniture",
+            "Taking medicine",
+            "Walking"
+          ],
+          "answer": "Moving furniture",
+          "audioTranscript": "I've had a sore back since Tuesday. It started after moving furniture, and today the pain is worse when I sit."
+        },
+        {
+          "id": "A2-U7-L7-A03",
+          "lessonId": "A2-U7-L7",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A2.U7.INTERACTION.MANAGE_CLINIC_TALK",
+            "A2.U7.ACTION.COMPLETE_CLINIC_CONSULTATION"
+          ],
+          "prompt": "Conduct a simple clinic exchange: ask about symptoms, duration and change, then check instructions.",
+          "promptAr": "أجرِ حوار عيادة بسيطاً: اسأل عن الأعراض والمدة والتغير ثم تحقق من التعليمات.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A2-U7-L7-A04",
+          "lessonId": "A2-U7-L7",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A2.U7.PRODUCTION.DESCRIBE_HEALTH_PROBLEM",
+            "A2.U7.ACTION.COMPLETE_CLINIC_CONSULTATION"
+          ],
+          "prompt": "Summarise the problem and give only the general advice contained in the task information.",
+          "promptAr": "لخّص المشكلة وقدّم فقط النصيحة العامة الواردة في معلومات المهمة.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A2-U7-L7-A05",
+          "lessonId": "A2-U7-L7",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "mediation",
+          "canDo": [
+            "A2.U7.MEDIATION.RELAY_HEALTH_GUIDANCE",
+            "A2.U7.ACTION.COMPLETE_CLINIC_CONSULTATION"
+          ],
+          "prompt": "Relay the written dose, warning and condition for contacting the clinic accurately.",
+          "promptAr": "انقل الجرعة المكتوبة والتحذير وشرط الاتصال بالعيادة بدقة.",
+          "evaluation": [
+            "selectRelevantInformation",
+            "clarity",
+            "audienceAwareness",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A2-U7-L7-A06",
+          "lessonId": "A2-U7-L7",
+          "type": "write",
+          "mode": "mastery",
+          "skill": "writing",
+          "canDo": [
+            "A2.U7.WRITING.WRITE_HEALTH_MESSAGE",
+            "A2.U7.ACTION.COMPLETE_CLINIC_CONSULTATION"
+          ],
+          "prompt": "Write a follow-up message summarising the symptoms and the supplied action plan. Do not invent medical advice.",
+          "promptAr": "اكتب رسالة متابعة تلخص الأعراض وخطة العمل المقدمة. لا تخترع نصيحة طبية.",
+          "evaluation": [
+            "taskCompletion",
+            "clarity",
+            "organisation",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "wordGuide": [
+            80,
+            110
+          ],
+          "accepted": []
+        }
+      ]
+    }
+  ],
+  "mastery": {
+    "requiredObjectives": [
+      "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE",
+      "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE",
+      "A2.U7.PRODUCTION.DESCRIBE_HEALTH_PROBLEM",
+      "A2.U7.INTERACTION.MANAGE_CLINIC_TALK",
+      "A2.U7.WRITING.WRITE_HEALTH_MESSAGE",
+      "A2.U7.MEDIATION.RELAY_HEALTH_GUIDANCE",
+      "A2.U7.ACTION.COMPLETE_CLINIC_CONSULTATION"
+    ],
+    "requiredSkillGroups": [
+      [
+        "listening",
+        "reading"
+      ],
+      [
+        "spokenInteraction",
+        "spokenProduction",
+        "writing"
+      ],
+      [
+        "mediation"
+      ]
+    ],
+    "minimumObjectiveScore": 0.75,
+    "missionRequired": true,
+    "retry": "targeted-by-objective",
+    "unlocks": "A2-U8"
+  },
+  "countsTowardA1Mastery": true
+}

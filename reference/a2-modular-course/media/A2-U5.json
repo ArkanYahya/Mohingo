@@ -1,0 +1,56 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-U5",
+  "kind": "media",
+  "records": {
+    "audio-a2-u5-l1-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "For the bread, we need 500 grams of flour, a lot of water and two small spoons of salt.",
+      "activityId": "A2-U5-L1-A01"
+    },
+    "audio-a2-u5-l1-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "The salad needs many tomatoes but not much oil. It also needs 100 grams of cheese.",
+      "activityId": "A2-U5-L1-A04"
+    },
+    "audio-a2-u5-l2-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "First, boil the water. Then add the pasta. Stir it twice and cook for ten minutes.",
+      "activityId": "A2-U5-L2-A01"
+    },
+    "audio-a2-u5-l2-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "Heat the oil, add the vegetables and stir for five minutes. Finally, add the cooked rice.",
+      "activityId": "A2-U5-L2-A04"
+    },
+    "audio-a2-u5-l4-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "Customer: Excuse me, this isn't what I ordered. I asked for vegetable soup, but this has chicken in it. Server: I'm sorry. I'll change it.",
+      "activityId": "A2-U5-L4-A01"
+    },
+    "audio-a2-u5-l4-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "Customer: One dessert is missing, and you brought us three coffees instead of two. Server: I'll correct the order now.",
+      "activityId": "A2-U5-L4-A04"
+    },
+    "audio-a2-u5-l7-a02": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "We ordered three vegetable meals, but only two arrived, and one of them has meat. Please send two correct vegetable meals.",
+      "activityId": "A2-U5-L7-A02"
+    }
+  }
+}

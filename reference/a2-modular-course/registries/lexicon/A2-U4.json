@@ -1,0 +1,367 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-U4",
+  "kind": "lexicon",
+  "records": [
+    {
+      "id": "A2.LEX.BALCONY_N01",
+      "headword": "balcony",
+      "partOfSpeech": "noun",
+      "arabic": "شرفة",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "balcony",
+      "examples": [
+        {
+          "en": "The flat had a small balcony.",
+          "ar": "كانت للشقة شرفة صغيرة."
+        }
+      ],
+      "introducedIn": "A2-U4-L1",
+      "recycledIn": [
+        "A2-U5-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.HEATING_N01",
+      "headword": "heating",
+      "partOfSpeech": "noun",
+      "arabic": "تدفئة",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "heating",
+      "examples": [
+        {
+          "en": "The heating was broken.",
+          "ar": "كانت التدفئة معطلة."
+        }
+      ],
+      "introducedIn": "A2-U4-L1",
+      "recycledIn": [
+        "A2-U5-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.MOVE_V01",
+      "headword": "move",
+      "partOfSpeech": "verb",
+      "arabic": "ينتقل",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "move",
+      "examples": [
+        {
+          "en": "We moved last month.",
+          "ar": "انتقلنا الشهر الماضي."
+        }
+      ],
+      "introducedIn": "A2-U4-L1",
+      "recycledIn": [
+        "A2-U5-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.NEARBY_ADV01",
+      "headword": "nearby",
+      "partOfSpeech": "adverb",
+      "arabic": "قريب",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "nearby",
+      "examples": [
+        {
+          "en": "There is a pharmacy nearby.",
+          "ar": "توجد صيدلية قريبة."
+        }
+      ],
+      "introducedIn": "A2-U4-L2",
+      "recycledIn": [
+        "A2-U5-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.FACILITY_N01",
+      "headword": "facility",
+      "partOfSpeech": "noun",
+      "arabic": "مرفق",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "facility",
+      "examples": [
+        {
+          "en": "The area has good sports facilities.",
+          "ar": "في المنطقة مرافق رياضية جيدة."
+        }
+      ],
+      "introducedIn": "A2-U4-L2",
+      "recycledIn": [
+        "A2-U5-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.CONVENIENT_ADJ01",
+      "headword": "convenient",
+      "partOfSpeech": "adjective",
+      "arabic": "مريح / ملائم",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "convenient",
+      "examples": [
+        {
+          "en": "The location is convenient.",
+          "ar": "الموقع ملائم."
+        }
+      ],
+      "introducedIn": "A2-U4-L2",
+      "recycledIn": [
+        "A2-U5-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.SPACIOUS_ADJ01",
+      "headword": "spacious",
+      "partOfSpeech": "adjective",
+      "arabic": "واسع",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "spacious",
+      "examples": [
+        {
+          "en": "The house is more spacious.",
+          "ar": "المنزل أوسع."
+        }
+      ],
+      "introducedIn": "A2-U4-L3",
+      "recycledIn": [
+        "A2-U6-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.PEACEFUL_ADJ01",
+      "headword": "peaceful",
+      "partOfSpeech": "adjective",
+      "arabic": "هادئ",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "peaceful",
+      "examples": [
+        {
+          "en": "This street is peaceful.",
+          "ar": "هذا الشارع هادئ."
+        }
+      ],
+      "introducedIn": "A2-U4-L3",
+      "recycledIn": [
+        "A2-U6-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.CROWDED_ADJ01",
+      "headword": "crowded",
+      "partOfSpeech": "adjective",
+      "arabic": "مزدحم",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "crowded",
+      "examples": [
+        {
+          "en": "The centre is crowded.",
+          "ar": "المركز مزدحم."
+        }
+      ],
+      "introducedIn": "A2-U4-L3",
+      "recycledIn": [
+        "A2-U6-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.NOISY_ADJ01",
+      "headword": "noisy",
+      "partOfSpeech": "adjective",
+      "arabic": "صاخب",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "noisy",
+      "examples": [
+        {
+          "en": "The bedroom is too noisy.",
+          "ar": "غرفة النوم صاخبة أكثر من اللازم."
+        }
+      ],
+      "introducedIn": "A2-U4-L4",
+      "recycledIn": [
+        "A2-U6-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.BRIGHT_ADJ01",
+      "headword": "bright",
+      "partOfSpeech": "adjective",
+      "arabic": "مضيء",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "bright",
+      "examples": [
+        {
+          "en": "The office is bright enough.",
+          "ar": "المكتب مضيء بما يكفي."
+        }
+      ],
+      "introducedIn": "A2-U4-L4",
+      "recycledIn": [
+        "A2-U6-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.SPACE_N01",
+      "headword": "space",
+      "partOfSpeech": "noun",
+      "arabic": "مساحة",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "space",
+      "examples": [
+        {
+          "en": "There isn't enough space.",
+          "ar": "لا توجد مساحة كافية."
+        }
+      ],
+      "introducedIn": "A2-U4-L4",
+      "recycledIn": [
+        "A2-U6-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.LEAK_N01",
+      "headword": "leak",
+      "partOfSpeech": "noun",
+      "arabic": "تسرّب",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "leak",
+      "examples": [
+        {
+          "en": "There is a leak under the sink.",
+          "ar": "يوجد تسرّب تحت الحوض."
+        }
+      ],
+      "introducedIn": "A2-U4-L5",
+      "recycledIn": [
+        "A2-U7-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.LANDLORD_N01",
+      "headword": "landlord",
+      "partOfSpeech": "noun",
+      "arabic": "مالك العقار",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "landlord",
+      "examples": [
+        {
+          "en": "Call the landlord.",
+          "ar": "اتصل بمالك العقار."
+        }
+      ],
+      "introducedIn": "A2-U4-L5",
+      "recycledIn": [
+        "A2-U7-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.REPAIR_V01",
+      "headword": "repair",
+      "partOfSpeech": "verb",
+      "arabic": "يصلح",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "repair",
+      "examples": [
+        {
+          "en": "Can you repair the door?",
+          "ar": "هل يمكنك إصلاح الباب؟"
+        }
+      ],
+      "introducedIn": "A2-U4-L5",
+      "recycledIn": [
+        "A2-U7-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.OPTION_N01",
+      "headword": "option",
+      "partOfSpeech": "noun",
+      "arabic": "خيار",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "option",
+      "examples": [
+        {
+          "en": "Compare the two options.",
+          "ar": "قارن الخيارين."
+        }
+      ],
+      "introducedIn": "A2-U4-L6",
+      "recycledIn": [
+        "A2-U7-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.RENT_N01",
+      "headword": "rent",
+      "partOfSpeech": "noun",
+      "arabic": "إيجار",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "rent",
+      "examples": [
+        {
+          "en": "The rent includes water.",
+          "ar": "يشمل الإيجار الماء."
+        }
+      ],
+      "introducedIn": "A2-U4-L6",
+      "recycledIn": [
+        "A2-U7-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.RECOMMEND_V01",
+      "headword": "recommend",
+      "partOfSpeech": "verb",
+      "arabic": "يوصي",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "recommend",
+      "examples": [
+        {
+          "en": "Which home do you recommend?",
+          "ar": "بأي منزل توصي؟"
+        }
+      ],
+      "introducedIn": "A2-U4-L6",
+      "recycledIn": [
+        "A2-U7-L5"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-U5",
+  "kind": "chunks",
+  "records": [
+    {
+      "id": "A2.CHUNK.HOW_MUCH_NEED",
+      "text": "How much ... do we need?",
+      "arabic": "كم نحتاج من...؟",
+      "cefr": "A2",
+      "introducedIn": "A2-U5-L1",
+      "productive": true,
+      "recycledIn": [
+        "A2-U6-L1"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.HOW_MANY_NEED",
+      "text": "How many ... do we need?",
+      "arabic": "كم نحتاج من...؟",
+      "cefr": "A2",
+      "introducedIn": "A2-U5-L1",
+      "productive": true,
+      "recycledIn": [
+        "A2-U6-L1"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.FIRST_THEN_FINALLY",
+      "text": "First ..., then ..., finally ...",
+      "arabic": "أولاً... ثم... أخيراً...",
+      "cefr": "A2",
+      "introducedIn": "A2-U5-L2",
+      "productive": true,
+      "recycledIn": [
+        "A2-U6-L1"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.A_LITTLE_BIT",
+      "text": "a little bit",
+      "arabic": "قليلاً",
+      "cefr": "A2",
+      "introducedIn": "A2-U5-L3",
+      "productive": true,
+      "recycledIn": [
+        "A2-U7-L3"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.SOMETHING_IS_MISSING",
+      "text": "Something is missing.",
+      "arabic": "هناك شيء مفقود.",
+      "cefr": "A2",
+      "introducedIn": "A2-U5-L4",
+      "productive": true,
+      "recycledIn": [
+        "A2-U7-L3"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.THIS_IS_NOT_WHAT_ORDERED",
+      "text": "This isn't what I ordered.",
+      "arabic": "هذا ليس ما طلبته.",
+      "cefr": "A2",
+      "introducedIn": "A2-U5-L4",
+      "productive": true,
+      "recycledIn": [
+        "A2-U7-L3"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.COULD_REPLACE",
+      "text": "Could you replace it?",
+      "arabic": "هل يمكنك استبداله؟",
+      "cefr": "A2",
+      "introducedIn": "A2-U5-L5",
+      "productive": true,
+      "recycledIn": [
+        "A2-U8-L5"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.SERVES_FOUR",
+      "text": "serves four",
+      "arabic": "يكفي أربعة أشخاص",
+      "cefr": "A2",
+      "introducedIn": "A2-U5-L6",
+      "productive": true,
+      "recycledIn": [
+        "A2-U8-L5"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-U8",
+  "kind": "chunks",
+  "records": [
+    {
+      "id": "A2.CHUNK.RESPONSIBLE_FOR",
+      "text": "be responsible for",
+      "arabic": "مسؤول عن",
+      "cefr": "A2",
+      "introducedIn": "A2-U8-L1",
+      "productive": true,
+      "recycledIn": [
+        "A2-U9-L1"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.WORK_A_SHIFT",
+      "text": "work a shift",
+      "arabic": "يعمل نوبة",
+      "cefr": "A2",
+      "introducedIn": "A2-U8-L1",
+      "productive": true,
+      "recycledIn": [
+        "A2-U9-L1"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.BE_ABLE_TO",
+      "text": "be able to",
+      "arabic": "يكون قادراً على",
+      "cefr": "A2",
+      "introducedIn": "A2-U8-L2",
+      "productive": true,
+      "recycledIn": [
+        "A2-U9-L1"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.WORK_WELL_WITH",
+      "text": "work well with",
+      "arabic": "يعمل جيداً مع",
+      "cefr": "A2",
+      "introducedIn": "A2-U8-L3",
+      "productive": true,
+      "recycledIn": [
+        "A2-U10-L3"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.INTERESTED_IN_COURSE",
+      "text": "interested in the course",
+      "arabic": "مهتم بالدورة",
+      "cefr": "A2",
+      "introducedIn": "A2-U8-L4",
+      "productive": true,
+      "recycledIn": [
+        "A2-U10-L3"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.COULD_YOU_TELL_ME",
+      "text": "Could you tell me ...?",
+      "arabic": "هل يمكنك إخباري...؟",
+      "cefr": "A2",
+      "introducedIn": "A2-U8-L5",
+      "productive": true,
+      "recycledIn": [
+        "A2-U10-L3"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.I_AM_WRITING_TO",
+      "text": "I am writing to ...",
+      "arabic": "أكتب من أجل...",
+      "cefr": "A2",
+      "introducedIn": "A2-U8-L5",
+      "productive": true,
+      "recycledIn": [
+        "A2-U11-L5"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.APPLY_FOR",
+      "text": "apply for",
+      "arabic": "يتقدم إلى",
+      "cefr": "A2",
+      "introducedIn": "A2-U8-L6",
+      "productive": true,
+      "recycledIn": [
+        "A2-U11-L5"
+      ]
+    }
+  ]
+}

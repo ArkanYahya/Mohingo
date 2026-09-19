@@ -1,0 +1,367 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-U3",
+  "kind": "lexicon",
+  "records": [
+    {
+      "id": "A2.LEX.TALL_ADJ01",
+      "headword": "tall",
+      "partOfSpeech": "adjective",
+      "arabic": "طويل القامة",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "tall",
+      "examples": [
+        {
+          "en": "He is tall and slim.",
+          "ar": "هو طويل ونحيف."
+        }
+      ],
+      "introducedIn": "A2-U3-L1",
+      "recycledIn": [
+        "A2-U4-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.CURLY_ADJ01",
+      "headword": "curly",
+      "partOfSpeech": "adjective",
+      "arabic": "مجعد",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "curly",
+      "examples": [
+        {
+          "en": "She has curly hair.",
+          "ar": "لديها شعر مجعد."
+        }
+      ],
+      "introducedIn": "A2-U3-L1",
+      "recycledIn": [
+        "A2-U4-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.APPEARANCE_N01",
+      "headword": "appearance",
+      "partOfSpeech": "noun",
+      "arabic": "مظهر",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "appearance",
+      "examples": [
+        {
+          "en": "Describe his appearance.",
+          "ar": "صف مظهره."
+        }
+      ],
+      "introducedIn": "A2-U3-L1",
+      "recycledIn": [
+        "A2-U4-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.PATIENT_ADJ01",
+      "headword": "patient",
+      "partOfSpeech": "adjective",
+      "arabic": "صبور",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "patient",
+      "examples": [
+        {
+          "en": "Our teacher is patient.",
+          "ar": "مدرسنا صبور."
+        }
+      ],
+      "introducedIn": "A2-U3-L2",
+      "recycledIn": [
+        "A2-U4-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.RELIABLE_ADJ01",
+      "headword": "reliable",
+      "partOfSpeech": "adjective",
+      "arabic": "موثوق",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "reliable",
+      "examples": [
+        {
+          "en": "A reliable friend keeps promises.",
+          "ar": "الصديق الموثوق يفي بوعوده."
+        }
+      ],
+      "introducedIn": "A2-U3-L2",
+      "recycledIn": [
+        "A2-U4-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.OUTGOING_ADJ01",
+      "headword": "outgoing",
+      "partOfSpeech": "adjective",
+      "arabic": "اجتماعي",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "outgoing",
+      "examples": [
+        {
+          "en": "Nadia is friendly and outgoing.",
+          "ar": "نادية ودودة واجتماعية."
+        }
+      ],
+      "introducedIn": "A2-U3-L2",
+      "recycledIn": [
+        "A2-U4-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.CALM_ADJ01",
+      "headword": "calm",
+      "partOfSpeech": "adjective",
+      "arabic": "هادئ",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "calm",
+      "examples": [
+        {
+          "en": "Sami is calmer than me.",
+          "ar": "سامي أهدأ مني."
+        }
+      ],
+      "introducedIn": "A2-U3-L3",
+      "recycledIn": [
+        "A2-U5-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.ORGANISED_ADJ01",
+      "headword": "organised",
+      "partOfSpeech": "adjective",
+      "arabic": "منظم",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "organised",
+      "examples": [
+        {
+          "en": "Rana is very organised.",
+          "ar": "رنا منظمة جداً."
+        }
+      ],
+      "introducedIn": "A2-U3-L3",
+      "recycledIn": [
+        "A2-U5-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.CONFIDENT_ADJ01",
+      "headword": "confident",
+      "partOfSpeech": "adjective",
+      "arabic": "واثق",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "confident",
+      "examples": [
+        {
+          "en": "He feels more confident now.",
+          "ar": "يشعر بثقة أكبر الآن."
+        }
+      ],
+      "introducedIn": "A2-U3-L3",
+      "recycledIn": [
+        "A2-U5-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.FUNNIEST_ADJ01",
+      "headword": "funny",
+      "partOfSpeech": "adjective",
+      "arabic": "مضحك",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "funny",
+      "examples": [
+        {
+          "en": "She is the funniest person in our group.",
+          "ar": "هي أكثر شخص مضحك في مجموعتنا."
+        }
+      ],
+      "introducedIn": "A2-U3-L4",
+      "recycledIn": [
+        "A2-U5-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.KIND_ADJ01",
+      "headword": "kind",
+      "partOfSpeech": "adjective",
+      "arabic": "لطيف",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "kind",
+      "examples": [
+        {
+          "en": "Ali is the kindest neighbour.",
+          "ar": "علي ألطف جار."
+        }
+      ],
+      "introducedIn": "A2-U3-L4",
+      "recycledIn": [
+        "A2-U5-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.ACTIVE_ADJ01",
+      "headword": "active",
+      "partOfSpeech": "adjective",
+      "arabic": "نشيط",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "active",
+      "examples": [
+        {
+          "en": "Who is the most active member?",
+          "ar": "من أكثر الأعضاء نشاطاً؟"
+        }
+      ],
+      "introducedIn": "A2-U3-L4",
+      "recycledIn": [
+        "A2-U5-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.COLLEAGUE_N01",
+      "headword": "colleague",
+      "partOfSpeech": "noun",
+      "arabic": "زميل عمل",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "colleague",
+      "examples": [
+        {
+          "en": "My colleague helped me.",
+          "ar": "ساعدني زميلي."
+        }
+      ],
+      "introducedIn": "A2-U3-L5",
+      "recycledIn": [
+        "A2-U6-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.NEIGHBOUR_N01",
+      "headword": "neighbour",
+      "partOfSpeech": "noun",
+      "arabic": "جار",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "neighbour",
+      "examples": [
+        {
+          "en": "Our new neighbour is friendly.",
+          "ar": "جارنا الجديد ودود."
+        }
+      ],
+      "introducedIn": "A2-U3-L5",
+      "recycledIn": [
+        "A2-U6-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.RELATIONSHIP_N01",
+      "headword": "relationship",
+      "partOfSpeech": "noun",
+      "arabic": "علاقة",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "relationship",
+      "examples": [
+        {
+          "en": "They have a good working relationship.",
+          "ar": "لديهما علاقة عمل جيدة."
+        }
+      ],
+      "introducedIn": "A2-U3-L5",
+      "recycledIn": [
+        "A2-U6-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.TEAM_N01",
+      "headword": "team",
+      "partOfSpeech": "noun",
+      "arabic": "فريق",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "team",
+      "examples": [
+        {
+          "en": "The team needs a leader.",
+          "ar": "يحتاج الفريق إلى قائد."
+        }
+      ],
+      "introducedIn": "A2-U3-L6",
+      "recycledIn": [
+        "A2-U6-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.MEMBER_N01",
+      "headword": "member",
+      "partOfSpeech": "noun",
+      "arabic": "عضو",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "member",
+      "examples": [
+        {
+          "en": "Each member has a role.",
+          "ar": "لكل عضو دور."
+        }
+      ],
+      "introducedIn": "A2-U3-L6",
+      "recycledIn": [
+        "A2-U6-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.SUITABLE_ADJ01",
+      "headword": "suitable",
+      "partOfSpeech": "adjective",
+      "arabic": "مناسب",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "suitable",
+      "examples": [
+        {
+          "en": "She is suitable for the role.",
+          "ar": "هي مناسبة للدور."
+        }
+      ],
+      "introducedIn": "A2-U3-L6",
+      "recycledIn": [
+        "A2-U6-L5"
+      ]
+    }
+  ]
+}

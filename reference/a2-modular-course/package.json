@@ -1,0 +1,12 @@
+{
+  "name": "a2-complete-modular-course",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "author:complete": "node tools/author-complete-a2.mjs",
+    "build": "node tools/build-a2.mjs",
+    "validate": "node tools/validate-a2.mjs",
+    "audit": "node tools/audit-quality.mjs",
+    "check": "npm run author:complete && npm run validate && npm run audit && npm run build"
+  }
+}

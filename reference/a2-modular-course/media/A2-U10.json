@@ -1,0 +1,56 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-U10",
+  "kind": "media",
+  "records": {
+    "audio-a2-u10-l1-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "At the beginning, the main character was living in a small village and working at a train station.",
+      "activityId": "A2-U10-L1-A01"
+    },
+    "audio-a2-u10-l1-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "The opening scene showed a family who were preparing for a long journey. The children were packing while their father was checking tickets.",
+      "activityId": "A2-U10-L1-A04"
+    },
+    "audio-a2-u10-l2-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "I was watching the final scene when the electricity went off. When it returned, I discovered that the film had finished.",
+      "activityId": "A2-U10-L2-A01"
+    },
+    "audio-a2-u10-l2-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "The actor was speaking when a dog ran onto the stage. The audience laughed and the actor stopped.",
+      "activityId": "A2-U10-L2-A04"
+    },
+    "audio-a2-u10-l5-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "In my opinion, the film was entertaining because the characters were warm. Although the middle was confusing, the ending was moving.",
+      "activityId": "A2-U10-L5-A01"
+    },
+    "audio-a2-u10-l5-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "What I liked was the music, but the story was too long. I still recommend it because the final scene was excellent.",
+      "activityId": "A2-U10-L5-A04"
+    },
+    "audio-a2-u10-l7-a02": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "I was enjoying the play when the sound suddenly stopped. While the actors were waiting, the audience began to sing. It became the funniest part of the evening.",
+      "activityId": "A2-U10-L7-A02"
+    }
+  }
+}

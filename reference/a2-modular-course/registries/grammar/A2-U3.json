@@ -1,0 +1,79 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-U3",
+  "kind": "grammar",
+  "records": [
+    {
+      "id": "A2.G.LOOK_LIKE",
+      "form": "look like + noun/pronoun",
+      "meaningAr": "وصف المظهر بـ look like",
+      "introducedIn": "A2-U3-L1",
+      "examples": [
+        {
+          "en": "She looks like her mother.",
+          "ar": "هي تشبه أمها."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.BE_LIKE",
+      "form": "be like for character",
+      "meaningAr": "السؤال عن الشخصية بـ be like",
+      "introducedIn": "A2-U3-L2",
+      "examples": [
+        {
+          "en": "What is he like?",
+          "ar": "كيف هي شخصيته؟"
+        }
+      ]
+    },
+    {
+      "id": "A2.G.COMPARATIVE_ADJECTIVES",
+      "form": "comparative adjective + than",
+      "meaningAr": "صيغة المقارنة",
+      "introducedIn": "A2-U3-L3",
+      "examples": [
+        {
+          "en": "Lina is calmer than Noor.",
+          "ar": "لينا أهدأ من نور."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.SUPERLATIVE_ADJECTIVES",
+      "form": "the + superlative adjective",
+      "meaningAr": "صيغة التفضيل",
+      "introducedIn": "A2-U3-L4",
+      "examples": [
+        {
+          "en": "He is the most patient person here.",
+          "ar": "هو أكثر شخص صبور هنا."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.RELATIVE_WHO_CHUNK",
+      "form": "a person who ...",
+      "meaningAr": "عبارة a person who",
+      "introducedIn": "A2-U3-L5",
+      "examples": [
+        {
+          "en": "We need someone who listens well.",
+          "ar": "نحتاج شخصاً يستمع جيداً."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.TOO_ALSO_RELATION",
+      "form": "too / also for shared qualities",
+      "meaningAr": "too وalso للصفات المشتركة",
+      "introducedIn": "A2-U3-L6",
+      "examples": [
+        {
+          "en": "Mira is organised, and Sami is organised too.",
+          "ar": "ميرا منظمة، وسامي منظم أيضاً."
+        }
+      ]
+    }
+  ]
+}

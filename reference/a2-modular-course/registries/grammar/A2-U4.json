@@ -1,0 +1,79 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-U4",
+  "kind": "grammar",
+  "records": [
+    {
+      "id": "A2.G.THERE_WAS_WERE",
+      "form": "there was / there were",
+      "meaningAr": "كان يوجد / كانت توجد",
+      "introducedIn": "A2-U4-L1",
+      "examples": [
+        {
+          "en": "There was a balcony.",
+          "ar": "كانت توجد شرفة."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.QUANTIFIERS_AREA",
+      "form": "some, any, a lot of, not much/many",
+      "meaningAr": "محددات الكمية للأماكن",
+      "introducedIn": "A2-U4-L2",
+      "examples": [
+        {
+          "en": "There are a lot of shops nearby.",
+          "ar": "توجد متاجر كثيرة قربنا."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.HOUSING_COMPARATIVES",
+      "form": "comparatives for homes and areas",
+      "meaningAr": "المقارنة بين المنازل والأحياء",
+      "introducedIn": "A2-U4-L3",
+      "examples": [
+        {
+          "en": "The flat is cheaper than the house.",
+          "ar": "الشقة أرخص من المنزل."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.TOO_ADJECTIVE",
+      "form": "too + adjective",
+      "meaningAr": "أكثر من اللازم",
+      "introducedIn": "A2-U4-L4",
+      "examples": [
+        {
+          "en": "The kitchen is too small.",
+          "ar": "المطبخ صغير أكثر من اللازم."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.ADJECTIVE_ENOUGH",
+      "form": "adjective + enough",
+      "meaningAr": "صفة + بما يكفي",
+      "introducedIn": "A2-U4-L4",
+      "examples": [
+        {
+          "en": "The room is bright enough.",
+          "ar": "الغرفة مضيئة بما يكفي."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.HOUSING_REQUESTS",
+      "form": "Could you ...? / Can we ...?",
+      "meaningAr": "طلبات مهذبة لمشكلة سكن",
+      "introducedIn": "A2-U4-L5",
+      "examples": [
+        {
+          "en": "Could you check the heating?",
+          "ar": "هل يمكنك فحص التدفئة؟"
+        }
+      ]
+    }
+  ]
+}

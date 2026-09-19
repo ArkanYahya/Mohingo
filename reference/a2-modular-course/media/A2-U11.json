@@ -1,0 +1,56 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-U11",
+  "kind": "media",
+  "records": {
+    "audio-a2-u11-l1-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "The forecast says a storm is coming, so the outdoor market will close early. Some roads are wet because of last night's rain.",
+      "activityId": "A2-U11-L1-A01"
+    },
+    "audio-a2-u11-l1-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "A tree fell because the wind was strong, so buses are using another road.",
+      "activityId": "A2-U11-L1-A04"
+    },
+    "audio-a2-u11-l2-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "If the river rises another twenty centimetres, the park will close. Visitors will use the higher road because it is safer.",
+      "activityId": "A2-U11-L2-A01"
+    },
+    "audio-a2-u11-l2-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "If temperatures fall tonight, the bridge will be icy in the morning. Drivers will need to slow down.",
+      "activityId": "A2-U11-L2-A04"
+    },
+    "audio-a2-u11-l5-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "A: The picnic area is flooded. B: We could use the shelter near the café. A: It might be crowded. Let's move the lunch indoors instead.",
+      "activityId": "A2-U11-L5-A01"
+    },
+    "audio-a2-u11-l5-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "The path is too muddy. We should choose the paved route, or we could visit the nature centre until it dries.",
+      "activityId": "A2-U11-L5-A04"
+    },
+    "audio-a2-u11-l7-a02": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "Heavy rain may begin after three, and there might be thunder at five. If thunder starts, all activities will move into the sports hall.",
+      "activityId": "A2-U11-L7-A02"
+    }
+  }
+}

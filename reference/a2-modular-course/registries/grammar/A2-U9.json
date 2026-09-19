@@ -1,0 +1,79 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-U9",
+  "kind": "grammar",
+  "records": [
+    {
+      "id": "A2.G.TECH_IMPERATIVES",
+      "form": "imperatives for device instructions",
+      "meaningAr": "صيغة الأمر لتعليمات الأجهزة",
+      "introducedIn": "A2-U9-L1",
+      "examples": [
+        {
+          "en": "Press the power button.",
+          "ar": "اضغط زر التشغيل."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.SEQUENCING_ADVERBS",
+      "form": "first, next, then, finally",
+      "meaningAr": "ظروف ترتيب الخطوات",
+      "introducedIn": "A2-U9-L2",
+      "examples": [
+        {
+          "en": "First open settings; next choose Wi-Fi.",
+          "ar": "افتح الإعدادات أولاً؛ ثم اختر الواي فاي."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.ZERO_CONDITIONAL_PROCEDURE",
+      "form": "if + present, present for procedures",
+      "meaningAr": "الشرط الصفري للإجراءات",
+      "introducedIn": "A2-U9-L3",
+      "examples": [
+        {
+          "en": "If the light is red, charge the device.",
+          "ar": "إذا كان الضوء أحمر، اشحن الجهاز."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.PRONOUN_REFERENCE",
+      "form": "it / this / that / they for reference",
+      "meaningAr": "الإحالة بالضمائر",
+      "introducedIn": "A2-U9-L4",
+      "examples": [
+        {
+          "en": "Open the link and copy it.",
+          "ar": "افتح الرابط وانسخه."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.TECH_QUESTIONS",
+      "form": "What happens when...? / Does it...?",
+      "meaningAr": "أسئلة تشخيص المشكلة التقنية",
+      "introducedIn": "A2-U9-L5",
+      "examples": [
+        {
+          "en": "What happens when you sign in?",
+          "ar": "ماذا يحدث عندما تسجل الدخول؟"
+        }
+      ]
+    },
+    {
+      "id": "A2.G.PURPOSE_TECH",
+      "form": "to + verb for digital purpose",
+      "meaningAr": "المصدر لغرض رقمي",
+      "introducedIn": "A2-U9-L6",
+      "examples": [
+        {
+          "en": "Use a strong password to protect the account.",
+          "ar": "استخدم كلمة مرور قوية لحماية الحساب."
+        }
+      ]
+    }
+  ]
+}

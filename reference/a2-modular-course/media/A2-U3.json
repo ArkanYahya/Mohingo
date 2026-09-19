@@ -1,0 +1,42 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-U3",
+  "kind": "media",
+  "records": {
+    "audio-a2-u3-l1-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "My cousin is tall and has short curly hair. He wears glasses.",
+      "activityId": "A2-U3-L1-A01"
+    },
+    "audio-a2-u3-l1-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "The new manager is medium height with long dark hair. She usually wears a blue jacket.",
+      "activityId": "A2-U3-L1-A04"
+    },
+    "audio-a2-u3-l2-a01": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "A: What is Dalia like? B: She is outgoing and kind. She talks to everyone, but she is also a patient listener.",
+      "activityId": "A2-U3-L2-A01"
+    },
+    "audio-a2-u3-l2-a04": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "Fadi is reliable. When he says he will help, he always comes on time.",
+      "activityId": "A2-U3-L2-A04"
+    },
+    "audio-a2-u3-l7-a02": {
+      "type": "ttsSource",
+      "locale": "en",
+      "voiceProfile": "clear-neutral-a2",
+      "transcript": "Bilal is quieter than the other candidates, but he is the most organised and always finishes tasks on time.",
+      "activityId": "A2-U3-L7-A02"
+    }
+  }
+}

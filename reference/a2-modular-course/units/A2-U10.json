@@ -1,0 +1,1070 @@
+{
+  "id": "A2-U10",
+  "title": "Stories and Entertainment",
+  "titleAr": "القصص والترفيه",
+  "levelRole": "core",
+  "estimatedMinutes": [
+    95,
+    130
+  ],
+  "lessons": [
+    {
+      "id": "A2-U10-L1",
+      "title": "Background in a Story",
+      "titleAr": "خلفية القصة",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW",
+        "A2.U10.PRODUCTION.TELL_STORY_OPINION"
+      ],
+      "grammar": [
+        "A2.G.PAST_CONTINUOUS",
+        "A2.G.TECH_IMPERATIVES",
+        "A2.G.SEQUENCING_ADVERBS"
+      ],
+      "lexicon": [
+        "A2.LEX.SCENE_N01",
+        "A2.LEX.CHARACTER_N01",
+        "A2.LEX.PLOT_N01",
+        "A2.LEX.SCREEN_N01",
+        "A2.LEX.BUTTON_N01",
+        "A2.LEX.CHARGE_V01",
+        "A2.LEX.SETTINGS_N01",
+        "A2.LEX.CONNECT_V01",
+        "A2.LEX.DOWNLOAD_V01"
+      ],
+      "chunks": [
+        "A2.CHUNK.AT_THE_BEGINNING",
+        "A2.CHUNK.PRESS_AND_HOLD",
+        "A2.CHUNK.GO_TO_SETTINGS",
+        "A2.CHUNK.CONNECT_TO_WIFI"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "At the beginning, the main character was living in a small village and working at a train station.",
+            "ar": "في البداية كانت الشخصية الرئيسية تعيش في قرية صغيرة وتعمل في محطة قطار."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U10-L1-A01",
+          "lessonId": "A2-U10-L1",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW",
+            "A2.U10.PRODUCTION.TELL_STORY_OPINION"
+          ],
+          "prompt": "Where was the character working?",
+          "promptAr": "أين كانت الشخصية تعمل؟",
+          "options": [
+            "At a train station",
+            "In a cinema",
+            "At a school"
+          ],
+          "answer": "At a train station",
+          "audioTranscript": "At the beginning, the main character was living in a small village and working at a train station."
+        },
+        {
+          "id": "A2-U10-L1-A02",
+          "lessonId": "A2-U10-L1",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW",
+            "A2.U10.PRODUCTION.TELL_STORY_OPINION"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "scene",
+              "مشهد"
+            ],
+            [
+              "character",
+              "شخصية"
+            ],
+            [
+              "plot",
+              "حبكة"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U10-L1-A03",
+          "lessonId": "A2-U10-L1",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW",
+            "A2.U10.PRODUCTION.TELL_STORY_OPINION"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "They were ___ dinner when the story began.",
+          "options": [
+            "having",
+            "have",
+            "had"
+          ],
+          "answer": "having"
+        },
+        {
+          "id": "A2-U10-L1-A04",
+          "lessonId": "A2-U10-L1",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW",
+            "A2.U10.PRODUCTION.TELL_STORY_OPINION"
+          ],
+          "prompt": "What was the father doing?",
+          "promptAr": "ماذا كان الأب يفعل؟",
+          "options": [
+            "Checking tickets",
+            "Packing toys",
+            "Driving"
+          ],
+          "answer": "Checking tickets",
+          "audioTranscript": "The opening scene showed a family who were preparing for a long journey. The children were packing while their father was checking tickets."
+        },
+        {
+          "id": "A2-U10-L1-A05",
+          "lessonId": "A2-U10-L1",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW",
+            "A2.U10.PRODUCTION.TELL_STORY_OPINION"
+          ],
+          "prompt": "Set the background for a short story using two past continuous actions.",
+          "promptAr": "هيئ خلفية لقصة قصيرة مستخدماً فعلين في الماضي المستمر.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U10-L2",
+      "title": "An Interruption",
+      "titleAr": "مقاطعة حدث",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW",
+        "A2.U10.PRODUCTION.TELL_STORY_OPINION"
+      ],
+      "grammar": [
+        "A2.G.PAST_SIMPLE_INTERRUPT"
+      ],
+      "lexicon": [
+        "A2.LEX.INTERRUPT_V01",
+        "A2.LEX.DISAPPEAR_V01",
+        "A2.LEX.DISCOVER_V01"
+      ],
+      "chunks": [
+        "A2.CHUNK.WAS_HAPPENING_WHEN"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "I was watching the final scene when the electricity went off. When it returned, I discovered that the film had finished.",
+            "ar": "كنت أشاهد المشهد الأخير عندما انقطعت الكهرباء. وعندما عادت اكتشفت أن الفيلم انتهى."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U10-L2-A01",
+          "lessonId": "A2-U10-L2",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW",
+            "A2.U10.PRODUCTION.TELL_STORY_OPINION"
+          ],
+          "prompt": "What interrupted the film?",
+          "promptAr": "ما الذي قاطع الفيلم؟",
+          "options": [
+            "A power cut",
+            "A phone call",
+            "The ending"
+          ],
+          "answer": "A power cut",
+          "audioTranscript": "I was watching the final scene when the electricity went off. When it returned, I discovered that the film had finished."
+        },
+        {
+          "id": "A2-U10-L2-A02",
+          "lessonId": "A2-U10-L2",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW",
+            "A2.U10.PRODUCTION.TELL_STORY_OPINION"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "interrupt",
+              "يقاطع"
+            ],
+            [
+              "disappear",
+              "يختفي"
+            ],
+            [
+              "discover",
+              "يكتشف"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U10-L2-A03",
+          "lessonId": "A2-U10-L2",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW",
+            "A2.U10.PRODUCTION.TELL_STORY_OPINION"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "We were walking home when it ___ to rain.",
+          "options": [
+            "started",
+            "starts",
+            "starting"
+          ],
+          "answer": "started"
+        },
+        {
+          "id": "A2-U10-L2-A04",
+          "lessonId": "A2-U10-L2",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW",
+            "A2.U10.PRODUCTION.TELL_STORY_OPINION"
+          ],
+          "prompt": "What unexpected event occurred?",
+          "promptAr": "ما الحدث غير المتوقع؟",
+          "options": [
+            "A dog ran onto the stage.",
+            "The audience left.",
+            "The actor finished."
+          ],
+          "answer": "A dog ran onto the stage.",
+          "audioTranscript": "The actor was speaking when a dog ran onto the stage. The audience laughed and the actor stopped."
+        },
+        {
+          "id": "A2-U10-L2-A05",
+          "lessonId": "A2-U10-L2",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW",
+            "A2.U10.PRODUCTION.TELL_STORY_OPINION"
+          ],
+          "prompt": "Tell a two-event mini-story in which one action interrupts another.",
+          "promptAr": "احك قصة صغيرة من حدثين يقاطع فيها حدثٌ فعلاً آخر.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U10-L3",
+      "title": "Events at the Same Time",
+      "titleAr": "أحداث في الوقت نفسه",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U10.READING.FOLLOW_STORY_REVIEW",
+        "A2.U10.MEDIATION.RELAY_STORY_RECOMMENDATION"
+      ],
+      "grammar": [
+        "A2.G.WHILE_PAST",
+        "A2.G.MANNER_ADVERBS",
+        "A2.G.COMMON_GERUND_INFINITIVE"
+      ],
+      "lexicon": [
+        "A2.LEX.AUDIENCE_N01",
+        "A2.LEX.PERFORM_V01",
+        "A2.LEX.STAGE_N01",
+        "A2.LEX.CAREFULLY_ADV01",
+        "A2.LEX.CLEARLY_ADV01",
+        "A2.LEX.EFFICIENTLY_ADV01",
+        "A2.LEX.PRACTICAL_ADJ01",
+        "A2.LEX.QUALIFICATION_N01",
+        "A2.LEX.WORK_EXPERIENCE_N01"
+      ],
+      "chunks": [
+        "A2.CHUNK.WHILE_THEY_WERE",
+        "A2.CHUNK.WORK_WELL_WITH",
+        "A2.CHUNK.INTERESTED_IN_COURSE",
+        "A2.CHUNK.COULD_YOU_TELL_ME"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "While the band was performing, the audience was dancing. Two children were holding signs near the stage.",
+            "ar": ""
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U10-L3-A01",
+          "lessonId": "A2-U10-L3",
+          "type": "textChoice",
+          "mode": "encounter",
+          "skill": "reading",
+          "canDo": [
+            "A2.U10.READING.FOLLOW_STORY_REVIEW",
+            "A2.U10.MEDIATION.RELAY_STORY_RECOMMENDATION"
+          ],
+          "prompt": "What was the audience doing?",
+          "promptAr": "ماذا كان الجمهور يفعل؟",
+          "options": [
+            "Dancing",
+            "Holding signs",
+            "Leaving"
+          ],
+          "answer": "Dancing",
+          "sourceText": "While the band was performing, the audience was dancing. Two children were holding signs near the stage."
+        },
+        {
+          "id": "A2-U10-L3-A02",
+          "lessonId": "A2-U10-L3",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U10.READING.FOLLOW_STORY_REVIEW",
+            "A2.U10.MEDIATION.RELAY_STORY_RECOMMENDATION"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "audience",
+              "جمهور"
+            ],
+            [
+              "perform",
+              "يؤدي"
+            ],
+            [
+              "stage",
+              "مسرح"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U10-L3-A03",
+          "lessonId": "A2-U10-L3",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U10.READING.FOLLOW_STORY_REVIEW",
+            "A2.U10.MEDIATION.RELAY_STORY_RECOMMENDATION"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "While we were waiting, the musicians ___ practising.",
+          "options": [
+            "were",
+            "was",
+            "did"
+          ],
+          "answer": "were"
+        },
+        {
+          "id": "A2-U10-L3-A04",
+          "lessonId": "A2-U10-L3",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A2.U10.READING.FOLLOW_STORY_REVIEW",
+            "A2.U10.MEDIATION.RELAY_STORY_RECOMMENDATION"
+          ],
+          "prompt": "Who was moving the lights?",
+          "promptAr": "من كان يحرك الأضواء؟",
+          "options": [
+            "The technicians",
+            "The actors",
+            "The presenter"
+          ],
+          "answer": "The technicians",
+          "sourceText": "While the actors were changing clothes, the presenter was talking to the audience and the technicians were moving the lights."
+        },
+        {
+          "id": "A2-U10-L3-A05",
+          "lessonId": "A2-U10-L3",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "mediation",
+          "canDo": [
+            "A2.U10.READING.FOLLOW_STORY_REVIEW",
+            "A2.U10.MEDIATION.RELAY_STORY_RECOMMENDATION"
+          ],
+          "prompt": "Relay what three groups were doing at the same time in an event scene.",
+          "promptAr": "انقل ما كانت تفعله ثلاث مجموعات في الوقت نفسه في مشهد فعالية.",
+          "evaluation": [
+            "selectRelevantInformation",
+            "clarity",
+            "audienceAwareness",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U10-L4",
+      "title": "Describe the Entertainment",
+      "titleAr": "صف العمل الترفيهي",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U10.READING.FOLLOW_STORY_REVIEW",
+        "A2.U10.INTERACTION.DISCUSS_ENTERTAINMENT"
+      ],
+      "grammar": [
+        "A2.G.RELATIVE_CLAUSES_BASIC"
+      ],
+      "lexicon": [
+        "A2.LEX.COMEDY_N01",
+        "A2.LEX.DOCUMENTARY_N01",
+        "A2.LEX.ENDING_N01"
+      ],
+      "chunks": [
+        "A2.CHUNK.THE_MAIN_CHARACTER"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "City Voices is a documentary that follows three young musicians. It has an ending which shows their first public concert.",
+            "ar": ""
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U10-L4-A01",
+          "lessonId": "A2-U10-L4",
+          "type": "textChoice",
+          "mode": "encounter",
+          "skill": "reading",
+          "canDo": [
+            "A2.U10.READING.FOLLOW_STORY_REVIEW",
+            "A2.U10.INTERACTION.DISCUSS_ENTERTAINMENT"
+          ],
+          "prompt": "What kind of programme is City Voices?",
+          "promptAr": "ما نوع برنامج City Voices؟",
+          "options": [
+            "A documentary",
+            "A comedy",
+            "A game show"
+          ],
+          "answer": "A documentary",
+          "sourceText": "City Voices is a documentary that follows three young musicians. It has an ending which shows their first public concert."
+        },
+        {
+          "id": "A2-U10-L4-A02",
+          "lessonId": "A2-U10-L4",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U10.READING.FOLLOW_STORY_REVIEW",
+            "A2.U10.INTERACTION.DISCUSS_ENTERTAINMENT"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "comedy",
+              "كوميديا"
+            ],
+            [
+              "documentary",
+              "فيلم وثائقي"
+            ],
+            [
+              "ending",
+              "نهاية"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U10-L4-A03",
+          "lessonId": "A2-U10-L4",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U10.READING.FOLLOW_STORY_REVIEW",
+            "A2.U10.INTERACTION.DISCUSS_ENTERTAINMENT"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "It's a comedy ___ families can enjoy together.",
+          "options": [
+            "that",
+            "where",
+            "what"
+          ],
+          "answer": "that"
+        },
+        {
+          "id": "A2-U10-L4-A04",
+          "lessonId": "A2-U10-L4",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A2.U10.READING.FOLLOW_STORY_REVIEW",
+            "A2.U10.INTERACTION.DISCUSS_ENTERTAINMENT"
+          ],
+          "prompt": "Who finds the bag?",
+          "promptAr": "من يجد الحقيبة؟",
+          "options": [
+            "A neighbour",
+            "A police officer",
+            "A musician"
+          ],
+          "answer": "A neighbour",
+          "sourceText": "The Lost Key is a comedy about a neighbour who finds a bag and tries to return it. The main character makes many funny mistakes."
+        },
+        {
+          "id": "A2-U10-L4-A05",
+          "lessonId": "A2-U10-L4",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A2.U10.READING.FOLLOW_STORY_REVIEW",
+            "A2.U10.INTERACTION.DISCUSS_ENTERTAINMENT"
+          ],
+          "prompt": "Describe a film, book or show without naming it and let a partner identify the type.",
+          "promptAr": "صف فيلماً أو كتاباً أو عرضاً من دون تسميته ودع شريكاً يحدد نوعه.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U10-L5",
+      "title": "Give a Balanced Opinion",
+      "titleAr": "قدّم رأياً متوازناً",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW",
+        "A2.U10.INTERACTION.DISCUSS_ENTERTAINMENT"
+      ],
+      "grammar": [
+        "A2.G.OPINION_LINKERS",
+        "A2.G.HEALTH_DURATION_FOR_SINCE",
+        "A2.G.ADVICE_LINKERS"
+      ],
+      "lexicon": [
+        "A2.LEX.ENTERTAINING_ADJ01",
+        "A2.LEX.CONFUSING_ADJ01",
+        "A2.LEX.MOVING_ADJ01",
+        "A2.LEX.SYMPTOM_N01",
+        "A2.LEX.PAIN_N01",
+        "A2.LEX.WORSE_ADJ01",
+        "A2.LEX.WELL_BEING_N01",
+        "A2.LEX.HABIT_N01",
+        "A2.LEX.RECOVER_V01"
+      ],
+      "chunks": [
+        "A2.CHUNK.IN_MY_OPINION",
+        "A2.CHUNK.WHAT_I_LIKED",
+        "A2.CHUNK.IT_STARTED",
+        "A2.CHUNK.IF_GETS_WORSE"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "In my opinion, the film was entertaining because the characters were warm. Although the middle was confusing, the ending was moving.",
+            "ar": "في رأيي كان الفيلم مسلياً لأن الشخصيات محببة. مع أن الوسط كان مربكاً، كانت النهاية مؤثرة."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U10-L5-A01",
+          "lessonId": "A2-U10-L5",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW",
+            "A2.U10.INTERACTION.DISCUSS_ENTERTAINMENT"
+          ],
+          "prompt": "Which part was confusing?",
+          "promptAr": "أي جزء كان مربكاً؟",
+          "options": [
+            "The middle",
+            "The ending",
+            "The characters"
+          ],
+          "answer": "The middle",
+          "audioTranscript": "In my opinion, the film was entertaining because the characters were warm. Although the middle was confusing, the ending was moving."
+        },
+        {
+          "id": "A2-U10-L5-A02",
+          "lessonId": "A2-U10-L5",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW",
+            "A2.U10.INTERACTION.DISCUSS_ENTERTAINMENT"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "entertaining",
+              "مسلٍّ"
+            ],
+            [
+              "confusing",
+              "مربك"
+            ],
+            [
+              "moving",
+              "مؤثر"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U10-L5-A03",
+          "lessonId": "A2-U10-L5",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW",
+            "A2.U10.INTERACTION.DISCUSS_ENTERTAINMENT"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "Although it was slow, I ___ the ending.",
+          "options": [
+            "liked",
+            "like to",
+            "liking"
+          ],
+          "answer": "liked"
+        },
+        {
+          "id": "A2-U10-L5-A04",
+          "lessonId": "A2-U10-L5",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW",
+            "A2.U10.INTERACTION.DISCUSS_ENTERTAINMENT"
+          ],
+          "prompt": "Why does the speaker still recommend it?",
+          "promptAr": "لماذا لا يزال المتحدث يوصي به؟",
+          "options": [
+            "The final scene was excellent.",
+            "The story was short.",
+            "There was no music."
+          ],
+          "answer": "The final scene was excellent.",
+          "audioTranscript": "What I liked was the music, but the story was too long. I still recommend it because the final scene was excellent."
+        },
+        {
+          "id": "A2-U10-L5-A05",
+          "lessonId": "A2-U10-L5",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW",
+            "A2.U10.INTERACTION.DISCUSS_ENTERTAINMENT"
+          ],
+          "prompt": "Exchange opinions about entertainment, giving one positive point, one limitation and a reason.",
+          "promptAr": "تبادل الآراء حول عمل ترفيهي مع نقطة إيجابية وقيد واحد وسبب.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U10-L6",
+      "title": "Write a Recommendation",
+      "titleAr": "اكتب توصية",
+      "lessonType": "integrated-production",
+      "canDo": [
+        "A2.U10.WRITING.WRITE_SHORT_REVIEW",
+        "A2.U10.PRODUCTION.TELL_STORY_OPINION"
+      ],
+      "grammar": [
+        "A2.G.RECOMMEND_GERUND",
+        "A2.G.OPINION_LINKERS"
+      ],
+      "lexicon": [
+        "A2.LEX.REVIEW_N01",
+        "A2.LEX.RECOMMENDATION_N01",
+        "A2.LEX.RATING_N01"
+      ],
+      "chunks": [
+        "A2.CHUNK.I_RECOMMEND_IT_TO",
+        "A2.CHUNK.OUT_OF_FIVE"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "Review: River Lights is a moving family film with a simple plot. The first half is slow, but the ending is strong. I recommend it to viewers who like quiet stories. Four out of five.",
+            "ar": ""
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U10-L6-A01",
+          "lessonId": "A2-U10-L6",
+          "type": "textChoice",
+          "mode": "encounter",
+          "skill": "reading",
+          "canDo": [
+            "A2.U10.WRITING.WRITE_SHORT_REVIEW",
+            "A2.U10.PRODUCTION.TELL_STORY_OPINION"
+          ],
+          "prompt": "Who may enjoy the film?",
+          "promptAr": "من قد يستمتع بالفيلم؟",
+          "options": [
+            "Viewers who like quiet stories",
+            "Only action fans",
+            "People who dislike family films"
+          ],
+          "answer": "Viewers who like quiet stories",
+          "sourceText": "Review: River Lights is a moving family film with a simple plot. The first half is slow, but the ending is strong. I recommend it to viewers who like quiet stories. Four out of five."
+        },
+        {
+          "id": "A2-U10-L6-A02",
+          "lessonId": "A2-U10-L6",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U10.WRITING.WRITE_SHORT_REVIEW",
+            "A2.U10.PRODUCTION.TELL_STORY_OPINION"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "review",
+              "مراجعة"
+            ],
+            [
+              "recommendation",
+              "توصية"
+            ],
+            [
+              "rating",
+              "تقييم"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U10-L6-A03",
+          "lessonId": "A2-U10-L6",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U10.WRITING.WRITE_SHORT_REVIEW",
+            "A2.U10.PRODUCTION.TELL_STORY_OPINION"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "I recommend ___ it with friends.",
+          "options": [
+            "watching",
+            "watch",
+            "watched"
+          ],
+          "answer": "watching"
+        },
+        {
+          "id": "A2-U10-L6-A04",
+          "lessonId": "A2-U10-L6",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A2.U10.WRITING.WRITE_SHORT_REVIEW",
+            "A2.U10.PRODUCTION.TELL_STORY_OPINION"
+          ],
+          "prompt": "What is praised most clearly?",
+          "promptAr": "ما الذي مُدح بوضوح؟",
+          "options": [
+            "The actors",
+            "Every scene",
+            "The simple story"
+          ],
+          "answer": "The actors",
+          "sourceText": "The Blue Door is an entertaining comedy, although some scenes are confusing. The actors are excellent. Rating: three out of five."
+        },
+        {
+          "id": "A2-U10-L6-A05",
+          "lessonId": "A2-U10-L6",
+          "type": "write",
+          "mode": "mastery",
+          "skill": "writing",
+          "canDo": [
+            "A2.U10.WRITING.WRITE_SHORT_REVIEW",
+            "A2.U10.PRODUCTION.TELL_STORY_OPINION"
+          ],
+          "prompt": "Write a balanced review with type, short summary, opinion, audience recommendation and rating.",
+          "promptAr": "اكتب مراجعة متوازنة تتضمن النوع وملخصاً قصيراً ورأياً وتوصية للجمهور وتقييماً.",
+          "evaluation": [
+            "taskCompletion",
+            "clarity",
+            "organisation",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "wordGuide": [
+            90,
+            120
+          ]
+        }
+      ]
+    },
+    {
+      "id": "A2-U10-L7",
+      "title": "Mission: A Short Review and Recommendation",
+      "titleAr": "المهمة: مراجعة وتوصية قصيرة",
+      "lessonType": "mission",
+      "canDo": [
+        "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW",
+        "A2.U10.READING.FOLLOW_STORY_REVIEW",
+        "A2.U10.PRODUCTION.TELL_STORY_OPINION",
+        "A2.U10.INTERACTION.DISCUSS_ENTERTAINMENT",
+        "A2.U10.WRITING.WRITE_SHORT_REVIEW",
+        "A2.U10.MEDIATION.RELAY_STORY_RECOMMENDATION",
+        "A2.U10.ACTION.CREATE_REVIEW_RECOMMENDATION"
+      ],
+      "grammar": [],
+      "lexicon": [],
+      "chunks": [],
+      "scenario": "Understand an unseen story and audience comments, discuss it, then create a spoiler-light review for a particular audience.",
+      "activities": [
+        {
+          "id": "A2-U10-L7-A01",
+          "lessonId": "A2-U10-L7",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A2.U10.READING.FOLLOW_STORY_REVIEW",
+            "A2.U10.ACTION.CREATE_REVIEW_RECOMMENDATION"
+          ],
+          "prompt": "What is especially moving?",
+          "promptAr": "ما الشيء المؤثر بصورة خاصة؟",
+          "options": [
+            "The relationship between the characters",
+            "The complicated plot",
+            "A sad ending"
+          ],
+          "answer": "The relationship between the characters",
+          "sourceText": "The Last Bus follows a driver who finds a lost child during a storm. Although the plot is simple, the relationship between the characters is moving. The ending is hopeful."
+        },
+        {
+          "id": "A2-U10-L7-A02",
+          "lessonId": "A2-U10-L7",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW",
+            "A2.U10.ACTION.CREATE_REVIEW_RECOMMENDATION"
+          ],
+          "prompt": "What did the audience do during the delay?",
+          "promptAr": "ماذا فعل الجمهور أثناء التأخير؟",
+          "options": [
+            "They sang",
+            "They left",
+            "They repaired the sound"
+          ],
+          "answer": "They sang",
+          "audioTranscript": "I was enjoying the play when the sound suddenly stopped. While the actors were waiting, the audience began to sing. It became the funniest part of the evening."
+        },
+        {
+          "id": "A2-U10-L7-A03",
+          "lessonId": "A2-U10-L7",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A2.U10.INTERACTION.DISCUSS_ENTERTAINMENT",
+            "A2.U10.ACTION.CREATE_REVIEW_RECOMMENDATION"
+          ],
+          "prompt": "Discuss the story's strongest and weakest points and agree on its best audience.",
+          "promptAr": "ناقش أقوى وأضعف نقاط القصة واتفق على الجمهور الأنسب لها.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A2-U10-L7-A04",
+          "lessonId": "A2-U10-L7",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A2.U10.PRODUCTION.TELL_STORY_OPINION",
+            "A2.U10.ACTION.CREATE_REVIEW_RECOMMENDATION"
+          ],
+          "prompt": "Give a connected short review without revealing unnecessary ending details.",
+          "promptAr": "قدّم مراجعة قصيرة مترابطة من دون كشف تفاصيل غير ضرورية من النهاية.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A2-U10-L7-A05",
+          "lessonId": "A2-U10-L7",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "mediation",
+          "canDo": [
+            "A2.U10.MEDIATION.RELAY_STORY_RECOMMENDATION",
+            "A2.U10.ACTION.CREATE_REVIEW_RECOMMENDATION"
+          ],
+          "prompt": "Relay the main plot, one audience reaction and the suitability recommendation.",
+          "promptAr": "انقل الحبكة الرئيسية ورد فعل واحداً للجمهور وتوصية الملاءمة.",
+          "evaluation": [
+            "selectRelevantInformation",
+            "clarity",
+            "audienceAwareness",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A2-U10-L7-A06",
+          "lessonId": "A2-U10-L7",
+          "type": "write",
+          "mode": "mastery",
+          "skill": "writing",
+          "canDo": [
+            "A2.U10.WRITING.WRITE_SHORT_REVIEW",
+            "A2.U10.ACTION.CREATE_REVIEW_RECOMMENDATION"
+          ],
+          "prompt": "Write a review with summary, balanced opinion, target audience and rating.",
+          "promptAr": "اكتب مراجعة تتضمن ملخصاً ورأياً متوازناً وجمهوراً مستهدفاً وتقييماً.",
+          "evaluation": [
+            "taskCompletion",
+            "clarity",
+            "organisation",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "wordGuide": [
+            90,
+            120
+          ],
+          "accepted": []
+        }
+      ]
+    }
+  ],
+  "mastery": {
+    "requiredObjectives": [
+      "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW",
+      "A2.U10.READING.FOLLOW_STORY_REVIEW",
+      "A2.U10.PRODUCTION.TELL_STORY_OPINION",
+      "A2.U10.INTERACTION.DISCUSS_ENTERTAINMENT",
+      "A2.U10.WRITING.WRITE_SHORT_REVIEW",
+      "A2.U10.MEDIATION.RELAY_STORY_RECOMMENDATION",
+      "A2.U10.ACTION.CREATE_REVIEW_RECOMMENDATION"
+    ],
+    "requiredSkillGroups": [
+      [
+        "listening",
+        "reading"
+      ],
+      [
+        "spokenInteraction",
+        "spokenProduction",
+        "writing"
+      ],
+      [
+        "mediation"
+      ]
+    ],
+    "minimumObjectiveScore": 0.75,
+    "missionRequired": true,
+    "retry": "targeted-by-objective",
+    "unlocks": "A2-U11"
+  },
+  "countsTowardA1Mastery": true
+}

@@ -1,0 +1,987 @@
+{
+  "id": "A2-FINAL-ASSESSMENT",
+  "title": "A2 Independent Final Assessment",
+  "titleAr": "الاختبار النهائي المستقل لمستوى A2",
+  "status": "summative",
+  "sourcePolicy": "Secure unseen inputs; do not draw prompts or answer options from practice activities.",
+  "estimatedMinutes": [
+    65,
+    90
+  ],
+  "sections": {
+    "listening": {
+      "targetEvidencePoints": 18,
+      "activities": [
+        {
+          "id": "A2-FA-LISTEN-01",
+          "type": "audioChoice",
+          "skill": "listening",
+          "mode": "mastery",
+          "canDo": [
+            "A2.U6.INTERACTION.BOOK_CHANGE_TRAVEL"
+          ],
+          "audioTranscript": "The 12:20 train now leaves at 12:50 from platform four.",
+          "prompt": "What changed?",
+          "promptAr": "ما الذي تغير؟",
+          "options": [
+            "The departure time",
+            "The platform",
+            "The destination"
+          ],
+          "answer": "The departure time",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A2-FA-LISTEN-02",
+          "type": "audioChoice",
+          "skill": "listening",
+          "mode": "mastery",
+          "canDo": [
+            "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE"
+          ],
+          "audioTranscript": "Take one tablet after dinner. Do not take a second tablet before morning.",
+          "prompt": "When is the tablet taken?",
+          "promptAr": "متى يُتناول القرص؟",
+          "options": [
+            "After dinner",
+            "Before breakfast",
+            "Twice at night"
+          ],
+          "answer": "After dinner",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A2-FA-LISTEN-03",
+          "type": "audioChoice",
+          "skill": "listening",
+          "mode": "mastery",
+          "canDo": [
+            "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS"
+          ],
+          "audioTranscript": "If the screen freezes, save your work before you restart the computer.",
+          "prompt": "What should happen before restarting?",
+          "promptAr": "ماذا ينبغي فعله قبل إعادة التشغيل؟",
+          "options": [
+            "Save the work",
+            "Delete the file",
+            "Turn off the network"
+          ],
+          "answer": "Save the work",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A2-FA-LISTEN-04",
+          "type": "audioChoice",
+          "skill": "listening",
+          "mode": "mastery",
+          "canDo": [
+            "A2.U11.LISTENING.UNDERSTAND_WEATHER_PROBLEM"
+          ],
+          "audioTranscript": "Rain is likely after five, so the football game will begin an hour earlier at three.",
+          "prompt": "Why does the game start earlier?",
+          "promptAr": "لماذا تبدأ المباراة مبكراً؟",
+          "options": [
+            "Rain is likely later",
+            "The field is closed now",
+            "The players arrive late"
+          ],
+          "answer": "Rain is likely later",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A2-FA-LISTEN-05",
+          "type": "audioChoice",
+          "skill": "listening",
+          "mode": "mastery",
+          "canDo": [
+            "A2.U12.READING.FOLLOW_INVITATION_MESSAGE"
+          ],
+          "audioTranscript": "I'd love to come, but I finish work at eight. Could I join for the last hour?",
+          "prompt": "What does the speaker request?",
+          "promptAr": "ماذا يطلب المتحدث؟",
+          "options": [
+            "To join late",
+            "To cancel the event",
+            "To change jobs"
+          ],
+          "answer": "To join late",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A2-FA-LISTEN-06",
+          "type": "audioChoice",
+          "skill": "listening",
+          "mode": "mastery",
+          "canDo": [
+            "A2.U5.INTERACTION.MANAGE_FOOD_SERVICE"
+          ],
+          "audioTranscript": "We ordered four soups, but only three arrived, and the bill lists five.",
+          "prompt": "What number appears on the bill?",
+          "promptAr": "ما الرقم الظاهر في الفاتورة؟",
+          "options": [
+            "Five",
+            "Four",
+            "Three"
+          ],
+          "answer": "Five",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A2-FA-LISTEN-07",
+          "type": "audioChoice",
+          "skill": "listening",
+          "mode": "mastery",
+          "canDo": [
+            "A2.U4.READING.COMPARE_HOUSING"
+          ],
+          "audioTranscript": "The flat is cheaper and closer to work, but the house is quieter and has more space.",
+          "prompt": "Which home is quieter?",
+          "promptAr": "أي منزل أكثر هدوءاً؟",
+          "options": [
+            "The house",
+            "The flat",
+            "Both"
+          ],
+          "answer": "The house",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A2-FA-LISTEN-08",
+          "type": "audioChoice",
+          "skill": "listening",
+          "mode": "mastery",
+          "canDo": [
+            "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION"
+          ],
+          "audioTranscript": "Leila is less experienced than Samir, but she is the most organised candidate.",
+          "prompt": "What is Leila's strongest stated quality?",
+          "promptAr": "ما أقوى صفة مذكورة لليلى؟",
+          "options": [
+            "Organisation",
+            "Experience",
+            "Age"
+          ],
+          "answer": "Organisation",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A2-FA-LISTEN-09",
+          "type": "audioChoice",
+          "skill": "listening",
+          "mode": "mastery",
+          "canDo": [
+            "A2.U2.READING.FOLLOW_SHORT_NARRATIVE"
+          ],
+          "audioTranscript": "We were walking to the station when a neighbour offered us a lift.",
+          "prompt": "What were they doing when help arrived?",
+          "promptAr": "ماذا كانوا يفعلون عندما وصلت المساعدة؟",
+          "options": [
+            "Walking to the station",
+            "Waiting on a train",
+            "Driving a car"
+          ],
+          "answer": "Walking to the station",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A2-FA-LISTEN-10",
+          "type": "audioChoice",
+          "skill": "listening",
+          "mode": "mastery",
+          "canDo": [
+            "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE"
+          ],
+          "audioTranscript": "I normally work mornings, but this month I am taking the evening shift.",
+          "prompt": "What is temporary?",
+          "promptAr": "ما الأمر المؤقت؟",
+          "options": [
+            "The evening shift",
+            "Having a job",
+            "Working every month"
+          ],
+          "answer": "The evening shift",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A2-FA-LISTEN-11",
+          "type": "audioChoice",
+          "skill": "listening",
+          "mode": "mastery",
+          "canDo": [
+            "A2.U8.READING.FOLLOW_COURSE_JOB_TEXT"
+          ],
+          "audioTranscript": "The course meets Tuesday and Thursday. Materials are included, but transport is not.",
+          "prompt": "What is included?",
+          "promptAr": "ما الذي هو مشمول؟",
+          "options": [
+            "Materials",
+            "Transport",
+            "Meals"
+          ],
+          "answer": "Materials",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A2-FA-LISTEN-12",
+          "type": "audioChoice",
+          "skill": "listening",
+          "mode": "mastery",
+          "canDo": [
+            "A2.U10.READING.FOLLOW_STORY_REVIEW"
+          ],
+          "audioTranscript": "Although the plot was simple, the characters were moving and the ending was excellent.",
+          "prompt": "Which point is least positive?",
+          "promptAr": "أي نقطة هي الأقل إيجابية؟",
+          "options": [
+            "The simple plot",
+            "The characters",
+            "The ending"
+          ],
+          "answer": "The simple plot",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A2-FA-LISTEN-13",
+          "type": "audioChoice",
+          "skill": "listening",
+          "mode": "mastery",
+          "canDo": [
+            "A2.U6.INTERACTION.BOOK_CHANGE_TRAVEL"
+          ],
+          "audioTranscript": "If the boat is cancelled, meet the guide at the museum entrance at ten.",
+          "prompt": "Where is the alternative meeting point?",
+          "promptAr": "أين نقطة اللقاء البديلة؟",
+          "options": [
+            "The museum entrance",
+            "The boat office",
+            "The hotel"
+          ],
+          "answer": "The museum entrance",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A2-FA-LISTEN-14",
+          "type": "audioChoice",
+          "skill": "listening",
+          "mode": "mastery",
+          "canDo": [
+            "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS"
+          ],
+          "audioTranscript": "Open settings, choose notifications, and turn off the sound for this app only.",
+          "prompt": "What will be changed?",
+          "promptAr": "ما الذي سيتغير؟",
+          "options": [
+            "One app's notification sound",
+            "All phone audio",
+            "The network password"
+          ],
+          "answer": "One app's notification sound",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A2-FA-LISTEN-15",
+          "type": "audioChoice",
+          "skill": "listening",
+          "mode": "mastery",
+          "canDo": [
+            "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE"
+          ],
+          "audioTranscript": "I've had the cough since Friday, and it became worse last night.",
+          "prompt": "When did the cough start?",
+          "promptAr": "متى بدأ السعال؟",
+          "options": [
+            "Friday",
+            "Last night",
+            "This morning"
+          ],
+          "answer": "Friday",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A2-FA-LISTEN-16",
+          "type": "audioChoice",
+          "skill": "listening",
+          "mode": "mastery",
+          "canDo": [
+            "A2.U12.READING.FOLLOW_INVITATION_MESSAGE"
+          ],
+          "audioTranscript": "Because the hall is unavailable, the workshop will take place online. The date and time are unchanged.",
+          "prompt": "What changed?",
+          "promptAr": "ما الذي تغير؟",
+          "options": [
+            "The format or place",
+            "The date",
+            "The time"
+          ],
+          "answer": "The format or place",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A2-FA-LISTEN-17",
+          "type": "audioChoice",
+          "skill": "listening",
+          "mode": "mastery",
+          "canDo": [
+            "A2.U11.LISTENING.UNDERSTAND_WEATHER_PROBLEM"
+          ],
+          "audioTranscript": "There might be fog early, but it should clear before the buses leave at nine.",
+          "prompt": "When should the fog clear?",
+          "promptAr": "متى ينبغي أن ينقشع الضباب؟",
+          "options": [
+            "Before nine",
+            "After the buses return",
+            "At midday only"
+          ],
+          "answer": "Before nine",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A2-FA-LISTEN-18",
+          "type": "audioChoice",
+          "skill": "listening",
+          "mode": "mastery",
+          "canDo": [
+            "A2.U5.INTERACTION.MANAGE_FOOD_SERVICE"
+          ],
+          "audioTranscript": "First chop the vegetables. Then heat the oil, and add the vegetables only when it is hot.",
+          "prompt": "When are the vegetables added?",
+          "promptAr": "متى تُضاف الخضروات؟",
+          "options": [
+            "After the oil is hot",
+            "Before chopping",
+            "Before heating the oil"
+          ],
+          "answer": "After the oil is hot",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        }
+      ]
+    },
+    "reading": {
+      "targetEvidencePoints": 18,
+      "activities": [
+        {
+          "id": "A2-FA-READ-01",
+          "type": "textChoice",
+          "skill": "reading",
+          "mode": "mastery",
+          "canDo": [
+            "A2.U8.READING.FOLLOW_COURSE_JOB_TEXT"
+          ],
+          "sourceText": "Library assistant needed: Saturdays 10–2. Must be able to use email and speak clearly to visitors. Apply by 9 March.",
+          "prompt": "Which ability is required?",
+          "promptAr": "أي قدرة مطلوبة؟",
+          "options": [
+            "Using email",
+            "Driving",
+            "Cooking"
+          ],
+          "answer": "Using email",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A2-FA-READ-02",
+          "type": "textChoice",
+          "skill": "reading",
+          "mode": "mastery",
+          "canDo": [
+            "A2.U4.READING.COMPARE_HOUSING"
+          ],
+          "sourceText": "Flat A: $480, one bedroom, near buses. Flat B: $530, two bedrooms, no late buses.",
+          "prompt": "Which option has more bedrooms?",
+          "promptAr": "أي خيار فيه غرف نوم أكثر؟",
+          "options": [
+            "Flat B",
+            "Flat A",
+            "Both"
+          ],
+          "answer": "Flat B",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A2-FA-READ-03",
+          "type": "textChoice",
+          "skill": "reading",
+          "mode": "mastery",
+          "canDo": [
+            "A2.U6.INTERACTION.BOOK_CHANGE_TRAVEL"
+          ],
+          "sourceText": "City Hotel includes breakfast and free cancellation until Thursday. River Rooms is cheaper but bookings cannot be changed.",
+          "prompt": "Which option is more flexible?",
+          "promptAr": "أي خيار أكثر مرونة؟",
+          "options": [
+            "City Hotel",
+            "River Rooms",
+            "Both"
+          ],
+          "answer": "City Hotel",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A2-FA-READ-04",
+          "type": "textChoice",
+          "skill": "reading",
+          "mode": "mastery",
+          "canDo": [
+            "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE"
+          ],
+          "sourceText": "Clinic note: arrive fifteen minutes early and bring your medicine list. You do not need to bring the medicine itself.",
+          "prompt": "What must the patient bring?",
+          "promptAr": "ماذا يجب على المريض أن يحضر؟",
+          "options": [
+            "A medicine list",
+            "Every medicine",
+            "Food"
+          ],
+          "answer": "A medicine list",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A2-FA-READ-05",
+          "type": "textChoice",
+          "skill": "reading",
+          "mode": "mastery",
+          "canDo": [
+            "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS"
+          ],
+          "sourceText": "To reset the app, first save a backup. Next sign out, update the app and sign in again. Never send your password to support.",
+          "prompt": "What is the first step?",
+          "promptAr": "ما الخطوة الأولى؟",
+          "options": [
+            "Save a backup",
+            "Sign in",
+            "Send the password"
+          ],
+          "answer": "Save a backup",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A2-FA-READ-06",
+          "type": "textChoice",
+          "skill": "reading",
+          "mode": "mastery",
+          "canDo": [
+            "A2.U10.READING.FOLLOW_STORY_REVIEW"
+          ],
+          "sourceText": "Review: A warm comedy with excellent actors. The middle is a little slow, but the final scene is very funny. Recommended for families.",
+          "prompt": "Who is the suggested audience?",
+          "promptAr": "من الجمهور المقترح؟",
+          "options": [
+            "Families",
+            "Only sports fans",
+            "Young children alone"
+          ],
+          "answer": "Families",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A2-FA-READ-07",
+          "type": "textChoice",
+          "skill": "reading",
+          "mode": "mastery",
+          "canDo": [
+            "A2.U12.READING.FOLLOW_INVITATION_MESSAGE"
+          ],
+          "sourceText": "Update: Sunday's picnic begins at noon instead of eleven. The location and food plan are unchanged. Please confirm by Friday.",
+          "prompt": "What remains unchanged?",
+          "promptAr": "ما الذي بقي من دون تغيير؟",
+          "options": [
+            "Location and food plan",
+            "Start time",
+            "Reply deadline"
+          ],
+          "answer": "Location and food plan",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A2-FA-READ-08",
+          "type": "textChoice",
+          "skill": "reading",
+          "mode": "mastery",
+          "canDo": [
+            "A2.U11.LISTENING.UNDERSTAND_WEATHER_PROBLEM"
+          ],
+          "sourceText": "Path closed after storm damage. Use the north entrance and stay on the marked route. The visitor centre remains open.",
+          "prompt": "Which entrance should visitors use?",
+          "promptAr": "أي مدخل ينبغي للزوار استخدامه؟",
+          "options": [
+            "North",
+            "The closed path",
+            "South"
+          ],
+          "answer": "North",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A2-FA-READ-09",
+          "type": "textChoice",
+          "skill": "reading",
+          "mode": "mastery",
+          "canDo": [
+            "A2.U5.INTERACTION.MANAGE_FOOD_SERVICE"
+          ],
+          "sourceText": "Tomato rice serves four: 300 g rice, six tomatoes, a little oil. Boil the rice, cook the tomatoes, then mix them.",
+          "prompt": "How many people does it serve?",
+          "promptAr": "كم شخصاً تكفي؟",
+          "options": [
+            "Four",
+            "Six",
+            "Three"
+          ],
+          "answer": "Four",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A2-FA-READ-10",
+          "type": "textChoice",
+          "skill": "reading",
+          "mode": "mastery",
+          "canDo": [
+            "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION"
+          ],
+          "sourceText": "Candidate A is the most experienced. Candidate B is more organised and available every day. The role needs daily record-keeping.",
+          "prompt": "Who better matches the stated duty?",
+          "promptAr": "من الأنسب للواجب المذكور؟",
+          "options": [
+            "Candidate B",
+            "Candidate A",
+            "Neither"
+          ],
+          "answer": "Candidate B",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A2-FA-READ-11",
+          "type": "textChoice",
+          "skill": "reading",
+          "mode": "mastery",
+          "canDo": [
+            "A2.U2.READING.FOLLOW_SHORT_NARRATIVE"
+          ],
+          "sourceText": "First we missed the bus. Then a driver showed us a shorter route, and finally we arrived before the office closed.",
+          "prompt": "What happened second?",
+          "promptAr": "ماذا حدث ثانياً؟",
+          "options": [
+            "A driver showed a shorter route",
+            "They missed the bus",
+            "The office closed"
+          ],
+          "answer": "A driver showed a shorter route",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A2-FA-READ-12",
+          "type": "textChoice",
+          "skill": "reading",
+          "mode": "mastery",
+          "canDo": [
+            "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE"
+          ],
+          "sourceText": "I usually study at home, but this week I am using the college library because my building is noisy.",
+          "prompt": "Why is the writer using the library?",
+          "promptAr": "لماذا يستخدم الكاتب المكتبة؟",
+          "options": [
+            "The building is noisy",
+            "The writer always studies there",
+            "The college is closed"
+          ],
+          "answer": "The building is noisy",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A2-FA-READ-13",
+          "type": "textChoice",
+          "skill": "reading",
+          "mode": "mastery",
+          "canDo": [
+            "A2.U8.READING.FOLLOW_COURSE_JOB_TEXT"
+          ],
+          "sourceText": "Evening design course: practical projects, Tuesday and Thursday, $120 including software access. No previous qualification required.",
+          "prompt": "What is not required?",
+          "promptAr": "ما الذي ليس مطلوباً؟",
+          "options": [
+            "A previous qualification",
+            "Attendance twice weekly",
+            "The fee"
+          ],
+          "answer": "A previous qualification",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A2-FA-READ-14",
+          "type": "textChoice",
+          "skill": "reading",
+          "mode": "mastery",
+          "canDo": [
+            "A2.U6.INTERACTION.BOOK_CHANGE_TRAVEL"
+          ],
+          "sourceText": "Flight arrives 14:30. Airport bus departs 14:45 and 15:15. Collecting bags usually takes twenty minutes.",
+          "prompt": "Which bus is realistically available after bag collection?",
+          "promptAr": "أي حافلة متاحة واقعياً بعد استلام الأمتعة؟",
+          "options": [
+            "15:15",
+            "14:45",
+            "Neither"
+          ],
+          "answer": "15:15",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A2-FA-READ-15",
+          "type": "textChoice",
+          "skill": "reading",
+          "mode": "mastery",
+          "canDo": [
+            "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE"
+          ],
+          "sourceText": "If the pain gets worse or you develop a fever, call the clinic. For urgent breathing problems, use emergency services.",
+          "prompt": "When should emergency services be used?",
+          "promptAr": "متى ينبغي استخدام خدمات الطوارئ؟",
+          "options": [
+            "For urgent breathing problems",
+            "For every mild pain",
+            "To change an appointment"
+          ],
+          "answer": "For urgent breathing problems",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A2-FA-READ-16",
+          "type": "textChoice",
+          "skill": "reading",
+          "mode": "mastery",
+          "canDo": [
+            "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS"
+          ],
+          "sourceText": "Meeting access: use your personal link once. If it fails, request a new link from the organiser. Do not post either link publicly.",
+          "prompt": "What should a user do after link failure?",
+          "promptAr": "ماذا ينبغي للمستخدم أن يفعل بعد فشل الرابط؟",
+          "options": [
+            "Request a new link",
+            "Post the old link",
+            "Share the password"
+          ],
+          "answer": "Request a new link",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A2-FA-READ-17",
+          "type": "textChoice",
+          "skill": "reading",
+          "mode": "mastery",
+          "canDo": [
+            "A2.U12.READING.FOLLOW_INVITATION_MESSAGE"
+          ],
+          "sourceText": "Thanks for the invitation. Unfortunately, I am away that weekend, so I cannot attend. I hope to join the next event.",
+          "prompt": "What is the purpose of the message?",
+          "promptAr": "ما غرض الرسالة؟",
+          "options": [
+            "To decline politely",
+            "To change the venue",
+            "To accept immediately"
+          ],
+          "answer": "To decline politely",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        },
+        {
+          "id": "A2-FA-READ-18",
+          "type": "textChoice",
+          "skill": "reading",
+          "mode": "mastery",
+          "canDo": [
+            "A2.U11.LISTENING.UNDERSTAND_WEATHER_PROBLEM"
+          ],
+          "sourceText": "Forecast: dry morning, showers possible after 14:00, strong wind from 18:00. Outdoor stalls must close if wind reaches the warning level.",
+          "prompt": "When are showers possible?",
+          "promptAr": "متى يحتمل هطول زخات؟",
+          "options": [
+            "After 14:00",
+            "Only in the morning",
+            "After 18:00 only"
+          ],
+          "answer": "After 14:00",
+          "assessmentMode": "secure",
+          "sourcePolicy": "unseen"
+        }
+      ]
+    },
+    "writing": {
+      "targetTasks": 2,
+      "activities": [
+        {
+          "id": "A2-FA-WRITE-01",
+          "type": "write",
+          "skill": "writing",
+          "mode": "mastery",
+          "canDo": [
+            "A2.FINAL.WRITING.CONNECTED_PRACTICAL_TEXT"
+          ],
+          "prompt": "Write an 80–120-word message to a friend about a recent day out: what happened, one unexpected event, your opinion and a future plan.",
+          "promptAr": "اكتب رسالة من 80–120 كلمة إلى صديق عن نزهة قريبة: ما حدث وحدث واحد غير متوقع ورأيك وخطة مستقبلية.",
+          "evaluation": [
+            "taskCompletion",
+            "clarity",
+            "organisation",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "wordGuide": [
+            80,
+            120
+          ],
+          "assessmentMode": "secure"
+        },
+        {
+          "id": "A2-FA-WRITE-02",
+          "type": "write",
+          "skill": "writing",
+          "mode": "mastery",
+          "canDo": [
+            "A2.FINAL.WRITING.CONNECTED_PRACTICAL_TEXT"
+          ],
+          "prompt": "Write an 80–120-word practical event update after the venue changes. Include apology, reason, new place and time, one task and a reply request.",
+          "promptAr": "اكتب تحديث فعالية عملياً من 80–120 كلمة بعد تغيير المكان. ضمّن اعتذاراً وسبباً والمكان والوقت الجديدين ومهمة وطلب رد.",
+          "evaluation": [
+            "taskCompletion",
+            "clarity",
+            "organisation",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "wordGuide": [
+            80,
+            120
+          ],
+          "assessmentMode": "secure"
+        }
+      ]
+    },
+    "speaking": {
+      "targetTasks": 4,
+      "activities": [
+        {
+          "id": "A2-FA-SPEAK-01",
+          "type": "speak",
+          "skill": "spokenInteraction",
+          "mode": "mastery",
+          "canDo": [
+            "A2.FINAL.INTERACTION.MANAGE_ROUTINE_SITUATIONS"
+          ],
+          "prompt": "Answer personal follow-up questions about your current life, recent past and next weekend, then ask two questions back.",
+          "promptAr": "أجب عن أسئلة متابعة شخصية حول حياتك الحالية وماضٍ قريب وعطلة الأسبوع القادمة ثم اسأل سؤالين بالمقابل.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "interaction",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing",
+          "fallbackCountsFor": "accessOnly",
+          "assessmentMode": "secure"
+        },
+        {
+          "id": "A2-FA-SPEAK-02",
+          "type": "speak",
+          "skill": "spokenInteraction",
+          "mode": "mastery",
+          "canDo": [
+            "A2.FINAL.INTERACTION.MANAGE_ROUTINE_SITUATIONS"
+          ],
+          "prompt": "Role-play a routine service problem: explain the issue, clarify details and agree on a solution.",
+          "promptAr": "مثّل مشكلة خدمة روتينية: اشرح المشكلة ووضّح التفاصيل واتفق على حل.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "interaction",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing",
+          "fallbackCountsFor": "accessOnly",
+          "assessmentMode": "secure"
+        },
+        {
+          "id": "A2-FA-SPEAK-03",
+          "type": "speak",
+          "skill": "spokenProduction",
+          "mode": "mastery",
+          "canDo": [
+            "A2.FINAL.PRODUCTION.CONNECT_SHORT_DESCRIPTION"
+          ],
+          "prompt": "Compare two supplied options and recommend one for a stated person's needs, giving at least two reasons.",
+          "promptAr": "قارن خيارين معروضين وأوصِ بأحدهما لاحتياجات شخص محدد مع سببين على الأقل.",
+          "evaluation": [
+            "taskCompletion",
+            "organisation",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing",
+          "fallbackCountsFor": "accessOnly",
+          "assessmentMode": "secure"
+        },
+        {
+          "id": "A2-FA-SPEAK-04",
+          "type": "speak",
+          "skill": "spokenProduction",
+          "mode": "mastery",
+          "canDo": [
+            "A2.FINAL.PRODUCTION.CONNECT_SHORT_DESCRIPTION"
+          ],
+          "prompt": "Tell a connected short story from four picture prompts using background, sequence, an interruption and an ending.",
+          "promptAr": "احك قصة قصيرة مترابطة من أربع صور مستخدماً الخلفية والتسلسل والمقاطعة والنهاية.",
+          "evaluation": [
+            "taskCompletion",
+            "organisation",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing",
+          "fallbackCountsFor": "accessOnly",
+          "assessmentMode": "secure"
+        }
+      ]
+    },
+    "mediation": {
+      "targetTasks": 2,
+      "activities": [
+        {
+          "id": "A2-FA-MEDIATE-01",
+          "type": "speak",
+          "skill": "mediation",
+          "mode": "mastery",
+          "canDo": [
+            "A2.FINAL.MEDIATION.RELAY_PRACTICAL_INFORMATION"
+          ],
+          "prompt": "Relay the essential date, time, place, change and required action from a short notice to a friend.",
+          "promptAr": "انقل التاريخ والوقت والمكان والتغيير والإجراء المطلوب من إشعار قصير إلى صديق.",
+          "evaluation": [
+            "selectRelevantInformation",
+            "clarity",
+            "audienceAwareness",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing",
+          "fallbackCountsFor": "accessOnly",
+          "assessmentMode": "secure"
+        },
+        {
+          "id": "A2-FA-MEDIATE-02",
+          "type": "speak",
+          "skill": "mediation",
+          "mode": "mastery",
+          "canDo": [
+            "A2.FINAL.MEDIATION.RELAY_PRACTICAL_INFORMATION"
+          ],
+          "prompt": "Read two simple options and relay the relevant differences for a person with stated cost, access and schedule needs.",
+          "promptAr": "اقرأ خيارين بسيطين وانقل الاختلافات ذات الصلة لشخص لديه احتياجات محددة في التكلفة والوصول والجدول.",
+          "evaluation": [
+            "selectRelevantInformation",
+            "clarity",
+            "audienceAwareness",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing",
+          "fallbackCountsFor": "accessOnly",
+          "assessmentMode": "secure"
+        }
+      ]
+    }
+  },
+  "scoring": {
+    "receptive": {
+      "method": "item-score",
+      "minimumPerSkill": 0.75
+    },
+    "writing": {
+      "criteria": [
+        "taskCompletion",
+        "informationCoverage",
+        "comprehensibility",
+        "A2Range",
+        "A2Accuracy"
+      ],
+      "minimumTaskCriterionAverage": 0.75,
+      "bothTasksRequired": true
+    },
+    "speaking": {
+      "criteria": [
+        "taskCompletion",
+        "intelligibility",
+        "appropriateLanguage",
+        "interaction"
+      ],
+      "minimumTaskCriterionAverage": 0.75,
+      "minimumCompletedTasks": 3,
+      "accuracyWeight": 0.2
+    },
+    "mediation": {
+      "criteria": [
+        "essentialInformation",
+        "accuracyOfRelay",
+        "comprehensibility"
+      ],
+      "minimumCriterionAverage": 0.75
+    },
+    "decisionRule": {
+      "noSingleOverallAverage": true,
+      "required": [
+        "listening",
+        "reading",
+        "writing",
+        "speaking",
+        "mediation"
+      ],
+      "capstoneMissionRequired": true
+    },
+    "accessibility": {
+      "microphoneFallback": "writing",
+      "fallbackDoesNotCreateSpeakingEvidence": true
+    }
+  }
+}

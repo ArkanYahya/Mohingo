@@ -1,0 +1,367 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-U6",
+  "kind": "lexicon",
+  "records": [
+    {
+      "id": "A2.LEX.ITINERARY_N01",
+      "headword": "itinerary",
+      "partOfSpeech": "noun",
+      "arabic": "برنامج رحلة",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "itinerary",
+      "examples": [
+        {
+          "en": "Our itinerary has three stops.",
+          "ar": "في برنامج رحلتنا ثلاث محطات."
+        }
+      ],
+      "introducedIn": "A2-U6-L1",
+      "recycledIn": [
+        "A2-U7-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.SIGHT_N01",
+      "headword": "sight",
+      "partOfSpeech": "noun",
+      "arabic": "مَعلم سياحي",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "sight",
+      "examples": [
+        {
+          "en": "We are going to see the main sights.",
+          "ar": "سنرى المعالم الرئيسية."
+        }
+      ],
+      "introducedIn": "A2-U6-L1",
+      "recycledIn": [
+        "A2-U7-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.PLAN_V01",
+      "headword": "plan",
+      "partOfSpeech": "verb",
+      "arabic": "يخطط",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "plan",
+      "examples": [
+        {
+          "en": "We plan to stay two nights.",
+          "ar": "نخطط للبقاء ليلتين."
+        }
+      ],
+      "introducedIn": "A2-U6-L1",
+      "recycledIn": [
+        "A2-U7-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.RESERVATION_N01",
+      "headword": "reservation",
+      "partOfSpeech": "noun",
+      "arabic": "حجز",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "reservation",
+      "examples": [
+        {
+          "en": "I have a hotel reservation.",
+          "ar": "لدي حجز فندق."
+        }
+      ],
+      "introducedIn": "A2-U6-L2",
+      "recycledIn": [
+        "A2-U7-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.CHECK_IN_V01",
+      "headword": "check in",
+      "partOfSpeech": "verb",
+      "arabic": "يسجل الوصول",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "check in",
+      "examples": [
+        {
+          "en": "We can check in after two.",
+          "ar": "يمكننا تسجيل الوصول بعد الثانية."
+        }
+      ],
+      "introducedIn": "A2-U6-L2",
+      "recycledIn": [
+        "A2-U7-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.AVAILABLE_ADJ01",
+      "headword": "available",
+      "partOfSpeech": "adjective",
+      "arabic": "متاح",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "available",
+      "examples": [
+        {
+          "en": "Is a twin room available?",
+          "ar": "هل غرفة بسريرين متاحة؟"
+        }
+      ],
+      "introducedIn": "A2-U6-L2",
+      "recycledIn": [
+        "A2-U7-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.DEPARTURE_N01",
+      "headword": "departure",
+      "partOfSpeech": "noun",
+      "arabic": "مغادرة",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "departure",
+      "examples": [
+        {
+          "en": "The departure is at 7:30.",
+          "ar": "المغادرة في السابعة والنصف."
+        }
+      ],
+      "introducedIn": "A2-U6-L3",
+      "recycledIn": [
+        "A2-U8-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.DIRECT_ADJ01",
+      "headword": "direct",
+      "partOfSpeech": "adjective",
+      "arabic": "مباشر",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "direct",
+      "examples": [
+        {
+          "en": "The direct train is faster.",
+          "ar": "القطار المباشر أسرع."
+        }
+      ],
+      "introducedIn": "A2-U6-L3",
+      "recycledIn": [
+        "A2-U8-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.FARE_N01",
+      "headword": "fare",
+      "partOfSpeech": "noun",
+      "arabic": "أجرة",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "fare",
+      "examples": [
+        {
+          "en": "The return fare is forty dollars.",
+          "ar": "أجرة الذهاب والعودة أربعون دولاراً."
+        }
+      ],
+      "introducedIn": "A2-U6-L3",
+      "recycledIn": [
+        "A2-U8-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.CANCEL_V01",
+      "headword": "cancel",
+      "partOfSpeech": "verb",
+      "arabic": "يلغي",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "cancel",
+      "examples": [
+        {
+          "en": "They may cancel the boat trip.",
+          "ar": "قد يلغون رحلة القارب."
+        }
+      ],
+      "introducedIn": "A2-U6-L4",
+      "recycledIn": [
+        "A2-U8-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.DELAY_N01",
+      "headword": "delay",
+      "partOfSpeech": "noun",
+      "arabic": "تأخير",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "delay",
+      "examples": [
+        {
+          "en": "There is a two-hour delay.",
+          "ar": "يوجد تأخير ساعتين."
+        }
+      ],
+      "introducedIn": "A2-U6-L4",
+      "recycledIn": [
+        "A2-U8-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.ALTERNATIVE_N01",
+      "headword": "alternative",
+      "partOfSpeech": "noun",
+      "arabic": "بديل",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "alternative",
+      "examples": [
+        {
+          "en": "We need an indoor alternative.",
+          "ar": "نحتاج بديلاً داخلياً."
+        }
+      ],
+      "introducedIn": "A2-U6-L4",
+      "recycledIn": [
+        "A2-U8-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.ARRIVAL_N01",
+      "headword": "arrival",
+      "partOfSpeech": "noun",
+      "arabic": "وصول",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "arrival",
+      "examples": [
+        {
+          "en": "Confirm your arrival time.",
+          "ar": "أكد وقت وصولك."
+        }
+      ],
+      "introducedIn": "A2-U6-L5",
+      "recycledIn": [
+        "A2-U9-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.TRANSFER_N01",
+      "headword": "transfer",
+      "partOfSpeech": "noun",
+      "arabic": "تبديل وسيلة",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "transfer",
+      "examples": [
+        {
+          "en": "The journey has one transfer.",
+          "ar": "في الرحلة تبديل واحد."
+        }
+      ],
+      "introducedIn": "A2-U6-L5",
+      "recycledIn": [
+        "A2-U9-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.CONFIRM_V01",
+      "headword": "confirm",
+      "partOfSpeech": "verb",
+      "arabic": "يؤكد",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "confirm",
+      "examples": [
+        {
+          "en": "Please confirm the booking.",
+          "ar": "يرجى تأكيد الحجز."
+        }
+      ],
+      "introducedIn": "A2-U6-L5",
+      "recycledIn": [
+        "A2-U9-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.SUITCASE_N01",
+      "headword": "suitcase",
+      "partOfSpeech": "noun",
+      "arabic": "حقيبة سفر",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "suitcase",
+      "examples": [
+        {
+          "en": "Pack one small suitcase.",
+          "ar": "احزم حقيبة سفر صغيرة."
+        }
+      ],
+      "introducedIn": "A2-U6-L6",
+      "recycledIn": [
+        "A2-U9-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.ACCOMMODATION_N01",
+      "headword": "accommodation",
+      "partOfSpeech": "noun",
+      "arabic": "إقامة",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "accommodation",
+      "examples": [
+        {
+          "en": "The accommodation includes breakfast.",
+          "ar": "تشمل الإقامة الإفطار."
+        }
+      ],
+      "introducedIn": "A2-U6-L6",
+      "recycledIn": [
+        "A2-U9-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.SCHEDULE_N01",
+      "headword": "schedule",
+      "partOfSpeech": "noun",
+      "arabic": "جدول",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "schedule",
+      "examples": [
+        {
+          "en": "The schedule is flexible.",
+          "ar": "الجدول مرن."
+        }
+      ],
+      "introducedIn": "A2-U6-L6",
+      "recycledIn": [
+        "A2-U9-L5"
+      ]
+    }
+  ]
+}

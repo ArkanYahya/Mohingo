@@ -1,0 +1,1076 @@
+{
+  "id": "A2-U9",
+  "title": "Technology and Communication",
+  "titleAr": "التقنية والتواصل",
+  "levelRole": "core",
+  "estimatedMinutes": [
+    95,
+    130
+  ],
+  "lessons": [
+    {
+      "id": "A2-U9-L1",
+      "title": "Device Basics",
+      "titleAr": "أساسيات الجهاز",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS",
+        "A2.U9.PRODUCTION.EXPLAIN_TECH_PROCEDURE"
+      ],
+      "grammar": [
+        "A2.G.TECH_IMPERATIVES",
+        "A2.G.WORK_HAVE_TO",
+        "A2.G.CAN_COULD_ABILITY"
+      ],
+      "lexicon": [
+        "A2.LEX.SCREEN_N01",
+        "A2.LEX.BUTTON_N01",
+        "A2.LEX.CHARGE_V01",
+        "A2.LEX.DUTY_N01",
+        "A2.LEX.SHIFT_N01",
+        "A2.LEX.DEADLINE_N01",
+        "A2.LEX.SKILL_N01",
+        "A2.LEX.SPREADSHEET_N01",
+        "A2.LEX.OPERATE_V01"
+      ],
+      "chunks": [
+        "A2.CHUNK.PRESS_AND_HOLD",
+        "A2.CHUNK.RESPONSIBLE_FOR",
+        "A2.CHUNK.WORK_A_SHIFT",
+        "A2.CHUNK.BE_ABLE_TO"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "Press and hold the side button for three seconds. If the screen stays dark, connect the charger.",
+            "ar": "اضغط مطولاً على الزر الجانبي ثلاث ثوانٍ. إذا بقيت الشاشة مظلمة، صِل الشاحن."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U9-L1-A01",
+          "lessonId": "A2-U9-L1",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS",
+            "A2.U9.PRODUCTION.EXPLAIN_TECH_PROCEDURE"
+          ],
+          "prompt": "What should happen first?",
+          "promptAr": "ما الذي ينبغي فعله أولاً؟",
+          "options": [
+            "Press and hold the side button",
+            "Replace the screen",
+            "Open settings"
+          ],
+          "answer": "Press and hold the side button",
+          "audioTranscript": "Press and hold the side button for three seconds. If the screen stays dark, connect the charger."
+        },
+        {
+          "id": "A2-U9-L1-A02",
+          "lessonId": "A2-U9-L1",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS",
+            "A2.U9.PRODUCTION.EXPLAIN_TECH_PROCEDURE"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "screen",
+              "شاشة"
+            ],
+            [
+              "button",
+              "زر"
+            ],
+            [
+              "charge",
+              "يشحن"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U9-L1-A03",
+          "lessonId": "A2-U9-L1",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS",
+            "A2.U9.PRODUCTION.EXPLAIN_TECH_PROCEDURE"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "___ the phone before you leave.",
+          "options": [
+            "Charge",
+            "Charges",
+            "Charged"
+          ],
+          "answer": "Charge"
+        },
+        {
+          "id": "A2-U9-L1-A04",
+          "lessonId": "A2-U9-L1",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS",
+            "A2.U9.PRODUCTION.EXPLAIN_TECH_PROCEDURE"
+          ],
+          "prompt": "Which button ends the call?",
+          "promptAr": "أي زر ينهي المكالمة؟",
+          "options": [
+            "The red button",
+            "The green button",
+            "The side button"
+          ],
+          "answer": "The red button",
+          "audioTranscript": "Tap the green button to answer. To end the call, tap the red button once."
+        },
+        {
+          "id": "A2-U9-L1-A05",
+          "lessonId": "A2-U9-L1",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS",
+            "A2.U9.PRODUCTION.EXPLAIN_TECH_PROCEDURE"
+          ],
+          "prompt": "Give three clear instructions for switching on and charging a device.",
+          "promptAr": "قدّم ثلاث تعليمات واضحة لتشغيل جهاز وشحنه.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U9-L2",
+      "title": "Connect and Download",
+      "titleAr": "اتصل ونزّل",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS",
+        "A2.U9.PRODUCTION.EXPLAIN_TECH_PROCEDURE"
+      ],
+      "grammar": [
+        "A2.G.SEQUENCING_ADVERBS"
+      ],
+      "lexicon": [
+        "A2.LEX.SETTINGS_N01",
+        "A2.LEX.CONNECT_V01",
+        "A2.LEX.DOWNLOAD_V01"
+      ],
+      "chunks": [
+        "A2.CHUNK.GO_TO_SETTINGS",
+        "A2.CHUNK.CONNECT_TO_WIFI"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "First go to settings. Next choose Wi-Fi and select the library network. Then enter the code and finally download the file.",
+            "ar": "اذهب أولاً إلى الإعدادات. بعد ذلك اختر الواي فاي وحدد شبكة المكتبة. ثم أدخل الرمز وأخيراً نزّل الملف."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U9-L2-A01",
+          "lessonId": "A2-U9-L2",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS",
+            "A2.U9.PRODUCTION.EXPLAIN_TECH_PROCEDURE"
+          ],
+          "prompt": "What happens immediately before downloading?",
+          "promptAr": "ماذا يحدث مباشرة قبل التنزيل؟",
+          "options": [
+            "Enter the code",
+            "Open the library",
+            "Restart the phone"
+          ],
+          "answer": "Enter the code",
+          "audioTranscript": "First go to settings. Next choose Wi-Fi and select the library network. Then enter the code and finally download the file."
+        },
+        {
+          "id": "A2-U9-L2-A02",
+          "lessonId": "A2-U9-L2",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS",
+            "A2.U9.PRODUCTION.EXPLAIN_TECH_PROCEDURE"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "settings",
+              "إعدادات"
+            ],
+            [
+              "connect",
+              "يتصل"
+            ],
+            [
+              "download",
+              "ينزّل"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U9-L2-A03",
+          "lessonId": "A2-U9-L2",
+          "type": "order",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS",
+            "A2.U9.PRODUCTION.EXPLAIN_TECH_PROCEDURE"
+          ],
+          "prompt": "Put the language in the best order.",
+          "promptAr": "رتب اللغة بالترتيب الأفضل.",
+          "tokens": [
+            "choose Wi-Fi.",
+            "Next,",
+            "settings",
+            "open"
+          ],
+          "answer": [
+            "Next,",
+            "open",
+            "settings",
+            "choose Wi-Fi."
+          ]
+        },
+        {
+          "id": "A2-U9-L2-A04",
+          "lessonId": "A2-U9-L2",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS",
+            "A2.U9.PRODUCTION.EXPLAIN_TECH_PROCEDURE"
+          ],
+          "prompt": "Where should the file appear?",
+          "promptAr": "أين ينبغي أن يظهر الملف؟",
+          "options": [
+            "The downloads folder",
+            "The settings page",
+            "The camera"
+          ],
+          "answer": "The downloads folder",
+          "audioTranscript": "Open the message, tap the document name and choose ‘save’. Finally, check the downloads folder."
+        },
+        {
+          "id": "A2-U9-L2-A05",
+          "lessonId": "A2-U9-L2",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS",
+            "A2.U9.PRODUCTION.EXPLAIN_TECH_PROCEDURE"
+          ],
+          "prompt": "Explain a four-step connection or download procedure in order.",
+          "promptAr": "اشرح إجراء اتصال أو تنزيل من أربع خطوات مرتبة.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U9-L3",
+      "title": "If It Does Not Work",
+      "titleAr": "إذا لم يعمل",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U9.READING.FOLLOW_DIGITAL_GUIDE",
+        "A2.U9.MEDIATION.RELAY_DIGITAL_INSTRUCTIONS"
+      ],
+      "grammar": [
+        "A2.G.ZERO_CONDITIONAL_PROCEDURE",
+        "A2.G.MUST_WARNING",
+        "A2.G.INFINITIVE_PURPOSE"
+      ],
+      "lexicon": [
+        "A2.LEX.PASSWORD_N01",
+        "A2.LEX.NETWORK_N01",
+        "A2.LEX.RESTART_V01",
+        "A2.LEX.ALLERGY_N01",
+        "A2.LEX.WARNING_N01",
+        "A2.LEX.DIZZY_ADJ01",
+        "A2.LEX.HYDRATED_ADJ01",
+        "A2.LEX.STRETCH_V01",
+        "A2.LEX.AVOID_V01"
+      ],
+      "chunks": [
+        "A2.CHUNK.IF_DOES_NOT_WORK",
+        "A2.CHUNK.MUST_NOT_DRIVE",
+        "A2.CHUNK.IN_ORDER_TO",
+        "A2.CHUNK.HOW_LONG_HAVE_HAD"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "If the network name does not appear, switch Wi-Fi off and on. If the password is rejected, check capital letters. If nothing changes, restart the phone.",
+            "ar": ""
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U9-L3-A01",
+          "lessonId": "A2-U9-L3",
+          "type": "textChoice",
+          "mode": "encounter",
+          "skill": "reading",
+          "canDo": [
+            "A2.U9.READING.FOLLOW_DIGITAL_GUIDE",
+            "A2.U9.MEDIATION.RELAY_DIGITAL_INSTRUCTIONS"
+          ],
+          "prompt": "What should you check after a password rejection?",
+          "promptAr": "ماذا ينبغي أن تتحقق منه بعد رفض كلمة المرور؟",
+          "options": [
+            "Capital letters",
+            "The battery colour",
+            "The camera"
+          ],
+          "answer": "Capital letters",
+          "sourceText": "If the network name does not appear, switch Wi-Fi off and on. If the password is rejected, check capital letters. If nothing changes, restart the phone."
+        },
+        {
+          "id": "A2-U9-L3-A02",
+          "lessonId": "A2-U9-L3",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U9.READING.FOLLOW_DIGITAL_GUIDE",
+            "A2.U9.MEDIATION.RELAY_DIGITAL_INSTRUCTIONS"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "password",
+              "كلمة مرور"
+            ],
+            [
+              "network",
+              "شبكة"
+            ],
+            [
+              "restart",
+              "يعيد التشغيل"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U9-L3-A03",
+          "lessonId": "A2-U9-L3",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U9.READING.FOLLOW_DIGITAL_GUIDE",
+            "A2.U9.MEDIATION.RELAY_DIGITAL_INSTRUCTIONS"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "If the app stops, ___ the device.",
+          "options": [
+            "restart",
+            "restarted",
+            "restarting"
+          ],
+          "answer": "restart"
+        },
+        {
+          "id": "A2-U9-L3-A04",
+          "lessonId": "A2-U9-L3",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A2.U9.READING.FOLLOW_DIGITAL_GUIDE",
+            "A2.U9.MEDIATION.RELAY_DIGITAL_INSTRUCTIONS"
+          ],
+          "prompt": "What should happen if the red light continues?",
+          "promptAr": "ماذا ينبغي فعله إذا استمر الضوء الأحمر؟",
+          "options": [
+            "Restart the printer after ten seconds",
+            "Add more ink immediately",
+            "Open a website"
+          ],
+          "answer": "Restart the printer after ten seconds",
+          "sourceText": "If the printer has no paper, add paper. If the red light continues, turn the printer off for ten seconds and start it again."
+        },
+        {
+          "id": "A2-U9-L3-A05",
+          "lessonId": "A2-U9-L3",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "mediation",
+          "canDo": [
+            "A2.U9.READING.FOLLOW_DIGITAL_GUIDE",
+            "A2.U9.MEDIATION.RELAY_DIGITAL_INSTRUCTIONS"
+          ],
+          "prompt": "Relay a short troubleshooting decision path without changing the order or conditions.",
+          "promptAr": "انقل مساراً قصيراً لاستكشاف المشكلة من دون تغيير ترتيب الخطوات أو شروطها.",
+          "evaluation": [
+            "selectRelevantInformation",
+            "clarity",
+            "audienceAwareness",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U9-L4",
+      "title": "Share Information Online",
+      "titleAr": "شارك المعلومات عبر الإنترنت",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U9.READING.FOLLOW_DIGITAL_GUIDE",
+        "A2.U9.INTERACTION.SOLVE_TECH_PROBLEM"
+      ],
+      "grammar": [
+        "A2.G.PRONOUN_REFERENCE"
+      ],
+      "lexicon": [
+        "A2.LEX.LINK_N01",
+        "A2.LEX.ATTACH_V01",
+        "A2.LEX.ACCOUNT_N01"
+      ],
+      "chunks": [
+        "A2.CHUNK.SIGN_IN_TO",
+        "A2.CHUNK.SEND_AS_ATTACHMENT"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "Sign in to your account and open the group page. Copy the meeting link and send it to Salma. Attach the agenda too, because she needs it before the call.",
+            "ar": ""
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U9-L4-A01",
+          "lessonId": "A2-U9-L4",
+          "type": "textChoice",
+          "mode": "encounter",
+          "skill": "reading",
+          "canDo": [
+            "A2.U9.READING.FOLLOW_DIGITAL_GUIDE",
+            "A2.U9.INTERACTION.SOLVE_TECH_PROBLEM"
+          ],
+          "prompt": "What does ‘it’ refer to?",
+          "promptAr": "إلى ماذا يعود الضمير it؟",
+          "options": [
+            "The agenda",
+            "The account",
+            "The call"
+          ],
+          "answer": "The agenda",
+          "sourceText": "Sign in to your account and open the group page. Copy the meeting link and send it to Salma. Attach the agenda too, because she needs it before the call."
+        },
+        {
+          "id": "A2-U9-L4-A02",
+          "lessonId": "A2-U9-L4",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U9.READING.FOLLOW_DIGITAL_GUIDE",
+            "A2.U9.INTERACTION.SOLVE_TECH_PROBLEM"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "link",
+              "رابط"
+            ],
+            [
+              "attach",
+              "يرفق"
+            ],
+            [
+              "account",
+              "حساب"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U9-L4-A03",
+          "lessonId": "A2-U9-L4",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U9.READING.FOLLOW_DIGITAL_GUIDE",
+            "A2.U9.INTERACTION.SOLVE_TECH_PROBLEM"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "Open the file and attach ___ to the message.",
+          "options": [
+            "it",
+            "them",
+            "this files"
+          ],
+          "answer": "it"
+        },
+        {
+          "id": "A2-U9-L4-A04",
+          "lessonId": "A2-U9-L4",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A2.U9.READING.FOLLOW_DIGITAL_GUIDE",
+            "A2.U9.INTERACTION.SOLVE_TECH_PROBLEM"
+          ],
+          "prompt": "What does ‘them’ refer to?",
+          "promptAr": "إلى ماذا يعود الضمير them؟",
+          "options": [
+            "The photos",
+            "The team",
+            "The link"
+          ],
+          "answer": "The photos",
+          "sourceText": "The photos are in a shared folder. Select them, copy the link and send it to the team."
+        },
+        {
+          "id": "A2-U9-L4-A05",
+          "lessonId": "A2-U9-L4",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A2.U9.READING.FOLLOW_DIGITAL_GUIDE",
+            "A2.U9.INTERACTION.SOLVE_TECH_PROBLEM"
+          ],
+          "prompt": "Explain how to share a link and an attachment, then check that the other person received them.",
+          "promptAr": "اشرح كيفية مشاركة رابط ومرفق ثم تحقق من استلام الشخص الآخر لهما.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U9-L5",
+      "title": "Describe a Technical Problem",
+      "titleAr": "صف مشكلة تقنية",
+      "lessonType": "encounter-focus-practice",
+      "canDo": [
+        "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS",
+        "A2.U9.INTERACTION.SOLVE_TECH_PROBLEM"
+      ],
+      "grammar": [
+        "A2.G.TECH_QUESTIONS",
+        "A2.G.FIRST_CONDITIONAL_INTRO",
+        "A2.G.FUTURE_TIME_CLAUSE"
+      ],
+      "lexicon": [
+        "A2.LEX.ERROR_N01",
+        "A2.LEX.FREEZE_V01",
+        "A2.LEX.SOLUTION_N01",
+        "A2.LEX.ARRIVAL_N01",
+        "A2.LEX.TRANSFER_N01",
+        "A2.LEX.CONFIRM_V01",
+        "A2.LEX.SUITCASE_N01",
+        "A2.LEX.ACCOMMODATION_N01",
+        "A2.LEX.SCHEDULE_N01"
+      ],
+      "chunks": [
+        "A2.CHUNK.WHAT_ERROR_MESSAGE",
+        "A2.CHUNK.WHEN_YOU_ARRIVE",
+        "A2.CHUNK.RETURN_TICKET"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "Support: What happens when you open the app? User: It freezes after I sign in. Support: Do you see an error message? User: Yes, code 204.",
+            "ar": "الدعم: ماذا يحدث عند فتح التطبيق؟ المستخدم: يتجمد بعد تسجيل الدخول. الدعم: هل ترى رسالة خطأ؟ المستخدم: نعم، الرمز 204."
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U9-L5-A01",
+          "lessonId": "A2-U9-L5",
+          "type": "audioChoice",
+          "mode": "encounter",
+          "skill": "listening",
+          "canDo": [
+            "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS",
+            "A2.U9.INTERACTION.SOLVE_TECH_PROBLEM"
+          ],
+          "prompt": "When does the app freeze?",
+          "promptAr": "متى يتجمد التطبيق؟",
+          "options": [
+            "After sign-in",
+            "Before opening",
+            "During download"
+          ],
+          "answer": "After sign-in",
+          "audioTranscript": "Support: What happens when you open the app? User: It freezes after I sign in. Support: Do you see an error message? User: Yes, code 204."
+        },
+        {
+          "id": "A2-U9-L5-A02",
+          "lessonId": "A2-U9-L5",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS",
+            "A2.U9.INTERACTION.SOLVE_TECH_PROBLEM"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "error",
+              "خطأ"
+            ],
+            [
+              "freeze",
+              "يتجمد"
+            ],
+            [
+              "solution",
+              "حل"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U9-L5-A03",
+          "lessonId": "A2-U9-L5",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS",
+            "A2.U9.INTERACTION.SOLVE_TECH_PROBLEM"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "What error message do you ___?",
+          "options": [
+            "see",
+            "saw",
+            "seeing"
+          ],
+          "answer": "see"
+        },
+        {
+          "id": "A2-U9-L5-A04",
+          "lessonId": "A2-U9-L5",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS",
+            "A2.U9.INTERACTION.SOLVE_TECH_PROBLEM"
+          ],
+          "prompt": "Which feature has the problem?",
+          "promptAr": "أي ميزة فيها المشكلة؟",
+          "options": [
+            "Call audio",
+            "Music playback",
+            "The screen"
+          ],
+          "answer": "Call audio",
+          "audioTranscript": "User: The sound works in music apps, but not during video calls. Support: Does the microphone icon show a line across it?"
+        },
+        {
+          "id": "A2-U9-L5-A05",
+          "lessonId": "A2-U9-L5",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS",
+            "A2.U9.INTERACTION.SOLVE_TECH_PROBLEM"
+          ],
+          "prompt": "Report a technical problem with the action, result, timing and exact error message.",
+          "promptAr": "أبلغ عن مشكلة تقنية مع الفعل والنتيجة والتوقيت ورسالة الخطأ الدقيقة.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        }
+      ]
+    },
+    {
+      "id": "A2-U9-L6",
+      "title": "Write a Safe Help Guide",
+      "titleAr": "اكتب دليل مساعدة آمن",
+      "lessonType": "integrated-production",
+      "canDo": [
+        "A2.U9.WRITING.WRITE_HELP_GUIDE",
+        "A2.U9.PRODUCTION.EXPLAIN_TECH_PROCEDURE"
+      ],
+      "grammar": [
+        "A2.G.PURPOSE_TECH",
+        "A2.G.ZERO_CONDITIONAL_PROCEDURE",
+        "A2.G.SEQUENCING_ADVERBS"
+      ],
+      "lexicon": [
+        "A2.LEX.SECURE_ADJ01",
+        "A2.LEX.BACKUP_N01",
+        "A2.LEX.GUIDE_N01"
+      ],
+      "chunks": [
+        "A2.CHUNK.STEP_BY_STEP"
+      ],
+      "encounter": {
+        "dialogue": [
+          {
+            "speaker": "Narrator",
+            "en": "To protect your account, use a different password for each service. Turn on screen lock and make a backup of important files. Never send a login code to another person.",
+            "ar": ""
+          }
+        ]
+      },
+      "activities": [
+        {
+          "id": "A2-U9-L6-A01",
+          "lessonId": "A2-U9-L6",
+          "type": "textChoice",
+          "mode": "encounter",
+          "skill": "reading",
+          "canDo": [
+            "A2.U9.WRITING.WRITE_HELP_GUIDE",
+            "A2.U9.PRODUCTION.EXPLAIN_TECH_PROCEDURE"
+          ],
+          "prompt": "Which action protects files from loss?",
+          "promptAr": "أي فعل يحمي الملفات من الفقدان؟",
+          "options": [
+            "Making a backup",
+            "Sharing a login code",
+            "Using no screen lock"
+          ],
+          "answer": "Making a backup",
+          "sourceText": "To protect your account, use a different password for each service. Turn on screen lock and make a backup of important files. Never send a login code to another person."
+        },
+        {
+          "id": "A2-U9-L6-A02",
+          "lessonId": "A2-U9-L6",
+          "type": "match",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U9.WRITING.WRITE_HELP_GUIDE",
+            "A2.U9.PRODUCTION.EXPLAIN_TECH_PROCEDURE"
+          ],
+          "prompt": "Match the key language to its Arabic meaning.",
+          "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+          "pairs": [
+            [
+              "secure",
+              "آمن"
+            ],
+            [
+              "backup",
+              "نسخة احتياطية"
+            ],
+            [
+              "guide",
+              "دليل"
+            ]
+          ]
+        },
+        {
+          "id": "A2-U9-L6-A03",
+          "lessonId": "A2-U9-L6",
+          "type": "gap",
+          "mode": "practice",
+          "skill": "reading",
+          "canDo": [
+            "A2.U9.WRITING.WRITE_HELP_GUIDE",
+            "A2.U9.PRODUCTION.EXPLAIN_TECH_PROCEDURE"
+          ],
+          "prompt": "Complete the sentence.",
+          "promptAr": "أكمل الجملة.",
+          "text": "Use screen lock ___ protect your device.",
+          "options": [
+            "to",
+            "for",
+            "so"
+          ],
+          "answer": "to"
+        },
+        {
+          "id": "A2-U9-L6-A04",
+          "lessonId": "A2-U9-L6",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A2.U9.WRITING.WRITE_HELP_GUIDE",
+            "A2.U9.PRODUCTION.EXPLAIN_TECH_PROCEDURE"
+          ],
+          "prompt": "What evidence should be saved?",
+          "promptAr": "ما الدليل الذي ينبغي حفظه؟",
+          "options": [
+            "A screenshot",
+            "The password",
+            "A new account"
+          ],
+          "answer": "A screenshot",
+          "sourceText": "Quick guide: first update the app. Next restart the phone. If the error remains, save a screenshot and contact support. Do not share your password."
+        },
+        {
+          "id": "A2-U9-L6-A05",
+          "lessonId": "A2-U9-L6",
+          "type": "write",
+          "mode": "mastery",
+          "skill": "writing",
+          "canDo": [
+            "A2.U9.WRITING.WRITE_HELP_GUIDE",
+            "A2.U9.PRODUCTION.EXPLAIN_TECH_PROCEDURE"
+          ],
+          "prompt": "Write a safe step-by-step guide for one simple digital task, including a problem condition and privacy warning.",
+          "promptAr": "اكتب دليلاً آمناً خطوة بخطوة لمهمة رقمية بسيطة، متضمناً شرط مشكلة وتحذير خصوصية.",
+          "evaluation": [
+            "taskCompletion",
+            "clarity",
+            "organisation",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "wordGuide": [
+            80,
+            110
+          ]
+        }
+      ]
+    },
+    {
+      "id": "A2-U9-L7",
+      "title": "Mission: Help Someone Complete an Online Task",
+      "titleAr": "المهمة: ساعد شخصاً على إكمال مهمة عبر الإنترنت",
+      "lessonType": "mission",
+      "canDo": [
+        "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS",
+        "A2.U9.READING.FOLLOW_DIGITAL_GUIDE",
+        "A2.U9.PRODUCTION.EXPLAIN_TECH_PROCEDURE",
+        "A2.U9.INTERACTION.SOLVE_TECH_PROBLEM",
+        "A2.U9.WRITING.WRITE_HELP_GUIDE",
+        "A2.U9.MEDIATION.RELAY_DIGITAL_INSTRUCTIONS",
+        "A2.U9.ACTION.HELP_ONLINE_TASK"
+      ],
+      "grammar": [],
+      "lexicon": [],
+      "chunks": [],
+      "scenario": "Help a classmate join an online session, share a document and resolve one connection problem without requesting private credentials.",
+      "activities": [
+        {
+          "id": "A2-U9-L7-A01",
+          "lessonId": "A2-U9-L7",
+          "type": "textChoice",
+          "mode": "mastery",
+          "skill": "reading",
+          "canDo": [
+            "A2.U9.READING.FOLLOW_DIGITAL_GUIDE",
+            "A2.U9.ACTION.HELP_ONLINE_TASK"
+          ],
+          "prompt": "Which information must remain private?",
+          "promptAr": "ما المعلومة التي يجب أن تبقى خاصة؟",
+          "options": [
+            "The password",
+            "The room number",
+            "The deadline"
+          ],
+          "answer": "The password",
+          "sourceText": "Join the workshop: open the invitation link, sign in with your own account and enter room 18. Download the worksheet before 5:00. Never share your password with support staff."
+        },
+        {
+          "id": "A2-U9-L7-A02",
+          "lessonId": "A2-U9-L7",
+          "type": "audioChoice",
+          "mode": "mastery",
+          "skill": "listening",
+          "canDo": [
+            "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS",
+            "A2.U9.ACTION.HELP_ONLINE_TASK"
+          ],
+          "prompt": "What should the user do first when video freezes?",
+          "promptAr": "ماذا ينبغي أن يفعل المستخدم أولاً عند تجمد الفيديو؟",
+          "options": [
+            "Turn the camera off briefly",
+            "Leave the meeting",
+            "Share the password"
+          ],
+          "answer": "Turn the camera off briefly",
+          "audioTranscript": "If the video freezes, turn the camera off for ten seconds. If the sound continues, stay in the meeting and switch the camera on again."
+        },
+        {
+          "id": "A2-U9-L7-A03",
+          "lessonId": "A2-U9-L7",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenInteraction",
+          "canDo": [
+            "A2.U9.INTERACTION.SOLVE_TECH_PROBLEM",
+            "A2.U9.ACTION.HELP_ONLINE_TASK"
+          ],
+          "prompt": "Guide the classmate through joining and sharing; ask diagnostic questions when the problem appears.",
+          "promptAr": "أرشد زميلك إلى الانضمام والمشاركة، واسأل أسئلة تشخيص عند ظهور المشكلة.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A2-U9-L7-A04",
+          "lessonId": "A2-U9-L7",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "spokenProduction",
+          "canDo": [
+            "A2.U9.PRODUCTION.EXPLAIN_TECH_PROCEDURE",
+            "A2.U9.ACTION.HELP_ONLINE_TASK"
+          ],
+          "prompt": "Explain the complete procedure step by step with one if-condition.",
+          "promptAr": "اشرح الإجراء كاملاً خطوة بخطوة مع شرط واحد باستخدام if.",
+          "evaluation": [
+            "taskCompletion",
+            "intelligibility",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A2-U9-L7-A05",
+          "lessonId": "A2-U9-L7",
+          "type": "speak",
+          "mode": "mastery",
+          "skill": "mediation",
+          "canDo": [
+            "A2.U9.MEDIATION.RELAY_DIGITAL_INSTRUCTIONS",
+            "A2.U9.ACTION.HELP_ONLINE_TASK"
+          ],
+          "prompt": "Relay the workshop instructions, deadline and safety warning accurately.",
+          "promptAr": "انقل تعليمات الورشة والموعد النهائي وتحذير الأمان بدقة.",
+          "evaluation": [
+            "selectRelevantInformation",
+            "clarity",
+            "audienceAwareness",
+            "accuracy"
+          ],
+          "accepted": [],
+          "fallbackSkill": "writing"
+        },
+        {
+          "id": "A2-U9-L7-A06",
+          "lessonId": "A2-U9-L7",
+          "type": "write",
+          "mode": "mastery",
+          "skill": "writing",
+          "canDo": [
+            "A2.U9.WRITING.WRITE_HELP_GUIDE",
+            "A2.U9.ACTION.HELP_ONLINE_TASK"
+          ],
+          "prompt": "Write the classmate a concise help guide covering access, file sharing, troubleshooting and security.",
+          "promptAr": "اكتب لزميلك دليل مساعدة موجزاً يغطي الدخول ومشاركة الملف وحل المشكلة والأمان.",
+          "evaluation": [
+            "taskCompletion",
+            "clarity",
+            "organisation",
+            "appropriateLanguage",
+            "accuracy"
+          ],
+          "wordGuide": [
+            90,
+            120
+          ],
+          "accepted": []
+        }
+      ]
+    }
+  ],
+  "mastery": {
+    "requiredObjectives": [
+      "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS",
+      "A2.U9.READING.FOLLOW_DIGITAL_GUIDE",
+      "A2.U9.PRODUCTION.EXPLAIN_TECH_PROCEDURE",
+      "A2.U9.INTERACTION.SOLVE_TECH_PROBLEM",
+      "A2.U9.WRITING.WRITE_HELP_GUIDE",
+      "A2.U9.MEDIATION.RELAY_DIGITAL_INSTRUCTIONS",
+      "A2.U9.ACTION.HELP_ONLINE_TASK"
+    ],
+    "requiredSkillGroups": [
+      [
+        "listening",
+        "reading"
+      ],
+      [
+        "spokenInteraction",
+        "spokenProduction",
+        "writing"
+      ],
+      [
+        "mediation"
+      ]
+    ],
+    "minimumObjectiveScore": 0.75,
+    "missionRequired": true,
+    "retry": "targeted-by-objective",
+    "unlocks": "A2-U10"
+  },
+  "countsTowardA1Mastery": true
+}

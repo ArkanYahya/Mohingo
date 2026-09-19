@@ -1,0 +1,95 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-U4",
+  "kind": "chunks",
+  "records": [
+    {
+      "id": "A2.CHUNK.USED_TO_BE_THERE",
+      "text": "There used to be ...",
+      "arabic": "كان يوجد سابقاً...",
+      "cefr": "A2",
+      "introducedIn": "A2-U4-L1",
+      "productive": false,
+      "recycledIn": [
+        "A2-U5-L1"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.WITHIN_WALKING_DISTANCE",
+      "text": "within walking distance",
+      "arabic": "على مسافة مشي",
+      "cefr": "A2",
+      "introducedIn": "A2-U4-L2",
+      "productive": true,
+      "recycledIn": [
+        "A2-U5-L1"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.CLOSE_TO",
+      "text": "close to",
+      "arabic": "قريب من",
+      "cefr": "A2",
+      "introducedIn": "A2-U4-L2",
+      "productive": true,
+      "recycledIn": [
+        "A2-U5-L1"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.COMPARED_WITH",
+      "text": "compared with",
+      "arabic": "مقارنةً بـ",
+      "cefr": "A2",
+      "introducedIn": "A2-U4-L3",
+      "productive": true,
+      "recycledIn": [
+        "A2-U6-L3"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.TOO_FAR_FROM",
+      "text": "too far from",
+      "arabic": "بعيد أكثر من اللازم عن",
+      "cefr": "A2",
+      "introducedIn": "A2-U4-L4",
+      "productive": true,
+      "recycledIn": [
+        "A2-U6-L3"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.ENOUGH_SPACE_FOR",
+      "text": "enough space for",
+      "arabic": "مساحة كافية لـ",
+      "cefr": "A2",
+      "introducedIn": "A2-U4-L4",
+      "productive": true,
+      "recycledIn": [
+        "A2-U6-L3"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.THERE_IS_A_PROBLEM_WITH",
+      "text": "There is a problem with ...",
+      "arabic": "توجد مشكلة في...",
+      "cefr": "A2",
+      "introducedIn": "A2-U4-L5",
+      "productive": true,
+      "recycledIn": [
+        "A2-U7-L5"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.BEST_VALUE",
+      "text": "best value",
+      "arabic": "أفضل قيمة",
+      "cefr": "A2",
+      "introducedIn": "A2-U4-L6",
+      "productive": true,
+      "recycledIn": [
+        "A2-U7-L5"
+      ]
+    }
+  ]
+}

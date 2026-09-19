@@ -1,0 +1,95 @@
+{
+  "moduleSchemaVersion": "1.0.0",
+  "unitId": "A2-U7",
+  "kind": "chunks",
+  "records": [
+    {
+      "id": "A2.CHUNK.YOU_SHOULD",
+      "text": "You should ...",
+      "arabic": "ينبغي أن...",
+      "cefr": "A2",
+      "introducedIn": "A2-U7-L1",
+      "productive": true,
+      "recycledIn": [
+        "A2-U8-L1"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.HOW_OFTEN_TAKE",
+      "text": "How often should I take it?",
+      "arabic": "كم مرة ينبغي أن أتناوله؟",
+      "cefr": "A2",
+      "introducedIn": "A2-U7-L2",
+      "productive": true,
+      "recycledIn": [
+        "A2-U8-L1"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.TAKE_WITH_FOOD",
+      "text": "take with food",
+      "arabic": "يتناوله مع الطعام",
+      "cefr": "A2",
+      "introducedIn": "A2-U7-L2",
+      "productive": true,
+      "recycledIn": [
+        "A2-U8-L1"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.MUST_NOT_DRIVE",
+      "text": "must not drive",
+      "arabic": "يجب ألا يقود",
+      "cefr": "A2",
+      "introducedIn": "A2-U7-L3",
+      "productive": true,
+      "recycledIn": [
+        "A2-U9-L3"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.IN_ORDER_TO",
+      "text": "in order to",
+      "arabic": "من أجل",
+      "cefr": "A2",
+      "introducedIn": "A2-U7-L4",
+      "productive": false,
+      "recycledIn": [
+        "A2-U9-L3"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.HOW_LONG_HAVE_HAD",
+      "text": "How long have you had it?",
+      "arabic": "منذ متى تعاني منه؟",
+      "cefr": "A2",
+      "introducedIn": "A2-U7-L5",
+      "productive": true,
+      "recycledIn": [
+        "A2-U9-L3"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.IT_STARTED",
+      "text": "It started ...",
+      "arabic": "بدأ...",
+      "cefr": "A2",
+      "introducedIn": "A2-U7-L5",
+      "productive": true,
+      "recycledIn": [
+        "A2-U10-L5"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.IF_GETS_WORSE",
+      "text": "If it gets worse, ...",
+      "arabic": "إذا ساء الأمر...",
+      "cefr": "A2",
+      "introducedIn": "A2-U7-L6",
+      "productive": true,
+      "recycledIn": [
+        "A2-U10-L5"
+      ]
+    }
+  ]
+}
