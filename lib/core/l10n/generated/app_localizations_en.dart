@@ -877,46 +877,95 @@ class AppLocalizationsEn extends AppLocalizations {
   String get skillSpeaking => 'Speaking';
 
   @override
-  String get testsHomePlacementTitle => 'A1 Gateway Placement Test';
+  String get testsHubSubtitle =>
+      'See where you are in A1 — and prove it at the end.';
 
   @override
-  String get testsHomePlacementSubtitle =>
-      'Not sure where to start? Find your best starting point in A1.';
+  String get testsStartHereOverline => 'Start here';
 
   @override
-  String get testsHomeFinalMissionTitle => 'A1 Final Mission';
+  String get testsPlacementHeroTitle => 'Find your starting point';
 
   @override
-  String get testsHomeFinalMissionSubtitle =>
-      'A scenario-based capstone that pulls together everything you\'ve learned.';
+  String get testsPlacementHeroBody =>
+      'Already know some English? A short placement test skips what you know.';
 
   @override
-  String get testsHomeFinalAssessmentTitle => 'A1 Final Assessment';
+  String get testsPlacementMeta => 'Stops as soon as it finds your level';
 
   @override
-  String get testsHomeFinalAssessmentSubtitle =>
-      'A short exit test covering every skill, scored separately — no single score hides a weak skill.';
+  String get testsPlacementCta => 'Take the placement test';
 
   @override
-  String get testsHomeUnitChecksTitle => 'Unit mastery checks';
+  String get testsPlacementOverline => 'Placement';
 
   @override
-  String get testsHomeUnitChecksSubtitle =>
-      'See how each unit is progressing on the Learn tab.';
+  String get testsPlacementTitle => 'Placement test';
 
   @override
-  String get testsHomeFutureLevelsTitle => 'A2 and beyond placement';
-
-  @override
-  String get testsHomeNotYetTaken => 'Not yet taken';
-
-  @override
-  String get testsHomeInProgress => 'In progress';
-
-  @override
-  String testsHomeCompletedOn(String date) {
-    return 'Completed $date';
+  String testsTakenOn(String date) {
+    return 'Taken $date';
   }
+
+  @override
+  String get testsNotTaken => 'Not taken';
+
+  @override
+  String get testsNotFinished => 'Not finished';
+
+  @override
+  String testsPlacementResultUnit(int unit) {
+    return 'Result: start from Unit $unit';
+  }
+
+  @override
+  String get testsPlacementResultMastered => 'Result: A1 already mastered';
+
+  @override
+  String get testsFinishOverline => 'Finish A1';
+
+  @override
+  String testsFinishProgress(int mastered, int total) {
+    return '$mastered of $total units mastered — best taken when you\'ve finished the course.';
+  }
+
+  @override
+  String testsFinishReady(int total) {
+    return 'All $total units mastered — you\'re ready.';
+  }
+
+  @override
+  String get testsMissionBody =>
+      'Use everything from A1 in one real-life scenario, stage by stage.';
+
+  @override
+  String testsMissionMeta(int tasks, int stages, int min, int max) {
+    return '$tasks tasks · $stages stages · $min–$max min';
+  }
+
+  @override
+  String get testsAssessmentBody =>
+      'Every skill is scored on its own — a weak skill can\'t hide behind the others.';
+
+  @override
+  String testsAssessmentMeta(int questions, int skills, int min, int max) {
+    return '$questions questions · $skills skills · $min–$max min';
+  }
+
+  @override
+  String get testsPassed => 'Passed';
+
+  @override
+  String get testsNotPassedYet => 'Not passed yet';
+
+  @override
+  String testsSkillsPassed(int passed, int total) {
+    return '$passed of $total skills passed';
+  }
+
+  @override
+  String get testsUnitChecksNote =>
+      'Each unit is checked as you go — its mission is on the Learn tab.';
 
   @override
   String get placementIntroTitle => 'A1 Gateway Placement Test';

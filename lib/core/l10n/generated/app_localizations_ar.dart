@@ -908,46 +908,94 @@ class AppLocalizationsAr extends AppLocalizations {
   String get skillSpeaking => 'التحدث';
 
   @override
-  String get testsHomePlacementTitle => 'اختبار تحديد المستوى لـ A1';
+  String get testsHubSubtitle => 'اعرف أين أنت في A1 — وأثبت ذلك في النهاية.';
 
   @override
-  String get testsHomePlacementSubtitle =>
-      'لست متأكداً من أين تبدأ؟ اكتشف أفضل نقطة بداية لك في A1.';
+  String get testsStartHereOverline => 'ابدأ من هنا';
 
   @override
-  String get testsHomeFinalMissionTitle => 'المهمة الختامية لمستوى A1';
+  String get testsPlacementHeroTitle => 'اعثر على نقطة البداية';
 
   @override
-  String get testsHomeFinalMissionSubtitle =>
-      'مهمة ختامية قائمة على سيناريو تجمع كل ما تعلمته.';
+  String get testsPlacementHeroBody =>
+      'تعرف بعض الإنجليزية؟ اختبار تحديد مستوى قصير يتخطّى ما تعرفه.';
 
   @override
-  String get testsHomeFinalAssessmentTitle => 'التقييم الختامي لمستوى A1';
+  String get testsPlacementMeta => 'يتوقف بمجرد أن يحدد مستواك';
 
   @override
-  String get testsHomeFinalAssessmentSubtitle =>
-      'اختبار ختامي قصير يغطي كل مهارة على حدة — لا تُخفي درجة إجمالية أي ضعف في مهارة بعينها.';
+  String get testsPlacementCta => 'ابدأ اختبار تحديد المستوى';
 
   @override
-  String get testsHomeUnitChecksTitle => 'تقييم إتقان الوحدات';
+  String get testsPlacementOverline => 'تحديد المستوى';
 
   @override
-  String get testsHomeUnitChecksSubtitle =>
-      'تابع تقدّم كل وحدة من تبويب تعلّم.';
+  String get testsPlacementTitle => 'اختبار تحديد المستوى';
 
   @override
-  String get testsHomeFutureLevelsTitle => 'تحديد المستوى لما بعد A1';
-
-  @override
-  String get testsHomeNotYetTaken => 'لم تبدأ المحاولة بعد';
-
-  @override
-  String get testsHomeInProgress => 'قيد التقدّم';
-
-  @override
-  String testsHomeCompletedOn(String date) {
-    return 'اكتملت المحاولة في $date';
+  String testsTakenOn(String date) {
+    return 'أُجري في $date';
   }
+
+  @override
+  String get testsNotTaken => 'لم يُجرَ بعد';
+
+  @override
+  String get testsNotFinished => 'لم يكتمل';
+
+  @override
+  String testsPlacementResultUnit(int unit) {
+    return 'النتيجة: ابدأ من الوحدة $unit';
+  }
+
+  @override
+  String get testsPlacementResultMastered => 'النتيجة: أتقنت A1 بالفعل';
+
+  @override
+  String get testsFinishOverline => 'أنهِ A1';
+
+  @override
+  String testsFinishProgress(int mastered, int total) {
+    return 'أتقنت $mastered من $total وحدة — الأفضل بعد إنهاء المقرر.';
+  }
+
+  @override
+  String testsFinishReady(int total) {
+    return 'أتقنت كل الوحدات الـ$total — أنت جاهز.';
+  }
+
+  @override
+  String get testsMissionBody =>
+      'استخدم كل ما تعلّمته في A1 في موقف واقعي واحد، مرحلة بعد مرحلة.';
+
+  @override
+  String testsMissionMeta(int tasks, int stages, int min, int max) {
+    return '$tasks مهمة · $stages مراحل · $min–$max دقيقة';
+  }
+
+  @override
+  String get testsAssessmentBody =>
+      'تُقيَّم كل مهارة وحدها — لا تختبئ مهارة ضعيفة خلف غيرها.';
+
+  @override
+  String testsAssessmentMeta(int questions, int skills, int min, int max) {
+    return '$questions سؤالاً · $skills مهارات · $min–$max دقيقة';
+  }
+
+  @override
+  String get testsPassed => 'نجحت';
+
+  @override
+  String get testsNotPassedYet => 'لم تنجح بعد';
+
+  @override
+  String testsSkillsPassed(int passed, int total) {
+    return 'نجحت في $passed من $total مهارات';
+  }
+
+  @override
+  String get testsUnitChecksNote =>
+      'تُقيَّم كل وحدة أثناء تقدّمك — مهمتها في تبويب «تعلّم».';
 
   @override
   String get placementIntroTitle => 'اختبار تحديد المستوى لـ A1';

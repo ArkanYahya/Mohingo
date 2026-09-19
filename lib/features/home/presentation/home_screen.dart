@@ -145,7 +145,7 @@ class _HomeBody extends ConsumerWidget {
           : l10n.homeJourneyNext(
               currentPosition + 1 < units.length
                   ? unitTitle(units[currentPosition + 1])
-                  : l10n.testsHomeFinalMissionTitle,
+                  : l10n.learnFinishTitle,
             ),
       onTap: () => context.go('/learn'),
     );

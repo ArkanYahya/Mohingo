@@ -1448,77 +1448,149 @@ abstract class AppLocalizations {
   /// **'Speaking'**
   String get skillSpeaking;
 
-  /// Tests tab card title.
+  /// Line under the Tests tab's title.
   ///
   /// In en, this message translates to:
-  /// **'A1 Gateway Placement Test'**
-  String get testsHomePlacementTitle;
+  /// **'See where you are in A1 — and prove it at the end.'**
+  String get testsHubSubtitle;
 
-  /// Tests tab card subtitle.
+  /// Overline on the Tests tab's placement card for a brand-new learner.
   ///
   /// In en, this message translates to:
-  /// **'Not sure where to start? Find your best starting point in A1.'**
-  String get testsHomePlacementSubtitle;
+  /// **'Start here'**
+  String get testsStartHereOverline;
 
-  /// Tests tab card title.
+  /// Title of the Tests tab's placement card for a brand-new learner.
   ///
   /// In en, this message translates to:
-  /// **'A1 Final Mission'**
-  String get testsHomeFinalMissionTitle;
+  /// **'Find your starting point'**
+  String get testsPlacementHeroTitle;
 
-  /// Tests tab card subtitle.
+  /// Body of the Tests tab's placement card for a brand-new learner.
   ///
   /// In en, this message translates to:
-  /// **'A scenario-based capstone that pulls together everything you\'ve learned.'**
-  String get testsHomeFinalMissionSubtitle;
+  /// **'Already know some English? A short placement test skips what you know.'**
+  String get testsPlacementHeroBody;
 
-  /// Tests tab card title.
+  /// How long the placement test is: it's adaptive.
   ///
   /// In en, this message translates to:
-  /// **'A1 Final Assessment'**
-  String get testsHomeFinalAssessmentTitle;
+  /// **'Stops as soon as it finds your level'**
+  String get testsPlacementMeta;
 
-  /// Tests tab card subtitle.
+  /// Button on the Tests tab's placement card.
   ///
   /// In en, this message translates to:
-  /// **'A short exit test covering every skill, scored separately — no single score hides a weak skill.'**
-  String get testsHomeFinalAssessmentSubtitle;
+  /// **'Take the placement test'**
+  String get testsPlacementCta;
 
-  /// Tests tab card title — informational, links to the Learn tab rather than opening its own flow.
+  /// Tests tab section heading for the placement test.
   ///
   /// In en, this message translates to:
-  /// **'Unit mastery checks'**
-  String get testsHomeUnitChecksTitle;
+  /// **'Placement'**
+  String get testsPlacementOverline;
 
-  /// Tests tab card subtitle.
+  /// Tests tab row title for the placement test.
   ///
   /// In en, this message translates to:
-  /// **'See how each unit is progressing on the Learn tab.'**
-  String get testsHomeUnitChecksSubtitle;
+  /// **'Placement test'**
+  String get testsPlacementTitle;
 
-  /// Tests tab card title for a not-yet-built feature — disabled, shown with the app-wide comingSoon label.
+  /// When a test was last finished.
   ///
   /// In en, this message translates to:
-  /// **'A2 and beyond placement'**
-  String get testsHomeFutureLevelsTitle;
+  /// **'Taken {date}'**
+  String testsTakenOn(String date);
 
-  /// Tests tab card state line — no attempt exists yet.
+  /// Status of a test never finished.
   ///
   /// In en, this message translates to:
-  /// **'Not yet taken'**
-  String get testsHomeNotYetTaken;
+  /// **'Not taken'**
+  String get testsNotTaken;
 
-  /// Tests tab card state line — an attempt was started but not completed.
+  /// Status of a test started but not finished.
   ///
   /// In en, this message translates to:
-  /// **'In progress'**
-  String get testsHomeInProgress;
+  /// **'Not finished'**
+  String get testsNotFinished;
 
-  /// Tests tab card state line — an attempt was completed on this date.
+  /// The placement test's recommendation.
   ///
   /// In en, this message translates to:
-  /// **'Completed {date}'**
-  String testsHomeCompletedOn(String date);
+  /// **'Result: start from Unit {unit}'**
+  String testsPlacementResultUnit(int unit);
+
+  /// The placement test found A1 mastered.
+  ///
+  /// In en, this message translates to:
+  /// **'Result: A1 already mastered'**
+  String get testsPlacementResultMastered;
+
+  /// Tests tab section heading for the final mission and assessment.
+  ///
+  /// In en, this message translates to:
+  /// **'Finish A1'**
+  String get testsFinishOverline;
+
+  /// Course progress above the final mission and assessment.
+  ///
+  /// In en, this message translates to:
+  /// **'{mastered} of {total} units mastered — best taken when you\'ve finished the course.'**
+  String testsFinishProgress(int mastered, int total);
+
+  /// Course progress when every unit is mastered.
+  ///
+  /// In en, this message translates to:
+  /// **'All {total} units mastered — you\'re ready.'**
+  String testsFinishReady(int total);
+
+  /// Tests tab description of the final mission.
+  ///
+  /// In en, this message translates to:
+  /// **'Use everything from A1 in one real-life scenario, stage by stage.'**
+  String get testsMissionBody;
+
+  /// Size and time of the final mission.
+  ///
+  /// In en, this message translates to:
+  /// **'{tasks} tasks · {stages} stages · {min}–{max} min'**
+  String testsMissionMeta(int tasks, int stages, int min, int max);
+
+  /// Tests tab description of the final assessment.
+  ///
+  /// In en, this message translates to:
+  /// **'Every skill is scored on its own — a weak skill can\'t hide behind the others.'**
+  String get testsAssessmentBody;
+
+  /// Size and time of the final assessment.
+  ///
+  /// In en, this message translates to:
+  /// **'{questions} questions · {skills} skills · {min}–{max} min'**
+  String testsAssessmentMeta(int questions, int skills, int min, int max);
+
+  /// Status of a passed final mission.
+  ///
+  /// In en, this message translates to:
+  /// **'Passed'**
+  String get testsPassed;
+
+  /// Status of a finished but not passed final mission.
+  ///
+  /// In en, this message translates to:
+  /// **'Not passed yet'**
+  String get testsNotPassedYet;
+
+  /// Status of a finished final assessment.
+  ///
+  /// In en, this message translates to:
+  /// **'{passed} of {total} skills passed'**
+  String testsSkillsPassed(int passed, int total);
+
+  /// Note at the end of the Tests tab.
+  ///
+  /// In en, this message translates to:
+  /// **'Each unit is checked as you go — its mission is on the Learn tab.'**
+  String get testsUnitChecksNote;
 
   /// Placement test intro screen app bar title.
   ///

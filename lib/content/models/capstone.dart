@@ -79,6 +79,10 @@ class FinalMission {
   final double minimumCriterionScore;
   final bool noSingleAverageCompensation;
   final Map<String, dynamic> raw;
+
+  /// The bundle's `[min, max]` time estimate in minutes (empty if absent).
+  List<int> get estimatedMinutes =>
+      List<int>.from(raw['estimatedMinutes'] as List? ?? const []);
 }
 
 /// One skill section of the [FinalAssessment] (e.g. `listening`, `writing`).
@@ -151,6 +155,10 @@ class FinalAssessment {
   final bool noSingleOverallAverage;
   final bool fallbackDoesNotCreateSpeakingEvidence;
   final Map<String, dynamic> raw;
+
+  /// The bundle's `[min, max]` time estimate in minutes (empty if absent).
+  List<int> get estimatedMinutes =>
+      List<int>.from(raw['estimatedMinutes'] as List? ?? const []);
 
   List<Activity> get allActivities =>
       sections.values.expand((s) => s.activities).toList();
