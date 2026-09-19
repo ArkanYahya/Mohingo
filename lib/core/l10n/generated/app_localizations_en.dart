@@ -1042,53 +1042,111 @@ class AppLocalizationsEn extends AppLocalizations {
   String get placementStartButton => 'Start the placement test';
 
   @override
-  String get placementConfidenceQuestion =>
-      'Overall, how confident did that feel?';
+  String get testsResultHowYouDid => 'How you did';
 
   @override
-  String get placementConfidenceLow => 'Not very';
-
-  @override
-  String get placementConfidenceHigh => 'Very confident';
-
-  @override
-  String get placementResultTitle => 'Your result';
-
-  @override
-  String get placementOutcomeStartWithEssentials =>
-      'Start with English Essentials (Unit 0) — it\'ll give you the footing the rest of A1 builds on.';
-
-  @override
-  String get placementOutcomeStartA1FromU1 =>
-      'You know the essentials — start A1 from Unit 1.';
-
-  @override
-  String placementOutcomeStartFromUnit(String unitTitle) {
-    return 'You\'re ahead in the early units — start from $unitTitle.';
+  String testsSkillScore(int right, int total) {
+    return '$right of $total';
   }
 
   @override
-  String get placementOutcomeMastered =>
-      'A1 appears mastered — great work! Higher-level placement isn\'t available yet, but it\'s coming.';
+  String get testsWaitingReview => 'Waiting for review';
 
   @override
-  String get placementResultGoToUnit => 'Go to this unit';
+  String get testsPendingBody =>
+      'Your answers are saved; this skill is scored once they\'re checked.';
+
+  @override
+  String testsScorePassMark(int score, int mark) {
+    return '$score% · pass mark $mark%';
+  }
+
+  @override
+  String get placementResultOverline => 'Placement result';
+
+  @override
+  String placementResultHeadline(int unit) {
+    return 'Start from Unit $unit';
+  }
+
+  @override
+  String get placementResultBodyEssentials =>
+      'Unit 1 gives you the basics every other unit builds on.';
+
+  @override
+  String placementResultBodyUnit(int unit) {
+    return 'You know the units before it well. Unit $unit is where new things begin for you.';
+  }
+
+  @override
+  String get placementResultMasteredTitle => 'A1 looks mastered';
+
+  @override
+  String get placementResultMasteredBody =>
+      'Take the final assessment to prove it. Higher levels are on the way.';
+
+  @override
+  String get placementResultEarlierOpen =>
+      'Earlier units stay open — go back to any lesson whenever you like.';
+
+  @override
+  String placementResultGoToUnitN(int unit) {
+    return 'Go to Unit $unit';
+  }
+
+  @override
+  String get placementConfidence1 => 'Not at all confident';
+
+  @override
+  String get placementConfidence2 => 'A little confident';
+
+  @override
+  String get placementConfidence3 => 'Fairly confident';
+
+  @override
+  String get placementConfidence4 => 'Quite confident';
+
+  @override
+  String get placementConfidence5 => 'Very confident';
+
+  @override
+  String get placementConfidenceNote =>
+      'Your answer doesn\'t change your result.';
+
+  @override
+  String get missionResultPassedTitle => 'Mission complete';
+
+  @override
+  String get missionResultPassedBody =>
+      'Every required skill came through across the day.';
+
+  @override
+  String get missionResultNotYetTitle => 'Not passed yet';
+
+  @override
+  String get missionResultNotYetBody =>
+      'Some skills need more practice — see below. You can take the mission again any time.';
+
+  @override
+  String get assessmentResultPassedTitle => 'You passed A1';
+
+  @override
+  String get assessmentResultNotYetTitle => 'Not passed yet';
+
+  @override
+  String assessmentResultBody(int passed, int total) {
+    return '$passed of $total skills passed.';
+  }
+
+  @override
+  String get placementConfidenceQuestion =>
+      'Overall, how confident did that feel?';
 
   @override
   String get placementResultDone => 'Done';
 
   @override
   String get finalMissionStartButton => 'Begin the mission';
-
-  @override
-  String get finalMissionResultTitle => 'Mission result';
-
-  @override
-  String get finalMissionPassed =>
-      'Mission complete — every required skill area came through.';
-
-  @override
-  String get finalMissionNotYetTitle => 'Not quite there yet';
 
   @override
   String get finalMissionDone => 'Done';
@@ -1101,32 +1159,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get finalAssessmentStartButton => 'Start the assessment';
 
   @override
-  String get finalAssessmentResultTitle => 'Assessment result';
-
-  @override
-  String get finalAssessmentOverallPassed =>
-      'Every required skill met the bar for A1.';
-
-  @override
-  String get finalAssessmentOverallNotYet =>
-      'Not every required skill met the bar yet — see the breakdown below.';
-
-  @override
   String get finalAssessmentSkillPassed => 'Passed';
 
   @override
   String get finalAssessmentSkillNotMet => 'Not yet met';
 
   @override
-  String get finalAssessmentSkillPendingReview => 'Pending review';
-
-  @override
   String get finalAssessmentDone => 'Done';
-
-  @override
-  String finalAssessmentSectionScore(int percent) {
-    return '$percent%';
-  }
 
   @override
   String get finalAssessmentWhatsNext => 'Keep practicing';

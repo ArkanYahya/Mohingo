@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:mohingo/core/l10n/generated/app_localizations.dart';
+import 'package:mohingo/core/theme/app_theme.dart';
+import 'package:mohingo/core/theme/color_seed.dart';
 import 'package:mohingo/features/final_assessment/domain/final_assessment_scoring.dart';
 import 'package:mohingo/features/final_assessment/presentation/final_assessment_screen.dart';
 
@@ -28,6 +30,7 @@ void main() {
 
       await tester.pumpWidget(
         MaterialApp(
+          theme: AppTheme.light(AppColorSeed.calmTeal),
           supportedLocales: AppLocalizations.supportedLocales,
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           home: buildFinalAssessmentResultViewForTest(

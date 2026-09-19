@@ -12,13 +12,20 @@ import '../../../content/models/media_specification.dart';
 import '../../../content/providers/course_content_providers.dart';
 import '../../../core/l10n/generated/app_localizations.dart';
 import '../../../core/l10n/skill_label.dart';
+import '../../../core/theme/app_tokens.dart';
+import '../../../core/theme/overline_style.dart';
+import '../../../core/widgets/section_heading.dart';
 import '../../activity_engine/domain/activity_submission.dart';
 import '../../activity_engine/domain/evidence_skill_resolver.dart';
 import '../../activity_engine/presentation/activity_view_registry.dart';
+import '../../activity_engine/presentation/widgets/activity_option_tile.dart';
+import '../../activity_engine/presentation/widgets/answer_tile_state.dart';
+import '../../lesson_player/presentation/widgets/activity_eyebrow.dart';
 import '../../progress/providers/current_learner_provider.dart';
 import '../../progress/providers/progress_providers.dart';
 import '../../tests_home/presentation/widgets/test_intro_view.dart';
 import '../../tests_home/presentation/widgets/test_question_frame.dart';
+import '../../tests_home/presentation/widgets/test_result_view.dart';
 import '../../tests_home/providers/tests_home_providers.dart';
 import '../domain/placement_classifier.dart';
 import '../domain/placement_item_sampler.dart';
@@ -371,7 +378,10 @@ class _PlacementTestBodyState extends ConsumerState<_PlacementTestBody> {
       _Phase.result => _ResultView(
         classification: _classification!,
         units: widget.units,
-        skillTally: _skillTally,
+        skillScores: {
+          for (final MapEntry(:key, :value) in _skillTally.entries)
+            key: (value.correct, value.total),
+        },
       ),
     };
   }
@@ -382,6 +392,9 @@ class _PlacementTestBodyState extends ConsumerState<_PlacementTestBody> {
   }
 }
 
+/// "Overall, how confident did that feel?" — five labelled options; the
+/// answer is stored as supporting information and never changes the
+/// result.
 class _ConfidenceView extends StatelessWidget {
   const _ConfidenceView({required this.onSubmit});
 
@@ -389,142 +402,210 @@ class _ConfidenceView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final tokens = theme.extension<AppTokens>()!;
     final l10n = AppLocalizations.of(context)!;
+    final labels = [
+      l10n.placementConfidence1,
+      l10n.placementConfidence2,
+      l10n.placementConfidence3,
+      l10n.placementConfidence4,
+      l10n.placementConfidence5,
+    ];
     return Scaffold(
-      appBar: AppBar(title: Text(l10n.placementConfidenceQuestion)),
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(24),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                l10n.placementConfidenceQuestion,
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 16),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  for (var value = 1; value <= 5; value++)
-                    OutlinedButton(
-                      onPressed: () => onSubmit(value),
-                      child: Text('$value'),
-                    ),
-                ],
-              ),
-              const SizedBox(height: 8),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    l10n.placementConfidenceLow,
-                    style: Theme.of(context).textTheme.labelSmall,
-                  ),
-                  Text(
-                    l10n.placementConfidenceHigh,
-                    style: Theme.of(context).textTheme.labelSmall,
-                  ),
-                ],
-              ),
-            ],
+        child: ListView(
+          padding: const EdgeInsets.fromLTRB(
+            AppSpace.md,
+            AppSpace.lg,
+            AppSpace.md,
+            AppSpace.lg,
           ),
+          children: [
+            Text(
+              l10n.testsPlacementTitle.toUpperCase(),
+              style: overlineStyle(context, color: tokens.textSecondary),
+            ),
+            const SizedBox(height: AppSpace.xxs),
+            Text(
+              l10n.placementConfidenceQuestion,
+              style: theme.textTheme.headlineSmall?.copyWith(
+                color: tokens.textPrimary,
+              ),
+            ),
+            const SizedBox(height: AppSpace.xs),
+            Text(
+              l10n.placementConfidenceNote,
+              style: theme.textTheme.bodyMedium?.copyWith(
+                color: tokens.textSecondary,
+              ),
+            ),
+            const SizedBox(height: AppSpace.md),
+            for (final (i, label) in labels.indexed)
+              Padding(
+                padding: const EdgeInsets.only(bottom: AppSpace.xs),
+                child: ActivityOptionTile(
+                  label: label,
+                  state: AnswerTileState.idle,
+                  onTap: () => onSubmit(i + 1),
+                ),
+              ),
+          ],
         ),
       ),
     );
   }
 }
 
+/// A placement result's per-skill score: (right, scored).
+typedef SkillScores = Map<Skill, (int, int)>;
+
+/// Test-only construction path for [_ResultView], mirroring
+/// `buildFinalAssessmentResultViewForTest`.
+@visibleForTesting
+Widget buildPlacementResultViewForTest({
+  required PlacementClassification classification,
+  required List<Unit> units,
+  required SkillScores skillScores,
+}) => _ResultView(
+  classification: classification,
+  units: units,
+  skillScores: skillScores,
+);
+
+/// The placement result: the unit to start from as the headline, that
+/// unit as a card, per-skill scores, and a button straight to the unit —
+/// or, when every unit passed, a pointer to the final assessment.
 class _ResultView extends StatelessWidget {
   const _ResultView({
     required this.classification,
     required this.units,
-    required this.skillTally,
+    required this.skillScores,
   });
 
   final PlacementClassification classification;
   final List<Unit> units;
-  final Map<Skill, _SkillTally> skillTally;
+  final SkillScores skillScores;
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final tokens = theme.extension<AppTokens>()!;
     final l10n = AppLocalizations.of(context)!;
-    final recommendedUnit = classification.recommendedUnitId == null
-        ? null
-        : units.firstWhere((u) => u.id == classification.recommendedUnitId);
+    final unitId = classification.recommendedUnitId;
+    final unitIndex = unitId == null
+        ? -1
+        : units.indexWhere((u) => u.id == unitId);
+    final unit = unitIndex < 0 ? null : units[unitIndex];
+    final unitNumber = unitIndex + 1;
 
-    final isArabic = Localizations.localeOf(context).languageCode == 'ar';
-    final message = switch (classification.outcome) {
-      PlacementOutcome.startWithEssentials =>
-        l10n.placementOutcomeStartWithEssentials,
-      PlacementOutcome.startA1FromU1 => l10n.placementOutcomeStartA1FromU1,
-      PlacementOutcome.startFromRecommendedUnit =>
-        l10n.placementOutcomeStartFromUnit(
-          isArabic ? recommendedUnit!.titleAr : recommendedUnit!.title,
-        ),
-      PlacementOutcome.a1Mastered => l10n.placementOutcomeMastered,
-    };
+    final (title, body) = unit == null
+        ? (l10n.placementResultMasteredTitle, l10n.placementResultMasteredBody)
+        : (
+            l10n.placementResultHeadline(unitNumber),
+            unitNumber == 1
+                ? l10n.placementResultBodyEssentials
+                : l10n.placementResultBodyUnit(unitNumber),
+          );
+    void done() => context.pop();
 
-    return Scaffold(
-      appBar: AppBar(title: Text(l10n.placementResultTitle)),
-      body: SafeArea(
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.all(24),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Icon(
-                Icons.flag_outlined,
-                size: 40,
-                color: Theme.of(context).colorScheme.primary,
-              ),
-              const SizedBox(height: 16),
-              Text(
-                message,
-                textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.titleMedium,
-              ),
-              const SizedBox(height: 24),
-              if (skillTally.isNotEmpty)
-                Card(
-                  child: Padding(
-                    padding: const EdgeInsets.all(16),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        for (final entry in skillTally.entries)
-                          Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 2),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(skillLabel(l10n, entry.key)),
-                                Text(
-                                  '${entry.value.correct}/${entry.value.total}',
-                                ),
-                              ],
-                            ),
-                          ),
-                      ],
+    return TestResultView(
+      overline: l10n.placementResultOverline,
+      title: title,
+      body: body,
+      primaryLabel: unit == null
+          ? l10n.placementResultDone
+          : l10n.placementResultGoToUnitN(unitNumber),
+      primaryArrow: unit != null,
+      onPrimary: unit == null
+          ? done
+          : () => context.go('/learn/unit/${unit.id}'),
+      secondaryLabel: unit == null ? null : l10n.placementResultDone,
+      onSecondary: done,
+      children: [
+        if (unit != null) ...[
+          const SizedBox(height: AppSpace.md),
+          DecoratedBox(
+            decoration: BoxDecoration(
+              color: tokens.card,
+              borderRadius: BorderRadius.circular(AppRadius.card),
+              border: Border.all(color: tokens.primaryInk, width: 2),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(AppSpace.md),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Text(
+                    l10n.learnUnitOverline(unitNumber).toUpperCase(),
+                    style: overlineStyle(context, color: tokens.primaryInk),
+                  ),
+                  const SizedBox(height: AppSpace.xxs),
+                  Align(
+                    alignment: AlignmentDirectional.centerStart,
+                    child: Text(
+                      unit.title,
+                      textDirection: TextDirection.ltr,
+                      style: theme.textTheme.titleLarge?.copyWith(
+                        color: tokens.textPrimary,
+                      ),
                     ),
                   ),
-                ),
-              const SizedBox(height: 24),
-              if (recommendedUnit != null)
-                FilledButton(
-                  onPressed: () =>
-                      context.go('/learn/unit/${recommendedUnit.id}'),
-                  child: Text(l10n.placementResultGoToUnit),
-                ),
-              const SizedBox(height: 8),
-              OutlinedButton(
-                onPressed: () => context.pop(),
-                child: Text(l10n.placementResultDone),
+                  Align(
+                    alignment: AlignmentDirectional.centerStart,
+                    child: Text(
+                      unit.titleAr,
+                      textDirection: TextDirection.rtl,
+                      style: theme.textTheme.bodyMedium?.copyWith(
+                        color: tokens.textSecondary,
+                      ),
+                    ),
+                  ),
+                  if (unit.estimatedMinutes.length == 2) ...[
+                    const SizedBox(height: AppSpace.xxs),
+                    Text(
+                      '${l10n.learnLessonCount(unit.lessons.length)} · '
+                      '${l10n.learnUnitMinutes(unit.estimatedMinutes[0], unit.estimatedMinutes[1])}',
+                      style: theme.textTheme.bodySmall?.copyWith(
+                        color: tokens.textSecondary,
+                      ),
+                    ),
+                  ],
+                ],
               ),
+            ),
+          ),
+        ],
+        if (skillScores.isNotEmpty) ...[
+          SectionHeading(l10n.testsResultHowYouDid),
+          ResultRowsCard(
+            rows: [
+              for (final MapEntry(key: skill, value: (right, total))
+                  in skillScores.entries)
+                SkillResultRow(
+                  icon: skillIcon(skill),
+                  label: skillLabel(l10n, skill),
+                  trailing: Text(
+                    l10n.testsSkillScore(right, total),
+                    style: theme.textTheme.labelLarge?.copyWith(
+                      color: tokens.textPrimary,
+                    ),
+                  ),
+                  progress: total == 0 ? 0 : right / total,
+                ),
             ],
           ),
-        ),
-      ),
+        ],
+        if (unit != null && unitNumber > 1) ...[
+          const SizedBox(height: AppSpace.sm),
+          Text(
+            l10n.placementResultEarlierOpen,
+            style: theme.textTheme.bodySmall?.copyWith(
+              color: tokens.textSecondary,
+            ),
+          ),
+        ],
+      ],
     );
   }
 }

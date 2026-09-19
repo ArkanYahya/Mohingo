@@ -113,11 +113,14 @@ void main() {
 
       // Confidence self-report — supporting info only, never affects the
       // classification already implied by answering everything correctly.
-      await tester.tap(find.widgetWithText(OutlinedButton, '3'));
+      final l10n = AppLocalizations.of(
+        tester.element(find.byType(Scaffold).first),
+      )!;
+      await tester.tap(find.text(l10n.placementConfidence3));
       await tester.pumpAndSettle();
 
-      // Reached the result screen.
-      expect(find.byIcon(Icons.flag_outlined), findsOneWidget);
+      // Reached the result screen: every unit passed.
+      expect(find.text(l10n.placementResultMasteredTitle), findsOneWidget);
 
       final attemptRows = await db.select(db.placementAttempts).get();
       expect(attemptRows, hasLength(1));

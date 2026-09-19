@@ -1694,59 +1694,167 @@ abstract class AppLocalizations {
   /// **'Start the placement test'**
   String get placementStartButton;
 
+  /// Result screen: heading above the per-skill results.
+  ///
+  /// In en, this message translates to:
+  /// **'How you did'**
+  String get testsResultHowYouDid;
+
+  /// A skill's score on the placement result.
+  ///
+  /// In en, this message translates to:
+  /// **'{right} of {total}'**
+  String testsSkillScore(int right, int total);
+
+  /// A skill whose answers are saved but not scored yet.
+  ///
+  /// In en, this message translates to:
+  /// **'Waiting for review'**
+  String get testsWaitingReview;
+
+  /// Under a skill that's waiting for review.
+  ///
+  /// In en, this message translates to:
+  /// **'Your answers are saved; this skill is scored once they\'re checked.'**
+  String get testsPendingBody;
+
+  /// A skill's score and the pass mark.
+  ///
+  /// In en, this message translates to:
+  /// **'{score}% · pass mark {mark}%'**
+  String testsScorePassMark(int score, int mark);
+
+  /// Overline on the placement result.
+  ///
+  /// In en, this message translates to:
+  /// **'Placement result'**
+  String get placementResultOverline;
+
+  /// The placement result's headline.
+  ///
+  /// In en, this message translates to:
+  /// **'Start from Unit {unit}'**
+  String placementResultHeadline(int unit);
+
+  /// Placement result when starting from the first unit.
+  ///
+  /// In en, this message translates to:
+  /// **'Unit 1 gives you the basics every other unit builds on.'**
+  String get placementResultBodyEssentials;
+
+  /// Placement result when starting further in.
+  ///
+  /// In en, this message translates to:
+  /// **'You know the units before it well. Unit {unit} is where new things begin for you.'**
+  String placementResultBodyUnit(int unit);
+
+  /// Placement result when every unit passed.
+  ///
+  /// In en, this message translates to:
+  /// **'A1 looks mastered'**
+  String get placementResultMasteredTitle;
+
+  /// Placement result body when every unit passed.
+  ///
+  /// In en, this message translates to:
+  /// **'Take the final assessment to prove it. Higher levels are on the way.'**
+  String get placementResultMasteredBody;
+
+  /// Placement result note when starting further in.
+  ///
+  /// In en, this message translates to:
+  /// **'Earlier units stay open — go back to any lesson whenever you like.'**
+  String get placementResultEarlierOpen;
+
+  /// Placement result button to the recommended unit.
+  ///
+  /// In en, this message translates to:
+  /// **'Go to Unit {unit}'**
+  String placementResultGoToUnitN(int unit);
+
+  /// Confidence self-report option 1 of 5.
+  ///
+  /// In en, this message translates to:
+  /// **'Not at all confident'**
+  String get placementConfidence1;
+
+  /// Confidence self-report option 2 of 5.
+  ///
+  /// In en, this message translates to:
+  /// **'A little confident'**
+  String get placementConfidence2;
+
+  /// Confidence self-report option 3 of 5.
+  ///
+  /// In en, this message translates to:
+  /// **'Fairly confident'**
+  String get placementConfidence3;
+
+  /// Confidence self-report option 4 of 5.
+  ///
+  /// In en, this message translates to:
+  /// **'Quite confident'**
+  String get placementConfidence4;
+
+  /// Confidence self-report option 5 of 5.
+  ///
+  /// In en, this message translates to:
+  /// **'Very confident'**
+  String get placementConfidence5;
+
+  /// Under the confidence question.
+  ///
+  /// In en, this message translates to:
+  /// **'Your answer doesn\'t change your result.'**
+  String get placementConfidenceNote;
+
+  /// Final mission result when passed.
+  ///
+  /// In en, this message translates to:
+  /// **'Mission complete'**
+  String get missionResultPassedTitle;
+
+  /// Final mission result body when passed.
+  ///
+  /// In en, this message translates to:
+  /// **'Every required skill came through across the day.'**
+  String get missionResultPassedBody;
+
+  /// Final mission result when not passed.
+  ///
+  /// In en, this message translates to:
+  /// **'Not passed yet'**
+  String get missionResultNotYetTitle;
+
+  /// Final mission result body when not passed.
+  ///
+  /// In en, this message translates to:
+  /// **'Some skills need more practice — see below. You can take the mission again any time.'**
+  String get missionResultNotYetBody;
+
+  /// Final assessment result when passed.
+  ///
+  /// In en, this message translates to:
+  /// **'You passed A1'**
+  String get assessmentResultPassedTitle;
+
+  /// Final assessment result when not passed.
+  ///
+  /// In en, this message translates to:
+  /// **'Not passed yet'**
+  String get assessmentResultNotYetTitle;
+
+  /// Final assessment result summary.
+  ///
+  /// In en, this message translates to:
+  /// **'{passed} of {total} skills passed.'**
+  String assessmentResultBody(int passed, int total);
+
   /// Placement test confidence self-report screen question — supporting info only, never affects the result.
   ///
   /// In en, this message translates to:
   /// **'Overall, how confident did that feel?'**
   String get placementConfidenceQuestion;
-
-  /// Label at the low end of the 1-5 confidence scale.
-  ///
-  /// In en, this message translates to:
-  /// **'Not very'**
-  String get placementConfidenceLow;
-
-  /// Label at the high end of the 1-5 confidence scale.
-  ///
-  /// In en, this message translates to:
-  /// **'Very confident'**
-  String get placementConfidenceHigh;
-
-  /// Placement test result screen app bar title.
-  ///
-  /// In en, this message translates to:
-  /// **'Your result'**
-  String get placementResultTitle;
-
-  /// Placement outcome 1 of 4: recommend starting at A1-U0.
-  ///
-  /// In en, this message translates to:
-  /// **'Start with English Essentials (Unit 0) — it\'ll give you the footing the rest of A1 builds on.'**
-  String get placementOutcomeStartWithEssentials;
-
-  /// Placement outcome 2 of 4: recommend starting at A1-U1.
-  ///
-  /// In en, this message translates to:
-  /// **'You know the essentials — start A1 from Unit 1.'**
-  String get placementOutcomeStartA1FromU1;
-
-  /// Placement outcome 3 of 4: recommend starting at a specific later unit.
-  ///
-  /// In en, this message translates to:
-  /// **'You\'re ahead in the early units — start from {unitTitle}.'**
-  String placementOutcomeStartFromUnit(String unitTitle);
-
-  /// Placement outcome 4 of 4: no A2+ claim is ever made, only that A1 shows no gaps.
-  ///
-  /// In en, this message translates to:
-  /// **'A1 appears mastered — great work! Higher-level placement isn\'t available yet, but it\'s coming.'**
-  String get placementOutcomeMastered;
-
-  /// Placement result screen CTA linking to the recommended starting unit.
-  ///
-  /// In en, this message translates to:
-  /// **'Go to this unit'**
-  String get placementResultGoToUnit;
 
   /// Placement result screen dismiss button.
   ///
@@ -1759,24 +1867,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Begin the mission'**
   String get finalMissionStartButton;
-
-  /// Final Mission result screen app bar title.
-  ///
-  /// In en, this message translates to:
-  /// **'Mission result'**
-  String get finalMissionResultTitle;
-
-  /// Final Mission result: every required skill group passed independently.
-  ///
-  /// In en, this message translates to:
-  /// **'Mission complete — every required skill area came through.'**
-  String get finalMissionPassed;
-
-  /// Final Mission result: at least one required skill group didn't clear the bar yet.
-  ///
-  /// In en, this message translates to:
-  /// **'Not quite there yet'**
-  String get finalMissionNotYetTitle;
 
   /// Final Mission result screen dismiss button.
   ///
@@ -1796,24 +1886,6 @@ abstract class AppLocalizations {
   /// **'Start the assessment'**
   String get finalAssessmentStartButton;
 
-  /// Final Assessment result screen app bar title.
-  ///
-  /// In en, this message translates to:
-  /// **'Assessment result'**
-  String get finalAssessmentResultTitle;
-
-  /// Final Assessment overall summary when every required section passed.
-  ///
-  /// In en, this message translates to:
-  /// **'Every required skill met the bar for A1.'**
-  String get finalAssessmentOverallPassed;
-
-  /// Final Assessment overall summary when at least one required section didn't pass.
-  ///
-  /// In en, this message translates to:
-  /// **'Not every required skill met the bar yet — see the breakdown below.'**
-  String get finalAssessmentOverallNotYet;
-
   /// Final Assessment per-section status label.
   ///
   /// In en, this message translates to:
@@ -1826,23 +1898,11 @@ abstract class AppLocalizations {
   /// **'Not yet met'**
   String get finalAssessmentSkillNotMet;
 
-  /// Final Assessment per-section status label — shown when a section has a free-response item this app can't auto-grade yet.
-  ///
-  /// In en, this message translates to:
-  /// **'Pending review'**
-  String get finalAssessmentSkillPendingReview;
-
   /// Final Assessment result screen dismiss button.
   ///
   /// In en, this message translates to:
   /// **'Done'**
   String get finalAssessmentDone;
-
-  /// Final Assessment result screen — a section's average score as a percentage.
-  ///
-  /// In en, this message translates to:
-  /// **'{percent}%'**
-  String finalAssessmentSectionScore(int percent);
 
   /// Final Assessment result screen CTA shown when the overall result isn't yet a pass, linking back to the Learn tab.
   ///

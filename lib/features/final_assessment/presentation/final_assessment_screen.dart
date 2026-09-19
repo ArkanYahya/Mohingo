@@ -10,6 +10,8 @@ import '../../../content/models/media_specification.dart';
 import '../../../content/providers/course_content_providers.dart';
 import '../../../core/l10n/generated/app_localizations.dart';
 import '../../../core/l10n/skill_label.dart';
+import '../../../core/widgets/section_heading.dart';
+import '../../../core/widgets/status_pill.dart';
 import '../../activity_engine/domain/activity_submission.dart';
 import '../../activity_engine/domain/evidence_skill_resolver.dart';
 import '../../activity_engine/presentation/activity_view_registry.dart';
@@ -17,6 +19,7 @@ import '../../progress/providers/current_learner_provider.dart';
 import '../../progress/providers/progress_providers.dart';
 import '../../tests_home/presentation/widgets/test_intro_view.dart';
 import '../../tests_home/presentation/widgets/test_question_frame.dart';
+import '../../tests_home/presentation/widgets/test_result_view.dart';
 import '../../tests_home/providers/tests_home_providers.dart';
 import '../domain/final_assessment_scoring.dart';
 
@@ -28,8 +31,13 @@ import '../domain/final_assessment_scoring.dart';
 Widget buildFinalAssessmentResultViewForTest({
   required List<FinalAssessmentSectionResult> results,
   required bool overallPassed,
+  Map<String, double> passMarks = const {},
 }) {
-  return _AssessmentResultView(results: results, overallPassed: overallPassed);
+  return _AssessmentResultView(
+    results: results,
+    overallPassed: overallPassed,
+    passMarks: passMarks,
+  );
 }
 
 class _FlatItem {
@@ -218,6 +226,10 @@ class _FinalAssessmentBodyState extends ConsumerState<_FinalAssessmentBody> {
 
     if (_results != null) {
       return _AssessmentResultView(
+        passMarks: {
+          for (final key in widget.assessment.sections.keys)
+            key: widget.assessment.minimumScoreForSection(key),
+        },
         results: _results!,
         overallPassed: FinalAssessmentScoring.overallPassed(
           widget.assessment,
@@ -298,77 +310,89 @@ IconData _sectionIcon(String sectionKey) => switch (sectionKey) {
   _ => Icons.translate_rounded,
 };
 
+/// The assessment's result: passed or not yet with how many skills passed,
+/// then each section with its score against its own pass mark, or
+/// "Waiting for review" when its answers can't be scored yet.
 class _AssessmentResultView extends StatelessWidget {
   const _AssessmentResultView({
     required this.results,
     required this.overallPassed,
+    required this.passMarks,
   });
 
   final List<FinalAssessmentSectionResult> results;
   final bool overallPassed;
 
+  /// Each section's pass mark (0–1), by section key.
+  final Map<String, double> passMarks;
+
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    return Scaffold(
-      appBar: AppBar(title: Text(l10n.finalAssessmentResultTitle)),
-      body: SafeArea(
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.all(24),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Text(
-                overallPassed
-                    ? l10n.finalAssessmentOverallPassed
-                    : l10n.finalAssessmentOverallNotYet,
-                textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.titleMedium,
-              ),
-              const SizedBox(height: 16),
-              for (final result in results)
-                Card(
-                  child: ListTile(
-                    title: Text(sectionLabel(l10n, result.section)),
-                    subtitle: result.scoredCount > 0
-                        ? Text(
-                            l10n.finalAssessmentSectionScore(
-                              (result.averageScore * 100).round(),
-                            ),
-                          )
-                        : null,
-                    trailing: Text(switch (result.status) {
-                      FinalAssessmentSectionStatus.passed =>
-                        l10n.finalAssessmentSkillPassed,
-                      FinalAssessmentSectionStatus.notMet =>
-                        l10n.finalAssessmentSkillNotMet,
-                      FinalAssessmentSectionStatus.pendingReview =>
-                        l10n.finalAssessmentSkillPendingReview,
-                    }),
-                  ),
-                ),
-              const SizedBox(height: 16),
-              // The spacer lives inside the conditional so the pass path —
-              // where this button isn't rendered at all — doesn't leave a
-              // stray gap above "Done".
-              if (!overallPassed) ...[
-                FilledButton(
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                    context.go('/learn');
-                  },
-                  child: Text(l10n.finalAssessmentWhatsNext),
-                ),
-                const SizedBox(height: 8),
-              ],
-              OutlinedButton(
-                onPressed: () => Navigator.of(context).pop(),
-                child: Text(l10n.finalAssessmentDone),
-              ),
-            ],
-          ),
+    final passed = results
+        .where((r) => r.status == FinalAssessmentSectionStatus.passed)
+        .length;
+    void done() => Navigator.of(context).pop();
+
+    return TestResultView(
+      overline: l10n.testsAssessmentOverline,
+      title: overallPassed
+          ? l10n.assessmentResultPassedTitle
+          : l10n.assessmentResultNotYetTitle,
+      body: l10n.assessmentResultBody(passed, results.length),
+      primaryLabel: overallPassed
+          ? l10n.finalAssessmentDone
+          : l10n.finalAssessmentWhatsNext,
+      primaryArrow: !overallPassed,
+      onPrimary: overallPassed
+          ? done
+          : () {
+              done();
+              context.go('/learn');
+            },
+      secondaryLabel: overallPassed ? null : l10n.finalAssessmentDone,
+      onSecondary: done,
+      children: [
+        SectionHeading(l10n.testsResultHowYouDid),
+        ResultRowsCard(
+          rows: [for (final result in results) _sectionRow(l10n, result)],
         ),
-      ),
+      ],
+    );
+  }
+
+  Widget _sectionRow(AppLocalizations l10n, FinalAssessmentSectionResult r) {
+    final pending = r.status == FinalAssessmentSectionStatus.pendingReview;
+    final scored = r.scoredCount > 0 && !pending;
+    final mark = passMarks[r.section] ?? 0.6;
+    return SkillResultRow(
+      icon: _sectionIcon(r.section),
+      label: sectionLabel(l10n, r.section),
+      trailing: switch (r.status) {
+        FinalAssessmentSectionStatus.passed => StatusPill(
+          label: l10n.finalAssessmentSkillPassed,
+          tone: StatusTone.success,
+          icon: Icons.check_rounded,
+        ),
+        FinalAssessmentSectionStatus.notMet => StatusPill(
+          label: l10n.finalAssessmentSkillNotMet,
+          tone: StatusTone.attention,
+          icon: Icons.refresh_rounded,
+        ),
+        FinalAssessmentSectionStatus.pendingReview => StatusPill(
+          label: l10n.testsWaitingReview,
+        ),
+      },
+      progress: scored ? r.averageScore.clamp(0, 1) : null,
+      progressDone: r.status == FinalAssessmentSectionStatus.passed,
+      caption: pending
+          ? l10n.testsPendingBody
+          : scored
+          ? l10n.testsScorePassMark(
+              (r.averageScore * 100).round(),
+              (mark * 100).round(),
+            )
+          : null,
     );
   }
 }

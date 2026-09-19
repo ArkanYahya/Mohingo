@@ -1074,53 +1074,110 @@ class AppLocalizationsAr extends AppLocalizations {
   String get placementStartButton => 'ابدأ اختبار تحديد المستوى';
 
   @override
-  String get placementConfidenceQuestion =>
-      'بشكل عام، كم شعرت بالثقة في إجاباتك؟';
+  String get testsResultHowYouDid => 'كيف كان أداؤك';
 
   @override
-  String get placementConfidenceLow => 'ليست كبيرة';
-
-  @override
-  String get placementConfidenceHigh => 'ثقة كبيرة';
-
-  @override
-  String get placementResultTitle => 'نتيجتك';
-
-  @override
-  String get placementOutcomeStartWithEssentials =>
-      'ابدأ بأساسيات اللغة الإنجليزية (الوحدة 0) — ستمنحك القاعدة التي يُبنى عليها بقية مستوى A1.';
-
-  @override
-  String get placementOutcomeStartA1FromU1 =>
-      'أساسياتك جيدة — ابدأ مستوى A1 من الوحدة الأولى.';
-
-  @override
-  String placementOutcomeStartFromUnit(String unitTitle) {
-    return 'أنت متقدّم في الوحدات الأولى — ابدأ من $unitTitle.';
+  String testsSkillScore(int right, int total) {
+    return '$right من $total';
   }
 
   @override
-  String get placementOutcomeMastered =>
-      'يبدو أنك أتقنت مستوى A1 بالكامل — عمل رائع! تحديد المستويات الأعلى غير متاح بعد، لكنه قادم.';
+  String get testsWaitingReview => 'بانتظار المراجعة';
 
   @override
-  String get placementResultGoToUnit => 'اذهب إلى هذه الوحدة';
+  String get testsPendingBody =>
+      'إجاباتك محفوظة، وتُقيَّم هذه المهارة بعد مراجعتها.';
+
+  @override
+  String testsScorePassMark(int score, int mark) {
+    return '$score% · درجة النجاح $mark%';
+  }
+
+  @override
+  String get placementResultOverline => 'نتيجة تحديد المستوى';
+
+  @override
+  String placementResultHeadline(int unit) {
+    return 'ابدأ من الوحدة $unit';
+  }
+
+  @override
+  String get placementResultBodyEssentials =>
+      'تمنحك الوحدة 1 الأساسيات التي تُبنى عليها كل الوحدات الأخرى.';
+
+  @override
+  String placementResultBodyUnit(int unit) {
+    return 'تعرف الوحدات السابقة جيداً. في الوحدة $unit تبدأ الأشياء الجديدة عليك.';
+  }
+
+  @override
+  String get placementResultMasteredTitle => 'يبدو أنك أتقنت A1';
+
+  @override
+  String get placementResultMasteredBody =>
+      'خذ الاختبار النهائي لتثبت ذلك. المستويات الأعلى في الطريق.';
+
+  @override
+  String get placementResultEarlierOpen =>
+      'تبقى الوحدات السابقة مفتوحة — عد إلى أي درس متى شئت.';
+
+  @override
+  String placementResultGoToUnitN(int unit) {
+    return 'انتقل إلى الوحدة $unit';
+  }
+
+  @override
+  String get placementConfidence1 => 'لست واثقاً أبداً';
+
+  @override
+  String get placementConfidence2 => 'واثق قليلاً';
+
+  @override
+  String get placementConfidence3 => 'واثق إلى حدّ ما';
+
+  @override
+  String get placementConfidence4 => 'واثق بدرجة كبيرة';
+
+  @override
+  String get placementConfidence5 => 'واثق تماماً';
+
+  @override
+  String get placementConfidenceNote => 'إجابتك لا تغيّر نتيجتك.';
+
+  @override
+  String get missionResultPassedTitle => 'اكتملت المهمة';
+
+  @override
+  String get missionResultPassedBody =>
+      'نجحت كل المهارات المطلوبة على مدار اليوم.';
+
+  @override
+  String get missionResultNotYetTitle => 'لم تنجح بعد';
+
+  @override
+  String get missionResultNotYetBody =>
+      'بعض المهارات تحتاج إلى مزيد من التدريب — انظر أدناه. يمكنك إعادة المهمة في أي وقت.';
+
+  @override
+  String get assessmentResultPassedTitle => 'نجحت في A1';
+
+  @override
+  String get assessmentResultNotYetTitle => 'لم تنجح بعد';
+
+  @override
+  String assessmentResultBody(int passed, int total) {
+    return 'نجحت في $passed من $total مهارات.';
+  }
+
+  @override
+  String get placementConfidenceQuestion =>
+      'بشكل عام، كم شعرت بالثقة في إجاباتك؟';
 
   @override
   String get placementResultDone => 'تم';
 
   @override
   String get finalMissionStartButton => 'ابدأ المهمة';
-
-  @override
-  String get finalMissionResultTitle => 'نتيجة المهمة';
-
-  @override
-  String get finalMissionPassed =>
-      'أكملت المهمة — كل مهارة مطلوبة تحققت بنجاح.';
-
-  @override
-  String get finalMissionNotYetTitle => 'لم تصل بعد';
 
   @override
   String get finalMissionDone => 'تم';
@@ -1133,32 +1190,13 @@ class AppLocalizationsAr extends AppLocalizations {
   String get finalAssessmentStartButton => 'ابدأ الاختبار';
 
   @override
-  String get finalAssessmentResultTitle => 'نتيجة التقييم';
-
-  @override
-  String get finalAssessmentOverallPassed =>
-      'كل مهارة مطلوبة حققت الحد المطلوب لمستوى A1.';
-
-  @override
-  String get finalAssessmentOverallNotYet =>
-      'لم تحقق كل المهارات المطلوبة الحد المطلوب بعد — راجع التفاصيل أدناه.';
-
-  @override
   String get finalAssessmentSkillPassed => 'تم اجتيازها';
 
   @override
   String get finalAssessmentSkillNotMet => 'لم تُحقَّق بعد';
 
   @override
-  String get finalAssessmentSkillPendingReview => 'قيد المراجعة';
-
-  @override
   String get finalAssessmentDone => 'تم';
-
-  @override
-  String finalAssessmentSectionScore(int percent) {
-    return '$percent٪';
-  }
 
   @override
   String get finalAssessmentWhatsNext => 'واصل التدرّب';
