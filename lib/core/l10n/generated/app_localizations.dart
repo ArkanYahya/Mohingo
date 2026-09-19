@@ -824,16 +824,82 @@ abstract class AppLocalizations {
   /// **'{current} of {total}'**
   String lessonPlayerProgress(int current, int total);
 
+  /// Overline on a finished lesson's answer review.
+  ///
+  /// In en, this message translates to:
+  /// **'Unit {unit} · Lesson {lesson} · Your answers'**
+  String lessonReviewOverline(int unit, int lesson);
+
+  /// Answer review summary.
+  ///
+  /// In en, this message translates to:
+  /// **'{right} of {total} right'**
+  String lessonReviewScore(int right, int total);
+
+  /// A question's number, e.g. in its summary mark's screen-reader label.
+  ///
+  /// In en, this message translates to:
+  /// **'Question {n}'**
+  String lessonReviewQuestion(int n);
+
+  /// Above each reviewed question: its number and skill.
+  ///
+  /// In en, this message translates to:
+  /// **'{n} · {skill}'**
+  String lessonReviewQuestionHeader(int n, String skill);
+
+  /// A reviewed answer that was right.
+  ///
+  /// In en, this message translates to:
+  /// **'Right'**
+  String get lessonReviewRight;
+
+  /// A reviewed answer that was wrong.
+  ///
+  /// In en, this message translates to:
+  /// **'Not quite'**
+  String get lessonReviewNotQuite;
+
+  /// A reviewed answer that was saved without a verdict.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved'**
+  String get lessonReviewSaved;
+
+  /// A question the learner never answered.
+  ///
+  /// In en, this message translates to:
+  /// **'Not answered'**
+  String get lessonReviewNotAnsweredPill;
+
+  /// Answer review filter: every question.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get lessonReviewFilterAll;
+
+  /// Answer review filter: only the wrong answers.
+  ///
+  /// In en, this message translates to:
+  /// **'To revisit'**
+  String get lessonReviewFilterToRevisit;
+
+  /// Answer review when To revisit is empty.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing to revisit — every answer was right.'**
+  String get lessonReviewNothingToRevisit;
+
   /// Button on the lesson review screen (a finished lesson's read-only answer walkthrough) that starts a fresh replay of the lesson.
   ///
   /// In en, this message translates to:
-  /// **'Practice again'**
+  /// **'Practise this lesson again'**
   String get lessonReviewPracticeAgain;
 
   /// Placeholder shown on the lesson review screen for an activity with no recorded attempt at all (e.g. content changed after the lesson was finished).
   ///
   /// In en, this message translates to:
-  /// **'Not answered'**
+  /// **'You didn\'t answer this one.'**
   String get lessonReviewNotAnswered;
 
   /// Vocabulary screen stat tile label — count of words overdue for spaced review.

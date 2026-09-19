@@ -506,10 +506,52 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get lessonReviewPracticeAgain => 'تدرّب مرة أخرى';
+  String lessonReviewOverline(int unit, int lesson) {
+    return 'الوحدة $unit · الدرس $lesson · إجاباتك';
+  }
 
   @override
-  String get lessonReviewNotAnswered => 'لم تتم الإجابة';
+  String lessonReviewScore(int right, int total) {
+    return '$right من $total صحيحة';
+  }
+
+  @override
+  String lessonReviewQuestion(int n) {
+    return 'السؤال $n';
+  }
+
+  @override
+  String lessonReviewQuestionHeader(int n, String skill) {
+    return '$n · $skill';
+  }
+
+  @override
+  String get lessonReviewRight => 'صحيحة';
+
+  @override
+  String get lessonReviewNotQuite => 'ليست تماماً';
+
+  @override
+  String get lessonReviewSaved => 'محفوظة';
+
+  @override
+  String get lessonReviewNotAnsweredPill => 'بلا إجابة';
+
+  @override
+  String get lessonReviewFilterAll => 'الكل';
+
+  @override
+  String get lessonReviewFilterToRevisit => 'للمراجعة';
+
+  @override
+  String get lessonReviewNothingToRevisit =>
+      'لا شيء للمراجعة — كل الإجابات صحيحة.';
+
+  @override
+  String get lessonReviewPracticeAgain => 'تدرّب على هذا الدرس مجدداً';
+
+  @override
+  String get lessonReviewNotAnswered => 'لم تُجب عن هذا السؤال.';
 
   @override
   String get vocabularyStatDue => 'مستحقة';

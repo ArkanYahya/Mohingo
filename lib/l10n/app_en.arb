@@ -377,11 +377,33 @@
       "total": {"type": "int"}
     }
   },
-  "lessonReviewPracticeAgain": "Practice again",
+  "lessonReviewOverline": "Unit {unit} · Lesson {lesson} · Your answers",
+  "@lessonReviewOverline": {"description": "Overline on a finished lesson's answer review.", "placeholders": {"unit": {"type": "int"}, "lesson": {"type": "int"}}},
+  "lessonReviewScore": "{right} of {total} right",
+  "@lessonReviewScore": {"description": "Answer review summary.", "placeholders": {"right": {"type": "int"}, "total": {"type": "int"}}},
+  "lessonReviewQuestion": "Question {n}",
+  "@lessonReviewQuestion": {"description": "A question's number, e.g. in its summary mark's screen-reader label.", "placeholders": {"n": {"type": "int"}}},
+  "lessonReviewQuestionHeader": "{n} · {skill}",
+  "@lessonReviewQuestionHeader": {"description": "Above each reviewed question: its number and skill.", "placeholders": {"n": {"type": "int"}, "skill": {"type": "String"}}},
+  "lessonReviewRight": "Right",
+  "@lessonReviewRight": {"description": "A reviewed answer that was right."},
+  "lessonReviewNotQuite": "Not quite",
+  "@lessonReviewNotQuite": {"description": "A reviewed answer that was wrong."},
+  "lessonReviewSaved": "Saved",
+  "@lessonReviewSaved": {"description": "A reviewed answer that was saved without a verdict."},
+  "lessonReviewNotAnsweredPill": "Not answered",
+  "@lessonReviewNotAnsweredPill": {"description": "A question the learner never answered."},
+  "lessonReviewFilterAll": "All",
+  "@lessonReviewFilterAll": {"description": "Answer review filter: every question."},
+  "lessonReviewFilterToRevisit": "To revisit",
+  "@lessonReviewFilterToRevisit": {"description": "Answer review filter: only the wrong answers."},
+  "lessonReviewNothingToRevisit": "Nothing to revisit — every answer was right.",
+  "@lessonReviewNothingToRevisit": {"description": "Answer review when To revisit is empty."},
+  "lessonReviewPracticeAgain": "Practise this lesson again",
   "@lessonReviewPracticeAgain": {
     "description": "Button on the lesson review screen (a finished lesson's read-only answer walkthrough) that starts a fresh replay of the lesson."
   },
-  "lessonReviewNotAnswered": "Not answered",
+  "lessonReviewNotAnswered": "You didn't answer this one.",
   "@lessonReviewNotAnswered": {
     "description": "Placeholder shown on the lesson review screen for an activity with no recorded attempt at all (e.g. content changed after the lesson was finished)."
   },

@@ -485,10 +485,52 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get lessonReviewPracticeAgain => 'Practice again';
+  String lessonReviewOverline(int unit, int lesson) {
+    return 'Unit $unit · Lesson $lesson · Your answers';
+  }
 
   @override
-  String get lessonReviewNotAnswered => 'Not answered';
+  String lessonReviewScore(int right, int total) {
+    return '$right of $total right';
+  }
+
+  @override
+  String lessonReviewQuestion(int n) {
+    return 'Question $n';
+  }
+
+  @override
+  String lessonReviewQuestionHeader(int n, String skill) {
+    return '$n · $skill';
+  }
+
+  @override
+  String get lessonReviewRight => 'Right';
+
+  @override
+  String get lessonReviewNotQuite => 'Not quite';
+
+  @override
+  String get lessonReviewSaved => 'Saved';
+
+  @override
+  String get lessonReviewNotAnsweredPill => 'Not answered';
+
+  @override
+  String get lessonReviewFilterAll => 'All';
+
+  @override
+  String get lessonReviewFilterToRevisit => 'To revisit';
+
+  @override
+  String get lessonReviewNothingToRevisit =>
+      'Nothing to revisit — every answer was right.';
+
+  @override
+  String get lessonReviewPracticeAgain => 'Practise this lesson again';
+
+  @override
+  String get lessonReviewNotAnswered => 'You didn\'t answer this one.';
 
   @override
   String get vocabularyStatDue => 'Due';
