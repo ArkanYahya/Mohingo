@@ -1388,6 +1388,9 @@ Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>"
 
 ### Task 7: The Learn tab's level strip
 
+**Arabic copy rule for these strings (learned from rendering the mockups):** an Arabic noun always precedes a Latin level code (`المستوى A2`, never a bare `A2` at a sentence boundary), and bidi isolates (`⁨`…`⁩`) are used **only** where two codes share one sentence — the lock sheet's title and body. Two bare codes in one Arabic sentence rendered in the wrong order ("A2 builds on A1" read as "A1 … A2"); isolates fix that, but inside a button they drew as a visible block in the render, so they stay out of button labels. The repo already uses isolates this way (`course_screen.dart`'s `'⁨${unit.title}⁩'`).
+
+
 **Files:**
 - Create: `lib/features/learning_path/presentation/widgets/level_strip.dart`
 - Modify: `lib/features/learning_path/presentation/course_screen.dart` (delete `_ComingLater` and `_LevelPill`, follow the current level), `lib/l10n/app_en.arb`, `lib/l10n/app_ar.arb` (+ generated)
@@ -1418,7 +1421,7 @@ Add to `lib/l10n/app_ar.arb`:
   "learnLevelSemanticsOpen": "المستوى {level}، مفتوح — انتقل إليه",
   "learnLevelSemanticsLocked": "المستوى {level}، مقفل",
   "learnLevelSemanticsComingSoon": "المستوى {level}، قادم لاحقًا",
-  "learnLevelComingLaterBody": "مستويات أخرى في الطريق، وكل ما تتعلّمه في {level} يبقى معك."
+  "learnLevelComingLaterBody": "مستويات أخرى في الطريق، وكل ما تتعلّمه في المستوى {level} يبقى معك."
 ```
 
 Delete `learnComingLaterBody` and `learnComingLaterTitle` from both files — the strip replaces both (`learnComingLaterBody` also hard-coded "A1", which is what the new parameterised string fixes).
@@ -1709,13 +1712,13 @@ Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>"
 `lib/l10n/app_ar.arb`:
 
 ```json
-  "levelLockTitle": "{level} يُبنى على {previous}",
-  "levelLockBody": "إنهاء {previous} يفتحه. ويمكنك معرفة مستواك عبر اختبار تحديد المستوى، أو فتح {level} على أي حال.",
+  "levelLockTitle": "المستوى ⁨{level}⁩ يُبنى على المستوى ⁨{previous}⁩",
+  "levelLockBody": "إنهاء ⁨{previous}⁩ يفتحه. ويمكنك معرفة مستواك عبر اختبار تحديد المستوى، أو فتح ⁨{level}⁩ على أي حال.",
   "levelLockTakeTest": "اختبر مستواك",
-  "levelLockOpenAnyway": "افتح {level} على أي حال",
-  "levelNotReleasedTitle": "{level} ليس جاهزًا بعد",
+  "levelLockOpenAnyway": "افتح المستوى {level} على أي حال",
+  "levelNotReleasedTitle": "المستوى {level} ليس جاهزًا بعد",
   "levelNotReleasedBody": "ستُفتح دروسه عندما يصبح جاهزًا، ويمكنك الآن الاطلاع على محتواه.",
-  "levelNotReleasedBrowse": "اطّلع على محتوى {level}"
+  "levelNotReleasedBrowse": "اطّلع على محتوى المستوى {level}"
 ```
 
 Run: `flutter gen-l10n`
@@ -1897,9 +1900,9 @@ Browsing shows the level's real unit list — what it covers, in order — with 
 `lib/l10n/app_ar.arb`:
 
 ```json
-  "learnPreviewBannerTitle": "نظرة على {level}",
-  "learnPreviewBannerBody": "هذه وحدات {level} التي سيتناولها. ستُفتح دروسه عندما يصبح جاهزًا.",
-  "learnPreviewBackToCurrent": "العودة إلى {level}"
+  "learnPreviewBannerTitle": "نظرة على المستوى {level}",
+  "learnPreviewBannerBody": "هذه وحدات المستوى {level} التي سيتناولها. ستُفتح دروسه عندما يصبح جاهزًا.",
+  "learnPreviewBackToCurrent": "العودة إلى المستوى {level}"
 ```
 
 Run: `flutter gen-l10n`
