@@ -61,4 +61,19 @@ void main() {
     ];
     expect(offenders, isEmpty);
   });
+
+  test('every lesson text carries its whole Arabic, not a stub', () {
+    bool isStub(String? ar) {
+      final text = ar?.trim() ?? '';
+      return text.isEmpty || text.endsWith('...') || text.endsWith('…');
+    }
+
+    final offenders = [
+      for (final unit in _bundle['units'] as List)
+        for (final lesson in (unit as Map)['lessons'] as List)
+          if ((lesson as Map)['readingText'] case final Map reading)
+            if (isStub(reading['textAr'] as String?)) lesson['id'],
+    ];
+    expect(offenders, isEmpty);
+  });
 }
