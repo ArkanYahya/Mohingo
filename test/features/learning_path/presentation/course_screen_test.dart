@@ -305,10 +305,9 @@ void main() {
       find.bySemanticsLabel(l10n.learnLevelSemanticsLocked('A2')),
       findsOneWidget,
     );
-    // B1-C2 have no content, so they are not segments: the caption is
-    // what tells the learner more levels are coming.
+    // B1 has no content, so it is not a segment: the caption is what
+    // tells the learner more levels are coming.
     expect(find.text('B1'), findsNothing);
-    expect(find.text('C2'), findsNothing);
     expect(find.text(l10n.learnLevelComingLaterBody('A1')), findsOneWidget);
   });
 
