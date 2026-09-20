@@ -84,7 +84,32 @@ void main() {
             reason: '${a.id} has an empty keyword group',
           );
         }
-        expect(map['minGroupsMatched'], isA<int>(), reason: a.id);
+        final minGroupsMatched = map['minGroupsMatched'];
+        expect(minGroupsMatched, isA<int>(), reason: a.id);
+        final requiredMatches = minGroupsMatched as int;
+        // minGroupsMatched: 0 satisfies a naive presence check while
+        // evaluator.dart's _keywordChecklist marks every answer correct at
+        // score 1.0 regardless of content (matchedGroups >= 0 is always
+        // true) — worse than the legacy shape it replaced, which at least
+        // left the task ungraded rather than grading it perfect.
+        expect(
+          requiredMatches,
+          greaterThanOrEqualTo(1),
+          reason:
+              '${a.id} has minGroupsMatched=$requiredMatches — the '
+              'evaluator marks every answer correct regardless of content',
+        );
+        // The opposite failure is equally broken: a rubric that demands
+        // more groups than it contains can never be satisfied by any
+        // answer.
+        final groupCount = groups.length;
+        expect(
+          groupCount,
+          greaterThanOrEqualTo(requiredMatches),
+          reason:
+              '${a.id} requires $requiredMatches of only $groupCount '
+              'groups — this can never be satisfied',
+        );
 
         // The raw-shape checks above inspect the JSON; this inspects what
         // the app actually gets. The parser drops a malformed spec to null

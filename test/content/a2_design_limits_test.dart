@@ -96,12 +96,32 @@ void main() {
         if (a is! MatchActivity) continue;
         final pairs = a.raw['pairs'];
         if (pairs is! List || pairs.isEmpty) continue;
+        // Count a pair as a translation if EITHER side carries Arabic
+        // script. Reading only p[1] means moving the Arabic to the left of
+        // each pair (English on the right) makes a real translation match
+        // count as zero, letting a unit exceed the cap undetected.
         final looksLikeTranslation = pairs.every(
-          (p) => p is List && p.length == 2 && arabic.hasMatch('${p[1]}'),
+          (p) =>
+              p is List &&
+              p.length == 2 &&
+              (arabic.hasMatch('${p[0]}') || arabic.hasMatch('${p[1]}')),
         );
         if (looksLikeTranslation) translationMatches++;
       }
       expect(translationMatches, lessThanOrEqualTo(1), reason: unit.id);
+    }
+  });
+
+  test('every activity carries at least one canDo objective', () {
+    // The category-check below iterates an activity's objectives, so
+    // "canDo": [] passes it vacuously. An untagged activity is worse than
+    // one tagged wrong: deleting a tag is the cheapest way to make that
+    // gate green, and it can quietly drop a required objective below its
+    // two carriers without any gate noticing.
+    for (final unit in finishedA2Units()) {
+      for (final a in activitiesOf(unit)) {
+        expect(a.canDo, isNotEmpty, reason: '${a.id} carries no canDo tag');
+      }
     }
   });
 

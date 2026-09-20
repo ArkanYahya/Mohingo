@@ -46,10 +46,21 @@ void main() {
     for (final unit in finishedA2Units()) {
       for (final lesson in unit.lessons) {
         for (final line in lesson.encounterDialogue) {
+          final ar = line.ar.trim();
           expect(
-            line.ar.trim(),
+            ar,
             isNotEmpty,
             reason: '${lesson.id} line by ${line.speaker}',
+          );
+          // Non-empty is not enough — the cheapest way to pass a bilingual
+          // gate is to copy the English string into `ar`. Require actual
+          // Arabic script, which that copy would never contain.
+          expect(
+            _arabic.hasMatch(ar),
+            isTrue,
+            reason:
+                '${lesson.id} line by ${line.speaker} has no Arabic '
+                'script: "$ar"',
           );
         }
       }
@@ -59,7 +70,13 @@ void main() {
   test('every activity prompt carries Arabic', () {
     for (final unit in finishedA2Units()) {
       for (final a in activitiesOf(unit)) {
-        expect(a.promptAr?.trim() ?? '', isNotEmpty, reason: a.id);
+        final ar = a.promptAr?.trim() ?? '';
+        expect(ar, isNotEmpty, reason: a.id);
+        expect(
+          _arabic.hasMatch(ar),
+          isTrue,
+          reason: '${a.id} promptAr has no Arabic script: "$ar"',
+        );
       }
     }
   });
