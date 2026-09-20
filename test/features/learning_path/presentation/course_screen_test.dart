@@ -313,6 +313,16 @@ void main() {
     expect(find.text(l10n.learnLevelComingLaterBody('A1')), findsOneWidget);
   });
 
+  testWidgets('a level counts only its own units as mastered', (tester) async {
+    final (_, l10n) = await _pump(tester, unlockedLevelIds: const {'a2'});
+
+    await tester.tap(find.text('A2'));
+    await tester.pumpAndSettle();
+
+    // A1-U0 is mastered; A2 has one unit and no progress at all.
+    expect(find.text(l10n.homeLevelProgressCaption(0, 1)), findsOneWidget);
+  });
+
   testWidgets('tapping an open level switches the course page to it', (
     tester,
   ) async {

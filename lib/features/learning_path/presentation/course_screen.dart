@@ -197,9 +197,14 @@ class _CourseBody extends StatelessWidget {
     final stateByUnitId = {
       for (final p in unitProgress) p.unitId: ProgressState.fromRaw(p.state),
     };
+    final unitIdsInLevel = {for (final unit in units) unit.id};
+    // unitProgress spans every level the learner has touched; a caption,
+    // a segment and the current-unit search all mean "in this level".
     final masteredIds = {
       for (final entry in stateByUnitId.entries)
-        if (entry.value == ProgressState.mastered) entry.key,
+        if (entry.value == ProgressState.mastered &&
+            unitIdsInLevel.contains(entry.key))
+          entry.key,
     };
     final currentId = currentUnitId(
       units: units,
