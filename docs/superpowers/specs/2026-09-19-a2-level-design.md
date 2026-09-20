@@ -219,6 +219,13 @@ App work is covered by its own tests: cross-level lookup, current level, locks, 
 
 New ADR (multiple levels: current level, cross-level references, level locks). Updates to PRODUCT.md (A2 in scope), ROADMAP.md (A2 in progress; correct the "no new app mechanics" claim), ARCHITECTURE.md, DATA_MODEL.md (schema v5, A2 bundle, cross-level references), GLOSSARY.md (Current level, Level lock, "From A1" reference, placement blocks), UX_PRINCIPLES.md (lock copy), TESTING.md (A2 content tests).
 
+## Carried forward from step 1 (landed 2026-09-20, branch `feature/a2-foundations`)
+
+Two things the step-1 execution decided that later steps must honour:
+
+- **The A2 content tests (step 3) must also fail a present-but-non-String bilingual field** (`ar`, `textAr`, `sourceText`), alongside the "no empty Arabic" rule. Step 1 unified four blank-to-null normalizations onto one `nonBlank(Object?)` helper (`lib/content/models/non_blank.dart`), which returns null for a non-String where two of those sites previously threw a `TypeError` at parse time. The looser parse is accepted deliberately — it matches how the content layer already degrades optional fields — so the strictness moves to the content tests instead.
+- **Each step's plan must derive its documentation list from this section plus CLAUDE.md's Definition-of-done table**, not by hand. Step 1's plan omitted ROADMAP.md and the whole-branch review caught the stale "no new app mechanics required" claim still standing.
+
 ## Non-goals
 
 - Re-tagging A1 activities' `canDo` lists (limitation 3) — a separate follow-up.
