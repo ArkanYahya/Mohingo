@@ -36,12 +36,17 @@ class LevelStrip extends StatelessWidget {
 
   final void Function(LevelCatalogEntry entry, LevelAccess access) onSelect;
 
-  /// A level whose access hasn't resolved yet reads as locked, never as
-  /// open (which would let a tap switch into it on a guess) and never as
-  /// [LevelAccess.noContent] (which is the one thing a level in this track
-  /// cannot be). The real value replaces it a frame later.
+  /// A level whose access hasn't resolved yet must default to the state
+  /// with no persistent action behind it, not merely to "some kind of
+  /// locked": [LevelAccess.lockedNeedsPrerequisite]'s sheet offers "Open
+  /// anyway", and `LevelSelectionController.unlock`/`select` don't
+  /// re-check access — a tap landing in that window could move the
+  /// learner into a level the app hasn't released. Never open (which
+  /// would let a tap switch into it on a guess) and never
+  /// [LevelAccess.noContent] (which is the one thing a level in this
+  /// track cannot be). The real value replaces it a frame later.
   LevelAccess _accessFor(LevelCatalogEntry entry) =>
-      access[entry.levelId] ?? LevelAccess.lockedNeedsPrerequisite;
+      access[entry.levelId] ?? LevelAccess.notReleased;
 
   @override
   Widget build(BuildContext context) {
