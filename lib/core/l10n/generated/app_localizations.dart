@@ -2251,6 +2251,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Hear it again'**
   String get speakPartnerPlay;
+
+  /// Title of the card holding a lesson's model text (a message, a menu, a profile) in the lesson intro.
+  ///
+  /// In en, this message translates to:
+  /// **'Read the text'**
+  String get lessonIntroReadTitle;
 }
 
 class _AppLocalizationsDelegate

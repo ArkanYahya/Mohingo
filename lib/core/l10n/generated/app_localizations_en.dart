@@ -1363,4 +1363,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get speakPartnerPlay => 'Hear it again';
+
+  @override
+  String get lessonIntroReadTitle => 'Read the text';
 }

@@ -19,6 +19,7 @@ import 'package:mohingo/features/lesson_player/presentation/lesson_player_screen
 import 'package:mohingo/features/lesson_player/presentation/widgets/lesson_conversation_step.dart';
 import 'package:mohingo/features/lesson_player/presentation/widgets/lesson_key_phrases_step.dart';
 import 'package:mohingo/features/lesson_player/presentation/widgets/lesson_progress_bar.dart';
+import 'package:mohingo/features/lesson_player/presentation/widgets/lesson_reading_step.dart';
 import 'package:mohingo/features/speech/domain/speech_capability_service.dart';
 import 'package:mohingo/features/speech/domain/speech_recognition_service.dart';
 import 'package:mohingo/features/speech/providers/speech_providers.dart';
@@ -218,6 +219,30 @@ void main() {
     await _pumpPlayer(tester, lessonId: 'A1-U1-L4');
 
     expect(find.byType(LessonConversationStep), findsNothing);
+    expect(find.byType(ActivityChrome), findsOneWidget);
+  });
+
+  testWidgets('a lesson built around a text opens on it — its title, the '
+      'English and its Arabic, which the switch hides — then key phrases, '
+      'then the first question', (tester) async {
+    await _pumpPlayer(tester, unitId: 'A1-U2', lessonId: 'A1-U2-L6');
+
+    expect(find.byType(LessonReadingStep), findsOneWidget);
+    expect(find.text('A People Profile'), findsOneWidget);
+    expect(find.text("Maya's Family"), findsOneWidget);
+    expect(find.textContaining('My name is Maya.'), findsOneWidget);
+    expect(find.textContaining('اسمي مايا.'), findsOneWidget);
+
+    await tester.tap(find.byType(Switch));
+    await tester.pumpAndSettle();
+    expect(find.textContaining('اسمي مايا.'), findsNothing);
+
+    await tester.tap(find.byType(FilledButton));
+    await tester.pumpAndSettle();
+    expect(find.byType(LessonKeyPhrasesStep), findsOneWidget);
+
+    await tester.tap(find.byType(FilledButton));
+    await tester.pumpAndSettle();
     expect(find.byType(ActivityChrome), findsOneWidget);
   });
 

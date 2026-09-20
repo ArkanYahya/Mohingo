@@ -1394,4 +1394,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get speakPartnerPlay => 'استمع مرة أخرى';
+
+  @override
+  String get lessonIntroReadTitle => 'اقرأ النص';
 }
