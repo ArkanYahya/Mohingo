@@ -185,6 +185,12 @@ void main() {
 
     // The app is up: the gate never waited on A2. A level that fails to
     // load is handled on the screen that shows it, not at the front door.
+    //
+    // That isn't what this next line is checking, though: if the gate had
+    // waited on A2, _pumpAppAndWaitForContent's own assertion above would
+    // already have failed when AppShellScaffold never appeared. This line
+    // covers the other failure — the gate surfacing a later level's error
+    // as the app's own, via ContentErrorScreen.
     expect(find.byType(ContentErrorScreen), findsNothing);
   });
 }
