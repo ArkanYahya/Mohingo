@@ -221,11 +221,13 @@ class _CourseBody extends StatelessWidget {
         AppSpace.lg,
       ),
       children: [
-        Text(
-          l10n.learnCourseOverline.toUpperCase(),
-          style: overlineStyle(context, color: tokens.textSecondary),
-        ),
-        const SizedBox(height: AppSpace.xxs),
+        if (!isBrowsing) ...[
+          Text(
+            l10n.learnCourseOverline.toUpperCase(),
+            style: overlineStyle(context, color: tokens.textSecondary),
+          ),
+          const SizedBox(height: AppSpace.xxs),
+        ],
         Align(
           alignment: AlignmentDirectional.centerStart,
           child: Text(

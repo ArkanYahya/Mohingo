@@ -427,4 +427,19 @@ void main() {
     expect(find.text(l10n.learnLevelComingLaterBody('A1')), findsOneWidget);
     expect(await container.read(currentLevelIdProvider.future), 'a1');
   });
+
+  testWidgets('a preview is not called "your course"', (tester) async {
+    final (_, l10n) = await _pump(tester, previewLevelIds: const {'a2'});
+
+    final overline = find.text(l10n.learnCourseOverline.toUpperCase());
+    expect(overline, findsOneWidget);
+
+    await tester.tap(find.text('A2'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text(l10n.levelNotReleasedBrowse('A2')));
+    await tester.pumpAndSettle();
+
+    expect(find.text(l10n.learnPreviewBannerTitle('A2')), findsOneWidget);
+    expect(overline, findsNothing);
+  });
 }
