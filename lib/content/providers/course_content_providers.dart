@@ -11,9 +11,23 @@ import 'bundle_asset_loader.dart';
 
 part 'course_content_providers.g.dart';
 
-/// The level catalogue ([kLevelCatalog]); overridden in tests.
+/// Levels this build opens although they aren't released — set at build
+/// time with `--dart-define=MOHINGO_PREVIEW_LEVELS=a2` so the product owner
+/// can walk through a level's real lessons before it ships. Empty in a
+/// release build.
+const _previewLevelIds = String.fromEnvironment('MOHINGO_PREVIEW_LEVELS');
+
+/// The level catalogue ([kLevelCatalog]), with any development-opened
+/// preview levels promoted; overridden in tests.
 @Riverpod(keepAlive: true)
-List<LevelCatalogEntry> levelCatalog(Ref ref) => kLevelCatalog;
+List<LevelCatalogEntry> levelCatalog(Ref ref) => applyPreviewOverrides(
+  kLevelCatalog,
+  _previewLevelIds
+      .split(',')
+      .map((id) => id.trim().toLowerCase())
+      .where((id) => id.isNotEmpty)
+      .toSet(),
+);
 
 /// Reads bundle assets; overridden in tests.
 @Riverpod(keepAlive: true)
@@ -27,9 +41,12 @@ BundleAssetLoader bundleAssetLoader(Ref ref) => const RootBundleAssetLoader();
 /// level's index and is built with it attached, so its lessons can
 /// reference the earlier level's grammar, words and phrases.
 ///
-/// A [LevelAvailability.comingSoon] or unknown [levelId] fails fast with a
-/// [StateError] — callers should check the catalogue before invoking this
-/// provider, not rely on it to report unavailability.
+/// A level with no bundle ([LevelAvailability.comingSoon]) or an unknown
+/// [levelId] fails fast with a [StateError] — callers should check the
+/// catalogue before invoking this provider, not rely on it to report
+/// unavailability. A [LevelAvailability.preview] level's bundle loads like
+/// an available one's; it is the Learn tab, not this provider, that keeps
+/// its lessons closed.
 ///
 /// Failures surface as this provider's [AsyncError]: an
 /// `UnsupportedContentSchemaException`/`ContentParseException`/
@@ -39,7 +56,7 @@ BundleAssetLoader bundleAssetLoader(Ref ref) => const RootBundleAssetLoader();
 @Riverpod(keepAlive: true)
 Future<CourseContentIndex> courseContent(Ref ref, String levelId) async {
   final entry = levelCatalogEntryIn(ref.watch(levelCatalogProvider), levelId);
-  if (entry == null || entry.availability != LevelAvailability.available) {
+  if (entry == null || entry.bundleAssetPath == null) {
     throw StateError('Level "$levelId" has no content bundle to load');
   }
   final loader = ref.watch(bundleAssetLoaderProvider);

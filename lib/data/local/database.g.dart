@@ -544,6 +544,40 @@ class $CourseEnrolmentsTable extends CourseEnrolments
     type: DriftSqlType.string,
     requiredDuringInsert: true,
   );
+  static const VerificationMeta _levelIdMeta = const VerificationMeta(
+    'levelId',
+  );
+  @override
+  late final GeneratedColumn<String> levelId = GeneratedColumn<String>(
+    'level_id',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _lastSelectedAtMeta = const VerificationMeta(
+    'lastSelectedAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> lastSelectedAt =
+      GeneratedColumn<DateTime>(
+        'last_selected_at',
+        aliasedName,
+        true,
+        type: DriftSqlType.dateTime,
+        requiredDuringInsert: false,
+      );
+  static const VerificationMeta _unlockedAtMeta = const VerificationMeta(
+    'unlockedAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> unlockedAt = GeneratedColumn<DateTime>(
+    'unlocked_at',
+    aliasedName,
+    true,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: false,
+  );
   @override
   List<GeneratedColumn> get $columns => [
     id,
@@ -553,6 +587,9 @@ class $CourseEnrolmentsTable extends CourseEnrolments
     contentVersion,
     enrolledAt,
     status,
+    levelId,
+    lastSelectedAt,
+    unlockedAt,
   ];
   @override
   String get aliasedName => _alias ?? actualTableName;
@@ -620,6 +657,27 @@ class $CourseEnrolmentsTable extends CourseEnrolments
     } else if (isInserting) {
       context.missing(_statusMeta);
     }
+    if (data.containsKey('level_id')) {
+      context.handle(
+        _levelIdMeta,
+        levelId.isAcceptableOrUnknown(data['level_id']!, _levelIdMeta),
+      );
+    }
+    if (data.containsKey('last_selected_at')) {
+      context.handle(
+        _lastSelectedAtMeta,
+        lastSelectedAt.isAcceptableOrUnknown(
+          data['last_selected_at']!,
+          _lastSelectedAtMeta,
+        ),
+      );
+    }
+    if (data.containsKey('unlocked_at')) {
+      context.handle(
+        _unlockedAtMeta,
+        unlockedAt.isAcceptableOrUnknown(data['unlocked_at']!, _unlockedAtMeta),
+      );
+    }
     return context;
   }
 
@@ -657,6 +715,18 @@ class $CourseEnrolmentsTable extends CourseEnrolments
         DriftSqlType.string,
         data['${effectivePrefix}status'],
       )!,
+      levelId: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}level_id'],
+      ),
+      lastSelectedAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}last_selected_at'],
+      ),
+      unlockedAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}unlocked_at'],
+      ),
     );
   }
 
@@ -674,6 +744,23 @@ class CourseEnrolment extends DataClass implements Insertable<CourseEnrolment> {
   final String contentVersion;
   final DateTime enrolledAt;
   final String status;
+
+  /// The catalogue level this enrolment is for (`"a1"`, `"a2"`) — the same
+  /// key `kLevelCatalog` and `courseContentProvider` use. Null on rows
+  /// written before schema v5, which are read as the base level; see
+  /// `LearnerRepository.ensureEnrolled`, which backfills them.
+  final String? levelId;
+
+  /// When the learner last made this level the one they're working in. The
+  /// enrolment with the most recent value is the current level; null means
+  /// they have never chosen it explicitly.
+  final DateTime? lastSelectedAt;
+
+  /// When this level opened for the learner — by finishing the level it
+  /// builds on, by a placement result inside it, or by their own "open
+  /// anyway". Null while it is still locked. A level with no prerequisite
+  /// needs no unlock. See `lib/features/progress/domain/level_access.dart`.
+  final DateTime? unlockedAt;
   const CourseEnrolment({
     required this.id,
     required this.uuid,
@@ -682,6 +769,9 @@ class CourseEnrolment extends DataClass implements Insertable<CourseEnrolment> {
     required this.contentVersion,
     required this.enrolledAt,
     required this.status,
+    this.levelId,
+    this.lastSelectedAt,
+    this.unlockedAt,
   });
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
@@ -693,6 +783,15 @@ class CourseEnrolment extends DataClass implements Insertable<CourseEnrolment> {
     map['content_version'] = Variable<String>(contentVersion);
     map['enrolled_at'] = Variable<DateTime>(enrolledAt);
     map['status'] = Variable<String>(status);
+    if (!nullToAbsent || levelId != null) {
+      map['level_id'] = Variable<String>(levelId);
+    }
+    if (!nullToAbsent || lastSelectedAt != null) {
+      map['last_selected_at'] = Variable<DateTime>(lastSelectedAt);
+    }
+    if (!nullToAbsent || unlockedAt != null) {
+      map['unlocked_at'] = Variable<DateTime>(unlockedAt);
+    }
     return map;
   }
 
@@ -705,6 +804,15 @@ class CourseEnrolment extends DataClass implements Insertable<CourseEnrolment> {
       contentVersion: Value(contentVersion),
       enrolledAt: Value(enrolledAt),
       status: Value(status),
+      levelId: levelId == null && nullToAbsent
+          ? const Value.absent()
+          : Value(levelId),
+      lastSelectedAt: lastSelectedAt == null && nullToAbsent
+          ? const Value.absent()
+          : Value(lastSelectedAt),
+      unlockedAt: unlockedAt == null && nullToAbsent
+          ? const Value.absent()
+          : Value(unlockedAt),
     );
   }
 
@@ -721,6 +829,9 @@ class CourseEnrolment extends DataClass implements Insertable<CourseEnrolment> {
       contentVersion: serializer.fromJson<String>(json['contentVersion']),
       enrolledAt: serializer.fromJson<DateTime>(json['enrolledAt']),
       status: serializer.fromJson<String>(json['status']),
+      levelId: serializer.fromJson<String?>(json['levelId']),
+      lastSelectedAt: serializer.fromJson<DateTime?>(json['lastSelectedAt']),
+      unlockedAt: serializer.fromJson<DateTime?>(json['unlockedAt']),
     );
   }
   @override
@@ -734,6 +845,9 @@ class CourseEnrolment extends DataClass implements Insertable<CourseEnrolment> {
       'contentVersion': serializer.toJson<String>(contentVersion),
       'enrolledAt': serializer.toJson<DateTime>(enrolledAt),
       'status': serializer.toJson<String>(status),
+      'levelId': serializer.toJson<String?>(levelId),
+      'lastSelectedAt': serializer.toJson<DateTime?>(lastSelectedAt),
+      'unlockedAt': serializer.toJson<DateTime?>(unlockedAt),
     };
   }
 
@@ -745,6 +859,9 @@ class CourseEnrolment extends DataClass implements Insertable<CourseEnrolment> {
     String? contentVersion,
     DateTime? enrolledAt,
     String? status,
+    Value<String?> levelId = const Value.absent(),
+    Value<DateTime?> lastSelectedAt = const Value.absent(),
+    Value<DateTime?> unlockedAt = const Value.absent(),
   }) => CourseEnrolment(
     id: id ?? this.id,
     uuid: uuid ?? this.uuid,
@@ -753,6 +870,11 @@ class CourseEnrolment extends DataClass implements Insertable<CourseEnrolment> {
     contentVersion: contentVersion ?? this.contentVersion,
     enrolledAt: enrolledAt ?? this.enrolledAt,
     status: status ?? this.status,
+    levelId: levelId.present ? levelId.value : this.levelId,
+    lastSelectedAt: lastSelectedAt.present
+        ? lastSelectedAt.value
+        : this.lastSelectedAt,
+    unlockedAt: unlockedAt.present ? unlockedAt.value : this.unlockedAt,
   );
   CourseEnrolment copyWithCompanion(CourseEnrolmentsCompanion data) {
     return CourseEnrolment(
@@ -767,6 +889,13 @@ class CourseEnrolment extends DataClass implements Insertable<CourseEnrolment> {
           ? data.enrolledAt.value
           : this.enrolledAt,
       status: data.status.present ? data.status.value : this.status,
+      levelId: data.levelId.present ? data.levelId.value : this.levelId,
+      lastSelectedAt: data.lastSelectedAt.present
+          ? data.lastSelectedAt.value
+          : this.lastSelectedAt,
+      unlockedAt: data.unlockedAt.present
+          ? data.unlockedAt.value
+          : this.unlockedAt,
     );
   }
 
@@ -779,7 +908,10 @@ class CourseEnrolment extends DataClass implements Insertable<CourseEnrolment> {
           ..write('courseId: $courseId, ')
           ..write('contentVersion: $contentVersion, ')
           ..write('enrolledAt: $enrolledAt, ')
-          ..write('status: $status')
+          ..write('status: $status, ')
+          ..write('levelId: $levelId, ')
+          ..write('lastSelectedAt: $lastSelectedAt, ')
+          ..write('unlockedAt: $unlockedAt')
           ..write(')'))
         .toString();
   }
@@ -793,6 +925,9 @@ class CourseEnrolment extends DataClass implements Insertable<CourseEnrolment> {
     contentVersion,
     enrolledAt,
     status,
+    levelId,
+    lastSelectedAt,
+    unlockedAt,
   );
   @override
   bool operator ==(Object other) =>
@@ -804,7 +939,10 @@ class CourseEnrolment extends DataClass implements Insertable<CourseEnrolment> {
           other.courseId == this.courseId &&
           other.contentVersion == this.contentVersion &&
           other.enrolledAt == this.enrolledAt &&
-          other.status == this.status);
+          other.status == this.status &&
+          other.levelId == this.levelId &&
+          other.lastSelectedAt == this.lastSelectedAt &&
+          other.unlockedAt == this.unlockedAt);
 }
 
 class CourseEnrolmentsCompanion extends UpdateCompanion<CourseEnrolment> {
@@ -815,6 +953,9 @@ class CourseEnrolmentsCompanion extends UpdateCompanion<CourseEnrolment> {
   final Value<String> contentVersion;
   final Value<DateTime> enrolledAt;
   final Value<String> status;
+  final Value<String?> levelId;
+  final Value<DateTime?> lastSelectedAt;
+  final Value<DateTime?> unlockedAt;
   const CourseEnrolmentsCompanion({
     this.id = const Value.absent(),
     this.uuid = const Value.absent(),
@@ -823,6 +964,9 @@ class CourseEnrolmentsCompanion extends UpdateCompanion<CourseEnrolment> {
     this.contentVersion = const Value.absent(),
     this.enrolledAt = const Value.absent(),
     this.status = const Value.absent(),
+    this.levelId = const Value.absent(),
+    this.lastSelectedAt = const Value.absent(),
+    this.unlockedAt = const Value.absent(),
   });
   CourseEnrolmentsCompanion.insert({
     this.id = const Value.absent(),
@@ -832,6 +976,9 @@ class CourseEnrolmentsCompanion extends UpdateCompanion<CourseEnrolment> {
     required String contentVersion,
     required DateTime enrolledAt,
     required String status,
+    this.levelId = const Value.absent(),
+    this.lastSelectedAt = const Value.absent(),
+    this.unlockedAt = const Value.absent(),
   }) : uuid = Value(uuid),
        learnerId = Value(learnerId),
        courseId = Value(courseId),
@@ -846,6 +993,9 @@ class CourseEnrolmentsCompanion extends UpdateCompanion<CourseEnrolment> {
     Expression<String>? contentVersion,
     Expression<DateTime>? enrolledAt,
     Expression<String>? status,
+    Expression<String>? levelId,
+    Expression<DateTime>? lastSelectedAt,
+    Expression<DateTime>? unlockedAt,
   }) {
     return RawValuesInsertable({
       if (id != null) 'id': id,
@@ -855,6 +1005,9 @@ class CourseEnrolmentsCompanion extends UpdateCompanion<CourseEnrolment> {
       if (contentVersion != null) 'content_version': contentVersion,
       if (enrolledAt != null) 'enrolled_at': enrolledAt,
       if (status != null) 'status': status,
+      if (levelId != null) 'level_id': levelId,
+      if (lastSelectedAt != null) 'last_selected_at': lastSelectedAt,
+      if (unlockedAt != null) 'unlocked_at': unlockedAt,
     });
   }
 
@@ -866,6 +1019,9 @@ class CourseEnrolmentsCompanion extends UpdateCompanion<CourseEnrolment> {
     Value<String>? contentVersion,
     Value<DateTime>? enrolledAt,
     Value<String>? status,
+    Value<String?>? levelId,
+    Value<DateTime?>? lastSelectedAt,
+    Value<DateTime?>? unlockedAt,
   }) {
     return CourseEnrolmentsCompanion(
       id: id ?? this.id,
@@ -875,6 +1031,9 @@ class CourseEnrolmentsCompanion extends UpdateCompanion<CourseEnrolment> {
       contentVersion: contentVersion ?? this.contentVersion,
       enrolledAt: enrolledAt ?? this.enrolledAt,
       status: status ?? this.status,
+      levelId: levelId ?? this.levelId,
+      lastSelectedAt: lastSelectedAt ?? this.lastSelectedAt,
+      unlockedAt: unlockedAt ?? this.unlockedAt,
     );
   }
 
@@ -902,6 +1061,15 @@ class CourseEnrolmentsCompanion extends UpdateCompanion<CourseEnrolment> {
     if (status.present) {
       map['status'] = Variable<String>(status.value);
     }
+    if (levelId.present) {
+      map['level_id'] = Variable<String>(levelId.value);
+    }
+    if (lastSelectedAt.present) {
+      map['last_selected_at'] = Variable<DateTime>(lastSelectedAt.value);
+    }
+    if (unlockedAt.present) {
+      map['unlocked_at'] = Variable<DateTime>(unlockedAt.value);
+    }
     return map;
   }
 
@@ -914,7 +1082,10 @@ class CourseEnrolmentsCompanion extends UpdateCompanion<CourseEnrolment> {
           ..write('courseId: $courseId, ')
           ..write('contentVersion: $contentVersion, ')
           ..write('enrolledAt: $enrolledAt, ')
-          ..write('status: $status')
+          ..write('status: $status, ')
+          ..write('levelId: $levelId, ')
+          ..write('lastSelectedAt: $lastSelectedAt, ')
+          ..write('unlockedAt: $unlockedAt')
           ..write(')'))
         .toString();
   }
@@ -9399,6 +9570,9 @@ typedef $$CourseEnrolmentsTableCreateCompanionBuilder =
       required String contentVersion,
       required DateTime enrolledAt,
       required String status,
+      Value<String?> levelId,
+      Value<DateTime?> lastSelectedAt,
+      Value<DateTime?> unlockedAt,
     });
 typedef $$CourseEnrolmentsTableUpdateCompanionBuilder =
     CourseEnrolmentsCompanion Function({
@@ -9409,6 +9583,9 @@ typedef $$CourseEnrolmentsTableUpdateCompanionBuilder =
       Value<String> contentVersion,
       Value<DateTime> enrolledAt,
       Value<String> status,
+      Value<String?> levelId,
+      Value<DateTime?> lastSelectedAt,
+      Value<DateTime?> unlockedAt,
     });
 
 final class $$CourseEnrolmentsTableReferences
@@ -9477,6 +9654,21 @@ class $$CourseEnrolmentsTableFilterComposer
     builder: (column) => ColumnFilters(column),
   );
 
+  ColumnFilters<String> get levelId => $composableBuilder(
+    column: $table.levelId,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get lastSelectedAt => $composableBuilder(
+    column: $table.lastSelectedAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get unlockedAt => $composableBuilder(
+    column: $table.unlockedAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
   $$LearnersTableFilterComposer get learnerId {
     final $$LearnersTableFilterComposer composer = $composerBuilder(
       composer: this,
@@ -9540,6 +9732,21 @@ class $$CourseEnrolmentsTableOrderingComposer
     builder: (column) => ColumnOrderings(column),
   );
 
+  ColumnOrderings<String> get levelId => $composableBuilder(
+    column: $table.levelId,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get lastSelectedAt => $composableBuilder(
+    column: $table.lastSelectedAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get unlockedAt => $composableBuilder(
+    column: $table.unlockedAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
   $$LearnersTableOrderingComposer get learnerId {
     final $$LearnersTableOrderingComposer composer = $composerBuilder(
       composer: this,
@@ -9594,6 +9801,19 @@ class $$CourseEnrolmentsTableAnnotationComposer
 
   GeneratedColumn<String> get status =>
       $composableBuilder(column: $table.status, builder: (column) => column);
+
+  GeneratedColumn<String> get levelId =>
+      $composableBuilder(column: $table.levelId, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get lastSelectedAt => $composableBuilder(
+    column: $table.lastSelectedAt,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<DateTime> get unlockedAt => $composableBuilder(
+    column: $table.unlockedAt,
+    builder: (column) => column,
+  );
 
   $$LearnersTableAnnotationComposer get learnerId {
     final $$LearnersTableAnnotationComposer composer = $composerBuilder(
@@ -9656,6 +9876,9 @@ class $$CourseEnrolmentsTableTableManager
                 Value<String> contentVersion = const Value.absent(),
                 Value<DateTime> enrolledAt = const Value.absent(),
                 Value<String> status = const Value.absent(),
+                Value<String?> levelId = const Value.absent(),
+                Value<DateTime?> lastSelectedAt = const Value.absent(),
+                Value<DateTime?> unlockedAt = const Value.absent(),
               }) => CourseEnrolmentsCompanion(
                 id: id,
                 uuid: uuid,
@@ -9664,6 +9887,9 @@ class $$CourseEnrolmentsTableTableManager
                 contentVersion: contentVersion,
                 enrolledAt: enrolledAt,
                 status: status,
+                levelId: levelId,
+                lastSelectedAt: lastSelectedAt,
+                unlockedAt: unlockedAt,
               ),
           createCompanionCallback:
               ({
@@ -9674,6 +9900,9 @@ class $$CourseEnrolmentsTableTableManager
                 required String contentVersion,
                 required DateTime enrolledAt,
                 required String status,
+                Value<String?> levelId = const Value.absent(),
+                Value<DateTime?> lastSelectedAt = const Value.absent(),
+                Value<DateTime?> unlockedAt = const Value.absent(),
               }) => CourseEnrolmentsCompanion.insert(
                 id: id,
                 uuid: uuid,
@@ -9682,6 +9911,9 @@ class $$CourseEnrolmentsTableTableManager
                 contentVersion: contentVersion,
                 enrolledAt: enrolledAt,
                 status: status,
+                levelId: levelId,
+                lastSelectedAt: lastSelectedAt,
+                unlockedAt: unlockedAt,
               ),
           withReferenceMapper: (p0) => p0
               .map(

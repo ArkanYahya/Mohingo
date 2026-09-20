@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -12,44 +14,151 @@ import '../../../core/theme/feedback_theme_extension.dart';
 import '../../../core/theme/overline_style.dart';
 import '../../../core/widgets/status_indicator.dart';
 import '../../../data/local/database.dart';
+import '../../progress/domain/level_access.dart';
+import '../../progress/providers/level_providers.dart';
 import '../domain/current_unit_selector.dart';
 import '../domain/lesson_resume.dart';
 import '../providers/unit_progress_providers.dart';
+import 'widgets/level_lock_sheet.dart';
+import 'widgets/level_strip.dart';
 import 'widgets/path_row.dart';
 
-/// The Learn tab: the A1 course, straight away.
+/// The Learn tab: the course the learner is in, not always A1.
 ///
-/// A header (course title in English and Arabic, units mastered with one
-/// segment per unit), then the units as one path — each a numbered node on
-/// a rail with its title, Arabic, and size or status. The unit the learner
-/// is working on (see [currentUnitId]) is the only highlighted card: its
-/// lessons done, the next lesson, and a button straight into it. The path
-/// ends at the level's final mission & assessment (the Tests tab), and the
-/// levels that aren't available yet are a small "Coming later" strip —
-/// visible, never selectable as if content exists (docs/PRODUCT.md).
+/// Below the course title (English and Arabic), a level strip carries only
+/// the levels that exist — the one the learner is in filled, an open one
+/// tappable, a locked one behind a small lock; the rest are a caption
+/// underneath, not segments (see [LevelStrip]). Below that, units mastered
+/// with one segment per unit, then the units as one path — each a numbered
+/// node on a rail with its title, Arabic, and size or status. The unit the
+/// learner is working on (see [currentUnitId]) is the only highlighted
+/// card: its lessons done, the next lesson, and a button straight into it.
+/// The path ends at the level's final mission & assessment (the Tests tab).
 ///
 /// Every unit stays tappable — free access, no hard lock — per
 /// docs/PRODUCT.md flow 5.
-class CourseScreen extends ConsumerWidget {
+class CourseScreen extends ConsumerStatefulWidget {
   const CourseScreen({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final contentAsync = ref.watch(courseContentProvider('a1'));
+  ConsumerState<CourseScreen> createState() => _CourseScreenState();
+}
+
+class _CourseScreenState extends ConsumerState<CourseScreen> {
+  /// A level the learner is only looking at — never the learner's
+  /// enrolment, which stays with [currentLevelIdProvider] until they
+  /// actually select an open level.
+  String? _browsingLevelId;
+
+  @override
+  Widget build(BuildContext context) {
+    final currentLevelIdAsync = ref.watch(currentLevelIdProvider);
+    final catalog = ref.watch(levelCatalogProvider);
     final unitProgress = ref.watch(allUnitProgressProvider).value ?? const [];
     final lessonProgress =
         ref.watch(allLessonProgressProvider).value ?? const [];
+
+    // A level whose access hasn't resolved yet is simply left out of the
+    // map — the strip renders it as coming later until it does, rather
+    // than letting one slow/failing level take the whole page down.
+    final access = <String, LevelAccess>{};
+    for (final entry in catalog) {
+      final resolved = ref.watch(levelAccessProvider(entry.levelId)).value;
+      if (resolved != null) access[entry.levelId] = resolved;
+    }
+
+    final currentLevelId = currentLevelIdAsync.value;
+    final shownLevelId = _browsingLevelId ?? currentLevelId;
+    final isBrowsing = _browsingLevelId != null;
+    final AsyncValue<CourseContentIndex> contentAsync;
+    if (currentLevelIdAsync.hasError) {
+      contentAsync = AsyncValue.error(
+        currentLevelIdAsync.error!,
+        currentLevelIdAsync.stackTrace!,
+      );
+    } else if (shownLevelId != null) {
+      contentAsync = ref.watch(courseContentProvider(shownLevelId));
+    } else {
+      contentAsync = const AsyncValue.loading();
+    }
+
+    void onSelect(LevelCatalogEntry entry, LevelAccess levelAccess) {
+      switch (levelAccess) {
+        case LevelAccess.open:
+          if (_browsingLevelId != null) {
+            setState(() => _browsingLevelId = null);
+          }
+          unawaited(
+            ref
+                .read(levelSelectionControllerProvider.notifier)
+                .select(entry.levelId),
+          );
+          return;
+        case LevelAccess.lockedNeedsPrerequisite:
+        case LevelAccess.notReleased:
+          final prerequisiteId = entry.prerequisiteLevelId;
+          final prerequisiteCode =
+              (prerequisiteId == null
+                      ? null
+                      : levelCatalogEntryIn(catalog, prerequisiteId))
+                  ?.cefrCode ??
+              levelCatalogEntryIn(catalog, shownLevelId!)?.cefrCode ??
+              entry.cefrCode;
+          unawaited(
+            showLevelLockSheet(
+              context,
+              entry: entry,
+              prerequisiteCode: prerequisiteCode,
+              access: levelAccess,
+              onTakePlacementTest: () => context.push('/tests/placement'),
+              onOpenAnyway: () async {
+                final controller = ref.read(
+                  levelSelectionControllerProvider.notifier,
+                );
+                await controller.unlock(entry.levelId);
+                await controller.select(entry.levelId);
+              },
+              onBrowse: () => setState(() => _browsingLevelId = entry.levelId),
+            ),
+          );
+          return;
+        case LevelAccess.noContent:
+          // Unreachable in practice — LevelStrip's track excludes
+          // no-content levels entirely — kept so this switch stays
+          // exhaustive.
+          return;
+      }
+    }
 
     return Scaffold(
       body: SafeArea(
         bottom: false,
         child: contentAsync.when(
           loading: () => const Center(child: CircularProgressIndicator()),
-          error: (error, _) => Center(child: Text('$error')),
+          error: (error, _) => _CourseLoadError(
+            // The way back is offered only when the learner's own level is
+            // known and isn't the one that failed. `currentLevelId` is an
+            // async provider's resolved value, so null means "not known
+            // yet" — treat it as that rather than reasoning about which
+            // failures can produce it, since _CourseLoadError's contract
+            // already covers the case by hiding the button.
+            currentCode: isBrowsing && currentLevelId != null
+                ? levelCatalogEntryIn(catalog, currentLevelId)?.cefrCode ??
+                      currentLevelId
+                : null,
+            onBack: () => setState(() => _browsingLevelId = null),
+          ),
           data: (index) => _CourseBody(
             index: index,
             unitProgress: unitProgress,
             lessonProgress: lessonProgress,
+            catalog: catalog,
+            shownLevelId: shownLevelId!,
+            currentLevelId: currentLevelId ?? shownLevelId,
+            isBrowsing: isBrowsing,
+            access: access,
+            onSelect: onSelect,
+            onBack: () => setState(() => _browsingLevelId = null),
           ),
         ),
       ),
@@ -62,11 +171,34 @@ class _CourseBody extends StatelessWidget {
     required this.index,
     required this.unitProgress,
     required this.lessonProgress,
+    required this.catalog,
+    required this.shownLevelId,
+    required this.currentLevelId,
+    required this.isBrowsing,
+    required this.access,
+    required this.onSelect,
+    required this.onBack,
   });
 
   final CourseContentIndex index;
   final List<UnitProgressData> unitProgress;
   final List<LessonProgressData> lessonProgress;
+  final List<LevelCatalogEntry> catalog;
+  final String shownLevelId;
+
+  /// The level the learner is actually enrolled in — the level [onBack]
+  /// returns to. Equal to [shownLevelId] unless [isBrowsing].
+  final String currentLevelId;
+
+  /// Whether [shownLevelId] is only being looked at: its units render
+  /// read-only, with no current-unit card, progress card, or finish card.
+  final bool isBrowsing;
+
+  final Map<String, LevelAccess> access;
+  final void Function(LevelCatalogEntry entry, LevelAccess access) onSelect;
+
+  /// Clears the browsing level and returns to [currentLevelId].
+  final VoidCallback onBack;
 
   @override
   Widget build(BuildContext context) {
@@ -77,9 +209,14 @@ class _CourseBody extends StatelessWidget {
     final stateByUnitId = {
       for (final p in unitProgress) p.unitId: ProgressState.fromRaw(p.state),
     };
+    final unitIdsInLevel = {for (final unit in units) unit.id};
+    // unitProgress spans every level the learner has touched; a caption,
+    // a segment and the current-unit search all mean "in this level".
     final masteredIds = {
       for (final entry in stateByUnitId.entries)
-        if (entry.value == ProgressState.mastered) entry.key,
+        if (entry.value == ProgressState.mastered &&
+            unitIdsInLevel.contains(entry.key))
+          entry.key,
     };
     final currentId = currentUnitId(
       units: units,
@@ -87,6 +224,11 @@ class _CourseBody extends StatelessWidget {
       allLessonProgress: lessonProgress,
     );
     final lessonCount = units.fold<int>(0, (n, u) => n + u.lessons.length);
+    final shownCode =
+        levelCatalogEntryIn(catalog, shownLevelId)?.cefrCode ?? shownLevelId;
+    final currentCode =
+        levelCatalogEntryIn(catalog, currentLevelId)?.cefrCode ??
+        currentLevelId;
 
     return ListView(
       padding: const EdgeInsets.fromLTRB(
@@ -96,11 +238,13 @@ class _CourseBody extends StatelessWidget {
         AppSpace.lg,
       ),
       children: [
-        Text(
-          l10n.learnCourseOverline.toUpperCase(),
-          style: overlineStyle(context, color: tokens.textSecondary),
-        ),
-        const SizedBox(height: AppSpace.xxs),
+        if (!isBrowsing) ...[
+          Text(
+            l10n.learnCourseOverline.toUpperCase(),
+            style: overlineStyle(context, color: tokens.textSecondary),
+          ),
+          const SizedBox(height: AppSpace.xxs),
+        ],
         Align(
           alignment: AlignmentDirectional.centerStart,
           child: Text(
@@ -122,13 +266,27 @@ class _CourseBody extends StatelessWidget {
           ),
         ),
         const SizedBox(height: AppSpace.md),
-        _CourseProgressCard(
-          units: units,
-          masteredIds: masteredIds,
-          currentId: currentId,
-          lessonCount: lessonCount,
+        LevelStrip(
+          catalog: catalog,
+          currentLevelId: currentLevelId,
+          access: access,
+          onSelect: onSelect,
         ),
-        const SizedBox(height: AppSpace.lg),
+        const SizedBox(height: AppSpace.md),
+        if (isBrowsing)
+          _PreviewBanner(
+            shownCode: shownCode,
+            currentCode: currentCode,
+            onBack: onBack,
+          )
+        else
+          _CourseProgressCard(
+            units: units,
+            masteredIds: masteredIds,
+            currentId: currentId,
+            lessonCount: lessonCount,
+          ),
+        SizedBox(height: isBrowsing ? AppSpace.md : AppSpace.lg),
         Text(
           l10n.learnUnitsTitle.toUpperCase(),
           style: overlineStyle(context, color: tokens.textSecondary),
@@ -141,22 +299,148 @@ class _CourseBody extends StatelessWidget {
             state: stateByUnitId[units[i].id] ?? ProgressState.notStarted,
             isCurrent: units[i].id == currentId,
             isFirst: i == 0,
+            isLast: isBrowsing && i == units.length - 1,
+            isBrowsing: isBrowsing,
             unitLessonProgress: [
               for (final p in lessonProgress)
                 if (p.unitId == units[i].id) p,
             ],
           ),
-        PathRow(
-          isLast: true,
-          node: PathNode(
-            kind: PathNodeKind.flag,
-            semanticsLabel: l10n.learnFinishOverline,
+        if (!isBrowsing)
+          PathRow(
+            isLast: true,
+            node: PathNode(
+              kind: PathNodeKind.flag,
+              semanticsLabel: l10n.learnFinishOverline,
+            ),
+            child: _FinishCard(onTap: () => context.go('/tests')),
           ),
-          child: _FinishCard(onTap: () => context.go('/tests')),
-        ),
-        const SizedBox(height: AppSpace.lg),
-        const _ComingLater(),
       ],
+    );
+  }
+}
+
+/// A level whose content failed to load, without trapping the learner:
+/// the same words the app-level content failure uses, plus the way back
+/// to the level they are actually in when they were only looking.
+class _CourseLoadError extends StatelessWidget {
+  const _CourseLoadError({required this.currentCode, required this.onBack});
+
+  /// Null when the level that failed IS the learner's own level — there is
+  /// nowhere to go back to, and the app-level gate covers the base level.
+  final String? currentCode;
+  final VoidCallback onBack;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final tokens = theme.extension<AppTokens>()!;
+    final l10n = AppLocalizations.of(context)!;
+
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.all(AppSpace.lg),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(Icons.error_outline, size: 40, color: theme.colorScheme.error),
+            const SizedBox(height: AppSpace.sm),
+            Text(
+              l10n.contentErrorTitle,
+              style: theme.textTheme.titleMedium?.copyWith(
+                color: tokens.textPrimary,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: AppSpace.xs),
+            Text(
+              l10n.contentErrorBody,
+              style: theme.textTheme.bodyMedium?.copyWith(
+                color: tokens.textSecondary,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            if (currentCode != null) ...[
+              const SizedBox(height: AppSpace.md),
+              TextButton(
+                onPressed: onBack,
+                child: Text(l10n.learnPreviewBackToCurrent(currentCode!)),
+              ),
+            ],
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/// The frame around a level the learner is only looking at: a muted
+/// surface, so it reads as a wrapper around the content rather than as
+/// content itself, and the way back to the level they are actually in.
+class _PreviewBanner extends StatelessWidget {
+  const _PreviewBanner({
+    required this.shownCode,
+    required this.currentCode,
+    required this.onBack,
+  });
+
+  final String shownCode;
+  final String currentCode;
+  final VoidCallback onBack;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final tokens = theme.extension<AppTokens>()!;
+    final l10n = AppLocalizations.of(context)!;
+
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        color: tokens.cardMuted,
+        borderRadius: BorderRadius.circular(AppRadius.card),
+        border: Border.all(color: tokens.border),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(AppSpace.md),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Icon(
+                  Icons.lock_outline_rounded,
+                  size: 16,
+                  color: tokens.textSecondary,
+                ),
+                const SizedBox(width: AppSpace.xs),
+                Expanded(
+                  child: Text(
+                    l10n.learnPreviewBannerTitle(shownCode),
+                    style: theme.textTheme.titleSmall?.copyWith(
+                      color: tokens.textPrimary,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 2),
+            Text(
+              l10n.learnPreviewBannerBody(shownCode),
+              style: theme.textTheme.bodySmall?.copyWith(
+                color: tokens.textSecondary,
+              ),
+            ),
+            const SizedBox(height: AppSpace.xs),
+            Align(
+              alignment: AlignmentDirectional.centerStart,
+              child: TextButton(
+                onPressed: onBack,
+                child: Text(l10n.learnPreviewBackToCurrent(currentCode)),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
@@ -254,6 +538,8 @@ class _UnitRow extends StatelessWidget {
     required this.isCurrent,
     required this.isFirst,
     required this.unitLessonProgress,
+    this.isLast = false,
+    this.isBrowsing = false,
   });
 
   final Unit unit;
@@ -262,10 +548,17 @@ class _UnitRow extends StatelessWidget {
   final bool isCurrent;
   final bool isFirst;
   final List<LessonProgressData> unitLessonProgress;
+  final bool isLast;
+
+  /// While browsing a level the learner isn't enrolled in, no unit is the
+  /// "current" one and no row is tappable: nothing here may start a lesson
+  /// or open the unit page.
+  final bool isBrowsing;
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
+    final highlightAsCurrent = isCurrent && !isBrowsing;
     final stateLabel = switch (state) {
       ProgressState.mastered => l10n.unitStateMastered,
       ProgressState.needsReview => l10n.unitStateNeedsReview,
@@ -274,20 +567,21 @@ class _UnitRow extends StatelessWidget {
     };
     final kind = state == ProgressState.mastered
         ? PathNodeKind.done
-        : isCurrent
+        : highlightAsCurrent
         ? PathNodeKind.current
         : PathNodeKind.upcoming;
     void openUnit() => context.go('/learn/unit/${unit.id}');
 
     return PathRow(
       isFirst: isFirst,
-      onTap: isCurrent ? null : openUnit,
+      isLast: isLast,
+      onTap: (highlightAsCurrent || isBrowsing) ? null : openUnit,
       node: PathNode(
         kind: kind,
         number: number,
         semanticsLabel: l10n.learnUnitNodeSemantics(number, stateLabel),
       ),
-      child: isCurrent
+      child: highlightAsCurrent
           ? _CurrentUnitCard(
               unit: unit,
               number: number,
@@ -606,104 +900,6 @@ class _FinishCard extends StatelessWidget {
               const SizedBox(width: AppSpace.xs),
               Icon(Icons.chevron_right_rounded, color: tokens.textSecondary),
             ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-/// Every CEFR level in the catalogue as a small pill: the available one
-/// filled, the rest outlined and announced as coming soon — shown so the
-/// learner sees the road ahead, never tappable. See docs/PRODUCT.md.
-class _ComingLater extends StatelessWidget {
-  const _ComingLater();
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final tokens = theme.extension<AppTokens>()!;
-    final l10n = AppLocalizations.of(context)!;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          l10n.learnComingLaterTitle.toUpperCase(),
-          style: overlineStyle(context, color: tokens.textSecondary),
-        ),
-        const SizedBox(height: AppSpace.xs),
-        Wrap(
-          spacing: AppSpace.xs,
-          runSpacing: AppSpace.xs,
-          children: [
-            for (final level in kLevelCatalog)
-              if (level.availability == LevelAvailability.available)
-                _LevelPill(
-                  code: level.cefrCode,
-                  semanticsLabel: level.cefrCode,
-                  background: tokens.primaryInk,
-                  foreground: tokens.onPrimaryInk,
-                )
-              else
-                _LevelPill(
-                  code: level.cefrCode,
-                  semanticsLabel: '${level.cefrCode} — ${l10n.comingSoon}',
-                  foreground: tokens.textSecondary,
-                  outline: Color.lerp(tokens.border, tokens.textSecondary, 0.2),
-                ),
-          ],
-        ),
-        const SizedBox(height: AppSpace.xs),
-        Text(
-          l10n.learnComingLaterBody,
-          style: theme.textTheme.bodySmall?.copyWith(
-            color: tokens.textSecondary,
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-class _LevelPill extends StatelessWidget {
-  const _LevelPill({
-    required this.code,
-    required this.semanticsLabel,
-    required this.foreground,
-    this.background,
-    this.outline,
-  });
-
-  final String code;
-  final String semanticsLabel;
-  final Color foreground;
-  final Color? background;
-  final Color? outline;
-
-  @override
-  Widget build(BuildContext context) {
-    return Semantics(
-      container: true,
-      label: semanticsLabel,
-      child: ExcludeSemantics(
-        child: Container(
-          constraints: const BoxConstraints(minWidth: 52, minHeight: 32),
-          padding: const EdgeInsets.symmetric(horizontal: AppSpace.sm),
-          decoration: BoxDecoration(
-            color: background,
-            borderRadius: BorderRadius.circular(999),
-            border: outline == null ? null : Border.all(color: outline!),
-          ),
-          // Sized to the code, not the row: Center with factors of 1
-          // centres it without expanding the pill.
-          child: Center(
-            widthFactor: 1,
-            heightFactor: 1,
-            child: Text(
-              code,
-              style: Theme.of(context).textTheme.labelLarge
-                  ?.copyWith(color: foreground, fontWeight: FontWeight.w700),
-            ),
           ),
         ),
       ),

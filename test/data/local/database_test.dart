@@ -22,8 +22,8 @@ void main() {
     await database.close();
   });
 
-  test('schema version is 4', () {
-    expect(database.schemaVersion, 4);
+  test('schema version is 5', () {
+    expect(database.schemaVersion, 5);
   });
 
   test('migrating from schemaVersion 1 adds a nullable name column without '
@@ -41,6 +41,20 @@ void main() {
           target_language TEXT NOT NULL DEFAULT 'en',
           created_at INTEGER NOT NULL,
           is_active INTEGER NOT NULL DEFAULT 1
+        )
+      ''');
+    // A genuine v1 install already has course_enrolments (unchanged in
+    // shape since v1) — present here so the from < 5 branch, which alters
+    // it, has a table to alter, exactly like a real upgrading install.
+    raw.execute('''
+        CREATE TABLE course_enrolments (
+          id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+          uuid TEXT NOT NULL UNIQUE,
+          learner_id INTEGER NOT NULL REFERENCES learners (id),
+          course_id TEXT NOT NULL,
+          content_version TEXT NOT NULL,
+          enrolled_at INTEGER NOT NULL,
+          status TEXT NOT NULL
         )
       ''');
     raw.execute(
@@ -81,6 +95,20 @@ void main() {
             target_language TEXT NOT NULL DEFAULT 'en',
             created_at INTEGER NOT NULL,
             is_active INTEGER NOT NULL DEFAULT 1
+          )
+        ''');
+    // A genuine v1 install already has course_enrolments (unchanged in
+    // shape since v1) — present here so the from < 5 branch, which alters
+    // it, has a table to alter, exactly like a real upgrading install.
+    raw.execute('''
+          CREATE TABLE course_enrolments (
+            id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+            uuid TEXT NOT NULL UNIQUE,
+            learner_id INTEGER NOT NULL REFERENCES learners (id),
+            course_id TEXT NOT NULL,
+            content_version TEXT NOT NULL,
+            enrolled_at INTEGER NOT NULL,
+            status TEXT NOT NULL
           )
         ''');
     raw.execute(
@@ -137,6 +165,73 @@ void main() {
         .get();
     expect(dailyTaskEvents, hasLength(1));
     expect(dailyTaskEvents.single.learnerId, row.id);
+  });
+
+  test('a v4 install upgrades to 5: an existing enrolment keeps its data and '
+      'gains the three nullable level columns', () async {
+    final raw = sqlite3.sqlite3.openInMemory();
+    raw.execute('''
+          CREATE TABLE learners (
+            id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+            uuid TEXT NOT NULL UNIQUE,
+            name TEXT NULL,
+            native_language TEXT NOT NULL DEFAULT 'ar',
+            target_language TEXT NOT NULL DEFAULT 'en',
+            created_at INTEGER NOT NULL,
+            is_active INTEGER NOT NULL DEFAULT 1
+          )
+        ''');
+    raw.execute('''
+          CREATE TABLE course_enrolments (
+            id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+            uuid TEXT NOT NULL UNIQUE,
+            learner_id INTEGER NOT NULL REFERENCES learners (id),
+            course_id TEXT NOT NULL,
+            content_version TEXT NOT NULL,
+            enrolled_at INTEGER NOT NULL,
+            status TEXT NOT NULL
+          )
+        ''');
+    raw.execute(
+      "INSERT INTO learners (uuid, created_at) VALUES ('learner-1', 0)",
+    );
+    raw.execute(
+      "INSERT INTO course_enrolments "
+      "(uuid, learner_id, course_id, content_version, enrolled_at, status) "
+      "VALUES ('e-1', 1, 'EN-A1-V2', 'A1-COMPLETE-2026.09.02', 0, 'active')",
+    );
+    raw.execute('PRAGMA user_version = 4');
+
+    final upgraded = AppDatabase(NativeDatabase.opened(raw));
+    addTearDown(upgraded.close);
+
+    final row = await upgraded.select(upgraded.courseEnrolments).getSingle();
+    expect(row.courseId, 'EN-A1-V2');
+    expect(row.levelId, isNull);
+    expect(row.lastSelectedAt, isNull);
+    expect(row.unlockedAt, isNull);
+
+    // The new columns are writable, not just present.
+    await (upgraded.update(
+      upgraded.courseEnrolments,
+    )..where((t) => t.id.equals(row.id))).write(
+      CourseEnrolmentsCompanion(
+        levelId: const Value('a1'),
+        lastSelectedAt: Value(DateTime.utc(2026, 9, 20)),
+        unlockedAt: Value(DateTime.utc(2026, 9, 20)),
+      ),
+    );
+    final updated = await upgraded
+        .select(upgraded.courseEnrolments)
+        .getSingle();
+    expect(updated.levelId, 'a1');
+    // Compared via toUtc(): drift round-trips DateTimeColumn values as unix
+    // timestamps and hands them back in local time (same instant, different
+    // `isUtc` flag) — and Dart's DateTime equality treats that flag as
+    // significant, so a raw `==` against a UTC literal is timezone-dependent
+    // even though the underlying instant matches exactly.
+    expect(updated.lastSelectedAt?.toUtc(), DateTime.utc(2026, 9, 20));
+    expect(updated.unlockedAt?.toUtc(), DateTime.utc(2026, 9, 20));
   });
 
   test('can insert and read back a learner, with ar/en defaults', () async {

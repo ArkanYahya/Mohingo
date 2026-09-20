@@ -56,5 +56,6 @@ flutter:
   generate: true
   assets:
     - assets/content/en/A1/a1-course-bundle.json
+    - assets/content/en/A2/a2-course-bundle.json
     - assets/sounds/correct.wav
     - assets/sounds/incorrect.wav

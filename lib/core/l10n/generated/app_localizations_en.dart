@@ -452,11 +452,71 @@ class AppLocalizationsEn extends AppLocalizations {
       'Show what you can do after the last unit — in the Tests tab.';
 
   @override
-  String get learnComingLaterTitle => 'Coming later';
+  String learnLevelSemanticsCurrent(String level) {
+    return 'Level $level, the one you\'re learning now';
+  }
 
   @override
-  String get learnComingLaterBody =>
-      'More levels are on the way. Everything you learn in A1 carries over.';
+  String learnLevelSemanticsOpen(String level) {
+    return 'Level $level, open — switch to it';
+  }
+
+  @override
+  String learnLevelSemanticsLocked(String level) {
+    return 'Level $level, locked';
+  }
+
+  @override
+  String learnLevelComingLaterBody(String level) {
+    return 'More levels are on the way. Everything you learn in $level carries over.';
+  }
+
+  @override
+  String levelLockTitle(String level, String previous) {
+    return '$level builds on $previous';
+  }
+
+  @override
+  String levelLockBody(String previous, String level) {
+    return 'Finishing $previous opens it. You can check where you stand with the placement test — or open $level anyway.';
+  }
+
+  @override
+  String get levelLockTakeTest => 'Take the placement test';
+
+  @override
+  String levelLockOpenAnyway(String level) {
+    return 'Open $level anyway';
+  }
+
+  @override
+  String levelNotReleasedTitle(String level) {
+    return '$level isn\'t ready yet';
+  }
+
+  @override
+  String get levelNotReleasedBody =>
+      'Its lessons open when it\'s ready. Until then you can look at what it covers.';
+
+  @override
+  String levelNotReleasedBrowse(String level) {
+    return 'See what $level covers';
+  }
+
+  @override
+  String learnPreviewBannerTitle(String level) {
+    return 'A look at $level';
+  }
+
+  @override
+  String learnPreviewBannerBody(String level) {
+    return 'These are the units $level will cover. Its lessons open when it\'s ready.';
+  }
+
+  @override
+  String learnPreviewBackToCurrent(String level) {
+    return 'Back to $level';
+  }
 
   @override
   String get lessonCompleteCorrectCaption => 'correct';

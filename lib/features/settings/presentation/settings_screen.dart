@@ -13,7 +13,7 @@ import '../../../data/local/database_provider.dart';
 import '../../grammar/providers/grammar_providers.dart';
 import '../../learning_path/providers/unit_progress_providers.dart';
 import '../../progress/providers/current_learner_provider.dart';
-import '../../progress/providers/ensure_a1_enrollment_provider.dart';
+import '../../progress/providers/level_providers.dart';
 import '../../progress/providers/progress_providers.dart';
 import '../../review/providers/review_providers.dart';
 import '../../speech/domain/speech_recognition_service.dart';
@@ -842,7 +842,10 @@ class _ResetProgressRow extends ConsumerWidget {
     ref.invalidate(allGrammarReviewStateProvider);
     ref.invalidate(weakObjectivesProvider);
     ref.invalidate(dueVocabularyProvider);
-    ref.invalidate(ensureA1EnrollmentProvider);
+    ref.invalidate(currentLevelIdProvider);
+    // A family: invalidating the family itself clears every already-built
+    // levelId's enrolment-ensure state, matching the wipe below.
+    ref.invalidate(ensureLevelEnrolmentProvider);
     ref.invalidate(currentStreakDaysProvider);
     ref.invalidate(latestPlacementAttemptProvider);
     ref.invalidate(latestFinalMissionAttemptProvider);

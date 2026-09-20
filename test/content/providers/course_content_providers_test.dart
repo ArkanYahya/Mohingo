@@ -31,7 +31,7 @@ const _catalog = [
   LevelCatalogEntry(
     levelId: 'a2',
     cefrCode: 'A2',
-    availability: LevelAvailability.available,
+    availability: LevelAvailability.preview,
     bundleAssetPath: 'a2.json',
     prerequisiteLevelId: 'a1',
   ),
@@ -74,6 +74,13 @@ void main() {
     expect(a2.prerequisite, same(a1));
     expect(a2.resolveGrammar('A1.G.BE.I_AM'), isNotNull);
     expect(loader.loaded, containsAll(['a1.json', 'a2.json']));
+  });
+
+  test("a preview level's content loads — its lessons are closed by the app, "
+      'not by the loader', () async {
+    final container = _container(_loader());
+    final a2 = await container.read(courseContentProvider('a2').future);
+    expect(a2.bundle.course.id, 'EN-A2-TEST');
   });
 
   test('a level without a prerequisite has none', () async {

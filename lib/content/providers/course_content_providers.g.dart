@@ -8,12 +8,14 @@ part of 'course_content_providers.dart';
 
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, type=warning
-/// The level catalogue ([kLevelCatalog]); overridden in tests.
+/// The level catalogue ([kLevelCatalog]), with any development-opened
+/// preview levels promoted; overridden in tests.
 
 @ProviderFor(levelCatalog)
 final levelCatalogProvider = LevelCatalogProvider._();
 
-/// The level catalogue ([kLevelCatalog]); overridden in tests.
+/// The level catalogue ([kLevelCatalog]), with any development-opened
+/// preview levels promoted; overridden in tests.
 
 final class LevelCatalogProvider
     extends
@@ -23,7 +25,8 @@ final class LevelCatalogProvider
           List<LevelCatalogEntry>
         >
     with $Provider<List<LevelCatalogEntry>> {
-  /// The level catalogue ([kLevelCatalog]); overridden in tests.
+  /// The level catalogue ([kLevelCatalog]), with any development-opened
+  /// preview levels promoted; overridden in tests.
   LevelCatalogProvider._()
     : super(
         from: null,
@@ -58,7 +61,7 @@ final class LevelCatalogProvider
   }
 }
 
-String _$levelCatalogHash() => r'567def97dd3901ab756d9a9d8c1c11b8c7d3e882';
+String _$levelCatalogHash() => r'05866def87375cd8255d98d78c11c98c30fc8766';
 
 /// Reads bundle assets; overridden in tests.
 
@@ -120,9 +123,12 @@ String _$bundleAssetLoaderHash() => r'94ef46acb9a3644de63f85c93387ca92208bc1f2';
 /// level's index and is built with it attached, so its lessons can
 /// reference the earlier level's grammar, words and phrases.
 ///
-/// A [LevelAvailability.comingSoon] or unknown [levelId] fails fast with a
-/// [StateError] — callers should check the catalogue before invoking this
-/// provider, not rely on it to report unavailability.
+/// A level with no bundle ([LevelAvailability.comingSoon]) or an unknown
+/// [levelId] fails fast with a [StateError] — callers should check the
+/// catalogue before invoking this provider, not rely on it to report
+/// unavailability. A [LevelAvailability.preview] level's bundle loads like
+/// an available one's; it is the Learn tab, not this provider, that keeps
+/// its lessons closed.
 ///
 /// Failures surface as this provider's [AsyncError]: an
 /// `UnsupportedContentSchemaException`/`ContentParseException`/
@@ -141,9 +147,12 @@ final courseContentProvider = CourseContentFamily._();
 /// level's index and is built with it attached, so its lessons can
 /// reference the earlier level's grammar, words and phrases.
 ///
-/// A [LevelAvailability.comingSoon] or unknown [levelId] fails fast with a
-/// [StateError] — callers should check the catalogue before invoking this
-/// provider, not rely on it to report unavailability.
+/// A level with no bundle ([LevelAvailability.comingSoon]) or an unknown
+/// [levelId] fails fast with a [StateError] — callers should check the
+/// catalogue before invoking this provider, not rely on it to report
+/// unavailability. A [LevelAvailability.preview] level's bundle loads like
+/// an available one's; it is the Learn tab, not this provider, that keeps
+/// its lessons closed.
 ///
 /// Failures surface as this provider's [AsyncError]: an
 /// `UnsupportedContentSchemaException`/`ContentParseException`/
@@ -169,9 +178,12 @@ final class CourseContentProvider
   /// level's index and is built with it attached, so its lessons can
   /// reference the earlier level's grammar, words and phrases.
   ///
-  /// A [LevelAvailability.comingSoon] or unknown [levelId] fails fast with a
-  /// [StateError] — callers should check the catalogue before invoking this
-  /// provider, not rely on it to report unavailability.
+  /// A level with no bundle ([LevelAvailability.comingSoon]) or an unknown
+  /// [levelId] fails fast with a [StateError] — callers should check the
+  /// catalogue before invoking this provider, not rely on it to report
+  /// unavailability. A [LevelAvailability.preview] level's bundle loads like
+  /// an available one's; it is the Learn tab, not this provider, that keeps
+  /// its lessons closed.
   ///
   /// Failures surface as this provider's [AsyncError]: an
   /// `UnsupportedContentSchemaException`/`ContentParseException`/
@@ -222,7 +234,7 @@ final class CourseContentProvider
   }
 }
 
-String _$courseContentHash() => r'0343e624352f7ce30aec3522c491f20f924d78b9';
+String _$courseContentHash() => r'82d06f3f2ba1efcef77eb5f2ef9a35684fb1d843';
 
 /// Loads, parses (off the UI isolate), and indexes the curriculum bundle for
 /// [levelId]. Kept alive so a level's bundle is parsed once, not per screen
@@ -232,9 +244,12 @@ String _$courseContentHash() => r'0343e624352f7ce30aec3522c491f20f924d78b9';
 /// level's index and is built with it attached, so its lessons can
 /// reference the earlier level's grammar, words and phrases.
 ///
-/// A [LevelAvailability.comingSoon] or unknown [levelId] fails fast with a
-/// [StateError] — callers should check the catalogue before invoking this
-/// provider, not rely on it to report unavailability.
+/// A level with no bundle ([LevelAvailability.comingSoon]) or an unknown
+/// [levelId] fails fast with a [StateError] — callers should check the
+/// catalogue before invoking this provider, not rely on it to report
+/// unavailability. A [LevelAvailability.preview] level's bundle loads like
+/// an available one's; it is the Learn tab, not this provider, that keeps
+/// its lessons closed.
 ///
 /// Failures surface as this provider's [AsyncError]: an
 /// `UnsupportedContentSchemaException`/`ContentParseException`/
@@ -261,9 +276,12 @@ final class CourseContentFamily extends $Family
   /// level's index and is built with it attached, so its lessons can
   /// reference the earlier level's grammar, words and phrases.
   ///
-  /// A [LevelAvailability.comingSoon] or unknown [levelId] fails fast with a
-  /// [StateError] — callers should check the catalogue before invoking this
-  /// provider, not rely on it to report unavailability.
+  /// A level with no bundle ([LevelAvailability.comingSoon]) or an unknown
+  /// [levelId] fails fast with a [StateError] — callers should check the
+  /// catalogue before invoking this provider, not rely on it to report
+  /// unavailability. A [LevelAvailability.preview] level's bundle loads like
+  /// an available one's; it is the Learn tab, not this provider, that keeps
+  /// its lessons closed.
   ///
   /// Failures surface as this provider's [AsyncError]: an
   /// `UnsupportedContentSchemaException`/`ContentParseException`/
@@ -284,7 +302,10 @@ final class CourseContentFamily extends $Family
 ///
 /// Kept alive: it only hands on the already kept-alive level index, and
 /// callers that `read` it from a callback (the refinement drain) must not
-/// see it disposed mid-load.
+/// see it disposed mid-load. Trade-off: every distinct content id ever
+/// opened keeps its own live family element here for the rest of the app's
+/// life — bounded by the bundles' total id count (~1,400 today), each
+/// element tiny, so this doesn't grow without bound.
 
 @ProviderFor(contentIndexForId)
 final contentIndexForIdProvider = ContentIndexForIdFamily._();
@@ -295,7 +316,10 @@ final contentIndexForIdProvider = ContentIndexForIdFamily._();
 ///
 /// Kept alive: it only hands on the already kept-alive level index, and
 /// callers that `read` it from a callback (the refinement drain) must not
-/// see it disposed mid-load.
+/// see it disposed mid-load. Trade-off: every distinct content id ever
+/// opened keeps its own live family element here for the rest of the app's
+/// life — bounded by the bundles' total id count (~1,400 today), each
+/// element tiny, so this doesn't grow without bound.
 
 final class ContentIndexForIdProvider
     extends
@@ -313,7 +337,10 @@ final class ContentIndexForIdProvider
   ///
   /// Kept alive: it only hands on the already kept-alive level index, and
   /// callers that `read` it from a callback (the refinement drain) must not
-  /// see it disposed mid-load.
+  /// see it disposed mid-load. Trade-off: every distinct content id ever
+  /// opened keeps its own live family element here for the rest of the app's
+  /// life — bounded by the bundles' total id count (~1,400 today), each
+  /// element tiny, so this doesn't grow without bound.
   ContentIndexForIdProvider._({
     required ContentIndexForIdFamily super.from,
     required String super.argument,
@@ -366,7 +393,10 @@ String _$contentIndexForIdHash() => r'e72c69931cfdce09edaad596cac54fb25d6d8f90';
 ///
 /// Kept alive: it only hands on the already kept-alive level index, and
 /// callers that `read` it from a callback (the refinement drain) must not
-/// see it disposed mid-load.
+/// see it disposed mid-load. Trade-off: every distinct content id ever
+/// opened keeps its own live family element here for the rest of the app's
+/// life — bounded by the bundles' total id count (~1,400 today), each
+/// element tiny, so this doesn't grow without bound.
 
 final class ContentIndexForIdFamily extends $Family
     with $FunctionalFamilyOverride<FutureOr<CourseContentIndex>, String> {
@@ -385,7 +415,10 @@ final class ContentIndexForIdFamily extends $Family
   ///
   /// Kept alive: it only hands on the already kept-alive level index, and
   /// callers that `read` it from a callback (the refinement drain) must not
-  /// see it disposed mid-load.
+  /// see it disposed mid-load. Trade-off: every distinct content id ever
+  /// opened keeps its own live family element here for the rest of the app's
+  /// life — bounded by the bundles' total id count (~1,400 today), each
+  /// element tiny, so this doesn't grow without bound.
 
   ContentIndexForIdProvider call(String contentId) =>
       ContentIndexForIdProvider._(argument: contentId, from: this);

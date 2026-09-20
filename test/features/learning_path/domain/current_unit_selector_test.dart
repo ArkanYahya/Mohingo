@@ -128,4 +128,46 @@ void main() {
       isNull,
     );
   });
+
+  test('activity in another level is ignored: the learner resumes where '
+      'they left off in THIS level', () {
+    expect(
+      currentUnitId(
+        units: units,
+        masteredUnitIds: const {'U0'},
+        allLessonProgress: [
+          _progress(
+            unitId: 'U1',
+            lessonId: 'L1',
+            lastPositionUpdatedAt: DateTime.utc(2026, 9, 18),
+          ),
+          // More recent, but it belongs to a level this page isn't showing.
+          _progress(
+            unitId: 'A2-U5',
+            lessonId: 'A2-L1',
+            lastPositionUpdatedAt: DateTime.utc(2026, 9, 20),
+          ),
+        ],
+      ),
+      'U1',
+    );
+  });
+
+  test('with activity only in another level, falls back to this level\'s '
+      'first not-yet-mastered unit', () {
+    expect(
+      currentUnitId(
+        units: units,
+        masteredUnitIds: const {'U0'},
+        allLessonProgress: [
+          _progress(
+            unitId: 'A2-U5',
+            lessonId: 'A2-L1',
+            lastPositionUpdatedAt: DateTime.utc(2026, 9, 20),
+          ),
+        ],
+      ),
+      'U1',
+    );
+  });
 }

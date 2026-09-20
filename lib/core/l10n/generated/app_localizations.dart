@@ -764,17 +764,89 @@ abstract class AppLocalizations {
   /// **'Show what you can do after the last unit — in the Tests tab.'**
   String get learnFinishBody;
 
-  /// Section title above the list of levels that aren't available yet.
+  /// Screen-reader label of the level strip's pill for the level the learner is currently in.
   ///
   /// In en, this message translates to:
-  /// **'Coming later'**
-  String get learnComingLaterTitle;
+  /// **'Level {level}, the one you\'re learning now'**
+  String learnLevelSemanticsCurrent(String level);
 
-  /// Line under the not-yet-available levels.
+  /// Screen-reader label of the level strip's pill for a level that is open but isn't the one on screen.
   ///
   /// In en, this message translates to:
-  /// **'More levels are on the way. Everything you learn in A1 carries over.'**
-  String get learnComingLaterBody;
+  /// **'Level {level}, open — switch to it'**
+  String learnLevelSemanticsOpen(String level);
+
+  /// Screen-reader label of the level strip's pill for a level that is released but locked for this learner.
+  ///
+  /// In en, this message translates to:
+  /// **'Level {level}, locked'**
+  String learnLevelSemanticsLocked(String level);
+
+  /// Line under the level strip, naming the level the learner is shown as being in.
+  ///
+  /// In en, this message translates to:
+  /// **'More levels are on the way. Everything you learn in {level} carries over.'**
+  String learnLevelComingLaterBody(String level);
+
+  /// Title of the lock sheet shown for a level the learner hasn't reached yet.
+  ///
+  /// In en, this message translates to:
+  /// **'{level} builds on {previous}'**
+  String levelLockTitle(String level, String previous);
+
+  /// Body of the lock sheet shown for a level the learner hasn't reached yet.
+  ///
+  /// In en, this message translates to:
+  /// **'Finishing {previous} opens it. You can check where you stand with the placement test — or open {level} anyway.'**
+  String levelLockBody(String previous, String level);
+
+  /// Button on the lock sheet that opens the placement test.
+  ///
+  /// In en, this message translates to:
+  /// **'Take the placement test'**
+  String get levelLockTakeTest;
+
+  /// Button on the lock sheet that opens the level without the placement test.
+  ///
+  /// In en, this message translates to:
+  /// **'Open {level} anyway'**
+  String levelLockOpenAnyway(String level);
+
+  /// Title of the lock sheet shown for a level the app hasn't released yet.
+  ///
+  /// In en, this message translates to:
+  /// **'{level} isn\'t ready yet'**
+  String levelNotReleasedTitle(String level);
+
+  /// Body of the lock sheet shown for a level the app hasn't released yet.
+  ///
+  /// In en, this message translates to:
+  /// **'Its lessons open when it\'s ready. Until then you can look at what it covers.'**
+  String get levelNotReleasedBody;
+
+  /// Button on the lock sheet that lets the learner look at a level's content without opening its lessons.
+  ///
+  /// In en, this message translates to:
+  /// **'See what {level} covers'**
+  String levelNotReleasedBrowse(String level);
+
+  /// Title of the banner shown above a level's unit list while the learner is only browsing it, not enrolled in it.
+  ///
+  /// In en, this message translates to:
+  /// **'A look at {level}'**
+  String learnPreviewBannerTitle(String level);
+
+  /// Body of the browsing banner, explaining the units are read-only until the level ships.
+  ///
+  /// In en, this message translates to:
+  /// **'These are the units {level} will cover. Its lessons open when it\'s ready.'**
+  String learnPreviewBannerBody(String level);
+
+  /// Button in the browsing banner that returns the learner to the level they are actually enrolled in.
+  ///
+  /// In en, this message translates to:
+  /// **'Back to {level}'**
+  String learnPreviewBackToCurrent(String level);
 
   /// Small word under the correct/total fraction inside the lesson-complete score ring, e.g. '3/4' over 'correct'.
   ///

@@ -1,7 +1,7 @@
 > **What this file is:** How the app talks to and treats users — voice, tone, how it handles errors/empty states, and the accessibility bar it must clear. Keeps copy and interaction patterns from feeling like they were written by a different person on every screen.
 > **How to use it:** Reference when writing any user-facing copy or interaction (errors, empty states, confirmations). If a new pattern is needed, add it here once decided rather than inventing it locally each time.
 
-_Last verified: 2026-09-19 — added "Tests": the placement test and final assessment don't mark answers while running. Previously verified 2026-09-09 — added the "not answered" empty-state copy introduced by the Learn tab's lesson-answer-review feature; see docs/superpowers/specs/2026-09-09-lesson-answer-review-design.md._
+_Last verified: 2026-09-20 (`feature/a2-current-level`) — added "Levels": a level that isn't open right now always says why and offers a way forward, never a dead end. Previously verified 2026-09-19 — added "Tests": the placement test and final assessment don't mark answers while running. Previously verified 2026-09-09 — added the "not answered" empty-state copy introduced by the Learn tab's lesson-answer-review feature; see docs/superpowers/specs/2026-09-09-lesson-answer-review-design.md._
 
 # UX Principles
 
@@ -32,6 +32,12 @@ Confirmation required only for actions that lose progress or data (e.g. resettin
 ## Tests
 
 The placement test and final assessment never tell the learner whether an answer was right while the test is running — no colours, sounds or correct answers, and no listening transcripts — because both are there to measure, and the assessment's items must stay unseen for a retake. Say so before the test starts (the intro's rules note) and after each answer ("Answer saved · You'll see your results at the end"). The final mission is a scenario the learner works through, so it keeps normal right/wrong feedback.
+
+## Levels
+
+A level that isn't open right now always says why, in the same bottom sheet, and always offers a way forward — the app never presents a level the learner can't act on at all without explaining itself. A level the learner hasn't reached yet names what it builds on and offers two ways forward: take the placement test, or open it anyway, since progression is a recommendation, never a wall (see [PRODUCT.md](PRODUCT.md) flow 5). A level the app hasn't released yet says so plainly and offers only to look at what it covers, since there's genuinely nothing to open. See [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md)'s Level lock sheet.
+
+Browsing an unreleased level never implies the learner has moved into it or is enrolled in it: the "your course" overline and the current-unit emphasis are both left out while browsing, and its units render read-only, with a clear way back to the level the learner is actually in.
 
 ## Accessibility baseline
 

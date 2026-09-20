@@ -473,11 +473,71 @@ class AppLocalizationsAr extends AppLocalizations {
       'بعد آخر وحدة، أظهر ما تستطيع فعله — في تبويب الاختبارات.';
 
   @override
-  String get learnComingLaterTitle => 'قريباً';
+  String learnLevelSemanticsCurrent(String level) {
+    return 'المستوى $level، وهو ما تتعلّمه الآن';
+  }
 
   @override
-  String get learnComingLaterBody =>
-      'مستويات أخرى في الطريق، وكل ما تتعلّمه في A1 يبقى معك.';
+  String learnLevelSemanticsOpen(String level) {
+    return 'المستوى $level، مفتوح — انتقل إليه';
+  }
+
+  @override
+  String learnLevelSemanticsLocked(String level) {
+    return 'المستوى $level، مقفل';
+  }
+
+  @override
+  String learnLevelComingLaterBody(String level) {
+    return 'مستويات أخرى في الطريق، وكل ما تتعلّمه في المستوى $level يبقى معك.';
+  }
+
+  @override
+  String levelLockTitle(String level, String previous) {
+    return 'المستوى $level يُبنى على المستوى $previous';
+  }
+
+  @override
+  String levelLockBody(String previous, String level) {
+    return 'إنهاء $previous يفتحه. ويمكنك معرفة مستواك عبر اختبار تحديد المستوى، أو فتح $level على أي حال.';
+  }
+
+  @override
+  String get levelLockTakeTest => 'اختبر مستواك';
+
+  @override
+  String levelLockOpenAnyway(String level) {
+    return 'افتح المستوى $level على أي حال';
+  }
+
+  @override
+  String levelNotReleasedTitle(String level) {
+    return 'المستوى $level ليس جاهزًا بعد';
+  }
+
+  @override
+  String get levelNotReleasedBody =>
+      'ستُفتح دروسه عندما يصبح جاهزًا، ويمكنك الآن الاطلاع على محتواه.';
+
+  @override
+  String levelNotReleasedBrowse(String level) {
+    return 'اطّلع على محتوى المستوى $level';
+  }
+
+  @override
+  String learnPreviewBannerTitle(String level) {
+    return 'نظرة على المستوى $level';
+  }
+
+  @override
+  String learnPreviewBannerBody(String level) {
+    return 'هذه وحدات المستوى $level التي سيتناولها. ستُفتح دروسه عندما يصبح جاهزًا.';
+  }
+
+  @override
+  String learnPreviewBackToCurrent(String level) {
+    return 'العودة إلى المستوى $level';
+  }
 
   @override
   String get lessonCompleteCorrectCaption => 'صحيحة';

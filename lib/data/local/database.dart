@@ -47,7 +47,7 @@ class AppDatabase extends _$AppDatabase {
   AppDatabase.defaults() : super(driftDatabase(name: 'mohingo_progress'));
 
   @override
-  int get schemaVersion => 4;
+  int get schemaVersion => 5;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
@@ -62,6 +62,14 @@ class AppDatabase extends _$AppDatabase {
       if (from < 4) {
         await migrator.createTable(dailyTaskEvents);
       }
+      if (from < 5) {
+        await migrator.addColumn(courseEnrolments, courseEnrolments.levelId);
+        await migrator.addColumn(
+          courseEnrolments,
+          courseEnrolments.lastSelectedAt,
+        );
+        await migrator.addColumn(courseEnrolments, courseEnrolments.unlockedAt);
+      }
     },
   );
 
@@ -69,7 +77,7 @@ class AppDatabase extends _$AppDatabase {
   /// history (lesson/placement/mission/assessment alike), vocabulary/grammar
   /// review state (including favourites), the course enrolment record
   /// (idempotently re-created on next app read, see
-  /// `ensureA1EnrollmentProvider`), any still-queued
+  /// `ensureLevelEnrolmentProvider`), any still-queued
   /// `PendingOnlineRefinements` items (a queued-but-unresolved answer is
   /// progress state too), and `DailyTaskEvents` (Home's "Tasks today" row
   /// resets with everything else). The `Learners` row itself, its stable

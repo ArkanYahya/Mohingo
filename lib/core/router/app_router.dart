@@ -1,6 +1,7 @@
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
+import '../../content/catalog/level_catalog.dart';
 import '../../content/providers/course_content_providers.dart';
 import '../../features/app_shell/presentation/app_shell_scaffold.dart';
 import '../../features/app_shell/presentation/content_error_screen.dart';
@@ -31,9 +32,11 @@ part 'app_router.g.dart';
 
 /// The app's route tree.
 ///
-/// The root [GoRouter.redirect] gates every route on the A1 curriculum
-/// bundle's load status: `/splash` while loading, `/content-error` on an
-/// unsupported schema or parse failure, otherwise the normal tree. See
+/// The root [GoRouter.redirect] gates every route on the base level's
+/// ([kBaseLevelId]) curriculum bundle load status: `/splash` while
+/// loading, `/content-error` on an unsupported schema or parse failure,
+/// otherwise the normal tree. A later level failing to load is handled
+/// where that level is shown and never blocks the app. See
 /// docs/ARCHITECTURE.md's content-loading strategy.
 ///
 /// The lesson player, and any future placement/final-mission/
@@ -48,7 +51,7 @@ GoRouter appRouter(Ref ref) {
     initialLocation: '/home',
     refreshListenable: refreshListenable,
     redirect: (context, state) {
-      final contentAsync = ref.read(courseContentProvider('a1'));
+      final contentAsync = ref.read(courseContentProvider(kBaseLevelId));
       final atGateScreen =
           state.matchedLocation == '/splash' ||
           state.matchedLocation == '/content-error';
