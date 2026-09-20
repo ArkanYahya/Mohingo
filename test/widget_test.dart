@@ -178,9 +178,8 @@ void main() {
       tester,
       prefs,
       overrides: [
-        courseContentProvider('a2').overrideWith(
-          (ref) async => throw StateError('A2 is broken'),
-        ),
+        courseContentProvider('a2')
+            .overrideWith((ref) async => throw StateError('A2 is broken')),
       ],
     );
 
