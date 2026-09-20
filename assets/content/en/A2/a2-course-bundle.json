@@ -6759,8 +6759,9 @@
           "titleAr": "اسأل سؤالاً أفضل",
           "lessonType": "encounter-focus-practice",
           "canDo": [
+            "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE",
             "A2.U1.READING.UNDERSTAND_PROFILE",
-            "A2.U1.INTERACTION.ASK_FOLLOW_UP"
+            "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE"
           ],
           "grammar": [
             "A2.G.WH_FOLLOW_UP"
@@ -6777,9 +6778,34 @@
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "Nora: I am learning to drive. Sami: Really? When do you practise? Nora: On Saturday mornings.",
-                "ar": ""
+                "speaker": "Tariq",
+                "en": "Rania? I don't usually see you here on Tuesdays.",
+                "ar": "رانية؟ لا أراكِ هنا عادةً أيام الثلاثاء."
+              },
+              {
+                "speaker": "Rania",
+                "en": "I'm doing the photography course now. What about you?",
+                "ar": "أتابع دورة التصوير هذه الأيام. وماذا عنكَ أنت؟"
+              },
+              {
+                "speaker": "Tariq",
+                "en": "A Spanish class. How often do you come?",
+                "ar": "درس إسبانية. وكم مرة تأتين؟"
+              },
+              {
+                "speaker": "Rania",
+                "en": "Every Tuesday. And how long is your class?",
+                "ar": "كل ثلاثاء. وكم تستغرق حصتكَ؟"
+              },
+              {
+                "speaker": "Tariq",
+                "en": "Ninety minutes. It's hard, but recently I feel more confident.",
+                "ar": "تسعون دقيقة. إنه صعب، لكنني مؤخراً أشعر بثقة أكبر."
+              },
+              {
+                "speaker": "Rania",
+                "en": "Tell me more. What do you do in the lesson?",
+                "ar": "أخبرني بالمزيد. ماذا تفعلون في الحصة؟"
               }
             ]
           },
@@ -6787,49 +6813,40 @@
             {
               "id": "A2-U1-L3-A01",
               "lessonId": "A2-U1-L3",
-              "type": "textChoice",
+              "type": "audioChoice",
               "mode": "encounter",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U1.READING.UNDERSTAND_PROFILE",
-                "A2.U1.INTERACTION.ASK_FOLLOW_UP"
+                "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE"
               ],
-              "prompt": "When does Nora practise driving?",
-              "promptAr": "متى تتدرب نورا على القيادة؟",
+              "prompt": "What are Tariq and Rania finding out about each other?",
+              "promptAr": "ما الذي يكتشفه طارق ورانية عن بعضهما؟",
               "options": [
-                "On Saturday mornings",
-                "Every evening",
-                "On Monday"
+                "Which evening classes they take",
+                "Which company they work for",
+                "How they get to the centre"
               ],
-              "answer": "On Saturday mornings",
-              "sourceText": "Nora: I am learning to drive. Sami: Really? When do you practise? Nora: On Saturday mornings."
+              "answer": "Which evening classes they take",
+              "audioTranscript": "Rania? I don't usually see you here on Tuesdays. I'm doing the photography course now. What about you? A Spanish class. How often do you come? Every Tuesday. And how long is your class? Ninety minutes. It's hard, but recently I feel more confident. Tell me more. What do you do in the lesson?"
             },
             {
               "id": "A2-U1-L3-A02",
               "lessonId": "A2-U1-L3",
-              "type": "match",
+              "type": "gap",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U1.READING.UNDERSTAND_PROFILE",
-                "A2.U1.INTERACTION.ASK_FOLLOW_UP"
+                "A2.U1.READING.UNDERSTAND_PROFILE"
               ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "follow-up",
-                  "متابعة"
-                ],
-                [
-                  "detail",
-                  "تفصيل"
-                ],
-                [
-                  "recently",
-                  "مؤخراً"
-                ]
-              ]
+              "prompt": "The answer is 'Twice a week'. Choose the question that asks for it.",
+              "promptAr": "الإجابة هي «مرتين في الأسبوع». اختر السؤال الذي يطلبها.",
+              "text": "___ do you go to the class? Twice a week.",
+              "options": [
+                "How often",
+                "How long",
+                "How many"
+              ],
+              "answer": "How often"
             },
             {
               "id": "A2-U1-L3-A03",
@@ -6838,66 +6855,100 @@
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U1.READING.UNDERSTAND_PROFILE",
-                "A2.U1.INTERACTION.ASK_FOLLOW_UP"
+                "A2.U1.READING.UNDERSTAND_PROFILE"
               ],
-              "prompt": "Put the language in the best order.",
-              "promptAr": "رتب اللغة بالترتيب الأفضل.",
+              "prompt": "Put this follow-up question in the correct order.",
+              "promptAr": "رتّب سؤال المتابعة هذا بالترتيب الصحيح.",
               "tokens": [
-                "do",
-                "What",
-                "after work?",
-                "you",
-                "do"
+                "is",
+                "How",
+                "each",
+                "long",
+                "lesson?"
               ],
               "answer": [
-                "What",
-                "do",
-                "you",
-                "do",
-                "after work?"
+                "How",
+                "long",
+                "is",
+                "each",
+                "lesson?"
               ]
             },
             {
               "id": "A2-U1-L3-A04",
               "lessonId": "A2-U1-L3",
-              "type": "textChoice",
+              "type": "audioChoice",
               "mode": "mastery",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U1.READING.UNDERSTAND_PROFILE",
-                "A2.U1.INTERACTION.ASK_FOLLOW_UP"
+                "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE"
               ],
-              "prompt": "Which question asks for more detail?",
-              "promptAr": "أي سؤال يطلب تفصيلاً إضافياً؟",
+              "prompt": "How often does Maysoon teach the bread class?",
+              "promptAr": "كم مرة تُدرّس ميسون درس الخبز؟",
               "options": [
-                "Where do you work?",
-                "Do you work?",
-                "Is it a job?"
+                "Twice a month",
+                "Every morning",
+                "Three times a week"
               ],
-              "answer": "Where do you work?",
-              "sourceText": "Adel: I have a new job. Rana: Where do you work? Adel: At the city hospital."
+              "answer": "Twice a month",
+              "audioTranscript": "Maysoon runs a small bakery in Erbil. She opens at six every morning and closes at two in the afternoon. Twice a month she also teaches a bread class, and each class lasts three hours. Her students come from all over the city."
             },
             {
               "id": "A2-U1-L3-A05",
               "lessonId": "A2-U1-L3",
               "type": "speak",
               "mode": "mastery",
-              "skill": "spokenInteraction",
+              "skill": "spokenProduction",
               "canDo": [
-                "A2.U1.READING.UNDERSTAND_PROFILE",
-                "A2.U1.INTERACTION.ASK_FOLLOW_UP"
+                "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE"
               ],
-              "prompt": "A partner says, ‘I am taking a new course.’ Ask two relevant follow-up questions.",
-              "promptAr": "يقول شريك: «أحضر دورة جديدة». اسأل سؤالَي متابعة مناسبين.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "Talk about something you are learning at the moment. Answer the two follow-up questions before your friend asks them: how often you do it, and how long it takes. Then add one more detail.",
+              "promptAr": "تحدّث عن شيء تتعلمه في الوقت الحالي. أجب عن سؤالَي المتابعة قبل أن يسألهما صديقك: كم مرة تفعل ذلك، وكم يستغرق من وقت. ثم أضف تفصيلاً آخر.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "learning",
+                    "studying",
+                    "practising",
+                    "practicing",
+                    "course",
+                    "class",
+                    "classes",
+                    "lessons",
+                    "training",
+                    "I go to"
+                  ],
+                  [
+                    "every",
+                    "twice",
+                    "three times",
+                    "once",
+                    "most days",
+                    "a week",
+                    "a month",
+                    "at the weekend",
+                    "on Tuesdays",
+                    "how often"
+                  ],
+                  [
+                    "minutes",
+                    "hour",
+                    "hours",
+                    "half an",
+                    "lasts",
+                    "takes",
+                    "all morning",
+                    "all evening",
+                    "how long"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             }
           ]
         },
@@ -6908,7 +6959,8 @@
           "lessonType": "encounter-focus-practice",
           "canDo": [
             "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE",
-            "A2.U1.INTERACTION.ASK_FOLLOW_UP"
+            "A2.U1.READING.UNDERSTAND_PROFILE",
+            "A2.U1.WRITING.WRITE_LIFE_UPDATE"
           ],
           "grammar": [
             "A2.G.QUESTION_AUXILIARY_REVIEW"
@@ -6924,9 +6976,34 @@
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "A: I am working on a new project. B: That sounds interesting. Are you enjoying it? A: Yes, very much.",
-                "ar": "أ: أعمل على مشروع جديد. ب: يبدو ذلك ممتعاً. هل تستمتع به؟ أ: نعم، كثيراً."
+                "speaker": "Zaid",
+                "en": "Hiba, do you come here every Saturday?",
+                "ar": "هبة، هل تأتين إلى هنا كل سبت؟"
+              },
+              {
+                "speaker": "Hiba",
+                "en": "I do, yes. I really enjoy sorting the books.",
+                "ar": "نعم، آتي. أستمتع حقاً بترتيب الكتب."
+              },
+              {
+                "speaker": "Samir",
+                "en": "Does your sister volunteer here too?",
+                "ar": "وهل تتطوّع أختكِ هنا أيضاً؟"
+              },
+              {
+                "speaker": "Hiba",
+                "en": "She doesn't. She's more interested in the music group.",
+                "ar": "لا، لا تتطوّع. هي مهتمة أكثر بمجموعة الموسيقى."
+              },
+              {
+                "speaker": "Zaid",
+                "en": "That sounds interesting. Tell me more about it.",
+                "ar": "يبدو ذلك ممتعاً. أخبريني بالمزيد عنها."
+              },
+              {
+                "speaker": "Hiba",
+                "en": "They meet on Sundays, and anyone can join.",
+                "ar": "يجتمعون أيام الأحد، ويمكن لأي شخص أن ينضم."
               }
             ]
           },
@@ -6938,106 +7015,138 @@
               "mode": "encounter",
               "skill": "listening",
               "canDo": [
-                "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE",
-                "A2.U1.INTERACTION.ASK_FOLLOW_UP"
+                "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE"
               ],
-              "prompt": "What does B do?",
-              "promptAr": "ماذا يفعل ب؟",
+              "prompt": "What are the three volunteers talking about?",
+              "promptAr": "عمَّ يتحدث المتطوعون الثلاثة؟",
               "options": [
-                "Shows interest and asks a question",
-                "Changes the subject",
-                "Ends the conversation"
+                "What each of them does here",
+                "A problem with the library",
+                "Their holiday next month"
               ],
-              "answer": "Shows interest and asks a question",
-              "audioTranscript": "A: I am working on a new project. B: That sounds interesting. Are you enjoying it? A: Yes, very much."
+              "answer": "What each of them does here",
+              "audioTranscript": "Hiba, do you come here every Saturday? I do, yes. I really enjoy sorting the books. Does your sister volunteer here too? She doesn't. She's more interested in the music group. That sounds interesting. Tell me more about it. They meet on Sundays, and anyone can join."
             },
             {
               "id": "A2-U1-L4-A02",
-              "lessonId": "A2-U1-L4",
-              "type": "match",
-              "mode": "practice",
-              "skill": "reading",
-              "canDo": [
-                "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE",
-                "A2.U1.INTERACTION.ASK_FOLLOW_UP"
-              ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "interested",
-                  "مهتم"
-                ],
-                [
-                  "busy",
-                  "مشغول"
-                ],
-                [
-                  "enjoy",
-                  "يستمتع"
-                ]
-              ]
-            },
-            {
-              "id": "A2-U1-L4-A03",
               "lessonId": "A2-U1-L4",
               "type": "gap",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE",
-                "A2.U1.INTERACTION.ASK_FOLLOW_UP"
+                "A2.U1.READING.UNDERSTAND_PROFILE"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "___ you enjoying your new class?",
+              "prompt": "Choose the word that starts this question correctly.",
+              "promptAr": "اختر الكلمة التي يبدأ بها هذا السؤال بشكل صحيح.",
+              "text": "___ your brother work at the library on Saturdays?",
               "options": [
-                "Are",
+                "Does",
                 "Do",
                 "Is"
               ],
-              "answer": "Are"
+              "answer": "Does"
+            },
+            {
+              "id": "A2-U1-L4-A03",
+              "lessonId": "A2-U1-L4",
+              "type": "match",
+              "mode": "practice",
+              "skill": "reading",
+              "canDo": [
+                "A2.U1.READING.UNDERSTAND_PROFILE"
+              ],
+              "prompt": "Match each question with the short answer that fits.",
+              "promptAr": "طابق كل سؤال بالإجابة القصيرة المناسبة له.",
+              "pairs": [
+                [
+                  "Do you enjoy the work?",
+                  "Yes, I do."
+                ],
+                [
+                  "Does Samir come on Sundays?",
+                  "No, he doesn't."
+                ],
+                [
+                  "Are you interested in music?",
+                  "Yes, I am."
+                ]
+              ]
             },
             {
               "id": "A2-U1-L4-A04",
               "lessonId": "A2-U1-L4",
-              "type": "audioChoice",
+              "type": "textChoice",
               "mode": "mastery",
-              "skill": "listening",
+              "skill": "reading",
               "canDo": [
-                "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE",
-                "A2.U1.INTERACTION.ASK_FOLLOW_UP"
+                "A2.U1.READING.UNDERSTAND_PROFILE"
               ],
-              "prompt": "Which phrase shows interest?",
-              "promptAr": "أي عبارة تظهر الاهتمام؟",
+              "prompt": "Read the notice. What does it say about new members?",
+              "promptAr": "اقرأ الإعلان. ماذا يقول عن الأعضاء الجدد؟",
+              "sourceText": "Saturday Book Group. We meet every week at ten, in the small room behind the library desk. New members are always welcome. You do not need to read the whole book. Come and listen if you prefer. Tea is free.",
               "options": [
-                "Tell me more.",
-                "Where is it?",
-                "My sister"
+                "They can come without reading the book",
+                "They must finish the book first",
+                "They pay a small fee for tea"
               ],
-              "answer": "Tell me more.",
-              "audioTranscript": "A: My sister is opening a café. B: Really? Tell me more. Where is it?"
+              "answer": "They can come without reading the book"
             },
             {
               "id": "A2-U1-L4-A05",
               "lessonId": "A2-U1-L4",
-              "type": "speak",
+              "type": "write",
               "mode": "mastery",
-              "skill": "spokenInteraction",
+              "skill": "writing",
               "canDo": [
-                "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE",
-                "A2.U1.INTERACTION.ASK_FOLLOW_UP"
+                "A2.U1.WRITING.WRITE_LIFE_UPDATE"
               ],
-              "prompt": "Respond with interest and ask a follow-up question about a new hobby.",
-              "promptAr": "استجب باهتمام واسأل سؤال متابعة عن هواية جديدة.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "A friend writes: I am volunteering at the library on Saturdays now. Write a reply. Show that you are interested, ask two questions with do, does or are, and say one thing you enjoy doing at the moment.",
+              "promptAr": "يكتب لك صديق: «أتطوّع في المكتبة أيام السبت الآن». اكتب رداً تُظهر فيه اهتمامك، واسأل سؤالين باستخدام do أو does أو are، واذكر شيئاً واحداً تستمتع بفعله في الوقت الحالي.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "that sounds",
+                    "sounds interesting",
+                    "sounds great",
+                    "tell me more",
+                    "how interesting",
+                    "interested",
+                    "really",
+                    "lovely",
+                    "wonderful"
+                  ],
+                  [
+                    "do you",
+                    "do they",
+                    "does it",
+                    "does he",
+                    "does she",
+                    "does your",
+                    "are you",
+                    "are they",
+                    "is it"
+                  ],
+                  [
+                    "I enjoy",
+                    "I'm enjoying",
+                    "I am enjoying",
+                    "at the moment",
+                    "these days",
+                    "this month",
+                    "right now",
+                    "I am learning",
+                    "I'm learning"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "wordGuide": [
+                55,
+                75
+              ]
             }
           ]
         },
@@ -7047,8 +7156,9 @@
           "titleAr": "قارن ملفين شخصيين",
           "lessonType": "encounter-focus-practice",
           "canDo": [
+            "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE",
             "A2.U1.READING.UNDERSTAND_PROFILE",
-            "A2.U1.MEDIATION.RELAY_LIFE_UPDATE"
+            "A2.U1.INTERACTION.ASK_FOLLOW_UP"
           ],
           "grammar": [
             "A2.G.PRESENT_SIMPLE_VS_CONTINUOUS"
@@ -7064,9 +7174,34 @@
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "Maha is a nurse and works nights. Tia is studying nursing and is currently working at a bookshop. Both enjoy running.",
-                "ar": ""
+                "speaker": "Ghada",
+                "en": "Here are two profiles, Bashar. Which partner suits you?",
+                "ar": "أمامكَ ملفان شخصيان يا بشار. أي شريك يناسبكَ؟"
+              },
+              {
+                "speaker": "Bashar",
+                "en": "Tell me about them. What do they do?",
+                "ar": "حدّثيني عنهما. ماذا يعملان؟"
+              },
+              {
+                "speaker": "Ghada",
+                "en": "Idris teaches maths, but this term he's studying in Amman.",
+                "ar": "إدريس يُدرّس الرياضيات، لكنه هذا الفصل يدرس في عمّان."
+              },
+              {
+                "speaker": "Bashar",
+                "en": "And the other one?",
+                "ar": "وماذا عن الآخر؟"
+              },
+              {
+                "speaker": "Ghada",
+                "en": "Wafaa works nights at a hotel and is learning Turkish.",
+                "ar": "وفاء تعمل ليلاً في فندق، وتتعلّم التركية."
+              },
+              {
+                "speaker": "Bashar",
+                "en": "Idris, I think. We have a similar background.",
+                "ar": "إدريس، على ما أظن. خلفيتنا متشابهة."
               }
             ]
           },
@@ -7074,110 +7209,139 @@
             {
               "id": "A2-U1-L5-A01",
               "lessonId": "A2-U1-L5",
-              "type": "textChoice",
+              "type": "audioChoice",
               "mode": "encounter",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U1.READING.UNDERSTAND_PROFILE",
-                "A2.U1.MEDIATION.RELAY_LIFE_UPDATE"
+                "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE"
               ],
-              "prompt": "What do Maha and Tia have in common?",
-              "promptAr": "ما الشيء المشترك بين مها وتيا؟",
+              "prompt": "What is Ghada helping Bashar to do?",
+              "promptAr": "بماذا تساعد غادة بشاراً؟",
               "options": [
-                "They enjoy running.",
-                "They both work nights.",
-                "They both work at a bookshop."
+                "Choose a language partner",
+                "Find a new job",
+                "Book a room at a hotel"
               ],
-              "answer": "They enjoy running.",
-              "sourceText": "Maha is a nurse and works nights. Tia is studying nursing and is currently working at a bookshop. Both enjoy running."
+              "answer": "Choose a language partner",
+              "audioTranscript": "Here are two profiles, Bashar. Which partner suits you? Tell me about them. What do they do? Idris teaches maths, but this term he's studying in Amman. And the other one? Wafaa works nights at a hotel and is learning Turkish. Idris, I think. We have a similar background."
             },
             {
               "id": "A2-U1-L5-A02",
-              "lessonId": "A2-U1-L5",
-              "type": "match",
-              "mode": "practice",
-              "skill": "reading",
-              "canDo": [
-                "A2.U1.READING.UNDERSTAND_PROFILE",
-                "A2.U1.MEDIATION.RELAY_LIFE_UPDATE"
-              ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "profile",
-                  "ملف شخصي"
-                ],
-                [
-                  "background",
-                  "خلفية"
-                ],
-                [
-                  "similar",
-                  "مشابه"
-                ]
-              ]
-            },
-            {
-              "id": "A2-U1-L5-A03",
               "lessonId": "A2-U1-L5",
               "type": "gap",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U1.READING.UNDERSTAND_PROFILE",
-                "A2.U1.MEDIATION.RELAY_LIFE_UPDATE"
+                "A2.U1.READING.UNDERSTAND_PROFILE"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "They both like music, so they have that ___ common.",
+              "prompt": "One fact is permanent, one is only this year. Choose the form that fits.",
+              "promptAr": "معلومة دائمة وأخرى خاصة بهذا العام فقط. اختر الصيغة المناسبة.",
+              "text": "Wafaa works at a hotel, and this year she ___ Turkish.",
               "options": [
-                "in",
-                "at",
-                "on"
+                "is learning",
+                "learns",
+                "learn"
               ],
-              "answer": "in"
+              "answer": "is learning"
+            },
+            {
+              "id": "A2-U1-L5-A03",
+              "lessonId": "A2-U1-L5",
+              "type": "textChoice",
+              "mode": "practice",
+              "skill": "reading",
+              "canDo": [
+                "A2.U1.READING.UNDERSTAND_PROFILE"
+              ],
+              "prompt": "Read the two profiles. What do Idris and Wafaa have in common?",
+              "promptAr": "اقرأ الملفين الشخصيين. ما القاسم المشترك بين إدريس ووفاء؟",
+              "sourceText": "Idris teaches maths at a school in Basra. This term he is studying for an exam in Amman. Wafaa works nights at a hotel in Amman, and she is learning Turkish online. Both of them run every morning before work.",
+              "options": [
+                "They both run in the morning",
+                "They both work at night",
+                "They both teach at a school"
+              ],
+              "answer": "They both run in the morning"
             },
             {
               "id": "A2-U1-L5-A04",
               "lessonId": "A2-U1-L5",
-              "type": "textChoice",
+              "type": "audioChoice",
               "mode": "mastery",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U1.READING.UNDERSTAND_PROFILE",
-                "A2.U1.MEDIATION.RELAY_LIFE_UPDATE"
+                "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE"
               ],
-              "prompt": "Which fact is true?",
-              "promptAr": "أي حقيقة صحيحة؟",
+              "prompt": "Which fact is true only this month?",
+              "promptAr": "أي معلومة صحيحة هذا الشهر فقط؟",
               "options": [
-                "Both are learning Arabic.",
-                "Both live in Cairo permanently.",
-                "Both work in IT."
+                "Rasha drives Mona to work",
+                "Rasha works in a bank",
+                "They both leave at seven"
               ],
-              "answer": "Both are learning Arabic.",
-              "sourceText": "Omar usually lives in Cairo and works in IT. Ben lives in London and is visiting Cairo for a month. Both are learning Arabic."
+              "answer": "Rasha drives Mona to work",
+              "audioTranscript": "My two neighbours have similar lives. Rasha works in a bank and Mona works in a school, but both of them leave the house at seven. This month Rasha is driving Mona to work, because Mona's car is at the garage."
             },
             {
               "id": "A2-U1-L5-A05",
               "lessonId": "A2-U1-L5",
               "type": "speak",
               "mode": "mastery",
-              "skill": "mediation",
+              "skill": "spokenInteraction",
               "canDo": [
-                "A2.U1.READING.UNDERSTAND_PROFILE",
-                "A2.U1.MEDIATION.RELAY_LIFE_UPDATE"
+                "A2.U1.INTERACTION.ASK_FOLLOW_UP"
               ],
-              "prompt": "Read two short profiles provided by the app and relay one similarity and one difference in simple language.",
-              "promptAr": "اقرأ ملفين قصيرين يعرضهما التطبيق وانقل تشابهاً واحداً واختلافاً واحداً بلغة بسيطة.",
-              "evaluation": [
-                "selectRelevantInformation",
-                "clarity",
-                "audienceAwareness",
-                "accuracy"
+              "prompt": "Talk to your new language partner. Say one thing you both do and one thing that is different for you at the moment, then ask her a question.",
+              "promptAr": "تحدّث إلى شريكتك الجديدة في اللغة. اذكر شيئاً تفعلانه كلاكما وشيئاً مختلفاً عندك في الوقت الحالي، ثم اسألها سؤالاً.",
+              "partnerTurns": [
+                "Hello! So we are partners this month. I work in a hospital, and I study English every evening.",
+                "Really? I usually study alone, but these days I am practising with my sister.",
+                "We have that in common, then. Now ask me something about my week."
               ],
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "both",
+                    "too",
+                    "also",
+                    "the same",
+                    "in common",
+                    "similar",
+                    "like you",
+                    "I work",
+                    "I study",
+                    "every"
+                  ],
+                  [
+                    "at the moment",
+                    "right now",
+                    "this month",
+                    "this week",
+                    "these days",
+                    "currently",
+                    "just now",
+                    "for now"
+                  ],
+                  [
+                    "how long",
+                    "how often",
+                    "do you",
+                    "does it",
+                    "are you",
+                    "what do",
+                    "where do",
+                    "when do",
+                    "why do",
+                    "what about you"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             }
           ]
         },
