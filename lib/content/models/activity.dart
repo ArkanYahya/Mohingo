@@ -38,6 +38,15 @@ sealed class Activity {
   final String? promptAr;
   final Map<String, dynamic> raw;
 
+  /// Material the learner works from — a notice, a timetable, two short
+  /// profiles — shown as a card with the question. Any activity type may
+  /// carry one (A1's final-assessment mediation tasks and A2's mediation
+  /// tasks do). Null when absent or blank.
+  String? get sourceCard {
+    final value = raw['sourceCard'];
+    return value is String && value.trim().isNotEmpty ? value : null;
+  }
+
   static Activity fromJson(Map<String, dynamic> json) {
     final type = json['type'] as String;
     return switch (type) {
@@ -339,6 +348,18 @@ class SpeakActivity extends Activity {
   /// and `evidenceSkill` set to this value, never as speaking evidence. See
   /// docs/DATA_MODEL.md.
   final String? fallbackSkill;
+
+  /// What the other person says, read aloud before the learner answers —
+  /// the bundle's `partnerTurns`, or A1's older `examinerTurns`. Empty
+  /// when the task has none.
+  List<String> get partnerTurns {
+    final value = raw['partnerTurns'] ?? raw['examinerTurns'];
+    if (value is! List) return const [];
+    return [
+      for (final turn in value)
+        if (turn is String && turn.trim().isNotEmpty) turn,
+    ];
+  }
 }
 
 class WriteActivity extends Activity {

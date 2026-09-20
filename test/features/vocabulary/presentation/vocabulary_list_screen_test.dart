@@ -149,6 +149,6 @@ void main() {
 
     await tester.tap(find.text(_lex[2].headword));
     await tester.pumpAndSettle();
-    expect(find.text(_lex[2].examples.first), findsOneWidget);
+    expect(find.text(_lex[2].examples.first.en), findsOneWidget);
   });
 }

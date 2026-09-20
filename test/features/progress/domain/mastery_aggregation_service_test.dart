@@ -174,7 +174,7 @@ Unit _testUnit() {
     titleAr: 'وحدة اختبار',
     levelRole: 'core',
     estimatedMinutes: const [10, 20],
-    countsTowardA1Mastery: true,
+    countsTowardLevelMastery: true,
     lessons: const [],
     mastery: const UnitMastery(
       requiredObjectives: [
