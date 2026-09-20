@@ -1,7 +1,7 @@
 > **What this file is:** The definition of what the app is, who it's for, and what counts as "done." Prevents scope from being reinvented differently in each session.
 > **How to use it:** Update when scope actually changes (a feature is added/cut/reprioritized). Keep it at the level of *what and why*, not *how* — implementation belongs in [ARCHITECTURE.md](ARCHITECTURE.md).
 
-_Last verified: 2026-09-09 — onboarding and progress-gating flows updated for the local-only, free-access v1 decided this session; see [ADR 0004](adr/0004-local-only-v1-no-firebase-backend.md). Phase 10 corrected stale "progress gating" wording in Success criteria (the actual v1 model is recommendation-only, per flow 5) and resolved 3 of the 4 Open questions below against what actually got built. Added flow 4's read-only lesson-answer-review step (Learn tab only) — see docs/superpowers/specs/2026-09-09-lesson-answer-review-design.md._
+_Last verified: 2026-09-20 (`feature/a2-current-level`) — corrected "CEFR levels beyond A1 are roadmapped, not built": A2's content now ships inside the app as a not-yet-released level — its units are browsable, its lessons aren't — while B1–C2 remain roadmapped only; see [ADR 0006](adr/0006-multiple-levels.md) and [ROADMAP.md](ROADMAP.md). Also noted that flow 5's "recommend, never block" principle now extends to levels, not just units. Previously verified 2026-09-09 — onboarding and progress-gating flows updated for the local-only, free-access v1 decided this session; see [ADR 0004](adr/0004-local-only-v1-no-firebase-backend.md). Phase 10 corrected stale "progress gating" wording in Success criteria (the actual v1 model is recommendation-only, per flow 5) and resolved 3 of the 4 Open questions below against what actually got built. Added flow 4's read-only lesson-answer-review step (Learn tab only) — see docs/superpowers/specs/2026-09-09-lesson-answer-review-design.md._
 
 # Product
 
@@ -37,7 +37,7 @@ Self-directed adult learners, native Arabic speakers, learning English on their 
 - Teacher / classroom tools (no assigning content or tracking groups of students)
 - Any taught language other than English
 - Any native/interface language other than Arabic and English
-- CEFR levels beyond A1 (A2–C2 are roadmapped, not built, in the MVP)
+- CEFR levels beyond A1 as something a learner can actually study — A2's content is in the app as a not-yet-released level (its units are browsable, but its lessons stay closed until release, see [ADR 0006](adr/0006-multiple-levels.md) and [ROADMAP.md](ROADMAP.md)); B1–C2 remain roadmapped, not built
 
 ## Success criteria
 
@@ -49,7 +49,7 @@ The MVP is "done" when all A1 content and mechanics are built and functional: al
 2. **Placement test** — learner takes a short test; MVP always confirms/assigns A1 as the starting level.
 3. **Level overview** — learner sees the A1 level broken into its 4 thematic blocks and the units within each.
 4. **Unit lesson flow** — within a unit: vocabulary (with bilingual glosses) → grammar instruction (bilingual explanation) → guided practice/drills → reading passage → listening exercise → writing task → speaking task → end-of-unit assessment. Reopening a lesson that's already reached its final activity (Learn tab only) shows a read-only review of the learner's latest answer to each activity first — correct/incorrect, and the correct answer where one exists — rather than dropping back into a blank replay; an explicit "Practice again" button is the only way from there into a full live replay, which still appends fresh evidence rather than overwriting history (see [DATA_MODEL.md](DATA_MODEL.md)). The Tests tab's own retake flows (Final Mission, Final Assessment, the Placement Test) are unaffected — a separate, later decision.
-5. **Progress tracking, not hard gating** — the app recommends the next unit via mastery evidence (per-CanDo-objective, tracked separately per skill — see [DATA_MODEL.md](DATA_MODEL.md)), but a learner may freely open any unit, vocabulary, grammar, review, or test screen at any time; a block completes when all its units are mastered.
+5. **Progress tracking, not hard gating** — the app recommends the next unit via mastery evidence (per-CanDo-objective, tracked separately per skill — see [DATA_MODEL.md](DATA_MODEL.md)), but a learner may freely open any unit, vocabulary, grammar, review, or test screen at any time; a block completes when all its units are mastered. The same recommend-don't-block principle now extends to levels: a level the learner hasn't reached, or one the app hasn't released, explains why and offers a way forward (take the placement test, open it anyway, or just look at what it covers) rather than a dead end — see [UX_PRINCIPLES.md](UX_PRINCIPLES.md) and [ADR 0006](adr/0006-multiple-levels.md).
 6. **Level completion** — after all 4 blocks are passed, the learner completes CEFR level A1.
 7. **Progress tracking** — learner can see their position within A1 (blocks/units completed, skills practiced) at any time.
 
