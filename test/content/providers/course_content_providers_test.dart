@@ -89,4 +89,32 @@ void main() {
       throwsStateError,
     );
   });
+
+  test('an item opens in the level its id belongs to', () async {
+    final container = _container(_loader());
+
+    final forUnit = await container.read(
+      contentIndexForIdProvider('A2-U1').future,
+    );
+    final forGrammar = await container.read(
+      contentIndexForIdProvider('A1.G.BE.I_AM').future,
+    );
+
+    expect(
+      forUnit,
+      same(await container.read(courseContentProvider('a2').future)),
+    );
+    expect(
+      forGrammar,
+      same(await container.read(courseContentProvider('a1').future)),
+    );
+  });
+
+  test('an id with no level prefix fails with a StateError', () async {
+    final container = _container(_loader());
+    await expectLater(
+      container.read(contentIndexForIdProvider('TEST-U1').future),
+      throwsStateError,
+    );
+  });
 }

@@ -130,7 +130,7 @@ final pendingRefinementDrainerProvider = Provider<PendingRefinementDrainer>((
     attemptRepository: ref.watch(activityAttemptRepositoryProvider),
     grammarCheckService: ref.watch(grammarCheckServiceProvider),
     onItemResolved: ({required learnerId, required unitId}) async {
-      final index = await ref.read(courseContentProvider('a1').future);
+      final index = await ref.read(contentIndexForIdProvider(unitId).future);
       final unit = index.unitsById[unitId];
       // The content bundle could in principle change between when an item
       // was queued and when it resolves; nothing to refresh if the unit no

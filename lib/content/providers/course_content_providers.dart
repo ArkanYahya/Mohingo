@@ -2,6 +2,7 @@ import 'dart:isolate';
 
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
+import '../catalog/content_level.dart';
 import '../catalog/level_catalog.dart';
 import '../index/course_content_index.dart';
 import '../models/course_bundle.dart';
@@ -58,4 +59,20 @@ Future<CourseContentIndex> courseContent(Ref ref, String levelId) async {
     () => CourseBundleParser.parse(rawJson),
   );
   return CourseContentIndex.build(bundle, prerequisite: prerequisite);
+}
+
+/// The index of the level [contentId] belongs to — for a screen that opens
+/// one unit, lesson, activity, word, phrase or grammar point, so it shows
+/// the right level without being told it. See [levelIdOfContentId].
+///
+/// Kept alive: it only hands on the already kept-alive level index, and
+/// callers that `read` it from a callback (the refinement drain) must not
+/// see it disposed mid-load.
+@Riverpod(keepAlive: true)
+Future<CourseContentIndex> contentIndexForId(Ref ref, String contentId) async {
+  final levelId = levelIdOfContentId(contentId);
+  if (levelId == null) {
+    throw StateError('"$contentId" has no level prefix');
+  }
+  return ref.watch(courseContentProvider(levelId).future);
 }

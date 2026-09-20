@@ -277,3 +277,119 @@ final class CourseContentFamily extends $Family
   @override
   String toString() => r'courseContentProvider';
 }
+
+/// The index of the level [contentId] belongs to — for a screen that opens
+/// one unit, lesson, activity, word, phrase or grammar point, so it shows
+/// the right level without being told it. See [levelIdOfContentId].
+///
+/// Kept alive: it only hands on the already kept-alive level index, and
+/// callers that `read` it from a callback (the refinement drain) must not
+/// see it disposed mid-load.
+
+@ProviderFor(contentIndexForId)
+final contentIndexForIdProvider = ContentIndexForIdFamily._();
+
+/// The index of the level [contentId] belongs to — for a screen that opens
+/// one unit, lesson, activity, word, phrase or grammar point, so it shows
+/// the right level without being told it. See [levelIdOfContentId].
+///
+/// Kept alive: it only hands on the already kept-alive level index, and
+/// callers that `read` it from a callback (the refinement drain) must not
+/// see it disposed mid-load.
+
+final class ContentIndexForIdProvider
+    extends
+        $FunctionalProvider<
+          AsyncValue<CourseContentIndex>,
+          CourseContentIndex,
+          FutureOr<CourseContentIndex>
+        >
+    with
+        $FutureModifier<CourseContentIndex>,
+        $FutureProvider<CourseContentIndex> {
+  /// The index of the level [contentId] belongs to — for a screen that opens
+  /// one unit, lesson, activity, word, phrase or grammar point, so it shows
+  /// the right level without being told it. See [levelIdOfContentId].
+  ///
+  /// Kept alive: it only hands on the already kept-alive level index, and
+  /// callers that `read` it from a callback (the refinement drain) must not
+  /// see it disposed mid-load.
+  ContentIndexForIdProvider._({
+    required ContentIndexForIdFamily super.from,
+    required String super.argument,
+  }) : super(
+         retry: null,
+         name: r'contentIndexForIdProvider',
+         isAutoDispose: false,
+         dependencies: null,
+         $allTransitiveDependencies: null,
+       );
+
+  @override
+  String debugGetCreateSourceHash() => _$contentIndexForIdHash();
+
+  @override
+  String toString() {
+    return r'contentIndexForIdProvider'
+        ''
+        '($argument)';
+  }
+
+  @$internal
+  @override
+  $FutureProviderElement<CourseContentIndex> $createElement(
+    $ProviderPointer pointer,
+  ) => $FutureProviderElement(pointer);
+
+  @override
+  FutureOr<CourseContentIndex> create(Ref ref) {
+    final argument = this.argument as String;
+    return contentIndexForId(ref, argument);
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return other is ContentIndexForIdProvider && other.argument == argument;
+  }
+
+  @override
+  int get hashCode {
+    return argument.hashCode;
+  }
+}
+
+String _$contentIndexForIdHash() => r'e72c69931cfdce09edaad596cac54fb25d6d8f90';
+
+/// The index of the level [contentId] belongs to — for a screen that opens
+/// one unit, lesson, activity, word, phrase or grammar point, so it shows
+/// the right level without being told it. See [levelIdOfContentId].
+///
+/// Kept alive: it only hands on the already kept-alive level index, and
+/// callers that `read` it from a callback (the refinement drain) must not
+/// see it disposed mid-load.
+
+final class ContentIndexForIdFamily extends $Family
+    with $FunctionalFamilyOverride<FutureOr<CourseContentIndex>, String> {
+  ContentIndexForIdFamily._()
+    : super(
+        retry: null,
+        name: r'contentIndexForIdProvider',
+        dependencies: null,
+        $allTransitiveDependencies: null,
+        isAutoDispose: false,
+      );
+
+  /// The index of the level [contentId] belongs to — for a screen that opens
+  /// one unit, lesson, activity, word, phrase or grammar point, so it shows
+  /// the right level without being told it. See [levelIdOfContentId].
+  ///
+  /// Kept alive: it only hands on the already kept-alive level index, and
+  /// callers that `read` it from a callback (the refinement drain) must not
+  /// see it disposed mid-load.
+
+  ContentIndexForIdProvider call(String contentId) =>
+      ContentIndexForIdProvider._(argument: contentId, from: this);
+
+  @override
+  String toString() => r'contentIndexForIdProvider';
+}

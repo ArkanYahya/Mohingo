@@ -84,7 +84,9 @@ final lessonAttemptsForUnitProvider =
       List<ActivityAttempt>,
       ({int learnerId, String unitId})
     >((ref, params) async {
-      final index = await ref.watch(courseContentProvider('a1').future);
+      final index = await ref.watch(
+        contentIndexForIdProvider(params.unitId).future,
+      );
       final unit = index.unitsById[params.unitId];
       final lessonIds = <String>[
         for (final lesson in unit?.lessons ?? const []) lesson.id,

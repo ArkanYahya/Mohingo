@@ -69,7 +69,7 @@ class LessonPlayerScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final contentAsync = ref.watch(courseContentProvider('a1'));
+    final contentAsync = ref.watch(contentIndexForIdProvider(lessonId));
     final learnerAsync = ref.watch(currentLearnerProvider);
 
     return contentAsync.when(
@@ -94,8 +94,10 @@ class LessonPlayerScreen extends ConsumerWidget {
             mediaByKey: index.bundle.mediaSpecifications,
             unitNumber:
                 index.bundle.units.indexWhere((u) => u.id == unitId) + 1,
-            phrases: [for (final id in lesson.chunks) ?index.chunkById[id]],
-            grammar: [for (final id in lesson.grammar) ?index.grammarById[id]],
+            phrases: [for (final id in lesson.chunks) ?index.resolveChunk(id)],
+            grammar: [
+              for (final id in lesson.grammar) ?index.resolveGrammar(id),
+            ],
           ),
         );
       },
