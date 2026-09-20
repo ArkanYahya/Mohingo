@@ -51,4 +51,4 @@ final class EnsureA1EnrollmentProvider
 }
 
 String _$ensureA1EnrollmentHash() =>
-    r'5720de2d4b0051b2a0e7e5eb38ae7bfc51d126b4';
+    r'fb494d6d6ac05b98ca239fff7b992c57d5798886';

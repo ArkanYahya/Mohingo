@@ -2,7 +2,17 @@
 /// docs/PRODUCT.md's "A2-C2 must appear in the levels interface with a
 /// clear Coming Soon state — they must not be selectable as if content
 /// exists" rule.
-enum LevelAvailability { available, comingSoon }
+///
+/// [preview] sits between the other two: the level's content exists and
+/// loads, so a learner can see what it covers, but its lessons don't open
+/// until it is released (and a development build can open it — see
+/// `applyPreviewOverrides`). [comingSoon] has no content at all.
+enum LevelAvailability { available, preview, comingSoon }
+
+/// The level every learner starts in, and the one the app cannot run
+/// without — the router's content gate waits for this one alone, so a
+/// later level failing to load never blocks the app.
+const kBaseLevelId = 'a1';
 
 /// One row of the app-owned, level-agnostic content catalogue.
 ///
@@ -28,7 +38,9 @@ class LevelCatalogEntry {
   final String cefrCode;
   final LevelAvailability availability;
 
-  /// Set only when [availability] is [LevelAvailability.available].
+  /// Set when [availability] is [LevelAvailability.available] or
+  /// [LevelAvailability.preview] — both have content to load. Null for
+  /// [LevelAvailability.comingSoon].
   final String? bundleAssetPath;
 
   /// The level this one builds on (A2 builds on A1), or null. Its content
@@ -38,8 +50,9 @@ class LevelCatalogEntry {
   final String? prerequisiteLevelId;
 }
 
-/// The full CEFR level catalogue for v1: A1 available, A2-C2 Coming Soon.
-/// See docs/ROADMAP.md.
+/// The full CEFR level catalogue for v1: A1 available, A2 a preview (its
+/// content loads but its lessons stay closed until release), B1-C2 Coming
+/// Soon. See docs/ROADMAP.md.
 const kLevelCatalog = <LevelCatalogEntry>[
   LevelCatalogEntry(
     levelId: 'a1',
@@ -50,7 +63,8 @@ const kLevelCatalog = <LevelCatalogEntry>[
   LevelCatalogEntry(
     levelId: 'a2',
     cefrCode: 'A2',
-    availability: LevelAvailability.comingSoon,
+    availability: LevelAvailability.preview,
+    bundleAssetPath: 'assets/content/en/A2/a2-course-bundle.json',
     prerequisiteLevelId: 'a1',
   ),
   LevelCatalogEntry(
@@ -88,4 +102,31 @@ LevelCatalogEntry? levelCatalogEntryIn(
     if (entry.levelId == levelId) return entry;
   }
   return null;
+}
+
+/// [catalog] with every level in [openedLevelIds] promoted from
+/// [LevelAvailability.preview] to [LevelAvailability.available] — how a
+/// development build opens a level that isn't released yet. A level with no
+/// bundle can't be promoted; a level that is already available is
+/// unaffected. Returns [catalog] itself when there is nothing to promote.
+List<LevelCatalogEntry> applyPreviewOverrides(
+  List<LevelCatalogEntry> catalog,
+  Set<String> openedLevelIds,
+) {
+  if (openedLevelIds.isEmpty) return catalog;
+  return [
+    for (final entry in catalog)
+      if (entry.availability == LevelAvailability.preview &&
+          entry.bundleAssetPath != null &&
+          openedLevelIds.contains(entry.levelId))
+        LevelCatalogEntry(
+          levelId: entry.levelId,
+          cefrCode: entry.cefrCode,
+          availability: LevelAvailability.available,
+          bundleAssetPath: entry.bundleAssetPath,
+          prerequisiteLevelId: entry.prerequisiteLevelId,
+        )
+      else
+        entry,
+  ];
 }
