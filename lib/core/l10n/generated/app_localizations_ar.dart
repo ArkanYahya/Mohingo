@@ -473,11 +473,32 @@ class AppLocalizationsAr extends AppLocalizations {
       'بعد آخر وحدة، أظهر ما تستطيع فعله — في تبويب الاختبارات.';
 
   @override
-  String get learnComingLaterTitle => 'قريباً';
+  String get learnLevelStripTitle => 'مستوياتك';
 
   @override
-  String get learnComingLaterBody =>
-      'مستويات أخرى في الطريق، وكل ما تتعلّمه في A1 يبقى معك.';
+  String learnLevelSemanticsCurrent(String level) {
+    return 'المستوى $level، وهو ما تتعلّمه الآن';
+  }
+
+  @override
+  String learnLevelSemanticsOpen(String level) {
+    return 'المستوى $level، مفتوح — انتقل إليه';
+  }
+
+  @override
+  String learnLevelSemanticsLocked(String level) {
+    return 'المستوى $level، مقفل';
+  }
+
+  @override
+  String learnLevelSemanticsComingSoon(String level) {
+    return 'المستوى $level، قادم لاحقًا';
+  }
+
+  @override
+  String learnLevelComingLaterBody(String level) {
+    return 'مستويات أخرى في الطريق، وكل ما تتعلّمه في المستوى $level يبقى معك.';
+  }
 
   @override
   String get lessonCompleteCorrectCaption => 'صحيحة';

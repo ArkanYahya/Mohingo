@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -12,33 +14,92 @@ import '../../../core/theme/feedback_theme_extension.dart';
 import '../../../core/theme/overline_style.dart';
 import '../../../core/widgets/status_indicator.dart';
 import '../../../data/local/database.dart';
+import '../../progress/domain/level_access.dart';
+import '../../progress/providers/level_providers.dart';
 import '../domain/current_unit_selector.dart';
 import '../domain/lesson_resume.dart';
 import '../providers/unit_progress_providers.dart';
+import 'widgets/level_strip.dart';
 import 'widgets/path_row.dart';
 
-/// The Learn tab: the A1 course, straight away.
+/// The Learn tab: the course the learner is in, not always A1.
 ///
-/// A header (course title in English and Arabic, units mastered with one
-/// segment per unit), then the units as one path — each a numbered node on
-/// a rail with its title, Arabic, and size or status. The unit the learner
-/// is working on (see [currentUnitId]) is the only highlighted card: its
-/// lessons done, the next lesson, and a button straight into it. The path
-/// ends at the level's final mission & assessment (the Tests tab), and the
-/// levels that aren't available yet are a small "Coming later" strip —
-/// visible, never selectable as if content exists (docs/PRODUCT.md).
+/// Under the course title, a level strip shows every CEFR level with
+/// content — the one the learner is in filled, an open one tappable, a
+/// locked one behind a small lock, and the rest inert until they have
+/// content (see [LevelStrip]). Below it, a header (course title in English
+/// and Arabic, units mastered with one segment per unit), then the units as
+/// one path — each a numbered node on a rail with its title, Arabic, and
+/// size or status. The unit the learner is working on (see [currentUnitId])
+/// is the only highlighted card: its lessons done, the next lesson, and a
+/// button straight into it. The path ends at the level's final mission &
+/// assessment (the Tests tab).
 ///
 /// Every unit stays tappable — free access, no hard lock — per
 /// docs/PRODUCT.md flow 5.
-class CourseScreen extends ConsumerWidget {
+class CourseScreen extends ConsumerStatefulWidget {
   const CourseScreen({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final contentAsync = ref.watch(courseContentProvider('a1'));
+  ConsumerState<CourseScreen> createState() => _CourseScreenState();
+}
+
+/// No local state of its own yet: Task 9 adds the field that tracks a
+/// level the learner is browsing without switching into it. Starting this
+/// class as a [ConsumerStatefulWidget] now avoids converting it — and
+/// re-threading `ref` through it — a second time.
+class _CourseScreenState extends ConsumerState<CourseScreen> {
+  @override
+  Widget build(BuildContext context) {
+    final currentLevelIdAsync = ref.watch(currentLevelIdProvider);
+    final catalog = ref.watch(levelCatalogProvider);
     final unitProgress = ref.watch(allUnitProgressProvider).value ?? const [];
     final lessonProgress =
         ref.watch(allLessonProgressProvider).value ?? const [];
+
+    // A level whose access hasn't resolved yet is simply left out of the
+    // map — the strip renders it as coming later until it does, rather
+    // than letting one slow/failing level take the whole page down.
+    final access = <String, LevelAccess>{};
+    for (final entry in catalog) {
+      final resolved = ref.watch(levelAccessProvider(entry.levelId)).value;
+      if (resolved != null) access[entry.levelId] = resolved;
+    }
+
+    // For now the shown level is always the current one; Task 9 adds a
+    // separate browsing level that doesn't move the learner's enrolment.
+    final shownLevelId = currentLevelIdAsync.value;
+    final AsyncValue<CourseContentIndex> contentAsync;
+    if (currentLevelIdAsync.hasError) {
+      contentAsync = AsyncValue.error(
+        currentLevelIdAsync.error!,
+        currentLevelIdAsync.stackTrace!,
+      );
+    } else if (shownLevelId != null) {
+      contentAsync = ref.watch(courseContentProvider(shownLevelId));
+    } else {
+      contentAsync = const AsyncValue.loading();
+    }
+
+    void onSelect(LevelCatalogEntry entry, LevelAccess levelAccess) {
+      switch (levelAccess) {
+        case LevelAccess.open:
+          unawaited(
+            ref
+                .read(levelSelectionControllerProvider.notifier)
+                .select(entry.levelId),
+          );
+          return;
+        case LevelAccess.lockedNeedsPrerequisite:
+        case LevelAccess.notReleased:
+          // Task 8: the lock sheet explaining why this level isn't open.
+          return;
+        case LevelAccess.noContent:
+          // Unreachable in practice — LevelStrip never makes a no-content
+          // pill tappable — kept so this switch stays exhaustive.
+          return;
+      }
+    }
 
     return Scaffold(
       body: SafeArea(
@@ -50,6 +111,10 @@ class CourseScreen extends ConsumerWidget {
             index: index,
             unitProgress: unitProgress,
             lessonProgress: lessonProgress,
+            catalog: catalog,
+            shownLevelId: shownLevelId!,
+            access: access,
+            onSelect: onSelect,
           ),
         ),
       ),
@@ -62,11 +127,19 @@ class _CourseBody extends StatelessWidget {
     required this.index,
     required this.unitProgress,
     required this.lessonProgress,
+    required this.catalog,
+    required this.shownLevelId,
+    required this.access,
+    required this.onSelect,
   });
 
   final CourseContentIndex index;
   final List<UnitProgressData> unitProgress;
   final List<LessonProgressData> lessonProgress;
+  final List<LevelCatalogEntry> catalog;
+  final String shownLevelId;
+  final Map<String, LevelAccess> access;
+  final void Function(LevelCatalogEntry entry, LevelAccess access) onSelect;
 
   @override
   Widget build(BuildContext context) {
@@ -101,6 +174,13 @@ class _CourseBody extends StatelessWidget {
           style: overlineStyle(context, color: tokens.textSecondary),
         ),
         const SizedBox(height: AppSpace.xxs),
+        LevelStrip(
+          catalog: catalog,
+          shownLevelId: shownLevelId,
+          access: access,
+          onSelect: onSelect,
+        ),
+        const SizedBox(height: AppSpace.md),
         Align(
           alignment: AlignmentDirectional.centerStart,
           child: Text(
@@ -154,8 +234,6 @@ class _CourseBody extends StatelessWidget {
           ),
           child: _FinishCard(onTap: () => context.go('/tests')),
         ),
-        const SizedBox(height: AppSpace.lg),
-        const _ComingLater(),
       ],
     );
   }
@@ -606,104 +684,6 @@ class _FinishCard extends StatelessWidget {
               const SizedBox(width: AppSpace.xs),
               Icon(Icons.chevron_right_rounded, color: tokens.textSecondary),
             ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-/// Every CEFR level in the catalogue as a small pill: the available one
-/// filled, the rest outlined and announced as coming soon — shown so the
-/// learner sees the road ahead, never tappable. See docs/PRODUCT.md.
-class _ComingLater extends StatelessWidget {
-  const _ComingLater();
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final tokens = theme.extension<AppTokens>()!;
-    final l10n = AppLocalizations.of(context)!;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          l10n.learnComingLaterTitle.toUpperCase(),
-          style: overlineStyle(context, color: tokens.textSecondary),
-        ),
-        const SizedBox(height: AppSpace.xs),
-        Wrap(
-          spacing: AppSpace.xs,
-          runSpacing: AppSpace.xs,
-          children: [
-            for (final level in kLevelCatalog)
-              if (level.availability == LevelAvailability.available)
-                _LevelPill(
-                  code: level.cefrCode,
-                  semanticsLabel: level.cefrCode,
-                  background: tokens.primaryInk,
-                  foreground: tokens.onPrimaryInk,
-                )
-              else
-                _LevelPill(
-                  code: level.cefrCode,
-                  semanticsLabel: '${level.cefrCode} — ${l10n.comingSoon}',
-                  foreground: tokens.textSecondary,
-                  outline: Color.lerp(tokens.border, tokens.textSecondary, 0.2),
-                ),
-          ],
-        ),
-        const SizedBox(height: AppSpace.xs),
-        Text(
-          l10n.learnComingLaterBody,
-          style: theme.textTheme.bodySmall?.copyWith(
-            color: tokens.textSecondary,
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-class _LevelPill extends StatelessWidget {
-  const _LevelPill({
-    required this.code,
-    required this.semanticsLabel,
-    required this.foreground,
-    this.background,
-    this.outline,
-  });
-
-  final String code;
-  final String semanticsLabel;
-  final Color foreground;
-  final Color? background;
-  final Color? outline;
-
-  @override
-  Widget build(BuildContext context) {
-    return Semantics(
-      container: true,
-      label: semanticsLabel,
-      child: ExcludeSemantics(
-        child: Container(
-          constraints: const BoxConstraints(minWidth: 52, minHeight: 32),
-          padding: const EdgeInsets.symmetric(horizontal: AppSpace.sm),
-          decoration: BoxDecoration(
-            color: background,
-            borderRadius: BorderRadius.circular(999),
-            border: outline == null ? null : Border.all(color: outline!),
-          ),
-          // Sized to the code, not the row: Center with factors of 1
-          // centres it without expanding the pill.
-          child: Center(
-            widthFactor: 1,
-            heightFactor: 1,
-            child: Text(
-              code,
-              style: Theme.of(context).textTheme.labelLarge
-                  ?.copyWith(color: foreground, fontWeight: FontWeight.w700),
-            ),
           ),
         ),
       ),

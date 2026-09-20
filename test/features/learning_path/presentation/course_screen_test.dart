@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:drift/drift.dart' hide isNull, isNotNull;
@@ -6,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
+import 'package:mohingo/content/catalog/level_catalog.dart';
 import 'package:mohingo/content/index/course_content_index.dart';
 import 'package:mohingo/content/parsing/course_bundle_parser.dart';
 import 'package:mohingo/content/providers/course_content_providers.dart';
@@ -16,12 +18,20 @@ import 'package:mohingo/core/theme/color_seed.dart';
 import 'package:mohingo/data/local/database.dart';
 import 'package:mohingo/data/local/database_provider.dart';
 import 'package:mohingo/features/learning_path/presentation/course_screen.dart';
+import 'package:mohingo/features/learning_path/presentation/widgets/level_strip.dart';
+import 'package:mohingo/features/progress/data/drift_learner_repository.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import '../../../content/fixtures/minimal_bundle.dart';
 
 final _index = CourseContentIndex.build(
   CourseBundleParser.parse(
     File('assets/content/en/A1/a1-course-bundle.json').readAsStringSync(),
   ),
+);
+
+final _a2Index = CourseContentIndex.build(
+  CourseBundleParser.parse(jsonEncode(minimalBundleJson(level: 'A2'))),
 );
 
 /// With [midCourse]: Unit 1 (A1-U0) mastered, and in A1-U1 the first two
@@ -69,9 +79,45 @@ Future<AppDatabase> _seed({required bool midCourse}) async {
   return db;
 }
 
-Future<AppLocalizations> _pump(
+/// Three-entry catalogue matching the brief: A1 available, A2 available
+/// (or [LevelAvailability.preview] when its id is in [previewLevelIds])
+/// building on A1, B1 with no content yet.
+List<LevelCatalogEntry> _catalog({required Set<String> previewLevelIds}) => [
+  const LevelCatalogEntry(
+    levelId: 'a1',
+    cefrCode: 'A1',
+    availability: LevelAvailability.available,
+    bundleAssetPath: 'a1.json',
+  ),
+  LevelCatalogEntry(
+    levelId: 'a2',
+    cefrCode: 'A2',
+    availability: previewLevelIds.contains('a2')
+        ? LevelAvailability.preview
+        : LevelAvailability.available,
+    bundleAssetPath: 'a2.json',
+    prerequisiteLevelId: 'a1',
+  ),
+  const LevelCatalogEntry(
+    levelId: 'b1',
+    cefrCode: 'B1',
+    availability: LevelAvailability.comingSoon,
+  ),
+];
+
+/// Pumps the course screen under a [ProviderContainer] the test can read
+/// directly, standing up A2 (`Test A2`, from [minimalBundleJson]) alongside
+/// A1 so the level strip has something real to switch to.
+///
+/// [unlockedLevelIds] enrols and unlocks the learner in each named level
+/// before pumping, the way `LevelSelectionController.unlock` would.
+/// [previewLevelIds] demotes A2's catalogue entry to
+/// [LevelAvailability.preview] instead of the default `available`.
+Future<(ProviderContainer, AppLocalizations)> _pump(
   WidgetTester tester, {
   bool midCourse = true,
+  Set<String> unlockedLevelIds = const {},
+  Set<String> previewLevelIds = const {},
 }) async {
   tester.view.physicalSize = const Size(800, 4000);
   tester.view.devicePixelRatio = 1;
@@ -79,6 +125,24 @@ Future<AppLocalizations> _pump(
   addTearDown(tester.view.resetDevicePixelRatio);
   final db = await _seed(midCourse: midCourse);
   addTearDown(db.close);
+  if (unlockedLevelIds.isNotEmpty) {
+    final learner = await db.select(db.learners).getSingle();
+    final repository = DriftLearnerRepository(db);
+    final indexByLevelId = {'a1': _index, 'a2': _a2Index};
+    for (final levelId in unlockedLevelIds) {
+      final index = indexByLevelId[levelId]!;
+      await repository.ensureEnrolled(
+        learnerId: learner.id,
+        levelId: levelId,
+        courseId: index.bundle.course.id,
+        contentVersion: index.bundle.contentVersion,
+      );
+      await repository.markLevelUnlocked(
+        learnerId: learner.id,
+        levelId: levelId,
+      );
+    }
+  }
   SharedPreferences.setMockInitialValues({});
   final prefs = await SharedPreferences.getInstance();
   final router = GoRouter(
@@ -98,13 +162,21 @@ Future<AppLocalizations> _pump(
       GoRoute(path: '/tests', builder: (_, _) => const Text('TESTS')),
     ],
   );
+  final container = ProviderContainer(
+    overrides: [
+      sharedPreferencesProvider.overrideWithValue(prefs),
+      appDatabaseProvider.overrideWithValue(db),
+      levelCatalogProvider.overrideWithValue(
+        _catalog(previewLevelIds: previewLevelIds),
+      ),
+      courseContentProvider('a1').overrideWith((ref) async => _index),
+      courseContentProvider('a2').overrideWith((ref) async => _a2Index),
+    ],
+  );
+  addTearDown(container.dispose);
   await tester.pumpWidget(
-    ProviderScope(
-      overrides: [
-        sharedPreferencesProvider.overrideWithValue(prefs),
-        appDatabaseProvider.overrideWithValue(db),
-        courseContentProvider('a1').overrideWith((ref) async => _index),
-      ],
+    UncontrolledProviderScope(
+      container: container,
       child: MaterialApp.router(
         theme: AppTheme.light(AppColorSeed.calmTeal),
         supportedLocales: AppLocalizations.supportedLocales,
@@ -114,7 +186,8 @@ Future<AppLocalizations> _pump(
     ),
   );
   await tester.pumpAndSettle();
-  return AppLocalizations.of(tester.element(find.byType(CourseScreen)))!;
+  final l10n = AppLocalizations.of(tester.element(find.byType(CourseScreen)))!;
+  return (container, l10n);
 }
 
 void main() {
@@ -122,7 +195,7 @@ void main() {
 
   testWidgets('opens on the course: its title in English and Arabic, units '
       'mastered over total, and every unit on the path', (tester) async {
-    final l10n = await _pump(tester);
+    final (_, l10n) = await _pump(tester);
 
     expect(find.text('English A1'), findsOneWidget);
     expect(find.text(_index.bundle.course.titleAr), findsOneWidget);
@@ -136,7 +209,7 @@ void main() {
       'lessons done, the next lesson, and Continue lesson opens the player', (
     tester,
   ) async {
-    final l10n = await _pump(tester);
+    final (_, l10n) = await _pump(tester);
 
     expect(
       find.text(l10n.learnUnitInProgressOverline(2).toUpperCase()),
@@ -156,7 +229,7 @@ void main() {
   testWidgets('a new learner starts on the first unit, with Start lesson', (
     tester,
   ) async {
-    final l10n = await _pump(tester, midCourse: false);
+    final (_, l10n) = await _pump(tester, midCourse: false);
 
     expect(
       find.text(l10n.learnUnitStartHereOverline(1).toUpperCase()),
@@ -169,7 +242,7 @@ void main() {
 
   testWidgets('a mastered unit says so; a unit not started shows its size '
       'and time; the starter unit is tagged', (tester) async {
-    final l10n = await _pump(tester);
+    final (_, l10n) = await _pump(tester);
 
     expect(find.text(l10n.unitStateMastered), findsOneWidget);
     expect(find.text(l10n.learnUnitStarter.toUpperCase()), findsOneWidget);
@@ -186,7 +259,7 @@ void main() {
   testWidgets('each unit\'s circle is announced with its number and state', (
     tester,
   ) async {
-    final l10n = await _pump(tester);
+    final (_, l10n) = await _pump(tester);
 
     expect(
       find.bySemanticsLabel(
@@ -212,28 +285,44 @@ void main() {
 
   testWidgets('the path ends at the final mission & assessment, which opens '
       'the Tests tab', (tester) async {
-    final l10n = await _pump(tester);
+    final (_, l10n) = await _pump(tester);
 
     await tester.tap(find.text(l10n.learnFinishTitle));
     await tester.pumpAndSettle();
     expect(find.text('TESTS'), findsOneWidget);
   });
 
-  testWidgets('the other levels are listed as coming later, never as '
-      'tappable rows', (tester) async {
-    final l10n = await _pump(tester);
+  testWidgets('the level strip shows every level, marks the current one and '
+      'says which are locked', (tester) async {
+    final (_, l10n) = await _pump(tester);
 
-    expect(find.text(l10n.learnComingLaterTitle.toUpperCase()), findsOneWidget);
-    for (final code in ['A2', 'B1', 'B2', 'C1', 'C2']) {
-      expect(find.text(code), findsOneWidget);
-      expect(
-        find.bySemanticsLabel('$code — ${l10n.comingSoon}'),
-        findsOneWidget,
-      );
-    }
+    expect(find.byType(LevelStrip), findsOneWidget);
     expect(
-      find.ancestor(of: find.text('A2'), matching: find.byType(InkWell)),
-      findsNothing,
+      find.bySemanticsLabel(l10n.learnLevelSemanticsCurrent('A1')),
+      findsOneWidget,
+    );
+    expect(
+      find.bySemanticsLabel(l10n.learnLevelSemanticsLocked('A2')),
+      findsOneWidget,
+    );
+    expect(
+      find.bySemanticsLabel(l10n.learnLevelSemanticsComingSoon('B1')),
+      findsOneWidget,
+    );
+  });
+
+  testWidgets('tapping an open level switches the course page to it', (
+    tester,
+  ) async {
+    final (_, l10n) = await _pump(tester, unlockedLevelIds: const {'a2'});
+
+    await tester.tap(find.text('A2'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Test A2'), findsOneWidget);
+    expect(
+      find.bySemanticsLabel(l10n.learnLevelSemanticsCurrent('A2')),
+      findsOneWidget,
     );
   });
 }

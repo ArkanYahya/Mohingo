@@ -764,17 +764,41 @@ abstract class AppLocalizations {
   /// **'Show what you can do after the last unit — in the Tests tab.'**
   String get learnFinishBody;
 
-  /// Section title above the list of levels that aren't available yet.
+  /// Section title above the strip showing every CEFR level on the Learn tab.
   ///
   /// In en, this message translates to:
-  /// **'Coming later'**
-  String get learnComingLaterTitle;
+  /// **'Your levels'**
+  String get learnLevelStripTitle;
 
-  /// Line under the not-yet-available levels.
+  /// Screen-reader label of the level strip's pill for the level the learner is currently in.
   ///
   /// In en, this message translates to:
-  /// **'More levels are on the way. Everything you learn in A1 carries over.'**
-  String get learnComingLaterBody;
+  /// **'Level {level}, the one you\'re learning now'**
+  String learnLevelSemanticsCurrent(String level);
+
+  /// Screen-reader label of the level strip's pill for a level that is open but isn't the one on screen.
+  ///
+  /// In en, this message translates to:
+  /// **'Level {level}, open — switch to it'**
+  String learnLevelSemanticsOpen(String level);
+
+  /// Screen-reader label of the level strip's pill for a level that is released but locked for this learner.
+  ///
+  /// In en, this message translates to:
+  /// **'Level {level}, locked'**
+  String learnLevelSemanticsLocked(String level);
+
+  /// Screen-reader label of the level strip's pill for a level with no content yet.
+  ///
+  /// In en, this message translates to:
+  /// **'Level {level}, coming later'**
+  String learnLevelSemanticsComingSoon(String level);
+
+  /// Line under the level strip, naming the level the learner is shown as being in.
+  ///
+  /// In en, this message translates to:
+  /// **'More levels are on the way. Everything you learn in {level} carries over.'**
+  String learnLevelComingLaterBody(String level);
 
   /// Small word under the correct/total fraction inside the lesson-complete score ring, e.g. '3/4' over 'correct'.
   ///
