@@ -108,10 +108,22 @@ void main() {
     for (final unit in finishedA2Units()) {
       for (final a in activitiesOf(unit)) {
         if (a.skill != Skill.spokenInteraction) continue;
-        final turns = a.raw['partnerTurns'] ?? a.raw['examinerTurns'];
+        // Read the parsed accessor, not the raw field: SpeakActivity.
+        // partnerTurns (which also covers A1's older examinerTurns) filters
+        // out blank strings, so a raw list of empty strings — e.g.
+        // ["", ""] — would satisfy a raw-field check while the app hands
+        // the learner an interaction task with no partner turns at all.
         expect(
-          turns is List && turns.isNotEmpty,
-          isTrue,
+          a,
+          isA<SpeakActivity>(),
+          reason:
+              '${a.id} is a spokenInteraction task but not a '
+              'SpeakActivity',
+        );
+        final turns = (a as SpeakActivity).partnerTurns;
+        expect(
+          turns,
+          isNotEmpty,
           reason: '${a.id} is an interaction with no partner',
         );
       }
