@@ -6432,13 +6432,13 @@
           "lessonType": "encounter-focus-practice",
           "canDo": [
             "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE",
+            "A2.U1.READING.UNDERSTAND_PROFILE",
             "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE"
           ],
           "grammar": [
             "A2.G.PRESENT_SIMPLE_REVIEW"
           ],
           "lexicon": [
-            "A2.LEX.ROUTINE_N01",
             "A2.LEX.NORMALLY_ADV01",
             "A2.LEX.WEEKDAY_N01"
           ],
@@ -6448,9 +6448,29 @@
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "I normally get up at seven on weekdays. I take the bus to work and play football on Thursday.",
-                "ar": "أستيقظ عادةً في السابعة في أيام العمل. أستقل الحافلة إلى العمل وألعب كرة القدم يوم الخميس."
+                "speaker": "Layla",
+                "en": "Do you still go to the gym before work?",
+                "ar": "هل ما زلت تذهب إلى النادي قبل العمل؟"
+              },
+              {
+                "speaker": "Omar",
+                "en": "Every morning except Friday. I finish at seven and walk there.",
+                "ar": "كل صباح ما عدا الجمعة. أنتهي في السابعة وأمشي إلى هناك."
+              },
+              {
+                "speaker": "Layla",
+                "en": "That's early! I never get up before eight.",
+                "ar": "هذا مبكر! أنا لا أستيقظ قبل الثامنة أبداً."
+              },
+              {
+                "speaker": "Omar",
+                "en": "You work late, though. What time do you start?",
+                "ar": "لكنكِ تعملين حتى وقت متأخر. متى تبدئين؟"
+              },
+              {
+                "speaker": "Layla",
+                "en": "Ten, usually. I teach until six, so the evenings are gone.",
+                "ar": "في العاشرة عادةً. أُدرّس حتى السادسة، فتضيع الأمسيات."
               }
             ]
           },
@@ -6462,65 +6482,62 @@
               "mode": "encounter",
               "skill": "listening",
               "canDo": [
-                "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE",
-                "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE"
+                "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE"
               ],
-              "prompt": "How does the speaker travel to work?",
-              "promptAr": "كيف يذهب المتحدث إلى العمل؟",
+              "prompt": "What are Layla and Omar comparing?",
+              "promptAr": "ما الذي يقارنه عمر وليلى؟",
               "options": [
-                "By bus",
-                "By car",
-                "On foot"
+                "Their daily routines",
+                "Their new jobs",
+                "Their weekend plans"
               ],
-              "answer": "By bus",
-              "audioTranscript": "I normally get up at seven on weekdays. I take the bus to work and play football on Thursday."
+              "answer": "Their daily routines",
+              "audioTranscript": "Do you still go to the gym before work? Every morning except Friday. I finish at seven and walk there. That's early! I never get up before eight. You work late, though. What time do you start? Ten, usually. I teach until six, so the evenings are gone."
             },
             {
               "id": "A2-U1-L1-A02",
-              "lessonId": "A2-U1-L1",
-              "type": "match",
-              "mode": "practice",
-              "skill": "reading",
-              "canDo": [
-                "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE",
-                "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE"
-              ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "routine",
-                  "روتين"
-                ],
-                [
-                  "normally",
-                  "عادةً"
-                ],
-                [
-                  "weekday",
-                  "يوم عمل"
-                ]
-              ]
-            },
-            {
-              "id": "A2-U1-L1-A03",
               "lessonId": "A2-U1-L1",
               "type": "gap",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE",
-                "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE"
+                "A2.U1.READING.UNDERSTAND_PROFILE"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "Mina ___ studies after dinner.",
+              "prompt": "Choose the correct verb form for Layla's weekday routine.",
+              "promptAr": "اختر صيغة الفعل الصحيحة لروتين ليلى في أيام العمل.",
+              "text": "Layla ___ at ten and teaches until six.",
               "options": [
-                "normally",
-                "now",
-                "temporary"
+                "starts",
+                "start",
+                "is starting"
               ],
-              "answer": "normally"
+              "answer": "starts"
+            },
+            {
+              "id": "A2-U1-L1-A03",
+              "lessonId": "A2-U1-L1",
+              "type": "match",
+              "mode": "practice",
+              "skill": "reading",
+              "canDo": [
+                "A2.U1.READING.UNDERSTAND_PROFILE"
+              ],
+              "prompt": "Match the two halves of each sentence about a regular week.",
+              "promptAr": "طابق نصفَي كل جملة تصف أسبوعاً معتاداً.",
+              "pairs": [
+                [
+                  "Nadia works on weekdays,",
+                  "so she rests on Friday."
+                ],
+                [
+                  "Sami finishes at six,",
+                  "and then he cooks dinner."
+                ],
+                [
+                  "Hala normally takes the bus,",
+                  "because she has no car."
+                ]
+              ]
             },
             {
               "id": "A2-U1-L1-A04",
@@ -6529,18 +6546,17 @@
               "mode": "mastery",
               "skill": "listening",
               "canDo": [
-                "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE",
-                "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE"
+                "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE"
               ],
-              "prompt": "What does Karim do on Friday?",
-              "promptAr": "ماذا يفعل كريم يوم الجمعة؟",
+              "prompt": "What is different about Hala's Saturday?",
+              "promptAr": "ما الذي يختلف في يوم السبت عند هالة؟",
               "options": [
-                "He visits his parents.",
-                "He works in the shop.",
-                "He studies."
+                "She travels to see her family",
+                "She opens the pharmacy later",
+                "She works until four"
               ],
-              "answer": "He visits his parents.",
-              "audioTranscript": "Karim works in a shop from Sunday to Thursday. On Friday, he visits his parents."
+              "answer": "She travels to see her family",
+              "audioTranscript": "Hala normally opens the pharmacy at eight and stays until four. She takes the bus on weekdays because the traffic is bad. On Saturday she drives to her mother's house in Kirkuk and spends the afternoon there with her sisters."
             },
             {
               "id": "A2-U1-L1-A05",
@@ -6549,19 +6565,63 @@
               "mode": "mastery",
               "skill": "spokenProduction",
               "canDo": [
-                "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE",
                 "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE"
               ],
-              "prompt": "Describe three things in your usual week.",
-              "promptAr": "صف ثلاثة أشياء في أسبوعك المعتاد.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "Talk about your regular week. Say how often you do something, what you do, and when you do it.",
+              "promptAr": "تحدّث عن أسبوعك المعتاد. اذكر كم مرة تفعل شيئاً ما، وما الذي تفعله، ومتى تفعله.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "usually",
+                    "normally",
+                    "always",
+                    "never",
+                    "often",
+                    "every",
+                    "twice",
+                    "three times",
+                    "most days",
+                    "on weekdays"
+                  ],
+                  [
+                    "work",
+                    "study",
+                    "teach",
+                    "cook",
+                    "travel",
+                    "go",
+                    "get up",
+                    "start",
+                    "finish",
+                    "meet",
+                    "drive",
+                    "walk",
+                    "play"
+                  ],
+                  [
+                    "morning",
+                    "afternoon",
+                    "evening",
+                    "night",
+                    "weekend",
+                    "Friday",
+                    "Saturday",
+                    "Sunday",
+                    "Monday",
+                    "o'clock",
+                    "at seven",
+                    "at eight",
+                    "at nine",
+                    "at ten"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             }
           ]
         },
@@ -6572,7 +6632,9 @@
           "lessonType": "encounter-focus-practice",
           "canDo": [
             "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE",
-            "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE"
+            "A2.U1.READING.UNDERSTAND_PROFILE",
+            "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE",
+            "A2.U1.INTERACTION.ASK_FOLLOW_UP"
           ],
           "grammar": [
             "A2.G.PRESENT_CONTINUOUS_NOW",
@@ -6580,8 +6642,7 @@
           ],
           "lexicon": [
             "A2.LEX.TEMPORARY_ADJ01",
-            "A2.LEX.CURRENTLY_ADV01",
-            "A2.LEX.STAY_V01"
+            "A2.LEX.CURRENTLY_ADV01"
           ],
           "chunks": [
             "A2.CHUNK.AT_THE_MOMENT",
@@ -6590,9 +6651,34 @@
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "I usually live in Mosul, but this month I am staying with my brother in Erbil. I am taking an evening course there.",
-                "ar": "أعيش عادةً في الموصل، لكنني أقيم هذا الشهر مع أخي في أربيل. أحضر دورة مسائية هناك."
+                "speaker": "Layla",
+                "en": "Omar! It's good to see you. How are things?",
+                "ar": "عمر! سعيدة برؤيتك. كيف الأحوال؟"
+              },
+              {
+                "speaker": "Omar",
+                "en": "Busy, actually. I'm working at the new clinic this month.",
+                "ar": "مشغول فعلاً. أعمل هذا الشهر في العيادة الجديدة."
+              },
+              {
+                "speaker": "Layla",
+                "en": "The one near the station? I thought you worked at the hospital.",
+                "ar": "التي بجانب المحطة؟ كنت أظنّك تعمل في المستشفى."
+              },
+              {
+                "speaker": "Omar",
+                "en": "I do, normally. But they need extra people right now.",
+                "ar": "أعمل فيه عادةً، لكنهم يحتاجون موظفين إضافيين هذه الأيام."
+              },
+              {
+                "speaker": "Layla",
+                "en": "How often do you go?",
+                "ar": "كم مرة تذهب؟"
+              },
+              {
+                "speaker": "Omar",
+                "en": "Three days a week. It's tiring, but I'm learning a lot.",
+                "ar": "ثلاثة أيام في الأسبوع. متعب، لكنني أتعلّم الكثير."
               }
             ]
           },
@@ -6604,65 +6690,55 @@
               "mode": "encounter",
               "skill": "listening",
               "canDo": [
-                "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE",
-                "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE"
+                "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE"
               ],
-              "prompt": "Where is the speaker staying this month?",
-              "promptAr": "أين يقيم المتحدث هذا الشهر؟",
+              "prompt": "Why is Omar working at the clinic this month?",
+              "promptAr": "لماذا يعمل عمر في العيادة هذا الشهر؟",
               "options": [
-                "In Erbil",
-                "In Mosul",
-                "In Baghdad"
+                "He changed jobs",
+                "They need extra people",
+                "He is studying there"
               ],
-              "answer": "In Erbil",
-              "audioTranscript": "I usually live in Mosul, but this month I am staying with my brother in Erbil. I am taking an evening course there."
+              "answer": "They need extra people",
+              "audioTranscript": "Omar! It's good to see you. How are things? Busy, actually. I'm working at the new clinic this month. The one near the station? I thought you worked at the hospital. I do, normally. But they need extra people right now. How often do you go? Three days a week. It's tiring, but I'm learning a lot."
             },
             {
               "id": "A2-U1-L2-A02",
-              "lessonId": "A2-U1-L2",
-              "type": "match",
-              "mode": "practice",
-              "skill": "reading",
-              "canDo": [
-                "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE",
-                "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE"
-              ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "temporary",
-                  "مؤقت"
-                ],
-                [
-                  "currently",
-                  "حالياً"
-                ],
-                [
-                  "stay",
-                  "يقيم"
-                ]
-              ]
-            },
-            {
-              "id": "A2-U1-L2-A03",
               "lessonId": "A2-U1-L2",
               "type": "gap",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE",
-                "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE"
+                "A2.U1.READING.UNDERSTAND_PROFILE"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "I work at the office, but today I ___ from home.",
+              "prompt": "One habit, one temporary change. Choose the form that fits.",
+              "promptAr": "عادة واحدة وتغيير مؤقت واحد. اختر الصيغة المناسبة.",
+              "text": "Yusuf usually cooks at home, but this week he ___ in his sister's restaurant.",
               "options": [
-                "am working",
-                "work",
-                "worked"
+                "is helping",
+                "helps",
+                "helped"
               ],
-              "answer": "am working"
+              "answer": "is helping"
+            },
+            {
+              "id": "A2-U1-L2-A03",
+              "lessonId": "A2-U1-L2",
+              "type": "textChoice",
+              "mode": "practice",
+              "skill": "reading",
+              "canDo": [
+                "A2.U1.READING.UNDERSTAND_PROFILE"
+              ],
+              "prompt": "Read the message. What is true only this month?",
+              "promptAr": "اقرأ الرسالة. ما الأمر الصحيح هذا الشهر فقط؟",
+              "sourceText": "Hi Dana. I am currently sharing a flat with my cousin in Amman, because my own building is closed for repairs. I still teach at the same school, and I still take the same bus. Everything else is normal.",
+              "options": [
+                "Where she lives",
+                "Where she works",
+                "How she travels"
+              ],
+              "answer": "Where she lives"
             },
             {
               "id": "A2-U1-L2-A04",
@@ -6671,39 +6747,69 @@
               "mode": "mastery",
               "skill": "listening",
               "canDo": [
-                "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE",
-                "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE"
+                "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE"
               ],
-              "prompt": "What is temporary?",
-              "promptAr": "ما الأمر المؤقت؟",
+              "prompt": "Why is Karim working in the shop?",
+              "promptAr": "لماذا يعمل كريم في المتجر؟",
               "options": [
-                "Helping at a sports camp",
-                "Teaching children",
-                "Living with children"
+                "His car is in the garage",
+                "He has left the taxi job",
+                "His brother is ill"
               ],
-              "answer": "Helping at a sports camp",
-              "audioTranscript": "Lina normally teaches children. This week, she is helping at a sports camp."
+              "answer": "His car is in the garage",
+              "audioTranscript": "Karim normally drives a taxi in Mosul six days a week. At the moment his car is in the garage, so he is working in his brother's shop instead. It is only a temporary job, and he hopes to be back on the road next week."
             },
             {
               "id": "A2-U1-L2-A05",
               "lessonId": "A2-U1-L2",
               "type": "speak",
               "mode": "mastery",
-              "skill": "spokenProduction",
+              "skill": "spokenInteraction",
               "canDo": [
-                "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE",
-                "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE"
+                "A2.U1.INTERACTION.ASK_FOLLOW_UP"
               ],
-              "prompt": "Say one usual fact and one temporary fact about your life now.",
-              "promptAr": "اذكر حقيقة معتادة وحقيقة مؤقتة عن حياتك الآن.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
+              "prompt": "Reply to your friend. Say what is different in your life at the moment, then ask her one question about her news.",
+              "promptAr": "ردّ على صديقتك. قل ما الذي يختلف في حياتك في الوقت الحالي، ثم اسألها سؤالاً واحداً عن خبرها.",
+              "partnerTurns": [
+                "Hi! How are things with you these days?",
+                "I'm staying at my sister's flat this month, because some workers are painting my kitchen.",
+                "It's fine, but I get up an hour earlier now. Ask me anything you like."
               ],
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "at the moment",
+                    "right now",
+                    "this month",
+                    "this week",
+                    "these days",
+                    "currently",
+                    "temporary",
+                    "for now",
+                    "just now"
+                  ],
+                  [
+                    "how long",
+                    "how often",
+                    "how many",
+                    "what time",
+                    "what about you",
+                    "where are you",
+                    "where do you",
+                    "when do you",
+                    "why",
+                    "do you",
+                    "are you",
+                    "is it"
+                  ]
+                ],
+                "minGroupsMatched": 2,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             }
           ]
         },
