@@ -17,6 +17,7 @@ class LevelCatalogEntry {
     required this.cefrCode,
     required this.availability,
     this.bundleAssetPath,
+    this.prerequisiteLevelId,
   });
 
   /// Lowercase catalogue key (e.g. `"a1"`), used as the route path segment
@@ -29,6 +30,12 @@ class LevelCatalogEntry {
 
   /// Set only when [availability] is [LevelAvailability.available].
   final String? bundleAssetPath;
+
+  /// The level this one builds on (A2 builds on A1), or null. Its content
+  /// loads first, and this level's lessons may reference its grammar,
+  /// words and phrases by id — shown to learners as "From A1". App-owned,
+  /// like the rest of this table: bundles never declare it.
+  final String? prerequisiteLevelId;
 }
 
 /// The full CEFR level catalogue for v1: A1 available, A2-C2 Coming Soon.
@@ -44,6 +51,7 @@ const kLevelCatalog = <LevelCatalogEntry>[
     levelId: 'a2',
     cefrCode: 'A2',
     availability: LevelAvailability.comingSoon,
+    prerequisiteLevelId: 'a1',
   ),
   LevelCatalogEntry(
     levelId: 'b1',
@@ -67,8 +75,16 @@ const kLevelCatalog = <LevelCatalogEntry>[
   ),
 ];
 
-LevelCatalogEntry? levelCatalogEntry(String levelId) {
-  for (final entry in kLevelCatalog) {
+LevelCatalogEntry? levelCatalogEntry(String levelId) =>
+    levelCatalogEntryIn(kLevelCatalog, levelId);
+
+/// [levelCatalogEntry] over any catalogue — the app reads the catalogue
+/// through `levelCatalogProvider`, which tests override.
+LevelCatalogEntry? levelCatalogEntryIn(
+  List<LevelCatalogEntry> catalog,
+  String levelId,
+) {
+  for (final entry in catalog) {
     if (entry.levelId == levelId) return entry;
   }
   return null;
