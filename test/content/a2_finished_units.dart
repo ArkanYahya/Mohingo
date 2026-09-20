@@ -22,6 +22,13 @@ CourseBundle loadA1Bundle() => CourseBundleParser.parse(
 );
 
 List<Unit> finishedA2Units() {
+  if (a2FinishedUnitIds.isEmpty) {
+    throw StateError(
+      'a2FinishedUnitIds is empty: every A2 content gate would pass while '
+      'asserting nothing. Removing the last unit from the list is never '
+      'the right way to make this suite green.',
+    );
+  }
   final byId = {for (final u in loadA2Bundle().units) u.id: u};
   return [
     for (final id in a2FinishedUnitIds)
