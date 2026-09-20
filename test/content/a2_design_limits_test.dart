@@ -4,6 +4,22 @@ import 'package:mohingo/content/models/domain_definitions.dart';
 
 import 'a2_finished_units.dart';
 
+/// The spec's length bands, by where the unit sits in the level.
+({List<int> listening, List<int> reading, List<int> writing}) _bandsFor(
+  String unitId,
+) {
+  final n = int.parse(unitId.split('-U').last);
+  if (n <= 4) {
+    return (listening: [30, 60], reading: [60, 100], writing: [55, 75]);
+  }
+  if (n <= 8) {
+    return (listening: [50, 90], reading: [90, 140], writing: [65, 85]);
+  }
+  return (listening: [70, 120], reading: [120, 180], writing: [75, 100]);
+}
+
+int _words(String? s) => RegExp(r"[A-Za-z']+").allMatches(s ?? '').length;
+
 void main() {
   test('each unit is in skill balance', () {
     for (final unit in finishedA2Units()) {
@@ -110,6 +126,80 @@ void main() {
             reason: '${a.id} (${a.skill}) claims $objective',
           );
         }
+      }
+    }
+  });
+
+  test('listening input is inside its band', () {
+    for (final unit in finishedA2Units()) {
+      final band = _bandsFor(unit.id).listening;
+      for (final lesson in unit.lessons) {
+        if (lesson.encounterDialogue.isNotEmpty) {
+          final words = lesson.encounterDialogue
+              .map((l) => _words(l.en))
+              .fold<int>(0, (a, b) => a + b);
+          expect(
+            words,
+            inInclusiveRange(band[0], band[1]),
+            reason: '${lesson.id} conversation is $words words',
+          );
+        }
+        for (final a in lesson.activities) {
+          if (a.skill != Skill.listening) continue;
+          final words = _words(a.raw['audioTranscript'] as String?);
+          expect(
+            words,
+            inInclusiveRange(band[0], band[1]),
+            reason: '${a.id} transcript is $words words',
+          );
+        }
+      }
+    }
+  });
+
+  test('the model text is inside its band', () {
+    for (final unit in finishedA2Units()) {
+      final band = _bandsFor(unit.id).reading;
+      for (final lesson in unit.lessons) {
+        final text = lesson.readingText;
+        if (text == null) continue;
+        final words = _words(text.text);
+        expect(
+          words,
+          inInclusiveRange(band[0], band[1]),
+          reason: '${lesson.id} model text is $words words',
+        );
+      }
+    }
+  });
+
+  test('notices and source cards are 15-60 words', () {
+    for (final unit in finishedA2Units()) {
+      for (final a in activitiesOf(unit)) {
+        for (final key in ['sourceText', 'sourceCard']) {
+          final value = a.raw[key];
+          if (value is! String || value.trim().isEmpty) continue;
+          expect(
+            _words(value),
+            inInclusiveRange(15, 60),
+            reason: '${a.id}.$key',
+          );
+        }
+      }
+    }
+  });
+
+  test('every writing task carries a wordGuide inside its band', () {
+    for (final unit in finishedA2Units()) {
+      final band = _bandsFor(unit.id).writing;
+      for (final a in activitiesOf(unit)) {
+        if (a.skill != Skill.writing) continue;
+        final guide = a.raw['wordGuide'];
+        expect(guide, isA<List>(), reason: '${a.id} has no wordGuide');
+        final g = (guide as List).cast<num>();
+        expect(g.length, 2, reason: '${a.id} wordGuide shape');
+        expect(g[0], band[0], reason: '${a.id} wordGuide low');
+        expect(g[1], band[1], reason: '${a.id} wordGuide high');
       }
     }
   });
