@@ -58,6 +58,7 @@ class _ActivityPartnerTurnsCardState
   Future<void> _play() async {
     final token = ++_playToken;
     if (_playing) await _tts.stop();
+    if (!mounted || token != _playToken) return;
     setState(() => _playing = true);
     final rate = ref.read(ttsRatePreferenceProvider);
     final pitch = ref.read(ttsPitchPreferenceProvider);
