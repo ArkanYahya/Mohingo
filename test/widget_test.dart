@@ -9,11 +9,13 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:mohingo/app.dart';
+import 'package:mohingo/content/providers/course_content_providers.dart';
 import 'package:mohingo/core/preferences/shared_preferences_provider.dart';
 import 'package:mohingo/data/local/database.dart';
 import 'package:mohingo/data/local/database_provider.dart';
 import 'package:mohingo/features/activity_engine/providers/online_refinement_providers.dart';
 import 'package:mohingo/features/app_shell/presentation/app_shell_scaffold.dart';
+import 'package:mohingo/features/app_shell/presentation/content_error_screen.dart';
 import 'package:mohingo/features/review/providers/review_providers.dart';
 
 import 'features/activity_engine/fake_connectivity_service.dart';
@@ -166,5 +168,24 @@ void main() {
       ),
       findsNothing,
     );
+  });
+
+  testWidgets('a later level failing to load never gates the app', (
+    tester,
+  ) async {
+    final prefs = await _mockPrefs();
+    await _pumpAppAndWaitForContent(
+      tester,
+      prefs,
+      overrides: [
+        courseContentProvider('a2').overrideWith(
+          (ref) async => throw StateError('A2 is broken'),
+        ),
+      ],
+    );
+
+    // The app is up: the gate never waited on A2. A level that fails to
+    // load is handled on the screen that shows it, not at the front door.
+    expect(find.byType(ContentErrorScreen), findsNothing);
   });
 }
