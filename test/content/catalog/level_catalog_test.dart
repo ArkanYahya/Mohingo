@@ -54,6 +54,21 @@ void main() {
         cefrCode: 'B1',
         availability: LevelAvailability.comingSoon,
       ),
+      // A second preview level with a bundle, never named below — proves
+      // the flag opens only the levels it names, not every preview level.
+      LevelCatalogEntry(
+        levelId: 'b2',
+        cefrCode: 'B2',
+        availability: LevelAvailability.preview,
+        bundleAssetPath: 'b2.json',
+      ),
+      // A preview level with no bundle at all — proves the bundle guard
+      // holds even when the level is explicitly named.
+      LevelCatalogEntry(
+        levelId: 'c1',
+        cefrCode: 'C1',
+        availability: LevelAvailability.preview,
+      ),
     ];
 
     final opened = applyPreviewOverrides(catalog, {'a2'});
@@ -61,15 +76,21 @@ void main() {
       LevelAvailability.available,
       LevelAvailability.available,
       LevelAvailability.comingSoon,
+      LevelAvailability.preview, // b2 has a bundle but wasn't named.
+      LevelAvailability.preview,
     ]);
     // Everything else about the entry survives the override.
     expect(opened[1].bundleAssetPath, 'a2.json');
     expect(opened[1].prerequisiteLevelId, 'a1');
 
-    // A level with no bundle can't be opened by the flag.
+    // A level with no bundle can't be opened by the flag, even when named.
     expect(
       applyPreviewOverrides(catalog, {'b1'})[2].availability,
       LevelAvailability.comingSoon,
+    );
+    expect(
+      applyPreviewOverrides(catalog, {'c1'})[4].availability,
+      LevelAvailability.preview,
     );
     expect(applyPreviewOverrides(catalog, const {}), same(catalog));
   });
