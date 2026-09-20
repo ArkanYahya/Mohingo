@@ -37,6 +37,14 @@ Future<void> showLevelLockSheet(
         action();
       }
 
+      // Two level codes in one Arabic sentence read in the wrong order
+      // without isolates ("A2 builds on A1" rendered as "A1 … A2"). This
+      // repo wraps the substituted value at the call site rather than in
+      // the ARB, where the raw characters trip text_direction_code_point
+      // in gen-l10n's output — see course_screen.dart's homeJourneyNext.
+      final isolatedCode = '\u2068$code\u2069';
+      final isolatedPrerequisite = '\u2068$prerequisiteCode\u2069';
+
       return Padding(
         padding: EdgeInsets.fromLTRB(
           AppSpace.md,
@@ -51,7 +59,7 @@ Future<void> showLevelLockSheet(
             Text(
               notReleased
                   ? l10n.levelNotReleasedTitle(code)
-                  : l10n.levelLockTitle(code, prerequisiteCode),
+                  : l10n.levelLockTitle(isolatedCode, isolatedPrerequisite),
               style: theme.textTheme.titleMedium?.copyWith(
                 color: tokens.textPrimary,
               ),
@@ -60,7 +68,7 @@ Future<void> showLevelLockSheet(
             Text(
               notReleased
                   ? l10n.levelNotReleasedBody
-                  : l10n.levelLockBody(prerequisiteCode, code),
+                  : l10n.levelLockBody(isolatedPrerequisite, isolatedCode),
               style: theme.textTheme.bodyMedium?.copyWith(
                 color: tokens.textSecondary,
               ),

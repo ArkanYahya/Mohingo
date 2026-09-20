@@ -494,12 +494,12 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String levelLockTitle(String level, String previous) {
-    return 'المستوى ⁨$level⁩ يُبنى على المستوى ⁨$previous⁩';
+    return 'المستوى $level يُبنى على المستوى $previous';
   }
 
   @override
   String levelLockBody(String previous, String level) {
-    return 'إنهاء ⁨$previous⁩ يفتحه. ويمكنك معرفة مستواك عبر اختبار تحديد المستوى، أو فتح ⁨$level⁩ على أي حال.';
+    return 'إنهاء $previous يفتحه. ويمكنك معرفة مستواك عبر اختبار تحديد المستوى، أو فتح $level على أي حال.';
   }
 
   @override

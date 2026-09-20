@@ -331,11 +331,15 @@ void main() {
   testWidgets('tapping a locked level explains it and offers the placement '
       'test or opening it anyway', (tester) async {
     final (container, l10n) = await _pump(tester);
+    String iso(String s) => '\u2068$s\u2069';
 
     await tester.tap(find.text('A2'));
     await tester.pumpAndSettle();
 
-    expect(find.text(l10n.levelLockTitle('A2', 'A1')), findsOneWidget);
+    expect(
+      find.text(l10n.levelLockTitle(iso('A2'), iso('A1'))),
+      findsOneWidget,
+    );
     expect(find.text(l10n.levelLockTakeTest), findsOneWidget);
 
     await tester.tap(find.text(l10n.levelLockOpenAnyway('A2')));
