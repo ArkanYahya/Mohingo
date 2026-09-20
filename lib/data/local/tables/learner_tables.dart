@@ -42,9 +42,10 @@ class CourseEnrolments extends Table {
   /// they have never chosen it explicitly.
   DateTimeColumn get lastSelectedAt => dateTime().nullable()();
 
-  /// When this level opened for the learner — by finishing the level it
-  /// builds on, by a placement result inside it, or by their own "open
-  /// anyway". Null while it is still locked. A level with no prerequisite
-  /// needs no unlock. See `lib/features/progress/domain/level_access.dart`.
+  /// When the learner chose to open this level before finishing the one it
+  /// builds on — the lock sheet's "open anyway" (`LevelSelectionController.
+  /// unlock`). Null otherwise: while it's still locked, and also once it's
+  /// open because its prerequisite is complete, which needs no unlock row.
+  /// See `lib/features/progress/domain/level_access.dart`.
   DateTimeColumn get unlockedAt => dateTime().nullable()();
 }
