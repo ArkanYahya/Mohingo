@@ -137,10 +137,11 @@ class _CourseScreenState extends ConsumerState<CourseScreen> {
           loading: () => const Center(child: CircularProgressIndicator()),
           error: (error, _) => _CourseLoadError(
             // The way back is offered only when the learner's own level is
-            // known and isn't the one that failed: currentLevelId can still
-            // be null here even while browsing — currentLevelIdAsync itself
-            // may have errored (e.g. a reset invalidates it) while
-            // _browsingLevelId is still set from before that happened.
+            // known and isn't the one that failed. `currentLevelId` is an
+            // async provider's resolved value, so null means "not known
+            // yet" — treat it as that rather than reasoning about which
+            // failures can produce it, since _CourseLoadError's contract
+            // already covers the case by hiding the button.
             currentCode: isBrowsing && currentLevelId != null
                 ? levelCatalogEntryIn(catalog, currentLevelId)?.cefrCode ??
                       currentLevelId
