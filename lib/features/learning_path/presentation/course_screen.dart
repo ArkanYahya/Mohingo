@@ -19,6 +19,7 @@ import '../../progress/providers/level_providers.dart';
 import '../domain/current_unit_selector.dart';
 import '../domain/lesson_resume.dart';
 import '../providers/unit_progress_providers.dart';
+import 'widgets/level_lock_sheet.dart';
 import 'widgets/level_strip.dart';
 import 'widgets/path_row.dart';
 
@@ -91,7 +92,32 @@ class _CourseScreenState extends ConsumerState<CourseScreen> {
           return;
         case LevelAccess.lockedNeedsPrerequisite:
         case LevelAccess.notReleased:
-          // Task 8: the lock sheet explaining why this level isn't open.
+          final prerequisiteId = entry.prerequisiteLevelId;
+          final prerequisiteCode =
+              (prerequisiteId == null
+                      ? null
+                      : levelCatalogEntryIn(catalog, prerequisiteId))
+                  ?.cefrCode ??
+              levelCatalogEntryIn(catalog, shownLevelId!)?.cefrCode ??
+              entry.cefrCode;
+          unawaited(
+            showLevelLockSheet(
+              context,
+              entry: entry,
+              prerequisiteCode: prerequisiteCode,
+              access: levelAccess,
+              onTakePlacementTest: () => context.push('/tests/placement'),
+              onOpenAnyway: () async {
+                final controller = ref.read(
+                  levelSelectionControllerProvider.notifier,
+                );
+                await controller.unlock(entry.levelId);
+                await controller.select(entry.levelId);
+              },
+              // Task 9: browsing a not-yet-released level's content.
+              onBrowse: () {},
+            ),
+          );
           return;
         case LevelAccess.noContent:
           // Unreachable in practice — LevelStrip's track excludes

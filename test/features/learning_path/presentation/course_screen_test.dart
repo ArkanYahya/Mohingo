@@ -20,6 +20,8 @@ import 'package:mohingo/data/local/database_provider.dart';
 import 'package:mohingo/features/learning_path/presentation/course_screen.dart';
 import 'package:mohingo/features/learning_path/presentation/widgets/level_strip.dart';
 import 'package:mohingo/features/progress/data/drift_learner_repository.dart';
+import 'package:mohingo/features/progress/domain/level_access.dart';
+import 'package:mohingo/features/progress/providers/level_providers.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../content/fixtures/minimal_bundle.dart';
@@ -324,5 +326,29 @@ void main() {
       find.bySemanticsLabel(l10n.learnLevelSemanticsCurrent('A2')),
       findsOneWidget,
     );
+  });
+
+  testWidgets('tapping a locked level explains it and offers the placement '
+      'test or opening it anyway', (tester) async {
+    final (container, l10n) = await _pump(tester);
+
+    await tester.tap(find.text('A2'));
+    await tester.pumpAndSettle();
+
+    expect(find.text(l10n.levelLockTitle('A2', 'A1')), findsOneWidget);
+    expect(find.text(l10n.levelLockTakeTest), findsOneWidget);
+
+    await tester.tap(find.text(l10n.levelLockOpenAnyway('A2')));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Test A2'), findsOneWidget);
+    expect(find.text(l10n.levelLockTakeTest), findsNothing);
+
+    // The assertions above would still pass if "Open anyway" only switched
+    // into A2 without truly unlocking it first — the shown level's segment
+    // reads as current regardless of its real access, and switching alone
+    // moves the course page. Read A2's access straight from the provider
+    // to confirm `unlock` actually ran, not just `select`.
+    expect(container.read(levelAccessProvider('a2')).value, LevelAccess.open);
   });
 }

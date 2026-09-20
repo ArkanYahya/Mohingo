@@ -472,6 +472,38 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String levelLockTitle(String level, String previous) {
+    return '$level builds on $previous';
+  }
+
+  @override
+  String levelLockBody(String previous, String level) {
+    return 'Finishing $previous opens it. You can check where you stand with the placement test — or open $level anyway.';
+  }
+
+  @override
+  String get levelLockTakeTest => 'Take the placement test';
+
+  @override
+  String levelLockOpenAnyway(String level) {
+    return 'Open $level anyway';
+  }
+
+  @override
+  String levelNotReleasedTitle(String level) {
+    return '$level isn\'t ready yet';
+  }
+
+  @override
+  String get levelNotReleasedBody =>
+      'Its lessons open when it\'s ready. Until then you can look at what it covers.';
+
+  @override
+  String levelNotReleasedBrowse(String level) {
+    return 'See what $level covers';
+  }
+
+  @override
   String get lessonCompleteCorrectCaption => 'correct';
 
   @override

@@ -788,6 +788,48 @@ abstract class AppLocalizations {
   /// **'More levels are on the way. Everything you learn in {level} carries over.'**
   String learnLevelComingLaterBody(String level);
 
+  /// Title of the lock sheet shown for a level the learner hasn't reached yet.
+  ///
+  /// In en, this message translates to:
+  /// **'{level} builds on {previous}'**
+  String levelLockTitle(String level, String previous);
+
+  /// Body of the lock sheet shown for a level the learner hasn't reached yet.
+  ///
+  /// In en, this message translates to:
+  /// **'Finishing {previous} opens it. You can check where you stand with the placement test — or open {level} anyway.'**
+  String levelLockBody(String previous, String level);
+
+  /// Button on the lock sheet that opens the placement test.
+  ///
+  /// In en, this message translates to:
+  /// **'Take the placement test'**
+  String get levelLockTakeTest;
+
+  /// Button on the lock sheet that opens the level without the placement test.
+  ///
+  /// In en, this message translates to:
+  /// **'Open {level} anyway'**
+  String levelLockOpenAnyway(String level);
+
+  /// Title of the lock sheet shown for a level the app hasn't released yet.
+  ///
+  /// In en, this message translates to:
+  /// **'{level} isn\'t ready yet'**
+  String levelNotReleasedTitle(String level);
+
+  /// Body of the lock sheet shown for a level the app hasn't released yet.
+  ///
+  /// In en, this message translates to:
+  /// **'Its lessons open when it\'s ready. Until then you can look at what it covers.'**
+  String get levelNotReleasedBody;
+
+  /// Button on the lock sheet that lets the learner look at a level's content without opening its lessons.
+  ///
+  /// In en, this message translates to:
+  /// **'See what {level} covers'**
+  String levelNotReleasedBrowse(String level);
+
   /// Small word under the correct/total fraction inside the lesson-complete score ring, e.g. '3/4' over 'correct'.
   ///
   /// In en, this message translates to:

@@ -493,6 +493,38 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
+  String levelLockTitle(String level, String previous) {
+    return 'المستوى ⁨$level⁩ يُبنى على المستوى ⁨$previous⁩';
+  }
+
+  @override
+  String levelLockBody(String previous, String level) {
+    return 'إنهاء ⁨$previous⁩ يفتحه. ويمكنك معرفة مستواك عبر اختبار تحديد المستوى، أو فتح ⁨$level⁩ على أي حال.';
+  }
+
+  @override
+  String get levelLockTakeTest => 'اختبر مستواك';
+
+  @override
+  String levelLockOpenAnyway(String level) {
+    return 'افتح المستوى $level على أي حال';
+  }
+
+  @override
+  String levelNotReleasedTitle(String level) {
+    return 'المستوى $level ليس جاهزًا بعد';
+  }
+
+  @override
+  String get levelNotReleasedBody =>
+      'ستُفتح دروسه عندما يصبح جاهزًا، ويمكنك الآن الاطلاع على محتواه.';
+
+  @override
+  String levelNotReleasedBrowse(String level) {
+    return 'اطّلع على محتوى المستوى $level';
+  }
+
+  @override
   String get lessonCompleteCorrectCaption => 'صحيحة';
 
   @override
