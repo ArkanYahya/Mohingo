@@ -57,7 +57,21 @@ Weaker than A1:
 
 ### Grammar
 
-A1 structures are **reviewed by reference, not re-registered**: an A2 lesson's `grammar`/`lexicon`/`chunks` lists may contain A1 IDs, shown on the key-phrases screen as "From A1" and extended by the lesson. Duplicates are merged into one record, reused by ID. Records merged away lose their IDs (no learner progress exists on A2).
+> **Superseded 2026-09-20 by the product owner (step 4, pilot review).** An
+> A2 lesson does **not** list A1 ids at all. A learner in A2 is assumed to
+> know A1 — whether they finished it here or arrived already knowing it —
+> so A2 teaches A2, and the A2 bundle stays self-contained. A1 material is
+> still *used* freely in A2 texts and conversations; it is simply not
+> listed as something the lesson teaches or enrols into review. Where A2
+> genuinely needs a different sense of a word A1 taught (A1 *change* = the
+> verb, A2 *change* = the noun), that stays an A2 record, as below.
+> Consequence recorded in [ADR 0006](../../adr/0006-multiple-levels.md):
+> the cross-level machinery built in step 1 — `CourseContentIndex`'s
+> `prerequisite`, the provider loading A1 alongside A2, and the "From A1"
+> badge — has no consumer for vocabulary. It is kept, unused, for grammar
+> and for later levels.
+
+~~A1 structures are **reviewed by reference, not re-registered**: an A2 lesson's `grammar`/`lexicon`/`chunks` lists may contain A1 IDs, shown on the key-phrases screen as "From A1" and extended by the lesson. Duplicates are merged into one record, reused by ID. Records merged away lose their IDs (no learner progress exists on A2).~~
 
 | Unit | New in A2 | Reviewed (A1 or earlier A2) |
 |---|---|---|
@@ -79,8 +93,8 @@ About 45 new A2 grammar records (reference: 72). Each record gets bilingual exam
 ### Vocabulary
 
 - About **35 new senses per unit** (~420 total). Every listed word appears in its lesson's conversation or text and is practised in at least one activity.
-- The 30 re-registered A1 senses become references to the A1 record. A genuinely new sense stays as an A2 record (e.g. *order* = sequence).
-- A learner placed straight into A2 still gets referenced A1 words enrolled into spaced review when the lesson finishes (existing `enrollLesson` behaviour; rows already scheduled are untouched).
+- **Superseded 2026-09-20:** the 30 A1-duplicating senses are **deleted**, not referenced. A word A1 already teaches is not listed by an A2 lesson at all; it may still appear in an A2 text. A genuinely new sense stays as an A2 record (A1 *change* = the verb, A2 *change* = the noun). Three were removed in the pilot — *routine*, *stay*, *busy*.
+  - Why the reference approach was dropped: its only functional gain was enrolling A1 words into spaced review for a learner placed straight into A2, and this app's placement test never places anyone beyond A1. The only way into A2 without A1 is the lock sheet's "Open anyway", a deliberate "I already know this". Meanwhile every normal learner would get a **second** review row for a word they have known for months, on a fresh schedule, with their real history stranded on the A1 record the A2 lesson did not point at (`enrollLesson` leaves already-scheduled rows untouched, so the duplicate schedules independently).
 - Examples are bilingual `{en, ar}` (A1's stay English-only strings).
 
 ## Design 2 — lesson design

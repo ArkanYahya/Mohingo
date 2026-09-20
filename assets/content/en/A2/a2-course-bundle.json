@@ -1036,26 +1036,6 @@
   ],
   "lexicon": [
     {
-      "id": "A2.LEX.ROUTINE_N01",
-      "headword": "routine",
-      "partOfSpeech": "noun",
-      "arabic": "روتين",
-      "cefr": "A2",
-      "receptive": true,
-      "productive": true,
-      "meaning": "routine",
-      "examples": [
-        {
-          "en": "My morning routine is simple.",
-          "ar": "روتيني الصباحي بسيط."
-        }
-      ],
-      "introducedIn": "A2-U1-L1",
-      "recycledIn": [
-        "A2-U2-L1"
-      ]
-    },
-    {
       "id": "A2.LEX.NORMALLY_ADV01",
       "headword": "normally",
       "partOfSpeech": "adverb",
@@ -1136,26 +1116,6 @@
       ]
     },
     {
-      "id": "A2.LEX.STAY_V01",
-      "headword": "stay",
-      "partOfSpeech": "verb",
-      "arabic": "يقيم",
-      "cefr": "A2",
-      "receptive": true,
-      "productive": true,
-      "meaning": "stay",
-      "examples": [
-        {
-          "en": "We are staying near the centre.",
-          "ar": "نقيم قرب المركز."
-        }
-      ],
-      "introducedIn": "A2-U1-L2",
-      "recycledIn": [
-        "A2-U2-L1"
-      ]
-    },
-    {
       "id": "A2.LEX.FOLLOW_UP_N01",
       "headword": "follow-up",
       "partOfSpeech": "noun",
@@ -1228,26 +1188,6 @@
         {
           "en": "I am interested in languages.",
           "ar": "أنا مهتم باللغات."
-        }
-      ],
-      "introducedIn": "A2-U1-L4",
-      "recycledIn": [
-        "A2-U3-L3"
-      ]
-    },
-    {
-      "id": "A2.LEX.BUSY_ADJ01",
-      "headword": "busy",
-      "partOfSpeech": "adjective",
-      "arabic": "مشغول",
-      "cefr": "A2",
-      "receptive": true,
-      "productive": true,
-      "meaning": "busy",
-      "examples": [
-        {
-          "en": "She is busy this month.",
-          "ar": "هي مشغولة هذا الشهر."
         }
       ],
       "introducedIn": "A2-U1-L4",
@@ -6975,7 +6915,6 @@
           ],
           "lexicon": [
             "A2.LEX.INTERESTED_ADJ01",
-            "A2.LEX.BUSY_ADJ01",
             "A2.LEX.ENJOY_V01"
           ],
           "chunks": [
@@ -7596,12 +7535,10 @@
             "A2.LEX.MEMORABLE_ADJ01",
             "A2.LEX.TRIP_N01",
             "A2.LEX.YESTERDAY_ADV01",
-            "A2.LEX.ROUTINE_N01",
             "A2.LEX.NORMALLY_ADV01",
             "A2.LEX.WEEKDAY_N01",
             "A2.LEX.TEMPORARY_ADJ01",
-            "A2.LEX.CURRENTLY_ADV01",
-            "A2.LEX.STAY_V01"
+            "A2.LEX.CURRENTLY_ADV01"
           ],
           "chunks": [
             "A2.CHUNK.LAST_WEEKEND",
@@ -8950,7 +8887,6 @@
             "A2.LEX.DETAIL_N01",
             "A2.LEX.RECENTLY_ADV01",
             "A2.LEX.INTERESTED_ADJ01",
-            "A2.LEX.BUSY_ADJ01",
             "A2.LEX.ENJOY_V01"
           ],
           "chunks": [
