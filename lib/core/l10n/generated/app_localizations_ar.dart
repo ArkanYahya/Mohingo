@@ -1388,4 +1388,10 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get settingsBackupBody =>
       'إعادة تثبيت التطبيق أو تغيير الهاتف يبدأ من جديد حالياً.';
+
+  @override
+  String get speakPartnerTitle => 'يقول الطرف الآخر';
+
+  @override
+  String get speakPartnerPlay => 'استمع مرة أخرى';
 }

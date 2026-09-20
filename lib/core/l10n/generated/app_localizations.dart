@@ -2239,6 +2239,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Reinstalling the app or changing phones starts fresh for now.'**
   String get settingsBackupBody;
+
+  /// Heading of the card on a speaking question that shows what the other person says before the learner answers.
+  ///
+  /// In en, this message translates to:
+  /// **'The other person says'**
+  String get speakPartnerTitle;
+
+  /// Accessibility label of the button that reads the other person's lines aloud again.
+  ///
+  /// In en, this message translates to:
+  /// **'Hear it again'**
+  String get speakPartnerPlay;
 }
 
 class _AppLocalizationsDelegate

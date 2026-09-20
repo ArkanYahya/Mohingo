@@ -7,6 +7,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mohingo/content/models/activity.dart';
 import 'package:mohingo/content/models/domain_definitions.dart';
 import 'package:mohingo/core/l10n/generated/app_localizations.dart';
+import 'package:mohingo/core/preferences/shared_preferences_provider.dart';
 import 'package:mohingo/core/theme/app_theme.dart';
 import 'package:mohingo/core/theme/color_seed.dart';
 import 'package:mohingo/data/local/database.dart';
@@ -16,10 +17,12 @@ import 'package:mohingo/features/activity_engine/domain/evaluation/evaluation_co
 import 'package:mohingo/features/activity_engine/domain/sound_effects_service.dart';
 import 'package:mohingo/content/models/evaluation_spec.dart';
 import 'package:mohingo/features/activity_engine/presentation/views/speak_activity_view.dart';
+import 'package:mohingo/features/activity_engine/presentation/widgets/activity_partner_turns_card.dart';
 import 'package:mohingo/features/activity_engine/providers/sound_effects_providers.dart';
 import 'package:mohingo/features/speech/domain/speech_capability_service.dart';
 import 'package:mohingo/features/speech/domain/speech_recognition_service.dart';
 import 'package:mohingo/features/speech/providers/speech_providers.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 // `Override` isn't part of flutter_riverpod's public export surface (an
 // explicit `show` list omits it) — it's only exported from this path.
 import 'package:riverpod/misc.dart' show Override;
@@ -720,6 +723,113 @@ void main() {
       expect(find.byIcon(Icons.hourglass_top), findsOneWidget);
       expect(find.byIcon(Icons.cancel), findsNothing);
       expect(find.byIcon(Icons.check_circle), findsNothing);
+    });
+  });
+
+  group("the other person's lines", () {
+    SpeakActivity partnerSpeak() => const SpeakActivity(
+      id: 'A1-FINAL-ASSESS-S02',
+      lessonId: null,
+      mode: ActivityMode.mastery,
+      skill: Skill.spokenInteraction,
+      canDo: [],
+      prompt: 'Respond to each turn.',
+      promptAr: 'ردّ على كل جملة.',
+      raw: {
+        'examinerTurns': ['Good morning.', 'What time do you start your day?'],
+      },
+      accepted: [],
+      fallbackSkill: 'writing',
+    );
+
+    Future<FakeTextToSpeechService> pumpPartner(
+      WidgetTester tester, {
+      ActivityAttempt? reviewAttempt,
+    }) async {
+      SharedPreferences.setMockInitialValues({});
+      final prefs = await SharedPreferences.getInstance();
+      final tts = FakeTextToSpeechService();
+      await tester.pumpWidget(
+        ProviderScope(
+          overrides: [
+            speechCapabilityServiceProvider.overrideWithValue(
+              FakeSpeechCapabilityService(
+                const DeviceSpeechCapabilities(
+                  sttAvailableForLocale: false,
+                  micPermission: SpeechPermissionStatus.notDetermined,
+                ),
+              ),
+            ),
+            speechRecognitionServiceProvider.overrideWithValue(
+              FakeSpeechRecognitionService(),
+            ),
+            textToSpeechServiceProvider.overrideWithValue(tts),
+            sharedPreferencesProvider.overrideWithValue(prefs),
+          ],
+          child: MaterialApp(
+            theme: AppTheme.light(AppColorSeed.calmTeal),
+            locale: const Locale('en'),
+            supportedLocales: AppLocalizations.supportedLocales,
+            localizationsDelegates: AppLocalizations.localizationsDelegates,
+            home: Scaffold(
+              body: SpeakActivityView(
+                activity: partnerSpeak(),
+                learnerId: 1,
+                onSubmitted: (_) {},
+                reviewAttempt: reviewAttempt,
+              ),
+            ),
+          ),
+        ),
+      );
+      await tester.pumpAndSettle();
+      return tts;
+    }
+
+    testWidgets("the other person's lines are shown and read aloud in order "
+        'when the question opens', (tester) async {
+      final tts = await pumpPartner(tester);
+
+      expect(find.byType(ActivityPartnerTurnsCard), findsOneWidget);
+      expect(find.text('Good morning.'), findsOneWidget);
+      expect(find.text('What time do you start your day?'), findsOneWidget);
+      expect(tts.spoken, ['Good morning.', 'What time do you start your day?']);
+    });
+
+    testWidgets('the lines can be heard again', (tester) async {
+      final tts = await pumpPartner(tester);
+      final l10n = AppLocalizations.of(tester.element(find.byType(Scaffold)))!;
+
+      await tester.tap(find.byTooltip(l10n.speakPartnerPlay));
+      await tester.pumpAndSettle();
+
+      expect(tts.spoken, hasLength(4));
+    });
+
+    testWidgets('reviewing an old answer never plays the lines by itself', (
+      tester,
+    ) async {
+      final tts = await pumpPartner(
+        tester,
+        reviewAttempt: ActivityAttempt(
+          id: 1,
+          uuid: 'attempt-1',
+          learnerId: 1,
+          activityId: 'A1-FINAL-ASSESS-S02',
+          sessionType: 'finalAssessment',
+          mode: 'mastery',
+          evidenceSkill: 'spokenInteraction',
+          rawAnswer: jsonEncode('Good morning to you.'),
+          isCorrect: null,
+          score: null,
+          wasFallback: false,
+          attemptedAt: DateTime.utc(2026, 9, 19),
+          updatedAt: DateTime.utc(2026, 9, 19),
+        ),
+      );
+
+      expect(find.text('Good morning.'), findsOneWidget);
+      expect(tts.spoken, isEmpty);
     });
   });
 }

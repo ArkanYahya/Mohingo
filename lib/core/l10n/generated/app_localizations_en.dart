@@ -1357,4 +1357,10 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get settingsBackupBody =>
       'Reinstalling the app or changing phones starts fresh for now.';
+
+  @override
+  String get speakPartnerTitle => 'The other person says';
+
+  @override
+  String get speakPartnerPlay => 'Hear it again';
 }
