@@ -67,36 +67,22 @@ class DriftLearnerRepository implements LearnerRepository {
   }
 
   @override
-  Future<List<CourseEnrolment>> enrolments({required int learnerId}) async {
-    final rows = await (_db.select(
+  Future<List<CourseEnrolment>> enrolments({required int learnerId}) {
+    return (_db.select(
       _db.courseEnrolments,
     )..where((t) => t.learnerId.equals(learnerId))).get();
-    return rows.map(_withUtcTimestamps).toList();
   }
 
   @override
   Future<CourseEnrolment?> enrolmentForLevel({
     required int learnerId,
     required String levelId,
-  }) async {
-    final row =
-        await (_db.select(_db.courseEnrolments)..where(
-              (t) => t.learnerId.equals(learnerId) & t.levelId.equals(levelId),
-            ))
-            .getSingleOrNull();
-    return row == null ? null : _withUtcTimestamps(row);
+  }) {
+    return (_db.select(_db.courseEnrolments)..where(
+          (t) => t.learnerId.equals(learnerId) & t.levelId.equals(levelId),
+        ))
+        .getSingleOrNull();
   }
-
-  /// sqlite3 stores `DateTime` columns as a timezone-agnostic unix
-  /// timestamp and drift always hands the row back tagged as local time —
-  /// never as the UTC value a caller wrote — so a plain `==` against a UTC
-  /// instant (as a synced value from a future backend would be) would fail
-  /// even though the instant itself is correct. Re-tagging here, once, is
-  /// cheaper than making every caller remember to call `.toUtc()`.
-  CourseEnrolment _withUtcTimestamps(CourseEnrolment row) => row.copyWith(
-    lastSelectedAt: Value(row.lastSelectedAt?.toUtc()),
-    unlockedAt: Value(row.unlockedAt?.toUtc()),
-  );
 
   @override
   Future<void> markLevelSelected({

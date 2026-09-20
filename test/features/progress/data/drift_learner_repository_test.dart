@@ -105,8 +105,14 @@ void main() {
         learnerId: learnerId,
         levelId: 'a2',
       );
-      expect(a1!.lastSelectedAt, DateTime.utc(2026, 9, 19));
-      expect(a2!.lastSelectedAt, DateTime.utc(2026, 9, 20));
+      // Compared via toUtc(): drift round-trips DateTimeColumn values as
+      // unix timestamps and hands them back in local time (same instant,
+      // different `isUtc` flag) — and Dart's DateTime equality treats that
+      // flag as significant, so a raw `==` against a UTC literal is
+      // timezone-dependent even though the underlying instant matches
+      // exactly.
+      expect(a1!.lastSelectedAt?.toUtc(), DateTime.utc(2026, 9, 19));
+      expect(a2!.lastSelectedAt?.toUtc(), DateTime.utc(2026, 9, 20));
     },
   );
 
@@ -135,7 +141,10 @@ void main() {
         learnerId: learnerId,
         levelId: 'a2',
       );
-      expect(row!.unlockedAt, DateTime.utc(2026, 9, 20));
+      // Compared via toUtc() — see the comment in "selecting a level stamps
+      // it" above. This also proves the *first* call's timestamp survives:
+      // a naive re-write would show 9/21, not 9/20.
+      expect(row!.unlockedAt?.toUtc(), DateTime.utc(2026, 9, 20));
     },
   );
 
