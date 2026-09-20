@@ -830,6 +830,24 @@ abstract class AppLocalizations {
   /// **'See what {level} covers'**
   String levelNotReleasedBrowse(String level);
 
+  /// Title of the banner shown above a level's unit list while the learner is only browsing it, not enrolled in it.
+  ///
+  /// In en, this message translates to:
+  /// **'A look at {level}'**
+  String learnPreviewBannerTitle(String level);
+
+  /// Body of the browsing banner, explaining the units are read-only until the level ships.
+  ///
+  /// In en, this message translates to:
+  /// **'These are the units {level} will cover. Its lessons open when it\'s ready.'**
+  String learnPreviewBannerBody(String level);
+
+  /// Button in the browsing banner that returns the learner to the level they are actually enrolled in.
+  ///
+  /// In en, this message translates to:
+  /// **'Back to {level}'**
+  String learnPreviewBackToCurrent(String level);
+
   /// Small word under the correct/total fraction inside the lesson-complete score ring, e.g. '3/4' over 'correct'.
   ///
   /// In en, this message translates to:

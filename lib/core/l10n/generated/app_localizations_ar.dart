@@ -525,6 +525,21 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
+  String learnPreviewBannerTitle(String level) {
+    return 'نظرة على المستوى $level';
+  }
+
+  @override
+  String learnPreviewBannerBody(String level) {
+    return 'هذه وحدات المستوى $level التي سيتناولها. ستُفتح دروسه عندما يصبح جاهزًا.';
+  }
+
+  @override
+  String learnPreviewBackToCurrent(String level) {
+    return 'العودة إلى المستوى $level';
+  }
+
+  @override
   String get lessonCompleteCorrectCaption => 'صحيحة';
 
   @override

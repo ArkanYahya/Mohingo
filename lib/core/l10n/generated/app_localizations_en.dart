@@ -504,6 +504,21 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String learnPreviewBannerTitle(String level) {
+    return 'A look at $level';
+  }
+
+  @override
+  String learnPreviewBannerBody(String level) {
+    return 'These are the units $level will cover. Its lessons open when it\'s ready.';
+  }
+
+  @override
+  String learnPreviewBackToCurrent(String level) {
+    return 'Back to $level';
+  }
+
+  @override
   String get lessonCompleteCorrectCaption => 'correct';
 
   @override
