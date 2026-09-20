@@ -1388,6 +1388,18 @@ Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>"
 
 ### Task 7: The Learn tab's level strip
 
+> **Superseded in part — read this before reusing Task 7's code.** This
+> task's widget code was written before the product owner reviewed the
+> mockups, and the mockups changed the design. What shipped is in
+> `.superpowers/sdd/2026-09-20-a2-step2a-current-level-and-lock/task-7-fix-1-brief.md`
+> (commits d4a1a59, 4912b9d): a segmented track over the levels that have
+> content, sitting **below** the course title, with no overline of its own.
+> The wrapped six-pill `Wrap` below, the `learnLevelStripTitle` overline and
+> the `learnLevelSemanticsComingSoon` string are all gone — the latter two
+> keys no longer exist in the ARB files, so any later task that references
+> them is referencing dead copy. The rest of this task (strings, wiring,
+> access plumbing) stands as written.
+
 **Arabic copy rule for these strings (learned from rendering the mockups):** an Arabic noun always precedes a Latin level code (`المستوى A2`, never a bare `A2` at a sentence boundary), and bidi isolates (`⁨`…`⁩`) are used **only** where two codes share one sentence — the lock sheet's title and body. Two bare codes in one Arabic sentence rendered in the wrong order ("A2 builds on A1" read as "A1 … A2"); isolates fix that, but inside a button they drew as a visible block in the render, so they stay out of button labels. The repo already uses isolates this way (`course_screen.dart`'s `'⁨${unit.title}⁩'`).
 
 
