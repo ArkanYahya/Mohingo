@@ -764,12 +764,6 @@ abstract class AppLocalizations {
   /// **'Show what you can do after the last unit — in the Tests tab.'**
   String get learnFinishBody;
 
-  /// Section title above the strip showing every CEFR level on the Learn tab.
-  ///
-  /// In en, this message translates to:
-  /// **'Your levels'**
-  String get learnLevelStripTitle;
-
   /// Screen-reader label of the level strip's pill for the level the learner is currently in.
   ///
   /// In en, this message translates to:
@@ -787,12 +781,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Level {level}, locked'**
   String learnLevelSemanticsLocked(String level);
-
-  /// Screen-reader label of the level strip's pill for a level with no content yet.
-  ///
-  /// In en, this message translates to:
-  /// **'Level {level}, coming later'**
-  String learnLevelSemanticsComingSoon(String level);
 
   /// Line under the level strip, naming the level the learner is shown as being in.
   ///

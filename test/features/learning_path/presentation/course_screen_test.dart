@@ -292,8 +292,8 @@ void main() {
     expect(find.text('TESTS'), findsOneWidget);
   });
 
-  testWidgets('the level strip shows every level, marks the current one and '
-      'says which are locked', (tester) async {
+  testWidgets('the level switcher carries only the levels that exist, and '
+      'marks which is current', (tester) async {
     final (_, l10n) = await _pump(tester);
 
     expect(find.byType(LevelStrip), findsOneWidget);
@@ -305,10 +305,11 @@ void main() {
       find.bySemanticsLabel(l10n.learnLevelSemanticsLocked('A2')),
       findsOneWidget,
     );
-    expect(
-      find.bySemanticsLabel(l10n.learnLevelSemanticsComingSoon('B1')),
-      findsOneWidget,
-    );
+    // B1-C2 have no content, so they are not segments: the caption is
+    // what tells the learner more levels are coming.
+    expect(find.text('B1'), findsNothing);
+    expect(find.text('C2'), findsNothing);
+    expect(find.text(l10n.learnLevelComingLaterBody('A1')), findsOneWidget);
   });
 
   testWidgets('tapping an open level switches the course page to it', (

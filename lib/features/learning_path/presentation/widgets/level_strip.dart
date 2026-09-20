@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import '../../../../content/catalog/level_catalog.dart';
 import '../../../../core/l10n/generated/app_localizations.dart';
 import '../../../../core/theme/app_tokens.dart';
-import '../../../../core/theme/overline_style.dart';
 import '../../../progress/domain/level_access.dart';
 
-/// Every CEFR level in the catalogue as a pill: the one on screen filled,
-/// an open level outlined and tappable, a locked one outlined behind a
-/// small lock, and the levels with no content yet outlined and inert.
+/// The levels that exist, as one segmented track under the course title:
+/// the level on screen filled, the others outlined, a locked one behind a
+/// small lock. Levels with no content yet are not segments — the caption
+/// under the track is what says more levels are coming.
 ///
 /// A locked level is still tappable — the tap is what opens the
 /// explanation and the way forward. Progression here is a recommendation,
@@ -27,20 +27,30 @@ class LevelStrip extends StatelessWidget {
   /// The level whose course page is on screen.
   final String shownLevelId;
 
-  /// Each level's access by level id; a level missing from the map is
-  /// treated as [LevelAccess.noContent].
+  /// Each level's access by level id.
   final Map<String, LevelAccess> access;
 
   final void Function(LevelCatalogEntry entry, LevelAccess access) onSelect;
 
+  /// A level whose access hasn't resolved yet reads as locked, never as
+  /// open (which would let a tap switch into it on a guess) and never as
+  /// [LevelAccess.noContent] (which is the one thing a level in this track
+  /// cannot be). The real value replaces it a frame later.
   LevelAccess _accessFor(LevelCatalogEntry entry) =>
-      access[entry.levelId] ?? LevelAccess.noContent;
+      access[entry.levelId] ?? LevelAccess.lockedNeedsPrerequisite;
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final tokens = theme.extension<AppTokens>()!;
     final l10n = AppLocalizations.of(context)!;
+    // Only the levels that have content are switchable. B1-C2 ship as
+    // `comingSoon` catalogue entries with no bundle; they would be dead
+    // segments, and six of them wrap onto a second row.
+    final switchable = [
+      for (final entry in catalog)
+        if (entry.availability != LevelAvailability.comingSoon) entry,
+    ];
     final shownCode = catalog
         .firstWhere(
           (e) => e.levelId == shownLevelId,
@@ -49,25 +59,30 @@ class LevelStrip extends StatelessWidget {
         .cefrCode;
 
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text(
-          l10n.learnLevelStripTitle.toUpperCase(),
-          style: overlineStyle(context, color: tokens.textSecondary),
-        ),
-        const SizedBox(height: AppSpace.xs),
-        Wrap(
-          spacing: AppSpace.xs,
-          runSpacing: AppSpace.xs,
-          children: [
-            for (final entry in catalog)
-              _LevelPill(
-                entry: entry,
-                access: _accessFor(entry),
-                isShown: entry.levelId == shownLevelId,
-                onTap: () => onSelect(entry, _accessFor(entry)),
-              ),
-          ],
+        DecoratedBox(
+          decoration: BoxDecoration(
+            color: tokens.cardMuted,
+            borderRadius: BorderRadius.circular(999),
+            border: Border.all(color: tokens.border),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(3),
+            child: Row(
+              children: [
+                for (final entry in switchable)
+                  Expanded(
+                    child: _LevelSegment(
+                      entry: entry,
+                      access: _accessFor(entry),
+                      isShown: entry.levelId == shownLevelId,
+                      onTap: () => onSelect(entry, _accessFor(entry)),
+                    ),
+                  ),
+              ],
+            ),
+          ),
         ),
         const SizedBox(height: AppSpace.xs),
         Text(
@@ -81,8 +96,8 @@ class LevelStrip extends StatelessWidget {
   }
 }
 
-class _LevelPill extends StatelessWidget {
-  const _LevelPill({
+class _LevelSegment extends StatelessWidget {
+  const _LevelSegment({
     required this.entry,
     required this.access,
     required this.isShown,
@@ -100,7 +115,6 @@ class _LevelPill extends StatelessWidget {
     final tokens = theme.extension<AppTokens>()!;
     final l10n = AppLocalizations.of(context)!;
     final code = entry.cefrCode;
-    final tappable = access != LevelAccess.noContent;
     final locked =
         access == LevelAccess.lockedNeedsPrerequisite ||
         access == LevelAccess.notReleased;
@@ -110,62 +124,42 @@ class _LevelPill extends StatelessWidget {
         ? l10n.learnLevelSemanticsCurrent(code)
         : switch (access) {
             LevelAccess.open => l10n.learnLevelSemanticsOpen(code),
+            // noContent can't reach a segment — the track filters those
+            // levels out — and an unresolved access already reads locked.
             LevelAccess.lockedNeedsPrerequisite ||
-            LevelAccess.notReleased => l10n.learnLevelSemanticsLocked(code),
-            LevelAccess.noContent => l10n.learnLevelSemanticsComingSoon(code),
+            LevelAccess.notReleased ||
+            LevelAccess.noContent => l10n.learnLevelSemanticsLocked(code),
           };
 
     return Semantics(
-      // Explicit so a coming-later pill (not a button — nothing else here
-      // marks it as a boundary) still gets its own node instead of
-      // silently merging its label into the strip's title/caption text.
       container: true,
-      button: tappable,
+      button: true,
       label: label,
       child: ExcludeSemantics(
         child: Material(
           color: isShown ? tokens.primaryInk : Colors.transparent,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(999),
-            side: isShown
-                ? BorderSide.none
-                : BorderSide(
-                    color:
-                        Color.lerp(tokens.border, tokens.textSecondary, 0.2) ??
-                        tokens.border,
-                  ),
-          ),
+          shape: const StadiumBorder(),
           clipBehavior: Clip.antiAlias,
           child: InkWell(
-            onTap: tappable ? onTap : null,
+            onTap: onTap,
             child: ConstrainedBox(
-              constraints: const BoxConstraints(minHeight: 44, minWidth: 56),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: AppSpace.sm,
-                  vertical: AppSpace.xs,
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    if (locked && !isShown) ...[
-                      Icon(
-                        Icons.lock_outline_rounded,
-                        size: 14,
-                        color: foreground,
-                      ),
-                      const SizedBox(width: AppSpace.xs - 2),
-                    ],
-                    Text(
-                      code,
-                      textDirection: TextDirection.ltr,
-                      style: theme.textTheme.labelLarge?.copyWith(
-                        color: foreground,
-                      ),
-                    ),
+              constraints: const BoxConstraints(minHeight: 44),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  if (locked && !isShown) ...[
+                    Icon(Icons.lock_rounded, size: 13, color: foreground),
+                    const SizedBox(width: AppSpace.xs - 2),
                   ],
-                ),
+                  Text(
+                    code,
+                    textDirection: TextDirection.ltr,
+                    style: theme.textTheme.labelLarge?.copyWith(
+                      color: foreground,
+                      fontWeight: isShown ? FontWeight.w700 : FontWeight.w500,
+                    ),
+                  ),
+                ],
               ),
             ),
           ),

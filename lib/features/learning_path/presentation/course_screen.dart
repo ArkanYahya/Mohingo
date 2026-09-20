@@ -24,16 +24,15 @@ import 'widgets/path_row.dart';
 
 /// The Learn tab: the course the learner is in, not always A1.
 ///
-/// Under the course title, a level strip shows every CEFR level with
-/// content — the one the learner is in filled, an open one tappable, a
-/// locked one behind a small lock, and the rest inert until they have
-/// content (see [LevelStrip]). Below it, a header (course title in English
-/// and Arabic, units mastered with one segment per unit), then the units as
-/// one path — each a numbered node on a rail with its title, Arabic, and
-/// size or status. The unit the learner is working on (see [currentUnitId])
-/// is the only highlighted card: its lessons done, the next lesson, and a
-/// button straight into it. The path ends at the level's final mission &
-/// assessment (the Tests tab).
+/// Below the course title (English and Arabic), a level strip carries only
+/// the levels that exist — the one the learner is in filled, an open one
+/// tappable, a locked one behind a small lock; the rest are a caption
+/// underneath, not segments (see [LevelStrip]). Below that, units mastered
+/// with one segment per unit, then the units as one path — each a numbered
+/// node on a rail with its title, Arabic, and size or status. The unit the
+/// learner is working on (see [currentUnitId]) is the only highlighted
+/// card: its lessons done, the next lesson, and a button straight into it.
+/// The path ends at the level's final mission & assessment (the Tests tab).
 ///
 /// Every unit stays tappable — free access, no hard lock — per
 /// docs/PRODUCT.md flow 5.
@@ -95,8 +94,9 @@ class _CourseScreenState extends ConsumerState<CourseScreen> {
           // Task 8: the lock sheet explaining why this level isn't open.
           return;
         case LevelAccess.noContent:
-          // Unreachable in practice — LevelStrip never makes a no-content
-          // pill tappable — kept so this switch stays exhaustive.
+          // Unreachable in practice — LevelStrip's track excludes
+          // no-content levels entirely — kept so this switch stays
+          // exhaustive.
           return;
       }
     }
@@ -174,13 +174,6 @@ class _CourseBody extends StatelessWidget {
           style: overlineStyle(context, color: tokens.textSecondary),
         ),
         const SizedBox(height: AppSpace.xxs),
-        LevelStrip(
-          catalog: catalog,
-          shownLevelId: shownLevelId,
-          access: access,
-          onSelect: onSelect,
-        ),
-        const SizedBox(height: AppSpace.md),
         Align(
           alignment: AlignmentDirectional.centerStart,
           child: Text(
@@ -200,6 +193,13 @@ class _CourseBody extends StatelessWidget {
               color: tokens.textSecondary,
             ),
           ),
+        ),
+        const SizedBox(height: AppSpace.md),
+        LevelStrip(
+          catalog: catalog,
+          shownLevelId: shownLevelId,
+          access: access,
+          onSelect: onSelect,
         ),
         const SizedBox(height: AppSpace.md),
         _CourseProgressCard(

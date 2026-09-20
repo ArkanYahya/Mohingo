@@ -473,9 +473,6 @@ class AppLocalizationsAr extends AppLocalizations {
       'بعد آخر وحدة، أظهر ما تستطيع فعله — في تبويب الاختبارات.';
 
   @override
-  String get learnLevelStripTitle => 'مستوياتك';
-
-  @override
   String learnLevelSemanticsCurrent(String level) {
     return 'المستوى $level، وهو ما تتعلّمه الآن';
   }
@@ -488,11 +485,6 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String learnLevelSemanticsLocked(String level) {
     return 'المستوى $level، مقفل';
-  }
-
-  @override
-  String learnLevelSemanticsComingSoon(String level) {
-    return 'المستوى $level، قادم لاحقًا';
   }
 
   @override

@@ -452,9 +452,6 @@ class AppLocalizationsEn extends AppLocalizations {
       'Show what you can do after the last unit — in the Tests tab.';
 
   @override
-  String get learnLevelStripTitle => 'Your levels';
-
-  @override
   String learnLevelSemanticsCurrent(String level) {
     return 'Level $level, the one you\'re learning now';
   }
@@ -467,11 +464,6 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String learnLevelSemanticsLocked(String level) {
     return 'Level $level, locked';
-  }
-
-  @override
-  String learnLevelSemanticsComingSoon(String level) {
-    return 'Level $level, coming later';
   }
 
   @override
