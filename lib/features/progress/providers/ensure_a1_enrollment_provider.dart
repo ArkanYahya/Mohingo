@@ -16,6 +16,7 @@ Future<void> ensureA1Enrollment(Ref ref) async {
   final learnerRepository = ref.watch(learnerRepositoryProvider);
   await learnerRepository.ensureEnrolled(
     learnerId: learner.id,
+    levelId: 'a1',
     courseId: index.bundle.course.id,
     contentVersion: index.bundle.contentVersion,
   );
