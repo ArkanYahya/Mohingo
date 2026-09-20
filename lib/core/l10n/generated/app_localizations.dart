@@ -410,6 +410,12 @@ abstract class AppLocalizations {
   /// **'Mission'**
   String get homeLessonTypeMission;
 
+  /// Lesson type label: lessonType integrated-production — a model text, questions on it, then the learner writes their own.
+  ///
+  /// In en, this message translates to:
+  /// **'Put it together'**
+  String get homeLessonTypeIntegrated;
+
   /// Label above the hero card's lesson progress bar.
   ///
   /// In en, this message translates to:
@@ -619,6 +625,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'New'**
   String get lessonIntroNew;
+
+  /// Badge on a key phrase or grammar form that the lesson reviews from an earlier level, e.g. 'From A1'.
+  ///
+  /// In en, this message translates to:
+  /// **'From {level}'**
+  String lessonIntroFromLevel(String level);
 
   /// Button that leaves the lesson intro for its first question.
   ///

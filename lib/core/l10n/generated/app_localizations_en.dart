@@ -223,6 +223,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get homeLessonTypeMission => 'Mission';
 
   @override
+  String get homeLessonTypeIntegrated => 'Put it together';
+
+  @override
   String get homeLessonProgressLabel => 'Lesson progress';
 
   @override
@@ -348,6 +351,11 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get lessonIntroNew => 'New';
+
+  @override
+  String lessonIntroFromLevel(String level) {
+    return 'From $level';
+  }
 
   @override
   String get lessonIntroStartPractice => 'Start practice';

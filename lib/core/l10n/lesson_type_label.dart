@@ -9,6 +9,7 @@ String? lessonTypeLabel(AppLocalizations l10n, String lessonType) {
     'focus-practice' => l10n.homeLessonTypePractice,
     'communication' => l10n.homeLessonTypeConversation,
     'mission' => l10n.homeLessonTypeMission,
+    'integrated-production' => l10n.homeLessonTypeIntegrated,
     _ => null,
   };
 }
