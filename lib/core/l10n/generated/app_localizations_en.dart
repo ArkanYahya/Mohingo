@@ -223,6 +223,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get homeLessonTypeMission => 'Mission';
 
   @override
+  String get homeLessonTypeIntegrated => 'Put it together';
+
+  @override
   String get homeLessonProgressLabel => 'Lesson progress';
 
   @override
@@ -348,6 +351,11 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get lessonIntroNew => 'New';
+
+  @override
+  String lessonIntroFromLevel(String level) {
+    return 'From $level';
+  }
 
   @override
   String get lessonIntroStartPractice => 'Start practice';
@@ -1357,4 +1365,13 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get settingsBackupBody =>
       'Reinstalling the app or changing phones starts fresh for now.';
+
+  @override
+  String get speakPartnerTitle => 'The other person says';
+
+  @override
+  String get speakPartnerPlay => 'Hear it again';
+
+  @override
+  String get lessonIntroReadTitle => 'Read the text';
 }

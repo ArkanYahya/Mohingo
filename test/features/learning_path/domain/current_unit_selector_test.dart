@@ -9,7 +9,7 @@ Unit _unit(String id) => Unit(
   titleAr: id,
   levelRole: 'core',
   estimatedMinutes: const [1, 2],
-  countsTowardA1Mastery: true,
+  countsTowardLevelMastery: true,
   lessons: const [],
   mastery: const UnitMastery(
     requiredObjectives: [],

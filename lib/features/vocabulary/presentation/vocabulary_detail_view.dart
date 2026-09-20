@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../content/index/course_content_index.dart';
+import '../../../content/models/registry_items.dart';
 import '../../../core/l10n/generated/app_localizations.dart';
 import '../../../core/theme/app_tokens.dart';
 import '../../../core/theme/overline_style.dart';
@@ -46,7 +47,7 @@ class VocabularyDetailView extends ConsumerStatefulWidget {
   final String text;
   final String arabic;
   final String? usage;
-  final List<String> examples;
+  final List<LexiconExample> examples;
 
   /// The lesson id that introduces the item.
   final String introducedIn;
@@ -217,18 +218,28 @@ class _VocabularyDetailViewState extends ConsumerState<VocabularyDetailView> {
                 child: Row(
                   children: [
                     Expanded(
-                      child: Align(
-                        alignment: AlignmentDirectional.centerStart,
-                        child: Text(
-                          example,
-                          textDirection: TextDirection.ltr,
-                          style: theme.textTheme.bodyLarge?.copyWith(
-                            color: tokens.textPrimary,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            example.en,
+                            textDirection: TextDirection.ltr,
+                            style: theme.textTheme.bodyLarge?.copyWith(
+                              color: tokens.textPrimary,
+                            ),
                           ),
-                        ),
+                          if (example.ar != null)
+                            Text(
+                              example.ar!,
+                              textDirection: TextDirection.rtl,
+                              style: theme.textTheme.bodyMedium?.copyWith(
+                                color: tokens.textSecondary,
+                              ),
+                            ),
+                        ],
                       ),
                     ),
-                    ListenButton(text: example),
+                    ListenButton(text: example.en),
                   ],
                 ),
               ),

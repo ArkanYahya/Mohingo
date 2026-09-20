@@ -37,4 +37,63 @@ void main() {
       expect(activity.evaluation, isNull);
     });
   });
+
+  group('material shown with a task', () {
+    Map<String, dynamic> speak(Map<String, dynamic> extra) => {
+      'id': 'A1-FINAL-ASSESS-S02',
+      'type': 'speak',
+      'mode': 'mastery',
+      'skill': 'spokenInteraction',
+      'canDo': <String>[],
+      'prompt': 'Respond to four short examiner turns.',
+      ...extra,
+    };
+
+    test('any activity may carry a source card', () {
+      final activity = Activity.fromJson(
+        speak({'sourceCard': 'Bus 14 — 08:00 to Central.'}),
+      );
+      expect(activity.sourceCard, 'Bus 14 — 08:00 to Central.');
+      expect(Activity.fromJson(speak({})).sourceCard, isNull);
+      expect(Activity.fromJson(speak({'sourceCard': '  '})).sourceCard, isNull);
+    });
+
+    test('a blank sourceText parses as null, not an empty source card that '
+        'would also shadow a real sourceCard', () {
+      final activity = Activity.fromJson({
+        'id': 'A2-TEST-A03',
+        'type': 'textChoice',
+        'mode': 'practice',
+        'skill': 'reading',
+        'canDo': <String>[],
+        'prompt': 'Choose the correct answer.',
+        'options': ['a', 'b'],
+        'answer': 'a',
+        'sourceText': '',
+      }) as TextChoiceActivity;
+      expect(activity.sourceText, isNull);
+    });
+
+    test("a speaking task's partner lines come from partnerTurns or A1's "
+        'examinerTurns', () {
+      final partner = Activity.fromJson(
+        speak({
+          'partnerTurns': ['Hi! How are you?', 'What do you do?'],
+        }),
+      ) as SpeakActivity;
+      expect(partner.partnerTurns, ['Hi! How are you?', 'What do you do?']);
+
+      final examiner = Activity.fromJson(
+        speak({
+          'examinerTurns': ['Good morning.'],
+        }),
+      ) as SpeakActivity;
+      expect(examiner.partnerTurns, ['Good morning.']);
+
+      expect(
+        (Activity.fromJson(speak({})) as SpeakActivity).partnerTurns,
+        isEmpty,
+      );
+    });
+  });
 }

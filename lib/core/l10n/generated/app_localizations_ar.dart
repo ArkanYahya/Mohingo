@@ -236,6 +236,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get homeLessonTypeMission => 'مهمة';
 
   @override
+  String get homeLessonTypeIntegrated => 'اجمع ما تعلّمته';
+
+  @override
   String get homeLessonProgressLabel => 'تقدّم الدرس';
 
   @override
@@ -365,6 +368,11 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get lessonIntroNew => 'جديد';
+
+  @override
+  String lessonIntroFromLevel(String level) {
+    return 'من $level';
+  }
 
   @override
   String get lessonIntroStartPractice => 'ابدأ التدريب';
@@ -1388,4 +1396,13 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get settingsBackupBody =>
       'إعادة تثبيت التطبيق أو تغيير الهاتف يبدأ من جديد حالياً.';
+
+  @override
+  String get speakPartnerTitle => 'يقول الطرف الآخر';
+
+  @override
+  String get speakPartnerPlay => 'استمع مرة أخرى';
+
+  @override
+  String get lessonIntroReadTitle => 'اقرأ النص';
 }

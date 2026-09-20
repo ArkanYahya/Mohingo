@@ -52,6 +52,7 @@
   "homeLessonTypePractice": "تدريب",
   "homeLessonTypeConversation": "محادثة",
   "homeLessonTypeMission": "مهمة",
+  "homeLessonTypeIntegrated": "اجمع ما تعلّمته",
   "homeLessonProgressLabel": "تقدّم الدرس",
   "homeLessonNew": "درس جديد",
   "homeLessonPercent": "{percent}٪",
@@ -87,6 +88,7 @@
   "lessonIntroKeyPhrasesTitle": "عبارات أساسية",
   "lessonIntroGrammarTitle": "القواعد",
   "lessonIntroNew": "جديد",
+  "lessonIntroFromLevel": "من {level}",
   "lessonIntroStartPractice": "ابدأ التدريب",
   "learnCourseOverline": "مقررك",
   "learnUnitsTitle": "الوحدات",
@@ -356,5 +358,8 @@
   "settingsResetProgressCancel": "إلغاء",
   "settingsResetProgressDone": "تمت إعادة تعيين التقدّم.",
   "settingsBackupTitle": "النسخ الاحتياطي والمزامنة",
-  "settingsBackupBody": "إعادة تثبيت التطبيق أو تغيير الهاتف يبدأ من جديد حالياً."
+  "settingsBackupBody": "إعادة تثبيت التطبيق أو تغيير الهاتف يبدأ من جديد حالياً.",
+  "speakPartnerTitle": "يقول الطرف الآخر",
+  "speakPartnerPlay": "استمع مرة أخرى",
+  "lessonIntroReadTitle": "اقرأ النص"
 }

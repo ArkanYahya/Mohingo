@@ -1,4 +1,5 @@
 import 'activity.dart';
+import 'non_blank.dart';
 
 /// One line of a lesson's `encounter.dialogue` — a first-exposure scripted
 /// conversation shown before practice activities.
@@ -22,14 +23,36 @@ class EncounterDialogueLine {
   final String ar;
 }
 
+/// A lesson's model text — a message, a menu, a profile — that its
+/// questions are about and that the learner's own writing follows. Shown
+/// in the lesson player's intro. `textAr` is null when absent or blank.
+class LessonReadingText {
+  const LessonReadingText({
+    required this.title,
+    required this.text,
+    this.textAr,
+  });
+
+  factory LessonReadingText.fromJson(Map<String, dynamic> json) {
+    return LessonReadingText(
+      title: json['title'] as String,
+      text: json['text'] as String,
+      textAr: nonBlank(json['textAr']),
+    );
+  }
+
+  final String title;
+  final String text;
+  final String? textAr;
+}
+
 /// A single teaching session within a [Unit] (e.g. `"A1-U1-L1"`, "My Name").
 ///
 /// [raw] carries the full original JSON, including lesson-level fields not
-/// yet given a dedicated typed getter (`scenario`, `readingText`,
-/// `uiPolicy`, `privacyNote`, `numberScope`, `placeLanguage`,
-/// `pedagogyNote`, `reference`) — present on some lessons, not modeled
-/// individually in Phase 4 since app logic doesn't act on them yet. See
-/// docs/DATA_MODEL.md.
+/// yet given a dedicated typed getter (`scenario`, `uiPolicy`,
+/// `privacyNote`, `numberScope`, `placeLanguage`, `pedagogyNote`,
+/// `reference`) — present on some lessons, not modeled individually in
+/// Phase 4 since app logic doesn't act on them yet. See docs/DATA_MODEL.md.
 class Lesson {
   const Lesson({
     required this.id,
@@ -42,6 +65,7 @@ class Lesson {
     required this.chunks,
     required this.encounterDialogue,
     required this.activities,
+    this.readingText,
     required this.raw,
   });
 
@@ -68,6 +92,11 @@ class Lesson {
       activities: (json['activities'] as List)
           .map((a) => Activity.fromJson(a as Map<String, dynamic>))
           .toList(),
+      readingText: json['readingText'] == null
+          ? null
+          : LessonReadingText.fromJson(
+              json['readingText'] as Map<String, dynamic>,
+            ),
       raw: json,
     );
   }
@@ -82,6 +111,9 @@ class Lesson {
   final List<String> chunks;
   final List<EncounterDialogueLine> encounterDialogue;
   final List<Activity> activities;
+
+  /// The lesson's model text, when it has one (A1's L6 lessons do).
+  final LessonReadingText? readingText;
   final Map<String, dynamic> raw;
 }
 
@@ -147,7 +179,7 @@ class Unit {
     required this.titleAr,
     required this.levelRole,
     required this.estimatedMinutes,
-    required this.countsTowardA1Mastery,
+    required this.countsTowardLevelMastery,
     required this.lessons,
     required this.mastery,
   });
@@ -159,7 +191,11 @@ class Unit {
       titleAr: json['titleAr'] as String,
       levelRole: json['levelRole'] as String,
       estimatedMinutes: List<int>.from(json['estimatedMinutes'] as List),
-      countsTowardA1Mastery: json['countsTowardA1Mastery'] as bool,
+      countsTowardLevelMastery:
+          (json['countsTowardLevelMastery'] ??
+                  json['countsTowardA1Mastery'] ??
+                  json['countsTowardA2Mastery'])
+              as bool,
       lessons: (json['lessons'] as List)
           .map((l) => Lesson.fromJson(l as Map<String, dynamic>))
           .toList(),
@@ -174,7 +210,11 @@ class Unit {
 
   /// `[min, max]` estimated guided-learning minutes.
   final List<int> estimatedMinutes;
-  final bool countsTowardA1Mastery;
+
+  /// Whether the unit counts towards its level's mastery (A1's starter unit
+  /// doesn't). Bundles name it per level — `countsTowardA1Mastery`,
+  /// `countsTowardA2Mastery` — so it's read under any of those names.
+  final bool countsTowardLevelMastery;
   final List<Lesson> lessons;
   final UnitMastery mastery;
 }

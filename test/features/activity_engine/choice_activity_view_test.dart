@@ -12,7 +12,9 @@ import 'package:mohingo/core/theme/feedback_theme_extension.dart';
 import 'package:mohingo/data/local/database.dart' show ActivityAttempt;
 import 'package:mohingo/features/activity_engine/domain/activity_submission.dart';
 import 'package:mohingo/features/activity_engine/domain/sound_effects_service.dart';
+import 'package:mohingo/features/activity_engine/presentation/activity_chrome.dart';
 import 'package:mohingo/features/activity_engine/presentation/views/choice_activity_view.dart';
+import 'package:mohingo/features/activity_engine/presentation/widgets/activity_source_card.dart';
 import 'package:mohingo/features/activity_engine/providers/sound_effects_providers.dart';
 import 'package:mohingo/features/speech/domain/text_to_speech_service.dart';
 
@@ -36,7 +38,56 @@ AudioChoiceActivity _audioChoice({bool mediaOptions = false}) {
   );
 }
 
+TextChoiceActivity readingQuestion() => const TextChoiceActivity(
+  id: 'A1-U4-L7-A02',
+  lessonId: 'A1-U4-L7',
+  mode: ActivityMode.mastery,
+  skill: Skill.reading,
+  canDo: [],
+  prompt: 'Choose the correct comparison.',
+  promptAr: 'اختر المقارنة الصحيحة.',
+  raw: {},
+  options: ['Rana starts earlier.', 'Hassan starts earlier.'],
+  answer: 'Rana starts earlier.',
+  sourceText: 'Rana gets up at 6:30. Hassan gets up at 7:00.',
+);
+
 void main() {
+  testWidgets('a reading question shows the text it asks about, left to '
+      'right even in Arabic', (tester) async {
+    await tester.pumpActivityView(
+      ChoiceActivityView.textChoice(
+        activity: readingQuestion(),
+        onSubmitted: (_) {},
+      ),
+      locale: const Locale('ar'),
+    );
+
+    expect(find.byType(ActivitySourceCard), findsOneWidget);
+    final text = tester.widget<Text>(
+      find.text('Rana gets up at 6:30. Hassan gets up at 7:00.'),
+    );
+    expect(text.textDirection, TextDirection.ltr);
+  });
+
+  testWidgets('a test that hides marking still shows the text', (tester) async {
+    await tester.pumpActivityView(
+      ActivityFrameScope(
+        onContinue: () {},
+        testMode: true,
+        child: ChoiceActivityView.textChoice(
+          activity: readingQuestion(),
+          onSubmitted: (_) {},
+        ),
+      ),
+    );
+
+    expect(
+      find.text('Rana gets up at 6:30. Hassan gets up at 7:00.'),
+      findsOneWidget,
+    );
+  });
+
   testWidgets('renders prompt, promptAr, options, and the transcript help card '
       'with the transcript text hidden until revealed', (tester) async {
     await tester.pumpActivityView(

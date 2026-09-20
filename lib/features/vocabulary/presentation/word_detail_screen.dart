@@ -16,7 +16,7 @@ class WordDetailScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final contentAsync = ref.watch(courseContentProvider('a1'));
+    final contentAsync = ref.watch(contentIndexForIdProvider(lexiconId));
 
     return contentAsync.when(
       loading: () =>

@@ -410,6 +410,12 @@ abstract class AppLocalizations {
   /// **'Mission'**
   String get homeLessonTypeMission;
 
+  /// Lesson type label: lessonType integrated-production — a model text, questions on it, then the learner writes their own.
+  ///
+  /// In en, this message translates to:
+  /// **'Put it together'**
+  String get homeLessonTypeIntegrated;
+
   /// Label above the hero card's lesson progress bar.
   ///
   /// In en, this message translates to:
@@ -619,6 +625,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'New'**
   String get lessonIntroNew;
+
+  /// Badge on a key phrase or grammar form that the lesson reviews from an earlier level, e.g. 'From A1'.
+  ///
+  /// In en, this message translates to:
+  /// **'From {level}'**
+  String lessonIntroFromLevel(String level);
 
   /// Button that leaves the lesson intro for its first question.
   ///
@@ -2239,6 +2251,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Reinstalling the app or changing phones starts fresh for now.'**
   String get settingsBackupBody;
+
+  /// Heading of the card on a speaking question that shows what the other person says before the learner answers.
+  ///
+  /// In en, this message translates to:
+  /// **'The other person says'**
+  String get speakPartnerTitle;
+
+  /// Accessibility label of the button that reads the other person's lines aloud again.
+  ///
+  /// In en, this message translates to:
+  /// **'Hear it again'**
+  String get speakPartnerPlay;
+
+  /// Title of the card holding a lesson's model text (a message, a menu, a profile) in the lesson intro.
+  ///
+  /// In en, this message translates to:
+  /// **'Read the text'**
+  String get lessonIntroReadTitle;
 }
 
 class _AppLocalizationsDelegate

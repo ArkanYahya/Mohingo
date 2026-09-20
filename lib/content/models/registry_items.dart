@@ -1,3 +1,5 @@
+import 'non_blank.dart';
+
 /// One bilingual example sentence for a [GrammarItem].
 class GrammarExample {
   const GrammarExample({required this.en, required this.ar});
@@ -49,6 +51,22 @@ class GrammarItem {
   final List<GrammarExample> examples;
 }
 
+/// One example sentence for a [LexiconItem]: English, and its Arabic when
+/// the bundle gives one. A1's examples are English strings; A2's are
+/// `{en, ar}` objects — both parse.
+class LexiconExample {
+  const LexiconExample({required this.en, this.ar});
+
+  factory LexiconExample.fromJson(Object json) {
+    if (json is String) return LexiconExample(en: json);
+    final map = json as Map<String, dynamic>;
+    return LexiconExample(en: map['en'] as String, ar: nonBlank(map['ar']));
+  }
+
+  final String en;
+  final String? ar;
+}
+
 /// One lexicon registry record (`lexicon[]` in the bundle) — a single
 /// lexical *sense*. Two records may share a [headword] while being distinct
 /// senses (e.g. the bundle's `A1.LEX.PICTURE.N01`/`N02`) — always keyed and
@@ -78,7 +96,10 @@ class LexiconItem {
       receptive: json['receptive'] as bool,
       productive: json['productive'] as bool,
       meaning: json['meaning'] as String,
-      examples: List<String>.from(json['examples'] as List),
+      examples: [
+        for (final example in json['examples'] as List)
+          LexiconExample.fromJson(example as Object),
+      ],
       introducedIn: json['introducedIn'] as String,
       recycledIn: List<String>.from(json['recycledIn'] as List),
     );
@@ -92,7 +113,7 @@ class LexiconItem {
   final bool receptive;
   final bool productive;
   final String meaning;
-  final List<String> examples;
+  final List<LexiconExample> examples;
   final String introducedIn;
   final List<String> recycledIn;
 }

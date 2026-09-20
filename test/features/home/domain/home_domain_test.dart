@@ -41,7 +41,7 @@ Unit _unit(List<Lesson> lessons) => Unit(
   titleAr: 'U1',
   levelRole: 'core',
   estimatedMinutes: const [60, 90],
-  countsTowardA1Mastery: true,
+  countsTowardLevelMastery: true,
   lessons: lessons,
   mastery: const UnitMastery(
     requiredObjectives: [],

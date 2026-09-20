@@ -20,6 +20,7 @@ import '../../domain/sound_effects_service.dart';
 import '../../providers/online_refinement_providers.dart';
 import '../../providers/sound_effects_providers.dart';
 import '../activity_chrome.dart';
+import '../widgets/activity_partner_turns_card.dart';
 import '../widgets/activity_text_field.dart';
 import '../widgets/phrase_text.dart';
 
@@ -353,17 +354,8 @@ class _SpeakActivityViewState extends ConsumerState<SpeakActivityView> {
     return ActivityChrome(
       prompt: widget.activity.prompt,
       promptAr: widget.activity.promptAr,
-      help: _mode == _SpeakMode.typedFallback && _submission == null
-          ? Text(
-              _capabilities?.micPermission ==
-                      SpeechPermissionStatus.permanentlyDenied
-                  ? l10n.speakPermissionPermanentlyDenied
-                  : l10n.activitySpeechUnavailableUseWriting,
-              style: theme.textTheme.bodyMedium?.copyWith(
-                color: tokens.textSecondary,
-              ),
-            )
-          : null,
+      source: widget.activity.sourceCard,
+      help: _help(l10n, theme, tokens),
       body: _withUsefulPhrases(context, _buildBody(context, l10n)),
       feedback: ActivitySubmitOrFeedback(
         submission: displaySubmission,
@@ -372,6 +364,38 @@ class _SpeakActivityViewState extends ConsumerState<SpeakActivityView> {
         correctAnswerLabel: _correctAnswerLabel(),
         secondaryAction: _secondaryAction(l10n),
       ),
+    );
+  }
+
+  /// The other person's lines, when the task has any, then — in the typed
+  /// fallback, before submission — why the learner is typing.
+  Widget? _help(AppLocalizations l10n, ThemeData theme, AppTokens tokens) {
+    final turns = widget.activity.partnerTurns;
+    final fallbackNote =
+        _mode == _SpeakMode.typedFallback && _submission == null
+        ? Text(
+            _capabilities?.micPermission ==
+                    SpeechPermissionStatus.permanentlyDenied
+                ? l10n.speakPermissionPermanentlyDenied
+                : l10n.activitySpeechUnavailableUseWriting,
+            style: theme.textTheme.bodyMedium?.copyWith(
+              color: tokens.textSecondary,
+            ),
+          )
+        : null;
+    if (turns.isEmpty) return fallbackNote;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        ActivityPartnerTurnsCard(
+          turns: turns,
+          autoPlay: widget.reviewAttempt == null,
+        ),
+        if (fallbackNote != null) ...[
+          const SizedBox(height: AppSpace.sm),
+          fallbackNote,
+        ],
+      ],
     );
   }
 

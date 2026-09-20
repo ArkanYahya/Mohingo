@@ -31,17 +31,22 @@ import 'widgets/lesson_complete_view.dart';
 import 'widgets/lesson_conversation_step.dart';
 import 'widgets/lesson_key_phrases_step.dart';
 import 'widgets/lesson_progress_bar.dart';
+import 'widgets/lesson_reading_step.dart';
 import 'widgets/lesson_top_bar.dart';
+
+/// The lesson player's intro screens, in the order they appear.
+enum _IntroStep { conversation, reading, keyPhrases }
 
 /// Sequences through one lesson's activities, rendering each via the
 /// activity-engine registry, recording every submission, and refreshing
 /// unit mastery once the lesson is complete.
 ///
-/// A lesson with an encounter conversation opens on two intro screens —
-/// [LessonConversationStep], then [LessonKeyPhrasesStep] when the lesson
-/// lists phrases or grammar — before its first activity. They're steps in
-/// the progress bar (its first group), shown when the lesson starts from
-/// the beginning and skipped on a mid-lesson resume.
+/// A lesson opens on its intro screens — [LessonConversationStep] when it
+/// has an encounter conversation, [LessonReadingStep] when it has a model
+/// text, then [LessonKeyPhrasesStep] when the lesson lists phrases or
+/// grammar — before its first activity. They're steps in the progress bar
+/// (its first group), shown when the lesson starts from the beginning and
+/// skipped on a mid-lesson resume.
 ///
 /// Each activity is hosted in an [ActivityFrameScope]: a slim top bar
 /// (close + [LessonProgressBar]), the phase · skill line, the question,
@@ -69,7 +74,7 @@ class LessonPlayerScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final contentAsync = ref.watch(courseContentProvider('a1'));
+    final contentAsync = ref.watch(contentIndexForIdProvider(lessonId));
     final learnerAsync = ref.watch(currentLearnerProvider);
 
     return contentAsync.when(
@@ -94,8 +99,10 @@ class LessonPlayerScreen extends ConsumerWidget {
             mediaByKey: index.bundle.mediaSpecifications,
             unitNumber:
                 index.bundle.units.indexWhere((u) => u.id == unitId) + 1,
-            phrases: [for (final id in lesson.chunks) ?index.chunkById[id]],
-            grammar: [for (final id in lesson.grammar) ?index.grammarById[id]],
+            phrases: [for (final id in lesson.chunks) ?index.resolveChunk(id)],
+            grammar: [
+              for (final id in lesson.grammar) ?index.resolveGrammar(id),
+            ],
           ),
         );
       },
@@ -165,15 +172,24 @@ class _LessonPlayerBodyState extends ConsumerState<_LessonPlayerBody> {
   /// activity.
   bool _advancing = false;
 
-  /// The intro screen showing (0 = conversation, 1 = key phrases), or
-  /// null once the activities have started.
+  /// The intro screen showing (an index into [_introSteps]), or null once
+  /// the activities have started.
   int? _introIndex;
 
-  /// How many intro screens this lesson has: none without an encounter
-  /// conversation; key phrases only when there are phrases or grammar.
-  late final int _introCount = widget.lesson.encounterDialogue.isEmpty
-      ? 0
-      : (widget.phrases.isEmpty && widget.grammar.isEmpty ? 1 : 2);
+  /// The lesson's intro screens, in order: its conversation, its model
+  /// text, then key phrases — the last only after a conversation or a
+  /// text, and only when there are phrases or grammar to show.
+  late final List<_IntroStep> _introSteps = [
+    if (widget.lesson.encounterDialogue.isNotEmpty) _IntroStep.conversation,
+    if (widget.lesson.readingText != null) _IntroStep.reading,
+    if ((widget.lesson.encounterDialogue.isNotEmpty ||
+            widget.lesson.readingText != null) &&
+        (widget.phrases.isNotEmpty || widget.grammar.isNotEmpty))
+      _IntroStep.keyPhrases,
+  ];
+
+  /// How many intro screens this lesson has (see [_introSteps]).
+  late final int _introCount = _introSteps.length;
   final List<ActivityCorrectness> _results = [];
 
   /// The skill of each activity answered this session, in order — the
@@ -562,28 +578,38 @@ class _LessonPlayerBodyState extends ConsumerState<_LessonPlayerBody> {
       _introIndex = isLast ? null : introIndex + 1;
     });
 
-    return introIndex == 0
-        ? LessonConversationStep(
-            key: const ValueKey('intro-conversation'),
-            overline: overline,
-            title: lesson.title,
-            titleAr: lesson.titleAr,
-            lines: lesson.encounterDialogue,
-            sceneAr:
-                (lesson.raw['encounter'] as Map<String, dynamic>?)?['sceneAr']
-                    as String?,
-            continueLabel: continueLabel,
-            onContinue: onContinue,
-          )
-        : LessonKeyPhrasesStep(
-            key: const ValueKey('intro-key-phrases'),
-            overline: overline,
-            lessonId: lesson.id,
-            phrases: widget.phrases,
-            grammar: widget.grammar,
-            continueLabel: continueLabel,
-            onContinue: onContinue,
-          );
+    return switch (_introSteps[introIndex]) {
+      _IntroStep.conversation => LessonConversationStep(
+        key: const ValueKey('intro-conversation'),
+        overline: overline,
+        title: lesson.title,
+        titleAr: lesson.titleAr,
+        lines: lesson.encounterDialogue,
+        sceneAr:
+            (lesson.raw['encounter'] as Map<String, dynamic>?)?['sceneAr']
+                as String?,
+        continueLabel: continueLabel,
+        onContinue: onContinue,
+      ),
+      _IntroStep.reading => LessonReadingStep(
+        key: const ValueKey('intro-reading'),
+        overline: overline,
+        title: lesson.title,
+        titleAr: lesson.titleAr,
+        reading: lesson.readingText!,
+        continueLabel: continueLabel,
+        onContinue: onContinue,
+      ),
+      _IntroStep.keyPhrases => LessonKeyPhrasesStep(
+        key: const ValueKey('intro-key-phrases'),
+        overline: overline,
+        lessonId: lesson.id,
+        phrases: widget.phrases,
+        grammar: widget.grammar,
+        continueLabel: continueLabel,
+        onContinue: onContinue,
+      ),
+    };
   }
 
   Widget _buildActivity(Activity activity) {

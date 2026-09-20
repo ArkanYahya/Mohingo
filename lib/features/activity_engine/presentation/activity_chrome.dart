@@ -6,6 +6,7 @@ import '../../../core/theme/app_tokens.dart';
 import '../../../core/theme/feedback_theme_extension.dart';
 import '../domain/activity_submission.dart';
 import 'activity_feedback_panel.dart';
+import 'widgets/activity_source_card.dart';
 
 export 'activity_feedback_panel.dart';
 
@@ -88,6 +89,7 @@ class ActivityChrome extends StatelessWidget {
   const ActivityChrome({
     required this.prompt,
     this.promptAr,
+    this.source,
     this.help,
     required this.body,
     this.feedback,
@@ -96,6 +98,10 @@ class ActivityChrome extends StatelessWidget {
 
   final String prompt;
   final String? promptAr;
+
+  /// The text the question is about ([ActivitySourceCard]) — a reading
+  /// question's passage, a mediation task's notice. Null for none.
+  final String? source;
   final Widget? help;
   final Widget body;
   final Widget? feedback;
@@ -140,6 +146,10 @@ class ActivityChrome extends StatelessWidget {
                       ?.copyWith(color: tokens.textSecondary),
             ),
           ),
+        ],
+        if (source != null) ...[
+          const SizedBox(height: AppSpace.sm),
+          ActivitySourceCard(text: source!),
         ],
         if (help != null) ...[const SizedBox(height: AppSpace.sm), help!],
         SizedBox(height: framed ? AppSpace.lg : AppSpace.md),

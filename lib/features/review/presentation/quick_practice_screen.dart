@@ -137,8 +137,10 @@ class _QuickPracticeScreenState extends ConsumerState<QuickPracticeScreen> {
 
   Widget _summary(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    final index = ref.watch(courseContentProvider('a1')).value;
     final lesson = widget.set.lesson;
+    final index = lesson == null
+        ? null
+        : ref.watch(contentIndexForIdProvider(lesson.id)).value;
     final right = _right.where((r) => r).length;
     return TestResultView(
       overline: l10n.practiceOverline('\u2068${widget.set.title}\u2069'),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../../content/catalog/content_level.dart';
 import '../../../../content/models/registry_items.dart';
 import '../../../../core/l10n/generated/app_localizations.dart';
 import '../../../../core/theme/app_tokens.dart';
@@ -12,11 +13,13 @@ import 'lesson_intro_chrome.dart';
 
 /// The second lesson-intro screen: the lesson's own phrases (from the
 /// bundle's chunk registry) and grammar forms, right after the
-/// conversation that used them.
+/// conversation or model text that used them.
 ///
 /// Each phrase shows its fill-in slots, its Arabic, a NEW badge when this
-/// lesson is where it's introduced, and a button to hear it. Grammar rows
-/// show the form, its short form, and the registry's first example.
+/// lesson is where it's introduced — or "From A1" when it comes from an
+/// earlier level — and a button to hear it. Grammar rows show the form,
+/// its short form, the registry's first example, and "From A1" when it
+/// comes from an earlier level.
 class LessonKeyPhrasesStep extends ConsumerWidget {
   const LessonKeyPhrasesStep({
     required this.overline,
@@ -42,6 +45,15 @@ class LessonKeyPhrasesStep extends ConsumerWidget {
     final theme = Theme.of(context);
     final tokens = theme.extension<AppTokens>()!;
     final l10n = AppLocalizations.of(context)!;
+
+    final lessonLevel = levelIdOfContentId(lessonId);
+
+    /// "From A1" for an item from an earlier level than this lesson.
+    String? fromLevelBadge(String itemId) {
+      final itemLevel = levelIdOfContentId(itemId);
+      if (itemLevel == null || itemLevel == lessonLevel) return null;
+      return l10n.lessonIntroFromLevel(itemLevel.toUpperCase());
+    }
 
     void speak(String text) => ref
         .read(textToSpeechServiceProvider)
@@ -77,7 +89,11 @@ class LessonKeyPhrasesStep extends ConsumerWidget {
                       for (final phrase in phrases)
                         _PhraseRow(
                           phrase: phrase,
-                          isNew: phrase.introducedIn == lessonId,
+                          badge:
+                              fromLevelBadge(phrase.id) ??
+                              (phrase.introducedIn == lessonId
+                                  ? l10n.lessonIntroNew
+                                  : null),
                           onListen: () => speak(phrase.text),
                         ),
                     ],
@@ -105,7 +121,8 @@ class LessonKeyPhrasesStep extends ConsumerWidget {
                   const SizedBox(height: AppSpace.xs),
                   _ListCard(
                     children: [
-                      for (final item in grammar) _GrammarRow(item: item),
+                      for (final item in grammar)
+                        _GrammarRow(item: item, badge: fromLevelBadge(item.id)),
                     ],
                   ),
                 ],
@@ -150,12 +167,12 @@ class _ListCard extends StatelessWidget {
 class _PhraseRow extends StatelessWidget {
   const _PhraseRow({
     required this.phrase,
-    required this.isNew,
+    required this.badge,
     required this.onListen,
   });
 
   final ChunkItem phrase;
-  final bool isNew;
+  final String? badge;
   final VoidCallback onListen;
 
   @override
@@ -194,22 +211,9 @@ class _PhraseRow extends StatelessWidget {
               ],
             ),
           ),
-          if (isNew) ...[
+          if (badge != null) ...[
             const SizedBox(width: AppSpace.xs),
-            Container(
-              padding: const EdgeInsets.symmetric(
-                horizontal: AppSpace.xs,
-                vertical: 3,
-              ),
-              decoration: BoxDecoration(
-                color: tokens.primaryInkTint,
-                borderRadius: BorderRadius.circular(999),
-              ),
-              child: Text(
-                l10n.lessonIntroNew.toUpperCase(),
-                style: overlineStyle(context, color: tokens.primaryInk),
-              ),
-            ),
+            _Badge(badge!),
           ],
           const SizedBox(width: AppSpace.xxs),
           IconButton(
@@ -228,9 +232,10 @@ class _PhraseRow extends StatelessWidget {
 }
 
 class _GrammarRow extends StatelessWidget {
-  const _GrammarRow({required this.item});
+  const _GrammarRow({required this.item, this.badge});
 
   final GrammarItem item;
+  final String? badge;
 
   @override
   Widget build(BuildContext context) {
@@ -251,26 +256,36 @@ class _GrammarRow extends StatelessWidget {
           // English grammar reads left-to-right in either interface
           // language, arrow included — while still starting at the
           // layout's start edge.
-          Align(
-            alignment: AlignmentDirectional.centerStart,
-            child: Directionality(
-              textDirection: TextDirection.ltr,
-              child: Wrap(
-                crossAxisAlignment: WrapCrossAlignment.center,
-                spacing: AppSpace.xs,
-                children: [
-                  Text(item.form, style: formStyle),
-                  if (shortForm != null) ...[
-                    Icon(
-                      Icons.arrow_forward_rounded,
-                      size: 16,
-                      color: tokens.textSecondary,
+          Row(
+            children: [
+              Expanded(
+                child: Align(
+                  alignment: AlignmentDirectional.centerStart,
+                  child: Directionality(
+                    textDirection: TextDirection.ltr,
+                    child: Wrap(
+                      crossAxisAlignment: WrapCrossAlignment.center,
+                      spacing: AppSpace.xs,
+                      children: [
+                        Text(item.form, style: formStyle),
+                        if (shortForm != null) ...[
+                          Icon(
+                            Icons.arrow_forward_rounded,
+                            size: 16,
+                            color: tokens.textSecondary,
+                          ),
+                          Text(shortForm, style: formStyle),
+                        ],
+                      ],
                     ),
-                    Text(shortForm, style: formStyle),
-                  ],
-                ],
+                  ),
+                ),
               ),
-            ),
+              if (badge != null) ...[
+                const SizedBox(width: AppSpace.xs),
+                _Badge(badge!),
+              ],
+            ],
           ),
           if (item.examples.isNotEmpty) ...[
             const SizedBox(height: 2),
@@ -283,6 +298,29 @@ class _GrammarRow extends StatelessWidget {
             ),
           ],
         ],
+      ),
+    );
+  }
+}
+
+/// A small pill on a key-phrases row: NEW, or From A1.
+class _Badge extends StatelessWidget {
+  const _Badge(this.label);
+
+  final String label;
+
+  @override
+  Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<AppTokens>()!;
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: AppSpace.xs, vertical: 3),
+      decoration: BoxDecoration(
+        color: tokens.primaryInkTint,
+        borderRadius: BorderRadius.circular(999),
+      ),
+      child: Text(
+        label.toUpperCase(),
+        style: overlineStyle(context, color: tokens.primaryInk),
       ),
     );
   }

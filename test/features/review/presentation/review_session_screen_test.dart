@@ -51,7 +51,7 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text(word.arabic), findsOneWidget);
-    expect(find.text(word.examples.first), findsOneWidget);
+    expect(find.text(word.examples.first.en), findsOneWidget);
     expect(find.text(l10n.reviewQualityAgain), findsOneWidget);
     // One repetition so far: Again brings it back tomorrow, Good in 6 days.
     expect(find.text(l10n.reviewSeeAgain(1)), findsOneWidget);

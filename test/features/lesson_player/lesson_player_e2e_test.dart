@@ -451,6 +451,7 @@ void main() {
         ),
       );
       await tester.pumpAndSettle();
+      await passLessonIntro(tester);
 
       for (final activity in lesson.activities.sublist(
         0,
@@ -557,6 +558,7 @@ void main() {
         ),
       );
       await tester.pumpAndSettle();
+      await passLessonIntro(tester);
 
       for (final activity in lesson.activities.sublist(
         0,

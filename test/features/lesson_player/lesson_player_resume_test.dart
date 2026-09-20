@@ -24,7 +24,7 @@ import 'package:uuid/uuid.dart';
 Map<String, dynamic> _fixtureBundleJson() {
   Map<String, dynamic> gapActivity(
     String id, {
-    String lessonId = 'TEST-U1-L1',
+    String lessonId = 'A1-TEST-U1-L1',
   }) => {
     'id': id,
     'lessonId': lessonId,
@@ -43,7 +43,7 @@ Map<String, dynamic> _fixtureBundleJson() {
   // past the referenced activity without rehydrating its recorded answer.
   Map<String, dynamic> writeActivity(String id) => {
     'id': id,
-    'lessonId': 'TEST-U1-L2',
+    'lessonId': 'A1-TEST-U1-L2',
     'type': 'write',
     'mode': 'mastery',
     'skill': 'writing',
@@ -93,7 +93,7 @@ Map<String, dynamic> _fixtureBundleJson() {
     'chunks': <Map<String, dynamic>>[],
     'units': [
       {
-        'id': 'TEST-U1',
+        'id': 'A1-TEST-U1',
         'title': 'Test Unit',
         'titleAr': 'وحدة',
         'levelRole': 'core',
@@ -101,7 +101,7 @@ Map<String, dynamic> _fixtureBundleJson() {
         'countsTowardA1Mastery': true,
         'lessons': [
           {
-            'id': 'TEST-U1-L1',
+            'id': 'A1-TEST-U1-L1',
             'title': 'Test Lesson',
             'titleAr': 'درس',
             'lessonType': 'practice',
@@ -117,7 +117,7 @@ Map<String, dynamic> _fixtureBundleJson() {
             ],
           },
           {
-            'id': 'TEST-U1-L2',
+            'id': 'A1-TEST-U1-L2',
             'title': 'Spell-back Lesson',
             'titleAr': 'درس',
             'lessonType': 'practice',
@@ -127,9 +127,9 @@ Map<String, dynamic> _fixtureBundleJson() {
             'chunks': <String>[],
             'activities': [
               writeActivity('B1'),
-              gapActivity('B2', lessonId: 'TEST-U1-L2'),
+              gapActivity('B2', lessonId: 'A1-TEST-U1-L2'),
               spellBackActivity('B3', 'B1'),
-              gapActivity('B4', lessonId: 'TEST-U1-L2'),
+              gapActivity('B4', lessonId: 'A1-TEST-U1-L2'),
             ],
           },
         ],
@@ -203,8 +203,8 @@ void main() {
             LessonProgressCompanion.insert(
               uuid: uuid.v4(),
               learnerId: learnerId,
-              lessonId: 'TEST-U1-L1',
-              unitId: 'TEST-U1',
+              lessonId: 'A1-TEST-U1-L1',
+              unitId: 'A1-TEST-U1',
               state: 'inProgress',
               lastActivityId: const Value('A2'),
               updatedAt: DateTime.utc(2026, 9, 2),
@@ -227,8 +227,8 @@ void main() {
             supportedLocales: AppLocalizations.supportedLocales,
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             home: const LessonPlayerScreen(
-              unitId: 'TEST-U1',
-              lessonId: 'TEST-U1-L1',
+              unitId: 'A1-TEST-U1',
+              lessonId: 'A1-TEST-U1-L1',
             ),
           ),
         ),
@@ -260,8 +260,8 @@ void main() {
           LessonProgressCompanion.insert(
             uuid: uuid.v4(),
             learnerId: learnerId,
-            lessonId: 'TEST-U1-L1',
-            unitId: 'TEST-U1',
+            lessonId: 'A1-TEST-U1-L1',
+            unitId: 'A1-TEST-U1',
             state: 'inProgress',
             lastActivityId: const Value('A4'), // the final activity
             updatedAt: DateTime.utc(2026, 9, 2),
@@ -284,8 +284,8 @@ void main() {
           supportedLocales: AppLocalizations.supportedLocales,
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           home: const LessonPlayerScreen(
-            unitId: 'TEST-U1',
-            lessonId: 'TEST-U1-L1',
+            unitId: 'A1-TEST-U1',
+            lessonId: 'A1-TEST-U1-L1',
           ),
         ),
       ),
@@ -318,7 +318,7 @@ void main() {
               uuid: uuid.v4(),
               learnerId: learnerId,
               activityId: 'B1',
-              lessonId: const Value('TEST-U1-L2'),
+              lessonId: const Value('A1-TEST-U1-L2'),
               sessionType: 'lesson',
               mode: 'mastery',
               evidenceSkill: 'writing',
@@ -333,8 +333,8 @@ void main() {
             LessonProgressCompanion.insert(
               uuid: uuid.v4(),
               learnerId: learnerId,
-              lessonId: 'TEST-U1-L2',
-              unitId: 'TEST-U1',
+              lessonId: 'A1-TEST-U1-L2',
+              unitId: 'A1-TEST-U1',
               state: 'inProgress',
               lastActivityId: const Value('B2'),
               updatedAt: DateTime.utc(2026, 9, 2),
@@ -357,8 +357,8 @@ void main() {
             supportedLocales: AppLocalizations.supportedLocales,
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             home: const LessonPlayerScreen(
-              unitId: 'TEST-U1',
-              lessonId: 'TEST-U1-L2',
+              unitId: 'A1-TEST-U1',
+              lessonId: 'A1-TEST-U1-L2',
             ),
           ),
         ),

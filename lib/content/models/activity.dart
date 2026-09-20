@@ -1,6 +1,7 @@
 import 'domain_definitions.dart';
 import 'evaluation_spec.dart';
 import 'exceptions.dart';
+import 'non_blank.dart';
 
 /// One typed exercise, discriminated by [type].
 ///
@@ -37,6 +38,12 @@ sealed class Activity {
   final String prompt;
   final String? promptAr;
   final Map<String, dynamic> raw;
+
+  /// Material the learner works from — a notice, a timetable, two short
+  /// profiles — shown as a card with the question. Any activity type may
+  /// carry one (A1's final-assessment mediation tasks and A2's mediation
+  /// tasks do). Null when absent or blank.
+  String? get sourceCard => nonBlank(raw['sourceCard']);
 
   static Activity fromJson(Map<String, dynamic> json) {
     final type = json['type'] as String;
@@ -146,12 +153,16 @@ class TextChoiceActivity extends Activity {
       raw: json,
       options: List<String>.from(json['options'] as List),
       answer: json['answer'] as String,
-      sourceText: json['sourceText'] as String?,
+      sourceText: nonBlank(json['sourceText']),
     );
   }
 
   final List<String> options;
   final String answer;
+
+  /// Null when absent or blank — a blank value must never shadow a real
+  /// [Activity.sourceCard] (see `ChoiceActivityView.textChoice`, which
+  /// falls back to it).
   final String? sourceText;
 }
 
@@ -339,6 +350,18 @@ class SpeakActivity extends Activity {
   /// and `evidenceSkill` set to this value, never as speaking evidence. See
   /// docs/DATA_MODEL.md.
   final String? fallbackSkill;
+
+  /// What the other person says, read aloud before the learner answers —
+  /// the bundle's `partnerTurns`, or A1's older `examinerTurns`. Empty
+  /// when the task has none.
+  List<String> get partnerTurns {
+    final value = raw['partnerTurns'] ?? raw['examinerTurns'];
+    if (value is! List) return const [];
+    return [
+      for (final turn in value)
+        if (turn is String && turn.trim().isNotEmpty) turn,
+    ];
+  }
 }
 
 class WriteActivity extends Activity {

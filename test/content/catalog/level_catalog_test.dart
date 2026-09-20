@@ -32,4 +32,22 @@ void main() {
   test('an unknown level id resolves to null, not a crash', () {
     expect(levelCatalogEntry('z9'), isNull);
   });
+
+  test('A2 builds on A1; A1 builds on nothing', () {
+    expect(levelCatalogEntry('a1')!.prerequisiteLevelId, isNull);
+    expect(levelCatalogEntry('a2')!.prerequisiteLevelId, 'a1');
+  });
+
+  test('levelCatalogEntryIn looks an entry up in any catalogue', () {
+    const catalog = [
+      LevelCatalogEntry(
+        levelId: 'x1',
+        cefrCode: 'X1',
+        availability: LevelAvailability.available,
+        bundleAssetPath: 'x1.json',
+      ),
+    ];
+    expect(levelCatalogEntryIn(catalog, 'x1')!.bundleAssetPath, 'x1.json');
+    expect(levelCatalogEntryIn(catalog, 'a1'), isNull);
+  });
 }

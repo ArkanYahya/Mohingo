@@ -23,12 +23,18 @@ class CourseContentIndex {
     required this.chunkById,
     required this.activitiesByCanDoId,
     required this.unitIdByLessonId,
+    required this.prerequisite,
   });
 
   /// Builds and validates the index. Throws
   /// [UnresolvedContentReferenceException] if any lesson/activity/unit
-  /// references a Can-Do/grammar/lexicon/chunk id that doesn't resolve.
-  factory CourseContentIndex.build(CourseBundle bundle) {
+  /// references a Can-Do/grammar/lexicon/chunk id that doesn't resolve —
+  /// grammar, words and phrases may also resolve in [prerequisite], the
+  /// earlier level this one builds on (an A2 lesson reviewing A1's `I am`).
+  factory CourseContentIndex.build(
+    CourseBundle bundle, {
+    CourseContentIndex? prerequisite,
+  }) {
     final unitsById = <String, Unit>{};
     final lessonsById = <String, Lesson>{};
     final activitiesById = <String, Activity>{};
@@ -78,6 +84,7 @@ class CourseContentIndex {
       chunkById: {for (final c in bundle.chunks) c.id: c},
       activitiesByCanDoId: activitiesByCanDoId,
       unitIdByLessonId: unitIdByLessonId,
+      prerequisite: prerequisite,
     );
 
     index._validateReferences();
@@ -91,6 +98,24 @@ class CourseContentIndex {
   final Map<String, GrammarItem> grammarById;
   final Map<String, LexiconItem> lexiconById;
   final Map<String, ChunkItem> chunkById;
+
+  /// The earlier level's index, when this level builds on one (A2 on A1) —
+  /// see `LevelCatalogEntry.prerequisiteLevelId`. Null for A1.
+  final CourseContentIndex? prerequisite;
+
+  /// This level's grammar record [id], or the prerequisite's. The
+  /// `*ById` maps hold this level's own records only; use these for ids a
+  /// lesson lists, which may point to an earlier level.
+  GrammarItem? resolveGrammar(String id) =>
+      grammarById[id] ?? prerequisite?.resolveGrammar(id);
+
+  /// See [resolveGrammar].
+  LexiconItem? resolveLexicon(String id) =>
+      lexiconById[id] ?? prerequisite?.resolveLexicon(id);
+
+  /// See [resolveGrammar].
+  ChunkItem? resolveChunk(String id) =>
+      chunkById[id] ?? prerequisite?.resolveChunk(id);
 
   /// Reverse index used by Review's "weak objective -> practice this" links.
   /// Training content only — see [CourseContentIndex.build]'s note on why
@@ -118,11 +143,11 @@ class CourseContentIndex {
     void checkRegistry(
       String context,
       Iterable<String> ids,
-      Map<String, Object?> registry,
+      Object? Function(String id) resolve,
       String kind,
     ) {
       for (final id in ids) {
-        if (!registry.containsKey(id)) {
+        if (resolve(id) == null) {
           errors.add('$context references unknown $kind id "$id"');
         }
       }
@@ -138,19 +163,19 @@ class CourseContentIndex {
         checkRegistry(
           'Lesson ${lesson.id}.grammar',
           lesson.grammar,
-          grammarById,
+          resolveGrammar,
           'grammar',
         );
         checkRegistry(
           'Lesson ${lesson.id}.lexicon',
           lesson.lexicon,
-          lexiconById,
+          resolveLexicon,
           'lexicon',
         );
         checkRegistry(
           'Lesson ${lesson.id}.chunks',
           lesson.chunks,
-          chunkById,
+          resolveChunk,
           'chunk',
         );
         for (final activity in lesson.activities) {

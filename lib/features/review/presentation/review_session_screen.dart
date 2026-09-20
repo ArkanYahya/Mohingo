@@ -43,7 +43,7 @@ class _Card {
         text: item.headword,
         arabic: item.arabic,
         isPhrase: false,
-        example: item.examples.firstOrNull,
+        example: item.examples.firstOrNull?.en,
       );
     }
     final item = index.chunkById[s.chunkId];

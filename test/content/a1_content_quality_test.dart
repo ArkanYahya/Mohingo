@@ -61,4 +61,37 @@ void main() {
     ];
     expect(offenders, isEmpty);
   });
+
+  test('an activity carrying a source card or source text is a type that '
+      'renders one (textChoice/audioChoice/speak/write) — an authored field '
+      'a renderer silently ignores means the renderer needs wiring, not '
+      'that the field is safe to drop', () {
+    const rendersSource = {'textChoice', 'audioChoice', 'speak', 'write'};
+    bool isNonBlank(Object? value) =>
+        value is String && value.trim().isNotEmpty;
+    bool hasSource(Map<String, dynamic> a) =>
+        isNonBlank(a['sourceCard']) || isNonBlank(a['sourceText']);
+
+    final offenders = [
+      for (final a in _activities())
+        if (hasSource(a) && !rendersSource.contains(a['type']))
+          '${a['id']} (${a['type']})',
+    ];
+    expect(offenders, isEmpty);
+  });
+
+  test('every lesson text carries its whole Arabic, not a stub', () {
+    bool isStub(String? ar) {
+      final text = ar?.trim() ?? '';
+      return text.isEmpty || text.endsWith('...') || text.endsWith('…');
+    }
+
+    final offenders = [
+      for (final unit in _bundle['units'] as List)
+        for (final lesson in (unit as Map)['lessons'] as List)
+          if ((lesson as Map)['readingText'] case final Map reading)
+            if (isStub(reading['textAr'] as String?)) lesson['id'],
+    ];
+    expect(offenders, isEmpty);
+  });
 }

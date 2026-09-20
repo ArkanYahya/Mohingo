@@ -32,7 +32,7 @@ void main() {
     expect(find.text(word.headword), findsOneWidget);
     expect(find.text(word.arabic), findsOneWidget);
     expect(find.text(l10n.wordUsageProductive), findsOneWidget);
-    expect(find.text(word.examples.first), findsOneWidget);
+    expect(find.text(word.examples.first.en), findsOneWidget);
     expect(find.text(l10n.wordMetInOverline.toUpperCase()), findsOneWidget);
     expect(find.text('Hello'), findsOneWidget); // A1-U0-L1's title
     expect(find.text(l10n.wordMetInMeta(1, 1)), findsOneWidget);
