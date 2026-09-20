@@ -358,18 +358,8 @@ void main() {
 
   testWidgets('a level the app has not released can be looked at but not '
       'opened', (tester) async {
-    // A brand-new learner, not `midCourse`: with no progress recorded
-    // anywhere, `currentUnitId` falls back to the first not-yet-mastered
-    // unit *in the units passed to it* — A2's own Unit 1 once browsing
-    // shows A2's content. That is what makes the assertions below load-
-    // bearing: with a mid-course A1 learner, the most recently active
-    // unit is an A1 unit id that never matches any A2 unit id, so
-    // `isCurrent` would already be false for every A2 unit even if
-    // browsing failed to suppress the current-unit card — the assertions
-    // would pass whether or not that suppression actually worked.
     final (container, l10n) = await _pump(
       tester,
-      midCourse: false,
       previewLevelIds: const {'a2'},
     );
 
