@@ -136,12 +136,13 @@ class _CourseScreenState extends ConsumerState<CourseScreen> {
         child: contentAsync.when(
           loading: () => const Center(child: CircularProgressIndicator()),
           error: (error, _) => _CourseLoadError(
-            // Reaching the error branch while browsing means the level
-            // that failed to load isn't the learner's own — reaching it by
-            // any other case (currentLevelIdAsync itself has failed) means
-            // it is, and currentLevelId won't have resolved either.
-            currentCode: isBrowsing
-                ? levelCatalogEntryIn(catalog, currentLevelId!)?.cefrCode ??
+            // The way back is offered only when the learner's own level is
+            // known and isn't the one that failed: currentLevelId can still
+            // be null here even while browsing — currentLevelIdAsync itself
+            // may have errored (e.g. a reset invalidates it) while
+            // _browsingLevelId is still set from before that happened.
+            currentCode: isBrowsing && currentLevelId != null
+                ? levelCatalogEntryIn(catalog, currentLevelId)?.cefrCode ??
                       currentLevelId
                 : null,
             onBack: () => setState(() => _browsingLevelId = null),
