@@ -409,4 +409,32 @@ void main() {
 
     expect(find.text(l10n.learnPreviewBannerTitle('A2')), findsNothing);
   });
+
+  testWidgets('browsing an unreleased level never claims the learner moved '
+      'into it', (tester) async {
+    final (container, l10n) = await _pump(
+      tester,
+      previewLevelIds: const {'a2'},
+    );
+
+    await tester.tap(find.text('A2'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text(l10n.levelNotReleasedBrowse('A2')));
+    await tester.pumpAndSettle();
+
+    // The preview is on screen...
+    expect(find.text(l10n.learnPreviewBannerTitle('A2')), findsOneWidget);
+    // ...but the switcher still says which level they are in, and says so
+    // to a screen reader too.
+    expect(
+      find.bySemanticsLabel(l10n.learnLevelSemanticsCurrent('A1')),
+      findsOneWidget,
+    );
+    expect(
+      find.bySemanticsLabel(l10n.learnLevelSemanticsCurrent('A2')),
+      findsNothing,
+    );
+    expect(find.text(l10n.learnLevelComingLaterBody('A1')), findsOneWidget);
+    expect(await container.read(currentLevelIdProvider.future), 'a1');
+  });
 }

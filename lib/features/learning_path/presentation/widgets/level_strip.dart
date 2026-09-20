@@ -10,13 +10,17 @@ import '../../../progress/domain/level_access.dart';
 /// small lock. Levels with no content yet are not segments — the caption
 /// under the track is what says more levels are coming.
 ///
+/// [currentLevelId] always reflects the level the learner is enrolled in,
+/// never what the page happens to be showing. Browsing another level's
+/// units does not move the filled segment: browsing is a view, not a move.
+///
 /// A locked level is still tappable — the tap is what opens the
 /// explanation and the way forward. Progression here is a recommendation,
 /// never a wall; see docs/PRODUCT.md flow 5.
 class LevelStrip extends StatelessWidget {
   const LevelStrip({
     required this.catalog,
-    required this.shownLevelId,
+    required this.currentLevelId,
     required this.access,
     required this.onSelect,
     super.key,
@@ -24,8 +28,8 @@ class LevelStrip extends StatelessWidget {
 
   final List<LevelCatalogEntry> catalog;
 
-  /// The level whose course page is on screen.
-  final String shownLevelId;
+  /// The level the learner is enrolled in.
+  final String currentLevelId;
 
   /// Each level's access by level id.
   final Map<String, LevelAccess> access;
@@ -51,9 +55,9 @@ class LevelStrip extends StatelessWidget {
       for (final entry in catalog)
         if (entry.availability != LevelAvailability.comingSoon) entry,
     ];
-    final shownCode = catalog
+    final currentCode = catalog
         .firstWhere(
-          (e) => e.levelId == shownLevelId,
+          (e) => e.levelId == currentLevelId,
           orElse: () => catalog.first,
         )
         .cefrCode;
@@ -76,7 +80,7 @@ class LevelStrip extends StatelessWidget {
                     child: _LevelSegment(
                       entry: entry,
                       access: _accessFor(entry),
-                      isShown: entry.levelId == shownLevelId,
+                      isCurrent: entry.levelId == currentLevelId,
                       onTap: () => onSelect(entry, _accessFor(entry)),
                     ),
                   ),
@@ -86,7 +90,7 @@ class LevelStrip extends StatelessWidget {
         ),
         const SizedBox(height: AppSpace.xs),
         Text(
-          l10n.learnLevelComingLaterBody(shownCode),
+          l10n.learnLevelComingLaterBody(currentCode),
           style: theme.textTheme.bodySmall?.copyWith(
             color: tokens.textSecondary,
           ),
@@ -100,13 +104,13 @@ class _LevelSegment extends StatelessWidget {
   const _LevelSegment({
     required this.entry,
     required this.access,
-    required this.isShown,
+    required this.isCurrent,
     required this.onTap,
   });
 
   final LevelCatalogEntry entry;
   final LevelAccess access;
-  final bool isShown;
+  final bool isCurrent;
   final VoidCallback onTap;
 
   @override
@@ -118,9 +122,9 @@ class _LevelSegment extends StatelessWidget {
     final locked =
         access == LevelAccess.lockedNeedsPrerequisite ||
         access == LevelAccess.notReleased;
-    final foreground = isShown ? tokens.onPrimaryInk : tokens.textSecondary;
+    final foreground = isCurrent ? tokens.onPrimaryInk : tokens.textSecondary;
 
-    final label = isShown
+    final label = isCurrent
         ? l10n.learnLevelSemanticsCurrent(code)
         : switch (access) {
             LevelAccess.open => l10n.learnLevelSemanticsOpen(code),
@@ -137,7 +141,7 @@ class _LevelSegment extends StatelessWidget {
       label: label,
       child: ExcludeSemantics(
         child: Material(
-          color: isShown ? tokens.primaryInk : Colors.transparent,
+          color: isCurrent ? tokens.primaryInk : Colors.transparent,
           shape: const StadiumBorder(),
           clipBehavior: Clip.antiAlias,
           child: InkWell(
@@ -147,7 +151,7 @@ class _LevelSegment extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  if (locked && !isShown) ...[
+                  if (locked && !isCurrent) ...[
                     Icon(Icons.lock_rounded, size: 13, color: foreground),
                     const SizedBox(width: AppSpace.xs - 2),
                   ],
@@ -156,7 +160,7 @@ class _LevelSegment extends StatelessWidget {
                     textDirection: TextDirection.ltr,
                     style: theme.textTheme.labelLarge?.copyWith(
                       color: foreground,
-                      fontWeight: isShown ? FontWeight.w700 : FontWeight.w500,
+                      fontWeight: isCurrent ? FontWeight.w700 : FontWeight.w500,
                     ),
                   ),
                 ],

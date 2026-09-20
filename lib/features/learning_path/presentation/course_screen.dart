@@ -249,7 +249,7 @@ class _CourseBody extends StatelessWidget {
         const SizedBox(height: AppSpace.md),
         LevelStrip(
           catalog: catalog,
-          shownLevelId: shownLevelId,
+          currentLevelId: currentLevelId,
           access: access,
           onSelect: onSelect,
         ),
