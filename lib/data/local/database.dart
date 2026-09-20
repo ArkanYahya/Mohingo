@@ -47,7 +47,7 @@ class AppDatabase extends _$AppDatabase {
   AppDatabase.defaults() : super(driftDatabase(name: 'mohingo_progress'));
 
   @override
-  int get schemaVersion => 4;
+  int get schemaVersion => 5;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
@@ -61,6 +61,14 @@ class AppDatabase extends _$AppDatabase {
       }
       if (from < 4) {
         await migrator.createTable(dailyTaskEvents);
+      }
+      if (from < 5) {
+        await migrator.addColumn(courseEnrolments, courseEnrolments.levelId);
+        await migrator.addColumn(
+          courseEnrolments,
+          courseEnrolments.lastSelectedAt,
+        );
+        await migrator.addColumn(courseEnrolments, courseEnrolments.unlockedAt);
       }
     },
   );

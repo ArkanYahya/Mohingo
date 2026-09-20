@@ -30,4 +30,21 @@ class CourseEnrolments extends Table {
   TextColumn get contentVersion => text()();
   DateTimeColumn get enrolledAt => dateTime()();
   TextColumn get status => text()();
+
+  /// The catalogue level this enrolment is for (`"a1"`, `"a2"`) — the same
+  /// key `kLevelCatalog` and `courseContentProvider` use. Null on rows
+  /// written before schema v5, which are read as the base level; see
+  /// `LearnerRepository.ensureEnrolled`, which backfills them.
+  TextColumn get levelId => text().nullable()();
+
+  /// When the learner last made this level the one they're working in. The
+  /// enrolment with the most recent value is the current level; null means
+  /// they have never chosen it explicitly.
+  DateTimeColumn get lastSelectedAt => dateTime().nullable()();
+
+  /// When this level opened for the learner — by finishing the level it
+  /// builds on, by a placement result inside it, or by their own "open
+  /// anyway". Null while it is still locked. A level with no prerequisite
+  /// needs no unlock. See `lib/features/progress/domain/level_access.dart`.
+  DateTimeColumn get unlockedAt => dateTime().nullable()();
 }
