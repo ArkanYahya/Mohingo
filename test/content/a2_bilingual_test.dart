@@ -81,6 +81,26 @@ void main() {
     }
   });
 
+  test('a lesson with a model text carries its Arabic', () {
+    // readingText.textAr goes through nonBlank(), so textAr: "" parses to
+    // null exactly like a missing field — the review found it would pass
+    // every other gate while turning a bilingual model text into an
+    // English-only one.
+    for (final unit in finishedA2Units()) {
+      for (final lesson in unit.lessons) {
+        final readingText = lesson.readingText;
+        if (readingText == null) continue;
+        final ar = readingText.textAr?.trim() ?? '';
+        expect(ar, isNotEmpty, reason: '${lesson.id}.readingText.textAr');
+        expect(
+          _arabic.hasMatch(ar),
+          isTrue,
+          reason: '${lesson.id}.readingText.textAr has no Arabic script: "$ar"',
+        );
+      }
+    }
+  });
+
   test(
     'a bilingual field the parser silently drops must be a String when present',
     () {

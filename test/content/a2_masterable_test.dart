@@ -74,16 +74,28 @@ void main() {
     }
   });
 
+  test('the finished list names real, distinct units', () {
+    // Always live: a duplicate or a typo here would otherwise only surface
+    // on release day, when the release gate finally runs.
+    expect(
+      a2FinishedUnitIds.toSet().length,
+      a2FinishedUnitIds.length,
+      reason: 'a2FinishedUnitIds contains a duplicate',
+    );
+    final bundleUnitIds = {for (final u in loadA2Bundle().units) u.id};
+    expect(bundleUnitIds.containsAll(a2FinishedUnitIds), isTrue);
+  });
+
   test('A2 stays a preview until every unit is finished', () {
     final a2 = kLevelCatalog.firstWhere((e) => e.levelId == 'a2');
-    if (a2.availability == LevelAvailability.available) {
-      expect(
-        a2FinishedUnitIds.length,
-        12,
-        reason:
-            'A2 is marked available with only '
-            '${a2FinishedUnitIds.length} finished units',
-      );
-    }
+    if (a2.availability != LevelAvailability.available) return;
+    final bundleUnitIds = {for (final u in loadA2Bundle().units) u.id};
+    expect(
+      a2FinishedUnitIds.toSet(),
+      bundleUnitIds,
+      reason:
+          'A2 is marked available, but the finished list is not every '
+          'unit in the bundle',
+    );
   });
 }
