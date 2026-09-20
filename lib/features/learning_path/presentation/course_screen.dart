@@ -135,7 +135,17 @@ class _CourseScreenState extends ConsumerState<CourseScreen> {
         bottom: false,
         child: contentAsync.when(
           loading: () => const Center(child: CircularProgressIndicator()),
-          error: (error, _) => Center(child: Text('$error')),
+          error: (error, _) => _CourseLoadError(
+            // Reaching the error branch while browsing means the level
+            // that failed to load isn't the learner's own — reaching it by
+            // any other case (currentLevelIdAsync itself has failed) means
+            // it is, and currentLevelId won't have resolved either.
+            currentCode: isBrowsing
+                ? levelCatalogEntryIn(catalog, currentLevelId!)?.cefrCode ??
+                      currentLevelId
+                : null,
+            onBack: () => setState(() => _browsingLevelId = null),
+          ),
           data: (index) => _CourseBody(
             index: index,
             unitProgress: unitProgress,
@@ -304,6 +314,60 @@ class _CourseBody extends StatelessWidget {
             child: _FinishCard(onTap: () => context.go('/tests')),
           ),
       ],
+    );
+  }
+}
+
+/// A level whose content failed to load, without trapping the learner:
+/// the same words the app-level content failure uses, plus the way back
+/// to the level they are actually in when they were only looking.
+class _CourseLoadError extends StatelessWidget {
+  const _CourseLoadError({required this.currentCode, required this.onBack});
+
+  /// Null when the level that failed IS the learner's own level — there is
+  /// nowhere to go back to, and the app-level gate covers the base level.
+  final String? currentCode;
+  final VoidCallback onBack;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final tokens = theme.extension<AppTokens>()!;
+    final l10n = AppLocalizations.of(context)!;
+
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.all(AppSpace.lg),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(Icons.error_outline, size: 40, color: theme.colorScheme.error),
+            const SizedBox(height: AppSpace.sm),
+            Text(
+              l10n.contentErrorTitle,
+              style: theme.textTheme.titleMedium?.copyWith(
+                color: tokens.textPrimary,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: AppSpace.xs),
+            Text(
+              l10n.contentErrorBody,
+              style: theme.textTheme.bodyMedium?.copyWith(
+                color: tokens.textSecondary,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            if (currentCode != null) ...[
+              const SizedBox(height: AppSpace.md),
+              TextButton(
+                onPressed: onBack,
+                child: Text(l10n.learnPreviewBackToCurrent(currentCode!)),
+              ),
+            ],
+          ],
+        ),
+      ),
     );
   }
 }

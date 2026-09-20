@@ -120,6 +120,7 @@ Future<(ProviderContainer, AppLocalizations)> _pump(
   bool midCourse = true,
   Set<String> unlockedLevelIds = const {},
   Set<String> previewLevelIds = const {},
+  bool a2Fails = false,
 }) async {
   tester.view.physicalSize = const Size(800, 4000);
   tester.view.devicePixelRatio = 1;
@@ -172,7 +173,9 @@ Future<(ProviderContainer, AppLocalizations)> _pump(
         _catalog(previewLevelIds: previewLevelIds),
       ),
       courseContentProvider('a1').overrideWith((ref) async => _index),
-      courseContentProvider('a2').overrideWith((ref) async => _a2Index),
+      courseContentProvider('a2').overrideWith(
+        (ref) async => a2Fails ? throw StateError('bad bundle') : _a2Index,
+      ),
     ],
   );
   addTearDown(container.dispose);
@@ -389,6 +392,30 @@ void main() {
 
     // Browsing never changes which level the learner is in.
     expect(await container.read(currentLevelIdProvider.future), 'a1');
+  });
+
+  testWidgets('a level that fails to load still lets the learner back out', (
+    tester,
+  ) async {
+    final (_, l10n) = await _pump(
+      tester,
+      previewLevelIds: const {'a2'},
+      a2Fails: true,
+    );
+
+    await tester.tap(find.text('A2'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text(l10n.levelNotReleasedBrowse('A2')));
+    await tester.pumpAndSettle();
+
+    expect(find.text(l10n.contentErrorTitle), findsOneWidget);
+
+    await tester.tap(find.text(l10n.learnPreviewBackToCurrent('A1')));
+    await tester.pumpAndSettle();
+
+    // Back on their own level, which loads fine.
+    expect(find.text(_index.bundle.course.title), findsOneWidget);
+    expect(find.text(l10n.contentErrorTitle), findsNothing);
   });
 
   testWidgets('leaving the preview returns to the level being learned', (
