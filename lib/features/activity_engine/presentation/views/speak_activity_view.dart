@@ -353,6 +353,7 @@ class _SpeakActivityViewState extends ConsumerState<SpeakActivityView> {
     return ActivityChrome(
       prompt: widget.activity.prompt,
       promptAr: widget.activity.promptAr,
+      source: widget.activity.sourceCard,
       help: _mode == _SpeakMode.typedFallback && _submission == null
           ? Text(
               _capabilities?.micPermission ==

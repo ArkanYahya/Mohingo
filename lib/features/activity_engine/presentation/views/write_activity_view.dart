@@ -232,6 +232,7 @@ class _WriteActivityViewState extends ConsumerState<WriteActivityView> {
     return ActivityChrome(
       prompt: widget.activity.prompt,
       promptAr: widget.activity.promptAr,
+      source: widget.activity.sourceCard,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [

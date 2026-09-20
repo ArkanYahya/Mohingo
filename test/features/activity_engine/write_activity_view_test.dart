@@ -53,6 +53,31 @@ WriteActivity _closedFormWrite() {
 }
 
 void main() {
+  testWidgets('a mediation write shows its source card', (tester) async {
+    await tester.pumpActivityView(
+      WriteActivityView(
+        activity: const WriteActivity(
+          id: 'A1-FINAL-ASSESS-M02',
+          lessonId: null,
+          mode: ActivityMode.mastery,
+          skill: Skill.mediation,
+          canDo: [],
+          prompt: 'Relay the clinic notice.',
+          promptAr: 'انقل ملاحظة العيادة.',
+          raw: {'sourceCard': 'Clinic B, 2nd floor. Appointment 14:30.'},
+          accepted: [],
+        ),
+        learnerId: 1,
+        onSubmitted: (_) {},
+      ),
+    );
+
+    expect(
+      find.text('Clinic B, 2nd floor. Appointment 14:30.'),
+      findsOneWidget,
+    );
+  });
+
   testWidgets("counts words live against the question's word guide", (
     tester,
   ) async {

@@ -42,6 +42,7 @@ class ChoiceActivityView extends ConsumerStatefulWidget {
        options = activity.options,
        answer = activity.answer,
        audioTranscript = activity.audioTranscript,
+       source = activity.sourceCard,
        isMediaOptions = activity.raw['optionMode'] == 'media',
        _random = random ?? Random();
 
@@ -57,6 +58,7 @@ class ChoiceActivityView extends ConsumerStatefulWidget {
        options = activity.options,
        answer = activity.answer,
        audioTranscript = null,
+       source = activity.sourceText ?? activity.sourceCard,
        isMediaOptions = activity.raw['optionMode'] == 'media',
        _random = random ?? Random();
 
@@ -65,6 +67,7 @@ class ChoiceActivityView extends ConsumerStatefulWidget {
   final List<String> options;
   final String answer;
   final String? audioTranscript;
+  final String? source;
   final bool isMediaOptions;
   final Map<String, MediaSpecification> mediaByKey;
   final OnActivitySubmitted onSubmitted;
@@ -159,6 +162,7 @@ class _ChoiceActivityViewState extends ConsumerState<ChoiceActivityView> {
     return ActivityChrome(
       prompt: widget.prompt,
       promptAr: widget.promptAr,
+      source: widget.source,
       help: widget.audioTranscript != null
           ? ActivityAudioCard(
               transcript: widget.audioTranscript!,

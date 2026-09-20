@@ -84,6 +84,30 @@ Future<void> _pumpSpeak(
 }
 
 void main() {
+  testWidgets('a mediation speak shows its source card', (tester) async {
+    await _pumpSpeak(
+      tester,
+      capabilities: const DeviceSpeechCapabilities(
+        sttAvailableForLocale: false,
+        micPermission: SpeechPermissionStatus.notDetermined,
+      ),
+      activity: const SpeakActivity(
+        id: 'A1-FINAL-ASSESS-M01',
+        lessonId: null,
+        mode: ActivityMode.mastery,
+        skill: Skill.mediation,
+        canDo: [],
+        prompt: 'Tell a friend the journey.',
+        promptAr: 'أخبر صديقك بالرحلة.',
+        raw: {'sourceCard': 'Bus 14 — 08:00 to Central.'},
+        accepted: [],
+        fallbackSkill: 'writing',
+      ),
+    );
+
+    expect(find.text('Bus 14 — 08:00 to Central.'), findsOneWidget);
+  });
+
   group('capability detection', () {
     testWidgets(
       'when recording is available right now, shows the Record button '
