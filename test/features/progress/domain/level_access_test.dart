@@ -77,13 +77,19 @@ void main() {
 
     test('an enrolment from before levels were tracked reads as the base '
         'level', () {
-      expect(
-        currentLevelIdFor(
-          enrolments: [_enrolment(levelId: null)],
-          catalog: _catalog,
-        ),
-        'a1',
+      // The pre-tracking enrolment must actually win the "most recent"
+      // comparison — otherwise this proves nothing about the null->base
+      // mapping, only that an enrolment skipped for having no
+      // lastSelectedAt falls back to the base level like having none at
+      // all does (see "a learner who has chosen nothing" above).
+      final current = currentLevelIdFor(
+        enrolments: [
+          _enrolment(levelId: null, lastSelectedAt: DateTime.utc(2026, 9, 20)),
+          _enrolment(levelId: 'a2', lastSelectedAt: DateTime.utc(2026, 9, 19)),
+        ],
+        catalog: _catalog,
       );
+      expect(current, 'a1');
     });
 
     test('a level that is no longer in the catalogue is ignored', () {

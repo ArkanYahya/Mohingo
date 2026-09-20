@@ -44,6 +44,16 @@ Future<String> currentLevelId(Ref ref) async {
 Future<LevelAccess> levelAccess(Ref ref, String levelId) async {
   final entry = levelCatalogEntryIn(ref.watch(levelCatalogProvider), levelId);
   if (entry == null) return LevelAccess.noContent;
+  // levelAccessFor's answer for a not-yet-available level never reads
+  // enrolment or prerequisite state, so don't fetch either — the learner
+  // and the repository call below are real DB work.
+  if (entry.availability != LevelAvailability.available) {
+    return levelAccessFor(
+      entry: entry,
+      enrolment: null,
+      prerequisiteComplete: false,
+    );
+  }
 
   final learner = await ref.watch(currentLearnerProvider.future);
   final repository = ref.watch(learnerRepositoryProvider);

@@ -77,7 +77,7 @@ class AppDatabase extends _$AppDatabase {
   /// history (lesson/placement/mission/assessment alike), vocabulary/grammar
   /// review state (including favourites), the course enrolment record
   /// (idempotently re-created on next app read, see
-  /// `ensureA1EnrollmentProvider`), any still-queued
+  /// `ensureLevelEnrolmentProvider`), any still-queued
   /// `PendingOnlineRefinements` items (a queued-but-unresolved answer is
   /// progress state too), and `DailyTaskEvents` (Home's "Tasks today" row
   /// resets with everything else). The `Learners` row itself, its stable
