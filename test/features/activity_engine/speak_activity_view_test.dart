@@ -803,7 +803,12 @@ void main() {
       await tester.tap(find.byTooltip(l10n.speakPartnerPlay));
       await tester.pumpAndSettle();
 
-      expect(tts.spoken, hasLength(4));
+      expect(tts.spoken, [
+        'Good morning.',
+        'What time do you start your day?',
+        'Good morning.',
+        'What time do you start your day?',
+      ]);
     });
 
     testWidgets('reviewing an old answer never plays the lines by itself', (

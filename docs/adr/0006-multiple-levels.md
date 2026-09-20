@@ -25,3 +25,4 @@ The app was built for A1 alone. An A2 curriculum (from `reference/a2-modular-cou
 - A2's index depends on A1's: if A1 fails to load, A2 does too (A2 failing never takes A1 down).
 - Ids must keep their level prefix; a test fixture without one can't be opened by id.
 - Later levels (B1+) reuse the same mechanism: each declares the level it builds on.
+- Landed so far: decision 2 (a level building on an earlier one) and decision 3 (items open in their own level). Decisions 1 (a current level) and 4 (level locks) are step 2, not yet in code.

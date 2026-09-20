@@ -1,4 +1,5 @@
 import 'activity.dart';
+import 'non_blank.dart';
 
 /// One line of a lesson's `encounter.dialogue` — a first-exposure scripted
 /// conversation shown before practice activities.
@@ -33,11 +34,10 @@ class LessonReadingText {
   });
 
   factory LessonReadingText.fromJson(Map<String, dynamic> json) {
-    final textAr = json['textAr'] as String?;
     return LessonReadingText(
       title: json['title'] as String,
       text: json['text'] as String,
-      textAr: textAr == null || textAr.trim().isEmpty ? null : textAr,
+      textAr: nonBlank(json['textAr']),
     );
   }
 

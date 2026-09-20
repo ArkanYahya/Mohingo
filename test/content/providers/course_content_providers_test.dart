@@ -63,8 +63,8 @@ _FakeLoader _loader() => _FakeLoader({
 });
 
 void main() {
-  test('a level with a prerequisite loads it first and resolves references '
-      'to it', () async {
+  test('a level with a prerequisite has both bundles loaded, and the '
+      "prerequisite's index attached so references to it resolve", () async {
     final loader = _loader();
     final container = _container(loader);
 

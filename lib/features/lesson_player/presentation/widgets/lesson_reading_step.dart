@@ -137,23 +137,36 @@ class _LessonReadingStepState extends State<LessonReadingStep> {
                 ),
                 if (textAr != null) ...[
                   const SizedBox(height: AppSpace.xs),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: Text(
-                          l10n.lessonIntroArabicToggle,
-                          style: theme.textTheme.bodyMedium?.copyWith(
-                            color: tokens.textPrimary,
-                            fontWeight: FontWeight.w500,
-                          ),
+                  MergeSemantics(
+                    child: InkWell(
+                      onTap: () => setState(() => _showArabic = !_showArabic),
+                      child: Padding(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                          AppSpace.md,
+                          AppSpace.xxs,
+                          AppSpace.sm,
+                          AppSpace.xxs,
+                        ),
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: Text(
+                                l10n.lessonIntroArabicToggle,
+                                style: theme.textTheme.bodyMedium?.copyWith(
+                                  color: tokens.textPrimary,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ),
+                            Switch(
+                              value: _showArabic,
+                              onChanged: (value) =>
+                                  setState(() => _showArabic = value),
+                            ),
+                          ],
                         ),
                       ),
-                      Switch(
-                        value: _showArabic,
-                        onChanged: (value) =>
-                            setState(() => _showArabic = value),
-                      ),
-                    ],
+                    ),
                   ),
                 ],
               ],

@@ -246,6 +246,19 @@ void main() {
     expect(find.byType(ActivityChrome), findsOneWidget);
   });
 
+  testWidgets('tapping the reading step\'s Arabic-toggle label — not the '
+      'switch itself — hides the Arabic translation too', (tester) async {
+    await _pumpPlayer(tester, unitId: 'A1-U2', lessonId: 'A1-U2-L6');
+    final l10n = _l10n(tester);
+
+    expect(find.textContaining('اسمي مايا.'), findsOneWidget);
+
+    await tester.tap(find.text(l10n.lessonIntroArabicToggle));
+    await tester.pumpAndSettle();
+
+    expect(find.textContaining('اسمي مايا.'), findsNothing);
+  });
+
   testWidgets('on a speaking question the lesson\'s own phrases are there as '
       'optional help, hidden until asked for', (tester) async {
     await _pumpPlayer(tester, resumeAfter: 2); // A03: "Introduce yourself."

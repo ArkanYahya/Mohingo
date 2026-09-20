@@ -1,3 +1,5 @@
+import 'non_blank.dart';
+
 /// One bilingual example sentence for a [GrammarItem].
 class GrammarExample {
   const GrammarExample({required this.en, required this.ar});
@@ -58,11 +60,7 @@ class LexiconExample {
   factory LexiconExample.fromJson(Object json) {
     if (json is String) return LexiconExample(en: json);
     final map = json as Map<String, dynamic>;
-    final ar = map['ar'] as String?;
-    return LexiconExample(
-      en: map['en'] as String,
-      ar: ar == null || ar.trim().isEmpty ? null : ar,
-    );
+    return LexiconExample(en: map['en'] as String, ar: nonBlank(map['ar']));
   }
 
   final String en;

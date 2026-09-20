@@ -67,7 +67,10 @@ Future<CourseContentIndex> courseContent(Ref ref, String levelId) async {
 ///
 /// Kept alive: it only hands on the already kept-alive level index, and
 /// callers that `read` it from a callback (the refinement drain) must not
-/// see it disposed mid-load.
+/// see it disposed mid-load. Trade-off: every distinct content id ever
+/// opened keeps its own live family element here for the rest of the app's
+/// life — bounded by the bundles' total id count (~1,400 today), each
+/// element tiny, so this doesn't grow without bound.
 @Riverpod(keepAlive: true)
 Future<CourseContentIndex> contentIndexForId(Ref ref, String contentId) async {
   final levelId = levelIdOfContentId(contentId);

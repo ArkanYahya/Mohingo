@@ -1,6 +1,7 @@
 import 'domain_definitions.dart';
 import 'evaluation_spec.dart';
 import 'exceptions.dart';
+import 'non_blank.dart';
 
 /// One typed exercise, discriminated by [type].
 ///
@@ -42,10 +43,7 @@ sealed class Activity {
   /// profiles — shown as a card with the question. Any activity type may
   /// carry one (A1's final-assessment mediation tasks and A2's mediation
   /// tasks do). Null when absent or blank.
-  String? get sourceCard {
-    final value = raw['sourceCard'];
-    return value is String && value.trim().isNotEmpty ? value : null;
-  }
+  String? get sourceCard => nonBlank(raw['sourceCard']);
 
   static Activity fromJson(Map<String, dynamic> json) {
     final type = json['type'] as String;
@@ -155,12 +153,16 @@ class TextChoiceActivity extends Activity {
       raw: json,
       options: List<String>.from(json['options'] as List),
       answer: json['answer'] as String,
-      sourceText: json['sourceText'] as String?,
+      sourceText: nonBlank(json['sourceText']),
     );
   }
 
   final List<String> options;
   final String answer;
+
+  /// Null when absent or blank — a blank value must never shadow a real
+  /// [Activity.sourceCard] (see `ChoiceActivityView.textChoice`, which
+  /// falls back to it).
   final String? sourceText;
 }
 

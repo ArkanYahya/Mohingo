@@ -58,6 +58,22 @@ void main() {
       expect(Activity.fromJson(speak({'sourceCard': '  '})).sourceCard, isNull);
     });
 
+    test('a blank sourceText parses as null, not an empty source card that '
+        'would also shadow a real sourceCard', () {
+      final activity = Activity.fromJson({
+        'id': 'A2-TEST-A03',
+        'type': 'textChoice',
+        'mode': 'practice',
+        'skill': 'reading',
+        'canDo': <String>[],
+        'prompt': 'Choose the correct answer.',
+        'options': ['a', 'b'],
+        'answer': 'a',
+        'sourceText': '',
+      }) as TextChoiceActivity;
+      expect(activity.sourceText, isNull);
+    });
+
     test("a speaking task's partner lines come from partnerTurns or A1's "
         'examinerTurns', () {
       final partner = Activity.fromJson(
