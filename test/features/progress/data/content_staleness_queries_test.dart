@@ -37,15 +37,53 @@ void main() {
     score: 1,
   );
 
-  test('attemptedActivityIds returns every activity this learner answered, '
-      'once each', () async {
+  test('attemptedActivityLessons returns every activity this learner '
+      'answered, once each, with the lesson it was answered in', () async {
     await answer('A2-U1-L1-A01');
     await answer('A2-U1-L1-A01');
     await answer('A2-U1-L2-A03');
 
-    expect(await attempts.attemptedActivityIds(learnerId: learnerId), {
-      'A2-U1-L1-A01',
-      'A2-U1-L2-A03',
+    expect(await attempts.attemptedActivityLessons(learnerId: learnerId), {
+      'A2-U1-L1-A01': 'A2-U1-L1',
+      'A2-U1-L2-A03': 'A2-U1-L1',
+    });
+  });
+
+  test('an activity answered in a review session keeps the lesson its other '
+      'attempt recorded', () async {
+    // Review records no lesson. If that attempt overwrote the lesson-bound
+    // one, a content update could no longer place the learner's answer in a
+    // unit, and the unit would quietly say nothing.
+    await answer('A2-U1-L1-A01');
+    await attempts.recordAttempt(
+      learnerId: learnerId,
+      activityId: 'A2-U1-L1-A01',
+      sessionType: 'review',
+      mode: ActivityMode.practice,
+      evidenceSkill: Skill.reading,
+      canDoIds: const [],
+      isCorrect: true,
+      score: 1,
+    );
+
+    expect(await attempts.attemptedActivityLessons(learnerId: learnerId), {
+      'A2-U1-L1-A01': 'A2-U1-L1',
+    });
+  });
+
+  test('an activity only ever answered outside a lesson is still recorded, '
+      'with no lesson', () async {
+    await attempts.recordAttempt(
+      learnerId: learnerId,
+      activityId: 'A2-FINAL-MISSION-A02',
+      sessionType: 'finalMission',
+      mode: ActivityMode.mastery,
+      evidenceSkill: Skill.writing,
+      canDoIds: const [],
+    );
+
+    expect(await attempts.attemptedActivityLessons(learnerId: learnerId), {
+      'A2-FINAL-MISSION-A02': null,
     });
   });
 
@@ -61,7 +99,7 @@ void main() {
         );
 
     expect(
-      await attempts.attemptedActivityIds(learnerId: other),
+      await attempts.attemptedActivityLessons(learnerId: other),
       isEmpty,
       reason: 'a shared device must not strand one learner on another\'s work',
     );

@@ -64,11 +64,8 @@ void main() {
         removedCanDoIds: {},
         addedCanDoIds: {},
       ),
-      attemptedActivityIds: const {'A2-U1-L1-A01'},
-      unitIdByActivityId: const {
-        'A2-U1-L1-A01': 'A2-U1',
-        'A2-U5-L1-A01': 'A2-U5',
-      },
+      attemptedLessonByActivityId: const {'A2-U1-L1-A01': 'A2-U1-L1'},
+      unitIdByLessonId: const {'A2-U1-L1': 'A2-U1', 'A2-U5-L1': 'A2-U5'},
       requiredObjectivesByUnitId: const {},
     );
 
@@ -77,19 +74,36 @@ void main() {
     expect(stale, {'A2-U1'});
   });
 
-  test('a removed activity that belongs to no unit strands nothing a unit '
-      'row could say', () {
-    // Capstone activities live outside `bundle.units`, so they have no unit
-    // to flag. Losing one must not crash, and must not flag an unrelated
-    // unit either.
+  test('an answer recorded against no lesson strands nothing a unit row '
+      'could say', () {
+    // A capstone task, or an activity answered in a review session, records
+    // no lesson — so there is no unit to place it in. Losing one must not
+    // crash, and must not flag an unrelated unit either.
     final stale = staleUnitIds(
       drift: const ContentDrift(
         removedActivityIds: {'A2-FINAL-MISSION-A02'},
         removedCanDoIds: {},
         addedCanDoIds: {},
       ),
-      attemptedActivityIds: const {'A2-FINAL-MISSION-A02'},
-      unitIdByActivityId: const {'A2-U1-L1-A01': 'A2-U1'},
+      attemptedLessonByActivityId: const {'A2-FINAL-MISSION-A02': null},
+      unitIdByLessonId: const {'A2-U1-L1': 'A2-U1'},
+      requiredObjectivesByUnitId: const {},
+    );
+
+    expect(stale, isEmpty);
+  });
+
+  test('a removed activity whose lesson was removed too flags nothing', () {
+    // Nothing dishonest to say: the lesson it lived in is gone from the
+    // bundle, so there is no unit row we can place their answer under.
+    final stale = staleUnitIds(
+      drift: const ContentDrift(
+        removedActivityIds: {'A2-U1-L9-A01'},
+        removedCanDoIds: {},
+        addedCanDoIds: {},
+      ),
+      attemptedLessonByActivityId: const {'A2-U1-L9-A01': 'A2-U1-L9'},
+      unitIdByLessonId: const {'A2-U1-L1': 'A2-U1'},
       requiredObjectivesByUnitId: const {},
     );
 
@@ -104,8 +118,8 @@ void main() {
         removedCanDoIds: {'A2.U3.WRITING.OLD'},
         addedCanDoIds: {'A2.U3.WRITING.NEW'},
       ),
-      attemptedActivityIds: const {},
-      unitIdByActivityId: const {},
+      attemptedLessonByActivityId: const {},
+      unitIdByLessonId: const {},
       requiredObjectivesByUnitId: const {
         'A2-U3': {'A2.U3.WRITING.NEW'},
         'A2-U7': {'A2.U7.READING.UNCHANGED'},
@@ -122,8 +136,8 @@ void main() {
         removedCanDoIds: {'A2.U3.WRITING.OLD'},
         addedCanDoIds: {},
       ),
-      attemptedActivityIds: const {},
-      unitIdByActivityId: const {},
+      attemptedLessonByActivityId: const {},
+      unitIdByLessonId: const {},
       requiredObjectivesByUnitId: const {
         'A2-U3': {'A2.U3.WRITING.OLD', 'A2.U3.READING.1'},
       },

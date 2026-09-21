@@ -146,12 +146,27 @@ class DriftActivityAttemptRepository implements ActivityAttemptRepository {
   }
 
   @override
-  Future<Set<String>> attemptedActivityIds({required int learnerId}) async {
+  Future<Map<String, String?>> attemptedActivityLessons({
+    required int learnerId,
+  }) async {
     final query = _db.selectOnly(_db.activityAttempts, distinct: true)
-      ..addColumns([_db.activityAttempts.activityId])
+      ..addColumns([
+        _db.activityAttempts.activityId,
+        _db.activityAttempts.lessonId,
+      ])
       ..where(_db.activityAttempts.learnerId.equals(learnerId));
     final rows = await query.get();
-    return {for (final row in rows) row.read(_db.activityAttempts.activityId)!};
+    final byActivityId = <String, String?>{};
+    for (final row in rows) {
+      final activityId = row.read(_db.activityAttempts.activityId)!;
+      // The same activity can be answered in a lesson and again in a review
+      // session, which records no lesson. Keep whichever attempt says where
+      // it lived; the key is present either way, because the learner
+      // answered it either way.
+      byActivityId[activityId] =
+          byActivityId[activityId] ?? row.read(_db.activityAttempts.lessonId);
+    }
+    return byActivityId;
   }
 
   @override

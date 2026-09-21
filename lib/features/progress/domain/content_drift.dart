@@ -81,19 +81,30 @@ ContentDrift contentDriftBetween({
 /// on it (the bar moved under them). A unit whose content changed in ways
 /// the learner never touched is not stale: there is nothing to tell them.
 ///
-/// An activity outside any unit — a capstone's — has no unit row to say
-/// anything on, so losing one flags nothing here.
+/// A removed activity is placed by the learner's own attempt row, not by
+/// the bundle. It has to be: an activity that left the bundle has no entry
+/// in the bundle to look its unit up in, and reading the unit out of the id
+/// string instead would be trusting a naming convention no test enforces.
+/// [attemptedLessonByActivityId] is their evidence — every activity they
+/// answered, and the lesson they answered it in — and [unitIdByLessonId]
+/// comes from the loaded bundle.
+///
+/// An attempt with no lesson (a review session, or a capstone task) cannot
+/// be placed in a unit, and a lesson that has itself been removed cannot
+/// either. Both flag nothing: there is no unit row to say it on.
 Set<String> staleUnitIds({
   required ContentDrift drift,
-  required Set<String> attemptedActivityIds,
-  required Map<String, String> unitIdByActivityId,
+  required Map<String, String?> attemptedLessonByActivityId,
+  required Map<String, String> unitIdByLessonId,
   required Map<String, Set<String>> requiredObjectivesByUnitId,
 }) {
   final stale = <String>{};
 
   for (final activityId in drift.removedActivityIds) {
-    if (!attemptedActivityIds.contains(activityId)) continue;
-    final unitId = unitIdByActivityId[activityId];
+    if (!attemptedLessonByActivityId.containsKey(activityId)) continue;
+    final lessonId = attemptedLessonByActivityId[activityId];
+    if (lessonId == null) continue;
+    final unitId = unitIdByLessonId[lessonId];
     if (unitId != null) stale.add(unitId);
   }
 

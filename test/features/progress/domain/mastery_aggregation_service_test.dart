@@ -94,8 +94,9 @@ class _FakeActivityAttemptRepository implements ActivityAttemptRepository {
   }) async => throw UnimplementedError('not needed by these tests');
 
   @override
-  Future<Set<String>> attemptedActivityIds({required int learnerId}) async =>
-      throw UnimplementedError('not needed by these tests');
+  Future<Map<String, String?>> attemptedActivityLessons({
+    required int learnerId,
+  }) async => throw UnimplementedError('not needed by these tests');
 }
 
 class _FakeUnitLessonProgressRepository
