@@ -98,11 +98,30 @@ void main() {
         expect(index.bundle.finalAssessment.id, gate.finalAssessmentId);
       });
 
-      test('every unit counts towards its level', () {
-        expect(
-          gate.bundle().units.every((u) => u.countsTowardLevelMastery),
-          isTrue,
-        );
+      test('every unit that is not a prerequisite counts towards its '
+          'level', () {
+        // Keyed on the bundle's own levelRole rather than on a hand-listed
+        // exception. A1-U0 is levelRole "prerequisite" — onboarding that
+        // deliberately does not count towards A1 mastery — and a level may
+        // legitimately have such a unit. What must never happen is a
+        // "core" unit that counts towards nothing.
+        for (final unit in gate.bundle().units) {
+          if (unit.levelRole == 'prerequisite') {
+            expect(
+              unit.countsTowardLevelMastery,
+              isFalse,
+              reason:
+                  '${unit.id} is a prerequisite unit but counts towards '
+                  'level mastery',
+            );
+            continue;
+          }
+          expect(
+            unit.countsTowardLevelMastery,
+            isTrue,
+            reason: '${unit.id} (${unit.levelRole}) counts towards nothing',
+          );
+        }
       });
     });
   }

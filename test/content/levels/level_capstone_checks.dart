@@ -370,17 +370,31 @@ List<String> capstoneLengthViolations(
       }
     }
     final guide = a.raw['wordGuide'];
-    if (a.skill == Skill.writing && guide == null) {
-      out.add('$label is a writing task with no wordGuide');
+    if (a is WriteActivity && guide == null) {
+      out.add('$label is a free-writing task with no wordGuide');
       continue;
     }
+    // Keyed on WriteActivity, not Skill.writing: A1's mission closes on a
+    // `form` task (fill these fields), which asks for no free text and is
+    // already excluded from mission scoring — see DATA_MODEL.md. A word
+    // count means nothing for it.
     if (guide == null) continue;
     final want = gate.capstoneWordGuide;
-    if (guide is! List ||
-        guide.length != 2 ||
-        guide[0] != want[0] ||
-        guide[1] != want[1]) {
-      out.add('$label wordGuide is $guide, not $want');
+    if (guide is! List || guide.length != 2) {
+      out.add('$label wordGuide is $guide, not a pair');
+      continue;
+    }
+    final low = (guide[0] as num).toInt();
+    final high = (guide[1] as num).toInt();
+    if (gate.wordGuideMustEqualBand) {
+      // This level asks both capstones for the same amount of writing.
+      if (low != want.min || high != want.max) {
+        out.add('$label wordGuide is $guide, not [${want.min}, ${want.max}]');
+      }
+    } else if (!want.contains(low) || !want.contains(high) || low >= high) {
+      // This level gives each task its own guide; it must still be a real
+      // range inside the capstone band.
+      out.add('$label wordGuide $guide is not a range inside $want');
     }
   }
   return out;

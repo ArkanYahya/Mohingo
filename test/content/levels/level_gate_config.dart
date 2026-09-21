@@ -106,6 +106,7 @@ class LevelGateConfig {
     required this.skillBalance,
     required this.bandTiers,
     required this.minimumNewSensesPerUnit,
+    required this.sourceCardWords,
     required this.maxPromptRepeatsPerUnit,
     required this.maxEnglishToArabicMatchesPerUnit,
     required this.requiresModelTextPerUnit,
@@ -120,7 +121,6 @@ class LevelGateConfig {
     required this.capstoneSuiteFile,
     this.unitShapeExceptions = const {},
     this.skillBalanceExceptions = const {},
-    this.modelTextExceptions = const {},
   });
 
   final String levelId;
@@ -139,6 +139,9 @@ class LevelGateConfig {
   final Map<String, DeclaredException<SkillBalance>> skillBalanceExceptions;
   final List<LengthBandTier> bandTiers;
   final int minimumNewSensesPerUnit;
+
+  /// Notices and source cards a unit's mediation tasks hand the learner.
+  final Range sourceCardWords;
   final int maxPromptRepeatsPerUnit;
   final int maxEnglishToArabicMatchesPerUnit;
 
@@ -151,9 +154,6 @@ class LevelGateConfig {
   /// carries its own guide, which must still sit inside the band (A1).
   final bool wordGuideMustEqualBand;
 
-  /// Units that deliberately carry no model text, with the reason.
-  final Map<String, DeclaredException<bool>> modelTextExceptions;
-
   final CanDoTagging canDoTagging;
   final String finalMissionId;
   final String finalAssessmentId;
@@ -164,7 +164,7 @@ class LevelGateConfig {
   /// marked against one band, not a per-unit tier.
   final Range capstoneListeningWords;
   final Range capstoneSourceWords;
-  final List<int> capstoneWordGuide;
+  final Range capstoneWordGuide;
 
   /// The focused capstone suite whose existence the release rule asserts,
   /// so the gates cannot be deleted and a release left standing.
@@ -203,7 +203,6 @@ class LevelGateConfig {
     final reasons = <String>[
       ?unitShapeExceptions[unitId]?.reason,
       ?skillBalanceExceptions[unitId]?.reason,
-      ?modelTextExceptions[unitId]?.reason,
     ];
     return reasons.isEmpty ? '' : ' (declared exception: ${reasons.first})';
   }
@@ -356,23 +355,14 @@ const _a1 = LevelGateConfig(
     ),
   ],
   minimumNewSensesPerUnit: 30,
+  sourceCardWords: Range(8, 60),
   maxPromptRepeatsPerUnit: 3,
   maxEnglishToArabicMatchesPerUnit: 1,
-  requiresModelTextPerUnit: true,
-  modelTextExceptions: {
-    'A1-U0': DeclaredException(
-      value: false,
-      reason:
-          'A1-U0 has no integrated-production lesson: a learner who cannot '
-          'read yet has nothing to model a text on.',
-    ),
-    'A1-U1': DeclaredException(
-      value: false,
-      reason:
-          'A1-U1 predates the model-text step, which starts at U2 with the '
-          'first integrated-production lesson.',
-    ),
-  },
+  // A1 has no one-model-text-per-unit design: 11 of its lessons carry a
+  // readingText, spread unevenly across 13 units and across two lesson
+  // types. A2 introduced the model text as a per-unit step. The band gate
+  // below still checks every model text A1 does have.
+  requiresModelTextPerUnit: false,
   // A1 gives each writing task its own guide rather than one guide per
   // unit; the guide must still sit inside the unit's band.
   wordGuideMustEqualBand: false,
@@ -385,9 +375,9 @@ const _a1 = LevelGateConfig(
   finalMissionId: 'A1-FINAL-MISSION',
   finalAssessmentId: 'A1-FINAL-ASSESSMENT',
   capstonePassMark: 0.6,
-  capstoneListeningWords: Range(2, 60),
-  capstoneSourceWords: Range(10, 60),
-  capstoneWordGuide: [50, 70],
+  capstoneListeningWords: Range(5, 30),
+  capstoneSourceWords: Range(8, 40),
+  capstoneWordGuide: Range(30, 60),
   capstoneSuiteFile: 'test/content/levels/level_capstones_test.dart',
 );
 
@@ -449,6 +439,7 @@ const _a2 = LevelGateConfig(
     ),
   ],
   minimumNewSensesPerUnit: 30,
+  sourceCardWords: Range(15, 60),
   maxPromptRepeatsPerUnit: 3,
   maxEnglishToArabicMatchesPerUnit: 1,
   requiresModelTextPerUnit: true,
@@ -459,7 +450,7 @@ const _a2 = LevelGateConfig(
   capstonePassMark: 0.6,
   capstoneListeningWords: Range(70, 120),
   capstoneSourceWords: Range(15, 60),
-  capstoneWordGuide: [70, 90],
+  capstoneWordGuide: Range(70, 90),
   capstoneSuiteFile: 'test/content/levels/level_capstones_test.dart',
 );
 

@@ -58,7 +58,6 @@ void main() {
       test('each unit has one model text for its production lesson', () {
         for (final unit in gate.finishedUnits()) {
           if (!gate.requiresModelTextPerUnit) continue;
-          if (gate.modelTextExceptions.containsKey(unit.id)) continue;
           final withText = unit.lessons
               .where((l) => l.readingText != null)
               .toList();
@@ -247,7 +246,7 @@ void main() {
         }
       });
 
-      test('notices and source cards are 15-60 words', () {
+      test('notices and source cards are inside their band', () {
         for (final unit in gate.finishedUnits()) {
           for (final a in activitiesOf(unit)) {
             for (final key in ['sourceText', 'sourceCard']) {
@@ -255,7 +254,10 @@ void main() {
               if (value is! String || value.trim().isEmpty) continue;
               expect(
                 _words(value),
-                inInclusiveRange(15, 60),
+                inInclusiveRange(
+                  gate.sourceCardWords.min,
+                  gate.sourceCardWords.max,
+                ),
                 reason: '${a.id}.$key',
               );
             }
