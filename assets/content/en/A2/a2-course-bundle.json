@@ -596,8 +596,12 @@
       "introducedIn": "A2-U7-L2",
       "examples": [
         {
-          "en": "You have to take this medicine with food.",
-          "ar": "عليك تناول هذا الدواء مع الطعام."
+          "en": "You have to keep it somewhere cool and dry.",
+          "ar": "عليكَ أن تحفظه في مكان بارد وجاف."
+        },
+        {
+          "en": "I have to be at the office at eight, but I don't have to wear a suit.",
+          "ar": "عليّ أن أكون في المكتب في الثامنة، لكن لا يلزمني ارتداء بدلة."
         }
       ]
     },
@@ -620,8 +624,12 @@
       "introducedIn": "A2-U7-L4",
       "examples": [
         {
-          "en": "Drink water to avoid dehydration.",
-          "ar": "اشرب الماء لتجنب الجفاف."
+          "en": "Stand up every hour to stretch your legs.",
+          "ar": "قف كل ساعة لتمدّ ساقيك."
+        },
+        {
+          "en": "She is taking the course to get a better job.",
+          "ar": "تتابع الدورة لتحصل على عمل أفضل."
         }
       ]
     },
@@ -646,18 +654,6 @@
         {
           "en": "Rest because you are tired, and call if it gets worse.",
           "ar": "استرح لأنك متعب واتصل إذا ساء الأمر."
-        }
-      ]
-    },
-    {
-      "id": "A2.G.WORK_HAVE_TO",
-      "form": "have to for duties",
-      "meaningAr": "have to لواجبات العمل والدراسة",
-      "introducedIn": "A2-U8-L1",
-      "examples": [
-        {
-          "en": "I have to open the office at eight.",
-          "ar": "عليّ فتح المكتب في الثامنة."
         }
       ]
     },
@@ -706,18 +702,6 @@
         {
           "en": "Could you send me the course dates?",
           "ar": "هل يمكنك إرسال مواعيد الدورة؟"
-        }
-      ]
-    },
-    {
-      "id": "A2.G.PURPOSE_APPLICATION",
-      "form": "to + verb for application purpose",
-      "meaningAr": "المصدر لبيان غرض التقديم",
-      "introducedIn": "A2-U8-L6",
-      "examples": [
-        {
-          "en": "I am applying to improve my skills.",
-          "ar": "أتقدم لتحسين مهاراتي."
         }
       ]
     },
@@ -6414,6 +6398,240 @@
       ],
       "introducedIn": "A2-U6-L5",
       "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.ACHE_V01",
+      "headword": "ache",
+      "partOfSpeech": "verb",
+      "arabic": "يوجع",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "ache",
+      "examples": [
+        {
+          "en": "My shoulders ache after a long day at the desk.",
+          "ar": "كتفاي يوجعانني بعد يوم طويل أمام المكتب."
+        }
+      ],
+      "introducedIn": "A2-U7-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.SHOULDER_N01",
+      "headword": "shoulder",
+      "partOfSpeech": "noun",
+      "arabic": "كتف",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "shoulder",
+      "examples": [
+        {
+          "en": "He carried the bag on one shoulder.",
+          "ar": "حمل الحقيبة على كتف واحد."
+        }
+      ],
+      "introducedIn": "A2-U7-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.LABEL_N01",
+      "headword": "label",
+      "partOfSpeech": "noun",
+      "arabic": "ملصق",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "label",
+      "examples": [
+        {
+          "en": "The label says with food.",
+          "ar": "الملصق يقول: مع الطعام."
+        }
+      ],
+      "introducedIn": "A2-U7-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.INSTRUCTION_N01",
+      "headword": "instruction",
+      "partOfSpeech": "noun",
+      "arabic": "تعليمة",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "instruction",
+      "examples": [
+        {
+          "en": "Read the instructions before you start.",
+          "ar": "اقرأ التعليمات قبل أن تبدأ."
+        }
+      ],
+      "introducedIn": "A2-U7-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.PHARMACIST_N01",
+      "headword": "pharmacist",
+      "partOfSpeech": "noun",
+      "arabic": "صيدلاني",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "pharmacist",
+      "examples": [
+        {
+          "en": "Ask the pharmacist if you are not sure.",
+          "ar": "اسأل الصيدلاني إن لم تكن متأكداً."
+        }
+      ],
+      "introducedIn": "A2-U7-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.ALLERGIC_ADJ01",
+      "headword": "allergic",
+      "partOfSpeech": "adjective",
+      "arabic": "مصاب بحساسية",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "allergic",
+      "examples": [
+        {
+          "en": "My son is allergic to nuts.",
+          "ar": "ابني لديه حساسية من المكسّرات."
+        }
+      ],
+      "introducedIn": "A2-U7-L3",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.NUT_N01",
+      "headword": "nut",
+      "partOfSpeech": "noun",
+      "arabic": "مكسّرات",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "nut",
+      "examples": [
+        {
+          "en": "This cake has no nuts in it.",
+          "ar": "هذه الكعكة خالية من المكسّرات."
+        }
+      ],
+      "introducedIn": "A2-U7-L3",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.ENERGY_N01",
+      "headword": "energy",
+      "partOfSpeech": "noun",
+      "arabic": "طاقة",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "energy",
+      "examples": [
+        {
+          "en": "I have more energy after a short walk.",
+          "ar": "أشعر بطاقة أكبر بعد مشي قصير."
+        }
+      ],
+      "introducedIn": "A2-U7-L4",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.CHECK_UP_N01",
+      "headword": "check-up",
+      "partOfSpeech": "noun",
+      "arabic": "فحص دوري",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "check-up",
+      "examples": [
+        {
+          "en": "I have a check-up on Thursday.",
+          "ar": "لديّ فحص دوري يوم الخميس."
+        }
+      ],
+      "introducedIn": "A2-U7-L5",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.HURT_V01",
+      "headword": "hurt",
+      "partOfSpeech": "verb",
+      "arabic": "يؤلم",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "hurt",
+      "examples": [
+        {
+          "en": "My knee hurts when I walk.",
+          "ar": "ركبتي تؤلمني حين أمشي."
+        }
+      ],
+      "introducedIn": "A2-U7-L5",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.RECEPTIONIST_N01",
+      "headword": "receptionist",
+      "partOfSpeech": "noun",
+      "arabic": "موظف الاستقبال",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "receptionist",
+      "examples": [
+        {
+          "en": "Give your card to the receptionist.",
+          "ar": "سلّم بطاقتكَ إلى موظف الاستقبال."
+        }
+      ],
+      "introducedIn": "A2-U7-L5",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.GENTLE_ADJ01",
+      "headword": "gentle",
+      "partOfSpeech": "adjective",
+      "arabic": "خفيف، لطيف",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "gentle",
+      "examples": [
+        {
+          "en": "Start with something gentle, not a long run.",
+          "ar": "ابدأ بشيء خفيف، لا بجري طويل."
+        }
+      ],
+      "introducedIn": "A2-U7-L6",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.SICK_NOTE_N01",
+      "headword": "sick note",
+      "partOfSpeech": "noun",
+      "arabic": "ورقة إجازة مرضية",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "sick note",
+      "examples": [
+        {
+          "en": "I gave my sick note to the office.",
+          "ar": "سلّمتُ ورقة الإجازة المرضية إلى المكتب."
+        }
+      ],
+      "introducedIn": "A2-U7-L6",
+      "recycledIn": []
     }
   ],
   "chunks": [
@@ -7692,6 +7910,51 @@
       "recycledIn": [
         "A2-U6-L7"
       ]
+    },
+    {
+      "id": "A2.CHUNK.ARE_YOU_ALL_RIGHT",
+      "text": "Are you all right?",
+      "arabic": "هل أنت بخير؟",
+      "cefr": "A2",
+      "introducedIn": "A2-U7-L1",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A2.CHUNK.GET_SOME_REST",
+      "text": "get some rest",
+      "arabic": "يأخذ قسطاً من الراحة",
+      "cefr": "A2",
+      "introducedIn": "A2-U7-L1",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A2.CHUNK.MAKE_SURE",
+      "text": "Make sure ...",
+      "arabic": "تأكّد من أن...",
+      "cefr": "A2",
+      "introducedIn": "A2-U7-L3",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A2.CHUNK.TAKE_A_BREAK",
+      "text": "take a break",
+      "arabic": "يأخذ استراحة",
+      "cefr": "A2",
+      "introducedIn": "A2-U7-L4",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A2.CHUNK.TAKE_IT_EASY",
+      "text": "Take it easy.",
+      "arabic": "لا ترهق نفسك.",
+      "cefr": "A2",
+      "introducedIn": "A2-U7-L6",
+      "productive": true,
+      "recycledIn": []
     }
   ],
   "units": [
@@ -17270,36 +17533,53 @@
           "lessonType": "encounter-focus-practice",
           "canDo": [
             "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE",
+            "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE",
             "A2.U7.PRODUCTION.DESCRIBE_HEALTH_PROBLEM"
           ],
           "grammar": [
-            "A2.G.SHOULD_ADVICE",
-            "A2.G.GOING_TO_PLANS",
-            "A2.G.PRESENT_CONTINUOUS_ARRANGEMENTS"
+            "A2.G.SHOULD_ADVICE"
           ],
           "lexicon": [
             "A2.LEX.SORE_ADJ01",
-            "A2.LEX.COUGH_N01",
-            "A2.LEX.REST_N01",
-            "A2.LEX.ITINERARY_N01",
-            "A2.LEX.SIGHT_N01",
-            "A2.LEX.PLAN_V01",
-            "A2.LEX.RESERVATION_N01",
-            "A2.LEX.CHECK_IN_V01",
-            "A2.LEX.AVAILABLE_ADJ01"
+            "A2.LEX.ACHE_V01",
+            "A2.LEX.SHOULDER_N01",
+            "A2.LEX.REST_N01"
           ],
           "chunks": [
-            "A2.CHUNK.YOU_SHOULD",
-            "A2.CHUNK.GOING_TO_STAY",
-            "A2.CHUNK.BOOK_A_ROOM",
-            "A2.CHUNK.DO_YOU_HAVE_AVAILABLE"
+            "A2.CHUNK.ARE_YOU_ALL_RIGHT",
+            "A2.CHUNK.GET_SOME_REST"
           ],
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "I have a sore throat and a cough. You should drink warm water and rest, but you shouldn't go to work today.",
-                "ar": "لدي التهاب حلق وسعال. ينبغي أن تشرب ماءً دافئاً وترتاح، ولا ينبغي أن تذهب إلى العمل اليوم."
+                "speaker": "Yusuf",
+                "en": "You don't look well, Dalia. Are you all right?",
+                "ar": "لا تبدين على ما يرام يا داليا. هل أنتِ بخير؟"
+              },
+              {
+                "speaker": "Dalia",
+                "en": "My throat is sore and I cough all night. My shoulders ache too.",
+                "ar": "حلقي مؤلم وأسعل طوال الليل، وكتفاي يوجعانني أيضاً."
+              },
+              {
+                "speaker": "Yusuf",
+                "en": "You should go home early. You shouldn't sit in this cold room.",
+                "ar": "ينبغي أن تعودي إلى البيت مبكراً، ولا ينبغي أن تجلسي في هذه الغرفة الباردة."
+              },
+              {
+                "speaker": "Dalia",
+                "en": "I have a report to finish.",
+                "ar": "لديّ تقرير عليّ إنهاؤه."
+              },
+              {
+                "speaker": "Yusuf",
+                "en": "The report can wait. Ask at the pharmacy, and get some rest.",
+                "ar": "التقرير يمكنه الانتظار. اسألي في الصيدلية، وخذي قسطاً من الراحة."
+              },
+              {
+                "speaker": "Dalia",
+                "en": "Maybe you're right. I'll finish it tomorrow.",
+                "ar": "ربما أنتَ محق. سأنهيه غداً."
               }
             ]
           },
@@ -17311,65 +17591,62 @@
               "mode": "encounter",
               "skill": "listening",
               "canDo": [
-                "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE",
-                "A2.U7.PRODUCTION.DESCRIBE_HEALTH_PROBLEM"
+                "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE"
               ],
-              "prompt": "What should the person avoid?",
-              "promptAr": "ما الذي ينبغي أن يتجنبه الشخص؟",
+              "prompt": "What is Yusuf trying to persuade Dalia to do?",
+              "promptAr": "إلامَ يحاول يوسف إقناع داليا؟",
               "options": [
-                "Going to work",
-                "Drinking warm water",
-                "Resting"
+                "Stop working and rest",
+                "Move to a warmer desk",
+                "Take the report home with her"
               ],
-              "answer": "Going to work",
-              "audioTranscript": "I have a sore throat and a cough. You should drink warm water and rest, but you shouldn't go to work today."
+              "answer": "Stop working and rest",
+              "audioTranscript": "You don't look well, Dalia. Are you all right? My throat is sore and I cough all night. My shoulders ache too. You should go home early. You shouldn't sit in this cold room. I have a report to finish. The report can wait. Ask at the pharmacy, and get some rest. Maybe you're right. I'll finish it tomorrow."
             },
             {
               "id": "A2-U7-L1-A02",
-              "lessonId": "A2-U7-L1",
-              "type": "match",
-              "mode": "practice",
-              "skill": "reading",
-              "canDo": [
-                "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE",
-                "A2.U7.PRODUCTION.DESCRIBE_HEALTH_PROBLEM"
-              ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "sore",
-                  "مؤلم"
-                ],
-                [
-                  "cough",
-                  "سعال"
-                ],
-                [
-                  "rest",
-                  "راحة"
-                ]
-              ]
-            },
-            {
-              "id": "A2-U7-L1-A03",
               "lessonId": "A2-U7-L1",
               "type": "gap",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE",
-                "A2.U7.PRODUCTION.DESCRIBE_HEALTH_PROBLEM"
+                "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "You ___ rest if you feel tired.",
+              "prompt": "One half of this advice says yes, the other says no. Choose the form that fits.",
+              "promptAr": "شطر من هذه النصيحة يقول نعم والآخر يقول لا. اختر الصيغة المناسبة.",
+              "text": "You look exhausted. You ___ sit in that cold room all afternoon.",
               "options": [
+                "shouldn't",
                 "should",
-                "mustn't",
-                "don't"
+                "don't should"
               ],
-              "answer": "should"
+              "answer": "shouldn't"
+            },
+            {
+              "id": "A2-U7-L1-A03",
+              "lessonId": "A2-U7-L1",
+              "type": "match",
+              "mode": "practice",
+              "skill": "reading",
+              "canDo": [
+                "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE"
+              ],
+              "prompt": "Match each problem with the advice that fits it.",
+              "promptAr": "طابق كل مشكلة بالنصيحة المناسبة لها.",
+              "pairs": [
+                [
+                  "Hani has a sore throat,",
+                  "so he should drink something warm."
+                ],
+                [
+                  "Rania sits at a desk all day,",
+                  "so she should stand up and stretch."
+                ],
+                [
+                  "Samir sleeps badly,",
+                  "so he shouldn't drink coffee at night."
+                ]
+              ]
             },
             {
               "id": "A2-U7-L1-A04",
@@ -17378,18 +17655,17 @@
               "mode": "mastery",
               "skill": "listening",
               "canDo": [
-                "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE",
-                "A2.U7.PRODUCTION.DESCRIBE_HEALTH_PROBLEM"
+                "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE"
               ],
-              "prompt": "What advice is given?",
-              "promptAr": "ما النصيحة المقدمة؟",
+              "prompt": "Listen to Nawal's message. What does her sister advise?",
+              "promptAr": "استمع إلى رسالة نوال. بماذا تنصحها أختها؟",
               "options": [
-                "Walk briefly and change position",
-                "Stay in the same position",
-                "Carry something heavy"
+                "A warm drink and another hour of sleep",
+                "A morning at the pool",
+                "A whole day in bed"
               ],
-              "answer": "Walk briefly and change position",
-              "audioTranscript": "My back hurts after sitting all day. You should walk for a few minutes and change your chair position."
+              "answer": "A warm drink and another hour of sleep",
+              "audioTranscript": "Hi, it's Nawal. I went to bed early last night, but my shoulders still ache this morning, and my throat is a little sore. I'm not going to the gym today. My sister says I should drink something warm and sleep for another hour, and she is probably right. Don't wait for me at the pool. I'll message you tomorrow when I feel better."
             },
             {
               "id": "A2-U7-L1-A05",
@@ -17398,19 +17674,58 @@
               "mode": "mastery",
               "skill": "spokenProduction",
               "canDo": [
-                "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE",
                 "A2.U7.PRODUCTION.DESCRIBE_HEALTH_PROBLEM"
               ],
-              "prompt": "Describe two simple symptoms and give safe, general self-care advice.",
-              "promptAr": "صف عرضين بسيطين وقدّم نصيحة عامة وآمنة للعناية الذاتية.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "A friend asks how you are, and you are not well today. Say two things you feel, then give yourself the advice a sensible friend would give.",
+              "promptAr": "يسألكَ صديق عن حالكَ، ولستَ بخير اليوم. اذكر شيئين تشعر بهما، ثم قدّم لنفسكَ النصيحة التي يقدمها صديق عاقل.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "sore",
+                    "ache",
+                    "aches",
+                    "hurts",
+                    "tired",
+                    "a cough",
+                    "cold",
+                    "headache",
+                    "my back",
+                    "my throat",
+                    "my shoulders",
+                    "I don't feel well",
+                    "not well"
+                  ],
+                  [
+                    "should",
+                    "shouldn't",
+                    "should not",
+                    "ought to",
+                    "it's better to",
+                    "I need to",
+                    "why don't I"
+                  ],
+                  [
+                    "rest",
+                    "sleep",
+                    "drink",
+                    "warm",
+                    "water",
+                    "stay at home",
+                    "take a break",
+                    "go to bed",
+                    "a walk",
+                    "stretch",
+                    "the pharmacy",
+                    "the clinic"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             }
           ]
         },
@@ -17421,15 +17736,16 @@
           "lessonType": "encounter-focus-practice",
           "canDo": [
             "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE",
+            "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE",
             "A2.U7.INTERACTION.MANAGE_CLINIC_TALK"
           ],
           "grammar": [
             "A2.G.HAVE_TO_OBLIGATION"
           ],
           "lexicon": [
-            "A2.LEX.MEDICINE_N01",
-            "A2.LEX.DOSE_N01",
-            "A2.LEX.APPOINTMENT_N01"
+            "A2.LEX.LABEL_N01",
+            "A2.LEX.INSTRUCTION_N01",
+            "A2.LEX.PHARMACIST_N01"
           ],
           "chunks": [
             "A2.CHUNK.HOW_OFTEN_TAKE",
@@ -17438,9 +17754,39 @@
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "Take one dose twice a day with food. You don't have to take it at an exact minute, but leave about twelve hours between doses.",
-                "ar": "تناول جرعة مرتين يومياً مع الطعام. لا يلزم تناولها في دقيقة محددة، لكن اترك نحو اثنتي عشرة ساعة بين الجرعات."
+                "speaker": "Kareem",
+                "en": "The doctor gave me this. Do I have to take it with food?",
+                "ar": "أعطاني الطبيب هذا. هل يجب أن أتناوله مع الطعام؟"
+              },
+              {
+                "speaker": "Huda",
+                "en": "Yes. The instructions on the label say with food.",
+                "ar": "نعم. التعليمات المكتوبة على الملصق تقول: مع الطعام."
+              },
+              {
+                "speaker": "Kareem",
+                "en": "How often should I take it? And do I have to come back for more?",
+                "ar": "كم مرة ينبغي أن أتناوله؟ وهل عليّ أن أعود لآخذ المزيد؟"
+              },
+              {
+                "speaker": "Huda",
+                "en": "The label answers that. No, you don't have to come back; one packet is enough.",
+                "ar": "الملصق يجيب عن ذلك. لا، لستَ مضطراً للعودة؛ عبوة واحدة تكفي."
+              },
+              {
+                "speaker": "Kareem",
+                "en": "Can I keep it in my bag at work?",
+                "ar": "هل يمكنني الاحتفاظ به في حقيبتي في العمل؟"
+              },
+              {
+                "speaker": "Huda",
+                "en": "Please don't. You have to keep it somewhere cool and dry, and read the label again before you use it.",
+                "ar": "أرجو ألا تفعل. عليكَ أن تحفظه في مكان بارد وجاف، واقرأ الملصق مرة أخرى قبل أن تستعمله."
+              },
+              {
+                "speaker": "Kareem",
+                "en": "Thanks. I'll read it tonight.",
+                "ar": "شكراً. سأقرؤه الليلة."
               }
             ]
           },
@@ -17452,65 +17798,55 @@
               "mode": "encounter",
               "skill": "listening",
               "canDo": [
-                "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE",
-                "A2.U7.INTERACTION.MANAGE_CLINIC_TALK"
+                "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE"
               ],
-              "prompt": "How many doses are taken daily?",
-              "promptAr": "كم جرعة تُؤخذ يومياً؟",
+              "prompt": "What is Kareem checking at the pharmacy counter?",
+              "promptAr": "ما الذي يتحقق منه كريم عند طاولة الصيدلية؟",
               "options": [
-                "Two",
-                "One",
-                "Twelve"
+                "How to take what he was given, and where to keep it",
+                "Whether the pharmacy is open on Friday",
+                "How much one packet costs"
               ],
-              "answer": "Two",
-              "audioTranscript": "Take one dose twice a day with food. You don't have to take it at an exact minute, but leave about twelve hours between doses."
+              "answer": "How to take what he was given, and where to keep it",
+              "audioTranscript": "The doctor gave me this. Do I have to take it with food? Yes. The instructions on the label say with food. How often should I take it? And do I have to come back for more? The label answers that. No, you don't have to come back; one packet is enough. Can I keep it in my bag at work? Please don't. You have to keep it somewhere cool and dry, and read the label again before you use it. Thanks. I'll read it tonight."
             },
             {
               "id": "A2-U7-L2-A02",
-              "lessonId": "A2-U7-L2",
-              "type": "match",
-              "mode": "practice",
-              "skill": "reading",
-              "canDo": [
-                "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE",
-                "A2.U7.INTERACTION.MANAGE_CLINIC_TALK"
-              ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "medicine",
-                  "دواء"
-                ],
-                [
-                  "dose",
-                  "جرعة"
-                ],
-                [
-                  "appointment",
-                  "موعد"
-                ]
-              ]
-            },
-            {
-              "id": "A2-U7-L2-A03",
               "lessonId": "A2-U7-L2",
               "type": "gap",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE",
-                "A2.U7.INTERACTION.MANAGE_CLINIC_TALK"
+                "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "You have to ___ this medicine with food.",
+              "prompt": "Is this a rule or a free choice? Choose the form that fits.",
+              "promptAr": "أهذا إلزام أم اختيار؟ اختر الصيغة المناسبة.",
+              "text": "The label says 'with food', so you ___ take it with a meal.",
               "options": [
-                "take",
-                "took",
-                "taking"
+                "have to",
+                "don't have to",
+                "are having to"
               ],
-              "answer": "take"
+              "answer": "have to"
+            },
+            {
+              "id": "A2-U7-L2-A03",
+              "lessonId": "A2-U7-L2",
+              "type": "textChoice",
+              "mode": "practice",
+              "skill": "reading",
+              "canDo": [
+                "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE"
+              ],
+              "prompt": "Read the notice at the counter. What do customers have to do?",
+              "promptAr": "اقرأ الإعلان على الطاولة. ما الذي يجب على الزبائن فعله؟",
+              "options": [
+                "Bring the packet with them",
+                "Book an appointment first",
+                "Arrive before eleven on Friday"
+              ],
+              "answer": "Bring the packet with them",
+              "sourceText": "Notice for customers: the pharmacist will answer any question about a label, and you don't have to make an appointment. You do have to bring the packet with you. On Fridays we open late, at eleven."
             },
             {
               "id": "A2-U7-L2-A04",
@@ -17519,18 +17855,17 @@
               "mode": "mastery",
               "skill": "listening",
               "canDo": [
-                "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE",
-                "A2.U7.INTERACTION.MANAGE_CLINIC_TALK"
+                "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE"
               ],
-              "prompt": "What must the patient do?",
-              "promptAr": "ماذا يجب على المريض أن يفعل؟",
+              "prompt": "Listen to the pharmacy's recorded message. What do you have to bring?",
+              "promptAr": "استمع إلى الرسالة المسجلة للصيدلية. ما الذي يجب أن تحضره معكَ؟",
               "options": [
-                "Arrive ten minutes early",
-                "Bring the medicine box",
-                "Come at five"
+                "The paper from the doctor",
+                "A booking number",
+                "The empty packet"
               ],
-              "answer": "Arrive ten minutes early",
-              "audioTranscript": "Your appointment is at four. You have to arrive ten minutes early, but you don't have to bring the medicine box."
+              "answer": "The paper from the doctor",
+              "audioTranscript": "This is the Riverside Pharmacy. Our counter is open from eight in the morning until nine at night. You don't have to book a time to speak to a pharmacist; just come to the desk and wait. If you are collecting something the doctor ordered, you have to bring the paper with you, and the instructions will be printed on the label."
             },
             {
               "id": "A2-U7-L2-A05",
@@ -17539,19 +17874,56 @@
               "mode": "mastery",
               "skill": "spokenInteraction",
               "canDo": [
-                "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE",
                 "A2.U7.INTERACTION.MANAGE_CLINIC_TALK"
               ],
-              "prompt": "Ask and answer about dose, timing, food and appointment instructions.",
-              "promptAr": "اسأل وأجب عن الجرعة والتوقيت والطعام وتعليمات الموعد.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
+              "prompt": "You are at the pharmacy counter for the first time. Ask what you have to do and what you don't have to do, and check one thing on the label.",
+              "promptAr": "أنتَ عند طاولة الصيدلية لأول مرة. اسأل عمّا يجب عليكَ فعله وما لا يلزمكَ فعله، وتحقق من أمر واحد في الملصق.",
+              "partnerTurns": [
+                "Good morning. Is this the first time you have collected something here?",
+                "Then I have to see the paper from the clinic, please. Ask me anything you like.",
+                "Of course. Tell me what you still need to know, and what you were worried about."
               ],
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "have to",
+                    "don't have to",
+                    "do I have to",
+                    "does it have to",
+                    "must",
+                    "need to",
+                    "is it necessary"
+                  ],
+                  [
+                    "label",
+                    "instructions",
+                    "packet",
+                    "with food",
+                    "before food",
+                    "how often",
+                    "when",
+                    "keep it",
+                    "store it",
+                    "somewhere cool"
+                  ],
+                  [
+                    "excuse me",
+                    "please",
+                    "could you",
+                    "can you",
+                    "thank you",
+                    "thanks",
+                    "sorry",
+                    "one more question"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             }
           ]
         },
@@ -17561,37 +17933,56 @@
           "titleAr": "التحذيرات والحساسية",
           "lessonType": "encounter-focus-practice",
           "canDo": [
+            "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE",
             "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE",
-            "A2.U7.MEDIATION.RELAY_HEALTH_GUIDANCE"
+            "A2.U7.PRODUCTION.DESCRIBE_HEALTH_PROBLEM"
           ],
           "grammar": [
             "A2.G.MUST_WARNING",
-            "A2.G.RECIPE_IMPERATIVES",
-            "A2.G.FEW_LITTLE"
+            "A2.G.RECIPE_IMPERATIVES"
           ],
           "lexicon": [
+            "A2.LEX.ALLERGIC_ADJ01",
             "A2.LEX.ALLERGY_N01",
+            "A2.LEX.NUT_N01",
             "A2.LEX.WARNING_N01",
-            "A2.LEX.DIZZY_ADJ01",
-            "A2.LEX.OLIVE_N01",
-            "A2.LEX.SALT_N01",
-            "A2.LEX.SAUCE_N01",
-            "A2.LEX.ORDER_N02",
-            "A2.LEX.MISSING_ADJ01",
-            "A2.LEX.WRONG_ADJ01"
+            "A2.LEX.DIZZY_ADJ01"
           ],
           "chunks": [
-            "A2.CHUNK.MUST_NOT_DRIVE",
-            "A2.CHUNK.A_LITTLE_BIT",
-            "A2.CHUNK.SOMETHING_IS_MISSING",
-            "A2.CHUNK.THIS_IS_NOT_WHAT_ORDERED"
+            "A2.CHUNK.MAKE_SURE",
+            "A2.CHUNK.MUST_NOT_DRIVE"
           ],
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "Warning: This medicine may make you dizzy. You must not drive for six hours after taking it. Tell the pharmacist if you have a nut allergy.",
-                "ar": ""
+                "speaker": "Faris",
+                "en": "Are you ready to order?",
+                "ar": "هل أنتما مستعدان للطلب؟"
+              },
+              {
+                "speaker": "Salma",
+                "en": "Before we order, my son is allergic to nuts. Is there anything in the sauce?",
+                "ar": "قبل أن نطلب: ابني لديه حساسية من المكسّرات. هل في الصلصة شيء منها؟"
+              },
+              {
+                "speaker": "Faris",
+                "en": "I must ask the kitchen. You mustn't guess with an allergy.",
+                "ar": "يجب أن أسأل المطبخ. لا يجوز التخمين في أمر الحساسية."
+              },
+              {
+                "speaker": "Bilal",
+                "en": "Thank you. Make sure they check the bread as well.",
+                "ar": "شكراً لكَ. تأكّد من أنهم يفحصون الخبز أيضاً."
+              },
+              {
+                "speaker": "Faris",
+                "en": "Of course. We write every warning on the menu, but I'll ask anyway.",
+                "ar": "بالطبع. نكتب كل تحذير في قائمة الطعام، لكنني سأسأل على أي حال."
+              },
+              {
+                "speaker": "Salma",
+                "en": "That's kind of you. He mustn't eat anything with nuts, not even a little.",
+                "ar": "هذا لطف منكَ. يجب ألا يأكل أي شيء فيه مكسّرات، ولو قليلاً."
               }
             ]
           },
@@ -17599,110 +17990,133 @@
             {
               "id": "A2-U7-L3-A01",
               "lessonId": "A2-U7-L3",
-              "type": "textChoice",
+              "type": "audioChoice",
               "mode": "encounter",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE",
-                "A2.U7.MEDIATION.RELAY_HEALTH_GUIDANCE"
+                "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE"
               ],
-              "prompt": "What activity is prohibited?",
-              "promptAr": "ما النشاط الممنوع؟",
+              "prompt": "What does Salma want to know before they order?",
+              "promptAr": "ما الذي تريد سلمى معرفته قبل أن يطلبوا؟",
               "options": [
-                "Driving for six hours",
-                "Eating any food",
-                "Talking to a pharmacist"
+                "Whether the food contains nuts",
+                "How long the food will take",
+                "Whether the cafe takes cards"
               ],
-              "answer": "Driving for six hours",
-              "sourceText": "Warning: This medicine may make you dizzy. You must not drive for six hours after taking it. Tell the pharmacist if you have a nut allergy."
+              "answer": "Whether the food contains nuts",
+              "audioTranscript": "Are you ready to order? Before we order, my son is allergic to nuts. Is there anything in the sauce? I must ask the kitchen. You mustn't guess with an allergy. Thank you. Make sure they check the bread as well. Of course. We write every warning on the menu, but I'll ask anyway. That's kind of you. He mustn't eat anything with nuts, not even a little."
             },
             {
               "id": "A2-U7-L3-A02",
-              "lessonId": "A2-U7-L3",
-              "type": "match",
-              "mode": "practice",
-              "skill": "reading",
-              "canDo": [
-                "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE",
-                "A2.U7.MEDIATION.RELAY_HEALTH_GUIDANCE"
-              ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "allergy",
-                  "حساسية"
-                ],
-                [
-                  "warning",
-                  "تحذير"
-                ],
-                [
-                  "dizzy",
-                  "يشعر بالدوار"
-                ]
-              ]
-            },
-            {
-              "id": "A2-U7-L3-A03",
               "lessonId": "A2-U7-L3",
               "type": "gap",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE",
-                "A2.U7.MEDIATION.RELAY_HEALTH_GUIDANCE"
+                "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "You ___ not take this if you are allergic to it.",
+              "prompt": "This is a warning, not a suggestion. Choose the form that fits.",
+              "promptAr": "هذا تحذير لا اقتراح. اختر الصيغة المناسبة.",
+              "text": "The label says it can make you dizzy, so you ___ drive today.",
               "options": [
+                "mustn't",
                 "must",
-                "have",
-                "should to"
+                "don't must"
               ],
-              "answer": "must"
+              "answer": "mustn't"
+            },
+            {
+              "id": "A2-U7-L3-A03",
+              "lessonId": "A2-U7-L3",
+              "type": "textChoice",
+              "mode": "practice",
+              "skill": "reading",
+              "canDo": [
+                "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE"
+              ],
+              "prompt": "Read the warning printed on the box. When can the person drive again?",
+              "promptAr": "اقرأ التحذير المطبوع على العلبة. متى يمكن للشخص أن يقود مرة أخرى؟",
+              "options": [
+                "When the sleepy feeling has gone",
+                "After six hours, whatever happens",
+                "Never, once the box is open"
+              ],
+              "answer": "When the sleepy feeling has gone",
+              "sourceText": "Please read before you travel: this box may make you feel sleepy or dizzy. You must not drive until the feeling has gone. Keep the box away from children, and show the warning to anyone who shares the car with you."
             },
             {
               "id": "A2-U7-L3-A04",
               "lessonId": "A2-U7-L3",
-              "type": "textChoice",
+              "type": "audioChoice",
               "mode": "mastery",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE",
-                "A2.U7.MEDIATION.RELAY_HEALTH_GUIDANCE"
+                "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE"
               ],
-              "prompt": "What may patients drink?",
-              "promptAr": "ماذا يمكن للمرضى أن يشربوا؟",
+              "prompt": "Listen to Nadia's message about Saturday. What mustn't Bilal do?",
+              "promptAr": "استمع إلى رسالة نادية عن يوم السبت. ما الذي يجب ألا يفعله بلال؟",
               "options": [
-                "Water",
-                "Milk",
-                "Nothing"
+                "Buy a cake from the bakery on the corner",
+                "Tell the other guests about Yara",
+                "Bring any fruit with him"
               ],
-              "answer": "Water",
-              "sourceText": "Patients must show their allergy card before treatment. They mustn't eat for four hours before the test, but water is allowed."
+              "answer": "Buy a cake from the bakery on the corner",
+              "audioTranscript": "Hi Bilal, it's Nadia. About Saturday: I'm making the cake myself this year, because Yara is allergic to nuts and the shop cakes all carry a warning. You mustn't bring anything from the bakery on the corner; they use the same trays for everything. Make sure you tell the others as well. Bring fruit if you want to bring something."
             },
             {
               "id": "A2-U7-L3-A05",
               "lessonId": "A2-U7-L3",
               "type": "speak",
               "mode": "mastery",
-              "skill": "mediation",
+              "skill": "spokenProduction",
               "canDo": [
-                "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE",
-                "A2.U7.MEDIATION.RELAY_HEALTH_GUIDANCE"
+                "A2.U7.PRODUCTION.DESCRIBE_HEALTH_PROBLEM"
               ],
-              "prompt": "Relay the essential medicine warning and allergy information to a family member.",
-              "promptAr": "انقل التحذير الأساسي للدواء ومعلومات الحساسية إلى أحد أفراد الأسرة.",
-              "evaluation": [
-                "selectRelevantInformation",
-                "clarity",
-                "audienceAwareness",
-                "accuracy"
-              ],
+              "prompt": "You are ordering food for a friend who is allergic to something. Say what your friend must not eat, ask the waiter one question about the kitchen, and make sure he checks the bread as well.",
+              "promptAr": "أنتَ تطلب الطعام لصديق لديه حساسية من شيء ما. قل ما الذي يجب ألا يأكله صديقكَ، واسأل النادل سؤالاً واحداً عن المطبخ، وتأكّد من أنه يفحص الخبز أيضاً.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "allergic",
+                    "allergy",
+                    "can't eat",
+                    "cannot eat",
+                    "must not eat",
+                    "mustn't eat",
+                    "reacts to"
+                  ],
+                  [
+                    "must",
+                    "mustn't",
+                    "must not",
+                    "have to",
+                    "don't have to",
+                    "make sure",
+                    "please check",
+                    "be careful"
+                  ],
+                  [
+                    "nuts",
+                    "nut",
+                    "milk",
+                    "eggs",
+                    "egg",
+                    "fish",
+                    "bread",
+                    "sauce",
+                    "oil",
+                    "cheese",
+                    "flour",
+                    "butter"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             }
           ]
         },
@@ -17713,25 +18127,59 @@
           "lessonType": "encounter-focus-practice",
           "canDo": [
             "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE",
-            "A2.U7.PRODUCTION.DESCRIBE_HEALTH_PROBLEM"
+            "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE",
+            "A2.U7.WRITING.WRITE_HEALTH_MESSAGE"
           ],
           "grammar": [
             "A2.G.INFINITIVE_PURPOSE"
           ],
           "lexicon": [
-            "A2.LEX.HYDRATED_ADJ01",
             "A2.LEX.STRETCH_V01",
-            "A2.LEX.AVOID_V01"
+            "A2.LEX.FRESH_ADJ01",
+            "A2.LEX.HYDRATED_ADJ01",
+            "A2.LEX.AVOID_V01",
+            "A2.LEX.ENERGY_N01"
           ],
           "chunks": [
+            "A2.CHUNK.TAKE_A_BREAK",
             "A2.CHUNK.IN_ORDER_TO"
           ],
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "Drink water to stay hydrated. Stand up every hour to stretch your legs, and avoid screens late at night to sleep better.",
-                "ar": "اشرب الماء لتحافظ على الترطيب. قف كل ساعة لتمدد ساقيك وتجنب الشاشات ليلاً لتنام أفضل."
+                "speaker": "Iman",
+                "en": "Why does everyone look tired on Mondays?",
+                "ar": "لماذا يبدو الجميع متعبين أيام الاثنين؟"
+              },
+              {
+                "speaker": "Tarek",
+                "en": "I sit at my desk from eight until six to finish everything on time.",
+                "ar": "أجلس إلى مكتبي من الثامنة حتى السادسة لأُنهي كل شيء في وقته."
+              },
+              {
+                "speaker": "Iman",
+                "en": "Then stand up every hour to stretch your legs. Walk to the window to get some fresh air.",
+                "ar": "إذن قف كل ساعة لتمدّ ساقيكَ، وامشِ إلى النافذة لتأخذ بعض الهواء النقي."
+              },
+              {
+                "speaker": "Rami",
+                "en": "I drink coffee to stay awake. Is that bad?",
+                "ar": "أشرب القهوة لأبقى مستيقظاً. هل هذا سيئ؟"
+              },
+              {
+                "speaker": "Iman",
+                "en": "Drink water as well, to stay hydrated. And avoid your phone after eleven, to give your body time to sleep.",
+                "ar": "اشرب الماء أيضاً لتبقى رطباً، وتجنّب هاتفكَ بعد الحادية عشرة لتمنح جسدكَ وقتاً للنوم."
+              },
+              {
+                "speaker": "Tarek",
+                "en": "So I should take a break to get my energy back.",
+                "ar": "إذن ينبغي أن آخذ استراحة لأستعيد طاقتي."
+              },
+              {
+                "speaker": "Iman",
+                "en": "Exactly. A short break is not lost time.",
+                "ar": "تماماً. الاستراحة القصيرة ليست وقتاً ضائعاً."
               }
             ]
           },
@@ -17743,59 +18191,30 @@
               "mode": "encounter",
               "skill": "listening",
               "canDo": [
-                "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE",
-                "A2.U7.PRODUCTION.DESCRIBE_HEALTH_PROBLEM"
+                "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE"
               ],
-              "prompt": "Why should a person avoid late screens?",
-              "promptAr": "لماذا ينبغي تجنب الشاشات ليلاً؟",
+              "prompt": "What is Iman explaining to her colleagues?",
+              "promptAr": "ماذا تشرح إيمان لزملائها؟",
               "options": [
-                "To sleep better",
-                "To drink more",
-                "To stretch"
+                "Small changes, and the reason for each one",
+                "A new timetable for the office",
+                "Which exercise class they should join"
               ],
-              "answer": "To sleep better",
-              "audioTranscript": "Drink water to stay hydrated. Stand up every hour to stretch your legs, and avoid screens late at night to sleep better."
+              "answer": "Small changes, and the reason for each one",
+              "audioTranscript": "Why does everyone look tired on Mondays? I sit at my desk from eight until six to finish everything on time. Then stand up every hour to stretch your legs. Walk to the window to get some fresh air. I drink coffee to stay awake. Is that bad? Drink water as well, to stay hydrated. And avoid your phone after eleven, to give your body time to sleep. So I should take a break to get my energy back. Exactly. A short break is not lost time."
             },
             {
               "id": "A2-U7-L4-A02",
-              "lessonId": "A2-U7-L4",
-              "type": "match",
-              "mode": "practice",
-              "skill": "reading",
-              "canDo": [
-                "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE",
-                "A2.U7.PRODUCTION.DESCRIBE_HEALTH_PROBLEM"
-              ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "hydrated",
-                  "مرطَّب"
-                ],
-                [
-                  "stretch",
-                  "يمدّد"
-                ],
-                [
-                  "avoid",
-                  "يتجنب"
-                ]
-              ]
-            },
-            {
-              "id": "A2-U7-L4-A03",
               "lessonId": "A2-U7-L4",
               "type": "gap",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE",
-                "A2.U7.PRODUCTION.DESCRIBE_HEALTH_PROBLEM"
+                "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "Walk regularly ___ keep your body active.",
+              "prompt": "Why does he leave at six? Choose the word that gives the purpose.",
+              "promptAr": "لماذا يخرج في السادسة؟ اختر الكلمة التي تعبّر عن الغرض.",
+              "text": "Hasan leaves the house at six ___ avoid the traffic.",
               "options": [
                 "to",
                 "for",
@@ -17804,45 +18223,104 @@
               "answer": "to"
             },
             {
-              "id": "A2-U7-L4-A04",
+              "id": "A2-U7-L4-A03",
               "lessonId": "A2-U7-L4",
               "type": "audioChoice",
-              "mode": "mastery",
+              "mode": "practice",
               "skill": "listening",
               "canDo": [
-                "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE",
-                "A2.U7.PRODUCTION.DESCRIBE_HEALTH_PROBLEM"
+                "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE"
               ],
-              "prompt": "What is the purpose of short breaks?",
-              "promptAr": "ما غرض الاستراحات القصيرة؟",
+              "prompt": "Listen to the start of the session. Why should people put their phones in their bags?",
+              "promptAr": "استمع إلى بداية الجلسة. لماذا ينبغي أن يضع الحاضرون هواتفهم في حقائبهم؟",
               "options": [
-                "To relax the eyes",
-                "To carry a larger bag",
-                "To work longer without stopping"
+                "To keep their hands free",
+                "To hear the speaker better",
+                "To finish the session on time"
               ],
-              "answer": "To relax the eyes",
-              "audioTranscript": "Use a smaller bag to reduce shoulder pain, and take short breaks to relax your eyes."
+              "answer": "To keep their hands free",
+              "audioTranscript": "Good morning, everyone. Before we start, three things. Open a window to let some fresh air in. Put your phone in your bag to keep your hands free. And if you want to ask a question, come to the front, because the people at the back cannot hear you. We finish at four, so drink some water before then."
+            },
+            {
+              "id": "A2-U7-L4-A04",
+              "lessonId": "A2-U7-L4",
+              "type": "textChoice",
+              "mode": "mastery",
+              "skill": "reading",
+              "canDo": [
+                "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE"
+              ],
+              "prompt": "Read the staff notice. Why does it suggest the stairs?",
+              "promptAr": "اقرأ إعلان الموظفين. لماذا يقترح استخدام الدرج؟",
+              "options": [
+                "To add a little exercise to the day",
+                "Because the lift is broken",
+                "To save the company money"
+              ],
+              "answer": "To add a little exercise to the day",
+              "sourceText": "Staff notice: the stairs at the back are open again. Use them in order to get a few extra minutes of exercise each day. The lift is still there for anyone carrying something heavy, and for anyone who needs it."
             },
             {
               "id": "A2-U7-L4-A05",
               "lessonId": "A2-U7-L4",
-              "type": "speak",
+              "type": "write",
               "mode": "mastery",
-              "skill": "spokenProduction",
+              "skill": "writing",
               "canDo": [
-                "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE",
-                "A2.U7.PRODUCTION.DESCRIBE_HEALTH_PROBLEM"
+                "A2.U7.WRITING.WRITE_HEALTH_MESSAGE"
               ],
-              "prompt": "Suggest three healthy actions and state the purpose of each.",
-              "promptAr": "اقترح ثلاثة أفعال صحية واذكر غرض كل منها.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "Your team is starting a good-habits week at work. Write a short message to your colleagues. Suggest three small changes and give the purpose of each one with to + verb. Then say one thing nobody has to do.",
+              "promptAr": "يبدأ فريقكَ أسبوع العادات الطيبة في العمل. اكتب رسالة قصيرة إلى زملائكَ. اقترح ثلاثة تغييرات صغيرة، وبيّن غرض كل منها بـ to + الفعل، ثم اذكر أمراً واحداً لا يلزم أحداً أن يفعله.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "to stay",
+                    "to get",
+                    "to keep",
+                    "to sleep",
+                    "to feel",
+                    "to avoid",
+                    "to give",
+                    "to rest",
+                    "in order to",
+                    "to help",
+                    "to stretch",
+                    "to relax"
+                  ],
+                  [
+                    "walk",
+                    "stand up",
+                    "stretch",
+                    "drink water",
+                    "fresh air",
+                    "a break",
+                    "the stairs",
+                    "go to bed",
+                    "sleep",
+                    "exercise",
+                    "your phone",
+                    "the window"
+                  ],
+                  [
+                    "don't have to",
+                    "do not have to",
+                    "nobody has to",
+                    "you don't need to",
+                    "it isn't a rule",
+                    "it is not a rule",
+                    "only if you want",
+                    "no one has to"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "wordGuide": [
+                65,
+                85
+              ]
             }
           ]
         },
@@ -17852,37 +18330,60 @@
           "titleAr": "في العيادة",
           "lessonType": "encounter-focus-practice",
           "canDo": [
+            "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE",
             "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE",
             "A2.U7.INTERACTION.MANAGE_CLINIC_TALK"
           ],
           "grammar": [
-            "A2.G.HEALTH_DURATION_FOR_SINCE",
-            "A2.G.ADJECTIVE_ENOUGH",
-            "A2.G.HOUSING_REQUESTS"
+            "A2.G.HEALTH_DURATION_FOR_SINCE"
           ],
           "lexicon": [
-            "A2.LEX.SYMPTOM_N01",
-            "A2.LEX.PAIN_N01",
+            "A2.LEX.CHECK_UP_N01",
+            "A2.LEX.HURT_V01",
             "A2.LEX.WORSE_ADJ01",
-            "A2.LEX.LEAK_N01",
-            "A2.LEX.LANDLORD_N01",
-            "A2.LEX.REPAIR_V01",
-            "A2.LEX.OPTION_N01",
-            "A2.LEX.RENT_N01",
-            "A2.LEX.RECOMMEND_V01"
+            "A2.LEX.SYMPTOM_N01",
+            "A2.LEX.RECEPTIONIST_N01"
           ],
           "chunks": [
             "A2.CHUNK.HOW_LONG_HAVE_HAD",
-            "A2.CHUNK.IT_STARTED",
-            "A2.CHUNK.THERE_IS_A_PROBLEM_WITH",
-            "A2.CHUNK.BEST_VALUE"
+            "A2.CHUNK.IT_STARTED"
           ],
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "Doctor: How long have you had the pain? Patient: For three days. It started after I lifted a heavy box, and it is worse this morning.",
-                "ar": ""
+                "speaker": "Maha",
+                "en": "Good morning. Do you have a check-up today, or is something wrong?",
+                "ar": "صباح الخير. هل لديكَ فحص دوري اليوم، أم أن هناك شكوى؟"
+              },
+              {
+                "speaker": "Adnan",
+                "en": "A check-up. But my knee hurts as well, so I'd like to mention it.",
+                "ar": "فحص دوري. لكن ركبتي تؤلمني أيضاً، وأودّ أن أذكر ذلك."
+              },
+              {
+                "speaker": "Maha",
+                "en": "Of course. How long have you had it?",
+                "ar": "بالطبع. منذ متى تعاني منها؟"
+              },
+              {
+                "speaker": "Adnan",
+                "en": "I've had it for about two weeks. It started after a long walk.",
+                "ar": "أعاني منها منذ أسبوعين تقريباً. بدأ الأمر بعد مشي طويل."
+              },
+              {
+                "speaker": "Maha",
+                "en": "Is it worse in the evening?",
+                "ar": "هل تزداد سوءاً في المساء؟"
+              },
+              {
+                "speaker": "Adnan",
+                "en": "A little. It wakes me at night, but it is the same as last week.",
+                "ar": "قليلاً. توقظني ليلاً، لكنها مثل الأسبوع الماضي."
+              },
+              {
+                "speaker": "Maha",
+                "en": "Sit down over there. The doctor is running ten minutes late.",
+                "ar": "تفضّل بالجلوس هناك. الطبيب متأخر عشر دقائق."
               }
             ]
           },
@@ -17890,89 +18391,78 @@
             {
               "id": "A2-U7-L5-A01",
               "lessonId": "A2-U7-L5",
-              "type": "textChoice",
+              "type": "audioChoice",
               "mode": "encounter",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE",
-                "A2.U7.INTERACTION.MANAGE_CLINIC_TALK"
+                "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE"
               ],
-              "prompt": "When did the pain begin?",
-              "promptAr": "متى بدأ الألم؟",
+              "prompt": "Why is Adnan at the clinic today?",
+              "promptAr": "لماذا جاء عدنان إلى العيادة اليوم؟",
               "options": [
-                "Three days ago",
-                "This morning",
-                "After a meal"
+                "For a check-up, and to mention one new thing",
+                "Because he cannot walk at all",
+                "To collect something for his knee"
               ],
-              "answer": "Three days ago",
-              "sourceText": "Doctor: How long have you had the pain? Patient: For three days. It started after I lifted a heavy box, and it is worse this morning."
+              "answer": "For a check-up, and to mention one new thing",
+              "audioTranscript": "Good morning. Do you have a check-up today, or is something wrong? A check-up. But my knee hurts as well, so I'd like to mention it. Of course. How long have you had it? I've had it for about two weeks. It started after a long walk. Is it worse in the evening? A little. It wakes me at night, but it is the same as last week. Sit down over there. The doctor is running ten minutes late."
             },
             {
               "id": "A2-U7-L5-A02",
-              "lessonId": "A2-U7-L5",
-              "type": "match",
-              "mode": "practice",
-              "skill": "reading",
-              "canDo": [
-                "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE",
-                "A2.U7.INTERACTION.MANAGE_CLINIC_TALK"
-              ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "symptom",
-                  "عَرَض"
-                ],
-                [
-                  "pain",
-                  "ألم"
-                ],
-                [
-                  "worse",
-                  "أسوأ"
-                ]
-              ]
-            },
-            {
-              "id": "A2-U7-L5-A03",
               "lessonId": "A2-U7-L5",
               "type": "gap",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE",
-                "A2.U7.INTERACTION.MANAGE_CLINIC_TALK"
+                "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "I've had this cough ___ Monday.",
+              "prompt": "One word counts the time, the other names the day it began. Choose the one that fits.",
+              "promptAr": "كلمة تعدّ المدة وأخرى تذكر يوم البداية. اختر المناسبة.",
+              "text": "Ali has had a sore knee ___ two weeks.",
               "options": [
-                "since",
                 "for",
+                "since",
                 "ago"
               ],
-              "answer": "since"
+              "answer": "for"
+            },
+            {
+              "id": "A2-U7-L5-A03",
+              "lessonId": "A2-U7-L5",
+              "type": "textChoice",
+              "mode": "practice",
+              "skill": "reading",
+              "canDo": [
+                "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE"
+              ],
+              "prompt": "Read the clinic card. What should you write on the back of it?",
+              "promptAr": "اقرأ بطاقة العيادة. ماذا ينبغي أن تكتب على ظهرها؟",
+              "options": [
+                "Anything new that has lasted more than a week",
+                "The time of your appointment",
+                "The name of the doctor you want"
+              ],
+              "answer": "Anything new that has lasted more than a week",
+              "sourceText": "Riverside Clinic, before your check-up. Please arrive ten minutes early and give your card to the receptionist. If you have had a new symptom for more than a week, write it on the back of the card so the doctor can see it."
             },
             {
               "id": "A2-U7-L5-A04",
               "lessonId": "A2-U7-L5",
-              "type": "textChoice",
+              "type": "audioChoice",
               "mode": "mastery",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE",
-                "A2.U7.INTERACTION.MANAGE_CLINIC_TALK"
+                "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE"
               ],
-              "prompt": "How did the headache change?",
-              "promptAr": "كيف تغير الصداع؟",
+              "prompt": "Listen to Warda's call from the clinic. What does she ask the patient to do?",
+              "promptAr": "استمع إلى اتصال وردة من العيادة. بماذا تطلب من المريض أن يقوم؟",
               "options": [
-                "It became worse.",
-                "It disappeared.",
-                "It moved to the back."
+                "Mention the shoulder at the same visit",
+                "Book a second appointment for it",
+                "Bring a different card on Thursday"
               ],
-              "answer": "It became worse.",
-              "sourceText": "The headache started yesterday afternoon. It was mild at first, but it became worse during the night."
+              "answer": "Mention the shoulder at the same visit",
+              "audioTranscript": "Hello, this is Warda at the clinic, returning your call. Your check-up is on Thursday at two, and the receptionist will take your card at the desk. You said on the phone that your shoulder has been sore since the weekend. Please mention that to the doctor as well, because it is easier to look at both things in one visit."
             },
             {
               "id": "A2-U7-L5-A05",
@@ -17981,19 +18471,63 @@
               "mode": "mastery",
               "skill": "spokenInteraction",
               "canDo": [
-                "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE",
                 "A2.U7.INTERACTION.MANAGE_CLINIC_TALK"
               ],
-              "prompt": "Role-play a clinic consultation: describe location, duration, start and change of symptoms.",
-              "promptAr": "مثّل استشارة في عيادة: صف مكان الأعراض ومدتها وبدايتها وتغيرها.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
+              "prompt": "You are at the clinic. Answer the doctor: say where it hurts, how long you have had it, when it started, and whether it has changed.",
+              "promptAr": "أنتَ في العيادة. أجب الطبيبة: قل أين يؤلمكَ، ومنذ متى تعاني منه، ومتى بدأ، وهل تغيّر.",
+              "partnerTurns": [
+                "Come in and sit down. What can I help you with today?",
+                "I see. And how long have you had it?",
+                "Has anything made it better or worse? Tell me what you have noticed."
               ],
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "hurts",
+                    "sore",
+                    "ache",
+                    "aches",
+                    "pain",
+                    "symptom",
+                    "my back",
+                    "my knee",
+                    "my shoulder",
+                    "my throat",
+                    "tired",
+                    "I don't feel well"
+                  ],
+                  [
+                    "I've had it for",
+                    "I have had it for",
+                    "for two",
+                    "for three",
+                    "for a week",
+                    "for about",
+                    "since",
+                    "it started",
+                    "last week",
+                    "yesterday",
+                    "a few days"
+                  ],
+                  [
+                    "worse",
+                    "better",
+                    "the same",
+                    "at night",
+                    "in the morning",
+                    "after",
+                    "when I",
+                    "it comes and goes",
+                    "not as bad"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             }
           ]
         },
@@ -18003,8 +18537,11 @@
           "titleAr": "خطة تعافٍ",
           "lessonType": "integrated-production",
           "canDo": [
+            "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE",
+            "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE",
+            "A2.U7.PRODUCTION.DESCRIBE_HEALTH_PROBLEM",
             "A2.U7.WRITING.WRITE_HEALTH_MESSAGE",
-            "A2.U7.PRODUCTION.DESCRIBE_HEALTH_PROBLEM"
+            "A2.U7.MEDIATION.RELAY_HEALTH_GUIDANCE"
           ],
           "grammar": [
             "A2.G.ADVICE_LINKERS",
@@ -18012,21 +18549,20 @@
             "A2.G.HAVE_TO_OBLIGATION"
           ],
           "lexicon": [
-            "A2.LEX.WELL_BEING_N01",
+            "A2.LEX.RECOVER_V01",
+            "A2.LEX.GENTLE_ADJ01",
             "A2.LEX.HABIT_N01",
-            "A2.LEX.RECOVER_V01"
+            "A2.LEX.SICK_NOTE_N01",
+            "A2.LEX.WELL_BEING_N01"
           ],
           "chunks": [
-            "A2.CHUNK.IF_GETS_WORSE"
+            "A2.CHUNK.IF_GETS_WORSE",
+            "A2.CHUNK.TAKE_IT_EASY"
           ],
-          "encounter": {
-            "dialogue": [
-              {
-                "speaker": "Narrator",
-                "en": "Rest for two days because your body needs time to recover. Drink water, and call the clinic if the fever gets worse. You don't have to stay in bed all day.",
-                "ar": ""
-              }
-            ]
+          "readingText": {
+            "title": "Getting Back to Normal",
+            "text": "Dear Ammar, I'm glad you are feeling a little better. Here is what helped me after my own week at home. Rest for the first two or three days, because the body recovers while you sleep. You don't have to stay in bed; sit in the garden, read, do something gentle. Drink water through the day to keep your energy up. Then build your old habits back one at a time. Go to work for a half day first, and a full day after that. If it gets worse, or if you feel the same on Sunday, ring the clinic instead of waiting for Monday. Take it easy, and don't compare this week with a normal one. Hind",
+            "textAr": "عزيزي عمّار، يسعدني أنكَ تتحسن قليلاً. إليكَ ما نفعني بعد أسبوعي أنا في البيت. استرح في اليومين أو الثلاثة الأولى، لأن الجسد يتعافى أثناء النوم. لستَ مضطراً للبقاء في الفراش؛ اجلس في الحديقة، أو اقرأ، أو افعل شيئاً خفيفاً. اشرب الماء طوال النهار لتحافظ على طاقتك. ثم أعِد بناء عاداتك القديمة واحدة تلو الأخرى: اذهب إلى العمل نصف يوم أولاً، ثم يوماً كاملاً بعد ذلك. وإذا ساء الأمر، أو شعرتَ بالحال نفسها يوم الأحد، فاتصل بالعيادة بدل انتظار يوم الاثنين. لا ترهق نفسكَ، ولا تقارن هذا الأسبوع بأسبوع عادي. هند"
           },
           "activities": [
             {
@@ -18036,85 +18572,147 @@
               "mode": "encounter",
               "skill": "reading",
               "canDo": [
-                "A2.U7.WRITING.WRITE_HEALTH_MESSAGE",
-                "A2.U7.PRODUCTION.DESCRIBE_HEALTH_PROBLEM"
+                "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE"
               ],
-              "prompt": "When should the patient call?",
-              "promptAr": "متى ينبغي للمريض الاتصال؟",
+              "prompt": "Read Hind's message once. What is she mainly telling Ammar?",
+              "promptAr": "اقرأ رسالة هند مرة واحدة. بماذا تخبر عمّاراً بشكل أساسي؟",
               "options": [
-                "If the fever gets worse",
-                "After every drink",
-                "Before resting"
+                "How to come back to normal life step by step",
+                "That he should stay away from work for a month",
+                "That she will visit him on Sunday"
               ],
-              "answer": "If the fever gets worse",
-              "sourceText": "Rest for two days because your body needs time to recover. Drink water, and call the clinic if the fever gets worse. You don't have to stay in bed all day."
+              "answer": "How to come back to normal life step by step"
             },
             {
               "id": "A2-U7-L6-A02",
               "lessonId": "A2-U7-L6",
-              "type": "match",
+              "type": "audioChoice",
               "mode": "practice",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U7.WRITING.WRITE_HEALTH_MESSAGE",
-                "A2.U7.PRODUCTION.DESCRIBE_HEALTH_PROBLEM"
+                "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE"
               ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "well-being",
-                  "عافية"
-                ],
-                [
-                  "habit",
-                  "عادة"
-                ],
-                [
-                  "recover",
-                  "يتعافى"
-                ]
-              ]
+              "prompt": "Listen to Lubna's message from the office. What has she already done?",
+              "promptAr": "استمع إلى رسالة لبنى من المكتب. ما الذي فعلته بالفعل؟",
+              "options": [
+                "Handed in his sick note for him",
+                "Cancelled the well-being session",
+                "Told him to come back on Thursday"
+              ],
+              "answer": "Handed in his sick note for him",
+              "audioTranscript": "Hi Ammar, it's Lubna from the office. Don't worry about the sick note; I gave yours to Samir this morning, and he said three days is fine. Nobody needs it back. Also, the well-being session on Thursday is now online, so you can watch it later. Come back when you are ready, not before. The work will still be here."
             },
             {
               "id": "A2-U7-L6-A03",
               "lessonId": "A2-U7-L6",
-              "type": "gap",
+              "type": "speak",
               "mode": "practice",
-              "skill": "reading",
+              "skill": "spokenProduction",
               "canDo": [
-                "A2.U7.WRITING.WRITE_HEALTH_MESSAGE",
                 "A2.U7.PRODUCTION.DESCRIBE_HEALTH_PROBLEM"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "Call the clinic ___ the pain gets worse.",
-              "options": [
-                "if",
-                "because",
-                "so"
-              ],
-              "answer": "if"
+              "prompt": "Before you write anything, say your plan aloud, the way Hind wrote hers. Give one thing your friend should do, one thing he doesn't have to do, and the reason for each.",
+              "promptAr": "قبل أن تكتب شيئاً، قل خطتكَ بصوت عالٍ كما كتبت هند خطتها. اذكر أمراً ينبغي لصديقكَ أن يفعله، وأمراً لا يلزمه فعله، وسبب كل منهما.",
+              "accepted": [],
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "should",
+                    "shouldn't",
+                    "have to",
+                    "don't have to",
+                    "must",
+                    "mustn't",
+                    "try to",
+                    "it helps to"
+                  ],
+                  [
+                    "rest",
+                    "sleep",
+                    "drink",
+                    "water",
+                    "walk",
+                    "gentle",
+                    "slowly",
+                    "a half day",
+                    "take it easy",
+                    "fresh air",
+                    "a break"
+                  ],
+                  [
+                    "because",
+                    "so",
+                    "if it gets worse",
+                    "if you feel",
+                    "to get",
+                    "to keep",
+                    "that's why",
+                    "in order to"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U7-L6-A04",
               "lessonId": "A2-U7-L6",
-              "type": "textChoice",
+              "type": "speak",
               "mode": "mastery",
-              "skill": "reading",
+              "skill": "mediation",
               "canDo": [
-                "A2.U7.WRITING.WRITE_HEALTH_MESSAGE",
-                "A2.U7.PRODUCTION.DESCRIBE_HEALTH_PROBLEM"
+                "A2.U7.MEDIATION.RELAY_HEALTH_GUIDANCE"
               ],
-              "prompt": "What activity must Sami avoid?",
-              "promptAr": "ما النشاط الذي يجب أن يتجنبه سامي؟",
-              "options": [
-                "Sport before Friday",
-                "Sleeping enough",
-                "Taking medicine with food"
-              ],
-              "answer": "Sport before Friday",
-              "sourceText": "To recover well, Sami should sleep enough and take the medicine with food. He must not play sport until Friday."
+              "prompt": "Amal's mother does not read English. Tell her what the clinic wrote: what Amal doesn't have to do, the two habits she should keep, and when she must ring the desk.",
+              "promptAr": "والدة أمل لا تقرأ الإنجليزية. أخبرها بما كتبته العيادة: ما الذي لا يلزم أمل فعله، والعادتان اللتان ينبغي أن تحافظ عليهما، ومتى يجب عليها أن تتصل بالاستقبال.",
+              "sourceCard": "Note from the clinic: Amal's results are normal, so she doesn't have to come back this month. She should walk for twenty minutes most days and sleep at a regular time. If the headaches get worse, or if anything new starts, she must ring the desk the same day.",
+              "accepted": [],
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "doesn't have to",
+                    "does not have to",
+                    "no need to",
+                    "not this month",
+                    "doesn't need to",
+                    "she can stay at home"
+                  ],
+                  [
+                    "walk",
+                    "twenty minutes",
+                    "most days",
+                    "sleep",
+                    "regular",
+                    "at the same time",
+                    "every night"
+                  ],
+                  [
+                    "worse",
+                    "anything new",
+                    "must ring",
+                    "must call",
+                    "the same day",
+                    "straight away",
+                    "phone the clinic",
+                    "ring the desk"
+                  ],
+                  [
+                    "normal",
+                    "fine",
+                    "nothing wrong",
+                    "good news",
+                    "all right"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U7-L6-A05",
@@ -18123,22 +18721,61 @@
               "mode": "mastery",
               "skill": "writing",
               "canDo": [
-                "A2.U7.WRITING.WRITE_HEALTH_MESSAGE",
-                "A2.U7.PRODUCTION.DESCRIBE_HEALTH_PROBLEM"
+                "A2.U7.WRITING.WRITE_HEALTH_MESSAGE"
               ],
-              "prompt": "Write a clear, general recovery plan with advice, obligations, purposes and a warning to seek professional help if needed.",
-              "promptAr": "اكتب خطة تعافٍ عامة وواضحة تتضمن نصائح وواجبات وأغراضاً وتحذيراً بطلب مساعدة مختصة عند الحاجة.",
-              "evaluation": [
-                "taskCompletion",
-                "clarity",
-                "organisation",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "Now write your own message to a friend who has been at home all week. Say what he should do and why, one thing he doesn't have to do, and what to do if it gets worse. Keep to rest, sleep, food and water, and do not add advice of your own.",
+              "promptAr": "اكتب الآن رسالتكَ إلى صديق بقي في البيت طوال الأسبوع. اذكر ما ينبغي أن يفعله ولماذا، وأمراً واحداً لا يلزمه فعله، وما العمل إذا ساء الأمر. اقتصر على الراحة والنوم والطعام والماء، ولا تضف نصيحة من عندكَ.",
               "accepted": [],
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "should",
+                    "shouldn't",
+                    "have to",
+                    "don't have to",
+                    "must",
+                    "mustn't",
+                    "try to"
+                  ],
+                  [
+                    "rest",
+                    "sleep",
+                    "drink",
+                    "water",
+                    "eat",
+                    "gentle",
+                    "slowly",
+                    "a walk",
+                    "fresh air",
+                    "take it easy",
+                    "a break",
+                    "half day"
+                  ],
+                  [
+                    "because",
+                    "so",
+                    "to keep",
+                    "to get",
+                    "in order to",
+                    "that's why"
+                  ],
+                  [
+                    "if it gets worse",
+                    "if you feel",
+                    "ring the clinic",
+                    "call the clinic",
+                    "see a doctor",
+                    "ask the pharmacist",
+                    "go back to the clinic"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
               "wordGuide": [
-                80,
-                110
+                65,
+                85
               ]
             }
           ]
@@ -18172,15 +18809,15 @@
                 "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE",
                 "A2.U7.ACTION.COMPLETE_CLINIC_CONSULTATION"
               ],
-              "prompt": "When should the tablet be taken?",
-              "promptAr": "متى ينبغي تناول القرص؟",
+              "prompt": "Read the volunteer card before the first visitor arrives. What must volunteers not do?",
+              "promptAr": "اقرأ بطاقة المتطوعين قبل وصول أول زائر. ما الذي يجب ألا يفعله المتطوعون؟",
               "options": [
-                "After breakfast",
-                "Before any food",
-                "At midnight"
+                "Give advice of their own",
+                "Write anything down",
+                "Speak to the nurse at desk three"
               ],
-              "answer": "After breakfast",
-              "sourceText": "Clinic note: Take one tablet after breakfast for five days. Do not take it on an empty stomach. Call the clinic if you develop a rash."
+              "answer": "Give advice of their own",
+              "sourceText": "Community health day, volunteer card. Listen to each visitor and write down where it hurts, how long they have had it, and whether it is worse. You must not give advice yourself. Send anyone who feels unwell to the nurse at desk three."
             },
             {
               "id": "A2-U7-L7-A02",
@@ -18192,15 +18829,15 @@
                 "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE",
                 "A2.U7.ACTION.COMPLETE_CLINIC_CONSULTATION"
               ],
-              "prompt": "What caused the problem?",
-              "promptAr": "ما سبب المشكلة؟",
+              "prompt": "Listen to the first visitor. What does he say about his shoulder?",
+              "promptAr": "استمع إلى أول زائر. ماذا يقول عن كتفه؟",
               "options": [
-                "Moving furniture",
-                "Taking medicine",
-                "Walking"
+                "It has not changed in either direction",
+                "It is much worse than last week",
+                "It only hurts when he carries something"
               ],
-              "answer": "Moving furniture",
-              "audioTranscript": "I've had a sore back since Tuesday. It started after moving furniture, and today the pain is worse when I sit."
+              "answer": "It has not changed in either direction",
+              "audioTranscript": "Good morning. It's my shoulder, really. I've had it for about ten days now, and it started after I carried my grandson around the market all afternoon. It isn't worse, but it isn't better either, and it wakes me at night. I don't want to make a fuss. Should I wait another week, or should I see someone today?"
             },
             {
               "id": "A2-U7-L7-A03",
@@ -18212,16 +18849,60 @@
                 "A2.U7.INTERACTION.MANAGE_CLINIC_TALK",
                 "A2.U7.ACTION.COMPLETE_CLINIC_CONSULTATION"
               ],
-              "prompt": "Conduct a simple clinic exchange: ask about symptoms, duration and change, then check instructions.",
-              "promptAr": "أجرِ حوار عيادة بسيطاً: اسأل عن الأعراض والمدة والتغير ثم تحقق من التعليمات.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
+              "prompt": "Talk to the visitor and fill in his card. Ask where it hurts, how long he has had it and whether it has changed, then tell him what happens next.",
+              "promptAr": "تحدّث إلى الزائر واملأ بطاقته. اسأله أين يؤلمه، ومنذ متى يعاني منه، وهل تغيّر، ثم أخبره بما سيحدث بعد ذلك.",
+              "partnerTurns": [
+                "Good morning. Someone told me to sit here and wait. Is this the right desk?",
+                "It's my shoulder. I've had it a while now, and I'm not sure it's worth anyone's time.",
+                "Ask me whatever you need for the card, and then tell me what happens next."
               ],
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "where",
+                    "which",
+                    "what's wrong",
+                    "what is wrong",
+                    "how can I help",
+                    "tell me about",
+                    "what hurts",
+                    "how do you feel"
+                  ],
+                  [
+                    "how long",
+                    "have you had",
+                    "since when",
+                    "when did it start",
+                    "for how long",
+                    "did it start"
+                  ],
+                  [
+                    "worse",
+                    "better",
+                    "the same",
+                    "at night",
+                    "changed",
+                    "getting",
+                    "any different"
+                  ],
+                  [
+                    "the nurse",
+                    "desk three",
+                    "I'll write",
+                    "write it down",
+                    "take you",
+                    "next",
+                    "wait here",
+                    "she will see you"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U7-L7-A04",
@@ -18233,16 +18914,53 @@
                 "A2.U7.PRODUCTION.DESCRIBE_HEALTH_PROBLEM",
                 "A2.U7.ACTION.COMPLETE_CLINIC_CONSULTATION"
               ],
-              "prompt": "Summarise the problem and give only the general advice contained in the task information.",
-              "promptAr": "لخّص المشكلة وقدّم فقط النصيحة العامة الواردة في معلومات المهمة.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "Now tell the nurse at desk three about the visitor, in under a minute. Say where it hurts, how long he has had it, whether it has changed, and what he asked you. Add nothing he did not say.",
+              "promptAr": "أخبر الممرضة في الطاولة الثالثة عن الزائر في أقل من دقيقة. قل أين يؤلمه، ومنذ متى يعاني منه، وهل تغيّر، وماذا سألكَ. ولا تضف شيئاً لم يقله.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "shoulder",
+                    "it hurts",
+                    "sore",
+                    "pain",
+                    "aches"
+                  ],
+                  [
+                    "ten days",
+                    "about ten",
+                    "for about",
+                    "he's had it",
+                    "he has had it",
+                    "since",
+                    "it started",
+                    "carried"
+                  ],
+                  [
+                    "not worse",
+                    "isn't worse",
+                    "no better",
+                    "the same",
+                    "hasn't changed",
+                    "at night",
+                    "wakes him"
+                  ],
+                  [
+                    "he asked",
+                    "he wants",
+                    "should he",
+                    "he is not sure",
+                    "he isn't sure",
+                    "he doesn't want",
+                    "he'd like"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U7-L7-A05",
@@ -18254,16 +18972,50 @@
                 "A2.U7.MEDIATION.RELAY_HEALTH_GUIDANCE",
                 "A2.U7.ACTION.COMPLETE_CLINIC_CONSULTATION"
               ],
-              "prompt": "Relay the written dose, warning and condition for contacting the clinic accurately.",
-              "promptAr": "انقل الجرعة المكتوبة والتحذير وشرط الاتصال بالعيادة بدقة.",
-              "evaluation": [
-                "selectRelevantInformation",
-                "clarity",
-                "audienceAwareness",
-                "accuracy"
-              ],
+              "prompt": "Mr Sabah left his glasses at home. Read him the nurse's card: what he should keep doing, what he doesn't have to do, when to come back, and when to ring instead.",
+              "promptAr": "نسي السيد صباح نظارته في البيت. اقرأ له بطاقة الممرضة: ما الذي ينبغي أن يستمر في فعله، وما الذي لا يلزمه فعله، ومتى يعود، ومتى يتصل بدل ذلك.",
+              "sourceCard": "Nurse's card for Mr Sabah: keep the arm moving gently through the day; you don't have to rest it completely. Something cool in the evening helps some people. Come back in two weeks if it is the same, and ring us straight away if it gets worse.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "keep moving",
+                    "moving",
+                    "move the arm",
+                    "gently",
+                    "use it",
+                    "keep using"
+                  ],
+                  [
+                    "don't have to",
+                    "doesn't have to",
+                    "no need to",
+                    "not rest it",
+                    "not completely",
+                    "you needn't"
+                  ],
+                  [
+                    "two weeks",
+                    "come back",
+                    "if it is the same",
+                    "the same"
+                  ],
+                  [
+                    "ring",
+                    "call",
+                    "phone",
+                    "straight away",
+                    "worse",
+                    "immediately",
+                    "the same day"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U7-L7-A06",
@@ -18275,20 +19027,54 @@
                 "A2.U7.WRITING.WRITE_HEALTH_MESSAGE",
                 "A2.U7.ACTION.COMPLETE_CLINIC_CONSULTATION"
               ],
-              "prompt": "Write a follow-up message summarising the symptoms and the supplied action plan. Do not invent medical advice.",
-              "promptAr": "اكتب رسالة متابعة تلخص الأعراض وخطة العمل المقدمة. لا تخترع نصيحة طبية.",
-              "evaluation": [
-                "taskCompletion",
-                "clarity",
-                "organisation",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "Write the follow-up message to Mr Sabah's daughter. Say where the pain is and how long he has had it, what the nurse wrote on the card, what he doesn't have to do, and when the family should ring the clinic. Use only what you were told.",
+              "promptAr": "اكتب رسالة المتابعة إلى ابنة السيد صباح. اذكر مكان الألم ومنذ متى يعاني منه، وما كتبته الممرضة على البطاقة، وما الذي لا يلزمه فعله، ومتى ينبغي للعائلة أن تتصل بالعيادة. استخدم فقط ما قيل لكَ.",
+              "accepted": [],
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "shoulder",
+                    "the pain",
+                    "it hurts",
+                    "sore"
+                  ],
+                  [
+                    "ten days",
+                    "about ten",
+                    "for about",
+                    "since",
+                    "started",
+                    "two weeks"
+                  ],
+                  [
+                    "should",
+                    "has to",
+                    "have to",
+                    "don't have to",
+                    "doesn't have to",
+                    "mustn't",
+                    "keep",
+                    "gently"
+                  ],
+                  [
+                    "ring",
+                    "call",
+                    "phone",
+                    "if it gets worse",
+                    "straight away",
+                    "come back",
+                    "the clinic",
+                    "the nurse"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
               "wordGuide": [
-                80,
-                110
-              ],
-              "accepted": []
+                65,
+                85
+              ]
             }
           ]
         }
@@ -18344,9 +19130,8 @@
             "A2.U8.PRODUCTION.DESCRIBE_DUTIES_SKILLS"
           ],
           "grammar": [
-            "A2.G.WORK_HAVE_TO",
-            "A2.G.SHOULD_ADVICE",
-            "A2.G.HAVE_TO_OBLIGATION"
+            "A2.G.HAVE_TO_OBLIGATION",
+            "A2.G.SHOULD_ADVICE"
           ],
           "lexicon": [
             "A2.LEX.DUTY_N01",
@@ -19079,7 +19864,7 @@
             "A2.U8.PRODUCTION.DESCRIBE_DUTIES_SKILLS"
           ],
           "grammar": [
-            "A2.G.PURPOSE_APPLICATION",
+            "A2.G.INFINITIVE_PURPOSE",
             "A2.G.COMMON_GERUND_INFINITIVE"
           ],
           "lexicon": [
@@ -19417,7 +20202,7 @@
           ],
           "grammar": [
             "A2.G.TECH_IMPERATIVES",
-            "A2.G.WORK_HAVE_TO",
+            "A2.G.HAVE_TO_OBLIGATION",
             "A2.G.CAN_COULD_ABILITY"
           ],
           "lexicon": [
@@ -22147,7 +22932,7 @@
           "grammar": [
             "A2.G.SUGGESTION_FORMS",
             "A2.G.POLITE_FORMAL_REQUEST",
-            "A2.G.PURPOSE_APPLICATION"
+            "A2.G.INFINITIVE_PURPOSE"
           ],
           "lexicon": [
             "A2.LEX.SHELTER_N01",
