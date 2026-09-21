@@ -2,19 +2,32 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../content/catalog/level_catalog.dart';
+import '../../../content/index/course_content_index.dart';
 import '../../../content/models/registry_items.dart';
 import '../../../content/providers/course_content_providers.dart';
 import '../../../core/l10n/generated/app_localizations.dart';
 import '../../../core/theme/app_tokens.dart';
 import '../../../core/theme/gamification_theme_extension.dart';
 import '../../../core/theme/overline_style.dart';
+import '../../../core/widgets/content_load_error.dart';
+import '../../../core/widgets/level_filter_chips.dart';
 import '../../../core/widgets/search_field.dart';
+import '../../progress/providers/level_providers.dart';
 import '../providers/grammar_providers.dart';
 
-/// Browses the A1 grammar registry, grouped by the unit that introduces
-/// each form ("UNIT 2 · HELLO, I'M…") — the closest structure to "topic" in
-/// the real data — and searchable by form or Arabic meaning. Units with no
-/// match drop out. See docs/ARCHITECTURE.md.
+/// Browses one level's grammar registry, grouped by the unit that
+/// introduces each form ("UNIT 2 · HELLO, I'M…") — the closest structure to
+/// "topic" in the real data — and searchable by form or Arabic meaning.
+/// Units with no match drop out. See docs/ARCHITECTURE.md.
+///
+/// The level is the one the learner is in ([currentLevelIdProvider]), with
+/// a [LevelFilterChips] row for looking back at an earlier level's forms —
+/// A2's lessons keep using A1's. Picking a level here only changes what the
+/// list shows; it never moves the learner between levels. The units and
+/// their lesson ids always come from the same index as the grammar records
+/// being grouped, so a form is never filed under another level's unit
+/// numbering.
 class GrammarListScreen extends ConsumerStatefulWidget {
   const GrammarListScreen({super.key});
 
@@ -24,6 +37,10 @@ class GrammarListScreen extends ConsumerStatefulWidget {
 
 class _GrammarListScreenState extends ConsumerState<GrammarListScreen> {
   final _searchController = TextEditingController();
+
+  /// A level the learner has filtered to. Null until they pick one, when
+  /// the list follows the level they are actually in.
+  String? _levelId;
 
   @override
   void dispose() {
@@ -36,17 +53,64 @@ class _GrammarListScreenState extends ConsumerState<GrammarListScreen> {
     final theme = Theme.of(context);
     final tokens = theme.extension<AppTokens>()!;
     final l10n = AppLocalizations.of(context)!;
-    final contentAsync = ref.watch(courseContentProvider('a1'));
+    final catalog = ref.watch(levelCatalogProvider);
+    final currentLevelIdAsync = ref.watch(currentLevelIdProvider);
+    final shownLevelId = _levelId ?? currentLevelIdAsync.value;
+    final AsyncValue<CourseContentIndex> contentAsync;
+    if (currentLevelIdAsync.hasError) {
+      contentAsync = AsyncValue.error(
+        currentLevelIdAsync.error!,
+        currentLevelIdAsync.stackTrace!,
+      );
+    } else if (shownLevelId != null) {
+      contentAsync = ref.watch(courseContentProvider(shownLevelId));
+    } else {
+      contentAsync = const AsyncValue.loading();
+    }
     final saved = {
       for (final s in ref.watch(allGrammarReviewStateProvider).value ?? [])
         if (s.isFavorite) s.grammarId,
     };
 
+    // The level row sits outside the content's loading/error branch: a
+    // level whose bundle fails to load must not strand the learner on an
+    // error page with no way back to their own level.
+    final levelFilter = shownLevelId == null
+        ? const SizedBox.shrink()
+        : LevelFilterChips(
+            catalog: catalog,
+            selectedLevelId: shownLevelId,
+            onSelect: (levelId) => setState(() => _levelId = levelId),
+          );
+    // The way back is offered only when the level that failed is one the
+    // learner was merely looking at — their own level failing has nowhere
+    // to go back to, and the app-level gate covers the base level.
+    final currentLevelId = currentLevelIdAsync.value;
+    final backToCode = currentLevelId == null || currentLevelId == shownLevelId
+        ? null
+        : levelCatalogEntryIn(catalog, currentLevelId)?.cefrCode ??
+              currentLevelId;
+
     return Scaffold(
       appBar: AppBar(title: Text(l10n.grammarSectionTitle)),
       body: contentAsync.when(
-        loading: () => const Center(child: CircularProgressIndicator()),
-        error: (error, _) => Center(child: Text('$error')),
+        loading: () => Column(
+          children: [
+            levelFilter,
+            const Expanded(child: Center(child: CircularProgressIndicator())),
+          ],
+        ),
+        error: (error, _) => Column(
+          children: [
+            levelFilter,
+            Expanded(
+              child: ContentLoadError(
+                currentCode: backToCode,
+                onBack: () => setState(() => _levelId = null),
+              ),
+            ),
+          ],
+        ),
         data: (index) {
           final query = _searchController.text.trim().toLowerCase();
           bool matches(GrammarItem g) =>
@@ -97,6 +161,7 @@ class _GrammarListScreenState extends ConsumerState<GrammarListScreen> {
 
           return Column(
             children: [
+              levelFilter,
               Padding(
                 padding: const EdgeInsets.fromLTRB(
                   AppSpace.md,

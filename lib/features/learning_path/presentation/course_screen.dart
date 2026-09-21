@@ -12,6 +12,7 @@ import '../../../core/l10n/generated/app_localizations.dart';
 import '../../../core/theme/app_tokens.dart';
 import '../../../core/theme/feedback_theme_extension.dart';
 import '../../../core/theme/overline_style.dart';
+import '../../../core/widgets/content_load_error.dart';
 import '../../../core/widgets/status_indicator.dart';
 import '../../../data/local/database.dart';
 import '../../progress/domain/level_access.dart';
@@ -135,12 +136,12 @@ class _CourseScreenState extends ConsumerState<CourseScreen> {
         bottom: false,
         child: contentAsync.when(
           loading: () => const Center(child: CircularProgressIndicator()),
-          error: (error, _) => _CourseLoadError(
+          error: (error, _) => ContentLoadError(
             // The way back is offered only when the learner's own level is
             // known and isn't the one that failed. `currentLevelId` is an
             // async provider's resolved value, so null means "not known
             // yet" — treat it as that rather than reasoning about which
-            // failures can produce it, since _CourseLoadError's contract
+            // failures can produce it, since ContentLoadError's contract
             // already covers the case by hiding the button.
             currentCode: isBrowsing && currentLevelId != null
                 ? levelCatalogEntryIn(catalog, currentLevelId)?.cefrCode ??
@@ -311,9 +312,12 @@ class _CourseBody extends StatelessWidget {
             isLast: true,
             node: PathNode(
               kind: PathNodeKind.flag,
-              semanticsLabel: l10n.learnFinishOverline,
+              semanticsLabel: l10n.learnFinishOverline(shownCode),
             ),
-            child: _FinishCard(onTap: () => context.go('/tests')),
+            child: _FinishCard(
+              levelCode: shownCode,
+              onTap: () => context.go('/tests'),
+            ),
           ),
       ],
     );
@@ -323,57 +327,6 @@ class _CourseBody extends StatelessWidget {
 /// A level whose content failed to load, without trapping the learner:
 /// the same words the app-level content failure uses, plus the way back
 /// to the level they are actually in when they were only looking.
-class _CourseLoadError extends StatelessWidget {
-  const _CourseLoadError({required this.currentCode, required this.onBack});
-
-  /// Null when the level that failed IS the learner's own level — there is
-  /// nowhere to go back to, and the app-level gate covers the base level.
-  final String? currentCode;
-  final VoidCallback onBack;
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final tokens = theme.extension<AppTokens>()!;
-    final l10n = AppLocalizations.of(context)!;
-
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.all(AppSpace.lg),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(Icons.error_outline, size: 40, color: theme.colorScheme.error),
-            const SizedBox(height: AppSpace.sm),
-            Text(
-              l10n.contentErrorTitle,
-              style: theme.textTheme.titleMedium?.copyWith(
-                color: tokens.textPrimary,
-              ),
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: AppSpace.xs),
-            Text(
-              l10n.contentErrorBody,
-              style: theme.textTheme.bodyMedium?.copyWith(
-                color: tokens.textSecondary,
-              ),
-              textAlign: TextAlign.center,
-            ),
-            if (currentCode != null) ...[
-              const SizedBox(height: AppSpace.md),
-              TextButton(
-                onPressed: onBack,
-                child: Text(l10n.learnPreviewBackToCurrent(currentCode!)),
-              ),
-            ],
-          ],
-        ),
-      ),
-    );
-  }
-}
-
 /// The frame around a level the learner is only looking at: a muted
 /// surface, so it reads as a wrapper around the content rather than as
 /// content itself, and the way back to the level they are actually in.
@@ -847,7 +800,11 @@ class _CurrentUnitCard extends StatelessWidget {
 }
 
 class _FinishCard extends StatelessWidget {
-  const _FinishCard({required this.onTap});
+  const _FinishCard({required this.levelCode, required this.onTap});
+
+  /// The CEFR code of the level this path ends — the card only renders for
+  /// the level the learner is in, never a browsed one.
+  final String levelCode;
 
   final VoidCallback onTap;
 
@@ -874,7 +831,7 @@ class _FinishCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      l10n.learnFinishOverline.toUpperCase(),
+                      l10n.learnFinishOverline(levelCode).toUpperCase(),
                       style: overlineStyle(
                         context,
                         color: tokens.textSecondary,

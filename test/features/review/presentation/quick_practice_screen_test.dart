@@ -39,6 +39,7 @@ final _index = CourseContentIndex.build(
 final _set = practiceSetForWeakSpot(
   weakSpotsFor(
     index: _index,
+    levelCode: 'A1',
     canDoIds: const [
       'A1.U1.PRODUCTION.INTRODUCE_SELF',
       'A1.U1.INTERACTION.ASK_NAME',

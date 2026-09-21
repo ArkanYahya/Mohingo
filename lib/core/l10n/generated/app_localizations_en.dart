@@ -140,7 +140,22 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get homeAllUnitsMastered => 'You\'ve mastered every A1 unit so far!';
+  String homeAllUnitsMastered(String level) {
+    return 'You\'ve mastered every $level unit so far!';
+  }
+
+  @override
+  String get homeNextLevelOverline => 'Next level';
+
+  @override
+  String homeNextLevelTitle(String level) {
+    return 'Start $level';
+  }
+
+  @override
+  String homeNextLevelBody(String current, String next) {
+    return 'Every $current unit is mastered, and $next builds straight on it — move when you\'re ready.';
+  }
 
   @override
   String homeLevelProgressCaption(int mastered, int total) {
@@ -169,9 +184,15 @@ class AppLocalizationsEn extends AppLocalizations {
   String get homeGreetingEvening => 'Good evening';
 
   @override
-  String homeLevelBadge(String cefr) {
-    return '$cefr · Beginner';
+  String homeLevelBadge(String cefr, String descriptor) {
+    return '$cefr · $descriptor';
   }
+
+  @override
+  String get cefrDescriptorA1 => 'Beginner';
+
+  @override
+  String get cefrDescriptorA2 => 'Elementary';
 
   @override
   String homeStreakChip(int days) {
@@ -442,7 +463,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get learnLessonHasConversation => 'Opens with a conversation';
 
   @override
-  String get learnFinishOverline => 'Finish A1';
+  String learnFinishOverline(String level) {
+    return 'Finish $level';
+  }
 
   @override
   String get learnFinishTitle => 'Final mission & assessment';
@@ -516,6 +539,14 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String learnPreviewBackToCurrent(String level) {
     return 'Back to $level';
+  }
+
+  @override
+  String get levelFilterLabel => 'Level';
+
+  @override
+  String levelFilterSemantics(String level) {
+    return 'Level $level';
   }
 
   @override
@@ -811,8 +842,8 @@ class AppLocalizationsEn extends AppLocalizations {
       'Goals in the units you\'re working on that need more practice';
 
   @override
-  String reviewWeakSpotMeta(int unit, String skills) {
-    return 'Unit $unit · $skills';
+  String reviewWeakSpotMeta(String level, int unit, String skills) {
+    return 'Level $level · Unit $unit · $skills';
   }
 
   @override
@@ -982,8 +1013,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get skillSpeaking => 'Speaking';
 
   @override
-  String get testsHubSubtitle =>
-      'See where you are in A1 — and prove it at the end.';
+  String testsHubSubtitle(String level) {
+    return 'See where you are in $level — and prove it at the end.';
+  }
 
   @override
   String get testsStartHereOverline => 'Start here';
@@ -1019,15 +1051,19 @@ class AppLocalizationsEn extends AppLocalizations {
   String get testsNotFinished => 'Not finished';
 
   @override
-  String testsPlacementResultUnit(int unit) {
-    return 'Result: start from Unit $unit';
+  String testsPlacementResultUnit(String level, int unit) {
+    return 'Result: start at $level Unit $unit';
   }
 
   @override
-  String get testsPlacementResultMastered => 'Result: A1 already mastered';
+  String testsPlacementResultMastered(String level) {
+    return 'Result: $level already mastered';
+  }
 
   @override
-  String get testsFinishOverline => 'Finish A1';
+  String testsFinishOverline(String level) {
+    return 'Finish $level';
+  }
 
   @override
   String testsFinishProgress(int mastered, int total) {
@@ -1040,8 +1076,9 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get testsMissionBody =>
-      'Use everything from A1 in one real-life scenario, stage by stage.';
+  String testsMissionBody(String level) {
+    return 'Use everything from $level in one real-life scenario, stage by stage.';
+  }
 
   @override
   String testsMissionMeta(int tasks, int stages, int min, int max) {
@@ -1137,11 +1174,19 @@ class AppLocalizationsEn extends AppLocalizations {
       'Stops at the first unit that\'s new to you';
 
   @override
-  String get placementIntroTitle => 'A1 Gateway Placement Test';
+  String placementIntroTitle(String level) {
+    return 'Placement test up to $level';
+  }
 
   @override
-  String get placementIntroBody =>
-      'A few questions from each A1 unit, easiest first. It stops at the first unit that\'s new to you — so the more you already know, the longer it runs.';
+  String placementIntroBody(String level) {
+    return 'A few questions from each unit, easiest first, all the way up to $level. It stops at the first unit that\'s new to you — so the more you already know, the longer it runs.';
+  }
+
+  @override
+  String placementUnitSection(String level, int unit) {
+    return '$level · Unit $unit';
+  }
 
   @override
   String get placementStartButton => 'Start the placement test';
@@ -1170,8 +1215,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get placementResultOverline => 'Placement result';
 
   @override
-  String placementResultHeadline(int unit) {
-    return 'Start from Unit $unit';
+  String placementResultHeadline(String level, int unit) {
+    return '$level Unit $unit is where to begin';
   }
 
   @override
@@ -1179,12 +1224,19 @@ class AppLocalizationsEn extends AppLocalizations {
       'Unit 1 gives you the basics every other unit builds on.';
 
   @override
+  String placementResultBodyLevelStart(String level) {
+    return 'You\'re ready for $level — start it from the very beginning.';
+  }
+
+  @override
   String placementResultBodyUnit(int unit) {
     return 'You know the units before it well. Unit $unit is where new things begin for you.';
   }
 
   @override
-  String get placementResultMasteredTitle => 'A1 looks mastered';
+  String placementResultMasteredTitle(String level) {
+    return '$level looks mastered';
+  }
 
   @override
   String get placementResultMasteredBody =>
@@ -1195,8 +1247,8 @@ class AppLocalizationsEn extends AppLocalizations {
       'Earlier units stay open — go back to any lesson whenever you like.';
 
   @override
-  String placementResultGoToUnitN(int unit) {
-    return 'Go to Unit $unit';
+  String placementResultStartAtUnit(String level, int unit) {
+    return 'Start at $level Unit $unit';
   }
 
   @override
@@ -1233,7 +1285,9 @@ class AppLocalizationsEn extends AppLocalizations {
       'Some skills need more practice — see below. You can take the mission again any time.';
 
   @override
-  String get assessmentResultPassedTitle => 'You passed A1';
+  String assessmentResultPassedTitle(String level) {
+    return 'You passed $level';
+  }
 
   @override
   String get assessmentResultNotYetTitle => 'Not passed yet';
@@ -1257,8 +1311,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get finalMissionDone => 'Done';
 
   @override
-  String get finalAssessmentIntroBody =>
-      'The exit test for A1. Each skill is scored on its own — a strong score in one never covers for a weak one in another.';
+  String finalAssessmentIntroBody(String level) {
+    return 'The exit test for $level. Each skill is scored on its own — a strong score in one never covers for a weak one in another.';
+  }
 
   @override
   String get finalAssessmentStartButton => 'Start the assessment';
@@ -1364,7 +1419,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settingsNameEmpty => 'Add your name';
 
   @override
-  String get settingsProfileMeta => 'Learning English · A1';
+  String settingsProfileMeta(String level) {
+    return 'Learning English · $level';
+  }
 
   @override
   String get settingsEdit => 'Edit';

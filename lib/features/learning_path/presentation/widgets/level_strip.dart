@@ -140,10 +140,16 @@ class _LevelSegment extends StatelessWidget {
             LevelAccess.noContent => l10n.learnLevelSemanticsLocked(code),
           };
 
+    // The label and the action belong to the same node: the [InkWell]
+    // below is inside [ExcludeSemantics], so without `onTap` here the
+    // segment is announced as a button that cannot be pressed — and
+    // switching level (or reaching a locked level's sheet) becomes a
+    // sighted-only control. `LevelFilterChips` does the same.
     return Semantics(
       container: true,
       button: true,
       label: label,
+      onTap: onTap,
       child: ExcludeSemantics(
         child: Material(
           color: isCurrent ? tokens.primaryInk : Colors.transparent,

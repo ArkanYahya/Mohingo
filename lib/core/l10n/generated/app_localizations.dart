@@ -314,11 +314,29 @@ abstract class AppLocalizations {
   /// **'{completed} of {total} lessons complete'**
   String unitOverviewLessonsComplete(int completed, int total);
 
-  /// Shown on Home when there is no next unit to recommend.
+  /// Shown on Home when there is no next unit to recommend, naming the level the learner is in.
   ///
   /// In en, this message translates to:
-  /// **'You\'ve mastered every A1 unit so far!'**
-  String get homeAllUnitsMastered;
+  /// **'You\'ve mastered every {level} unit so far!'**
+  String homeAllUnitsMastered(String level);
+
+  /// Overline on Home's next-level card, shown once the learner has mastered their level's units and the level after it is released.
+  ///
+  /// In en, this message translates to:
+  /// **'Next level'**
+  String get homeNextLevelOverline;
+
+  /// Title and action of Home's next-level card. Tapping the card moves the learner into that level; the app never moves them on its own.
+  ///
+  /// In en, this message translates to:
+  /// **'Start {level}'**
+  String homeNextLevelTitle(String level);
+
+  /// Body of Home's next-level card: why it's being offered, and that the choice is the learner's.
+  ///
+  /// In en, this message translates to:
+  /// **'Every {current} unit is mastered, and {next} builds straight on it — move when you\'re ready.'**
+  String homeNextLevelBody(String current, String next);
 
   /// Home level-progress card caption.
   ///
@@ -350,11 +368,23 @@ abstract class AppLocalizations {
   /// **'Good evening'**
   String get homeGreetingEvening;
 
-  /// Home header chip: the learner's current CEFR level and its plain-language descriptor.
+  /// Home header chip: the learner's current CEFR level and its plain-language descriptor. The descriptor comes from cefrDescriptorLabel; the chip shows the bare code for a level with no descriptor yet.
   ///
   /// In en, this message translates to:
-  /// **'{cefr} · Beginner'**
-  String homeLevelBadge(String cefr);
+  /// **'{cefr} · {descriptor}'**
+  String homeLevelBadge(String cefr, String descriptor);
+
+  /// Plain-language descriptor for CEFR level A1, shown beside the code.
+  ///
+  /// In en, this message translates to:
+  /// **'Beginner'**
+  String get cefrDescriptorA1;
+
+  /// Plain-language descriptor for CEFR level A2, shown beside the code. Deliberately not "Beginner" — that is A1, and telling an A2 learner they are a beginner undoes what finishing A1 meant.
+  ///
+  /// In en, this message translates to:
+  /// **'Elementary'**
+  String get cefrDescriptorA2;
 
   /// Home header streak chip, next to a flame icon.
   ///
@@ -746,11 +776,11 @@ abstract class AppLocalizations {
   /// **'Opens with a conversation'**
   String get learnLessonHasConversation;
 
-  /// Overline on the card at the end of the unit path.
+  /// Overline on the card at the end of the unit path, naming the level the path belongs to.
   ///
   /// In en, this message translates to:
-  /// **'Finish A1'**
-  String get learnFinishOverline;
+  /// **'Finish {level}'**
+  String learnFinishOverline(String level);
 
   /// Title of the card at the end of the unit path.
   ///
@@ -847,6 +877,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Back to {level}'**
   String learnPreviewBackToCurrent(String level);
+
+  /// Label before the level chips at the top of the words & phrases and grammar lists, saying which level's items the list is showing.
+  ///
+  /// In en, this message translates to:
+  /// **'Level'**
+  String get levelFilterLabel;
+
+  /// Screen-reader label of one level chip on the words & phrases and grammar lists — the chip itself shows only the bare CEFR code.
+  ///
+  /// In en, this message translates to:
+  /// **'Level {level}'**
+  String levelFilterSemantics(String level);
 
   /// Small word under the correct/total fraction inside the lesson-complete score ring, e.g. '3/4' over 'correct'.
   ///
@@ -1316,11 +1358,11 @@ abstract class AppLocalizations {
   /// **'Goals in the units you\'re working on that need more practice'**
   String get reviewWeakSpotsBody;
 
-  /// Under a weak spot's lesson title: its unit and the skills it practises.
+  /// Under a weak spot's lesson title: its level, its unit within that level, and the skills it practises. Review shows weak spots from every level at once, so the unit number alone would be ambiguous.
   ///
   /// In en, this message translates to:
-  /// **'Unit {unit} · {skills}'**
-  String reviewWeakSpotMeta(int unit, String skills);
+  /// **'Level {level} · Unit {unit} · {skills}'**
+  String reviewWeakSpotMeta(String level, int unit, String skills);
 
   /// Expands a shortened Review tab list to show every item.
   ///
@@ -1346,13 +1388,13 @@ abstract class AppLocalizations {
   /// **'Words & phrases'**
   String get reviewWordsTile;
 
-  /// Under the Words & phrases tile: how many are in spaced review out of all.
+  /// Under the Words & phrases tile: how many are in spaced review, out of every word and phrase in every level the learner has reached.
   ///
   /// In en, this message translates to:
   /// **'{inReview} of {total} in review'**
   String reviewWordsTileMeta(int inReview, int total);
 
-  /// Under the Grammar tile: how many grammar forms the course has.
+  /// Under the Grammar tile: how many grammar forms there are across every level the learner has reached.
   ///
   /// In en, this message translates to:
   /// **'{count, plural, =1{1 form} other{{count} forms}}'**
@@ -1586,11 +1628,11 @@ abstract class AppLocalizations {
   /// **'Speaking'**
   String get skillSpeaking;
 
-  /// Line under the Tests tab's title.
+  /// Line under the Tests tab's title, naming the level the learner is in.
   ///
   /// In en, this message translates to:
-  /// **'See where you are in A1 — and prove it at the end.'**
-  String get testsHubSubtitle;
+  /// **'See where you are in {level} — and prove it at the end.'**
+  String testsHubSubtitle(String level);
 
   /// Overline on the Tests tab's placement card for a brand-new learner.
   ///
@@ -1652,23 +1694,23 @@ abstract class AppLocalizations {
   /// **'Not finished'**
   String get testsNotFinished;
 
-  /// The placement test's recommendation.
+  /// The placement test's recommendation on the Tests tab. It covers every released level, so the unit number alone would be ambiguous.
   ///
   /// In en, this message translates to:
-  /// **'Result: start from Unit {unit}'**
-  String testsPlacementResultUnit(int unit);
+  /// **'Result: start at {level} Unit {unit}'**
+  String testsPlacementResultUnit(String level, int unit);
 
-  /// The placement test found A1 mastered.
+  /// The placement test found nothing left to teach in the top released level. Always the level the attempt actually measured — never one that shipped afterwards.
   ///
   /// In en, this message translates to:
-  /// **'Result: A1 already mastered'**
-  String get testsPlacementResultMastered;
+  /// **'Result: {level} already mastered'**
+  String testsPlacementResultMastered(String level);
 
-  /// Tests tab section heading for the final mission and assessment.
+  /// Tests tab section heading for the final mission and assessment, naming the level they close.
   ///
   /// In en, this message translates to:
-  /// **'Finish A1'**
-  String get testsFinishOverline;
+  /// **'Finish {level}'**
+  String testsFinishOverline(String level);
 
   /// Course progress above the final mission and assessment.
   ///
@@ -1682,11 +1724,11 @@ abstract class AppLocalizations {
   /// **'All {total} units mastered — you\'re ready.'**
   String testsFinishReady(int total);
 
-  /// Tests tab description of the final mission.
+  /// Tests tab and Final Mission intro description of the final mission.
   ///
   /// In en, this message translates to:
-  /// **'Use everything from A1 in one real-life scenario, stage by stage.'**
-  String get testsMissionBody;
+  /// **'Use everything from {level} in one real-life scenario, stage by stage.'**
+  String testsMissionBody(String level);
 
   /// Size and time of the final mission.
   ///
@@ -1814,17 +1856,23 @@ abstract class AppLocalizations {
   /// **'Stops at the first unit that\'s new to you'**
   String get placementCoversStops;
 
-  /// Placement test intro screen app bar title.
+  /// Overline on the placement test's intro, naming the highest level it can place a learner in.
   ///
   /// In en, this message translates to:
-  /// **'A1 Gateway Placement Test'**
-  String get placementIntroTitle;
+  /// **'Placement test up to {level}'**
+  String placementIntroTitle(String level);
 
-  /// Placement test intro screen body text.
+  /// Placement test intro screen body text, naming the highest released level it covers.
   ///
   /// In en, this message translates to:
-  /// **'A few questions from each A1 unit, easiest first. It stops at the first unit that\'s new to you — so the more you already know, the longer it runs.'**
-  String get placementIntroBody;
+  /// **'A few questions from each unit, easiest first, all the way up to {level}. It stops at the first unit that\'s new to you — so the more you already know, the longer it runs.'**
+  String placementIntroBody(String level);
+
+  /// Which unit a placement question came from, and the level that unit belongs to — the test moves through every released level, so the unit number alone would be ambiguous.
+  ///
+  /// In en, this message translates to:
+  /// **'{level} · Unit {unit}'**
+  String placementUnitSection(String level, int unit);
 
   /// Placement test intro screen start button.
   ///
@@ -1868,11 +1916,11 @@ abstract class AppLocalizations {
   /// **'Placement result'**
   String get placementResultOverline;
 
-  /// The placement result's headline.
+  /// The placement result's headline, naming the level as well as the unit.
   ///
   /// In en, this message translates to:
-  /// **'Start from Unit {unit}'**
-  String placementResultHeadline(int unit);
+  /// **'{level} Unit {unit} is where to begin'**
+  String placementResultHeadline(String level, int unit);
 
   /// Placement result when starting from the first unit.
   ///
@@ -1880,17 +1928,23 @@ abstract class AppLocalizations {
   /// **'Unit 1 gives you the basics every other unit builds on.'**
   String get placementResultBodyEssentials;
 
+  /// Placement result when the learner passed everything before this level and starts it at its first unit.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re ready for {level} — start it from the very beginning.'**
+  String placementResultBodyLevelStart(String level);
+
   /// Placement result when starting further in.
   ///
   /// In en, this message translates to:
   /// **'You know the units before it well. Unit {unit} is where new things begin for you.'**
   String placementResultBodyUnit(int unit);
 
-  /// Placement result when every unit passed.
+  /// Placement result when every unit of every released level passed. Names the top released level and never one above it — there is no content above it to have been measured.
   ///
   /// In en, this message translates to:
-  /// **'A1 looks mastered'**
-  String get placementResultMasteredTitle;
+  /// **'{level} looks mastered'**
+  String placementResultMasteredTitle(String level);
 
   /// Placement result body when every unit passed.
   ///
@@ -1904,11 +1958,11 @@ abstract class AppLocalizations {
   /// **'Earlier units stay open — go back to any lesson whenever you like.'**
   String get placementResultEarlierOpen;
 
-  /// Placement result button to the recommended unit.
+  /// Placement result button: it moves the learner into that level and opens the unit.
   ///
   /// In en, this message translates to:
-  /// **'Go to Unit {unit}'**
-  String placementResultGoToUnitN(int unit);
+  /// **'Start at {level} Unit {unit}'**
+  String placementResultStartAtUnit(String level, int unit);
 
   /// Confidence self-report option 1 of 5.
   ///
@@ -1973,8 +2027,8 @@ abstract class AppLocalizations {
   /// Final assessment result when passed.
   ///
   /// In en, this message translates to:
-  /// **'You passed A1'**
-  String get assessmentResultPassedTitle;
+  /// **'You passed {level}'**
+  String assessmentResultPassedTitle(String level);
 
   /// Final assessment result when not passed.
   ///
@@ -2015,8 +2069,8 @@ abstract class AppLocalizations {
   /// Final Assessment intro screen body text.
   ///
   /// In en, this message translates to:
-  /// **'The exit test for A1. Each skill is scored on its own — a strong score in one never covers for a weak one in another.'**
-  String get finalAssessmentIntroBody;
+  /// **'The exit test for {level}. Each skill is scored on its own — a strong score in one never covers for a weak one in another.'**
+  String finalAssessmentIntroBody(String level);
 
   /// Final Assessment intro screen start button.
   ///
@@ -2204,11 +2258,11 @@ abstract class AppLocalizations {
   /// **'Add your name'**
   String get settingsNameEmpty;
 
-  /// Profile card line under the name.
+  /// Settings profile card subtitle: the level the learner is in.
   ///
   /// In en, this message translates to:
-  /// **'Learning English · A1'**
-  String get settingsProfileMeta;
+  /// **'Learning English · {level}'**
+  String settingsProfileMeta(String level);
 
   /// Profile card button that edits the name.
   ///

@@ -1,8 +1,10 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../content/index/course_content_index.dart';
+import '../../../content/catalog/level_catalog.dart';
 import '../../../content/models/curriculum_structure.dart';
 import '../../../content/providers/course_content_providers.dart';
 import '../../../core/l10n/generated/app_localizations.dart';
@@ -11,7 +13,9 @@ import '../../../core/theme/app_tokens.dart';
 import '../../../data/local/database.dart';
 import '../../learning_path/domain/current_unit_selector.dart';
 import '../../learning_path/providers/unit_progress_providers.dart';
+import '../../progress/domain/level_access.dart';
 import '../../progress/providers/current_learner_provider.dart';
+import '../../progress/providers/level_providers.dart';
 import '../../review/providers/review_providers.dart';
 import '../domain/day_part.dart';
 import '../../learning_path/domain/lesson_resume.dart';
@@ -19,6 +23,7 @@ import 'widgets/continue_lesson_card.dart';
 import 'widgets/daily_goal_section.dart';
 import 'widgets/home_header.dart';
 import 'widgets/journey_card.dart';
+import 'widgets/next_level_card.dart';
 import 'widgets/review_status.dart';
 
 /// Home: where am I, what should I do now, how am I doing.
@@ -29,20 +34,27 @@ import 'widgets/review_status.dart';
 /// becomes a card only when something is actually due. All state comes
 /// from existing providers; this screen only arranges it. See
 /// docs/DESIGN_SYSTEM.md.
+///
+/// Everything here follows the level the learner is in
+/// ([currentCourseProvider]), so an A2 learner opens the app to A2's
+/// continue card, A2's journey and A2 by name. Once that level's units are
+/// all mastered and the level after it is open, the one thing Home adds is
+/// an offer to start it — a card the learner taps, never an automatic
+/// switch (docs/superpowers/specs/2026-09-19-a2-level-design.md, Design 3).
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final contentAsync = ref.watch(courseContentProvider('a1'));
+    final courseAsync = ref.watch(currentCourseProvider);
 
     return Scaffold(
       body: SafeArea(
         bottom: false,
-        child: contentAsync.when(
+        child: courseAsync.when(
           loading: () => const Center(child: CircularProgressIndicator()),
           error: (error, _) => Center(child: Text('$error')),
-          data: (index) => _HomeBody(index: index),
+          data: (course) => _HomeBody(course: course),
         ),
       ),
     );
@@ -50,14 +62,16 @@ class HomeScreen extends ConsumerWidget {
 }
 
 class _HomeBody extends ConsumerWidget {
-  const _HomeBody({required this.index});
+  const _HomeBody({required this.course});
 
-  final CourseContentIndex index;
+  final CurrentCourse course;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context)!;
     final isArabic = Localizations.localeOf(context).languageCode == 'ar';
+    final index = course.index;
+    final levelCode = course.cefrCode;
 
     final unitProgress = ref.watch(allUnitProgressProvider).value ?? const [];
     final lessonProgress =
@@ -98,11 +112,38 @@ class _HomeBody extends ConsumerWidget {
     final hero = _hero(
       context,
       l10n,
+      levelCode: levelCode,
       unit: currentUnit,
       position: currentPosition,
       lessonProgress: lessonProgress,
       onResume: resume,
     );
+
+    // The level that builds on this one, offered only once this one's units
+    // are all mastered and that one is genuinely open — the same two
+    // questions the Learn tab's lock asks, answered by the same code. The
+    // offer is a tap, never a switch Home makes on the learner's behalf.
+    final next = nextLevelEntryIn(
+      ref.watch(levelCatalogProvider),
+      course.levelId,
+    );
+    final nextAccess = next == null
+        ? null
+        : ref.watch(levelAccessProvider(next.levelId)).value;
+    final nextLevelOffer =
+        next != null &&
+            nextAccess == LevelAccess.open &&
+            levelComplete(units: units, masteredUnitIds: masteredUnitIds)
+        ? NextLevelCard(
+            currentLevelCode: levelCode,
+            nextLevelCode: next.cefrCode,
+            onStart: () => unawaited(
+              ref
+                  .read(levelSelectionControllerProvider.notifier)
+                  .select(next.levelId),
+            ),
+          )
+        : null;
 
     final goals = DailyGoalSection(
       goals: [
@@ -138,7 +179,7 @@ class _HomeBody extends ConsumerWidget {
       ],
       position: currentPosition == null ? null : currentPosition + 1,
       nowTitle: currentUnit == null
-          ? l10n.homeAllUnitsMastered
+          ? l10n.homeAllUnitsMastered(levelCode)
           : l10n.homeJourneyNow(unitTitle(currentUnit)),
       nextTitle: currentPosition == null
           ? null
@@ -166,11 +207,15 @@ class _HomeBody extends ConsumerWidget {
         HomeHeader(
           dayPart: dayPartFor(DateTime.now().hour),
           name: (learnerName?.isEmpty ?? true) ? null : learnerName,
-          levelCode: 'A1',
+          levelCode: levelCode,
           streakDays: streakDays,
         ),
         const SizedBox(height: AppSpace.lg),
         hero,
+        if (nextLevelOffer != null) ...[
+          const SizedBox(height: AppSpace.sm),
+          nextLevelOffer,
+        ],
         const SizedBox(height: AppSpace.md),
         goals,
         if (dueCount > 0) ...[const SizedBox(height: AppSpace.md), review],
@@ -184,6 +229,7 @@ class _HomeBody extends ConsumerWidget {
   Widget _hero(
     BuildContext context,
     AppLocalizations l10n, {
+    required String levelCode,
     required Unit? unit,
     required int? position,
     required List<LessonProgressData> lessonProgress,
@@ -192,8 +238,8 @@ class _HomeBody extends ConsumerWidget {
     if (unit == null || position == null) {
       return ContinueLessonCard(
         badge: const Icon(Icons.emoji_events_rounded),
-        overline: 'A1',
-        title: l10n.homeAllUnitsMastered,
+        overline: levelCode,
+        title: l10n.homeAllUnitsMastered(levelCode),
         ctaLabel: l10n.navTests,
         onPressed: () => context.go('/tests'),
       );

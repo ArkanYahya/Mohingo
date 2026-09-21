@@ -36,6 +36,7 @@ void main() {
           home: buildFinalAssessmentResultViewForTest(
             results: results,
             overallPassed: false,
+            levelCode: 'A1',
           ),
         ),
       );

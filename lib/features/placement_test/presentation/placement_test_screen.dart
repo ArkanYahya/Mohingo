@@ -6,10 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../content/models/activity.dart';
-import '../../../content/models/curriculum_structure.dart';
 import '../../../content/models/domain_definitions.dart';
-import '../../../content/models/media_specification.dart';
-import '../../../content/providers/course_content_providers.dart';
 import '../../../core/l10n/generated/app_localizations.dart';
 import '../../../core/l10n/skill_label.dart';
 import '../../../core/theme/app_tokens.dart';
@@ -21,15 +18,19 @@ import '../../activity_engine/presentation/activity_view_registry.dart';
 import '../../activity_engine/presentation/widgets/activity_option_tile.dart';
 import '../../activity_engine/presentation/widgets/answer_tile_state.dart';
 import '../../lesson_player/presentation/widgets/activity_eyebrow.dart';
+import '../../progress/domain/level_access.dart';
 import '../../progress/providers/current_learner_provider.dart';
+import '../../progress/providers/level_providers.dart';
 import '../../progress/providers/progress_providers.dart';
 import '../../tests_home/presentation/widgets/test_intro_view.dart';
 import '../../tests_home/presentation/widgets/test_question_frame.dart';
 import '../../tests_home/presentation/widgets/test_result_view.dart';
 import '../../tests_home/providers/tests_home_providers.dart';
 import '../domain/placement_classifier.dart';
-import '../domain/placement_item_sampler.dart';
 import '../domain/placement_outcome.dart';
+import '../domain/placement_item_sampler.dart';
+import '../domain/placement_plan.dart';
+import '../providers/placement_providers.dart';
 
 /// The RNG seed used to sample placement-test items each attempt — a real
 /// random value in production, overridable in tests so item sampling is
@@ -39,19 +40,30 @@ final placementSeedProvider = Provider<int>(
   (ref) => Random().nextInt(0x7FFFFFFF),
 );
 
-/// The A1 Gateway Placement Test.
+/// The Gateway Placement Test, across every released level.
 ///
-/// Scans the curriculum's units in order (`A1-U0` first), sampling a
-/// handful of listening/reading `practice` items per unit (see
-/// [PlacementItemSampler] — the bundle has no dedicated placement-item pool,
-/// this samples from existing training content instead) and stopping at the
-/// first unit that fails. That stopping point *is* the useful signal, so
-/// this collapses the master prompt's "fixed foundation stage + adaptive
-/// receptive stage" into one continuous adaptive scan — see
-/// [PlacementClassifier]. A single productive (write/speak) item is sampled
-/// afterward as supporting evidence only; it never changes the
+/// Two speeds (Design 4 of
+/// docs/superpowers/specs/2026-09-19-a2-level-design.md):
+///
+/// 1. **Block pass.** Each level's units in blocks of three or four
+///    (A1: U0–U3, U4–U6, U7–U9, U10–U12; A2: U1–U3, …), one item per unit,
+///    the block passing at 60%. A learner who knows the material answers
+///    about 25 items for the whole course instead of 39+.
+/// 2. **Drill-down.** A failed block is opened up unit by unit, up to three
+///    items each, stopping at the first unit that fails — and *that* unit
+///    is the recommendation. If every unit in the block passes after all,
+///    the scan carries on with the next block.
+///
+/// Items are sampled from existing `practice` content ([PlacementItemSampler]
+/// — the bundles have no dedicated placement-item pool), seeded per attempt
+/// so a retake draws different items. A single productive (write/speak)
+/// item follows as supporting evidence only; it never changes the
 /// classification, since no rubric evaluator exists yet for free-response
 /// answers.
+///
+/// Everything is recorded under `sessionType='placement'`, which is what
+/// keeps it out of mastery evidence and Review — never the source
+/// activity's own mode.
 ///
 /// Not resumable mid-test (unlike the lesson player) — a placement attempt
 /// is short and a partial attempt is simply discarded if the app closes;
@@ -61,19 +73,16 @@ class PlacementTestScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final contentAsync = ref.watch(courseContentProvider('a1'));
+    final planAsync = ref.watch(placementPlanProvider);
     final learnerAsync = ref.watch(currentLearnerProvider);
-    return contentAsync.when(
+    return planAsync.when(
       loading: () => const _LoadingScaffold(),
       error: (error, _) => _ErrorScaffold(message: '$error'),
-      data: (index) => learnerAsync.when(
+      data: (plan) => learnerAsync.when(
         loading: () => const _LoadingScaffold(),
         error: (error, _) => _ErrorScaffold(message: '$error'),
-        data: (learner) => _PlacementTestBody(
-          units: index.bundle.units,
-          mediaByKey: index.bundle.mediaSpecifications,
-          learnerId: learner.id,
-        ),
+        data: (learner) =>
+            _PlacementTestBody(plan: plan, learnerId: learner.id),
       ),
     );
   }
@@ -101,15 +110,20 @@ class _SkillTally {
   int total = 0;
 }
 
-class _PlacementTestBody extends ConsumerStatefulWidget {
-  const _PlacementTestBody({
-    required this.units,
-    required this.mediaByKey,
-    required this.learnerId,
-  });
+/// One question the scan asks, with the unit (and therefore the level) it
+/// came from — so its eyebrow, its media and "the last unit reached" are
+/// all read off the item itself rather than off whichever level the screen
+/// started in.
+class _ScanItem {
+  const _ScanItem({required this.activity, required this.unit});
+  final Activity activity;
+  final PlacementUnitRef unit;
+}
 
-  final List<Unit> units;
-  final Map<String, MediaSpecification> mediaByKey;
+class _PlacementTestBody extends ConsumerStatefulWidget {
+  const _PlacementTestBody({required this.plan, required this.learnerId});
+
+  final PlacementPlan plan;
   final int learnerId;
 
   @override
@@ -124,14 +138,33 @@ class _PlacementTestBodyState extends ConsumerState<_PlacementTestBody> {
   String? _sessionUuid;
   int _seed = 0;
 
-  int _unitIndex = 0;
-  List<Activity> _unitItems = const [];
+  /// Where the scan is: which block, and — once that block has failed —
+  /// which of its units is being looked at on its own. Null means the
+  /// block's one-item-per-unit pass is still running.
+  int _blockIndex = 0;
+  int? _drillIndex;
+
+  List<_ScanItem> _items = const [];
   int _itemIndex = 0;
-  List<bool> _unitCorrectness = [];
+  List<bool> _correctness = [];
+
+  /// Activity ids this attempt has already asked — a unit's drill-down
+  /// never repeats the item its block pass asked.
+  final Set<String> _askedActivityIds = {};
+
+  /// Per-unit results from drill-downs only, in curriculum order. A block
+  /// that passed contributes nothing: it recommends no unit inside it.
   final List<MapEntry<String, bool>> _unitResults = [];
   final Map<Skill, _SkillTally> _skillTally = {};
 
-  Activity? _productiveActivity;
+  /// How far through the course the scan has reached, in units — the
+  /// progress bar's fill and the attempt's stored `stageReached`. Only
+  /// ever moves forward, so opening a block up unit by unit never rewinds
+  /// the bar the block pass already filled.
+  int _unitsReached = 0;
+
+  PlacementUnitRef? _lastUnitReached;
+  _ScanItem? _productiveItem;
   PlacementClassification? _classification;
 
   /// The current answer's save, awaited before moving on — the feedback
@@ -143,6 +176,10 @@ class _PlacementTestBodyState extends ConsumerState<_PlacementTestBody> {
     final tally = _skillTally.putIfAbsent(skill, () => _SkillTally());
     tally.total++;
     if (correct) tally.correct++;
+  }
+
+  void _reachUnits(int units) {
+    if (units > _unitsReached) _unitsReached = units;
   }
 
   Future<void> _start() async {
@@ -159,46 +196,97 @@ class _PlacementTestBodyState extends ConsumerState<_PlacementTestBody> {
     _attemptId = attemptId;
     _sessionUuid = attemptRow!.uuid;
     _seed = seed;
-    _beginUnit(0);
+    _beginBlock(0);
   }
 
-  void _beginUnit(int unitIndex) {
-    if (unitIndex >= widget.units.length) {
-      _finishReceptiveScan(widget.units.last);
+  /// One item per unit in block [blockIndex] — the fast pass.
+  void _beginBlock(int blockIndex) {
+    final plan = widget.plan;
+    if (blockIndex >= plan.blocks.length) {
+      _finishReceptiveScan();
       return;
     }
-    final unit = widget.units[unitIndex];
-    final items = PlacementItemSampler.receptiveItemsForUnit(
-      unit,
-      seed: _seed + unitIndex,
-    );
+    final block = plan.blocks[blockIndex];
+    final items = <_ScanItem>[];
+    for (final unit in block.units) {
+      final unitRef = plan.locate(unit.id)!;
+      final sampled = PlacementItemSampler.receptiveItemsForUnit(
+        unit,
+        seed: _seed + unitRef.scanIndex,
+        limit: 1,
+        exclude: _askedActivityIds,
+      );
+      if (sampled.isEmpty) continue;
+      items.add(_ScanItem(activity: sampled.single, unit: unitRef));
+    }
     if (items.isEmpty) {
+      // Nothing eligible to ask: no evidence blocks nothing (the same rule
+      // as a unit with too few items), so move on.
+      _reachUnits(plan.unitsBefore(blockIndex) + block.units.length);
+      _beginBlock(blockIndex + 1);
+      return;
+    }
+    _reachUnits(plan.unitsBefore(blockIndex));
+    setState(() {
+      _starting = false;
+      _blockIndex = blockIndex;
+      _drillIndex = null;
+      _items = items;
+      _itemIndex = 0;
+      _correctness = [];
+      _phase = _Phase.item;
+    });
+  }
+
+  /// Up to three items from one unit of the failed block — the slow pass.
+  void _beginDrill(int drillIndex) {
+    final plan = widget.plan;
+    final block = plan.blocks[_blockIndex];
+    if (drillIndex >= block.units.length) {
+      // Every unit passed on its own after all: the block's items were
+      // unlucky, not the learner. Carry on with the next block.
+      _beginBlock(_blockIndex + 1);
+      return;
+    }
+    final unit = block.units[drillIndex];
+    final unitRef = plan.locate(unit.id)!;
+    final sampled = PlacementItemSampler.receptiveItemsForUnit(
+      unit,
+      seed: _seed + unitRef.scanIndex,
+      exclude: _askedActivityIds,
+    );
+    if (sampled.isEmpty) {
       _unitResults.add(MapEntry(unit.id, true));
-      _beginUnit(unitIndex + 1);
+      _beginDrill(drillIndex + 1);
       return;
     }
     setState(() {
-      _starting = false;
-      _unitIndex = unitIndex;
-      _unitItems = items;
+      _drillIndex = drillIndex;
+      _items = [
+        for (final activity in sampled)
+          _ScanItem(activity: activity, unit: unitRef),
+      ];
       _itemIndex = 0;
-      _unitCorrectness = [];
+      _correctness = [];
       _phase = _Phase.item;
     });
   }
 
   Future<void> _handleItemSubmitted(
-    Activity activity,
+    _ScanItem item,
     ActivitySubmission submission,
   ) async {
+    final activity = item.activity;
     final correct = submission.correctness == ActivityCorrectness.correct;
-    // Counted before the save so the unit's result can't miss it.
+    // Counted before the save so the block/unit result can't miss it.
     _tallySkill(
       activity.skill,
       correct: correct,
       scored: submission.correctness != ActivityCorrectness.notAutoGraded,
     );
-    _unitCorrectness.add(correct);
+    _correctness.add(correct);
+    _askedActivityIds.add(activity.id);
+    _lastUnitReached = item.unit;
     await ref
         .read(activityAttemptRepositoryProvider)
         .recordAttempt(
@@ -222,39 +310,73 @@ class _PlacementTestBodyState extends ConsumerState<_PlacementTestBody> {
   Future<void> _nextItem() async {
     await _recording;
     if (!mounted) return;
-    if (_itemIndex < _unitItems.length - 1) {
+    if (_itemIndex < _items.length - 1) {
       setState(() {
         _itemIndex++;
+        // A block pass decides one unit per item, so the bar moves with it;
+        // a drill-down's three items are all about the one unit, which
+        // isn't settled until they are all answered.
+        if (_drillIndex == null) {
+          _reachUnits(widget.plan.unitsBefore(_blockIndex) + _itemIndex);
+        }
       });
       return;
     }
-    final unit = widget.units[_unitIndex];
-    final passed = PlacementScoring.unitPassed(_unitCorrectness);
-    _unitResults.add(MapEntry(unit.id, passed));
-    if (passed) {
-      _beginUnit(_unitIndex + 1);
+    final drillIndex = _drillIndex;
+    if (drillIndex == null) {
+      _finishBlockPass();
     } else {
-      _finishReceptiveScan(unit);
+      _finishDrillUnit(drillIndex);
     }
   }
 
-  void _finishReceptiveScan(Unit stoppedAtUnit) {
-    final productive = PlacementItemSampler.productiveItemForUnit(
-      stoppedAtUnit,
-      seed: _seed,
-    );
-    if (productive == null) {
+  void _finishBlockPass() {
+    final block = widget.plan.blocks[_blockIndex];
+    if (PlacementScoring.blockPassed(_correctness)) {
+      _reachUnits(widget.plan.unitsBefore(_blockIndex) + block.units.length);
+      _beginBlock(_blockIndex + 1);
+    } else {
+      _beginDrill(0);
+    }
+  }
+
+  void _finishDrillUnit(int drillIndex) {
+    final block = widget.plan.blocks[_blockIndex];
+    final unit = block.units[drillIndex];
+    final passed = PlacementScoring.unitPassed(_correctness);
+    _unitResults.add(MapEntry(unit.id, passed));
+    _reachUnits(widget.plan.unitsBefore(_blockIndex) + drillIndex + 1);
+    if (passed) {
+      _beginDrill(drillIndex + 1);
+    } else {
+      _finishReceptiveScan();
+    }
+  }
+
+  void _finishReceptiveScan() {
+    final plan = widget.plan;
+    // Nothing answered at all (every block had nothing eligible to ask):
+    // fall back to the last unit in the plan, if there is one.
+    final reached =
+        _lastUnitReached ??
+        (plan.blocks.isEmpty
+            ? null
+            : plan.locate(plan.blocks.last.units.last.id));
+    final productive = reached == null
+        ? null
+        : PlacementItemSampler.productiveItemForUnit(reached.unit, seed: _seed);
+    if (productive == null || reached == null) {
       setState(() => _phase = _Phase.confidence);
       return;
     }
     setState(() {
-      _productiveActivity = productive;
+      _productiveItem = _ScanItem(activity: productive, unit: reached);
       _phase = _Phase.productive;
     });
   }
 
   Future<void> _handleProductiveSubmitted(ActivitySubmission submission) async {
-    final activity = _productiveActivity!;
+    final activity = _productiveItem!.activity;
     final evidenceSkill = resolveEvidenceSkill(activity, submission);
     final correct = submission.correctness == ActivityCorrectness.correct;
     await ref
@@ -284,13 +406,16 @@ class _PlacementTestBodyState extends ConsumerState<_PlacementTestBody> {
   }
 
   Future<void> _submitConfidence(int value) async {
-    final classification = PlacementClassifier.classify(_unitResults);
+    final classification = PlacementClassifier.classify(
+      _unitResults,
+      topLevelId: widget.plan.topLevel.levelId,
+    );
     await ref
         .read(assessmentAttemptRepositoryProvider)
         .completePlacementAttempt(
           attemptId: _attemptId!,
-          stageReached: _unitResults.length,
-          outcome: classification.outcome.name,
+          stageReached: _unitsReached,
+          outcome: classification.storedOutcome,
           recommendedUnitId: classification.recommendedUnitId,
           confidenceSelfReportsJson: jsonEncode({'overall': value}),
         );
@@ -308,12 +433,16 @@ class _PlacementTestBodyState extends ConsumerState<_PlacementTestBody> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    final units = widget.units;
+    final plan = widget.plan;
+    final topCode = plan.topLevel.cefrCode;
+    // One segment per block, sized by its units — the bar advances a unit
+    // at a time whichever speed the scan is running at.
+    final groupSizes = [for (final block in plan.blocks) block.units.length];
     return switch (_phase) {
       _Phase.intro => TestIntroView(
-        overline: l10n.testsPlacementTitle,
+        overline: l10n.placementIntroTitle(topCode),
         title: l10n.testsPlacementHeroTitle,
-        lead: l10n.placementIntroBody,
+        lead: l10n.placementIntroBody(topCode),
         heading: l10n.testIntroCoversHeading,
         rows: [
           TestIntroRow(
@@ -334,56 +463,66 @@ class _PlacementTestBodyState extends ConsumerState<_PlacementTestBody> {
         starting: _starting,
         onStart: _start,
       ),
-      _Phase.item => TestQuestionFrame(
-        // One segment per unit: the scan moves through the course.
-        groupSizes: [for (final _ in units) 1],
-        completed: _unitIndex,
-        eyebrow: TestEyebrow(
-          skill: _unitItems[_itemIndex].skill,
-          text: l10n.testQuestionEyebrow(
-            l10n.learnUnitOverline(_unitIndex + 1),
-            _itemIndex + 1,
-            _unitItems.length,
-          ),
-        ),
-        testMode: true,
-        onContinue: _nextItem,
-        child: buildActivityView(
-          key: ValueKey(_unitItems[_itemIndex].id),
-          _unitItems[_itemIndex],
-          learnerId: widget.learnerId,
-          onSubmitted: (s) =>
-              _recording = _handleItemSubmitted(_unitItems[_itemIndex], s),
-          mediaByKey: widget.mediaByKey,
-        ),
-      ),
+      _Phase.item => _buildItem(l10n, groupSizes),
       _Phase.productive => TestQuestionFrame(
-        groupSizes: [for (final _ in units) 1],
-        completed: units.length,
+        groupSizes: groupSizes,
+        completed: plan.totalUnits,
         eyebrow: TestEyebrow(
-          skill: _productiveActivity!.skill,
-          text: learnerSkillLabel(l10n, _productiveActivity!.skill),
+          skill: _productiveItem!.activity.skill,
+          text: learnerSkillLabel(l10n, _productiveItem!.activity.skill),
         ),
         testMode: true,
         onContinue: _nextAfterProductive,
         child: buildActivityView(
-          key: ValueKey(_productiveActivity!.id),
-          _productiveActivity!,
+          key: ValueKey(_productiveItem!.activity.id),
+          _productiveItem!.activity,
           learnerId: widget.learnerId,
           onSubmitted: (s) => _recording = _handleProductiveSubmitted(s),
-          mediaByKey: widget.mediaByKey,
+          mediaByKey: _productiveItem!.unit.level.mediaByKey,
         ),
       ),
       _Phase.confidence => _ConfidenceView(onSubmit: _submitConfidence),
       _Phase.result => _ResultView(
         classification: _classification!,
-        units: widget.units,
+        recommendation: plan.locate(_classification!.recommendedUnitId),
+        masteredLevelCode: topCode,
         skillScores: {
           for (final MapEntry(:key, :value) in _skillTally.entries)
             key: (value.correct, value.total),
         },
       ),
     };
+  }
+
+  Widget _buildItem(AppLocalizations l10n, List<int> groupSizes) {
+    final item = _items[_itemIndex];
+    final section = l10n.placementUnitSection(
+      item.unit.cefrCode,
+      item.unit.number,
+    );
+    return TestQuestionFrame(
+      groupSizes: groupSizes,
+      // One segment per block, filled a unit at a time — and never
+      // rewound when a block is opened up unit by unit (see [_reachUnits]).
+      completed: _unitsReached,
+      eyebrow: TestEyebrow(
+        skill: item.activity.skill,
+        // One item per unit in a block pass, so there is no "n of 3" to
+        // report; a drill-down's three items are all from this one unit.
+        text: _drillIndex == null
+            ? section
+            : l10n.testQuestionEyebrow(section, _itemIndex + 1, _items.length),
+      ),
+      testMode: true,
+      onContinue: _nextItem,
+      child: buildActivityView(
+        key: ValueKey(item.activity.id),
+        item.activity,
+        learnerId: widget.learnerId,
+        onSubmitted: (s) => _recording = _handleItemSubmitted(item, s),
+        mediaByKey: item.unit.level.mediaByKey,
+      ),
+    );
   }
 
   Future<void> _nextAfterProductive() async {
@@ -465,47 +604,110 @@ typedef SkillScores = Map<Skill, (int, int)>;
 @visibleForTesting
 Widget buildPlacementResultViewForTest({
   required PlacementClassification classification,
-  required List<Unit> units,
+  required PlacementUnitRef? recommendation,
+  required String masteredLevelCode,
   required SkillScores skillScores,
 }) => _ResultView(
   classification: classification,
-  units: units,
+  recommendation: recommendation,
+  masteredLevelCode: masteredLevelCode,
   skillScores: skillScores,
 );
 
 /// The placement result: the unit to start from as the headline, that
-/// unit as a card, per-skill scores, and a button straight to the unit —
-/// or, when every unit passed, a pointer to the final assessment.
-class _ResultView extends StatelessWidget {
+/// unit as a card, per-skill scores, and a button that starts there —
+/// or, when every unit passed, "{top released level} looks mastered" and a
+/// pointer to the final assessment.
+///
+/// A mastered level is somewhere to start too when it isn't the level the
+/// learner is in: ADR 0006 decision 4 counts a placement result inside a
+/// level as one of the three things that open it, so the button moves them
+/// there rather than leaving them a level below with it still locked.
+class _ResultView extends ConsumerWidget {
   const _ResultView({
     required this.classification,
-    required this.units,
+    required this.recommendation,
+    required this.masteredLevelCode,
     required this.skillScores,
   });
 
   final PlacementClassification classification;
-  final List<Unit> units;
+
+  /// Where the result points, already resolved in its own level — null for
+  /// a "level mastered" result.
+  final PlacementUnitRef? recommendation;
+
+  /// The top released level's code, for the mastered headline. Never a
+  /// level above it: there is no content above it to have been measured.
+  final String masteredLevelCode;
+
   final SkillScores skillScores;
 
+  /// Makes [levelId] the level the learner is in (unlocking it first if
+  /// they haven't reached it) and opens it — at [unitId] when the result
+  /// names a unit, at the level itself when it names a whole mastered
+  /// level.
+  ///
+  /// [access] comes from a `watch` in [build], not a `read` here: reading
+  /// an auto-dispose provider from a callback that has no listener tears it
+  /// down mid-await — the same trap `LevelSelectionController`'s own doc
+  /// comment records. Null (still loading) unlocks, which is the safe way
+  /// to be wrong.
+  Future<void> _startHere(
+    BuildContext context,
+    WidgetRef ref,
+    String levelId,
+    String? unitId,
+    LevelAccess? access,
+  ) async {
+    final controller = ref.read(levelSelectionControllerProvider.notifier);
+    if (access != LevelAccess.open) {
+      await controller.unlock(levelId);
+    }
+    await controller.select(levelId);
+    if (context.mounted) {
+      context.go(unitId == null ? '/learn' : '/learn/unit/$unitId');
+    }
+  }
+
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
     final tokens = theme.extension<AppTokens>()!;
     final l10n = AppLocalizations.of(context)!;
-    final unitId = classification.recommendedUnitId;
-    final unitIndex = unitId == null
-        ? -1
-        : units.indexWhere((u) => u.id == unitId);
-    final unit = unitIndex < 0 ? null : units[unitIndex];
-    final unitNumber = unitIndex + 1;
+    final recommendation = this.recommendation;
+    // A mastered level is only somewhere to *go* when the learner isn't
+    // already there. `currentLevelIdProvider` is async, so null means "not
+    // known yet" — until it resolves the result stays a plain close, the
+    // safe way to be wrong.
+    final masteredLevelId = classification.masteredLevelId;
+    final masteredElsewhere =
+        recommendation == null &&
+        masteredLevelId != null &&
+        masteredLevelId != ref.watch(currentLevelIdProvider).value;
+    final startLevelId =
+        recommendation?.levelId ?? (masteredElsewhere ? masteredLevelId : null);
+    final access = startLevelId == null
+        ? null
+        : ref.watch(levelAccessProvider(startLevelId)).value;
 
-    final (title, body) = unit == null
-        ? (l10n.placementResultMasteredTitle, l10n.placementResultMasteredBody)
+    final (title, body) = recommendation == null
+        ? (
+            l10n.placementResultMasteredTitle(masteredLevelCode),
+            l10n.placementResultMasteredBody,
+          )
         : (
-            l10n.placementResultHeadline(unitNumber),
-            unitNumber == 1
-                ? l10n.placementResultBodyEssentials
-                : l10n.placementResultBodyUnit(unitNumber),
+            l10n.placementResultHeadline(
+              recommendation.cefrCode,
+              recommendation.number,
+            ),
+            switch (classification.outcome) {
+              PlacementOutcome.startWithEssentials =>
+                l10n.placementResultBodyEssentials,
+              _ when recommendation.isFirstInLevel =>
+                l10n.placementResultBodyLevelStart(recommendation.cefrCode),
+              _ => l10n.placementResultBodyUnit(recommendation.number),
+            },
           );
     void done() => context.pop();
 
@@ -513,17 +715,25 @@ class _ResultView extends StatelessWidget {
       overline: l10n.placementResultOverline,
       title: title,
       body: body,
-      primaryLabel: unit == null
-          ? l10n.placementResultDone
-          : l10n.placementResultGoToUnitN(unitNumber),
-      primaryArrow: unit != null,
-      onPrimary: unit == null
+      primaryLabel: switch ((recommendation, masteredElsewhere)) {
+        (final r?, _) => l10n.placementResultStartAtUnit(r.cefrCode, r.number),
+        (null, true) => l10n.homeNextLevelTitle(masteredLevelCode),
+        (null, false) => l10n.placementResultDone,
+      },
+      primaryArrow: startLevelId != null,
+      onPrimary: startLevelId == null
           ? done
-          : () => context.go('/learn/unit/${unit.id}'),
-      secondaryLabel: unit == null ? null : l10n.placementResultDone,
+          : () => _startHere(
+              context,
+              ref,
+              startLevelId,
+              recommendation?.unit.id,
+              access,
+            ),
+      secondaryLabel: startLevelId == null ? null : l10n.placementResultDone,
       onSecondary: done,
       children: [
-        if (unit != null) ...[
+        if (recommendation != null) ...[
           const SizedBox(height: AppSpace.md),
           DecoratedBox(
             decoration: BoxDecoration(
@@ -537,14 +747,19 @@ class _ResultView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Text(
-                    l10n.learnUnitOverline(unitNumber).toUpperCase(),
+                    l10n
+                        .placementUnitSection(
+                          recommendation.cefrCode,
+                          recommendation.number,
+                        )
+                        .toUpperCase(),
                     style: overlineStyle(context, color: tokens.primaryInk),
                   ),
                   const SizedBox(height: AppSpace.xxs),
                   Align(
                     alignment: AlignmentDirectional.centerStart,
                     child: Text(
-                      unit.title,
+                      recommendation.unit.title,
                       textDirection: TextDirection.ltr,
                       style: theme.textTheme.titleLarge?.copyWith(
                         color: tokens.textPrimary,
@@ -554,18 +769,18 @@ class _ResultView extends StatelessWidget {
                   Align(
                     alignment: AlignmentDirectional.centerStart,
                     child: Text(
-                      unit.titleAr,
+                      recommendation.unit.titleAr,
                       textDirection: TextDirection.rtl,
                       style: theme.textTheme.bodyMedium?.copyWith(
                         color: tokens.textSecondary,
                       ),
                     ),
                   ),
-                  if (unit.estimatedMinutes.length == 2) ...[
+                  if (recommendation.unit.estimatedMinutes.length == 2) ...[
                     const SizedBox(height: AppSpace.xxs),
                     Text(
-                      '${l10n.learnLessonCount(unit.lessons.length)} · '
-                      '${l10n.learnUnitMinutes(unit.estimatedMinutes[0], unit.estimatedMinutes[1])}',
+                      '${l10n.learnLessonCount(recommendation.unit.lessons.length)} · '
+                      '${l10n.learnUnitMinutes(recommendation.unit.estimatedMinutes[0], recommendation.unit.estimatedMinutes[1])}',
                       style: theme.textTheme.bodySmall?.copyWith(
                         color: tokens.textSecondary,
                       ),
@@ -596,7 +811,7 @@ class _ResultView extends StatelessWidget {
             ],
           ),
         ],
-        if (unit != null && unitNumber > 1) ...[
+        if (recommendation != null && recommendation.number > 1) ...[
           const SizedBox(height: AppSpace.sm),
           Text(
             l10n.placementResultEarlierOpen,

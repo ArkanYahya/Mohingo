@@ -97,12 +97,42 @@ void main() {
 
         final latest = await repo.latestFinalMissionAttempt(
           learnerId: learnerId,
+          courseId: 'EN-A1-V2',
         );
         expect(latest, isNotNull);
         expect(latest!.outcome, 'passed');
         expect(latest.completedAt, isNotNull);
       },
     );
+
+    test('the latest attempt is the latest attempt at THAT course — a '
+        'learner who finished A1 and moved to A2 has not attempted A2\'s '
+        'mission', () async {
+      final a1 = await repo.startFinalMissionAttempt(
+        learnerId: learnerId,
+        courseId: 'EN-A1-V2',
+      );
+      await repo.completeFinalMissionAttempt(
+        attemptId: a1,
+        stagesCompletedJson: '[]',
+        outcome: 'passed',
+      );
+
+      expect(
+        await repo.latestFinalMissionAttempt(
+          learnerId: learnerId,
+          courseId: 'EN-A2-V1',
+        ),
+        isNull,
+      );
+      expect(
+        (await repo.latestFinalMissionAttempt(
+          learnerId: learnerId,
+          courseId: 'EN-A1-V2',
+        ))!.id,
+        a1,
+      );
+    });
   });
 
   group('final assessment attempts', () {
@@ -121,11 +151,27 @@ void main() {
 
         final latest = await repo.latestFinalAssessmentAttempt(
           learnerId: learnerId,
+          courseId: 'EN-A1-V2',
         );
         expect(latest, isNotNull);
         expect(latest!.outcomeSummary, contains('overallPassed'));
         expect(latest.completedAt, isNotNull);
       },
     );
+
+    test('and an A1 assessment is not A2\'s latest either', () async {
+      await repo.startFinalAssessmentAttempt(
+        learnerId: learnerId,
+        courseId: 'EN-A1-V2',
+      );
+
+      expect(
+        await repo.latestFinalAssessmentAttempt(
+          learnerId: learnerId,
+          courseId: 'EN-A2-V1',
+        ),
+        isNull,
+      );
+    });
   });
 }

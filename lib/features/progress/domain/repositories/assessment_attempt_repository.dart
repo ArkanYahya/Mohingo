@@ -35,8 +35,12 @@ abstract interface class AssessmentAttemptRepository {
     required String outcome,
   });
 
+  /// The learner's latest attempt at [courseId]'s final mission — never an
+  /// attempt at another level's, which would read as this level's result
+  /// under this level's heading.
   Future<FinalMissionAttempt?> latestFinalMissionAttempt({
     required int learnerId,
+    required String courseId,
   });
 
   Future<int> startFinalAssessmentAttempt({
@@ -50,7 +54,10 @@ abstract interface class AssessmentAttemptRepository {
     required String outcomeSummaryJson,
   });
 
+  /// The learner's latest attempt at [courseId]'s final assessment — see
+  /// [latestFinalMissionAttempt] on why the course is part of the question.
   Future<FinalAssessmentAttempt?> latestFinalAssessmentAttempt({
     required int learnerId,
+    required String courseId,
   });
 }

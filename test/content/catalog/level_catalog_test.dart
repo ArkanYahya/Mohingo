@@ -13,14 +13,22 @@ void main() {
     ]);
   });
 
-  test('only A1 is available; A2 is a preview; B1-C2 are Coming Soon', () {
+  test('A1 and A2 are available; B1-C2 are Coming Soon', () {
+    // A2 shipped as a preview from 2026-09-20 until its content was
+    // written: the imported bundle had one-line conversations, no working
+    // graders and no present perfect at all. It became available once all
+    // twelve units and both capstones passed the content gates in
+    // test/content/a2_*. Changing this expectation is deliberate — the
+    // release rule in a2_masterable_test.dart is the other half of the
+    // brake, and it checks the content rather than the catalogue.
     final a1 = levelCatalogEntry('a1')!;
     expect(a1.availability, LevelAvailability.available);
     expect(a1.bundleAssetPath, isNotNull);
 
     final a2 = levelCatalogEntry('a2')!;
-    expect(a2.availability, LevelAvailability.preview);
+    expect(a2.availability, LevelAvailability.available);
     expect(a2.bundleAssetPath, isNotNull);
+    expect(a2.prerequisiteLevelId, 'a1');
 
     for (final levelId in ['b1', 'b2', 'c1', 'c2']) {
       final entry = levelCatalogEntry(levelId)!;

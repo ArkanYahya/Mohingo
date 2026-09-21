@@ -1,7 +1,7 @@
 # A2 Level — continuing the A1 course into CEFR A2
 
-**Status:** Approved design, ready for implementation planning
-**Date:** 2026-09-19
+**Status:** Implemented — all six steps have landed and **A2 was released on 2026-09-21** (`feature/a2-pilot-u1`). Step 2b (Home, Tests, Review, Vocabulary, Grammar and placement) was built in five parts: Tests and both capstones, then Home — including Home's "Start A2" offer — then Vocabulary and Grammar, with the A1/A2 filter (Vocabulary stays a flat searchable list; only Grammar groups by unit, as it already did), then the Review tab, which as designed spans every level rather than following one, and finally the block placement test of Design 4, which covers every released level and whose measured lengths match the design's estimates exactly (7 / 16 / 25 / 25 — see the foot of this document). Read "What actually shipped" at the foot of this document before trusting any table above it: several were written before anyone counted what the import contained.
+**Date:** 2026-09-19 (design), 2026-09-21 (outcome recorded)
 
 ## Context
 
@@ -57,7 +57,21 @@ Weaker than A1:
 
 ### Grammar
 
-A1 structures are **reviewed by reference, not re-registered**: an A2 lesson's `grammar`/`lexicon`/`chunks` lists may contain A1 IDs, shown on the key-phrases screen as "From A1" and extended by the lesson. Duplicates are merged into one record, reused by ID. Records merged away lose their IDs (no learner progress exists on A2).
+> **Superseded 2026-09-20 by the product owner (step 4, pilot review).** An
+> A2 lesson does **not** list A1 ids at all. A learner in A2 is assumed to
+> know A1 — whether they finished it here or arrived already knowing it —
+> so A2 teaches A2, and the A2 bundle stays self-contained. A1 material is
+> still *used* freely in A2 texts and conversations; it is simply not
+> listed as something the lesson teaches or enrols into review. Where A2
+> genuinely needs a different sense of a word A1 taught (A1 *change* = the
+> verb, A2 *change* = the noun), that stays an A2 record, as below.
+> Consequence recorded in [ADR 0006](../../adr/0006-multiple-levels.md):
+> the cross-level machinery built in step 1 — `CourseContentIndex`'s
+> `prerequisite`, the provider loading A1 alongside A2, and the "From A1"
+> badge — has no consumer for vocabulary. It is kept, unused, for grammar
+> and for later levels.
+
+~~A1 structures are **reviewed by reference, not re-registered**: an A2 lesson's `grammar`/`lexicon`/`chunks` lists may contain A1 IDs, shown on the key-phrases screen as "From A1" and extended by the lesson. Duplicates are merged into one record, reused by ID. Records merged away lose their IDs (no learner progress exists on A2).~~
 
 | Unit | New in A2 | Reviewed (A1 or earlier A2) |
 |---|---|---|
@@ -79,8 +93,8 @@ About 45 new A2 grammar records (reference: 72). Each record gets bilingual exam
 ### Vocabulary
 
 - About **35 new senses per unit** (~420 total). Every listed word appears in its lesson's conversation or text and is practised in at least one activity.
-- The 30 re-registered A1 senses become references to the A1 record. A genuinely new sense stays as an A2 record (e.g. *order* = sequence).
-- A learner placed straight into A2 still gets referenced A1 words enrolled into spaced review when the lesson finishes (existing `enrollLesson` behaviour; rows already scheduled are untouched).
+- **Superseded 2026-09-20:** the 30 A1-duplicating senses are **deleted**, not referenced. A word A1 already teaches is not listed by an A2 lesson at all; it may still appear in an A2 text. A genuinely new sense stays as an A2 record (A1 *change* = the verb, A2 *change* = the noun). Three were removed in the pilot — *routine*, *stay*, *busy*.
+  - Why the reference approach was dropped: its only functional gain was enrolling A1 words into spaced review for a learner placed straight into A2, and this app's placement test never places anyone beyond A1. The only way into A2 without A1 is the lock sheet's "Open anyway", a deliberate "I already know this". Meanwhile every normal learner would get a **second** review row for a word they have known for months, on a fresh schedule, with their real history stranded on the A1 record the A2 lesson did not point at (`enrollLesson` leaves already-scheduled rows untouched, so the duplicate schedules independently).
 - Examples are bilingual `{en, ar}` (A1's stay English-only strings).
 
 ## Design 2 — lesson design
@@ -208,12 +222,12 @@ App work is covered by its own tests: cross-level lookup, current level, locks, 
 
 ### Order of work (each step gets its own implementation plan)
 
-1. **App foundations:** model/parser changes, prerequisite-aware index, cross-level lookup, rendering fixes (+ A1 `readingText` Arabic).
-2. **Multiple levels:** current level, switcher, locked preview, soft lock, tabs, wording, placement.
-3. **Import** the A2 reference (locked preview; full in development builds).
-4. **Pilot:** rewrite A2-U1; product owner review in the app, including the Arabic; adjust design/tests.
-5. **Batches:** U2–U4, U5–U7, U8–U10, then U11–U12 + Final Mission + Final Assessment.
-6. **Release:** A2 available (soft lock), reference marked out of date.
+1. **App foundations:** model/parser changes, prerequisite-aware index, cross-level lookup, rendering fixes (+ A1 `readingText` Arabic). — **Done**, `feature/a2-foundations`.
+2. **Multiple levels:** current level, switcher, locked preview, soft lock, tabs, wording, placement. — **Done.** Step 2a (current level, switcher, locks, Learn tab) landed on `feature/a2-current-level`. **Step 2b landed in five parts on `feature/a2-pilot-u1`:** Tests and both capstones follow the current level, and so does Home — whose "Start A2" suggestion is built exactly as designed below (offered when the level is complete and the next is released, tapped by the learner, never automatic). Vocabulary and Grammar follow it too, with the level filter (`LevelFilterChips`), which is a view and never calls `select`; Vocabulary deliberately stays a flat searchable list rather than gaining the unit grouping the Tabs line below asks for, since its search and status filters are what a lookup list is for. The Review tab is built, to the line above: due words and phrases from every level the learner has reached, weak spots from every level with a unit in progress, each labelled by level. The block placement test landed last, to Design 4 exactly — blocks of three (four for A1, whose starter unit joins the opening block), one item per unit, drill-down into a failed block only, and a result that can make A2 current and unlock it. Two things the design did not say, decided while building it and worth carrying to B1: a drill-down excludes the item its block pass already asked (the per-unit shuffle is seeded, so it simply hands back the next items), and a "mastered" outcome is stored per level (`a1Mastered`, `a2Mastered`) rather than as one level-neutral name, so a result recorded when A1 was the only released level can never be re-read as a claim about a level that shipped later. The ARB wording is finished too: `settingsProfileMeta`, the last of the twelve strings that named A1 whatever level the learner was in, took the level as a parameter in `fc8fe56`.
+3. **Import** the A2 reference (locked preview; full in development builds). — **Done**, commit `141e182`.
+4. **Pilot:** rewrite A2-U1; product owner review in the app, including the Arabic; adjust design/tests. — **Done**, `feature/a2-pilot-u1`. The review changed two things recorded above as "Superseded 2026-09-20": A2 stopped referencing A1 ids at all, and the duplicated A1 senses were deleted rather than referenced.
+5. **Batches:** U2–U4, U5–U7, U8–U10, then U11–U12 + Final Mission + Final Assessment. — **Done**, same branch, though not in those groupings: units were authored in the order U1, U3+U4, U2, U5, U6, U7, U10, U8, U11, U12, U9, then the Final Assessment and the Final Mission, each in its own commit.
+6. **Release:** A2 available (soft lock), reference marked out of date. — **Done**, commit `ba2a73f`; `reference/a2-modular-course/OUT_OF_DATE.md` added with the docs pass.
 
 ### Documentation (part of each step's definition of done)
 
@@ -233,6 +247,24 @@ Two things the step-1 execution decided that later steps must honour:
 - Rendering A1's `randomScenarioBank` (`A1-FINAL-ASSESS-S03`).
 - Changing mastery rules, the grading approach (keyword checklists + optional LanguageTool), or unit-level recommendation-only progression.
 - Regenerating A2 through the reference's `tools/authoring` generator.
+
+## What actually shipped (recorded 2026-09-21, after release)
+
+Verified against `assets/content/en/A2/a2-course-bundle.json` and the import at commit `141e182`, not against this document.
+
+**Held exactly.** Unit shape (12 units × 7 lessons × 36 activities, 6/12/18). Skill balance — every unit is 12 listening / 12 reading / 7 speaking / 3 writing / 2 mediation, tighter than the "≥10 / ≤12 / 6–8 / 3 / 2" this spec asked for. Conversations: all 60 guided lessons open on 5–8 lines and 2–3 speakers with Arabic on every line (the import: 72 single-line "Narrator" paragraphs, 38 with no Arabic). Length bands, exactly as tabled, including `wordGuide` 55–75 / 65–85 / 75–100. Capstones at 0.6 with unit mastery left at 0.75. Prompt repetition: the spec allowed three uses per unit; all 432 prompts are distinct (the import had 291 distinct in 432).
+
+**Diverged, and why it matters to know.**
+
+- **The grammar map above was written before anyone checked the import's registry.** It lists what each unit should teach, unit by unit, and never says that **the present perfect was absent from all 72 imported records** — in the level CEFR most defines by it. It is now `A2.G.PRESENT_PERFECT_EXPERIENCE` (U8-L2, *ever/never*) and `A2.G.PRESENT_PERFECT_JUST_ALREADY_YET` (U12-L3), both listed by three and two lessons respectively. Treat the table above as intent; the bundle is the record.
+- **"About 45 new A2 grammar records" did not happen and was the wrong frame.** The import's records were largely kept and rewritten in place. Net: 72 → 74, with 8 added and 6 retired.
+- **Consolidation went two deep, not three.** The first conditional had **two** import records (`FIRST_CONDITIONAL_INTRO`, `FIRST_CONDITIONAL_NATURE`), not three as commit `a0981c4`'s message says; they became one `A2.G.FIRST_CONDITIONAL`, now listed by six lessons across U6, U9, U11 and U12. `FUTURE_CONTRAST` + `FUTURE_EVENT_REVIEW` → `A2.G.FUTURE_FORMS_CONTRAST`. `WORK_HAVE_TO` → `HAVE_TO_OBLIGATION`, `PURPOSE_APPLICATION` → `INFINITIVE_PURPOSE`.
+- **Two consolidations this spec asked for were not made.** `A2.G.PURPOSE_TECH` (U9-L6) still exists beside `INFINITIVE_PURPOSE`, although Design 1 calls the latter "the only record"; and `A2.G.HOUSING_COMPARATIVES` (U4) survived alongside both `COMPARATIVE_ADJECTIVES` (U3) and the new `AS_AS_COMPARISON`, although Design 1 says the new record replaces it. Neither is caught by any gate — the gates check reference resolution and uniqueness, not that two records teach the same thing.
+- **Vocabulary landed on different arithmetic.** Not "~35 new senses per unit, ~420 total" but 35–43 words and phrases listed per unit (lexicon + chunks), 462 listings across the level, over registries of 305 senses and 145 chunks. 29 imported senses were deleted, 118 added.
+- **`onlineRefinement` went much wider than "for open paragraphs, as in A1", and was pulled back before release.** Authoring applied one rubric template to speaking and writing alike: all 144 of the units' speak/write tasks carried it, plus 6 in the Final Mission. `SpeakActivityView` honours the mark on whatever carries it, so each of those 120 speaking tasks would have sent the learner's recognised speech to the public LanguageTool API — the one thing [ADR 0005](../../adr/0005-narrow-network-exception-for-open-ended-grading.md) excludes by name. Commit `1893e23` unmarked them. What shipped is **36 rubrics, every one a `write` task in the units, none in the capstones** — A1's shape, at A1's proportion. The boundary now has a gate, `test/content/online_refinement_boundary_test.dart`, over every shipped bundle rather than only an ADR. Recorded in [SECURITY.md](../../SECURITY.md)'s "Data handling".
+- **The bundle's `contentVersion` is still `A2-IMPORT-2026.09.20`.** Design 5's import step said to set a new one and nothing bumped it as the level was written, so the string names the file's origin rather than its contents. `course_enrolments.contentVersion` snapshots it, so changing it later is not free.
+- **Arabic was never read by a native speaker.** Design 5 step 3 required a native-speaker check of the pilot unit's Arabic before the batches; that did not happen, and units 3–12 were written by AI and machine-checked only for presence and script. The gates can prove a field contains Arabic and is not the English copied across; they cannot prove it reads naturally. Recorded in README's "Known limitations".
+- **The gates grew a rule this spec didn't ask for**: a per-unit vocabulary floor of 30 words and phrases, added after a unit reached its full 36 activities while teaching a handful of senses. Nothing else counted what the activities were supposed to teach.
 
 ## Risks
 

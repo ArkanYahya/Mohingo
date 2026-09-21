@@ -102,9 +102,12 @@ class DriftAssessmentAttemptRepository implements AssessmentAttemptRepository {
   @override
   Future<FinalMissionAttempt?> latestFinalMissionAttempt({
     required int learnerId,
+    required String courseId,
   }) {
     return (_db.select(_db.finalMissionAttempts)
-          ..where((t) => t.learnerId.equals(learnerId))
+          ..where(
+            (t) => t.learnerId.equals(learnerId) & t.courseId.equals(courseId),
+          )
           ..orderBy([
             (t) => OrderingTerm.desc(t.startedAt),
             (t) => OrderingTerm.desc(t.id),
@@ -150,9 +153,12 @@ class DriftAssessmentAttemptRepository implements AssessmentAttemptRepository {
   @override
   Future<FinalAssessmentAttempt?> latestFinalAssessmentAttempt({
     required int learnerId,
+    required String courseId,
   }) {
     return (_db.select(_db.finalAssessmentAttempts)
-          ..where((t) => t.learnerId.equals(learnerId))
+          ..where(
+            (t) => t.learnerId.equals(learnerId) & t.courseId.equals(courseId),
+          )
           ..orderBy([
             (t) => OrderingTerm.desc(t.startedAt),
             (t) => OrderingTerm.desc(t.id),

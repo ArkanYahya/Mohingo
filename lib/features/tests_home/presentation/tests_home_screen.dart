@@ -6,7 +6,6 @@ import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart' show DateFormat;
 
 import '../../../content/index/course_content_index.dart';
-import '../../../content/providers/course_content_providers.dart';
 import '../../../core/l10n/generated/app_localizations.dart';
 import '../../../core/theme/app_tokens.dart';
 import '../../../core/theme/feedback_theme_extension.dart';
@@ -15,6 +14,10 @@ import '../../../core/widgets/section_heading.dart';
 import '../../../core/widgets/status_pill.dart';
 import '../../../data/local/database.dart';
 import '../../learning_path/providers/unit_progress_providers.dart';
+import '../../placement_test/domain/placement_outcome.dart';
+import '../../placement_test/domain/placement_plan.dart';
+import '../../placement_test/providers/placement_providers.dart';
+import '../../progress/providers/level_providers.dart';
 import '../providers/tests_home_providers.dart';
 
 /// The Tests tab.
@@ -22,24 +25,33 @@ import '../providers/tests_home_providers.dart';
 /// A brand-new learner (no placement attempt, no lesson played) is pointed
 /// at the placement test with one highlighted card. Otherwise placement is
 /// a row showing when it was taken and its result ("start from Unit 4").
-/// Then "Finish A1": units mastered with a segment per unit, and the final
-/// mission and final assessment with their real size and time and their
-/// latest result. Unit checks aren't a separate flow — a closing note points
-/// to each unit's mission on the Learn tab. Every test stays open (free
-/// access, docs/PRODUCT.md flow 5); course progress only advises when.
+/// Then "Finish A2" — or whichever level the learner is in: units mastered
+/// with a segment per unit, and the final mission and final assessment with
+/// their real size and time and their latest result. Unit checks aren't a
+/// separate flow — a closing note points to each unit's mission on the Learn
+/// tab. Every test stays open (free access, docs/PRODUCT.md flow 5); course
+/// progress only advises when.
+///
+/// Everything but placement follows the level the learner is in
+/// ([currentCourseProvider]), so an A2 learner's exit is A2's mission and
+/// A2's assessment — see docs/superpowers/specs/2026-09-19-a2-level-design.md.
+/// The placement test is deliberately level-agnostic: it covers every
+/// released level and finds where the learner belongs, so it neither reads
+/// nor names the current one.
 class TestsHomeScreen extends ConsumerWidget {
   const TestsHomeScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final contentAsync = ref.watch(courseContentProvider('a1'));
+    final courseAsync = ref.watch(currentCourseProvider);
     return Scaffold(
       body: SafeArea(
         bottom: false,
-        child: contentAsync.when(
+        child: courseAsync.when(
           loading: () => const Center(child: CircularProgressIndicator()),
           error: (error, _) => Center(child: Text('$error')),
-          data: (index) => _TestsBody(index: index),
+          data: (course) =>
+              _TestsBody(index: course.index, levelCode: course.cefrCode),
         ),
       ),
     );
@@ -47,9 +59,12 @@ class TestsHomeScreen extends ConsumerWidget {
 }
 
 class _TestsBody extends ConsumerWidget {
-  const _TestsBody({required this.index});
+  const _TestsBody({required this.index, required this.levelCode});
 
   final CourseContentIndex index;
+
+  /// The CEFR code of the level [index] holds, for the copy that names it.
+  final String levelCode;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -69,6 +84,11 @@ class _TestsBody extends ConsumerWidget {
         placement == null &&
         lessonsAsync.value!.isEmpty;
     final units = index.bundle.units;
+    // A placement result is numbered against the level its recommended
+    // unit id names — never against whichever level the learner is in now,
+    // where the other level's unit ids resolve to nothing and the row once
+    // read "Unit 0". The plan holds every released level for exactly this.
+    final placementPlan = ref.watch(placementPlanProvider).value;
     final masteredIds = {
       for (final p in unitProgress)
         if (p.state == 'mastered') p.unitId,
@@ -96,7 +116,7 @@ class _TestsBody extends ConsumerWidget {
         ),
         const SizedBox(height: AppSpace.xxs),
         Text(
-          l10n.testsHubSubtitle,
+          l10n.testsHubSubtitle(levelCode),
           style: theme.textTheme.bodyLarge?.copyWith(
             color: tokens.textSecondary,
           ),
@@ -116,13 +136,13 @@ class _TestsBody extends ConsumerWidget {
                     : l10n.testsTakenOn(
                         _date(context, placement!.completedAt!),
                       ),
-                status: _placementPill(l10n, placement),
+                status: _placementPill(l10n, placement, placementPlan),
                 onTap: () => context.push('/tests/placement'),
               ),
             ],
           ),
         ],
-        SectionHeading(l10n.testsFinishOverline),
+        SectionHeading(l10n.testsFinishOverline(levelCode)),
         _CourseProgress(
           mastered: units.where((u) => masteredIds.contains(u.id)).length,
           segments: [for (final u in units) masteredIds.contains(u.id)],
@@ -134,7 +154,7 @@ class _TestsBody extends ConsumerWidget {
               icon: Icons.explore_outlined,
               title: fm.title,
               titleAr: fm.titleAr,
-              body: l10n.testsMissionBody,
+              body: l10n.testsMissionBody(levelCode),
               meta: fm.estimatedMinutes.length == 2
                   ? l10n.testsMissionMeta(
                       fm.activities.length,
@@ -179,20 +199,45 @@ class _TestsBody extends ConsumerWidget {
       DateFormat.yMMMd(Localizations.localeOf(context).languageCode)
           .format(date);
 
-  StatusPill _placementPill(AppLocalizations l10n, PlacementAttempt? a) {
+  /// A finished placement attempt's result, read back from what was
+  /// stored — including results recorded before the test covered more than
+  /// one level, which a learner should still be able to read in their
+  /// history. `a1Mastered` is such a row, and stays exactly as readable as
+  /// today's `a2Mastered`.
+  StatusPill _placementPill(
+    AppLocalizations l10n,
+    PlacementAttempt? a,
+    PlacementPlan? plan,
+  ) {
     if (a == null) return StatusPill(label: l10n.testsNotTaken);
     if (a.completedAt == null) return StatusPill(label: l10n.testsNotFinished);
-    final units = index.bundle.units;
-    int unitNumber(String id) => units.indexWhere((u) => u.id == id) + 1;
-    final result = switch (a.outcome) {
-      'a1Mastered' => l10n.testsPlacementResultMastered,
-      'startWithEssentials' => l10n.testsPlacementResultUnit(1),
-      'startA1FromU1' => l10n.testsPlacementResultUnit(unitNumber('A1-U1')),
-      _ when a.recommendedUnitId != null => l10n.testsPlacementResultUnit(
-        unitNumber(a.recommendedUnitId!),
-      ),
-      _ => null,
-    };
+    final outcome = a.outcome;
+    final masteredLevelId = outcome == null
+        ? null
+        : masteredLevelIdOfStoredOutcome(outcome);
+    String? result;
+    if (masteredLevelId != null) {
+      final level = plan?.levels
+          .where((l) => l.levelId == masteredLevelId)
+          .firstOrNull;
+      result = l10n.testsPlacementResultMastered(
+        level?.cefrCode ?? masteredLevelId.toUpperCase(),
+      );
+    } else {
+      // The two outcomes that name a unit the row itself may not carry:
+      // the oldest stored rows recorded the outcome alone.
+      final unitId =
+          a.recommendedUnitId ??
+          switch (outcome) {
+            'startWithEssentials' => 'A1-U0',
+            'startA1FromU1' => 'A1-U1',
+            _ => null,
+          };
+      final unit = placementUnitRefIn(plan, unitId);
+      if (unit != null) {
+        result = l10n.testsPlacementResultUnit(unit.cefrCode, unit.number);
+      }
+    }
     return StatusPill(
       label: result ?? l10n.testsNotFinished,
       tone: StatusTone.success,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/l10n/cefr_descriptor_label.dart';
 import '../../../../core/l10n/generated/app_localizations.dart';
 import '../../../../core/theme/app_tokens.dart';
 import '../../../../core/theme/gamification_theme_extension.dart';
@@ -21,7 +22,11 @@ class HomeHeader extends StatelessWidget {
 
   final DayPart dayPart;
   final String? name;
+
+  /// The CEFR code of the level the learner is in — the pill names this one,
+  /// never a fixed level.
   final String levelCode;
+
   final int streakDays;
 
   @override
@@ -35,6 +40,10 @@ class HomeHeader extends StatelessWidget {
       DayPart.evening => l10n.homeGreetingEvening,
     };
     final name = this.name;
+    // A level with no descriptor yet shows its bare code rather than
+    // borrowing another level's — "A2 · Beginner" would undo what
+    // finishing A1 meant.
+    final descriptor = cefrDescriptorLabel(l10n, levelCode);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -59,7 +68,9 @@ class HomeHeader extends StatelessWidget {
                 alignment: AlignmentDirectional.centerStart,
                 child: _Pill(
                   child: Text(
-                    l10n.homeLevelBadge(levelCode),
+                    descriptor == null
+                        ? levelCode
+                        : l10n.homeLevelBadge(levelCode, descriptor),
                     overflow: TextOverflow.ellipsis,
                     style: text.labelMedium?.copyWith(
                       color: tokens.textPrimary,

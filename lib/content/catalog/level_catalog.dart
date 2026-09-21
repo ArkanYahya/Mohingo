@@ -50,9 +50,10 @@ class LevelCatalogEntry {
   final String? prerequisiteLevelId;
 }
 
-/// The full CEFR level catalogue for v1: A1 available, A2 a preview (its
-/// content loads but its lessons stay closed until release), B1-C2 Coming
-/// Soon. See docs/ROADMAP.md.
+/// The full CEFR level catalogue for v1: A1 and A2 available, B1-C2 Coming
+/// Soon. A2 was a preview until its content was authored and its gates
+/// passed; [LevelAvailability.preview] is still the state a level sits in
+/// while that is true of it. See docs/ROADMAP.md.
 const kLevelCatalog = <LevelCatalogEntry>[
   LevelCatalogEntry(
     levelId: 'a1',
@@ -63,7 +64,7 @@ const kLevelCatalog = <LevelCatalogEntry>[
   LevelCatalogEntry(
     levelId: 'a2',
     cefrCode: 'A2',
-    availability: LevelAvailability.preview,
+    availability: LevelAvailability.available,
     bundleAssetPath: 'assets/content/en/A2/a2-course-bundle.json',
     prerequisiteLevelId: 'a1',
   ),
@@ -100,6 +101,24 @@ LevelCatalogEntry? levelCatalogEntryIn(
 ) {
   for (final entry in catalog) {
     if (entry.levelId == levelId) return entry;
+  }
+  return null;
+}
+
+/// The level that builds on [levelId] — the one a learner who finishes it
+/// moves into next. Null when nothing builds on it: the last level with
+/// content, or a level no entry names as its prerequisite.
+///
+/// Structural only. Whether that level is actually open to this learner is
+/// a separate question — see `levelAccessFor`.
+LevelCatalogEntry? nextLevelEntryIn(
+  List<LevelCatalogEntry> catalog,
+  String levelId,
+) {
+  for (final entry in catalog) {
+    // A level is never its own next level, however the catalogue is edited.
+    if (entry.levelId == levelId) continue;
+    if (entry.prerequisiteLevelId == levelId) return entry;
   }
   return null;
 }
