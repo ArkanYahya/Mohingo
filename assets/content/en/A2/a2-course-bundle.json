@@ -1060,6 +1060,46 @@
           "ar": "في عطلة نهاية الأسبوع الماضية كنا في كربلاء."
         }
       ]
+    },
+    {
+      "id": "A2.G.PRESENT_PERFECT_EXPERIENCE",
+      "form": "have/has + past participle for experience (ever, never)",
+      "meaningAr": "المضارع التام للحديث عن التجارب السابقة دون تحديد وقتها",
+      "introducedIn": "A2-U8-L2",
+      "examples": [
+        {
+          "en": "I have worked in a school before.",
+          "ar": "سبق أن عملتُ في مدرسة."
+        },
+        {
+          "en": "Have you ever taken an online course?",
+          "ar": "هل سبق أن درستَ دورة عبر الإنترنت؟"
+        },
+        {
+          "en": "She has never driven a bus.",
+          "ar": "لم تقد حافلة قط."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.PRESENT_PERFECT_JUST_ALREADY_YET",
+      "form": "have/has + just / already / yet",
+      "meaningAr": "المضارع التام مع just و already و yet لما اكتمل للتو أو لم يكتمل بعد",
+      "introducedIn": "A2-U12-L3",
+      "examples": [
+        {
+          "en": "They have just finished the meeting.",
+          "ar": "انتهوا من الاجتماع للتو."
+        },
+        {
+          "en": "I have already sent the invitation.",
+          "ar": "أرسلتُ الدعوة بالفعل."
+        },
+        {
+          "en": "He hasn't replied yet.",
+          "ar": "لم يردّ بعد."
+        }
+      ]
     }
   ],
   "lexicon": [
@@ -16843,7 +16883,8 @@
             "A2.U8.INTERACTION.MAKE_FORMAL_REQUEST"
           ],
           "grammar": [
-            "A2.G.CAN_COULD_ABILITY"
+            "A2.G.CAN_COULD_ABILITY",
+            "A2.G.PRESENT_PERFECT_EXPERIENCE"
           ],
           "lexicon": [
             "A2.LEX.SKILL_N01",
@@ -21273,7 +21314,8 @@
           "grammar": [
             "A2.G.FUTURE_EVENT_REVIEW",
             "A2.G.WHILE_PAST",
-            "A2.G.RELATIVE_CLAUSES_BASIC"
+            "A2.G.RELATIVE_CLAUSES_BASIC",
+            "A2.G.PRESENT_PERFECT_JUST_ALREADY_YET"
           ],
           "lexicon": [
             "A2.LEX.ATTENDANCE_N01",
