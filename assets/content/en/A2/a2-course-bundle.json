@@ -29151,7 +29151,7 @@
     "title": "A2 Independent Final Assessment",
     "titleAr": "الاختبار النهائي المستقل لمستوى A2",
     "status": "summative",
-    "sourcePolicy": "Secure unseen inputs; do not draw prompts or answer options from practice activities.",
+    "sourcePolicy": "Secure unseen inputs; every transcript, text and source card is new to this assessment and appears in no unit and in no capstone.",
     "estimatedMinutes": [
       65,
       90
@@ -29166,17 +29166,17 @@
             "skill": "listening",
             "mode": "mastery",
             "canDo": [
-              "A2.U6.INTERACTION.BOOK_CHANGE_TRAVEL"
+              "A2.FINAL.LISTENING.INTEGRATED_ROUTINE_INFO"
             ],
-            "audioTranscript": "The 12:20 train now leaves at 12:50 from platform four.",
-            "prompt": "What changed?",
-            "promptAr": "ما الذي تغير؟",
+            "audioTranscript": "Hello, this is Bilal from the delivery office. I tried to bring your parcel yesterday afternoon, but nobody answered the door. While I was waiting outside, your neighbour came out and told me that you work until six. I didn't want to leave a box in the rain, so I took it back with me. We are open from eight until four on weekdays, and you can collect it with any card that shows your name. If coming here is difficult, ring us before Thursday and we will try your door again on Friday morning.",
+            "prompt": "Why did the driver take the parcel back to the office?",
+            "promptAr": "لماذا أعاد السائق الطرد إلى المكتب؟",
             "options": [
-              "The departure time",
-              "The platform",
-              "The destination"
+              "Nobody was at home and it was raining",
+              "The name on the box was wrong",
+              "The office closes early on Fridays"
             ],
-            "answer": "The departure time",
+            "answer": "Nobody was at home and it was raining",
             "assessmentMode": "secure",
             "sourcePolicy": "unseen"
           },
@@ -29186,17 +29186,17 @@
             "skill": "listening",
             "mode": "mastery",
             "canDo": [
-              "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE"
+              "A2.FINAL.LISTENING.INTEGRATED_ROUTINE_INFO"
             ],
-            "audioTranscript": "Take one tablet after dinner. Do not take a second tablet before morning.",
-            "prompt": "When is the tablet taken?",
-            "promptAr": "متى يُتناول القرص؟",
+            "audioTranscript": "Hi Rana, it's Dunya. I looked at both evening courses for you. The one at the college is cheaper and the room is bigger, but it finishes at nine, which is later than you wanted. The class at the community centre costs more, although it is the closest one to your flat and the group is much smaller — only eight people. Honestly, I think the small group is better for you, because you told me you never ask questions in a big room. The college course is easier to pay for, so it depends what matters most.",
+            "prompt": "Which course does Dunya recommend, and why?",
+            "promptAr": "أي دورة توصي بها دنيا؟ ولماذا؟",
             "options": [
-              "After dinner",
-              "Before breakfast",
-              "Twice at night"
+              "The community centre one, because the group is smaller",
+              "The college one, because the room is bigger",
+              "Neither one, because both finish too late"
             ],
-            "answer": "After dinner",
+            "answer": "The community centre one, because the group is smaller",
             "assessmentMode": "secure",
             "sourcePolicy": "unseen"
           },
@@ -29206,17 +29206,17 @@
             "skill": "listening",
             "mode": "mastery",
             "canDo": [
-              "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS"
+              "A2.FINAL.LISTENING.INTEGRATED_ROUTINE_INFO"
             ],
-            "audioTranscript": "If the screen freezes, save your work before you restart the computer.",
-            "prompt": "What should happen before restarting?",
-            "promptAr": "ماذا ينبغي فعله قبل إعادة التشغيل؟",
+            "audioTranscript": "Good morning, everyone. This is Sawsan from the river clean-up. We have plenty of gloves now, so please don't buy any more. We still need a few large bags, and we have very little drinking water, which worries me because the forecast is warm. There isn't much shade near the bridge either. If each of you brings one bottle and one bag, that will be enough for the whole group. A lot of new people joined us this week, so please arrive early and leave enough space in the car park for them.",
+            "prompt": "What does the group still need?",
+            "promptAr": "ما الذي لا تزال المجموعة بحاجة إليه؟",
             "options": [
-              "Save the work",
-              "Delete the file",
-              "Turn off the network"
+              "A few bags and more drinking water",
+              "More gloves and more shade",
+              "More cars and a later start"
             ],
-            "answer": "Save the work",
+            "answer": "A few bags and more drinking water",
             "assessmentMode": "secure",
             "sourcePolicy": "unseen"
           },
@@ -29226,17 +29226,17 @@
             "skill": "listening",
             "mode": "mastery",
             "canDo": [
-              "A2.U11.LISTENING.UNDERSTAND_WEATHER_PROBLEM"
+              "A2.FINAL.LISTENING.INTEGRATED_ROUTINE_INFO"
             ],
-            "audioTranscript": "Rain is likely after five, so the football game will begin an hour earlier at three.",
-            "prompt": "Why does the game start earlier?",
-            "promptAr": "لماذا تبدأ المباراة مبكراً؟",
+            "audioTranscript": "Hi Tarek, it's Widad. We're moving on the twenty-first, so I'm writing to the landlord this evening. The van is arriving at nine, and my brother is going to help us with the heavy furniture. I think it will take most of the day, honestly. I'm not going to pack the kitchen until the night before, because we still have to cook. If you're free on the Saturday after that, we'll have a small lunch in the new place — nothing formal. I'll send you the address as soon as the keys are ours.",
+            "prompt": "What is already arranged for the twenty-first?",
+            "promptAr": "ما المرتّب فعلاً ليوم الحادي والعشرين؟",
             "options": [
-              "Rain is likely later",
-              "The field is closed now",
-              "The players arrive late"
+              "A van at nine and her brother's help",
+              "A lunch for all of their friends",
+              "A meeting with the new landlord"
             ],
-            "answer": "Rain is likely later",
+            "answer": "A van at nine and her brother's help",
             "assessmentMode": "secure",
             "sourcePolicy": "unseen"
           },
@@ -29246,17 +29246,17 @@
             "skill": "listening",
             "mode": "mastery",
             "canDo": [
-              "A2.U12.READING.FOLLOW_INVITATION_MESSAGE"
+              "A2.FINAL.LISTENING.INTEGRATED_ROUTINE_INFO"
             ],
-            "audioTranscript": "I'd love to come, but I finish work at eight. Could I join for the last hour?",
-            "prompt": "What does the speaker request?",
-            "promptAr": "ماذا يطلب المتحدث؟",
+            "audioTranscript": "Welcome to the sports centre. Before you use the pool, you have to leave your bag in a locker, because bags are not allowed beside the water. You must shower first; that is a rule, not a request. You don't have to bring your own towel, because we lend them at the desk for nothing. Children under eight have to swim with an adult. The last swim is at half past nine, and everyone must leave the water when the whistle goes. If you need help, our staff in the red shirts are here all evening.",
+            "prompt": "Which one of these is NOT necessary?",
+            "promptAr": "أي من هذه الأمور غير ضروري؟",
             "options": [
-              "To join late",
-              "To cancel the event",
-              "To change jobs"
+              "Bringing your own towel",
+              "Showering before you swim",
+              "Leaving your bag in a locker"
             ],
-            "answer": "To join late",
+            "answer": "Bringing your own towel",
             "assessmentMode": "secure",
             "sourcePolicy": "unseen"
           },
@@ -29266,17 +29266,17 @@
             "skill": "listening",
             "mode": "mastery",
             "canDo": [
-              "A2.U5.INTERACTION.MANAGE_FOOD_SERVICE"
+              "A2.FINAL.LISTENING.INTEGRATED_ROUTINE_INFO"
             ],
-            "audioTranscript": "We ordered four soups, but only three arrived, and the bill lists five.",
-            "prompt": "What number appears on the bill?",
-            "promptAr": "ما الرقم الظاهر في الفاتورة؟",
+            "audioTranscript": "You asked me about cycling to work, so here is what I think. You should try the river path first; it is longer, but you don't share it with buses. You shouldn't start with five days a week — begin with two and see how your legs feel. I'd buy a good light before anything else, because the mornings are dark now. It might be a good idea to keep a spare shirt at the office too. And if it rains hard, take the bus. There is no prize for arriving wet and angry.",
+            "prompt": "What does the speaker advise about the first weeks?",
+            "promptAr": "بماذا ينصح المتحدث بشأن الأسابيع الأولى؟",
             "options": [
-              "Five",
-              "Four",
-              "Three"
+              "Cycle two days a week, not five",
+              "Cycle every day along the main road",
+              "Wait until the mornings are lighter"
             ],
-            "answer": "Five",
+            "answer": "Cycle two days a week, not five",
             "assessmentMode": "secure",
             "sourcePolicy": "unseen"
           },
@@ -29286,17 +29286,17 @@
             "skill": "listening",
             "mode": "mastery",
             "canDo": [
-              "A2.U4.READING.COMPARE_HOUSING"
+              "A2.FINAL.LISTENING.INTEGRATED_ROUTINE_INFO"
             ],
-            "audioTranscript": "The flat is cheaper and closer to work, but the house is quieter and has more space.",
-            "prompt": "Which home is quieter?",
-            "promptAr": "أي منزل أكثر هدوءاً؟",
+            "audioTranscript": "This is a message for all the parents. If the rain continues tonight, Saturday's match will move to the indoor hall. We will decide at eight on Friday evening and I'll send one message to everybody, so please don't ring the club. If we play indoors, your child will need clean shoes, because the floor is new and the school is strict about it. If the weather clears, we'll play on the usual field and start at ten as normal. Either way, the coach would like everyone there twenty minutes early.",
+            "prompt": "When will the club make its decision?",
+            "promptAr": "متى سيتخذ النادي قراره؟",
             "options": [
-              "The house",
-              "The flat",
-              "Both"
+              "At eight on Friday evening",
+              "On Saturday morning at ten",
+              "Twenty minutes before the match"
             ],
-            "answer": "The house",
+            "answer": "At eight on Friday evening",
             "assessmentMode": "secure",
             "sourcePolicy": "unseen"
           },
@@ -29306,17 +29306,17 @@
             "skill": "listening",
             "mode": "mastery",
             "canDo": [
-              "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION"
+              "A2.FINAL.LISTENING.INTEGRATED_ROUTINE_INFO"
             ],
-            "audioTranscript": "Leila is less experienced than Samir, but she is the most organised candidate.",
-            "prompt": "What is Leila's strongest stated quality?",
-            "promptAr": "ما أقوى صفة مذكورة لليلى؟",
+            "audioTranscript": "Here is how the machine in the basement works. First, put your coins in the slot at the top; if you press the button before you pay, nothing happens. Then choose a programme — the short one takes forty minutes and the long one takes an hour and a half. When the light turns green, the door opens. If the light stays red, the machine is still full of water, so wait; don't pull the handle. Finally, take your clothes out the same day. If people leave washing overnight, the caretaker puts it in a box by the stairs.",
+            "prompt": "What does a red light mean?",
+            "promptAr": "ماذا يعني الضوء الأحمر؟",
             "options": [
-              "Organisation",
-              "Experience",
-              "Age"
+              "There is still water inside the machine",
+              "The programme has finished",
+              "The machine needs more coins"
             ],
-            "answer": "Organisation",
+            "answer": "There is still water inside the machine",
             "assessmentMode": "secure",
             "sourcePolicy": "unseen"
           },
@@ -29326,17 +29326,17 @@
             "skill": "listening",
             "mode": "mastery",
             "canDo": [
-              "A2.U2.READING.FOLLOW_SHORT_NARRATIVE"
+              "A2.FINAL.LISTENING.INTEGRATED_ROUTINE_INFO"
             ],
-            "audioTranscript": "We were walking to the station when a neighbour offered us a lift.",
-            "prompt": "What were they doing when help arrived?",
-            "promptAr": "ماذا كانوا يفعلون عندما وصلت المساعدة؟",
+            "audioTranscript": "Hello, my name is Hanan and I'd like to join the reading group at the library. I've worked with children before — I spent two years at a primary school in my own country — but I've never taught an adult. I have read to my nieces every week since they were small, so I'm not nervous about reading aloud. I haven't used your booking system yet, and I've never been to the Thursday session, so I'd like somebody to show me the room first. Have you ever had a volunteer who speaks two languages?",
+            "prompt": "What has Hanan never done?",
+            "promptAr": "ما الشيء الذي لم تفعله حنان قط؟",
             "options": [
-              "Walking to the station",
-              "Waiting on a train",
-              "Driving a car"
+              "Taught an adult",
+              "Worked with children",
+              "Read aloud to anybody"
             ],
-            "answer": "Walking to the station",
+            "answer": "Taught an adult",
             "assessmentMode": "secure",
             "sourcePolicy": "unseen"
           },
@@ -29346,17 +29346,17 @@
             "skill": "listening",
             "mode": "mastery",
             "canDo": [
-              "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE"
+              "A2.FINAL.LISTENING.INTEGRATED_ROUTINE_INFO"
             ],
-            "audioTranscript": "I normally work mornings, but this month I am taking the evening shift.",
-            "prompt": "What is temporary?",
-            "promptAr": "ما الأمر المؤقت؟",
+            "audioTranscript": "Hi, I've just got home and the kitchen was a disaster, so don't worry — I've already washed the plates and put the bins out. The delivery man has been twice, but he hasn't left the box yet, because somebody has to sign for it. I haven't paid the electricity bill yet; it's on the table and the date on it is the ninth, so please don't move it anywhere. Oh, and Munther has already taken his bicycle out of the hall, so you can reach the cupboard now. See you tonight.",
+            "prompt": "What still has to be done?",
+            "promptAr": "ما الذي لا يزال يجب فعله؟",
             "options": [
-              "The evening shift",
-              "Having a job",
-              "Working every month"
+              "Paying the electricity bill",
+              "Washing the plates",
+              "Moving the bicycle out of the hall"
             ],
-            "answer": "The evening shift",
+            "answer": "Paying the electricity bill",
             "assessmentMode": "secure",
             "sourcePolicy": "unseen"
           },
@@ -29366,17 +29366,17 @@
             "skill": "listening",
             "mode": "mastery",
             "canDo": [
-              "A2.U8.READING.FOLLOW_COURSE_JOB_TEXT"
+              "A2.FINAL.LISTENING.INTEGRATED_ROUTINE_INFO"
             ],
-            "audioTranscript": "The course meets Tuesday and Thursday. Materials are included, but transport is not.",
-            "prompt": "What is included?",
-            "promptAr": "ما الذي هو مشمول؟",
+            "audioTranscript": "Good afternoon. I usually stand at the other end of the market, near the fish, but this month I'm working from this corner because workers are repairing the roof. I sell honey and dried fruit all year, and in winter I also bring olives from my brother's farm. At the moment I'm only taking cash, I'm afraid — the card machine is broken and I'm waiting for a new one. I open at seven every day except Sunday. If you come early, the bread next door is still warm.",
+            "prompt": "Why is the stall in a different place this month?",
+            "promptAr": "لماذا يقع كشك البائع في مكان مختلف هذا الشهر؟",
             "options": [
-              "Materials",
-              "Transport",
-              "Meals"
+              "Workers are repairing the roof",
+              "The card machine is broken",
+              "He sells olives only in winter"
             ],
-            "answer": "Materials",
+            "answer": "Workers are repairing the roof",
             "assessmentMode": "secure",
             "sourcePolicy": "unseen"
           },
@@ -29386,17 +29386,17 @@
             "skill": "listening",
             "mode": "mastery",
             "canDo": [
-              "A2.U10.READING.FOLLOW_STORY_REVIEW"
+              "A2.FINAL.LISTENING.INTEGRATED_ROUTINE_INFO"
             ],
-            "audioTranscript": "Although the plot was simple, the characters were moving and the ending was excellent.",
-            "prompt": "Which point is least positive?",
-            "promptAr": "أي نقطة هي الأقل إيجابية؟",
+            "audioTranscript": "I want to tell you what happened to me on Tuesday. I left my wallet on the counter of a small shop near the station and I didn't notice for two hours. First I searched my bag three times, then I rang my bank, and finally I went back to the shop without much hope. The woman behind the counter smiled and gave it to me — everything was still inside, even the photographs. She refused any money, so I bought a box of sweets for the staff instead. It was a very good day after a bad start.",
+            "prompt": "What did the speaker do last?",
+            "promptAr": "ما آخر شيء فعله المتحدث؟",
             "options": [
-              "The simple plot",
-              "The characters",
-              "The ending"
+              "Bought sweets for the shop staff",
+              "Telephoned the bank",
+              "Searched through the bag"
             ],
-            "answer": "The simple plot",
+            "answer": "Bought sweets for the shop staff",
             "assessmentMode": "secure",
             "sourcePolicy": "unseen"
           },
@@ -29406,17 +29406,17 @@
             "skill": "listening",
             "mode": "mastery",
             "canDo": [
-              "A2.U6.INTERACTION.BOOK_CHANGE_TRAVEL"
+              "A2.FINAL.LISTENING.INTEGRATED_ROUTINE_INFO"
             ],
-            "audioTranscript": "If the boat is cancelled, meet the guide at the museum entrance at ten.",
-            "prompt": "Where is the alternative meeting point?",
-            "promptAr": "أين نقطة اللقاء البديلة؟",
+            "audioTranscript": "Hello, this is the repair office returning your call about the heating. I'm sorry nobody came on Monday; the engineer was ill and the message didn't reach you, which isn't good enough. Could you tell us whether the noise happens only when the water is hot, or all the time? We'd like to send somebody on Wednesday between eleven and one. If that doesn't suit you, would Thursday morning be better? Please don't turn the system off completely in this weather. Ring us back today if you can, and ask for Ghada.",
+            "prompt": "What does the office want the customer to do?",
+            "promptAr": "ماذا يريد المكتب من الزبون أن يفعل؟",
             "options": [
-              "The museum entrance",
-              "The boat office",
-              "The hotel"
+              "Say when the noise happens and agree a time",
+              "Turn the heating off until Wednesday",
+              "Pay for the visit that did not happen"
             ],
-            "answer": "The museum entrance",
+            "answer": "Say when the noise happens and agree a time",
             "assessmentMode": "secure",
             "sourcePolicy": "unseen"
           },
@@ -29426,17 +29426,17 @@
             "skill": "listening",
             "mode": "mastery",
             "canDo": [
-              "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS"
+              "A2.FINAL.LISTENING.INTEGRATED_ROUTINE_INFO"
             ],
-            "audioTranscript": "Open settings, choose notifications, and turn off the sound for this app only.",
-            "prompt": "What will be changed?",
-            "promptAr": "ما الذي سيتغير؟",
+            "audioTranscript": "A short update about the museum trip. Although the tickets are booked, we are changing the day, because the museum is closed for cleaning on the fourteenth. So the trip is now on the twenty-first, with the same bus at the same time, and the cost has not changed. Although lunch isn't included, there is a big room where the children can eat their own food, so please send them with something simple. We still need two more adults with us; if nobody offers by Friday, we will take one class instead of two.",
+            "prompt": "Why has the trip moved to another day?",
+            "promptAr": "لماذا انتقلت الرحلة إلى يوم آخر؟",
             "options": [
-              "One app's notification sound",
-              "All phone audio",
-              "The network password"
+              "The museum is closed for cleaning that day",
+              "The bus company has raised its prices",
+              "Too few children have paid for tickets"
             ],
-            "answer": "One app's notification sound",
+            "answer": "The museum is closed for cleaning that day",
             "assessmentMode": "secure",
             "sourcePolicy": "unseen"
           },
@@ -29446,17 +29446,17 @@
             "skill": "listening",
             "mode": "mastery",
             "canDo": [
-              "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE"
+              "A2.FINAL.LISTENING.INTEGRATED_ROUTINE_INFO"
             ],
-            "audioTranscript": "I've had the cough since Friday, and it became worse last night.",
-            "prompt": "When did the cough start?",
-            "promptAr": "متى بدأ السعال؟",
+            "audioTranscript": "Here is the travel picture for tomorrow. The first part of the day will be dry and rather cold, and there may be fog in the valley before nine. Buses will run normally, but the early train to the coast might be late, because engineers are working on the line near the bridge. In the afternoon it will get warmer, and I think most people will be comfortable without a heavy coat. There might be rain after six, so if you are walking home late, take something for it. I'll be back with more at midday.",
+            "prompt": "Which thing is the speaker sure about?",
+            "promptAr": "ما الأمر الذي يتأكد منه المتحدث؟",
             "options": [
-              "Friday",
-              "Last night",
-              "This morning"
+              "The early part of the day will be dry and cold",
+              "The early train will be late",
+              "It will rain in the evening"
             ],
-            "answer": "Friday",
+            "answer": "The early part of the day will be dry and cold",
             "assessmentMode": "secure",
             "sourcePolicy": "unseen"
           },
@@ -29466,17 +29466,17 @@
             "skill": "listening",
             "mode": "mastery",
             "canDo": [
-              "A2.U12.READING.FOLLOW_INVITATION_MESSAGE"
+              "A2.FINAL.LISTENING.INTEGRATED_ROUTINE_INFO"
             ],
-            "audioTranscript": "Because the hall is unavailable, the workshop will take place online. The date and time are unchanged.",
-            "prompt": "What changed?",
-            "promptAr": "ما الذي تغير؟",
+            "audioTranscript": "We interviewed four people, and I want to tell you about the one who impressed me most. She is the woman who worked in the hospital kitchen for six years, which is exactly the experience we need here. She is also the only applicant who can start in April, and she brought a reference from a manager who trusts her completely. The man who came second is friendlier, honestly, but he can only work at weekends, which doesn't help us at all. So the person I would choose is the one with the kitchen years behind her.",
+            "prompt": "Why does the speaker prefer the first candidate?",
+            "promptAr": "لماذا يفضّل المتحدث المتقدمة الأولى؟",
             "options": [
-              "The format or place",
-              "The date",
-              "The time"
+              "Her experience, and she can start in April",
+              "She is the friendliest of the four",
+              "She is free only at the weekend"
             ],
-            "answer": "The format or place",
+            "answer": "Her experience, and she can start in April",
             "assessmentMode": "secure",
             "sourcePolicy": "unseen"
           },
@@ -29486,17 +29486,17 @@
             "skill": "listening",
             "mode": "mastery",
             "canDo": [
-              "A2.U11.LISTENING.UNDERSTAND_WEATHER_PROBLEM"
+              "A2.FINAL.LISTENING.INTEGRATED_ROUTINE_INFO"
             ],
-            "audioTranscript": "There might be fog early, but it should clear before the buses leave at nine.",
-            "prompt": "When should the fog clear?",
-            "promptAr": "متى ينبغي أن ينقشع الضباب؟",
+            "audioTranscript": "This is the simplest soup I know, and my grandmother made it every winter. Chop one large onion and four carrots, and heat a little oil in a big pot. Cook the onion gently for five minutes — don't let it turn brown. Add the carrots, half a spoon of salt and a litre of water, then boil it for twenty minutes. Take the pot off the heat before you mix it, or you will burn your hands. Serve it with warm bread. If you like it thicker, use less water next time.",
+            "prompt": "What must you do before you mix the soup?",
+            "promptAr": "ما الذي يجب فعله قبل خلط الحساء؟",
             "options": [
-              "Before nine",
-              "After the buses return",
-              "At midday only"
+              "Take the pot off the heat",
+              "Add another litre of water",
+              "Let the onion turn brown"
             ],
-            "answer": "Before nine",
+            "answer": "Take the pot off the heat",
             "assessmentMode": "secure",
             "sourcePolicy": "unseen"
           },
@@ -29506,17 +29506,17 @@
             "skill": "listening",
             "mode": "mastery",
             "canDo": [
-              "A2.U5.INTERACTION.MANAGE_FOOD_SERVICE"
+              "A2.FINAL.LISTENING.INTEGRATED_ROUTINE_INFO"
             ],
-            "audioTranscript": "First chop the vegetables. Then heat the oil, and add the vegetables only when it is hot.",
-            "prompt": "When are the vegetables added?",
-            "promptAr": "متى تُضاف الخضروات؟",
+            "audioTranscript": "Hi Saleem, it's Aisha. I'd like to invite you and your family to our new flat on the last Friday of the month, at about one o'clock. It is not a big occasion at all — only lunch and plenty of talking. My sister is coming from the coast, and she has never met you. Would you like me to cook the fish you enjoyed last year? If Friday is difficult, we are free on the Sunday too, so tell me which one suits you. Please don't bring anything; the kitchen is full already. Let me know this week.",
+            "prompt": "What does Aisha ask Saleem to do?",
+            "promptAr": "ماذا تطلب عائشة من سليم أن يفعل؟",
             "options": [
-              "After the oil is hot",
-              "Before chopping",
-              "Before heating the oil"
+              "Choose between two days and reply this week",
+              "Bring food for everybody",
+              "Collect her sister from the coast"
             ],
-            "answer": "After the oil is hot",
+            "answer": "Choose between two days and reply this week",
             "assessmentMode": "secure",
             "sourcePolicy": "unseen"
           }
@@ -29531,17 +29531,17 @@
             "skill": "reading",
             "mode": "mastery",
             "canDo": [
-              "A2.U8.READING.FOLLOW_COURSE_JOB_TEXT"
+              "A2.FINAL.READING.INTEGRATED_PRACTICAL_TEXTS"
             ],
-            "sourceText": "Library assistant needed: Saturdays 10–2. Must be able to use email and speak clearly to visitors. Apply by 9 March.",
-            "prompt": "Which ability is required?",
-            "promptAr": "أي قدرة مطلوبة؟",
+            "sourceText": "Weekend helper wanted at the community garden. You must be over sixteen and you have to work outside in all weather. You don't need any experience, because we train everybody on the first morning. Tools are provided. Write to Rida before the twelfth of May.",
+            "prompt": "Which of these does the garden require?",
+            "promptAr": "ما الشرط الذي تطلبه الحديقة؟",
             "options": [
-              "Using email",
-              "Driving",
-              "Cooking"
+              "Being over sixteen",
+              "Two years of experience",
+              "Bringing your own tools"
             ],
-            "answer": "Using email",
+            "answer": "Being over sixteen",
             "assessmentMode": "secure",
             "sourcePolicy": "unseen"
           },
@@ -29551,17 +29551,17 @@
             "skill": "reading",
             "mode": "mastery",
             "canDo": [
-              "A2.U4.READING.COMPARE_HOUSING"
+              "A2.FINAL.READING.INTEGRATED_PRACTICAL_TEXTS"
             ],
-            "sourceText": "Flat A: $480, one bedroom, near buses. Flat B: $530, two bedrooms, no late buses.",
-            "prompt": "Which option has more bedrooms?",
-            "promptAr": "أي خيار فيه غرف نوم أكثر؟",
+            "sourceText": "Flat one: two rooms on the third floor, no lift, but the rent is lower and the street is quiet. Flat two: one room on the ground floor, more expensive, and the buses are noisy until midnight. Both flats are furnished and both are fifteen minutes from the college.",
+            "prompt": "Which flat suits somebody who cannot use stairs?",
+            "promptAr": "أي شقة تناسب من لا يستطيع صعود الدرج؟",
             "options": [
-              "Flat B",
-              "Flat A",
-              "Both"
+              "Flat two, although it costs more",
+              "Flat one, because the rent is lower",
+              "Neither flat, because both have stairs"
             ],
-            "answer": "Flat B",
+            "answer": "Flat two, although it costs more",
             "assessmentMode": "secure",
             "sourcePolicy": "unseen"
           },
@@ -29571,17 +29571,17 @@
             "skill": "reading",
             "mode": "mastery",
             "canDo": [
-              "A2.U6.INTERACTION.BOOK_CHANGE_TRAVEL"
+              "A2.FINAL.READING.INTEGRATED_PRACTICAL_TEXTS"
             ],
-            "sourceText": "City Hotel includes breakfast and free cancellation until Thursday. River Rooms is cheaper but bookings cannot be changed.",
-            "prompt": "Which option is more flexible?",
-            "promptAr": "أي خيار أكثر مرونة؟",
+            "sourceText": "Passengers for the coast: the eleven o'clock boat will not run today because of the wind. If you have a ticket for it, take the bus from stand six instead. The bus leaves at half past eleven and arrives an hour later. The desk cannot return money for today's tickets.",
+            "prompt": "What should a passenger with a boat ticket do?",
+            "promptAr": "ماذا ينبغي لراكب يحمل تذكرة القارب أن يفعل؟",
             "options": [
-              "City Hotel",
-              "River Rooms",
-              "Both"
+              "Take the half past eleven bus from stand six",
+              "Ask the desk to return the money",
+              "Wait for a later boat this evening"
             ],
-            "answer": "City Hotel",
+            "answer": "Take the half past eleven bus from stand six",
             "assessmentMode": "secure",
             "sourcePolicy": "unseen"
           },
@@ -29591,17 +29591,17 @@
             "skill": "reading",
             "mode": "mastery",
             "canDo": [
-              "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE"
+              "A2.FINAL.READING.INTEGRATED_PRACTICAL_TEXTS"
             ],
-            "sourceText": "Clinic note: arrive fifteen minutes early and bring your medicine list. You do not need to bring the medicine itself.",
-            "prompt": "What must the patient bring?",
-            "promptAr": "ماذا يجب على المريض أن يحضر؟",
+            "sourceText": "After the treatment you should rest for two days and drink plenty of water. You must not lift anything heavy for a week. A short walk each day is good for you. If the pain becomes worse at night, or you have a temperature, ring the nurse on the number below.",
+            "prompt": "What is forbidden for a week?",
+            "promptAr": "ما الممنوع لمدة أسبوع؟",
             "options": [
-              "A medicine list",
-              "Every medicine",
-              "Food"
+              "Lifting heavy things",
+              "Walking every day",
+              "Drinking a lot of water"
             ],
-            "answer": "A medicine list",
+            "answer": "Lifting heavy things",
             "assessmentMode": "secure",
             "sourcePolicy": "unseen"
           },
@@ -29611,17 +29611,17 @@
             "skill": "reading",
             "mode": "mastery",
             "canDo": [
-              "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS"
+              "A2.FINAL.READING.INTEGRATED_PRACTICAL_TEXTS"
             ],
-            "sourceText": "To reset the app, first save a backup. Next sign out, update the app and sign in again. Never send your password to support.",
-            "prompt": "What is the first step?",
-            "promptAr": "ما الخطوة الأولى؟",
+            "sourceText": "To share the file: open the folder, choose the file, then press Share. If the button is grey, you are not signed in. Copy the link and send it to one person at a time. If you send it to a whole group, everybody can change the file and nobody knows who did it.",
+            "prompt": "What does a grey Share button mean?",
+            "promptAr": "ماذا يعني أن يكون زر المشاركة رمادياً؟",
             "options": [
-              "Save a backup",
-              "Sign in",
-              "Send the password"
+              "You have not signed in",
+              "The file is too large to share",
+              "Somebody else has changed the file"
             ],
-            "answer": "Save a backup",
+            "answer": "You have not signed in",
             "assessmentMode": "secure",
             "sourcePolicy": "unseen"
           },
@@ -29631,17 +29631,17 @@
             "skill": "reading",
             "mode": "mastery",
             "canDo": [
-              "A2.U10.READING.FOLLOW_STORY_REVIEW"
+              "A2.FINAL.READING.INTEGRATED_PRACTICAL_TEXTS"
             ],
-            "sourceText": "Review: A warm comedy with excellent actors. The middle is a little slow, but the final scene is very funny. Recommended for families.",
-            "prompt": "Who is the suggested audience?",
-            "promptAr": "من الجمهور المقترح؟",
+            "sourceText": "I watched this film on a cold evening and I did not expect to enjoy it. The beginning was slow and the music was far too loud, but the last twenty minutes were excellent. In my opinion the older actor saved it. I would watch it again, although not with small children.",
+            "prompt": "What is the writer's opinion of the film overall?",
+            "promptAr": "ما رأي الكاتب في الفيلم عموماً؟",
             "options": [
-              "Families",
-              "Only sports fans",
-              "Young children alone"
+              "Good in the end, in spite of a weak start",
+              "Bad from the beginning to the end",
+              "Perfect for a family with small children"
             ],
-            "answer": "Families",
+            "answer": "Good in the end, in spite of a weak start",
             "assessmentMode": "secure",
             "sourcePolicy": "unseen"
           },
@@ -29651,17 +29651,17 @@
             "skill": "reading",
             "mode": "mastery",
             "canDo": [
-              "A2.U12.READING.FOLLOW_INVITATION_MESSAGE"
+              "A2.FINAL.READING.INTEGRATED_PRACTICAL_TEXTS"
             ],
-            "sourceText": "Update: Sunday's picnic begins at noon instead of eleven. The location and food plan are unchanged. Please confirm by Friday.",
-            "prompt": "What remains unchanged?",
-            "promptAr": "ما الذي بقي من دون تغيير؟",
+            "sourceText": "Dear neighbours, we would like to invite you to tea in the courtyard on Saturday at four, to meet the new family in flat nine. Children are welcome. Please tell Suad by Thursday whether you are coming, so that we know how many chairs to carry down.",
+            "prompt": "What must neighbours do before Thursday?",
+            "promptAr": "ما الواجب على الجيران قبل يوم الخميس؟",
             "options": [
-              "Location and food plan",
-              "Start time",
-              "Reply deadline"
+              "Say whether they will come",
+              "Carry the chairs to the courtyard",
+              "Bring something to eat with the tea"
             ],
-            "answer": "Location and food plan",
+            "answer": "Say whether they will come",
             "assessmentMode": "secure",
             "sourcePolicy": "unseen"
           },
@@ -29671,17 +29671,17 @@
             "skill": "reading",
             "mode": "mastery",
             "canDo": [
-              "A2.U11.LISTENING.UNDERSTAND_WEATHER_PROBLEM"
+              "A2.FINAL.READING.INTEGRATED_PRACTICAL_TEXTS"
             ],
-            "sourceText": "Path closed after storm damage. Use the north entrance and stay on the marked route. The visitor centre remains open.",
-            "prompt": "Which entrance should visitors use?",
-            "promptAr": "أي مدخل ينبغي للزوار استخدامه؟",
+            "sourceText": "The coastal path is open, but the wind may be strong after midday. Walkers must stay behind the fence near the cliff, and must not use the lower steps, which are wet and slippery. Dogs have to be kept on a lead. The cafe at the halfway point closes at four.",
+            "prompt": "Which part of the walk is closed to people?",
+            "promptAr": "أي جزء من الممشى مغلق أمام الناس؟",
             "options": [
-              "North",
-              "The closed path",
-              "South"
+              "The lower steps",
+              "The whole coastal path",
+              "The cafe at the halfway point"
             ],
-            "answer": "North",
+            "answer": "The lower steps",
             "assessmentMode": "secure",
             "sourcePolicy": "unseen"
           },
@@ -29691,17 +29691,17 @@
             "skill": "reading",
             "mode": "mastery",
             "canDo": [
-              "A2.U5.INTERACTION.MANAGE_FOOD_SERVICE"
+              "A2.FINAL.READING.INTEGRATED_PRACTICAL_TEXTS"
             ],
-            "sourceText": "Tomato rice serves four: 300 g rice, six tomatoes, a little oil. Boil the rice, cook the tomatoes, then mix them.",
-            "prompt": "How many people does it serve?",
-            "promptAr": "كم شخصاً تكفي؟",
+            "sourceText": "Lentil soup for six people: 400 grams of lentils, two onions, a little oil and one spoon of cumin. Wash the lentils twice. Cook the onions until they are soft, then add everything else with a litre and a half of water and boil it for half an hour.",
+            "prompt": "How much water does the recipe need?",
+            "promptAr": "كم من الماء تحتاج الوصفة؟",
             "options": [
-              "Four",
-              "Six",
-              "Three"
+              "A litre and a half",
+              "Half a litre",
+              "Three litres"
             ],
-            "answer": "Four",
+            "answer": "A litre and a half",
             "assessmentMode": "secure",
             "sourcePolicy": "unseen"
           },
@@ -29711,17 +29711,17 @@
             "skill": "reading",
             "mode": "mastery",
             "canDo": [
-              "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION"
+              "A2.FINAL.READING.INTEGRATED_PRACTICAL_TEXTS"
             ],
-            "sourceText": "Candidate A is the most experienced. Candidate B is more organised and available every day. The role needs daily record-keeping.",
-            "prompt": "Who better matches the stated duty?",
-            "promptAr": "من الأنسب للواجب المذكور؟",
+            "sourceText": "Three people applied for the job. Hala has the most experience, but she can work only in the mornings. Nizar is the quickest learner and is free every day except Sunday. Rawan, who worked here last summer, knows the machines best, but she can only work three days a week. The job is full time, Monday to Friday.",
+            "prompt": "Which applicant can work the hours of the job?",
+            "promptAr": "أي متقدّم يستطيع العمل في ساعات الوظيفة؟",
             "options": [
-              "Candidate B",
-              "Candidate A",
-              "Neither"
+              "Nizar",
+              "Hala",
+              "Nobody can"
             ],
-            "answer": "Candidate B",
+            "answer": "Nizar",
             "assessmentMode": "secure",
             "sourcePolicy": "unseen"
           },
@@ -29731,17 +29731,17 @@
             "skill": "reading",
             "mode": "mastery",
             "canDo": [
-              "A2.U2.READING.FOLLOW_SHORT_NARRATIVE"
+              "A2.FINAL.READING.INTEGRATED_PRACTICAL_TEXTS"
             ],
-            "sourceText": "First we missed the bus. Then a driver showed us a shorter route, and finally we arrived before the office closed.",
-            "prompt": "What happened second?",
-            "promptAr": "ماذا حدث ثانياً؟",
+            "sourceText": "Last winter our street had no electricity for two days. While we were looking for candles, a neighbour knocked and brought us a small gas cooker. We cooked together in her kitchen for two evenings, and afterwards nobody on the street forgot what she did.",
+            "prompt": "What were the writer's family doing when the neighbour arrived?",
+            "promptAr": "ماذا كانت عائلة الكاتب تفعل عندما وصلت الجارة؟",
             "options": [
-              "A driver showed a shorter route",
-              "They missed the bus",
-              "The office closed"
+              "Looking for candles",
+              "Cooking on a gas cooker",
+              "Writing to the electricity office"
             ],
-            "answer": "A driver showed a shorter route",
+            "answer": "Looking for candles",
             "assessmentMode": "secure",
             "sourcePolicy": "unseen"
           },
@@ -29751,17 +29751,17 @@
             "skill": "reading",
             "mode": "mastery",
             "canDo": [
-              "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE"
+              "A2.FINAL.READING.INTEGRATED_PRACTICAL_TEXTS"
             ],
-            "sourceText": "I usually study at home, but this week I am using the college library because my building is noisy.",
-            "prompt": "Why is the writer using the library?",
-            "promptAr": "لماذا يستخدم الكاتب المكتبة؟",
+            "sourceText": "I still work at the same school, but this term I am teaching the youngest class, because their usual teacher is ill. These days I leave home an hour earlier and I am learning a great deal from them. It is only until March, and honestly I will be glad to go back.",
+            "prompt": "Which part of the writer's life is temporary?",
+            "promptAr": "أي جزء من حياة الكاتب مؤقت؟",
             "options": [
-              "The building is noisy",
-              "The writer always studies there",
-              "The college is closed"
+              "Teaching the youngest class",
+              "Working at that school",
+              "Getting up in the morning"
             ],
-            "answer": "The building is noisy",
+            "answer": "Teaching the youngest class",
             "assessmentMode": "secure",
             "sourcePolicy": "unseen"
           },
@@ -29771,17 +29771,17 @@
             "skill": "reading",
             "mode": "mastery",
             "canDo": [
-              "A2.U8.READING.FOLLOW_COURSE_JOB_TEXT"
+              "A2.FINAL.READING.INTEGRATED_PRACTICAL_TEXTS"
             ],
-            "sourceText": "Evening design course: practical projects, Tuesday and Thursday, $120 including software access. No previous qualification required.",
-            "prompt": "What is not required?",
-            "promptAr": "ما الذي ليس مطلوباً؟",
+            "sourceText": "Digital skills course, ten evenings, starting 3 October. The fee is 90 dollars and it includes the book. You do not need a computer at home, because the room has twenty. You must attend at least eight evenings to receive the certificate. Places are held for people who pay by 26 September.",
+            "prompt": "What is needed in order to get the certificate?",
+            "promptAr": "ما المطلوب للحصول على الشهادة؟",
             "options": [
-              "A previous qualification",
-              "Attendance twice weekly",
-              "The fee"
+              "Attending at least eight evenings",
+              "Owning a computer at home",
+              "Paying an extra fee for the book"
             ],
-            "answer": "A previous qualification",
+            "answer": "Attending at least eight evenings",
             "assessmentMode": "secure",
             "sourcePolicy": "unseen"
           },
@@ -29791,17 +29791,17 @@
             "skill": "reading",
             "mode": "mastery",
             "canDo": [
-              "A2.U6.INTERACTION.BOOK_CHANGE_TRAVEL"
+              "A2.FINAL.READING.INTEGRATED_PRACTICAL_TEXTS"
             ],
-            "sourceText": "Flight arrives 14:30. Airport bus departs 14:45 and 15:15. Collecting bags usually takes twenty minutes.",
-            "prompt": "Which bus is realistically available after bag collection?",
-            "promptAr": "أي حافلة متاحة واقعياً بعد استلام الأمتعة؟",
+            "sourceText": "Bus 9 leaves the village at 07:15 and reaches the hospital at 07:55. Bus 12 leaves at 07:40 and arrives at 08:35, because it goes through the market. The clinic asks patients to be at the desk before their appointment time.",
+            "prompt": "A patient has an appointment at 08:00. Which bus must she take?",
+            "promptAr": "لدى مريضة موعد في الثامنة؛ أي حافلة يجب أن تستقل؟",
             "options": [
-              "15:15",
-              "14:45",
-              "Neither"
+              "Bus 9",
+              "Bus 12",
+              "Either bus is fine"
             ],
-            "answer": "15:15",
+            "answer": "Bus 9",
             "assessmentMode": "secure",
             "sourcePolicy": "unseen"
           },
@@ -29811,17 +29811,17 @@
             "skill": "reading",
             "mode": "mastery",
             "canDo": [
-              "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE"
+              "A2.FINAL.READING.INTEGRATED_PRACTICAL_TEXTS"
             ],
-            "sourceText": "If the pain gets worse or you develop a fever, call the clinic. For urgent breathing problems, use emergency services.",
-            "prompt": "When should emergency services be used?",
-            "promptAr": "متى ينبغي استخدام خدمات الطوارئ؟",
+            "sourceText": "Update from the office: we have already moved the chairs and the small tables into the hall. The new lights have just arrived, but we haven't tested them yet. Nobody has found the key to the store room, so please look in the top drawer before you leave tonight.",
+            "prompt": "Which job has not been done yet?",
+            "promptAr": "أي مهمة لم تُنجَز بعد؟",
             "options": [
-              "For urgent breathing problems",
-              "For every mild pain",
-              "To change an appointment"
+              "Testing the new lights",
+              "Moving the chairs into the hall",
+              "Bringing the small tables in"
             ],
-            "answer": "For urgent breathing problems",
+            "answer": "Testing the new lights",
             "assessmentMode": "secure",
             "sourcePolicy": "unseen"
           },
@@ -29831,17 +29831,17 @@
             "skill": "reading",
             "mode": "mastery",
             "canDo": [
-              "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS"
+              "A2.FINAL.READING.INTEGRATED_PRACTICAL_TEXTS"
             ],
-            "sourceText": "Meeting access: use your personal link once. If it fails, request a new link from the organiser. Do not post either link publicly.",
-            "prompt": "What should a user do after link failure?",
-            "promptAr": "ماذا ينبغي للمستخدم أن يفعل بعد فشل الرابط؟",
+            "sourceText": "You asked me about your first week. Don't try to remember every name on the first day, because nobody does. You should write down the things people tell you, because they explain them only once. Why don't you eat lunch with the team instead of at your desk? That is where the real information is.",
+            "prompt": "What does the writer suggest about lunch?",
+            "promptAr": "بماذا يقترح الكاتب فيما يخص الغداء؟",
             "options": [
-              "Request a new link",
-              "Post the old link",
-              "Share the password"
+              "Eat it with the team, not at your desk",
+              "Eat it quickly and go back to work",
+              "Bring it from home on the first day"
             ],
-            "answer": "Request a new link",
+            "answer": "Eat it with the team, not at your desk",
             "assessmentMode": "secure",
             "sourcePolicy": "unseen"
           },
@@ -29851,17 +29851,17 @@
             "skill": "reading",
             "mode": "mastery",
             "canDo": [
-              "A2.U12.READING.FOLLOW_INVITATION_MESSAGE"
+              "A2.FINAL.READING.INTEGRATED_PRACTICAL_TEXTS"
             ],
-            "sourceText": "Thanks for the invitation. Unfortunately, I am away that weekend, so I cannot attend. I hope to join the next event.",
-            "prompt": "What is the purpose of the message?",
-            "promptAr": "ما غرض الرسالة؟",
+            "sourceText": "Hall booking: pay a deposit of 40 dollars when you book. We return it if you leave the room clean and lock the door. Cancel more than seven days before your date and you lose nothing; cancel later than that and we keep the deposit. Music must stop at eleven.",
+            "prompt": "In which case does a group lose its deposit?",
+            "promptAr": "في أي حالة تخسر المجموعة عربونها؟",
             "options": [
-              "To decline politely",
-              "To change the venue",
-              "To accept immediately"
+              "It cancels three days before the date",
+              "It cancels a month before the date",
+              "It books the hall for a Saturday"
             ],
-            "answer": "To decline politely",
+            "answer": "It cancels three days before the date",
             "assessmentMode": "secure",
             "sourcePolicy": "unseen"
           },
@@ -29871,17 +29871,17 @@
             "skill": "reading",
             "mode": "mastery",
             "canDo": [
-              "A2.U11.LISTENING.UNDERSTAND_WEATHER_PROBLEM"
+              "A2.FINAL.READING.INTEGRATED_PRACTICAL_TEXTS"
             ],
-            "sourceText": "Forecast: dry morning, showers possible after 14:00, strong wind from 18:00. Outdoor stalls must close if wind reaches the warning level.",
-            "prompt": "When are showers possible?",
-            "promptAr": "متى يحتمل هطول زخات؟",
+            "sourceText": "Two evenings at the library. Tuesday: a storyteller for children between five and nine years old, free, no booking. Thursday: a book group for adults reading a short novel about a family in the south; five dollars, and you should read the first fifty pages before you come.",
+            "prompt": "What should an adult do before the Thursday evening?",
+            "promptAr": "ماذا ينبغي للبالغ أن يفعل قبل أمسية الخميس؟",
             "options": [
-              "After 14:00",
-              "Only in the morning",
-              "After 18:00 only"
+              "Read the first fifty pages of the novel",
+              "Book a free place for the storyteller",
+              "Bring a child between five and nine"
             ],
-            "answer": "After 14:00",
+            "answer": "Read the first fifty pages of the novel",
             "assessmentMode": "secure",
             "sourcePolicy": "unseen"
           }
@@ -29898,19 +29898,53 @@
             "canDo": [
               "A2.FINAL.WRITING.CONNECTED_PRACTICAL_TEXT"
             ],
-            "prompt": "Write an 80–120-word message to a friend about a recent day out: what happened, one unexpected event, your opinion and a future plan.",
-            "promptAr": "اكتب رسالة من 80–120 كلمة إلى صديق عن نزهة قريبة: ما حدث وحدث واحد غير متوقع ورأيك وخطة مستقبلية.",
-            "evaluation": [
-              "taskCompletion",
-              "clarity",
-              "organisation",
-              "appropriateLanguage",
-              "accuracy"
-            ],
+            "prompt": "Write 70–90 words to a friend about something that happened to you last month. Say what you were doing when it happened, what you did next, how you felt about it, and one thing you will do differently.",
+            "promptAr": "اكتب من 70 إلى 90 كلمة إلى صديق عن شيء حدث لك الشهر الماضي. قل ماذا كنت تفعل حين حدث، وماذا فعلت بعده، وبماذا شعرت، وشيئاً واحداً ستفعله بطريقة مختلفة.",
+            "evaluation": {
+              "type": "keywordChecklist",
+              "requiredGroups": [
+                [
+                  "I was",
+                  "we were",
+                  "while I",
+                  "while we",
+                  "when I",
+                  "when we"
+                ],
+                [
+                  "then",
+                  "after that",
+                  "later",
+                  "finally",
+                  "in the end",
+                  "so I",
+                  "the next day"
+                ],
+                [
+                  "I felt",
+                  "I was happy",
+                  "I was angry",
+                  "I was worried",
+                  "I was surprised",
+                  "honestly",
+                  "in my opinion",
+                  "I think"
+                ],
+                [
+                  "next time",
+                  "I will",
+                  "I'll",
+                  "I'm going to",
+                  "I am going to",
+                  "from now on"
+                ]
+              ],
+              "minGroupsMatched": 3
+            },
             "accepted": [],
             "wordGuide": [
-              80,
-              120
+              70,
+              90
             ],
             "assessmentMode": "secure"
           },
@@ -29922,19 +29956,52 @@
             "canDo": [
               "A2.FINAL.WRITING.CONNECTED_PRACTICAL_TEXT"
             ],
-            "prompt": "Write an 80–120-word practical event update after the venue changes. Include apology, reason, new place and time, one task and a reply request.",
-            "promptAr": "اكتب تحديث فعالية عملياً من 80–120 كلمة بعد تغيير المكان. ضمّن اعتذاراً وسبباً والمكان والوقت الجديدين ومهمة وطلب رد.",
-            "evaluation": [
-              "taskCompletion",
-              "clarity",
-              "organisation",
-              "appropriateLanguage",
-              "accuracy"
-            ],
+            "prompt": "Write 70–90 words to the person who runs a club you have joined. Explain that you cannot come on Saturday, give your reason, suggest another day, ask one question about what you will miss, and thank them.",
+            "promptAr": "اكتب من 70 إلى 90 كلمة إلى من يدير نادياً انضممت إليه. اشرح أنك لا تستطيع الحضور يوم السبت، واذكر السبب، واقترح يوماً آخر، واسأل سؤالاً عمّا ستفوته، واشكره.",
+            "evaluation": {
+              "type": "keywordChecklist",
+              "requiredGroups": [
+                [
+                  "I'm sorry",
+                  "I am sorry",
+                  "unfortunately",
+                  "I can't",
+                  "I cannot",
+                  "I won't be able",
+                  "I will not be able"
+                ],
+                [
+                  "because",
+                  "as I have to",
+                  "I have to",
+                  "I must",
+                  "since"
+                ],
+                [
+                  "instead",
+                  "could I",
+                  "could we",
+                  "would it be possible",
+                  "another day",
+                  "next week",
+                  "how about",
+                  "what about"
+                ],
+                [
+                  "will I miss",
+                  "what will",
+                  "could you tell me",
+                  "let me know",
+                  "thank you",
+                  "thanks"
+                ]
+              ],
+              "minGroupsMatched": 3
+            },
             "accepted": [],
             "wordGuide": [
-              80,
-              120
+              70,
+              90
             ],
             "assessmentMode": "secure"
           }
@@ -29951,15 +30018,58 @@
             "canDo": [
               "A2.FINAL.INTERACTION.MANAGE_ROUTINE_SITUATIONS"
             ],
-            "prompt": "Answer personal follow-up questions about your current life, recent past and next weekend, then ask two questions back.",
-            "promptAr": "أجب عن أسئلة متابعة شخصية حول حياتك الحالية وماضٍ قريب وعطلة الأسبوع القادمة ثم اسأل سؤالين بالمقابل.",
-            "evaluation": [
-              "taskCompletion",
-              "intelligibility",
-              "appropriateLanguage",
-              "interaction",
-              "accuracy"
+            "prompt": "Answer the four questions about your life now, about something you did recently and about next weekend, then ask two questions of your own at the end.",
+            "promptAr": "أجب عن الأسئلة الأربعة عن حياتك الآن، وعن شيء فعلته مؤخراً، وعن عطلة الأسبوع القادمة، ثم اسأل سؤالين من عندك في النهاية.",
+            "partnerTurns": [
+              "Let's start with now. Tell me about an ordinary week for you, and say whether anything is different at the moment.",
+              "Thank you. Now think back: tell me about something you did last month that you enjoyed, and say what happened.",
+              "And next weekend — what are your plans, and why those?",
+              "Before we finish, ask me two questions about my own week."
             ],
+            "evaluation": {
+              "type": "keywordChecklist",
+              "requiredGroups": [
+                [
+                  "usually",
+                  "every day",
+                  "at the moment",
+                  "these days",
+                  "this week",
+                  "normally",
+                  "I'm working",
+                  "I am working"
+                ],
+                [
+                  "last month",
+                  "last week",
+                  "went",
+                  "was",
+                  "were",
+                  "I enjoyed",
+                  "ago",
+                  "we had"
+                ],
+                [
+                  "I'm going to",
+                  "I am going to",
+                  "I'll",
+                  "I will",
+                  "next weekend",
+                  "I'm meeting",
+                  "we're going"
+                ],
+                [
+                  "what about you",
+                  "and you",
+                  "do you",
+                  "did you",
+                  "are you",
+                  "how about you",
+                  "have you"
+                ]
+              ],
+              "minGroupsMatched": 3
+            },
             "accepted": [],
             "fallbackSkill": "writing",
             "fallbackCountsFor": "accessOnly",
@@ -29973,15 +30083,56 @@
             "canDo": [
               "A2.FINAL.INTERACTION.MANAGE_ROUTINE_SITUATIONS"
             ],
-            "prompt": "Role-play a routine service problem: explain the issue, clarify details and agree on a solution.",
-            "promptAr": "مثّل مشكلة خدمة روتينية: اشرح المشكلة ووضّح التفاصيل واتفق على حل.",
-            "evaluation": [
-              "taskCompletion",
-              "intelligibility",
-              "appropriateLanguage",
-              "interaction",
-              "accuracy"
+            "prompt": "You booked a Saturday cookery course, but the office has put you in the Sunday group and taken too much money. Telephone them: explain both problems, ask politely for a change, answer what you are offered, and agree what happens next.",
+            "promptAr": "حجزت دورة طبخ يوم السبت، لكن المكتب وضعك في مجموعة الأحد وأخذ منك مالاً أكثر مما يجب. اتصل بهم: اشرح المشكلتين، واطلب التغيير بأدب، وردّ على ما يُعرَض عليك، واتفق على الخطوة التالية.",
+            "partnerTurns": [
+              "Bookings office, good morning. What can I do for you?",
+              "I see. I'm afraid the Saturday group is full now. What would you like me to do?",
+              "I can put you back on Saturday next month and return the difference. Is that all right, and what is the best number for you?"
             ],
+            "evaluation": {
+              "type": "keywordChecklist",
+              "requiredGroups": [
+                [
+                  "there's a problem",
+                  "there is a problem",
+                  "I booked",
+                  "the wrong",
+                  "you've charged",
+                  "you have charged",
+                  "too much",
+                  "isn't right",
+                  "is not right"
+                ],
+                [
+                  "could you",
+                  "would you",
+                  "can you",
+                  "would it be possible",
+                  "I'd like",
+                  "I would like"
+                ],
+                [
+                  "that's fine",
+                  "that is fine",
+                  "yes, please",
+                  "I'm afraid",
+                  "I'd prefer",
+                  "that works",
+                  "because"
+                ],
+                [
+                  "my number is",
+                  "call me",
+                  "ring me",
+                  "send me",
+                  "confirm",
+                  "by email",
+                  "thank you"
+                ]
+              ],
+              "minGroupsMatched": 3
+            },
             "accepted": [],
             "fallbackSkill": "writing",
             "fallbackCountsFor": "accessOnly",
@@ -29995,15 +30146,47 @@
             "canDo": [
               "A2.FINAL.PRODUCTION.CONNECT_SHORT_DESCRIPTION"
             ],
-            "prompt": "Compare two supplied options and recommend one for a stated person's needs, giving at least two reasons.",
-            "promptAr": "قارن خيارين معروضين وأوصِ بأحدهما لاحتياجات شخص محدد مع سببين على الأقل.",
-            "evaluation": [
-              "taskCompletion",
-              "organisation",
-              "intelligibility",
-              "appropriateLanguage",
-              "accuracy"
-            ],
+            "sourceCard": "Two evening jobs. The cafe: Monday to Thursday, six until ten, twelve dollars an hour, ten minutes from Yara's flat. The warehouse: Friday and Saturday, eight until two in the morning, eighteen dollars an hour, one bus and one train away. Yara studies full time and has an exam every Friday.",
+            "prompt": "Compare the two jobs on the card and recommend one of them for Yara. Give at least two reasons, and say one problem with the job you did not choose.",
+            "promptAr": "قارن بين الوظيفتين في البطاقة وأوصِ بإحداهما ليارا. اذكر سببين على الأقل، واذكر مشكلة واحدة في الوظيفة التي لم تخترها.",
+            "evaluation": {
+              "type": "keywordChecklist",
+              "requiredGroups": [
+                [
+                  "better",
+                  "closer",
+                  "nearer",
+                  "cheaper",
+                  "more",
+                  "less",
+                  "than",
+                  "the best"
+                ],
+                [
+                  "I would choose",
+                  "I'd choose",
+                  "I recommend",
+                  "she should",
+                  "I think she",
+                  "the best one for her"
+                ],
+                [
+                  "because",
+                  "so",
+                  "since",
+                  "as she"
+                ],
+                [
+                  "but",
+                  "however",
+                  "the problem",
+                  "too late",
+                  "too far",
+                  "exam"
+                ]
+              ],
+              "minGroupsMatched": 3
+            },
             "accepted": [],
             "fallbackSkill": "writing",
             "fallbackCountsFor": "accessOnly",
@@ -30017,15 +30200,46 @@
             "canDo": [
               "A2.FINAL.PRODUCTION.CONNECT_SHORT_DESCRIPTION"
             ],
-            "prompt": "Tell a connected short story from four picture prompts using background, sequence, an interruption and an ending.",
-            "promptAr": "احك قصة قصيرة مترابطة من أربع صور مستخدماً الخلفية والتسلسل والمقاطعة والنهاية.",
-            "evaluation": [
-              "taskCompletion",
-              "organisation",
-              "intelligibility",
-              "appropriateLanguage",
-              "accuracy"
-            ],
+            "sourceCard": "Four notes for your story, in this order: a hot Friday afternoon and a long queue at the post office; a telephone call from your sister; a decision you had to take quickly; how the day ended.",
+            "prompt": "Tell the story on the card from beginning to end. Set the scene, say what was happening, explain what interrupted it, what you decided and how it ended.",
+            "promptAr": "احكِ القصة التي في البطاقة من بدايتها إلى نهايتها. مهّد للمشهد، وقل ماذا كان يجري، وما الذي قاطعه، وماذا قررت، وكيف انتهت.",
+            "evaluation": {
+              "type": "keywordChecklist",
+              "requiredGroups": [
+                [
+                  "I was waiting",
+                  "I was standing",
+                  "it was",
+                  "there were",
+                  "while",
+                  "I was"
+                ],
+                [
+                  "first",
+                  "then",
+                  "after that",
+                  "next",
+                  "later"
+                ],
+                [
+                  "my sister",
+                  "rang",
+                  "called",
+                  "phoned",
+                  "suddenly",
+                  "when my phone"
+                ],
+                [
+                  "in the end",
+                  "finally",
+                  "at last",
+                  "I decided",
+                  "so I",
+                  "luckily"
+                ]
+              ],
+              "minGroupsMatched": 3
+            },
             "accepted": [],
             "fallbackSkill": "writing",
             "fallbackCountsFor": "accessOnly",
@@ -30044,14 +30258,39 @@
             "canDo": [
               "A2.FINAL.MEDIATION.RELAY_PRACTICAL_INFORMATION"
             ],
-            "prompt": "Relay the essential date, time, place, change and required action from a short notice to a friend.",
-            "promptAr": "انقل التاريخ والوقت والمكان والتغيير والإجراء المطلوب من إشعار قصير إلى صديق.",
-            "evaluation": [
-              "selectRelevantInformation",
-              "clarity",
-              "audienceAwareness",
-              "accuracy"
-            ],
+            "sourceCard": "Notice to residents: the water will be off on Tuesday 14 June from nine in the morning until four in the afternoon, while the old pipes are replaced. Please fill bottles the night before. The caretaker will leave drinking water in the hall. If the water looks brown after Wednesday, tell the office on the ground floor.",
+            "prompt": "A neighbour did not understand the building notice. Relay it to her in simple English: when the water will be off, what she should do the night before, what the caretaker will leave, and who to tell if the water looks brown later.",
+            "promptAr": "جارتُك لم تفهم إعلان المبنى. انقله لها بإنجليزية بسيطة: متى ينقطع الماء، وماذا ينبغي لها أن تفعل في الليلة السابقة، وماذا سيترك الحارس، ومن تُخبِر إذا بدا الماء بنيّاً لاحقاً.",
+            "evaluation": {
+              "type": "keywordChecklist",
+              "requiredGroups": [
+                [
+                  "Tuesday",
+                  "nine",
+                  "four",
+                  "14",
+                  "fourteenth"
+                ],
+                [
+                  "fill",
+                  "bottles",
+                  "the night before",
+                  "before Tuesday"
+                ],
+                [
+                  "drinking water",
+                  "caretaker",
+                  "in the hall"
+                ],
+                [
+                  "brown",
+                  "the office",
+                  "tell the office",
+                  "ground floor"
+                ]
+              ],
+              "minGroupsMatched": 3
+            },
             "accepted": [],
             "fallbackSkill": "writing",
             "fallbackCountsFor": "accessOnly",
@@ -30065,14 +30304,46 @@
             "canDo": [
               "A2.FINAL.MEDIATION.RELAY_PRACTICAL_INFORMATION"
             ],
-            "prompt": "Read two simple options and relay the relevant differences for a person with stated cost, access and schedule needs.",
-            "promptAr": "اقرأ خيارين بسيطين وانقل الاختلافات ذات الصلة لشخص لديه احتياجات محددة في التكلفة والوصول والجدول.",
-            "evaluation": [
-              "selectRelevantInformation",
-              "clarity",
-              "audienceAwareness",
-              "accuracy"
-            ],
+            "sourceCard": "Two swimming courses. Course A: Mondays and Wednesdays at seven in the evening, 60 dollars, in the old pool, no parking. Course B: Saturdays at ten in the morning, 85 dollars, in the new pool, free parking. Kamal works late every weekday and drives everywhere.",
+            "prompt": "Kamal asked which swimming course suits him. Relay only what he needs: the day and time, the difference in price, and the parking. Then say which course you would tell him to take.",
+            "promptAr": "سأل كمال أي دورة سباحة تناسبه. انقل له ما يهمّه فقط: اليوم والوقت، وفرق السعر، وموقف السيارات، ثم قل أي دورة تنصحه بها.",
+            "evaluation": {
+              "type": "keywordChecklist",
+              "requiredGroups": [
+                [
+                  "Saturday",
+                  "Saturdays",
+                  "ten",
+                  "morning",
+                  "Monday",
+                  "Wednesday",
+                  "evening"
+                ],
+                [
+                  "85",
+                  "60",
+                  "dollars",
+                  "more expensive",
+                  "cheaper",
+                  "costs"
+                ],
+                [
+                  "parking",
+                  "park",
+                  "car",
+                  "drive"
+                ],
+                [
+                  "course B",
+                  "the Saturday one",
+                  "he should",
+                  "I would tell him",
+                  "I'd tell him",
+                  "better for him"
+                ]
+              ],
+              "minGroupsMatched": 3
+            },
             "accepted": [],
             "fallbackSkill": "writing",
             "fallbackCountsFor": "accessOnly",
@@ -30084,7 +30355,7 @@
     "scoring": {
       "receptive": {
         "method": "item-score",
-        "minimumPerSkill": 0.75
+        "minimumPerSkill": 0.6
       },
       "writing": {
         "criteria": [
@@ -30094,7 +30365,7 @@
           "A2Range",
           "A2Accuracy"
         ],
-        "minimumTaskCriterionAverage": 0.75,
+        "minimumTaskCriterionAverage": 0.6,
         "bothTasksRequired": true
       },
       "speaking": {
@@ -30104,7 +30375,7 @@
           "appropriateLanguage",
           "interaction"
         ],
-        "minimumTaskCriterionAverage": 0.75,
+        "minimumTaskCriterionAverage": 0.6,
         "minimumCompletedTasks": 3,
         "accuracyWeight": 0.2
       },
@@ -30114,7 +30385,7 @@
           "accuracyOfRelay",
           "comprehensibility"
         ],
-        "minimumCriterionAverage": 0.75
+        "minimumCriterionAverage": 0.6
       },
       "decisionRule": {
         "noSingleOverallAverage": true,
