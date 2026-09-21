@@ -28796,8 +28796,8 @@
       35,
       50
     ],
-    "sourcePolicy": "All names, schedules, notices, service problems and visitor details are fictional and unseen in earlier lessons.",
-    "scenario": "A friend is visiting for two days. Build the plan from new messages and notices, explain the neighbourhood, handle food, health and technology problems, then write a follow-up.",
+    "sourcePolicy": "Sabri, Sefton Court, Meadow Lane, Ashfield, the Harbour line, Old Mill Kitchen, Willow Gardens and the evening clinic are fictional. Every message, notice, recording and card in this mission is written for it alone and appears in no A1 or A2 lesson.",
+    "scenario": "An old friend comes for two nights. Read his message and the building's notice, take in two recordings that change the plan, welcome him and solve the problem that appears, present the visit and the neighbourhood, relay two cards he cannot read for himself, then write the plan and, a week later, the thank-you.",
     "canDo": [
       "A2.FINAL.LISTENING.INTEGRATED_ROUTINE_INFO",
       "A2.FINAL.READING.INTEGRATED_PRACTICAL_TEXTS",
@@ -28873,15 +28873,15 @@
           "A2.FINAL.READING.INTEGRATED_PRACTICAL_TEXTS",
           "A2.FINAL.ACTION.HOST_VISITOR"
         ],
-        "sourceText": "Visitor message: I arrive Friday at 17:40. I prefer a quiet room, cannot eat nuts, and need reliable Wi-Fi for a meeting Saturday at 09:00. I leave Sunday at 16:15.",
-        "prompt": "Which three needs affect the plan?",
-        "promptAr": "ما الاحتياجات الثلاثة التي تؤثر في الخطة؟",
+        "prompt": "Read Sabri's message before you decide anything. He says that one thing matters to him more than the rest. Which room do you give him?",
+        "promptAr": "اقرأ رسالة صبري قبل أن تقرر أي شيء. يقول إن أمراً واحداً يهمّه أكثر من غيره. أي غرفة تعطيه؟",
         "options": [
-          "Quiet room, nut-free food, reliable Wi-Fi",
-          "Late breakfast, a car, live music",
-          "A large party, seafood, no internet"
+          "The small room at the back, because the internet reaches it best",
+          "The big room at the front, because the bed there is more comfortable",
+          "The room beside the kitchen, because of the food he cannot eat"
         ],
-        "answer": "Quiet room, nut-free food, reliable Wi-Fi"
+        "answer": "The small room at the back, because the internet reaches it best",
+        "sourceText": "From Sabri: I get in on Friday evening and leave on Sunday after lunch. Please don't cook anything with nuts for me, because I have been ill twice from them. I don't mind a small room, but I have to join a meeting online at nine on Saturday, so good internet matters more than a big bed."
       },
       {
         "id": "A2-FINAL-MISSION-A02",
@@ -28892,15 +28892,15 @@
           "A2.FINAL.READING.INTEGRATED_PRACTICAL_TEXTS",
           "A2.FINAL.ACTION.HOST_VISITOR"
         ],
-        "sourceText": "Neighbourhood notice: The west bus stop is closed this weekend. Use the library stop instead. The pharmacy closes at 18:00 on Saturday; the urgent-care centre is open until 22:00.",
-        "prompt": "Where should the visitor take the bus?",
-        "promptAr": "من أين ينبغي للزائر ركوب الحافلة؟",
+        "prompt": "Your building has put this notice by the door, and Sabri arrives on Friday evening. What do you have to do so that he can get in?",
+        "promptAr": "علّقت إدارة البناية هذا الإعلان عند الباب، وصبري يصل مساء الجمعة. ماذا عليكَ أن تفعل كي يتمكن من الدخول؟",
         "options": [
-          "The library stop",
-          "The west stop",
-          "The pharmacy"
+          "Meet him at the back gate yourself, because the bells are not working",
+          "Tell him to ring the bell at the front entrance when the painters have gone",
+          "Ask him to wait until Monday, when the front entrance opens again"
         ],
-        "answer": "The library stop"
+        "answer": "Meet him at the back gate yourself, because the bells are not working",
+        "sourceText": "Sefton Court, to all residents: the painters start work on the front entrance on Friday morning and finish on Monday. Until then, please use the back gate on Meadow Lane. The door bells do not work while the painting goes on, so if you are expecting anybody this weekend, meet them at the gate or give them your number."
       },
       {
         "id": "A2-FINAL-MISSION-A03",
@@ -28911,15 +28911,15 @@
           "A2.FINAL.LISTENING.INTEGRATED_ROUTINE_INFO",
           "A2.FINAL.ACTION.HOST_VISITOR"
         ],
-        "audioTranscript": "Your train is delayed by twenty-five minutes and will now arrive at eighteen oh five. The platform is unchanged.",
-        "prompt": "What is the revised arrival time?",
-        "promptAr": "ما وقت الوصول المعدل؟",
+        "prompt": "Listen to the message Sabri leaves from the station. What has changed for you?",
+        "promptAr": "استمع إلى الرسالة التي تركها صبري من المحطة. ما الذي تغيّر بالنسبة إليكَ؟",
         "options": [
-          "18:05",
-          "17:40",
-          "18:25"
+          "He now reaches you about eight, and he is bringing nothing with him",
+          "He now reaches you at a quarter past seven, and he wants you at the station",
+          "He now reaches you about eight, and he has already bought something for your family"
         ],
-        "answer": "18:05"
+        "answer": "He now reaches you about eight, and he is bringing nothing with him",
+        "audioTranscript": "Hi, it's Sabri. I'm at Ashfield already, but there is a problem on the Harbour line, so my train is leaving at a quarter past seven now instead of a quarter past six. They say it will still take fifty minutes, so I should reach you at about eight. Please don't stand out in the cold waiting for me. One more thing: I've just seen that the station shop is closed, so I haven't bought anything for your family after all. I'll find something near you on Saturday morning instead. Ring me if anything changes at your end."
       },
       {
         "id": "A2-FINAL-MISSION-A04",
@@ -28930,15 +28930,15 @@
           "A2.FINAL.LISTENING.INTEGRATED_ROUTINE_INFO",
           "A2.FINAL.ACTION.HOST_VISITOR"
         ],
-        "audioTranscript": "The café can prepare the vegetable dish without nuts, but you must order it before noon because the evening kitchen is very busy.",
-        "prompt": "What condition applies to the nut-free dish?",
-        "promptAr": "ما الشرط المتعلق بالطبق الخالي من المكسرات؟",
+        "prompt": "You ring the kitchen about Saturday's meal and hear its recorded line. What do you have to do to get Sabri a meal he can safely eat?",
+        "promptAr": "تتصل بالمطبخ بشأن وجبة السبت فتسمع خطه المسجل. ماذا عليكَ أن تفعل كي تحصل لصبري على وجبة يستطيع تناولها بأمان؟",
         "options": [
-          "Order it before noon",
-          "Collect it after midnight",
-          "Choose a meat dish"
+          "Order before twelve on Friday and collect it at the side door",
+          "Order on Saturday evening and collect it at the front counter",
+          "Order before twelve on Friday and ask them to bring it to the flat"
         ],
-        "answer": "Order it before noon"
+        "answer": "Order before twelve on Friday and collect it at the side door",
+        "audioTranscript": "Old Mill Kitchen, thank you for holding. We can cook the rice and vegetable dish without any nuts, and we will prepare it on a clean board, but we need the order by twelve o'clock on Friday, because Saturday is our busiest evening of the year. We cannot promise anything after that, and we do not bring food to people's homes. If you order in time, collect it from the side door between six and seven, not from the front counter, because the queue there is very long. Please tell us the name of the person who cannot eat nuts."
       },
       {
         "id": "A2-FINAL-MISSION-A05",
@@ -28949,16 +28949,74 @@
           "A2.FINAL.INTERACTION.MANAGE_ROUTINE_SITUATIONS",
           "A2.FINAL.ACTION.HOST_VISITOR"
         ],
-        "prompt": "Welcome the visitor, confirm arrival and departure details, and ask at least three connected questions about needs or preferences.",
-        "promptAr": "رحّب بالزائر وأكد تفاصيل الوصول والمغادرة واسأل ثلاثة أسئلة مترابطة على الأقل عن الاحتياجات أو التفضيلات.",
-        "evaluation": [
-          "taskCompletion",
-          "intelligibility",
-          "appropriateLanguage",
-          "interaction",
-          "accuracy"
+        "prompt": "Sabri is at the back gate at last. Welcome him, explain why the front entrance is shut and how he gets in tomorrow while you are at work, and settle two things for the morning: his meeting at nine and what the two of you are eating. Answer everything he says.",
+        "promptAr": "وصل صبري إلى البوابة الخلفية أخيراً. رحّب به، واشرح له لماذا المدخل الأمامي مغلق وكيف يدخل غداً بينما تكون في عملكَ، واحسم أمرين للصباح: اجتماعه في التاسعة وما ستأكلانه. وأجب عن كل ما يقوله.",
+        "partnerTurns": [
+          "Finally! Sorry, that journey was terrible. Why is everybody coming round the back?",
+          "And if I go out tomorrow while you're at work, how do I get in again?",
+          "Fine, fine. Tell me about the morning, then. What time do you need me up, and what are we eating?"
         ],
         "accepted": [],
+        "evaluation": {
+          "type": "keywordChecklist",
+          "requiredGroups": [
+            [
+              "welcome",
+              "come in",
+              "it's good to see you",
+              "how was the journey",
+              "you must be tired",
+              "let me take",
+              "give me the bag"
+            ],
+            [
+              "the painters",
+              "the front entrance",
+              "the back gate",
+              "Meadow Lane",
+              "the bells",
+              "don't work",
+              "do not work",
+              "until Monday",
+              "they're painting"
+            ],
+            [
+              "ring me",
+              "call me",
+              "my number",
+              "I'll come down",
+              "take this key",
+              "the same gate",
+              "wait at the gate",
+              "text me"
+            ],
+            [
+              "nine",
+              "your meeting",
+              "the internet",
+              "the wifi",
+              "the wi-fi",
+              "the back room",
+              "I'll wake you",
+              "I will wake you",
+              "at eight"
+            ],
+            [
+              "nuts",
+              "no nuts",
+              "without nuts",
+              "the kitchen",
+              "I've ordered",
+              "I have ordered",
+              "rice",
+              "vegetable",
+              "we're eating",
+              "we are eating"
+            ]
+          ],
+          "minGroupsMatched": 4,
+          "onlineRefinement": "grammarCheck"
+        },
         "fallbackSkill": "writing",
         "fallbackCountsFor": "accessOnly"
       },
@@ -28971,16 +29029,73 @@
           "A2.FINAL.INTERACTION.MANAGE_ROUTINE_SITUATIONS",
           "A2.FINAL.ACTION.HOST_VISITOR"
         ],
-        "prompt": "Role-play one problem: the restaurant order is unsafe, the Wi-Fi fails before the meeting, or the visitor feels unwell. Clarify the problem and agree on a practical solution using the supplied facts.",
-        "promptAr": "مثّل مشكلة واحدة: الطلب غير آمن أو تعطل الواي فاي قبل الاجتماع أو شعر الزائر بالتعب. وضّح المشكلة واتفق على حل عملي مستخدماً الحقائق المقدمة.",
-        "evaluation": [
-          "taskCompletion",
-          "intelligibility",
-          "appropriateLanguage",
-          "interaction",
-          "accuracy"
+        "prompt": "Ten minutes before Sabri's meeting the internet stops. Tell him what has happened, say what you have already tried, offer him two ways of getting online in time, and agree together on one of them.",
+        "promptAr": "قبل اجتماع صبري بعشر دقائق ينقطع الإنترنت. أخبره بما حدث، وقل له ما جرّبته بالفعل، واعرض عليه طريقتين للاتصال في الوقت المناسب، واتفق معه على إحداهما.",
+        "partnerTurns": [
+          "The page won't load. Is it my laptop, or is it the whole flat?",
+          "I can't miss this one. Have you already tried turning the box off and on?",
+          "All right, I'll take whichever is faster. Which one shall I try?"
         ],
         "accepted": [],
+        "evaluation": {
+          "type": "keywordChecklist",
+          "requiredGroups": [
+            [
+              "the internet",
+              "the wifi",
+              "the wi-fi",
+              "the router",
+              "the box",
+              "the whole flat",
+              "is down",
+              "isn't working",
+              "has stopped",
+              "no signal"
+            ],
+            [
+              "I've turned",
+              "I have turned",
+              "I've already",
+              "I have already",
+              "I've tried",
+              "I have tried",
+              "I've restarted",
+              "I've unplugged",
+              "nothing has changed",
+              "it hasn't"
+            ],
+            [
+              "my phone",
+              "hotspot",
+              "my data",
+              "mobile data",
+              "share my",
+              "use my phone"
+            ],
+            [
+              "the café",
+              "the cafe",
+              "the library",
+              "downstairs",
+              "next door",
+              "the neighbour",
+              "Old Mill",
+              "five minutes away"
+            ],
+            [
+              "let's",
+              "shall we",
+              "I think you should",
+              "that's faster",
+              "it's quicker",
+              "we'll do",
+              "take the",
+              "go with"
+            ]
+          ],
+          "minGroupsMatched": 4,
+          "onlineRefinement": "grammarCheck"
+        },
         "fallbackSkill": "writing",
         "fallbackCountsFor": "accessOnly"
       },
@@ -28993,16 +29108,57 @@
           "A2.FINAL.PRODUCTION.CONNECT_SHORT_DESCRIPTION",
           "A2.FINAL.ACTION.HOST_VISITOR"
         ],
-        "prompt": "Present the two-day itinerary in a clear order. Include transport, two activities, food arrangements and one Plan B.",
-        "promptAr": "قدّم برنامج اليومين بترتيب واضح. ضمّن النقل ونشاطين وترتيبات الطعام وخطة بديلة واحدة.",
-        "evaluation": [
-          "taskCompletion",
-          "organisation",
-          "intelligibility",
-          "appropriateLanguage",
-          "accuracy"
-        ],
+        "prompt": "Present the whole visit to Sabri in one go and in order: Friday evening, Saturday morning, Saturday afternoon, and Sunday before he travels. Say what you have already arranged, what is not arranged yet, and what you will do if it rains.",
+        "promptAr": "قدّم لصبري برنامج الزيارة كاملاً دفعة واحدة وبالترتيب: مساء الجمعة، وصباح السبت، وبعد ظهر السبت، والأحد قبل سفره. قل ما سبق أن رتّبته، وما لم يُرتَّب بعد، وما ستفعله إن أمطرت.",
         "accepted": [],
+        "evaluation": {
+          "type": "keywordChecklist",
+          "requiredGroups": [
+            [
+              "first",
+              "then",
+              "after that",
+              "finally",
+              "on Friday",
+              "on Saturday morning",
+              "in the afternoon",
+              "on Sunday",
+              "before you travel"
+            ],
+            [
+              "I've booked",
+              "I have booked",
+              "I've ordered",
+              "I have ordered",
+              "I've asked",
+              "is arranged",
+              "is booked",
+              "already"
+            ],
+            [
+              "yet",
+              "haven't",
+              "have not",
+              "still need",
+              "I don't know yet",
+              "nothing is fixed",
+              "we'll decide",
+              "we will decide"
+            ],
+            [
+              "if it rains",
+              "if the weather",
+              "instead",
+              "we could",
+              "we'll stay",
+              "we will go",
+              "the museum",
+              "indoors"
+            ]
+          ],
+          "minGroupsMatched": 3,
+          "onlineRefinement": "grammarCheck"
+        },
         "fallbackSkill": "writing",
         "fallbackCountsFor": "accessOnly"
       },
@@ -29015,16 +29171,63 @@
           "A2.FINAL.PRODUCTION.CONNECT_SHORT_DESCRIPTION",
           "A2.FINAL.ACTION.HOST_VISITOR"
         ],
-        "prompt": "Describe the neighbourhood to the visitor, comparing two areas and explaining the location of four useful services.",
-        "promptAr": "صف الحي للزائر وقارن منطقتين واشرح موقع أربع خدمات مفيدة.",
-        "evaluation": [
-          "taskCompletion",
-          "organisation",
-          "intelligibility",
-          "appropriateLanguage",
-          "accuracy"
-        ],
+        "prompt": "Sabri wants to walk on his own while you finish your work. Describe the neighbourhood to him: compare the two ends of your street, say where four useful places are, and warn him about the one thing he should not do.",
+        "promptAr": "يريد صبري أن يتمشّى وحده بينما تنهي عملكَ. صف له الحي: قارن بين طرفَي شارعكَ، وقل أين تقع أربعة أماكن مفيدة، ونبّهه إلى الأمر الوحيد الذي ينبغي ألا يفعله.",
         "accepted": [],
+        "evaluation": {
+          "type": "keywordChecklist",
+          "requiredGroups": [
+            [
+              "quieter",
+              "busier",
+              "cheaper",
+              "nicer",
+              "safer",
+              "than",
+              "not as",
+              "the busiest",
+              "the best",
+              "more expensive"
+            ],
+            [
+              "opposite",
+              "next to",
+              "behind",
+              "on the corner",
+              "at the end of",
+              "across",
+              "between",
+              "past the",
+              "turn left",
+              "turn right"
+            ],
+            [
+              "pharmacy",
+              "chemist",
+              "bakery",
+              "market",
+              "bank",
+              "post office",
+              "clinic",
+              "supermarket",
+              "the station",
+              "cash machine"
+            ],
+            [
+              "don't",
+              "do not",
+              "mustn't",
+              "must not",
+              "shouldn't",
+              "should not",
+              "be careful",
+              "after dark",
+              "I wouldn't"
+            ]
+          ],
+          "minGroupsMatched": 3,
+          "onlineRefinement": "grammarCheck"
+        },
         "fallbackSkill": "writing",
         "fallbackCountsFor": "accessOnly"
       },
@@ -29037,15 +29240,54 @@
           "A2.FINAL.MEDIATION.RELAY_PRACTICAL_INFORMATION",
           "A2.FINAL.ACTION.HOST_VISITOR"
         ],
-        "prompt": "Relay the revised train time, unchanged platform and replacement bus stop from the notices. Preserve all numbers exactly.",
-        "promptAr": "انقل وقت القطار المعدل ورقم الرصيف غير المتغير ومحطة الحافلة البديلة من الإشعارات. حافظ على جميع الأرقام بدقة.",
-        "evaluation": [
-          "selectRelevantInformation",
-          "clarity",
-          "audienceAwareness",
-          "accuracy"
-        ],
+        "prompt": "Sabri is going to the gardens on his own and cannot read the notice at the ticket desk. Tell him when they open and when the last tickets are sold, what is free and what he pays for, what he has to do with his bag, and the two things visitors must not do.",
+        "promptAr": "سيذهب صبري إلى الحدائق وحده، وهو لا يستطيع قراءة الإعلان عند مكتب التذاكر. أخبره متى تفتح ومتى تُباع آخر التذاكر، وما المجاني وما الذي يدفع مقابله، وماذا عليه أن يفعل بحقيبته، والأمرين الممنوعين على الزوار.",
+        "sourceCard": "Willow Gardens, ticket desk notice: we open at ten and close at six, and the last tickets are sold at half past five. Entry is free on Saturday, but the flower house costs two dinars. Large bags must be left at the desk. Please do not pick the flowers, and keep off the grass near the pond.",
         "accepted": [],
+        "evaluation": {
+          "type": "keywordChecklist",
+          "requiredGroups": [
+            [
+              "open at ten",
+              "from ten",
+              "close at six",
+              "until six",
+              "half past five",
+              "five thirty",
+              "the last tickets"
+            ],
+            [
+              "free",
+              "on Saturday",
+              "you don't pay",
+              "you do not pay",
+              "two dinars",
+              "the flower house",
+              "costs"
+            ],
+            [
+              "your bag",
+              "large bags",
+              "leave it",
+              "at the desk",
+              "you can't take",
+              "you cannot take",
+              "give them your bag"
+            ],
+            [
+              "don't pick",
+              "do not pick",
+              "mustn't pick",
+              "the flowers",
+              "keep off",
+              "the grass",
+              "near the pond",
+              "don't walk on"
+            ]
+          ],
+          "minGroupsMatched": 3,
+          "onlineRefinement": "grammarCheck"
+        },
         "fallbackSkill": "writing",
         "fallbackCountsFor": "accessOnly"
       },
@@ -29058,15 +29300,61 @@
           "A2.FINAL.MEDIATION.RELAY_PRACTICAL_INFORMATION",
           "A2.FINAL.ACTION.HOST_VISITOR"
         ],
-        "prompt": "Relay the visitor's food need and the café's ordering condition to another person without adding medical or dietary claims.",
-        "promptAr": "انقل حاجة الزائر الغذائية وشرط الطلب في المقهى إلى شخص آخر من دون إضافة ادعاءات طبية أو غذائية.",
-        "evaluation": [
-          "selectRelevantInformation",
-          "clarity",
-          "audienceAwareness",
-          "accuracy"
-        ],
+        "prompt": "Sabri feels ill on Saturday evening and hands you the clinic's card. Tell him what it says: how late he can go and which night it is closed, what he does not have to do, what he must take with him, and the one thing he must say at the desk. Add nothing the card does not say.",
+        "promptAr": "يشعر صبري بالتوعك مساء السبت ويناولكَ بطاقة العيادة. أخبره بما فيها: إلى أي ساعة يستطيع الذهاب وفي أي ليلة تكون مغلقة، وما لا يلزمه فعله، وما عليه أخذه معه، والأمر الوحيد الذي عليه قوله عند المكتب. لا تضف شيئاً ليس في البطاقة.",
+        "sourceCard": "Evening clinic card: we are open until half past ten every night except Sunday. You do not need an appointment, but bring your passport or another paper that shows your name. Tell the nurse at the desk about any allergy before the doctor calls you in. Do not take other medicine on the same evening.",
         "accepted": [],
+        "evaluation": {
+          "type": "keywordChecklist",
+          "requiredGroups": [
+            [
+              "half past ten",
+              "ten thirty",
+              "until ten",
+              "every night",
+              "not on Sunday",
+              "except Sunday",
+              "closed on Sunday"
+            ],
+            [
+              "you don't need",
+              "you do not need",
+              "no appointment",
+              "don't have to",
+              "do not have to",
+              "without an appointment",
+              "just go"
+            ],
+            [
+              "bring",
+              "take your",
+              "your passport",
+              "your name",
+              "a paper",
+              "identity",
+              "ID"
+            ],
+            [
+              "tell the nurse",
+              "the desk",
+              "your allergy",
+              "about the nuts",
+              "before the doctor",
+              "say that you"
+            ],
+            [
+              "don't take",
+              "do not take",
+              "mustn't take",
+              "must not take",
+              "other medicine",
+              "nothing else",
+              "no other"
+            ]
+          ],
+          "minGroupsMatched": 4,
+          "onlineRefinement": "grammarCheck"
+        },
         "fallbackSkill": "writing",
         "fallbackCountsFor": "accessOnly"
       },
@@ -29079,19 +29367,69 @@
           "A2.FINAL.WRITING.CONNECTED_PRACTICAL_TEXT",
           "A2.FINAL.ACTION.HOST_VISITOR"
         ],
-        "prompt": "Write the visitor the final practical plan: arrival, transport change, accommodation, activities, food arrangement and what to do if Wi-Fi fails.",
-        "promptAr": "اكتب للزائر الخطة العملية النهائية: الوصول وتغيير النقل والإقامة والأنشطة وترتيب الطعام وما ينبغي فعله إذا تعطل الواي فاي.",
-        "evaluation": [
-          "taskCompletion",
-          "clarity",
-          "organisation",
-          "appropriateLanguage",
-          "accuracy"
-        ],
+        "prompt": "Sabri would rather have the plan in writing than try to remember it. Write him the message: how he gets into the building on Friday evening, what is already arranged for his meeting at nine, the food and where you collect it from, what you will do on Saturday afternoon and what it costs, and what time you both have to leave on Sunday.",
+        "promptAr": "يفضّل صبري أن تكون الخطة مكتوبة على أن يحاول حفظها. اكتب له الرسالة: كيف يدخل البناية مساء الجمعة، وما رُتّب بالفعل لاجتماعه في التاسعة، والطعام ومن أين تستلمه، وما ستفعلانه بعد ظهر السبت وكم يكلّف، والساعة التي عليكما المغادرة فيها يوم الأحد.",
         "accepted": [],
+        "evaluation": {
+          "type": "keywordChecklist",
+          "requiredGroups": [
+            [
+              "the back gate",
+              "Meadow Lane",
+              "the bell",
+              "the bells",
+              "don't work",
+              "the painters",
+              "the front entrance",
+              "I'll meet you"
+            ],
+            [
+              "I've checked",
+              "I have checked",
+              "I've arranged",
+              "I have arranged",
+              "already",
+              "is arranged",
+              "your meeting",
+              "at nine",
+              "the back room"
+            ],
+            [
+              "without nuts",
+              "no nuts",
+              "the side door",
+              "between six and seven",
+              "I've ordered",
+              "I have ordered",
+              "collect"
+            ],
+            [
+              "the gardens",
+              "Willow",
+              "free on Saturday",
+              "two dinars",
+              "the flower house",
+              "if it rains",
+              "instead",
+              "we could"
+            ],
+            [
+              "on Sunday",
+              "we have to leave",
+              "we'll leave",
+              "before",
+              "in the morning",
+              "don't forget",
+              "half past",
+              "your train"
+            ]
+          ],
+          "minGroupsMatched": 4,
+          "onlineRefinement": "grammarCheck"
+        },
         "wordGuide": [
-          90,
-          120
+          70,
+          90
         ]
       },
       {
@@ -29103,19 +29441,68 @@
           "A2.FINAL.WRITING.CONNECTED_PRACTICAL_TEXT",
           "A2.FINAL.ACTION.HOST_VISITOR"
         ],
-        "prompt": "After the visit, write a friendly follow-up message. Mention two past events, one opinion, thanks and a future invitation.",
-        "promptAr": "بعد الزيارة اكتب رسالة متابعة ودودة. اذكر حدثين ماضيين ورأياً واحداً وشكراً ودعوة مستقبلية.",
-        "evaluation": [
-          "taskCompletion",
-          "clarity",
-          "organisation",
-          "appropriateLanguage",
-          "accuracy"
-        ],
+        "prompt": "A week after the visit, write the message you send Sabri. Mention two things the two of you did that you still remember, say what you thought of one of them, thank him for something he brought or did, tell him one thing that has changed since he left, and invite him back for a particular weekend.",
+        "promptAr": "بعد الزيارة بأسبوع، اكتب الرسالة التي سترسلها إلى صبري. اذكر أمرين فعلتماهما معاً وما زلتَ تتذكرهما، وقل رأيكَ في أحدهما، واشكره على شيء أحضره أو فعله، وأخبره بأمر واحد تغيّر منذ أن سافر، وادعُه للعودة في عطلة أسبوع محددة.",
         "accepted": [],
+        "evaluation": {
+          "type": "keywordChecklist",
+          "requiredGroups": [
+            [
+              "we went",
+              "we walked",
+              "we ate",
+              "we cooked",
+              "we watched",
+              "we saw",
+              "do you remember",
+              "that evening",
+              "on Saturday"
+            ],
+            [
+              "I thought",
+              "I really enjoyed",
+              "the best",
+              "I loved",
+              "my favourite",
+              "it was",
+              "although",
+              "because it was"
+            ],
+            [
+              "thank you",
+              "thanks",
+              "it was kind of you",
+              "I'm grateful",
+              "I am grateful",
+              "thank you for"
+            ],
+            [
+              "has changed",
+              "have finished",
+              "since you left",
+              "I've",
+              "I have",
+              "the painters have",
+              "already",
+              "at last"
+            ],
+            [
+              "would you like",
+              "come back",
+              "next month",
+              "in the spring",
+              "why don't you",
+              "I'd love you to",
+              "the weekend of",
+              "you're welcome any"
+            ]
+          ],
+          "minGroupsMatched": 4,
+          "onlineRefinement": "grammarCheck"
+        },
         "wordGuide": [
-          80,
-          110
+          70,
+          90
         ]
       }
     ],
@@ -29141,7 +29528,7 @@
         "appropriateA2Language",
         "informationAccuracy"
       ],
-      "minimumCriterionScore": 0.75,
+      "minimumCriterionScore": 0.6,
       "speechAccuracyWeight": 0.2,
       "noSingleAverageCompensation": true
     }
