@@ -1032,6 +1032,18 @@
           "ar": "أكد الوقت أولاً؛ وأخبرنا أيضاً بالاحتياجات الغذائية."
         }
       ]
+    },
+    {
+      "id": "A2.G.AS_AS_COMPARISON",
+      "form": "(not) as + adjective + as",
+      "meaningAr": "المقارنة بالتساوي ونفيها",
+      "introducedIn": "A2-U4-L3",
+      "examples": [
+        {
+          "en": "The flat is not as big as the house.",
+          "ar": "الشقة ليست كبيرة مثل المنزل."
+        }
+      ]
     }
   ],
   "lexicon": [
@@ -1853,26 +1865,6 @@
       "introducedIn": "A2-U2-L6",
       "recycledIn": [
         "A2-U5-L5"
-      ]
-    },
-    {
-      "id": "A2.LEX.TALL_ADJ01",
-      "headword": "tall",
-      "partOfSpeech": "adjective",
-      "arabic": "طويل القامة",
-      "cefr": "A2",
-      "receptive": true,
-      "productive": true,
-      "meaning": "tall",
-      "examples": [
-        {
-          "en": "He is tall and slim.",
-          "ar": "هو طويل ونحيف."
-        }
-      ],
-      "introducedIn": "A2-U3-L1",
-      "recycledIn": [
-        "A2-U4-L1"
       ]
     },
     {
@@ -5458,6 +5450,282 @@
       "recycledIn": [
         "A2-FINAL-MISSION"
       ]
+    },
+    {
+      "id": "A2.LEX.LIFT_N01",
+      "headword": "lift",
+      "partOfSpeech": "noun",
+      "arabic": "مصعد",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "lift",
+      "examples": [
+        {
+          "en": "There wasn't a lift in the old building.",
+          "ar": "لم يكن هناك مصعد في البناية القديمة."
+        }
+      ],
+      "introducedIn": "A2-U4-L1",
+      "recycledIn": [
+        "A2-U4-L2",
+        "A2-U4-L4",
+        "A2-U4-L7"
+      ]
+    },
+    {
+      "id": "A2.LEX.NEIGHBOURHOOD_N01",
+      "headword": "neighbourhood",
+      "partOfSpeech": "noun",
+      "arabic": "حيّ",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "neighbourhood",
+      "examples": [
+        {
+          "en": "I chose this neighbourhood for the schools.",
+          "ar": "اخترتُ هذا الحيّ من أجل المدارس."
+        }
+      ],
+      "introducedIn": "A2-U4-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.STORAGE_N01",
+      "headword": "storage",
+      "partOfSpeech": "noun",
+      "arabic": "تخزين",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "storage",
+      "examples": [
+        {
+          "en": "There is a storage space next to the kitchen.",
+          "ar": "توجد مساحة تخزين بجانب المطبخ."
+        }
+      ],
+      "introducedIn": "A2-U4-L4",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.DAMP_ADJ01",
+      "headword": "damp",
+      "partOfSpeech": "adjective",
+      "arabic": "رطب",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "damp",
+      "examples": [
+        {
+          "en": "The wall behind the pipe is damp.",
+          "ar": "الجدار خلف الأنبوب رطب."
+        }
+      ],
+      "introducedIn": "A2-U4-L5",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.FURNISHED_ADJ01",
+      "headword": "furnished",
+      "partOfSpeech": "adjective",
+      "arabic": "مفروش",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "furnished",
+      "examples": [
+        {
+          "en": "The flat is furnished, so we need no beds.",
+          "ar": "الشقة مفروشة، فلا نحتاج إلى أسرّة."
+        }
+      ],
+      "introducedIn": "A2-U4-L6",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.DEPOSIT_N01",
+      "headword": "deposit",
+      "partOfSpeech": "noun",
+      "arabic": "مبلغ التأمين",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "deposit",
+      "examples": [
+        {
+          "en": "The deposit is one month of rent.",
+          "ar": "مبلغ التأمين يعادل إيجار شهر واحد."
+        }
+      ],
+      "introducedIn": "A2-U4-L6",
+      "recycledIn": [
+        "A2-U4-L7"
+      ]
+    },
+    {
+      "id": "A2.LEX.BEARD_N01",
+      "headword": "beard",
+      "partOfSpeech": "noun",
+      "arabic": "لحية",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "beard",
+      "examples": [
+        {
+          "en": "The driver has a short black beard.",
+          "ar": "للسائق لحية سوداء قصيرة."
+        }
+      ],
+      "introducedIn": "A2-U3-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.RECOGNISE_V01",
+      "headword": "recognise",
+      "partOfSpeech": "verb",
+      "arabic": "يتعرّف على",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "recognise",
+      "examples": [
+        {
+          "en": "I will recognise her at the airport.",
+          "ar": "سأتعرّف عليها في المطار."
+        }
+      ],
+      "introducedIn": "A2-U3-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.SHY_ADJ01",
+      "headword": "shy",
+      "partOfSpeech": "adjective",
+      "arabic": "خجول",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "shy",
+      "examples": [
+        {
+          "en": "He is a little shy at first.",
+          "ar": "هو خجول قليلاً في البداية."
+        }
+      ],
+      "introducedIn": "A2-U3-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.GENEROUS_ADJ01",
+      "headword": "generous",
+      "partOfSpeech": "adjective",
+      "arabic": "كريم",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "generous",
+      "examples": [
+        {
+          "en": "She is generous with her time.",
+          "ar": "هي كريمة بوقتها."
+        }
+      ],
+      "introducedIn": "A2-U3-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.HELPFUL_ADJ01",
+      "headword": "helpful",
+      "partOfSpeech": "adjective",
+      "arabic": "متعاون",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "helpful",
+      "examples": [
+        {
+          "en": "Rami is more helpful with beginners.",
+          "ar": "رامي أكثر تعاوناً مع المبتدئين."
+        }
+      ],
+      "introducedIn": "A2-U3-L3",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.CREATIVE_ADJ01",
+      "headword": "creative",
+      "partOfSpeech": "adjective",
+      "arabic": "مبدع",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "creative",
+      "examples": [
+        {
+          "en": "Karim is the most creative person here.",
+          "ar": "كريم أكثرنا إبداعاً هنا."
+        }
+      ],
+      "introducedIn": "A2-U3-L4",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.ROLE_N01",
+      "headword": "role",
+      "partOfSpeech": "noun",
+      "arabic": "دور",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "role",
+      "examples": [
+        {
+          "en": "Each person has a different role.",
+          "ar": "لكل شخص دور مختلف."
+        }
+      ],
+      "introducedIn": "A2-U3-L4",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.TRUST_V01",
+      "headword": "trust",
+      "partOfSpeech": "verb",
+      "arabic": "يثق بـ",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "trust",
+      "examples": [
+        {
+          "en": "The neighbours trust him.",
+          "ar": "الجيران يثقون به."
+        }
+      ],
+      "introducedIn": "A2-U3-L5",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.STRENGTH_N01",
+      "headword": "strength",
+      "partOfSpeech": "noun",
+      "arabic": "نقطة قوة",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "strength",
+      "examples": [
+        {
+          "en": "Their strengths are different.",
+          "ar": "نقاط قوتهما مختلفة."
+        }
+      ],
+      "introducedIn": "A2-U3-L6",
+      "recycledIn": []
     }
   ],
   "chunks": [
@@ -6539,6 +6807,65 @@
       "recycledIn": [
         "A2-FINAL-MISSION"
       ]
+    },
+    {
+      "id": "A2.CHUNK.NOT_AS_AS",
+      "text": "not as ... as",
+      "arabic": "ليس ... مثل",
+      "cefr": "A2",
+      "introducedIn": "A2-U4-L3",
+      "productive": true,
+      "recycledIn": [
+        "A2-U4-L6",
+        "A2-U4-L7"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.AS_SOON_AS_POSSIBLE",
+      "text": "as soon as possible",
+      "arabic": "في أقرب وقت ممكن",
+      "cefr": "A2",
+      "introducedIn": "A2-U4-L5",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A2.CHUNK.BILLS_INCLUDED",
+      "text": "bills included",
+      "arabic": "الفواتير مشمولة",
+      "cefr": "A2",
+      "introducedIn": "A2-U4-L6",
+      "productive": true,
+      "recycledIn": [
+        "A2-U4-L7"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.EASY_TO_TALK_TO",
+      "text": "easy to talk to",
+      "arabic": "سهل الحديث معه",
+      "cefr": "A2",
+      "introducedIn": "A2-U3-L2",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A2.CHUNK.ASK_FOR_HELP",
+      "text": "ask for help",
+      "arabic": "يطلب المساعدة",
+      "cefr": "A2",
+      "introducedIn": "A2-U3-L3",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A2.CHUNK.AS_WELL",
+      "text": "as well",
+      "arabic": "أيضاً",
+      "cefr": "A2",
+      "introducedIn": "A2-U3-L6",
+      "productive": true,
+      "recycledIn": []
     }
   ],
   "units": [
@@ -9213,36 +9540,53 @@
           "lessonType": "encounter-focus-practice",
           "canDo": [
             "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION",
+            "A2.U3.READING.COMPARE_PEOPLE",
             "A2.U3.PRODUCTION.DESCRIBE_PERSON"
           ],
           "grammar": [
-            "A2.G.LOOK_LIKE",
-            "A2.G.BE_PAST",
-            "A2.G.PAST_REGULAR"
+            "A2.G.LOOK_LIKE"
           ],
           "lexicon": [
-            "A2.LEX.TALL_ADJ01",
             "A2.LEX.CURLY_ADJ01",
             "A2.LEX.APPEARANCE_N01",
-            "A2.LEX.MEMORABLE_ADJ01",
-            "A2.LEX.TRIP_N01",
-            "A2.LEX.YESTERDAY_ADV01",
-            "A2.LEX.VISIT_V01",
-            "A2.LEX.ARRIVE_V01",
-            "A2.LEX.DECIDE_V01"
+            "A2.LEX.BEARD_N01",
+            "A2.LEX.RECOGNISE_V01",
+            "A2.LEX.SIMILAR_ADJ01"
           ],
           "chunks": [
-            "A2.CHUNK.WHAT_DOES_LOOK_LIKE",
-            "A2.CHUNK.LAST_WEEKEND",
-            "A2.CHUNK.LAST_YEAR",
-            "A2.CHUNK.TWO_DAYS_AGO"
+            "A2.CHUNK.WHAT_DOES_LOOK_LIKE"
           ],
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "My cousin is tall and has short curly hair. He wears glasses.",
-                "ar": "ابن عمي طويل وله شعر قصير مجعد. يرتدي نظارة."
+                "speaker": "Hanan",
+                "en": "You are collecting Doctor Salwa at the airport. Do you know her?",
+                "ar": "ستستقبل الدكتورة سلوى في المطار. هل تعرفها؟"
+              },
+              {
+                "speaker": "Yousef",
+                "en": "No, never. What does she look like?",
+                "ar": "لا، لم أرها قط. كيف تبدو؟"
+              },
+              {
+                "speaker": "Hanan",
+                "en": "She is short, with curly grey hair, and she wears glasses.",
+                "ar": "قصيرة القامة، شعرها رمادي مجعد، وترتدي نظارة."
+              },
+              {
+                "speaker": "Yousef",
+                "en": "Half the airport wears glasses. Tell me about her appearance.",
+                "ar": "نصف من في المطار يرتدون نظارات. حدّثيني أكثر عن مظهرها."
+              },
+              {
+                "speaker": "Hanan",
+                "en": "She looks similar to her sister Rasha, and her suitcase is red.",
+                "ar": "تشبه أختها رشا، وحقيبتها حمراء."
+              },
+              {
+                "speaker": "Yousef",
+                "en": "Rasha! Now I will recognise her.",
+                "ar": "رشا! الآن سأتعرّف عليها."
               }
             ]
           },
@@ -9254,65 +9598,62 @@
               "mode": "encounter",
               "skill": "listening",
               "canDo": [
-                "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION",
-                "A2.U3.PRODUCTION.DESCRIBE_PERSON"
+                "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION"
               ],
-              "prompt": "Which description is correct?",
-              "promptAr": "أي وصف صحيح؟",
+              "prompt": "Why does Yousef need the description?",
+              "promptAr": "لماذا يحتاج يوسف إلى الوصف؟",
               "options": [
-                "Tall with curly hair",
-                "Short with straight hair",
-                "Tall without glasses"
+                "So he can find Doctor Salwa at the airport",
+                "So he can book her a taxi home",
+                "So he can send her photo to Rasha"
               ],
-              "answer": "Tall with curly hair",
-              "audioTranscript": "My cousin is tall and has short curly hair. He wears glasses."
+              "answer": "So he can find Doctor Salwa at the airport",
+              "audioTranscript": "You are collecting Doctor Salwa at the airport. Do you know her? No, never. What does she look like? She is short, with curly grey hair, and she wears glasses. Half the airport wears glasses. Tell me about her appearance. She looks similar to her sister Rasha, and her suitcase is red. Rasha! Now I will recognise her."
             },
             {
               "id": "A2-U3-L1-A02",
-              "lessonId": "A2-U3-L1",
-              "type": "match",
-              "mode": "practice",
-              "skill": "reading",
-              "canDo": [
-                "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION",
-                "A2.U3.PRODUCTION.DESCRIBE_PERSON"
-              ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "tall",
-                  "طويل القامة"
-                ],
-                [
-                  "curly",
-                  "مجعد"
-                ],
-                [
-                  "appearance",
-                  "مظهر"
-                ]
-              ]
-            },
-            {
-              "id": "A2-U3-L1-A03",
               "lessonId": "A2-U3-L1",
               "type": "gap",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION",
-                "A2.U3.PRODUCTION.DESCRIBE_PERSON"
+                "A2.U3.READING.COMPARE_PEOPLE"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "What does your sister look ___?",
+              "prompt": "Looks, not character. Choose the missing word.",
+              "promptAr": "المظهر لا الطبع. اختر الكلمة الناقصة.",
+              "text": "What ___ the new teacher look like?",
               "options": [
-                "like",
-                "as",
-                "than"
+                "does",
+                "is",
+                "has"
               ],
-              "answer": "like"
+              "answer": "does"
+            },
+            {
+              "id": "A2-U3-L1-A03",
+              "lessonId": "A2-U3-L1",
+              "type": "match",
+              "mode": "practice",
+              "skill": "reading",
+              "canDo": [
+                "A2.U3.READING.COMPARE_PEOPLE"
+              ],
+              "prompt": "Match each traveller to the detail that will help the driver find them.",
+              "promptAr": "طابق كل مسافر بالتفصيل الذي يساعد السائق على إيجاده.",
+              "pairs": [
+                [
+                  "Doctor Salwa looks similar to her sister,",
+                  "so Yousef already knows her face."
+                ],
+                [
+                  "Mister Adel has a short grey beard,",
+                  "and he is wearing a blue jacket."
+                ],
+                [
+                  "Huda is not tall,",
+                  "but her suitcase is bright red."
+                ]
+              ]
             },
             {
               "id": "A2-U3-L1-A04",
@@ -9321,18 +9662,17 @@
               "mode": "mastery",
               "skill": "listening",
               "canDo": [
-                "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION",
-                "A2.U3.PRODUCTION.DESCRIBE_PERSON"
+                "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION"
               ],
-              "prompt": "What colour jacket does she usually wear?",
-              "promptAr": "ما لون السترة التي ترتديها عادةً؟",
+              "prompt": "Listen to the driver's voice message. How will the traveller know it is Yousef?",
+              "promptAr": "استمع إلى رسالة السائق الصوتية. كيف ستعرف المسافرة أنه يوسف؟",
               "options": [
-                "Blue",
-                "Black",
-                "Green"
+                "He is holding a card with her name on it",
+                "He is wearing a bright red jacket",
+                "He will call her before the plane lands"
               ],
-              "answer": "Blue",
-              "audioTranscript": "The new manager is medium height with long dark hair. She usually wears a blue jacket."
+              "answer": "He is holding a card with her name on it",
+              "audioTranscript": "This is Yousef at the arrivals gate. I am holding a card with your name on it. I am tall, and I have a short black beard and a grey cap. My English is not good, but my sister wrote this message. Call me when you land."
             },
             {
               "id": "A2-U3-L1-A05",
@@ -9341,19 +9681,57 @@
               "mode": "mastery",
               "skill": "spokenProduction",
               "canDo": [
-                "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION",
                 "A2.U3.PRODUCTION.DESCRIBE_PERSON"
               ],
-              "prompt": "Describe a real or fictional person’s appearance in three or four details.",
-              "promptAr": "صف مظهر شخص حقيقي أو خيالي في ثلاثة أو أربعة تفاصيل.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "A driver is meeting your friend at the airport tomorrow and has never seen her. Describe her out loud: her height, her hair, and one detail he will find quickly.",
+              "promptAr": "سيستقبل سائقٌ صديقتَك في المطار غداً، وهو لم يرها من قبل. صِفها بصوت عالٍ: طولها، وشعرها، وتفصيلاً واحداً يلاحظه بسرعة.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "looks like",
+                    "look like",
+                    "looks similar",
+                    "tall",
+                    "short",
+                    "medium height",
+                    "she is about",
+                    "not very tall",
+                    "thin"
+                  ],
+                  [
+                    "hair",
+                    "curly",
+                    "straight",
+                    "grey",
+                    "dark",
+                    "blonde",
+                    "beard",
+                    "glasses",
+                    "eyes",
+                    "face"
+                  ],
+                  [
+                    "wearing",
+                    "wears",
+                    "jacket",
+                    "coat",
+                    "scarf",
+                    "suitcase",
+                    "bag",
+                    "red",
+                    "blue",
+                    "black",
+                    "hat",
+                    "holding"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             }
           ]
         },
@@ -9364,6 +9742,7 @@
           "lessonType": "encounter-focus-practice",
           "canDo": [
             "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION",
+            "A2.U3.READING.COMPARE_PEOPLE",
             "A2.U3.INTERACTION.DISCUSS_PEOPLE"
           ],
           "grammar": [
@@ -9372,17 +9751,45 @@
           "lexicon": [
             "A2.LEX.PATIENT_ADJ01",
             "A2.LEX.RELIABLE_ADJ01",
-            "A2.LEX.OUTGOING_ADJ01"
+            "A2.LEX.OUTGOING_ADJ01",
+            "A2.LEX.SHY_ADJ01",
+            "A2.LEX.GENEROUS_ADJ01"
           ],
           "chunks": [
-            "A2.CHUNK.WHAT_IS_LIKE"
+            "A2.CHUNK.WHAT_IS_LIKE",
+            "A2.CHUNK.EASY_TO_TALK_TO"
           ],
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "A: What is Dalia like? B: She is outgoing and kind. She talks to everyone, but she is also a patient listener.",
-                "ar": "أ: كيف هي شخصية داليا؟ ب: اجتماعية ولطيفة. تتحدث مع الجميع، لكنها أيضاً مستمعة صبورة."
+                "speaker": "Karim",
+                "en": "You worked with Nabil last year. What is he like?",
+                "ar": "عملتِ مع نبيل العام الماضي. كيف هي شخصيته؟"
+              },
+              {
+                "speaker": "Dima",
+                "en": "Very patient. He never shouts, even on a bad day.",
+                "ar": "صبور جداً. لا يرفع صوته أبداً، حتى في يوم سيّئ."
+              },
+              {
+                "speaker": "Karim",
+                "en": "Is he outgoing? Our office eats lunch together.",
+                "ar": "وهل هو اجتماعي؟ نحن في المكتب نتغدّى معاً."
+              },
+              {
+                "speaker": "Dima",
+                "en": "A little shy at first, but he is easy to talk to.",
+                "ar": "خجول قليلاً في البداية، لكن الحديث معه سهل."
+              },
+              {
+                "speaker": "Karim",
+                "en": "And is he reliable? I need someone for Saturdays.",
+                "ar": "وهل هو موثوق؟ أحتاج إلى شخص لأيام السبت."
+              },
+              {
+                "speaker": "Dima",
+                "en": "Completely. He is also generous, and he always brings coffee.",
+                "ar": "تماماً. وهو كريم أيضاً، ويُحضر القهوة دائماً."
               }
             ]
           },
@@ -9394,59 +9801,30 @@
               "mode": "encounter",
               "skill": "listening",
               "canDo": [
-                "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION",
-                "A2.U3.INTERACTION.DISCUSS_PEOPLE"
+                "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION"
               ],
-              "prompt": "Which quality is mentioned?",
-              "promptAr": "أي صفة ذُكرت؟",
+              "prompt": "What is Karim trying to find out?",
+              "promptAr": "ما الذي يحاول كريم معرفته؟",
               "options": [
-                "Patient",
-                "Careless",
-                "Quiet"
+                "What sort of person Nabil is",
+                "What Nabil looks like",
+                "Where Nabil worked last year"
               ],
-              "answer": "Patient",
-              "audioTranscript": "A: What is Dalia like? B: She is outgoing and kind. She talks to everyone, but she is also a patient listener."
+              "answer": "What sort of person Nabil is",
+              "audioTranscript": "You worked with Nabil last year. What is he like? Very patient. He never shouts, even on a bad day. Is he outgoing? Our office eats lunch together. A little shy at first, but he is easy to talk to. And is he reliable? I need someone for Saturdays. Completely. He is also generous, and he always brings coffee."
             },
             {
               "id": "A2-U3-L2-A02",
-              "lessonId": "A2-U3-L2",
-              "type": "match",
-              "mode": "practice",
-              "skill": "reading",
-              "canDo": [
-                "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION",
-                "A2.U3.INTERACTION.DISCUSS_PEOPLE"
-              ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "patient",
-                  "صبور"
-                ],
-                [
-                  "reliable",
-                  "موثوق"
-                ],
-                [
-                  "outgoing",
-                  "اجتماعي"
-                ]
-              ]
-            },
-            {
-              "id": "A2-U3-L2-A03",
               "lessonId": "A2-U3-L2",
               "type": "gap",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION",
-                "A2.U3.INTERACTION.DISCUSS_PEOPLE"
+                "A2.U3.READING.COMPARE_PEOPLE"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "What ___ your new colleague like?",
+              "prompt": "Character, not looks. Choose the missing word.",
+              "promptAr": "الطبع لا المظهر. اختر الكلمة الناقصة.",
+              "text": "What ___ your new flatmate like? She is quiet and very generous.",
               "options": [
                 "is",
                 "does",
@@ -9455,24 +9833,42 @@
               "answer": "is"
             },
             {
+              "id": "A2-U3-L2-A03",
+              "lessonId": "A2-U3-L2",
+              "type": "textChoice",
+              "mode": "practice",
+              "skill": "reading",
+              "canDo": [
+                "A2.U3.READING.COMPARE_PEOPLE"
+              ],
+              "prompt": "Read the message about a new flatmate. What is it warning Rana about?",
+              "promptAr": "اقرأ الرسالة عن شريكة السكن الجديدة. مِمَّ تحذّر رنا؟",
+              "options": [
+                "Suha needs quiet late in the evening",
+                "Suha never cooks for other people",
+                "Suha is shy and hard to talk to"
+              ],
+              "answer": "Suha needs quiet late in the evening",
+              "sourceText": "Hi Rana. About the room: my flatmate Suha is quiet in the morning, and she cooks for everyone on Fridays. She is not shy at all once she knows you, and she is generous with her things. She does not like loud music after ten."
+            },
+            {
               "id": "A2-U3-L2-A04",
               "lessonId": "A2-U3-L2",
               "type": "audioChoice",
               "mode": "mastery",
               "skill": "listening",
               "canDo": [
-                "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION",
-                "A2.U3.INTERACTION.DISCUSS_PEOPLE"
+                "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION"
               ],
-              "prompt": "What shows that Fadi is reliable?",
-              "promptAr": "ما الذي يدل على أن فادي موثوق؟",
+              "prompt": "Listen to the reference for Fadi. What does the speaker warn you about?",
+              "promptAr": "استمع إلى التزكية الخاصة بفادي. ممَّ يحذّرك المتحدث؟",
               "options": [
-                "He keeps his promises.",
-                "He talks a lot.",
-                "He works alone."
+                "He will be quiet with new people",
+                "He is often late in the morning",
+                "He does not like helping anyone"
               ],
-              "answer": "He keeps his promises.",
-              "audioTranscript": "Fadi is reliable. When he says he will help, he always comes on time."
+              "answer": "He will be quiet with new people",
+              "audioTranscript": "You asked about Fadi. He is a very patient man, and he is reliable too. He was never late in three years. He is not outgoing, so he will not talk much at the party, but he is generous with his time and he listens."
             },
             {
               "id": "A2-U3-L2-A05",
@@ -9481,19 +9877,62 @@
               "mode": "mastery",
               "skill": "spokenInteraction",
               "canDo": [
-                "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION",
                 "A2.U3.INTERACTION.DISCUSS_PEOPLE"
               ],
-              "prompt": "Ask about someone’s character and respond with two qualities plus an example.",
-              "promptAr": "اسأل عن شخصية شخص وأجب بصفتين مع مثال.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
+              "prompt": "Answer your friend. Say what Hala is like, give two qualities with an example for each, then ask your friend one question about her new office.",
+              "promptAr": "أجب صديقتك. قل كيف هي شخصية هالة، واذكر صفتين مع مثال لكل صفة، ثم اسألها سؤالاً واحداً عن مكتبها الجديد.",
+              "partnerTurns": [
+                "So you know Hala well. I am sharing an office with her from Sunday. What is she like?",
+                "That is good to hear. And is she easy to talk to? I am a bit shy myself.",
+                "Thank you. Tell me one more thing about her, and then ask me anything you want."
               ],
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "patient",
+                    "reliable",
+                    "outgoing",
+                    "generous",
+                    "shy",
+                    "calm",
+                    "kind",
+                    "friendly",
+                    "quiet",
+                    "helpful",
+                    "organised"
+                  ],
+                  [
+                    "for example",
+                    "she always",
+                    "she never",
+                    "once",
+                    "when",
+                    "because",
+                    "every",
+                    "last year",
+                    "she helped",
+                    "she brings"
+                  ],
+                  [
+                    "what about you",
+                    "do you",
+                    "are you",
+                    "will you",
+                    "how long",
+                    "how many",
+                    "when do",
+                    "where is",
+                    "is she",
+                    "who else"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             }
           ]
         },
@@ -9503,36 +9942,49 @@
           "titleAr": "قارن بين الناس",
           "lessonType": "encounter-focus-practice",
           "canDo": [
+            "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION",
             "A2.U3.READING.COMPARE_PEOPLE",
             "A2.U3.PRODUCTION.DESCRIBE_PERSON"
           ],
           "grammar": [
-            "A2.G.COMPARATIVE_ADJECTIVES",
-            "A2.G.PRESENT_SIMPLE_VS_CONTINUOUS",
-            "A2.G.WH_FOLLOW_UP"
+            "A2.G.COMPARATIVE_ADJECTIVES"
           ],
           "lexicon": [
             "A2.LEX.CALM_ADJ01",
             "A2.LEX.ORGANISED_ADJ01",
             "A2.LEX.CONFIDENT_ADJ01",
-            "A2.LEX.FOLLOW_UP_N01",
-            "A2.LEX.DETAIL_N01",
-            "A2.LEX.RECENTLY_ADV01",
-            "A2.LEX.INTERESTED_ADJ01",
-            "A2.LEX.ENJOY_V01"
+            "A2.LEX.HELPFUL_ADJ01"
           ],
           "chunks": [
             "A2.CHUNK.MORE_THAN",
-            "A2.CHUNK.WHAT_ABOUT_YOU",
-            "A2.CHUNK.TELL_ME_MORE",
-            "A2.CHUNK.THAT_SOUNDS_INTERESTING"
+            "A2.CHUNK.ASK_FOR_HELP"
           ],
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "Rami and Hadi are both friendly. Rami is calmer, but Hadi is more confident when speaking to a group.",
-                "ar": ""
+                "speaker": "Ruba",
+                "en": "I have to present on Thursday. Who should I ask for help?",
+                "ar": "عليّ تقديم عرض يوم الخميس. مَن أطلب منه المساعدة؟"
+              },
+              {
+                "speaker": "Samer",
+                "en": "Maha or Ziad. Maha is calmer, and she explains things slowly.",
+                "ar": "مها أو زياد. مها أهدأ، وتشرح الأمور ببطء."
+              },
+              {
+                "speaker": "Ruba",
+                "en": "And Ziad? He is more confident than both of us.",
+                "ar": "وزياد؟ هو أكثر ثقة منا نحن الاثنين."
+              },
+              {
+                "speaker": "Samer",
+                "en": "He is, but he is busier this week than Maha.",
+                "ar": "صحيح، لكنه أكثر انشغالاً من مها هذا الأسبوع."
+              },
+              {
+                "speaker": "Ruba",
+                "en": "Then Maha. She is also more organised, so she will answer.",
+                "ar": "إذاً مها. وهي أكثر تنظيماً أيضاً، لذا سترد عليّ."
               }
             ]
           },
@@ -9540,89 +9992,78 @@
             {
               "id": "A2-U3-L3-A01",
               "lessonId": "A2-U3-L3",
-              "type": "textChoice",
+              "type": "audioChoice",
               "mode": "encounter",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U3.READING.COMPARE_PEOPLE",
-                "A2.U3.PRODUCTION.DESCRIBE_PERSON"
+                "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION"
               ],
-              "prompt": "Who is more confident in a group?",
-              "promptAr": "من الأكثر ثقة أمام مجموعة؟",
+              "prompt": "What are Ruba and Samer deciding?",
+              "promptAr": "ما الذي تقرره ربى مع سامر؟",
               "options": [
-                "Hadi",
-                "Rami",
-                "Both equally"
+                "Who Ruba should ask to help her practise",
+                "Which day Ruba will give her presentation",
+                "Who is the best speaker in the office"
               ],
-              "answer": "Hadi",
-              "sourceText": "Rami and Hadi are both friendly. Rami is calmer, but Hadi is more confident when speaking to a group."
+              "answer": "Who Ruba should ask to help her practise",
+              "audioTranscript": "I have to present on Thursday. Who should I ask for help? Maha or Ziad. Maha is calmer, and she explains things slowly. And Ziad? He is more confident than both of us. He is, but he is busier this week than Maha. Then Maha. She is also more organised, so she will answer."
             },
             {
               "id": "A2-U3-L3-A02",
-              "lessonId": "A2-U3-L3",
-              "type": "match",
-              "mode": "practice",
-              "skill": "reading",
-              "canDo": [
-                "A2.U3.READING.COMPARE_PEOPLE",
-                "A2.U3.PRODUCTION.DESCRIBE_PERSON"
-              ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "calm",
-                  "هادئ"
-                ],
-                [
-                  "organised",
-                  "منظم"
-                ],
-                [
-                  "confident",
-                  "واثق"
-                ]
-              ]
-            },
-            {
-              "id": "A2-U3-L3-A03",
               "lessonId": "A2-U3-L3",
               "type": "gap",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U3.READING.COMPARE_PEOPLE",
-                "A2.U3.PRODUCTION.DESCRIBE_PERSON"
+                "A2.U3.READING.COMPARE_PEOPLE"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "Salma is more organised ___ her brother.",
+              "prompt": "A short adjective or a long one? Choose the correct comparative.",
+              "promptAr": "صفة قصيرة أم طويلة؟ اختر صيغة المقارنة الصحيحة.",
+              "text": "Maha explains slowly, so she is ___ than Ziad in a long meeting.",
               "options": [
-                "than",
-                "that",
-                "then"
+                "calmer",
+                "more calm",
+                "calmest"
               ],
-              "answer": "than"
+              "answer": "calmer"
+            },
+            {
+              "id": "A2-U3-L3-A03",
+              "lessonId": "A2-U3-L3",
+              "type": "textChoice",
+              "mode": "practice",
+              "skill": "reading",
+              "canDo": [
+                "A2.U3.READING.COMPARE_PEOPLE"
+              ],
+              "prompt": "Read the note on the office door. Who should you ask first about a slow laptop?",
+              "promptAr": "اقرأ الملاحظة على باب المكتب. مَن تسأل أولاً عن حاسوب بطيء؟",
+              "options": [
+                "Rami, because he explains patiently",
+                "Sawsan, because she is quicker",
+                "Either of them, because they work together"
+              ],
+              "answer": "Rami, because he explains patiently",
+              "sourceText": "Note on the office door: if your laptop stops working, ask Rami first. He is slower than Sawsan, but he is more helpful with beginners and he never makes you feel silly. Sawsan is quicker, so ask her when the problem is urgent."
             },
             {
               "id": "A2-U3-L3-A04",
               "lessonId": "A2-U3-L3",
-              "type": "textChoice",
+              "type": "audioChoice",
               "mode": "mastery",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U3.READING.COMPARE_PEOPLE",
-                "A2.U3.PRODUCTION.DESCRIBE_PERSON"
+                "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION"
               ],
-              "prompt": "Why is Lina described as more organised?",
-              "promptAr": "لماذا توصف لينا بأنها أكثر تنظيماً؟",
+              "prompt": "Listen. Why does the speaker choose Basma to feed the cat?",
+              "promptAr": "استمع. لماذا تختار المتحدثة بسمة لإطعام القطة؟",
               "options": [
-                "She finishes tasks early.",
-                "She forgets deadlines.",
-                "She works fewer hours."
+                "She lives nearer and is more careful",
+                "She is friendlier than Huda",
+                "She is the only one who is free"
               ],
-              "answer": "She finishes tasks early.",
-              "sourceText": "Lina finishes tasks early. Noor sometimes forgets deadlines. Lina is more organised than Noor."
+              "answer": "She lives nearer and is more careful",
+              "audioTranscript": "I need someone to feed the cat next weekend. Huda is friendlier than Basma, but she travels a lot. Basma is quieter and lives closer to us, and she is more careful with keys. So I will ask Basma this time, and Huda in August."
             },
             {
               "id": "A2-U3-L3-A05",
@@ -9631,19 +10072,51 @@
               "mode": "mastery",
               "skill": "spokenProduction",
               "canDo": [
-                "A2.U3.READING.COMPARE_PEOPLE",
                 "A2.U3.PRODUCTION.DESCRIBE_PERSON"
               ],
-              "prompt": "Compare two people using at least two comparative forms and fair evidence.",
-              "promptAr": "قارن بين شخصين مستخدماً صيغتي مقارنة على الأقل ودليلاً عادلاً.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "Think of two people you could ask for help with a difficult form. Compare them using at least two comparative forms, then say which one you will ask and why.",
+              "promptAr": "فكّر في شخصين يمكنك أن تطلب منهما المساعدة في استمارة صعبة. قارن بينهما بصيغتَي مقارنة على الأقل، ثم قل مَن ستسأل ولماذا.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "calmer",
+                    "quieter",
+                    "friendlier",
+                    "busier",
+                    "older",
+                    "younger",
+                    "better",
+                    "faster",
+                    "slower",
+                    "easier",
+                    "more patient",
+                    "more organised",
+                    "more helpful",
+                    "more confident",
+                    "more careful"
+                  ],
+                  [
+                    "than"
+                  ],
+                  [
+                    "I will ask",
+                    "I would ask",
+                    "I am going to ask",
+                    "I'm going to ask",
+                    "because",
+                    "so",
+                    "that is why",
+                    "that's why",
+                    "the reason"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             }
           ]
         },
@@ -9653,16 +10126,18 @@
           "titleAr": "الأفضل للدور",
           "lessonType": "encounter-focus-practice",
           "canDo": [
+            "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION",
             "A2.U3.READING.COMPARE_PEOPLE",
-            "A2.U3.INTERACTION.DISCUSS_PEOPLE"
+            "A2.U3.WRITING.WRITE_PERSON_PROFILE"
           ],
           "grammar": [
             "A2.G.SUPERLATIVE_ADJECTIVES"
           ],
           "lexicon": [
-            "A2.LEX.FUNNIEST_ADJ01",
-            "A2.LEX.KIND_ADJ01",
-            "A2.LEX.ACTIVE_ADJ01"
+            "A2.LEX.ACTIVE_ADJ01",
+            "A2.LEX.CREATIVE_ADJ01",
+            "A2.LEX.ROLE_N01",
+            "A2.LEX.EXPERIENCE_N01"
           ],
           "chunks": [
             "A2.CHUNK.THE_MOST",
@@ -9671,9 +10146,34 @@
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "Three volunteers can lead the activity. Sami has the most experience, Reem is the most organised, and Amal is the most creative.",
-                "ar": ""
+                "speaker": "Faris",
+                "en": "Three roles, three people. Who takes the welcome desk?",
+                "ar": "ثلاثة أدوار وثلاثة أشخاص. مَن يتولّى مكتب الاستقبال؟"
+              },
+              {
+                "speaker": "Suad",
+                "en": "Nawal. She has the most experience with visitors.",
+                "ar": "نوال. لديها أكبر خبرة مع الزوّار."
+              },
+              {
+                "speaker": "Hani",
+                "en": "And the posters? Karim is the most creative person here.",
+                "ar": "وماذا عن الملصقات؟ كريم أكثرنا إبداعاً هنا."
+              },
+              {
+                "speaker": "Suad",
+                "en": "Agreed. That leaves the children's games.",
+                "ar": "متفقة. يبقى إذاً ألعاب الأطفال."
+              },
+              {
+                "speaker": "Faris",
+                "en": "Rania, then. She is the most active of all of us.",
+                "ar": "رانية إذاً. هي الأنشط بيننا جميعاً."
+              },
+              {
+                "speaker": "Hani",
+                "en": "Three different roles, three best choices. Nobody does everything.",
+                "ar": "ثلاثة أدوار مختلفة وثلاثة خيارات أفضل. لا أحد يقوم بكل شيء."
               }
             ]
           },
@@ -9681,69 +10181,59 @@
             {
               "id": "A2-U3-L4-A01",
               "lessonId": "A2-U3-L4",
-              "type": "textChoice",
+              "type": "audioChoice",
               "mode": "encounter",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U3.READING.COMPARE_PEOPLE",
-                "A2.U3.INTERACTION.DISCUSS_PEOPLE"
+                "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION"
               ],
-              "prompt": "Who is the most organised?",
-              "promptAr": "من الأكثر تنظيماً؟",
+              "prompt": "How are the three of them dividing the work?",
+              "promptAr": "كيف يوزّع الثلاثة العمل بينهم؟",
               "options": [
-                "Reem",
-                "Sami",
-                "Amal"
+                "Each person takes the job that suits them best",
+                "One person will do all three jobs",
+                "They cannot agree on anything"
               ],
-              "answer": "Reem",
-              "sourceText": "Three volunteers can lead the activity. Sami has the most experience, Reem is the most organised, and Amal is the most creative."
+              "answer": "Each person takes the job that suits them best",
+              "audioTranscript": "Three roles, three people. Who takes the welcome desk? Nawal. She has the most experience with visitors. And the posters? Karim is the most creative person here. Agreed. That leaves the children's games. Rania, then. She is the most active of all of us. Three different roles, three best choices. Nobody does everything."
             },
             {
               "id": "A2-U3-L4-A02",
-              "lessonId": "A2-U3-L4",
-              "type": "match",
-              "mode": "practice",
-              "skill": "reading",
-              "canDo": [
-                "A2.U3.READING.COMPARE_PEOPLE",
-                "A2.U3.INTERACTION.DISCUSS_PEOPLE"
-              ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "funny",
-                  "مضحك"
-                ],
-                [
-                  "kind",
-                  "لطيف"
-                ],
-                [
-                  "active",
-                  "نشيط"
-                ]
-              ]
-            },
-            {
-              "id": "A2-U3-L4-A03",
               "lessonId": "A2-U3-L4",
               "type": "gap",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U3.READING.COMPARE_PEOPLE",
-                "A2.U3.INTERACTION.DISCUSS_PEOPLE"
+                "A2.U3.READING.COMPARE_PEOPLE"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "He is the ___ patient person on the team.",
+              "prompt": "One person above everyone else. Choose the correct form.",
+              "promptAr": "شخص واحد يتفوق على الجميع. اختر الصيغة الصحيحة.",
+              "text": "Of the four volunteers, Rania is ___ active.",
               "options": [
-                "most",
+                "the most",
                 "more",
-                "much"
+                "as"
               ],
-              "answer": "most"
+              "answer": "the most"
+            },
+            {
+              "id": "A2-U3-L4-A03",
+              "lessonId": "A2-U3-L4",
+              "type": "audioChoice",
+              "mode": "practice",
+              "skill": "listening",
+              "canDo": [
+                "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION"
+              ],
+              "prompt": "Listen to the manager give out the jobs. Why does Lubna write the report?",
+              "promptAr": "استمع إلى المديرة وهي توزّع المهام. لماذا تكتب لبنى التقرير؟",
+              "options": [
+                "She is the most careful with numbers",
+                "She knows the city best",
+                "She is the friendliest of them"
+              ],
+              "answer": "She is the most careful with numbers",
+              "audioTranscript": "Listen, everybody. Ahmad will drive the van, because he knows the city best. Sana will meet the families at the door; she is the friendliest of us. And Lubna will write the report, because she is the most careful with numbers. Nobody is the best at everything."
             },
             {
               "id": "A2-U3-L4-A04",
@@ -9752,39 +10242,80 @@
               "mode": "mastery",
               "skill": "reading",
               "canDo": [
-                "A2.U3.READING.COMPARE_PEOPLE",
-                "A2.U3.INTERACTION.DISCUSS_PEOPLE"
+                "A2.U3.READING.COMPARE_PEOPLE"
               ],
-              "prompt": "What supports the description of Nora?",
-              "promptAr": "ما الذي يدعم وصف نورا؟",
+              "prompt": "Read the staff notice. Why does Yasmin lead the group?",
+              "promptAr": "اقرأ إعلان الموظفين. لماذا تقود ياسمين المجموعة؟",
               "options": [
-                "Her frequent exercise",
-                "Her quiet personality",
-                "Her job"
+                "She has the most experience",
+                "She is the strongest of them",
+                "She wrote the list of names"
               ],
-              "answer": "Her frequent exercise",
-              "sourceText": "Nora runs every day and plays two sports. Huda walks twice a week. Nora is the most active person in the group."
+              "answer": "She has the most experience",
+              "sourceText": "Saturday clean-up: the roles are now fixed. Yasmin leads the group, because she has the most experience. Omar takes the tools; he is the strongest of us. Dalia writes the list of names. Please do not swap roles on the day."
             },
             {
               "id": "A2-U3-L4-A05",
               "lessonId": "A2-U3-L4",
-              "type": "speak",
+              "type": "write",
               "mode": "mastery",
-              "skill": "spokenInteraction",
+              "skill": "writing",
               "canDo": [
-                "A2.U3.READING.COMPARE_PEOPLE",
-                "A2.U3.INTERACTION.DISCUSS_PEOPLE"
+                "A2.U3.WRITING.WRITE_PERSON_PROFILE"
               ],
-              "prompt": "Discuss three candidates and agree who is the best for a simple role, giving reasons.",
-              "promptAr": "ناقش ثلاثة مرشحين واتفق على الأفضل لدور بسيط مع ذكر الأسباب.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "Two colleagues are waiting for their jobs at a school open day: one is very organised, the other is very good with children. Write a short note to the head teacher. Give each of them one role, and say why each one is the best choice for it.",
+              "promptAr": "زميلان ينتظران مهمتيهما في يوم مفتوح بالمدرسة: أحدهما منظّم جداً، والآخر يجيد التعامل مع الأطفال. اكتب ملاحظة قصيرة إلى مدير المدرسة. امنح كل واحد منهما دوراً، وبيّن لماذا هو الخيار الأفضل له.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "the most",
+                    "the best",
+                    "the friendliest",
+                    "the quickest",
+                    "the calmest",
+                    "the strongest",
+                    "the quietest",
+                    "best at",
+                    "most experience",
+                    "most creative",
+                    "most organised",
+                    "most active"
+                  ],
+                  [
+                    "role",
+                    "job",
+                    "desk",
+                    "group",
+                    "children",
+                    "games",
+                    "tools",
+                    "list",
+                    "lead",
+                    "leads",
+                    "takes",
+                    "look after",
+                    "welcome"
+                  ],
+                  [
+                    "because",
+                    "so",
+                    "that is why",
+                    "that's why",
+                    "since",
+                    "as she",
+                    "as he",
+                    "the reason"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "wordGuide": [
+                55,
+                75
+              ]
             }
           ]
         },
@@ -9794,8 +10325,9 @@
           "titleAr": "الناس في مجتمعي",
           "lessonType": "encounter-focus-practice",
           "canDo": [
+            "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION",
             "A2.U3.READING.COMPARE_PEOPLE",
-            "A2.U3.MEDIATION.RELAY_PERSON_MATCH"
+            "A2.U3.INTERACTION.DISCUSS_PEOPLE"
           ],
           "grammar": [
             "A2.G.RELATIVE_WHO_CHUNK"
@@ -9803,18 +10335,39 @@
           "lexicon": [
             "A2.LEX.COLLEAGUE_N01",
             "A2.LEX.NEIGHBOUR_N01",
-            "A2.LEX.RELATIONSHIP_N01"
+            "A2.LEX.RELATIONSHIP_N01",
+            "A2.LEX.TRUST_V01"
           ],
           "chunks": [
-            "A2.CHUNK.GET_ON_WELL",
-            "A2.CHUNK.A_PERSON_WHO"
+            "A2.CHUNK.A_PERSON_WHO",
+            "A2.CHUNK.GET_ON_WELL"
           ],
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "My neighbour is a person who helps older people in our street. My colleague is someone who always shares useful information.",
-                "ar": ""
+                "speaker": "Iman",
+                "en": "Our street needs a person who can speak to the council.",
+                "ar": "شارعنا يحتاج إلى شخص يستطيع مخاطبة البلدية."
+              },
+              {
+                "speaker": "Bashir",
+                "en": "Ask Mister Jalal. He is the neighbour who fixed the lights.",
+                "ar": "اسألي الأستاذ جلال. هو الجار الذي أصلح الإنارة."
+              },
+              {
+                "speaker": "Iman",
+                "en": "Does he get on well with the office there?",
+                "ar": "وهل ينسجم مع الموظفين هناك؟"
+              },
+              {
+                "speaker": "Bashir",
+                "en": "Very well. My colleague Sara works there, and they trust him.",
+                "ar": "ينسجم تماماً. زميلتي سارة تعمل هناك، وهم يثقون به."
+              },
+              {
+                "speaker": "Iman",
+                "en": "Good. A quiet relationship like that opens more doors than shouting.",
+                "ar": "جيد. علاقة هادئة كهذه تفتح أبواباً أكثر من الصراخ."
               }
             ]
           },
@@ -9822,110 +10375,145 @@
             {
               "id": "A2-U3-L5-A01",
               "lessonId": "A2-U3-L5",
-              "type": "textChoice",
+              "type": "audioChoice",
               "mode": "encounter",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U3.READING.COMPARE_PEOPLE",
-                "A2.U3.MEDIATION.RELAY_PERSON_MATCH"
+                "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION"
               ],
-              "prompt": "Who helps older people?",
-              "promptAr": "من يساعد كبار السن؟",
+              "prompt": "What does the street need?",
+              "promptAr": "ما الذي يحتاجه الشارع؟",
               "options": [
-                "The neighbour",
-                "The colleague",
-                "The writer"
+                "Someone who can talk to the council for them",
+                "A new set of street lights",
+                "A neighbour who can drive a van"
               ],
-              "answer": "The neighbour",
-              "sourceText": "My neighbour is a person who helps older people in our street. My colleague is someone who always shares useful information."
+              "answer": "Someone who can talk to the council for them",
+              "audioTranscript": "Our street needs a person who can speak to the council. Ask Mister Jalal. He is the neighbour who fixed the lights. Does he get on well with the office there? Very well. My colleague Sara works there, and they trust him. Good. A quiet relationship like that opens more doors than shouting."
             },
             {
               "id": "A2-U3-L5-A02",
-              "lessonId": "A2-U3-L5",
-              "type": "match",
-              "mode": "practice",
-              "skill": "reading",
-              "canDo": [
-                "A2.U3.READING.COMPARE_PEOPLE",
-                "A2.U3.MEDIATION.RELAY_PERSON_MATCH"
-              ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "colleague",
-                  "زميل عمل"
-                ],
-                [
-                  "neighbour",
-                  "جار"
-                ],
-                [
-                  "relationship",
-                  "علاقة"
-                ]
-              ]
-            },
-            {
-              "id": "A2-U3-L5-A03",
               "lessonId": "A2-U3-L5",
               "type": "gap",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U3.READING.COMPARE_PEOPLE",
-                "A2.U3.MEDIATION.RELAY_PERSON_MATCH"
+                "A2.U3.READING.COMPARE_PEOPLE"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "We need someone ___ listens carefully.",
+              "prompt": "Which word introduces the person? Complete the advert.",
+              "promptAr": "أي كلمة تُدخِل وصف الشخص؟ أكمل الإعلان.",
+              "text": "We are looking for someone ___ can drive a small van.",
               "options": [
                 "who",
-                "where",
-                "what"
+                "which",
+                "where"
               ],
               "answer": "who"
             },
             {
-              "id": "A2-U3-L5-A04",
+              "id": "A2-U3-L5-A03",
               "lessonId": "A2-U3-L5",
               "type": "textChoice",
-              "mode": "mastery",
+              "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U3.READING.COMPARE_PEOPLE",
-                "A2.U3.MEDIATION.RELAY_PERSON_MATCH"
+                "A2.U3.READING.COMPARE_PEOPLE"
               ],
-              "prompt": "Why does Mazen get on well with his manager?",
-              "promptAr": "لماذا ينسجم مازن مع مديره؟",
+              "prompt": "Read the noticeboard advert. Who is it looking for?",
+              "promptAr": "اقرأ إعلان لوحة الحي. عمَّن يبحث؟",
               "options": [
-                "They communicate clearly.",
-                "They are neighbours.",
-                "They have the same job."
+                "Someone who can explain English letters to older people",
+                "Someone who can teach an English class on Sundays",
+                "Someone who can drive older neighbours to the post office"
               ],
-              "answer": "They communicate clearly.",
-              "sourceText": "Mazen gets on well with his manager because they communicate clearly. He also supports a new colleague who is learning the job."
+              "answer": "Someone who can explain English letters to older people",
+              "sourceText": "Noticeboard, Al-Hadba Street. Wanted: a person who can read letters in English for older neighbours, one hour on Sunday mornings. You do not need any training. You do need patience, and a neighbour who will sit with you the first time."
+            },
+            {
+              "id": "A2-U3-L5-A04",
+              "lessonId": "A2-U3-L5",
+              "type": "audioChoice",
+              "mode": "mastery",
+              "skill": "listening",
+              "canDo": [
+                "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION"
+              ],
+              "prompt": "Listen to the three neighbours. Who would you ask about a letter you cannot read?",
+              "promptAr": "استمع إلى وصف الجيران الثلاثة. مَن تسأل بشأن رسالة لا تستطيع قراءتها؟",
+              "options": [
+                "Widad",
+                "Umm Salim",
+                "Abu Nasser"
+              ],
+              "answer": "Widad",
+              "audioTranscript": "Three people help on our street. Umm Salim is the woman who cooks when a family has a new baby. Abu Nasser is a neighbour who repairs bicycles for free. And Widad is a colleague of mine who writes letters for people who cannot read."
             },
             {
               "id": "A2-U3-L5-A05",
               "lessonId": "A2-U3-L5",
               "type": "speak",
               "mode": "mastery",
-              "skill": "mediation",
+              "skill": "spokenInteraction",
               "canDo": [
-                "A2.U3.READING.COMPARE_PEOPLE",
-                "A2.U3.MEDIATION.RELAY_PERSON_MATCH"
+                "A2.U3.INTERACTION.DISCUSS_PEOPLE"
               ],
-              "prompt": "Read three short relationship notes and relay who can help with a stated need.",
-              "promptAr": "اقرأ ثلاث ملاحظات قصيرة عن العلاقات وانقل من يستطيع المساعدة في حاجة محددة.",
-              "evaluation": [
-                "selectRelevantInformation",
-                "clarity",
-                "audienceAwareness",
-                "accuracy"
+              "prompt": "Answer your neighbour. Suggest a person who could help her mother, describe that person with someone who, and ask your neighbour one question about what her mother needs.",
+              "promptAr": "أجب جارتك. اقترح شخصاً يستطيع مساعدة والدتها، وصِفه بعبارة someone who، ثم اسألها سؤالاً واحداً عمّا تحتاجه والدتها.",
+              "partnerTurns": [
+                "Good morning. My mother is alone all day now, and I work until six. I do not know who to ask.",
+                "That is kind of you. Is she someone my mother will trust? My mother is very shy with new people.",
+                "Thank you. Tell me how you know her, and then ask me anything you need to know."
               ],
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "someone who",
+                    "a person who",
+                    "a woman who",
+                    "a man who",
+                    "a neighbour who",
+                    "a friend who",
+                    "a colleague who",
+                    "the one who",
+                    "who lives",
+                    "who works",
+                    "who can"
+                  ],
+                  [
+                    "patient",
+                    "kind",
+                    "calm",
+                    "reliable",
+                    "trust",
+                    "quiet",
+                    "friendly",
+                    "generous",
+                    "she helped",
+                    "he helped",
+                    "every week",
+                    "for years",
+                    "gets on well"
+                  ],
+                  [
+                    "do you",
+                    "does she",
+                    "is she",
+                    "what time",
+                    "how long",
+                    "how often",
+                    "would she",
+                    "what about",
+                    "when does",
+                    "where does"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             }
           ]
         },
@@ -9935,31 +10523,30 @@
           "titleAr": "كوّن فريقاً متوازناً",
           "lessonType": "integrated-production",
           "canDo": [
+            "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION",
+            "A2.U3.READING.COMPARE_PEOPLE",
+            "A2.U3.PRODUCTION.DESCRIBE_PERSON",
             "A2.U3.WRITING.WRITE_PERSON_PROFILE",
-            "A2.U3.PRODUCTION.DESCRIBE_PERSON"
+            "A2.U3.MEDIATION.RELAY_PERSON_MATCH"
           ],
           "grammar": [
             "A2.G.TOO_ALSO_RELATION",
-            "A2.G.COMPARATIVE_ADJECTIVES",
-            "A2.G.SUPERLATIVE_ADJECTIVES"
+            "A2.G.LINKERS_AND_BUT_BECAUSE"
           ],
           "lexicon": [
             "A2.LEX.TEAM_N01",
             "A2.LEX.MEMBER_N01",
-            "A2.LEX.SUITABLE_ADJ01"
+            "A2.LEX.SUITABLE_ADJ01",
+            "A2.LEX.STRENGTH_N01"
           ],
           "chunks": [
             "A2.CHUNK.GOOD_AT",
-            "A2.CHUNK.BEST_CHOICE"
+            "A2.CHUNK.AS_WELL"
           ],
-          "encounter": {
-            "dialogue": [
-              {
-                "speaker": "Narrator",
-                "en": "A team needs an organiser and a presenter. Layla is good at planning, while Faris is the most confident speaker. Together, they are a suitable pair.",
-                "ar": ""
-              }
-            ]
+          "readingText": {
+            "title": "Who I Would Choose",
+            "text": "Dear Mrs Zeinab, you asked me about the two new members for the reading team. I would choose Hind and Ayman. Hind is good at planning, and she is the most organised person in our group. Ayman is good with children, and he is patient as well. Hind is quieter than Ayman, but that is useful: he talks to the families and she keeps the lists. Their strengths are different, so they are a suitable pair. Warm regards, Nour.",
+            "textAr": "عزيزتي السيدة زينب، سألتِني عن العضوين الجديدين لفريق القراءة. أختار هند وأيمن. هند تجيد التخطيط، وهي أكثرنا تنظيماً في المجموعة. وأيمن يحسن التعامل مع الأطفال، وهو صبور أيضاً. هند أهدأ من أيمن، لكن ذلك مفيد: هو يتحدث إلى العائلات وهي تتولّى القوائم. نقاط قوتهما مختلفة، لذا فهما ثنائي مناسب. مع خالص التحية، نور."
           },
           "activities": [
             {
@@ -9969,85 +10556,140 @@
               "mode": "encounter",
               "skill": "reading",
               "canDo": [
-                "A2.U3.WRITING.WRITE_PERSON_PROFILE",
-                "A2.U3.PRODUCTION.DESCRIBE_PERSON"
+                "A2.U3.READING.COMPARE_PEOPLE"
               ],
-              "prompt": "Why are Layla and Faris a suitable pair?",
-              "promptAr": "لماذا ليلى وفارس ثنائي مناسب؟",
+              "prompt": "Read Nour's note once. What is she telling Mrs Zeinab?",
+              "promptAr": "اقرأ ملاحظة نور مرة واحدة. ماذا تخبر به السيدة زينب؟",
               "options": [
-                "They have different useful strengths.",
-                "They are both presenters.",
-                "They are the oldest members."
+                "Why these two people work well together",
+                "That the team already has too many members",
+                "That she cannot join the team herself"
               ],
-              "answer": "They have different useful strengths.",
-              "sourceText": "A team needs an organiser and a presenter. Layla is good at planning, while Faris is the most confident speaker. Together, they are a suitable pair."
+              "answer": "Why these two people work well together"
             },
             {
               "id": "A2-U3-L6-A02",
               "lessonId": "A2-U3-L6",
-              "type": "match",
+              "type": "audioChoice",
               "mode": "practice",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U3.WRITING.WRITE_PERSON_PROFILE",
-                "A2.U3.PRODUCTION.DESCRIBE_PERSON"
+                "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION"
               ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "team",
-                  "فريق"
-                ],
-                [
-                  "member",
-                  "عضو"
-                ],
-                [
-                  "suitable",
-                  "مناسب"
-                ]
-              ]
+              "prompt": "Listen to Mrs Zeinab's reply. What is her worry about Ayman?",
+              "promptAr": "استمع إلى ردّ السيدة زينب. ما الذي يقلقها بشأن أيمن؟",
+              "options": [
+                "He may not have the time every week",
+                "He is not good enough with children",
+                "He is less organised than Hind"
+              ],
+              "answer": "He may not have the time every week",
+              "audioTranscript": "It is Zeinab. Thank you for the note. I agree about Hind, and she is the most organised of all of us. I am not sure about Ayman, though. He is kind, but he is also the busiest man in the building. Can he really come every Saturday?"
             },
             {
               "id": "A2-U3-L6-A03",
               "lessonId": "A2-U3-L6",
-              "type": "gap",
+              "type": "speak",
               "mode": "practice",
-              "skill": "reading",
+              "skill": "spokenProduction",
               "canDo": [
-                "A2.U3.WRITING.WRITE_PERSON_PROFILE",
                 "A2.U3.PRODUCTION.DESCRIBE_PERSON"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "Rana is good ___ solving practical problems.",
-              "options": [
-                "at",
-                "in",
-                "for"
-              ],
-              "answer": "at"
+              "prompt": "Before you write, say your own recommendation out loud, the way Nour wrote hers. Name two people, say what each one is good at, and add one quality they share using too or also.",
+              "promptAr": "قبل أن تكتب، قل توصيتك بصوت عالٍ كما كتبت نور توصيتها. سمِّ شخصين، واذكر ما يجيده كل منهما، وأضف صفة مشتركة بينهما مستخدماً too أو also.",
+              "accepted": [],
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "good at",
+                    "good with",
+                    "best at",
+                    "she can",
+                    "he can",
+                    "plans",
+                    "organises",
+                    "talks to",
+                    "writes",
+                    "looks after"
+                  ],
+                  [
+                    "too",
+                    "also",
+                    "as well",
+                    "both",
+                    "the same"
+                  ],
+                  [
+                    "but",
+                    "and",
+                    "because",
+                    "so",
+                    "while",
+                    "different"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U3-L6-A04",
               "lessonId": "A2-U3-L6",
-              "type": "textChoice",
+              "type": "speak",
               "mode": "mastery",
-              "skill": "reading",
+              "skill": "mediation",
               "canDo": [
-                "A2.U3.WRITING.WRITE_PERSON_PROFILE",
-                "A2.U3.PRODUCTION.DESCRIBE_PERSON"
+                "A2.U3.MEDIATION.RELAY_PERSON_MATCH"
               ],
-              "prompt": "Who is the best choice for keeping records?",
-              "promptAr": "من الخيار الأفضل لحفظ السجلات؟",
-              "options": [
-                "Zain",
-                "The least organised member",
-                "No one"
-              ],
-              "answer": "Zain",
-              "sourceText": "The project needs careful records. Zain is more organised than the others and checks every detail."
+              "prompt": "Mrs Zeinab sent you this message and Ayman never saw it. Tell him when and where the team meets, the two kinds of person it needs, and the one condition.",
+              "promptAr": "أرسلت لكَ السيدة زينب هذه الرسالة، ولم يرَها أيمن. أخبره متى يجتمع الفريق وأين، وأي نوعين من الأشخاص يحتاج، والشرط الوحيد.",
+              "sourceCard": "Message from Mrs Zeinab: the reading team meets on Saturdays from nine to eleven, in the room behind the mosque. We need one person who is good with children and one who can keep the lists. No experience is needed, but please come for both hours.",
+              "accepted": [],
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "Saturday",
+                    "nine",
+                    "eleven",
+                    "two hours",
+                    "morning",
+                    "behind the mosque",
+                    "the room"
+                  ],
+                  [
+                    "children",
+                    "good with",
+                    "the lists",
+                    "keep the lists",
+                    "write the names",
+                    "two people",
+                    "one person"
+                  ],
+                  [
+                    "both hours",
+                    "the whole",
+                    "all of it",
+                    "stay until",
+                    "no experience",
+                    "you do not need",
+                    "you don't need"
+                  ],
+                  [
+                    "team",
+                    "reading",
+                    "join",
+                    "come"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U3-L6-A05",
@@ -10056,22 +10698,58 @@
               "mode": "mastery",
               "skill": "writing",
               "canDo": [
-                "A2.U3.WRITING.WRITE_PERSON_PROFILE",
-                "A2.U3.PRODUCTION.DESCRIBE_PERSON"
+                "A2.U3.WRITING.WRITE_PERSON_PROFILE"
               ],
-              "prompt": "Recommend two people for a small team. Compare their qualities and explain each role.",
-              "promptAr": "رشّح شخصين لفريق صغير. قارن صفاتهما واشرح دور كل منهما.",
-              "evaluation": [
-                "taskCompletion",
-                "clarity",
-                "organisation",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "Write your own note recommending two people for a small team. Say what each one is good at, add one quality they share with too or also, and explain with and, but and because why the two of them fit together.",
+              "promptAr": "اكتب ملاحظتك الخاصة توصي فيها بشخصين لفريق صغير. اذكر ما يجيده كل منهما، وأضف صفة مشتركة بينهما بـ too أو also، واشرح بـ and وbut وbecause لماذا يتكاملان معاً.",
               "accepted": [],
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "good at",
+                    "good with",
+                    "best at",
+                    "organised",
+                    "patient",
+                    "creative",
+                    "reliable",
+                    "calm",
+                    "active",
+                    "helpful",
+                    "generous"
+                  ],
+                  [
+                    "too",
+                    "also",
+                    "as well",
+                    "both",
+                    "the same"
+                  ],
+                  [
+                    "but",
+                    "and",
+                    "because",
+                    "so",
+                    "while"
+                  ],
+                  [
+                    "team",
+                    "pair",
+                    "together",
+                    "role",
+                    "roles",
+                    "suitable",
+                    "work well",
+                    "each other"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
               "wordGuide": [
-                70,
-                100
+                55,
+                75
               ]
             }
           ]
@@ -10105,15 +10783,15 @@
                 "A2.U3.READING.COMPARE_PEOPLE",
                 "A2.U3.ACTION.CHOOSE_TEAM_MEMBER"
               ],
-              "prompt": "Who has more experience with children?",
-              "promptAr": "من لديه خبرة أكبر مع الأطفال؟",
+              "prompt": "Read the three candidate notes. Who is the best choice for the morning shift, and why?",
+              "promptAr": "اقرأ ملاحظات المرشحين الثلاثة. مَن الخيار الأفضل لنوبة الصباح ولماذا؟",
               "options": [
-                "Rasha",
-                "Tarek",
-                "Both"
+                "Lubna, because she is free all day",
+                "Hanaa, because she has the most experience",
+                "Mazen, because he knows every street"
               ],
-              "answer": "Rasha",
-              "sourceText": "Rasha is patient and reliable, and she has the most experience with children. Tarek is creative and confident, but he is new to the area."
+              "answer": "Lubna, because she is free all day",
+              "sourceText": "Candidates for the community kitchen. Hanaa: five years in a school canteen, very organised, cannot come before four. Mazen: no experience with food, but he drives a van and knows every street. Lubna: calm and quick, free all day, new to the city."
             },
             {
               "id": "A2-U3-L7-A02",
@@ -10125,15 +10803,15 @@
                 "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION",
                 "A2.U3.ACTION.CHOOSE_TEAM_MEMBER"
               ],
-              "prompt": "What is Bilal's strongest stated quality?",
-              "promptAr": "ما أقوى صفة مذكورة لبلال؟",
+              "prompt": "Listen to the kitchen manager. What does she say about the driver?",
+              "promptAr": "استمع إلى مديرة المطبخ. ماذا تقول عن السائق؟",
               "options": [
-                "Organisation",
-                "Confidence",
-                "Creativity"
+                "He does not have to cook at all",
+                "He must start work at seven",
+                "He needs experience with food"
               ],
-              "answer": "Organisation",
-              "audioTranscript": "Bilal is quieter than the other candidates, but he is the most organised and always finishes tasks on time."
+              "answer": "He does not have to cook at all",
+              "audioTranscript": "This is Umm Rami from the kitchen. Two things. The morning cook must start at seven, so anybody who works until four is no good for us. And the driver does not need to cook at all; he only needs a clean van and a good map."
             },
             {
               "id": "A2-U3-L7-A03",
@@ -10145,16 +10823,58 @@
                 "A2.U3.INTERACTION.DISCUSS_PEOPLE",
                 "A2.U3.ACTION.CHOOSE_TEAM_MEMBER"
               ],
-              "prompt": "Discuss at least three candidates and agree on two team members.",
-              "promptAr": "ناقش ثلاثة مرشحين على الأقل واتفق على عضوين للفريق.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
+              "prompt": "Discuss the three candidates with the project leader. Compare at least two of them, disagree politely once, and agree on two names.",
+              "promptAr": "ناقش المرشحين الثلاثة مع مسؤولة المشروع. قارن بين اثنين منهم على الأقل، واعترض بلطف مرة واحدة، واتفقا على اسمين.",
+              "partnerTurns": [
+                "So, we have three names and two places. I like Hanaa; nobody here has more experience than her.",
+                "That is true, but she cannot start before four, and the cooking starts at seven. Who else, then?",
+                "Good. Tell me your two names, and I will write them on the list."
               ],
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "more",
+                    "than",
+                    "the most",
+                    "the best",
+                    "calmer",
+                    "quicker",
+                    "quieter",
+                    "busier",
+                    "better",
+                    "most experience"
+                  ],
+                  [
+                    "I agree",
+                    "you are right",
+                    "you're right",
+                    "that is true",
+                    "that's true",
+                    "I am not sure",
+                    "I'm not sure",
+                    "maybe",
+                    "however",
+                    "I think"
+                  ],
+                  [
+                    "I choose",
+                    "we choose",
+                    "let us take",
+                    "let's take",
+                    "we should take",
+                    "my two names",
+                    "the best choice",
+                    "I would pick",
+                    "we could take"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U3-L7-A04",
@@ -10166,16 +10886,57 @@
                 "A2.U3.PRODUCTION.DESCRIBE_PERSON",
                 "A2.U3.ACTION.CHOOSE_TEAM_MEMBER"
               ],
-              "prompt": "Describe the chosen people and compare their useful qualities.",
-              "promptAr": "صف الشخصين المختارين وقارن صفاتهما المفيدة.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "Explain your choice to the whole group in one minute. Describe the two people you chose, compare them with each other, and say which part of the work each one is best at.",
+              "promptAr": "اشرح اختيارك أمام المجموعة كلها في دقيقة واحدة. صف الشخصين اللذين اخترتهما، وقارن بينهما، وقل أي جزء من العمل يجيده كل واحد منهما أكثر.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "calm",
+                    "organised",
+                    "quick",
+                    "reliable",
+                    "patient",
+                    "creative",
+                    "active",
+                    "helpful",
+                    "good with",
+                    "experience",
+                    "drives",
+                    "cooks"
+                  ],
+                  [
+                    "more",
+                    "than",
+                    "the most",
+                    "the best",
+                    "better",
+                    "calmer",
+                    "quicker",
+                    "quieter",
+                    "busier",
+                    "friendlier"
+                  ],
+                  [
+                    "best at",
+                    "good at",
+                    "better at",
+                    "will cook",
+                    "will drive",
+                    "the morning",
+                    "the van",
+                    "the kitchen",
+                    "her job",
+                    "his job",
+                    "suitable"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U3-L7-A05",
@@ -10187,16 +10948,50 @@
                 "A2.U3.MEDIATION.RELAY_PERSON_MATCH",
                 "A2.U3.ACTION.CHOOSE_TEAM_MEMBER"
               ],
-              "prompt": "Relay the essential strengths and limitations from the candidate profiles to the team leader.",
-              "promptAr": "انقل نقاط القوة والقيود الأساسية من ملفات المرشحين إلى قائد الفريق.",
-              "evaluation": [
-                "selectRelevantInformation",
-                "clarity",
-                "audienceAwareness",
-                "accuracy"
-              ],
+              "prompt": "The two people you chose do not read English. Tell them when the training is, what to bring, what the centre pays for, and what to do if they cannot come.",
+              "promptAr": "الشخصان اللذان اخترتهما لا يقرآن الإنجليزية. أخبرهما متى التدريب، وماذا يُحضران، وما الذي يدفع المركز ثمنه، وماذا يفعلان إن تعذّر حضورهما.",
+              "sourceCard": "Message from the community centre: both new volunteers must come to a short training on Thursday evening, from six to seven. Bring an identity card. The centre pays for the bus, but not for food. If you cannot come on Thursday, tell us before Tuesday.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "Thursday",
+                    "six",
+                    "seven",
+                    "evening",
+                    "one hour",
+                    "training"
+                  ],
+                  [
+                    "identity card",
+                    "your card",
+                    "bring",
+                    "papers",
+                    "with you"
+                  ],
+                  [
+                    "pays",
+                    "the bus",
+                    "free",
+                    "not the food",
+                    "no food",
+                    "food is not"
+                  ],
+                  [
+                    "Tuesday",
+                    "before",
+                    "tell them",
+                    "call",
+                    "let them know",
+                    "cannot come"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U3-L7-A06",
@@ -10208,20 +11003,59 @@
                 "A2.U3.WRITING.WRITE_PERSON_PROFILE",
                 "A2.U3.ACTION.CHOOSE_TEAM_MEMBER"
               ],
-              "prompt": "Write a recommendation naming the best choices, their roles and clear reasons.",
-              "promptAr": "اكتب توصية تذكر أفضل الخيارات وأدوارهم وأسباباً واضحة.",
-              "evaluation": [
-                "taskCompletion",
-                "clarity",
-                "organisation",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "Write your recommendation to the community centre. Name the two people you chose, give each one a job, compare them with the candidate you did not choose, and explain your reasons with and, but and because.",
+              "promptAr": "اكتب توصيتك إلى المركز المجتمعي. سمِّ الشخصين اللذين اخترتهما، وامنح كلاً منهما مهمة، وقارنهما بالمرشح الذي لم تختره، واشرح أسبابك بـ and وbut وbecause.",
+              "accepted": [],
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "cook",
+                    "cooking",
+                    "drive",
+                    "driver",
+                    "van",
+                    "morning",
+                    "kitchen",
+                    "job",
+                    "role",
+                    "shift"
+                  ],
+                  [
+                    "more",
+                    "than",
+                    "the most",
+                    "the best",
+                    "better",
+                    "calmer",
+                    "quicker",
+                    "most experience"
+                  ],
+                  [
+                    "because",
+                    "but",
+                    "and",
+                    "so",
+                    "that is why",
+                    "that's why"
+                  ],
+                  [
+                    "I choose",
+                    "we choose",
+                    "I would choose",
+                    "my choice",
+                    "recommend",
+                    "the best choice",
+                    "suitable"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
               "wordGuide": [
-                80,
-                110
-              ],
-              "accepted": []
+                55,
+                75
+              ]
             }
           ]
         }
@@ -10274,36 +11108,52 @@
           "lessonType": "encounter-focus-practice",
           "canDo": [
             "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO",
+            "A2.U4.READING.COMPARE_HOUSING",
             "A2.U4.PRODUCTION.DESCRIBE_HOME_AREA"
           ],
           "grammar": [
-            "A2.G.THERE_WAS_WERE",
-            "A2.G.LOOK_LIKE",
-            "A2.G.BE_LIKE"
+            "A2.G.THERE_WAS_WERE"
           ],
           "lexicon": [
             "A2.LEX.BALCONY_N01",
             "A2.LEX.HEATING_N01",
             "A2.LEX.MOVE_V01",
-            "A2.LEX.TALL_ADJ01",
-            "A2.LEX.CURLY_ADJ01",
-            "A2.LEX.APPEARANCE_N01",
-            "A2.LEX.PATIENT_ADJ01",
-            "A2.LEX.RELIABLE_ADJ01",
-            "A2.LEX.OUTGOING_ADJ01"
+            "A2.LEX.LIFT_N01"
           ],
           "chunks": [
-            "A2.CHUNK.USED_TO_BE_THERE",
-            "A2.CHUNK.WHAT_DOES_LOOK_LIKE",
-            "A2.CHUNK.WHAT_IS_LIKE",
-            "A2.CHUNK.MORE_THAN"
+            "A2.CHUNK.USED_TO_BE_THERE"
           ],
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "Our old flat was small. There was one bedroom and there wasn't a balcony. We moved because the heating was unreliable.",
-                "ar": "كانت شقتنا القديمة صغيرة. كانت فيها غرفة نوم واحدة ولم تكن فيها شرفة. انتقلنا لأن التدفئة لم تكن موثوقة."
+                "speaker": "Sameer",
+                "en": "How is the new flat, Ruba?",
+                "ar": "كيف هي الشقة الجديدة يا ربى؟"
+              },
+              {
+                "speaker": "Ruba",
+                "en": "Much better. In the old building there wasn't a lift, and we were on the fourth floor.",
+                "ar": "أفضل بكثير. في البناية القديمة لم يكن هناك مصعد، وكنّا في الطابق الرابع."
+              },
+              {
+                "speaker": "Sameer",
+                "en": "Was there a balcony?",
+                "ar": "وهل كانت فيها شرفة؟"
+              },
+              {
+                "speaker": "Ruba",
+                "en": "No, there wasn't. And the heating was always broken in winter.",
+                "ar": "لا، لم تكن. وكانت التدفئة معطّلة دائماً في الشتاء."
+              },
+              {
+                "speaker": "Sameer",
+                "en": "So that is why you moved.",
+                "ar": "إذن لهذا السبب انتقلتِ."
+              },
+              {
+                "speaker": "Ruba",
+                "en": "Yes. There used to be a garden, though, and I miss it.",
+                "ar": "نعم. لكن كانت هناك حديقة فيما مضى، وأنا أفتقدها."
               }
             ]
           },
@@ -10315,59 +11165,30 @@
               "mode": "encounter",
               "skill": "listening",
               "canDo": [
-                "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO",
-                "A2.U4.PRODUCTION.DESCRIBE_HOME_AREA"
+                "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO"
               ],
-              "prompt": "Why did the family move?",
-              "promptAr": "لماذا انتقلت العائلة؟",
+              "prompt": "What is Ruba comparing?",
+              "promptAr": "ما الذي تقارنه ربى؟",
               "options": [
-                "The heating was unreliable.",
-                "The balcony was large.",
-                "There were too many bedrooms."
+                "Her old building and her new flat",
+                "Two gardens on the same street",
+                "Two jobs in the same city"
               ],
-              "answer": "The heating was unreliable.",
-              "audioTranscript": "Our old flat was small. There was one bedroom and there wasn't a balcony. We moved because the heating was unreliable."
+              "answer": "Her old building and her new flat",
+              "audioTranscript": "How is the new flat, Ruba? Much better. In the old building there wasn't a lift, and we were on the fourth floor. Was there a balcony? No, there wasn't. And the heating was always broken in winter. So that is why you moved. Yes. There used to be a garden, though, and I miss it."
             },
             {
               "id": "A2-U4-L1-A02",
-              "lessonId": "A2-U4-L1",
-              "type": "match",
-              "mode": "practice",
-              "skill": "reading",
-              "canDo": [
-                "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO",
-                "A2.U4.PRODUCTION.DESCRIBE_HOME_AREA"
-              ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "balcony",
-                  "شرفة"
-                ],
-                [
-                  "heating",
-                  "تدفئة"
-                ],
-                [
-                  "move",
-                  "ينتقل"
-                ]
-              ]
-            },
-            {
-              "id": "A2-U4-L1-A03",
               "lessonId": "A2-U4-L1",
               "type": "gap",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO",
-                "A2.U4.PRODUCTION.DESCRIBE_HOME_AREA"
+                "A2.U4.READING.COMPARE_HOUSING"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "There ___ two bathrooms in the old house.",
+              "prompt": "The old house had more than one bedroom. Choose the form that says so.",
+              "promptAr": "كان في المنزل القديم أكثر من غرفة نوم واحدة. اختر الصيغة التي تعبّر عن ذلك.",
+              "text": "There ___ three bedrooms in the old house, but only one bathroom.",
               "options": [
                 "were",
                 "was",
@@ -10376,24 +11197,49 @@
               "answer": "were"
             },
             {
+              "id": "A2-U4-L1-A03",
+              "lessonId": "A2-U4-L1",
+              "type": "match",
+              "mode": "practice",
+              "skill": "reading",
+              "canDo": [
+                "A2.U4.READING.COMPARE_HOUSING"
+              ],
+              "prompt": "Match each sentence about an old home with the part that finishes it.",
+              "promptAr": "طابق كل جملة عن منزل قديم بالجزء الذي يكملها.",
+              "pairs": [
+                [
+                  "There wasn't a lift,",
+                  "so we carried the shopping upstairs."
+                ],
+                [
+                  "There were two long balconies,",
+                  "and my mother grew flowers on both."
+                ],
+                [
+                  "The heating was very old,",
+                  "so the rooms were cold in January."
+                ]
+              ]
+            },
+            {
               "id": "A2-U4-L1-A04",
               "lessonId": "A2-U4-L1",
               "type": "audioChoice",
               "mode": "mastery",
               "skill": "listening",
               "canDo": [
-                "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO",
-                "A2.U4.PRODUCTION.DESCRIBE_HOME_AREA"
+                "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO"
               ],
-              "prompt": "What was missing?",
-              "promptAr": "ما الذي كان مفقوداً؟",
+              "prompt": "How did the family keep warm in winter?",
+              "promptAr": "كيف كانت العائلة تتدفأ في الشتاء؟",
               "options": [
-                "A lift",
-                "Parks",
-                "Quiet rooms"
+                "They all sat in the kitchen",
+                "They closed the balcony door",
+                "They turned the heating on"
               ],
-              "answer": "A lift",
-              "audioTranscript": "The building was quiet, and there were two parks nearby. There wasn't a lift."
+              "answer": "They all sat in the kitchen",
+              "audioTranscript": "Before we moved to Basra, we lived in a small house in Duhok. There were two rooms and a long balcony at the back. There was no heating, so in winter we all sat in the kitchen next to the stove."
             },
             {
               "id": "A2-U4-L1-A05",
@@ -10402,19 +11248,49 @@
               "mode": "mastery",
               "skill": "spokenProduction",
               "canDo": [
-                "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO",
                 "A2.U4.PRODUCTION.DESCRIBE_HOME_AREA"
               ],
-              "prompt": "Describe a previous home or a fictional old home using there was/were.",
-              "promptAr": "صف منزلاً سابقاً أو منزلاً قديماً خيالياً مستخدماً there was/were.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "Describe a home you lived in before. Say what there was, what there wasn't, and one thing you miss about it.",
+              "promptAr": "صف منزلاً سكنتَ فيه سابقاً. اذكر ما كان فيه، وما لم يكن فيه، وشيئاً واحداً تفتقده منه.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "there was",
+                    "there were",
+                    "there used to be",
+                    "we had",
+                    "it had",
+                    "the house had",
+                    "the flat had"
+                  ],
+                  [
+                    "there wasn't",
+                    "there weren't",
+                    "there was no",
+                    "there were no",
+                    "we did not have",
+                    "we didn't have",
+                    "no lift",
+                    "no heating",
+                    "not any"
+                  ],
+                  [
+                    "I miss",
+                    "I loved",
+                    "I liked",
+                    "the best thing",
+                    "my favourite",
+                    "I remember",
+                    "I still think about"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             }
           ]
         },
@@ -10425,7 +11301,8 @@
           "lessonType": "encounter-focus-practice",
           "canDo": [
             "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO",
-            "A2.U4.PRODUCTION.DESCRIBE_HOME_AREA"
+            "A2.U4.READING.COMPARE_HOUSING",
+            "A2.U4.INTERACTION.DISCUSS_HOUSING_PROBLEM"
           ],
           "grammar": [
             "A2.G.QUANTIFIERS_AREA"
@@ -10433,7 +11310,8 @@
           "lexicon": [
             "A2.LEX.NEARBY_ADV01",
             "A2.LEX.FACILITY_N01",
-            "A2.LEX.CONVENIENT_ADJ01"
+            "A2.LEX.CONVENIENT_ADJ01",
+            "A2.LEX.NEIGHBOURHOOD_N01"
           ],
           "chunks": [
             "A2.CHUNK.WITHIN_WALKING_DISTANCE",
@@ -10442,9 +11320,34 @@
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "The area is convenient. There are a lot of cafés and some small shops. There isn't much traffic at night.",
-                "ar": "المنطقة ملائمة. توجد مقاهٍ كثيرة وبعض المتاجر الصغيرة. لا توجد حركة مرور كثيرة ليلاً."
+                "speaker": "Kamal",
+                "en": "How is your new neighbourhood, Nour?",
+                "ar": "كيف هو حيّكِ الجديد يا نور؟"
+              },
+              {
+                "speaker": "Nour",
+                "en": "Very convenient. There are a lot of small shops, and the market is close to us.",
+                "ar": "ملائم جداً. توجد متاجر صغيرة كثيرة، والسوق قريب منّا."
+              },
+              {
+                "speaker": "Kamal",
+                "en": "Are there many buses?",
+                "ar": "وهل هناك حافلات كثيرة؟"
+              },
+              {
+                "speaker": "Nour",
+                "en": "Not many after nine, but the metro station is within walking distance.",
+                "ar": "ليست كثيرة بعد التاسعة، لكن محطة المترو على بعد مسافة قصيرة سيراً على الأقدام."
+              },
+              {
+                "speaker": "Kamal",
+                "en": "And is there much noise at night?",
+                "ar": "وهل هناك ضجيج كثير في الليل؟"
+              },
+              {
+                "speaker": "Nour",
+                "en": "Not much. There is one café nearby, and it closes at eleven.",
+                "ar": "ليس كثيراً. يوجد مقهى واحد قريب، ويُغلق في الحادية عشرة."
               }
             ]
           },
@@ -10456,65 +11359,55 @@
               "mode": "encounter",
               "skill": "listening",
               "canDo": [
-                "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO",
-                "A2.U4.PRODUCTION.DESCRIBE_HOME_AREA"
+                "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO"
               ],
-              "prompt": "What is the traffic like at night?",
-              "promptAr": "كيف هي حركة المرور ليلاً؟",
+              "prompt": "What is Kamal finding out about Nour's area?",
+              "promptAr": "ما الذي يكتشفه كمال عن منطقة نور؟",
               "options": [
-                "There isn't much.",
-                "There is a lot.",
-                "There is none at any time."
+                "What is nearby and how busy it is",
+                "How much rent she pays",
+                "Which floor her flat is on"
               ],
-              "answer": "There isn't much.",
-              "audioTranscript": "The area is convenient. There are a lot of cafés and some small shops. There isn't much traffic at night."
+              "answer": "What is nearby and how busy it is",
+              "audioTranscript": "How is your new neighbourhood, Nour? Very convenient. There are a lot of small shops, and the market is close to us. Are there many buses? Not many after nine, but the metro station is within walking distance. And is there much noise at night? Not much. There is one café nearby, and it closes at eleven."
             },
             {
               "id": "A2-U4-L2-A02",
-              "lessonId": "A2-U4-L2",
-              "type": "match",
-              "mode": "practice",
-              "skill": "reading",
-              "canDo": [
-                "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO",
-                "A2.U4.PRODUCTION.DESCRIBE_HOME_AREA"
-              ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "nearby",
-                  "قريب"
-                ],
-                [
-                  "facility",
-                  "مرفق"
-                ],
-                [
-                  "convenient",
-                  "مريح / ملائم"
-                ]
-              ]
-            },
-            {
-              "id": "A2-U4-L2-A03",
               "lessonId": "A2-U4-L2",
               "type": "gap",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO",
-                "A2.U4.PRODUCTION.DESCRIBE_HOME_AREA"
+                "A2.U4.READING.COMPARE_HOUSING"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "There are ___ good facilities near the flat.",
+              "prompt": "Traffic is one thing you cannot count. Choose the word that fits it.",
+              "promptAr": "حركة المرور شيء لا يُعَدّ. اختر الكلمة المناسبة له.",
+              "text": "Is there ___ traffic on your street in the evening?",
               "options": [
-                "some",
-                "any",
-                "much"
+                "much",
+                "many",
+                "few"
               ],
-              "answer": "some"
+              "answer": "much"
+            },
+            {
+              "id": "A2-U4-L2-A03",
+              "lessonId": "A2-U4-L2",
+              "type": "textChoice",
+              "mode": "practice",
+              "skill": "reading",
+              "canDo": [
+                "A2.U4.READING.COMPARE_HOUSING"
+              ],
+              "prompt": "Read the flat listing. What should a person with a car check first?",
+              "promptAr": "اقرأ إعلان الشقة. ما الذي يجب أن يتحقق منه صاحب السيارة أولاً؟",
+              "options": [
+                "Whether a parking space is free",
+                "Whether there is a pharmacy",
+                "Whether the flat has two bedrooms"
+              ],
+              "answer": "Whether a parking space is free",
+              "sourceText": "TO LET: two-bedroom flat, Al-Mansour. Third floor, no lift. A lot of natural light. The building has one shared facility, a roof terrace. Not many parking spaces. Bus stop and pharmacy within walking distance. 600,000 IQD monthly."
             },
             {
               "id": "A2-U4-L2-A04",
@@ -10523,39 +11416,84 @@
               "mode": "mastery",
               "skill": "listening",
               "canDo": [
-                "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO",
-                "A2.U4.PRODUCTION.DESCRIBE_HOME_AREA"
+                "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO"
               ],
-              "prompt": "What transport limitation is mentioned?",
-              "promptAr": "ما قيد النقل المذكور؟",
+              "prompt": "What is this area short of?",
+              "promptAr": "ما الذي تفتقر إليه هذه المنطقة؟",
               "options": [
-                "Few late buses",
-                "No station",
-                "Heavy daytime traffic"
+                "Restaurants",
+                "Schools",
+                "Shops"
               ],
-              "answer": "Few late buses",
-              "audioTranscript": "There aren't many buses after ten, but the station is within walking distance."
+              "answer": "Restaurants",
+              "audioTranscript": "I chose this neighbourhood because of the facilities. There are a lot of good schools, and there is a big park at the end of the road. There aren't many restaurants, but the supermarket is open until midnight, and that is enough for us."
             },
             {
               "id": "A2-U4-L2-A05",
               "lessonId": "A2-U4-L2",
               "type": "speak",
               "mode": "mastery",
-              "skill": "spokenProduction",
+              "skill": "spokenInteraction",
               "canDo": [
-                "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO",
-                "A2.U4.PRODUCTION.DESCRIBE_HOME_AREA"
+                "A2.U4.INTERACTION.DISCUSS_HOUSING_PROBLEM"
               ],
-              "prompt": "Describe the services and transport near your home or a fictional home.",
-              "promptAr": "صف الخدمات والنقل قرب منزلك أو منزل خيالي.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
+              "prompt": "Answer Rana's questions about your area, then ask her one question about what she needs.",
+              "promptAr": "أجب عن أسئلة رنا حول منطقتك، ثم اسألها سؤالاً واحداً عمّا تحتاج إليه.",
+              "partnerTurns": [
+                "Hello! I am looking at a flat in your street. What is the area like?",
+                "That sounds good. Is there much noise in the evening?",
+                "One more thing: are there many shops within walking distance? Tell me, and then ask me what I need."
               ],
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "a lot of",
+                    "lots of",
+                    "many",
+                    "much",
+                    "not much",
+                    "not many",
+                    "a few",
+                    "some",
+                    "there are",
+                    "there is"
+                  ],
+                  [
+                    "shops",
+                    "market",
+                    "school",
+                    "park",
+                    "bus",
+                    "station",
+                    "cafe",
+                    "supermarket",
+                    "pharmacy",
+                    "restaurant",
+                    "facilities",
+                    "nearby",
+                    "close to",
+                    "within walking distance"
+                  ],
+                  [
+                    "what do you need",
+                    "do you need",
+                    "how many",
+                    "how much",
+                    "are you",
+                    "do you have",
+                    "what about you",
+                    "where do you",
+                    "do you drive",
+                    "do you work"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             }
           ]
         },
@@ -10565,37 +11503,54 @@
           "titleAr": "قارن منطقتين",
           "lessonType": "encounter-focus-practice",
           "canDo": [
+            "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO",
             "A2.U4.READING.COMPARE_HOUSING",
-            "A2.U4.MEDIATION.RELAY_HOUSING_OPTIONS"
+            "A2.U4.PRODUCTION.DESCRIBE_HOME_AREA"
           ],
           "grammar": [
             "A2.G.HOUSING_COMPARATIVES",
-            "A2.G.PAST_IRREGULAR",
-            "A2.G.PAST_QUESTIONS"
+            "A2.G.AS_AS_COMPARISON"
           ],
           "lexicon": [
             "A2.LEX.SPACIOUS_ADJ01",
             "A2.LEX.PEACEFUL_ADJ01",
-            "A2.LEX.CROWDED_ADJ01",
-            "A2.LEX.GO_V02",
-            "A2.LEX.BUY_V02",
-            "A2.LEX.MEET_V02",
-            "A2.LEX.HAPPEN_V01",
-            "A2.LEX.EXPERIENCE_N01",
-            "A2.LEX.AGO_ADV01"
+            "A2.LEX.CROWDED_ADJ01"
           ],
           "chunks": [
             "A2.CHUNK.COMPARED_WITH",
-            "A2.CHUNK.WHAT_HAPPENED",
-            "A2.CHUNK.HOW_WAS_IT",
-            "A2.CHUNK.AFTER_THAT"
+            "A2.CHUNK.NOT_AS_AS"
           ],
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "Green Street is quieter and cheaper than Central Road, but Central Road is closer to the university and has more shops.",
-                "ar": ""
+                "speaker": "Ammar",
+                "en": "You know both areas, Suha. Which one should I choose?",
+                "ar": "أنتِ تعرفين المنطقتين يا سُها. أيّهما أختار؟"
+              },
+              {
+                "speaker": "Suha",
+                "en": "The riverside is greener, but it is not as cheap as Al-Jisr.",
+                "ar": "منطقة النهر أكثر خضرةً، لكنها ليست رخيصة مثل الجسر."
+              },
+              {
+                "speaker": "Ammar",
+                "en": "Is it far from the hospital?",
+                "ar": "وهل هي بعيدة عن المستشفى؟"
+              },
+              {
+                "speaker": "Suha",
+                "en": "It is further, yes. Al-Jisr is more crowded, though, and less peaceful.",
+                "ar": "نعم، أبعد قليلاً. لكن الجسر أكثر ازدحاماً وأقلّ هدوءاً."
+              },
+              {
+                "speaker": "Ammar",
+                "en": "So the riverside is quieter?",
+                "ar": "إذن منطقة النهر أهدأ؟"
+              },
+              {
+                "speaker": "Suha",
+                "en": "Much quieter. Compared with Al-Jisr, it feels like another city.",
+                "ar": "أهدأ بكثير. بالمقارنة مع الجسر، تبدو وكأنها مدينة أخرى."
               }
             ]
           },
@@ -10603,110 +11558,136 @@
             {
               "id": "A2-U4-L3-A01",
               "lessonId": "A2-U4-L3",
-              "type": "textChoice",
+              "type": "audioChoice",
               "mode": "encounter",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U4.READING.COMPARE_HOUSING",
-                "A2.U4.MEDIATION.RELAY_HOUSING_OPTIONS"
+                "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO"
               ],
-              "prompt": "Which area is closer to the university?",
-              "promptAr": "أي منطقة أقرب إلى الجامعة؟",
+              "prompt": "What are Ammar and Suha comparing?",
+              "promptAr": "ما الذي يقارنه عمّار وسُها؟",
               "options": [
-                "Central Road",
-                "Green Street",
-                "Both"
+                "Two areas of the same city",
+                "Two flats in the same building",
+                "Two ways to reach the hospital"
               ],
-              "answer": "Central Road",
-              "sourceText": "Green Street is quieter and cheaper than Central Road, but Central Road is closer to the university and has more shops."
+              "answer": "Two areas of the same city",
+              "audioTranscript": "You know both areas, Suha. Which one should I choose? The riverside is greener, but it is not as cheap as Al-Jisr. Is it far from the hospital? It is further, yes. Al-Jisr is more crowded, though, and less peaceful. So the riverside is quieter? Much quieter. Compared with Al-Jisr, it feels like another city."
             },
             {
               "id": "A2-U4-L3-A02",
-              "lessonId": "A2-U4-L3",
-              "type": "match",
-              "mode": "practice",
-              "skill": "reading",
-              "canDo": [
-                "A2.U4.READING.COMPARE_HOUSING",
-                "A2.U4.MEDIATION.RELAY_HOUSING_OPTIONS"
-              ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "spacious",
-                  "واسع"
-                ],
-                [
-                  "peaceful",
-                  "هادئ"
-                ],
-                [
-                  "crowded",
-                  "مزدحم"
-                ]
-              ]
-            },
-            {
-              "id": "A2-U4-L3-A03",
               "lessonId": "A2-U4-L3",
               "type": "gap",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U4.READING.COMPARE_HOUSING",
-                "A2.U4.MEDIATION.RELAY_HOUSING_OPTIONS"
+                "A2.U4.READING.COMPARE_HOUSING"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "The house is more spacious ___ the flat.",
+              "prompt": "The two flats cost exactly the same. Choose the word that says so.",
+              "promptAr": "الشقتان تكلّفان المبلغ نفسه تماماً. اختر الكلمة التي تعبّر عن ذلك.",
+              "text": "The riverside flat is ___ expensive as the one on Al-Jisr Street.",
               "options": [
-                "than",
-                "then",
-                "that"
+                "as",
+                "more",
+                "than"
               ],
-              "answer": "than"
+              "answer": "as"
+            },
+            {
+              "id": "A2-U4-L3-A03",
+              "lessonId": "A2-U4-L3",
+              "type": "textChoice",
+              "mode": "practice",
+              "skill": "reading",
+              "canDo": [
+                "A2.U4.READING.COMPARE_HOUSING"
+              ],
+              "prompt": "Read the two listings. Which home suits a family that wants space?",
+              "promptAr": "اقرأ الإعلانين. أي منزل يناسب عائلة تريد مساحة؟",
+              "options": [
+                "The Al-Jisr house",
+                "The riverside flat",
+                "Neither of them"
+              ],
+              "answer": "The Al-Jisr house",
+              "sourceText": "Al-Jisr Street: a spacious three-bedroom house with a small garden, ten minutes from the market by bus. Riverside: a two-bedroom flat, not as big as the house, but the rooms are brighter and the street is much quieter at night."
             },
             {
               "id": "A2-U4-L3-A04",
               "lessonId": "A2-U4-L3",
-              "type": "textChoice",
+              "type": "audioChoice",
               "mode": "mastery",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U4.READING.COMPARE_HOUSING",
-                "A2.U4.MEDIATION.RELAY_HOUSING_OPTIONS"
+                "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO"
               ],
-              "prompt": "Which area suits someone who values quiet?",
-              "promptAr": "أي منطقة تناسب من يقدّر الهدوء؟",
+              "prompt": "Why did the speaker choose Zayouna?",
+              "promptAr": "لماذا اختار المتحدث زيونة؟",
               "options": [
-                "Area A",
-                "Area B",
-                "Both equally"
+                "He needs a quiet place to work",
+                "The flats there are bigger",
+                "There is a market on every corner"
               ],
-              "answer": "Area A",
-              "sourceText": "Area A is more peaceful, while Area B is more convenient for buses. Area B is also more crowded at weekends."
+              "answer": "He needs a quiet place to work",
+              "audioTranscript": "I looked at two areas last month. Al-Karrada is livelier, and there is a market on every corner. But it is not as peaceful as Zayouna, and the flats there are smaller. In the end I chose Zayouna, because I work from home."
             },
             {
               "id": "A2-U4-L3-A05",
               "lessonId": "A2-U4-L3",
               "type": "speak",
               "mode": "mastery",
-              "skill": "mediation",
+              "skill": "spokenProduction",
               "canDo": [
-                "A2.U4.READING.COMPARE_HOUSING",
-                "A2.U4.MEDIATION.RELAY_HOUSING_OPTIONS"
+                "A2.U4.PRODUCTION.DESCRIBE_HOME_AREA"
               ],
-              "prompt": "Read two neighbourhood cards and relay the main advantage and disadvantage of each.",
-              "promptAr": "اقرأ بطاقتي حيين وانقل الميزة والعيب الرئيسيين لكل منهما.",
-              "evaluation": [
-                "selectRelevantInformation",
-                "clarity",
-                "audienceAwareness",
-                "accuracy"
-              ],
+              "prompt": "Compare two areas you know. Say which one is cheaper, bigger or quieter, use not as ... as once, and say where you would live and why.",
+              "promptAr": "قارن بين منطقتين تعرفهما. قل أيّهما أرخص أو أوسع أو أهدأ، واستخدم not as ... as مرة واحدة، ثم قل أين تفضّل السكن ولماذا.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "quieter",
+                    "cheaper",
+                    "bigger",
+                    "smaller",
+                    "busier",
+                    "greener",
+                    "closer",
+                    "further",
+                    "more crowded",
+                    "more peaceful",
+                    "more spacious",
+                    "better",
+                    "worse"
+                  ],
+                  [
+                    "not as",
+                    "isn't as",
+                    "is not as",
+                    "aren't as",
+                    "as cheap as",
+                    "as quiet as",
+                    "as big as",
+                    "as close as",
+                    "as good as"
+                  ],
+                  [
+                    "I would live",
+                    "I'd live",
+                    "I would choose",
+                    "I'd choose",
+                    "I prefer",
+                    "because",
+                    "for me",
+                    "that is why"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             }
           ]
         },
@@ -10717,7 +11698,8 @@
           "lessonType": "encounter-focus-practice",
           "canDo": [
             "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO",
-            "A2.U4.INTERACTION.DISCUSS_HOUSING_PROBLEM"
+            "A2.U4.READING.COMPARE_HOUSING",
+            "A2.U4.WRITING.WRITE_HOUSING_RECOMMENDATION"
           ],
           "grammar": [
             "A2.G.TOO_ADJECTIVE",
@@ -10726,7 +11708,8 @@
           "lexicon": [
             "A2.LEX.NOISY_ADJ01",
             "A2.LEX.BRIGHT_ADJ01",
-            "A2.LEX.SPACE_N01"
+            "A2.LEX.SPACE_N01",
+            "A2.LEX.STORAGE_N01"
           ],
           "chunks": [
             "A2.CHUNK.TOO_FAR_FROM",
@@ -10735,9 +11718,34 @@
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "The living room is bright enough, but the kitchen is too small for a family of five. The street is also too noisy at night.",
-                "ar": "غرفة المعيشة مضيئة بما يكفي، لكن المطبخ صغير جداً لعائلة من خمسة أشخاص. الشارع أيضاً صاخب جداً ليلاً."
+                "speaker": "Fouad",
+                "en": "This is the living room. Is it bright enough for you?",
+                "ar": "هذه غرفة المعيشة. هل هي مضيئة بما يكفي بالنسبة لكِ؟"
+              },
+              {
+                "speaker": "Maryam",
+                "en": "Yes, but the kitchen is too small for three children.",
+                "ar": "نعم، لكن المطبخ صغير أكثر من اللازم لثلاثة أطفال."
+              },
+              {
+                "speaker": "Fouad",
+                "en": "There is a storage space next to it.",
+                "ar": "توجد مساحة تخزين بجانبه."
+              },
+              {
+                "speaker": "Maryam",
+                "en": "Good. Is the street noisy?",
+                "ar": "جيد. وهل الشارع صاخب؟"
+              },
+              {
+                "speaker": "Fouad",
+                "en": "Not in the day. At night the café below is too loud.",
+                "ar": "ليس في النهار. أما في الليل فالمقهى الذي في الأسفل صاخب أكثر من اللازم."
+              },
+              {
+                "speaker": "Maryam",
+                "en": "Then the bedrooms are not quiet enough for us.",
+                "ar": "إذن غرف النوم ليست هادئة بما يكفي لنا."
               }
             ]
           },
@@ -10749,106 +11757,134 @@
               "mode": "encounter",
               "skill": "listening",
               "canDo": [
-                "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO",
-                "A2.U4.INTERACTION.DISCUSS_HOUSING_PROBLEM"
+                "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO"
               ],
-              "prompt": "What is acceptable?",
-              "promptAr": "ما الشيء المقبول؟",
+              "prompt": "What is Maryam deciding?",
+              "promptAr": "ما الذي تقرّره مريم؟",
               "options": [
-                "The living room's light",
-                "The kitchen size",
-                "The night noise"
+                "Whether the flat suits her family",
+                "Which street is the cheapest",
+                "What time the café closes"
               ],
-              "answer": "The living room's light",
-              "audioTranscript": "The living room is bright enough, but the kitchen is too small for a family of five. The street is also too noisy at night."
+              "answer": "Whether the flat suits her family",
+              "audioTranscript": "This is the living room. Is it bright enough for you? Yes, but the kitchen is too small for three children. There is a storage space next to it. Good. Is the street noisy? Not in the day. At night the café below is too loud. Then the bedrooms are not quiet enough for us."
             },
             {
               "id": "A2-U4-L4-A02",
-              "lessonId": "A2-U4-L4",
-              "type": "match",
-              "mode": "practice",
-              "skill": "reading",
-              "canDo": [
-                "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO",
-                "A2.U4.INTERACTION.DISCUSS_HOUSING_PROBLEM"
-              ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "noisy",
-                  "صاخب"
-                ],
-                [
-                  "bright",
-                  "مضيء"
-                ],
-                [
-                  "space",
-                  "مساحة"
-                ]
-              ]
-            },
-            {
-              "id": "A2-U4-L4-A03",
               "lessonId": "A2-U4-L4",
               "type": "gap",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO",
-                "A2.U4.INTERACTION.DISCUSS_HOUSING_PROBLEM"
+                "A2.U4.READING.COMPARE_HOUSING"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "Is the room warm ___ for a baby?",
+              "prompt": "The room is a problem, not a good size. Choose the word that shows it.",
+              "promptAr": "الغرفة مشكلة، لا حجماً مناسباً. اختر الكلمة التي تُظهر ذلك.",
+              "text": "The second bedroom is ___ narrow for two beds.",
               "options": [
-                "enough",
                 "too",
-                "more"
+                "enough",
+                "quite"
               ],
-              "answer": "enough"
+              "answer": "too"
+            },
+            {
+              "id": "A2-U4-L4-A03",
+              "lessonId": "A2-U4-L4",
+              "type": "audioChoice",
+              "mode": "practice",
+              "skill": "listening",
+              "canDo": [
+                "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO"
+              ],
+              "prompt": "Listen to the voice message. Why is the speaker still unsure?",
+              "promptAr": "استمع إلى الرسالة الصوتية. لماذا ما زالت المتحدثة مترددة؟",
+              "options": [
+                "Her mother cannot climb five floors",
+                "The rooms are too dark",
+                "There is no storage at all"
+              ],
+              "answer": "Her mother cannot climb five floors",
+              "audioTranscript": "I saw the flat on Palm Street this morning. The living room is bright enough and there is plenty of storage. But the building has no lift, and the fifth floor is too high for my mother. I am still thinking about it."
             },
             {
               "id": "A2-U4-L4-A04",
               "lessonId": "A2-U4-L4",
-              "type": "audioChoice",
+              "type": "textChoice",
               "mode": "mastery",
-              "skill": "listening",
+              "skill": "reading",
               "canDo": [
-                "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO",
-                "A2.U4.INTERACTION.DISCUSS_HOUSING_PROBLEM"
+                "A2.U4.READING.COMPARE_HOUSING"
               ],
-              "prompt": "Which problem is about money?",
-              "promptAr": "أي مشكلة تتعلق بالمال؟",
+              "prompt": "Read the notice in the entrance hall. What must residents not do this week?",
+              "promptAr": "اقرأ الإعلان المعلّق في مدخل البناية. ما الذي يُمنع على السكان فعله هذا الأسبوع؟",
               "options": [
-                "It is too expensive.",
-                "It is close to work.",
-                "It lacks storage."
+                "Leave bags on the stairs",
+                "Use the basement storage",
+                "Come home after midnight"
               ],
-              "answer": "It is too expensive.",
-              "audioTranscript": "The flat is close enough to work, but it is too expensive and there isn't enough storage space."
+              "answer": "Leave bags on the stairs",
+              "sourceText": "NOTICE TO ALL TENANTS. The lift will be switched off from Monday to Thursday for repairs. The stairs are wide enough for two people, but please do not leave bags on them. The basement storage will stay open. Sorry for the trouble. The Building Office."
             },
             {
               "id": "A2-U4-L4-A05",
               "lessonId": "A2-U4-L4",
-              "type": "speak",
+              "type": "write",
               "mode": "mastery",
-              "skill": "spokenInteraction",
+              "skill": "writing",
               "canDo": [
-                "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO",
-                "A2.U4.INTERACTION.DISCUSS_HOUSING_PROBLEM"
+                "A2.U4.WRITING.WRITE_HOUSING_RECOMMENDATION"
               ],
-              "prompt": "Discuss whether a home is suitable, using too and enough with reasons.",
-              "promptAr": "ناقش ما إذا كان المنزل مناسباً مستخدماً too وenough مع الأسباب.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "You saw a flat yesterday with the friend who is moving with you. Write her a message. Say one thing that is good enough, two things that are too small, too noisy or too far, and what you want to do next.",
+              "promptAr": "شاهدتَ شقة أمس مع صديقتك التي ستنتقل معك. اكتب لها رسالة. اذكر شيئاً واحداً جيداً بما يكفي، وشيئين أصغر أو أصخب أو أبعد من اللازم، وما الذي تريد فعله بعد ذلك.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "big enough",
+                    "bright enough",
+                    "close enough",
+                    "quiet enough",
+                    "warm enough",
+                    "wide enough",
+                    "large enough",
+                    "good enough",
+                    "enough space",
+                    "enough storage"
+                  ],
+                  [
+                    "too small",
+                    "too noisy",
+                    "too far",
+                    "too expensive",
+                    "too high",
+                    "too dark",
+                    "too loud",
+                    "too busy",
+                    "too old",
+                    "too cold"
+                  ],
+                  [
+                    "we should",
+                    "shall we",
+                    "let's",
+                    "I want to",
+                    "do you want",
+                    "what do you think",
+                    "see another",
+                    "keep looking",
+                    "take it",
+                    "tomorrow"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "wordGuide": [
+                55,
+                75
+              ]
             }
           ]
         },
@@ -10858,36 +11894,55 @@
           "titleAr": "أبلغ عن مشكلة سكن",
           "lessonType": "encounter-focus-practice",
           "canDo": [
+            "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO",
             "A2.U4.READING.COMPARE_HOUSING",
             "A2.U4.INTERACTION.DISCUSS_HOUSING_PROBLEM"
           ],
           "grammar": [
             "A2.G.HOUSING_REQUESTS",
-            "A2.G.QUESTION_AUXILIARY_REVIEW",
             "A2.G.LINKERS_AND_BUT_BECAUSE"
           ],
           "lexicon": [
             "A2.LEX.LEAK_N01",
             "A2.LEX.LANDLORD_N01",
             "A2.LEX.REPAIR_V01",
-            "A2.LEX.PROFILE_N01",
-            "A2.LEX.BACKGROUND_N01",
-            "A2.LEX.SIMILAR_ADJ01",
-            "A2.LEX.UPDATE_N01",
-            "A2.LEX.CHANGE_N01",
-            "A2.LEX.SITUATION_N01"
+            "A2.LEX.DAMP_ADJ01"
           ],
           "chunks": [
             "A2.CHUNK.THERE_IS_A_PROBLEM_WITH",
-            "A2.CHUNK.HAVE_IN_COMMON",
-            "A2.CHUNK.RIGHT_NOW"
+            "A2.CHUNK.AS_SOON_AS_POSSIBLE"
           ],
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "Hello, there is a problem with the kitchen tap. It has leaked since this morning. Could you send someone to check it today?",
-                "ar": ""
+                "speaker": "Ilham",
+                "en": "Good morning, Mr Jabbar. There is a problem with the bathroom.",
+                "ar": "صباح الخير يا أستاذ جبّار. هناك مشكلة في الحمّام."
+              },
+              {
+                "speaker": "Mr Jabbar",
+                "en": "What kind of problem?",
+                "ar": "أي نوع من المشاكل؟"
+              },
+              {
+                "speaker": "Ilham",
+                "en": "A pipe is leaking, and the wall behind it is damp.",
+                "ar": "هناك أنبوب يسرّب الماء، والجدار خلفه رطب."
+              },
+              {
+                "speaker": "Mr Jabbar",
+                "en": "How long has it been like that?",
+                "ar": "منذ متى وهو على هذه الحال؟"
+              },
+              {
+                "speaker": "Ilham",
+                "en": "Since Sunday. Could you send someone to repair it this week?",
+                "ar": "منذ يوم الأحد. هل يمكنك أن ترسل أحداً لإصلاحه هذا الأسبوع؟"
+              },
+              {
+                "speaker": "Mr Jabbar",
+                "en": "I will call the plumber today. He can come tomorrow morning.",
+                "ar": "سأتصل بالسبّاك اليوم. يستطيع أن يأتي صباح الغد."
               }
             ]
           },
@@ -10895,89 +11950,87 @@
             {
               "id": "A2-U4-L5-A01",
               "lessonId": "A2-U4-L5",
-              "type": "textChoice",
+              "type": "audioChoice",
               "mode": "encounter",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U4.READING.COMPARE_HOUSING",
-                "A2.U4.INTERACTION.DISCUSS_HOUSING_PROBLEM"
+                "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO"
               ],
-              "prompt": "What does the writer request?",
-              "promptAr": "ماذا يطلب الكاتب؟",
+              "prompt": "Why is Ilham calling?",
+              "promptAr": "لماذا تتصل إلهام؟",
               "options": [
-                "Someone to check the tap",
-                "A new kitchen",
-                "Lower rent"
+                "To report a leak in the bathroom",
+                "To ask when the rent is due",
+                "To say that she is leaving the flat"
               ],
-              "answer": "Someone to check the tap",
-              "sourceText": "Hello, there is a problem with the kitchen tap. It has leaked since this morning. Could you send someone to check it today?"
+              "answer": "To report a leak in the bathroom",
+              "audioTranscript": "Good morning, Mr Jabbar. There is a problem with the bathroom. What kind of problem? A pipe is leaking, and the wall behind it is damp. How long has it been like that? Since Sunday. Could you send someone to repair it this week? I will call the plumber today. He can come tomorrow morning."
             },
             {
               "id": "A2-U4-L5-A02",
               "lessonId": "A2-U4-L5",
-              "type": "match",
+              "type": "order",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U4.READING.COMPARE_HOUSING",
-                "A2.U4.INTERACTION.DISCUSS_HOUSING_PROBLEM"
+                "A2.U4.READING.COMPARE_HOUSING"
               ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "leak",
-                  "تسرّب"
-                ],
-                [
-                  "landlord",
-                  "مالك العقار"
-                ],
-                [
-                  "repair",
-                  "يصلح"
-                ]
+              "prompt": "Put this polite request to the landlord in the correct order.",
+              "promptAr": "رتّب هذا الطلب المهذّب الموجّه إلى مالك العقار بالترتيب الصحيح.",
+              "tokens": [
+                "you",
+                "Could",
+                "the",
+                "window?",
+                "repair",
+                "broken"
+              ],
+              "answer": [
+                "Could",
+                "you",
+                "repair",
+                "the",
+                "broken",
+                "window?"
               ]
             },
             {
               "id": "A2-U4-L5-A03",
               "lessonId": "A2-U4-L5",
-              "type": "gap",
+              "type": "textChoice",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U4.READING.COMPARE_HOUSING",
-                "A2.U4.INTERACTION.DISCUSS_HOUSING_PROBLEM"
+                "A2.U4.READING.COMPARE_HOUSING"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "Could you ___ the broken window?",
+              "prompt": "Read the note your neighbour left. What does Hala want you to do?",
+              "promptAr": "اقرأ الملاحظة التي تركتها جارتك. ماذا تريد منك هالة أن تفعل؟",
               "options": [
-                "repair",
-                "repaired",
-                "repairing"
+                "Look at the taps in your bathroom",
+                "Call the landlord for her",
+                "Pay for a new ceiling"
               ],
-              "answer": "repair"
+              "answer": "Look at the taps in your bathroom",
+              "sourceText": "Note from flat 4: Dear neighbour, water is coming through my ceiling, and I think it comes from your bathroom. I told the landlord yesterday, but nobody called me back. Could you check your taps tonight? Thank you. Hala."
             },
             {
               "id": "A2-U4-L5-A04",
               "lessonId": "A2-U4-L5",
-              "type": "textChoice",
+              "type": "audioChoice",
               "mode": "mastery",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U4.READING.COMPARE_HOUSING",
-                "A2.U4.INTERACTION.DISCUSS_HOUSING_PROBLEM"
+                "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO"
               ],
-              "prompt": "What information does the tenant need?",
-              "promptAr": "ما المعلومة التي يحتاجها المستأجر؟",
+              "prompt": "When can the engineer visit Adnan?",
+              "promptAr": "متى يستطيع الفني زيارة عدنان؟",
               "options": [
-                "The technician's arrival time",
-                "The cost of a new flat",
-                "The landlord's address"
+                "In the afternoon",
+                "Only on Friday",
+                "At the weekend"
               ],
-              "answer": "The technician's arrival time",
-              "sourceText": "The heating is not working, and the flat is very cold. Can you tell me when a technician can come?"
+              "answer": "In the afternoon",
+              "audioTranscript": "Hello, this is Adnan from flat 12. The heating stopped on Friday, and the children's room is very cold. I tried the switch, but nothing happened. Could you send an engineer as soon as possible? I am at home every afternoon this week."
             },
             {
               "id": "A2-U4-L5-A05",
@@ -10986,19 +12039,61 @@
               "mode": "mastery",
               "skill": "spokenInteraction",
               "canDo": [
-                "A2.U4.READING.COMPARE_HOUSING",
                 "A2.U4.INTERACTION.DISCUSS_HOUSING_PROBLEM"
               ],
-              "prompt": "Report a housing problem politely, explain its effect and request action.",
-              "promptAr": "أبلغ عن مشكلة سكن بأدب واشرح أثرها واطلب إجراءً.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
+              "prompt": "Phone the letting office about a problem in your flat. Say what the problem is, explain how it affects you, and make a polite request.",
+              "promptAr": "اتصل بمكتب التأجير بشأن مشكلة في شقتك. قل ما هي المشكلة، واشرح كيف تؤثر عليك، ثم قدّم طلباً مهذّباً.",
+              "partnerTurns": [
+                "Hello, this is the letting office. How can I help you?",
+                "I see. And how long has this been a problem?",
+                "All right. Tell me exactly what you want us to do, and when we can come."
               ],
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "there is a problem",
+                    "there's a problem",
+                    "doesn't work",
+                    "does not work",
+                    "is broken",
+                    "is leaking",
+                    "a leak",
+                    "is damp",
+                    "stopped working",
+                    "is not working"
+                  ],
+                  [
+                    "could you",
+                    "can you",
+                    "would you",
+                    "is it possible",
+                    "please send",
+                    "I'd like you to",
+                    "I would like you to"
+                  ],
+                  [
+                    "because",
+                    "so",
+                    "cold",
+                    "wet",
+                    "dangerous",
+                    "I can't sleep",
+                    "my children",
+                    "every night",
+                    "all week",
+                    "as soon as possible",
+                    "today",
+                    "tomorrow",
+                    "this week"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             }
           ]
         },
@@ -11008,30 +12103,33 @@
           "titleAr": "أوصِ بمنزل",
           "lessonType": "integrated-production",
           "canDo": [
+            "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO",
+            "A2.U4.READING.COMPARE_HOUSING",
+            "A2.U4.PRODUCTION.DESCRIBE_HOME_AREA",
             "A2.U4.WRITING.WRITE_HOUSING_RECOMMENDATION",
-            "A2.U4.PRODUCTION.DESCRIBE_HOME_AREA"
+            "A2.U4.MEDIATION.RELAY_HOUSING_OPTIONS"
           ],
           "grammar": [
             "A2.G.HOUSING_COMPARATIVES",
             "A2.G.TOO_ADJECTIVE",
-            "A2.G.ADJECTIVE_ENOUGH"
+            "A2.G.ADJECTIVE_ENOUGH",
+            "A2.G.LINKERS_AND_BUT_BECAUSE"
           ],
           "lexicon": [
             "A2.LEX.OPTION_N01",
             "A2.LEX.RENT_N01",
-            "A2.LEX.RECOMMEND_V01"
+            "A2.LEX.RECOMMEND_V01",
+            "A2.LEX.FURNISHED_ADJ01",
+            "A2.LEX.DEPOSIT_N01"
           ],
           "chunks": [
-            "A2.CHUNK.BEST_VALUE"
+            "A2.CHUNK.BEST_VALUE",
+            "A2.CHUNK.BILLS_INCLUDED"
           ],
-          "encounter": {
-            "dialogue": [
-              {
-                "speaker": "Narrator",
-                "en": "Flat A costs $500 and is close to work, but it is small. Flat B costs $560, has two bedrooms and includes heating. For a couple with a child, Flat B offers better value.",
-                "ar": ""
-              }
-            ]
+          "readingText": {
+            "title": "Which Home for Samar?",
+            "text": "Samar, I looked at both options yesterday. The Karrada flat is furnished and the rent is 550 a month, with bills included. It is not as quiet as the other one, but it is only ten minutes from your office. The Zayouna flat is cheaper and more spacious, and the street is peaceful. However, it is unfurnished, the deposit is two months, and there is no bus after nine. For you, I recommend Karrada. The rent is higher, but you will not need a car.",
+            "textAr": "سمر، نظرتُ إلى الخيارين أمس. شقة الكرادة مفروشة، وإيجارها 550 في الشهر مع الفواتير. هي ليست هادئة مثل الشقة الأخرى، لكنها على بعد عشر دقائق فقط من مكتبكِ. شقة زيونة أرخص وأوسع، والشارع فيها هادئ. لكنها غير مفروشة، والتأمين إيجار شهرين، ولا توجد حافلة بعد التاسعة. بالنسبة لكِ، أنصحكِ بالكرادة: الإيجار أعلى، لكنكِ لن تحتاجي إلى سيارة."
           },
           "activities": [
             {
@@ -11041,85 +12139,140 @@
               "mode": "encounter",
               "skill": "reading",
               "canDo": [
-                "A2.U4.WRITING.WRITE_HOUSING_RECOMMENDATION",
-                "A2.U4.PRODUCTION.DESCRIBE_HOME_AREA"
+                "A2.U4.READING.COMPARE_HOUSING"
               ],
-              "prompt": "Why is Flat B recommended?",
-              "promptAr": "لماذا يوصى بالشقة ب؟",
+              "prompt": "Read the message once. What is the writer doing?",
+              "promptAr": "اقرأ الرسالة مرة واحدة. ماذا يفعل كاتبها؟",
               "options": [
-                "It has more suitable space and included heating.",
-                "It is cheaper.",
-                "It is closer to work."
+                "Recommending one of two flats",
+                "Asking Samar to lend her money",
+                "Describing her own new home"
               ],
-              "answer": "It has more suitable space and included heating.",
-              "sourceText": "Flat A costs $500 and is close to work, but it is small. Flat B costs $560, has two bedrooms and includes heating. For a couple with a child, Flat B offers better value."
+              "answer": "Recommending one of two flats"
             },
             {
               "id": "A2-U4-L6-A02",
               "lessonId": "A2-U4-L6",
-              "type": "match",
+              "type": "audioChoice",
               "mode": "practice",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U4.WRITING.WRITE_HOUSING_RECOMMENDATION",
-                "A2.U4.PRODUCTION.DESCRIBE_HOME_AREA"
+                "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO"
               ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "option",
-                  "خيار"
-                ],
-                [
-                  "rent",
-                  "إيجار"
-                ],
-                [
-                  "recommend",
-                  "يوصي"
-                ]
-              ]
+              "prompt": "Listen to the agent's voice note. What is the problem with the house?",
+              "promptAr": "استمع إلى الرسالة الصوتية من الوكيلة. ما المشكلة في المنزل؟",
+              "options": [
+                "The deposit is very high",
+                "Somebody has already rented it",
+                "It has no furniture at all"
+              ],
+              "answer": "The deposit is very high",
+              "audioTranscript": "Hello, this is Widad from the agency. The house you liked is still free, but the owner wants three months' deposit. There is a smaller flat on the same street for less money, and it is furnished. Shall I book a viewing for Saturday?"
             },
             {
               "id": "A2-U4-L6-A03",
               "lessonId": "A2-U4-L6",
-              "type": "gap",
+              "type": "speak",
               "mode": "practice",
-              "skill": "reading",
+              "skill": "spokenProduction",
               "canDo": [
-                "A2.U4.WRITING.WRITE_HOUSING_RECOMMENDATION",
                 "A2.U4.PRODUCTION.DESCRIBE_HOME_AREA"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "This option offers the best ___ for a family.",
-              "options": [
-                "value",
-                "valuable",
-                "valued"
-              ],
-              "answer": "value"
+              "prompt": "Before you write anything, say your recommendation aloud, the way the message does. Compare two homes, then say which one you recommend and why.",
+              "promptAr": "قبل أن تكتب شيئاً، قل توصيتك بصوت عالٍ كما فعلت الرسالة. قارن بين منزلين، ثم قل بأيّهما توصي ولماذا.",
+              "accepted": [],
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "cheaper",
+                    "bigger",
+                    "smaller",
+                    "quieter",
+                    "closer",
+                    "further",
+                    "more spacious",
+                    "more peaceful",
+                    "more crowded",
+                    "better",
+                    "not as"
+                  ],
+                  [
+                    "I recommend",
+                    "I would choose",
+                    "I'd choose",
+                    "I think you should",
+                    "the best",
+                    "better for you",
+                    "go for"
+                  ],
+                  [
+                    "because",
+                    "so",
+                    "but",
+                    "however",
+                    "the reason"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U4-L6-A04",
               "lessonId": "A2-U4-L6",
-              "type": "textChoice",
+              "type": "speak",
               "mode": "mastery",
-              "skill": "reading",
+              "skill": "mediation",
               "canDo": [
-                "A2.U4.WRITING.WRITE_HOUSING_RECOMMENDATION",
-                "A2.U4.PRODUCTION.DESCRIBE_HOME_AREA"
+                "A2.U4.MEDIATION.RELAY_HOUSING_OPTIONS"
               ],
-              "prompt": "Which option is more convenient for commuting?",
-              "promptAr": "أي خيار أنسب للتنقل؟",
-              "options": [
-                "Flat Y",
-                "House X",
-                "Neither"
-              ],
-              "answer": "Flat Y",
-              "sourceText": "House X has a garden but is far from transport. Flat Y has no garden, but it is cheaper and close enough to the station."
+              "prompt": "Your friend Bilal does not read English, and this listing is on the door of the bakery. Tell him what the flat costs, what is included, what the deposit is, and when he can see it.",
+              "promptAr": "صديقك بلال لا يقرأ الإنجليزية، وهذا الإعلان معلّق على باب المخبز. أخبره كم يكلّف إيجار الشقة، وما الذي يشمله، وكم مبلغ التأمين، ومتى يستطيع معاينتها.",
+              "sourceCard": "FOR RENT: one-bedroom flat above the bakery, Al-Wahda Street. Furnished. 400,000 IQD monthly, bills included. Deposit: one month. No pets. The room at the back is not as bright as the front one. Viewings Thursday and Friday only. Call Um Ahmed.",
+              "accepted": [],
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "400",
+                    "four hundred",
+                    "a month",
+                    "monthly",
+                    "the rent",
+                    "costs"
+                  ],
+                  [
+                    "furnished",
+                    "bills",
+                    "included",
+                    "includes",
+                    "electricity",
+                    "water"
+                  ],
+                  [
+                    "deposit",
+                    "one month",
+                    "a month's rent",
+                    "in advance"
+                  ],
+                  [
+                    "Thursday",
+                    "Friday",
+                    "viewing",
+                    "see it",
+                    "visit",
+                    "call",
+                    "Um Ahmed"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U4-L6-A05",
@@ -11128,22 +12281,60 @@
               "mode": "mastery",
               "skill": "writing",
               "canDo": [
-                "A2.U4.WRITING.WRITE_HOUSING_RECOMMENDATION",
-                "A2.U4.PRODUCTION.DESCRIBE_HOME_AREA"
+                "A2.U4.WRITING.WRITE_HOUSING_RECOMMENDATION"
               ],
-              "prompt": "Compare two housing options and recommend one for a stated person's needs.",
-              "promptAr": "قارن خيارَي سكن وأوصِ بأحدهما وفق احتياجات شخص محدد.",
-              "evaluation": [
-                "taskCompletion",
-                "clarity",
-                "organisation",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "Now write your own recommendation to a friend who is moving. Compare two homes, say which one you recommend, give your reason, and warn her about one thing she should check.",
+              "promptAr": "اكتب الآن توصيتك أنتَ إلى صديقة ستنتقل إلى سكن جديد. قارن بين منزلين، وقل بأيّهما توصي، واذكر سببك، ونبّهها إلى أمر واحد عليها التحقق منه.",
               "accepted": [],
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "cheaper",
+                    "bigger",
+                    "smaller",
+                    "quieter",
+                    "closer",
+                    "further",
+                    "more spacious",
+                    "more peaceful",
+                    "better",
+                    "not as"
+                  ],
+                  [
+                    "I recommend",
+                    "I would choose",
+                    "I'd choose",
+                    "you should take",
+                    "go for",
+                    "is better for you",
+                    "the better one"
+                  ],
+                  [
+                    "because",
+                    "so",
+                    "but",
+                    "however"
+                  ],
+                  [
+                    "check",
+                    "be careful",
+                    "remember",
+                    "the only problem",
+                    "ask about",
+                    "no lift",
+                    "the deposit",
+                    "the bills",
+                    "too far",
+                    "too small"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
               "wordGuide": [
-                75,
-                105
+                55,
+                75
               ]
             }
           ]
@@ -11177,15 +12368,15 @@
                 "A2.U4.READING.COMPARE_HOUSING",
                 "A2.U4.ACTION.CHOOSE_HOME"
               ],
-              "prompt": "Which home has two bedrooms?",
-              "promptAr": "أي منزل فيه غرفتا نوم؟",
+              "prompt": "Read the two listings your friend sent. Which home is harder for someone carrying a heavy suitcase?",
+              "promptAr": "اقرأ الإعلانين اللذين أرسلتهما صديقتك. أي منزل أصعب على من يحمل حقيبة ثقيلة؟",
               "options": [
-                "Riverside Flat",
-                "Centre Studio",
-                "Both"
+                "Home A",
+                "Home B",
+                "Both are the same"
               ],
-              "answer": "Riverside Flat",
-              "sourceText": "Riverside Flat: two bedrooms, quiet street, no lift, $620 monthly. Centre Studio: one room, near buses and shops, fifth floor with a lift, $510 monthly."
+              "answer": "Home A",
+              "sourceText": "HOME A, Riverside: two bedrooms, third floor, no lift, 620 a month, bills not included. Quiet street, small balcony. HOME B, Centre: one large room, ground floor, 510 a month, bills included. Buses and shops at the door, but the street is crowded until midnight."
             },
             {
               "id": "A2-U4-L7-A02",
@@ -11197,15 +12388,15 @@
                 "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO",
                 "A2.U4.ACTION.CHOOSE_HOME"
               ],
-              "prompt": "Which home is better for online meetings?",
-              "promptAr": "أي منزل أفضل للاجتماعات عبر الإنترنت؟",
+              "prompt": "Listen to Yara's voice message. What does she need that neither home gives her?",
+              "promptAr": "استمع إلى رسالة يارا الصوتية. ما الذي تحتاجه ولا يوفره لها أيّ من المنزلين؟",
               "options": [
-                "Riverside Flat",
-                "Centre Studio",
-                "Both equally"
+                "A separate place to work",
+                "A second bathroom",
+                "A balcony"
               ],
-              "answer": "Riverside Flat",
-              "audioTranscript": "The studio is convenient, but it is too small for two people who work from home. The riverside flat is larger and quiet enough for online meetings."
+              "answer": "A separate place to work",
+              "audioTranscript": "It's Yara. I looked at both places again today. Home A has a real kitchen, but there isn't enough space for my desk in either bedroom. Home B is one room, so I would work and sleep in the same place. Tell me honestly what you think."
             },
             {
               "id": "A2-U4-L7-A03",
@@ -11217,16 +12408,57 @@
                 "A2.U4.INTERACTION.DISCUSS_HOUSING_PROBLEM",
                 "A2.U4.ACTION.CHOOSE_HOME"
               ],
-              "prompt": "Ask about the mover's needs and discuss the advantages and disadvantages of both homes.",
-              "promptAr": "اسأل عن احتياجات الشخص المنتقل وناقش مزايا وعيوب المنزلين.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
+              "prompt": "Talk to Yara about the two homes. Ask her what matters most to her, then give the advantages and the disadvantages of each one.",
+              "promptAr": "تحدّث إلى يارا عن المنزلين. اسألها ما الأهم بالنسبة لها، ثم اذكر مزايا كل منزل وعيوبه.",
+              "partnerTurns": [
+                "Thanks for looking at them for me. Before you say anything, ask me what matters most.",
+                "Well, I work from home four days a week, and my mother visits every weekend.",
+                "Money is not the main thing. So which one, and why?"
               ],
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "what do you need",
+                    "what matters",
+                    "how many",
+                    "do you need",
+                    "how often",
+                    "do you work",
+                    "who visits",
+                    "how much",
+                    "would you"
+                  ],
+                  [
+                    "bigger",
+                    "smaller",
+                    "cheaper",
+                    "quieter",
+                    "closer",
+                    "not as",
+                    "more space",
+                    "less space",
+                    "enough",
+                    "too small",
+                    "too noisy",
+                    "too far"
+                  ],
+                  [
+                    "but",
+                    "however",
+                    "the problem",
+                    "the good thing",
+                    "on the other hand",
+                    "the only",
+                    "so"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U4-L7-A04",
@@ -11238,16 +12470,56 @@
                 "A2.U4.PRODUCTION.DESCRIBE_HOME_AREA",
                 "A2.U4.ACTION.CHOOSE_HOME"
               ],
-              "prompt": "Present a clear recommendation with comparisons and a practical reason.",
-              "promptAr": "قدّم توصية واضحة تتضمن مقارنات وسبباً عملياً.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "Give Yara your recommendation, one to two minutes long. Compare the two homes, say clearly which one she should take, and give a practical reason.",
+              "promptAr": "قدّم ليارا توصيتك، في دقيقة إلى دقيقتين. قارن بين المنزلين، وقل بوضوح أيّهما ينبغي أن تأخذ، واذكر سبباً عملياً.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "Home A",
+                    "Home B",
+                    "the riverside",
+                    "the centre",
+                    "the first one",
+                    "the second one"
+                  ],
+                  [
+                    "bigger",
+                    "smaller",
+                    "cheaper",
+                    "quieter",
+                    "closer",
+                    "further",
+                    "not as",
+                    "more space",
+                    "enough",
+                    "too far",
+                    "too small",
+                    "too noisy"
+                  ],
+                  [
+                    "I recommend",
+                    "I would take",
+                    "I'd take",
+                    "you should",
+                    "the better",
+                    "go for",
+                    "choose"
+                  ],
+                  [
+                    "because",
+                    "so",
+                    "that is why",
+                    "the reason",
+                    "since"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U4-L7-A05",
@@ -11259,16 +12531,48 @@
                 "A2.U4.MEDIATION.RELAY_HOUSING_OPTIONS",
                 "A2.U4.ACTION.CHOOSE_HOME"
               ],
-              "prompt": "Relay the rent, location, space and access details from both listings without adding facts.",
-              "promptAr": "انقل تفاصيل الإيجار والموقع والمساحة والوصول من الإعلانين من دون إضافة معلومات.",
-              "evaluation": [
-                "selectRelevantInformation",
-                "clarity",
-                "audienceAwareness",
-                "accuracy"
-              ],
+              "prompt": "Yara cannot read the owner's English. Tell her the new rent and its condition, what the deposit is, what will change in March, and the two rules.",
+              "promptAr": "يارا لا تستطيع قراءة رسالة المالك بالإنجليزية. أخبرها بالإيجار الجديد وشرطه، وبمبلغ التأمين، وبما سيتغيّر في آذار، وبالقاعدتين.",
+              "sourceCard": "Reply from the owner of Home A: I can lower the rent to 590 if your friend signs for two years. The deposit is one month. The lift will be repaired in March. I cannot allow pets, and the rent does not include water.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "590",
+                    "five hundred and ninety",
+                    "lower",
+                    "cheaper",
+                    "two years",
+                    "sign",
+                    "contract"
+                  ],
+                  [
+                    "deposit",
+                    "one month",
+                    "a month"
+                  ],
+                  [
+                    "lift",
+                    "March",
+                    "repaired",
+                    "fixed",
+                    "working again"
+                  ],
+                  [
+                    "pets",
+                    "no animals",
+                    "water",
+                    "not included",
+                    "pay for the water",
+                    "extra"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U4-L7-A06",
@@ -11280,20 +12584,59 @@
                 "A2.U4.WRITING.WRITE_HOUSING_RECOMMENDATION",
                 "A2.U4.ACTION.CHOOSE_HOME"
               ],
-              "prompt": "Write the friend a recommendation comparing both homes and mentioning one possible problem.",
-              "promptAr": "اكتب لصديقك توصية تقارن المنزلين وتذكر مشكلة محتملة واحدة.",
-              "evaluation": [
-                "taskCompletion",
-                "clarity",
-                "organisation",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "Write Yara your recommendation. Compare the two homes, choose one for her, give your reason, and warn her about one possible problem.",
+              "promptAr": "اكتب ليارا توصيتك. قارن بين المنزلين، واختر أحدهما لها، واذكر سببك، ونبّهها إلى مشكلة محتملة واحدة.",
+              "accepted": [],
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "Home A",
+                    "Home B",
+                    "the riverside",
+                    "the centre",
+                    "the studio",
+                    "the flat"
+                  ],
+                  [
+                    "cheaper",
+                    "bigger",
+                    "smaller",
+                    "quieter",
+                    "closer",
+                    "not as",
+                    "enough",
+                    "too small",
+                    "too far",
+                    "too noisy"
+                  ],
+                  [
+                    "I recommend",
+                    "I would choose",
+                    "I'd choose",
+                    "you should take",
+                    "go for",
+                    "the better one"
+                  ],
+                  [
+                    "but",
+                    "however",
+                    "the problem",
+                    "be careful",
+                    "remember",
+                    "no lift",
+                    "the deposit",
+                    "the bills",
+                    "crowded"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
               "wordGuide": [
-                85,
-                115
-              ],
-              "accepted": []
+                55,
+                75
+              ]
             }
           ]
         }
