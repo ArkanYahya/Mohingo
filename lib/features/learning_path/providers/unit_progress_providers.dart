@@ -5,7 +5,8 @@ import '../../../data/local/database.dart';
 import '../../progress/providers/current_learner_provider.dart';
 import '../../progress/providers/progress_providers.dart';
 
-/// All A1 unit-progress rows for the current learner. Invalidate (see
+/// Every unit-progress row for the current learner, across every level they
+/// are enrolled in — not one level's. Invalidate (see
 /// `ref.invalidate`) whenever
 /// `MasteryAggregationService.refreshUnitProgress` runs, so the Learn tab
 /// and Home reflect fresh state after a lesson.

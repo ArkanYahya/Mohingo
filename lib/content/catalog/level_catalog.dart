@@ -50,9 +50,10 @@ class LevelCatalogEntry {
   final String? prerequisiteLevelId;
 }
 
-/// The full CEFR level catalogue for v1: A1 available, A2 a preview (its
-/// content loads but its lessons stay closed until release), B1-C2 Coming
-/// Soon. See docs/ROADMAP.md.
+/// The full CEFR level catalogue for v1: A1 and A2 available, B1-C2 Coming
+/// Soon. A2 was a preview until its content was authored and its gates
+/// passed; [LevelAvailability.preview] is still the state a level sits in
+/// while that is true of it. See docs/ROADMAP.md.
 const kLevelCatalog = <LevelCatalogEntry>[
   LevelCatalogEntry(
     levelId: 'a1',
