@@ -160,6 +160,10 @@ void main() {
     // conversation or text and is practised in at least one activity."
     // Only A2 records are checked — an A1 reference is revision, and the
     // lesson may legitimately only allude to it.
+    // An activity's PROMPT is deliberately not part of the haystack. "Ask a
+    // follow-up question" is an instruction, not the lesson teaching the
+    // word in context, and counting it lets a unit claim vocabulary it only
+    // ever names in its own rubric.
     final a2 = loadA2Bundle();
     final byId = {for (final l in a2.lexicon) l.id: l};
     for (final unit in finishedA2Units()) {
@@ -167,8 +171,10 @@ void main() {
         final haystack = [
           for (final line in lesson.encounterDialogue) line.en,
           lesson.readingText?.text ?? '',
+          lesson.readingText?.title ?? '',
           for (final a in lesson.activities) ...[
-            a.prompt,
+            '${a.raw['partnerTurns'] ?? ''}',
+            '${a.raw['text'] ?? ''}',
             '${a.raw['audioTranscript'] ?? ''}',
             '${a.raw['sourceText'] ?? ''}',
             '${a.raw['sourceCard'] ?? ''}',
