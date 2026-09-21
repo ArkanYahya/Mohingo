@@ -1,7 +1,7 @@
 > **What this file is:** The boring-but-expensive-if-inconsistent rules — naming, file layout, error handling shape, commit/branch format. The stuff that's cheap to follow if written down and expensive to reconcile if not.
 > **How to use it:** Follow as default behavior in every session, no exceptions unless the code being touched already established a different local pattern (match it, then flag the inconsistency here).
 
-_Last verified: 2026-09-19 — added Versioning (`kAppVersion` kept in step with pubspec.yaml). Previously verified 2026-09-01 — initial conventions established via brainstorming session._
+_Last verified: 2026-09-21 (`feature/level-standard-and-content-versioning`) — added "Content ids, after a level ships": ids are permanent, an activity's `mode` is frozen and its `canDo` is append-only once a level is published, with what each one does to a learner who has already studied it, and the `contentVersion` bump a content change must carry. All of it was previously a comment in one table file. Previously verified: 2026-09-19 — added Versioning (`kAppVersion` kept in step with pubspec.yaml). Previously verified 2026-09-01 — initial conventions established via brainstorming session._
 
 # Conventions
 
@@ -31,6 +31,28 @@ Feature-first, per [ARCHITECTURE.md](ARCHITECTURE.md)'s folder structure: new co
 - Branch naming: `feature/<short-desc>`, `fix/<short-desc>` — optional, since this is a solo project (direct commits to `main` are also fine for small changes).
 - Commit message format: short imperative summary line (e.g. "Add unit progress gating"); no strict conventional-commits requirement.
 - PR requirements: none — solo project, no review process. (Revisit if a second contributor joins.)
+
+## Content ids, after a level ships
+
+**Once a level is published, its ids are permanent, an activity's `mode` is frozen, and its `canDo` list is append-only.**
+
+`activity_attempts` stores `activityId`, `lessonId`, `mode` and `canDoId` as plain bundle strings with no foreign key (see [DATA_MODEL.md](DATA_MODEL.md)), so a learner's recorded evidence outlives the content it points at. Each rule has a consequence for a real learner:
+
+- **Reuse an id** and their work on the old activity is re-attributed to the new one.
+- **Change a published `mode`** and every stored attempt on it is re-counted — a `practice`→`mastery` re-tag hands them evidence they never earned, and the reverse takes away mastery they did.
+- **Drop a published `canDo`** and their stored evidence names an objective the unit no longer requires; a unit they had mastered stops being mastered.
+
+Retiring content therefore means leaving the id in place, or giving the replacement a new one — never deleting or re-pointing the old. A genuinely deliberate removal means hand-editing `test/content/published/<level>-published-ids.json`, which is a visible act a reviewer can question.
+
+**A content change must bump the bundle's `contentVersion`.** The app treats an unchanged `contentVersion` as "not an upgrade" and skips the content diff entirely, so a change that keeps the old string is invisible to stale detection on every device (see [DATA_MODEL.md](DATA_MODEL.md)'s `content_versions`).
+
+Enforced by `test/content/published_id_stability_test.dart` against a committed snapshot per level. After **adding** content:
+
+```
+dart run tool/update_published_ids.dart
+```
+
+and commit the diff. The script merges rather than regenerates — it refuses to drop an id, change a mode, drop a tag, or record new ids under an unchanged `contentVersion` — so making the gate green by re-running it is not a move that exists.
 
 ## Versioning
 

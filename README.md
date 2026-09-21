@@ -28,6 +28,7 @@ flutter gen-l10n                                              # regenerate AppLo
 dart format --set-exit-if-changed .                           # format check (also just `dart format .` to apply)
 flutter analyze                                               # static analysis — must report "No issues found!"
 flutter test                                                  # the full test suite (unit + widget)
+dart run tool/update_published_ids.dart                       # after ADDING curriculum content — records its ids, then commit the diff
 flutter run                                                   # run on a connected device/emulator
 ```
 
@@ -45,7 +46,7 @@ After editing `lib/l10n/app_en.arb` or `lib/l10n/app_ar.arb`, run `flutter gen-l
 ## Running tests
 
 ```
-flutter test                      # unit + widget tests (705 passing as of the last full run — see CLAUDE.md)
+flutter test                      # unit + widget tests (798 passing as of the last full run — see CLAUDE.md)
 flutter test integration_test/    # not yet added — see "Known limitations" below
 ```
 
@@ -56,7 +57,9 @@ flutter test test/features/placement_test/placement_classifier_test.dart
 flutter test --plain-name "some substring of a test description"
 ```
 
-If a widget test hangs or times out, it's almost always a missing fake-service override — see `test/features/speech/fake_speech_services.dart` and how existing tests use it. Real device-backed plugins (`flutter_tts`, `speech_to_text`, `permission_handler`) have no platform channel to answer in `flutter test`, so any widget that reads their providers needs `textToSpeechServiceProvider`/`speechCapabilityServiceProvider` overridden with a fake, or the test will hang waiting for a response that never comes.
+A widget test that reads the database after `_pumpAppAndWaitForContent` returns will hang, not fail. `flutter test` runs widget tests under a fake clock, so real async work — a Drift query, anything a provider kicked off — cannot complete outside `tester.runAsync`, and a poll loop placed after the pump waits forever (observed: a 10-minute timeout). Do the read *inside* the helper's own `runAsync` loop, which is what its `onEachPump`/`until` parameters are for.
+
+If a widget test hangs or times out otherwise, it's almost always a missing fake-service override — see `test/features/speech/fake_speech_services.dart` and how existing tests use it. Real device-backed plugins (`flutter_tts`, `speech_to_text`, `permission_handler`) have no platform channel to answer in `flutter test`, so any widget that reads their providers needs `textToSpeechServiceProvider`/`speechCapabilityServiceProvider` overridden with a fake, or the test will hang waiting for a response that never comes.
 
 ## Known limitations (honestly, not swept under the rug)
 
