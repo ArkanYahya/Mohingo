@@ -7344,8 +7344,11 @@
           "titleAr": "تحديث عن حياتي",
           "lessonType": "integrated-production",
           "canDo": [
+            "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE",
+            "A2.U1.READING.UNDERSTAND_PROFILE",
+            "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE",
             "A2.U1.WRITING.WRITE_LIFE_UPDATE",
-            "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE"
+            "A2.U1.MEDIATION.RELAY_LIFE_UPDATE"
           ],
           "grammar": [
             "A2.G.LINKERS_AND_BUT_BECAUSE"
@@ -7359,14 +7362,10 @@
             "A2.CHUNK.RIGHT_NOW",
             "A2.CHUNK.AT_THE_MOMENT"
           ],
-          "encounter": {
-            "dialogue": [
-              {
-                "speaker": "Narrator",
-                "en": "Hi Salma, I still work at the bank, but I am taking a design course at the moment because I want a change. I am busy, but happy.",
-                "ar": ""
-              }
-            ]
+          "readingText": {
+            "title": "Rana's Update",
+            "text": "Hi Ahmed! Here is my news. I normally work in a small library in Basra, and I walk there every morning because it is close to my flat. But this month my situation is a little different. The library is closed for repairs, so I am working from home and answering emails all day. I miss the quiet rooms, but I like the extra sleep. It is only a temporary change, and we open again in May.",
+            "textAr": "أهلاً أحمد! إليكَ أخباري. أعمل عادةً في مكتبة صغيرة في البصرة، وأمشي إليها كل صباح لأنها قريبة من شقتي. لكن وضعي هذا الشهر مختلف قليلاً: المكتبة مغلقة للترميم، فصرتُ أعمل من البيت وأردّ على الرسائل طوال النهار. تنقصني القاعات الهادئة، لكن ساعة النوم الإضافية تعجبني. إنه تغيير مؤقت فقط، وسنفتح أبوابنا من جديد في أيار."
           },
           "activities": [
             {
@@ -7376,85 +7375,148 @@
               "mode": "encounter",
               "skill": "reading",
               "canDo": [
-                "A2.U1.WRITING.WRITE_LIFE_UPDATE",
-                "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE"
+                "A2.U1.READING.UNDERSTAND_PROFILE"
               ],
-              "prompt": "Why is the writer taking a design course?",
-              "promptAr": "لماذا يحضر الكاتب دورة تصميم؟",
+              "prompt": "Read Rana's message once. What is she telling her old classmate?",
+              "promptAr": "اقرأ رسالة رنا مرة واحدة. ما الذي تخبر به زميلها القديم؟",
               "options": [
-                "Because the writer wants a change.",
-                "Because the bank is closed.",
-                "Because Salma is a designer."
+                "That her work has changed for a short time",
+                "That she has moved to another city",
+                "That she has left her job at the library"
               ],
-              "answer": "Because the writer wants a change.",
-              "sourceText": "Hi Salma, I still work at the bank, but I am taking a design course at the moment because I want a change. I am busy, but happy."
+              "answer": "That her work has changed for a short time"
             },
             {
               "id": "A2-U1-L6-A02",
               "lessonId": "A2-U1-L6",
-              "type": "match",
+              "type": "audioChoice",
               "mode": "practice",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U1.WRITING.WRITE_LIFE_UPDATE",
-                "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE"
+                "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE"
               ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "update",
-                  "تحديث"
-                ],
-                [
-                  "change",
-                  "تغيير"
-                ],
-                [
-                  "situation",
-                  "وضع"
-                ]
-              ]
+              "prompt": "Listen to Basim's voice message. Why is he going to the hospital this month?",
+              "promptAr": "استمع إلى رسالة باسم الصوتية. لماذا يذهب إلى المستشفى هذا الشهر؟",
+              "options": [
+                "His mother cannot drive after an operation",
+                "He is tired and needs a doctor",
+                "He drives the school bus to the hospital"
+              ],
+              "answer": "His mother cannot drive after an operation",
+              "audioTranscript": "Hello, it's Basim. I usually drive the school bus in the mornings, and I am free every afternoon. This month I am also taking my mother to the hospital twice a week, because she cannot drive after her operation. I am tired, but she is getting better."
             },
             {
               "id": "A2-U1-L6-A03",
               "lessonId": "A2-U1-L6",
-              "type": "gap",
+              "type": "speak",
               "mode": "practice",
-              "skill": "reading",
+              "skill": "spokenProduction",
               "canDo": [
-                "A2.U1.WRITING.WRITE_LIFE_UPDATE",
                 "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "I like the course ___ it is practical.",
-              "options": [
-                "because",
-                "but",
-                "and"
-              ],
-              "answer": "because"
+              "prompt": "Before you write anything, say your update aloud, the way Rana wrote hers. Give one thing you usually do, one thing that is different right now, and the reason.",
+              "promptAr": "قبل أن تكتب شيئاً، قل تحديثك بصوت عالٍ كما كتبت رنا تحديثها. اذكر شيئاً تفعله عادةً، وشيئاً مختلفاً في الوقت الحالي، والسبب.",
+              "accepted": [],
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "usually",
+                    "normally",
+                    "always",
+                    "often",
+                    "every",
+                    "most days",
+                    "on weekdays",
+                    "at weekends",
+                    "I work",
+                    "I study"
+                  ],
+                  [
+                    "at the moment",
+                    "right now",
+                    "this month",
+                    "this week",
+                    "these days",
+                    "currently",
+                    "temporary",
+                    "for now",
+                    "just now"
+                  ],
+                  [
+                    "because",
+                    "but",
+                    "so",
+                    "that's why"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U1-L6-A04",
               "lessonId": "A2-U1-L6",
-              "type": "textChoice",
+              "type": "speak",
               "mode": "mastery",
-              "skill": "reading",
+              "skill": "mediation",
               "canDo": [
-                "A2.U1.WRITING.WRITE_LIFE_UPDATE",
-                "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE"
+                "A2.U1.MEDIATION.RELAY_LIFE_UPDATE"
               ],
-              "prompt": "What has changed this week?",
-              "promptAr": "ما الذي تغير هذا الأسبوع؟",
-              "options": [
-                "The study time",
-                "The usual city",
-                "The course subject"
-              ],
-              "answer": "The study time",
-              "sourceText": "I usually study in the morning, but this week I am studying at night because I have a temporary job."
+              "prompt": "Suhad sent you this message, and your friend Dina never saw it. Tell Dina what Suhad usually does, what is new this term and why, and how Dina can join.",
+              "promptAr": "أرسلت لكَ سُهاد هذه الرسالة، ولم ترَها صديقتكَ دينا. أخبر دينا بما تفعله سُهاد عادةً، وما الجديد هذا الفصل ولماذا، وكيف تستطيع دينا الانضمام.",
+              "sourceCard": "Message from Suhad: I still teach Arabic at the centre on Mondays and Wednesdays. This term I am also giving a free online class on Saturday mornings, because many of my old students have moved abroad. Anyone can join; just send me your email.",
+              "accepted": [],
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "teaches",
+                    "teaching",
+                    "Arabic",
+                    "the centre",
+                    "the center",
+                    "Monday",
+                    "Wednesday",
+                    "still",
+                    "usually",
+                    "normally"
+                  ],
+                  [
+                    "online",
+                    "Saturday",
+                    "free",
+                    "this term",
+                    "at the moment",
+                    "right now",
+                    "these days",
+                    "also",
+                    "new"
+                  ],
+                  [
+                    "because",
+                    "so",
+                    "abroad",
+                    "moved away",
+                    "left the country",
+                    "that's why"
+                  ],
+                  [
+                    "email",
+                    "send",
+                    "write to her",
+                    "message her",
+                    "join",
+                    "sign up"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U1-L6-A05",
@@ -7463,22 +7525,50 @@
               "mode": "mastery",
               "skill": "writing",
               "canDo": [
-                "A2.U1.WRITING.WRITE_LIFE_UPDATE",
-                "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE"
+                "A2.U1.WRITING.WRITE_LIFE_UPDATE"
               ],
-              "prompt": "Write a life update with two usual facts, one current change and a reason.",
-              "promptAr": "اكتب تحديثاً عن حياتك يتضمن حقيقتين معتادتين وتغييراً حالياً وسبباً.",
-              "evaluation": [
-                "taskCompletion",
-                "clarity",
-                "organisation",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "Now write your own life update to an old classmate. Say what you usually do, what is different at the moment, and why. Join your ideas with and, but and because.",
+              "promptAr": "اكتب الآن تحديثاً عن حياتك إلى زميل دراسة قديم. اذكر ما تفعله عادةً، وما المختلف في الوقت الحالي، والسبب. اربط أفكارك بـ and وbut وbecause.",
               "accepted": [],
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "usually",
+                    "normally",
+                    "always",
+                    "often",
+                    "every",
+                    "most days",
+                    "on weekdays",
+                    "at weekends",
+                    "I work",
+                    "I study"
+                  ],
+                  [
+                    "at the moment",
+                    "right now",
+                    "this month",
+                    "this week",
+                    "these days",
+                    "currently",
+                    "temporary",
+                    "for now",
+                    "just now"
+                  ],
+                  [
+                    "because",
+                    "but",
+                    "so",
+                    "that's why"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
               "wordGuide": [
-                60,
-                90
+                55,
+                75
               ]
             }
           ]
