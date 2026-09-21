@@ -150,6 +150,7 @@ class _FinalAssessmentBodyState extends ConsumerState<_FinalAssessmentBody> {
     );
     final attemptRow = await repository.latestFinalAssessmentAttempt(
       learnerId: widget.learnerId,
+      courseId: widget.courseId,
     );
     if (!mounted) return;
     setState(() {

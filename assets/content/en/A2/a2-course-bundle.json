@@ -29310,8 +29310,7 @@
               "your train"
             ]
           ],
-          "minGroupsMatched": 4,
-          "onlineRefinement": "grammarCheck"
+          "minGroupsMatched": 4
         },
         "wordGuide": [
           70,
@@ -29383,8 +29382,7 @@
               "you're welcome any"
             ]
           ],
-          "minGroupsMatched": 4,
-          "onlineRefinement": "grammarCheck"
+          "minGroupsMatched": 4
         },
         "wordGuide": [
           70,

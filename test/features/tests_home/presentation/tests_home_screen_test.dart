@@ -116,6 +116,51 @@ Future<void> _seedPlacement(
       ),
     );
 
+/// A passed final mission and a part-passed final assessment, both
+/// recorded against [courseId] — the level whose capstones they were.
+Future<void> _seedCapstones(
+  AppDatabase db,
+  int learnerId, {
+  required String courseId,
+}) async {
+  await db
+      .into(db.finalMissionAttempts)
+      .insert(
+        FinalMissionAttemptsCompanion.insert(
+          uuid: 'm',
+          learnerId: learnerId,
+          courseId: courseId,
+          startedAt: _taken,
+          completedAt: Value(_taken),
+          outcome: const Value('passed'),
+        ),
+      );
+  await db
+      .into(db.finalAssessmentAttempts)
+      .insert(
+        FinalAssessmentAttemptsCompanion.insert(
+          uuid: 'a',
+          learnerId: learnerId,
+          courseId: courseId,
+          startedAt: _taken,
+          completedAt: Value(_taken),
+          sectionResults: Value(
+            jsonEncode([
+              for (final (i, s) in [
+                'listening',
+                'reading',
+                'writing',
+                'speaking',
+                'mediation',
+              ].indexed)
+                {'section': s, 'status': i < 3 ? 'passed' : 'notMet'},
+            ]),
+          ),
+          outcomeSummary: Value(jsonEncode({'overallPassed': false})),
+        ),
+      );
+}
+
 Future<void> _seedLessonPlayed(AppDatabase db, int learnerId) => db
     .into(db.lessonProgress)
     .insert(
@@ -258,44 +303,38 @@ void main() {
   ) async {
     final l10n = await _pump(
       tester,
-      seed: (db, id) async {
-        await db
-            .into(db.finalMissionAttempts)
-            .insert(
-              FinalMissionAttemptsCompanion.insert(
-                uuid: 'm',
-                learnerId: id,
-                courseId: 'c',
-                startedAt: _taken,
-                completedAt: Value(_taken),
-                outcome: const Value('passed'),
-              ),
-            );
-        await db
-            .into(db.finalAssessmentAttempts)
-            .insert(
-              FinalAssessmentAttemptsCompanion.insert(
-                uuid: 'a',
-                learnerId: id,
-                courseId: 'c',
-                startedAt: _taken,
-                completedAt: Value(_taken),
-                sectionResults: Value(
-                  jsonEncode([
-                    for (final (i, s) in [
-                      'listening',
-                      'reading',
-                      'writing',
-                      'speaking',
-                      'mediation',
-                    ].indexed)
-                      {'section': s, 'status': i < 3 ? 'passed' : 'notMet'},
-                  ]),
-                ),
-                outcomeSummary: Value(jsonEncode({'overallPassed': false})),
-              ),
-            );
-      },
+      seed: (db, id) =>
+          _seedCapstones(db, id, courseId: _index.bundle.course.id),
+    );
+
+    expect(find.text(l10n.testsPassed), findsOneWidget);
+    expect(find.text(l10n.testsSkillsPassed(3, 5)), findsOneWidget);
+  });
+
+  testWidgets('an A1 result never shows under A2\'s heading — the latest '
+      'attempt is the latest attempt at THIS level\'s capstones', (
+    tester,
+  ) async {
+    final l10n = await _pump(
+      tester,
+      levelId: 'a2',
+      seed: (db, id) =>
+          _seedCapstones(db, id, courseId: _index.bundle.course.id),
+    );
+
+    // A2's mission and assessment have never been attempted, whatever the
+    // learner did on their way out of A1.
+    expect(find.text(l10n.testsPassed), findsNothing);
+    expect(find.text(l10n.testsSkillsPassed(3, 5)), findsNothing);
+    expect(find.text(l10n.testsNotTaken), findsNWidgets(2));
+  });
+
+  testWidgets('and an A2 result does show under A2\'s heading', (tester) async {
+    final l10n = await _pump(
+      tester,
+      levelId: 'a2',
+      seed: (db, id) =>
+          _seedCapstones(db, id, courseId: _a2Index.bundle.course.id),
     );
 
     expect(find.text(l10n.testsPassed), findsOneWidget);

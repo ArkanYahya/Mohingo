@@ -117,6 +117,7 @@ class _FinalMissionBodyState extends ConsumerState<_FinalMissionBody> {
     );
     final attemptRow = await repository.latestFinalMissionAttempt(
       learnerId: widget.learnerId,
+      courseId: widget.courseId,
     );
     if (!mounted) return;
     setState(() {
