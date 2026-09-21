@@ -222,6 +222,61 @@ void main() {
       expect(find.text('TESTS'), findsOneWidget);
     });
 
+    testWidgets('a level mastered that is not the level the learner is in '
+        'offers to start there — and starting opens it', (tester) async {
+      final l10n = await _pump(
+        tester,
+        buildPlacementResultViewForTest(
+          classification: const PlacementClassification(
+            outcome: PlacementOutcome.levelMastered,
+            masteredLevelId: 'a2',
+          ),
+          recommendation: null,
+          masteredLevelCode: 'A2',
+          skillScores: const {},
+        ),
+      );
+
+      await tester.tap(find.text(l10n.homeNextLevelTitle('A2')));
+      await tester.pumpAndSettle();
+
+      expect(find.text('LEARN'), findsOneWidget);
+      final enrolments = await _db.select(_db.courseEnrolments).get();
+      final a2 = enrolments.singleWhere((e) => e.levelId == 'a2');
+      expect(
+        a2.unlockedAt,
+        isNotNull,
+        reason: 'passing placement inside A2 opens A2',
+      );
+      expect(
+        a2.lastSelectedAt,
+        isNotNull,
+        reason: 'and leaves the learner in it, not back in A1',
+      );
+    });
+
+    testWidgets('but a level mastered that IS their own level just closes', (
+      tester,
+    ) async {
+      final l10n = await _pump(
+        tester,
+        buildPlacementResultViewForTest(
+          classification: const PlacementClassification(
+            outcome: PlacementOutcome.levelMastered,
+            masteredLevelId: 'a1',
+          ),
+          recommendation: null,
+          masteredLevelCode: 'A1',
+          skillScores: const {},
+        ),
+      );
+
+      expect(find.text(l10n.homeNextLevelTitle('A1')), findsNothing);
+      await tester.tap(find.text(l10n.placementResultDone));
+      await tester.pumpAndSettle();
+      expect(find.text('TESTS'), findsOneWidget);
+    });
+
     testWidgets('a level start reads as the beginning of that level, not as '
         'a gap inside it', (tester) async {
       final l10n = await _pump(

@@ -618,6 +618,11 @@ Widget buildPlacementResultViewForTest({
 /// unit as a card, per-skill scores, and a button that starts there —
 /// or, when every unit passed, "{top released level} looks mastered" and a
 /// pointer to the final assessment.
+///
+/// A mastered level is somewhere to start too when it isn't the level the
+/// learner is in: ADR 0006 decision 4 counts a placement result inside a
+/// level as one of the three things that open it, so the button moves them
+/// there rather than leaving them a level below with it still locked.
 class _ResultView extends ConsumerWidget {
   const _ResultView({
     required this.classification,
@@ -638,8 +643,10 @@ class _ResultView extends ConsumerWidget {
 
   final SkillScores skillScores;
 
-  /// Makes the recommended unit's level current (unlocking it first if the
-  /// learner hasn't reached it) and opens the unit.
+  /// Makes [levelId] the level the learner is in (unlocking it first if
+  /// they haven't reached it) and opens it — at [unitId] when the result
+  /// names a unit, at the level itself when it names a whole mastered
+  /// level.
   ///
   /// [access] comes from a `watch` in [build], not a `read` here: reading
   /// an auto-dispose provider from a callback that has no listener tears it
@@ -649,15 +656,18 @@ class _ResultView extends ConsumerWidget {
   Future<void> _startHere(
     BuildContext context,
     WidgetRef ref,
-    PlacementUnitRef recommendation,
+    String levelId,
+    String? unitId,
     LevelAccess? access,
   ) async {
     final controller = ref.read(levelSelectionControllerProvider.notifier);
     if (access != LevelAccess.open) {
-      await controller.unlock(recommendation.levelId);
+      await controller.unlock(levelId);
     }
-    await controller.select(recommendation.levelId);
-    if (context.mounted) context.go('/learn/unit/${recommendation.unit.id}');
+    await controller.select(levelId);
+    if (context.mounted) {
+      context.go(unitId == null ? '/learn' : '/learn/unit/$unitId');
+    }
   }
 
   @override
@@ -666,9 +676,20 @@ class _ResultView extends ConsumerWidget {
     final tokens = theme.extension<AppTokens>()!;
     final l10n = AppLocalizations.of(context)!;
     final recommendation = this.recommendation;
-    final access = recommendation == null
+    // A mastered level is only somewhere to *go* when the learner isn't
+    // already there. `currentLevelIdProvider` is async, so null means "not
+    // known yet" — until it resolves the result stays a plain close, the
+    // safe way to be wrong.
+    final masteredLevelId = classification.masteredLevelId;
+    final masteredElsewhere =
+        recommendation == null &&
+        masteredLevelId != null &&
+        masteredLevelId != ref.watch(currentLevelIdProvider).value;
+    final startLevelId =
+        recommendation?.levelId ?? (masteredElsewhere ? masteredLevelId : null);
+    final access = startLevelId == null
         ? null
-        : ref.watch(levelAccessProvider(recommendation.levelId)).value;
+        : ref.watch(levelAccessProvider(startLevelId)).value;
 
     final (title, body) = recommendation == null
         ? (
@@ -694,17 +715,22 @@ class _ResultView extends ConsumerWidget {
       overline: l10n.placementResultOverline,
       title: title,
       body: body,
-      primaryLabel: recommendation == null
-          ? l10n.placementResultDone
-          : l10n.placementResultStartAtUnit(
-              recommendation.cefrCode,
-              recommendation.number,
-            ),
-      primaryArrow: recommendation != null,
-      onPrimary: recommendation == null
+      primaryLabel: switch ((recommendation, masteredElsewhere)) {
+        (final r?, _) => l10n.placementResultStartAtUnit(r.cefrCode, r.number),
+        (null, true) => l10n.homeNextLevelTitle(masteredLevelCode),
+        (null, false) => l10n.placementResultDone,
+      },
+      primaryArrow: startLevelId != null,
+      onPrimary: startLevelId == null
           ? done
-          : () => _startHere(context, ref, recommendation, access),
-      secondaryLabel: recommendation == null ? null : l10n.placementResultDone,
+          : () => _startHere(
+              context,
+              ref,
+              startLevelId,
+              recommendation?.unit.id,
+              access,
+            ),
+      secondaryLabel: startLevelId == null ? null : l10n.placementResultDone,
       onSecondary: done,
       children: [
         if (recommendation != null) ...[
