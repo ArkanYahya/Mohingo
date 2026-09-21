@@ -868,8 +868,8 @@ class AppLocalizationsAr extends AppLocalizations {
       'أهداف في الوحدات التي تدرسها تحتاج إلى مزيد من التدريب';
 
   @override
-  String reviewWeakSpotMeta(int unit, String skills) {
-    return 'الوحدة $unit · $skills';
+  String reviewWeakSpotMeta(String level, int unit, String skills) {
+    return 'المستوى $level · الوحدة $unit · $skills';
   }
 
   @override

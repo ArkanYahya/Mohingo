@@ -1,61 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../content/index/course_content_index.dart';
-import '../../../content/providers/course_content_providers.dart';
 import '../../../core/l10n/generated/app_localizations.dart';
 import '../../../core/theme/app_tokens.dart';
 import '../../../core/theme/feedback_theme_extension.dart';
 import '../../../core/theme/overline_style.dart';
-import '../../../data/local/database.dart';
 import '../../lesson_player/presentation/widgets/lesson_intro_chrome.dart';
 import '../../progress/providers/current_learner_provider.dart';
-import '../../progress/providers/progress_providers.dart';
 import '../../speech/presentation/listen_button.dart';
 import '../../vocabulary/domain/spaced_review_scheduler.dart';
 import '../../vocabulary/presentation/review_rating_bar.dart';
 import '../../vocabulary/providers/vocabulary_providers.dart';
 import '../domain/next_review.dart';
+import '../domain/review_card.dart';
 import '../providers/review_providers.dart';
-
-/// One due word or phrase in a review session.
-class _Card {
-  const _Card({
-    required this.state,
-    required this.text,
-    required this.arabic,
-    required this.isPhrase,
-    this.example,
-  });
-
-  final VocabularyReviewStateData state;
-  final String text;
-  final String arabic;
-  final bool isPhrase;
-  final String? example;
-
-  static _Card? of(CourseContentIndex index, VocabularyReviewStateData s) {
-    if (s.lexiconId != null) {
-      final item = index.lexiconById[s.lexiconId];
-      if (item == null) return null;
-      return _Card(
-        state: s,
-        text: item.headword,
-        arabic: item.arabic,
-        isPhrase: false,
-        example: item.examples.firstOrNull?.en,
-      );
-    }
-    final item = index.chunkById[s.chunkId];
-    if (item == null) return null;
-    return _Card(
-      state: s,
-      text: item.text,
-      arabic: item.arabic,
-      isPhrase: true,
-    );
-  }
-}
 
 /// A spaced-review session over every word and phrase due when it opens,
 /// oldest first: each card shows the English (with audio), then — after
@@ -63,6 +21,11 @@ class _Card {
 /// recall Again/Good/Easy, each saying when the item comes back. Ratings
 /// are saved card by card (closing early keeps them), through the same
 /// [SpacedReviewScheduler] as the word pages. A summary ends the session.
+///
+/// The queue spans levels: a learner in A2 reviews A1's words here too, and
+/// each card is resolved against its own level's content. The cards come
+/// from [reviewCardsFor] — the same list the Review tab counted, so what
+/// the tab promised is what this session shows.
 ///
 /// Like every vocabulary review, this only updates the memory schedule — it
 /// never grants Can-Do mastery. See docs/DATA_MODEL.md.
@@ -75,7 +38,7 @@ class ReviewSessionScreen extends ConsumerStatefulWidget {
 }
 
 class _ReviewSessionScreenState extends ConsumerState<ReviewSessionScreen> {
-  List<_Card>? _cards;
+  List<ReviewCard>? _cards;
   int _position = 0;
   bool _revealed = false;
   bool _saving = false;
@@ -88,16 +51,10 @@ class _ReviewSessionScreenState extends ConsumerState<ReviewSessionScreen> {
   }
 
   Future<void> _load() async {
-    final index = await ref.read(courseContentProvider('a1').future);
-    final learner = await ref.read(currentLearnerProvider.future);
-    final due = await ref
-        .read(reviewStateRepositoryProvider)
-        .dueVocabulary(learnerId: learner.id, asOf: DateTime.now());
-    due.sort(
-      (a, b) => (a.dueAt ?? DateTime(0)).compareTo(b.dueAt ?? DateTime(0)),
-    );
+    final content = await ref.read(reviewContentProvider.future);
+    final due = await ref.read(dueVocabularyProvider.future);
     if (!mounted) return;
-    setState(() => _cards = [for (final s in due) ?_Card.of(index, s)]);
+    setState(() => _cards = reviewCardsFor(content: content, due: due));
   }
 
   Future<void> _rate(ReviewQuality quality) async {
@@ -242,7 +199,7 @@ class _TopBar extends StatelessWidget {
 class _CardView extends StatelessWidget {
   const _CardView({required this.card, required this.revealed, super.key});
 
-  final _Card card;
+  final ReviewCard card;
   final bool revealed;
 
   @override

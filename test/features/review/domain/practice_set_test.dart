@@ -20,6 +20,7 @@ void main() {
         'practising one of its goals, never first-exposure ones', () {
       final spot = weakSpotsFor(
         index: _index,
+        levelCode: 'A1',
         canDoIds: const [
           'A1.U1.PRODUCTION.INTRODUCE_SELF',
           'A1.U1.INTERACTION.ASK_NAME',

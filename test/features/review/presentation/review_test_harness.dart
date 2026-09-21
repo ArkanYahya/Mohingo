@@ -115,11 +115,22 @@ Future<void> seedVocabulary(
 }
 
 /// Pumps [start] ('/review' or '/review/session') inside a router with
-/// stub pages for everything the Review tab links to. [seed] runs first.
+/// stub pages for everything the Review tab links to, with both levels of
+/// the shipped catalogue standing up. [seed] runs first.
+///
+/// [currentLevelId] is the level the learner is enrolled in — seeded the
+/// way `LevelSelectionController.select` would. Review spans every level
+/// the learner has reached, so this also decides which levels' items it can
+/// resolve.
+///
+/// [a2Fails] makes A2's bundle fail to load, the way a missing or
+/// unparseable asset would: the tab must still show A1's items.
 Future<(ProviderContainer, AppDatabase, AppLocalizations)> pumpReview(
   WidgetTester tester, {
   String start = '/review',
   Future<void> Function(AppDatabase db, int learnerId)? seed,
+  String currentLevelId = kBaseLevelId,
+  bool a2Fails = false,
 }) async {
   tester.view.physicalSize = const Size(800, 2400);
   tester.view.devicePixelRatio = 1;
@@ -133,12 +144,18 @@ Future<(ProviderContainer, AppDatabase, AppLocalizations)> pumpReview(
     overrides: [
       sharedPreferencesProvider.overrideWithValue(prefs),
       appDatabaseProvider.overrideWithValue(db),
+      levelCatalogProvider.overrideWithValue(twoLevelTestCatalog),
       courseContentProvider('a1').overrideWith((ref) async => reviewTestIndex),
+      courseContentProvider('a2').overrideWith((ref) async {
+        if (a2Fails) throw StateError('A2 bundle failed to load');
+        return reviewTestA2Index;
+      }),
       textToSpeechServiceProvider.overrideWithValue(FakeTextToSpeechService()),
     ],
   );
   addTearDown(container.dispose);
   final learner = await container.read(currentLearnerProvider.future);
+  await seedCurrentLevel(db, learner.id, currentLevelId);
   if (seed != null) await seed(db, learner.id);
 
   final router = GoRouter(

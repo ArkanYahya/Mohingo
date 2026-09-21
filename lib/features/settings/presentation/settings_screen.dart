@@ -840,7 +840,8 @@ class _ResetProgressRow extends ConsumerWidget {
     ref.invalidate(allLessonProgressProvider);
     ref.invalidate(allVocabularyReviewStateProvider);
     ref.invalidate(allGrammarReviewStateProvider);
-    ref.invalidate(weakObjectivesProvider);
+    ref.invalidate(reviewContentProvider);
+    ref.invalidate(weakSpotsProvider);
     ref.invalidate(dueVocabularyProvider);
     ref.invalidate(currentLevelIdProvider);
     // A family: invalidating the family itself clears every already-built

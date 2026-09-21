@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../content/index/course_content_index.dart';
-import '../../../content/providers/course_content_providers.dart';
 import '../../../core/l10n/generated/app_localizations.dart';
 import '../../../core/l10n/skill_label.dart';
 import '../../../core/theme/app_tokens.dart';
@@ -16,6 +14,8 @@ import '../../lesson_player/presentation/widgets/activity_eyebrow.dart';
 import '../../vocabulary/providers/vocabulary_providers.dart';
 import '../domain/next_review.dart';
 import '../domain/practice_set.dart';
+import '../domain/review_card.dart';
+import '../domain/review_content.dart';
 import '../domain/weak_spots.dart';
 import '../providers/review_providers.dart';
 
@@ -27,6 +27,11 @@ import '../providers/review_providers.dart';
 /// lesson that teaches them; tiles into the words and grammar lists; and
 /// the learner's saved items.
 ///
+/// This is the one tab that does **not** follow the learner's current
+/// level: everything here spans every level they have reached, because an
+/// A2 learner has to keep meeting A1's words in spaced review. See
+/// [ReviewContent] and docs/adr/0006-multiple-levels.md.
+///
 /// Vocabulary-memory scheduling (the spaced-review "due" queue) is kept
 /// entirely separate from communicative mastery (weak objectives, evidence
 /// from real lesson activities) — remembering a flashcard never proves
@@ -36,14 +41,14 @@ class ReviewHomeScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final contentAsync = ref.watch(courseContentProvider('a1'));
+    final contentAsync = ref.watch(reviewContentProvider);
     return Scaffold(
       body: SafeArea(
         bottom: false,
         child: contentAsync.when(
           loading: () => const Center(child: CircularProgressIndicator()),
           error: (error, _) => Center(child: Text('$error')),
-          data: (index) => _ReviewBody(index: index),
+          data: (content) => _ReviewBody(content: content),
         ),
       ),
     );
@@ -51,9 +56,9 @@ class ReviewHomeScreen extends ConsumerWidget {
 }
 
 class _ReviewBody extends ConsumerWidget {
-  const _ReviewBody({required this.index});
+  const _ReviewBody({required this.content});
 
-  final CourseContentIndex index;
+  final ReviewContent content;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -61,23 +66,22 @@ class _ReviewBody extends ConsumerWidget {
     final tokens = theme.extension<AppTokens>()!;
     final l10n = AppLocalizations.of(context)!;
     final due = ref.watch(dueVocabularyProvider).value;
+    // The same list the session builds from, so the count on this tab is
+    // never a promise the session can't keep.
+    final cards = due == null
+        ? null
+        : reviewCardsFor(content: content, due: due);
     final vocabState =
         ref.watch(allVocabularyReviewStateProvider).value ?? const [];
     final grammarState =
         ref.watch(allGrammarReviewStateProvider).value ?? const [];
-    final weakIds = ref.watch(weakObjectivesProvider).value ?? const [];
-    final weakSpots = weakSpotsFor(index: index, canDoIds: weakIds);
+    final weakSpots = ref.watch(weakSpotsProvider).value ?? const <WeakSpot>[];
 
     final saved = <_SavedItem>[
       for (final s in vocabState)
-        if (s.isFavorite) ?_SavedItem.vocabulary(index, s),
+        if (s.isFavorite) ?_SavedItem.vocabulary(content, s),
       for (final s in grammarState)
-        if (s.isFavorite && index.grammarById[s.grammarId] != null)
-          _SavedItem(
-            text: index.grammarById[s.grammarId]!.form,
-            arabic: index.grammarById[s.grammarId]!.meaningAr,
-            route: '/review/grammar/${s.grammarId}',
-          ),
+        if (s.isFavorite) ?_SavedItem.grammar(content, s),
     ];
 
     return ListView(
@@ -102,14 +106,14 @@ class _ReviewBody extends ConsumerWidget {
           ),
         ),
         const SizedBox(height: AppSpace.md),
-        if (due == null)
+        if (cards == null)
           const SizedBox.shrink()
-        else if (due.isEmpty)
+        else if (cards.isEmpty)
           _CaughtUpCard(
             daysUntilNext: daysUntilNextReview(vocabState, DateTime.now()),
           )
         else
-          _DueCard(index: index, due: due),
+          _DueCard(cards: cards),
         _Section(
           overline: l10n.reviewWeakSpotsOverline,
           body: weakSpots.isEmpty
@@ -133,7 +137,7 @@ class _ReviewBody extends ConsumerWidget {
                   title: l10n.reviewWordsTile,
                   meta: l10n.reviewWordsTileMeta(
                     vocabState.length,
-                    index.bundle.lexicon.length + index.bundle.chunks.length,
+                    content.wordAndPhraseCount,
                   ),
                   onTap: () => context.push('/review/vocabulary'),
                 ),
@@ -143,7 +147,7 @@ class _ReviewBody extends ConsumerWidget {
                 child: _BrowseTile(
                   icon: Icons.account_tree_outlined,
                   title: l10n.grammarSectionTitle,
-                  meta: l10n.reviewGrammarTileMeta(index.bundle.grammar.length),
+                  meta: l10n.reviewGrammarTileMeta(content.grammarCount),
                   onTap: () => context.push('/review/grammar'),
                 ),
               ),
@@ -160,35 +164,26 @@ class _ReviewBody extends ConsumerWidget {
   }
 }
 
-/// A due word or phrase's English text.
-String? _dueLabel(CourseContentIndex index, VocabularyReviewStateData s) =>
-    s.lexiconId != null
-    ? index.lexiconById[s.lexiconId]?.headword
-    : index.chunkById[s.chunkId]?.text;
-
 /// The Review tab's one emphasised card: how many words and phrases are
 /// due, the first few, roughly how long, and Start review.
+///
+/// [cards] is exactly what Start review opens, whatever levels the items
+/// come from — see [reviewCardsFor].
 class _DueCard extends StatelessWidget {
-  const _DueCard({required this.index, required this.due});
+  const _DueCard({required this.cards});
 
-  final CourseContentIndex index;
-  final List<VocabularyReviewStateData> due;
+  final List<ReviewCard> cards;
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final tokens = theme.extension<AppTokens>()!;
     final l10n = AppLocalizations.of(context)!;
-    final sorted = [...due]
-      ..sort(
-        (a, b) => (a.dueAt ?? DateTime(0)).compareTo(b.dueAt ?? DateTime(0)),
-      );
-    final labels = [for (final s in sorted) ?_dueLabel(index, s)];
-    final shown = labels.take(3).map((t) => '\u2068$t\u2069').join(' · ');
-    final more = labels.length > 3
-        ? ' ${l10n.reviewDueMore(labels.length - 3)}'
+    final shown = cards.take(3).map((c) => '\u2068${c.text}\u2069').join(' · ');
+    final more = cards.length > 3
+        ? ' ${l10n.reviewDueMore(cards.length - 3)}'
         : '';
-    final minutes = (due.length * 20 / 60).ceil().clamp(1, 999);
+    final minutes = (cards.length * 20 / 60).ceil().clamp(1, 999);
 
     return DecoratedBox(
       decoration: BoxDecoration(
@@ -207,7 +202,7 @@ class _DueCard extends StatelessWidget {
             ),
             const SizedBox(height: AppSpace.xxs),
             Text(
-              l10n.reviewDueCount(due.length),
+              l10n.reviewDueCount(cards.length),
               style: theme.textTheme.titleLarge?.copyWith(
                 color: tokens.textPrimary,
               ),
@@ -389,8 +384,10 @@ class _SectionState extends State<_Section> {
   }
 }
 
-/// A lesson whose goals need more practice: its title and Arabic, unit and
-/// skills; tapping opens a practice activity from it.
+/// A lesson whose goals need more practice: its title and Arabic, the
+/// level and unit it sits in, and the skills it practises; tapping opens a
+/// practice activity from it. The level is named because weak spots come
+/// from every level the learner has units in progress in at once.
 class _WeakSpotRow extends StatelessWidget {
   const _WeakSpotRow({required this.spot});
 
@@ -435,7 +432,11 @@ class _WeakSpotRow extends StatelessWidget {
               child: _TwoLanguageText(
                 english: spot.lesson.title,
                 arabic: spot.lesson.titleAr,
-                meta: l10n.reviewWeakSpotMeta(spot.unitNumber, skills),
+                meta: l10n.reviewWeakSpotMeta(
+                  spot.levelCode,
+                  spot.unitNumber,
+                  skills,
+                ),
               ),
             ),
             if (practice.activities.isNotEmpty)
@@ -569,13 +570,15 @@ class _SavedItem {
   final String arabic;
   final String route;
 
-  /// A saved word or phrase, or null if its id no longer resolves.
+  /// A saved word or phrase, or null when its level isn't loaded or its id
+  /// no longer resolves there.
   static _SavedItem? vocabulary(
-    CourseContentIndex index,
+    ReviewContent content,
     VocabularyReviewStateData s,
   ) {
-    if (s.lexiconId != null) {
-      final item = index.lexiconById[s.lexiconId];
+    final lexiconId = s.lexiconId;
+    if (lexiconId != null) {
+      final item = content.lexicon(lexiconId);
       if (item == null) return null;
       return _SavedItem(
         text: item.headword,
@@ -583,12 +586,25 @@ class _SavedItem {
         route: '/review/vocabulary/${item.id}',
       );
     }
-    final item = index.chunkById[s.chunkId];
+    final chunkId = s.chunkId;
+    if (chunkId == null) return null;
+    final item = content.chunk(chunkId);
     if (item == null) return null;
     return _SavedItem(
       text: item.text,
       arabic: item.arabic,
       route: '/review/chunks/${item.id}',
+    );
+  }
+
+  /// A saved grammar form — see [vocabulary].
+  static _SavedItem? grammar(ReviewContent content, GrammarReviewStateData s) {
+    final item = content.grammar(s.grammarId);
+    if (item == null) return null;
+    return _SavedItem(
+      text: item.form,
+      arabic: item.meaningAr,
+      route: '/review/grammar/${item.id}',
     );
   }
 }

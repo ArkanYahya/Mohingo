@@ -842,8 +842,8 @@ class AppLocalizationsEn extends AppLocalizations {
       'Goals in the units you\'re working on that need more practice';
 
   @override
-  String reviewWeakSpotMeta(int unit, String skills) {
-    return 'Unit $unit · $skills';
+  String reviewWeakSpotMeta(String level, int unit, String skills) {
+    return 'Level $level · Unit $unit · $skills';
   }
 
   @override

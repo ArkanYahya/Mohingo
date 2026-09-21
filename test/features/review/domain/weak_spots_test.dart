@@ -19,6 +19,7 @@ void main() {
       'practise', () {
     final spots = weakSpotsFor(
       index: _index,
+      levelCode: 'A1',
       canDoIds: const ['A1.U1.PRODUCTION.INTRODUCE_SELF'],
     );
 
@@ -40,6 +41,7 @@ void main() {
   test('goals taught by the same lesson are one weak spot', () {
     final spots = weakSpotsFor(
       index: _index,
+      levelCode: 'A1',
       canDoIds: const [
         'A1.U1.PRODUCTION.INTRODUCE_SELF',
         'A1.U1.INTERACTION.ASK_NAME',
@@ -53,6 +55,7 @@ void main() {
   test('listening-only goals name their lesson and skill', () {
     final spot = weakSpotsFor(
       index: _index,
+      levelCode: 'A1',
       canDoIds: const ['A1.U1.LISTENING.UNDERSTAND_PERSONAL_INFO'],
     ).single;
 
@@ -62,7 +65,11 @@ void main() {
 
   test('an id no lesson teaches is left out rather than shown raw', () {
     expect(
-      weakSpotsFor(index: _index, canDoIds: const ['A1.NOT.A.REAL.GOAL']),
+      weakSpotsFor(
+        index: _index,
+        levelCode: 'A1',
+        canDoIds: const ['A1.NOT.A.REAL.GOAL'],
+      ),
       isEmpty,
     );
   });
@@ -70,6 +77,7 @@ void main() {
   test('keeps the order it was given', () {
     final spots = weakSpotsFor(
       index: _index,
+      levelCode: 'A1',
       canDoIds: const [
         'A1.U1.PRODUCTION.STATE_RESIDENCE',
         'A1.U1.PRODUCTION.INTRODUCE_SELF',

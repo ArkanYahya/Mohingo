@@ -9,6 +9,7 @@ import '../../../content/models/domain_definitions.dart';
 class WeakSpot {
   const WeakSpot({
     required this.lesson,
+    required this.levelCode,
     required this.unitNumber,
     required this.canDoIds,
     required this.skills,
@@ -17,7 +18,13 @@ class WeakSpot {
   /// The first non-mission lesson that teaches the goals.
   final Lesson lesson;
 
-  /// The lesson's unit's 1-based position in the course.
+  /// The CEFR code of the level the lesson belongs to (`"A2"`). Review
+  /// shows weak spots from every level with units in progress at once, so
+  /// [unitNumber] alone would be ambiguous between A1's third unit and
+  /// A2's.
+  final String levelCode;
+
+  /// The lesson's unit's 1-based position in its own level.
   final int unitNumber;
 
   final List<String> canDoIds;
@@ -33,9 +40,13 @@ bool _isSpeaking(Skill s) =>
 
 /// Groups [canDoIds] into [WeakSpot]s by the lesson that teaches each, in
 /// the order the ids first appear. An id no lesson teaches is left out.
+///
+/// One level at a time: [index] and [levelCode] are one level's, and a
+/// caller showing weak spots from several levels calls this once per level.
 List<WeakSpot> weakSpotsFor({
   required CourseContentIndex index,
   required List<String> canDoIds,
+  required String levelCode,
 }) {
   final units = index.bundle.units;
   final byLessonId = <String, List<String>>{};
@@ -64,13 +75,20 @@ List<WeakSpot> weakSpotsFor({
 
   return [
     for (final MapEntry(key: lessonId, value: ids) in byLessonId.entries)
-      _spot(index, lessonById[lessonId]!, unitNumberByLessonId[lessonId]!, ids),
+      _spot(
+        index,
+        lessonById[lessonId]!,
+        levelCode,
+        unitNumberByLessonId[lessonId]!,
+        ids,
+      ),
   ];
 }
 
 WeakSpot _spot(
   CourseContentIndex index,
   Lesson lesson,
+  String levelCode,
   int unitNumber,
   List<String> canDoIds,
 ) {
@@ -86,6 +104,7 @@ WeakSpot _spot(
   }
   return WeakSpot(
     lesson: lesson,
+    levelCode: levelCode,
     unitNumber: unitNumber,
     canDoIds: canDoIds,
     skills: skills,

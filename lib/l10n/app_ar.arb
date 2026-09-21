@@ -210,7 +210,7 @@
   "reviewCaughtUpEmpty": "تعود إليك هنا الكلمات والعبارات من دروسك في اليوم التالي لتعلّمها.",
   "reviewWeakSpotsOverline": "تدرّب على نقاط ضعفك",
   "reviewWeakSpotsBody": "أهداف في الوحدات التي تدرسها تحتاج إلى مزيد من التدريب",
-  "reviewWeakSpotMeta": "الوحدة {unit} · {skills}",
+  "reviewWeakSpotMeta": "المستوى {level} · الوحدة {unit} · {skills}",
   "reviewShowAll": "الكل ({count})",
   "reviewShowFewer": "عرض أقل",
   "reviewBrowseOverline": "تصفّح",

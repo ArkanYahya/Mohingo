@@ -1358,11 +1358,11 @@ abstract class AppLocalizations {
   /// **'Goals in the units you\'re working on that need more practice'**
   String get reviewWeakSpotsBody;
 
-  /// Under a weak spot's lesson title: its unit and the skills it practises.
+  /// Under a weak spot's lesson title: its level, its unit within that level, and the skills it practises. Review shows weak spots from every level at once, so the unit number alone would be ambiguous.
   ///
   /// In en, this message translates to:
-  /// **'Unit {unit} · {skills}'**
-  String reviewWeakSpotMeta(int unit, String skills);
+  /// **'Level {level} · Unit {unit} · {skills}'**
+  String reviewWeakSpotMeta(String level, int unit, String skills);
 
   /// Expands a shortened Review tab list to show every item.
   ///
@@ -1388,13 +1388,13 @@ abstract class AppLocalizations {
   /// **'Words & phrases'**
   String get reviewWordsTile;
 
-  /// Under the Words & phrases tile: how many are in spaced review out of all.
+  /// Under the Words & phrases tile: how many are in spaced review, out of every word and phrase in every level the learner has reached.
   ///
   /// In en, this message translates to:
   /// **'{inReview} of {total} in review'**
   String reviewWordsTileMeta(int inReview, int total);
 
-  /// Under the Grammar tile: how many grammar forms the course has.
+  /// Under the Grammar tile: how many grammar forms there are across every level the learner has reached.
   ///
   /// In en, this message translates to:
   /// **'{count, plural, =1{1 form} other{{count} forms}}'**
