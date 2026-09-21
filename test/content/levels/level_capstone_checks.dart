@@ -3,30 +3,34 @@ import 'package:mohingo/content/models/course_bundle.dart';
 import 'package:mohingo/content/models/domain_definitions.dart';
 import 'package:mohingo/content/models/evaluation_spec.dart';
 
-/// The A2 capstone content rules, as pure functions over a parsed bundle.
+import 'level_gate_config.dart';
+
+/// A level's capstone content rules, as pure functions over a parsed
+/// bundle and that level's gate config.
 ///
-/// They live here rather than inline in `a2_capstones_test.dart` because two
-/// files have to apply them: that file, which runs them gate by gate on every
-/// `flutter test`, and `a2_masterable_test.dart`'s release rule, which must
-/// re-run them the day A2 is marked `available`. Deleting this file breaks
-/// both, which is the point — the release gate cannot be satisfied by a level
-/// whose capstone checks no longer exist.
+/// They live here rather than inline in `level_capstones_test.dart` because
+/// two files have to apply them: that file, which runs them gate by gate on
+/// every `flutter test`, and `level_masterable_test.dart`'s release rule,
+/// which must re-run them the day a level is marked `available`. Deleting
+/// this file breaks both, which is the point — the release gate cannot be
+/// satisfied by a level whose capstone checks no longer exist.
 ///
 /// Each function returns a list of human-readable offenders rather than
 /// calling `expect` itself, so the same rule reads identically from a
 /// focused gate and from the release gate, and so a failure always names the
 /// activity and the value that broke it.
 ///
-/// Scope note: `bundle.units` gates (see `a2_finished_units.dart`) walk the
-/// twelve units. Nothing there ever looks at `finalMission` or
-/// `finalAssessment`, so without this file the two capstones — the only two
-/// objects a learner must clear to leave A2 — are ungated.
+/// Scope note: every other gate in this directory walks
+/// `LevelGateConfig.finishedUnits()`. Nothing there ever looks at
+/// `finalMission` or `finalAssessment`, so without this file a level's two
+/// capstones — the only two objects a learner must clear to leave it — are
+/// ungated.
 
 /// Arabic script. A field that merely repeats its English string — the
 /// cheapest way to pass a "has Arabic" check — never matches this.
 final _arabic = RegExp(r'[؀-ۿ]');
 
-/// Word counting, matching `a2_design_limits_test.dart`'s `_words`.
+/// Word counting, matching `level_design_limits_test.dart`'s `_words`.
 final _wordPattern = RegExp(r"[A-Za-z']+");
 
 /// Overlap tokens. Broader than [_wordPattern] on purpose: a reused run like
@@ -35,23 +39,23 @@ final _wordPattern = RegExp(r"[A-Za-z']+");
 final _tokenPattern = RegExp(r"[a-z0-9']+");
 
 /// The run length the unseen-input gate treats as reuse. Six words is long
-/// enough that ordinary A2 phrasing ("what time does the bus leave") does
+/// enough that ordinary phrasing at this level ("what time does the bus leave") does
 /// not trip it by coincidence, and short enough to catch a sentence lifted
 /// from a unit and lightly edited at its ends.
 const capstoneOverlapWindow = 6;
 
-/// The pass mark both A2 exits share, matching A1's. Both are keyword-marked
-/// by the same evaluator, so "passed the A2 mission" and "passed the A2
-/// assessment" have to mean the same thing. The import shipped 0.75; it was
-/// lowered deliberately, and this constant is what stops it drifting back.
-const capstonePassMark = 0.6;
+/// The pass mark a level's two exits share. Both are keyword-marked by the
+/// same evaluator, so "passed the mission" and "passed the assessment" have
+/// to mean the same thing. A2's import shipped 0.75; it was lowered to
+/// A1's 0.6 deliberately, and `LevelGateConfig.capstonePassMark` is what
+/// stops it drifting back.
 
 int _words(String? value) => _wordPattern.allMatches(value ?? '').length;
 
 String? _string(Object? value) => value is String ? value : null;
 
 /// One capstone activity, labelled by where it lives, so a violation reads
-/// `finalAssessment.speaking A2-FA-SPEAK-01 ...` rather than just an id.
+/// `finalAssessment.speaking <id> ...` rather than just an id.
 typedef CapstoneActivity = ({String where, Activity activity});
 
 /// Every activity in both capstones: the mission's flat `activities` list,
@@ -72,7 +76,10 @@ String _label(CapstoneActivity e) => '${e.where} ${e.activity.id}';
 /// An empty mission, an empty section, or a capstone with no productive,
 /// mediation or listening work in it would satisfy all of them while
 /// asserting nothing — which is exactly the shape a skeleton capstone has.
-List<String> capstoneStructureViolations(CourseBundle bundle) {
+List<String> capstoneStructureViolations(
+  CourseBundle bundle,
+  LevelGateConfig gate,
+) {
   final out = <String>[];
   final mission = bundle.finalMission;
   if (mission.activities.isEmpty) {
@@ -94,18 +101,19 @@ List<String> capstoneStructureViolations(CourseBundle bundle) {
   bool has(bool Function(Activity a) test) => all.any((e) => test(e.activity));
   if (!has((a) => a is SpeakActivity || a is WriteActivity)) {
     out.add(
-      'the A2 capstones contain no speak/write task — the grader gate '
+      '${gate.levelId} capstones contain no speak/write task — the grader '
+      'gate '
       'would assert nothing',
     );
   }
   if (!has((a) => a.skill == Skill.mediation)) {
-    out.add('the A2 capstones contain no mediation task');
+    out.add('${gate.levelId} capstones contain no mediation task');
   }
   if (!has((a) => a.skill == Skill.spokenInteraction)) {
-    out.add('the A2 capstones contain no spokenInteraction task');
+    out.add('${gate.levelId} capstones contain no spokenInteraction task');
   }
   if (!has((a) => a.skill == Skill.listening)) {
-    out.add('the A2 capstones contain no listening task');
+    out.add('${gate.levelId} capstones contain no listening task');
   }
   return out;
 }
@@ -129,7 +137,10 @@ List<String> capstoneStructureViolations(CourseBundle bundle) {
 /// rule. A section that genuinely should not gate the result declares
 /// `"optional": true` on itself — an authored statement of intent, not the
 /// silence of an omission.
-List<String> capstoneDecisionRuleViolations(CourseBundle bundle) {
+List<String> capstoneDecisionRuleViolations(
+  CourseBundle bundle,
+  LevelGateConfig gate,
+) {
   final out = <String>[];
   final assessment = bundle.finalAssessment;
   final required = assessment.requiredSkills;
@@ -174,7 +185,10 @@ List<String> capstoneDecisionRuleViolations(CourseBundle bundle) {
 /// Non-empty is not the bar: copying the English into the Arabic field passes
 /// a presence check and ships a monolingual exit test, so the Arabic has to
 /// contain Arabic script.
-List<String> capstoneBilingualViolations(CourseBundle bundle) {
+List<String> capstoneBilingualViolations(
+  CourseBundle bundle,
+  LevelGateConfig gate,
+) {
   final out = <String>[];
   void check(String label, String? value) {
     final ar = value?.trim() ?? '';
@@ -208,7 +222,10 @@ List<String> capstoneBilingualViolations(CourseBundle bundle) {
 /// both needed: `EvaluationSpec.fromJson` returns null for a malformed spec
 /// rather than throwing, so an item can carry an `evaluation` object, satisfy
 /// a JSON-shape check, and still reach the app ungradeable.
-List<String> capstoneGraderViolations(CourseBundle bundle) {
+List<String> capstoneGraderViolations(
+  CourseBundle bundle,
+  LevelGateConfig gate,
+) {
   final out = <String>[];
   for (final e in capstoneActivities(bundle)) {
     final a = e.activity;
@@ -283,10 +300,13 @@ List<String> capstoneGraderViolations(CourseBundle bundle) {
 /// at all.
 ///
 /// The reading rule is stricter here than the equivalent unit gate in
-/// `a2_answerable_test.dart`, which accepts a lesson-level `readingText` as
+/// `level_answerable_test.dart`, which accepts a lesson-level `readingText` as
 /// the material. A capstone item has no lesson behind it, so the text has to
 /// be on the item.
-List<String> capstoneAnswerableViolations(CourseBundle bundle) {
+List<String> capstoneAnswerableViolations(
+  CourseBundle bundle,
+  LevelGateConfig gate,
+) {
   final out = <String>[];
   for (final e in capstoneActivities(bundle)) {
     final a = e.activity;
@@ -319,28 +339,34 @@ List<String> capstoneAnswerableViolations(CourseBundle bundle) {
 
 /// The capstones' input and output lengths.
 ///
-/// An exit test at the top of A2 uses the level's longest band: listening
+/// An exit test uses the level's longest band: listening
 /// 70-120 words, notices and source cards 15-60, and a single writing guide
 /// of 70-90 for both capstones so the two exits demand the same amount of
 /// writing. A writing task with no `wordGuide` at all is a violation too —
 /// otherwise deleting the field is the cheapest way to satisfy this gate.
-List<String> capstoneLengthViolations(CourseBundle bundle) {
+List<String> capstoneLengthViolations(
+  CourseBundle bundle,
+  LevelGateConfig gate,
+) {
   final out = <String>[];
   for (final e in capstoneActivities(bundle)) {
     final a = e.activity;
     final label = _label(e);
     if (a.skill == Skill.listening) {
       final words = _words(_string(a.raw['audioTranscript']));
-      if (words < 70 || words > 120) {
-        out.add('$label transcript is $words words, outside 70-120');
+      final band = gate.capstoneListeningWords;
+      if (!band.contains(words)) {
+        out.add('$label transcript is $words words, outside $band');
       }
     }
     for (final key in ['sourceText', 'sourceCard']) {
       final value = _string(a.raw[key]);
       if (value == null || value.trim().isEmpty) continue;
       final words = _words(value);
-      if (words < 15 || words > 60) {
-        out.add('$label.$key is $words words, outside 15-60');
+      if (!gate.capstoneSourceWords.contains(words)) {
+        out.add(
+          '$label.$key is $words words, outside ${gate.capstoneSourceWords}',
+        );
       }
     }
     final guide = a.raw['wordGuide'];
@@ -349,11 +375,12 @@ List<String> capstoneLengthViolations(CourseBundle bundle) {
       continue;
     }
     if (guide == null) continue;
+    final want = gate.capstoneWordGuide;
     if (guide is! List ||
         guide.length != 2 ||
-        guide[0] != 70 ||
-        guide[1] != 90) {
-      out.add('$label wordGuide is $guide, not [70, 90]');
+        guide[0] != want[0] ||
+        guide[1] != want[1]) {
+      out.add('$label wordGuide is $guide, not $want');
     }
   }
   return out;
@@ -371,13 +398,16 @@ List<String> capstoneLengthViolations(CourseBundle bundle) {
 /// `minimum...` added to the assessment's scoring block has to be 0.6 too.
 /// Integer minimums (`minimumCompletedTasks: 3`) are counts, not scores, and
 /// are deliberately left alone.
-List<String> capstonePassMarkViolations(CourseBundle bundle) {
+List<String> capstonePassMarkViolations(
+  CourseBundle bundle,
+  LevelGateConfig gate,
+) {
   final out = <String>[];
   final mission = bundle.finalMission;
-  if (mission.minimumCriterionScore != capstonePassMark) {
+  if (mission.minimumCriterionScore != gate.capstonePassMark) {
     out.add(
       '${mission.id} scoring.minimumCriterionScore is '
-      '${mission.minimumCriterionScore}, not $capstonePassMark',
+      '${mission.minimumCriterionScore}, not ${gate.capstonePassMark}',
     );
   }
   final missionRaw = (mission.raw['scoring'] as Map?)?['minimumCriterionScore'];
@@ -409,20 +439,20 @@ List<String> capstonePassMarkViolations(CourseBundle bundle) {
         out.add(
           '${assessment.id} scoring.$configKey.$fieldKey is missing — '
           'minimumScoreForSection("$sectionKey") would silently fall back '
-          'to $capstonePassMark',
+          'to ${gate.capstonePassMark}',
         );
-      } else if (value.toDouble() != capstonePassMark) {
+      } else if (value.toDouble() != gate.capstonePassMark) {
         out.add(
           '${assessment.id} scoring.$configKey.$fieldKey is $value, '
-          'not $capstonePassMark',
+          'not ${gate.capstonePassMark}',
         );
       }
     }
     final resolved = assessment.minimumScoreForSection(sectionKey);
-    if (resolved != capstonePassMark) {
+    if (resolved != gate.capstonePassMark) {
       out.add(
         '${assessment.id} minimumScoreForSection("$sectionKey") '
-        'resolves to $resolved, not $capstonePassMark',
+        'resolves to $resolved, not ${gate.capstonePassMark}',
       );
     }
   }
@@ -439,10 +469,10 @@ List<String> capstonePassMarkViolations(CourseBundle bundle) {
     if (!name.startsWith('minimum')) return;
     if (checkedPaths.contains(path)) return;
     final isFraction = node != node.truncate();
-    if (isFraction && node.toDouble() != capstonePassMark) {
+    if (isFraction && node.toDouble() != gate.capstonePassMark) {
       out.add(
         '${assessment.id} scoring.$path is $node, '
-        'not $capstonePassMark',
+        'not ${gate.capstonePassMark}',
       );
     }
   }
@@ -459,7 +489,10 @@ List<String> capstonePassMarkViolations(CourseBundle bundle) {
 /// source card or partner turn. Unit partner turns are in the haystack
 /// deliberately — a line the learner's practice partner said is material they
 /// have already met, the same as a conversation line.
-List<String> capstoneUnseenInputViolations(CourseBundle bundle) {
+List<String> capstoneUnseenInputViolations(
+  CourseBundle bundle,
+  LevelGateConfig gate,
+) {
   Iterable<String> shingles(String? text) sync* {
     final tokens = _tokenPattern
         .allMatches((text ?? '').toLowerCase())
@@ -524,14 +557,15 @@ List<String> capstoneUnseenInputViolations(CourseBundle bundle) {
   return out;
 }
 
-/// Every A2 capstone rule in one list, for the release gate.
-List<String> allCapstoneViolations(CourseBundle bundle) => [
-  ...capstoneStructureViolations(bundle),
-  ...capstoneDecisionRuleViolations(bundle),
-  ...capstoneBilingualViolations(bundle),
-  ...capstoneGraderViolations(bundle),
-  ...capstoneAnswerableViolations(bundle),
-  ...capstoneLengthViolations(bundle),
-  ...capstonePassMarkViolations(bundle),
-  ...capstoneUnseenInputViolations(bundle),
-];
+/// Every capstone rule in one list, for the release gate.
+List<String> allCapstoneViolations(CourseBundle bundle, LevelGateConfig gate) =>
+    [
+      ...capstoneStructureViolations(bundle, gate),
+      ...capstoneDecisionRuleViolations(bundle, gate),
+      ...capstoneBilingualViolations(bundle, gate),
+      ...capstoneGraderViolations(bundle, gate),
+      ...capstoneAnswerableViolations(bundle, gate),
+      ...capstoneLengthViolations(bundle, gate),
+      ...capstonePassMarkViolations(bundle, gate),
+      ...capstoneUnseenInputViolations(bundle, gate),
+    ];
