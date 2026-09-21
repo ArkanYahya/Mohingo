@@ -966,18 +966,6 @@
       ]
     },
     {
-      "id": "A2.G.FUTURE_EVENT_REVIEW",
-      "form": "will / going to / present continuous review",
-      "meaningAr": "مراجعة صيغ المستقبل للفعاليات",
-      "introducedIn": "A2-U12-L3",
-      "examples": [
-        {
-          "en": "We're meeting at six, and I'll bring drinks.",
-          "ar": "سنلتقي في السادسة وسأحضر المشروبات."
-        }
-      ]
-    },
-    {
       "id": "A2.G.ACCEPT_DECLINE_REASONS",
       "form": "accepting and declining with because / but",
       "meaningAr": "قبول الدعوة ورفضها مع سبب",
@@ -2073,46 +2061,6 @@
       ]
     },
     {
-      "id": "A2.LEX.FUNNIEST_ADJ01",
-      "headword": "funny",
-      "partOfSpeech": "adjective",
-      "arabic": "مضحك",
-      "cefr": "A2",
-      "receptive": true,
-      "productive": true,
-      "meaning": "funny",
-      "examples": [
-        {
-          "en": "She is the funniest person in our group.",
-          "ar": "هي أكثر شخص مضحك في مجموعتنا."
-        }
-      ],
-      "introducedIn": "A2-U3-L4",
-      "recycledIn": [
-        "A2-U5-L3"
-      ]
-    },
-    {
-      "id": "A2.LEX.KIND_ADJ01",
-      "headword": "kind",
-      "partOfSpeech": "adjective",
-      "arabic": "لطيف",
-      "cefr": "A2",
-      "receptive": true,
-      "productive": true,
-      "meaning": "kind",
-      "examples": [
-        {
-          "en": "Ali is the kindest neighbour.",
-          "ar": "علي ألطف جار."
-        }
-      ],
-      "introducedIn": "A2-U3-L4",
-      "recycledIn": [
-        "A2-U5-L3"
-      ]
-    },
-    {
       "id": "A2.LEX.ACTIVE_ADJ01",
       "headword": "active",
       "partOfSpeech": "adjective",
@@ -2794,66 +2742,6 @@
       ]
     },
     {
-      "id": "A2.LEX.ORDER_N02",
-      "headword": "order",
-      "partOfSpeech": "noun",
-      "arabic": "طلب",
-      "cefr": "A2",
-      "receptive": true,
-      "productive": true,
-      "meaning": "order",
-      "examples": [
-        {
-          "en": "Our order is incomplete.",
-          "ar": "طلبنا غير مكتمل."
-        }
-      ],
-      "introducedIn": "A2-U5-L4",
-      "recycledIn": [
-        "A2-U7-L3"
-      ]
-    },
-    {
-      "id": "A2.LEX.MISSING_ADJ01",
-      "headword": "missing",
-      "partOfSpeech": "adjective",
-      "arabic": "مفقود",
-      "cefr": "A2",
-      "receptive": true,
-      "productive": true,
-      "meaning": "missing",
-      "examples": [
-        {
-          "en": "One drink is missing.",
-          "ar": "مشروب واحد مفقود."
-        }
-      ],
-      "introducedIn": "A2-U5-L4",
-      "recycledIn": [
-        "A2-U7-L3"
-      ]
-    },
-    {
-      "id": "A2.LEX.WRONG_ADJ01",
-      "headword": "wrong",
-      "partOfSpeech": "adjective",
-      "arabic": "خطأ",
-      "cefr": "A2",
-      "receptive": true,
-      "productive": true,
-      "meaning": "wrong",
-      "examples": [
-        {
-          "en": "This is the wrong dish.",
-          "ar": "هذا الطبق الخطأ."
-        }
-      ],
-      "introducedIn": "A2-U5-L4",
-      "recycledIn": [
-        "A2-U7-L3"
-      ]
-    },
-    {
       "id": "A2.LEX.REPLACE_V01",
       "headword": "replace",
       "partOfSpeech": "verb",
@@ -2866,26 +2754,6 @@
         {
           "en": "Could you replace the soup?",
           "ar": "هل يمكنك استبدال الحساء؟"
-        }
-      ],
-      "introducedIn": "A2-U5-L5",
-      "recycledIn": [
-        "A2-U8-L5"
-      ]
-    },
-    {
-      "id": "A2.LEX.BILL_N01",
-      "headword": "bill",
-      "partOfSpeech": "noun",
-      "arabic": "فاتورة",
-      "cefr": "A2",
-      "receptive": true,
-      "productive": true,
-      "meaning": "bill",
-      "examples": [
-        {
-          "en": "There is an extra item on the bill.",
-          "ar": "يوجد عنصر إضافي في الفاتورة."
         }
       ],
       "introducedIn": "A2-U5-L5",
@@ -3074,26 +2942,6 @@
       ]
     },
     {
-      "id": "A2.LEX.AVAILABLE_ADJ01",
-      "headword": "available",
-      "partOfSpeech": "adjective",
-      "arabic": "متاح",
-      "cefr": "A2",
-      "receptive": true,
-      "productive": true,
-      "meaning": "available",
-      "examples": [
-        {
-          "en": "Is a twin room available?",
-          "ar": "هل غرفة بسريرين متاحة؟"
-        }
-      ],
-      "introducedIn": "A2-U6-L2",
-      "recycledIn": [
-        "A2-U7-L1"
-      ]
-    },
-    {
       "id": "A2.LEX.DEPARTURE_N01",
       "headword": "departure",
       "partOfSpeech": "noun",
@@ -3149,46 +2997,6 @@
         }
       ],
       "introducedIn": "A2-U6-L3",
-      "recycledIn": [
-        "A2-U8-L3"
-      ]
-    },
-    {
-      "id": "A2.LEX.CANCEL_V01",
-      "headword": "cancel",
-      "partOfSpeech": "verb",
-      "arabic": "يلغي",
-      "cefr": "A2",
-      "receptive": true,
-      "productive": true,
-      "meaning": "cancel",
-      "examples": [
-        {
-          "en": "They may cancel the boat trip.",
-          "ar": "قد يلغون رحلة القارب."
-        }
-      ],
-      "introducedIn": "A2-U6-L4",
-      "recycledIn": [
-        "A2-U8-L3"
-      ]
-    },
-    {
-      "id": "A2.LEX.DELAY_N01",
-      "headword": "delay",
-      "partOfSpeech": "noun",
-      "arabic": "تأخير",
-      "cefr": "A2",
-      "receptive": true,
-      "productive": true,
-      "meaning": "delay",
-      "examples": [
-        {
-          "en": "There is a two-hour delay.",
-          "ar": "يوجد تأخير ساعتين."
-        }
-      ],
-      "introducedIn": "A2-U6-L4",
       "recycledIn": [
         "A2-U8-L3"
       ]
@@ -3354,26 +3162,6 @@
       ]
     },
     {
-      "id": "A2.LEX.COUGH_N01",
-      "headword": "cough",
-      "partOfSpeech": "noun",
-      "arabic": "سعال",
-      "cefr": "A2",
-      "receptive": true,
-      "productive": true,
-      "meaning": "cough",
-      "examples": [
-        {
-          "en": "I have a dry cough.",
-          "ar": "لدي سعال جاف."
-        }
-      ],
-      "introducedIn": "A2-U7-L1",
-      "recycledIn": [
-        "A2-U8-L1"
-      ]
-    },
-    {
       "id": "A2.LEX.REST_N01",
       "headword": "rest",
       "partOfSpeech": "noun",
@@ -3389,66 +3177,6 @@
         }
       ],
       "introducedIn": "A2-U7-L1",
-      "recycledIn": [
-        "A2-U8-L1"
-      ]
-    },
-    {
-      "id": "A2.LEX.MEDICINE_N01",
-      "headword": "medicine",
-      "partOfSpeech": "noun",
-      "arabic": "دواء",
-      "cefr": "A2",
-      "receptive": true,
-      "productive": true,
-      "meaning": "medicine",
-      "examples": [
-        {
-          "en": "Take the medicine after food.",
-          "ar": "تناول الدواء بعد الطعام."
-        }
-      ],
-      "introducedIn": "A2-U7-L2",
-      "recycledIn": [
-        "A2-U8-L1"
-      ]
-    },
-    {
-      "id": "A2.LEX.DOSE_N01",
-      "headword": "dose",
-      "partOfSpeech": "noun",
-      "arabic": "جرعة",
-      "cefr": "A2",
-      "receptive": true,
-      "productive": true,
-      "meaning": "dose",
-      "examples": [
-        {
-          "en": "Take one dose every eight hours.",
-          "ar": "تناول جرعة كل ثماني ساعات."
-        }
-      ],
-      "introducedIn": "A2-U7-L2",
-      "recycledIn": [
-        "A2-U8-L1"
-      ]
-    },
-    {
-      "id": "A2.LEX.APPOINTMENT_N01",
-      "headword": "appointment",
-      "partOfSpeech": "noun",
-      "arabic": "موعد",
-      "cefr": "A2",
-      "receptive": true,
-      "productive": true,
-      "meaning": "appointment",
-      "examples": [
-        {
-          "en": "I need a doctor's appointment.",
-          "ar": "أحتاج موعداً مع الطبيب."
-        }
-      ],
-      "introducedIn": "A2-U7-L2",
       "recycledIn": [
         "A2-U8-L1"
       ]
@@ -3586,26 +3314,6 @@
         {
           "en": "Describe each symptom.",
           "ar": "صف كل عرض."
-        }
-      ],
-      "introducedIn": "A2-U7-L5",
-      "recycledIn": [
-        "A2-U10-L5"
-      ]
-    },
-    {
-      "id": "A2.LEX.PAIN_N01",
-      "headword": "pain",
-      "partOfSpeech": "noun",
-      "arabic": "ألم",
-      "cefr": "A2",
-      "receptive": true,
-      "productive": true,
-      "meaning": "pain",
-      "examples": [
-        {
-          "en": "Where is the pain?",
-          "ar": "أين الألم؟"
         }
       ],
       "introducedIn": "A2-U7-L5",
@@ -4774,26 +4482,6 @@
       ]
     },
     {
-      "id": "A2.LEX.FORECAST_N01",
-      "headword": "forecast",
-      "partOfSpeech": "noun",
-      "arabic": "توقعات الطقس",
-      "cefr": "A2",
-      "receptive": true,
-      "productive": true,
-      "meaning": "forecast",
-      "examples": [
-        {
-          "en": "The forecast says heavy rain.",
-          "ar": "تقول التوقعات إن المطر غزير."
-        }
-      ],
-      "introducedIn": "A2-U11-L1",
-      "recycledIn": [
-        "A2-U12-L1"
-      ]
-    },
-    {
       "id": "A2.LEX.STORM_N01",
       "headword": "storm",
       "partOfSpeech": "noun",
@@ -4846,26 +4534,6 @@
         {
           "en": "The river may rise.",
           "ar": "قد يرتفع النهر."
-        }
-      ],
-      "introducedIn": "A2-U11-L2",
-      "recycledIn": [
-        "A2-U12-L1"
-      ]
-    },
-    {
-      "id": "A2.LEX.CLOSE_V01",
-      "headword": "close",
-      "partOfSpeech": "verb",
-      "arabic": "يغلق",
-      "cefr": "A2",
-      "receptive": true,
-      "productive": true,
-      "meaning": "close",
-      "examples": [
-        {
-          "en": "The park will close at six.",
-          "ar": "ستغلق الحديقة في السادسة."
         }
       ],
       "introducedIn": "A2-U11-L2",
@@ -5069,46 +4737,6 @@
         }
       ],
       "introducedIn": "A2-U11-L5",
-      "recycledIn": [
-        "A2-FINAL-MISSION"
-      ]
-    },
-    {
-      "id": "A2.LEX.ACTION_N01",
-      "headword": "action",
-      "partOfSpeech": "noun",
-      "arabic": "إجراء",
-      "cefr": "A2",
-      "receptive": true,
-      "productive": true,
-      "meaning": "action",
-      "examples": [
-        {
-          "en": "Choose the safest action.",
-          "ar": "اختر الإجراء الأكثر أماناً."
-        }
-      ],
-      "introducedIn": "A2-U11-L6",
-      "recycledIn": [
-        "A2-FINAL-MISSION"
-      ]
-    },
-    {
-      "id": "A2.LEX.EMERGENCY_N01",
-      "headword": "emergency",
-      "partOfSpeech": "noun",
-      "arabic": "طوارئ",
-      "cefr": "A2",
-      "receptive": true,
-      "productive": true,
-      "meaning": "emergency",
-      "examples": [
-        {
-          "en": "Use the emergency number only if needed.",
-          "ar": "استخدم رقم الطوارئ فقط عند الحاجة."
-        }
-      ],
-      "introducedIn": "A2-U11-L6",
       "recycledIn": [
         "A2-FINAL-MISSION"
       ]
@@ -5355,26 +4983,6 @@
       ]
     },
     {
-      "id": "A2.LEX.FREE_ADJ02",
-      "headword": "free",
-      "partOfSpeech": "adjective",
-      "arabic": "متفرغ",
-      "cefr": "A2",
-      "receptive": true,
-      "productive": true,
-      "meaning": "free",
-      "examples": [
-        {
-          "en": "Are you free on Saturday?",
-          "ar": "هل أنت متفرغ السبت؟"
-        }
-      ],
-      "introducedIn": "A2-U12-L4",
-      "recycledIn": [
-        "A2-FINAL-MISSION"
-      ]
-    },
-    {
       "id": "A2.LEX.UNFORTUNATELY_ADV01",
       "headword": "unfortunately",
       "partOfSpeech": "adverb",
@@ -5387,26 +4995,6 @@
         {
           "en": "Unfortunately, the room is unavailable.",
           "ar": "للأسف الغرفة غير متاحة."
-        }
-      ],
-      "introducedIn": "A2-U12-L5",
-      "recycledIn": [
-        "A2-FINAL-MISSION"
-      ]
-    },
-    {
-      "id": "A2.LEX.CHANGE_V02",
-      "headword": "change",
-      "partOfSpeech": "verb",
-      "arabic": "يغيّر",
-      "cefr": "A2",
-      "receptive": true,
-      "productive": true,
-      "meaning": "change",
-      "examples": [
-        {
-          "en": "We need to change the time.",
-          "ar": "نحتاج إلى تغيير الوقت."
         }
       ],
       "introducedIn": "A2-U12-L5",
@@ -7269,6 +6857,166 @@
       ],
       "introducedIn": "A2-U11-L6",
       "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.HOST_N01",
+      "headword": "host",
+      "partOfSpeech": "noun",
+      "arabic": "المضيف",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "host",
+      "examples": [
+        {
+          "en": "I'm the host, so I'm sending the invitations myself.",
+          "ar": "أنا المضيفة، لذا أرسل الدعوات بنفسي."
+        }
+      ],
+      "introducedIn": "A2-U12-L1",
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.LEX.OCCASION_N01",
+      "headword": "occasion",
+      "partOfSpeech": "noun",
+      "arabic": "مناسبة",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "occasion",
+      "examples": [
+        {
+          "en": "What's the occasion?",
+          "ar": "ما المناسبة؟"
+        }
+      ],
+      "introducedIn": "A2-U12-L1",
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.LEX.SET_UP_V01",
+      "headword": "set up",
+      "partOfSpeech": "verb",
+      "arabic": "يجهّز",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "set up",
+      "examples": [
+        {
+          "en": "We have an hour to set up the room.",
+          "ar": "أمامنا ساعة لتجهيز الغرفة."
+        }
+      ],
+      "introducedIn": "A2-U12-L2",
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.LEX.ATTEND_V01",
+      "headword": "attend",
+      "partOfSpeech": "verb",
+      "arabic": "يحضر",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "attend",
+      "examples": [
+        {
+          "en": "Four of them can only attend after four o'clock.",
+          "ar": "أربعة منهم لا يستطيعون الحضور إلا بعد الرابعة."
+        }
+      ],
+      "introducedIn": "A2-U12-L3",
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.LEX.REMIND_V01",
+      "headword": "remind",
+      "partOfSpeech": "verb",
+      "arabic": "يذكّر",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "remind",
+      "examples": [
+        {
+          "en": "I'll remind her about the parking.",
+          "ar": "سأذكّرها بموقف السيارات."
+        }
+      ],
+      "introducedIn": "A2-U12-L3",
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.LEX.DISAPPOINTED_ADJ01",
+      "headword": "disappointed",
+      "partOfSpeech": "adjective",
+      "arabic": "خائب الأمل",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "disappointed",
+      "examples": [
+        {
+          "en": "She'll be disappointed if you don't come at all.",
+          "ar": "ستشعر بخيبة أمل إن لم تأتِ أصلاً."
+        }
+      ],
+      "introducedIn": "A2-U12-L4",
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.LEX.HOWEVER_ADV01",
+      "headword": "however",
+      "partOfSpeech": "adverb",
+      "arabic": "غير أن",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "however",
+      "examples": [
+        {
+          "en": "The kitchen is included. However, the big oven is broken.",
+          "ar": "المطبخ مشمول، غير أن الفرن الكبير معطّل."
+        }
+      ],
+      "introducedIn": "A2-U12-L6",
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.LEX.CONTACT_V01",
+      "headword": "contact",
+      "partOfSpeech": "verb",
+      "arabic": "يتواصل مع",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "contact",
+      "examples": [
+        {
+          "en": "Contact Faiza on the number below.",
+          "ar": "تواصل مع فائزة على الرقم أدناه."
+        }
+      ],
+      "introducedIn": "A2-U12-L6",
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
     }
   ],
   "chunks": [
@@ -7769,17 +7517,6 @@
       ]
     },
     {
-      "id": "A2.CHUNK.ILL_TAKE_IT",
-      "text": "I'll take it.",
-      "arabic": "سآخذه.",
-      "cefr": "A2",
-      "introducedIn": "A2-U6-L3",
-      "productive": true,
-      "recycledIn": [
-        "A2-U8-L3"
-      ]
-    },
-    {
       "id": "A2.CHUNK.IF_WEATHER_BAD",
       "text": "If the weather is bad, ...",
       "arabic": "إذا كان الطقس سيئاً...",
@@ -7821,17 +7558,6 @@
       "productive": true,
       "recycledIn": [
         "A2-U9-L5"
-      ]
-    },
-    {
-      "id": "A2.CHUNK.YOU_SHOULD",
-      "text": "You should ...",
-      "arabic": "ينبغي أن...",
-      "cefr": "A2",
-      "introducedIn": "A2-U7-L1",
-      "productive": true,
-      "recycledIn": [
-        "A2-U8-L1"
       ]
     },
     {
@@ -8741,6 +8467,61 @@
       "introducedIn": "A2-U11-L6",
       "productive": true,
       "recycledIn": []
+    },
+    {
+      "id": "A2.CHUNK.SAVE_THE_DATE",
+      "text": "Save the date.",
+      "arabic": "احفظ التاريخ.",
+      "cefr": "A2",
+      "introducedIn": "A2-U12-L1",
+      "productive": true,
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.ALL_SET",
+      "text": "We're all set.",
+      "arabic": "كل شيء جاهز.",
+      "cefr": "A2",
+      "introducedIn": "A2-U12-L3",
+      "productive": true,
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.COUNT_ME_IN",
+      "text": "Count me in.",
+      "arabic": "اعتبرني معكم.",
+      "cefr": "A2",
+      "introducedIn": "A2-U12-L4",
+      "productive": true,
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.SHORT_NOTICE",
+      "text": "at short notice",
+      "arabic": "في مهلة قصيرة",
+      "cefr": "A2",
+      "introducedIn": "A2-U12-L5",
+      "productive": true,
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.PASS_IT_ON",
+      "text": "I'll pass it on.",
+      "arabic": "سأبلّغ الآخرين.",
+      "cefr": "A2",
+      "introducedIn": "A2-U12-L5",
+      "productive": true,
+      "recycledIn": [
+        "A2-FINAL-MISSION"
+      ]
     }
   ],
   "units": [
@@ -25899,37 +25680,62 @@
           "lessonType": "encounter-focus-practice",
           "canDo": [
             "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE",
-            "A2.U12.INTERACTION.INVITE_ACCEPT_DECLINE"
+            "A2.U12.READING.FOLLOW_INVITATION_MESSAGE",
+            "A2.U12.PRODUCTION.EXPLAIN_EVENT_PLAN"
           ],
           "grammar": [
             "A2.G.INVITATION_WOULD_LIKE",
-            "A2.G.BECAUSE_SO_CAUSE",
-            "A2.G.FIRST_CONDITIONAL"
+            "A2.G.FIRST_CONDITIONAL",
+            "A2.G.BECAUSE_SO_CAUSE"
           ],
           "lexicon": [
             "A2.LEX.INVITATION_N01",
             "A2.LEX.CELEBRATION_N01",
             "A2.LEX.JOIN_V01",
-            "A2.LEX.FORECAST_N01",
-            "A2.LEX.STORM_N01",
-            "A2.LEX.FLOOD_N01",
-            "A2.LEX.RISE_V01",
-            "A2.LEX.CLOSE_V01",
-            "A2.LEX.SAFE_ADJ01"
+            "A2.LEX.HOST_N01",
+            "A2.LEX.OCCASION_N01"
           ],
           "chunks": [
             "A2.CHUNK.WOULD_LIKE_TO_JOIN",
             "A2.CHUNK.ARE_YOU_FREE",
-            "A2.CHUNK.BECAUSE_OF_RAIN",
-            "A2.CHUNK.IF_RIVER_RISES",
-            "A2.CHUNK.THERE_MAY_BE"
+            "A2.CHUNK.SAVE_THE_DATE"
           ],
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "A: Are you free on Friday evening? We're having a small celebration. Would you like to join us? B: Yes, thank you.",
-                "ar": "أ: هل أنت متفرغ مساء الجمعة؟ سنقيم احتفالاً صغيراً. هل ترغب في الانضمام إلينا؟ ب: نعم، شكراً."
+                "speaker": "Rania",
+                "en": "Are you free on the last Saturday of the month? We're having a small celebration for Amina.",
+                "ar": "هل أنتما متفرغان السبت الأخير من الشهر؟ سنقيم احتفالاً صغيراً لأمينة."
+              },
+              {
+                "speaker": "Tawfiq",
+                "en": "What's the occasion? She didn't tell me anything.",
+                "ar": "ما المناسبة؟ لم تخبرني بشيء."
+              },
+              {
+                "speaker": "Rania",
+                "en": "Ten years at the school. I'm the host, so I'm sending the invitations myself.",
+                "ar": "عشر سنوات في المدرسة. أنا المضيفة، لذا أرسل الدعوات بنفسي."
+              },
+              {
+                "speaker": "Suha",
+                "en": "Would you like us to join you early and help?",
+                "ar": "هل تودّين أن ننضم إليكِ مبكراً ونساعد؟"
+              },
+              {
+                "speaker": "Rania",
+                "en": "Please. If the weather is good, we'll eat in the garden, so we'll need the long tables.",
+                "ar": "أرجوكما. إذا كان الجو جميلاً فسنأكل في الحديقة، ولذلك سنحتاج إلى الطاولات الطويلة."
+              },
+              {
+                "speaker": "Tawfiq",
+                "en": "And if it rains?",
+                "ar": "وإذا أمطرت؟"
+              },
+              {
+                "speaker": "Rania",
+                "en": "Then we move inside, and nobody carries anything. Save the date and tell Hasan.",
+                "ar": "عندها ننتقل إلى الداخل ولا يحمل أحد شيئاً. احفظا التاريخ وأخبرا حسناً."
               }
             ]
           },
@@ -25941,65 +25747,55 @@
               "mode": "encounter",
               "skill": "listening",
               "canDo": [
-                "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE",
-                "A2.U12.INTERACTION.INVITE_ACCEPT_DECLINE"
+                "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE"
               ],
-              "prompt": "When is the celebration?",
-              "promptAr": "متى الاحتفال؟",
+              "prompt": "Listen once. What are the three of them arranging?",
+              "promptAr": "استمع مرة واحدة. ما الذي يرتبه الثلاثة؟",
               "options": [
-                "Friday evening",
-                "Saturday morning",
-                "Thursday evening"
+                "A celebration for a colleague, and who will help before it starts",
+                "A school meeting about next year's timetable",
+                "A trip to the garden centre on Saturday morning"
               ],
-              "answer": "Friday evening",
-              "audioTranscript": "A: Are you free on Friday evening? We're having a small celebration. Would you like to join us? B: Yes, thank you."
+              "answer": "A celebration for a colleague, and who will help before it starts",
+              "audioTranscript": "Are you free on the last Saturday of the month? We're having a small celebration for Amina. What's the occasion? She didn't tell me anything. Ten years at the school. I'm the host, so I'm sending the invitations myself. Would you like us to join you early and help? Please. If the weather is good, we'll eat in the garden, so we'll need the long tables. And if it rains? Then we move inside, and nobody carries anything. Save the date and tell Hasan."
             },
             {
               "id": "A2-U12-L1-A02",
-              "lessonId": "A2-U12-L1",
-              "type": "match",
-              "mode": "practice",
-              "skill": "reading",
-              "canDo": [
-                "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE",
-                "A2.U12.INTERACTION.INVITE_ACCEPT_DECLINE"
-              ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "invitation",
-                  "دعوة"
-                ],
-                [
-                  "celebration",
-                  "احتفال"
-                ],
-                [
-                  "join",
-                  "ينضم"
-                ]
-              ]
-            },
-            {
-              "id": "A2-U12-L1-A03",
               "lessonId": "A2-U12-L1",
               "type": "gap",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE",
-                "A2.U12.INTERACTION.INVITE_ACCEPT_DECLINE"
+                "A2.U12.READING.FOLLOW_INVITATION_MESSAGE"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "Would you like to ___ us for dinner?",
+              "prompt": "All three words make a question. Only one of them makes an invitation. Choose it.",
+              "promptAr": "الكلمات الثلاث تصنع سؤالاً، لكن واحدة منها فقط تصنع دعوة. اخترها.",
+              "text": "___ you like to join us for the meal on the thirtieth?",
               "options": [
-                "join",
-                "joined",
-                "joining"
+                "Would",
+                "Do",
+                "Will"
               ],
-              "answer": "join"
+              "answer": "Would"
+            },
+            {
+              "id": "A2-U12-L1-A03",
+              "lessonId": "A2-U12-L1",
+              "type": "textChoice",
+              "mode": "practice",
+              "skill": "reading",
+              "canDo": [
+                "A2.U12.READING.FOLLOW_INVITATION_MESSAGE"
+              ],
+              "prompt": "Read the notice from Green Street. What does it ask you to do before you bring food?",
+              "promptAr": "اقرأ إعلان شارع غرين. ماذا يطلب منك أن تفعل قبل أن تحضر طعاماً؟",
+              "options": [
+                "Tell Munira first",
+                "Pay at the gate",
+                "Arrive before five"
+              ],
+              "answer": "Tell Munira first",
+              "sourceText": "Green Street neighbours: we are opening the new garden on Friday at five. There will be tea, music and a short talk from the people who built it. Everyone is welcome, children too. If you would like to bring something sweet, please tell Munira first."
             },
             {
               "id": "A2-U12-L1-A04",
@@ -26008,39 +25804,84 @@
               "mode": "mastery",
               "skill": "listening",
               "canDo": [
-                "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE",
-                "A2.U12.INTERACTION.INVITE_ACCEPT_DECLINE"
+                "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE"
               ],
-              "prompt": "What event is proposed?",
-              "promptAr": "ما الفعالية المقترحة؟",
+              "prompt": "Listen to Ghassan's message. What does he want Munir to do this week?",
+              "promptAr": "استمع إلى رسالة غسان. ماذا يريد من منير أن يفعل هذا الأسبوع؟",
               "options": [
-                "A picnic",
-                "A concert",
-                "A course"
+                "Say whether he is coming",
+                "Book a table at the cafe",
+                "Collect Nadia from her course"
               ],
-              "answer": "A picnic",
-              "audioTranscript": "We're meeting at the park on Sunday at eleven. Would you like to come for a picnic?"
+              "answer": "Say whether he is coming",
+              "audioTranscript": "Hi Munir, it's Ghassan. I'm the host this year, and I'd like you to come. Nadia finishes her course on the fourteenth, so we're having a small celebration at my brother's flat on the Friday after, at one o'clock. It isn't a big occasion: twelve people, lunch, nothing formal. Would you like to join us? If you can't come at one, come later; we'll still be there at four. Save the date and let me know this week, because I have to tell the cafe our numbers on Monday."
             },
             {
               "id": "A2-U12-L1-A05",
               "lessonId": "A2-U12-L1",
               "type": "speak",
               "mode": "mastery",
-              "skill": "spokenInteraction",
+              "skill": "spokenProduction",
               "canDo": [
-                "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE",
-                "A2.U12.INTERACTION.INVITE_ACCEPT_DECLINE"
+                "A2.U12.PRODUCTION.EXPLAIN_EVENT_PLAN"
               ],
-              "prompt": "Invite someone to a small event, giving type, date, time and place.",
-              "promptAr": "ادعُ شخصاً إلى فعالية صغيرة مع ذكر النوع والتاريخ والوقت والمكان.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "Invite a friend to something you are organising. Say what the occasion is, when and where it is, why you are having it, and what will happen if the weather turns bad.",
+              "promptAr": "ادعُ صديقاً إلى شيء تنظّمه. قل ما المناسبة، ومتى وأين، ولماذا تقيمها، وماذا سيحدث إذا ساء الطقس.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "would you like",
+                    "I'd like you to",
+                    "I would like you to",
+                    "can you come",
+                    "are you free",
+                    "join us",
+                    "come to",
+                    "I'm inviting"
+                  ],
+                  [
+                    "celebration",
+                    "occasion",
+                    "lunch",
+                    "dinner",
+                    "party",
+                    "meal",
+                    "birthday",
+                    "it's for",
+                    "ten years",
+                    "because",
+                    "we're having"
+                  ],
+                  [
+                    "on Saturday",
+                    "on Friday",
+                    "on Sunday",
+                    "at six",
+                    "at one",
+                    "o'clock",
+                    "in the garden",
+                    "at my",
+                    "at the",
+                    "the thirtieth"
+                  ],
+                  [
+                    "if it rains",
+                    "if the weather",
+                    "we'll move",
+                    "we will move",
+                    "inside",
+                    "indoors",
+                    "instead",
+                    "if it's cold"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             }
           ]
         },
@@ -26051,6 +25892,7 @@
           "lessonType": "encounter-focus-practice",
           "canDo": [
             "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE",
+            "A2.U12.READING.FOLLOW_INVITATION_MESSAGE",
             "A2.U12.INTERACTION.INVITE_ACCEPT_DECLINE"
           ],
           "grammar": [
@@ -26059,17 +25901,50 @@
           "lexicon": [
             "A2.LEX.DECORATION_N01",
             "A2.LEX.VENUE_N01",
-            "A2.LEX.ORGANISE_V01"
+            "A2.LEX.ORGANISE_V01",
+            "A2.LEX.SET_UP_V01",
+            "A2.LEX.SPARE_ADJ01"
           ],
           "chunks": [
-            "A2.CHUNK.COULD_YOU_BRING"
+            "A2.CHUNK.COULD_YOU_BRING",
+            "A2.CHUNK.IN_ADVANCE"
           ],
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "A: Could you bring the decorations to the venue at four? B: Sure. Would you send me the address?",
-                "ar": "أ: هل يمكنك إحضار الزينة إلى مكان الفعالية في الرابعة؟ ب: بالتأكيد. هل ترسل لي العنوان؟"
+                "speaker": "Basma",
+                "en": "The venue opens at six, so we have an hour to set up.",
+                "ar": "يفتح مكان الفعالية في السادسة، فأمامنا ساعة للتجهيز."
+              },
+              {
+                "speaker": "Karim",
+                "en": "Could you bring the decorations from the office? They're in two boxes.",
+                "ar": "هل يمكنكِ إحضار الزينة من المكتب؟ إنها في صندوقين."
+              },
+              {
+                "speaker": "Basma",
+                "en": "I can take one. Would you ask Idris to carry the other?",
+                "ar": "أستطيع حمل واحد. هل تطلب من إدريس أن يحمل الآخر؟"
+              },
+              {
+                "speaker": "Idris",
+                "en": "I'm here. I'll take both, but could someone book the lift in advance?",
+                "ar": "أنا هنا. سآخذ الصندوقين، لكن هل يحجز أحدكم المصعد مسبقاً؟"
+              },
+              {
+                "speaker": "Basma",
+                "en": "I'll do that now. Karim, would you organise the tables along the wall?",
+                "ar": "سأفعل ذلك الآن. يا كريم، هل ترتّب الطاولات بمحاذاة الجدار؟"
+              },
+              {
+                "speaker": "Karim",
+                "en": "Of course. Do we have spare chairs if more people come?",
+                "ar": "بالطبع. هل لدينا كراسٍ إضافية إن جاء عدد أكبر؟"
+              },
+              {
+                "speaker": "Basma",
+                "en": "Ten in the store room. Could you count them before you sit down?",
+                "ar": "عشرة في غرفة المخزن. هل يمكنك عدّها قبل أن تجلس؟"
               }
             ]
           },
@@ -26081,65 +25956,64 @@
               "mode": "encounter",
               "skill": "listening",
               "canDo": [
-                "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE",
-                "A2.U12.INTERACTION.INVITE_ACCEPT_DECLINE"
+                "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE"
               ],
-              "prompt": "What information does B request?",
-              "promptAr": "ما المعلومة التي يطلبها ب؟",
+              "prompt": "Listen once. What is happening in this conversation?",
+              "promptAr": "استمع مرة واحدة. ماذا يجري في هذه المحادثة؟",
               "options": [
-                "The address",
-                "The guest list",
-                "The price"
+                "Three people are dividing the jobs before an event",
+                "Three people are complaining about a venue",
+                "Three people are deciding what time to invite the guests"
               ],
-              "answer": "The address",
-              "audioTranscript": "A: Could you bring the decorations to the venue at four? B: Sure. Would you send me the address?"
+              "answer": "Three people are dividing the jobs before an event",
+              "audioTranscript": "The venue opens at six, so we have an hour to set up. Could you bring the decorations from the office? They're in two boxes. I can take one. Would you ask Idris to carry the other? I'm here. I'll take both, but could someone book the lift in advance? I'll do that now. Karim, would you organise the tables along the wall? Of course. Do we have spare chairs if more people come? Ten in the store room. Could you count them before you sit down?"
             },
             {
               "id": "A2-U12-L2-A02",
               "lessonId": "A2-U12-L2",
-              "type": "match",
+              "type": "order",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE",
-                "A2.U12.INTERACTION.INVITE_ACCEPT_DECLINE"
+                "A2.U12.READING.FOLLOW_INVITATION_MESSAGE"
               ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "decoration",
-                  "زينة"
-                ],
-                [
-                  "venue",
-                  "مكان الفعالية"
-                ],
-                [
-                  "organise",
-                  "ينظم"
-                ]
+              "prompt": "Build the polite request. Could is followed by the base verb, with no to.",
+              "promptAr": "كوّن الطلب المهذب. بعد could يأتي الفعل في صيغته الأساسية بلا to.",
+              "tokens": [
+                "set",
+                "you",
+                "Could",
+                "before six?",
+                "the tables",
+                "up"
+              ],
+              "answer": [
+                "Could",
+                "you",
+                "set",
+                "up",
+                "the tables",
+                "before six?"
               ]
             },
             {
               "id": "A2-U12-L2-A03",
               "lessonId": "A2-U12-L2",
-              "type": "gap",
+              "type": "textChoice",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE",
-                "A2.U12.INTERACTION.INVITE_ACCEPT_DECLINE"
+                "A2.U12.READING.FOLLOW_INVITATION_MESSAGE"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "Could you ___ the tables, please?",
+              "prompt": "Read the job list for the open evening. Ziad has two jobs. What are they?",
+              "promptAr": "اقرأ قائمة المهام لأمسية الأبواب المفتوحة. لزياد مهمتان. ما هما؟",
               "options": [
-                "organise",
-                "organised",
-                "organising"
+                "Spare chairs, and a table for the name cards",
+                "The sound, and the front door",
+                "Decorations, and the store room"
               ],
-              "answer": "organise"
+              "answer": "Spare chairs, and a table for the name cards",
+              "sourceText": "Open evening, jobs before six. Munir: unlock the venue and set up the sound. Hana: put the decorations on the door and along the stairs. Ziad: bring the spare chairs from the store room, and organise a table by the entrance for the name cards."
             },
             {
               "id": "A2-U12-L2-A04",
@@ -26148,18 +26022,17 @@
               "mode": "mastery",
               "skill": "listening",
               "canDo": [
-                "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE",
-                "A2.U12.INTERACTION.INVITE_ACCEPT_DECLINE"
+                "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE"
               ],
-              "prompt": "Who will bring chairs?",
-              "promptAr": "من سيحضر الكراسي؟",
+              "prompt": "Listen to Wafa's message. What does she ask the group to do at the end of the evening?",
+              "promptAr": "استمع إلى رسالة وفاء. ماذا تطلب من المجموعة في نهاية الأمسية؟",
               "options": [
-                "Dana",
-                "The listener",
-                "The speaker"
+                "Clear the decorations away the same night",
+                "Leave the key with the woman at the desk",
+                "Move everything into the big hall"
               ],
-              "answer": "Dana",
-              "audioTranscript": "Could you collect the key at noon? I will prepare the food, and Dana will bring extra chairs."
+              "answer": "Clear the decorations away the same night",
+              "audioTranscript": "Hello, this is Wafa from the community centre. I'm the caretaker, and I've left the key with the woman at the desk. Two things before Thursday. Could you set up in the small hall, not the big one? The big one is being painted. And would you take the decorations down the same night? The morning class starts at eight, so the room has to be empty. There are spare tables behind the stage if you need them. Ring me in advance if anything changes."
             },
             {
               "id": "A2-U12-L2-A05",
@@ -26168,19 +26041,66 @@
               "mode": "mastery",
               "skill": "spokenInteraction",
               "canDo": [
-                "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE",
                 "A2.U12.INTERACTION.INVITE_ACCEPT_DECLINE"
               ],
-              "prompt": "Divide three event tasks using polite requests and confirm who will do each one.",
-              "promptAr": "وزع ثلاث مهام للفعالية باستخدام طلبات مهذبة وأكد من سينفذ كل مهمة.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
+              "prompt": "You and a neighbour are sharing out the jobs for Saturday. Ask her for three things politely, say which job you will do yourself, and agree a time to meet at the venue.",
+              "promptAr": "أنتَ وجارتكَ توزّعان مهام السبت. اطلب منها ثلاثة أشياء بأدب، وقل أي مهمة ستؤديها بنفسكَ، واتفقا على وقت اللقاء في مكان الفعالية.",
+              "partnerTurns": [
+                "Right, Saturday. Tell me what you still need doing and I'll write it down.",
+                "I can manage two of those, but not the heavy box on my own.",
+                "Fine. So what are you doing yourself, and what time do you want me there?"
               ],
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "could you",
+                    "would you",
+                    "can you",
+                    "could I",
+                    "would you mind",
+                    "is it all right if",
+                    "do you think you could"
+                  ],
+                  [
+                    "bring",
+                    "carry",
+                    "set up",
+                    "organise",
+                    "collect",
+                    "count",
+                    "book",
+                    "unlock",
+                    "put out",
+                    "take down",
+                    "buy"
+                  ],
+                  [
+                    "I'll",
+                    "I will",
+                    "I can do",
+                    "leave that to me",
+                    "my job",
+                    "I'm doing",
+                    "I'll take care of"
+                  ],
+                  [
+                    "at four",
+                    "at five",
+                    "at six",
+                    "o'clock",
+                    "an hour before",
+                    "before we open",
+                    "see you at",
+                    "half past"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             }
           ]
         },
@@ -26190,38 +26110,66 @@
           "titleAr": "أكد الترتيبات",
           "lessonType": "encounter-focus-practice",
           "canDo": [
+            "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE",
             "A2.U12.READING.FOLLOW_INVITATION_MESSAGE",
             "A2.U12.PRODUCTION.EXPLAIN_EVENT_PLAN"
           ],
           "grammar": [
-            "A2.G.FUTURE_EVENT_REVIEW",
-            "A2.G.WHILE_PAST",
-            "A2.G.RELATIVE_CLAUSES_BASIC",
-            "A2.G.PRESENT_PERFECT_JUST_ALREADY_YET"
+            "A2.G.PRESENT_PERFECT_JUST_ALREADY_YET",
+            "A2.G.FUTURE_FORMS_CONTRAST"
           ],
           "lexicon": [
             "A2.LEX.ATTENDANCE_N01",
             "A2.LEX.GUEST_N01",
             "A2.LEX.ARRANGEMENT_N01",
-            "A2.LEX.AUDIENCE_N01",
-            "A2.LEX.PERFORM_V01",
-            "A2.LEX.STAGE_N01",
-            "A2.LEX.COMEDY_N01",
-            "A2.LEX.DOCUMENTARY_N01",
-            "A2.LEX.ENDING_N01"
+            "A2.LEX.ATTEND_V01",
+            "A2.LEX.REMIND_V01"
           ],
           "chunks": [
             "A2.CHUNK.LOOKING_FORWARD",
-            "A2.CHUNK.THE_MAIN_CHARACTER",
-            "A2.CHUNK.IN_MY_OPINION",
-            "A2.CHUNK.WHAT_I_LIKED"
+            "A2.CHUNK.ALL_SET"
           ],
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "Confirmed: We are meeting outside the library at 5:30. The bus is leaving at 5:45, and I will check the guest list before we go.",
-                "ar": ""
+                "speaker": "Nawal",
+                "en": "The chairs have just arrived. Has anyone counted the guests yet?",
+                "ar": "وصلت الكراسي للتو. هل عدّ أحدٌ الضيوف بعد؟"
+              },
+              {
+                "speaker": "Sami",
+                "en": "I've already checked the attendance list. Forty-one people are coming.",
+                "ar": "راجعتُ قائمة الحضور بالفعل. سيأتي واحد وأربعون شخصاً."
+              },
+              {
+                "speaker": "Bushra",
+                "en": "Four of them can only attend after four o'clock. Is that a problem?",
+                "ar": "أربعة منهم لا يستطيعون الحضور إلا بعد الرابعة. هل في ذلك مشكلة؟"
+              },
+              {
+                "speaker": "Nawal",
+                "en": "No. But I haven't printed the name cards yet, and the speaker is arriving at one.",
+                "ar": "لا. لكنني لم أطبع بطاقات الأسماء بعد، والمتحدثة تصل في الواحدة."
+              },
+              {
+                "speaker": "Sami",
+                "en": "I'll remind her about the parking. She hasn't driven here before.",
+                "ar": "سأذكّرها بموقف السيارات؛ فهي لم تقد إلى هنا من قبل."
+              },
+              {
+                "speaker": "Bushra",
+                "en": "Has Munir opened the hall yet?",
+                "ar": "هل فتح منير القاعة بعد؟"
+              },
+              {
+                "speaker": "Nawal",
+                "en": "He's already opened it, so every arrangement is finished. We're all set.",
+                "ar": "فتحها بالفعل، فكل الترتيبات انتهت. كل شيء جاهز."
+              },
+              {
+                "speaker": "Sami",
+                "en": "Good. I'm looking forward to this one.",
+                "ar": "جيد. أتطلع إلى هذه المرة."
               }
             ]
           },
@@ -26229,89 +26177,85 @@
             {
               "id": "A2-U12-L3-A01",
               "lessonId": "A2-U12-L3",
-              "type": "textChoice",
+              "type": "audioChoice",
               "mode": "encounter",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U12.READING.FOLLOW_INVITATION_MESSAGE",
-                "A2.U12.PRODUCTION.EXPLAIN_EVENT_PLAN"
+                "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE"
               ],
-              "prompt": "What time does the bus leave?",
-              "promptAr": "في أي وقت تغادر الحافلة؟",
+              "prompt": "Listen once. Where are the three of them in their preparations?",
+              "promptAr": "استمع مرة واحدة. إلى أين وصلوا في تحضيراتهم؟",
               "options": [
-                "5:45",
-                "5:30",
-                "Before five"
+                "Almost everything is done, with one job left",
+                "They have only just started and nothing is ready",
+                "They have run out of time and want to cancel"
               ],
-              "answer": "5:45",
-              "sourceText": "Confirmed: We are meeting outside the library at 5:30. The bus is leaving at 5:45, and I will check the guest list before we go."
+              "answer": "Almost everything is done, with one job left",
+              "audioTranscript": "The chairs have just arrived. Has anyone counted the guests yet? I've already checked the attendance list. Forty-one people are coming. Four of them can only attend after four o'clock. Is that a problem? No. But I haven't printed the name cards yet, and the speaker is arriving at one. I'll remind her about the parking. She hasn't driven here before. Has Munir opened the hall yet? He's already opened it, so every arrangement is finished. We're all set. Good. I'm looking forward to this one."
             },
             {
               "id": "A2-U12-L3-A02",
-              "lessonId": "A2-U12-L3",
-              "type": "match",
-              "mode": "practice",
-              "skill": "reading",
-              "canDo": [
-                "A2.U12.READING.FOLLOW_INVITATION_MESSAGE",
-                "A2.U12.PRODUCTION.EXPLAIN_EVENT_PLAN"
-              ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "attendance",
-                  "حضور"
-                ],
-                [
-                  "guest",
-                  "ضيف"
-                ],
-                [
-                  "arrangement",
-                  "ترتيب"
-                ]
-              ]
-            },
-            {
-              "id": "A2-U12-L3-A03",
               "lessonId": "A2-U12-L3",
               "type": "gap",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U12.READING.FOLLOW_INVITATION_MESSAGE",
-                "A2.U12.PRODUCTION.EXPLAIN_EVENT_PLAN"
+                "A2.U12.READING.FOLLOW_INVITATION_MESSAGE"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "We ___ meeting the guests at six.",
+              "prompt": "The sentence is negative, and the news is still waiting. Choose the word that fits.",
+              "promptAr": "الجملة منفية والخبر ما زال منتظراً. اختر الكلمة المناسبة.",
+              "text": "I've sent forty invitations, but nine people haven't replied ___.",
               "options": [
-                "are",
-                "will to",
-                "do"
+                "yet",
+                "already",
+                "just"
               ],
-              "answer": "are"
+              "answer": "yet"
+            },
+            {
+              "id": "A2-U12-L3-A03",
+              "lessonId": "A2-U12-L3",
+              "type": "match",
+              "mode": "practice",
+              "skill": "reading",
+              "canDo": [
+                "A2.U12.READING.FOLLOW_INVITATION_MESSAGE"
+              ],
+              "prompt": "Match each piece of news to the job it describes.",
+              "promptAr": "طابق كل خبر بالمهمة التي يصفها.",
+              "pairs": [
+                [
+                  "The flowers have just arrived,",
+                  "so somebody should put them on the tables."
+                ],
+                [
+                  "Suad has already paid the hall,",
+                  "so nobody has to bring money today."
+                ],
+                [
+                  "No one has rung the kitchen yet,",
+                  "so we still do not know about the tea."
+                ]
+              ]
             },
             {
               "id": "A2-U12-L3-A04",
               "lessonId": "A2-U12-L3",
-              "type": "textChoice",
+              "type": "audioChoice",
               "mode": "mastery",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U12.READING.FOLLOW_INVITATION_MESSAGE",
-                "A2.U12.PRODUCTION.EXPLAIN_EVENT_PLAN"
+                "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE"
               ],
-              "prompt": "What is Salma's plan?",
-              "promptAr": "ما خطة سلمى؟",
+              "prompt": "Listen to Fouad's message from the hall. What does he ask you to bring?",
+              "promptAr": "استمع إلى رسالة فؤاد من القاعة. ماذا يطلب منك أن تحضر؟",
               "options": [
-                "Prepare name cards",
-                "Help late guests",
-                "Count buses"
+                "A sign for the front door",
+                "Flowers from the shop",
+                "Paper for the printer"
               ],
-              "answer": "Prepare name cards",
-              "sourceText": "Ten guests are coming. Salma is going to prepare name cards, and Omar will help anyone who arrives late."
+              "answer": "A sign for the front door",
+              "audioTranscript": "Hello, it's Fouad at the office. I've just come back from the hall, and I wanted to give you the news before you set off. The tables have already arrived, and I've put them along the two long walls. The man from the sound company has been and gone. Two things are not finished yet: nobody has collected the flowers, and the front door still needs a sign. I haven't printed one because the printer is out of paper. Could you bring a sign with you? Everything else is ready."
             },
             {
               "id": "A2-U12-L3-A05",
@@ -26320,19 +26264,61 @@
               "mode": "mastery",
               "skill": "spokenProduction",
               "canDo": [
-                "A2.U12.READING.FOLLOW_INVITATION_MESSAGE",
                 "A2.U12.PRODUCTION.EXPLAIN_EVENT_PLAN"
               ],
-              "prompt": "Confirm the fixed arrangements, intentions and last-minute decisions for an event.",
-              "promptAr": "أكد الترتيبات الثابتة والنوايا والقرارات اللحظية لفعالية.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "It is the morning of an event you are running. Tell the team where things stand: one thing that has just happened, two that are already done, and one that has not happened yet.",
+              "promptAr": "إنه صباح يوم فعالية تديرها. أخبر الفريق أين وصلت الأمور: شيء حدث للتو، وشيئان تمّا بالفعل، وشيء لم يحدث بعد.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "has just",
+                    "have just",
+                    "I've just",
+                    "we've just",
+                    "has only just",
+                    "a moment ago"
+                  ],
+                  [
+                    "already",
+                    "has done",
+                    "have done",
+                    "I've done",
+                    "we've booked",
+                    "is finished",
+                    "are finished",
+                    "is done"
+                  ],
+                  [
+                    "yet",
+                    "hasn't",
+                    "haven't",
+                    "has not",
+                    "have not",
+                    "still needs",
+                    "nobody has",
+                    "no one has"
+                  ],
+                  [
+                    "chairs",
+                    "tables",
+                    "the hall",
+                    "the guests",
+                    "the food",
+                    "the key",
+                    "name cards",
+                    "the list",
+                    "the door",
+                    "the flowers",
+                    "the sound"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             }
           ]
         },
@@ -26343,7 +26329,8 @@
           "lessonType": "encounter-focus-practice",
           "canDo": [
             "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE",
-            "A2.U12.INTERACTION.INVITE_ACCEPT_DECLINE"
+            "A2.U12.READING.FOLLOW_INVITATION_MESSAGE",
+            "A2.U12.WRITING.WRITE_CONNECTED_EVENT_MESSAGE"
           ],
           "grammar": [
             "A2.G.ACCEPT_DECLINE_REASONS"
@@ -26351,18 +26338,54 @@
           "lexicon": [
             "A2.LEX.ACCEPT_V01",
             "A2.LEX.DECLINE_V01",
-            "A2.LEX.FREE_ADJ02"
+            "A2.LEX.DISAPPOINTED_ADJ01"
           ],
           "chunks": [
             "A2.CHUNK.ID_LOVE_TO_BUT",
-            "A2.CHUNK.SORRY_CANT_MAKE_IT"
+            "A2.CHUNK.SORRY_CANT_MAKE_IT",
+            "A2.CHUNK.COUNT_ME_IN"
           ],
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "A: Would you like to come on Saturday? B: I'd love to, but I'm working until seven. Could I join later?",
-                "ar": "أ: هل ترغب في الحضور السبت؟ ب: يسعدني، لكنني أعمل حتى السابعة. هل يمكنني الانضمام لاحقاً؟"
+                "speaker": "Lina",
+                "en": "Did you both get Maha's message about Thursday?",
+                "ar": "هل وصلتكما رسالة مها عن يوم الخميس؟"
+              },
+              {
+                "speaker": "Rashid",
+                "en": "I did. Count me in; I'll finish work at five and come straight there.",
+                "ar": "وصلتني. اعتبريني معكم؛ سأنهي عملي في الخامسة وآتي مباشرة."
+              },
+              {
+                "speaker": "Dalal",
+                "en": "I'd love to, but my sister arrives from Basra that evening.",
+                "ar": "يسعدني ذلك، لكن أختي تصل من البصرة في ذلك المساء."
+              },
+              {
+                "speaker": "Lina",
+                "en": "So you're going to decline?",
+                "ar": "إذن ستعتذرين عن الحضور؟"
+              },
+              {
+                "speaker": "Dalal",
+                "en": "Not completely. I'll accept for the second half and bring her with me, if Maha doesn't mind.",
+                "ar": "ليس تماماً. سأقبل الدعوة للنصف الثاني وآتي بها معي، إن لم تمانع مها."
+              },
+              {
+                "speaker": "Rashid",
+                "en": "She won't. She'll be disappointed if you don't come at all.",
+                "ar": "لن تمانع. ستشعر بخيبة أمل إن لم تأتي أصلاً."
+              },
+              {
+                "speaker": "Lina",
+                "en": "Then say yes now, because she has to tell the restaurant by tonight.",
+                "ar": "إذن قولي نعم الآن، لأن عليها أن تخبر المطعم الليلة."
+              },
+              {
+                "speaker": "Dalal",
+                "en": "I'm writing to her now. Sorry, I can't make it at seven, but eight is fine.",
+                "ar": "أكتب إليها الآن. آسفة، لا أستطيع الحضور في السابعة، لكن الثامنة مناسبة."
               }
             ]
           },
@@ -26374,106 +26397,149 @@
               "mode": "encounter",
               "skill": "listening",
               "canDo": [
-                "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE",
-                "A2.U12.INTERACTION.INVITE_ACCEPT_DECLINE"
+                "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE"
               ],
-              "prompt": "Does B completely decline?",
-              "promptAr": "هل يرفض ب تماماً؟",
+              "prompt": "Listen once. What are the three of them doing?",
+              "promptAr": "استمع مرة واحدة. ماذا يفعل الثلاثة؟",
               "options": [
-                "No, B asks to join later.",
-                "Yes, without a reason.",
-                "No, B will arrive before seven."
+                "Working out how to answer an invitation",
+                "Choosing a restaurant for Thursday",
+                "Planning a journey to Basra"
               ],
-              "answer": "No, B asks to join later.",
-              "audioTranscript": "A: Would you like to come on Saturday? B: I'd love to, but I'm working until seven. Could I join later?"
+              "answer": "Working out how to answer an invitation",
+              "audioTranscript": "Did you both get Maha's message about Thursday? I did. Count me in; I'll finish work at five and come straight there. I'd love to, but my sister arrives from Basra that evening. So you're going to decline? Not completely. I'll accept for the second half and bring her with me, if Maha doesn't mind. She won't. She'll be disappointed if you don't come at all. Then say yes now, because she has to tell the restaurant by tonight. I'm writing to her now. Sorry, I can't make it at seven, but eight is fine."
             },
             {
               "id": "A2-U12-L4-A02",
               "lessonId": "A2-U12-L4",
-              "type": "match",
+              "type": "order",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE",
-                "A2.U12.INTERACTION.INVITE_ACCEPT_DECLINE"
+                "A2.U12.READING.FOLLOW_INVITATION_MESSAGE"
               ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "accept",
-                  "يقبل"
-                ],
-                [
-                  "decline",
-                  "يرفض بأدب"
-                ],
-                [
-                  "free",
-                  "متفرغ"
-                ]
+              "prompt": "Build the polite refusal. The warm half comes first, the reason last.",
+              "promptAr": "كوّن الاعتذار المهذب: الشطر الودود أولاً والسبب أخيراً.",
+              "tokens": [
+                "but",
+                "I'd love to,",
+                "that evening.",
+                "I'm working",
+                "Thursday,",
+                "on"
+              ],
+              "answer": [
+                "I'd love to,",
+                "but",
+                "I'm working",
+                "on",
+                "Thursday,",
+                "that evening."
               ]
             },
             {
               "id": "A2-U12-L4-A03",
               "lessonId": "A2-U12-L4",
-              "type": "gap",
+              "type": "audioChoice",
               "mode": "practice",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE",
-                "A2.U12.INTERACTION.INVITE_ACCEPT_DECLINE"
+                "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "I'd love to come, ___ I am not available.",
+              "prompt": "Listen to Sabah's reply. Why can't she come?",
+              "promptAr": "استمع إلى رد صباح. لماذا لا تستطيع الحضور؟",
               "options": [
-                "but",
-                "because",
-                "so"
+                "She is away on a course that week",
+                "She has already promised to see her mother",
+                "She was told about it too late"
               ],
-              "answer": "but"
+              "answer": "She is away on a course that week",
+              "audioTranscript": "Hi Maha, it's Sabah. Thank you for the invitation; that's really kind of you. I'd love to come on Thursday, but I'm away that week. My course finishes on the Friday and I don't get back until late. I'm disappointed, honestly, because I haven't seen everybody since the spring. Please don't keep a seat for me. If you do the same thing in August, I'll be the first to accept. Say hello to your mother from me, and I hope it goes well."
             },
             {
               "id": "A2-U12-L4-A04",
               "lessonId": "A2-U12-L4",
-              "type": "audioChoice",
+              "type": "textChoice",
               "mode": "mastery",
-              "skill": "listening",
+              "skill": "reading",
               "canDo": [
-                "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE",
-                "A2.U12.INTERACTION.INVITE_ACCEPT_DECLINE"
+                "A2.U12.READING.FOLLOW_INVITATION_MESSAGE"
               ],
-              "prompt": "Why can't the speaker attend?",
-              "promptAr": "لماذا لا يستطيع المتحدث الحضور؟",
+              "prompt": "Read the reply card. What should somebody do if they say yes and then cannot come?",
+              "promptAr": "اقرأ بطاقة الرد. ماذا يفعل من يوافق ثم لا يستطيع الحضور؟",
               "options": [
-                "They are travelling.",
-                "They dislike the event.",
-                "The time changed."
+                "Ring the office",
+                "Send the card back a second time",
+                "Send something instead"
               ],
-              "answer": "They are travelling.",
-              "audioTranscript": "Thanks for inviting me. Unfortunately, I can't make it because I am travelling that day. I hope you have a great time."
+              "answer": "Ring the office",
+              "sourceText": "Reply card: please tick one line and return it by Monday. I will attend, and I am bringing one guest. I will attend alone. Unfortunately I must decline, and I will send something instead. If you accept and then cannot come, ring the office, because we pay for the food on Tuesday."
             },
             {
               "id": "A2-U12-L4-A05",
               "lessonId": "A2-U12-L4",
-              "type": "speak",
+              "type": "write",
               "mode": "mastery",
-              "skill": "spokenInteraction",
+              "skill": "writing",
               "canDo": [
-                "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE",
-                "A2.U12.INTERACTION.INVITE_ACCEPT_DECLINE"
+                "A2.U12.WRITING.WRITE_CONNECTED_EVENT_MESSAGE"
               ],
-              "prompt": "Accept one invitation warmly and decline another politely with a clear reason.",
-              "promptAr": "اقبل دعوة بحفاوة وارفض أخرى بأدب مع سبب واضح.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "Two invitations have arrived for the same evening. Write both replies: accept the first warmly and say what time you will arrive, then decline the second politely with a real reason and an offer for another time.",
+              "promptAr": "وصلتكَ دعوتان لليلة نفسها. اكتب الردّين: اقبل الأولى بحفاوة مع ذكر وقت وصولكَ، ثم اعتذر عن الثانية بأدب مع سبب حقيقي واقتراح موعد آخر.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "I'd love to",
+                    "I would love to",
+                    "thank you for",
+                    "count me in",
+                    "I'll be there",
+                    "I will be there",
+                    "I accept",
+                    "yes please",
+                    "with pleasure"
+                  ],
+                  [
+                    "I can't make it",
+                    "I cannot make it",
+                    "I'm sorry",
+                    "I am sorry",
+                    "unfortunately",
+                    "I must decline",
+                    "I have to decline",
+                    "I can't come"
+                  ],
+                  [
+                    "because",
+                    "but",
+                    "I'm working",
+                    "I am working",
+                    "my sister",
+                    "I'm away",
+                    "that evening",
+                    "at the same time",
+                    "I've already"
+                  ],
+                  [
+                    "another time",
+                    "next time",
+                    "if you do it again",
+                    "some other",
+                    "I'll see you",
+                    "I hope it goes well",
+                    "have a good",
+                    "see you soon"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "wordGuide": [
+                75,
+                100
+              ]
             }
           ]
         },
@@ -26483,36 +26549,64 @@
           "titleAr": "أبلغ عن تغيير",
           "lessonType": "encounter-focus-practice",
           "canDo": [
+            "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE",
             "A2.U12.READING.FOLLOW_INVITATION_MESSAGE",
-            "A2.U12.MEDIATION.RELAY_EVENT_CHANGE"
+            "A2.U12.INTERACTION.INVITE_ACCEPT_DECLINE"
           ],
           "grammar": [
-            "A2.G.CHANGE_APOLOGY",
-            "A2.G.TECH_QUESTIONS",
-            "A2.G.PURPOSE_TECH"
+            "A2.G.CHANGE_APOLOGY"
           ],
           "lexicon": [
             "A2.LEX.UNFORTUNATELY_ADV01",
-            "A2.LEX.CHANGE_V02",
             "A2.LEX.INSTEAD_ADV01",
-            "A2.LEX.ERROR_N01",
-            "A2.LEX.FREEZE_V01",
-            "A2.LEX.SOLUTION_N01",
-            "A2.LEX.SECURE_ADJ01",
-            "A2.LEX.BACKUP_N01",
-            "A2.LEX.GUIDE_N01"
+            "A2.LEX.POSTPONE_V01"
           ],
           "chunks": [
             "A2.CHUNK.CHANGE_OF_PLAN",
-            "A2.CHUNK.WHAT_ERROR_MESSAGE",
-            "A2.CHUNK.STEP_BY_STEP"
+            "A2.CHUNK.SHORT_NOTICE",
+            "A2.CHUNK.PASS_IT_ON"
           ],
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "There is a change of plan. Unfortunately, the community hall has a water problem, so the meeting will take place at the school instead. The time is still 6:00.",
-                "ar": ""
+                "speaker": "Widad",
+                "en": "There's a change of plan. Unfortunately the hall has no heating.",
+                "ar": "هناك تغيير في الخطة. للأسف لا توجد تدفئة في القاعة."
+              },
+              {
+                "speaker": "Jalal",
+                "en": "At this time of year? We can't ask sixty people to sit in the cold.",
+                "ar": "في هذا الوقت من السنة؟ لا يمكننا أن نطلب من ستين شخصاً الجلوس في البرد."
+              },
+              {
+                "speaker": "Widad",
+                "en": "I know. So we'll use the library room instead, and start half an hour later.",
+                "ar": "أعرف. لذلك سنستخدم غرفة المكتبة بدلاً منها، ونبدأ متأخرين نصف ساعة."
+              },
+              {
+                "speaker": "Amjad",
+                "en": "Or we postpone it to next Saturday and keep the hall.",
+                "ar": "أو نؤجّلها إلى السبت المقبل ونحتفظ بالقاعة."
+              },
+              {
+                "speaker": "Widad",
+                "en": "Next Saturday is the exam week. I'd rather not postpone at short notice.",
+                "ar": "السبت المقبل أسبوع الامتحانات. أفضّل ألا نؤجّل في مهلة قصيرة كهذه."
+              },
+              {
+                "speaker": "Jalal",
+                "en": "Then the library room. I'll pass it on to the choir tonight.",
+                "ar": "إذن غرفة المكتبة. سأبلّغ الجوقة الليلة."
+              },
+              {
+                "speaker": "Amjad",
+                "en": "And I'll ring the six people who never read messages.",
+                "ar": "وسأتصل بالستة الذين لا يقرؤون الرسائل أبداً."
+              },
+              {
+                "speaker": "Widad",
+                "en": "Thank you. The date, the food and the price are all the same; only the room and the time have changed.",
+                "ar": "شكراً لكما. التاريخ والطعام والسعر كما هي؛ الغرفة والوقت وحدهما تغيّرا."
               }
             ]
           },
@@ -26520,110 +26614,148 @@
             {
               "id": "A2-U12-L5-A01",
               "lessonId": "A2-U12-L5",
-              "type": "textChoice",
+              "type": "audioChoice",
               "mode": "encounter",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U12.READING.FOLLOW_INVITATION_MESSAGE",
-                "A2.U12.MEDIATION.RELAY_EVENT_CHANGE"
+                "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE"
               ],
-              "prompt": "What has not changed?",
-              "promptAr": "ما الذي لم يتغير؟",
+              "prompt": "Listen once. What do the three of them decide in the end?",
+              "promptAr": "استمع مرة واحدة. ما الذي يقرره الثلاثة في النهاية؟",
               "options": [
-                "The time",
-                "The place",
-                "The building"
+                "To keep the day and move to a different room",
+                "To postpone everything until the exam week is over",
+                "To ask the sixty guests to bring warm clothes"
               ],
-              "answer": "The time",
-              "sourceText": "There is a change of plan. Unfortunately, the community hall has a water problem, so the meeting will take place at the school instead. The time is still 6:00."
+              "answer": "To keep the day and move to a different room",
+              "audioTranscript": "There's a change of plan. Unfortunately the hall has no heating. At this time of year? We can't ask sixty people to sit in the cold. I know. So we'll use the library room instead, and start half an hour later. Or we postpone it to next Saturday and keep the hall. Next Saturday is the exam week. I'd rather not postpone at short notice. Then the library room. I'll pass it on to the choir tonight. And I'll ring the six people who never read messages. Thank you. The date, the food and the price are all the same; only the room and the time have changed."
             },
             {
               "id": "A2-U12-L5-A02",
-              "lessonId": "A2-U12-L5",
-              "type": "match",
-              "mode": "practice",
-              "skill": "reading",
-              "canDo": [
-                "A2.U12.READING.FOLLOW_INVITATION_MESSAGE",
-                "A2.U12.MEDIATION.RELAY_EVENT_CHANGE"
-              ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "unfortunately",
-                  "للأسف"
-                ],
-                [
-                  "change",
-                  "يغيّر"
-                ],
-                [
-                  "instead",
-                  "بدلاً من ذلك"
-                ]
-              ]
-            },
-            {
-              "id": "A2-U12-L5-A03",
               "lessonId": "A2-U12-L5",
               "type": "gap",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U12.READING.FOLLOW_INVITATION_MESSAGE",
-                "A2.U12.MEDIATION.RELAY_EVENT_CHANGE"
+                "A2.U12.READING.FOLLOW_INVITATION_MESSAGE"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "The café is closed, so we'll meet at the library ___.",
+              "prompt": "This is the first line of the message, and it brings bad news. Choose the word that fits.",
+              "promptAr": "هذا أول سطر في الرسالة وهو يحمل خبراً سيئاً. اختر الكلمة المناسبة.",
+              "text": "Dear all: ___, the boat is not running on Sunday. We will take the bus instead.",
               "options": [
-                "instead",
-                "unfortunately",
-                "because"
+                "Unfortunately",
+                "Instead",
+                "However"
               ],
-              "answer": "instead"
+              "answer": "Unfortunately"
+            },
+            {
+              "id": "A2-U12-L5-A03",
+              "lessonId": "A2-U12-L5",
+              "type": "textChoice",
+              "mode": "practice",
+              "skill": "reading",
+              "canDo": [
+                "A2.U12.READING.FOLLOW_INVITATION_MESSAGE"
+              ],
+              "prompt": "Read the notice on the door. What stays the same after the change?",
+              "promptAr": "اقرأ الإعلان على الباب. ما الذي يبقى كما هو بعد التغيير؟",
+              "options": [
+                "The hour, and what you have already paid",
+                "The day, and the room",
+                "Nothing at all this month"
+              ],
+              "answer": "The hour, and what you have already paid",
+              "sourceText": "Notice on the door: this week's class is postponed. Unfortunately the teacher is ill. There is no class on Wednesday; we will meet on Saturday at the same hour instead. Your card is still valid, and nobody has to pay twice."
             },
             {
               "id": "A2-U12-L5-A04",
               "lessonId": "A2-U12-L5",
-              "type": "textChoice",
+              "type": "audioChoice",
               "mode": "mastery",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U12.READING.FOLLOW_INVITATION_MESSAGE",
-                "A2.U12.MEDIATION.RELAY_EVENT_CHANGE"
+                "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE"
               ],
-              "prompt": "Which detail remains usable?",
-              "promptAr": "أي تفصيل يبقى قابلاً للاستخدام؟",
+              "prompt": "Listen to Rabab's message from the swimming club. What still happens tomorrow?",
+              "promptAr": "استمع إلى رسالة رباب من نادي السباحة. ما الذي سيحدث غداً رغم كل شيء؟",
               "options": [
-                "The same link",
-                "Friday's date",
-                "The physical room"
+                "The children's session, in the small pool",
+                "Saturday's lesson, at the usual time",
+                "Nothing at all until Friday"
               ],
-              "answer": "The same link",
-              "sourceText": "Because the speaker is ill, Friday's talk is postponed. It will happen online on Monday at 7:30 instead. The same link will work."
+              "answer": "The children's session, in the small pool",
+              "audioTranscript": "Good evening, this is Rabab from the swimming club. I'm sorry to ring at short notice. Unfortunately the pool is closed tomorrow; something broke in the heating last night, and the engineer cannot come until Friday. So Saturday's lesson is postponed to the week after, at the same time. The children's session tomorrow will run in the small pool instead, but only for the under nines. Please pass it on to the other parents; I have not reached everybody yet. Nobody needs to pay again."
             },
             {
               "id": "A2-U12-L5-A05",
               "lessonId": "A2-U12-L5",
               "type": "speak",
               "mode": "mastery",
-              "skill": "mediation",
+              "skill": "spokenInteraction",
               "canDo": [
-                "A2.U12.READING.FOLLOW_INVITATION_MESSAGE",
-                "A2.U12.MEDIATION.RELAY_EVENT_CHANGE"
+                "A2.U12.INTERACTION.INVITE_ACCEPT_DECLINE"
               ],
-              "prompt": "Relay an event change with reason, replacement arrangement and any detail that stays the same.",
-              "promptAr": "انقل تغيير فعالية مع السبب والترتيب البديل وأي تفصيل بقي كما هو.",
-              "evaluation": [
-                "selectRelevantInformation",
-                "clarity",
-                "audienceAwareness",
-                "accuracy"
+              "prompt": "A friend has heard that Saturday is cancelled, which is not quite right. Tell him what has really changed, what has not, and why, then say whether you are still going yourself.",
+              "promptAr": "سمع صديقكَ أن السبت أُلغي، وهذا ليس دقيقاً. أخبره بما تغيّر فعلاً وما لم يتغيّر ولماذا، ثم قل له إن كنتَ ستذهب أنتَ أم لا.",
+              "partnerTurns": [
+                "Someone told me Saturday is off. Is that right? I've already told my brother.",
+                "So what has actually changed, and what stays the same?",
+                "All right. And are you still going yourself?"
               ],
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "it isn't cancelled",
+                    "it is not cancelled",
+                    "not cancelled",
+                    "it's not off",
+                    "only the",
+                    "just the",
+                    "change of plan",
+                    "it has moved"
+                  ],
+                  [
+                    "unfortunately",
+                    "because",
+                    "the heating",
+                    "the hall",
+                    "no heating",
+                    "closed",
+                    "ill",
+                    "broke",
+                    "too cold",
+                    "being painted"
+                  ],
+                  [
+                    "instead",
+                    "we'll meet",
+                    "we will meet",
+                    "the library",
+                    "the other room",
+                    "half an hour later",
+                    "at the same",
+                    "postponed",
+                    "the week after"
+                  ],
+                  [
+                    "I'm still going",
+                    "I am still going",
+                    "I'll be there",
+                    "count me in",
+                    "I can't make it",
+                    "I'd love to but",
+                    "I'm coming",
+                    "I won't come"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             }
           ]
         },
@@ -26633,30 +26765,31 @@
           "titleAr": "اكتب رسالة فعالية كاملة",
           "lessonType": "integrated-production",
           "canDo": [
+            "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE",
+            "A2.U12.READING.FOLLOW_INVITATION_MESSAGE",
+            "A2.U12.PRODUCTION.EXPLAIN_EVENT_PLAN",
             "A2.U12.WRITING.WRITE_CONNECTED_EVENT_MESSAGE",
-            "A2.U12.PRODUCTION.EXPLAIN_EVENT_PLAN"
+            "A2.U12.MEDIATION.RELAY_EVENT_CHANGE"
           ],
           "grammar": [
             "A2.G.EVENT_MESSAGE_LINKERS",
-            "A2.G.FUTURE_EVENT_REVIEW"
+            "A2.G.PRESENT_PERFECT_JUST_ALREADY_YET"
           ],
           "lexicon": [
             "A2.LEX.EVENT_DETAIL_N01",
             "A2.LEX.REPLY_N01",
-            "A2.LEX.DIETARY_ADJ01"
+            "A2.LEX.DIETARY_ADJ01",
+            "A2.LEX.HOWEVER_ADV01",
+            "A2.LEX.CONTACT_V01"
           ],
           "chunks": [
             "A2.CHUNK.PLEASE_LET_US_KNOW",
             "A2.CHUNK.LOOKING_FORWARD"
           ],
-          "encounter": {
-            "dialogue": [
-              {
-                "speaker": "Narrator",
-                "en": "Hello everyone, our meal is on 14 August at 6:30 in Garden Hall. Please reply by Monday and let us know about any dietary needs. Also, bring a reusable cup. We're looking forward to seeing you.",
-                "ar": ""
-              }
-            ]
+          "readingText": {
+            "title": "The Street Lunch at Number Twelve",
+            "text": "Dear neighbours, you are invited to the street lunch at number twelve on Saturday the sixth of June, from one o'clock until five. It is ten years since the first one, so we would like everybody to come, old neighbours and new. All the event details are on the card in your letterbox. We have already booked the tables and the tea urn. However, we have not found anybody to carry the chairs up from the basement yet, so please tell us if you have an hour free on Saturday morning. Bring a dish if you would like to. Please let us know about any dietary needs when you reply, and tell us how many are coming with you. Two families have not sent a reply yet; the rest of you have been very quick, thank you. If it rains we will eat in the hall instead. Contact Faiza on the number below with any question. We are looking forward to seeing you all.",
+            "textAr": "أعزاءنا الجيران، ندعوكم إلى غداء الشارع في المنزل رقم اثني عشر يوم السبت السادس من حزيران، من الواحدة ظهراً حتى الخامسة. مرّت عشر سنوات على أول غداء، ونودّ أن يأتي الجميع، القدامى منكم والجدد. تفاصيل الفعالية كلها في البطاقة التي وضعناها في صندوق بريدكم. لقد حجزنا الطاولات وإبريق الشاي الكبير بالفعل، غير أننا لم نجد بعد من يحمل الكراسي من القبو، فأخبرونا إن كانت لديكم ساعة فارغة صباح السبت. أحضروا طبقاً إن أحببتم. أرجو أن تخبرونا بأي احتياجات غذائية حين تردّون، وأن تذكروا كم شخصاً سيأتي معكم. عائلتان لم ترسلا رداً بعد، أما بقيتكم فكانوا سريعين جداً، ولكم الشكر. وإذا أمطرت فسنتناول الغداء في القاعة بدلاً من الشارع. تواصلوا مع فائزة على الرقم أدناه لأي سؤال. نتطلع إلى رؤيتكم جميعاً."
           },
           "activities": [
             {
@@ -26666,85 +26799,153 @@
               "mode": "encounter",
               "skill": "reading",
               "canDo": [
-                "A2.U12.WRITING.WRITE_CONNECTED_EVENT_MESSAGE",
-                "A2.U12.PRODUCTION.EXPLAIN_EVENT_PLAN"
+                "A2.U12.READING.FOLLOW_INVITATION_MESSAGE"
               ],
-              "prompt": "What must guests report?",
-              "promptAr": "ماذا يجب على الضيوف الإبلاغ عنه؟",
+              "prompt": "Read Faiza and Nabil's message once. What are they mainly asking the street to do?",
+              "promptAr": "اقرأ رسالة فائزة ونبيل مرة واحدة. ما الذي يطلبانه من أهل الشارع أساساً؟",
               "options": [
-                "Dietary needs",
-                "Their job history",
-                "The weather"
+                "Come, reply with their numbers, and say if they can help",
+                "Pay a share of the tables and the tea urn",
+                "Move the lunch indoors because of the weather"
               ],
-              "answer": "Dietary needs",
-              "sourceText": "Hello everyone, our meal is on 14 August at 6:30 in Garden Hall. Please reply by Monday and let us know about any dietary needs. Also, bring a reusable cup. We're looking forward to seeing you."
+              "answer": "Come, reply with their numbers, and say if they can help"
             },
             {
               "id": "A2-U12-L6-A02",
               "lessonId": "A2-U12-L6",
-              "type": "match",
+              "type": "audioChoice",
               "mode": "practice",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U12.WRITING.WRITE_CONNECTED_EVENT_MESSAGE",
-                "A2.U12.PRODUCTION.EXPLAIN_EVENT_PLAN"
+                "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE"
               ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "event detail",
-                  "تفصيل فعالية"
-                ],
-                [
-                  "reply",
-                  "رد"
-                ],
-                [
-                  "dietary",
-                  "غذائي"
-                ]
-              ]
+              "prompt": "Listen to Nabil's message. What three things does he need from each family?",
+              "promptAr": "استمع إلى رسالة نبيل. ما الأشياء الثلاثة التي يحتاجها من كل عائلة؟",
+              "options": [
+                "Numbers, dietary needs and a phone number",
+                "Money, a dish and a chair",
+                "A card, an address and a signature"
+              ],
+              "answer": "Numbers, dietary needs and a phone number",
+              "audioTranscript": "Hello, this is Nabil from number twelve, leaving a message for the people who haven't replied. Don't worry, there's nothing to pay. We only need three things from you: how many are coming, whether anybody has a dietary need, and a phone number we can contact on the day. The card came through your door on Monday. However, if you have lost it, everything is also on the noticeboard by the shop. Please let us know by Wednesday, because we order the bread on Thursday morning. Thank you."
             },
             {
               "id": "A2-U12-L6-A03",
               "lessonId": "A2-U12-L6",
-              "type": "gap",
+              "type": "speak",
               "mode": "practice",
-              "skill": "reading",
+              "skill": "spokenProduction",
               "canDo": [
-                "A2.U12.WRITING.WRITE_CONNECTED_EVENT_MESSAGE",
                 "A2.U12.PRODUCTION.EXPLAIN_EVENT_PLAN"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "Please let us ___ if you can attend.",
-              "options": [
-                "know",
-                "knew",
-                "knowing"
-              ],
-              "answer": "know"
+              "prompt": "Before you write anything, say your own message aloud the way Faiza wrote hers: the occasion, when and where, one thing already arranged, one thing still missing, and what to do if it rains.",
+              "promptAr": "قبل أن تكتب شيئاً، قل رسالتكَ بصوت عالٍ كما كتبت فائزة رسالتها: المناسبة، ومتى وأين، وأمر رُتّب بالفعل، وأمر ما زال ناقصاً، وماذا تفعلون إن أمطرت.",
+              "accepted": [],
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "you are invited",
+                    "we're having",
+                    "we are having",
+                    "would you like",
+                    "please come",
+                    "join us",
+                    "the lunch",
+                    "the celebration"
+                  ],
+                  [
+                    "already",
+                    "we've booked",
+                    "we have booked",
+                    "is arranged",
+                    "is done",
+                    "have arrived",
+                    "we've paid"
+                  ],
+                  [
+                    "yet",
+                    "we haven't",
+                    "we have not",
+                    "nobody has",
+                    "still need",
+                    "we are still looking",
+                    "not found"
+                  ],
+                  [
+                    "if it rains",
+                    "however",
+                    "instead",
+                    "in the hall",
+                    "indoors",
+                    "please let us know",
+                    "reply",
+                    "contact"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U12-L6-A04",
               "lessonId": "A2-U12-L6",
-              "type": "textChoice",
+              "type": "speak",
               "mode": "mastery",
-              "skill": "reading",
+              "skill": "mediation",
               "canDo": [
-                "A2.U12.WRITING.WRITE_CONNECTED_EVENT_MESSAGE",
-                "A2.U12.PRODUCTION.EXPLAIN_EVENT_PLAN"
+                "A2.U12.MEDIATION.RELAY_EVENT_CHANGE"
               ],
-              "prompt": "What is included?",
-              "promptAr": "ما الذي هو مشمول؟",
-              "options": [
-                "Lunch",
-                "A notebook",
-                "Transport"
-              ],
-              "answer": "Lunch",
-              "sourceText": "The workshop starts at ten. First, sign in at the desk. Also, bring a notebook. However, you do not need to bring food because lunch is included."
+              "prompt": "Your neighbour does not read English. Tell her what the hall has written: the hours the room is theirs, what is already in the room, the one thing that does not work, and what has to happen at the end of the day.",
+              "promptAr": "جارتكِ لا تقرأ الإنجليزية. أخبريها بما كتبته إدارة القاعة: ساعات استخدام الغرفة، وما الموجود فيها أصلاً، والشيء الوحيد المعطّل، وما يجب فعله في نهاية اليوم.",
+              "sourceCard": "Note from the hall: you may use the room from twelve until six on Saturday. The kitchen is included, however the big oven is broken. Tables and sixty chairs are already there. Please leave the room as you found it, and return the key to the shop next door.",
+              "accepted": [],
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "twelve",
+                    "until six",
+                    "from twelve",
+                    "six hours",
+                    "midday",
+                    "noon",
+                    "till six",
+                    "the afternoon"
+                  ],
+                  [
+                    "tables",
+                    "sixty chairs",
+                    "chairs",
+                    "the kitchen",
+                    "already there",
+                    "are there"
+                  ],
+                  [
+                    "oven",
+                    "broken",
+                    "doesn't work",
+                    "does not work",
+                    "out of order",
+                    "not working"
+                  ],
+                  [
+                    "leave the room",
+                    "as you found it",
+                    "tidy",
+                    "clean",
+                    "return the key",
+                    "the shop next door",
+                    "give the key back"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U12-L6-A05",
@@ -26753,22 +26954,67 @@
               "mode": "mastery",
               "skill": "writing",
               "canDo": [
-                "A2.U12.WRITING.WRITE_CONNECTED_EVENT_MESSAGE",
-                "A2.U12.PRODUCTION.EXPLAIN_EVENT_PLAN"
+                "A2.U12.WRITING.WRITE_CONNECTED_EVENT_MESSAGE"
               ],
-              "prompt": "Write a connected invitation with purpose, date, time, place, response request, practical detail and warm close.",
-              "promptAr": "اكتب دعوة مترابطة تتضمن الغرض والتاريخ والوقت والمكان وطلب الرد وتفصيلاً عملياً وخاتمة ودودة.",
-              "evaluation": [
-                "taskCompletion",
-                "clarity",
-                "organisation",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "Now write your own event message to a group you belong to. Give the occasion, the date, the time and the place, one thing that is already arranged and one that is not arranged yet, what you need in the reply, and how to contact you.",
+              "promptAr": "اكتب الآن رسالة فعاليتكَ إلى مجموعة تنتمي إليها. اذكر المناسبة والتاريخ والوقت والمكان، وأمراً رُتّب بالفعل وأمراً لم يُرتّب بعد، وما تحتاجه في الرد، وكيف يتواصلون معكَ.",
               "accepted": [],
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "you are invited",
+                    "we would like",
+                    "we're having",
+                    "we are having",
+                    "please come",
+                    "join us",
+                    "I'm writing to invite"
+                  ],
+                  [
+                    "on Saturday",
+                    "on Friday",
+                    "o'clock",
+                    "at six",
+                    "at one",
+                    "from",
+                    "until",
+                    "at the hall",
+                    "at number",
+                    "in the garden",
+                    "the date"
+                  ],
+                  [
+                    "already",
+                    "we've booked",
+                    "we have booked",
+                    "is arranged",
+                    "have arrived",
+                    "yet",
+                    "we haven't",
+                    "we have not",
+                    "still need",
+                    "nobody has"
+                  ],
+                  [
+                    "please let us know",
+                    "please reply",
+                    "tell us",
+                    "by Wednesday",
+                    "by Monday",
+                    "dietary",
+                    "how many",
+                    "contact",
+                    "ring me",
+                    "the number below"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
               "wordGuide": [
-                90,
-                120
+                75,
+                100
               ]
             }
           ]
@@ -26802,15 +27048,15 @@
                 "A2.U12.READING.FOLLOW_INVITATION_MESSAGE",
                 "A2.U12.ACTION.ORGANISE_EVENT"
               ],
-              "prompt": "Which activity is unchanged?",
-              "promptAr": "أي نشاط لم يتغير؟",
+              "prompt": "Read the council's notice before you ring anybody. What has not changed about Saturday?",
+              "promptAr": "اقرأ إعلان المجلس البلدي قبل أن تتصل بأحد. ما الذي لم يتغيّر في يوم السبت؟",
               "options": [
-                "The cooking activity",
-                "The venue",
-                "The time"
+                "The cooking activity and the price",
+                "The building and the street",
+                "The hour the evening starts"
               ],
-              "answer": "The cooking activity",
-              "sourceText": "Original plan: Saturday 4:00, River Hall. Update: River Hall is unavailable, so the event will be at Oak Centre at 5:00. The cooking activity is unchanged. Confirm attendance by Thursday."
+              "answer": "The cooking activity and the price",
+              "sourceText": "From the council office: River Hall is closed for repairs until the autumn, so Saturday's welcome evening moves to the Oak Centre on Mill Road. The start is now five o'clock, not four. The cooking activity and the price are unchanged. Confirm your numbers by Thursday."
             },
             {
               "id": "A2-U12-L7-A02",
@@ -26822,15 +27068,15 @@
                 "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE",
                 "A2.U12.ACTION.ORGANISE_EVENT"
               ],
-              "prompt": "Which task can the speaker do?",
-              "promptAr": "أي مهمة يستطيع المتحدث تنفيذها؟",
+              "prompt": "Listen to Thurayya's reply. What does she need somebody else to do?",
+              "promptAr": "استمع إلى رد ثريا. ما الذي تحتاج أن يقوم به شخص آخر؟",
               "options": [
-                "Bring the drinks",
-                "Collect the key",
-                "Open at four"
+                "Collect the key at four",
+                "Tell Munir about the new place",
+                "Bring knives for the cooking"
               ],
-              "answer": "Bring the drinks",
-              "audioTranscript": "I can come at five and bring the drinks, but I can't collect the key because I am working until four thirty. Could someone else do that?"
+              "answer": "Collect the key at four",
+              "audioTranscript": "Hi, it's Thurayya. I've just read the notice about the Oak Centre. Count me in for the evening; I'd love to help with the cooking, and I'll bring my own knives. However, I can't collect the key at four, because I don't finish my shift until half past. Could somebody else do that? I've already told Munir and the two families on my landing, so you don't have to contact them again. One more thing: my neighbour is coming, and she can't eat anything with nuts."
             },
             {
               "id": "A2-U12-L7-A03",
@@ -26842,16 +27088,62 @@
                 "A2.U12.INTERACTION.INVITE_ACCEPT_DECLINE",
                 "A2.U12.ACTION.ORGANISE_EVENT"
               ],
-              "prompt": "Invite a guest, negotiate two tasks and respond to one availability problem.",
-              "promptAr": "ادعُ ضيفاً وتفاوض على مهمتين واستجب لمشكلة توفر واحدة.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
+              "prompt": "Ring a guest who has not replied. Invite her to the new time and place, explain why it moved, and ask her to take one job. Answer what she says.",
+              "promptAr": "اتصل بضيفة لم تردّ بعد. ادعُها إلى الموعد والمكان الجديدين، واشرح سبب التغيير، واطلب منها أن تتولى مهمة واحدة. وأجب عما تقوله.",
+              "partnerTurns": [
+                "Hello? Sorry, I've been away. I haven't read anything all week.",
+                "The Oak Centre? I thought it was at River Hall at four. What happened?",
+                "I can come, but not for the whole evening. Tell me what you still need, and I'll say what I can do."
               ],
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "would you like",
+                    "are you free",
+                    "we'd love you to",
+                    "please come",
+                    "I'm ringing to invite",
+                    "join us",
+                    "can you come"
+                  ],
+                  [
+                    "the Oak Centre",
+                    "Mill Road",
+                    "at five",
+                    "five o'clock",
+                    "not four",
+                    "moved",
+                    "the new place",
+                    "a different"
+                  ],
+                  [
+                    "because",
+                    "closed",
+                    "repairs",
+                    "River Hall",
+                    "unfortunately",
+                    "until the autumn",
+                    "so we"
+                  ],
+                  [
+                    "could you",
+                    "would you",
+                    "can you",
+                    "we still need",
+                    "one job",
+                    "bring",
+                    "collect",
+                    "set up",
+                    "help with"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U12-L7-A04",
@@ -26863,16 +27155,60 @@
                 "A2.U12.PRODUCTION.EXPLAIN_EVENT_PLAN",
                 "A2.U12.ACTION.ORGANISE_EVENT"
               ],
-              "prompt": "Present the final event plan, including arrangements, responsibilities and the change.",
-              "promptAr": "قدّم خطة الفعالية النهائية متضمنة الترتيبات والمسؤوليات والتغيير.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "Present the final plan to the team in under a minute: the new place and time, what has already been arranged, what is not arranged yet, and who is doing each job.",
+              "promptAr": "قدّم الخطة النهائية للفريق في أقل من دقيقة: المكان والوقت الجديدين، وما رُتّب بالفعل، وما لم يُرتّب بعد، ومن يتولى كل مهمة.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "the Oak Centre",
+                    "Mill Road",
+                    "at five",
+                    "five o'clock",
+                    "on Saturday",
+                    "the new",
+                    "we've moved",
+                    "we have moved"
+                  ],
+                  [
+                    "already",
+                    "is booked",
+                    "we've booked",
+                    "have arrived",
+                    "is arranged",
+                    "is done",
+                    "has told",
+                    "I've confirmed"
+                  ],
+                  [
+                    "yet",
+                    "haven't",
+                    "have not",
+                    "nobody has",
+                    "still need",
+                    "we are still",
+                    "no one has"
+                  ],
+                  [
+                    "Thurayya",
+                    "Munir",
+                    "is doing",
+                    "will do",
+                    "is bringing",
+                    "will bring",
+                    "is collecting",
+                    "takes the",
+                    "her job",
+                    "his job",
+                    "I'll"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U12-L7-A05",
@@ -26884,16 +27220,53 @@
                 "A2.U12.MEDIATION.RELAY_EVENT_CHANGE",
                 "A2.U12.ACTION.ORGANISE_EVENT"
               ],
-              "prompt": "Relay the old and new details, unchanged activity and reply deadline accurately.",
-              "promptAr": "انقل التفاصيل القديمة والجديدة والنشاط غير المتغير وموعد الرد بدقة.",
-              "evaluation": [
-                "selectRelevantInformation",
-                "clarity",
-                "audienceAwareness",
-                "accuracy"
-              ],
+              "prompt": "Umm Zahra does not read English. Tell her what the Oak Centre has written: when she can come in and how long the room is yours, where to leave the car, what is included, and the one thing nobody may do.",
+              "promptAr": "أم زهراء لا تقرأ الإنجليزية. أخبرها بما كتبه مركز أوك: متى يمكنها الدخول وكم من الوقت الغرفة لكم، وأين تترك السيارة، وما المشمول، والشيء الوحيد الممنوع.",
+              "sourceCard": "Oak Centre, note for the organiser: doors open at half past four, and the room is yours until nine. There is no parking on Mill Road, so use the school car park opposite. Tea and coffee are included. Please do not move the piano.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "half past four",
+                    "four thirty",
+                    "doors open",
+                    "come in at",
+                    "until nine",
+                    "till nine",
+                    "nine o'clock"
+                  ],
+                  [
+                    "no parking",
+                    "Mill Road",
+                    "the school",
+                    "car park",
+                    "opposite",
+                    "leave the car",
+                    "park at"
+                  ],
+                  [
+                    "tea",
+                    "coffee",
+                    "included",
+                    "free",
+                    "you don't pay",
+                    "we don't pay"
+                  ],
+                  [
+                    "the piano",
+                    "do not move",
+                    "don't move",
+                    "mustn't move",
+                    "must not move",
+                    "leave it where"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U12-L7-A06",
@@ -26905,20 +27278,68 @@
                 "A2.U12.WRITING.WRITE_CONNECTED_EVENT_MESSAGE",
                 "A2.U12.ACTION.ORGANISE_EVENT"
               ],
-              "prompt": "Write the final update to all guests with apology, reason, replacement details, tasks and confirmation request.",
-              "promptAr": "اكتب التحديث النهائي لجميع الضيوف مع اعتذار وسبب وتفاصيل بديلة ومهام وطلب تأكيد.",
-              "evaluation": [
-                "taskCompletion",
-                "clarity",
-                "organisation",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "The invitation you sent last week is now wrong. Write the message that replaces it: apologise for the change, say why it happened, give the new place and time, say what has not changed, name the two jobs you still need, and ask for a reply by Thursday.",
+              "promptAr": "الدعوة التي أرسلتها الأسبوع الماضي صارت خاطئة. اكتب الرسالة التي تحل محلها: اعتذر عن التغيير، واذكر سببه، وأعطِ المكان والوقت الجديدين، وقل ما لم يتغيّر، وسمِّ المهمتين اللتين ما زلت تحتاجهما، واطلب الرد قبل الخميس.",
+              "accepted": [],
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "sorry",
+                    "apologies",
+                    "I'm sorry",
+                    "I am sorry",
+                    "unfortunately",
+                    "short notice",
+                    "please forgive"
+                  ],
+                  [
+                    "because",
+                    "closed",
+                    "repairs",
+                    "River Hall",
+                    "until the autumn",
+                    "so we have moved",
+                    "that is why"
+                  ],
+                  [
+                    "the Oak Centre",
+                    "Mill Road",
+                    "at five",
+                    "five o'clock",
+                    "not four",
+                    "instead",
+                    "the new place"
+                  ],
+                  [
+                    "the cooking",
+                    "the price",
+                    "unchanged",
+                    "the same",
+                    "has not changed",
+                    "still on Saturday",
+                    "however"
+                  ],
+                  [
+                    "please reply",
+                    "let us know",
+                    "by Thursday",
+                    "confirm",
+                    "tell me",
+                    "we still need",
+                    "could somebody",
+                    "two jobs",
+                    "the key",
+                    "help with"
+                  ]
+                ],
+                "minGroupsMatched": 4,
+                "onlineRefinement": "grammarCheck"
+              },
               "wordGuide": [
-                95,
-                125
-              ],
-              "accepted": []
+                75,
+                100
+              ]
             }
           ]
         }
