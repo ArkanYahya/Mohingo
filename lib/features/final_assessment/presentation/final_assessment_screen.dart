@@ -7,7 +7,6 @@ import 'package:go_router/go_router.dart';
 import '../../../content/models/activity.dart';
 import '../../../content/models/capstone.dart';
 import '../../../content/models/media_specification.dart';
-import '../../../content/providers/course_content_providers.dart';
 import '../../../core/l10n/generated/app_localizations.dart';
 import '../../../core/l10n/skill_label.dart';
 import '../../../core/widgets/section_heading.dart';
@@ -16,6 +15,7 @@ import '../../activity_engine/domain/activity_submission.dart';
 import '../../activity_engine/domain/evidence_skill_resolver.dart';
 import '../../activity_engine/presentation/activity_view_registry.dart';
 import '../../progress/providers/current_learner_provider.dart';
+import '../../progress/providers/level_providers.dart';
 import '../../progress/providers/progress_providers.dart';
 import '../../tests_home/presentation/widgets/test_intro_view.dart';
 import '../../tests_home/presentation/widgets/test_question_frame.dart';
@@ -31,11 +31,13 @@ import '../domain/final_assessment_scoring.dart';
 Widget buildFinalAssessmentResultViewForTest({
   required List<FinalAssessmentSectionResult> results,
   required bool overallPassed,
+  required String levelCode,
   Map<String, double> passMarks = const {},
 }) {
   return _AssessmentResultView(
     results: results,
     overallPassed: overallPassed,
+    levelCode: levelCode,
     passMarks: passMarks,
   );
 }
@@ -52,29 +54,33 @@ List<_FlatItem> _flatten(FinalAssessment assessment) => [
       _FlatItem(entry.key, activity),
 ];
 
-/// The A1 Final Assessment — the bundle's own secured, unseen `sections`
-/// (`listening`/`reading`/`writing`/`speaking`/`mediation`), sequenced in
-/// order. Scored strictly per section, never one blended average
-/// (`decisionRule.noSingleOverallAverage`); a section with any
+/// The current level's Final Assessment — the bundle's own secured, unseen
+/// `sections` (`listening`/`reading`/`writing`/`speaking`/`mediation`),
+/// sequenced in order. Scored strictly per section, never one blended
+/// average (`decisionRule.noSingleOverallAverage`); a section with any
 /// free-response item this app can't auto-grade is honestly reported as
 /// pending review rather than guessed at.
+///
+/// Which level's assessment this is follows [currentCourseProvider], so an
+/// A2 learner gets A2's — the Tests tab that opens it follows the same seam.
 class FinalAssessmentScreen extends ConsumerWidget {
   const FinalAssessmentScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final contentAsync = ref.watch(courseContentProvider('a1'));
+    final courseAsync = ref.watch(currentCourseProvider);
     final learnerAsync = ref.watch(currentLearnerProvider);
-    return contentAsync.when(
+    return courseAsync.when(
       loading: () => const _LoadingScaffold(),
       error: (error, _) => _ErrorScaffold(message: '$error'),
-      data: (index) => learnerAsync.when(
+      data: (course) => learnerAsync.when(
         loading: () => const _LoadingScaffold(),
         error: (error, _) => _ErrorScaffold(message: '$error'),
         data: (learner) => _FinalAssessmentBody(
-          assessment: index.bundle.finalAssessment,
-          courseId: index.bundle.course.id,
-          mediaByKey: index.bundle.mediaSpecifications,
+          assessment: course.index.bundle.finalAssessment,
+          courseId: course.index.bundle.course.id,
+          levelCode: course.cefrCode,
+          mediaByKey: course.index.bundle.mediaSpecifications,
           learnerId: learner.id,
         ),
       ),
@@ -101,12 +107,17 @@ class _FinalAssessmentBody extends ConsumerStatefulWidget {
   const _FinalAssessmentBody({
     required this.assessment,
     required this.courseId,
+    required this.levelCode,
     required this.mediaByKey,
     required this.learnerId,
   });
 
   final FinalAssessment assessment;
   final String courseId;
+
+  /// The CEFR code of the level [assessment] closes, for the copy naming it.
+  final String levelCode;
+
   final Map<String, MediaSpecification> mediaByKey;
   final int learnerId;
 
@@ -230,6 +241,7 @@ class _FinalAssessmentBodyState extends ConsumerState<_FinalAssessmentBody> {
           for (final key in widget.assessment.sections.keys)
             key: widget.assessment.minimumScoreForSection(key),
         },
+        levelCode: widget.levelCode,
         results: _results!,
         overallPassed: FinalAssessmentScoring.overallPassed(
           widget.assessment,
@@ -245,7 +257,7 @@ class _FinalAssessmentBodyState extends ConsumerState<_FinalAssessmentBody> {
         overline: l10n.testsAssessmentOverline,
         title: assessment.title,
         titleAr: assessment.titleAr,
-        lead: l10n.finalAssessmentIntroBody,
+        lead: l10n.finalAssessmentIntroBody(widget.levelCode),
         meta: assessment.estimatedMinutes.length == 2
             ? l10n.testsAssessmentMeta(
                 _items.length,
@@ -317,11 +329,15 @@ class _AssessmentResultView extends StatelessWidget {
   const _AssessmentResultView({
     required this.results,
     required this.overallPassed,
+    required this.levelCode,
     required this.passMarks,
   });
 
   final List<FinalAssessmentSectionResult> results;
   final bool overallPassed;
+
+  /// The CEFR code of the level just sat, for "You passed A2".
+  final String levelCode;
 
   /// Each section's pass mark (0–1), by section key.
   final Map<String, double> passMarks;
@@ -337,7 +353,7 @@ class _AssessmentResultView extends StatelessWidget {
     return TestResultView(
       overline: l10n.testsAssessmentOverline,
       title: overallPassed
-          ? l10n.assessmentResultPassedTitle
+          ? l10n.assessmentResultPassedTitle(levelCode)
           : l10n.assessmentResultNotYetTitle,
       body: l10n.assessmentResultBody(passed, results.length),
       primaryLabel: overallPassed

@@ -746,11 +746,11 @@ abstract class AppLocalizations {
   /// **'Opens with a conversation'**
   String get learnLessonHasConversation;
 
-  /// Overline on the card at the end of the unit path.
+  /// Overline on the card at the end of the unit path, naming the level the path belongs to.
   ///
   /// In en, this message translates to:
-  /// **'Finish A1'**
-  String get learnFinishOverline;
+  /// **'Finish {level}'**
+  String learnFinishOverline(String level);
 
   /// Title of the card at the end of the unit path.
   ///
@@ -1586,11 +1586,11 @@ abstract class AppLocalizations {
   /// **'Speaking'**
   String get skillSpeaking;
 
-  /// Line under the Tests tab's title.
+  /// Line under the Tests tab's title, naming the level the learner is in.
   ///
   /// In en, this message translates to:
-  /// **'See where you are in A1 — and prove it at the end.'**
-  String get testsHubSubtitle;
+  /// **'See where you are in {level} — and prove it at the end.'**
+  String testsHubSubtitle(String level);
 
   /// Overline on the Tests tab's placement card for a brand-new learner.
   ///
@@ -1664,11 +1664,11 @@ abstract class AppLocalizations {
   /// **'Result: A1 already mastered'**
   String get testsPlacementResultMastered;
 
-  /// Tests tab section heading for the final mission and assessment.
+  /// Tests tab section heading for the final mission and assessment, naming the level they close.
   ///
   /// In en, this message translates to:
-  /// **'Finish A1'**
-  String get testsFinishOverline;
+  /// **'Finish {level}'**
+  String testsFinishOverline(String level);
 
   /// Course progress above the final mission and assessment.
   ///
@@ -1682,11 +1682,11 @@ abstract class AppLocalizations {
   /// **'All {total} units mastered — you\'re ready.'**
   String testsFinishReady(int total);
 
-  /// Tests tab description of the final mission.
+  /// Tests tab and Final Mission intro description of the final mission.
   ///
   /// In en, this message translates to:
-  /// **'Use everything from A1 in one real-life scenario, stage by stage.'**
-  String get testsMissionBody;
+  /// **'Use everything from {level} in one real-life scenario, stage by stage.'**
+  String testsMissionBody(String level);
 
   /// Size and time of the final mission.
   ///
@@ -1973,8 +1973,8 @@ abstract class AppLocalizations {
   /// Final assessment result when passed.
   ///
   /// In en, this message translates to:
-  /// **'You passed A1'**
-  String get assessmentResultPassedTitle;
+  /// **'You passed {level}'**
+  String assessmentResultPassedTitle(String level);
 
   /// Final assessment result when not passed.
   ///
@@ -2015,8 +2015,8 @@ abstract class AppLocalizations {
   /// Final Assessment intro screen body text.
   ///
   /// In en, this message translates to:
-  /// **'The exit test for A1. Each skill is scored on its own — a strong score in one never covers for a weak one in another.'**
-  String get finalAssessmentIntroBody;
+  /// **'The exit test for {level}. Each skill is scored on its own — a strong score in one never covers for a weak one in another.'**
+  String finalAssessmentIntroBody(String level);
 
   /// Final Assessment intro screen start button.
   ///

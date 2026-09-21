@@ -133,6 +133,71 @@ final class CurrentLevelIdProvider
 
 String _$currentLevelIdHash() => r'7ada187cb7b7194feff4c1c2afaed91c682ca2e5';
 
+/// The current level's course, for the screens that show one level whole
+/// rather than one item: the Tests tab and the two capstones.
+///
+/// The Learn tab does this inline instead (`CourseScreen`) because it also
+/// has a level the learner is merely *browsing*, which is not their
+/// enrolment; nothing here has that second notion, so the two watches
+/// collapse into one `AsyncValue` and each screen keeps a single
+/// loading/error branch.
+
+@ProviderFor(currentCourse)
+final currentCourseProvider = CurrentCourseProvider._();
+
+/// The current level's course, for the screens that show one level whole
+/// rather than one item: the Tests tab and the two capstones.
+///
+/// The Learn tab does this inline instead (`CourseScreen`) because it also
+/// has a level the learner is merely *browsing*, which is not their
+/// enrolment; nothing here has that second notion, so the two watches
+/// collapse into one `AsyncValue` and each screen keeps a single
+/// loading/error branch.
+
+final class CurrentCourseProvider
+    extends
+        $FunctionalProvider<
+          AsyncValue<CurrentCourse>,
+          CurrentCourse,
+          FutureOr<CurrentCourse>
+        >
+    with $FutureModifier<CurrentCourse>, $FutureProvider<CurrentCourse> {
+  /// The current level's course, for the screens that show one level whole
+  /// rather than one item: the Tests tab and the two capstones.
+  ///
+  /// The Learn tab does this inline instead (`CourseScreen`) because it also
+  /// has a level the learner is merely *browsing*, which is not their
+  /// enrolment; nothing here has that second notion, so the two watches
+  /// collapse into one `AsyncValue` and each screen keeps a single
+  /// loading/error branch.
+  CurrentCourseProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'currentCourseProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$currentCourseHash();
+
+  @$internal
+  @override
+  $FutureProviderElement<CurrentCourse> $createElement(
+    $ProviderPointer pointer,
+  ) => $FutureProviderElement(pointer);
+
+  @override
+  FutureOr<CurrentCourse> create(Ref ref) {
+    return currentCourse(ref);
+  }
+}
+
+String _$currentCourseHash() => r'a8fb7ecd74433dc0755ffc8e666f2d8d9b55baf0';
+
 /// Whether [levelId] is open for the learner right now, and if not, why.
 
 @ProviderFor(levelAccess)
@@ -193,7 +258,7 @@ final class LevelAccessProvider
   }
 }
 
-String _$levelAccessHash() => r'd039df822705bd30385309c4d8a1185ec78ffaca';
+String _$levelAccessHash() => r'b9aa208fc0645458c3b596aefa48ac4b1dc21b81';
 
 /// Whether [levelId] is open for the learner right now, and if not, why.
 

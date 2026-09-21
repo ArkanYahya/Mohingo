@@ -5,7 +5,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart' show DateFormat;
 
+import '../../../content/catalog/level_catalog.dart';
 import '../../../content/index/course_content_index.dart';
+import '../../../content/models/curriculum_structure.dart';
 import '../../../content/providers/course_content_providers.dart';
 import '../../../core/l10n/generated/app_localizations.dart';
 import '../../../core/theme/app_tokens.dart';
@@ -15,6 +17,7 @@ import '../../../core/widgets/section_heading.dart';
 import '../../../core/widgets/status_pill.dart';
 import '../../../data/local/database.dart';
 import '../../learning_path/providers/unit_progress_providers.dart';
+import '../../progress/providers/level_providers.dart';
 import '../providers/tests_home_providers.dart';
 
 /// The Tests tab.
@@ -22,24 +25,33 @@ import '../providers/tests_home_providers.dart';
 /// A brand-new learner (no placement attempt, no lesson played) is pointed
 /// at the placement test with one highlighted card. Otherwise placement is
 /// a row showing when it was taken and its result ("start from Unit 4").
-/// Then "Finish A1": units mastered with a segment per unit, and the final
-/// mission and final assessment with their real size and time and their
-/// latest result. Unit checks aren't a separate flow — a closing note points
-/// to each unit's mission on the Learn tab. Every test stays open (free
-/// access, docs/PRODUCT.md flow 5); course progress only advises when.
+/// Then "Finish A2" — or whichever level the learner is in: units mastered
+/// with a segment per unit, and the final mission and final assessment with
+/// their real size and time and their latest result. Unit checks aren't a
+/// separate flow — a closing note points to each unit's mission on the Learn
+/// tab. Every test stays open (free access, docs/PRODUCT.md flow 5); course
+/// progress only advises when.
+///
+/// Everything but placement follows the level the learner is in
+/// ([currentCourseProvider]), so an A2 learner's exit is A2's mission and
+/// A2's assessment — see docs/superpowers/specs/2026-09-19-a2-level-design.md.
+/// The placement test is deliberately level-agnostic: it covers every
+/// released level and finds where the learner belongs, so it neither reads
+/// nor names the current one.
 class TestsHomeScreen extends ConsumerWidget {
   const TestsHomeScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final contentAsync = ref.watch(courseContentProvider('a1'));
+    final courseAsync = ref.watch(currentCourseProvider);
     return Scaffold(
       body: SafeArea(
         bottom: false,
-        child: contentAsync.when(
+        child: courseAsync.when(
           loading: () => const Center(child: CircularProgressIndicator()),
           error: (error, _) => Center(child: Text('$error')),
-          data: (index) => _TestsBody(index: index),
+          data: (course) =>
+              _TestsBody(index: course.index, levelCode: course.cefrCode),
         ),
       ),
     );
@@ -47,9 +59,12 @@ class TestsHomeScreen extends ConsumerWidget {
 }
 
 class _TestsBody extends ConsumerWidget {
-  const _TestsBody({required this.index});
+  const _TestsBody({required this.index, required this.levelCode});
 
   final CourseContentIndex index;
+
+  /// The CEFR code of the level [index] holds, for the copy that names it.
+  final String levelCode;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -69,6 +84,13 @@ class _TestsBody extends ConsumerWidget {
         placement == null &&
         lessonsAsync.value!.isEmpty;
     final units = index.bundle.units;
+    // Placement is the base level's gateway test, so its result is
+    // numbered against that level's units — not against whichever level
+    // the learner is in now, where an A1 unit id resolves to nothing. The
+    // base bundle is always loaded: the router gates startup on it.
+    final placementUnits =
+        ref.watch(courseContentProvider(kBaseLevelId)).value?.bundle.units ??
+        units;
     final masteredIds = {
       for (final p in unitProgress)
         if (p.state == 'mastered') p.unitId,
@@ -96,7 +118,7 @@ class _TestsBody extends ConsumerWidget {
         ),
         const SizedBox(height: AppSpace.xxs),
         Text(
-          l10n.testsHubSubtitle,
+          l10n.testsHubSubtitle(levelCode),
           style: theme.textTheme.bodyLarge?.copyWith(
             color: tokens.textSecondary,
           ),
@@ -116,13 +138,13 @@ class _TestsBody extends ConsumerWidget {
                     : l10n.testsTakenOn(
                         _date(context, placement!.completedAt!),
                       ),
-                status: _placementPill(l10n, placement),
+                status: _placementPill(l10n, placement, placementUnits),
                 onTap: () => context.push('/tests/placement'),
               ),
             ],
           ),
         ],
-        SectionHeading(l10n.testsFinishOverline),
+        SectionHeading(l10n.testsFinishOverline(levelCode)),
         _CourseProgress(
           mastered: units.where((u) => masteredIds.contains(u.id)).length,
           segments: [for (final u in units) masteredIds.contains(u.id)],
@@ -134,7 +156,7 @@ class _TestsBody extends ConsumerWidget {
               icon: Icons.explore_outlined,
               title: fm.title,
               titleAr: fm.titleAr,
-              body: l10n.testsMissionBody,
+              body: l10n.testsMissionBody(levelCode),
               meta: fm.estimatedMinutes.length == 2
                   ? l10n.testsMissionMeta(
                       fm.activities.length,
@@ -179,10 +201,13 @@ class _TestsBody extends ConsumerWidget {
       DateFormat.yMMMd(Localizations.localeOf(context).languageCode)
           .format(date);
 
-  StatusPill _placementPill(AppLocalizations l10n, PlacementAttempt? a) {
+  StatusPill _placementPill(
+    AppLocalizations l10n,
+    PlacementAttempt? a,
+    List<Unit> units,
+  ) {
     if (a == null) return StatusPill(label: l10n.testsNotTaken);
     if (a.completedAt == null) return StatusPill(label: l10n.testsNotFinished);
-    final units = index.bundle.units;
     int unitNumber(String id) => units.indexWhere((u) => u.id == id) + 1;
     final result = switch (a.outcome) {
       'a1Mastered' => l10n.testsPlacementResultMastered,

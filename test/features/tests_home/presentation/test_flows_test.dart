@@ -22,6 +22,7 @@ import 'package:mohingo/features/final_assessment/presentation/final_assessment_
 import 'package:mohingo/features/final_mission/presentation/final_mission_screen.dart';
 import 'package:mohingo/features/placement_test/domain/placement_item_sampler.dart';
 import 'package:mohingo/features/placement_test/presentation/placement_test_screen.dart';
+import 'package:mohingo/features/progress/data/drift_learner_repository.dart';
 import 'package:mohingo/features/speech/domain/speech_capability_service.dart';
 import 'package:mohingo/features/speech/domain/speech_recognition_service.dart';
 import 'package:mohingo/features/speech/providers/speech_providers.dart';
@@ -35,11 +36,21 @@ final _index = CourseContentIndex.build(
     File('assets/content/en/A1/a1-course-bundle.json').readAsStringSync(),
   ),
 );
+final _a2Index = CourseContentIndex.build(
+  CourseBundleParser.parse(
+    File('assets/content/en/A2/a2-course-bundle.json').readAsStringSync(),
+  ),
+);
 
+/// Pumps [screen] for a learner in [levelId] — enrolling and selecting
+/// anything but the base level first, the way
+/// `LevelSelectionController.select` would, so `currentLevelIdProvider`
+/// resolves to it and the capstones load that level's content.
 Future<(AppLocalizations, AppDatabase)> _pump(
   WidgetTester tester,
-  Widget screen,
-) async {
+  Widget screen, {
+  String levelId = 'a1',
+}) async {
   tester.view.physicalSize = const Size(800, 2400);
   tester.view.devicePixelRatio = 1;
   addTearDown(tester.view.resetPhysicalSize);
@@ -48,12 +59,25 @@ Future<(AppLocalizations, AppDatabase)> _pump(
   final prefs = await SharedPreferences.getInstance();
   final db = AppDatabase(NativeDatabase.memory());
   addTearDown(db.close);
+  if (levelId != 'a1') {
+    final index = {'a2': _a2Index}[levelId]!;
+    final repository = DriftLearnerRepository(db);
+    final learnerId = (await repository.getOrCreateLearner()).id;
+    await repository.ensureEnrolled(
+      learnerId: learnerId,
+      levelId: levelId,
+      courseId: index.bundle.course.id,
+      contentVersion: index.bundle.contentVersion,
+    );
+    await repository.markLevelSelected(learnerId: learnerId, levelId: levelId);
+  }
   await tester.pumpWidget(
     ProviderScope(
       overrides: [
         sharedPreferencesProvider.overrideWithValue(prefs),
         appDatabaseProvider.overrideWithValue(db),
         courseContentProvider('a1').overrideWith((ref) async => _index),
+        courseContentProvider('a2').overrideWith((ref) async => _a2Index),
         placementSeedProvider.overrideWithValue(999),
         soundEffectsServiceProvider.overrideWithValue(
           FakeSoundEffectsService(),
@@ -105,6 +129,40 @@ void main() {
         );
       }
       expect(find.text(l10n.testRulesNote), findsOneWidget);
+      expect(find.text(l10n.finalAssessmentIntroBody('A1')), findsOneWidget);
+    });
+
+    testWidgets('a learner in A2 sits A2\'s assessment, named as A2', (
+      tester,
+    ) async {
+      final a2 = _a2Index.bundle.finalAssessment;
+      final (l10n, _) = await _pump(
+        tester,
+        const FinalAssessmentScreen(),
+        levelId: 'a2',
+      );
+
+      expect(find.text(a2.title), findsOneWidget);
+      expect(find.text(assessment.title), findsNothing);
+      expect(find.text(l10n.finalAssessmentIntroBody('A2')), findsOneWidget);
+      expect(find.text(l10n.finalAssessmentIntroBody('A1')), findsNothing);
+
+      // It is not just the intro: starting it serves an A2 question.
+      await tester.tap(find.text(l10n.finalAssessmentStartButton));
+      await tester.pumpAndSettle();
+      final first = a2.sections.entries.first;
+      expect(
+        find.text(
+          l10n
+              .testQuestionEyebrow(
+                sectionLabel(l10n, first.key),
+                1,
+                first.value.activities.length,
+              )
+              .toUpperCase(),
+        ),
+        findsOneWidget,
+      );
     });
 
     testWidgets('a question sits in the frame with its section and place; '
@@ -159,13 +217,46 @@ void main() {
     testWidgets('the intro lists the stages of the day with their tasks', (
       tester,
     ) async {
-      await _pump(tester, const FinalMissionScreen());
+      final (l10n, _) = await _pump(tester, const FinalMissionScreen());
 
       expect(find.text(mission.title), findsOneWidget);
+      expect(find.text(l10n.testsMissionBody('A1')), findsOneWidget);
       for (final stage in mission.stages) {
         expect(find.text(stage.title), findsOneWidget);
         expect(find.text(stage.titleAr), findsOneWidget);
       }
+    });
+
+    testWidgets('a learner in A2 runs A2\'s mission, named as A2', (
+      tester,
+    ) async {
+      final a2 = _a2Index.bundle.finalMission;
+      final (l10n, _) = await _pump(
+        tester,
+        const FinalMissionScreen(),
+        levelId: 'a2',
+      );
+
+      expect(find.text(a2.title), findsOneWidget);
+      expect(find.text(mission.title), findsNothing);
+      expect(find.text(l10n.testsMissionBody('A2')), findsOneWidget);
+      expect(find.text(l10n.testsMissionBody('A1')), findsNothing);
+      for (final stage in a2.stages) {
+        expect(find.text(stage.title), findsOneWidget, reason: stage.title);
+      }
+
+      // It is not just the intro: starting it serves an A2 stage's task.
+      await tester.tap(find.text(l10n.finalMissionStartButton));
+      await tester.pumpAndSettle();
+      final stage = a2.stages.first;
+      expect(
+        find.text(
+          l10n
+              .testQuestionEyebrow(stage.title, 1, stage.activityIds.length)
+              .toUpperCase(),
+        ),
+        findsOneWidget,
+      );
     });
 
     testWidgets('questions show their stage, and keep right/wrong feedback', (

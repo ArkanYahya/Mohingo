@@ -311,9 +311,12 @@ class _CourseBody extends StatelessWidget {
             isLast: true,
             node: PathNode(
               kind: PathNodeKind.flag,
-              semanticsLabel: l10n.learnFinishOverline,
+              semanticsLabel: l10n.learnFinishOverline(shownCode),
             ),
-            child: _FinishCard(onTap: () => context.go('/tests')),
+            child: _FinishCard(
+              levelCode: shownCode,
+              onTap: () => context.go('/tests'),
+            ),
           ),
       ],
     );
@@ -847,7 +850,11 @@ class _CurrentUnitCard extends StatelessWidget {
 }
 
 class _FinishCard extends StatelessWidget {
-  const _FinishCard({required this.onTap});
+  const _FinishCard({required this.levelCode, required this.onTap});
+
+  /// The CEFR code of the level this path ends — the card only renders for
+  /// the level the learner is in, never a browsed one.
+  final String levelCode;
 
   final VoidCallback onTap;
 
@@ -874,7 +881,7 @@ class _FinishCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      l10n.learnFinishOverline.toUpperCase(),
+                      l10n.learnFinishOverline(levelCode).toUpperCase(),
                       style: overlineStyle(
                         context,
                         color: tokens.textSecondary,

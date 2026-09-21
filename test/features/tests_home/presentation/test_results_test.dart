@@ -191,6 +191,7 @@ void main() {
             ),
           ],
           overallPassed: false,
+          levelCode: 'A1',
           passMarks: const {'reading': 0.6, 'writing': 0.6},
         ),
       );

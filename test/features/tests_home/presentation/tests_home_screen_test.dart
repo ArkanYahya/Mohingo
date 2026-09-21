@@ -19,6 +19,7 @@ import 'package:mohingo/core/theme/app_theme.dart';
 import 'package:mohingo/core/theme/color_seed.dart';
 import 'package:mohingo/data/local/database.dart';
 import 'package:mohingo/data/local/database_provider.dart';
+import 'package:mohingo/features/progress/data/drift_learner_repository.dart';
 import 'package:mohingo/features/tests_home/presentation/tests_home_screen.dart';
 
 final _index = CourseContentIndex.build(
@@ -26,13 +27,23 @@ final _index = CourseContentIndex.build(
     File('assets/content/en/A1/a1-course-bundle.json').readAsStringSync(),
   ),
 );
+final _a2Index = CourseContentIndex.build(
+  CourseBundleParser.parse(
+    File('assets/content/en/A2/a2-course-bundle.json').readAsStringSync(),
+  ),
+);
 final _mission = _index.bundle.finalMission;
 final _assessment = _index.bundle.finalAssessment;
 final _taken = DateTime(2026, 9, 12, 10);
 
+/// Pumps the Tests tab for a learner in [levelId] — enrolling and
+/// selecting anything but the base level first, the way
+/// `LevelSelectionController.select` would, so `currentLevelIdProvider`
+/// resolves to it.
 Future<AppLocalizations> _pump(
   WidgetTester tester, {
   Future<void> Function(AppDatabase db, int learnerId)? seed,
+  String levelId = 'a1',
 }) async {
   tester.view.physicalSize = const Size(800, 2400);
   tester.view.devicePixelRatio = 1;
@@ -46,6 +57,17 @@ Future<AppLocalizations> _pump(
       .into(db.learners)
       .insert(LearnersCompanion.insert(uuid: 'l', createdAt: DateTime(2026)));
   if (seed != null) await seed(db, learnerId);
+  if (levelId != 'a1') {
+    final index = {'a2': _a2Index}[levelId]!;
+    final repository = DriftLearnerRepository(db);
+    await repository.ensureEnrolled(
+      learnerId: learnerId,
+      levelId: levelId,
+      courseId: index.bundle.course.id,
+      contentVersion: index.bundle.contentVersion,
+    );
+    await repository.markLevelSelected(learnerId: learnerId, levelId: levelId);
+  }
 
   final router = GoRouter(
     initialLocation: '/tests',
@@ -61,6 +83,7 @@ Future<AppLocalizations> _pump(
         sharedPreferencesProvider.overrideWithValue(prefs),
         appDatabaseProvider.overrideWithValue(db),
         courseContentProvider('a1').overrideWith((ref) async => _index),
+        courseContentProvider('a2').overrideWith((ref) async => _a2Index),
       ],
       child: MaterialApp.router(
         theme: AppTheme.light(AppColorSeed.calmTeal),
@@ -166,7 +189,10 @@ void main() {
       'assessment with their real size and time', (tester) async {
     final l10n = await _pump(tester);
 
-    expect(find.text(l10n.testsFinishOverline.toUpperCase()), findsOneWidget);
+    expect(
+      find.text(l10n.testsFinishOverline('A1').toUpperCase()),
+      findsOneWidget,
+    );
     expect(
       find.text(l10n.testsFinishProgress(0, _index.bundle.units.length)),
       findsOneWidget,
@@ -260,5 +286,49 @@ void main() {
 
     expect(find.text(l10n.testsUnitChecksNote), findsOneWidget);
     expect(find.textContaining('A2'), findsNothing);
+  });
+
+  testWidgets('a learner in A2 gets A2\'s capstones, named as A2 — and can '
+      'open the mission', (tester) async {
+    final l10n = await _pump(tester, levelId: 'a2');
+    final mission = _a2Index.bundle.finalMission;
+    final assessment = _a2Index.bundle.finalAssessment;
+
+    expect(
+      find.text(l10n.testsFinishOverline('A2').toUpperCase()),
+      findsOneWidget,
+    );
+    expect(find.text(l10n.testsHubSubtitle('A2')), findsOneWidget);
+    expect(find.text(mission.title), findsOneWidget);
+    expect(find.text(assessment.title), findsOneWidget);
+    // A1's capstones are gone, not merely joined by A2's.
+    expect(find.text(_mission.title), findsNothing);
+    expect(find.text(_assessment.title), findsNothing);
+    expect(
+      find.text(l10n.testsFinishProgress(0, _a2Index.bundle.units.length)),
+      findsOneWidget,
+    );
+
+    await tester.tap(find.text(mission.title));
+    await tester.pumpAndSettle();
+    expect(find.text('OPEN final-mission'), findsOneWidget);
+  });
+
+  testWidgets('placement keeps numbering the base level\'s units even for a '
+      'learner who has moved on to A2', (tester) async {
+    final l10n = await _pump(
+      tester,
+      levelId: 'a2',
+      seed: (db, id) => _seedPlacement(
+        db,
+        id,
+        outcome: 'startFromRecommendedUnit',
+        unitId: 'A1-U3',
+      ),
+    );
+
+    // A1-U3 is A1's fourth unit; it is in no A2 bundle, so reading the
+    // recommendation against A2's units would say "Unit 0".
+    expect(find.text(l10n.testsPlacementResultUnit(4)), findsOneWidget);
   });
 }

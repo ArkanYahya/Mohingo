@@ -463,7 +463,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get learnLessonHasConversation => 'يبدأ بمحادثة';
 
   @override
-  String get learnFinishOverline => 'ختام المستوى A1';
+  String learnFinishOverline(String level) {
+    return 'ختام المستوى $level';
+  }
 
   @override
   String get learnFinishTitle => 'المهمة النهائية والتقييم';
@@ -1013,7 +1015,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get skillSpeaking => 'التحدث';
 
   @override
-  String get testsHubSubtitle => 'اعرف أين أنت في A1 — وأثبت ذلك في النهاية.';
+  String testsHubSubtitle(String level) {
+    return 'اعرف أين أنت في المستوى $level — وأثبت ذلك في النهاية.';
+  }
 
   @override
   String get testsStartHereOverline => 'ابدأ من هنا';
@@ -1057,7 +1061,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get testsPlacementResultMastered => 'النتيجة: أتقنت A1 بالفعل';
 
   @override
-  String get testsFinishOverline => 'أنهِ A1';
+  String testsFinishOverline(String level) {
+    return 'أنهِ المستوى $level';
+  }
 
   @override
   String testsFinishProgress(int mastered, int total) {
@@ -1070,8 +1076,9 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get testsMissionBody =>
-      'استخدم كل ما تعلّمته في A1 في موقف واقعي واحد، مرحلة بعد مرحلة.';
+  String testsMissionBody(String level) {
+    return 'استخدم كل ما تعلّمته في المستوى $level في موقف واقعي واحد، مرحلة بعد مرحلة.';
+  }
 
   @override
   String testsMissionMeta(int tasks, int stages, int min, int max) {
@@ -1264,7 +1271,9 @@ class AppLocalizationsAr extends AppLocalizations {
       'بعض المهارات تحتاج إلى مزيد من التدريب — انظر أدناه. يمكنك إعادة المهمة في أي وقت.';
 
   @override
-  String get assessmentResultPassedTitle => 'نجحت في A1';
+  String assessmentResultPassedTitle(String level) {
+    return 'نجحت في المستوى $level';
+  }
 
   @override
   String get assessmentResultNotYetTitle => 'لم تنجح بعد';
@@ -1288,8 +1297,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get finalMissionDone => 'تم';
 
   @override
-  String get finalAssessmentIntroBody =>
-      'الاختبار الختامي لمستوى A1. تُقيَّم كل مهارة على حدة — لا يعوّض تفوقك في مهارة ضعفك في أخرى.';
+  String finalAssessmentIntroBody(String level) {
+    return 'الاختبار الختامي لمستوى $level. تُقيَّم كل مهارة على حدة — لا يعوّض تفوقك في مهارة ضعفك في أخرى.';
+  }
 
   @override
   String get finalAssessmentStartButton => 'ابدأ الاختبار';

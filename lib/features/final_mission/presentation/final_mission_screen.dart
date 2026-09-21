@@ -8,7 +8,6 @@ import '../../../content/models/activity.dart';
 import '../../../content/models/capstone.dart';
 import '../../../content/models/domain_definitions.dart';
 import '../../../content/models/media_specification.dart';
-import '../../../content/providers/course_content_providers.dart';
 import '../../../core/l10n/generated/app_localizations.dart';
 import '../../../core/l10n/skill_label.dart';
 import '../../../core/widgets/section_heading.dart';
@@ -18,6 +17,7 @@ import '../../activity_engine/domain/activity_submission.dart';
 import '../../activity_engine/domain/evidence_skill_resolver.dart';
 import '../../activity_engine/presentation/activity_view_registry.dart';
 import '../../progress/providers/current_learner_provider.dart';
+import '../../progress/providers/level_providers.dart';
 import '../../progress/providers/progress_providers.dart';
 import '../../tests_home/presentation/widgets/test_intro_view.dart';
 import '../../tests_home/presentation/widgets/test_question_frame.dart';
@@ -25,28 +25,32 @@ import '../../tests_home/presentation/widgets/test_result_view.dart';
 import '../../tests_home/providers/tests_home_providers.dart';
 import '../domain/final_mission_scoring.dart';
 
-/// The A1 Final Mission — a scenario-based capstone reusing the bundle's own
-/// `finalMission.activities` directly (no sampling needed, unlike the
-/// placement test: this content is dedicated and pre-built). Scored per
-/// [FinalMission.requiredSkillGroups] independently
+/// The current level's Final Mission — a scenario-based capstone reusing
+/// the bundle's own `finalMission.activities` directly (no sampling needed,
+/// unlike the placement test: this content is dedicated and pre-built).
+/// Scored per [FinalMission.requiredSkillGroups] independently
 /// (`noSingleAverageCompensation`), never one blended average.
+///
+/// Which level's mission this is follows [currentCourseProvider], so an A2
+/// learner gets A2's — the Tests tab that opens it follows the same seam.
 class FinalMissionScreen extends ConsumerWidget {
   const FinalMissionScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final contentAsync = ref.watch(courseContentProvider('a1'));
+    final courseAsync = ref.watch(currentCourseProvider);
     final learnerAsync = ref.watch(currentLearnerProvider);
-    return contentAsync.when(
+    return courseAsync.when(
       loading: () => const _LoadingScaffold(),
       error: (error, _) => _ErrorScaffold(message: '$error'),
-      data: (index) => learnerAsync.when(
+      data: (course) => learnerAsync.when(
         loading: () => const _LoadingScaffold(),
         error: (error, _) => _ErrorScaffold(message: '$error'),
         data: (learner) => _FinalMissionBody(
-          mission: index.bundle.finalMission,
-          courseId: index.bundle.course.id,
-          mediaByKey: index.bundle.mediaSpecifications,
+          mission: course.index.bundle.finalMission,
+          courseId: course.index.bundle.course.id,
+          levelCode: course.cefrCode,
+          mediaByKey: course.index.bundle.mediaSpecifications,
           learnerId: learner.id,
         ),
       ),
@@ -73,12 +77,17 @@ class _FinalMissionBody extends ConsumerStatefulWidget {
   const _FinalMissionBody({
     required this.mission,
     required this.courseId,
+    required this.levelCode,
     required this.mediaByKey,
     required this.learnerId,
   });
 
   final FinalMission mission;
   final String courseId;
+
+  /// The CEFR code of the level [mission] closes, for the copy naming it.
+  final String levelCode;
+
   final Map<String, MediaSpecification> mediaByKey;
   final int learnerId;
 
@@ -205,7 +214,7 @@ class _FinalMissionBodyState extends ConsumerState<_FinalMissionBody> {
         overline: l10n.testsMissionOverline,
         title: mission.title,
         titleAr: mission.titleAr,
-        lead: l10n.testsMissionBody,
+        lead: l10n.testsMissionBody(widget.levelCode),
         meta: mission.estimatedMinutes.length == 2
             ? l10n.testsMissionMeta(
                 mission.activities.length,

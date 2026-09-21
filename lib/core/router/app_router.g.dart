@@ -10,9 +10,11 @@ part of 'app_router.dart';
 // ignore_for_file: type=lint, type=warning
 /// The app's route tree.
 ///
-/// The root [GoRouter.redirect] gates every route on the A1 curriculum
-/// bundle's load status: `/splash` while loading, `/content-error` on an
-/// unsupported schema or parse failure, otherwise the normal tree. See
+/// The root [GoRouter.redirect] gates every route on the base level's
+/// ([kBaseLevelId]) curriculum bundle load status: `/splash` while
+/// loading, `/content-error` on an unsupported schema or parse failure,
+/// otherwise the normal tree. A later level failing to load is handled
+/// where that level is shown and never blocks the app. See
 /// docs/ARCHITECTURE.md's content-loading strategy.
 ///
 /// The lesson player, and any future placement/final-mission/
@@ -24,9 +26,11 @@ final appRouterProvider = AppRouterProvider._();
 
 /// The app's route tree.
 ///
-/// The root [GoRouter.redirect] gates every route on the A1 curriculum
-/// bundle's load status: `/splash` while loading, `/content-error` on an
-/// unsupported schema or parse failure, otherwise the normal tree. See
+/// The root [GoRouter.redirect] gates every route on the base level's
+/// ([kBaseLevelId]) curriculum bundle load status: `/splash` while
+/// loading, `/content-error` on an unsupported schema or parse failure,
+/// otherwise the normal tree. A later level failing to load is handled
+/// where that level is shown and never blocks the app. See
 /// docs/ARCHITECTURE.md's content-loading strategy.
 ///
 /// The lesson player, and any future placement/final-mission/
@@ -38,9 +42,11 @@ final class AppRouterProvider
     with $Provider<GoRouter> {
   /// The app's route tree.
   ///
-  /// The root [GoRouter.redirect] gates every route on the A1 curriculum
-  /// bundle's load status: `/splash` while loading, `/content-error` on an
-  /// unsupported schema or parse failure, otherwise the normal tree. See
+  /// The root [GoRouter.redirect] gates every route on the base level's
+  /// ([kBaseLevelId]) curriculum bundle load status: `/splash` while
+  /// loading, `/content-error` on an unsupported schema or parse failure,
+  /// otherwise the normal tree. A later level failing to load is handled
+  /// where that level is shown and never blocks the app. See
   /// docs/ARCHITECTURE.md's content-loading strategy.
   ///
   /// The lesson player, and any future placement/final-mission/
@@ -79,4 +85,4 @@ final class AppRouterProvider
   }
 }
 
-String _$appRouterHash() => r'7d68b191941d3d210c5fa328aeee319a5bfafcb1';
+String _$appRouterHash() => r'06401e329007c1be1042dfa6eb4c41a1093a5e7e';

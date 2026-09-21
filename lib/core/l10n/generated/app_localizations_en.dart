@@ -442,7 +442,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get learnLessonHasConversation => 'Opens with a conversation';
 
   @override
-  String get learnFinishOverline => 'Finish A1';
+  String learnFinishOverline(String level) {
+    return 'Finish $level';
+  }
 
   @override
   String get learnFinishTitle => 'Final mission & assessment';
@@ -982,8 +984,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get skillSpeaking => 'Speaking';
 
   @override
-  String get testsHubSubtitle =>
-      'See where you are in A1 — and prove it at the end.';
+  String testsHubSubtitle(String level) {
+    return 'See where you are in $level — and prove it at the end.';
+  }
 
   @override
   String get testsStartHereOverline => 'Start here';
@@ -1027,7 +1030,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get testsPlacementResultMastered => 'Result: A1 already mastered';
 
   @override
-  String get testsFinishOverline => 'Finish A1';
+  String testsFinishOverline(String level) {
+    return 'Finish $level';
+  }
 
   @override
   String testsFinishProgress(int mastered, int total) {
@@ -1040,8 +1045,9 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get testsMissionBody =>
-      'Use everything from A1 in one real-life scenario, stage by stage.';
+  String testsMissionBody(String level) {
+    return 'Use everything from $level in one real-life scenario, stage by stage.';
+  }
 
   @override
   String testsMissionMeta(int tasks, int stages, int min, int max) {
@@ -1233,7 +1239,9 @@ class AppLocalizationsEn extends AppLocalizations {
       'Some skills need more practice — see below. You can take the mission again any time.';
 
   @override
-  String get assessmentResultPassedTitle => 'You passed A1';
+  String assessmentResultPassedTitle(String level) {
+    return 'You passed $level';
+  }
 
   @override
   String get assessmentResultNotYetTitle => 'Not passed yet';
@@ -1257,8 +1265,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get finalMissionDone => 'Done';
 
   @override
-  String get finalAssessmentIntroBody =>
-      'The exit test for A1. Each skill is scored on its own — a strong score in one never covers for a weak one in another.';
+  String finalAssessmentIntroBody(String level) {
+    return 'The exit test for $level. Each skill is scored on its own — a strong score in one never covers for a weak one in another.';
+  }
 
   @override
   String get finalAssessmentStartButton => 'Start the assessment';

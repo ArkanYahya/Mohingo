@@ -1,6 +1,7 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../../content/catalog/level_catalog.dart';
+import '../../../content/index/course_content_index.dart';
 import '../../../content/providers/course_content_providers.dart';
 import '../../learning_path/providers/unit_progress_providers.dart';
 import '../domain/level_access.dart';
@@ -36,6 +37,46 @@ Future<String> currentLevelId(Ref ref) async {
   return currentLevelIdFor(
     enrolments: enrolments,
     catalog: ref.watch(levelCatalogProvider),
+  );
+}
+
+/// The level the learner is in, resolved into the two things a screen
+/// showing "this level" actually needs: its content, and the CEFR code the
+/// copy names it by.
+class CurrentCourse {
+  const CurrentCourse({
+    required this.levelId,
+    required this.cefrCode,
+    required this.index,
+  });
+
+  /// The catalogue key, e.g. `"a2"`.
+  final String levelId;
+
+  /// The code as displayed, e.g. `"A2"` — what every `{level}` placeholder
+  /// is given. Falls back to [levelId] only if the catalogue has no entry.
+  final String cefrCode;
+
+  final CourseContentIndex index;
+}
+
+/// The current level's course, for the screens that show one level whole
+/// rather than one item: the Tests tab and the two capstones.
+///
+/// The Learn tab does this inline instead (`CourseScreen`) because it also
+/// has a level the learner is merely *browsing*, which is not their
+/// enrolment; nothing here has that second notion, so the two watches
+/// collapse into one `AsyncValue` and each screen keeps a single
+/// loading/error branch.
+@riverpod
+Future<CurrentCourse> currentCourse(Ref ref) async {
+  final levelId = await ref.watch(currentLevelIdProvider.future);
+  final index = await ref.watch(courseContentProvider(levelId).future);
+  final entry = levelCatalogEntryIn(ref.watch(levelCatalogProvider), levelId);
+  return CurrentCourse(
+    levelId: levelId,
+    cefrCode: entry?.cefrCode ?? levelId,
+    index: index,
   );
 }
 
