@@ -566,30 +566,6 @@
       ]
     },
     {
-      "id": "A2.G.FUTURE_CONTRAST",
-      "form": "going to vs present continuous vs will",
-      "meaningAr": "المقارنة بين صيغ المستقبل",
-      "introducedIn": "A2-U6-L3",
-      "examples": [
-        {
-          "en": "I'm going to travel; I'm leaving Friday; I'll book now.",
-          "ar": "أنوي السفر؛ سأغادر الجمعة؛ سأحجز الآن."
-        }
-      ]
-    },
-    {
-      "id": "A2.G.FIRST_CONDITIONAL_INTRO",
-      "form": "if + present, will + verb",
-      "meaningAr": "مقدمة الشرط الأول",
-      "introducedIn": "A2-U6-L4",
-      "examples": [
-        {
-          "en": "If it rains, we'll visit the museum.",
-          "ar": "إذا أمطرت فسنزور المتحف."
-        }
-      ]
-    },
-    {
       "id": "A2.G.FUTURE_TIME_CLAUSE",
       "form": "when/after/before + present",
       "meaningAr": "عبارات الزمن المستقبلية",
@@ -902,18 +878,6 @@
       ]
     },
     {
-      "id": "A2.G.FIRST_CONDITIONAL_NATURE",
-      "form": "first conditional for likely situations",
-      "meaningAr": "الشرط الأول للمواقف المحتملة",
-      "introducedIn": "A2-U11-L2",
-      "examples": [
-        {
-          "en": "If the river rises, the road will close.",
-          "ar": "إذا ارتفع النهر سيُغلق الطريق."
-        }
-      ]
-    },
-    {
       "id": "A2.G.MAY_MIGHT_POSSIBILITY",
       "form": "may / might for possibility",
       "meaningAr": "may وmight للاحتمال",
@@ -1114,6 +1078,54 @@
         {
           "en": "He wants only a slice of bread.",
           "ar": "هو لا يريد إلا شريحة من الخبز."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.FIRST_CONDITIONAL",
+      "form": "if + present simple, will + base verb (either half can come first)",
+      "meaningAr": "الشرط الأول: if مع المضارع البسيط، و will مع المصدر — لنتيجة محتملة في المستقبل",
+      "introducedIn": "A2-U6-L4",
+      "examples": [
+        {
+          "en": "If the sea is rough, we will not sail.",
+          "ar": "إذا كان البحر هائجاً فلن نبحر."
+        },
+        {
+          "en": "We'll do the meeting online if the flight moves again.",
+          "ar": "سنعقد الاجتماع عبر الإنترنت إذا تغيّر موعد الرحلة مرة أخرى."
+        },
+        {
+          "en": "If you decide not to wait, we will give you your money back.",
+          "ar": "إذا قررت ألا تنتظر فسنعيد لك مالك."
+        },
+        {
+          "en": "If she calls before six, I'll tell her.",
+          "ar": "إذا اتصلت قبل السادسة فسأخبرها."
+        }
+      ]
+    },
+    {
+      "id": "A2.G.FUTURE_FORMS_CONTRAST",
+      "form": "three futures: be going to (an intention already decided), present continuous (a fixed arrangement with a time), will (a decision or offer made while speaking)",
+      "meaningAr": "ثلاث صيغ للمستقبل: going to لنية سبق اتخاذها، والمضارع المستمر لترتيب ثابت له موعد، و will لقرار أو عرض يُتخذ أثناء الكلام",
+      "introducedIn": "A2-U6-L3",
+      "examples": [
+        {
+          "en": "We are going to see three sights.",
+          "ar": "ننوي زيارة ثلاثة معالم."
+        },
+        {
+          "en": "I'm meeting my sister at six.",
+          "ar": "سألتقي أختي في السادسة، وهذا موعد ثابت."
+        },
+        {
+          "en": "Two dinars is nothing. I'll take the direct one.",
+          "ar": "ديناران ليسا بشيء. سآخذ المباشرة."
+        },
+        {
+          "en": "Shall I book the seats tonight?",
+          "ar": "هل أحجز المقاعد الليلة؟"
         }
       ]
     }
@@ -6186,6 +6198,222 @@
       ],
       "introducedIn": "A2-U5-L6",
       "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.DESTINATION_N01",
+      "headword": "destination",
+      "partOfSpeech": "noun",
+      "arabic": "وجهة",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "destination",
+      "examples": [
+        {
+          "en": "We have not chosen a destination yet.",
+          "ar": "لم نختر وجهة بعد."
+        }
+      ],
+      "introducedIn": "A2-U6-L1",
+      "recycledIn": [
+        "A2-U6-L7"
+      ]
+    },
+    {
+      "id": "A2.LEX.OVERNIGHT_ADV01",
+      "headword": "overnight",
+      "partOfSpeech": "adverb",
+      "arabic": "ليلة واحدة",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "overnight",
+      "examples": [
+        {
+          "en": "We are staying overnight in Karak.",
+          "ar": "سنبيت ليلة واحدة في الكرك."
+        }
+      ],
+      "introducedIn": "A2-U6-L1",
+      "recycledIn": [
+        "A2-U6-L6"
+      ]
+    },
+    {
+      "id": "A2.LEX.BOOK_V01",
+      "headword": "book",
+      "partOfSpeech": "verb",
+      "arabic": "يحجز",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "book",
+      "examples": [
+        {
+          "en": "I'd like to book a room for two nights.",
+          "ar": "أريد حجز غرفة لليلتين."
+        }
+      ],
+      "introducedIn": "A2-U6-L2",
+      "recycledIn": [
+        "A2-U6-L3",
+        "A2-U6-L7"
+      ]
+    },
+    {
+      "id": "A2.LEX.COACH_N01",
+      "headword": "coach",
+      "partOfSpeech": "noun",
+      "arabic": "حافلة سفر",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "coach",
+      "examples": [
+        {
+          "en": "The direct coach leaves at seven.",
+          "ar": "حافلة السفر المباشرة تغادر في السابعة."
+        }
+      ],
+      "introducedIn": "A2-U6-L3",
+      "recycledIn": [
+        "A2-U6-L6",
+        "A2-U6-L7"
+      ]
+    },
+    {
+      "id": "A2.LEX.FERRY_N01",
+      "headword": "ferry",
+      "partOfSpeech": "noun",
+      "arabic": "عبّارة",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "ferry",
+      "examples": [
+        {
+          "en": "The nine o'clock ferry is full.",
+          "ar": "عبّارة التاسعة ممتلئة."
+        }
+      ],
+      "introducedIn": "A2-U6-L3",
+      "recycledIn": [
+        "A2-U6-L4"
+      ]
+    },
+    {
+      "id": "A2.LEX.PASSENGER_N01",
+      "headword": "passenger",
+      "partOfSpeech": "noun",
+      "arabic": "راكب",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "passenger",
+      "examples": [
+        {
+          "en": "Passengers with a ticket can take the later boat.",
+          "ar": "الركاب الذين يحملون تذكرة يمكنهم أخذ القارب اللاحق."
+        }
+      ],
+      "introducedIn": "A2-U6-L3",
+      "recycledIn": [
+        "A2-U6-L4"
+      ]
+    },
+    {
+      "id": "A2.LEX.COLLECT_V01",
+      "headword": "collect",
+      "partOfSpeech": "verb",
+      "arabic": "يمرّ ليُقلّ",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "collect",
+      "examples": [
+        {
+          "en": "I'll collect you from your flat at six.",
+          "ar": "سأمرّ لأقلّك من شقتك في السادسة."
+        }
+      ],
+      "introducedIn": "A2-U6-L3",
+      "recycledIn": [
+        "A2-U6-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.DELAYED_ADJ01",
+      "headword": "delayed",
+      "partOfSpeech": "adjective",
+      "arabic": "متأخر عن موعده",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "delayed",
+      "examples": [
+        {
+          "en": "My flight to Basra is delayed again.",
+          "ar": "رحلتي إلى البصرة تأخرت عن موعدها مرة أخرى."
+        }
+      ],
+      "introducedIn": "A2-U6-L4",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.RESCHEDULE_V01",
+      "headword": "reschedule",
+      "partOfSpeech": "verb",
+      "arabic": "يعيد تحديد الموعد",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "reschedule",
+      "examples": [
+        {
+          "en": "Shall we reschedule the meeting?",
+          "ar": "هل نعيد تحديد موعد الاجتماع؟"
+        }
+      ],
+      "introducedIn": "A2-U6-L4",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.FLEXIBLE_ADJ01",
+      "headword": "flexible",
+      "partOfSpeech": "adjective",
+      "arabic": "مرن",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "flexible",
+      "examples": [
+        {
+          "en": "I'm flexible until noon on Sunday.",
+          "ar": "وقتي مرن حتى ظهر الأحد."
+        }
+      ],
+      "introducedIn": "A2-U6-L5",
+      "recycledIn": [
+        "A2-U6-L6"
+      ]
+    },
+    {
+      "id": "A2.LEX.ANNOUNCEMENT_N01",
+      "headword": "announcement",
+      "partOfSpeech": "noun",
+      "arabic": "إعلان",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "announcement",
+      "examples": [
+        {
+          "en": "Listen for the gate announcement.",
+          "ar": "انتبه إلى إعلان البوابة."
+        }
+      ],
+      "introducedIn": "A2-U6-L5",
+      "recycledIn": []
     }
   ],
   "chunks": [
@@ -7391,6 +7619,79 @@
       "introducedIn": "A2-U5-L3",
       "productive": true,
       "recycledIn": []
+    },
+    {
+      "id": "A2.CHUNK.IN_ADVANCE",
+      "text": "in advance",
+      "arabic": "مسبقاً",
+      "cefr": "A2",
+      "introducedIn": "A2-U6-L1",
+      "productive": true,
+      "recycledIn": [
+        "A2-U6-L2"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.SHALL_I",
+      "text": "Shall I ...?",
+      "arabic": "هل أفعل ...؟",
+      "cefr": "A2",
+      "introducedIn": "A2-U6-L3",
+      "productive": true,
+      "recycledIn": [
+        "A2-U6-L4"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.ILL_COLLECT_YOU",
+      "text": "I'll collect you from ...",
+      "arabic": "سأمرّ لأقلّك من ...",
+      "cefr": "A2",
+      "introducedIn": "A2-U6-L3",
+      "productive": true,
+      "recycledIn": [
+        "A2-U6-L5"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.BEFORE_YOU_LEAVE",
+      "text": "before you leave",
+      "arabic": "قبل أن تغادر",
+      "cefr": "A2",
+      "introducedIn": "A2-U6-L5",
+      "productive": true,
+      "recycledIn": [
+        "A2-U6-L7"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.LET_YOU_KNOW",
+      "text": "I'll let you know.",
+      "arabic": "سأخبرك.",
+      "cefr": "A2",
+      "introducedIn": "A2-U6-L5",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A2.CHUNK.RUNNING_LATE",
+      "text": "running late",
+      "arabic": "متأخر عن الموعد",
+      "cefr": "A2",
+      "introducedIn": "A2-U6-L5",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A2.CHUNK.MOVE_IT_TO",
+      "text": "move it to ...",
+      "arabic": "ننقله إلى ...",
+      "cefr": "A2",
+      "introducedIn": "A2-U6-L6",
+      "productive": true,
+      "recycledIn": [
+        "A2-U6-L7"
+      ]
     }
   ],
   "units": [
@@ -15398,36 +15699,54 @@
           "lessonType": "encounter-focus-practice",
           "canDo": [
             "A2.U6.LISTENING.UNDERSTAND_TRAVEL_PLAN",
+            "A2.U6.READING.COMPARE_TRAVEL_OPTIONS",
             "A2.U6.PRODUCTION.PRESENT_ITINERARY"
           ],
           "grammar": [
-            "A2.G.GOING_TO_PLANS",
-            "A2.G.QUANTITY_MUCH_MANY",
-            "A2.G.QUANTITY_A_LOT_OF"
+            "A2.G.GOING_TO_PLANS"
           ],
           "lexicon": [
+            "A2.LEX.DESTINATION_N01",
             "A2.LEX.ITINERARY_N01",
             "A2.LEX.SIGHT_N01",
             "A2.LEX.PLAN_V01",
-            "A2.LEX.INGREDIENT_N01",
-            "A2.LEX.FLOUR_N01",
-            "A2.LEX.GRAM_N01",
-            "A2.LEX.CHOP_V01",
-            "A2.LEX.BOIL_V01",
-            "A2.LEX.STIR_V01"
+            "A2.LEX.OVERNIGHT_ADV01"
           ],
           "chunks": [
             "A2.CHUNK.GOING_TO_STAY",
-            "A2.CHUNK.HOW_MUCH_NEED",
-            "A2.CHUNK.HOW_MANY_NEED",
-            "A2.CHUNK.FIRST_THEN_FINALLY"
+            "A2.CHUNK.IN_ADVANCE"
           ],
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "We are going to spend the weekend in Aqaba. We plan to see the fort and take a boat trip.",
-                "ar": "سنقضي عطلة نهاية الأسبوع في العقبة. نخطط لرؤية القلعة والقيام برحلة قارب."
+                "speaker": "Faris",
+                "en": "Have you chosen a destination for the holiday yet?",
+                "ar": "هل اخترتِ وجهة العطلة بعد؟"
+              },
+              {
+                "speaker": "Nadia",
+                "en": "Petra. We're going to stay overnight there, then drive south.",
+                "ar": "البتراء. سنبيت هناك ليلة واحدة ثم نتجه جنوباً بالسيارة."
+              },
+              {
+                "speaker": "Faris",
+                "en": "Two days is short. Which sights are you going to see?",
+                "ar": "يومان وقت قصير. أي المعالم ستزورين؟"
+              },
+              {
+                "speaker": "Nadia",
+                "en": "Only three. I plan to book everything in advance this time.",
+                "ar": "ثلاثة فقط. أنوي حجز كل شيء مسبقاً هذه المرة."
+              },
+              {
+                "speaker": "Faris",
+                "en": "Send me the itinerary. I know a good place for breakfast.",
+                "ar": "أرسلي لي برنامج الرحلة. أعرف مكاناً جيداً للإفطار."
+              },
+              {
+                "speaker": "Nadia",
+                "en": "I'll write it tonight. It's not a long one.",
+                "ar": "سأكتبه الليلة. ليس برنامجاً طويلاً."
               }
             ]
           },
@@ -15439,65 +15758,62 @@
               "mode": "encounter",
               "skill": "listening",
               "canDo": [
-                "A2.U6.LISTENING.UNDERSTAND_TRAVEL_PLAN",
-                "A2.U6.PRODUCTION.PRESENT_ITINERARY"
+                "A2.U6.LISTENING.UNDERSTAND_TRAVEL_PLAN"
               ],
-              "prompt": "Which sight will they visit?",
-              "promptAr": "أي معلم سيزورون؟",
+              "prompt": "What are Faris and Nadia arranging?",
+              "promptAr": "ما الذي يرتّبه فارس ونادية؟",
               "options": [
-                "The fort",
-                "A museum",
-                "A stadium"
+                "A short holiday Nadia has decided to take",
+                "A work trip Faris cannot avoid",
+                "A hotel booking that went wrong"
               ],
-              "answer": "The fort",
-              "audioTranscript": "We are going to spend the weekend in Aqaba. We plan to see the fort and take a boat trip."
+              "answer": "A short holiday Nadia has decided to take",
+              "audioTranscript": "Have you chosen a destination for the holiday yet? Petra. We're going to stay overnight there, then drive south. Two days is short. Which sights are you going to see? Only three. I plan to book everything in advance this time. Send me the itinerary. I know a good place for breakfast. I'll write it tonight. It's not a long one."
             },
             {
               "id": "A2-U6-L1-A02",
-              "lessonId": "A2-U6-L1",
-              "type": "match",
-              "mode": "practice",
-              "skill": "reading",
-              "canDo": [
-                "A2.U6.LISTENING.UNDERSTAND_TRAVEL_PLAN",
-                "A2.U6.PRODUCTION.PRESENT_ITINERARY"
-              ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "itinerary",
-                  "برنامج رحلة"
-                ],
-                [
-                  "sight",
-                  "مَعلم سياحي"
-                ],
-                [
-                  "plan",
-                  "يخطط"
-                ]
-              ]
-            },
-            {
-              "id": "A2-U6-L1-A03",
               "lessonId": "A2-U6-L1",
               "type": "gap",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U6.LISTENING.UNDERSTAND_TRAVEL_PLAN",
-                "A2.U6.PRODUCTION.PRESENT_ITINERARY"
+                "A2.U6.READING.COMPARE_TRAVEL_OPTIONS"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "I am going to ___ two nights.",
+              "prompt": "The decision was made last week. Choose the form that shows it.",
+              "promptAr": "القرار اتُّخذ الأسبوع الماضي. اختر الصيغة التي تدل على ذلك.",
+              "text": "They ___ see only three sights, because the trip is short.",
               "options": [
-                "stay",
-                "stayed",
-                "staying"
+                "are going to",
+                "are go to",
+                "goes to"
               ],
-              "answer": "stay"
+              "answer": "are going to"
+            },
+            {
+              "id": "A2-U6-L1-A03",
+              "lessonId": "A2-U6-L1",
+              "type": "match",
+              "mode": "practice",
+              "skill": "reading",
+              "canDo": [
+                "A2.U6.READING.COMPARE_TRAVEL_OPTIONS"
+              ],
+              "prompt": "Match each reason to the intention it explains.",
+              "promptAr": "طابق كل سبب بالنية التي يفسّرها.",
+              "pairs": [
+                [
+                  "The market closes at four,",
+                  "so we are going to go straight there."
+                ],
+                [
+                  "I don't want to drive all night,",
+                  "so we are staying overnight in Karak."
+                ],
+                [
+                  "She has no destination yet,",
+                  "but she plans to decide this week."
+                ]
+              ]
             },
             {
               "id": "A2-U6-L1-A04",
@@ -15506,18 +15822,17 @@
               "mode": "mastery",
               "skill": "listening",
               "canDo": [
-                "A2.U6.LISTENING.UNDERSTAND_TRAVEL_PLAN",
-                "A2.U6.PRODUCTION.PRESENT_ITINERARY"
+                "A2.U6.LISTENING.UNDERSTAND_TRAVEL_PLAN"
               ],
-              "prompt": "How long is Mira's trip?",
-              "promptAr": "كم مدة رحلة ميرا؟",
+              "prompt": "Listen to Rami's message. Why is he driving instead of taking the train?",
+              "promptAr": "استمع إلى رسالة رامي. لماذا سيقود سيارته بدل أن يأخذ القطار؟",
               "options": [
-                "Three days",
-                "Two nights",
-                "One week"
+                "He wants to stop at his aunt's house on the way",
+                "The train is more expensive this month",
+                "His brother cannot travel by train"
               ],
-              "answer": "Three days",
-              "audioTranscript": "Mira is going to visit Cairo for three days. She plans to see the museum and walk by the river."
+              "answer": "He wants to stop at his aunt's house on the way",
+              "audioTranscript": "Hi, it's Rami. About next weekend, I'm going to drive, not take the train, because I want to stop at my aunt's house on the way. I'll leave on Friday at six and stay overnight in Karak. If you want a seat, tell me before Wednesday, because my brother is asking for one too."
             },
             {
               "id": "A2-U6-L1-A05",
@@ -15526,19 +15841,53 @@
               "mode": "mastery",
               "skill": "spokenProduction",
               "canDo": [
-                "A2.U6.LISTENING.UNDERSTAND_TRAVEL_PLAN",
                 "A2.U6.PRODUCTION.PRESENT_ITINERARY"
               ],
-              "prompt": "State a destination, length and two intentions for a short trip.",
-              "promptAr": "اذكر وجهة ومدة ونيتين لرحلة قصيرة.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "Tell a friend about a short trip you have decided to take. Say where you are going, how long you are going to stay, and two things you plan to do there.",
+              "promptAr": "أخبر صديقاً برحلة قصيرة قررت القيام بها. قل إلى أين ستذهب، وكم ستبقى، وأمرين تنوي فعلهما هناك.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "going to",
+                    "I'm going to",
+                    "we're going to",
+                    "plan to",
+                    "planning to",
+                    "we are going to",
+                    "I am going to"
+                  ],
+                  [
+                    "overnight",
+                    "one night",
+                    "two nights",
+                    "three nights",
+                    "three days",
+                    "for a week",
+                    "the weekend",
+                    "staying",
+                    "stay"
+                  ],
+                  [
+                    "see",
+                    "visit",
+                    "sights",
+                    "market",
+                    "museum",
+                    "old town",
+                    "castle",
+                    "walk",
+                    "swim",
+                    "take photos",
+                    "eat"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             }
           ]
         },
@@ -15549,15 +15898,17 @@
           "lessonType": "encounter-focus-practice",
           "canDo": [
             "A2.U6.LISTENING.UNDERSTAND_TRAVEL_PLAN",
+            "A2.U6.READING.COMPARE_TRAVEL_OPTIONS",
             "A2.U6.INTERACTION.BOOK_CHANGE_TRAVEL"
           ],
           "grammar": [
             "A2.G.PRESENT_CONTINUOUS_ARRANGEMENTS"
           ],
           "lexicon": [
+            "A2.LEX.BOOK_V01",
             "A2.LEX.RESERVATION_N01",
             "A2.LEX.CHECK_IN_V01",
-            "A2.LEX.AVAILABLE_ADJ01"
+            "A2.LEX.ACCOMMODATION_N01"
           ],
           "chunks": [
             "A2.CHUNK.BOOK_A_ROOM",
@@ -15566,9 +15917,39 @@
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "Guest: Do you have a double room available for Friday? Clerk: Yes. What time are you arriving? Guest: We're arriving at six.",
-                "ar": "النزيل: هل لديكم غرفة مزدوجة متاحة ليوم الجمعة؟ الموظف: نعم. في أي وقت ستصلون؟ النزيل: سنصل في السادسة."
+                "speaker": "Salma",
+                "en": "Good morning. I'd like to book a room for the fourteenth.",
+                "ar": "صباح الخير. أريد حجز غرفة ليوم الرابع عشر."
+              },
+              {
+                "speaker": "Hisham",
+                "en": "Do you have a reservation with us already, madam?",
+                "ar": "هل لديكِ حجز عندنا من قبل يا سيدتي؟"
+              },
+              {
+                "speaker": "Salma",
+                "en": "No. Do you have a twin room available for two nights?",
+                "ar": "لا. هل لديكم غرفة بسريرين متاحة لليلتين؟"
+              },
+              {
+                "speaker": "Hisham",
+                "en": "We do. What time are you arriving on the fourteenth?",
+                "ar": "نعم لدينا. في أي ساعة ستصلين يوم الرابع عشر؟"
+              },
+              {
+                "speaker": "Salma",
+                "en": "We're taking the late bus, so we check in around ten.",
+                "ar": "سنأخذ الحافلة المتأخرة، لذا سنسجّل الوصول حوالي العاشرة."
+              },
+              {
+                "speaker": "Hisham",
+                "en": "That's fine. The accommodation includes breakfast until nine.",
+                "ar": "لا مشكلة. الإقامة تشمل الإفطار حتى التاسعة."
+              },
+              {
+                "speaker": "Salma",
+                "en": "Perfect. I'm sending my details now.",
+                "ar": "ممتاز. سأرسل بياناتي الآن."
               }
             ]
           },
@@ -15580,65 +15961,55 @@
               "mode": "encounter",
               "skill": "listening",
               "canDo": [
-                "A2.U6.LISTENING.UNDERSTAND_TRAVEL_PLAN",
-                "A2.U6.INTERACTION.BOOK_CHANGE_TRAVEL"
+                "A2.U6.LISTENING.UNDERSTAND_TRAVEL_PLAN"
               ],
-              "prompt": "When are the guests arriving?",
-              "promptAr": "متى سيصل الضيوف؟",
+              "prompt": "What is Salma doing on the phone?",
+              "promptAr": "ماذا تفعل سلمى في المكالمة؟",
               "options": [
-                "At six",
-                "On Saturday",
-                "At two"
+                "Making a booking she does not have yet",
+                "Changing a booking she already has",
+                "Asking why her room was cancelled"
               ],
-              "answer": "At six",
-              "audioTranscript": "Guest: Do you have a double room available for Friday? Clerk: Yes. What time are you arriving? Guest: We're arriving at six."
+              "answer": "Making a booking she does not have yet",
+              "audioTranscript": "Good morning. I'd like to book a room for the fourteenth. Do you have a reservation with us already, madam? No. Do you have a twin room available for two nights? We do. What time are you arriving on the fourteenth? We're taking the late bus, so we check in around ten. That's fine. The accommodation includes breakfast until nine. Perfect. I'm sending my details now."
             },
             {
               "id": "A2-U6-L2-A02",
-              "lessonId": "A2-U6-L2",
-              "type": "match",
-              "mode": "practice",
-              "skill": "reading",
-              "canDo": [
-                "A2.U6.LISTENING.UNDERSTAND_TRAVEL_PLAN",
-                "A2.U6.INTERACTION.BOOK_CHANGE_TRAVEL"
-              ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "reservation",
-                  "حجز"
-                ],
-                [
-                  "check in",
-                  "يسجل الوصول"
-                ],
-                [
-                  "available",
-                  "متاح"
-                ]
-              ]
-            },
-            {
-              "id": "A2-U6-L2-A03",
               "lessonId": "A2-U6-L2",
               "type": "gap",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U6.LISTENING.UNDERSTAND_TRAVEL_PLAN",
-                "A2.U6.INTERACTION.BOOK_CHANGE_TRAVEL"
+                "A2.U6.READING.COMPARE_TRAVEL_OPTIONS"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "We ___ checking in on Friday evening.",
+              "prompt": "One line is a habit, one is a fixed arrangement. Choose the form.",
+              "promptAr": "جملة تصف عادة وأخرى تصف ترتيباً ثابتاً. اختر الصيغة المناسبة.",
+              "text": "I usually travel on Saturday, but this week I ___ on Friday.",
               "options": [
-                "are",
-                "do",
-                "will be to"
+                "am travelling",
+                "travel",
+                "travelled"
               ],
-              "answer": "are"
+              "answer": "am travelling"
+            },
+            {
+              "id": "A2-U6-L2-A03",
+              "lessonId": "A2-U6-L2",
+              "type": "textChoice",
+              "mode": "practice",
+              "skill": "reading",
+              "canDo": [
+                "A2.U6.READING.COMPARE_TRAVEL_OPTIONS"
+              ],
+              "prompt": "Read the hotel's reply. What must a late guest do?",
+              "promptAr": "اقرأ رد الفندق. ما الذي يجب على النزيل المتأخر فعله؟",
+              "sourceText": "Thank you. Your reservation is confirmed for two nights. You can check in from two in the afternoon. If you are arriving after ten at night, please write to us first, because the desk is not open.",
+              "options": [
+                "Write to the hotel before arriving",
+                "Pay for the room in advance",
+                "Collect the key from another building"
+              ],
+              "answer": "Write to the hotel before arriving"
             },
             {
               "id": "A2-U6-L2-A04",
@@ -15647,18 +16018,17 @@
               "mode": "mastery",
               "skill": "listening",
               "canDo": [
-                "A2.U6.LISTENING.UNDERSTAND_TRAVEL_PLAN",
-                "A2.U6.INTERACTION.BOOK_CHANGE_TRAVEL"
+                "A2.U6.LISTENING.UNDERSTAND_TRAVEL_PLAN"
               ],
-              "prompt": "What kind of room is offered?",
-              "promptAr": "ما نوع الغرفة المعروضة؟",
+              "prompt": "Listen to the call from the guest house. What has changed?",
+              "promptAr": "استمع إلى اتصال بيت الضيافة. ما الذي تغيّر؟",
               "options": [
-                "A single room",
-                "A family room",
-                "A twin room"
+                "The twin room is not free any more",
+                "The price of the room has risen",
+                "The guest house is closed on the fourteenth"
               ],
-              "answer": "A single room",
-              "audioTranscript": "Caller: I'm travelling alone and need a room for two nights. Reception: A single room is available, and breakfast is included."
+              "answer": "The twin room is not free any more",
+              "audioTranscript": "Hello, this is Farah from Cedar Guest House. I'm calling about your booking for the fourteenth. The twin room is not available any more, because a group is staying that night. I can give you two single rooms at the same price, or you can move your reservation to the fifteenth. Tell me which you prefer and I'll hold it for you."
             },
             {
               "id": "A2-U6-L2-A05",
@@ -15667,19 +16037,60 @@
               "mode": "mastery",
               "skill": "spokenInteraction",
               "canDo": [
-                "A2.U6.LISTENING.UNDERSTAND_TRAVEL_PLAN",
                 "A2.U6.INTERACTION.BOOK_CHANGE_TRAVEL"
               ],
-              "prompt": "Book a room: ask about availability, dates, price and one facility.",
-              "promptAr": "احجز غرفة: اسأل عن التوفر والتواريخ والسعر ومرفق واحد.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
+              "prompt": "Phone the guest house. Say which nights you need, ask what is free, say what time you are arriving, and check the price.",
+              "promptAr": "اتصل ببيت الضيافة. قل الليالي التي تحتاجها، واسأل عمّا هو متاح، وقل في أي ساعة ستصل، وتأكد من السعر.",
+              "partnerTurns": [
+                "Cedar Guest House, good afternoon. How can I help you?",
+                "Let me look. We have a double room and a small twin. Which nights do you need?",
+                "That's fine. And what time are you arriving? The desk closes at eleven."
               ],
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "book a room",
+                    "I'd like to book",
+                    "I want to book",
+                    "a room for",
+                    "do you have",
+                    "available",
+                    "a double",
+                    "a twin",
+                    "a single"
+                  ],
+                  [
+                    "I'm arriving",
+                    "I am arriving",
+                    "we're arriving",
+                    "we are arriving",
+                    "we're taking",
+                    "we are taking",
+                    "arriving at",
+                    "check in",
+                    "at ten",
+                    "at nine",
+                    "in the evening"
+                  ],
+                  [
+                    "how much",
+                    "the price",
+                    "per night",
+                    "one night",
+                    "two nights",
+                    "three nights",
+                    "includes breakfast",
+                    "dinars",
+                    "dollars"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             }
           ]
         },
@@ -15689,39 +16100,63 @@
           "titleAr": "اختر وسيلة النقل",
           "lessonType": "encounter-focus-practice",
           "canDo": [
+            "A2.U6.LISTENING.UNDERSTAND_TRAVEL_PLAN",
             "A2.U6.READING.COMPARE_TRAVEL_OPTIONS",
-            "A2.U6.INTERACTION.BOOK_CHANGE_TRAVEL"
+            "A2.U6.PRODUCTION.PRESENT_ITINERARY"
           ],
           "grammar": [
             "A2.G.WILL_DECISION_OFFER",
-            "A2.G.FUTURE_CONTRAST",
-            "A2.G.HOUSING_COMPARATIVES",
-            "A2.G.TOO_ADJECTIVE"
+            "A2.G.FUTURE_FORMS_CONTRAST"
           ],
           "lexicon": [
-            "A2.LEX.DEPARTURE_N01",
+            "A2.LEX.COACH_N01",
             "A2.LEX.DIRECT_ADJ01",
             "A2.LEX.FARE_N01",
-            "A2.LEX.SPACIOUS_ADJ01",
-            "A2.LEX.PEACEFUL_ADJ01",
-            "A2.LEX.CROWDED_ADJ01",
-            "A2.LEX.NOISY_ADJ01",
-            "A2.LEX.BRIGHT_ADJ01",
-            "A2.LEX.SPACE_N01"
+            "A2.LEX.DEPARTURE_N01",
+            "A2.LEX.COLLECT_V01",
+            "A2.LEX.FERRY_N01",
+            "A2.LEX.PASSENGER_N01"
           ],
           "chunks": [
-            "A2.CHUNK.ILL_TAKE_IT",
-            "A2.CHUNK.RETURN_TICKET",
-            "A2.CHUNK.COMPARED_WITH",
-            "A2.CHUNK.TOO_FAR_FROM",
-            "A2.CHUNK.ENOUGH_SPACE_FOR"
+            "A2.CHUNK.SHALL_I",
+            "A2.CHUNK.ILL_COLLECT_YOU"
           ],
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "Train 1 leaves at 08:00, is direct and costs $35. Train 2 leaves at 09:15, has one transfer and costs $24.",
-                "ar": ""
+                "speaker": "Maha",
+                "en": "The direct coach leaves at seven. The slow one is cheaper.",
+                "ar": "حافلة السفر المباشرة تغادر في السابعة. البطيئة أرخص."
+              },
+              {
+                "speaker": "Bilal",
+                "en": "How much cheaper? I'm not going to sit on a bus all day.",
+                "ar": "أرخص بكم؟ لن أجلس في حافلة طوال اليوم."
+              },
+              {
+                "speaker": "Maha",
+                "en": "Two dinars. But it stops four times and arrives at three.",
+                "ar": "ديناران. لكنها تتوقف أربع مرات وتصل في الثالثة."
+              },
+              {
+                "speaker": "Bilal",
+                "en": "Then I'll take the direct one. Two dinars is nothing.",
+                "ar": "إذن سآخذ المباشرة. ديناران ليسا بشيء."
+              },
+              {
+                "speaker": "Karim",
+                "en": "Shall I book the seats tonight? The fare rises on Thursday.",
+                "ar": "هل أحجز المقاعد الليلة؟ الأجرة سترتفع يوم الخميس."
+              },
+              {
+                "speaker": "Maha",
+                "en": "Please do. And I'm meeting my sister before the departure.",
+                "ar": "نعم من فضلك. وسألتقي أختي قبل موعد المغادرة."
+              },
+              {
+                "speaker": "Karim",
+                "en": "Then I'll collect you both at six. I'm driving anyway.",
+                "ar": "إذن سأمرّ لأقلّكما في السادسة. سأقود سيارتي على أي حال."
               }
             ]
           },
@@ -15729,110 +16164,133 @@
             {
               "id": "A2-U6-L3-A01",
               "lessonId": "A2-U6-L3",
-              "type": "textChoice",
+              "type": "audioChoice",
               "mode": "encounter",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U6.READING.COMPARE_TRAVEL_OPTIONS",
-                "A2.U6.INTERACTION.BOOK_CHANGE_TRAVEL"
+                "A2.U6.LISTENING.UNDERSTAND_TRAVEL_PLAN"
               ],
-              "prompt": "Which train is cheaper?",
-              "promptAr": "أي قطار أرخص؟",
+              "prompt": "What are the three friends settling between them?",
+              "promptAr": "ما الأمر الذي يحسمه الأصدقاء الثلاثة فيما بينهم؟",
               "options": [
-                "Train 2",
-                "Train 1",
-                "They cost the same"
+                "Which coach to take and who drives them there",
+                "Which hotel is nearest the station",
+                "Whether to travel this week or next"
               ],
-              "answer": "Train 2",
-              "sourceText": "Train 1 leaves at 08:00, is direct and costs $35. Train 2 leaves at 09:15, has one transfer and costs $24."
+              "answer": "Which coach to take and who drives them there",
+              "audioTranscript": "The direct coach leaves at seven. The slow one is cheaper. How much cheaper? I'm not going to sit on a bus all day. Two dinars. But it stops four times and arrives at three. Then I'll take the direct one. Two dinars is nothing. Shall I book the seats tonight? The fare rises on Thursday. Please do. And I'm meeting my sister before the departure. Then I'll collect you both at six. I'm driving anyway."
             },
             {
               "id": "A2-U6-L3-A02",
-              "lessonId": "A2-U6-L3",
-              "type": "match",
-              "mode": "practice",
-              "skill": "reading",
-              "canDo": [
-                "A2.U6.READING.COMPARE_TRAVEL_OPTIONS",
-                "A2.U6.INTERACTION.BOOK_CHANGE_TRAVEL"
-              ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "departure",
-                  "مغادرة"
-                ],
-                [
-                  "direct",
-                  "مباشر"
-                ],
-                [
-                  "fare",
-                  "أجرة"
-                ]
-              ]
-            },
-            {
-              "id": "A2-U6-L3-A03",
               "lessonId": "A2-U6-L3",
               "type": "gap",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U6.READING.COMPARE_TRAVEL_OPTIONS",
-                "A2.U6.INTERACTION.BOOK_CHANGE_TRAVEL"
+                "A2.U6.READING.COMPARE_TRAVEL_OPTIONS"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "The direct train is faster. I ___ take it.",
+              "prompt": "He decides while he is speaking. Choose the form for that.",
+              "promptAr": "هو يقرر أثناء حديثه. اختر الصيغة المناسبة لذلك.",
+              "text": "The slow coach is two hours longer. All right, I ___ take the direct one.",
               "options": [
                 "will",
-                "am",
-                "going"
+                "am going to",
+                "am"
               ],
               "answer": "will"
             },
             {
-              "id": "A2-U6-L3-A04",
+              "id": "A2-U6-L3-A03",
               "lessonId": "A2-U6-L3",
               "type": "textChoice",
-              "mode": "mastery",
+              "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U6.READING.COMPARE_TRAVEL_OPTIONS",
-                "A2.U6.INTERACTION.BOOK_CHANGE_TRAVEL"
+                "A2.U6.READING.COMPARE_TRAVEL_OPTIONS"
               ],
-              "prompt": "Which bus is practical for the meeting?",
-              "promptAr": "أي حافلة عملية للاجتماع؟",
+              "prompt": "Read the notice at the port. What can a passenger with a nine o'clock ticket do?",
+              "promptAr": "اقرأ الإشعار في الميناء. ماذا يستطيع الراكب الذي يحمل تذكرة التاسعة أن يفعل؟",
+              "sourceText": "Notice for passengers: the nine o'clock ferry is full. Passengers with a ticket for it can travel on the eleven o'clock boat at no extra cost, or ask for their money back at window four.",
               "options": [
-                "Bus A",
-                "Bus B",
-                "Neither arrives"
+                "Take the later boat for the same price",
+                "Buy a cheaper ticket at window four",
+                "Travel on any ferry this week"
               ],
-              "answer": "Bus A",
-              "sourceText": "Bus A arrives earlier but costs $18. Bus B costs $12 but arrives after the meeting starts."
+              "answer": "Take the later boat for the same price"
+            },
+            {
+              "id": "A2-U6-L3-A04",
+              "lessonId": "A2-U6-L3",
+              "type": "audioChoice",
+              "mode": "mastery",
+              "skill": "listening",
+              "canDo": [
+                "A2.U6.LISTENING.UNDERSTAND_TRAVEL_PLAN"
+              ],
+              "prompt": "Listen to Nawal's message. What is she offering to do?",
+              "promptAr": "استمع إلى رسالة نوال. ما الذي تعرض القيام به؟",
+              "options": [
+                "Pay for Rana's seat and drive her to the coach",
+                "Change Rana's ticket to the cheaper coach",
+                "Wait for Rana at the station on the day"
+              ],
+              "answer": "Pay for Rana's seat and drive her to the coach",
+              "audioTranscript": "Hi Rana, it's Nawal. I checked the times. The direct coach costs nine dinars and takes four hours; the cheap one takes six. I'm going to take the direct one, and I'll pay for your seat now. You can give me the money later. Shall I collect you from your flat at half past five, or will you meet me at the station?"
             },
             {
               "id": "A2-U6-L3-A05",
               "lessonId": "A2-U6-L3",
               "type": "speak",
               "mode": "mastery",
-              "skill": "spokenInteraction",
+              "skill": "spokenProduction",
               "canDo": [
-                "A2.U6.READING.COMPARE_TRAVEL_OPTIONS",
-                "A2.U6.INTERACTION.BOOK_CHANGE_TRAVEL"
+                "A2.U6.PRODUCTION.PRESENT_ITINERARY"
               ],
-              "prompt": "Compare two transport options and make a decision with a reason.",
-              "promptAr": "قارن خيارَي نقل واتخذ قراراً مع سبب.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "Compare two ways of getting to a city you know: the times, the fare and how direct each one is. Then decide which one you will take, and offer to do one thing for the person travelling with you.",
+              "promptAr": "قارن طريقتين للوصول إلى مدينة تعرفها: المواعيد والأجرة ومدى كون كل منهما مباشرة. ثم قرر أيهما ستأخذ، واعرض أن تقوم بأمر واحد لمن يسافر معك.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "cheaper",
+                    "faster",
+                    "quicker",
+                    "more expensive",
+                    "longer",
+                    "shorter",
+                    "than",
+                    "costs",
+                    "takes",
+                    "direct",
+                    "stops"
+                  ],
+                  [
+                    "I'll",
+                    "I will",
+                    "we'll",
+                    "we will",
+                    "I think I'll",
+                    "let's take",
+                    "I'd rather"
+                  ],
+                  [
+                    "Shall I",
+                    "I'll collect",
+                    "I'll book",
+                    "I'll pay",
+                    "I'll drive",
+                    "I'll meet",
+                    "would you like me to",
+                    "do you want me to",
+                    "I can collect"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             }
           ]
         },
@@ -15843,14 +16301,16 @@
           "lessonType": "encounter-focus-practice",
           "canDo": [
             "A2.U6.LISTENING.UNDERSTAND_TRAVEL_PLAN",
-            "A2.U6.PRODUCTION.PRESENT_ITINERARY"
+            "A2.U6.READING.COMPARE_TRAVEL_OPTIONS",
+            "A2.U6.WRITING.WRITE_TRAVEL_PLAN"
           ],
           "grammar": [
-            "A2.G.FIRST_CONDITIONAL_INTRO"
+            "A2.G.FIRST_CONDITIONAL"
           ],
           "lexicon": [
-            "A2.LEX.CANCEL_V01",
-            "A2.LEX.DELAY_N01",
+            "A2.LEX.DELAYED_ADJ01",
+            "A2.LEX.RESCHEDULE_V01",
+            "A2.LEX.REFUND_N01",
             "A2.LEX.ALTERNATIVE_N01"
           ],
           "chunks": [
@@ -15860,9 +16320,39 @@
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "If the boat trip is cancelled, we'll visit the aquarium. If there is a train delay, we'll call the hotel.",
-                "ar": "إذا أُلغيت رحلة القارب سنزور حوض الأسماك. إذا تأخر القطار سنتصل بالفندق."
+                "speaker": "Yousef",
+                "en": "My flight to Basra is delayed again. The new time is four.",
+                "ar": "رحلتي إلى البصرة تأخرت مرة أخرى. الموعد الجديد الرابعة."
+              },
+              {
+                "speaker": "Dina",
+                "en": "Then you'll miss the two o'clock meeting. Shall we reschedule it?",
+                "ar": "إذن ستفوتك جلسة الثانية. هل نعيد تحديد موعدها؟"
+              },
+              {
+                "speaker": "Yousef",
+                "en": "If I land at four, I'll be at the office by six.",
+                "ar": "إذا هبطت في الرابعة فسأكون في المكتب قبل السادسة."
+              },
+              {
+                "speaker": "Dina",
+                "en": "That's late. If the flight moves again, we'll do it online.",
+                "ar": "هذا متأخر. إذا تغيّر موعد الرحلة مرة أخرى فسنعقدها عبر الإنترنت."
+              },
+              {
+                "speaker": "Yousef",
+                "en": "Agreed. That's Plan B.",
+                "ar": "اتفقنا. تلك هي الخطة البديلة."
+              },
+              {
+                "speaker": "Dina",
+                "en": "And if they cancel it completely, ask for a refund at the desk.",
+                "ar": "وإذا ألغوها تماماً فاطلب استرداد المبلغ من مكتب الخدمة."
+              },
+              {
+                "speaker": "Yousef",
+                "en": "I will. There's an evening alternative, but it costs more.",
+                "ar": "سأفعل. هناك بديل مسائي لكنه أغلى."
               }
             ]
           },
@@ -15874,106 +16364,130 @@
               "mode": "encounter",
               "skill": "listening",
               "canDo": [
-                "A2.U6.LISTENING.UNDERSTAND_TRAVEL_PLAN",
-                "A2.U6.PRODUCTION.PRESENT_ITINERARY"
+                "A2.U6.LISTENING.UNDERSTAND_TRAVEL_PLAN"
               ],
-              "prompt": "What is the alternative to the boat trip?",
-              "promptAr": "ما بديل رحلة القارب؟",
+              "prompt": "What problem are Yousef and Dina working around?",
+              "promptAr": "ما المشكلة التي يتدبرها يوسف ودينا؟",
               "options": [
-                "The aquarium",
-                "The hotel",
-                "The station"
+                "A meeting that his delayed flight may break",
+                "A ticket that cost more than they expected",
+                "A colleague who cannot come to Basra"
               ],
-              "answer": "The aquarium",
-              "audioTranscript": "If the boat trip is cancelled, we'll visit the aquarium. If there is a train delay, we'll call the hotel."
+              "answer": "A meeting that his delayed flight may break",
+              "audioTranscript": "My flight to Basra is delayed again. The new time is four. Then you'll miss the two o'clock meeting. Shall we reschedule it? If I land at four, I'll be at the office by six. That's late. If the flight moves again, we'll do it online. Agreed. That's Plan B. And if they cancel it completely, ask for a refund at the desk. I will. There's an evening alternative, but it costs more."
             },
             {
               "id": "A2-U6-L4-A02",
-              "lessonId": "A2-U6-L4",
-              "type": "match",
-              "mode": "practice",
-              "skill": "reading",
-              "canDo": [
-                "A2.U6.LISTENING.UNDERSTAND_TRAVEL_PLAN",
-                "A2.U6.PRODUCTION.PRESENT_ITINERARY"
-              ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "cancel",
-                  "يلغي"
-                ],
-                [
-                  "delay",
-                  "تأخير"
-                ],
-                [
-                  "alternative",
-                  "بديل"
-                ]
-              ]
-            },
-            {
-              "id": "A2-U6-L4-A03",
               "lessonId": "A2-U6-L4",
               "type": "gap",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U6.LISTENING.UNDERSTAND_TRAVEL_PLAN",
-                "A2.U6.PRODUCTION.PRESENT_ITINERARY"
+                "A2.U6.READING.COMPARE_TRAVEL_OPTIONS"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "If it rains, we ___ stay indoors.",
+              "prompt": "The if part stays in the present. Choose the word for the other part.",
+              "promptAr": "الجزء الذي يبدأ بـ if يبقى في المضارع. اختر الكلمة المناسبة للجزء الآخر.",
+              "text": "If the weather is bad tomorrow, the ferry ___ not run.",
               "options": [
                 "will",
-                "are",
-                "did"
+                "would",
+                "is"
               ],
               "answer": "will"
             },
             {
-              "id": "A2-U6-L4-A04",
+              "id": "A2-U6-L4-A03",
               "lessonId": "A2-U6-L4",
               "type": "audioChoice",
-              "mode": "mastery",
+              "mode": "practice",
               "skill": "listening",
               "canDo": [
-                "A2.U6.LISTENING.UNDERSTAND_TRAVEL_PLAN",
-                "A2.U6.PRODUCTION.PRESENT_ITINERARY"
+                "A2.U6.LISTENING.UNDERSTAND_TRAVEL_PLAN"
               ],
-              "prompt": "What will cause the delay?",
-              "promptAr": "ما الذي سيسبب التأخير؟",
+              "prompt": "Listen to the station announcement. What happens if you do not want to wait?",
+              "promptAr": "استمع إلى إعلان المحطة. ماذا يحدث إن لم تشأ الانتظار؟",
               "options": [
-                "A closed road",
-                "Bad accommodation",
-                "A cancelled flight"
+                "You get all your money back",
+                "You travel on tomorrow's coach",
+                "You pay less for the next ticket"
               ],
-              "answer": "A closed road",
-              "audioTranscript": "If the road is closed, the bus will use another route and arrive twenty minutes late."
+              "answer": "You get all your money back",
+              "audioTranscript": "Good afternoon, passengers. The two o'clock coach to Kirkuk is delayed by ninety minutes. If you are travelling on to Sulaymaniyah tonight, come to the desk and we will change your ticket. If you decide not to wait, we will give you a full refund at window two. We are sorry for the trouble."
+            },
+            {
+              "id": "A2-U6-L4-A04",
+              "lessonId": "A2-U6-L4",
+              "type": "textChoice",
+              "mode": "mastery",
+              "skill": "reading",
+              "canDo": [
+                "A2.U6.READING.COMPARE_TRAVEL_OPTIONS"
+              ],
+              "prompt": "Read the message from the tour office. What happens if the sea is rough?",
+              "promptAr": "اقرأ رسالة مكتب الرحلات. ماذا يحدث إذا كان البحر هائجاً؟",
+              "sourceText": "Tomorrow's boat trip depends on the wind. If the sea is rough at eight, we will not sail, and we will move everyone to Thursday. If you cannot come on Thursday, write to us today and we will refund you.",
+              "options": [
+                "The trip moves to Thursday",
+                "The trip starts two hours later",
+                "The office keeps the money"
+              ],
+              "answer": "The trip moves to Thursday"
             },
             {
               "id": "A2-U6-L4-A05",
               "lessonId": "A2-U6-L4",
-              "type": "speak",
+              "type": "write",
               "mode": "mastery",
-              "skill": "spokenProduction",
+              "skill": "writing",
               "canDo": [
-                "A2.U6.LISTENING.UNDERSTAND_TRAVEL_PLAN",
-                "A2.U6.PRODUCTION.PRESENT_ITINERARY"
+                "A2.U6.WRITING.WRITE_TRAVEL_PLAN"
               ],
-              "prompt": "Give two realistic travel problems and a Plan B for each using if.",
-              "promptAr": "اذكر مشكلتين واقعيتين في السفر وخطة بديلة لكل منهما مستخدماً if.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "Your colleague is flying on the morning of an important meeting. Write her a short message: say what the plan is, give two things that could go wrong, and say what you will do in each case.",
+              "promptAr": "زميلتك ستسافر جواً صباح اجتماع مهم. اكتب لها رسالة قصيرة: اذكر الخطة، وأمرين قد يسيران على غير ما يُراد، وما ستفعله في كل حالة.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "if the",
+                    "if it",
+                    "if we",
+                    "if you",
+                    "if they",
+                    "if there",
+                    "if she",
+                    "if he",
+                    "if your",
+                    "if my"
+                  ],
+                  [
+                    "we'll",
+                    "we will",
+                    "I'll",
+                    "I will",
+                    "they'll",
+                    "we can",
+                    "I can"
+                  ],
+                  [
+                    "the meeting",
+                    "the flight",
+                    "the plan",
+                    "Plan B",
+                    "we are meeting",
+                    "we're meeting",
+                    "at two",
+                    "in the morning",
+                    "online"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "wordGuide": [
+                65,
+                85
+              ]
             }
           ]
         },
@@ -15983,36 +16497,56 @@
           "titleAr": "أكد التغييرات وانقلها",
           "lessonType": "encounter-focus-practice",
           "canDo": [
+            "A2.U6.LISTENING.UNDERSTAND_TRAVEL_PLAN",
             "A2.U6.READING.COMPARE_TRAVEL_OPTIONS",
-            "A2.U6.MEDIATION.RELAY_TRAVEL_CHANGE"
+            "A2.U6.INTERACTION.BOOK_CHANGE_TRAVEL"
           ],
           "grammar": [
-            "A2.G.FUTURE_TIME_CLAUSE",
-            "A2.G.RELATIVE_WHO_CHUNK",
-            "A2.G.TOO_ALSO_RELATION"
+            "A2.G.FUTURE_TIME_CLAUSE"
           ],
           "lexicon": [
             "A2.LEX.ARRIVAL_N01",
             "A2.LEX.TRANSFER_N01",
-            "A2.LEX.CONFIRM_V01",
-            "A2.LEX.COLLEAGUE_N01",
-            "A2.LEX.NEIGHBOUR_N01",
-            "A2.LEX.RELATIONSHIP_N01",
-            "A2.LEX.TEAM_N01",
-            "A2.LEX.MEMBER_N01",
-            "A2.LEX.SUITABLE_ADJ01"
+            "A2.LEX.FLEXIBLE_ADJ01",
+            "A2.LEX.ANNOUNCEMENT_N01"
           ],
           "chunks": [
             "A2.CHUNK.WHEN_YOU_ARRIVE",
-            "A2.CHUNK.GOOD_AT",
-            "A2.CHUNK.BEST_CHOICE"
+            "A2.CHUNK.BEFORE_YOU_LEAVE",
+            "A2.CHUNK.LET_YOU_KNOW",
+            "A2.CHUNK.RUNNING_LATE"
           ],
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "Your flight now arrives at 18:40, not 17:50. The airport transfer will wait at Exit 3. Call the driver when you collect your bag.",
-                "ar": ""
+                "speaker": "Adel",
+                "en": "Sawsan, my arrival time changed. I get in at nine now.",
+                "ar": "سوسن، تغيّر وقت وصولي. سأصل في التاسعة الآن."
+              },
+              {
+                "speaker": "Sawsan",
+                "en": "No problem. Message me when you arrive and I'll come out.",
+                "ar": "لا مشكلة. راسلني عندما تصل وسأخرج إليك."
+              },
+              {
+                "speaker": "Adel",
+                "en": "There's one transfer in Amman, so I may be running late.",
+                "ar": "هناك تبديل واحد في عمّان، لذا قد أتأخر عن الموعد."
+              },
+              {
+                "speaker": "Sawsan",
+                "en": "Don't worry, I'm flexible until noon. But before you leave Amman, listen for the gate announcement.",
+                "ar": "لا تقلق، وقتي مرن حتى الظهر. لكن قبل أن تغادر عمّان انتبه إلى إعلان البوابة."
+              },
+              {
+                "speaker": "Adel",
+                "en": "I will. And I'll let you know after I collect my bag.",
+                "ar": "سأفعل. وسأخبركِ بعد أن أستلم حقيبتي."
+              },
+              {
+                "speaker": "Sawsan",
+                "en": "Perfect. Rami is driving, and he waits at Exit Three.",
+                "ar": "ممتاز. رامي هو من سيقود، وسينتظر عند المخرج الثالث."
               }
             ]
           },
@@ -16020,110 +16554,141 @@
             {
               "id": "A2-U6-L5-A01",
               "lessonId": "A2-U6-L5",
-              "type": "textChoice",
+              "type": "audioChoice",
               "mode": "encounter",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U6.READING.COMPARE_TRAVEL_OPTIONS",
-                "A2.U6.MEDIATION.RELAY_TRAVEL_CHANGE"
+                "A2.U6.LISTENING.UNDERSTAND_TRAVEL_PLAN"
               ],
-              "prompt": "Where will the transfer wait?",
-              "promptAr": "أين ستنتظر وسيلة النقل؟",
+              "prompt": "What are Adel and Sawsan sorting out between them?",
+              "promptAr": "ما الأمر الذي يرتّبه عادل وسوسن بينهما؟",
               "options": [
-                "Exit 3",
-                "The hotel",
-                "Gate 17"
+                "How they will meet after his journey changed",
+                "Which hotel he should book in Amman",
+                "Whether he should travel on Sunday instead"
               ],
-              "answer": "Exit 3",
-              "sourceText": "Your flight now arrives at 18:40, not 17:50. The airport transfer will wait at Exit 3. Call the driver when you collect your bag."
+              "answer": "How they will meet after his journey changed",
+              "audioTranscript": "Sawsan, my arrival time changed. I get in at nine now. No problem. Message me when you arrive and I'll come out. There's one transfer in Amman, so I may be running late. Don't worry, I'm flexible until noon. But before you leave Amman, listen for the gate announcement. I will. And I'll let you know after I collect my bag. Perfect. Rami is driving, and he waits at Exit Three."
             },
             {
               "id": "A2-U6-L5-A02",
               "lessonId": "A2-U6-L5",
-              "type": "match",
+              "type": "order",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U6.READING.COMPARE_TRAVEL_OPTIONS",
-                "A2.U6.MEDIATION.RELAY_TRAVEL_CHANGE"
+                "A2.U6.READING.COMPARE_TRAVEL_OPTIONS"
               ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "arrival",
-                  "وصول"
-                ],
-                [
-                  "transfer",
-                  "تبديل وسيلة"
-                ],
-                [
-                  "confirm",
-                  "يؤكد"
-                ]
+              "prompt": "Put this line from a message in the correct order.",
+              "promptAr": "رتّب هذا السطر من الرسالة بالترتيب الصحيح.",
+              "tokens": [
+                "arrive",
+                "you",
+                "Call",
+                "when",
+                "the",
+                "driver"
+              ],
+              "answer": [
+                "Call",
+                "the",
+                "driver",
+                "when",
+                "you",
+                "arrive"
               ]
             },
             {
               "id": "A2-U6-L5-A03",
               "lessonId": "A2-U6-L5",
-              "type": "gap",
+              "type": "textChoice",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U6.READING.COMPARE_TRAVEL_OPTIONS",
-                "A2.U6.MEDIATION.RELAY_TRAVEL_CHANGE"
+                "A2.U6.READING.COMPARE_TRAVEL_OPTIONS"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "Message me when you ___.",
+              "prompt": "Read Sawsan's second message. When should Adel phone the driver?",
+              "promptAr": "اقرأ رسالة سوسن الثانية. متى ينبغي لعادل أن يتصل بالسائق؟",
+              "sourceText": "Rami is not free after eight, so Karim will drive instead. He has a grey car and waits at Exit Three. Call him before you leave the building, not after, because he cannot park for long.",
               "options": [
-                "arrive",
-                "will arrive",
-                "arrived"
+                "Before he comes out of the building",
+                "As soon as the plane lands",
+                "After he finds the grey car"
               ],
-              "answer": "arrive"
+              "answer": "Before he comes out of the building"
             },
             {
               "id": "A2-U6-L5-A04",
               "lessonId": "A2-U6-L5",
-              "type": "textChoice",
+              "type": "audioChoice",
               "mode": "mastery",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U6.READING.COMPARE_TRAVEL_OPTIONS",
-                "A2.U6.MEDIATION.RELAY_TRAVEL_CHANGE"
+                "A2.U6.LISTENING.UNDERSTAND_TRAVEL_PLAN"
               ],
-              "prompt": "When should visitors meet the guide?",
-              "promptAr": "متى يجب أن يلتقي الزوار المرشد؟",
+              "prompt": "Listen to Muna's message. What must you do when you get to the hotel?",
+              "promptAr": "استمع إلى رسالة منى. ماذا يجب أن تفعل عندما تصل إلى الفندق؟",
               "options": [
-                "At 9:45",
-                "At 10:15",
-                "At 9:00"
+                "Ask at the desk for an envelope",
+                "Send Muna the meeting papers",
+                "Wait for the transfer by the bridge"
               ],
-              "answer": "At 9:45",
-              "sourceText": "The tour starts at ten instead of nine. Meet the guide outside the museum fifteen minutes before it begins."
+              "answer": "Ask at the desk for an envelope",
+              "audioTranscript": "Hi, it's Muna from the office. Two things before you travel. First, the airport transfer is now at seven, not half past six, because the road by the bridge is closed. Second, when you get to the hotel, ask for the envelope at the desk; your meeting papers are inside. Call me after you check in, and I'll tell you the rest."
             },
             {
               "id": "A2-U6-L5-A05",
               "lessonId": "A2-U6-L5",
               "type": "speak",
               "mode": "mastery",
-              "skill": "mediation",
+              "skill": "spokenInteraction",
               "canDo": [
-                "A2.U6.READING.COMPARE_TRAVEL_OPTIONS",
-                "A2.U6.MEDIATION.RELAY_TRAVEL_CHANGE"
+                "A2.U6.INTERACTION.BOOK_CHANGE_TRAVEL"
               ],
-              "prompt": "Relay updated arrival, meeting point and required action from a travel notice.",
-              "promptAr": "انقل وقت الوصول المحدّث ونقطة اللقاء والإجراء المطلوب من إشعار سفر.",
-              "evaluation": [
-                "selectRelevantInformation",
-                "clarity",
-                "audienceAwareness",
-                "accuracy"
+              "prompt": "Your colleague's flight has moved. Talk to her: confirm the new arrival time, say what you will do when she lands, and agree one thing she should do before she leaves the airport.",
+              "promptAr": "تغيّر موعد رحلة زميلتك. تحدّث إليها: أكّد وقت الوصول الجديد، وقل ما الذي ستفعله عندما تهبط، واتفقا على أمر تفعله قبل أن تغادر المطار.",
+              "partnerTurns": [
+                "Sorry to call so late. The airline moved my flight. I land at twenty past nine now, not seven.",
+                "That's kind of you. Do I wait inside, or come out to the car park?",
+                "Fine. And is there anything I should do before I leave the airport?"
               ],
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "twenty past nine",
+                    "nine twenty",
+                    "at nine",
+                    "the new time",
+                    "you land at",
+                    "you arrive at",
+                    "instead of seven",
+                    "not seven"
+                  ],
+                  [
+                    "when you land",
+                    "when you arrive",
+                    "when you get",
+                    "after you land",
+                    "after you get",
+                    "as soon as you",
+                    "once you"
+                  ],
+                  [
+                    "before you leave",
+                    "before you come out",
+                    "before that",
+                    "don't forget to",
+                    "make sure you",
+                    "remember to"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             }
           ]
         },
@@ -16133,31 +16698,29 @@
           "titleAr": "برنامج رحلة كامل",
           "lessonType": "integrated-production",
           "canDo": [
+            "A2.U6.LISTENING.UNDERSTAND_TRAVEL_PLAN",
+            "A2.U6.READING.COMPARE_TRAVEL_OPTIONS",
+            "A2.U6.PRODUCTION.PRESENT_ITINERARY",
             "A2.U6.WRITING.WRITE_TRAVEL_PLAN",
-            "A2.U6.PRODUCTION.PRESENT_ITINERARY"
+            "A2.U6.MEDIATION.RELAY_TRAVEL_CHANGE"
           ],
           "grammar": [
             "A2.G.GOING_TO_PLANS",
             "A2.G.PRESENT_CONTINUOUS_ARRANGEMENTS",
-            "A2.G.FIRST_CONDITIONAL_INTRO"
+            "A2.G.FIRST_CONDITIONAL"
           ],
           "lexicon": [
             "A2.LEX.SUITCASE_N01",
-            "A2.LEX.ACCOMMODATION_N01",
             "A2.LEX.SCHEDULE_N01"
           ],
           "chunks": [
-            "A2.CHUNK.RETURN_TICKET",
-            "A2.CHUNK.PLAN_B"
+            "A2.CHUNK.PLAN_B",
+            "A2.CHUNK.MOVE_IT_TO"
           ],
-          "encounter": {
-            "dialogue": [
-              {
-                "speaker": "Narrator",
-                "en": "Saturday: arrive 10:00, leave bags at the hotel, visit the market. Sunday: museum at 11:00, return train at 18:30. If the museum is closed, visit the city park.",
-                "ar": ""
-              }
-            ]
+          "readingText": {
+            "title": "Hanan's Weekend Plan",
+            "text": "Ziad, here is the plan for Saturday and Sunday. I'm taking the seven o'clock coach, so I get to you at about eleven. I have one small suitcase, nothing heavy. On Saturday afternoon we are going to walk around the old market, and in the evening I'm meeting my cousin for dinner; she is working until seven, so we eat late. On Sunday the schedule is looser. We are going to the hill above the river if the morning is clear. If it rains, that's Plan B: the covered market and a long lunch. My coach home leaves at six. Tell me if any of this is difficult and we will move it to another day.",
+            "textAr": "زياد، هذه خطة السبت والأحد. سآخذ حافلة السابعة، فأصل إليك حوالي الحادية عشرة. معي حقيبة سفر صغيرة واحدة، لا شيء ثقيل. بعد ظهر السبت سنتجول في السوق القديم، وفي المساء سألتقي ابنة عمي على العشاء؛ هي تعمل حتى السابعة، لذا نتعشى متأخرين. يوم الأحد الجدول أكثر مرونة: سنصعد إلى التلة المطلّة على النهر إذا كان الصباح صافياً. وإذا أمطرت فهذه هي الخطة البديلة: السوق المسقوف وغداء طويل. حافلة عودتي تغادر في السادسة. أخبرني إن كان أي من هذا صعباً وسننقله إلى يوم آخر."
           },
           "activities": [
             {
@@ -16167,85 +16730,141 @@
               "mode": "encounter",
               "skill": "reading",
               "canDo": [
-                "A2.U6.WRITING.WRITE_TRAVEL_PLAN",
-                "A2.U6.PRODUCTION.PRESENT_ITINERARY"
+                "A2.U6.READING.COMPARE_TRAVEL_OPTIONS"
               ],
-              "prompt": "What is the Sunday alternative?",
-              "promptAr": "ما بديل يوم الأحد؟",
+              "prompt": "Read Hanan's plan once. What is she sending Ziad?",
+              "promptAr": "اقرأ خطة حنان مرة واحدة. ما الذي ترسله إلى زياد؟",
               "options": [
-                "The city park",
-                "The market",
-                "The hotel"
+                "A two-day plan with one alternative for bad weather",
+                "A list of the places she visited last month",
+                "A request to change the date of her visit"
               ],
-              "answer": "The city park",
-              "sourceText": "Saturday: arrive 10:00, leave bags at the hotel, visit the market. Sunday: museum at 11:00, return train at 18:30. If the museum is closed, visit the city park."
+              "answer": "A two-day plan with one alternative for bad weather"
             },
             {
               "id": "A2-U6-L6-A02",
               "lessonId": "A2-U6-L6",
-              "type": "match",
+              "type": "audioChoice",
               "mode": "practice",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U6.WRITING.WRITE_TRAVEL_PLAN",
-                "A2.U6.PRODUCTION.PRESENT_ITINERARY"
+                "A2.U6.LISTENING.UNDERSTAND_TRAVEL_PLAN"
               ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "suitcase",
-                  "حقيبة سفر"
-                ],
-                [
-                  "accommodation",
-                  "إقامة"
-                ],
-                [
-                  "schedule",
-                  "جدول"
-                ]
-              ]
+              "prompt": "Listen to Ziad's reply. Why might they go to the museum?",
+              "promptAr": "استمع إلى رد زياد. لماذا قد يذهبان إلى المتحف؟",
+              "options": [
+                "The hill path closes after heavy rain",
+                "The market is shut on Sunday",
+                "His brother needs the car all weekend"
+              ],
+              "answer": "The hill path closes after heavy rain",
+              "audioTranscript": "Ziad here. Your plan is fine, but two small things. My brother is using the car on Saturday morning, so we walk to the market; it's twenty minutes. And the hill path is closed after heavy rain, so if Saturday night is wet, we'll go to the museum instead. Send me your coach number and I'll meet you at the stop."
             },
             {
               "id": "A2-U6-L6-A03",
               "lessonId": "A2-U6-L6",
-              "type": "gap",
+              "type": "speak",
               "mode": "practice",
-              "skill": "reading",
+              "skill": "spokenProduction",
               "canDo": [
-                "A2.U6.WRITING.WRITE_TRAVEL_PLAN",
                 "A2.U6.PRODUCTION.PRESENT_ITINERARY"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "Our accommodation ___ breakfast.",
-              "options": [
-                "includes",
-                "including",
-                "include to"
-              ],
-              "answer": "includes"
+              "prompt": "Before you write anything, say your own two-day plan aloud, the way Hanan wrote hers. Give one fixed arrangement, one intention, and one alternative for bad weather.",
+              "promptAr": "قبل أن تكتب شيئاً، قل خطتك ليومين بصوت عالٍ كما كتبت حنان خطتها. اذكر ترتيباً ثابتاً واحداً، ونية واحدة، وبديلاً واحداً إن كان الطقس سيئاً.",
+              "accepted": [],
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "I'm taking",
+                    "I am taking",
+                    "I'm meeting",
+                    "I am meeting",
+                    "we're meeting",
+                    "we are meeting",
+                    "I'm leaving",
+                    "I am leaving",
+                    "I'm staying",
+                    "I am staying",
+                    "we're taking",
+                    "we are taking"
+                  ],
+                  [
+                    "going to",
+                    "we are going to",
+                    "I am going to",
+                    "plan to",
+                    "planning to"
+                  ],
+                  [
+                    "if it rains",
+                    "if the weather",
+                    "if it is",
+                    "if it's",
+                    "if we can't",
+                    "if that happens",
+                    "Plan B",
+                    "instead"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U6-L6-A04",
               "lessonId": "A2-U6-L6",
-              "type": "textChoice",
+              "type": "speak",
               "mode": "mastery",
-              "skill": "reading",
+              "skill": "mediation",
               "canDo": [
-                "A2.U6.WRITING.WRITE_TRAVEL_PLAN",
-                "A2.U6.PRODUCTION.PRESENT_ITINERARY"
+                "A2.U6.MEDIATION.RELAY_TRAVEL_CHANGE"
               ],
-              "prompt": "What is fixed at 07:30?",
-              "promptAr": "ما الترتيب الثابت في 07:30؟",
-              "options": [
-                "The station meeting",
-                "The hike",
-                "The cooking class"
-              ],
-              "answer": "The station meeting",
-              "sourceText": "The group is meeting at the station at 07:30. They are going to hike after lunch, but if it rains, they will take a cooking class."
+              "prompt": "Hanan sent you this in a hurry, and Ziad has not seen it. Tell Ziad what has changed, what time she now gets in, what she plans to do instead, and what he must do before Friday.",
+              "promptAr": "أرسلت حنان هذه الرسالة على عجل، ولم يرها زياد. أخبر زياد بما تغيّر، وفي أي ساعة ستصل الآن، وما الذي تنوي فعله بدلاً من ذلك، وما عليه فعله قبل الجمعة.",
+              "sourceCard": "From Hanan: The seven o'clock coach is full, so I'm taking the nine o'clock one and getting in at one. I'm going to skip the market and see the old bridge instead. If Ziad can't meet me at one, tell him to leave the key with his neighbour before Friday.",
+              "accepted": [],
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "nine o'clock",
+                    "the later coach",
+                    "the nine",
+                    "not seven",
+                    "is full",
+                    "full"
+                  ],
+                  [
+                    "at one",
+                    "one o'clock",
+                    "gets in at",
+                    "arrives at",
+                    "she arrives"
+                  ],
+                  [
+                    "old bridge",
+                    "the bridge",
+                    "instead of the market",
+                    "not the market",
+                    "skip the market",
+                    "going to see"
+                  ],
+                  [
+                    "before Friday",
+                    "the key",
+                    "his neighbour",
+                    "leave the key",
+                    "with the neighbour"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U6-L6-A05",
@@ -16254,22 +16873,62 @@
               "mode": "mastery",
               "skill": "writing",
               "canDo": [
-                "A2.U6.WRITING.WRITE_TRAVEL_PLAN",
-                "A2.U6.PRODUCTION.PRESENT_ITINERARY"
+                "A2.U6.WRITING.WRITE_TRAVEL_PLAN"
               ],
-              "prompt": "Write a two-day itinerary with travel, accommodation, activities and one alternative.",
-              "promptAr": "اكتب برنامج يومين يتضمن النقل والإقامة والأنشطة وبديلاً واحداً.",
-              "evaluation": [
-                "taskCompletion",
-                "clarity",
-                "organisation",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "Now write your own two-day plan for a visitor. Give the travel times you have fixed, what you are going to do on each day, and one alternative if the weather is bad.",
+              "promptAr": "اكتب الآن خطتك أنت ليومين من أجل زائر. اذكر مواعيد السفر التي ثبّتها، وما ستفعله في كل يوم، وبديلاً واحداً إذا كان الطقس سيئاً.",
               "accepted": [],
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "I'm taking",
+                    "I am taking",
+                    "I'm meeting",
+                    "I am meeting",
+                    "we're meeting",
+                    "we are meeting",
+                    "I'm collecting",
+                    "I am collecting",
+                    "we're leaving",
+                    "we are leaving"
+                  ],
+                  [
+                    "going to",
+                    "we are going to",
+                    "I am going to",
+                    "plan to",
+                    "planning to"
+                  ],
+                  [
+                    "if it rains",
+                    "if the weather",
+                    "if it is wet",
+                    "if it's wet",
+                    "if that happens",
+                    "Plan B",
+                    "instead"
+                  ],
+                  [
+                    "at seven",
+                    "at eight",
+                    "at nine",
+                    "at ten",
+                    "o'clock",
+                    "in the morning",
+                    "in the afternoon",
+                    "in the evening",
+                    "the coach",
+                    "the train",
+                    "the bus"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
               "wordGuide": [
-                80,
-                110
+                65,
+                85
               ]
             }
           ]
@@ -16303,15 +16962,15 @@
                 "A2.U6.READING.COMPARE_TRAVEL_OPTIONS",
                 "A2.U6.ACTION.BUILD_WEEKEND_ITINERARY"
               ],
-              "prompt": "Which hotel is closer to the old town?",
-              "promptAr": "أي فندق أقرب إلى البلدة القديمة؟",
+              "prompt": "Your visitor does not mind walking but cannot sleep with noise. Which place suits her?",
+              "promptAr": "زائرتك لا تمانع المشي لكنها لا تستطيع النوم مع الضجيج. أي مكان يناسبها؟",
+              "sourceText": "Two places have a free room: the guest house by the station, forty dinars, breakfast included, twenty minutes from the old town; and the flat above the bakery, thirty dinars, no breakfast, three minutes from the old town but noisy until midnight.",
               "options": [
-                "Hotel View",
-                "Hotel Cedar",
-                "Both"
+                "The guest house by the station",
+                "The flat above the bakery",
+                "Neither has a free room"
               ],
-              "answer": "Hotel View",
-              "sourceText": "Hotel Cedar: $55, breakfast included, 15 minutes from the station. Hotel View: $48, no breakfast, 5 minutes from the old town."
+              "answer": "The guest house by the station"
             },
             {
               "id": "A2-U6-L7-A02",
@@ -16323,15 +16982,15 @@
                 "A2.U6.LISTENING.UNDERSTAND_TRAVEL_PLAN",
                 "A2.U6.ACTION.BUILD_WEEKEND_ITINERARY"
               ],
-              "prompt": "What is the new departure time?",
-              "promptAr": "ما وقت المغادرة الجديد؟",
+              "prompt": "Listen to Basma's message. What has changed about her journey?",
+              "promptAr": "استمع إلى رسالة بسمة. ما الذي تغيّر في رحلتها؟",
               "options": [
-                "9:05",
-                "8:15",
-                "11:20"
+                "She gets in two and a half hours later",
+                "She is coming on Saturday instead of Friday",
+                "She is taking a taxi from the station"
               ],
-              "answer": "9:05",
-              "audioTranscript": "The 8:15 train is cancelled. Your ticket is valid on the direct train at 9:05, which arrives at 11:20."
+              "answer": "She gets in two and a half hours later",
+              "audioTranscript": "Hello, this is Basma, the visitor coming on Friday. My coach gets in at half past four, not two, because the earlier one was full. I'm free all day Saturday, but on Sunday I have to leave by four. I'd rather walk than take taxis, and I'd like to see one market and one old building. Anything else is up to you."
             },
             {
               "id": "A2-U6-L7-A03",
@@ -16343,16 +17002,55 @@
                 "A2.U6.INTERACTION.BOOK_CHANGE_TRAVEL",
                 "A2.U6.ACTION.BUILD_WEEKEND_ITINERARY"
               ],
-              "prompt": "Ask about the visitor's priorities, compare options and agree on the weekend plan.",
-              "promptAr": "اسأل عن أولويات الزائر وقارن الخيارات واتفق على خطة العطلة.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
+              "prompt": "Talk to Basma. Ask what matters most to her, compare the two places to stay, and agree what you are doing on Saturday.",
+              "promptAr": "تحدّث إلى بسمة. اسألها عمّا يهمها أكثر، وقارن بين مكانَي الإقامة، واتفقا على ما ستفعلانه يوم السبت.",
+              "partnerTurns": [
+                "Thanks for calling. I don't need anything special; I just want to see the town on foot.",
+                "Forty dinars is fine if I can sleep. The flat above the bakery sounds loud.",
+                "Saturday is yours, then. What are we doing first?"
               ],
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "what would you like",
+                    "what do you want",
+                    "do you prefer",
+                    "would you prefer",
+                    "is it important",
+                    "do you mind",
+                    "how much",
+                    "what matters"
+                  ],
+                  [
+                    "cheaper",
+                    "quieter",
+                    "nearer",
+                    "closer",
+                    "more expensive",
+                    "than",
+                    "three minutes",
+                    "twenty minutes",
+                    "includes breakfast",
+                    "noisy"
+                  ],
+                  [
+                    "let's",
+                    "we'll",
+                    "we will",
+                    "shall we",
+                    "so on Saturday",
+                    "I'll book",
+                    "we're going to",
+                    "we are going to"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U6-L7-A04",
@@ -16364,16 +17062,47 @@
                 "A2.U6.PRODUCTION.PRESENT_ITINERARY",
                 "A2.U6.ACTION.BUILD_WEEKEND_ITINERARY"
               ],
-              "prompt": "Present the final itinerary and explain one Plan B.",
-              "promptAr": "قدّم برنامج الرحلة النهائي واشرح خطة بديلة واحدة.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "Present the finished weekend to Basma: the arrangements that are fixed, what you are going to do on each day, and one Plan B if the weather changes.",
+              "promptAr": "قدّم لبسمة عطلة نهاية الأسبوع في صيغتها النهائية: الترتيبات الثابتة، وما ستفعلانه في كل يوم، وخطة بديلة واحدة إذا تغيّر الطقس.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "we're meeting",
+                    "we are meeting",
+                    "I'm collecting",
+                    "I am collecting",
+                    "we're leaving",
+                    "we are leaving",
+                    "I'm taking",
+                    "I am taking",
+                    "at half past",
+                    "the coach gets in"
+                  ],
+                  [
+                    "going to",
+                    "we're going to",
+                    "we are going to",
+                    "plan to",
+                    "we'll see",
+                    "we will see"
+                  ],
+                  [
+                    "if it rains",
+                    "if the weather",
+                    "Plan B",
+                    "instead",
+                    "if that happens",
+                    "if it's wet",
+                    "if it is wet"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U6-L7-A05",
@@ -16385,16 +17114,50 @@
                 "A2.U6.MEDIATION.RELAY_TRAVEL_CHANGE",
                 "A2.U6.ACTION.BUILD_WEEKEND_ITINERARY"
               ],
-              "prompt": "Relay the transport change and the exact revised schedule to the visitor.",
-              "promptAr": "انقل تغيير النقل والجدول المعدل بدقة إلى الزائر.",
-              "evaluation": [
-                "selectRelevantInformation",
-                "clarity",
-                "audienceAwareness",
-                "accuracy"
-              ],
+              "prompt": "The coach company sent you this notice, and Basma has not seen it. Tell her what has changed, what it means for Sunday, and what she must do before she travels.",
+              "promptAr": "أرسلت شركة الحافلات هذا الإشعار، ولم ترَه بسمة. أخبرها بما تغيّر، وما يعنيه ذلك ليوم الأحد، وما عليها فعله قبل السفر.",
+              "sourceCard": "Notice: from Sunday the four o'clock coach does not run. The last coach leaves at half past two. Passengers holding a four o'clock ticket must change it at any office before Saturday evening, or it will not be valid.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "does not run",
+                    "doesn't run",
+                    "is cancelled",
+                    "no four o'clock",
+                    "no longer runs",
+                    "has stopped"
+                  ],
+                  [
+                    "half past two",
+                    "two thirty",
+                    "the last coach",
+                    "leave earlier",
+                    "earlier than",
+                    "two hours earlier"
+                  ],
+                  [
+                    "change her ticket",
+                    "change your ticket",
+                    "change it",
+                    "at any office",
+                    "go to the office"
+                  ],
+                  [
+                    "before Saturday",
+                    "Saturday evening",
+                    "by Saturday",
+                    "not valid",
+                    "won't be valid",
+                    "will not be valid"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U6-L7-A06",
@@ -16406,20 +17169,55 @@
                 "A2.U6.WRITING.WRITE_TRAVEL_PLAN",
                 "A2.U6.ACTION.BUILD_WEEKEND_ITINERARY"
               ],
-              "prompt": "Write the full weekend itinerary with arrangements, intentions and a conditional alternative.",
-              "promptAr": "اكتب برنامج العطلة كاملاً متضمناً الترتيبات والنوايا وبديلاً شرطياً.",
-              "evaluation": [
-                "taskCompletion",
-                "clarity",
-                "organisation",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "Write the weekend plan for Basma. Give the times that are fixed, what you are going to do on Saturday and on Sunday, one alternative if it rains, and the new Sunday coach time.",
+              "promptAr": "اكتب خطة عطلة نهاية الأسبوع لبسمة. اذكر المواعيد الثابتة، وما ستفعلانه يوم السبت ويوم الأحد، وبديلاً واحداً إذا أمطرت، وموعد حافلة الأحد الجديد.",
+              "accepted": [],
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "we're meeting",
+                    "we are meeting",
+                    "I'm collecting",
+                    "I am collecting",
+                    "at half past",
+                    "at four",
+                    "at two",
+                    "o'clock",
+                    "gets in at"
+                  ],
+                  [
+                    "going to",
+                    "we're going to",
+                    "we are going to",
+                    "plan to",
+                    "we'll see",
+                    "we will see"
+                  ],
+                  [
+                    "if it rains",
+                    "if the weather",
+                    "Plan B",
+                    "instead",
+                    "if it's wet",
+                    "if it is wet"
+                  ],
+                  [
+                    "half past two",
+                    "two thirty",
+                    "the last coach",
+                    "the new time",
+                    "earlier",
+                    "change the ticket"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
               "wordGuide": [
-                90,
-                120
-              ],
-              "accepted": []
+                65,
+                85
+              ]
             }
           ]
         }
@@ -17841,7 +18639,7 @@
           "grammar": [
             "A2.G.MANNER_ADVERBS",
             "A2.G.WILL_DECISION_OFFER",
-            "A2.G.FUTURE_CONTRAST"
+            "A2.G.FUTURE_FORMS_CONTRAST"
           ],
           "lexicon": [
             "A2.LEX.CAREFULLY_ADV01",
@@ -19208,7 +20006,7 @@
           ],
           "grammar": [
             "A2.G.TECH_QUESTIONS",
-            "A2.G.FIRST_CONDITIONAL_INTRO",
+            "A2.G.FIRST_CONDITIONAL",
             "A2.G.FUTURE_TIME_CLAUSE"
           ],
           "lexicon": [
@@ -20915,7 +21713,7 @@
             "A2.U11.PRODUCTION.DESCRIBE_PLACE_PROBLEM"
           ],
           "grammar": [
-            "A2.G.FIRST_CONDITIONAL_NATURE"
+            "A2.G.FIRST_CONDITIONAL"
           ],
           "lexicon": [
             "A2.LEX.RISE_V01",
@@ -21498,7 +22296,7 @@
           ],
           "grammar": [
             "A2.G.PLAN_LINKERS",
-            "A2.G.FIRST_CONDITIONAL_NATURE",
+            "A2.G.FIRST_CONDITIONAL",
             "A2.G.MAY_MIGHT_POSSIBILITY"
           ],
           "lexicon": [
@@ -21837,7 +22635,7 @@
           "grammar": [
             "A2.G.INVITATION_WOULD_LIKE",
             "A2.G.BECAUSE_SO_CAUSE",
-            "A2.G.FIRST_CONDITIONAL_NATURE"
+            "A2.G.FIRST_CONDITIONAL"
           ],
           "lexicon": [
             "A2.LEX.INVITATION_N01",
