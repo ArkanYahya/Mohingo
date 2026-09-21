@@ -1100,6 +1100,22 @@
           "ar": "لم يردّ بعد."
         }
       ]
+    },
+    {
+      "id": "A2.G.CONTAINERS_PORTIONS",
+      "form": "a bottle of / a slice of / a piece of",
+      "meaningAr": "عبارات العبوات والحصص: زجاجة من، شريحة من، قطعة من",
+      "introducedIn": "A2-U5-L3",
+      "examples": [
+        {
+          "en": "Buy a bottle of oil and a piece of cheese.",
+          "ar": "اشترِ زجاجة من الزيت وقطعة من الجبن."
+        },
+        {
+          "en": "He wants only a slice of bread.",
+          "ar": "هو لا يريد إلا شريحة من الخبز."
+        }
+      ]
     }
   ],
   "lexicon": [
@@ -5918,6 +5934,258 @@
       ],
       "introducedIn": "A2-U2-L6",
       "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.SPICE_N01",
+      "headword": "spice",
+      "partOfSpeech": "noun",
+      "arabic": "بهار",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "spice",
+      "examples": [
+        {
+          "en": "This dish needs one spice only.",
+          "ar": "هذا الطبق يحتاج نوعاً واحداً من البهار فقط."
+        }
+      ],
+      "introducedIn": "A2-U5-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.DOUGH_N01",
+      "headword": "dough",
+      "partOfSpeech": "noun",
+      "arabic": "عجينة",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "dough",
+      "examples": [
+        {
+          "en": "Leave the dough for an hour.",
+          "ar": "اترك العجينة ساعة."
+        }
+      ],
+      "introducedIn": "A2-U5-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.STALL_N01",
+      "headword": "stall",
+      "partOfSpeech": "noun",
+      "arabic": "بسطة",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "stall",
+      "examples": [
+        {
+          "en": "The stall near the gate is cheaper.",
+          "ar": "البسطة القريبة من البوابة أرخص."
+        }
+      ],
+      "introducedIn": "A2-U5-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.MIX_V01",
+      "headword": "mix",
+      "partOfSpeech": "verb",
+      "arabic": "يخلط",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "mix",
+      "examples": [
+        {
+          "en": "Mix the eggs with the sugar.",
+          "ar": "اخلط البيض مع السكر."
+        }
+      ],
+      "introducedIn": "A2-U5-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.POT_N01",
+      "headword": "pot",
+      "partOfSpeech": "noun",
+      "arabic": "قِدر",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "pot",
+      "examples": [
+        {
+          "en": "Put the big pot on the heat.",
+          "ar": "ضع القِدر الكبير على النار."
+        }
+      ],
+      "introducedIn": "A2-U5-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.FRESH_ADJ01",
+      "headword": "fresh",
+      "partOfSpeech": "adjective",
+      "arabic": "طازج",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "fresh",
+      "examples": [
+        {
+          "en": "The bread is not fresh today.",
+          "ar": "الخبز ليس طازجاً اليوم."
+        }
+      ],
+      "introducedIn": "A2-U5-L3",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.TASTE_V01",
+      "headword": "taste",
+      "partOfSpeech": "verb",
+      "arabic": "يتذوّق",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "taste",
+      "examples": [
+        {
+          "en": "Taste the sauce before you serve it.",
+          "ar": "تذوّق الصلصة قبل أن تقدّمها."
+        }
+      ],
+      "introducedIn": "A2-U5-L3",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.DELIVERY_N01",
+      "headword": "delivery",
+      "partOfSpeech": "noun",
+      "arabic": "توصيل",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "delivery",
+      "examples": [
+        {
+          "en": "Our delivery arrived twenty minutes ago.",
+          "ar": "وصل طلب التوصيل قبل عشرين دقيقة."
+        }
+      ],
+      "introducedIn": "A2-U5-L4",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.CUSTOMER_N01",
+      "headword": "customer",
+      "partOfSpeech": "noun",
+      "arabic": "زبون",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "customer",
+      "examples": [
+        {
+          "en": "A customer called about the wrong order.",
+          "ar": "اتصل زبون بشأن الطلب الخطأ."
+        }
+      ],
+      "introducedIn": "A2-U5-L4",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.APOLOGISE_V01",
+      "headword": "apologise",
+      "partOfSpeech": "verb",
+      "arabic": "يعتذر",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "apologise",
+      "examples": [
+        {
+          "en": "I apologise for the mistake.",
+          "ar": "أعتذر عن الخطأ."
+        }
+      ],
+      "introducedIn": "A2-U5-L4",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.EXTRA_ADJ01",
+      "headword": "extra",
+      "partOfSpeech": "adjective",
+      "arabic": "إضافي",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "extra",
+      "examples": [
+        {
+          "en": "There is an extra soup in the bag.",
+          "ar": "يوجد حساء إضافي في الكيس."
+        }
+      ],
+      "introducedIn": "A2-U5-L4",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.REFUND_N01",
+      "headword": "refund",
+      "partOfSpeech": "noun",
+      "arabic": "استرداد المبلغ",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "refund",
+      "examples": [
+        {
+          "en": "They sent a refund to my card.",
+          "ar": "أرسلوا استرداد المبلغ إلى بطاقتي."
+        }
+      ],
+      "introducedIn": "A2-U5-L5",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.COMPLAINT_N01",
+      "headword": "complaint",
+      "partOfSpeech": "noun",
+      "arabic": "شكوى",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "complaint",
+      "examples": [
+        {
+          "en": "We answered her complaint the same day.",
+          "ar": "أجبنا عن شكواها في اليوم نفسه."
+        }
+      ],
+      "introducedIn": "A2-U5-L5",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.SERVE_V01",
+      "headword": "serve",
+      "partOfSpeech": "verb",
+      "arabic": "يقدّم",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "serve",
+      "examples": [
+        {
+          "en": "Serve the soup with warm bread.",
+          "ar": "قدّم الحساء مع خبز دافئ."
+        }
+      ],
+      "introducedIn": "A2-U5-L6",
+      "recycledIn": []
     }
   ],
   "chunks": [
@@ -7105,6 +7373,24 @@
       "recycledIn": [
         "A2-U2-L6"
       ]
+    },
+    {
+      "id": "A2.CHUNK.A_BOTTLE_OF",
+      "text": "a bottle of",
+      "arabic": "زجاجة من",
+      "cefr": "A2",
+      "introducedIn": "A2-U5-L3",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A2.CHUNK.A_PIECE_OF",
+      "text": "a piece of",
+      "arabic": "قطعة من",
+      "cefr": "A2",
+      "introducedIn": "A2-U5-L3",
+      "productive": true,
+      "recycledIn": []
     }
   ],
   "units": [
@@ -13507,38 +13793,56 @@
           "lessonType": "encounter-focus-practice",
           "canDo": [
             "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE",
+            "A2.U5.READING.FOLLOW_RECIPE_MENU",
             "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
           ],
           "grammar": [
             "A2.G.QUANTITY_MUCH_MANY",
-            "A2.G.QUANTITY_A_LOT_OF",
-            "A2.G.THERE_WAS_WERE",
-            "A2.G.QUANTIFIERS_AREA"
+            "A2.G.QUANTITY_A_LOT_OF"
           ],
           "lexicon": [
             "A2.LEX.INGREDIENT_N01",
             "A2.LEX.FLOUR_N01",
             "A2.LEX.GRAM_N01",
-            "A2.LEX.BALCONY_N01",
-            "A2.LEX.HEATING_N01",
-            "A2.LEX.MOVE_V01",
-            "A2.LEX.NEARBY_ADV01",
-            "A2.LEX.FACILITY_N01",
-            "A2.LEX.CONVENIENT_ADJ01"
+            "A2.LEX.SPICE_N01",
+            "A2.LEX.DOUGH_N01",
+            "A2.LEX.STALL_N01"
           ],
           "chunks": [
             "A2.CHUNK.HOW_MUCH_NEED",
-            "A2.CHUNK.HOW_MANY_NEED",
-            "A2.CHUNK.USED_TO_BE_THERE",
-            "A2.CHUNK.WITHIN_WALKING_DISTANCE",
-            "A2.CHUNK.CLOSE_TO"
+            "A2.CHUNK.HOW_MANY_NEED"
           ],
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "For the bread, we need 500 grams of flour, a lot of water and two small spoons of salt.",
-                "ar": "للخبز نحتاج 500 غرام من الطحين وكمية كبيرة من الماء وملعقتين صغيرتين من الملح."
+                "speaker": "Tareq",
+                "en": "Hadeel, how much flour do we need for this dough?",
+                "ar": "هديل، كم نحتاج من الطحين لهذه العجينة؟"
+              },
+              {
+                "speaker": "Hadeel",
+                "en": "Six hundred grams. There isn't much sugar left, but the dough doesn't need a lot of it.",
+                "ar": "ستمئة غرام. لم يبقَ سكر كثير، لكن العجينة لا تحتاج الكثير منه."
+              },
+              {
+                "speaker": "Tareq",
+                "en": "And how many eggs do we need?",
+                "ar": "وكم بيضة نحتاج؟"
+              },
+              {
+                "speaker": "Hadeel",
+                "en": "Four. Look in the fridge door, please.",
+                "ar": "أربع بيضات. انظرْ في باب الثلاجة من فضلك."
+              },
+              {
+                "speaker": "Tareq",
+                "en": "There are only two. How many spices does the filling take?",
+                "ar": "لا توجد إلا بيضتان. وكم نوعاً من البهارات تحتاج الحشوة؟"
+              },
+              {
+                "speaker": "Hadeel",
+                "en": "A lot of them, but buy them at the stall near the gate — they're cheaper there.",
+                "ar": "الكثير منها، لكن اشترِها من البسطة القريبة من البوابة، فهي أرخص هناك."
               }
             ]
           },
@@ -13550,59 +13854,30 @@
               "mode": "encounter",
               "skill": "listening",
               "canDo": [
-                "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE",
-                "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
+                "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE"
               ],
-              "prompt": "How much flour is needed?",
-              "promptAr": "كم نحتاج من الطحين؟",
+              "prompt": "What are Tareq and Hadeel working out?",
+              "promptAr": "ما الذي يحاول طارق وهديل تحديده؟",
               "options": [
-                "500 grams",
-                "200 grams",
-                "Two spoons"
+                "How much of each ingredient they have",
+                "Which restaurant to order the lunch from",
+                "How long the family lunch will take"
               ],
-              "answer": "500 grams",
-              "audioTranscript": "For the bread, we need 500 grams of flour, a lot of water and two small spoons of salt."
+              "answer": "How much of each ingredient they have",
+              "audioTranscript": "Hadeel, how much flour do we need for this dough? Six hundred grams. There isn't much sugar left, but the dough doesn't need a lot of it. And how many eggs do we need? Four. Look in the fridge door, please. There are only two. How many spices does the filling take? A lot of them, but buy them at the stall near the gate — they're cheaper there."
             },
             {
               "id": "A2-U5-L1-A02",
-              "lessonId": "A2-U5-L1",
-              "type": "match",
-              "mode": "practice",
-              "skill": "reading",
-              "canDo": [
-                "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE",
-                "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
-              ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "ingredient",
-                  "مكوّن"
-                ],
-                [
-                  "flour",
-                  "طحين"
-                ],
-                [
-                  "gram",
-                  "غرام"
-                ]
-              ]
-            },
-            {
-              "id": "A2-U5-L1-A03",
               "lessonId": "A2-U5-L1",
               "type": "gap",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE",
-                "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
+                "A2.U5.READING.FOLLOW_RECIPE_MENU"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "How ___ onions do we need?",
+              "prompt": "Ingredients can be counted one by one. Choose the word that fits them.",
+              "promptAr": "المكوّنات تُعَدّ واحداً واحداً. اختر الكلمة التي تناسبها.",
+              "text": "How ___ ingredients does this bread need?",
               "options": [
                 "many",
                 "much",
@@ -13611,24 +13886,49 @@
               "answer": "many"
             },
             {
+              "id": "A2-U5-L1-A03",
+              "lessonId": "A2-U5-L1",
+              "type": "match",
+              "mode": "practice",
+              "skill": "reading",
+              "canDo": [
+                "A2.U5.READING.FOLLOW_RECIPE_MENU"
+              ],
+              "prompt": "Match each sentence about the shopping with the part that finishes it.",
+              "promptAr": "طابق كل جملة عن التسوّق بالجزء الذي يكملها.",
+              "pairs": [
+                [
+                  "There isn't much flour left,",
+                  "so we can only make half the dough."
+                ],
+                [
+                  "There are a lot of spices at the stall,",
+                  "but this dish needs only three of them."
+                ],
+                [
+                  "How many grams of cheese did you buy,",
+                  "and is that enough for six people?"
+                ]
+              ]
+            },
+            {
               "id": "A2-U5-L1-A04",
               "lessonId": "A2-U5-L1",
               "type": "audioChoice",
               "mode": "mastery",
               "skill": "listening",
               "canDo": [
-                "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE",
-                "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
+                "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE"
               ],
-              "prompt": "Which ingredient is used in a small amount?",
-              "promptAr": "أي مكوّن يُستخدم بكمية قليلة؟",
+              "prompt": "Listen to the voice message. What does the speaker want a lot of?",
+              "promptAr": "استمع إلى الرسالة الصوتية. ما الذي يريده المتحدث بكمية كبيرة؟",
               "options": [
-                "Oil",
                 "Tomatoes",
-                "Cheese"
+                "Onions",
+                "Oil"
               ],
-              "answer": "Oil",
-              "audioTranscript": "The salad needs many tomatoes but not much oil. It also needs 100 grams of cheese."
+              "answer": "Tomatoes",
+              "audioTranscript": "Before you come home, go to the market for me. We need a lot of tomatoes — two kilos is fine. Do not buy many onions; three are enough. Buy two hundred grams of white cheese, and only a little oil, because we still have some. The spices at the stall by the gate are fresher, so buy the black pepper there."
             },
             {
               "id": "A2-U5-L1-A05",
@@ -13637,19 +13937,59 @@
               "mode": "mastery",
               "skill": "spokenProduction",
               "canDo": [
-                "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE",
                 "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
               ],
-              "prompt": "List ingredients and sensible amounts for a simple dish.",
-              "promptAr": "اذكر مكونات وكميات معقولة لطبق بسيط.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "Describe a dish you cook often. Say how much of two ingredients it needs, how many of one more, and where you buy them.",
+              "promptAr": "صف طبقاً تطبخه كثيراً. قل كم يحتاج من مكوّنين، وكم عدد مكوّن ثالث، ومن أين تشتريها.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "a lot of",
+                    "much",
+                    "not much",
+                    "half a kilo",
+                    "grams",
+                    "a little",
+                    "a cup of",
+                    "two cups",
+                    "a bottle of",
+                    "a piece of"
+                  ],
+                  [
+                    "many",
+                    "not many",
+                    "a few",
+                    "how many",
+                    "two",
+                    "three",
+                    "four",
+                    "five",
+                    "six"
+                  ],
+                  [
+                    "flour",
+                    "rice",
+                    "oil",
+                    "salt",
+                    "spices",
+                    "onion",
+                    "tomato",
+                    "cheese",
+                    "eggs",
+                    "meat",
+                    "market",
+                    "stall",
+                    "supermarket",
+                    "shop"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             }
           ]
         },
@@ -13660,7 +14000,8 @@
           "lessonType": "encounter-focus-practice",
           "canDo": [
             "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE",
-            "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
+            "A2.U5.READING.FOLLOW_RECIPE_MENU",
+            "A2.U5.INTERACTION.MANAGE_FOOD_SERVICE"
           ],
           "grammar": [
             "A2.G.RECIPE_IMPERATIVES"
@@ -13668,7 +14009,9 @@
           "lexicon": [
             "A2.LEX.CHOP_V01",
             "A2.LEX.BOIL_V01",
-            "A2.LEX.STIR_V01"
+            "A2.LEX.STIR_V01",
+            "A2.LEX.MIX_V01",
+            "A2.LEX.POT_N01"
           ],
           "chunks": [
             "A2.CHUNK.FIRST_THEN_FINALLY"
@@ -13676,9 +14019,39 @@
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "First, boil the water. Then add the pasta. Stir it twice and cook for ten minutes.",
-                "ar": "أولاً اغلِ الماء. ثم أضف المعكرونة. حرّكها مرتين واطبخها عشر دقائق."
+                "speaker": "Sawsan",
+                "en": "Put the big pot on the heat first, Yousef, and boil two litres of water.",
+                "ar": "ضَعْ القِدر الكبير على النار أولاً يا يوسف، واغلِ لترين من الماء."
+              },
+              {
+                "speaker": "Yousef",
+                "en": "Should I chop the vegetables now?",
+                "ar": "هل أفرم الخضار الآن؟"
+              },
+              {
+                "speaker": "Sawsan",
+                "en": "Chop them while the water heats. Then mix the spices with a little oil.",
+                "ar": "افرمها بينما يسخن الماء. ثم اخلط البهارات مع قليل من الزيت."
+              },
+              {
+                "speaker": "Yousef",
+                "en": "And when does the rice go into the pot?",
+                "ar": "ومتى يدخل الأرز في القِدر؟"
+              },
+              {
+                "speaker": "Sawsan",
+                "en": "After the water boils. Stir it once, then cook it for twelve minutes.",
+                "ar": "بعد أن يغلي الماء. حرّكه مرة واحدة، ثم اطبخه اثنتي عشرة دقيقة."
+              },
+              {
+                "speaker": "Yousef",
+                "en": "And finally I add the vegetables and the sauce?",
+                "ar": "وأخيراً أضيف الخضار والصلصة؟"
+              },
+              {
+                "speaker": "Sawsan",
+                "en": "Exactly. Mix everything gently and leave it for five minutes.",
+                "ar": "بالضبط. اخلط كل شيء بلطف واتركه خمس دقائق."
               }
             ]
           },
@@ -13690,68 +14063,66 @@
               "mode": "encounter",
               "skill": "listening",
               "canDo": [
-                "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE",
-                "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
+                "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE"
               ],
-              "prompt": "What happens after the water boils?",
-              "promptAr": "ماذا يحدث بعد غلي الماء؟",
+              "prompt": "What is Sawsan doing?",
+              "promptAr": "ماذا تفعل سوسن؟",
               "options": [
-                "Add the pasta",
-                "Stir the cold water",
-                "Serve immediately"
+                "Guiding Yousef through the steps of a dish",
+                "Ordering a meal for the whole class",
+                "Explaining why the pot is broken"
               ],
-              "answer": "Add the pasta",
-              "audioTranscript": "First, boil the water. Then add the pasta. Stir it twice and cook for ten minutes."
+              "answer": "Guiding Yousef through the steps of a dish",
+              "audioTranscript": "Put the big pot on the heat first, Yousef, and boil two litres of water. Should I chop the vegetables now? Chop them while the water heats. Then mix the spices with a little oil. And when does the rice go into the pot? After the water boils. Stir it once, then cook it for twelve minutes. And finally I add the vegetables and the sauce? Exactly. Mix everything gently and leave it for five minutes."
             },
             {
               "id": "A2-U5-L2-A02",
-              "lessonId": "A2-U5-L2",
-              "type": "match",
-              "mode": "practice",
-              "skill": "reading",
-              "canDo": [
-                "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE",
-                "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
-              ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "chop",
-                  "يفرم"
-                ],
-                [
-                  "boil",
-                  "يغلي"
-                ],
-                [
-                  "stir",
-                  "يحرّك"
-                ]
-              ]
-            },
-            {
-              "id": "A2-U5-L2-A03",
               "lessonId": "A2-U5-L2",
               "type": "order",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE",
-                "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
+                "A2.U5.READING.FOLLOW_RECIPE_MENU"
               ],
-              "prompt": "Put the language in the best order.",
-              "promptAr": "رتب اللغة بالترتيب الأفضل.",
+              "prompt": "Put this instruction from a recipe card in the correct order.",
+              "promptAr": "رتّب هذه التعليمة من بطاقة وصفة بالترتيب الصحيح.",
               "tokens": [
-                "the onion.",
-                "First,",
-                "chop"
+                "the",
+                "Chop",
+                "before",
+                "onions",
+                "you",
+                "boil",
+                "them"
               ],
               "answer": [
-                "First,",
-                "chop",
-                "the onion."
+                "Chop",
+                "the",
+                "onions",
+                "before",
+                "you",
+                "boil",
+                "them"
               ]
+            },
+            {
+              "id": "A2-U5-L2-A03",
+              "lessonId": "A2-U5-L2",
+              "type": "gap",
+              "mode": "practice",
+              "skill": "reading",
+              "canDo": [
+                "A2.U5.READING.FOLLOW_RECIPE_MENU"
+              ],
+              "prompt": "A recipe gives its steps as orders, not as descriptions. Choose the right form.",
+              "promptAr": "الوصفة تعطي خطواتها بصيغة الأمر لا بصيغة الوصف. اختر الصيغة الصحيحة.",
+              "text": "___ the sauce for two minutes, then turn off the heat.",
+              "options": [
+                "Stir",
+                "Stirs",
+                "Stirring"
+              ],
+              "answer": "Stir"
             },
             {
               "id": "A2-U5-L2-A04",
@@ -13760,39 +14131,76 @@
               "mode": "mastery",
               "skill": "listening",
               "canDo": [
-                "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE",
-                "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
+                "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE"
               ],
-              "prompt": "When is the rice added?",
-              "promptAr": "متى يُضاف الأرز؟",
+              "prompt": "Listen to the recipe. What is the last step before the guests eat?",
+              "promptAr": "استمع إلى الوصفة. ما الخطوة الأخيرة قبل أن يأكل الضيوف؟",
               "options": [
-                "At the end",
-                "Before the oil",
-                "With the raw vegetables"
+                "Letting the cake cool",
+                "Adding the flour",
+                "Heating the oven"
               ],
-              "answer": "At the end",
-              "audioTranscript": "Heat the oil, add the vegetables and stir for five minutes. Finally, add the cooked rice."
+              "answer": "Letting the cake cool",
+              "audioTranscript": "This is how my mother makes her tea cake. First, mix three eggs with a cup of sugar for two minutes. Then add the flour slowly and stir until it is smooth. Put it in a hot oven for half an hour. Finally, leave it on the table to cool, and cut it when your guests arrive."
             },
             {
               "id": "A2-U5-L2-A05",
               "lessonId": "A2-U5-L2",
               "type": "speak",
               "mode": "mastery",
-              "skill": "spokenProduction",
+              "skill": "spokenInteraction",
               "canDo": [
-                "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE",
-                "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
+                "A2.U5.INTERACTION.MANAGE_FOOD_SERVICE"
               ],
-              "prompt": "Explain four ordered steps for making a simple food or drink.",
-              "promptAr": "اشرح أربع خطوات مرتبة لإعداد طعام أو شراب بسيط.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
+              "prompt": "Your friend is cooking and phones you for help. Answer her questions and give the steps in order.",
+              "promptAr": "صديقتك تطبخ وتتصل بك طلباً للمساعدة. أجب عن أسئلتها واذكر الخطوات بالترتيب.",
+              "partnerTurns": [
+                "Hi! I have rice, an onion and some tomatoes. What do I do first?",
+                "The onion is in the pot now. What comes next?",
+                "It smells good. Tell me the last two steps and how long they take."
               ],
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "first",
+                    "then",
+                    "after that",
+                    "next",
+                    "finally",
+                    "at the end",
+                    "before"
+                  ],
+                  [
+                    "chop",
+                    "boil",
+                    "stir",
+                    "mix",
+                    "add",
+                    "cook",
+                    "heat",
+                    "fry",
+                    "put",
+                    "cut",
+                    "wash"
+                  ],
+                  [
+                    "minutes",
+                    "an hour",
+                    "half an hour",
+                    "a little",
+                    "a few",
+                    "a cup",
+                    "grams",
+                    "until"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             }
           ]
         },
@@ -13802,37 +14210,57 @@
           "titleAr": "بضع أم قليل؟",
           "lessonType": "encounter-focus-practice",
           "canDo": [
+            "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE",
             "A2.U5.READING.FOLLOW_RECIPE_MENU",
             "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
           ],
           "grammar": [
             "A2.G.FEW_LITTLE",
-            "A2.G.COMPARATIVE_ADJECTIVES",
-            "A2.G.SUPERLATIVE_ADJECTIVES"
+            "A2.G.CONTAINERS_PORTIONS"
           ],
           "lexicon": [
             "A2.LEX.OLIVE_N01",
             "A2.LEX.SALT_N01",
             "A2.LEX.SAUCE_N01",
-            "A2.LEX.CALM_ADJ01",
-            "A2.LEX.ORGANISED_ADJ01",
-            "A2.LEX.CONFIDENT_ADJ01",
-            "A2.LEX.FUNNIEST_ADJ01",
-            "A2.LEX.KIND_ADJ01",
-            "A2.LEX.ACTIVE_ADJ01"
+            "A2.LEX.FRESH_ADJ01",
+            "A2.LEX.TASTE_V01"
           ],
           "chunks": [
             "A2.CHUNK.A_LITTLE_BIT",
-            "A2.CHUNK.THE_MOST",
-            "A2.CHUNK.GET_ON_WELL",
-            "A2.CHUNK.A_PERSON_WHO"
+            "A2.CHUNK.A_BOTTLE_OF",
+            "A2.CHUNK.A_PIECE_OF"
           ],
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "For the sauce, use a little oil, a few tomatoes and a little bit of salt. Add a few olives at the end.",
-                "ar": ""
+                "speaker": "Ziad",
+                "en": "Is there enough for dinner, Rania?",
+                "ar": "هل يوجد ما يكفي للعشاء يا رانيا؟"
+              },
+              {
+                "speaker": "Rania",
+                "en": "A little rice, a few eggs and half a bottle of oil.",
+                "ar": "قليل من الأرز، وبضع بيضات، ونصف زجاجة من الزيت."
+              },
+              {
+                "speaker": "Ziad",
+                "en": "There's a piece of cheese too, and a few olives.",
+                "ar": "وهناك قطعة من الجبن أيضاً، وبضع حبات من الزيتون."
+              },
+              {
+                "speaker": "Rania",
+                "en": "Good. Taste the sauce, please — I think it needs a little bit of salt.",
+                "ar": "جيد. تذوّق الصلصة من فضلك، أظن أنها تحتاج قليلاً من الملح."
+              },
+              {
+                "speaker": "Ziad",
+                "en": "It's fine now. The bread isn't fresh, though, so I only want a slice of it.",
+                "ar": "صارت جيدة الآن. لكن الخبز ليس طازجاً، لذلك لا أريد منه إلا شريحة واحدة."
+              },
+              {
+                "speaker": "Rania",
+                "en": "Then buy a fresh one tomorrow, and a few tomatoes from the market.",
+                "ar": "إذن اشترِ خبزاً طازجاً غداً، وبضع حبات من الطماطم من السوق."
               }
             ]
           },
@@ -13840,63 +14268,34 @@
             {
               "id": "A2-U5-L3-A01",
               "lessonId": "A2-U5-L3",
-              "type": "textChoice",
+              "type": "audioChoice",
               "mode": "encounter",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U5.READING.FOLLOW_RECIPE_MENU",
-                "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
+                "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE"
               ],
-              "prompt": "Which countable ingredient is added at the end?",
-              "promptAr": "أي مكوّن معدود يُضاف في النهاية؟",
+              "prompt": "What are Rania and Ziad deciding?",
+              "promptAr": "ما الذي تقرره رانيا وزياد؟",
               "options": [
-                "Olives",
-                "Oil",
-                "Salt"
+                "Whether they can cook dinner with what is left",
+                "Which restaurant to book for the evening",
+                "How much the shopping cost last week"
               ],
-              "answer": "Olives",
-              "sourceText": "For the sauce, use a little oil, a few tomatoes and a little bit of salt. Add a few olives at the end."
+              "answer": "Whether they can cook dinner with what is left",
+              "audioTranscript": "Is there enough for dinner, Rania? A little rice, a few eggs and half a bottle of oil. There's a piece of cheese too, and a few olives. Good. Taste the sauce, please — I think it needs a little bit of salt. It's fine now. The bread isn't fresh, though, so I only want a slice of it. Then buy a fresh one tomorrow, and a few tomatoes from the market."
             },
             {
               "id": "A2-U5-L3-A02",
-              "lessonId": "A2-U5-L3",
-              "type": "match",
-              "mode": "practice",
-              "skill": "reading",
-              "canDo": [
-                "A2.U5.READING.FOLLOW_RECIPE_MENU",
-                "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
-              ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "olive",
-                  "زيتونة"
-                ],
-                [
-                  "salt",
-                  "ملح"
-                ],
-                [
-                  "sauce",
-                  "صلصة"
-                ]
-              ]
-            },
-            {
-              "id": "A2-U5-L3-A03",
               "lessonId": "A2-U5-L3",
               "type": "gap",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U5.READING.FOLLOW_RECIPE_MENU",
-                "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
+                "A2.U5.READING.FOLLOW_RECIPE_MENU"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "Add ___ sugar, but not too much.",
+              "prompt": "Sugar cannot be counted one by one. Choose the words that fit it.",
+              "promptAr": "السكر لا يُعَدّ حبةً حبة. اختر العبارة المناسبة له.",
+              "text": "Add ___ sugar to the sauce, but not too much.",
               "options": [
                 "a little",
                 "a few",
@@ -13905,24 +14304,42 @@
               "answer": "a little"
             },
             {
-              "id": "A2-U5-L3-A04",
+              "id": "A2-U5-L3-A03",
               "lessonId": "A2-U5-L3",
               "type": "textChoice",
-              "mode": "mastery",
+              "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U5.READING.FOLLOW_RECIPE_MENU",
-                "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
+                "A2.U5.READING.FOLLOW_RECIPE_MENU"
               ],
-              "prompt": "How many portions can they make?",
-              "promptAr": "كم حصة يمكنهم إعدادها؟",
+              "prompt": "Read the board outside the café. Which dish suits a guest who cannot eat much salt?",
+              "promptAr": "اقرأ اللوحة المعلّقة خارج المقهى. أي طبق يناسب ضيفاً لا يستطيع تناول الكثير من الملح؟",
               "options": [
-                "Two",
-                "A few",
-                "One egg"
+                "The village salad",
+                "The grilled fish",
+                "The lentil soup"
               ],
-              "answer": "Two",
-              "sourceText": "We have a little cheese and a few eggs. That is enough for two portions."
+              "answer": "The village salad",
+              "sourceText": "THE RIVER CAFE, TODAY. Village salad: fresh tomatoes, a few olives, no salt added. Lentil soup: a little salt, served with a slice of bread. Grilled fish: salty sauce and a piece of lemon. Tea or juice with every meal."
+            },
+            {
+              "id": "A2-U5-L3-A04",
+              "lessonId": "A2-U5-L3",
+              "type": "audioChoice",
+              "mode": "mastery",
+              "skill": "listening",
+              "canDo": [
+                "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE"
+              ],
+              "prompt": "Listen to the cook. What does she use instead of salt?",
+              "promptAr": "استمع إلى الطاهية. ما الذي تستخدمه بدلاً من الملح؟",
+              "options": [
+                "Herbs and lemon",
+                "More butter",
+                "Two small portions"
+              ],
+              "answer": "Herbs and lemon",
+              "audioTranscript": "I cook for my grandmother every Sunday, and her doctor told her to eat less salt. So I use a few herbs instead: a little parsley, a few mint leaves and half a lemon. I still add a piece of butter at the end, because she says food without it tastes of nothing. She eats two small portions and leaves the rest for Monday."
             },
             {
               "id": "A2-U5-L3-A05",
@@ -13931,19 +14348,48 @@
               "mode": "mastery",
               "skill": "spokenProduction",
               "canDo": [
-                "A2.U5.READING.FOLLOW_RECIPE_MENU",
                 "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
               ],
-              "prompt": "Describe small quantities for a recipe using a few and a little accurately.",
-              "promptAr": "صف كميات صغيرة لوصفة مستخدماً a few وa little بدقة.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "Look in your own kitchen. Say what there is a little of, what there is a few of, and one dish you could make with them.",
+              "promptAr": "تفقّد مطبخك أنت. قل ما الذي يوجد منه قليل، وما الذي توجد منه بضع قطع، وطبقاً واحداً يمكنك إعداده منها.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "a little",
+                    "a little bit",
+                    "a bit of",
+                    "not much",
+                    "half a",
+                    "a bottle of",
+                    "a piece of"
+                  ],
+                  [
+                    "a few",
+                    "a couple of",
+                    "two eggs",
+                    "three",
+                    "four",
+                    "some eggs",
+                    "some tomatoes",
+                    "some olives"
+                  ],
+                  [
+                    "I could make",
+                    "I can make",
+                    "I would make",
+                    "I'd make",
+                    "enough for",
+                    "that is enough",
+                    "so I"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             }
           ]
         },
@@ -13954,15 +14400,17 @@
           "lessonType": "encounter-focus-practice",
           "canDo": [
             "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE",
-            "A2.U5.INTERACTION.MANAGE_FOOD_SERVICE"
+            "A2.U5.READING.FOLLOW_RECIPE_MENU",
+            "A2.U5.WRITING.WRITE_RECIPE_MESSAGE"
           ],
           "grammar": [
             "A2.G.OBJECT_PRONOUNS_SERVICE"
           ],
           "lexicon": [
-            "A2.LEX.ORDER_N02",
-            "A2.LEX.MISSING_ADJ01",
-            "A2.LEX.WRONG_ADJ01"
+            "A2.LEX.DELIVERY_N01",
+            "A2.LEX.CUSTOMER_N01",
+            "A2.LEX.APOLOGISE_V01",
+            "A2.LEX.EXTRA_ADJ01"
           ],
           "chunks": [
             "A2.CHUNK.SOMETHING_IS_MISSING",
@@ -13971,9 +14419,34 @@
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "Customer: Excuse me, this isn't what I ordered. I asked for vegetable soup, but this has chicken in it. Server: I'm sorry. I'll change it.",
-                "ar": "الزبون: عفواً، هذا ليس ما طلبته. طلبت حساء خضار، لكن فيه دجاج. النادل: أنا آسف. سأستبدله."
+                "speaker": "Muna",
+                "en": "Hello, I'm calling about our delivery. It arrived twenty minutes ago.",
+                "ar": "مرحباً، أتصل بخصوص طلب التوصيل. وصل قبل عشرين دقيقة."
+              },
+              {
+                "speaker": "Bashar",
+                "en": "Is there a problem with it, madam?",
+                "ar": "هل هناك مشكلة فيه يا سيدتي؟"
+              },
+              {
+                "speaker": "Muna",
+                "en": "Yes. This isn't what I ordered. I asked for two vegetable meals, and you sent me chicken.",
+                "ar": "نعم. هذا ليس ما طلبته. طلبتُ وجبتَي خضار، وأنتم أرسلتم لي دجاجاً."
+              },
+              {
+                "speaker": "Bashar",
+                "en": "I apologise. Did the salad reach you?",
+                "ar": "أعتذر. وهل وصلتكِ السلطة؟"
+              },
+              {
+                "speaker": "Muna",
+                "en": "No — something is missing. The salad isn't here, but there is an extra soup.",
+                "ar": "لا، هناك شيء ناقص. السلطة غير موجودة، لكن هناك حساء إضافي."
+              },
+              {
+                "speaker": "Bashar",
+                "en": "I'll send the driver back with your two meals, and he will take the soup.",
+                "ar": "سأرسل السائق مرة أخرى بوجبتيكِ، وسيأخذ الحساء."
               }
             ]
           },
@@ -13985,59 +14458,30 @@
               "mode": "encounter",
               "skill": "listening",
               "canDo": [
-                "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE",
-                "A2.U5.INTERACTION.MANAGE_FOOD_SERVICE"
+                "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE"
               ],
-              "prompt": "What is wrong with the soup?",
-              "promptAr": "ما الخطأ في الحساء؟",
+              "prompt": "Why is Muna calling the delivery office?",
+              "promptAr": "لماذا تتصل منى بمكتب التوصيل؟",
               "options": [
-                "It contains chicken.",
-                "It is missing vegetables.",
-                "It is too cold."
+                "The food is wrong and one item is missing",
+                "She wants to order more food for tomorrow",
+                "She wants to pay for the meal by card"
               ],
-              "answer": "It contains chicken.",
-              "audioTranscript": "Customer: Excuse me, this isn't what I ordered. I asked for vegetable soup, but this has chicken in it. Server: I'm sorry. I'll change it."
+              "answer": "The food is wrong and one item is missing",
+              "audioTranscript": "Hello, I'm calling about our delivery. It arrived twenty minutes ago. Is there a problem with it, madam? Yes. This isn't what I ordered. I asked for two vegetable meals, and you sent me chicken. I apologise. Did the salad reach you? No — something is missing. The salad isn't here, but there is an extra soup. I'll send the driver back with your two meals, and he will take the soup."
             },
             {
               "id": "A2-U5-L4-A02",
-              "lessonId": "A2-U5-L4",
-              "type": "match",
-              "mode": "practice",
-              "skill": "reading",
-              "canDo": [
-                "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE",
-                "A2.U5.INTERACTION.MANAGE_FOOD_SERVICE"
-              ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "order",
-                  "طلب"
-                ],
-                [
-                  "missing",
-                  "مفقود"
-                ],
-                [
-                  "wrong",
-                  "خطأ"
-                ]
-              ]
-            },
-            {
-              "id": "A2-U5-L4-A03",
               "lessonId": "A2-U5-L4",
               "type": "gap",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE",
-                "A2.U5.INTERACTION.MANAGE_FOOD_SERVICE"
+                "A2.U5.READING.FOLLOW_RECIPE_MENU"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "We ordered two juices, but they didn't bring ___.",
+              "prompt": "Two juices is more than one thing. Choose the pronoun that stands for both.",
+              "promptAr": "عصيران شيئان لا شيء واحد. اختر الضمير الذي يحل محلهما.",
+              "text": "We ordered two juices, but the driver forgot ___.",
               "options": [
                 "them",
                 "it",
@@ -14046,45 +14490,102 @@
               "answer": "them"
             },
             {
-              "id": "A2-U5-L4-A04",
+              "id": "A2-U5-L4-A03",
               "lessonId": "A2-U5-L4",
               "type": "audioChoice",
-              "mode": "mastery",
+              "mode": "practice",
               "skill": "listening",
               "canDo": [
-                "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE",
-                "A2.U5.INTERACTION.MANAGE_FOOD_SERVICE"
+                "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE"
               ],
-              "prompt": "What extra item arrived?",
-              "promptAr": "ما العنصر الإضافي الذي وصل؟",
+              "prompt": "Listen to the manager's message to the kitchen staff. What must they do when something is missing?",
+              "promptAr": "استمع إلى رسالة المدير لعمّال المطبخ. ماذا عليهم أن يفعلوا عندما ينقص شيء؟",
               "options": [
-                "One coffee",
-                "One dessert",
-                "Two juices"
+                "Tell the customer before the customer calls",
+                "Send the driver home for the evening",
+                "Write a new menu for the week"
               ],
-              "answer": "One coffee",
-              "audioTranscript": "Customer: One dessert is missing, and you brought us three coffees instead of two. Server: I'll correct the order now."
+              "answer": "Tell the customer before the customer calls",
+              "audioTranscript": "Team, listen before the evening shift. A customer called this afternoon: we sent her chicken instead of vegetables, and we forgot her salad. Read every order twice before it leaves the kitchen, and count the boxes with the driver. If something is missing, tell the customer first; do not wait for them to call us."
+            },
+            {
+              "id": "A2-U5-L4-A04",
+              "lessonId": "A2-U5-L4",
+              "type": "textChoice",
+              "mode": "mastery",
+              "skill": "reading",
+              "canDo": [
+                "A2.U5.READING.FOLLOW_RECIPE_MENU"
+              ],
+              "prompt": "Read the order summary from the app. What did the kitchen send by mistake?",
+              "promptAr": "اقرأ ملخّص الطلب من التطبيق. ما الذي أرسله المطبخ بالخطأ؟",
+              "options": [
+                "Chicken meals and a soup",
+                "Two bottles of water",
+                "A green salad"
+              ],
+              "answer": "Chicken meals and a soup",
+              "sourceText": "ORDER 4482 — Muna A. Ordered: 2 x vegetable meal, 1 x green salad, 2 x water. Delivered: 2 x chicken meal, 1 x lentil soup, 2 x water. Note from the driver: one extra soup and no salad. The customer refused the chicken."
             },
             {
               "id": "A2-U5-L4-A05",
               "lessonId": "A2-U5-L4",
-              "type": "speak",
+              "type": "write",
               "mode": "mastery",
-              "skill": "spokenInteraction",
+              "skill": "writing",
               "canDo": [
-                "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE",
-                "A2.U5.INTERACTION.MANAGE_FOOD_SERVICE"
+                "A2.U5.WRITING.WRITE_RECIPE_MESSAGE"
               ],
-              "prompt": "Explain a wrong or incomplete order clearly and politely.",
-              "promptAr": "اشرح طلباً خاطئاً أو ناقصاً بوضوح وأدب.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "Write a message to the restaurant about a delivery that went wrong. Say what you ordered, what arrived, what is missing, and what you want them to do.",
+              "promptAr": "اكتب رسالة إلى المطعم عن طلب توصيل وصل خاطئاً. اذكر ما طلبته، وما الذي وصل، وما هو الناقص، وما تريد منهم أن يفعلوه.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "I ordered",
+                    "we ordered",
+                    "I asked for",
+                    "we asked for",
+                    "my order"
+                  ],
+                  [
+                    "you sent",
+                    "arrived",
+                    "this isn't what",
+                    "this is not what",
+                    "instead of",
+                    "by mistake",
+                    "the wrong"
+                  ],
+                  [
+                    "is missing",
+                    "are missing",
+                    "didn't come",
+                    "did not come",
+                    "wasn't in",
+                    "an extra",
+                    "one extra"
+                  ],
+                  [
+                    "could you",
+                    "can you",
+                    "please send",
+                    "I'd like",
+                    "I would like",
+                    "bring it",
+                    "replace",
+                    "take it back",
+                    "a refund"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "wordGuide": [
+                65,
+                85
+              ]
             }
           ]
         },
@@ -14094,36 +14595,53 @@
           "titleAr": "حل مشكلة خدمة",
           "lessonType": "encounter-focus-practice",
           "canDo": [
+            "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE",
             "A2.U5.READING.FOLLOW_RECIPE_MENU",
-            "A2.U5.MEDIATION.RELAY_ORDER_RECIPE"
+            "A2.U5.INTERACTION.MANAGE_FOOD_SERVICE"
           ],
           "grammar": [
-            "A2.G.POLITE_FOOD_REQUESTS",
-            "A2.G.PAST_NEGATIVE",
-            "A2.G.PAST_TIME_LINKERS"
+            "A2.G.POLITE_FOOD_REQUESTS"
           ],
           "lexicon": [
             "A2.LEX.REPLACE_V01",
-            "A2.LEX.BILL_N01",
             "A2.LEX.SERVICE_N01",
-            "A2.LEX.SUDDENLY_ADV01",
-            "A2.LEX.FINALLY_ADV01",
-            "A2.LEX.SEQUENCE_N01",
-            "A2.LEX.STORY_N01",
-            "A2.LEX.EVENT_N01",
-            "A2.LEX.SURPRISED_ADJ01"
+            "A2.LEX.REFUND_N01",
+            "A2.LEX.COMPLAINT_N01"
           ],
           "chunks": [
-            "A2.CHUNK.COULD_REPLACE",
-            "A2.CHUNK.IN_THE_END",
-            "A2.CHUNK.A_GREAT_TIME"
+            "A2.CHUNK.COULD_REPLACE"
           ],
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "Hello, the meal was good, but the bill includes two salads and we only had one. Could you correct it, please?",
-                "ar": ""
+                "speaker": "Nadia",
+                "en": "Excuse me, could I speak to the manager, please?",
+                "ar": "عفواً، هل يمكنني التحدث إلى المدير من فضلك؟"
+              },
+              {
+                "speaker": "Faris",
+                "en": "I am the manager. How can I help you?",
+                "ar": "أنا المدير. كيف أستطيع مساعدتكِ؟"
+              },
+              {
+                "speaker": "Nadia",
+                "en": "We waited fifty minutes for the fish, and it arrived cold.",
+                "ar": "انتظرنا السمك خمسين دقيقة، ووصل بارداً."
+              },
+              {
+                "speaker": "Faris",
+                "en": "I am very sorry. Could I replace it with a hot one?",
+                "ar": "أنا آسف جداً. هل يمكنني أن أستبدله بآخر ساخن؟"
+              },
+              {
+                "speaker": "Nadia",
+                "en": "We have finished now. Could you take it off the bill instead?",
+                "ar": "لقد انتهينا الآن. هل يمكنك أن تحذفه من الفاتورة بدلاً من ذلك؟"
+              },
+              {
+                "speaker": "Faris",
+                "en": "Of course. I will remove the fish and the service charge, and bring you tea.",
+                "ar": "بالتأكيد. سأحذف السمك ورسوم الخدمة، وسأحضر لكِ الشاي."
               }
             ]
           },
@@ -14131,110 +14649,149 @@
             {
               "id": "A2-U5-L5-A01",
               "lessonId": "A2-U5-L5",
-              "type": "textChoice",
+              "type": "audioChoice",
               "mode": "encounter",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U5.READING.FOLLOW_RECIPE_MENU",
-                "A2.U5.MEDIATION.RELAY_ORDER_RECIPE"
+                "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE"
               ],
-              "prompt": "What needs correcting?",
-              "promptAr": "ما الذي يحتاج إلى تصحيح؟",
+              "prompt": "What does Nadia want the manager to do?",
+              "promptAr": "ماذا تريد نادية من المدير أن يفعل؟",
               "options": [
-                "The number of salads on the bill",
-                "The meal itself",
-                "The table number"
+                "Change the bill",
+                "Give her a table by the window",
+                "Bring her a different menu"
               ],
-              "answer": "The number of salads on the bill",
-              "sourceText": "Hello, the meal was good, but the bill includes two salads and we only had one. Could you correct it, please?"
+              "answer": "Change the bill",
+              "audioTranscript": "Excuse me, could I speak to the manager, please? I am the manager. How can I help you? We waited fifty minutes for the fish, and it arrived cold. I am very sorry. Could I replace it with a hot one? We have finished now. Could you take it off the bill instead? Of course. I will remove the fish and the service charge, and bring you tea."
             },
             {
               "id": "A2-U5-L5-A02",
               "lessonId": "A2-U5-L5",
-              "type": "match",
+              "type": "order",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U5.READING.FOLLOW_RECIPE_MENU",
-                "A2.U5.MEDIATION.RELAY_ORDER_RECIPE"
+                "A2.U5.READING.FOLLOW_RECIPE_MENU"
               ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "replace",
-                  "يستبدل"
-                ],
-                [
-                  "bill",
-                  "فاتورة"
-                ],
-                [
-                  "service",
-                  "خدمة"
-                ]
+              "prompt": "Put this polite request to a server in the correct order.",
+              "promptAr": "رتّب هذا الطلب المهذّب الموجّه إلى النادل بالترتيب الصحيح.",
+              "tokens": [
+                "us",
+                "Could",
+                "bring",
+                "another",
+                "you",
+                "of",
+                "bottle",
+                "water?"
+              ],
+              "answer": [
+                "Could",
+                "you",
+                "bring",
+                "us",
+                "another",
+                "bottle",
+                "of",
+                "water?"
               ]
             },
             {
               "id": "A2-U5-L5-A03",
               "lessonId": "A2-U5-L5",
-              "type": "gap",
+              "type": "textChoice",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U5.READING.FOLLOW_RECIPE_MENU",
-                "A2.U5.MEDIATION.RELAY_ORDER_RECIPE"
+                "A2.U5.READING.FOLLOW_RECIPE_MENU"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "Could you ___ this cold drink, please?",
+              "prompt": "Read the restaurant's written reply. What is it offering Nadia?",
+              "promptAr": "اقرأ رد المطعم المكتوب. ما الذي يعرضه على نادية؟",
               "options": [
-                "replace",
-                "replaces",
-                "replaced"
+                "A free dessert on her next visit",
+                "A refund for the whole meal",
+                "A different table for tonight"
               ],
-              "answer": "replace"
+              "answer": "A free dessert on her next visit",
+              "sourceText": "Dear Nadia, thank you for your complaint. We are sorry that your fish was cold. We have removed it from your bill, but we cannot give a refund for the meals you ate. Please accept a free dessert on your next visit. The River Restaurant."
             },
             {
               "id": "A2-U5-L5-A04",
               "lessonId": "A2-U5-L5",
-              "type": "textChoice",
+              "type": "audioChoice",
               "mode": "mastery",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U5.READING.FOLLOW_RECIPE_MENU",
-                "A2.U5.MEDIATION.RELAY_ORDER_RECIPE"
+                "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE"
               ],
-              "prompt": "What solution does the server offer?",
-              "promptAr": "ما الحل الذي يقدمه النادل؟",
+              "prompt": "Listen to the voicemail from the café. What will the café do?",
+              "promptAr": "استمع إلى الرسالة الصوتية من المقهى. ما الذي سيفعله المقهى؟",
               "options": [
-                "Fruit",
-                "A different bill",
-                "More nuts"
+                "Send the money back to the card",
+                "Bake a new cake this week",
+                "Deliver two more portions tomorrow"
               ],
-              "answer": "Fruit",
-              "sourceText": "A guest cannot eat nuts, but the dessert contains them. The server offers fruit instead."
+              "answer": "Send the money back to the card",
+              "audioTranscript": "Good afternoon, this is Salma from the Palm Cafe. You left a complaint about the birthday cake we delivered on Saturday. You are right: we used the wrong sauce, and two portions were broken. We cannot replace the cake this week, so we will send a refund to your card by Thursday. Please call me if that does not suit you."
             },
             {
               "id": "A2-U5-L5-A05",
               "lessonId": "A2-U5-L5",
               "type": "speak",
               "mode": "mastery",
-              "skill": "mediation",
+              "skill": "spokenInteraction",
               "canDo": [
-                "A2.U5.READING.FOLLOW_RECIPE_MENU",
-                "A2.U5.MEDIATION.RELAY_ORDER_RECIPE"
+                "A2.U5.INTERACTION.MANAGE_FOOD_SERVICE"
               ],
-              "prompt": "Read the customer's problem and relay it to the server with the requested solution.",
-              "promptAr": "اقرأ مشكلة الزبون وانقلها إلى النادل مع الحل المطلوب.",
-              "evaluation": [
-                "selectRelevantInformation",
-                "clarity",
-                "audienceAwareness",
-                "accuracy"
+              "prompt": "Phone a restaurant about a meal that was wrong. Say what happened, make a polite request, and agree on what they will do.",
+              "promptAr": "اتصل بمطعم بشأن وجبة كانت خاطئة. قل ما الذي حدث، وقدّم طلباً مهذّباً، واتفق على ما سيفعلونه.",
+              "partnerTurns": [
+                "Good evening, this is the Palm Restaurant. How can I help you?",
+                "I am sorry to hear that. What would you like us to do?",
+                "I can do that. Tell me your name and when you can come, and I will write it down."
               ],
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "was cold",
+                    "was wrong",
+                    "wasn't what",
+                    "was not what",
+                    "we waited",
+                    "too salty",
+                    "is missing",
+                    "never arrived",
+                    "the wrong"
+                  ],
+                  [
+                    "could you",
+                    "could I",
+                    "can you",
+                    "would you",
+                    "I'd like",
+                    "I would like",
+                    "is it possible",
+                    "please"
+                  ],
+                  [
+                    "replace",
+                    "a refund",
+                    "take it off the bill",
+                    "bring another",
+                    "send it again",
+                    "next time",
+                    "tomorrow",
+                    "this evening"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             }
           ]
         },
@@ -14244,31 +14801,32 @@
           "titleAr": "شارك وصفة",
           "lessonType": "integrated-production",
           "canDo": [
+            "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE",
+            "A2.U5.READING.FOLLOW_RECIPE_MENU",
+            "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM",
             "A2.U5.WRITING.WRITE_RECIPE_MESSAGE",
-            "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
+            "A2.U5.MEDIATION.RELAY_ORDER_RECIPE"
           ],
           "grammar": [
             "A2.G.QUANTITY_MUCH_MANY",
             "A2.G.RECIPE_IMPERATIVES",
-            "A2.G.FEW_LITTLE"
+            "A2.G.FEW_LITTLE",
+            "A2.G.CONTAINERS_PORTIONS"
           ],
           "lexicon": [
             "A2.LEX.RECIPE_N01",
             "A2.LEX.PORTION_N01",
-            "A2.LEX.METHOD_N01"
+            "A2.LEX.METHOD_N01",
+            "A2.LEX.SERVE_V01"
           ],
           "chunks": [
             "A2.CHUNK.SERVES_FOUR",
             "A2.CHUNK.FIRST_THEN_FINALLY"
           ],
-          "encounter": {
-            "dialogue": [
-              {
-                "speaker": "Narrator",
-                "en": "Bean soup — serves four. Use two cups of beans, a few carrots and a little oil. Boil the beans, add the carrots, and finally cook everything for twenty minutes.",
-                "ar": ""
-              }
-            ]
+          "readingText": {
+            "title": "Lentil Soup for Four",
+            "text": "Hala, this is the lentil soup you liked on Friday. The recipe serves four people, and one portion is enough for a light dinner. You need two cups of red lentils, one onion, a few carrots, a piece of ginger, a little salt and one and a half litres of water. The method is simple. First, chop the onion and the carrots, and fry them for three minutes. Then add the lentils, the ginger and the water, and boil everything for twenty-five minutes. Finally, mix the soup until it is smooth, and serve it with a slice of warm bread. Do not add much salt at the start; taste it at the end.",
+            "textAr": "هالة، هذا حساء العدس الذي أعجبكِ يوم الجمعة. الوصفة تكفي أربعة أشخاص، وحصة واحدة تكفي لعشاء خفيف. تحتاجين إلى كوبين من العدس الأحمر، وبصلة واحدة، وبضع جزرات، وقطعة من الزنجبيل، وقليل من الملح، ولتر ونصف من الماء. الطريقة بسيطة. أولاً، افرمي البصل والجزر واقليهما ثلاث دقائق. ثم أضيفي العدس والزنجبيل والماء، واغلي كل شيء خمساً وعشرين دقيقة. وأخيراً، اخلطي الحساء حتى يصير ناعماً، وقدّميه مع شريحة من الخبز الدافئ. لا تضيفي ملحاً كثيراً في البداية، وتذوّقيه في النهاية."
           },
           "activities": [
             {
@@ -14278,85 +14836,142 @@
               "mode": "encounter",
               "skill": "reading",
               "canDo": [
-                "A2.U5.WRITING.WRITE_RECIPE_MESSAGE",
-                "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
+                "A2.U5.READING.FOLLOW_RECIPE_MENU"
               ],
-              "prompt": "How many people does the recipe serve?",
-              "promptAr": "كم شخصاً تكفي الوصفة؟",
+              "prompt": "Read the message once. What is the writer doing for Hala?",
+              "promptAr": "اقرأ الرسالة مرة واحدة. ماذا يفعل كاتبها من أجل هالة؟",
               "options": [
-                "Four",
-                "Two",
-                "Twenty"
+                "Writing out a recipe she asked for",
+                "Inviting her to dinner on Friday",
+                "Complaining about a restaurant meal"
               ],
-              "answer": "Four",
-              "sourceText": "Bean soup — serves four. Use two cups of beans, a few carrots and a little oil. Boil the beans, add the carrots, and finally cook everything for twenty minutes."
+              "answer": "Writing out a recipe she asked for"
             },
             {
               "id": "A2-U5-L6-A02",
               "lessonId": "A2-U5-L6",
-              "type": "match",
+              "type": "audioChoice",
               "mode": "practice",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U5.WRITING.WRITE_RECIPE_MESSAGE",
-                "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
+                "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE"
               ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "recipe",
-                  "وصفة"
-                ],
-                [
-                  "portion",
-                  "حصة طعام"
-                ],
-                [
-                  "method",
-                  "طريقة"
-                ]
-              ]
+              "prompt": "Listen to the voice note that came after the message. What can replace the ginger?",
+              "promptAr": "استمع إلى الرسالة الصوتية التي تلت الرسالة المكتوبة. ما الذي يمكن أن يحلّ محل الزنجبيل؟",
+              "options": [
+                "A little black pepper",
+                "A few pieces of potato",
+                "The water from the lentils"
+              ],
+              "answer": "A little black pepper",
+              "audioTranscript": "One more thing about the soup. If you cannot find ginger, use a little black pepper instead; it is not the same, but it is good. My sister adds a few pieces of potato, and then it serves six. And do not throw away the water from the lentils. Keep it, and add it slowly while you mix."
             },
             {
               "id": "A2-U5-L6-A03",
               "lessonId": "A2-U5-L6",
-              "type": "gap",
+              "type": "speak",
               "mode": "practice",
-              "skill": "reading",
+              "skill": "spokenProduction",
               "canDo": [
-                "A2.U5.WRITING.WRITE_RECIPE_MESSAGE",
                 "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "This recipe ___ six people.",
-              "options": [
-                "serves",
-                "service",
-                "serve"
-              ],
-              "answer": "serves"
+              "prompt": "Before you write anything, say your own recipe aloud the way the message does: how many it serves, what it needs, and the steps in order.",
+              "promptAr": "قبل أن تكتب شيئاً، قل وصفتك أنت بصوت عالٍ كما فعلت الرسالة: كم شخصاً تكفي، وما الذي تحتاجه، والخطوات بالترتيب.",
+              "accepted": [],
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "serves",
+                    "enough for",
+                    "portions",
+                    "for four",
+                    "for two",
+                    "for six"
+                  ],
+                  [
+                    "a little",
+                    "a few",
+                    "a piece of",
+                    "a slice of",
+                    "a bottle of",
+                    "two cups",
+                    "grams",
+                    "much",
+                    "many"
+                  ],
+                  [
+                    "first",
+                    "then",
+                    "after that",
+                    "finally",
+                    "at the end",
+                    "chop",
+                    "boil",
+                    "stir",
+                    "mix",
+                    "add",
+                    "cook"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U5-L6-A04",
               "lessonId": "A2-U5-L6",
-              "type": "textChoice",
+              "type": "speak",
               "mode": "mastery",
-              "skill": "reading",
+              "skill": "mediation",
               "canDo": [
-                "A2.U5.WRITING.WRITE_RECIPE_MESSAGE",
-                "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
+                "A2.U5.MEDIATION.RELAY_ORDER_RECIPE"
               ],
-              "prompt": "What should be mixed with the fruit?",
-              "promptAr": "ما الذي يُخلط مع الفاكهة؟",
-              "options": [
-                "A little water",
-                "A lot of salt",
-                "Two portions"
-              ],
-              "answer": "A little water",
-              "sourceText": "Fruit drink — serves two. Chop one apple and a few strawberries. Add a little water and mix well."
+              "prompt": "Your neighbour Um Kareem cannot read the English on this packet. Tell her how many it serves, what she must add, how long it cooks, and the warning at the bottom.",
+              "promptAr": "جارتك أم كريم لا تستطيع قراءة الإنجليزية المكتوبة على هذه العبوة. أخبرها كم شخصاً تكفي، وما الذي عليها إضافته، وكم مدة الطهي، وما التحذير المكتوب في الأسفل.",
+              "sourceCard": "QUICK BEAN MIX — serves three. Add one bottle of cold water and two spoons of oil. Boil for fifteen minutes, then stir and leave it for five. Do not add salt: the mix already contains a lot. Keep the packet closed in a dry place.",
+              "accepted": [],
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "three",
+                    "serves",
+                    "for three people",
+                    "enough for three"
+                  ],
+                  [
+                    "water",
+                    "a bottle",
+                    "oil",
+                    "two spoons",
+                    "spoons of oil"
+                  ],
+                  [
+                    "fifteen",
+                    "boil",
+                    "stir",
+                    "five minutes",
+                    "twenty minutes",
+                    "cook"
+                  ],
+                  [
+                    "do not add salt",
+                    "don't add salt",
+                    "no salt",
+                    "already",
+                    "enough salt",
+                    "it has salt",
+                    "too salty"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U5-L6-A05",
@@ -14365,22 +14980,64 @@
               "mode": "mastery",
               "skill": "writing",
               "canDo": [
-                "A2.U5.WRITING.WRITE_RECIPE_MESSAGE",
-                "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
+                "A2.U5.WRITING.WRITE_RECIPE_MESSAGE"
               ],
-              "prompt": "Write a simple recipe with a title, portions, ingredients and ordered method.",
-              "promptAr": "اكتب وصفة بسيطة تتضمن عنواناً وعدد الحصص والمكونات وطريقة مرتبة.",
-              "evaluation": [
-                "taskCompletion",
-                "clarity",
-                "organisation",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "Now write your own recipe for a friend. Give it a title, say how many it serves, list what it needs with the amounts, and put the steps in order.",
+              "promptAr": "اكتب الآن وصفتك أنت لصديق. ضع لها عنواناً، وقل كم شخصاً تكفي، واذكر ما تحتاجه مع الكميات، ورتّب الخطوات.",
               "accepted": [],
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "serves",
+                    "enough for",
+                    "portions",
+                    "for four",
+                    "for two",
+                    "for three",
+                    "for six"
+                  ],
+                  [
+                    "a little",
+                    "a few",
+                    "a piece of",
+                    "a slice of",
+                    "a bottle of",
+                    "cups",
+                    "grams",
+                    "half a",
+                    "much",
+                    "many",
+                    "a lot of"
+                  ],
+                  [
+                    "first",
+                    "then",
+                    "after that",
+                    "next",
+                    "finally",
+                    "at the end"
+                  ],
+                  [
+                    "chop",
+                    "boil",
+                    "stir",
+                    "mix",
+                    "add",
+                    "cook",
+                    "fry",
+                    "heat",
+                    "serve",
+                    "cut",
+                    "wash"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
               "wordGuide": [
-                75,
-                105
+                65,
+                85
               ]
             }
           ]
@@ -14414,15 +15071,15 @@
                 "A2.U5.READING.FOLLOW_RECIPE_MENU",
                 "A2.U5.ACTION.COOK_AND_RESOLVE_ORDER"
               ],
-              "prompt": "What must be cooked?",
-              "promptAr": "ما الذي يجب طبخه؟",
+              "prompt": "Read the recipe card for tonight. What must you buy on the day itself?",
+              "promptAr": "اقرأ بطاقة وصفة هذه الليلة. ما الذي يجب شراؤه في اليوم نفسه؟",
               "options": [
+                "The chicken",
                 "The rice",
-                "The tomatoes",
-                "The oil"
+                "The tomato sauce"
               ],
-              "answer": "The rice",
-              "sourceText": "Rice salad — serves three. Use 250 grams of rice, a few tomatoes and a little oil. Cook the rice, chop the tomatoes, then mix everything."
+              "answer": "The chicken",
+              "sourceText": "FAMILY RICE WITH CHICKEN — serves five. 500 grams of rice, one bottle of tomato sauce, a few carrots, a little cumin and a piece of butter. Buy the chicken fresh on the day; everything else can wait in the cupboard. Cooking time: forty minutes."
             },
             {
               "id": "A2-U5-L7-A02",
@@ -14434,15 +15091,15 @@
                 "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE",
                 "A2.U5.ACTION.COOK_AND_RESOLVE_ORDER"
               ],
-              "prompt": "What solution is requested?",
-              "promptAr": "ما الحل المطلوب؟",
+              "prompt": "Listen to Samia's message. What is wrong with the delivery?",
+              "promptAr": "استمع إلى رسالة سامية. ما الخطأ في طلب التوصيل؟",
               "options": [
-                "Send two correct vegetable meals",
-                "Cancel every meal",
-                "Add one meat meal"
+                "Two plates are meat instead of vegetable, and the bread is missing",
+                "The whole order arrived an hour late",
+                "They sent rice when nobody ordered any"
               ],
-              "answer": "Send two correct vegetable meals",
-              "audioTranscript": "We ordered three vegetable meals, but only two arrived, and one of them has meat. Please send two correct vegetable meals."
+              "answer": "Two plates are meat instead of vegetable, and the bread is missing",
+              "audioTranscript": "It's Samia. I ordered the extra dishes from the restaurant for tonight, and the delivery came ten minutes ago. They sent four meat plates, but we asked for two meat and two vegetable, because Nabil does not eat meat. The bread is missing as well. I am cooking the rice now, so could you call them and sort it out?"
             },
             {
               "id": "A2-U5-L7-A03",
@@ -14454,16 +15111,63 @@
                 "A2.U5.INTERACTION.MANAGE_FOOD_SERVICE",
                 "A2.U5.ACTION.COOK_AND_RESOLVE_ORDER"
               ],
-              "prompt": "Role-play the order problem: explain the error, answer a question and agree on a solution.",
-              "promptAr": "مثّل مشكلة الطلب: اشرح الخطأ وأجب عن سؤال واتفق على حل.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
+              "prompt": "Phone the restaurant about Samia's order. Explain the mistake, answer the server's question, and agree on a solution.",
+              "promptAr": "اتصل بالمطعم بشأن طلب سامية. اشرح الخطأ، وأجب عن سؤال النادل، واتفق على حل.",
+              "partnerTurns": [
+                "Palm Restaurant, good evening. Do you have the order number?",
+                "I see. So which plates are wrong, and what is missing?",
+                "We can send a driver in twenty minutes, or take it off your bill. Which do you prefer, and why?"
               ],
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "this isn't what",
+                    "this is not what",
+                    "we ordered",
+                    "we asked for",
+                    "by mistake",
+                    "instead of",
+                    "the wrong",
+                    "you sent"
+                  ],
+                  [
+                    "is missing",
+                    "are missing",
+                    "didn't come",
+                    "did not come",
+                    "no bread",
+                    "an extra",
+                    "two meat",
+                    "two vegetable"
+                  ],
+                  [
+                    "could you",
+                    "can you",
+                    "please send",
+                    "I'd like",
+                    "I would like",
+                    "replace",
+                    "take it off the bill",
+                    "a refund",
+                    "bring"
+                  ],
+                  [
+                    "because",
+                    "does not eat",
+                    "doesn't eat",
+                    "we prefer",
+                    "that is better",
+                    "we are eating now",
+                    "tonight"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U5-L7-A04",
@@ -14475,16 +15179,58 @@
                 "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM",
                 "A2.U5.ACTION.COOK_AND_RESOLVE_ORDER"
               ],
-              "prompt": "Explain the recipe ingredients, quantities and steps in a clear order.",
-              "promptAr": "اشرح مكونات الوصفة وكمياتها وخطواتها بترتيب واضح.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "Explain tonight's dish to a friend who wants to cook it. Give the amounts, the steps in order, and one thing not to do.",
+              "promptAr": "اشرح طبق هذه الليلة لصديق يريد طبخه. اذكر الكميات، والخطوات بالترتيب، وأمراً واحداً يجب تجنّبه.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "grams",
+                    "a bottle of",
+                    "a piece of",
+                    "a slice of",
+                    "a little",
+                    "a few",
+                    "cups",
+                    "half a",
+                    "a lot of",
+                    "serves"
+                  ],
+                  [
+                    "first",
+                    "then",
+                    "after that",
+                    "next",
+                    "finally",
+                    "at the end"
+                  ],
+                  [
+                    "chop",
+                    "boil",
+                    "stir",
+                    "mix",
+                    "add",
+                    "fry",
+                    "cook",
+                    "heat",
+                    "serve"
+                  ],
+                  [
+                    "do not",
+                    "don't",
+                    "never",
+                    "be careful",
+                    "too much",
+                    "too salty",
+                    "not too"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U5-L7-A05",
@@ -14496,16 +15242,50 @@
                 "A2.U5.MEDIATION.RELAY_ORDER_RECIPE",
                 "A2.U5.ACTION.COOK_AND_RESOLVE_ORDER"
               ],
-              "prompt": "Relay a diner’s dietary need and exact order correction to the server.",
-              "promptAr": "انقل حاجة غذائية لزبون وتصحيح الطلب بدقة إلى النادل.",
-              "evaluation": [
-                "selectRelevantInformation",
-                "clarity",
-                "audienceAwareness",
-                "accuracy"
-              ],
+              "prompt": "Samia cannot read the restaurant's English reply. Tell her what they are sending, what they will not charge for, when the driver comes, and the one thing they need from her.",
+              "promptAr": "سامية لا تستطيع قراءة رد المطعم بالإنجليزية. أخبرها بما سيرسلونه، وبما لن يحاسبوها عليه، ومتى يصل السائق، وبالأمر الوحيد الذي يريدونه منها.",
+              "sourceCard": "Reply from the Palm Restaurant: we are sending two vegetable plates and the bread now. We will not charge for the two meat plates you did not order. The driver leaves in twenty minutes. Please give him the wrong plates at the door.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "two vegetable",
+                    "vegetable plates",
+                    "the bread",
+                    "sending",
+                    "they will send"
+                  ],
+                  [
+                    "will not charge",
+                    "won't charge",
+                    "free",
+                    "not pay",
+                    "no charge",
+                    "take it off",
+                    "not on the bill"
+                  ],
+                  [
+                    "twenty minutes",
+                    "in twenty",
+                    "the driver",
+                    "soon",
+                    "on his way"
+                  ],
+                  [
+                    "give him",
+                    "hand him",
+                    "return",
+                    "take back",
+                    "the wrong plates",
+                    "at the door"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U5-L7-A06",
@@ -14517,20 +15297,55 @@
                 "A2.U5.WRITING.WRITE_RECIPE_MESSAGE",
                 "A2.U5.ACTION.COOK_AND_RESOLVE_ORDER"
               ],
-              "prompt": "Write the recipe and a short polite message about the order error.",
-              "promptAr": "اكتب الوصفة ورسالة قصيرة مهذبة عن خطأ الطلب.",
-              "evaluation": [
-                "taskCompletion",
-                "clarity",
-                "organisation",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "Write one message to Samia. Give the recipe steps for tonight in order, then say what you agreed with the restaurant about the wrong order.",
+              "promptAr": "اكتب رسالة واحدة إلى سامية. اذكر خطوات وصفة هذه الليلة بالترتيب، ثم قل ما اتفقت عليه مع المطعم بشأن الطلب الخطأ.",
+              "accepted": [],
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "first",
+                    "then",
+                    "after that",
+                    "next",
+                    "finally",
+                    "at the end"
+                  ],
+                  [
+                    "grams",
+                    "a bottle of",
+                    "a piece of",
+                    "a little",
+                    "a few",
+                    "cups",
+                    "serves",
+                    "half a"
+                  ],
+                  [
+                    "the wrong",
+                    "instead of",
+                    "was missing",
+                    "they sent",
+                    "this isn't what",
+                    "we ordered"
+                  ],
+                  [
+                    "they will send",
+                    "they are sending",
+                    "a refund",
+                    "take it off the bill",
+                    "will not charge",
+                    "the driver",
+                    "in twenty minutes"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
               "wordGuide": [
-                85,
-                115
-              ],
-              "accepted": []
+                65,
+                85
+              ]
             }
           ]
         }

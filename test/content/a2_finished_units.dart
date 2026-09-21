@@ -11,7 +11,7 @@ import 'package:mohingo/content/parsing/course_bundle_parser.dart';
 /// it in the batch that authors it — never before — and A2 cannot be marked
 /// available in the catalogue until all twelve are here (see
 /// `a2_masterable_test.dart`'s release rule).
-const a2FinishedUnitIds = <String>['A2-U1', 'A2-U2', 'A2-U3', 'A2-U4'];
+const a2FinishedUnitIds = <String>['A2-U1', 'A2-U2', 'A2-U3', 'A2-U4', 'A2-U5'];
 
 CourseBundle loadA2Bundle() => CourseBundleParser.parse(
   File('assets/content/en/A2/a2-course-bundle.json').readAsStringSync(),
