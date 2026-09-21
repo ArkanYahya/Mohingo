@@ -72,18 +72,31 @@ void main() {
     }
   });
 
-  test('no prompt is used more than three times in a unit', () {
+  test('no prompt is used more than three times in a unit, in either '
+      'language', () {
+    // The rule exists because the import used the same drill six times a
+    // unit. Keyed on `prompt` alone it only ever enforced that in English:
+    // one identical `promptAr` across all 36 activities of a unit passed —
+    // against the app's primary audience, who read the Arabic first. Both
+    // are counted, each in its own tally, because they are separately
+    // authored strings and either can go stale on its own.
     for (final unit in finishedA2Units()) {
-      final counts = <String, int>{};
+      final counts = <(String language, String prompt), int>{};
       for (final a in activitiesOf(unit)) {
-        final key = a.prompt.trim().toLowerCase();
-        counts[key] = (counts[key] ?? 0) + 1;
+        final en = ('prompt', a.prompt.trim().toLowerCase());
+        counts[en] = (counts[en] ?? 0) + 1;
+        final arabic = a.promptAr?.trim().toLowerCase() ?? '';
+        if (arabic.isEmpty) continue; // a missing promptAr is a2_bilingual's
+        final ar = ('promptAr', arabic);
+        counts[ar] = (counts[ar] ?? 0) + 1;
       }
       final overused = counts.entries.where((e) => e.value > 3).toList();
       expect(
         overused,
         isEmpty,
-        reason: '${unit.id}: ${overused.map((e) => '"${e.key}" x${e.value}')}',
+        reason:
+            '${unit.id}: '
+            '${overused.map((e) => '${e.key.$1} "${e.key.$2}" x${e.value}')}',
       );
     }
   });

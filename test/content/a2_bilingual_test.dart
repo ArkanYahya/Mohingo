@@ -163,6 +163,108 @@ void main() {
     );
   });
 
+  test('every word, phrase and structure a unit teaches carries Arabic', () {
+    // The gates above read what a learner meets inside a lesson. They never
+    // read the registries — and Vocabulary, Grammar and Review are built
+    // from nothing else. `lexicon.arabic`, `grammar.meaningAr` and
+    // `chunk.arabic` are the only Arabic those screens have: blank them, or
+    // copy the English across, and the whole of Words & phrases and Grammar
+    // goes monolingual for an Arabic-speaking learner while this suite
+    // stays green. That is the app's first non-negotiable rule, and until
+    // now no test in this directory touched any of the three fields.
+    //
+    // Records are resolved against A1's bundle as well as A2's, because an
+    // A2 lesson may legitimately list an A1 word for revision and the
+    // learner sees that record exactly as they see an A2 one. An id that
+    // resolves in neither is reported here too rather than skipped: it is
+    // a word the lesson claims to teach and the app cannot show at all.
+    final a2 = loadA2Bundle();
+    final a1 = loadA1Bundle();
+    final lexicon = {
+      for (final l in [...a1.lexicon, ...a2.lexicon]) l.id: l.arabic,
+    };
+    final grammar = {
+      for (final g in [...a1.grammar, ...a2.grammar]) g.id: g.meaningAr,
+    };
+    final chunks = {
+      for (final c in [...a1.chunks, ...a2.chunks]) c.id: c.arabic,
+    };
+
+    final offenders = <String>[];
+    var checked = 0;
+    void check(
+      String where,
+      String field,
+      Map<String, String> registry,
+      String id,
+    ) {
+      checked++;
+      final arabic = registry[id];
+      if (arabic == null) {
+        offenders.add('$where lists $id, which no bundle defines');
+        return;
+      }
+      if (arabic.trim().isEmpty) {
+        offenders.add('$where lists $id, whose $field is blank');
+        return;
+      }
+      if (!_arabic.hasMatch(arabic)) {
+        // Copying the English across is the cheapest way to pass a
+        // presence check and the exact failure this rules out.
+        offenders.add(
+          '$where lists $id, whose $field has no Arabic script: '
+          '"$arabic"',
+        );
+      }
+    }
+
+    for (final unit in finishedA2Units()) {
+      for (final lesson in unit.lessons) {
+        for (final id in lesson.lexicon) {
+          check(lesson.id, 'lexicon.arabic', lexicon, id);
+        }
+        for (final id in lesson.grammar) {
+          check(lesson.id, 'grammar.meaningAr', grammar, id);
+        }
+        for (final id in lesson.chunks) {
+          check(lesson.id, 'chunk.arabic', chunks, id);
+        }
+      }
+    }
+    expect(
+      checked,
+      greaterThan(0),
+      reason: 'no registry references were checked at all',
+    );
+    expect(offenders, isEmpty, reason: offenders.join('\n'));
+  });
+
+  test('every unit and lesson title carries Arabic', () {
+    // The capstone gates read both capstone titles; nothing read a unit's
+    // or a lesson's. They are the headings on the Learn tab and at the top
+    // of every lesson, so an English-only one is the first thing a learner
+    // sees — which made the omission an inconsistency rather than a
+    // considered scope line.
+    for (final unit in finishedA2Units()) {
+      final unitAr = unit.titleAr.trim();
+      expect(unitAr, isNotEmpty, reason: '${unit.id}.titleAr is missing');
+      expect(
+        _arabic.hasMatch(unitAr),
+        isTrue,
+        reason: '${unit.id}.titleAr has no Arabic script: "$unitAr"',
+      );
+      for (final lesson in unit.lessons) {
+        final lessonAr = lesson.titleAr.trim();
+        expect(lessonAr, isNotEmpty, reason: '${lesson.id}.titleAr is missing');
+        expect(
+          _arabic.hasMatch(lessonAr),
+          isTrue,
+          reason: '${lesson.id}.titleAr has no Arabic script: "$lessonAr"',
+        );
+      }
+    }
+  });
+
   test('English fields contain no Arabic script', () {
     for (final unit in finishedA2Units()) {
       for (final lesson in unit.lessons) {
