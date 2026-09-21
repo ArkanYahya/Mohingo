@@ -1,0 +1,3211 @@
+{
+  "courseId": "EN-A2-V1",
+  "contentVersion": "A2-IMPORT-2026.09.20",
+  "unitIds": [
+    "A2-U1",
+    "A2-U10",
+    "A2-U11",
+    "A2-U12",
+    "A2-U2",
+    "A2-U3",
+    "A2-U4",
+    "A2-U5",
+    "A2-U6",
+    "A2-U7",
+    "A2-U8",
+    "A2-U9"
+  ],
+  "lessonIds": [
+    "A2-U1-L1",
+    "A2-U1-L2",
+    "A2-U1-L3",
+    "A2-U1-L4",
+    "A2-U1-L5",
+    "A2-U1-L6",
+    "A2-U1-L7",
+    "A2-U10-L1",
+    "A2-U10-L2",
+    "A2-U10-L3",
+    "A2-U10-L4",
+    "A2-U10-L5",
+    "A2-U10-L6",
+    "A2-U10-L7",
+    "A2-U11-L1",
+    "A2-U11-L2",
+    "A2-U11-L3",
+    "A2-U11-L4",
+    "A2-U11-L5",
+    "A2-U11-L6",
+    "A2-U11-L7",
+    "A2-U12-L1",
+    "A2-U12-L2",
+    "A2-U12-L3",
+    "A2-U12-L4",
+    "A2-U12-L5",
+    "A2-U12-L6",
+    "A2-U12-L7",
+    "A2-U2-L1",
+    "A2-U2-L2",
+    "A2-U2-L3",
+    "A2-U2-L4",
+    "A2-U2-L5",
+    "A2-U2-L6",
+    "A2-U2-L7",
+    "A2-U3-L1",
+    "A2-U3-L2",
+    "A2-U3-L3",
+    "A2-U3-L4",
+    "A2-U3-L5",
+    "A2-U3-L6",
+    "A2-U3-L7",
+    "A2-U4-L1",
+    "A2-U4-L2",
+    "A2-U4-L3",
+    "A2-U4-L4",
+    "A2-U4-L5",
+    "A2-U4-L6",
+    "A2-U4-L7",
+    "A2-U5-L1",
+    "A2-U5-L2",
+    "A2-U5-L3",
+    "A2-U5-L4",
+    "A2-U5-L5",
+    "A2-U5-L6",
+    "A2-U5-L7",
+    "A2-U6-L1",
+    "A2-U6-L2",
+    "A2-U6-L3",
+    "A2-U6-L4",
+    "A2-U6-L5",
+    "A2-U6-L6",
+    "A2-U6-L7",
+    "A2-U7-L1",
+    "A2-U7-L2",
+    "A2-U7-L3",
+    "A2-U7-L4",
+    "A2-U7-L5",
+    "A2-U7-L6",
+    "A2-U7-L7",
+    "A2-U8-L1",
+    "A2-U8-L2",
+    "A2-U8-L3",
+    "A2-U8-L4",
+    "A2-U8-L5",
+    "A2-U8-L6",
+    "A2-U8-L7",
+    "A2-U9-L1",
+    "A2-U9-L2",
+    "A2-U9-L3",
+    "A2-U9-L4",
+    "A2-U9-L5",
+    "A2-U9-L6",
+    "A2-U9-L7"
+  ],
+  "activities": {
+    "A2-FA-LISTEN-01": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.LISTENING.INTEGRATED_ROUTINE_INFO"
+      ]
+    },
+    "A2-FA-LISTEN-02": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.LISTENING.INTEGRATED_ROUTINE_INFO"
+      ]
+    },
+    "A2-FA-LISTEN-03": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.LISTENING.INTEGRATED_ROUTINE_INFO"
+      ]
+    },
+    "A2-FA-LISTEN-04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.LISTENING.INTEGRATED_ROUTINE_INFO"
+      ]
+    },
+    "A2-FA-LISTEN-05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.LISTENING.INTEGRATED_ROUTINE_INFO"
+      ]
+    },
+    "A2-FA-LISTEN-06": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.LISTENING.INTEGRATED_ROUTINE_INFO"
+      ]
+    },
+    "A2-FA-LISTEN-07": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.LISTENING.INTEGRATED_ROUTINE_INFO"
+      ]
+    },
+    "A2-FA-LISTEN-08": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.LISTENING.INTEGRATED_ROUTINE_INFO"
+      ]
+    },
+    "A2-FA-LISTEN-09": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.LISTENING.INTEGRATED_ROUTINE_INFO"
+      ]
+    },
+    "A2-FA-LISTEN-10": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.LISTENING.INTEGRATED_ROUTINE_INFO"
+      ]
+    },
+    "A2-FA-LISTEN-11": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.LISTENING.INTEGRATED_ROUTINE_INFO"
+      ]
+    },
+    "A2-FA-LISTEN-12": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.LISTENING.INTEGRATED_ROUTINE_INFO"
+      ]
+    },
+    "A2-FA-LISTEN-13": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.LISTENING.INTEGRATED_ROUTINE_INFO"
+      ]
+    },
+    "A2-FA-LISTEN-14": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.LISTENING.INTEGRATED_ROUTINE_INFO"
+      ]
+    },
+    "A2-FA-LISTEN-15": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.LISTENING.INTEGRATED_ROUTINE_INFO"
+      ]
+    },
+    "A2-FA-LISTEN-16": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.LISTENING.INTEGRATED_ROUTINE_INFO"
+      ]
+    },
+    "A2-FA-LISTEN-17": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.LISTENING.INTEGRATED_ROUTINE_INFO"
+      ]
+    },
+    "A2-FA-LISTEN-18": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.LISTENING.INTEGRATED_ROUTINE_INFO"
+      ]
+    },
+    "A2-FA-MEDIATE-01": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.MEDIATION.RELAY_PRACTICAL_INFORMATION"
+      ]
+    },
+    "A2-FA-MEDIATE-02": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.MEDIATION.RELAY_PRACTICAL_INFORMATION"
+      ]
+    },
+    "A2-FA-READ-01": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.READING.INTEGRATED_PRACTICAL_TEXTS"
+      ]
+    },
+    "A2-FA-READ-02": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.READING.INTEGRATED_PRACTICAL_TEXTS"
+      ]
+    },
+    "A2-FA-READ-03": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.READING.INTEGRATED_PRACTICAL_TEXTS"
+      ]
+    },
+    "A2-FA-READ-04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.READING.INTEGRATED_PRACTICAL_TEXTS"
+      ]
+    },
+    "A2-FA-READ-05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.READING.INTEGRATED_PRACTICAL_TEXTS"
+      ]
+    },
+    "A2-FA-READ-06": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.READING.INTEGRATED_PRACTICAL_TEXTS"
+      ]
+    },
+    "A2-FA-READ-07": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.READING.INTEGRATED_PRACTICAL_TEXTS"
+      ]
+    },
+    "A2-FA-READ-08": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.READING.INTEGRATED_PRACTICAL_TEXTS"
+      ]
+    },
+    "A2-FA-READ-09": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.READING.INTEGRATED_PRACTICAL_TEXTS"
+      ]
+    },
+    "A2-FA-READ-10": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.READING.INTEGRATED_PRACTICAL_TEXTS"
+      ]
+    },
+    "A2-FA-READ-11": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.READING.INTEGRATED_PRACTICAL_TEXTS"
+      ]
+    },
+    "A2-FA-READ-12": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.READING.INTEGRATED_PRACTICAL_TEXTS"
+      ]
+    },
+    "A2-FA-READ-13": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.READING.INTEGRATED_PRACTICAL_TEXTS"
+      ]
+    },
+    "A2-FA-READ-14": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.READING.INTEGRATED_PRACTICAL_TEXTS"
+      ]
+    },
+    "A2-FA-READ-15": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.READING.INTEGRATED_PRACTICAL_TEXTS"
+      ]
+    },
+    "A2-FA-READ-16": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.READING.INTEGRATED_PRACTICAL_TEXTS"
+      ]
+    },
+    "A2-FA-READ-17": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.READING.INTEGRATED_PRACTICAL_TEXTS"
+      ]
+    },
+    "A2-FA-READ-18": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.READING.INTEGRATED_PRACTICAL_TEXTS"
+      ]
+    },
+    "A2-FA-SPEAK-01": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.INTERACTION.MANAGE_ROUTINE_SITUATIONS"
+      ]
+    },
+    "A2-FA-SPEAK-02": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.INTERACTION.MANAGE_ROUTINE_SITUATIONS"
+      ]
+    },
+    "A2-FA-SPEAK-03": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.PRODUCTION.CONNECT_SHORT_DESCRIPTION"
+      ]
+    },
+    "A2-FA-SPEAK-04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.PRODUCTION.CONNECT_SHORT_DESCRIPTION"
+      ]
+    },
+    "A2-FA-WRITE-01": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.WRITING.CONNECTED_PRACTICAL_TEXT"
+      ]
+    },
+    "A2-FA-WRITE-02": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.WRITING.CONNECTED_PRACTICAL_TEXT"
+      ]
+    },
+    "A2-FINAL-MISSION-A01": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.ACTION.HOST_VISITOR",
+        "A2.FINAL.READING.INTEGRATED_PRACTICAL_TEXTS"
+      ]
+    },
+    "A2-FINAL-MISSION-A02": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.ACTION.HOST_VISITOR",
+        "A2.FINAL.READING.INTEGRATED_PRACTICAL_TEXTS"
+      ]
+    },
+    "A2-FINAL-MISSION-A03": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.ACTION.HOST_VISITOR",
+        "A2.FINAL.LISTENING.INTEGRATED_ROUTINE_INFO"
+      ]
+    },
+    "A2-FINAL-MISSION-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.ACTION.HOST_VISITOR",
+        "A2.FINAL.LISTENING.INTEGRATED_ROUTINE_INFO"
+      ]
+    },
+    "A2-FINAL-MISSION-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.ACTION.HOST_VISITOR",
+        "A2.FINAL.INTERACTION.MANAGE_ROUTINE_SITUATIONS"
+      ]
+    },
+    "A2-FINAL-MISSION-A06": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.ACTION.HOST_VISITOR",
+        "A2.FINAL.INTERACTION.MANAGE_ROUTINE_SITUATIONS"
+      ]
+    },
+    "A2-FINAL-MISSION-A07": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.ACTION.HOST_VISITOR",
+        "A2.FINAL.PRODUCTION.CONNECT_SHORT_DESCRIPTION"
+      ]
+    },
+    "A2-FINAL-MISSION-A08": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.ACTION.HOST_VISITOR",
+        "A2.FINAL.PRODUCTION.CONNECT_SHORT_DESCRIPTION"
+      ]
+    },
+    "A2-FINAL-MISSION-A09": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.ACTION.HOST_VISITOR",
+        "A2.FINAL.MEDIATION.RELAY_PRACTICAL_INFORMATION"
+      ]
+    },
+    "A2-FINAL-MISSION-A10": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.ACTION.HOST_VISITOR",
+        "A2.FINAL.MEDIATION.RELAY_PRACTICAL_INFORMATION"
+      ]
+    },
+    "A2-FINAL-MISSION-A11": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.ACTION.HOST_VISITOR",
+        "A2.FINAL.WRITING.CONNECTED_PRACTICAL_TEXT"
+      ]
+    },
+    "A2-FINAL-MISSION-A12": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.FINAL.ACTION.HOST_VISITOR",
+        "A2.FINAL.WRITING.CONNECTED_PRACTICAL_TEXT"
+      ]
+    },
+    "A2-U1-L1-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE"
+      ]
+    },
+    "A2-U1-L1-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U1.READING.UNDERSTAND_PROFILE"
+      ]
+    },
+    "A2-U1-L1-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U1.READING.UNDERSTAND_PROFILE"
+      ]
+    },
+    "A2-U1-L1-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE"
+      ]
+    },
+    "A2-U1-L1-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE"
+      ]
+    },
+    "A2-U1-L2-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE"
+      ]
+    },
+    "A2-U1-L2-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U1.READING.UNDERSTAND_PROFILE"
+      ]
+    },
+    "A2-U1-L2-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U1.READING.UNDERSTAND_PROFILE"
+      ]
+    },
+    "A2-U1-L2-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE"
+      ]
+    },
+    "A2-U1-L2-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U1.INTERACTION.ASK_FOLLOW_UP"
+      ]
+    },
+    "A2-U1-L3-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE"
+      ]
+    },
+    "A2-U1-L3-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U1.READING.UNDERSTAND_PROFILE"
+      ]
+    },
+    "A2-U1-L3-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U1.READING.UNDERSTAND_PROFILE"
+      ]
+    },
+    "A2-U1-L3-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE"
+      ]
+    },
+    "A2-U1-L3-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE"
+      ]
+    },
+    "A2-U1-L4-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE"
+      ]
+    },
+    "A2-U1-L4-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U1.READING.UNDERSTAND_PROFILE"
+      ]
+    },
+    "A2-U1-L4-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE"
+      ]
+    },
+    "A2-U1-L4-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U1.READING.UNDERSTAND_PROFILE"
+      ]
+    },
+    "A2-U1-L4-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U1.WRITING.WRITE_LIFE_UPDATE"
+      ]
+    },
+    "A2-U1-L5-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE"
+      ]
+    },
+    "A2-U1-L5-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U1.READING.UNDERSTAND_PROFILE"
+      ]
+    },
+    "A2-U1-L5-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U1.READING.UNDERSTAND_PROFILE"
+      ]
+    },
+    "A2-U1-L5-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE"
+      ]
+    },
+    "A2-U1-L5-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U1.INTERACTION.ASK_FOLLOW_UP"
+      ]
+    },
+    "A2-U1-L6-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U1.READING.UNDERSTAND_PROFILE"
+      ]
+    },
+    "A2-U1-L6-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE"
+      ]
+    },
+    "A2-U1-L6-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE"
+      ]
+    },
+    "A2-U1-L6-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U1.MEDIATION.RELAY_LIFE_UPDATE"
+      ]
+    },
+    "A2-U1-L6-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U1.WRITING.WRITE_LIFE_UPDATE"
+      ]
+    },
+    "A2-U1-L7-A01": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U1.ACTION.COMPLETE_LIFE_UPDATE",
+        "A2.U1.READING.UNDERSTAND_PROFILE"
+      ]
+    },
+    "A2-U1-L7-A02": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U1.ACTION.COMPLETE_LIFE_UPDATE",
+        "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE"
+      ]
+    },
+    "A2-U1-L7-A03": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U1.ACTION.COMPLETE_LIFE_UPDATE",
+        "A2.U1.INTERACTION.ASK_FOLLOW_UP"
+      ]
+    },
+    "A2-U1-L7-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U1.ACTION.COMPLETE_LIFE_UPDATE",
+        "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE"
+      ]
+    },
+    "A2-U1-L7-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U1.ACTION.COMPLETE_LIFE_UPDATE",
+        "A2.U1.MEDIATION.RELAY_LIFE_UPDATE"
+      ]
+    },
+    "A2-U1-L7-A06": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U1.ACTION.COMPLETE_LIFE_UPDATE",
+        "A2.U1.WRITING.WRITE_LIFE_UPDATE"
+      ]
+    },
+    "A2-U10-L1-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW"
+      ]
+    },
+    "A2-U10-L1-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U10.READING.FOLLOW_STORY_REVIEW"
+      ]
+    },
+    "A2-U10-L1-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U10.READING.FOLLOW_STORY_REVIEW"
+      ]
+    },
+    "A2-U10-L1-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW"
+      ]
+    },
+    "A2-U10-L1-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U10.PRODUCTION.TELL_STORY_OPINION"
+      ]
+    },
+    "A2-U10-L2-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW"
+      ]
+    },
+    "A2-U10-L2-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U10.READING.FOLLOW_STORY_REVIEW"
+      ]
+    },
+    "A2-U10-L2-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U10.READING.FOLLOW_STORY_REVIEW"
+      ]
+    },
+    "A2-U10-L2-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW"
+      ]
+    },
+    "A2-U10-L2-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U10.INTERACTION.DISCUSS_ENTERTAINMENT"
+      ]
+    },
+    "A2-U10-L3-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW"
+      ]
+    },
+    "A2-U10-L3-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U10.READING.FOLLOW_STORY_REVIEW"
+      ]
+    },
+    "A2-U10-L3-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U10.READING.FOLLOW_STORY_REVIEW"
+      ]
+    },
+    "A2-U10-L3-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW"
+      ]
+    },
+    "A2-U10-L3-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U10.PRODUCTION.TELL_STORY_OPINION"
+      ]
+    },
+    "A2-U10-L4-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW"
+      ]
+    },
+    "A2-U10-L4-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U10.READING.FOLLOW_STORY_REVIEW"
+      ]
+    },
+    "A2-U10-L4-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW"
+      ]
+    },
+    "A2-U10-L4-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U10.READING.FOLLOW_STORY_REVIEW"
+      ]
+    },
+    "A2-U10-L4-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U10.WRITING.WRITE_SHORT_REVIEW"
+      ]
+    },
+    "A2-U10-L5-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW"
+      ]
+    },
+    "A2-U10-L5-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U10.READING.FOLLOW_STORY_REVIEW"
+      ]
+    },
+    "A2-U10-L5-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U10.READING.FOLLOW_STORY_REVIEW"
+      ]
+    },
+    "A2-U10-L5-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW"
+      ]
+    },
+    "A2-U10-L5-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U10.INTERACTION.DISCUSS_ENTERTAINMENT"
+      ]
+    },
+    "A2-U10-L6-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U10.READING.FOLLOW_STORY_REVIEW"
+      ]
+    },
+    "A2-U10-L6-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW"
+      ]
+    },
+    "A2-U10-L6-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U10.PRODUCTION.TELL_STORY_OPINION"
+      ]
+    },
+    "A2-U10-L6-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U10.MEDIATION.RELAY_STORY_RECOMMENDATION"
+      ]
+    },
+    "A2-U10-L6-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U10.WRITING.WRITE_SHORT_REVIEW"
+      ]
+    },
+    "A2-U10-L7-A01": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U10.ACTION.CREATE_REVIEW_RECOMMENDATION",
+        "A2.U10.READING.FOLLOW_STORY_REVIEW"
+      ]
+    },
+    "A2-U10-L7-A02": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U10.ACTION.CREATE_REVIEW_RECOMMENDATION",
+        "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW"
+      ]
+    },
+    "A2-U10-L7-A03": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U10.ACTION.CREATE_REVIEW_RECOMMENDATION",
+        "A2.U10.INTERACTION.DISCUSS_ENTERTAINMENT"
+      ]
+    },
+    "A2-U10-L7-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U10.ACTION.CREATE_REVIEW_RECOMMENDATION",
+        "A2.U10.PRODUCTION.TELL_STORY_OPINION"
+      ]
+    },
+    "A2-U10-L7-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U10.ACTION.CREATE_REVIEW_RECOMMENDATION",
+        "A2.U10.MEDIATION.RELAY_STORY_RECOMMENDATION"
+      ]
+    },
+    "A2-U10-L7-A06": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U10.ACTION.CREATE_REVIEW_RECOMMENDATION",
+        "A2.U10.WRITING.WRITE_SHORT_REVIEW"
+      ]
+    },
+    "A2-U11-L1-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U11.LISTENING.UNDERSTAND_WEATHER_PROBLEM"
+      ]
+    },
+    "A2-U11-L1-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U11.READING.FOLLOW_NATURE_NOTICE"
+      ]
+    },
+    "A2-U11-L1-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U11.READING.FOLLOW_NATURE_NOTICE"
+      ]
+    },
+    "A2-U11-L1-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U11.LISTENING.UNDERSTAND_WEATHER_PROBLEM"
+      ]
+    },
+    "A2-U11-L1-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U11.PRODUCTION.DESCRIBE_PLACE_PROBLEM"
+      ]
+    },
+    "A2-U11-L2-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U11.LISTENING.UNDERSTAND_WEATHER_PROBLEM"
+      ]
+    },
+    "A2-U11-L2-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U11.READING.FOLLOW_NATURE_NOTICE"
+      ]
+    },
+    "A2-U11-L2-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U11.READING.FOLLOW_NATURE_NOTICE"
+      ]
+    },
+    "A2-U11-L2-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U11.LISTENING.UNDERSTAND_WEATHER_PROBLEM"
+      ]
+    },
+    "A2-U11-L2-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U11.INTERACTION.SUGGEST_ACTION"
+      ]
+    },
+    "A2-U11-L3-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U11.LISTENING.UNDERSTAND_WEATHER_PROBLEM"
+      ]
+    },
+    "A2-U11-L3-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U11.READING.FOLLOW_NATURE_NOTICE"
+      ]
+    },
+    "A2-U11-L3-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U11.READING.FOLLOW_NATURE_NOTICE"
+      ]
+    },
+    "A2-U11-L3-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U11.LISTENING.UNDERSTAND_WEATHER_PROBLEM"
+      ]
+    },
+    "A2-U11-L3-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U11.PRODUCTION.DESCRIBE_PLACE_PROBLEM"
+      ]
+    },
+    "A2-U11-L4-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U11.LISTENING.UNDERSTAND_WEATHER_PROBLEM"
+      ]
+    },
+    "A2-U11-L4-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U11.READING.FOLLOW_NATURE_NOTICE"
+      ]
+    },
+    "A2-U11-L4-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U11.LISTENING.UNDERSTAND_WEATHER_PROBLEM"
+      ]
+    },
+    "A2-U11-L4-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U11.READING.FOLLOW_NATURE_NOTICE"
+      ]
+    },
+    "A2-U11-L4-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U11.WRITING.WRITE_ACTION_PLAN"
+      ]
+    },
+    "A2-U11-L5-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U11.LISTENING.UNDERSTAND_WEATHER_PROBLEM"
+      ]
+    },
+    "A2-U11-L5-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U11.READING.FOLLOW_NATURE_NOTICE"
+      ]
+    },
+    "A2-U11-L5-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U11.READING.FOLLOW_NATURE_NOTICE"
+      ]
+    },
+    "A2-U11-L5-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U11.LISTENING.UNDERSTAND_WEATHER_PROBLEM"
+      ]
+    },
+    "A2-U11-L5-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U11.INTERACTION.SUGGEST_ACTION"
+      ]
+    },
+    "A2-U11-L6-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U11.READING.FOLLOW_NATURE_NOTICE"
+      ]
+    },
+    "A2-U11-L6-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U11.LISTENING.UNDERSTAND_WEATHER_PROBLEM"
+      ]
+    },
+    "A2-U11-L6-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U11.PRODUCTION.DESCRIBE_PLACE_PROBLEM"
+      ]
+    },
+    "A2-U11-L6-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U11.MEDIATION.RELAY_SAFETY_INFORMATION"
+      ]
+    },
+    "A2-U11-L6-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U11.WRITING.WRITE_ACTION_PLAN"
+      ]
+    },
+    "A2-U11-L7-A01": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U11.ACTION.BUILD_BAD_WEATHER_PLAN",
+        "A2.U11.READING.FOLLOW_NATURE_NOTICE"
+      ]
+    },
+    "A2-U11-L7-A02": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U11.ACTION.BUILD_BAD_WEATHER_PLAN",
+        "A2.U11.LISTENING.UNDERSTAND_WEATHER_PROBLEM"
+      ]
+    },
+    "A2-U11-L7-A03": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U11.ACTION.BUILD_BAD_WEATHER_PLAN",
+        "A2.U11.INTERACTION.SUGGEST_ACTION"
+      ]
+    },
+    "A2-U11-L7-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U11.ACTION.BUILD_BAD_WEATHER_PLAN",
+        "A2.U11.PRODUCTION.DESCRIBE_PLACE_PROBLEM"
+      ]
+    },
+    "A2-U11-L7-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U11.ACTION.BUILD_BAD_WEATHER_PLAN",
+        "A2.U11.MEDIATION.RELAY_SAFETY_INFORMATION"
+      ]
+    },
+    "A2-U11-L7-A06": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U11.ACTION.BUILD_BAD_WEATHER_PLAN",
+        "A2.U11.WRITING.WRITE_ACTION_PLAN"
+      ]
+    },
+    "A2-U12-L1-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE"
+      ]
+    },
+    "A2-U12-L1-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U12.READING.FOLLOW_INVITATION_MESSAGE"
+      ]
+    },
+    "A2-U12-L1-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U12.READING.FOLLOW_INVITATION_MESSAGE"
+      ]
+    },
+    "A2-U12-L1-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE"
+      ]
+    },
+    "A2-U12-L1-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U12.PRODUCTION.EXPLAIN_EVENT_PLAN"
+      ]
+    },
+    "A2-U12-L2-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE"
+      ]
+    },
+    "A2-U12-L2-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U12.READING.FOLLOW_INVITATION_MESSAGE"
+      ]
+    },
+    "A2-U12-L2-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U12.READING.FOLLOW_INVITATION_MESSAGE"
+      ]
+    },
+    "A2-U12-L2-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE"
+      ]
+    },
+    "A2-U12-L2-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U12.INTERACTION.INVITE_ACCEPT_DECLINE"
+      ]
+    },
+    "A2-U12-L3-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE"
+      ]
+    },
+    "A2-U12-L3-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U12.READING.FOLLOW_INVITATION_MESSAGE"
+      ]
+    },
+    "A2-U12-L3-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U12.READING.FOLLOW_INVITATION_MESSAGE"
+      ]
+    },
+    "A2-U12-L3-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE"
+      ]
+    },
+    "A2-U12-L3-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U12.PRODUCTION.EXPLAIN_EVENT_PLAN"
+      ]
+    },
+    "A2-U12-L4-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE"
+      ]
+    },
+    "A2-U12-L4-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U12.READING.FOLLOW_INVITATION_MESSAGE"
+      ]
+    },
+    "A2-U12-L4-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE"
+      ]
+    },
+    "A2-U12-L4-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U12.READING.FOLLOW_INVITATION_MESSAGE"
+      ]
+    },
+    "A2-U12-L4-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U12.WRITING.WRITE_CONNECTED_EVENT_MESSAGE"
+      ]
+    },
+    "A2-U12-L5-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE"
+      ]
+    },
+    "A2-U12-L5-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U12.READING.FOLLOW_INVITATION_MESSAGE"
+      ]
+    },
+    "A2-U12-L5-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U12.READING.FOLLOW_INVITATION_MESSAGE"
+      ]
+    },
+    "A2-U12-L5-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE"
+      ]
+    },
+    "A2-U12-L5-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U12.INTERACTION.INVITE_ACCEPT_DECLINE"
+      ]
+    },
+    "A2-U12-L6-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U12.READING.FOLLOW_INVITATION_MESSAGE"
+      ]
+    },
+    "A2-U12-L6-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE"
+      ]
+    },
+    "A2-U12-L6-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U12.PRODUCTION.EXPLAIN_EVENT_PLAN"
+      ]
+    },
+    "A2-U12-L6-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U12.MEDIATION.RELAY_EVENT_CHANGE"
+      ]
+    },
+    "A2-U12-L6-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U12.WRITING.WRITE_CONNECTED_EVENT_MESSAGE"
+      ]
+    },
+    "A2-U12-L7-A01": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U12.ACTION.ORGANISE_EVENT",
+        "A2.U12.READING.FOLLOW_INVITATION_MESSAGE"
+      ]
+    },
+    "A2-U12-L7-A02": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U12.ACTION.ORGANISE_EVENT",
+        "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE"
+      ]
+    },
+    "A2-U12-L7-A03": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U12.ACTION.ORGANISE_EVENT",
+        "A2.U12.INTERACTION.INVITE_ACCEPT_DECLINE"
+      ]
+    },
+    "A2-U12-L7-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U12.ACTION.ORGANISE_EVENT",
+        "A2.U12.PRODUCTION.EXPLAIN_EVENT_PLAN"
+      ]
+    },
+    "A2-U12-L7-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U12.ACTION.ORGANISE_EVENT",
+        "A2.U12.MEDIATION.RELAY_EVENT_CHANGE"
+      ]
+    },
+    "A2-U12-L7-A06": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U12.ACTION.ORGANISE_EVENT",
+        "A2.U12.WRITING.WRITE_CONNECTED_EVENT_MESSAGE"
+      ]
+    },
+    "A2-U2-L1-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U2.LISTENING.UNDERSTAND_PAST_EVENT"
+      ]
+    },
+    "A2-U2-L1-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U2.READING.FOLLOW_SHORT_NARRATIVE"
+      ]
+    },
+    "A2-U2-L1-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U2.READING.FOLLOW_SHORT_NARRATIVE"
+      ]
+    },
+    "A2-U2-L1-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U2.LISTENING.UNDERSTAND_PAST_EVENT"
+      ]
+    },
+    "A2-U2-L1-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U2.PRODUCTION.TELL_PAST_EXPERIENCE"
+      ]
+    },
+    "A2-U2-L2-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U2.LISTENING.UNDERSTAND_PAST_EVENT"
+      ]
+    },
+    "A2-U2-L2-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U2.READING.FOLLOW_SHORT_NARRATIVE"
+      ]
+    },
+    "A2-U2-L2-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U2.READING.FOLLOW_SHORT_NARRATIVE"
+      ]
+    },
+    "A2-U2-L2-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U2.LISTENING.UNDERSTAND_PAST_EVENT"
+      ]
+    },
+    "A2-U2-L2-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U2.INTERACTION.ASK_ABOUT_PAST"
+      ]
+    },
+    "A2-U2-L3-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U2.LISTENING.UNDERSTAND_PAST_EVENT"
+      ]
+    },
+    "A2-U2-L3-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U2.READING.FOLLOW_SHORT_NARRATIVE"
+      ]
+    },
+    "A2-U2-L3-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U2.READING.FOLLOW_SHORT_NARRATIVE"
+      ]
+    },
+    "A2-U2-L3-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U2.LISTENING.UNDERSTAND_PAST_EVENT"
+      ]
+    },
+    "A2-U2-L3-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U2.PRODUCTION.TELL_PAST_EXPERIENCE"
+      ]
+    },
+    "A2-U2-L4-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U2.LISTENING.UNDERSTAND_PAST_EVENT"
+      ]
+    },
+    "A2-U2-L4-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U2.READING.FOLLOW_SHORT_NARRATIVE"
+      ]
+    },
+    "A2-U2-L4-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U2.LISTENING.UNDERSTAND_PAST_EVENT"
+      ]
+    },
+    "A2-U2-L4-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U2.READING.FOLLOW_SHORT_NARRATIVE"
+      ]
+    },
+    "A2-U2-L4-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U2.WRITING.WRITE_PAST_NARRATIVE"
+      ]
+    },
+    "A2-U2-L5-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U2.LISTENING.UNDERSTAND_PAST_EVENT"
+      ]
+    },
+    "A2-U2-L5-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U2.READING.FOLLOW_SHORT_NARRATIVE"
+      ]
+    },
+    "A2-U2-L5-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U2.READING.FOLLOW_SHORT_NARRATIVE"
+      ]
+    },
+    "A2-U2-L5-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U2.LISTENING.UNDERSTAND_PAST_EVENT"
+      ]
+    },
+    "A2-U2-L5-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U2.INTERACTION.ASK_ABOUT_PAST"
+      ]
+    },
+    "A2-U2-L6-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U2.READING.FOLLOW_SHORT_NARRATIVE"
+      ]
+    },
+    "A2-U2-L6-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U2.LISTENING.UNDERSTAND_PAST_EVENT"
+      ]
+    },
+    "A2-U2-L6-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U2.PRODUCTION.TELL_PAST_EXPERIENCE"
+      ]
+    },
+    "A2-U2-L6-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U2.MEDIATION.RELAY_EVENT_SEQUENCE"
+      ]
+    },
+    "A2-U2-L6-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U2.WRITING.WRITE_PAST_NARRATIVE"
+      ]
+    },
+    "A2-U2-L7-A01": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U2.ACTION.SHARE_MEMORABLE_DAY",
+        "A2.U2.READING.FOLLOW_SHORT_NARRATIVE"
+      ]
+    },
+    "A2-U2-L7-A02": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U2.ACTION.SHARE_MEMORABLE_DAY",
+        "A2.U2.LISTENING.UNDERSTAND_PAST_EVENT"
+      ]
+    },
+    "A2-U2-L7-A03": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U2.ACTION.SHARE_MEMORABLE_DAY",
+        "A2.U2.INTERACTION.ASK_ABOUT_PAST"
+      ]
+    },
+    "A2-U2-L7-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U2.ACTION.SHARE_MEMORABLE_DAY",
+        "A2.U2.PRODUCTION.TELL_PAST_EXPERIENCE"
+      ]
+    },
+    "A2-U2-L7-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U2.ACTION.SHARE_MEMORABLE_DAY",
+        "A2.U2.MEDIATION.RELAY_EVENT_SEQUENCE"
+      ]
+    },
+    "A2-U2-L7-A06": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U2.ACTION.SHARE_MEMORABLE_DAY",
+        "A2.U2.WRITING.WRITE_PAST_NARRATIVE"
+      ]
+    },
+    "A2-U3-L1-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION"
+      ]
+    },
+    "A2-U3-L1-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U3.READING.COMPARE_PEOPLE"
+      ]
+    },
+    "A2-U3-L1-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U3.READING.COMPARE_PEOPLE"
+      ]
+    },
+    "A2-U3-L1-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION"
+      ]
+    },
+    "A2-U3-L1-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U3.PRODUCTION.DESCRIBE_PERSON"
+      ]
+    },
+    "A2-U3-L2-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION"
+      ]
+    },
+    "A2-U3-L2-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U3.READING.COMPARE_PEOPLE"
+      ]
+    },
+    "A2-U3-L2-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U3.READING.COMPARE_PEOPLE"
+      ]
+    },
+    "A2-U3-L2-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION"
+      ]
+    },
+    "A2-U3-L2-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U3.INTERACTION.DISCUSS_PEOPLE"
+      ]
+    },
+    "A2-U3-L3-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION"
+      ]
+    },
+    "A2-U3-L3-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U3.READING.COMPARE_PEOPLE"
+      ]
+    },
+    "A2-U3-L3-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U3.READING.COMPARE_PEOPLE"
+      ]
+    },
+    "A2-U3-L3-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION"
+      ]
+    },
+    "A2-U3-L3-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U3.PRODUCTION.DESCRIBE_PERSON"
+      ]
+    },
+    "A2-U3-L4-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION"
+      ]
+    },
+    "A2-U3-L4-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U3.READING.COMPARE_PEOPLE"
+      ]
+    },
+    "A2-U3-L4-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION"
+      ]
+    },
+    "A2-U3-L4-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U3.READING.COMPARE_PEOPLE"
+      ]
+    },
+    "A2-U3-L4-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U3.WRITING.WRITE_PERSON_PROFILE"
+      ]
+    },
+    "A2-U3-L5-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION"
+      ]
+    },
+    "A2-U3-L5-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U3.READING.COMPARE_PEOPLE"
+      ]
+    },
+    "A2-U3-L5-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U3.READING.COMPARE_PEOPLE"
+      ]
+    },
+    "A2-U3-L5-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION"
+      ]
+    },
+    "A2-U3-L5-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U3.INTERACTION.DISCUSS_PEOPLE"
+      ]
+    },
+    "A2-U3-L6-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U3.READING.COMPARE_PEOPLE"
+      ]
+    },
+    "A2-U3-L6-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION"
+      ]
+    },
+    "A2-U3-L6-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U3.PRODUCTION.DESCRIBE_PERSON"
+      ]
+    },
+    "A2-U3-L6-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U3.MEDIATION.RELAY_PERSON_MATCH"
+      ]
+    },
+    "A2-U3-L6-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U3.WRITING.WRITE_PERSON_PROFILE"
+      ]
+    },
+    "A2-U3-L7-A01": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U3.ACTION.CHOOSE_TEAM_MEMBER",
+        "A2.U3.READING.COMPARE_PEOPLE"
+      ]
+    },
+    "A2-U3-L7-A02": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U3.ACTION.CHOOSE_TEAM_MEMBER",
+        "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION"
+      ]
+    },
+    "A2-U3-L7-A03": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U3.ACTION.CHOOSE_TEAM_MEMBER",
+        "A2.U3.INTERACTION.DISCUSS_PEOPLE"
+      ]
+    },
+    "A2-U3-L7-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U3.ACTION.CHOOSE_TEAM_MEMBER",
+        "A2.U3.PRODUCTION.DESCRIBE_PERSON"
+      ]
+    },
+    "A2-U3-L7-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U3.ACTION.CHOOSE_TEAM_MEMBER",
+        "A2.U3.MEDIATION.RELAY_PERSON_MATCH"
+      ]
+    },
+    "A2-U3-L7-A06": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U3.ACTION.CHOOSE_TEAM_MEMBER",
+        "A2.U3.WRITING.WRITE_PERSON_PROFILE"
+      ]
+    },
+    "A2-U4-L1-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO"
+      ]
+    },
+    "A2-U4-L1-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U4.READING.COMPARE_HOUSING"
+      ]
+    },
+    "A2-U4-L1-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U4.READING.COMPARE_HOUSING"
+      ]
+    },
+    "A2-U4-L1-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO"
+      ]
+    },
+    "A2-U4-L1-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U4.PRODUCTION.DESCRIBE_HOME_AREA"
+      ]
+    },
+    "A2-U4-L2-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO"
+      ]
+    },
+    "A2-U4-L2-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U4.READING.COMPARE_HOUSING"
+      ]
+    },
+    "A2-U4-L2-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U4.READING.COMPARE_HOUSING"
+      ]
+    },
+    "A2-U4-L2-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO"
+      ]
+    },
+    "A2-U4-L2-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U4.INTERACTION.DISCUSS_HOUSING_PROBLEM"
+      ]
+    },
+    "A2-U4-L3-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO"
+      ]
+    },
+    "A2-U4-L3-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U4.READING.COMPARE_HOUSING"
+      ]
+    },
+    "A2-U4-L3-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U4.READING.COMPARE_HOUSING"
+      ]
+    },
+    "A2-U4-L3-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO"
+      ]
+    },
+    "A2-U4-L3-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U4.PRODUCTION.DESCRIBE_HOME_AREA"
+      ]
+    },
+    "A2-U4-L4-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO"
+      ]
+    },
+    "A2-U4-L4-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U4.READING.COMPARE_HOUSING"
+      ]
+    },
+    "A2-U4-L4-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO"
+      ]
+    },
+    "A2-U4-L4-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U4.READING.COMPARE_HOUSING"
+      ]
+    },
+    "A2-U4-L4-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U4.WRITING.WRITE_HOUSING_RECOMMENDATION"
+      ]
+    },
+    "A2-U4-L5-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO"
+      ]
+    },
+    "A2-U4-L5-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U4.READING.COMPARE_HOUSING"
+      ]
+    },
+    "A2-U4-L5-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U4.READING.COMPARE_HOUSING"
+      ]
+    },
+    "A2-U4-L5-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO"
+      ]
+    },
+    "A2-U4-L5-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U4.INTERACTION.DISCUSS_HOUSING_PROBLEM"
+      ]
+    },
+    "A2-U4-L6-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U4.READING.COMPARE_HOUSING"
+      ]
+    },
+    "A2-U4-L6-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO"
+      ]
+    },
+    "A2-U4-L6-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U4.PRODUCTION.DESCRIBE_HOME_AREA"
+      ]
+    },
+    "A2-U4-L6-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U4.MEDIATION.RELAY_HOUSING_OPTIONS"
+      ]
+    },
+    "A2-U4-L6-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U4.WRITING.WRITE_HOUSING_RECOMMENDATION"
+      ]
+    },
+    "A2-U4-L7-A01": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U4.ACTION.CHOOSE_HOME",
+        "A2.U4.READING.COMPARE_HOUSING"
+      ]
+    },
+    "A2-U4-L7-A02": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U4.ACTION.CHOOSE_HOME",
+        "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO"
+      ]
+    },
+    "A2-U4-L7-A03": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U4.ACTION.CHOOSE_HOME",
+        "A2.U4.INTERACTION.DISCUSS_HOUSING_PROBLEM"
+      ]
+    },
+    "A2-U4-L7-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U4.ACTION.CHOOSE_HOME",
+        "A2.U4.PRODUCTION.DESCRIBE_HOME_AREA"
+      ]
+    },
+    "A2-U4-L7-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U4.ACTION.CHOOSE_HOME",
+        "A2.U4.MEDIATION.RELAY_HOUSING_OPTIONS"
+      ]
+    },
+    "A2-U4-L7-A06": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U4.ACTION.CHOOSE_HOME",
+        "A2.U4.WRITING.WRITE_HOUSING_RECOMMENDATION"
+      ]
+    },
+    "A2-U5-L1-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE"
+      ]
+    },
+    "A2-U5-L1-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U5.READING.FOLLOW_RECIPE_MENU"
+      ]
+    },
+    "A2-U5-L1-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U5.READING.FOLLOW_RECIPE_MENU"
+      ]
+    },
+    "A2-U5-L1-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE"
+      ]
+    },
+    "A2-U5-L1-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
+      ]
+    },
+    "A2-U5-L2-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE"
+      ]
+    },
+    "A2-U5-L2-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U5.READING.FOLLOW_RECIPE_MENU"
+      ]
+    },
+    "A2-U5-L2-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U5.READING.FOLLOW_RECIPE_MENU"
+      ]
+    },
+    "A2-U5-L2-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE"
+      ]
+    },
+    "A2-U5-L2-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U5.INTERACTION.MANAGE_FOOD_SERVICE"
+      ]
+    },
+    "A2-U5-L3-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE"
+      ]
+    },
+    "A2-U5-L3-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U5.READING.FOLLOW_RECIPE_MENU"
+      ]
+    },
+    "A2-U5-L3-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U5.READING.FOLLOW_RECIPE_MENU"
+      ]
+    },
+    "A2-U5-L3-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE"
+      ]
+    },
+    "A2-U5-L3-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
+      ]
+    },
+    "A2-U5-L4-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE"
+      ]
+    },
+    "A2-U5-L4-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U5.READING.FOLLOW_RECIPE_MENU"
+      ]
+    },
+    "A2-U5-L4-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE"
+      ]
+    },
+    "A2-U5-L4-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U5.READING.FOLLOW_RECIPE_MENU"
+      ]
+    },
+    "A2-U5-L4-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U5.WRITING.WRITE_RECIPE_MESSAGE"
+      ]
+    },
+    "A2-U5-L5-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE"
+      ]
+    },
+    "A2-U5-L5-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U5.READING.FOLLOW_RECIPE_MENU"
+      ]
+    },
+    "A2-U5-L5-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U5.READING.FOLLOW_RECIPE_MENU"
+      ]
+    },
+    "A2-U5-L5-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE"
+      ]
+    },
+    "A2-U5-L5-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U5.INTERACTION.MANAGE_FOOD_SERVICE"
+      ]
+    },
+    "A2-U5-L6-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U5.READING.FOLLOW_RECIPE_MENU"
+      ]
+    },
+    "A2-U5-L6-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE"
+      ]
+    },
+    "A2-U5-L6-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
+      ]
+    },
+    "A2-U5-L6-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U5.MEDIATION.RELAY_ORDER_RECIPE"
+      ]
+    },
+    "A2-U5-L6-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U5.WRITING.WRITE_RECIPE_MESSAGE"
+      ]
+    },
+    "A2-U5-L7-A01": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U5.ACTION.COOK_AND_RESOLVE_ORDER",
+        "A2.U5.READING.FOLLOW_RECIPE_MENU"
+      ]
+    },
+    "A2-U5-L7-A02": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U5.ACTION.COOK_AND_RESOLVE_ORDER",
+        "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE"
+      ]
+    },
+    "A2-U5-L7-A03": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U5.ACTION.COOK_AND_RESOLVE_ORDER",
+        "A2.U5.INTERACTION.MANAGE_FOOD_SERVICE"
+      ]
+    },
+    "A2-U5-L7-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U5.ACTION.COOK_AND_RESOLVE_ORDER",
+        "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM"
+      ]
+    },
+    "A2-U5-L7-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U5.ACTION.COOK_AND_RESOLVE_ORDER",
+        "A2.U5.MEDIATION.RELAY_ORDER_RECIPE"
+      ]
+    },
+    "A2-U5-L7-A06": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U5.ACTION.COOK_AND_RESOLVE_ORDER",
+        "A2.U5.WRITING.WRITE_RECIPE_MESSAGE"
+      ]
+    },
+    "A2-U6-L1-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U6.LISTENING.UNDERSTAND_TRAVEL_PLAN"
+      ]
+    },
+    "A2-U6-L1-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U6.READING.COMPARE_TRAVEL_OPTIONS"
+      ]
+    },
+    "A2-U6-L1-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U6.READING.COMPARE_TRAVEL_OPTIONS"
+      ]
+    },
+    "A2-U6-L1-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U6.LISTENING.UNDERSTAND_TRAVEL_PLAN"
+      ]
+    },
+    "A2-U6-L1-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U6.PRODUCTION.PRESENT_ITINERARY"
+      ]
+    },
+    "A2-U6-L2-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U6.LISTENING.UNDERSTAND_TRAVEL_PLAN"
+      ]
+    },
+    "A2-U6-L2-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U6.READING.COMPARE_TRAVEL_OPTIONS"
+      ]
+    },
+    "A2-U6-L2-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U6.READING.COMPARE_TRAVEL_OPTIONS"
+      ]
+    },
+    "A2-U6-L2-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U6.LISTENING.UNDERSTAND_TRAVEL_PLAN"
+      ]
+    },
+    "A2-U6-L2-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U6.INTERACTION.BOOK_CHANGE_TRAVEL"
+      ]
+    },
+    "A2-U6-L3-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U6.LISTENING.UNDERSTAND_TRAVEL_PLAN"
+      ]
+    },
+    "A2-U6-L3-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U6.READING.COMPARE_TRAVEL_OPTIONS"
+      ]
+    },
+    "A2-U6-L3-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U6.READING.COMPARE_TRAVEL_OPTIONS"
+      ]
+    },
+    "A2-U6-L3-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U6.LISTENING.UNDERSTAND_TRAVEL_PLAN"
+      ]
+    },
+    "A2-U6-L3-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U6.PRODUCTION.PRESENT_ITINERARY"
+      ]
+    },
+    "A2-U6-L4-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U6.LISTENING.UNDERSTAND_TRAVEL_PLAN"
+      ]
+    },
+    "A2-U6-L4-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U6.READING.COMPARE_TRAVEL_OPTIONS"
+      ]
+    },
+    "A2-U6-L4-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U6.LISTENING.UNDERSTAND_TRAVEL_PLAN"
+      ]
+    },
+    "A2-U6-L4-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U6.READING.COMPARE_TRAVEL_OPTIONS"
+      ]
+    },
+    "A2-U6-L4-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U6.WRITING.WRITE_TRAVEL_PLAN"
+      ]
+    },
+    "A2-U6-L5-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U6.LISTENING.UNDERSTAND_TRAVEL_PLAN"
+      ]
+    },
+    "A2-U6-L5-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U6.READING.COMPARE_TRAVEL_OPTIONS"
+      ]
+    },
+    "A2-U6-L5-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U6.READING.COMPARE_TRAVEL_OPTIONS"
+      ]
+    },
+    "A2-U6-L5-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U6.LISTENING.UNDERSTAND_TRAVEL_PLAN"
+      ]
+    },
+    "A2-U6-L5-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U6.INTERACTION.BOOK_CHANGE_TRAVEL"
+      ]
+    },
+    "A2-U6-L6-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U6.READING.COMPARE_TRAVEL_OPTIONS"
+      ]
+    },
+    "A2-U6-L6-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U6.LISTENING.UNDERSTAND_TRAVEL_PLAN"
+      ]
+    },
+    "A2-U6-L6-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U6.PRODUCTION.PRESENT_ITINERARY"
+      ]
+    },
+    "A2-U6-L6-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U6.MEDIATION.RELAY_TRAVEL_CHANGE"
+      ]
+    },
+    "A2-U6-L6-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U6.WRITING.WRITE_TRAVEL_PLAN"
+      ]
+    },
+    "A2-U6-L7-A01": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U6.ACTION.BUILD_WEEKEND_ITINERARY",
+        "A2.U6.READING.COMPARE_TRAVEL_OPTIONS"
+      ]
+    },
+    "A2-U6-L7-A02": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U6.ACTION.BUILD_WEEKEND_ITINERARY",
+        "A2.U6.LISTENING.UNDERSTAND_TRAVEL_PLAN"
+      ]
+    },
+    "A2-U6-L7-A03": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U6.ACTION.BUILD_WEEKEND_ITINERARY",
+        "A2.U6.INTERACTION.BOOK_CHANGE_TRAVEL"
+      ]
+    },
+    "A2-U6-L7-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U6.ACTION.BUILD_WEEKEND_ITINERARY",
+        "A2.U6.PRODUCTION.PRESENT_ITINERARY"
+      ]
+    },
+    "A2-U6-L7-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U6.ACTION.BUILD_WEEKEND_ITINERARY",
+        "A2.U6.MEDIATION.RELAY_TRAVEL_CHANGE"
+      ]
+    },
+    "A2-U6-L7-A06": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U6.ACTION.BUILD_WEEKEND_ITINERARY",
+        "A2.U6.WRITING.WRITE_TRAVEL_PLAN"
+      ]
+    },
+    "A2-U7-L1-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE"
+      ]
+    },
+    "A2-U7-L1-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE"
+      ]
+    },
+    "A2-U7-L1-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE"
+      ]
+    },
+    "A2-U7-L1-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE"
+      ]
+    },
+    "A2-U7-L1-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U7.PRODUCTION.DESCRIBE_HEALTH_PROBLEM"
+      ]
+    },
+    "A2-U7-L2-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE"
+      ]
+    },
+    "A2-U7-L2-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE"
+      ]
+    },
+    "A2-U7-L2-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE"
+      ]
+    },
+    "A2-U7-L2-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE"
+      ]
+    },
+    "A2-U7-L2-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U7.INTERACTION.MANAGE_CLINIC_TALK"
+      ]
+    },
+    "A2-U7-L3-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE"
+      ]
+    },
+    "A2-U7-L3-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE"
+      ]
+    },
+    "A2-U7-L3-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE"
+      ]
+    },
+    "A2-U7-L3-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE"
+      ]
+    },
+    "A2-U7-L3-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U7.PRODUCTION.DESCRIBE_HEALTH_PROBLEM"
+      ]
+    },
+    "A2-U7-L4-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE"
+      ]
+    },
+    "A2-U7-L4-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE"
+      ]
+    },
+    "A2-U7-L4-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE"
+      ]
+    },
+    "A2-U7-L4-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE"
+      ]
+    },
+    "A2-U7-L4-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U7.WRITING.WRITE_HEALTH_MESSAGE"
+      ]
+    },
+    "A2-U7-L5-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE"
+      ]
+    },
+    "A2-U7-L5-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE"
+      ]
+    },
+    "A2-U7-L5-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE"
+      ]
+    },
+    "A2-U7-L5-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE"
+      ]
+    },
+    "A2-U7-L5-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U7.INTERACTION.MANAGE_CLINIC_TALK"
+      ]
+    },
+    "A2-U7-L6-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE"
+      ]
+    },
+    "A2-U7-L6-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE"
+      ]
+    },
+    "A2-U7-L6-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U7.PRODUCTION.DESCRIBE_HEALTH_PROBLEM"
+      ]
+    },
+    "A2-U7-L6-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U7.MEDIATION.RELAY_HEALTH_GUIDANCE"
+      ]
+    },
+    "A2-U7-L6-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U7.WRITING.WRITE_HEALTH_MESSAGE"
+      ]
+    },
+    "A2-U7-L7-A01": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U7.ACTION.COMPLETE_CLINIC_CONSULTATION",
+        "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE"
+      ]
+    },
+    "A2-U7-L7-A02": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U7.ACTION.COMPLETE_CLINIC_CONSULTATION",
+        "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE"
+      ]
+    },
+    "A2-U7-L7-A03": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U7.ACTION.COMPLETE_CLINIC_CONSULTATION",
+        "A2.U7.INTERACTION.MANAGE_CLINIC_TALK"
+      ]
+    },
+    "A2-U7-L7-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U7.ACTION.COMPLETE_CLINIC_CONSULTATION",
+        "A2.U7.PRODUCTION.DESCRIBE_HEALTH_PROBLEM"
+      ]
+    },
+    "A2-U7-L7-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U7.ACTION.COMPLETE_CLINIC_CONSULTATION",
+        "A2.U7.MEDIATION.RELAY_HEALTH_GUIDANCE"
+      ]
+    },
+    "A2-U7-L7-A06": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U7.ACTION.COMPLETE_CLINIC_CONSULTATION",
+        "A2.U7.WRITING.WRITE_HEALTH_MESSAGE"
+      ]
+    },
+    "A2-U8-L1-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U8.LISTENING.UNDERSTAND_WORK_STUDY_INFO"
+      ]
+    },
+    "A2-U8-L1-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U8.READING.FOLLOW_COURSE_JOB_TEXT"
+      ]
+    },
+    "A2-U8-L1-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U8.READING.FOLLOW_COURSE_JOB_TEXT"
+      ]
+    },
+    "A2-U8-L1-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U8.LISTENING.UNDERSTAND_WORK_STUDY_INFO"
+      ]
+    },
+    "A2-U8-L1-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U8.PRODUCTION.DESCRIBE_DUTIES_SKILLS"
+      ]
+    },
+    "A2-U8-L2-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U8.LISTENING.UNDERSTAND_WORK_STUDY_INFO"
+      ]
+    },
+    "A2-U8-L2-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U8.READING.FOLLOW_COURSE_JOB_TEXT"
+      ]
+    },
+    "A2-U8-L2-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U8.READING.FOLLOW_COURSE_JOB_TEXT"
+      ]
+    },
+    "A2-U8-L2-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U8.LISTENING.UNDERSTAND_WORK_STUDY_INFO"
+      ]
+    },
+    "A2-U8-L2-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U8.INTERACTION.MAKE_FORMAL_REQUEST"
+      ]
+    },
+    "A2-U8-L3-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U8.LISTENING.UNDERSTAND_WORK_STUDY_INFO"
+      ]
+    },
+    "A2-U8-L3-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U8.READING.FOLLOW_COURSE_JOB_TEXT"
+      ]
+    },
+    "A2-U8-L3-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U8.READING.FOLLOW_COURSE_JOB_TEXT"
+      ]
+    },
+    "A2-U8-L3-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U8.LISTENING.UNDERSTAND_WORK_STUDY_INFO"
+      ]
+    },
+    "A2-U8-L3-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U8.PRODUCTION.DESCRIBE_DUTIES_SKILLS"
+      ]
+    },
+    "A2-U8-L4-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U8.LISTENING.UNDERSTAND_WORK_STUDY_INFO"
+      ]
+    },
+    "A2-U8-L4-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U8.READING.FOLLOW_COURSE_JOB_TEXT"
+      ]
+    },
+    "A2-U8-L4-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U8.LISTENING.UNDERSTAND_WORK_STUDY_INFO"
+      ]
+    },
+    "A2-U8-L4-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U8.READING.FOLLOW_COURSE_JOB_TEXT"
+      ]
+    },
+    "A2-U8-L4-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U8.WRITING.WRITE_APPLICATION_REQUEST"
+      ]
+    },
+    "A2-U8-L5-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U8.LISTENING.UNDERSTAND_WORK_STUDY_INFO"
+      ]
+    },
+    "A2-U8-L5-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U8.READING.FOLLOW_COURSE_JOB_TEXT"
+      ]
+    },
+    "A2-U8-L5-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U8.READING.FOLLOW_COURSE_JOB_TEXT"
+      ]
+    },
+    "A2-U8-L5-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U8.LISTENING.UNDERSTAND_WORK_STUDY_INFO"
+      ]
+    },
+    "A2-U8-L5-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U8.INTERACTION.MAKE_FORMAL_REQUEST"
+      ]
+    },
+    "A2-U8-L6-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U8.READING.FOLLOW_COURSE_JOB_TEXT"
+      ]
+    },
+    "A2-U8-L6-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U8.LISTENING.UNDERSTAND_WORK_STUDY_INFO"
+      ]
+    },
+    "A2-U8-L6-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U8.PRODUCTION.DESCRIBE_DUTIES_SKILLS"
+      ]
+    },
+    "A2-U8-L6-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U8.MEDIATION.RELAY_REQUIREMENTS"
+      ]
+    },
+    "A2-U8-L6-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U8.WRITING.WRITE_APPLICATION_REQUEST"
+      ]
+    },
+    "A2-U8-L7-A01": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U8.ACTION.COMPLETE_APPLICATION",
+        "A2.U8.READING.FOLLOW_COURSE_JOB_TEXT"
+      ]
+    },
+    "A2-U8-L7-A02": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U8.ACTION.COMPLETE_APPLICATION",
+        "A2.U8.LISTENING.UNDERSTAND_WORK_STUDY_INFO"
+      ]
+    },
+    "A2-U8-L7-A03": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U8.ACTION.COMPLETE_APPLICATION",
+        "A2.U8.INTERACTION.MAKE_FORMAL_REQUEST"
+      ]
+    },
+    "A2-U8-L7-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U8.ACTION.COMPLETE_APPLICATION",
+        "A2.U8.PRODUCTION.DESCRIBE_DUTIES_SKILLS"
+      ]
+    },
+    "A2-U8-L7-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U8.ACTION.COMPLETE_APPLICATION",
+        "A2.U8.MEDIATION.RELAY_REQUIREMENTS"
+      ]
+    },
+    "A2-U8-L7-A06": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U8.ACTION.COMPLETE_APPLICATION",
+        "A2.U8.WRITING.WRITE_APPLICATION_REQUEST"
+      ]
+    },
+    "A2-U9-L1-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS"
+      ]
+    },
+    "A2-U9-L1-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U9.READING.FOLLOW_DIGITAL_GUIDE"
+      ]
+    },
+    "A2-U9-L1-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U9.READING.FOLLOW_DIGITAL_GUIDE"
+      ]
+    },
+    "A2-U9-L1-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS"
+      ]
+    },
+    "A2-U9-L1-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U9.PRODUCTION.EXPLAIN_TECH_PROCEDURE"
+      ]
+    },
+    "A2-U9-L2-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS"
+      ]
+    },
+    "A2-U9-L2-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U9.READING.FOLLOW_DIGITAL_GUIDE"
+      ]
+    },
+    "A2-U9-L2-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U9.READING.FOLLOW_DIGITAL_GUIDE"
+      ]
+    },
+    "A2-U9-L2-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS"
+      ]
+    },
+    "A2-U9-L2-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U9.INTERACTION.SOLVE_TECH_PROBLEM"
+      ]
+    },
+    "A2-U9-L3-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS"
+      ]
+    },
+    "A2-U9-L3-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U9.READING.FOLLOW_DIGITAL_GUIDE"
+      ]
+    },
+    "A2-U9-L3-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U9.READING.FOLLOW_DIGITAL_GUIDE"
+      ]
+    },
+    "A2-U9-L3-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS"
+      ]
+    },
+    "A2-U9-L3-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U9.PRODUCTION.EXPLAIN_TECH_PROCEDURE"
+      ]
+    },
+    "A2-U9-L4-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS"
+      ]
+    },
+    "A2-U9-L4-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U9.READING.FOLLOW_DIGITAL_GUIDE"
+      ]
+    },
+    "A2-U9-L4-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS"
+      ]
+    },
+    "A2-U9-L4-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U9.READING.FOLLOW_DIGITAL_GUIDE"
+      ]
+    },
+    "A2-U9-L4-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U9.WRITING.WRITE_HELP_GUIDE"
+      ]
+    },
+    "A2-U9-L5-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS"
+      ]
+    },
+    "A2-U9-L5-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U9.READING.FOLLOW_DIGITAL_GUIDE"
+      ]
+    },
+    "A2-U9-L5-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U9.READING.FOLLOW_DIGITAL_GUIDE"
+      ]
+    },
+    "A2-U9-L5-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS"
+      ]
+    },
+    "A2-U9-L5-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U9.INTERACTION.SOLVE_TECH_PROBLEM"
+      ]
+    },
+    "A2-U9-L6-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A2.U9.READING.FOLLOW_DIGITAL_GUIDE"
+      ]
+    },
+    "A2-U9-L6-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS"
+      ]
+    },
+    "A2-U9-L6-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A2.U9.PRODUCTION.EXPLAIN_TECH_PROCEDURE"
+      ]
+    },
+    "A2-U9-L6-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U9.MEDIATION.RELAY_DIGITAL_INSTRUCTIONS"
+      ]
+    },
+    "A2-U9-L6-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U9.WRITING.WRITE_HELP_GUIDE"
+      ]
+    },
+    "A2-U9-L7-A01": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U9.ACTION.HELP_ONLINE_TASK",
+        "A2.U9.READING.FOLLOW_DIGITAL_GUIDE"
+      ]
+    },
+    "A2-U9-L7-A02": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U9.ACTION.HELP_ONLINE_TASK",
+        "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS"
+      ]
+    },
+    "A2-U9-L7-A03": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U9.ACTION.HELP_ONLINE_TASK",
+        "A2.U9.INTERACTION.SOLVE_TECH_PROBLEM"
+      ]
+    },
+    "A2-U9-L7-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U9.ACTION.HELP_ONLINE_TASK",
+        "A2.U9.PRODUCTION.EXPLAIN_TECH_PROCEDURE"
+      ]
+    },
+    "A2-U9-L7-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U9.ACTION.HELP_ONLINE_TASK",
+        "A2.U9.MEDIATION.RELAY_DIGITAL_INSTRUCTIONS"
+      ]
+    },
+    "A2-U9-L7-A06": {
+      "mode": "mastery",
+      "canDo": [
+        "A2.U9.ACTION.HELP_ONLINE_TASK",
+        "A2.U9.WRITING.WRITE_HELP_GUIDE"
+      ]
+    }
+  },
+  "canDoIds": [
+    "A2.FINAL.ACTION.HOST_VISITOR",
+    "A2.FINAL.INTERACTION.MANAGE_ROUTINE_SITUATIONS",
+    "A2.FINAL.LISTENING.INTEGRATED_ROUTINE_INFO",
+    "A2.FINAL.MEDIATION.RELAY_PRACTICAL_INFORMATION",
+    "A2.FINAL.PRODUCTION.CONNECT_SHORT_DESCRIPTION",
+    "A2.FINAL.READING.INTEGRATED_PRACTICAL_TEXTS",
+    "A2.FINAL.WRITING.CONNECTED_PRACTICAL_TEXT",
+    "A2.U1.ACTION.COMPLETE_LIFE_UPDATE",
+    "A2.U1.INTERACTION.ASK_FOLLOW_UP",
+    "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE",
+    "A2.U1.MEDIATION.RELAY_LIFE_UPDATE",
+    "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE",
+    "A2.U1.READING.UNDERSTAND_PROFILE",
+    "A2.U1.WRITING.WRITE_LIFE_UPDATE",
+    "A2.U10.ACTION.CREATE_REVIEW_RECOMMENDATION",
+    "A2.U10.INTERACTION.DISCUSS_ENTERTAINMENT",
+    "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW",
+    "A2.U10.MEDIATION.RELAY_STORY_RECOMMENDATION",
+    "A2.U10.PRODUCTION.TELL_STORY_OPINION",
+    "A2.U10.READING.FOLLOW_STORY_REVIEW",
+    "A2.U10.WRITING.WRITE_SHORT_REVIEW",
+    "A2.U11.ACTION.BUILD_BAD_WEATHER_PLAN",
+    "A2.U11.INTERACTION.SUGGEST_ACTION",
+    "A2.U11.LISTENING.UNDERSTAND_WEATHER_PROBLEM",
+    "A2.U11.MEDIATION.RELAY_SAFETY_INFORMATION",
+    "A2.U11.PRODUCTION.DESCRIBE_PLACE_PROBLEM",
+    "A2.U11.READING.FOLLOW_NATURE_NOTICE",
+    "A2.U11.WRITING.WRITE_ACTION_PLAN",
+    "A2.U12.ACTION.ORGANISE_EVENT",
+    "A2.U12.INTERACTION.INVITE_ACCEPT_DECLINE",
+    "A2.U12.LISTENING.UNDERSTAND_EVENT_UPDATE",
+    "A2.U12.MEDIATION.RELAY_EVENT_CHANGE",
+    "A2.U12.PRODUCTION.EXPLAIN_EVENT_PLAN",
+    "A2.U12.READING.FOLLOW_INVITATION_MESSAGE",
+    "A2.U12.WRITING.WRITE_CONNECTED_EVENT_MESSAGE",
+    "A2.U2.ACTION.SHARE_MEMORABLE_DAY",
+    "A2.U2.INTERACTION.ASK_ABOUT_PAST",
+    "A2.U2.LISTENING.UNDERSTAND_PAST_EVENT",
+    "A2.U2.MEDIATION.RELAY_EVENT_SEQUENCE",
+    "A2.U2.PRODUCTION.TELL_PAST_EXPERIENCE",
+    "A2.U2.READING.FOLLOW_SHORT_NARRATIVE",
+    "A2.U2.WRITING.WRITE_PAST_NARRATIVE",
+    "A2.U3.ACTION.CHOOSE_TEAM_MEMBER",
+    "A2.U3.INTERACTION.DISCUSS_PEOPLE",
+    "A2.U3.LISTENING.UNDERSTAND_PERSON_DESCRIPTION",
+    "A2.U3.MEDIATION.RELAY_PERSON_MATCH",
+    "A2.U3.PRODUCTION.DESCRIBE_PERSON",
+    "A2.U3.READING.COMPARE_PEOPLE",
+    "A2.U3.WRITING.WRITE_PERSON_PROFILE",
+    "A2.U4.ACTION.CHOOSE_HOME",
+    "A2.U4.INTERACTION.DISCUSS_HOUSING_PROBLEM",
+    "A2.U4.LISTENING.UNDERSTAND_HOUSING_INFO",
+    "A2.U4.MEDIATION.RELAY_HOUSING_OPTIONS",
+    "A2.U4.PRODUCTION.DESCRIBE_HOME_AREA",
+    "A2.U4.READING.COMPARE_HOUSING",
+    "A2.U4.WRITING.WRITE_HOUSING_RECOMMENDATION",
+    "A2.U5.ACTION.COOK_AND_RESOLVE_ORDER",
+    "A2.U5.INTERACTION.MANAGE_FOOD_SERVICE",
+    "A2.U5.LISTENING.UNDERSTAND_FOOD_SERVICE",
+    "A2.U5.MEDIATION.RELAY_ORDER_RECIPE",
+    "A2.U5.PRODUCTION.EXPLAIN_RECIPE_PROBLEM",
+    "A2.U5.READING.FOLLOW_RECIPE_MENU",
+    "A2.U5.WRITING.WRITE_RECIPE_MESSAGE",
+    "A2.U6.ACTION.BUILD_WEEKEND_ITINERARY",
+    "A2.U6.INTERACTION.BOOK_CHANGE_TRAVEL",
+    "A2.U6.LISTENING.UNDERSTAND_TRAVEL_PLAN",
+    "A2.U6.MEDIATION.RELAY_TRAVEL_CHANGE",
+    "A2.U6.PRODUCTION.PRESENT_ITINERARY",
+    "A2.U6.READING.COMPARE_TRAVEL_OPTIONS",
+    "A2.U6.WRITING.WRITE_TRAVEL_PLAN",
+    "A2.U7.ACTION.COMPLETE_CLINIC_CONSULTATION",
+    "A2.U7.INTERACTION.MANAGE_CLINIC_TALK",
+    "A2.U7.LISTENING.UNDERSTAND_HEALTH_ADVICE",
+    "A2.U7.MEDIATION.RELAY_HEALTH_GUIDANCE",
+    "A2.U7.PRODUCTION.DESCRIBE_HEALTH_PROBLEM",
+    "A2.U7.READING.FOLLOW_HEALTH_GUIDANCE",
+    "A2.U7.WRITING.WRITE_HEALTH_MESSAGE",
+    "A2.U8.ACTION.COMPLETE_APPLICATION",
+    "A2.U8.INTERACTION.MAKE_FORMAL_REQUEST",
+    "A2.U8.LISTENING.UNDERSTAND_WORK_STUDY_INFO",
+    "A2.U8.MEDIATION.RELAY_REQUIREMENTS",
+    "A2.U8.PRODUCTION.DESCRIBE_DUTIES_SKILLS",
+    "A2.U8.READING.FOLLOW_COURSE_JOB_TEXT",
+    "A2.U8.WRITING.WRITE_APPLICATION_REQUEST",
+    "A2.U9.ACTION.HELP_ONLINE_TASK",
+    "A2.U9.INTERACTION.SOLVE_TECH_PROBLEM",
+    "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS",
+    "A2.U9.MEDIATION.RELAY_DIGITAL_INSTRUCTIONS",
+    "A2.U9.PRODUCTION.EXPLAIN_TECH_PROCEDURE",
+    "A2.U9.READING.FOLLOW_DIGITAL_GUIDE",
+    "A2.U9.WRITING.WRITE_HELP_GUIDE"
+  ]
+}
