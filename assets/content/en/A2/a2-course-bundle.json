@@ -7602,15 +7602,15 @@
                 "A2.U1.READING.UNDERSTAND_PROFILE",
                 "A2.U1.ACTION.COMPLETE_LIFE_UPDATE"
               ],
-              "prompt": "Why does Yara enjoy the training?",
-              "promptAr": "لماذا تستمتع يارا بالتدريب؟",
+              "prompt": "Read your old classmate's profile. Why does Maha start work earlier at the moment?",
+              "promptAr": "اقرأ الملف الشخصي لزميلتك القديمة. لماذا تبدأ مها عملها مبكراً في الوقت الحالي؟",
               "options": [
-                "She meets international visitors.",
-                "She works fewer days.",
-                "The branch is near home."
+                "She is taking an evening course",
+                "She has a new job at a hotel",
+                "The agency opens at seven now"
               ],
-              "answer": "She meets international visitors.",
-              "sourceText": "Yara works in a hotel, but this month she is training at a new branch. She enjoys it because she is meeting visitors from many countries."
+              "answer": "She is taking an evening course",
+              "sourceText": "Maha Saleh, Baghdad. We were in the same class at school! I work at a travel agency near the river, and I normally start at nine. At the moment I start at seven and finish at three, because I am taking an evening course in hotel management."
             },
             {
               "id": "A2-U1-L7-A02",
@@ -7622,15 +7622,15 @@
                 "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE",
                 "A2.U1.ACTION.COMPLETE_LIFE_UPDATE"
               ],
-              "prompt": "What is the speaker doing temporarily?",
-              "promptAr": "ماذا يفعل المتحدث مؤقتاً؟",
+              "prompt": "Listen to Maha's voice message. What does she say about the course?",
+              "promptAr": "استمع إلى رسالة مها الصوتية. ماذا تقول عن الدورة؟",
               "options": [
-                "Working in a shop",
-                "Studying engineering",
-                "Visiting a school"
+                "It is going well, but it makes her tired",
+                "It is too difficult, so she wants to stop",
+                "It is easy, and she has plenty of free time"
               ],
-              "answer": "Working in a shop",
-              "audioTranscript": "I normally study engineering, but I am working in my uncle's shop during the holiday."
+              "answer": "It is going well, but it makes her tired",
+              "audioTranscript": "Hi again, it's Maha. The course is going really well. We have classes on Monday and Thursday evenings, and each one lasts two hours. I am always tired on Friday, but the teacher is excellent and I am learning a lot. Anyway, tell me about your week."
             },
             {
               "id": "A2-U1-L7-A03",
@@ -7642,16 +7642,62 @@
                 "A2.U1.INTERACTION.ASK_FOLLOW_UP",
                 "A2.U1.ACTION.COMPLETE_LIFE_UPDATE"
               ],
-              "prompt": "Exchange current-life updates and ask at least two connected follow-up questions.",
-              "promptAr": "تبادل تحديثات الحياة الحالية واسأل سؤالَي متابعة مترابطين على الأقل.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
+              "prompt": "You are talking to Maha online. Reply to her news, say what your week is like at the moment, and ask her at least two follow-up questions.",
+              "promptAr": "أنتَ تتحدث إلى مها عبر الإنترنت. ردّ على خبرها، وقل كيف يبدو أسبوعك في الوقت الحالي، واسألها سؤالَي متابعة على الأقل.",
+              "partnerTurns": [
+                "I can't believe it's you! I'm still in Baghdad. How are things with you these days?",
+                "Me? I'm fine, but busy. I'm staying with my brother's family this year, because my flat is too far from the agency.",
+                "It's only until the summer. Now tell me about your week, and ask me whatever you want to know."
               ],
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "that sounds",
+                    "sounds interesting",
+                    "sounds great",
+                    "tell me more",
+                    "how interesting",
+                    "really",
+                    "I'm glad",
+                    "I am glad",
+                    "good for you",
+                    "nice to hear"
+                  ],
+                  [
+                    "at the moment",
+                    "right now",
+                    "this week",
+                    "this month",
+                    "these days",
+                    "currently",
+                    "I'm working",
+                    "I am working",
+                    "I'm studying",
+                    "I am studying",
+                    "most days",
+                    "I usually"
+                  ],
+                  [
+                    "how long",
+                    "how often",
+                    "how many",
+                    "what time",
+                    "what about you",
+                    "do you",
+                    "are you",
+                    "does it",
+                    "where do",
+                    "when do",
+                    "why do"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U1-L7-A04",
@@ -7663,16 +7709,67 @@
                 "A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE",
                 "A2.U1.ACTION.COMPLETE_LIFE_UPDATE"
               ],
-              "prompt": "Give a one-to-two-minute update about your routine and one current change.",
-              "promptAr": "قدّم تحديثاً من دقيقة إلى دقيقتين عن روتينك وتغيير حالي واحد.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "Give Maha your own update, one to two minutes long. Say what you usually do, one thing that is different at the moment, why it is different, and how you feel about it.",
+              "promptAr": "قدّم لمها تحديثك أنتَ، في دقيقة إلى دقيقتين. اذكر ما تفعله عادةً، وشيئاً واحداً مختلفاً في الوقت الحالي، وسبب اختلافه، وكيف تشعر حياله.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "usually",
+                    "normally",
+                    "always",
+                    "often",
+                    "every",
+                    "most days",
+                    "on weekdays",
+                    "at weekends",
+                    "I work",
+                    "I study",
+                    "twice",
+                    "three times"
+                  ],
+                  [
+                    "at the moment",
+                    "right now",
+                    "this month",
+                    "this week",
+                    "these days",
+                    "currently",
+                    "temporary",
+                    "for now",
+                    "just now",
+                    "this term"
+                  ],
+                  [
+                    "because",
+                    "but",
+                    "so",
+                    "that's why",
+                    "the reason"
+                  ],
+                  [
+                    "I like",
+                    "I don't like",
+                    "I enjoy",
+                    "enjoying",
+                    "happy",
+                    "glad",
+                    "tired",
+                    "busy",
+                    "difficult",
+                    "hard",
+                    "easy",
+                    "I miss",
+                    "I prefer",
+                    "better"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U1-L7-A05",
@@ -7684,16 +7781,58 @@
                 "A2.U1.MEDIATION.RELAY_LIFE_UPDATE",
                 "A2.U1.ACTION.COMPLETE_LIFE_UPDATE"
               ],
-              "prompt": "Relay the classmate's routine, current change and reason to a third person.",
-              "promptAr": "انقل إلى شخص ثالث روتين زميلك وتغييره الحالي وسببه.",
-              "evaluation": [
-                "selectRelevantInformation",
-                "clarity",
-                "audienceAwareness",
-                "accuracy"
-              ],
+              "prompt": "Maha sent you this message, and your friend Firas works at a hotel. Tell him what the trip is, who can go, what is included, and what he must do before Friday.",
+              "promptAr": "أرسلت لكَ مها هذه الرسالة، وصديقكَ فراس يعمل في فندق. أخبره ما هي الرحلة، ومن يستطيع الذهاب، وما الذي تشمله، وما عليه فعله قبل الجمعة.",
+              "sourceCard": "Message from Maha: My agency has two free places on a weekend English trip to Babylon in April. It is for people who work in tourism. The bus and the room are included, but not the food. Send me a name before Friday and I can add it to the list.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "trip",
+                    "Babylon",
+                    "weekend",
+                    "two places",
+                    "free place",
+                    "free places",
+                    "April"
+                  ],
+                  [
+                    "tourism",
+                    "people who work",
+                    "you work",
+                    "your job",
+                    "hotel staff",
+                    "works in a hotel"
+                  ],
+                  [
+                    "included",
+                    "includes",
+                    "bus",
+                    "the room",
+                    "a room",
+                    "not the food",
+                    "no food",
+                    "pays for",
+                    "covered"
+                  ],
+                  [
+                    "Friday",
+                    "before",
+                    "send",
+                    "give her",
+                    "your name",
+                    "message her",
+                    "tell her",
+                    "write to her",
+                    "sign up"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U1-L7-A06",
@@ -7705,20 +7844,64 @@
                 "A2.U1.WRITING.WRITE_LIFE_UPDATE",
                 "A2.U1.ACTION.COMPLETE_LIFE_UPDATE"
               ],
-              "prompt": "Write a connected update to an old classmate using and, but and because.",
-              "promptAr": "اكتب تحديثاً مترابطاً إلى زميل قديم مستخدماً and وbut وbecause.",
-              "evaluation": [
-                "taskCompletion",
-                "clarity",
-                "organisation",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "Write your message back to Maha. Say what you usually do and what is different at the moment, give the reason, and ask her two questions about her course. Join your ideas with and, but and because.",
+              "promptAr": "اكتب رسالتك الجوابية إلى مها. اذكر ما تفعله عادةً وما المختلف في الوقت الحالي، وبيّن السبب، واسألها سؤالين عن دورتها. اربط أفكارك بـ and وbut وbecause.",
+              "accepted": [],
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "usually",
+                    "normally",
+                    "always",
+                    "often",
+                    "every",
+                    "most days",
+                    "on weekdays",
+                    "at weekends",
+                    "I work",
+                    "I study"
+                  ],
+                  [
+                    "at the moment",
+                    "right now",
+                    "this month",
+                    "this week",
+                    "these days",
+                    "currently",
+                    "temporary",
+                    "for now",
+                    "just now",
+                    "this term"
+                  ],
+                  [
+                    "because",
+                    "but",
+                    "so",
+                    "that's why"
+                  ],
+                  [
+                    "how long",
+                    "how often",
+                    "how is",
+                    "how are",
+                    "what time",
+                    "do you",
+                    "are you",
+                    "does it",
+                    "what about you",
+                    "tell me more",
+                    "when do",
+                    "where do"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
               "wordGuide": [
-                80,
-                110
-              ],
-              "accepted": []
+                55,
+                75
+              ]
             }
           ]
         }
