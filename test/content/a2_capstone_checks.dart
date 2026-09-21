@@ -110,6 +110,64 @@ List<String> capstoneStructureViolations(CourseBundle bundle) {
   return out;
 }
 
+/// The exit's decision rule and its sections describe the same test.
+///
+/// `FinalAssessmentScoring.overallPassed` asks, for each skill in
+/// `scoring.decisionRule.required`, whether that section reached `passed`.
+/// It looks the section up by name and reads `result?.status` — so a
+/// required skill with no section resolves to `null`, which is never
+/// `passed`. The learner sits the whole exit test, answers every item
+/// correctly, and still cannot pass it, with nothing on screen to say why.
+/// Deleting `sections.reading`, deleting `sections.writing` or adding
+/// `"spokenProduction"` to `required` each produces exactly that, and each
+/// left the rest of this suite green before this gate existed.
+///
+/// The check runs in both directions, because both directions are wrong. A
+/// required skill with no section makes the exit unpassable; a section no
+/// decision rule names is work the learner does that counts for nothing,
+/// and it is the shape a section gets when someone adds one and forgets the
+/// rule. A section that genuinely should not gate the result declares
+/// `"optional": true` on itself — an authored statement of intent, not the
+/// silence of an omission.
+List<String> capstoneDecisionRuleViolations(CourseBundle bundle) {
+  final out = <String>[];
+  final assessment = bundle.finalAssessment;
+  final required = assessment.requiredSkills;
+  final sections = assessment.sections;
+
+  if (required.isEmpty) {
+    out.add(
+      '${assessment.id} scoring.decisionRule.required is empty — '
+      'overallPassed would return true for any performance at all',
+    );
+  }
+  final seen = <String>{};
+  for (final skill in required) {
+    if (!seen.add(skill)) {
+      out.add(
+        '${assessment.id} scoring.decisionRule.required names "$skill" twice',
+      );
+    }
+    if (!sections.containsKey(skill)) {
+      out.add(
+        '${assessment.id} requires "$skill" but has no sections.$skill — '
+        'overallPassed resolves it to null, which is never passed, so the '
+        'exit can never be passed by anyone',
+      );
+    }
+  }
+  for (final entry in sections.entries) {
+    if (seen.contains(entry.key)) continue;
+    if (entry.value.raw['optional'] == true) continue;
+    out.add(
+      '${assessment.id} sections."${entry.key}" is named by no decision '
+      'rule and is not marked "optional": true — the learner sits it and '
+      'it counts for nothing',
+    );
+  }
+  return out;
+}
+
 /// Every learner-facing string in the capstones carries real Arabic.
 ///
 /// Both capstone titles, every mission stage title and every activity prompt.
@@ -469,6 +527,7 @@ List<String> capstoneUnseenInputViolations(CourseBundle bundle) {
 /// Every A2 capstone rule in one list, for the release gate.
 List<String> allCapstoneViolations(CourseBundle bundle) => [
   ...capstoneStructureViolations(bundle),
+  ...capstoneDecisionRuleViolations(bundle),
   ...capstoneBilingualViolations(bundle),
   ...capstoneGraderViolations(bundle),
   ...capstoneAnswerableViolations(bundle),

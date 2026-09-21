@@ -77,6 +77,90 @@ void main() {
     }
   });
 
+  test('every unit declares mastery it could actually fail', () {
+    // The test above proves a unit *can* be mastered. It says nothing about
+    // what the unit asks for, and the two are not the same claim: the
+    // cheapest way to make it green is to ask for less. Deleting
+    // A2.U1.WRITING.WRITE_LIFE_UPDATE from requiredObjectives keeps it green
+    // and lets a learner finish the unit with no writing evidence at all;
+    // emptying requiredObjectives *and* requiredSkillGroups keeps it green
+    // too, and MasteryAggregationService.evaluateUnit then returns
+    // isMastered: true with hasAnyEvidence: false — the unit reads Mastered
+    // before a lesson has been opened. Nothing above would notice either.
+    //
+    // So this gate asserts the declaration rather than the outcome: the
+    // unit asks for objectives, it asks for skill-group coverage, and the
+    // objectives it asks for reach every skill the unit actually teaches.
+    const categoryBySkill = {
+      Skill.listening: 'LISTENING',
+      Skill.reading: 'READING',
+      Skill.writing: 'WRITING',
+      Skill.spokenProduction: 'PRODUCTION',
+      Skill.spokenInteraction: 'INTERACTION',
+      Skill.mediation: 'MEDIATION',
+    };
+    final skillNames = {for (final s in Skill.values) s.name};
+
+    for (final unit in finishedA2Units()) {
+      final mastery = unit.mastery;
+      expect(
+        mastery.requiredObjectives,
+        isNotEmpty,
+        reason:
+            '${unit.id} requires no objectives — every learner masters it '
+            'with no evidence at all',
+      );
+      expect(
+        mastery.requiredSkillGroups,
+        isNotEmpty,
+        reason:
+            '${unit.id} declares no requiredSkillGroups — nothing then '
+            'forces productive evidence to exist before the unit is '
+            'mastered',
+      );
+      for (final group in mastery.requiredSkillGroups) {
+        // The opposite failure: an empty group is satisfied by nothing, so
+        // the unit becomes permanently unmasterable rather than free.
+        expect(
+          group,
+          isNotEmpty,
+          reason:
+              '${unit.id} declares an empty skill group, which no evidence '
+              'can ever cover',
+        );
+        for (final skill in group) {
+          expect(
+            skillNames,
+            contains(skill),
+            reason:
+                '${unit.id} requires skill-group coverage of "$skill", '
+                'which is not a skill any attempt can be recorded under',
+          );
+        }
+      }
+
+      // Every skill the unit teaches has to be a skill the unit's mastery
+      // asks for. Without this, a unit can keep its twelve listening
+      // activities and quietly stop requiring any evidence from them.
+      final taught = {for (final a in activitiesOf(unit)) a.skill};
+      final askedFor = {
+        for (final objective in mastery.requiredObjectives)
+          for (final entry in categoryBySkill.entries)
+            if (objective.contains('.${entry.value}.')) entry.key,
+      };
+      for (final skill in taught) {
+        expect(
+          askedFor,
+          contains(skill),
+          reason:
+              '${unit.id} teaches ${skill.name} but requires no '
+              '${categoryBySkill[skill]} objective — a learner masters the '
+              'unit without ever evidencing it',
+        );
+      }
+    }
+  });
+
   test('the finished list names real, distinct units', () {
     // Always live: a duplicate or a typo here would otherwise only surface
     // on release day, when the release gate finally runs.

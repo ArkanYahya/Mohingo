@@ -35,6 +35,10 @@ void main() {
     expectNoViolations(capstoneStructureViolations(bundle));
   });
 
+  test('every skill the exit requires is a section the exit contains', () {
+    expectNoViolations(capstoneDecisionRuleViolations(bundle));
+  });
+
   test('every learner-facing capstone string carries Arabic', () {
     expectNoViolations(capstoneBilingualViolations(bundle));
   });

@@ -57,6 +57,86 @@ void main() {
     }
   });
 
+  test('every closed question can be answered right, and can be answered '
+      'wrong', () {
+    // The gates above ask whether an item supplies its material. They never
+    // look inside the options, and `ChoiceActivityView._submit` grades
+    // `_selected == widget.answer` where `_selected` is always one of the
+    // options — so an `answer` that is not among its own `options` makes
+    // every attempt wrong, forever. On a mastery item carrying a required
+    // objective that makes the whole unit permanently unmasterable, and it
+    // is invisible to every other check in this file.
+    //
+    // The mirror image is just as broken and much easier to write by
+    // accident: options that are all the same string, or a single option
+    // that is the answer, are marked correct whatever the learner taps, so
+    // the item produces mastery evidence for nothing. Both are one rule —
+    // a closed question needs at least two distinct choices, exactly one
+    // meaning of which is right.
+    for (final unit in finishedA2Units()) {
+      for (final a in activitiesOf(unit)) {
+        final (List<String> options, String answer)? choice = switch (a) {
+          TextChoiceActivity() => (a.options, a.answer),
+          AudioChoiceActivity() => (a.options, a.answer),
+          GapActivity() => (a.options, a.answer),
+          _ => null,
+        };
+        if (choice != null) {
+          final (options, answer) = choice;
+          expect(
+            options,
+            contains(answer),
+            reason:
+                '${a.id} answers "$answer", which is not one of its '
+                'options $options — every attempt is graded wrong',
+          );
+          expect(
+            options.map((o) => o.trim()).toSet().length,
+            greaterThanOrEqualTo(2),
+            reason:
+                '${a.id} offers $options — with nothing to choose between, '
+                'any tap is marked correct',
+          );
+        }
+        if (a is GapActivity) {
+          // GapActivityView renders the sentence by splitting on `___`; a
+          // text without one shows the learner a complete sentence and no
+          // gap to fill.
+          expect(
+            a.text,
+            contains('___'),
+            reason: '${a.id} is a gap task whose text has no ___ gap in it',
+          );
+        }
+        if (a is MatchActivity) {
+          // One pair leaves the learner nothing to decide: the single left
+          // item can only go with the single right one.
+          expect(
+            a.pairs.length,
+            greaterThanOrEqualTo(2),
+            reason:
+                '${a.id} is a matching task with ${a.pairs.length} pair(s) '
+                '— there is no choice to get wrong',
+          );
+          for (final pair in a.pairs) {
+            expect(
+              pair.length,
+              2,
+              reason: '${a.id} has a pair that is not [left, right]: $pair',
+            );
+            for (final side in pair) {
+              expect(
+                side.trim(),
+                isNotEmpty,
+                reason: '${a.id} has a pair with a blank side: $pair',
+              );
+            }
+          }
+        }
+      }
+    }
+  });
+
   test('every mastery speak or write task carries a STRUCTURED evaluation', () {
     // Presence is not enough. The A2 import carries A1's retired legacy
     // shape — an opaque list of rubric names, e.g.
