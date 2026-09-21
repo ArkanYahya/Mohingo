@@ -1544,26 +1544,6 @@
       ]
     },
     {
-      "id": "A2.LEX.TRIP_N01",
-      "headword": "trip",
-      "partOfSpeech": "noun",
-      "arabic": "رحلة",
-      "cefr": "A2",
-      "receptive": true,
-      "productive": true,
-      "meaning": "trip",
-      "examples": [
-        {
-          "en": "The trip was short.",
-          "ar": "كانت الرحلة قصيرة."
-        }
-      ],
-      "introducedIn": "A2-U2-L1",
-      "recycledIn": [
-        "A2-U3-L1"
-      ]
-    },
-    {
       "id": "A2.LEX.YESTERDAY_ADV01",
       "headword": "yesterday",
       "partOfSpeech": "adverb",
@@ -1579,46 +1559,6 @@
         }
       ],
       "introducedIn": "A2-U2-L1",
-      "recycledIn": [
-        "A2-U3-L1"
-      ]
-    },
-    {
-      "id": "A2.LEX.VISIT_V01",
-      "headword": "visit",
-      "partOfSpeech": "verb",
-      "arabic": "يزور",
-      "cefr": "A2",
-      "receptive": true,
-      "productive": true,
-      "meaning": "visit",
-      "examples": [
-        {
-          "en": "We visited a museum.",
-          "ar": "زرنا متحفاً."
-        }
-      ],
-      "introducedIn": "A2-U2-L2",
-      "recycledIn": [
-        "A2-U3-L1"
-      ]
-    },
-    {
-      "id": "A2.LEX.ARRIVE_V01",
-      "headword": "arrive",
-      "partOfSpeech": "verb",
-      "arabic": "يصل",
-      "cefr": "A2",
-      "receptive": true,
-      "productive": true,
-      "meaning": "arrive",
-      "examples": [
-        {
-          "en": "They arrived at noon.",
-          "ar": "وصلوا ظهراً."
-        }
-      ],
-      "introducedIn": "A2-U2-L2",
       "recycledIn": [
         "A2-U3-L1"
       ]
@@ -1676,26 +1616,6 @@
         {
           "en": "He bought a ticket.",
           "ar": "اشترى تذكرة."
-        }
-      ],
-      "introducedIn": "A2-U2-L3",
-      "recycledIn": [
-        "A2-U4-L3"
-      ]
-    },
-    {
-      "id": "A2.LEX.MEET_V02",
-      "headword": "meet",
-      "partOfSpeech": "verb",
-      "arabic": "يلتقي (ماضٍ: met)",
-      "cefr": "A2",
-      "receptive": true,
-      "productive": true,
-      "meaning": "meet",
-      "examples": [
-        {
-          "en": "I met an old friend.",
-          "ar": "التقيت صديقاً قديماً."
         }
       ],
       "introducedIn": "A2-U2-L3",
