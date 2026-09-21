@@ -57,16 +57,97 @@ Future<void> enterCorrectAnswer(WidgetTester tester, Activity activity) async {
   await tester.pump();
 }
 
+/// Gives [activity] an answer that is definitely **not** its answer key —
+/// a wrong option, a swapped word order, a crossed-over pairing.
+///
+/// The mirror of [enterCorrectAnswer], for the end-to-end tests that have
+/// to drive a learner who doesn't know the material (the placement test's
+/// block pass only stops where a learner gets things wrong). Throws rather
+/// than guessing when an activity has no wrong answer to give — a
+/// single-token order, a one-pair match — so a test can never quietly pass
+/// by answering correctly.
+Future<void> enterWrongAnswer(WidgetTester tester, Activity activity) async {
+  String otherThan(List<String> options, String answer, String what) {
+    for (final option in options) {
+      if (option != answer) return option;
+    }
+    throw StateError('${activity.id}: $what has no wrong option to pick');
+  }
+
+  switch (activity) {
+    case AudioChoiceActivity a:
+      await tester.tap(
+        find.text(otherThan(a.options, a.answer, 'audioChoice')).last,
+      );
+    case TextChoiceActivity a:
+      await tester.tap(
+        find.text(otherThan(a.options, a.answer, 'textChoice')).last,
+      );
+    case GapActivity a:
+      await tester.tap(
+        find
+            .widgetWithText(
+              ActivityWordTile,
+              otherThan(a.options, a.answer, 'gap'),
+            )
+            .first,
+      );
+    case OrderActivity a:
+      if (a.answer.length < 2) {
+        throw StateError('${activity.id}: a 1-token order is always right');
+      }
+      // The answer with its last two tokens swapped: still every token,
+      // in an order the key doesn't accept.
+      final wrong = [...a.answer];
+      final last = wrong.removeLast();
+      wrong.insert(wrong.length - 1, last);
+      for (final token in wrong) {
+        await tester.tap(_idleTile(token));
+        await tester.pump();
+      }
+    case MatchActivity a:
+      if (a.pairs.length < 2) {
+        throw StateError('${activity.id}: a 1-pair match is always right');
+      }
+      // The first two pairs crossed over, the rest as they should be.
+      final crossed = [
+        [a.pairs[0][0], a.pairs[1][1]],
+        [a.pairs[1][0], a.pairs[0][1]],
+        ...a.pairs.skip(2),
+      ];
+      for (final pair in crossed) {
+        await tester.tap(_idleTile(pair[0]));
+        await tester.pump();
+        await tester.tap(_idleTile(pair[1]));
+        await tester.pump();
+      }
+    case SpeakActivity _:
+    case WriteActivity _:
+    case FormActivity _:
+    case DialogueActivity _:
+      throw StateError(
+        '${activity.id}: productive and dialogue activities are never '
+        'scored right or wrong by these tests',
+      );
+  }
+  await tester.pump();
+}
+
 /// Answers [activity], taps Check, then taps the button that moves on —
 /// the lesson player's Continue, or another host's Next.
 Future<void> answerCheckAndAdvance(
   WidgetTester tester,
-  Activity activity,
-) async {
+  Activity activity, {
+  bool correctly = true,
+}) async {
   // Some activity views (e.g. SpeakActivityView) do an async capability
   // check in initState before their real body renders — settle that first.
   await tester.pumpAndSettle();
-  await enterCorrectAnswer(tester, activity);
+  if (correctly) {
+    await enterCorrectAnswer(tester, activity);
+  } else {
+    await enterWrongAnswer(tester, activity);
+  }
   await tester.tap(find.byType(FilledButton)); // Check
   await tester.pumpAndSettle();
   await tester.tap(find.byType(FilledButton)); // Continue / Next

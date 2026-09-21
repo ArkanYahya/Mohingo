@@ -173,16 +173,38 @@ void main() {
       find.text(l10n.testsTakenOn(DateFormat.yMMMd('en').format(_taken))),
       findsOneWidget,
     );
-    expect(find.text(l10n.testsPlacementResultUnit(4)), findsOneWidget);
+    expect(find.text(l10n.testsPlacementResultUnit('A1', 4)), findsOneWidget);
   });
 
-  testWidgets('"start with essentials" and "A1 mastered" results read as '
-      'Unit 1 and as already mastered', (tester) async {
+  testWidgets('"start with essentials" reads as Unit 1 of A1 even though '
+      'the row stored no unit id', (tester) async {
     final l10n = await _pump(
       tester,
       seed: (db, id) => _seedPlacement(db, id, outcome: 'startWithEssentials'),
     );
-    expect(find.text(l10n.testsPlacementResultUnit(1)), findsOneWidget);
+    expect(find.text(l10n.testsPlacementResultUnit('A1', 1)), findsOneWidget);
+  });
+
+  testWidgets('a result stored before placement covered A2 still reads in '
+      'history — "a1Mastered" says A1, not the top level today', (
+    tester,
+  ) async {
+    final l10n = await _pump(
+      tester,
+      seed: (db, id) => _seedPlacement(db, id, outcome: 'a1Mastered'),
+    );
+    expect(find.text(l10n.testsPlacementResultMastered('A1')), findsOneWidget);
+    expect(find.text(l10n.testsPlacementResultMastered('A2')), findsNothing);
+  });
+
+  testWidgets('a result recorded now names the level it measured', (
+    tester,
+  ) async {
+    final l10n = await _pump(
+      tester,
+      seed: (db, id) => _seedPlacement(db, id, outcome: 'a2Mastered'),
+    );
+    expect(find.text(l10n.testsPlacementResultMastered('A2')), findsOneWidget);
   });
 
   testWidgets('Finish A1: course progress, then the mission and the '
@@ -314,8 +336,8 @@ void main() {
     expect(find.text('OPEN final-mission'), findsOneWidget);
   });
 
-  testWidgets('placement keeps numbering the base level\'s units even for a '
-      'learner who has moved on to A2', (tester) async {
+  testWidgets('a placement result is numbered against the level its unit id '
+      'names, whichever level the learner is in now', (tester) async {
     final l10n = await _pump(
       tester,
       levelId: 'a2',
@@ -329,6 +351,21 @@ void main() {
 
     // A1-U3 is A1's fourth unit; it is in no A2 bundle, so reading the
     // recommendation against A2's units would say "Unit 0".
-    expect(find.text(l10n.testsPlacementResultUnit(4)), findsOneWidget);
+    expect(find.text(l10n.testsPlacementResultUnit('A1', 4)), findsOneWidget);
+  });
+
+  testWidgets('and an A2 recommendation reads as an A2 unit for a learner '
+      'still in A1', (tester) async {
+    final l10n = await _pump(
+      tester,
+      seed: (db, id) => _seedPlacement(
+        db,
+        id,
+        outcome: 'startFromRecommendedUnit',
+        unitId: 'A2-U5',
+      ),
+    );
+
+    expect(find.text(l10n.testsPlacementResultUnit('A2', 5)), findsOneWidget);
   });
 }

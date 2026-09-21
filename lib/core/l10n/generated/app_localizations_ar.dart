@@ -1082,12 +1082,14 @@ class AppLocalizationsAr extends AppLocalizations {
   String get testsNotFinished => 'لم يكتمل';
 
   @override
-  String testsPlacementResultUnit(int unit) {
-    return 'النتيجة: ابدأ من الوحدة $unit';
+  String testsPlacementResultUnit(String level, int unit) {
+    return 'النتيجة: ابدأ من الوحدة $unit في المستوى $level';
   }
 
   @override
-  String get testsPlacementResultMastered => 'النتيجة: أتقنت A1 بالفعل';
+  String testsPlacementResultMastered(String level) {
+    return 'النتيجة: أتقنت المستوى $level بالفعل';
+  }
 
   @override
   String testsFinishOverline(String level) {
@@ -1205,11 +1207,19 @@ class AppLocalizationsAr extends AppLocalizations {
   String get placementCoversStops => 'يتوقف عند أول وحدة جديدة عليك';
 
   @override
-  String get placementIntroTitle => 'اختبار تحديد المستوى لـ A1';
+  String placementIntroTitle(String level) {
+    return 'اختبار تحديد المستوى حتى المستوى $level';
+  }
 
   @override
-  String get placementIntroBody =>
-      'بضعة أسئلة من كل وحدة في A1، من الأسهل إلى الأصعب. يتوقف عند أول وحدة جديدة عليك — فكلما عرفت أكثر، طال الاختبار.';
+  String placementIntroBody(String level) {
+    return 'بضعة أسئلة من كل وحدة، من الأسهل إلى الأصعب، حتى المستوى $level. يتوقف عند أول وحدة جديدة عليك — فكلما عرفت أكثر، طال الاختبار.';
+  }
+
+  @override
+  String placementUnitSection(String level, int unit) {
+    return 'المستوى $level · الوحدة $unit';
+  }
 
   @override
   String get placementStartButton => 'ابدأ اختبار تحديد المستوى';
@@ -1238,8 +1248,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get placementResultOverline => 'نتيجة تحديد المستوى';
 
   @override
-  String placementResultHeadline(int unit) {
-    return 'ابدأ من الوحدة $unit';
+  String placementResultHeadline(String level, int unit) {
+    return 'الوحدة $unit من المستوى $level هي نقطة البداية';
   }
 
   @override
@@ -1247,12 +1257,19 @@ class AppLocalizationsAr extends AppLocalizations {
       'تمنحك الوحدة 1 الأساسيات التي تُبنى عليها كل الوحدات الأخرى.';
 
   @override
+  String placementResultBodyLevelStart(String level) {
+    return 'أنت جاهز للمستوى $level — ابدأه من أوله.';
+  }
+
+  @override
   String placementResultBodyUnit(int unit) {
     return 'تعرف الوحدات السابقة جيداً. في الوحدة $unit تبدأ الأشياء الجديدة عليك.';
   }
 
   @override
-  String get placementResultMasteredTitle => 'يبدو أنك أتقنت A1';
+  String placementResultMasteredTitle(String level) {
+    return 'يبدو أنك أتقنت المستوى $level';
+  }
 
   @override
   String get placementResultMasteredBody =>
@@ -1263,8 +1280,8 @@ class AppLocalizationsAr extends AppLocalizations {
       'تبقى الوحدات السابقة مفتوحة — عد إلى أي درس متى شئت.';
 
   @override
-  String placementResultGoToUnitN(int unit) {
-    return 'انتقل إلى الوحدة $unit';
+  String placementResultStartAtUnit(String level, int unit) {
+    return 'ابدأ من الوحدة $unit في المستوى $level';
   }
 
   @override

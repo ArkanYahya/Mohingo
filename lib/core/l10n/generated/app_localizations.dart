@@ -1694,17 +1694,17 @@ abstract class AppLocalizations {
   /// **'Not finished'**
   String get testsNotFinished;
 
-  /// The placement test's recommendation.
+  /// The placement test's recommendation on the Tests tab. It covers every released level, so the unit number alone would be ambiguous.
   ///
   /// In en, this message translates to:
-  /// **'Result: start from Unit {unit}'**
-  String testsPlacementResultUnit(int unit);
+  /// **'Result: start at {level} Unit {unit}'**
+  String testsPlacementResultUnit(String level, int unit);
 
-  /// The placement test found A1 mastered.
+  /// The placement test found nothing left to teach in the top released level. Always the level the attempt actually measured — never one that shipped afterwards.
   ///
   /// In en, this message translates to:
-  /// **'Result: A1 already mastered'**
-  String get testsPlacementResultMastered;
+  /// **'Result: {level} already mastered'**
+  String testsPlacementResultMastered(String level);
 
   /// Tests tab section heading for the final mission and assessment, naming the level they close.
   ///
@@ -1856,17 +1856,23 @@ abstract class AppLocalizations {
   /// **'Stops at the first unit that\'s new to you'**
   String get placementCoversStops;
 
-  /// Placement test intro screen app bar title.
+  /// Overline on the placement test's intro, naming the highest level it can place a learner in.
   ///
   /// In en, this message translates to:
-  /// **'A1 Gateway Placement Test'**
-  String get placementIntroTitle;
+  /// **'Placement test up to {level}'**
+  String placementIntroTitle(String level);
 
-  /// Placement test intro screen body text.
+  /// Placement test intro screen body text, naming the highest released level it covers.
   ///
   /// In en, this message translates to:
-  /// **'A few questions from each A1 unit, easiest first. It stops at the first unit that\'s new to you — so the more you already know, the longer it runs.'**
-  String get placementIntroBody;
+  /// **'A few questions from each unit, easiest first, all the way up to {level}. It stops at the first unit that\'s new to you — so the more you already know, the longer it runs.'**
+  String placementIntroBody(String level);
+
+  /// Which unit a placement question came from, and the level that unit belongs to — the test moves through every released level, so the unit number alone would be ambiguous.
+  ///
+  /// In en, this message translates to:
+  /// **'{level} · Unit {unit}'**
+  String placementUnitSection(String level, int unit);
 
   /// Placement test intro screen start button.
   ///
@@ -1910,11 +1916,11 @@ abstract class AppLocalizations {
   /// **'Placement result'**
   String get placementResultOverline;
 
-  /// The placement result's headline.
+  /// The placement result's headline, naming the level as well as the unit.
   ///
   /// In en, this message translates to:
-  /// **'Start from Unit {unit}'**
-  String placementResultHeadline(int unit);
+  /// **'{level} Unit {unit} is where to begin'**
+  String placementResultHeadline(String level, int unit);
 
   /// Placement result when starting from the first unit.
   ///
@@ -1922,17 +1928,23 @@ abstract class AppLocalizations {
   /// **'Unit 1 gives you the basics every other unit builds on.'**
   String get placementResultBodyEssentials;
 
+  /// Placement result when the learner passed everything before this level and starts it at its first unit.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re ready for {level} — start it from the very beginning.'**
+  String placementResultBodyLevelStart(String level);
+
   /// Placement result when starting further in.
   ///
   /// In en, this message translates to:
   /// **'You know the units before it well. Unit {unit} is where new things begin for you.'**
   String placementResultBodyUnit(int unit);
 
-  /// Placement result when every unit passed.
+  /// Placement result when every unit of every released level passed. Names the top released level and never one above it — there is no content above it to have been measured.
   ///
   /// In en, this message translates to:
-  /// **'A1 looks mastered'**
-  String get placementResultMasteredTitle;
+  /// **'{level} looks mastered'**
+  String placementResultMasteredTitle(String level);
 
   /// Placement result body when every unit passed.
   ///
@@ -1946,11 +1958,11 @@ abstract class AppLocalizations {
   /// **'Earlier units stay open — go back to any lesson whenever you like.'**
   String get placementResultEarlierOpen;
 
-  /// Placement result button to the recommended unit.
+  /// Placement result button: it moves the learner into that level and opens the unit.
   ///
   /// In en, this message translates to:
-  /// **'Go to Unit {unit}'**
-  String placementResultGoToUnitN(int unit);
+  /// **'Start at {level} Unit {unit}'**
+  String placementResultStartAtUnit(String level, int unit);
 
   /// Confidence self-report option 1 of 5.
   ///

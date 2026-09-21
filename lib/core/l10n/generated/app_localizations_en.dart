@@ -1051,12 +1051,14 @@ class AppLocalizationsEn extends AppLocalizations {
   String get testsNotFinished => 'Not finished';
 
   @override
-  String testsPlacementResultUnit(int unit) {
-    return 'Result: start from Unit $unit';
+  String testsPlacementResultUnit(String level, int unit) {
+    return 'Result: start at $level Unit $unit';
   }
 
   @override
-  String get testsPlacementResultMastered => 'Result: A1 already mastered';
+  String testsPlacementResultMastered(String level) {
+    return 'Result: $level already mastered';
+  }
 
   @override
   String testsFinishOverline(String level) {
@@ -1172,11 +1174,19 @@ class AppLocalizationsEn extends AppLocalizations {
       'Stops at the first unit that\'s new to you';
 
   @override
-  String get placementIntroTitle => 'A1 Gateway Placement Test';
+  String placementIntroTitle(String level) {
+    return 'Placement test up to $level';
+  }
 
   @override
-  String get placementIntroBody =>
-      'A few questions from each A1 unit, easiest first. It stops at the first unit that\'s new to you — so the more you already know, the longer it runs.';
+  String placementIntroBody(String level) {
+    return 'A few questions from each unit, easiest first, all the way up to $level. It stops at the first unit that\'s new to you — so the more you already know, the longer it runs.';
+  }
+
+  @override
+  String placementUnitSection(String level, int unit) {
+    return '$level · Unit $unit';
+  }
 
   @override
   String get placementStartButton => 'Start the placement test';
@@ -1205,8 +1215,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get placementResultOverline => 'Placement result';
 
   @override
-  String placementResultHeadline(int unit) {
-    return 'Start from Unit $unit';
+  String placementResultHeadline(String level, int unit) {
+    return '$level Unit $unit is where to begin';
   }
 
   @override
@@ -1214,12 +1224,19 @@ class AppLocalizationsEn extends AppLocalizations {
       'Unit 1 gives you the basics every other unit builds on.';
 
   @override
+  String placementResultBodyLevelStart(String level) {
+    return 'You\'re ready for $level — start it from the very beginning.';
+  }
+
+  @override
   String placementResultBodyUnit(int unit) {
     return 'You know the units before it well. Unit $unit is where new things begin for you.';
   }
 
   @override
-  String get placementResultMasteredTitle => 'A1 looks mastered';
+  String placementResultMasteredTitle(String level) {
+    return '$level looks mastered';
+  }
 
   @override
   String get placementResultMasteredBody =>
@@ -1230,8 +1247,8 @@ class AppLocalizationsEn extends AppLocalizations {
       'Earlier units stay open — go back to any lesson whenever you like.';
 
   @override
-  String placementResultGoToUnitN(int unit) {
-    return 'Go to Unit $unit';
+  String placementResultStartAtUnit(String level, int unit) {
+    return 'Start at $level Unit $unit';
   }
 
   @override

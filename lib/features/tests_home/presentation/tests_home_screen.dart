@@ -5,10 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart' show DateFormat;
 
-import '../../../content/catalog/level_catalog.dart';
 import '../../../content/index/course_content_index.dart';
-import '../../../content/models/curriculum_structure.dart';
-import '../../../content/providers/course_content_providers.dart';
 import '../../../core/l10n/generated/app_localizations.dart';
 import '../../../core/theme/app_tokens.dart';
 import '../../../core/theme/feedback_theme_extension.dart';
@@ -17,6 +14,9 @@ import '../../../core/widgets/section_heading.dart';
 import '../../../core/widgets/status_pill.dart';
 import '../../../data/local/database.dart';
 import '../../learning_path/providers/unit_progress_providers.dart';
+import '../../placement_test/domain/placement_outcome.dart';
+import '../../placement_test/domain/placement_plan.dart';
+import '../../placement_test/providers/placement_providers.dart';
 import '../../progress/providers/level_providers.dart';
 import '../providers/tests_home_providers.dart';
 
@@ -84,13 +84,11 @@ class _TestsBody extends ConsumerWidget {
         placement == null &&
         lessonsAsync.value!.isEmpty;
     final units = index.bundle.units;
-    // Placement is the base level's gateway test, so its result is
-    // numbered against that level's units — not against whichever level
-    // the learner is in now, where an A1 unit id resolves to nothing. The
-    // base bundle is always loaded: the router gates startup on it.
-    final placementUnits =
-        ref.watch(courseContentProvider(kBaseLevelId)).value?.bundle.units ??
-        units;
+    // A placement result is numbered against the level its recommended
+    // unit id names — never against whichever level the learner is in now,
+    // where the other level's unit ids resolve to nothing and the row once
+    // read "Unit 0". The plan holds every released level for exactly this.
+    final placementPlan = ref.watch(placementPlanProvider).value;
     final masteredIds = {
       for (final p in unitProgress)
         if (p.state == 'mastered') p.unitId,
@@ -138,7 +136,7 @@ class _TestsBody extends ConsumerWidget {
                     : l10n.testsTakenOn(
                         _date(context, placement!.completedAt!),
                       ),
-                status: _placementPill(l10n, placement, placementUnits),
+                status: _placementPill(l10n, placement, placementPlan),
                 onTap: () => context.push('/tests/placement'),
               ),
             ],
@@ -201,23 +199,45 @@ class _TestsBody extends ConsumerWidget {
       DateFormat.yMMMd(Localizations.localeOf(context).languageCode)
           .format(date);
 
+  /// A finished placement attempt's result, read back from what was
+  /// stored — including results recorded before the test covered more than
+  /// one level, which a learner should still be able to read in their
+  /// history. `a1Mastered` is such a row, and stays exactly as readable as
+  /// today's `a2Mastered`.
   StatusPill _placementPill(
     AppLocalizations l10n,
     PlacementAttempt? a,
-    List<Unit> units,
+    PlacementPlan? plan,
   ) {
     if (a == null) return StatusPill(label: l10n.testsNotTaken);
     if (a.completedAt == null) return StatusPill(label: l10n.testsNotFinished);
-    int unitNumber(String id) => units.indexWhere((u) => u.id == id) + 1;
-    final result = switch (a.outcome) {
-      'a1Mastered' => l10n.testsPlacementResultMastered,
-      'startWithEssentials' => l10n.testsPlacementResultUnit(1),
-      'startA1FromU1' => l10n.testsPlacementResultUnit(unitNumber('A1-U1')),
-      _ when a.recommendedUnitId != null => l10n.testsPlacementResultUnit(
-        unitNumber(a.recommendedUnitId!),
-      ),
-      _ => null,
-    };
+    final outcome = a.outcome;
+    final masteredLevelId = outcome == null
+        ? null
+        : masteredLevelIdOfStoredOutcome(outcome);
+    String? result;
+    if (masteredLevelId != null) {
+      final level = plan?.levels
+          .where((l) => l.levelId == masteredLevelId)
+          .firstOrNull;
+      result = l10n.testsPlacementResultMastered(
+        level?.cefrCode ?? masteredLevelId.toUpperCase(),
+      );
+    } else {
+      // The two outcomes that name a unit the row itself may not carry:
+      // the oldest stored rows recorded the outcome alone.
+      final unitId =
+          a.recommendedUnitId ??
+          switch (outcome) {
+            'startWithEssentials' => 'A1-U0',
+            'startA1FromU1' => 'A1-U1',
+            _ => null,
+          };
+      final unit = placementUnitRefIn(plan, unitId);
+      if (unit != null) {
+        result = l10n.testsPlacementResultUnit(unit.cefrCode, unit.number);
+      }
+    }
     return StatusPill(
       label: result ?? l10n.testsNotFinished,
       tone: StatusTone.success,

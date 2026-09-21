@@ -17,9 +17,21 @@ import '../../../content/models/domain_definitions.dart';
 abstract final class PlacementItemSampler {
   static const int maxReceptiveItemsPerUnit = 3;
 
-  /// Up to [maxReceptiveItemsPerUnit] listening/reading practice items from
-  /// [unit] — the auto-gradable skills the classification scan relies on.
-  static List<Activity> receptiveItemsForUnit(Unit unit, {required int seed}) {
+  /// Up to [limit] listening/reading practice items from [unit] — the
+  /// auto-gradable skills the classification scan relies on.
+  ///
+  /// [limit] is 1 for a block pass (one item per unit decides the block)
+  /// and [maxReceptiveItemsPerUnit] when a failed block is opened up unit
+  /// by unit. [exclude] holds the activity ids this attempt has already
+  /// asked, so a unit's drill-down never repeats the item its block pass
+  /// asked: the shuffle is seeded per unit, so excluding the first item
+  /// simply hands back the next ones in the same order.
+  static List<Activity> receptiveItemsForUnit(
+    Unit unit, {
+    required int seed,
+    int limit = maxReceptiveItemsPerUnit,
+    Set<String> exclude = const {},
+  }) {
     final candidates = <Activity>[
       for (final lesson in unit.lessons)
         for (final activity in lesson.activities)
@@ -30,7 +42,10 @@ abstract final class PlacementItemSampler {
     ];
     if (candidates.isEmpty) return const [];
     candidates.shuffle(Random(seed));
-    return candidates.take(maxReceptiveItemsPerUnit).toList();
+    return candidates
+        .where((activity) => !exclude.contains(activity.id))
+        .take(limit)
+        .toList();
   }
 
   /// One `write`/`speak` item from [unit], for the productive
