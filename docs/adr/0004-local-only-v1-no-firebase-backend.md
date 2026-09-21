@@ -10,9 +10,11 @@ A new, much more detailed build specification for the app (provided this session
 
 This is a genuine, material architecture change — not a minor implementation detail — because it removes the concept of a `Learner` account entirely from v1 (no sign-up/sign-in flow, no Firebase Auth UID as identity), removes the Firestore-download step from the content flow, and means every repository in the app has no remote counterpart actually wired up, only an interface shaped to accept one later.
 
+_Note (2026-09-21): the curriculum-authoring package moved from `docs/a1-modular-course/` to `reference/a1-modular-course/` on 2026-09-19. The path below was corrected to match; the decision itself is unchanged._
+
 ## Decision
 
-For v1, Mohingo ships with **no backend of any kind**: no Firebase Auth, no Firestore, no Cloud Storage, no accounts, no sign-in, and no network call required for any learning feature. The learner is identified by a locally-generated stable UUID, not a Firebase Auth UID. Curriculum content ships as a bundled Flutter asset, copied from the curriculum-authoring package's build output (`docs/a1-modular-course/dist/a1-course-bundle.json`) rather than downloaded from Firestore/Cloud Storage. All progress is stored exclusively in the local Drift database.
+For v1, Mohingo ships with **no backend of any kind**: no Firebase Auth, no Firestore, no Cloud Storage, no accounts, no sign-in, and no network call required for any learning feature. The learner is identified by a locally-generated stable UUID, not a Firebase Auth UID. Curriculum content ships as a bundled Flutter asset, copied from the curriculum-authoring package's build output (`reference/a1-modular-course/dist/a1-course-bundle.json`) rather than downloaded from Firestore/Cloud Storage. All progress is stored exclusively in the local Drift database.
 
 Every progress-relevant repository interface is still designed as if a remote counterpart existed (each record carries an app-level `uuid`, `updatedAt`, and a `deletedAt` soft-delete marker — see [DATA_MODEL.md](../DATA_MODEL.md)), so that a future sync layer can be added as a new repository implementation plus a Riverpod provider-binding swap, without a domain-layer rewrite. This is the mechanism, not just an aspiration — it's what makes this ADR a *timeframe-scoped* supersession of ADR 0001 rather than a reversal of it.
 
