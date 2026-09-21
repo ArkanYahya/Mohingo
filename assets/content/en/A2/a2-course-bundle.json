@@ -3062,26 +3062,6 @@
       ]
     },
     {
-      "id": "A2.LEX.CONFIRM_V01",
-      "headword": "confirm",
-      "partOfSpeech": "verb",
-      "arabic": "يؤكد",
-      "cefr": "A2",
-      "receptive": true,
-      "productive": true,
-      "meaning": "confirm",
-      "examples": [
-        {
-          "en": "Please confirm the booking.",
-          "ar": "يرجى تأكيد الحجز."
-        }
-      ],
-      "introducedIn": "A2-U6-L5",
-      "recycledIn": [
-        "A2-U9-L5"
-      ]
-    },
-    {
       "id": "A2.LEX.SUITCASE_N01",
       "headword": "suitcase",
       "partOfSpeech": "noun",
@@ -7017,6 +6997,168 @@
       "recycledIn": [
         "A2-FINAL-MISSION"
       ]
+    },
+    {
+      "id": "A2.LEX.CABLE_N01",
+      "headword": "cable",
+      "partOfSpeech": "noun",
+      "arabic": "كابل",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "a covered wire that carries power or a signal between two machines",
+      "examples": [
+        {
+          "en": "Plug the cable in at the side and wait two minutes.",
+          "ar": "صِل الكابل من الجانب وانتظر دقيقتين."
+        }
+      ],
+      "introducedIn": "A2-U9-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.BATTERY_N01",
+      "headword": "battery",
+      "partOfSpeech": "noun",
+      "arabic": "بطارية",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "the part inside a device that stores the power it runs on",
+      "examples": [
+        {
+          "en": "The battery was flat, not the screen.",
+          "ar": "البطارية كانت فارغة، لا الشاشة."
+        }
+      ],
+      "introducedIn": "A2-U9-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.FOLDER_N01",
+      "headword": "folder",
+      "partOfSpeech": "noun",
+      "arabic": "مجلد",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "a place on a phone or a computer where files are kept together",
+      "examples": [
+        {
+          "en": "The form stays in your downloads folder.",
+          "ar": "تبقى الاستمارة في مجلد التنزيلات لديكَ."
+        }
+      ],
+      "introducedIn": "A2-U9-L2",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.OFFLINE_ADJ01",
+      "headword": "offline",
+      "partOfSpeech": "adjective",
+      "arabic": "غير متصل",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "not connected to a network, so it can neither send nor receive",
+      "examples": [
+        {
+          "en": "If a printer goes offline, it has lost the network.",
+          "ar": "إذا صارت الطابعة غير متصلة فهذا يعني أنها فقدت الشبكة."
+        }
+      ],
+      "introducedIn": "A2-U9-L3",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.UPLOAD_V01",
+      "headword": "upload",
+      "partOfSpeech": "verb",
+      "arabic": "يرفع",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "to put a file from your own device into a place online",
+      "examples": [
+        {
+          "en": "Somebody is uploading photographs into the class folder.",
+          "ar": "هناك من يرفع صوراً إلى مجلد الصف."
+        }
+      ],
+      "introducedIn": "A2-U9-L4",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.COPY_V01",
+      "headword": "copy",
+      "partOfSpeech": "verb",
+      "arabic": "ينسخ",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "to make a second version of something and leave the first one as it is",
+      "examples": [
+        {
+          "en": "Copy the link and send that instead.",
+          "ar": "انسخ الرابط وأرسله بدلاً من ذلك."
+        }
+      ],
+      "introducedIn": "A2-U9-L4",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.SCREENSHOT_N01",
+      "headword": "screenshot",
+      "partOfSpeech": "noun",
+      "arabic": "صورة للشاشة",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "a picture of what a screen is showing, taken by the device itself",
+      "examples": [
+        {
+          "en": "Shall I send you a screenshot of the message?",
+          "ar": "هل أرسل لكَ صورة للشاشة تُظهر الرسالة؟"
+        }
+      ],
+      "introducedIn": "A2-U9-L5",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.INSTALL_V01",
+      "headword": "install",
+      "partOfSpeech": "verb",
+      "arabic": "يثبّت",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "to put an app or a program onto a device so that it can be used",
+      "examples": [
+        {
+          "en": "Please do not install the app again before Thursday.",
+          "ar": "أرجو ألا تثبّت التطبيق من جديد قبل الخميس."
+        }
+      ],
+      "introducedIn": "A2-U9-L5",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.SHARE_V01",
+      "headword": "share",
+      "partOfSpeech": "verb",
+      "arabic": "يشارك",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "to let another person have or see something that is yours",
+      "examples": [
+        {
+          "en": "Never share your password with anyone.",
+          "ar": "لا تشارك كلمة مرورك مع أحد أبداً."
+        }
+      ],
+      "introducedIn": "A2-U9-L6",
+      "recycledIn": []
     }
   ],
   "chunks": [
@@ -7544,17 +7686,6 @@
       "arabic": "عندما تصل",
       "cefr": "A2",
       "introducedIn": "A2-U6-L5",
-      "productive": true,
-      "recycledIn": [
-        "A2-U9-L5"
-      ]
-    },
-    {
-      "id": "A2.CHUNK.RETURN_TICKET",
-      "text": "return ticket",
-      "arabic": "تذكرة ذهاب وعودة",
-      "cefr": "A2",
-      "introducedIn": "A2-U6-L3",
       "productive": true,
       "recycledIn": [
         "A2-U9-L5"
@@ -8522,6 +8653,42 @@
       "recycledIn": [
         "A2-FINAL-MISSION"
       ]
+    },
+    {
+      "id": "A2.CHUNK.SWITCH_IT_OFF_AND_ON",
+      "text": "switch it off and on again",
+      "arabic": "أطفئه ثم شغّله من جديد",
+      "cefr": "A2",
+      "introducedIn": "A2-U9-L3",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A2.CHUNK.WHAT_HAPPENS_WHEN",
+      "text": "What happens when ...?",
+      "arabic": "ماذا يحدث عندما ...؟",
+      "cefr": "A2",
+      "introducedIn": "A2-U9-L5",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A2.CHUNK.IVE_TRIED_THAT_ALREADY",
+      "text": "I've tried that already.",
+      "arabic": "جرّبتُ ذلك بالفعل.",
+      "cefr": "A2",
+      "introducedIn": "A2-U9-L5",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A2.CHUNK.NEVER_SHARE_YOUR_PASSWORD",
+      "text": "Never share your password.",
+      "arabic": "لا تشارك كلمة مرورك أبداً.",
+      "cefr": "A2",
+      "introducedIn": "A2-U9-L6",
+      "productive": true,
+      "recycledIn": []
     }
   ],
   "units": [
@@ -21374,36 +21541,59 @@
           "lessonType": "encounter-focus-practice",
           "canDo": [
             "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS",
+            "A2.U9.READING.FOLLOW_DIGITAL_GUIDE",
             "A2.U9.PRODUCTION.EXPLAIN_TECH_PROCEDURE"
           ],
           "grammar": [
             "A2.G.TECH_IMPERATIVES",
-            "A2.G.HAVE_TO_OBLIGATION",
             "A2.G.CAN_COULD_ABILITY"
           ],
           "lexicon": [
             "A2.LEX.SCREEN_N01",
             "A2.LEX.BUTTON_N01",
             "A2.LEX.CHARGE_V01",
-            "A2.LEX.DUTY_N01",
-            "A2.LEX.SHIFT_N01",
-            "A2.LEX.DEADLINE_N01",
-            "A2.LEX.SKILL_N01",
-            "A2.LEX.SPREADSHEET_N01",
-            "A2.LEX.OPERATE_V01"
+            "A2.LEX.CABLE_N01",
+            "A2.LEX.BATTERY_N01"
           ],
           "chunks": [
-            "A2.CHUNK.PRESS_AND_HOLD",
-            "A2.CHUNK.RESPONSIBLE_FOR",
-            "A2.CHUNK.WORK_A_SHIFT",
-            "A2.CHUNK.BE_ABLE_TO"
+            "A2.CHUNK.PRESS_AND_HOLD"
           ],
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "Press and hold the side button for three seconds. If the screen stays dark, connect the charger.",
-                "ar": "اضغط مطولاً على الزر الجانبي ثلاث ثوانٍ. إذا بقيت الشاشة مظلمة، صِل الشاحن."
+                "speaker": "Basma",
+                "en": "Put it on the desk and press the top button. Hold it down — don't just tap it.",
+                "ar": "ضعه على الطاولة واضغط الزر العلوي. أبقِ إصبعك عليه ولا تنقره نقرة سريعة."
+              },
+              {
+                "speaker": "Jamal",
+                "en": "I pressed it for a second and nothing happened. Is the screen broken?",
+                "ar": "ضغطتُه ثانية واحدة فلم يحدث شيء. هل الشاشة معطّلة؟"
+              },
+              {
+                "speaker": "Basma",
+                "en": "Press and hold it for five seconds. If it is only asleep, it wakes up.",
+                "ar": "اضغط عليه مطوّلاً خمس ثوانٍ. إذا كان نائماً فقط فإنه يستيقظ."
+              },
+              {
+                "speaker": "Jamal",
+                "en": "Still black. Can I charge it here, or should I take it home?",
+                "ar": "ما زالت سوداء. هل يمكنني شحنه هنا، أم آخذه إلى البيت؟"
+              },
+              {
+                "speaker": "Basma",
+                "en": "Charge it here. Plug the cable in at the side, then wait two minutes before you try again.",
+                "ar": "اشحنه هنا. صِل الكابل من الجانب، ثم انتظر دقيقتين قبل أن تحاول مرة أخرى."
+              },
+              {
+                "speaker": "Jamal",
+                "en": "There it is. So the battery was flat, not the screen.",
+                "ar": "ها هو قد عاد. إذن البطارية كانت فارغة، لا الشاشة."
+              },
+              {
+                "speaker": "Basma",
+                "en": "It usually is. Charge it overnight and it lasts all day.",
+                "ar": "غالباً ما تكون كذلك. اشحنه ليلاً فيدوم طوال النهار."
               }
             ]
           },
@@ -21415,65 +21605,62 @@
               "mode": "encounter",
               "skill": "listening",
               "canDo": [
-                "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS",
-                "A2.U9.PRODUCTION.EXPLAIN_TECH_PROCEDURE"
+                "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS"
               ],
-              "prompt": "What should happen first?",
-              "promptAr": "ما الذي ينبغي فعله أولاً؟",
+              "prompt": "Listen once. What are Basma and Jamal working out between them?",
+              "promptAr": "استمع مرة واحدة. ما الذي تحاول بسمة وجمال معرفته معاً؟",
               "options": [
-                "Press and hold the side button",
-                "Replace the screen",
-                "Open settings"
+                "Whether the tablet is broken or simply out of charge",
+                "Which tablet Jamal should borrow from the library",
+                "How to get the library's Wi-Fi onto the tablet"
               ],
-              "answer": "Press and hold the side button",
-              "audioTranscript": "Press and hold the side button for three seconds. If the screen stays dark, connect the charger."
+              "answer": "Whether the tablet is broken or simply out of charge",
+              "audioTranscript": "Put it on the desk and press the top button. Hold it down — don't just tap it. I pressed it for a second and nothing happened. Is the screen broken? Press and hold it for five seconds. If it is only asleep, it wakes up. Still black. Can I charge it here, or should I take it home? Charge it here. Plug the cable in at the side, then wait two minutes before you try again. There it is. So the battery was flat, not the screen. It usually is. Charge it overnight and it lasts all day."
             },
             {
               "id": "A2-U9-L1-A02",
-              "lessonId": "A2-U9-L1",
-              "type": "match",
-              "mode": "practice",
-              "skill": "reading",
-              "canDo": [
-                "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS",
-                "A2.U9.PRODUCTION.EXPLAIN_TECH_PROCEDURE"
-              ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "screen",
-                  "شاشة"
-                ],
-                [
-                  "button",
-                  "زر"
-                ],
-                [
-                  "charge",
-                  "يشحن"
-                ]
-              ]
-            },
-            {
-              "id": "A2-U9-L1-A03",
               "lessonId": "A2-U9-L1",
               "type": "gap",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS",
-                "A2.U9.PRODUCTION.EXPLAIN_TECH_PROCEDURE"
+                "A2.U9.READING.FOLLOW_DIGITAL_GUIDE"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "___ the phone before you leave.",
+              "prompt": "This line tells somebody what to do; it does not describe what happens. Choose the form that fits.",
+              "promptAr": "هذا السطر يأمر بفعل شيء ولا يصف ما يحدث. اختر الصيغة المناسبة.",
+              "text": "The screen is still dark, so ___ the cable in and wait two minutes.",
               "options": [
-                "Charge",
-                "Charges",
-                "Charged"
+                "plug",
+                "plugs",
+                "plugging"
               ],
-              "answer": "Charge"
+              "answer": "plug"
+            },
+            {
+              "id": "A2-U9-L1-A03",
+              "lessonId": "A2-U9-L1",
+              "type": "match",
+              "mode": "practice",
+              "skill": "reading",
+              "canDo": [
+                "A2.U9.READING.FOLLOW_DIGITAL_GUIDE"
+              ],
+              "prompt": "Match each problem with the instruction that answers it.",
+              "promptAr": "طابق كل مشكلة بالتعليمة التي تعالجها.",
+              "pairs": [
+                [
+                  "The screen stays black even after a long wait,",
+                  "so plug the cable in and leave it a few minutes."
+                ],
+                [
+                  "The tablet is only asleep,",
+                  "so press and hold the top button for five seconds."
+                ],
+                [
+                  "The battery is flat by lunchtime every day,",
+                  "so charge it overnight instead of in the morning."
+                ]
+              ]
             },
             {
               "id": "A2-U9-L1-A04",
@@ -21482,18 +21669,17 @@
               "mode": "mastery",
               "skill": "listening",
               "canDo": [
-                "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS",
-                "A2.U9.PRODUCTION.EXPLAIN_TECH_PROCEDURE"
+                "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS"
               ],
-              "prompt": "Which button ends the call?",
-              "promptAr": "أي زر ينهي المكالمة؟",
+              "prompt": "Listen to Basma's message. What should Jamal do when the tablet will not wake up?",
+              "promptAr": "استمع إلى رسالة بسمة. ماذا ينبغي أن يفعل جمال عندما لا يستيقظ اللوح؟",
               "options": [
-                "The red button",
-                "The green button",
-                "The side button"
+                "Hold the top button down until something appears",
+                "Push the small hole at the back with a pin",
+                "Change the cable in the box for a different one"
               ],
-              "answer": "The red button",
-              "audioTranscript": "Tap the green button to answer. To end the call, tap the red button once."
+              "answer": "Hold the top button down until something appears",
+              "audioTranscript": "Hello Jamal, it is Basma at the library. About the tablet you took home: the cable in the box belongs to a different machine, so please don't use it. Bring the tablet back to the desk tomorrow and I will give you the right one. Until then, charge it from your computer instead. And one more thing, because everybody does this. There is a small hole at the back. Don't push anything into it. People try that when the tablet will not wake up, and then the tablet forgets everything on it. Hold the top button down instead, and wait."
             },
             {
               "id": "A2-U9-L1-A05",
@@ -21502,19 +21688,50 @@
               "mode": "mastery",
               "skill": "spokenProduction",
               "canDo": [
-                "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS",
                 "A2.U9.PRODUCTION.EXPLAIN_TECH_PROCEDURE"
               ],
-              "prompt": "Give three clear instructions for switching on and charging a device.",
-              "promptAr": "قدّم ثلاث تعليمات واضحة لتشغيل جهاز وشحنه.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "A neighbour's phone will not switch on and he has rung you. Give him three instructions in the order he should try them, and say what to do if the screen is still dark after all three.",
+              "promptAr": "هاتف جاركَ لا يعمل وقد اتصل بكَ. أعطه ثلاث تعليمات بالترتيب الذي ينبغي أن يجرّبها به، وقل له ماذا يفعل إذا بقيت الشاشة مظلمة بعدها جميعاً.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "press and hold",
+                    "hold it down",
+                    "hold the button",
+                    "press the",
+                    "push the",
+                    "tap the",
+                    "don't tap"
+                  ],
+                  [
+                    "charge",
+                    "charger",
+                    "cable",
+                    "plug",
+                    "battery",
+                    "flat",
+                    "empty",
+                    "power"
+                  ],
+                  [
+                    "if it",
+                    "if the screen",
+                    "if nothing",
+                    "still dark",
+                    "still black",
+                    "doesn't work",
+                    "does not work",
+                    "bring it",
+                    "take it to"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             }
           ]
         },
@@ -21525,26 +21742,65 @@
           "lessonType": "encounter-focus-practice",
           "canDo": [
             "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS",
-            "A2.U9.PRODUCTION.EXPLAIN_TECH_PROCEDURE"
+            "A2.U9.READING.FOLLOW_DIGITAL_GUIDE",
+            "A2.U9.INTERACTION.SOLVE_TECH_PROBLEM"
           ],
           "grammar": [
-            "A2.G.SEQUENCING_ADVERBS"
+            "A2.G.SEQUENCING_ADVERBS",
+            "A2.G.TECH_IMPERATIVES"
           ],
           "lexicon": [
             "A2.LEX.SETTINGS_N01",
             "A2.LEX.CONNECT_V01",
-            "A2.LEX.DOWNLOAD_V01"
+            "A2.LEX.DOWNLOAD_V01",
+            "A2.LEX.FOLDER_N01"
           ],
           "chunks": [
             "A2.CHUNK.GO_TO_SETTINGS",
-            "A2.CHUNK.CONNECT_TO_WIFI"
+            "A2.CHUNK.CONNECT_TO_WIFI",
+            "A2.CHUNK.FIRST_THEN_FINALLY"
           ],
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "First go to settings. Next choose Wi-Fi and select the library network. Then enter the code and finally download the file.",
-                "ar": "اذهب أولاً إلى الإعدادات. بعد ذلك اختر الواي فاي وحدد شبكة المكتبة. ثم أدخل الرمز وأخيراً نزّل الملف."
+                "speaker": "Nizar",
+                "en": "The nurse says I can fill the form in on my phone. How do I connect to the Wi-Fi here?",
+                "ar": "تقول الممرضة إن بإمكاني تعبئة الاستمارة على هاتفي. كيف أتصل بشبكة الواي فاي هنا؟"
+              },
+              {
+                "speaker": "Salwa",
+                "en": "First go to settings and turn Wi-Fi on. Next choose 'Clinic Guest' from the list.",
+                "ar": "اذهب أولاً إلى الإعدادات وشغّل الواي فاي، ثم اختر «ضيف العيادة» من القائمة."
+              },
+              {
+                "speaker": "Nizar",
+                "en": "It is asking me for a code.",
+                "ar": "إنه يطلب منّي رمزاً."
+              },
+              {
+                "speaker": "Salwa",
+                "en": "It is on the card by the door. Then open the message I sent you and tap the blue link.",
+                "ar": "الرمز مكتوب على البطاقة المعلّقة بجانب الباب. بعد ذلك افتح الرسالة التي أرسلتها إليكَ وانقر الرابط الأزرق."
+              },
+              {
+                "speaker": "Nizar",
+                "en": "Done. It says I am connected.",
+                "ar": "تمّ. يقول إنني متصل."
+              },
+              {
+                "speaker": "Salwa",
+                "en": "Finally, choose 'download'. The form opens by itself, and it stays in your downloads folder.",
+                "ar": "وأخيراً اختر «تنزيل». تُفتح الاستمارة وحدها، وتبقى في مجلد التنزيلات لديكَ."
+              },
+              {
+                "speaker": "Nizar",
+                "en": "And if it does not open?",
+                "ar": "وإذا لم تُفتح؟"
+              },
+              {
+                "speaker": "Salwa",
+                "en": "Look in that folder. It is usually sitting there, waiting for you.",
+                "ar": "ابحث في ذلك المجلد. عادةً ما تكون موجودة هناك في انتظاركَ."
               }
             ]
           },
@@ -21556,45 +21812,36 @@
               "mode": "encounter",
               "skill": "listening",
               "canDo": [
-                "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS",
-                "A2.U9.PRODUCTION.EXPLAIN_TECH_PROCEDURE"
+                "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS"
               ],
-              "prompt": "What happens immediately before downloading?",
-              "promptAr": "ماذا يحدث مباشرة قبل التنزيل؟",
+              "prompt": "Listen once. What is Salwa walking Nizar through?",
+              "promptAr": "استمع مرة واحدة. ما الذي ترشد سلوى نزاراً إليه؟",
               "options": [
-                "Enter the code",
-                "Open the library",
-                "Restart the phone"
+                "Getting onto the clinic's network and opening a form",
+                "Booking a different appointment for next week",
+                "Sending a photograph of his card to the nurse"
               ],
-              "answer": "Enter the code",
-              "audioTranscript": "First go to settings. Next choose Wi-Fi and select the library network. Then enter the code and finally download the file."
+              "answer": "Getting onto the clinic's network and opening a form",
+              "audioTranscript": "The nurse says I can fill the form in on my phone. How do I connect to the Wi-Fi here? First go to settings and turn Wi-Fi on. Next choose 'Clinic Guest' from the list. It is asking me for a code. It is on the card by the door. Then open the message I sent you and tap the blue link. Done. It says I am connected. Finally, choose 'download'. The form opens by itself, and it stays in your downloads folder. And if it does not open? Look in that folder. It is usually sitting there, waiting for you."
             },
             {
               "id": "A2-U9-L2-A02",
               "lessonId": "A2-U9-L2",
-              "type": "match",
+              "type": "gap",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS",
-                "A2.U9.PRODUCTION.EXPLAIN_TECH_PROCEDURE"
+                "A2.U9.READING.FOLLOW_DIGITAL_GUIDE"
               ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "settings",
-                  "إعدادات"
-                ],
-                [
-                  "connect",
-                  "يتصل"
-                ],
-                [
-                  "download",
-                  "ينزّل"
-                ]
-              ]
+              "prompt": "Three steps, and this one is the last. Choose the word that says so.",
+              "promptAr": "ثلاث خطوات، وهذه آخرها. اختر الكلمة التي تدل على ذلك.",
+              "text": "First open the message, next tap the link, and ___ choose 'download'.",
+              "options": [
+                "finally",
+                "first",
+                "next"
+              ],
+              "answer": "finally"
             },
             {
               "id": "A2-U9-L2-A03",
@@ -21603,22 +21850,25 @@
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS",
-                "A2.U9.PRODUCTION.EXPLAIN_TECH_PROCEDURE"
+                "A2.U9.READING.FOLLOW_DIGITAL_GUIDE"
               ],
-              "prompt": "Put the language in the best order.",
-              "promptAr": "رتب اللغة بالترتيب الأفضل.",
+              "prompt": "Put Salwa's first two steps back into the order she gave them.",
+              "promptAr": "أعد ترتيب أولى خطوتين ذكرتهما سلوى كما قالتهما.",
               "tokens": [
-                "choose Wi-Fi.",
-                "Next,",
-                "settings",
-                "open"
+                "enter the code.",
+                "First,",
+                "turn Wi-Fi on.",
+                "Then",
+                "choose the network",
+                "and"
               ],
               "answer": [
-                "Next,",
-                "open",
-                "settings",
-                "choose Wi-Fi."
+                "First,",
+                "turn Wi-Fi on.",
+                "Then",
+                "choose the network",
+                "and",
+                "enter the code."
               ]
             },
             {
@@ -21628,39 +21878,71 @@
               "mode": "mastery",
               "skill": "listening",
               "canDo": [
-                "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS",
-                "A2.U9.PRODUCTION.EXPLAIN_TECH_PROCEDURE"
+                "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS"
               ],
-              "prompt": "Where should the file appear?",
-              "promptAr": "أين ينبغي أن يظهر الملف؟",
+              "prompt": "Listen to Rida's message from the college office. What should the student sign in with?",
+              "promptAr": "استمع إلى رسالة رضا من مكتب الكلية. بأي شيء ينبغي أن تسجّل الطالبة دخولها؟",
               "options": [
-                "The downloads folder",
-                "The settings page",
-                "The camera"
+                "The number printed on her student card",
+                "The email address she gave the office",
+                "The name of the course she is taking"
               ],
-              "answer": "The downloads folder",
-              "audioTranscript": "Open the message, tap the document name and choose ‘save’. Finally, check the downloads folder."
+              "answer": "The number printed on her student card",
+              "audioTranscript": "Hello, this is Rida from the college office. You asked me how to get the reading list. First, sign in to the student page with the number printed on your card, not with your email address. Next, open 'My Courses' and choose the right course. Then you will see a grey button that says 'Files'. Tap it, and the reading list is the first thing in the folder. Finally, choose 'download', so that you still have the list when you are nowhere near the college. If the grey button does nothing at all, the page has not finished loading. Wait a moment and tap it again."
             },
             {
               "id": "A2-U9-L2-A05",
               "lessonId": "A2-U9-L2",
               "type": "speak",
               "mode": "mastery",
-              "skill": "spokenProduction",
+              "skill": "spokenInteraction",
               "canDo": [
-                "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS",
-                "A2.U9.PRODUCTION.EXPLAIN_TECH_PROCEDURE"
+                "A2.U9.INTERACTION.SOLVE_TECH_PROBLEM"
               ],
-              "prompt": "Explain a four-step connection or download procedure in order.",
-              "promptAr": "اشرح إجراء اتصال أو تنزيل من أربع خطوات مرتبة.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
+              "prompt": "A cousin rings you from a clinic waiting room. Talk her through getting onto the network and opening the form, one step at a time, and answer what she asks you.",
+              "promptAr": "تتصل بكَ ابنة عمّكَ من قاعة انتظار في عيادة. أرشدها إلى الاتصال بالشبكة وفتح الاستمارة خطوة خطوة، وأجب عمّا تسألكَ عنه.",
+              "partnerTurns": [
+                "They have told me to fill the form in on my phone, and I don't know where to start.",
+                "All right, Wi-Fi is on. There is a long list of names here, and now it is asking me for something.",
+                "It says I am connected. So where is this form, and what do I do with it?"
               ],
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "first",
+                    "next",
+                    "then",
+                    "finally",
+                    "after that",
+                    "now",
+                    "the last"
+                  ],
+                  [
+                    "settings",
+                    "wi-fi",
+                    "the network",
+                    "the list",
+                    "the code",
+                    "the card",
+                    "connect"
+                  ],
+                  [
+                    "download",
+                    "the link",
+                    "the message",
+                    "the form",
+                    "the folder",
+                    "open it",
+                    "tap it"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             }
           ]
         },
@@ -21670,37 +21952,60 @@
           "titleAr": "إذا لم يعمل",
           "lessonType": "encounter-focus-practice",
           "canDo": [
+            "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS",
             "A2.U9.READING.FOLLOW_DIGITAL_GUIDE",
-            "A2.U9.MEDIATION.RELAY_DIGITAL_INSTRUCTIONS"
+            "A2.U9.PRODUCTION.EXPLAIN_TECH_PROCEDURE"
           ],
           "grammar": [
             "A2.G.ZERO_CONDITIONAL_PROCEDURE",
-            "A2.G.MUST_WARNING",
-            "A2.G.INFINITIVE_PURPOSE"
+            "A2.G.TECH_IMPERATIVES"
           ],
           "lexicon": [
             "A2.LEX.PASSWORD_N01",
             "A2.LEX.NETWORK_N01",
             "A2.LEX.RESTART_V01",
-            "A2.LEX.ALLERGY_N01",
-            "A2.LEX.WARNING_N01",
-            "A2.LEX.DIZZY_ADJ01",
-            "A2.LEX.HYDRATED_ADJ01",
-            "A2.LEX.STRETCH_V01",
-            "A2.LEX.AVOID_V01"
+            "A2.LEX.OFFLINE_ADJ01"
           ],
           "chunks": [
             "A2.CHUNK.IF_DOES_NOT_WORK",
-            "A2.CHUNK.MUST_NOT_DRIVE",
-            "A2.CHUNK.IN_ORDER_TO",
-            "A2.CHUNK.HOW_LONG_HAVE_HAD"
+            "A2.CHUNK.SWITCH_IT_OFF_AND_ON"
           ],
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "If the network name does not appear, switch Wi-Fi off and on. If the password is rejected, check capital letters. If nothing changes, restart the phone.",
-                "ar": ""
+                "speaker": "Rawan",
+                "en": "If the light is orange, the printer is only thinking. Give it a minute.",
+                "ar": "إذا كان الضوء برتقالياً فالطابعة تفكّر فقط. امنحها دقيقة."
+              },
+              {
+                "speaker": "Tamer",
+                "en": "It has been orange since I arrived, and nothing comes out.",
+                "ar": "إنه برتقالي منذ أن وصلت، ولا يخرج شيء."
+              },
+              {
+                "speaker": "Rawan",
+                "en": "Then read the small screen. If it says 'no paper', the bottom tray is empty.",
+                "ar": "إذن اقرأ الشاشة الصغيرة. إذا كُتب فيها «لا يوجد ورق» فالدرج السفلي فارغ."
+              },
+              {
+                "speaker": "Tamer",
+                "en": "It says 'offline'.",
+                "ar": "مكتوب فيها «غير متصل»."
+              },
+              {
+                "speaker": "Rawan",
+                "en": "That one is easy. If a printer goes offline, it has lost the network. Restart it: switch it off, count to ten, and switch it on again.",
+                "ar": "هذه سهلة. إذا صارت الطابعة غير متصلة فهذا يعني أنها فقدت الشبكة. أعِد تشغيلها: أطفئها، وعُدّ إلى عشرة، ثم شغّلها من جديد."
+              },
+              {
+                "speaker": "Tamer",
+                "en": "And if the light turns red?",
+                "ar": "وإذا تحوّل الضوء إلى الأحمر؟"
+              },
+              {
+                "speaker": "Rawan",
+                "en": "If it turns red, do not open anything. You press the red button twice and it starts again. If that does not work, we ring the shop.",
+                "ar": "إذا تحوّل إلى الأحمر فلا تفتح أي غطاء. تضغط الزر الأحمر مرتين فتبدأ من جديد. وإذا لم ينفع ذلك فنتصل بالمحل."
               }
             ]
           },
@@ -21708,110 +22013,127 @@
             {
               "id": "A2-U9-L3-A01",
               "lessonId": "A2-U9-L3",
-              "type": "textChoice",
+              "type": "audioChoice",
               "mode": "encounter",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U9.READING.FOLLOW_DIGITAL_GUIDE",
-                "A2.U9.MEDIATION.RELAY_DIGITAL_INSTRUCTIONS"
+                "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS"
               ],
-              "prompt": "What should you check after a password rejection?",
-              "promptAr": "ماذا ينبغي أن تتحقق منه بعد رفض كلمة المرور؟",
+              "prompt": "Listen once. What is Rawan teaching Tamer?",
+              "promptAr": "استمع مرة واحدة. ما الذي تعلّمه روان لتامر؟",
               "options": [
-                "Capital letters",
-                "The battery colour",
-                "The camera"
+                "What each light and message on the printer means, and what to do about it",
+                "Why the office should buy a newer printer this year",
+                "How to order more paper before the office runs out"
               ],
-              "answer": "Capital letters",
-              "sourceText": "If the network name does not appear, switch Wi-Fi off and on. If the password is rejected, check capital letters. If nothing changes, restart the phone."
+              "answer": "What each light and message on the printer means, and what to do about it",
+              "audioTranscript": "If the light is orange, the printer is only thinking. Give it a minute. It has been orange since I arrived, and nothing comes out. Then read the small screen. If it says 'no paper', the bottom tray is empty. It says 'offline'. That one is easy. If a printer goes offline, it has lost the network. Restart it: switch it off, count to ten, and switch it on again. And if the light turns red? If it turns red, do not open anything. You press the red button twice and it starts again. If that does not work, we ring the shop."
             },
             {
               "id": "A2-U9-L3-A02",
-              "lessonId": "A2-U9-L3",
-              "type": "match",
-              "mode": "practice",
-              "skill": "reading",
-              "canDo": [
-                "A2.U9.READING.FOLLOW_DIGITAL_GUIDE",
-                "A2.U9.MEDIATION.RELAY_DIGITAL_INSTRUCTIONS"
-              ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "password",
-                  "كلمة مرور"
-                ],
-                [
-                  "network",
-                  "شبكة"
-                ],
-                [
-                  "restart",
-                  "يعيد التشغيل"
-                ]
-              ]
-            },
-            {
-              "id": "A2-U9-L3-A03",
               "lessonId": "A2-U9-L3",
               "type": "gap",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U9.READING.FOLLOW_DIGITAL_GUIDE",
-                "A2.U9.MEDIATION.RELAY_DIGITAL_INSTRUCTIONS"
+                "A2.U9.READING.FOLLOW_DIGITAL_GUIDE"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "If the app stops, ___ the device.",
+              "prompt": "This is what always happens, not a plan for one afternoon. Choose the form that fits.",
+              "promptAr": "هذا ما يحدث دائماً، لا خطة لبعد ظهر يوم بعينه. اختر الصيغة المناسبة.",
+              "text": "If the light ___ red, the printer stops and waits for you.",
               "options": [
-                "restart",
-                "restarted",
-                "restarting"
+                "turns",
+                "will turn",
+                "turned"
               ],
-              "answer": "restart"
+              "answer": "turns"
+            },
+            {
+              "id": "A2-U9-L3-A03",
+              "lessonId": "A2-U9-L3",
+              "type": "textChoice",
+              "mode": "practice",
+              "skill": "reading",
+              "canDo": [
+                "A2.U9.READING.FOLLOW_DIGITAL_GUIDE"
+              ],
+              "prompt": "Read the card taped inside meeting room two. What does it say about the sound?",
+              "promptAr": "اقرأ البطاقة الملصقة داخل قاعة الاجتماعات الثانية. ماذا تقول عن الصوت؟",
+              "options": [
+                "The cable is in the wrong socket",
+                "The laptop has not finished starting",
+                "Somebody has changed a setting"
+              ],
+              "answer": "The cable is in the wrong socket",
+              "sourceText": "Meeting room two, please read before you start. If the screen shows a blue box, the laptop is still starting; give it a minute. If the sound does not work, the cable is in the wrong socket at the back. If you change any setting, put it back before you leave the room."
             },
             {
               "id": "A2-U9-L3-A04",
               "lessonId": "A2-U9-L3",
-              "type": "textChoice",
+              "type": "audioChoice",
               "mode": "mastery",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U9.READING.FOLLOW_DIGITAL_GUIDE",
-                "A2.U9.MEDIATION.RELAY_DIGITAL_INSTRUCTIONS"
+                "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS"
               ],
-              "prompt": "What should happen if the red light continues?",
-              "promptAr": "ماذا ينبغي فعله إذا استمر الضوء الأحمر؟",
+              "prompt": "Listen to Hazem's message. What should his aunt do if the picture stops but the sound carries on?",
+              "promptAr": "استمع إلى رسالة حازم. ماذا ينبغي أن تفعل خالته إذا توقفت الصورة واستمر الصوت؟",
               "options": [
-                "Restart the printer after ten seconds",
-                "Add more ink immediately",
-                "Open a website"
+                "Press the round button on the small remote",
+                "Pull the cable out of the wall and count to ten",
+                "Type in the password from the book by the phone"
               ],
-              "answer": "Restart the printer after ten seconds",
-              "sourceText": "If the printer has no paper, add paper. If the red light continues, turn the printer off for ten seconds and start it again."
+              "answer": "Press the round button on the small remote",
+              "audioTranscript": "Auntie, it is Hazem. I am sorry I could not come on Friday, so here is what I do when the television box stops. If the picture stops but the sound carries on, nothing is broken: press the round button on the small remote and the picture catches up. If both of them stop, restart the box. Pull the cable out of the wall, count to ten, and put it back in. If it asks for the password after that, the password is written inside the cover of the book by the phone. If none of that works, leave it and I will look on Friday."
             },
             {
               "id": "A2-U9-L3-A05",
               "lessonId": "A2-U9-L3",
               "type": "speak",
               "mode": "mastery",
-              "skill": "mediation",
+              "skill": "spokenProduction",
               "canDo": [
-                "A2.U9.READING.FOLLOW_DIGITAL_GUIDE",
-                "A2.U9.MEDIATION.RELAY_DIGITAL_INSTRUCTIONS"
+                "A2.U9.PRODUCTION.EXPLAIN_TECH_PROCEDURE"
               ],
-              "prompt": "Relay a short troubleshooting decision path without changing the order or conditions.",
-              "promptAr": "انقل مساراً قصيراً لاستكشاف المشكلة من دون تغيير ترتيب الخطوات أو شروطها.",
-              "evaluation": [
-                "selectRelevantInformation",
-                "clarity",
-                "audienceAwareness",
-                "accuracy"
-              ],
+              "prompt": "A friend's laptop will not reach her home network. Say what she should check, in the order you would check it yourself, and start each step with 'if'.",
+              "promptAr": "حاسوب صديقتكَ لا يصل إلى شبكة بيتها. قل ما الذي ينبغي أن تتحقق منه، بالترتيب الذي كنتَ ستتبعه بنفسكَ، وابدأ كل خطوة بـ if.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "if the",
+                    "if it",
+                    "if you",
+                    "if there",
+                    "if nothing",
+                    "if that"
+                  ],
+                  [
+                    "restart",
+                    "switch it off",
+                    "turn it off",
+                    "off and on",
+                    "again",
+                    "count to ten",
+                    "wait"
+                  ],
+                  [
+                    "network",
+                    "wi-fi",
+                    "password",
+                    "offline",
+                    "the cable",
+                    "settings",
+                    "the list",
+                    "the box"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             }
           ]
         },
@@ -21821,16 +22143,20 @@
           "titleAr": "شارك المعلومات عبر الإنترنت",
           "lessonType": "encounter-focus-practice",
           "canDo": [
+            "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS",
             "A2.U9.READING.FOLLOW_DIGITAL_GUIDE",
-            "A2.U9.INTERACTION.SOLVE_TECH_PROBLEM"
+            "A2.U9.WRITING.WRITE_HELP_GUIDE"
           ],
           "grammar": [
-            "A2.G.PRONOUN_REFERENCE"
+            "A2.G.PRONOUN_REFERENCE",
+            "A2.G.SEQUENCING_ADVERBS"
           ],
           "lexicon": [
             "A2.LEX.LINK_N01",
             "A2.LEX.ATTACH_V01",
-            "A2.LEX.ACCOUNT_N01"
+            "A2.LEX.ACCOUNT_N01",
+            "A2.LEX.UPLOAD_V01",
+            "A2.LEX.COPY_V01"
           ],
           "chunks": [
             "A2.CHUNK.SIGN_IN_TO",
@@ -21839,9 +22165,44 @@
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "Sign in to your account and open the group page. Copy the meeting link and send it to Salma. Attach the agenda too, because she needs it before the call.",
-                "ar": ""
+                "speaker": "Dina",
+                "en": "Ghassan, the letter for the parents — have you finished it?",
+                "ar": "غسّان، رسالة أولياء الأمور، هل أنهيتها؟"
+              },
+              {
+                "speaker": "Ghassan",
+                "en": "It is in the shared folder. I put it there this morning.",
+                "ar": "إنها في المجلد المشترك. وضعتها هناك هذا الصباح."
+              },
+              {
+                "speaker": "Dina",
+                "en": "I can see two letters. Which one do I send?",
+                "ar": "أرى رسالتين. أيّهما أُرسل؟"
+              },
+              {
+                "speaker": "Ghassan",
+                "en": "The one with today's date. Open that, and leave the other; it is last year's.",
+                "ar": "تلك التي تحمل تاريخ اليوم. افتحي تلك واتركي الأخرى، فهي رسالة العام الماضي."
+              },
+              {
+                "speaker": "Dina",
+                "en": "And the photographs from the trip — where are they?",
+                "ar": "وصور الرحلة، أين هي؟"
+              },
+              {
+                "speaker": "Ghassan",
+                "en": "They are in the same folder. Do not send them as an attachment; the message becomes too heavy. Copy the link and send that instead.",
+                "ar": "هي في المجلد نفسه. لا ترسليها كمرفق، فالرسالة تصبح ثقيلة جداً. انسخي الرابط وأرسليه بدلاً منها."
+              },
+              {
+                "speaker": "Dina",
+                "en": "So the letter is attached to the message, and the photographs stay behind the link.",
+                "ar": "إذن الخطاب يُرفق بالرسالة، والصور تبقى خلف الرابط."
+              },
+              {
+                "speaker": "Ghassan",
+                "en": "Exactly. That is the safe way round.",
+                "ar": "بالضبط. هذه هي الطريقة الآمنة."
               }
             ]
           },
@@ -21849,22 +22210,21 @@
             {
               "id": "A2-U9-L4-A01",
               "lessonId": "A2-U9-L4",
-              "type": "textChoice",
+              "type": "audioChoice",
               "mode": "encounter",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U9.READING.FOLLOW_DIGITAL_GUIDE",
-                "A2.U9.INTERACTION.SOLVE_TECH_PROBLEM"
+                "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS"
               ],
-              "prompt": "What does ‘it’ refer to?",
-              "promptAr": "إلى ماذا يعود الضمير it؟",
+              "prompt": "Listen once. What are Dina and Ghassan sorting out?",
+              "promptAr": "استمع مرة واحدة. ما الذي ترتّبه دينا وغسّان؟",
               "options": [
-                "The agenda",
-                "The account",
-                "The call"
+                "How to send one document and a set of photographs",
+                "Whether the school trip should be cancelled",
+                "Who is going to write the letter for the parents"
               ],
-              "answer": "The agenda",
-              "sourceText": "Sign in to your account and open the group page. Copy the meeting link and send it to Salma. Attach the agenda too, because she needs it before the call."
+              "answer": "How to send one document and a set of photographs",
+              "audioTranscript": "Ghassan, the letter for the parents — have you finished it? It is in the shared folder. I put it there this morning. I can see two letters. Which one do I send? The one with today's date. Open that, and leave the other; it is last year's. And the photographs from the trip — where are they? They are in the same folder. Do not send them as an attachment; the message becomes too heavy. Copy the link and send that instead. So the letter is attached to the message, and the photographs stay behind the link. Exactly. That is the safe way round."
             },
             {
               "id": "A2-U9-L4-A02",
@@ -21873,45 +22233,43 @@
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U9.READING.FOLLOW_DIGITAL_GUIDE",
-                "A2.U9.INTERACTION.SOLVE_TECH_PROBLEM"
+                "A2.U9.READING.FOLLOW_DIGITAL_GUIDE"
               ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
+              "prompt": "Each line comes from a message about the shared folder. Match the word in quotation marks to the thing it points back to.",
+              "promptAr": "كل سطر مأخوذ من رسالة عن المجلد المشترك. طابق الكلمة الموضوعة بين علامتي تنصيص بما تعود إليه.",
               "pairs": [
                 [
-                  "link",
-                  "رابط"
+                  "Open the letter and print 'it' before the meeting starts.",
+                  "the letter"
                 ],
                 [
-                  "attach",
-                  "يرفق"
+                  "The photographs are large, so do not send 'them' by email.",
+                  "the photographs"
                 ],
                 [
-                  "account",
-                  "حساب"
+                  "We moved the trip to Thursday, and 'that' surprised the parents.",
+                  "moving the trip to Thursday"
                 ]
               ]
             },
             {
               "id": "A2-U9-L4-A03",
               "lessonId": "A2-U9-L4",
-              "type": "gap",
+              "type": "audioChoice",
               "mode": "practice",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U9.READING.FOLLOW_DIGITAL_GUIDE",
-                "A2.U9.INTERACTION.SOLVE_TECH_PROBLEM"
+                "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "Open the file and attach ___ to the message.",
+              "prompt": "Listen to Warda's message from the school office. What is she asking people to stop doing?",
+              "promptAr": "استمع إلى رسالة وردة من مكتب المدرسة. ما الذي تطلب من الناس التوقف عنه؟",
               "options": [
-                "it",
-                "them",
-                "this files"
+                "Putting photographs into the class-list folder",
+                "Sending the class list out by email",
+                "Signing in on the computers in the office"
               ],
-              "answer": "it"
+              "answer": "Putting photographs into the class-list folder",
+              "audioTranscript": "Hello everyone, it is Warda in the office. Two small things this week. The new class list is in the shared folder; please look at it today and tell me straight away if a name is missing. The second thing is this. Somebody is uploading photographs into the same folder from a personal account, and I would rather they did not. Put them in the 'Trips' folder instead, then copy the link into your message. That keeps the class list where people can find it. If you cannot open the folder at all, you are probably signed in to the wrong account."
             },
             {
               "id": "A2-U9-L4-A04",
@@ -21920,39 +22278,85 @@
               "mode": "mastery",
               "skill": "reading",
               "canDo": [
-                "A2.U9.READING.FOLLOW_DIGITAL_GUIDE",
-                "A2.U9.INTERACTION.SOLVE_TECH_PROBLEM"
+                "A2.U9.READING.FOLLOW_DIGITAL_GUIDE"
               ],
-              "prompt": "What does ‘them’ refer to?",
-              "promptAr": "إلى ماذا يعود الضمير them؟",
+              "prompt": "Read the message Dina finally sent. What does 'they' refer to?",
+              "promptAr": "اقرأ الرسالة التي أرسلتها دينا في النهاية. إلى ماذا تعود كلمة they؟",
               "options": [
-                "The photos",
-                "The team",
-                "The link"
+                "The photographs from last year",
+                "The parents who are reading the message",
+                "The pages at the end of the letter"
               ],
-              "answer": "The photos",
-              "sourceText": "The photos are in a shared folder. Select them, copy the link and send it to the team."
+              "answer": "The photographs from last year",
+              "sourceText": "Dear parents, the letter about the trip is attached to this message. Please read it and sign the last page. The photographs from last year are behind the link below; they are very large, so open them at home and not on a phone."
             },
             {
               "id": "A2-U9-L4-A05",
               "lessonId": "A2-U9-L4",
-              "type": "speak",
+              "type": "write",
               "mode": "mastery",
-              "skill": "spokenInteraction",
+              "skill": "writing",
               "canDo": [
-                "A2.U9.READING.FOLLOW_DIGITAL_GUIDE",
-                "A2.U9.INTERACTION.SOLVE_TECH_PROBLEM"
+                "A2.U9.WRITING.WRITE_HELP_GUIDE"
               ],
-              "prompt": "Explain how to share a link and an attachment, then check that the other person received them.",
-              "promptAr": "اشرح كيفية مشاركة رابط ومرفق ثم تحقق من استلام الشخص الآخر لهما.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "Your study group cannot find last week's notes. Write them a short message saying where everything is: send the notes with the message, put the photographs behind a link, and use 'it', 'them' and 'that' so that nobody has to guess what each step points to.",
+              "promptAr": "مجموعة دراستكَ لا تجد ملاحظات الأسبوع الماضي. اكتب لهم رسالة قصيرة توضح أين كل شيء: أرسل الملاحظات مع الرسالة، وضع الصور خلف رابط، واستخدم it وthem وthat حتى لا يضطر أحد إلى التخمين.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "send it",
+                    "open it",
+                    "read it",
+                    "copy it",
+                    "attach it",
+                    "print it",
+                    "send them",
+                    "open them",
+                    "download them",
+                    "that one",
+                    "this one",
+                    "they are",
+                    "it is in"
+                  ],
+                  [
+                    "folder",
+                    "shared folder",
+                    "link",
+                    "attachment",
+                    "attached",
+                    "attach",
+                    "message",
+                    "file",
+                    "files",
+                    "account"
+                  ],
+                  [
+                    "notes",
+                    "photographs",
+                    "photos",
+                    "pictures",
+                    "document",
+                    "the list"
+                  ],
+                  [
+                    "first",
+                    "next",
+                    "then",
+                    "finally",
+                    "after that",
+                    "because",
+                    "so that"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "wordGuide": [
+                75,
+                100
+              ]
             }
           ]
         },
@@ -21963,35 +22367,67 @@
           "lessonType": "encounter-focus-practice",
           "canDo": [
             "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS",
+            "A2.U9.READING.FOLLOW_DIGITAL_GUIDE",
             "A2.U9.INTERACTION.SOLVE_TECH_PROBLEM"
           ],
           "grammar": [
             "A2.G.TECH_QUESTIONS",
-            "A2.G.FIRST_CONDITIONAL",
-            "A2.G.FUTURE_TIME_CLAUSE"
+            "A2.G.PRESENT_PERFECT_EXPERIENCE",
+            "A2.G.FIRST_CONDITIONAL"
           ],
           "lexicon": [
             "A2.LEX.ERROR_N01",
             "A2.LEX.FREEZE_V01",
             "A2.LEX.SOLUTION_N01",
-            "A2.LEX.ARRIVAL_N01",
-            "A2.LEX.TRANSFER_N01",
-            "A2.LEX.CONFIRM_V01",
-            "A2.LEX.SUITCASE_N01",
-            "A2.LEX.ACCOMMODATION_N01",
-            "A2.LEX.SCHEDULE_N01"
+            "A2.LEX.SCREENSHOT_N01",
+            "A2.LEX.INSTALL_V01"
           ],
           "chunks": [
             "A2.CHUNK.WHAT_ERROR_MESSAGE",
-            "A2.CHUNK.WHEN_YOU_ARRIVE",
-            "A2.CHUNK.RETURN_TICKET"
+            "A2.CHUNK.WHAT_HAPPENS_WHEN",
+            "A2.CHUNK.IVE_TRIED_THAT_ALREADY"
           ],
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "Support: What happens when you open the app? User: It freezes after I sign in. Support: Do you see an error message? User: Yes, code 204.",
-                "ar": "الدعم: ماذا يحدث عند فتح التطبيق؟ المستخدم: يتجمد بعد تسجيل الدخول. الدعم: هل ترى رسالة خطأ؟ المستخدم: نعم، الرمز 204."
+                "speaker": "Maysoon",
+                "en": "Thank you for waiting. What happens when you open the app?",
+                "ar": "شكراً على انتظاركَ. ماذا يحدث عندما تفتح التطبيق؟"
+              },
+              {
+                "speaker": "Adel",
+                "en": "It opens, I sign in, and then the screen freezes and goes white.",
+                "ar": "يُفتح، وأسجّل الدخول، ثم تتجمّد الشاشة وتصير بيضاء."
+              },
+              {
+                "speaker": "Maysoon",
+                "en": "Does it do that every time, or only on Wi-Fi?",
+                "ar": "هل يحدث ذلك في كل مرة، أم على الواي فاي فقط؟"
+              },
+              {
+                "speaker": "Adel",
+                "en": "Every time. I have tried my tablet as well, and it does the same.",
+                "ar": "في كل مرة. جرّبتُ لوحي أيضاً، فحدث الأمر نفسه."
+              },
+              {
+                "speaker": "Maysoon",
+                "en": "Have you closed the app and opened it again?",
+                "ar": "هل أغلقتَ التطبيق ثم فتحته من جديد؟"
+              },
+              {
+                "speaker": "Adel",
+                "en": "I've tried that already, twice. Nothing changed.",
+                "ar": "جرّبتُ ذلك بالفعل مرّتين، ولم يتغيّر شيء."
+              },
+              {
+                "speaker": "Maysoon",
+                "en": "Then it is not your phone. What error message do you see before the screen turns white?",
+                "ar": "إذن المشكلة ليست في هاتفكَ. ما رسالة الخطأ التي تظهر لكَ قبل أن تبيضّ الشاشة؟"
+              },
+              {
+                "speaker": "Adel",
+                "en": "A small grey line at the bottom. It says error 204. Shall I send you a screenshot?",
+                "ar": "سطر رمادي صغير في الأسفل، مكتوب فيه: خطأ 204. هل أرسل لكِ صورة للشاشة؟"
               }
             ]
           },
@@ -22003,65 +22439,66 @@
               "mode": "encounter",
               "skill": "listening",
               "canDo": [
-                "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS",
-                "A2.U9.INTERACTION.SOLVE_TECH_PROBLEM"
+                "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS"
               ],
-              "prompt": "When does the app freeze?",
-              "promptAr": "متى يتجمد التطبيق؟",
+              "prompt": "Listen once. What is Maysoon trying to establish?",
+              "promptAr": "استمع مرة واحدة. ما الذي تحاول ميسون التوصل إليه؟",
               "options": [
-                "After sign-in",
-                "Before opening",
-                "During download"
+                "What the app does before it fails, and what Adel has already tried",
+                "Which phone Adel ought to buy to replace this one",
+                "Whether Adel's home internet is fast enough for the app"
               ],
-              "answer": "After sign-in",
-              "audioTranscript": "Support: What happens when you open the app? User: It freezes after I sign in. Support: Do you see an error message? User: Yes, code 204."
+              "answer": "What the app does before it fails, and what Adel has already tried",
+              "audioTranscript": "Thank you for waiting. What happens when you open the app? It opens, I sign in, and then the screen freezes and goes white. Does it do that every time, or only on Wi-Fi? Every time. I have tried my tablet as well, and it does the same. Have you closed the app and opened it again? I've tried that already, twice. Nothing changed. Then it is not your phone. What error message do you see before the screen turns white? A small grey line at the bottom. It says error 204. Shall I send you a screenshot?"
             },
             {
               "id": "A2-U9-L5-A02",
-              "lessonId": "A2-U9-L5",
-              "type": "match",
-              "mode": "practice",
-              "skill": "reading",
-              "canDo": [
-                "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS",
-                "A2.U9.INTERACTION.SOLVE_TECH_PROBLEM"
-              ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "error",
-                  "خطأ"
-                ],
-                [
-                  "freeze",
-                  "يتجمد"
-                ],
-                [
-                  "solution",
-                  "حل"
-                ]
-              ]
-            },
-            {
-              "id": "A2-U9-L5-A03",
               "lessonId": "A2-U9-L5",
               "type": "gap",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS",
-                "A2.U9.INTERACTION.SOLVE_TECH_PROBLEM"
+                "A2.U9.READING.FOLLOW_DIGITAL_GUIDE"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "What error message do you ___?",
+              "prompt": "The desk is asking what the app does every time, not what it did once. Choose the form that fits.",
+              "promptAr": "يسأل مكتب الدعم عمّا يفعله التطبيق في كل مرة، لا عمّا فعله مرة واحدة. اختر الصيغة المناسبة.",
+              "text": "What ___ when you tap the blue button at the bottom?",
               "options": [
-                "see",
-                "saw",
-                "seeing"
+                "happens",
+                "happen",
+                "is happen"
               ],
-              "answer": "see"
+              "answer": "happens"
+            },
+            {
+              "id": "A2-U9-L5-A03",
+              "lessonId": "A2-U9-L5",
+              "type": "match",
+              "mode": "practice",
+              "skill": "reading",
+              "canDo": [
+                "A2.U9.READING.FOLLOW_DIGITAL_GUIDE"
+              ],
+              "prompt": "Match each help-desk question with the answer that actually answers it.",
+              "promptAr": "طابق كل سؤال من مكتب الدعم بالجواب الذي يجيب عنه فعلاً.",
+              "pairs": [
+                [
+                  "What happens when you sign in?",
+                  "The screen freezes and then goes white."
+                ],
+                [
+                  "Does it happen on Wi-Fi as well?",
+                  "Yes, on Wi-Fi and away from the house."
+                ],
+                [
+                  "Have you tried it on another machine?",
+                  "I've tried that already, on my tablet."
+                ],
+                [
+                  "What error message do you see?",
+                  "A grey line at the bottom saying error 204."
+                ]
+              ]
             },
             {
               "id": "A2-U9-L5-A04",
@@ -22070,18 +22507,17 @@
               "mode": "mastery",
               "skill": "listening",
               "canDo": [
-                "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS",
-                "A2.U9.INTERACTION.SOLVE_TECH_PROBLEM"
+                "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS"
               ],
-              "prompt": "Which feature has the problem?",
-              "promptAr": "أي ميزة فيها المشكلة؟",
+              "prompt": "Listen to Ghada's message from the support team. What does she ask Mr Adel not to do?",
+              "promptAr": "استمع إلى رسالة غادة من فريق الدعم. ما الذي تطلب من السيد عادل ألا يفعله؟",
               "options": [
-                "Call audio",
-                "Music playback",
-                "The screen"
+                "Install the app on his phone again",
+                "Open his account in a browser",
+                "Send the support team another screenshot"
               ],
-              "answer": "Call audio",
-              "audioTranscript": "User: The sound works in music apps, but not during video calls. Support: Does the microphone icon show a line across it?"
+              "answer": "Install the app on his phone again",
+              "audioTranscript": "Good afternoon, this is Ghada from the support team, returning Mr Adel's call. Thank you for the screenshot. Error 204 means the app cannot reach our machines, so the problem is on our side and not on your phone. We do have a solution, but it arrives with the update on Thursday. Until then, please do not install the app again; it will not help, and you will lose the pages you saved. If you need the account today, open it in a browser instead. What happens there is exactly the same, only a little slower."
             },
             {
               "id": "A2-U9-L5-A05",
@@ -22090,30 +22526,67 @@
               "mode": "mastery",
               "skill": "spokenInteraction",
               "canDo": [
-                "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS",
                 "A2.U9.INTERACTION.SOLVE_TECH_PROBLEM"
               ],
-              "prompt": "Report a technical problem with the action, result, timing and exact error message.",
-              "promptAr": "أبلغ عن مشكلة تقنية مع الفعل والنتيجة والتوقيت ورسالة الخطأ الدقيقة.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
+              "prompt": "Ring a help desk about an app that fails on your phone. Say what happens when you open it, what you have already tried, and read out the exact message you can see.",
+              "promptAr": "اتصل بمكتب الدعم بشأن تطبيق لا يعمل على هاتفكَ. قل ماذا يحدث عندما تفتحه، وما الذي جرّبته بالفعل، واقرأ الرسالة التي تظهر لكَ نصّاً.",
+              "partnerTurns": [
+                "Support desk, good morning. Tell me what the app is doing.",
+                "I see. And what happens when you sign in — does it stop straight away, or after a moment?",
+                "Right. Have you tried anything yourself before you rang us?"
               ],
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "what happens",
+                    "it freezes",
+                    "it stops",
+                    "the screen",
+                    "goes white",
+                    "closes itself",
+                    "nothing happens",
+                    "when i open"
+                  ],
+                  [
+                    "i've tried",
+                    "i have tried",
+                    "i've already",
+                    "already",
+                    "twice",
+                    "i tried that",
+                    "i've done"
+                  ],
+                  [
+                    "error",
+                    "it says",
+                    "the message says",
+                    "a code",
+                    "grey",
+                    "at the bottom",
+                    "screenshot"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             }
           ]
         },
         {
           "id": "A2-U9-L6",
           "title": "Write a Safe Help Guide",
-          "titleAr": "اكتب دليل مساعدة آمن",
+          "titleAr": "اكتب دليل مساعدة آمناً",
           "lessonType": "integrated-production",
           "canDo": [
+            "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS",
+            "A2.U9.READING.FOLLOW_DIGITAL_GUIDE",
+            "A2.U9.PRODUCTION.EXPLAIN_TECH_PROCEDURE",
             "A2.U9.WRITING.WRITE_HELP_GUIDE",
-            "A2.U9.PRODUCTION.EXPLAIN_TECH_PROCEDURE"
+            "A2.U9.MEDIATION.RELAY_DIGITAL_INSTRUCTIONS"
           ],
           "grammar": [
             "A2.G.PURPOSE_TECH",
@@ -22123,19 +22596,17 @@
           "lexicon": [
             "A2.LEX.SECURE_ADJ01",
             "A2.LEX.BACKUP_N01",
-            "A2.LEX.GUIDE_N01"
+            "A2.LEX.GUIDE_N01",
+            "A2.LEX.SHARE_V01"
           ],
           "chunks": [
-            "A2.CHUNK.STEP_BY_STEP"
+            "A2.CHUNK.STEP_BY_STEP",
+            "A2.CHUNK.NEVER_SHARE_YOUR_PASSWORD"
           ],
-          "encounter": {
-            "dialogue": [
-              {
-                "speaker": "Narrator",
-                "en": "To protect your account, use a different password for each service. Turn on screen lock and make a backup of important files. Never send a login code to another person.",
-                "ar": ""
-              }
-            ]
+          "readingText": {
+            "title": "A Short Guide for Khalid",
+            "text": "Khalid, here are the four things I promised to write down for you, step by step. First, give every important account its own password. If you use one password everywhere and somebody learns it, that person has all of them. Keep the list in the little book in your drawer, not in a note on the phone. Second, turn the screen lock on. It costs you four seconds each time you pick the phone up, and it keeps a lost phone secure. Third, make a backup once a week to protect the photographs. If the phone falls in the sea on a Thursday, you lose four days, not four years. Finally, and this is the one that matters: never share your password, and never read a code out to anyone who rings you. A real bank never asks for either of them. If a message asks you, it is not from the bank. Ring me instead and we will look at it together. Rania",
+            "textAr": "خالد، إليكَ الأمور الأربعة التي وعدتكَ بأن أكتبها لكَ، خطوة خطوة. أولاً، اجعل لكل حساب مهم كلمة مرور خاصة به. فإذا استعملتَ كلمة مرور واحدة في كل مكان وعرفها أحد، صارت في يده حساباتكَ كلها. احتفظ بالقائمة في الدفتر الصغير الذي في الدرج، لا في ملاحظة على الهاتف. ثانياً، شغّل قفل الشاشة. إنه يكلّفكَ أربع ثوانٍ كلما رفعتَ الهاتف، ويُبقي الهاتف الضائع آمناً. ثالثاً، اعمل نسخة احتياطية مرة كل أسبوع لتحمي الصور. فإذا سقط الهاتف في البحر يوم الخميس، خسرتَ أربعة أيام لا أربع سنوات. وأخيراً، وهذا هو الأهم: لا تشارك كلمة مرورك أبداً، ولا تقرأ رمزاً لأي شخص يتصل بكَ. المصرف الحقيقي لا يطلب أياً منهما أبداً، وإذا طلبت منكَ رسالة ذلك فهي ليست من المصرف. اتصل بي بدل ذلك وننظر فيها معاً. رانيا"
           },
           "activities": [
             {
@@ -22145,85 +22616,142 @@
               "mode": "encounter",
               "skill": "reading",
               "canDo": [
-                "A2.U9.WRITING.WRITE_HELP_GUIDE",
-                "A2.U9.PRODUCTION.EXPLAIN_TECH_PROCEDURE"
+                "A2.U9.READING.FOLLOW_DIGITAL_GUIDE"
               ],
-              "prompt": "Which action protects files from loss?",
-              "promptAr": "أي فعل يحمي الملفات من الفقدان؟",
+              "prompt": "Read Rania's guide once. What is she mainly giving Khalid?",
+              "promptAr": "اقرأ دليل رانيا مرة واحدة. ما الذي تقدمه لخالد بشكل أساسي؟",
               "options": [
-                "Making a backup",
-                "Sharing a login code",
-                "Using no screen lock"
+                "Four habits that keep his phone and his accounts safe",
+                "A list of the phones she thinks he should look at",
+                "Instructions for sending photographs to the family"
               ],
-              "answer": "Making a backup",
-              "sourceText": "To protect your account, use a different password for each service. Turn on screen lock and make a backup of important files. Never send a login code to another person."
+              "answer": "Four habits that keep his phone and his accounts safe"
             },
             {
               "id": "A2-U9-L6-A02",
               "lessonId": "A2-U9-L6",
-              "type": "match",
+              "type": "audioChoice",
               "mode": "practice",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U9.WRITING.WRITE_HELP_GUIDE",
-                "A2.U9.PRODUCTION.EXPLAIN_TECH_PROCEDURE"
+                "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS"
               ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "secure",
-                  "آمن"
-                ],
-                [
-                  "backup",
-                  "نسخة احتياطية"
-                ],
-                [
-                  "guide",
-                  "دليل"
-                ]
-              ]
+              "prompt": "Listen to Rania's next message. Why did her neighbour lose the money?",
+              "promptAr": "استمع إلى رسالة رانيا التالية. لماذا خسرت جارتها المال؟",
+              "options": [
+                "She read out the numbers the message asked for",
+                "She used the same password on two accounts",
+                "She had not made a backup of her phone"
+              ],
+              "answer": "She read out the numbers the message asked for",
+              "audioTranscript": "Khalid, it is Rania again. Something happened to my neighbour this week, so I am adding it to the guide. She had a message that looked exactly like the bank's: the same name, the same colours, everything. It said her account was locked, and it asked her to read out the six numbers they had just sent to her phone. She read them out, and by the evening the money had gone. Nobody from a bank will ever ask you for those numbers. Nobody. If a message asks you, put the phone down and ring the number printed on your own card."
             },
             {
               "id": "A2-U9-L6-A03",
               "lessonId": "A2-U9-L6",
-              "type": "gap",
+              "type": "speak",
               "mode": "practice",
-              "skill": "reading",
+              "skill": "spokenProduction",
               "canDo": [
-                "A2.U9.WRITING.WRITE_HELP_GUIDE",
                 "A2.U9.PRODUCTION.EXPLAIN_TECH_PROCEDURE"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "Use screen lock ___ protect your device.",
-              "options": [
-                "to",
-                "for",
-                "so"
-              ],
-              "answer": "to"
+              "prompt": "Before you write anything, say your own version aloud, the way Rania wrote hers. Give two steps, the purpose of each one, and the single thing the reader must never do.",
+              "promptAr": "قبل أن تكتب شيئاً، قل نسختكَ بصوت عالٍ كما كتبت رانيا نسختها. اذكر خطوتين وغرض كل منهما، والأمر الوحيد الذي يجب ألا يفعله القارئ أبداً.",
+              "accepted": [],
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "to keep",
+                    "to protect",
+                    "to stop",
+                    "to make",
+                    "to save",
+                    "so that",
+                    "in order to"
+                  ],
+                  [
+                    "password",
+                    "screen lock",
+                    "backup",
+                    "wi-fi",
+                    "settings",
+                    "update",
+                    "account"
+                  ],
+                  [
+                    "never share",
+                    "never send",
+                    "never give",
+                    "never read out",
+                    "don't share",
+                    "do not share",
+                    "nobody",
+                    "no one"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U9-L6-A04",
               "lessonId": "A2-U9-L6",
-              "type": "textChoice",
+              "type": "speak",
               "mode": "mastery",
-              "skill": "reading",
+              "skill": "mediation",
               "canDo": [
-                "A2.U9.WRITING.WRITE_HELP_GUIDE",
-                "A2.U9.PRODUCTION.EXPLAIN_TECH_PROCEDURE"
+                "A2.U9.MEDIATION.RELAY_DIGITAL_INSTRUCTIONS"
               ],
-              "prompt": "What evidence should be saved?",
-              "promptAr": "ما الدليل الذي ينبغي حفظه؟",
-              "options": [
-                "A screenshot",
-                "The password",
-                "A new account"
-              ],
-              "answer": "A screenshot",
-              "sourceText": "Quick guide: first update the app. Next restart the phone. If the error remains, save a screenshot and contact support. Do not share your password."
+              "prompt": "Your mother does not read English. She has photographed a warning on her screen and wants to know what it says. Tell her what has happened, what she does not have to do if it was her, and the two things to do if it was not.",
+              "promptAr": "والدتكَ لا تقرأ الإنجليزية. صوّرت تحذيراً ظهر على شاشتها وتريد أن تعرف ما فيه. أخبرها بما حدث، وبما لا يلزمها فعله إن كانت هي، وبالأمرين اللذين تفعلهما إن لم تكن هي.",
+              "sourceCard": "Security warning: somebody signed in to your account from a new device in another city. If this was you, no action is needed. If it was not you, change your password now and sign out of every device. We will never ask you for your password in a message.",
+              "accepted": [],
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "signed in",
+                    "sign in",
+                    "somebody",
+                    "someone",
+                    "a new device",
+                    "another city",
+                    "a new phone"
+                  ],
+                  [
+                    "if it was you",
+                    "if it wasn't",
+                    "if that was you",
+                    "nothing",
+                    "no action",
+                    "you don't have to",
+                    "nothing to do"
+                  ],
+                  [
+                    "change",
+                    "your password",
+                    "sign out",
+                    "log out",
+                    "every device",
+                    "all the devices"
+                  ],
+                  [
+                    "never ask",
+                    "will never",
+                    "in a message",
+                    "not from them",
+                    "don't reply",
+                    "never send"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U9-L6-A05",
@@ -22232,22 +22760,57 @@
               "mode": "mastery",
               "skill": "writing",
               "canDo": [
-                "A2.U9.WRITING.WRITE_HELP_GUIDE",
-                "A2.U9.PRODUCTION.EXPLAIN_TECH_PROCEDURE"
+                "A2.U9.WRITING.WRITE_HELP_GUIDE"
               ],
-              "prompt": "Write a safe step-by-step guide for one simple digital task, including a problem condition and privacy warning.",
-              "promptAr": "اكتب دليلاً آمناً خطوة بخطوة لمهمة رقمية بسيطة، متضمناً شرط مشكلة وتحذير خصوصية.",
-              "evaluation": [
-                "taskCompletion",
-                "clarity",
-                "organisation",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "Write your own guide for somebody who has just been given a first smartphone. Give three steps in order with the purpose of each, one 'if' sentence for the moment something goes wrong, and one clear warning about what never to share. Keep to the advice in Rania's guide.",
+              "promptAr": "اكتب دليلكَ الخاص لشخص حصل للتو على أول هاتف ذكي. اذكر ثلاث خطوات مرتبة مع غرض كل منها، وجملة واحدة بـ if لما يحدث عند حصول خلل، وتحذيراً واضحاً بشأن ما لا يُشارَك أبداً. التزم بما ورد في دليل رانيا.",
               "accepted": [],
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "first",
+                    "next",
+                    "then",
+                    "finally",
+                    "after that",
+                    "second",
+                    "third"
+                  ],
+                  [
+                    "to keep",
+                    "to protect",
+                    "to stop",
+                    "to save",
+                    "to make sure",
+                    "so that",
+                    "in order to"
+                  ],
+                  [
+                    "if the",
+                    "if you",
+                    "if it",
+                    "if a message",
+                    "if somebody",
+                    "if someone",
+                    "if anything"
+                  ],
+                  [
+                    "never share",
+                    "never send",
+                    "never give",
+                    "never read out",
+                    "don't share",
+                    "do not share",
+                    "never tell anyone"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
               "wordGuide": [
-                80,
-                110
+                75,
+                100
               ]
             }
           ]
@@ -22281,15 +22844,15 @@
                 "A2.U9.READING.FOLLOW_DIGITAL_GUIDE",
                 "A2.U9.ACTION.HELP_ONLINE_TASK"
               ],
-              "prompt": "Which information must remain private?",
-              "promptAr": "ما المعلومة التي يجب أن تبقى خاصة؟",
+              "prompt": "Read the note the tutor pinned to the class page. What must nobody ever be asked for?",
+              "promptAr": "اقرأ الملاحظة التي ثبّتها المعلّم على صفحة الصف. ما الشيء الذي يجب ألا يُطلب من أحد أبداً؟",
               "options": [
-                "The password",
-                "The room number",
-                "The deadline"
+                "A classmate's password",
+                "The number of the room",
+                "The name on the college account"
               ],
-              "answer": "The password",
-              "sourceText": "Join the workshop: open the invitation link, sign in with your own account and enter room 18. Download the worksheet before 5:00. Never share your password with support staff."
+              "answer": "A classmate's password",
+              "sourceText": "Wednesday's session, please read this before you join. Open the invitation link, sign in with your own college account and wait in room 18. The worksheet is in the shared folder; download it before five o'clock. If you help a classmate, never ask for their password."
             },
             {
               "id": "A2-U9-L7-A02",
@@ -22301,15 +22864,15 @@
                 "A2.U9.LISTENING.UNDERSTAND_TECH_INSTRUCTIONS",
                 "A2.U9.ACTION.HELP_ONLINE_TASK"
               ],
-              "prompt": "What should the user do first when video freezes?",
-              "promptAr": "ماذا ينبغي أن يفعل المستخدم أولاً عند تجمد الفيديو؟",
+              "prompt": "Listen to Nour's message. What exactly stops working?",
+              "promptAr": "استمع إلى رسالة نور. ما الذي يتوقف بالضبط؟",
               "options": [
-                "Turn the camera off briefly",
-                "Leave the meeting",
-                "Share the password"
+                "Her picture, while the sound carries on",
+                "The sound, while the picture carries on",
+                "The invitation link, before the meeting opens"
               ],
-              "answer": "Turn the camera off briefly",
-              "audioTranscript": "If the video freezes, turn the camera off for ten seconds. If the sound continues, stay in the meeting and switch the camera on again."
+              "answer": "Her picture, while the sound carries on",
+              "audioTranscript": "Hello, it is Nour. I am sorry to ask, but I cannot stay in Wednesday's session and the worksheet is due on Friday. When I tap the invitation link the meeting opens, I can see everybody, and then after about ten seconds my picture freezes. The sound carries on, so they can still hear me talking. I have tried that already on my sister's phone and it does exactly the same, so I do not think the phone is the problem. There is a small message at the top that says 'weak connection'. Ring me tonight if you can."
             },
             {
               "id": "A2-U9-L7-A03",
@@ -22321,16 +22884,59 @@
                 "A2.U9.INTERACTION.SOLVE_TECH_PROBLEM",
                 "A2.U9.ACTION.HELP_ONLINE_TASK"
               ],
-              "prompt": "Guide the classmate through joining and sharing; ask diagnostic questions when the problem appears.",
-              "promptAr": "أرشد زميلك إلى الانضمام والمشاركة، واسأل أسئلة تشخيص عند ظهور المشكلة.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
+              "prompt": "Nour rings you back. Talk her into the session step by step, ask the questions you need in order to find the cause, and get the worksheet to her — without taking anything private from her.",
+              "promptAr": "تعاود نور الاتصال بكَ. أدخلها إلى الجلسة خطوة خطوة، واسأل الأسئلة التي تحتاجها لمعرفة السبب، وأوصل إليها ورقة العمل من دون أن تأخذ منها أي شيء خاص.",
+              "partnerTurns": [
+                "Thanks for ringing me back. I am looking at the class page now. Where do I even start?",
+                "All right, I am in room 18 and I can see everyone. Oh — it has frozen again. Shall I just tell you my password and you do it from your side?",
+                "Fine, no password. So what do I do about the picture, and where is this worksheet?"
               ],
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "first",
+                    "next",
+                    "then",
+                    "finally",
+                    "the link",
+                    "sign in",
+                    "room"
+                  ],
+                  [
+                    "what happens",
+                    "does it",
+                    "have you tried",
+                    "how long",
+                    "when does",
+                    "what does it say",
+                    "can you see"
+                  ],
+                  [
+                    "camera off",
+                    "turn the camera",
+                    "switch the camera",
+                    "weak connection",
+                    "closer to",
+                    "the router",
+                    "wi-fi"
+                  ],
+                  [
+                    "don't tell me",
+                    "never tell",
+                    "i don't need",
+                    "keep your password",
+                    "don't share",
+                    "not your password",
+                    "never ask"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U9-L7-A04",
@@ -22342,16 +22948,50 @@
                 "A2.U9.PRODUCTION.EXPLAIN_TECH_PROCEDURE",
                 "A2.U9.ACTION.HELP_ONLINE_TASK"
               ],
-              "prompt": "Explain the complete procedure step by step with one if-condition.",
-              "promptAr": "اشرح الإجراء كاملاً خطوة بخطوة مع شرط واحد باستخدام if.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "Now say the whole procedure aloud, so that Nour can follow it on her own next week: the steps in order, and one 'if' sentence for the moment the picture freezes. Add nothing she has not already agreed to.",
+              "promptAr": "قل الآن الإجراء كاملاً بصوت عالٍ لتتمكن نور من اتباعه وحدها الأسبوع المقبل: الخطوات مرتبة، وجملة واحدة بـ if للحظة تجمّد الصورة. ولا تضف شيئاً لم توافق عليه.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "first",
+                    "next",
+                    "then",
+                    "finally",
+                    "after that"
+                  ],
+                  [
+                    "the link",
+                    "sign in",
+                    "your own account",
+                    "room",
+                    "the folder",
+                    "download",
+                    "the worksheet"
+                  ],
+                  [
+                    "if the picture",
+                    "if it freezes",
+                    "if it stops",
+                    "if the connection",
+                    "if that happens",
+                    "if it does"
+                  ],
+                  [
+                    "camera off",
+                    "turn the camera",
+                    "wait",
+                    "ten seconds",
+                    "on again",
+                    "closer to the router"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U9-L7-A05",
@@ -22363,16 +23003,51 @@
                 "A2.U9.MEDIATION.RELAY_DIGITAL_INSTRUCTIONS",
                 "A2.U9.ACTION.HELP_ONLINE_TASK"
               ],
-              "prompt": "Relay the workshop instructions, deadline and safety warning accurately.",
-              "promptAr": "انقل تعليمات الورشة والموعد النهائي وتحذير الأمان بدقة.",
-              "evaluation": [
-                "selectRelevantInformation",
-                "clarity",
-                "audienceAwareness",
-                "accuracy"
-              ],
+              "prompt": "Nour's mother wants to know what the class page says, and she does not read English. Tell her where and when the session is, what Nour has to do before Friday, and the one rule about passwords.",
+              "promptAr": "تريد والدة نور أن تعرف ما في صفحة الصف، وهي لا تقرأ الإنجليزية. أخبرها بموعد الجلسة ومكانها، وبما على نور فعله قبل الجمعة، وبالقاعدة الوحيدة الخاصة بكلمات المرور.",
+              "sourceCard": "Wednesday at six in the evening, room 18. Bring nothing with you; everything is on the class page. Download the worksheet before five o'clock on Friday, because the folder closes at five. Tutors and classmates will never ask you for a password, and you should never give one.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "wednesday",
+                    "six",
+                    "the evening",
+                    "room",
+                    "eighteen",
+                    "the session"
+                  ],
+                  [
+                    "before five",
+                    "five o'clock",
+                    "friday",
+                    "the worksheet",
+                    "download",
+                    "the folder closes"
+                  ],
+                  [
+                    "never",
+                    "password",
+                    "nobody asks",
+                    "will never ask",
+                    "don't give",
+                    "do not give",
+                    "never share"
+                  ],
+                  [
+                    "bring nothing",
+                    "nothing to bring",
+                    "the class page",
+                    "everything is on",
+                    "she doesn't need"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U9-L7-A06",
@@ -22384,20 +23059,54 @@
                 "A2.U9.WRITING.WRITE_HELP_GUIDE",
                 "A2.U9.ACTION.HELP_ONLINE_TASK"
               ],
-              "prompt": "Write the classmate a concise help guide covering access, file sharing, troubleshooting and security.",
-              "promptAr": "اكتب لزميلك دليل مساعدة موجزاً يغطي الدخول ومشاركة الملف وحل المشكلة والأمان.",
-              "evaluation": [
-                "taskCompletion",
-                "clarity",
-                "organisation",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "Write Nour the guide she can keep. Cover how to get in, where the worksheet is and when the folder closes, what to do if the picture freezes, and the rule about passwords. Use 'it', 'them' and 'that' so that she knows what each step points to.",
+              "promptAr": "اكتب لنور الدليل الذي تحتفظ به. غطِّ كيفية الدخول، وأين ورقة العمل ومتى يُغلق المجلد، وماذا تفعل إذا تجمّدت الصورة، وقاعدة كلمات المرور. استخدم it وthem وthat لتعرف إلامَ تشير كل خطوة.",
+              "accepted": [],
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "first",
+                    "next",
+                    "then",
+                    "finally",
+                    "the link",
+                    "sign in",
+                    "room"
+                  ],
+                  [
+                    "worksheet",
+                    "folder",
+                    "download",
+                    "before five",
+                    "friday",
+                    "five o'clock"
+                  ],
+                  [
+                    "if the picture",
+                    "if it freezes",
+                    "if it stops",
+                    "camera off",
+                    "turn the camera",
+                    "weak connection"
+                  ],
+                  [
+                    "never",
+                    "password",
+                    "don't share",
+                    "do not share",
+                    "never ask",
+                    "never give",
+                    "keep it private"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
               "wordGuide": [
-                90,
-                120
-              ],
-              "accepted": []
+                75,
+                100
+              ]
             }
           ]
         }
