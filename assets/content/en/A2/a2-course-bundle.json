@@ -6632,6 +6632,161 @@
       ],
       "introducedIn": "A2-U7-L6",
       "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.STORYTELLER_N01",
+      "headword": "storyteller",
+      "partOfSpeech": "noun",
+      "arabic": "حكواتي",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "a person whose work is telling stories to an audience",
+      "examples": [
+        {
+          "en": "The storyteller was sitting in the corner of the café.",
+          "ar": "كان الحكواتي جالساً في زاوية المقهى."
+        }
+      ],
+      "introducedIn": "A2-U10-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.CROWD_N01",
+      "headword": "crowd",
+      "partOfSpeech": "noun",
+      "arabic": "حشد",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "a large group of people in one place",
+      "examples": [
+        {
+          "en": "The crowd was still coming in when we started.",
+          "ar": "كان الحشد ما يزال يدخل عندما بدأنا."
+        }
+      ],
+      "introducedIn": "A2-U10-L1",
+      "recycledIn": [
+        "A2-U10-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.ACTOR_N01",
+      "headword": "actor",
+      "partOfSpeech": "noun",
+      "arabic": "ممثل",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "a person who plays a part in a film or play",
+      "examples": [
+        {
+          "en": "The actor who plays the brother says very little.",
+          "ar": "الممثل الذي يؤدي دور الأخ يقول القليل جداً."
+        }
+      ],
+      "introducedIn": "A2-U10-L4",
+      "recycledIn": [
+        "A2-U10-L6"
+      ]
+    },
+    {
+      "id": "A2.LEX.EPISODE_N01",
+      "headword": "episode",
+      "partOfSpeech": "noun",
+      "arabic": "حلقة",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "one part of a series shown on one day",
+      "examples": [
+        {
+          "en": "The last episode is next Thursday.",
+          "ar": "الحلقة الأخيرة يوم الخميس القادم."
+        }
+      ],
+      "introducedIn": "A2-U10-L4",
+      "recycledIn": [
+        "A2-U10-L6"
+      ]
+    },
+    {
+      "id": "A2.LEX.SUBTITLES_N01",
+      "headword": "subtitles",
+      "partOfSpeech": "noun",
+      "arabic": "ترجمة مكتوبة",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "the written words at the bottom of the screen",
+      "examples": [
+        {
+          "en": "Watch it with the subtitles on.",
+          "ar": "شاهده مع تشغيل الترجمة المكتوبة."
+        }
+      ],
+      "introducedIn": "A2-U10-L4",
+      "recycledIn": [
+        "A2-U10-L6",
+        "A2-U10-L7"
+      ]
+    },
+    {
+      "id": "A2.LEX.NOVEL_N01",
+      "headword": "novel",
+      "partOfSpeech": "noun",
+      "arabic": "رواية",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "a long written story about people who are not real",
+      "examples": [
+        {
+          "en": "It is the novel which every student read at school.",
+          "ar": "إنها الرواية التي قرأها كل طالب في المدرسة."
+        }
+      ],
+      "introducedIn": "A2-U10-L4",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.PREDICTABLE_ADJ01",
+      "headword": "predictable",
+      "partOfSpeech": "adjective",
+      "arabic": "متوقَّع",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "easy to guess before it happens",
+      "examples": [
+        {
+          "en": "The second half is predictable.",
+          "ar": "النصف الثاني متوقَّع."
+        }
+      ],
+      "introducedIn": "A2-U10-L5",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.SPOIL_V01",
+      "headword": "spoil",
+      "partOfSpeech": "verb",
+      "arabic": "يفسد",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "to ruin something for someone, especially by telling the ending",
+      "examples": [
+        {
+          "en": "Don't let anyone spoil the ending for you.",
+          "ar": "لا تدع أحداً يفسد النهاية عليك."
+        }
+      ],
+      "introducedIn": "A2-U10-L5",
+      "recycledIn": [
+        "A2-U10-L6"
+      ]
     }
   ],
   "chunks": [
@@ -7953,6 +8108,47 @@
       "arabic": "لا ترهق نفسك.",
       "cefr": "A2",
       "introducedIn": "A2-U7-L6",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A2.CHUNK.HAVE_YOU_SEEN",
+      "text": "Have you seen ...?",
+      "arabic": "هل شاهدتَ...؟",
+      "cefr": "A2",
+      "introducedIn": "A2-U10-L5",
+      "productive": true,
+      "recycledIn": [
+        "A2-U10-L7"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.THE_BEST_PART_WAS",
+      "text": "The best part was ...",
+      "arabic": "أفضل جزء كان...",
+      "cefr": "A2",
+      "introducedIn": "A2-U10-L5",
+      "productive": true,
+      "recycledIn": [
+        "A2-U10-L6",
+        "A2-U10-L7"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.BASED_ON_A_TRUE_STORY",
+      "text": "based on a true story",
+      "arabic": "مبنيّ على قصة حقيقية",
+      "cefr": "A2",
+      "introducedIn": "A2-U10-L4",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A2.CHUNK.WORTH_WATCHING",
+      "text": "worth watching",
+      "arabic": "يستحق المشاهدة",
+      "cefr": "A2",
+      "introducedIn": "A2-U10-L6",
       "productive": true,
       "recycledIn": []
     }
@@ -21274,36 +21470,54 @@
           "lessonType": "encounter-focus-practice",
           "canDo": [
             "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW",
+            "A2.U10.READING.FOLLOW_STORY_REVIEW",
             "A2.U10.PRODUCTION.TELL_STORY_OPINION"
           ],
           "grammar": [
             "A2.G.PAST_CONTINUOUS",
-            "A2.G.TECH_IMPERATIVES",
             "A2.G.SEQUENCING_ADVERBS"
           ],
           "lexicon": [
             "A2.LEX.SCENE_N01",
             "A2.LEX.CHARACTER_N01",
             "A2.LEX.PLOT_N01",
-            "A2.LEX.SCREEN_N01",
-            "A2.LEX.BUTTON_N01",
-            "A2.LEX.CHARGE_V01",
-            "A2.LEX.SETTINGS_N01",
-            "A2.LEX.CONNECT_V01",
-            "A2.LEX.DOWNLOAD_V01"
+            "A2.LEX.STORYTELLER_N01",
+            "A2.LEX.CROWD_N01"
           ],
           "chunks": [
-            "A2.CHUNK.AT_THE_BEGINNING",
-            "A2.CHUNK.PRESS_AND_HOLD",
-            "A2.CHUNK.GO_TO_SETTINGS",
-            "A2.CHUNK.CONNECT_TO_WIFI"
+            "A2.CHUNK.AT_THE_BEGINNING"
           ],
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "At the beginning, the main character was living in a small village and working at a train station.",
-                "ar": "في البداية كانت الشخصية الرئيسية تعيش في قرية صغيرة وتعمل في محطة قطار."
+                "speaker": "Munir",
+                "en": "You look tired this morning, Rana. Were you working late?",
+                "ar": "تبدين متعبة هذا الصباح يا رنا. هل كنتِ تعملين حتى وقت متأخر؟"
+              },
+              {
+                "speaker": "Rana",
+                "en": "No. I was sitting in a café in Karrada until midnight, listening to a storyteller.",
+                "ar": "لا. كنتُ جالسة في مقهى في الكرادة حتى منتصف الليل أستمع إلى حكواتي."
+              },
+              {
+                "speaker": "Munir",
+                "en": "A storyteller? In a café?",
+                "ar": "حكواتي؟ في مقهى؟"
+              },
+              {
+                "speaker": "Rana",
+                "en": "Every Thursday. At the beginning he described the scene: a family was living above a bakery, and the youngest son was working at the port.",
+                "ar": "كل خميس. في البداية وصف المشهد: كانت عائلة تسكن فوق مخبز، وكان الابن الأصغر يعمل في الميناء."
+              },
+              {
+                "speaker": "Munir",
+                "en": "And the crowd? Was anybody listening, or were they all on their phones?",
+                "ar": "وماذا عن الحشد؟ هل كان أحد يصغي، أم كانوا جميعاً منشغلين بهواتفهم؟"
+              },
+              {
+                "speaker": "Rana",
+                "en": "Nobody moved. Even the waiters were standing at the back, holding empty trays.",
+                "ar": "لم يتحرك أحد. حتى النُّدُل كانوا واقفين في الخلف ممسكين بصوانٍ فارغة."
               }
             ]
           },
@@ -21315,65 +21529,62 @@
               "mode": "encounter",
               "skill": "listening",
               "canDo": [
-                "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW",
-                "A2.U10.PRODUCTION.TELL_STORY_OPINION"
+                "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW"
               ],
-              "prompt": "Where was the character working?",
-              "promptAr": "أين كانت الشخصية تعمل؟",
+              "prompt": "What are Munir and Rana talking about?",
+              "promptAr": "عمَّ يتحدث منير ورنا؟",
               "options": [
-                "At a train station",
-                "In a cinema",
-                "At a school"
+                "A night Rana spent listening to a storyteller",
+                "A late shift at Rana's office",
+                "A bakery that opened near the port"
               ],
-              "answer": "At a train station",
-              "audioTranscript": "At the beginning, the main character was living in a small village and working at a train station."
+              "answer": "A night Rana spent listening to a storyteller",
+              "audioTranscript": "You look tired this morning, Rana. Were you working late? No. I was sitting in a café in Karrada until midnight, listening to a storyteller. A storyteller? In a café? Every Thursday. At the beginning he described the scene: a family was living above a bakery, and the youngest son was working at the port. And the crowd? Was anybody listening, or were they all on their phones? Nobody moved. Even the waiters were standing at the back, holding empty trays."
             },
             {
               "id": "A2-U10-L1-A02",
               "lessonId": "A2-U10-L1",
-              "type": "match",
+              "type": "order",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW",
-                "A2.U10.PRODUCTION.TELL_STORY_OPINION"
+                "A2.U10.READING.FOLLOW_STORY_REVIEW"
               ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "scene",
-                  "مشهد"
-                ],
-                [
-                  "character",
-                  "شخصية"
-                ],
-                [
-                  "plot",
-                  "حبكة"
-                ]
+              "prompt": "Build the sentence. In the past continuous, was or were comes before the -ing verb.",
+              "promptAr": "كوّن الجملة. في الماضي المستمر تأتي was أو were قبل الفعل المنتهي بـ -ing.",
+              "tokens": [
+                "was",
+                "in the corner",
+                "The storyteller",
+                "of the room.",
+                "sitting"
+              ],
+              "answer": [
+                "The storyteller",
+                "was",
+                "sitting",
+                "in the corner",
+                "of the room."
               ]
             },
             {
               "id": "A2-U10-L1-A03",
               "lessonId": "A2-U10-L1",
-              "type": "gap",
+              "type": "textChoice",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW",
-                "A2.U10.PRODUCTION.TELL_STORY_OPINION"
+                "A2.U10.READING.FOLLOW_STORY_REVIEW"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "They were ___ dinner when the story began.",
+              "prompt": "Read the café's notice. What is different this month?",
+              "promptAr": "اقرأ إعلان المقهى. ما الذي يختلف هذا الشهر؟",
+              "sourceText": "Notice at Café Al Rasheed: Our storyteller was performing here every Thursday for eleven years. He is ill this month, so his daughter will take his chair. The plot changes every week, but the main character never does.",
               "options": [
-                "having",
-                "have",
-                "had"
+                "His daughter will tell the stories",
+                "The stories will stop for a month",
+                "The café will close on Thursdays"
               ],
-              "answer": "having"
+              "answer": "His daughter will tell the stories"
             },
             {
               "id": "A2-U10-L1-A04",
@@ -21382,18 +21593,17 @@
               "mode": "mastery",
               "skill": "listening",
               "canDo": [
-                "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW",
-                "A2.U10.PRODUCTION.TELL_STORY_OPINION"
+                "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW"
               ],
-              "prompt": "What was the father doing?",
-              "promptAr": "ماذا كان الأب يفعل؟",
+              "prompt": "Listen to the opening of a radio story. What made the children sit up?",
+              "promptAr": "استمع إلى بداية قصة إذاعية. ما الذي جعل الأطفال يعتدلون في جلستهم؟",
               "options": [
-                "Checking tickets",
-                "Packing toys",
-                "Driving"
+                "The grandmother stopped in the middle of a sentence",
+                "Jasim shouted to them from his roof",
+                "The story finally reached its last night"
               ],
-              "answer": "Checking tickets",
-              "audioTranscript": "The opening scene showed a family who were preparing for a long journey. The children were packing while their father was checking tickets."
+              "answer": "The grandmother stopped in the middle of a sentence",
+              "audioTranscript": "Here is the first scene of tonight's story. It was the summer of nineteen seventy, and the whole street was sleeping on the roofs. A boy called Jasim was lying under a blanket, counting the stars, while his grandmother was telling the same story she told every night. At the beginning nobody was listening. Then she stopped in the middle of a sentence, and suddenly every child on every roof was sitting up. That silence is where our plot really starts."
             },
             {
               "id": "A2-U10-L1-A05",
@@ -21402,19 +21612,65 @@
               "mode": "mastery",
               "skill": "spokenProduction",
               "canDo": [
-                "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW",
                 "A2.U10.PRODUCTION.TELL_STORY_OPINION"
               ],
-              "prompt": "Set the background for a short story using two past continuous actions.",
-              "promptAr": "هيئ خلفية لقصة قصيرة مستخدماً فعلين في الماضي المستمر.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "Set the scene of a story you know. Say where it was happening, and what two different people were doing before anything went wrong.",
+              "promptAr": "هيّئ مشهد البداية لقصة تعرفها. قل أين كان الحدث يجري، وماذا كان شخصان مختلفان يفعلان قبل أن يسوء أي شيء.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "was sitting",
+                    "were sitting",
+                    "was working",
+                    "were working",
+                    "was waiting",
+                    "were waiting",
+                    "was living",
+                    "were living",
+                    "was watching",
+                    "were watching",
+                    "was talking",
+                    "were talking",
+                    "was cooking",
+                    "were playing",
+                    "was standing",
+                    "was raining"
+                  ],
+                  [
+                    "at the beginning",
+                    "one evening",
+                    "that night",
+                    "last summer",
+                    "it was",
+                    "in the village",
+                    "in the house",
+                    "at the station",
+                    "on the roof",
+                    "in the market",
+                    "when I was"
+                  ],
+                  [
+                    "my grandmother",
+                    "my mother",
+                    "my father",
+                    "my brother",
+                    "my sister",
+                    "the main character",
+                    "a boy",
+                    "a girl",
+                    "an old man",
+                    "an old woman",
+                    "the neighbours",
+                    "my friend"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             }
           ]
         },
@@ -21425,10 +21681,12 @@
           "lessonType": "encounter-focus-practice",
           "canDo": [
             "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW",
-            "A2.U10.PRODUCTION.TELL_STORY_OPINION"
+            "A2.U10.READING.FOLLOW_STORY_REVIEW",
+            "A2.U10.INTERACTION.DISCUSS_ENTERTAINMENT"
           ],
           "grammar": [
-            "A2.G.PAST_SIMPLE_INTERRUPT"
+            "A2.G.PAST_SIMPLE_INTERRUPT",
+            "A2.G.PAST_CONTINUOUS"
           ],
           "lexicon": [
             "A2.LEX.INTERRUPT_V01",
@@ -21441,9 +21699,34 @@
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "I was watching the final scene when the electricity went off. When it returned, I discovered that the film had finished.",
-                "ar": "كنت أشاهد المشهد الأخير عندما انقطعت الكهرباء. وعندما عادت اكتشفت أن الفيلم انتهى."
+                "speaker": "Karim",
+                "en": "You were at Lamia's wedding on Friday. Is it true about the lights?",
+                "ar": "كنتِ في عرس لمياء يوم الجمعة. هل ما يُقال عن الأضواء صحيح؟"
+              },
+              {
+                "speaker": "Suha",
+                "en": "Every word. The singer was starting the second song when the whole hall went dark.",
+                "ar": "كل كلمة منه. كان المغني يبدأ الأغنية الثانية عندما أظلمت القاعة كلها."
+              },
+              {
+                "speaker": "Karim",
+                "en": "What did people do?",
+                "ar": "ماذا فعل الناس؟"
+              },
+              {
+                "speaker": "Suha",
+                "en": "Nothing, for ten seconds. Then a cousin opened his phone light, and four hundred phones appeared at the same moment.",
+                "ar": "لا شيء، لعشر ثوانٍ. ثم أضاء أحد أبناء العم مصباح هاتفه، فظهرت أربعمئة هاتف في اللحظة نفسها."
+              },
+              {
+                "speaker": "Karim",
+                "en": "So the party stopped?",
+                "ar": "إذن توقف الحفل؟"
+              },
+              {
+                "speaker": "Suha",
+                "en": "It got better! The band was playing without microphones when the bride discovered she could hear her own guests singing. Nobody wanted the electricity back.",
+                "ar": "بل صار أجمل! كانت الفرقة تعزف بلا مكبرات صوت عندما اكتشفت العروس أنها تسمع ضيوفها يغنّون. لم يعد أحد يريد عودة الكهرباء."
               }
             ]
           },
@@ -21455,65 +21738,55 @@
               "mode": "encounter",
               "skill": "listening",
               "canDo": [
-                "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW",
-                "A2.U10.PRODUCTION.TELL_STORY_OPINION"
+                "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW"
               ],
-              "prompt": "What interrupted the film?",
-              "promptAr": "ما الذي قاطع الفيلم؟",
+              "prompt": "What are Karim and Suha talking about?",
+              "promptAr": "عمَّ يتحدث كريم وسهى؟",
               "options": [
-                "A power cut",
-                "A phone call",
-                "The ending"
+                "A power cut in the middle of a wedding party",
+                "A singer who lost his voice on stage",
+                "A wedding that finished much too early"
               ],
-              "answer": "A power cut",
-              "audioTranscript": "I was watching the final scene when the electricity went off. When it returned, I discovered that the film had finished."
+              "answer": "A power cut in the middle of a wedding party",
+              "audioTranscript": "You were at Lamia's wedding on Friday. Is it true about the lights? Every word. The singer was starting the second song when the whole hall went dark. What did people do? Nothing, for ten seconds. Then a cousin opened his phone light, and four hundred phones appeared at the same moment. So the party stopped? It got better! The band was playing without microphones when the bride discovered she could hear her own guests singing. Nobody wanted the electricity back."
             },
             {
               "id": "A2-U10-L2-A02",
-              "lessonId": "A2-U10-L2",
-              "type": "match",
-              "mode": "practice",
-              "skill": "reading",
-              "canDo": [
-                "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW",
-                "A2.U10.PRODUCTION.TELL_STORY_OPINION"
-              ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "interrupt",
-                  "يقاطع"
-                ],
-                [
-                  "disappear",
-                  "يختفي"
-                ],
-                [
-                  "discover",
-                  "يكتشف"
-                ]
-              ]
-            },
-            {
-              "id": "A2-U10-L2-A03",
               "lessonId": "A2-U10-L2",
               "type": "gap",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW",
-                "A2.U10.PRODUCTION.TELL_STORY_OPINION"
+                "A2.U10.READING.FOLLOW_STORY_REVIEW"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "We were walking home when it ___ to rain.",
+              "prompt": "The long action takes the past continuous; the short one that cuts it takes the past simple. Choose the second verb.",
+              "promptAr": "الحدث الطويل يأخذ الماضي المستمر، والحدث القصير الذي يقطعه يأخذ الماضي البسيط. اختر الفعل الثاني.",
+              "text": "The cook was carrying the cake when a waiter ___ the door.",
               "options": [
-                "started",
-                "starts",
-                "starting"
+                "opened",
+                "was opening",
+                "opens"
               ],
-              "answer": "started"
+              "answer": "opened"
+            },
+            {
+              "id": "A2-U10-L2-A03",
+              "lessonId": "A2-U10-L2",
+              "type": "textChoice",
+              "mode": "practice",
+              "skill": "reading",
+              "canDo": [
+                "A2.U10.READING.FOLLOW_STORY_REVIEW"
+              ],
+              "prompt": "Read the manager's message. What caused the power cut?",
+              "promptAr": "اقرأ رسالة مدير القاعة. ما سبب انقطاع الكهرباء؟",
+              "sourceText": "Message from the hall manager: We are sorry. A driver hit a cable outside while your guests were eating, and the lights disappeared for eleven minutes. Nothing was damaged, and we did not interrupt the music for long.",
+              "options": [
+                "A driver hit a cable outside the hall",
+                "The hall was using too much electricity",
+                "The band's equipment failed during a song"
+              ],
+              "answer": "A driver hit a cable outside the hall"
             },
             {
               "id": "A2-U10-L2-A04",
@@ -21522,39 +21795,80 @@
               "mode": "mastery",
               "skill": "listening",
               "canDo": [
-                "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW",
-                "A2.U10.PRODUCTION.TELL_STORY_OPINION"
+                "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW"
               ],
-              "prompt": "What unexpected event occurred?",
-              "promptAr": "ما الحدث غير المتوقع؟",
+              "prompt": "Listen to a man telling a story about his car. What did the bus driver do?",
+              "promptAr": "استمع إلى رجل يحكي قصة عن سيارته. ماذا فعل سائق الحافلة؟",
               "options": [
-                "A dog ran onto the stage.",
-                "The audience left.",
-                "The actor finished."
+                "He took the girl to her exam",
+                "He repaired the car on the bridge",
+                "He called a mechanic for the family"
               ],
-              "answer": "A dog ran onto the stage.",
-              "audioTranscript": "The actor was speaking when a dog ran onto the stage. The audience laughed and the actor stopped."
+              "answer": "He took the girl to her exam",
+              "audioTranscript": "Two summers ago I was driving my daughter to her exam when the car stopped on the bridge. I was looking for a mechanic's number when a bus stopped behind us. The driver did not ask anything. He opened his door, my daughter climbed in, and he took her to the school gate. I was still standing beside the car when she called me. She was laughing. The whole bus waited for her, nobody complained, and she discovered later that she finished first in her class."
             },
             {
               "id": "A2-U10-L2-A05",
               "lessonId": "A2-U10-L2",
               "type": "speak",
               "mode": "mastery",
-              "skill": "spokenProduction",
+              "skill": "spokenInteraction",
               "canDo": [
-                "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW",
-                "A2.U10.PRODUCTION.TELL_STORY_OPINION"
+                "A2.U10.INTERACTION.DISCUSS_ENTERTAINMENT"
               ],
-              "prompt": "Tell a two-event mini-story in which one action interrupts another.",
-              "promptAr": "احك قصة صغيرة من حدثين يقاطع فيها حدثٌ فعلاً آخر.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
+              "prompt": "Your neighbour is describing the day her plans were interrupted. Tell her about a time something interrupted you, and ask her two questions about her day.",
+              "promptAr": "جارتكَ تصف اليوم الذي تعطلت فيه خططها. أخبرها عن مرة قاطع فيها شيءٌ ما يومك، واسألها سؤالين عن يومها.",
+              "partnerTurns": [
+                "I will never forget last Eid. I was cooking for fifteen people when the water stopped.",
+                "I was carrying pots to my sister's kitchen when it started to rain, and I lost half the rice on the stairs.",
+                "We ate at ten at night in the end. Now tell me about your day, and ask me whatever you like."
               ],
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "I was",
+                    "we were",
+                    "was cooking",
+                    "was driving",
+                    "was working",
+                    "was waiting",
+                    "was walking",
+                    "was watching",
+                    "was sleeping",
+                    "were eating",
+                    "were sitting"
+                  ],
+                  [
+                    "when the",
+                    "when my",
+                    "when someone",
+                    "when it",
+                    "suddenly",
+                    "stopped",
+                    "rang",
+                    "went out",
+                    "broke",
+                    "started to rain",
+                    "interrupted"
+                  ],
+                  [
+                    "did you",
+                    "what did",
+                    "how long",
+                    "who was",
+                    "were you",
+                    "what happened",
+                    "where were",
+                    "what about you"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             }
           ]
         },
@@ -21564,37 +21878,53 @@
           "titleAr": "أحداث في الوقت نفسه",
           "lessonType": "encounter-focus-practice",
           "canDo": [
+            "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW",
             "A2.U10.READING.FOLLOW_STORY_REVIEW",
-            "A2.U10.MEDIATION.RELAY_STORY_RECOMMENDATION"
+            "A2.U10.PRODUCTION.TELL_STORY_OPINION"
           ],
           "grammar": [
             "A2.G.WHILE_PAST",
-            "A2.G.MANNER_ADVERBS",
-            "A2.G.COMMON_GERUND_INFINITIVE"
+            "A2.G.PAST_CONTINUOUS"
           ],
           "lexicon": [
             "A2.LEX.AUDIENCE_N01",
             "A2.LEX.PERFORM_V01",
-            "A2.LEX.STAGE_N01",
-            "A2.LEX.CAREFULLY_ADV01",
-            "A2.LEX.CLEARLY_ADV01",
-            "A2.LEX.EFFICIENTLY_ADV01",
-            "A2.LEX.PRACTICAL_ADJ01",
-            "A2.LEX.QUALIFICATION_N01",
-            "A2.LEX.WORK_EXPERIENCE_N01"
+            "A2.LEX.STAGE_N01"
           ],
           "chunks": [
-            "A2.CHUNK.WHILE_THEY_WERE",
-            "A2.CHUNK.WORK_WELL_WITH",
-            "A2.CHUNK.INTERESTED_IN_COURSE",
-            "A2.CHUNK.COULD_YOU_TELL_ME"
+            "A2.CHUNK.WHILE_THEY_WERE"
           ],
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "While the band was performing, the audience was dancing. Two children were holding signs near the stage.",
-                "ar": ""
+                "speaker": "Nabil",
+                "en": "I opened the hall at six. What was happening in here while I was outside?",
+                "ar": "فتحتُ القاعة في السادسة. ماذا كان يحدث هنا بينما كنتُ في الخارج؟"
+              },
+              {
+                "speaker": "Widad",
+                "en": "Everything at once. While the little ones were practising on the stage, the mothers were arranging chairs at the back.",
+                "ar": "كل شيء في وقت واحد. بينما كان الصغار يتدربون على المسرح، كانت الأمهات ينظّمن الكراسي في الخلف."
+              },
+              {
+                "speaker": "Salma",
+                "en": "And I was looking for my shoes for twenty minutes!",
+                "ar": "وأنا كنتُ أبحث عن حذائي عشرين دقيقة!"
+              },
+              {
+                "speaker": "Widad",
+                "en": "While Salma was crying in the corridor, her brother was quietly putting the shoes in her bag.",
+                "ar": "بينما كانت سلمى تبكي في الممر، كان أخوها يضع الحذاء في حقيبتها بهدوء."
+              },
+              {
+                "speaker": "Nabil",
+                "en": "So the audience arrived, and nothing was ready.",
+                "ar": "إذن وصل الجمهور ولم يكن شيء جاهزاً."
+              },
+              {
+                "speaker": "Salma",
+                "en": "It was ready. While the crowd was still coming in, we were already standing behind the curtain, counting.",
+                "ar": "بل كان جاهزاً. بينما كان الحشد ما يزال يدخل، كنا نقف خلف الستارة ونعدّ."
               }
             ]
           },
@@ -21602,110 +21932,142 @@
             {
               "id": "A2-U10-L3-A01",
               "lessonId": "A2-U10-L3",
-              "type": "textChoice",
+              "type": "audioChoice",
               "mode": "encounter",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U10.READING.FOLLOW_STORY_REVIEW",
-                "A2.U10.MEDIATION.RELAY_STORY_RECOMMENDATION"
+                "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW"
               ],
-              "prompt": "What was the audience doing?",
-              "promptAr": "ماذا كان الجمهور يفعل؟",
+              "prompt": "What are the three of them describing?",
+              "promptAr": "ما الذي يصفه الثلاثة؟",
               "options": [
-                "Dancing",
-                "Holding signs",
-                "Leaving"
+                "The hour before a school concert",
+                "A concert that had to be cancelled",
+                "A bag that was lost at the school"
               ],
-              "answer": "Dancing",
-              "sourceText": "While the band was performing, the audience was dancing. Two children were holding signs near the stage."
+              "answer": "The hour before a school concert",
+              "audioTranscript": "I opened the hall at six. What was happening in here while I was outside? Everything at once. While the little ones were practising on the stage, the mothers were arranging chairs at the back. And I was looking for my shoes for twenty minutes! While Salma was crying in the corridor, her brother was quietly putting the shoes in her bag. So the audience arrived, and nothing was ready. It was ready. While the crowd was still coming in, we were already standing behind the curtain, counting."
             },
             {
               "id": "A2-U10-L3-A02",
               "lessonId": "A2-U10-L3",
-              "type": "match",
+              "type": "order",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U10.READING.FOLLOW_STORY_REVIEW",
-                "A2.U10.MEDIATION.RELAY_STORY_RECOMMENDATION"
+                "A2.U10.READING.FOLLOW_STORY_REVIEW"
               ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "audience",
-                  "جمهور"
-                ],
-                [
-                  "perform",
-                  "يؤدي"
-                ],
-                [
-                  "stage",
-                  "مسرح"
-                ]
+              "prompt": "Build the sentence so that while introduces the longer action.",
+              "promptAr": "كوّن الجملة بحيث تقدّم while الحدثَ الأطول.",
+              "tokens": [
+                "were tuning",
+                "the musicians",
+                "While the hall",
+                "their instruments.",
+                "was filling,"
+              ],
+              "answer": [
+                "While the hall",
+                "was filling,",
+                "the musicians",
+                "were tuning",
+                "their instruments."
               ]
             },
             {
               "id": "A2-U10-L3-A03",
               "lessonId": "A2-U10-L3",
-              "type": "gap",
+              "type": "textChoice",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U10.READING.FOLLOW_STORY_REVIEW",
-                "A2.U10.MEDIATION.RELAY_STORY_RECOMMENDATION"
+                "A2.U10.READING.FOLLOW_STORY_REVIEW"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "While we were waiting, the musicians ___ practising.",
+              "prompt": "Read the school newsletter. Where was class five during class four's turn?",
+              "promptAr": "اقرأ نشرة المدرسة. أين كان الصف الخامس أثناء دور الصف الرابع؟",
+              "sourceText": "From the school newsletter: Our concert worked because three groups were working at the same time. While class four was performing, class five was waiting in the library, and six parents were selling tea in the yard. Nobody was standing in the wrong place.",
               "options": [
-                "were",
-                "was",
-                "did"
+                "In the library",
+                "In the yard with the parents",
+                "Behind the curtain with class four"
               ],
-              "answer": "were"
+              "answer": "In the library"
             },
             {
               "id": "A2-U10-L3-A04",
               "lessonId": "A2-U10-L3",
-              "type": "textChoice",
+              "type": "audioChoice",
               "mode": "mastery",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U10.READING.FOLLOW_STORY_REVIEW",
-                "A2.U10.MEDIATION.RELAY_STORY_RECOMMENDATION"
+                "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW"
               ],
-              "prompt": "Who was moving the lights?",
-              "promptAr": "من كان يحرك الأضواء؟",
+              "prompt": "Listen to a woman describing a street festival. What was happening while the drummers were moving down the road?",
+              "promptAr": "استمع إلى امرأة تصف مهرجاناً في الشارع. ماذا كان يحدث بينما كان الطبّالون يسيرون في الطريق؟",
               "options": [
-                "The technicians",
-                "The actors",
-                "The presenter"
+                "Women were laying cloths and boys were carrying chairs",
+                "The square was still completely empty",
+                "The food was being cooked in the houses"
               ],
-              "answer": "The technicians",
-              "sourceText": "While the actors were changing clothes, the presenter was talking to the audience and the technicians were moving the lights."
+              "answer": "Women were laying cloths and boys were carrying chairs",
+              "audioTranscript": "Our street festival looks like chaos, but every year it works. While the drummers were moving down the main road, the older women were laying cloths in the square and the boys were carrying chairs from the mosque. I was filming from a balcony. At seven the drummers reached the square, and everything was finished at exactly the same minute: the food was hot, the chairs were straight, and nine hundred people were already sitting down. We were not lucky. We were counting."
             },
             {
               "id": "A2-U10-L3-A05",
               "lessonId": "A2-U10-L3",
               "type": "speak",
               "mode": "mastery",
-              "skill": "mediation",
+              "skill": "spokenProduction",
               "canDo": [
-                "A2.U10.READING.FOLLOW_STORY_REVIEW",
-                "A2.U10.MEDIATION.RELAY_STORY_RECOMMENDATION"
+                "A2.U10.PRODUCTION.TELL_STORY_OPINION"
               ],
-              "prompt": "Relay what three groups were doing at the same time in an event scene.",
-              "promptAr": "انقل ما كانت تفعله ثلاث مجموعات في الوقت نفسه في مشهد فعالية.",
-              "evaluation": [
-                "selectRelevantInformation",
-                "clarity",
-                "audienceAwareness",
-                "accuracy"
-              ],
+              "prompt": "Describe a busy scene you remember - a market, a wedding, a match. Say what three different people or groups were doing at the same time, and what you were doing.",
+              "promptAr": "صف مشهداً مزدحماً تتذكره: سوقاً أو عرساً أو مباراة. قل ماذا كان ثلاثة أشخاص أو ثلاث مجموعات يفعلون في الوقت نفسه، وماذا كنتَ تفعل أنت.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "while",
+                    "at the same time",
+                    "meanwhile",
+                    "during",
+                    "at the same minute",
+                    "all at once"
+                  ],
+                  [
+                    "were standing",
+                    "were waiting",
+                    "were selling",
+                    "were playing",
+                    "were talking",
+                    "were cooking",
+                    "were dancing",
+                    "were carrying",
+                    "was playing",
+                    "was sitting",
+                    "was watching",
+                    "was singing"
+                  ],
+                  [
+                    "the audience",
+                    "the crowd",
+                    "the children",
+                    "the women",
+                    "the men",
+                    "my family",
+                    "the players",
+                    "the musicians",
+                    "the guests",
+                    "the sellers",
+                    "the neighbours"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             }
           ]
         },
@@ -21715,26 +22077,58 @@
           "titleAr": "صف العمل الترفيهي",
           "lessonType": "encounter-focus-practice",
           "canDo": [
+            "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW",
             "A2.U10.READING.FOLLOW_STORY_REVIEW",
-            "A2.U10.INTERACTION.DISCUSS_ENTERTAINMENT"
+            "A2.U10.WRITING.WRITE_SHORT_REVIEW"
           ],
           "grammar": [
-            "A2.G.RELATIVE_CLAUSES_BASIC"
+            "A2.G.RELATIVE_CLAUSES_BASIC",
+            "A2.G.RELATIVE_WHO_CHUNK"
           ],
           "lexicon": [
             "A2.LEX.COMEDY_N01",
             "A2.LEX.DOCUMENTARY_N01",
-            "A2.LEX.ENDING_N01"
+            "A2.LEX.ENDING_N01",
+            "A2.LEX.ACTOR_N01",
+            "A2.LEX.EPISODE_N01",
+            "A2.LEX.SUBTITLES_N01",
+            "A2.LEX.NOVEL_N01"
           ],
           "chunks": [
-            "A2.CHUNK.THE_MAIN_CHARACTER"
+            "A2.CHUNK.THE_MAIN_CHARACTER",
+            "A2.CHUNK.BASED_ON_A_TRUE_STORY"
           ],
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "City Voices is a documentary that follows three young musicians. It has an ending which shows their first public concert.",
-                "ar": ""
+                "speaker": "Zaid",
+                "en": "My sister keeps sending me one series. Is it the one which is about a bus driver?",
+                "ar": "أختي تبعث لي مسلسلاً واحداً باستمرار. هل هو ذاك الذي يدور حول سائق حافلة؟"
+              },
+              {
+                "speaker": "Hala",
+                "en": "No, that's the comedy. She means the documentary that follows four families in Basra for a year.",
+                "ar": "لا، تلك هي الكوميديا. هي تقصد الفيلم الوثائقي الذي يتابع أربع عائلات في البصرة مدة سنة."
+              },
+              {
+                "speaker": "Zaid",
+                "en": "A documentary? My Arabic is fine, but my English is slow.",
+                "ar": "فيلم وثائقي؟ عربيتي جيدة، لكن إنجليزيتي بطيئة."
+              },
+              {
+                "speaker": "Hala",
+                "en": "It has subtitles. And the actor who narrates it speaks very clearly.",
+                "ar": "فيه ترجمة مكتوبة. والممثل الذي يروي أحداثه يتحدث بوضوح شديد."
+              },
+              {
+                "speaker": "Zaid",
+                "en": "How many episodes?",
+                "ar": "كم حلقة فيه؟"
+              },
+              {
+                "speaker": "Hala",
+                "en": "Six. Each one ends with a question which the next episode answers. The ending is the best part, and I won't say more.",
+                "ar": "ست حلقات. كل حلقة تنتهي بسؤال تجيب عنه الحلقة التالية. النهاية هي أفضل جزء، ولن أقول أكثر."
               }
             ]
           },
@@ -21742,69 +22136,59 @@
             {
               "id": "A2-U10-L4-A01",
               "lessonId": "A2-U10-L4",
-              "type": "textChoice",
+              "type": "audioChoice",
               "mode": "encounter",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U10.READING.FOLLOW_STORY_REVIEW",
-                "A2.U10.INTERACTION.DISCUSS_ENTERTAINMENT"
+                "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW"
               ],
-              "prompt": "What kind of programme is City Voices?",
-              "promptAr": "ما نوع برنامج City Voices؟",
+              "prompt": "What are Hala and Zaid working out?",
+              "promptAr": "ما الذي يحاول هالة وزيد تحديده؟",
               "options": [
-                "A documentary",
-                "A comedy",
-                "A game show"
+                "Which programme Zaid's sister means",
+                "Where Hala's sister lives now",
+                "How to turn the subtitles off"
               ],
-              "answer": "A documentary",
-              "sourceText": "City Voices is a documentary that follows three young musicians. It has an ending which shows their first public concert."
+              "answer": "Which programme Zaid's sister means",
+              "audioTranscript": "My sister keeps sending me one series. Is it the one which is about a bus driver? No, that's the comedy. She means the documentary that follows four families in Basra for a year. A documentary? My Arabic is fine, but my English is slow. It has subtitles. And the actor who narrates it speaks very clearly. How many episodes? Six. Each one ends with a question which the next episode answers. The ending is the best part, and I won't say more."
             },
             {
               "id": "A2-U10-L4-A02",
-              "lessonId": "A2-U10-L4",
-              "type": "match",
-              "mode": "practice",
-              "skill": "reading",
-              "canDo": [
-                "A2.U10.READING.FOLLOW_STORY_REVIEW",
-                "A2.U10.INTERACTION.DISCUSS_ENTERTAINMENT"
-              ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "comedy",
-                  "كوميديا"
-                ],
-                [
-                  "documentary",
-                  "فيلم وثائقي"
-                ],
-                [
-                  "ending",
-                  "نهاية"
-                ]
-              ]
-            },
-            {
-              "id": "A2-U10-L4-A03",
               "lessonId": "A2-U10-L4",
               "type": "gap",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U10.READING.FOLLOW_STORY_REVIEW",
-                "A2.U10.INTERACTION.DISCUSS_ENTERTAINMENT"
+                "A2.U10.READING.FOLLOW_STORY_REVIEW"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "It's a comedy ___ families can enjoy together.",
+              "prompt": "Use who for people and which for things. Choose the word that fits a person.",
+              "promptAr": "استخدم who للأشخاص وwhich للأشياء. اختر الكلمة التي تناسب شخصاً.",
+              "text": "The main character is a teacher ___ writes letters for her neighbours.",
               "options": [
-                "that",
-                "where",
-                "what"
+                "who",
+                "which",
+                "where"
               ],
-              "answer": "that"
+              "answer": "who"
+            },
+            {
+              "id": "A2-U10-L4-A03",
+              "lessonId": "A2-U10-L4",
+              "type": "audioChoice",
+              "mode": "practice",
+              "skill": "listening",
+              "canDo": [
+                "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW"
+              ],
+              "prompt": "Listen to the evening announcement. What is The Long Road?",
+              "promptAr": "استمع إلى إعلان برامج المساء. ما هو عمل «الطريق الطويل»؟",
+              "options": [
+                "A comedy taken from a novel",
+                "A documentary about bakers",
+                "A programme about old bridges"
+              ],
+              "answer": "A comedy taken from a novel",
+              "audioTranscript": "Good evening. Tonight at nine we have The Long Road, a comedy about two brothers who open a bakery in a town that has four bakeries already. It is the novel which every student read at school, and the actor who plays the older brother has not acted for eleven years. After that, at ten, a documentary that follows the men who repair the old bridges of Mosul. Both programmes have Arabic subtitles. The last episode of The Long Road is next Thursday."
             },
             {
               "id": "A2-U10-L4-A04",
@@ -21813,39 +22197,89 @@
               "mode": "mastery",
               "skill": "reading",
               "canDo": [
-                "A2.U10.READING.FOLLOW_STORY_REVIEW",
-                "A2.U10.INTERACTION.DISCUSS_ENTERTAINMENT"
+                "A2.U10.READING.FOLLOW_STORY_REVIEW"
               ],
-              "prompt": "Who finds the bag?",
-              "promptAr": "من يجد الحقيبة؟",
+              "prompt": "Read the back cover. Who is the book for?",
+              "promptAr": "اقرأ الغلاف الخلفي. لمن هذا الكتاب؟",
+              "sourceText": "Back cover of The Salt House: This is a novel which is based on a true story. The main character is a fisherman who loses his boat and walks home along the coast for nine days. Readers who like quiet books will finish it in one evening.",
               "options": [
-                "A neighbour",
-                "A police officer",
-                "A musician"
+                "Readers who enjoy quiet books",
+                "Readers who want a long series",
+                "Readers who dislike true stories"
               ],
-              "answer": "A neighbour",
-              "sourceText": "The Lost Key is a comedy about a neighbour who finds a bag and tries to return it. The main character makes many funny mistakes."
+              "answer": "Readers who enjoy quiet books"
             },
             {
               "id": "A2-U10-L4-A05",
               "lessonId": "A2-U10-L4",
-              "type": "speak",
+              "type": "write",
               "mode": "mastery",
-              "skill": "spokenInteraction",
+              "skill": "writing",
               "canDo": [
-                "A2.U10.READING.FOLLOW_STORY_REVIEW",
-                "A2.U10.INTERACTION.DISCUSS_ENTERTAINMENT"
+                "A2.U10.WRITING.WRITE_SHORT_REVIEW"
               ],
-              "prompt": "Describe a film, book or show without naming it and let a partner identify the type.",
-              "promptAr": "صف فيلماً أو كتاباً أو عرضاً من دون تسميته ودع شريكاً يحدد نوعه.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "A friend asks you to describe a film, series or book without naming it. Write your description: what kind it is, who the main character is, and what happens. Use who, which or that at least twice.",
+              "promptAr": "يطلب منكَ صديق أن تصف فيلماً أو مسلسلاً أو كتاباً من دون تسميته. اكتب وصفك: ما نوعه، ومن الشخصية الرئيسية، وماذا يحدث. استخدم who أو which أو that مرتين على الأقل.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "who",
+                    "which",
+                    "a film that",
+                    "a story that",
+                    "a book that",
+                    "a series that",
+                    "a comedy that",
+                    "a man that",
+                    "a woman that",
+                    "characters that"
+                  ],
+                  [
+                    "comedy",
+                    "documentary",
+                    "novel",
+                    "series",
+                    "film",
+                    "story",
+                    "episode",
+                    "book",
+                    "programme"
+                  ],
+                  [
+                    "the main character",
+                    "the actor",
+                    "a teacher",
+                    "a driver",
+                    "a doctor",
+                    "a woman",
+                    "a man",
+                    "a boy",
+                    "a girl",
+                    "a family"
+                  ],
+                  [
+                    "happens",
+                    "he finds",
+                    "she finds",
+                    "they find",
+                    "loses",
+                    "decides",
+                    "tries",
+                    "meets",
+                    "travels",
+                    "at the beginning",
+                    "in the end"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "wordGuide": [
+                75,
+                100
+              ]
             }
           ]
         },
@@ -21856,36 +22290,57 @@
           "lessonType": "encounter-focus-practice",
           "canDo": [
             "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW",
+            "A2.U10.READING.FOLLOW_STORY_REVIEW",
             "A2.U10.INTERACTION.DISCUSS_ENTERTAINMENT"
           ],
           "grammar": [
             "A2.G.OPINION_LINKERS",
-            "A2.G.HEALTH_DURATION_FOR_SINCE",
-            "A2.G.ADVICE_LINKERS"
+            "A2.G.PRESENT_PERFECT_EXPERIENCE"
           ],
           "lexicon": [
             "A2.LEX.ENTERTAINING_ADJ01",
             "A2.LEX.CONFUSING_ADJ01",
             "A2.LEX.MOVING_ADJ01",
-            "A2.LEX.SYMPTOM_N01",
-            "A2.LEX.PAIN_N01",
-            "A2.LEX.WORSE_ADJ01",
-            "A2.LEX.WELL_BEING_N01",
-            "A2.LEX.HABIT_N01",
-            "A2.LEX.RECOVER_V01"
+            "A2.LEX.PREDICTABLE_ADJ01",
+            "A2.LEX.SPOIL_V01"
           ],
           "chunks": [
             "A2.CHUNK.IN_MY_OPINION",
             "A2.CHUNK.WHAT_I_LIKED",
-            "A2.CHUNK.IT_STARTED",
-            "A2.CHUNK.IF_GETS_WORSE"
+            "A2.CHUNK.HAVE_YOU_SEEN",
+            "A2.CHUNK.THE_BEST_PART_WAS"
           ],
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "In my opinion, the film was entertaining because the characters were warm. Although the middle was confusing, the ending was moving.",
-                "ar": "في رأيي كان الفيلم مسلياً لأن الشخصيات محببة. مع أن الوسط كان مربكاً، كانت النهاية مؤثرة."
+                "speaker": "Omar",
+                "en": "Have you seen The Salt House? Everybody at work is talking about it.",
+                "ar": "هل شاهدتِ «بيت الملح»؟ الجميع في العمل يتحدث عنه."
+              },
+              {
+                "speaker": "Ruqayya",
+                "en": "I have seen it twice. Although the first hour is slow, I would watch it again tomorrow.",
+                "ar": "شاهدته مرتين. مع أن الساعة الأولى بطيئة، فإني مستعدة لمشاهدته غداً مرة أخرى."
+              },
+              {
+                "speaker": "Omar",
+                "en": "Twice? My brother said it was confusing.",
+                "ar": "مرتين؟ قال أخي إنه مربك."
+              },
+              {
+                "speaker": "Ruqayya",
+                "en": "It is confusing at the start, because nobody explains who the old woman is. Then it becomes very moving.",
+                "ar": "هو مربك في البداية لأن لا أحد يوضّح من تكون المرأة العجوز. ثم يصبح مؤثراً جداً."
+              },
+              {
+                "speaker": "Omar",
+                "en": "Is it entertaining, though? I have never enjoyed sad films.",
+                "ar": "لكن هل هو مسلٍّ؟ أنا لم أستمتع يوماً بالأفلام الحزينة."
+              },
+              {
+                "speaker": "Ruqayya",
+                "en": "The best part was the ending, and it is not sad. But don't let anyone spoil it for you, because that ruins the whole thing.",
+                "ar": "أفضل جزء كان النهاية، وهي ليست حزينة. لكن لا تدع أحداً يفسدها عليك، فذلك يخرّب كل شيء."
               }
             ]
           },
@@ -21897,65 +22352,55 @@
               "mode": "encounter",
               "skill": "listening",
               "canDo": [
-                "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW",
-                "A2.U10.INTERACTION.DISCUSS_ENTERTAINMENT"
+                "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW"
               ],
-              "prompt": "Which part was confusing?",
-              "promptAr": "أي جزء كان مربكاً؟",
+              "prompt": "What are Omar and Ruqayya discussing?",
+              "promptAr": "عمَّ يتحدث عمر ورقية؟",
               "options": [
-                "The middle",
-                "The ending",
-                "The characters"
+                "Whether Omar should watch a film",
+                "A film they both disliked",
+                "A book Ruqayya is writing"
               ],
-              "answer": "The middle",
-              "audioTranscript": "In my opinion, the film was entertaining because the characters were warm. Although the middle was confusing, the ending was moving."
+              "answer": "Whether Omar should watch a film",
+              "audioTranscript": "Have you seen The Salt House? Everybody at work is talking about it. I have seen it twice. Although the first hour is slow, I would watch it again tomorrow. Twice? My brother said it was confusing. It is confusing at the start, because nobody explains who the old woman is. Then it becomes very moving. Is it entertaining, though? I have never enjoyed sad films. The best part was the ending, and it is not sad. But don't let anyone spoil it for you, because that ruins the whole thing."
             },
             {
               "id": "A2-U10-L5-A02",
-              "lessonId": "A2-U10-L5",
-              "type": "match",
-              "mode": "practice",
-              "skill": "reading",
-              "canDo": [
-                "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW",
-                "A2.U10.INTERACTION.DISCUSS_ENTERTAINMENT"
-              ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "entertaining",
-                  "مسلٍّ"
-                ],
-                [
-                  "confusing",
-                  "مربك"
-                ],
-                [
-                  "moving",
-                  "مؤثر"
-                ]
-              ]
-            },
-            {
-              "id": "A2-U10-L5-A03",
               "lessonId": "A2-U10-L5",
               "type": "gap",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW",
-                "A2.U10.INTERACTION.DISCUSS_ENTERTAINMENT"
+                "A2.U10.READING.FOLLOW_STORY_REVIEW"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "Although it was slow, I ___ the ending.",
+              "prompt": "Although joins two facts that do not fit together. Choose the word that fits.",
+              "promptAr": "تربط although حقيقتين لا تتفقان معاً. اختر الكلمة المناسبة.",
+              "text": "___ the story was predictable, the acting kept me in my chair.",
               "options": [
-                "liked",
-                "like to",
-                "liking"
+                "Although",
+                "Because",
+                "So"
               ],
-              "answer": "liked"
+              "answer": "Although"
+            },
+            {
+              "id": "A2-U10-L5-A03",
+              "lessonId": "A2-U10-L5",
+              "type": "textChoice",
+              "mode": "practice",
+              "skill": "reading",
+              "canDo": [
+                "A2.U10.READING.FOLLOW_STORY_REVIEW"
+              ],
+              "prompt": "Read the comment under the trailer. What does the writer think in the end?",
+              "promptAr": "اقرأ التعليق تحت المقطع الدعائي. ما رأي الكاتبة في النهاية؟",
+              "sourceText": "Comment under the trailer: I watched this with my mother, who never finishes a film. In my opinion the middle is too long, and the second half is predictable. Although I complained for two hours, I am still thinking about it a week later.",
+              "options": [
+                "The film stayed with her although she criticised it",
+                "She regrets the two hours she spent on it",
+                "Her mother enjoyed it far more than she did"
+              ],
+              "answer": "The film stayed with her although she criticised it"
             },
             {
               "id": "A2-U10-L5-A04",
@@ -21964,18 +22409,17 @@
               "mode": "mastery",
               "skill": "listening",
               "canDo": [
-                "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW",
-                "A2.U10.INTERACTION.DISCUSS_ENTERTAINMENT"
+                "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW"
               ],
-              "prompt": "Why does the speaker still recommend it?",
-              "promptAr": "لماذا لا يزال المتحدث يوصي به؟",
+              "prompt": "Listen to a review of a theatre season. What is the speaker's problem with the first play?",
+              "promptAr": "استمع إلى مراجعة لموسم مسرحي. ما مشكلة المتحدثة مع المسرحية الأولى؟",
               "options": [
-                "The final scene was excellent.",
-                "The story was short.",
-                "There was no music."
+                "She guessed the ending very early",
+                "It was far too short for the ticket",
+                "She could not hear the actors at all"
               ],
-              "answer": "The final scene was excellent.",
-              "audioTranscript": "What I liked was the music, but the story was too long. I still recommend it because the final scene was excellent."
+              "answer": "She guessed the ending very early",
+              "audioTranscript": "I will give you my honest opinion of the new theatre season. What I liked was the second play, about a family who lose their shop. Although it was only forty minutes, three people near me were crying at the end. The first play was entertaining but completely predictable, and I knew the ending after five minutes. In my opinion the season is worth the ticket, and the best part was that nobody tried to explain anything to the audience."
             },
             {
               "id": "A2-U10-L5-A05",
@@ -21984,19 +22428,59 @@
               "mode": "mastery",
               "skill": "spokenInteraction",
               "canDo": [
-                "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW",
                 "A2.U10.INTERACTION.DISCUSS_ENTERTAINMENT"
               ],
-              "prompt": "Exchange opinions about entertainment, giving one positive point, one limitation and a reason.",
-              "promptAr": "تبادل الآراء حول عمل ترفيهي مع نقطة إيجابية وقيد واحد وسبب.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
+              "prompt": "A colleague wants to know whether a film is worth her evening. Give a balanced opinion: one thing you liked, one limitation with although, and a clear recommendation.",
+              "promptAr": "تريد زميلة أن تعرف إن كان الفيلم يستحق أمسيتها. قدّم رأياً متوازناً: شيئاً أعجبك، وقيداً واحداً باستخدام although، وتوصية واضحة.",
+              "partnerTurns": [
+                "Have you seen the one everybody is talking about? I have three free hours tonight.",
+                "My sister says the first hour is slow. Is that true, or was she asleep?",
+                "So should I watch it tonight, or should I choose something else? Tell me honestly."
               ],
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "I liked",
+                    "what I liked",
+                    "the best part",
+                    "moving",
+                    "entertaining",
+                    "excellent",
+                    "funny",
+                    "beautiful",
+                    "I enjoyed",
+                    "strong"
+                  ],
+                  [
+                    "although",
+                    "but",
+                    "however",
+                    "too long",
+                    "too slow",
+                    "confusing",
+                    "predictable",
+                    "the only problem",
+                    "not perfect"
+                  ],
+                  [
+                    "I recommend",
+                    "watch it",
+                    "don't watch",
+                    "worth",
+                    "you would like",
+                    "it is for",
+                    "if you like",
+                    "I would not",
+                    "choose something else"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             }
           ]
         },
@@ -22006,11 +22490,15 @@
           "titleAr": "اكتب توصية",
           "lessonType": "integrated-production",
           "canDo": [
+            "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW",
+            "A2.U10.READING.FOLLOW_STORY_REVIEW",
+            "A2.U10.PRODUCTION.TELL_STORY_OPINION",
             "A2.U10.WRITING.WRITE_SHORT_REVIEW",
-            "A2.U10.PRODUCTION.TELL_STORY_OPINION"
+            "A2.U10.MEDIATION.RELAY_STORY_RECOMMENDATION"
           ],
           "grammar": [
             "A2.G.RECOMMEND_GERUND",
+            "A2.G.COMMON_GERUND_INFINITIVE",
             "A2.G.OPINION_LINKERS"
           ],
           "lexicon": [
@@ -22020,16 +22508,13 @@
           ],
           "chunks": [
             "A2.CHUNK.I_RECOMMEND_IT_TO",
-            "A2.CHUNK.OUT_OF_FIVE"
+            "A2.CHUNK.OUT_OF_FIVE",
+            "A2.CHUNK.WORTH_WATCHING"
           ],
-          "encounter": {
-            "dialogue": [
-              {
-                "speaker": "Narrator",
-                "en": "Review: River Lights is a moving family film with a simple plot. The first half is slow, but the ending is strong. I recommend it to viewers who like quiet stories. Four out of five.",
-                "ar": ""
-              }
-            ]
+          "readingText": {
+            "title": "The Night Bus - a review",
+            "text": "The Night Bus is a six-episode comedy that follows a driver called Munther on the last bus out of Baghdad every night. I watched all six episodes in two evenings, which is not something I usually do. The plot is small and that is its strength. Nothing large happens: a woman loses a ring, two students argue about football, an old man falls asleep and misses his stop. The actor who plays Munther says very little, and the best part was watching his face while other people talked. Although the fourth episode is weak, because the writers try too hard to be funny, the ending of the series is genuinely moving. The English is clear and the Arabic subtitles are good. I recommend it to anyone who enjoys quiet stories, and to learners who want listening practice. It is worth watching twice. Four out of five.",
+            "textAr": "«حافلة الليل» مسلسل كوميدي من ست حلقات يتابع سائقاً اسمه منذر في آخر حافلة تخرج من بغداد كل ليلة. شاهدتُ الحلقات الست في مساءين، وهذا ليس ما أفعله عادةً. الحبكة صغيرة، وهنا تكمن قوتها. لا يحدث شيء كبير: امرأة تفقد خاتمها، وطالبان يتجادلان حول كرة القدم، ورجل مسنّ ينام فيفوته موقفه. الممثل الذي يؤدي دور منذر يقول القليل جداً، وأفضل جزء كان مراقبة وجهه بينما يتحدث الآخرون. ومع أن الحلقة الرابعة ضعيفة لأن الكتّاب يبالغون في محاولة الإضحاك، فإن نهاية المسلسل مؤثرة حقاً. الإنجليزية فيه واضحة، والترجمة العربية المكتوبة جيدة. أوصي به لكل من يحب القصص الهادئة، وللمتعلمين الذين يريدون تدريباً على الاستماع. إنه يستحق المشاهدة مرتين. أربعة من خمسة."
           },
           "activities": [
             {
@@ -22039,85 +22524,152 @@
               "mode": "encounter",
               "skill": "reading",
               "canDo": [
-                "A2.U10.WRITING.WRITE_SHORT_REVIEW",
-                "A2.U10.PRODUCTION.TELL_STORY_OPINION"
+                "A2.U10.READING.FOLLOW_STORY_REVIEW"
               ],
-              "prompt": "Who may enjoy the film?",
-              "promptAr": "من قد يستمتع بالفيلم؟",
+              "prompt": "Read the review once. What is the writer's overall message?",
+              "promptAr": "اقرأ المراجعة مرة واحدة. ما الرسالة العامة التي يقدمها الكاتب؟",
               "options": [
-                "Viewers who like quiet stories",
-                "Only action fans",
-                "People who dislike family films"
+                "Watch it, because the small story is its strength",
+                "Skip it unless you like loud comedies",
+                "Wait for the second series before you start"
               ],
-              "answer": "Viewers who like quiet stories",
-              "sourceText": "Review: River Lights is a moving family film with a simple plot. The first half is slow, but the ending is strong. I recommend it to viewers who like quiet stories. Four out of five."
+              "answer": "Watch it, because the small story is its strength"
             },
             {
               "id": "A2-U10-L6-A02",
               "lessonId": "A2-U10-L6",
-              "type": "match",
+              "type": "audioChoice",
               "mode": "practice",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U10.WRITING.WRITE_SHORT_REVIEW",
-                "A2.U10.PRODUCTION.TELL_STORY_OPINION"
+                "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW"
               ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "review",
-                  "مراجعة"
-                ],
-                [
-                  "recommendation",
-                  "توصية"
-                ],
-                [
-                  "rating",
-                  "تقييم"
-                ]
-              ]
+              "prompt": "Listen to the voice message. Why does the speaker advise using subtitles?",
+              "promptAr": "استمع إلى الرسالة الصوتية. لماذا ينصح المتحدث باستخدام الترجمة المكتوبة؟",
+              "options": [
+                "The driver speaks very quietly",
+                "The Arabic is better than the English",
+                "The first minutes have no sound"
+              ],
+              "answer": "The driver speaks very quietly",
+              "audioTranscript": "You asked me for a recommendation, so here is my short review. Do not start The Night Bus if you only have one free evening, because you will not stop at one episode. My rating is four out of five, and I took one star away for the fourth episode. Two warnings. First, do not read the comments online, because somebody always spoils the ending. Second, watch it with the subtitles on, even if your English is good, because the driver speaks very quietly and half the jokes are in what he does not say."
             },
             {
               "id": "A2-U10-L6-A03",
               "lessonId": "A2-U10-L6",
-              "type": "gap",
+              "type": "speak",
               "mode": "practice",
-              "skill": "reading",
+              "skill": "spokenProduction",
               "canDo": [
-                "A2.U10.WRITING.WRITE_SHORT_REVIEW",
                 "A2.U10.PRODUCTION.TELL_STORY_OPINION"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "I recommend ___ it with friends.",
-              "options": [
-                "watching",
-                "watch",
-                "watched"
-              ],
-              "answer": "watching"
+              "prompt": "Before you write anything, say your own review aloud the way the model says it: what it is, one strength, one limitation with although, and who it is for.",
+              "promptAr": "قبل أن تكتب شيئاً، قل مراجعتكَ بصوت عالٍ كما يقولها النموذج: ما هو العمل، ونقطة قوة، وقيد واحد باستخدام although، ولمن هو.",
+              "accepted": [],
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "comedy",
+                    "documentary",
+                    "novel",
+                    "series",
+                    "film",
+                    "book",
+                    "story",
+                    "programme"
+                  ],
+                  [
+                    "the best part",
+                    "what I liked",
+                    "strong",
+                    "moving",
+                    "entertaining",
+                    "funny",
+                    "clear",
+                    "beautiful"
+                  ],
+                  [
+                    "although",
+                    "but",
+                    "too long",
+                    "too slow",
+                    "weak",
+                    "predictable",
+                    "confusing",
+                    "the only problem"
+                  ],
+                  [
+                    "I recommend it to",
+                    "for anyone who",
+                    "for people who",
+                    "it is for",
+                    "if you like",
+                    "viewers who",
+                    "readers who",
+                    "learners who"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U10-L6-A04",
               "lessonId": "A2-U10-L6",
-              "type": "textChoice",
+              "type": "speak",
               "mode": "mastery",
-              "skill": "reading",
+              "skill": "mediation",
               "canDo": [
-                "A2.U10.WRITING.WRITE_SHORT_REVIEW",
-                "A2.U10.PRODUCTION.TELL_STORY_OPINION"
+                "A2.U10.MEDIATION.RELAY_STORY_RECOMMENDATION"
               ],
-              "prompt": "What is praised most clearly?",
-              "promptAr": "ما الذي مُدح بوضوح؟",
-              "options": [
-                "The actors",
-                "Every scene",
-                "The simple story"
-              ],
-              "answer": "The actors",
-              "sourceText": "The Blue Door is an entertaining comedy, although some scenes are confusing. The actors are excellent. Rating: three out of five."
+              "prompt": "Your aunt does not read English and is choosing a film for her grandchildren. Tell her what it is about, what the warning says, and which showing she should book.",
+              "promptAr": "عمتكَ لا تقرأ الإنجليزية، وهي تختار فيلماً لأحفادها. أخبرها بموضوعه، وبما يقوله التنبيه، وبأي عرض ينبغي أن تحجز.",
+              "sourceCard": "Cinema listing: Paper Boats. A ninety-minute film about a girl who builds a radio. Warning: one long scene shows a storm at sea and may frighten young children. Rating: suitable from ten years. Arabic subtitles at the three o'clock showing only.",
+              "accepted": [],
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "girl",
+                    "radio",
+                    "builds",
+                    "a film about",
+                    "ninety minutes",
+                    "the story of"
+                  ],
+                  [
+                    "storm",
+                    "frighten",
+                    "at sea",
+                    "warning",
+                    "frightening",
+                    "afraid",
+                    "scary"
+                  ],
+                  [
+                    "ten years",
+                    "from ten",
+                    "suitable",
+                    "old enough",
+                    "too young",
+                    "younger children"
+                  ],
+                  [
+                    "subtitles",
+                    "three o'clock",
+                    "Arabic",
+                    "the three",
+                    "afternoon showing"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U10-L6-A05",
@@ -22126,22 +22678,63 @@
               "mode": "mastery",
               "skill": "writing",
               "canDo": [
-                "A2.U10.WRITING.WRITE_SHORT_REVIEW",
-                "A2.U10.PRODUCTION.TELL_STORY_OPINION"
+                "A2.U10.WRITING.WRITE_SHORT_REVIEW"
               ],
-              "prompt": "Write a balanced review with type, short summary, opinion, audience recommendation and rating.",
-              "promptAr": "اكتب مراجعة متوازنة تتضمن النوع وملخصاً قصيراً ورأياً وتوصية للجمهور وتقييماً.",
-              "evaluation": [
-                "taskCompletion",
-                "clarity",
-                "organisation",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "Now write your own review of a film, series or book. Say what kind it is and who is in it, give one strength and one limitation with although, say who it is for, and finish with a rating.",
+              "promptAr": "اكتب الآن مراجعتكَ لفيلم أو مسلسل أو كتاب. قل ما نوعه ومن فيه، واذكر نقطة قوة وقيداً باستخدام although، وقل لمن هو، واختم بتقييم.",
               "accepted": [],
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "comedy",
+                    "documentary",
+                    "novel",
+                    "series",
+                    "a film that",
+                    "a story which",
+                    "who plays",
+                    "which follows",
+                    "that follows",
+                    "the main character"
+                  ],
+                  [
+                    "although",
+                    "but",
+                    "however",
+                    "the only problem",
+                    "too long",
+                    "too slow",
+                    "predictable",
+                    "confusing",
+                    "not perfect"
+                  ],
+                  [
+                    "I recommend it to",
+                    "for anyone who",
+                    "for people who",
+                    "it is for",
+                    "viewers who",
+                    "readers who",
+                    "if you like",
+                    "families"
+                  ],
+                  [
+                    "out of five",
+                    "out of ten",
+                    "four stars",
+                    "three stars",
+                    "five stars",
+                    "my rating",
+                    "I give it"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
               "wordGuide": [
-                90,
-                120
+                75,
+                100
               ]
             }
           ]
@@ -22175,15 +22768,15 @@
                 "A2.U10.READING.FOLLOW_STORY_REVIEW",
                 "A2.U10.ACTION.CREATE_REVIEW_RECOMMENDATION"
               ],
-              "prompt": "What is especially moving?",
-              "promptAr": "ما الشيء المؤثر بصورة خاصة؟",
+              "prompt": "Read the festival programme. What surprises the writer about the film?",
+              "promptAr": "اقرأ برنامج المهرجان. ما الذي يثير دهشة الكاتب في الفيلم؟",
+              "sourceText": "From the festival programme: The Ninth Floor. A woman who repairs lifts is trapped in her own building during a storm. Although almost the whole film happens in one small space, it never feels slow. Ninety-four minutes. No interval.",
               "options": [
-                "The relationship between the characters",
-                "The complicated plot",
-                "A sad ending"
+                "It never feels slow although it stays in one place",
+                "It is much longer than the other festival films",
+                "It was filmed during a real storm in the city"
               ],
-              "answer": "The relationship between the characters",
-              "sourceText": "The Last Bus follows a driver who finds a lost child during a storm. Although the plot is simple, the relationship between the characters is moving. The ending is hopeful."
+              "answer": "It never feels slow although it stays in one place"
             },
             {
               "id": "A2-U10-L7-A02",
@@ -22195,15 +22788,15 @@
                 "A2.U10.LISTENING.UNDERSTAND_SHORT_STORY_REVIEW",
                 "A2.U10.ACTION.CREATE_REVIEW_RECOMMENDATION"
               ],
-              "prompt": "What did the audience do during the delay?",
-              "promptAr": "ماذا فعل الجمهور أثناء التأخير؟",
+              "prompt": "Listen to three people leaving the cinema. What does the third speaker advise?",
+              "promptAr": "استمع إلى ثلاثة أشخاص يغادرون السينما. بماذا ينصح المتحدث الثالث؟",
               "options": [
-                "They sang",
-                "They left",
-                "They repaired the sound"
+                "Bring your mother rather than your children",
+                "Wait until it comes to television",
+                "Read the book before you watch it"
               ],
-              "answer": "They sang",
-              "audioTranscript": "I was enjoying the play when the sound suddenly stopped. While the actors were waiting, the audience began to sing. It became the funniest part of the evening."
+              "answer": "Bring your mother rather than your children",
+              "audioTranscript": "Three people left the cinema, and this is what they said. The first: I was checking my phone in the first ten minutes, and then I did not move for an hour. The second: I liked it, although the ending was too quick for me, and I wanted one more scene. The third, a woman of about seventy: My husband repaired lifts for thirty years, and while I was watching I was hearing his voice. I have never cried at a film before. Take your mother, not your children."
             },
             {
               "id": "A2-U10-L7-A03",
@@ -22215,16 +22808,57 @@
                 "A2.U10.INTERACTION.DISCUSS_ENTERTAINMENT",
                 "A2.U10.ACTION.CREATE_REVIEW_RECOMMENDATION"
               ],
-              "prompt": "Discuss the story's strongest and weakest points and agree on its best audience.",
-              "promptAr": "ناقش أقوى وأضعف نقاط القصة واتفق على الجمهور الأنسب لها.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
+              "prompt": "Discuss the film with a friend who has also seen it. Say what worked and what did not, and agree together who should watch it.",
+              "promptAr": "ناقش الفيلم مع صديق شاهده أيضاً. قل ما الذي نجح وما الذي لم ينجح، واتفقا معاً على من ينبغي أن يشاهده.",
+              "partnerTurns": [
+                "I have seen it twice now. For me the strongest part was the hour with almost no words at all.",
+                "My cousin was bored, although she watches everything. Do you think it is only for older people?",
+                "So who do we tell to watch it, and who do we warn? Give me one sentence I can send."
               ],
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "the best part",
+                    "what I liked",
+                    "worked",
+                    "strong",
+                    "moving",
+                    "the acting",
+                    "the ending",
+                    "the storm",
+                    "the one place"
+                  ],
+                  [
+                    "although",
+                    "but",
+                    "however",
+                    "too quick",
+                    "too slow",
+                    "did not work",
+                    "the problem",
+                    "boring",
+                    "confusing"
+                  ],
+                  [
+                    "we should tell",
+                    "it is for",
+                    "anyone who",
+                    "people who",
+                    "older",
+                    "not for children",
+                    "not for young",
+                    "I agree",
+                    "do you agree",
+                    "what do you think"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U10-L7-A04",
@@ -22236,16 +22870,55 @@
                 "A2.U10.PRODUCTION.TELL_STORY_OPINION",
                 "A2.U10.ACTION.CREATE_REVIEW_RECOMMENDATION"
               ],
-              "prompt": "Give a connected short review without revealing unnecessary ending details.",
-              "promptAr": "قدّم مراجعة قصيرة مترابطة من دون كشف تفاصيل غير ضرورية من النهاية.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "Give your own short spoken review of the film. Describe it with who, which or that, give a balanced opinion with although, and recommend it without revealing the ending.",
+              "promptAr": "قدّم مراجعتكَ المنطوقة القصيرة للفيلم. صفه مستخدماً who أو which أو that، وقدّم رأياً متوازناً باستخدام although، وأوصِ به من دون كشف النهاية.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "who",
+                    "which",
+                    "a film that",
+                    "a story that",
+                    "a woman that",
+                    "the main character",
+                    "who repairs",
+                    "which happens"
+                  ],
+                  [
+                    "although",
+                    "but",
+                    "however",
+                    "the only problem",
+                    "too quick",
+                    "too slow",
+                    "not perfect"
+                  ],
+                  [
+                    "I recommend",
+                    "worth watching",
+                    "you should watch",
+                    "it is for",
+                    "if you like",
+                    "anyone who",
+                    "I would not"
+                  ],
+                  [
+                    "I will not say",
+                    "without the ending",
+                    "I won't tell you",
+                    "no spoilers",
+                    "you will see",
+                    "watch it yourself",
+                    "find out"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U10-L7-A05",
@@ -22257,16 +22930,49 @@
                 "A2.U10.MEDIATION.RELAY_STORY_RECOMMENDATION",
                 "A2.U10.ACTION.CREATE_REVIEW_RECOMMENDATION"
               ],
-              "prompt": "Relay the main plot, one audience reaction and the suitability recommendation.",
-              "promptAr": "انقل الحبكة الرئيسية ورد فعل واحداً للجمهور وتوصية الملاءمة.",
-              "evaluation": [
-                "selectRelevantInformation",
-                "clarity",
-                "audienceAwareness",
-                "accuracy"
-              ],
+              "prompt": "Your uncle does not read English and is choosing a film for Friday. Relay what the board says about the film, what the audience wrote, and which showing suits him.",
+              "promptAr": "عمّكَ لا يقرأ الإنجليزية وهو يختار فيلماً ليوم الجمعة. انقل له ما تقوله اللوحة عن الفيلم، وما كتبه الجمهور، وأي عرض يناسبه.",
+              "sourceCard": "Festival board, The Ninth Floor: Best First Film. Audience score four out of five. Comments on the board read moving, slow at the start and not for small children. Two showings left: Friday at four with Arabic subtitles, Saturday at nine without.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "best first film",
+                    "a prize",
+                    "won",
+                    "four out of five",
+                    "audience score",
+                    "the board says"
+                  ],
+                  [
+                    "moving",
+                    "slow at the start",
+                    "slow",
+                    "not for small children",
+                    "not for children",
+                    "people wrote"
+                  ],
+                  [
+                    "Friday",
+                    "at four",
+                    "subtitles",
+                    "Arabic subtitles",
+                    "the Friday showing"
+                  ],
+                  [
+                    "Saturday",
+                    "at nine",
+                    "no subtitles",
+                    "without subtitles",
+                    "the other showing"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U10-L7-A06",
@@ -22278,20 +22984,57 @@
                 "A2.U10.WRITING.WRITE_SHORT_REVIEW",
                 "A2.U10.ACTION.CREATE_REVIEW_RECOMMENDATION"
               ],
-              "prompt": "Write a review with summary, balanced opinion, target audience and rating.",
-              "promptAr": "اكتب مراجعة تتضمن ملخصاً ورأياً متوازناً وجمهوراً مستهدفاً وتقييماً.",
-              "evaluation": [
-                "taskCompletion",
-                "clarity",
-                "organisation",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "Write the review your friends will read before they book. Summarise the story without the ending, give a balanced opinion, name the audience it suits, and add your rating.",
+              "promptAr": "اكتب المراجعة التي سيقرؤها أصدقاؤك قبل الحجز. لخّص القصة من دون النهاية، وقدّم رأياً متوازناً، وحدّد الجمهور الذي يناسبه، وأضف تقييمك.",
+              "accepted": [],
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "a woman who",
+                    "who repairs",
+                    "the main character",
+                    "a film that",
+                    "which happens",
+                    "trapped",
+                    "the storm",
+                    "the building"
+                  ],
+                  [
+                    "although",
+                    "but",
+                    "however",
+                    "too quick",
+                    "slow at the start",
+                    "the only problem",
+                    "not perfect"
+                  ],
+                  [
+                    "I recommend it to",
+                    "for anyone who",
+                    "for people who",
+                    "it is for",
+                    "not for children",
+                    "viewers who",
+                    "if you like"
+                  ],
+                  [
+                    "out of five",
+                    "out of ten",
+                    "four stars",
+                    "three stars",
+                    "five stars",
+                    "my rating",
+                    "I give it"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
               "wordGuide": [
-                90,
-                120
-              ],
-              "accepted": []
+                75,
+                100
+              ]
             }
           ]
         }
