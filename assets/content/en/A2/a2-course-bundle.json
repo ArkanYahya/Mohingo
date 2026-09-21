@@ -1076,6 +1076,46 @@
       ]
     },
     {
+      "id": "A2.LEX.EXCEPT_PREP01",
+      "headword": "except",
+      "partOfSpeech": "preposition",
+      "arabic": "ما عدا",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "except",
+      "examples": [
+        {
+          "en": "The bakery opens every day except Friday.",
+          "ar": "يفتح المخبز كل يوم ما عدا الجمعة."
+        }
+      ],
+      "introducedIn": "A2-U1-L1",
+      "recycledIn": [
+        "A2-U2-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.TRAFFIC_N01",
+      "headword": "traffic",
+      "partOfSpeech": "noun",
+      "arabic": "حركة المرور",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "traffic",
+      "examples": [
+        {
+          "en": "I take the bus because the traffic is bad.",
+          "ar": "أستقل الحافلة لأن حركة المرور سيئة."
+        }
+      ],
+      "introducedIn": "A2-U1-L1",
+      "recycledIn": [
+        "A2-U2-L1"
+      ]
+    },
+    {
       "id": "A2.LEX.TEMPORARY_ADJ01",
       "headword": "temporary",
       "partOfSpeech": "adjective",
@@ -1108,6 +1148,26 @@
         {
           "en": "I am currently living in Amman.",
           "ar": "أعيش حالياً في عمّان."
+        }
+      ],
+      "introducedIn": "A2-U1-L2",
+      "recycledIn": [
+        "A2-U2-L1"
+      ]
+    },
+    {
+      "id": "A2.LEX.ACTUALLY_ADV01",
+      "headword": "actually",
+      "partOfSpeech": "adverb",
+      "arabic": "في الحقيقة",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "actually",
+      "examples": [
+        {
+          "en": "I am very busy, actually.",
+          "ar": "أنا مشغول جداً في الحقيقة."
         }
       ],
       "introducedIn": "A2-U1-L2",
@@ -1166,8 +1226,28 @@
       "meaning": "recently",
       "examples": [
         {
-          "en": "What are you doing recently?",
-          "ar": "ماذا تفعل مؤخراً؟"
+          "en": "I started a new course recently.",
+          "ar": "بدأتُ دورة جديدة مؤخراً."
+        }
+      ],
+      "introducedIn": "A2-U1-L3",
+      "recycledIn": [
+        "A2-U3-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.LAST_V01",
+      "headword": "last",
+      "partOfSpeech": "verb",
+      "arabic": "يستغرق",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "last",
+      "examples": [
+        {
+          "en": "Each class lasts three hours.",
+          "ar": "تستغرق كل حصة ثلاث ساعات."
         }
       ],
       "introducedIn": "A2-U1-L3",
@@ -1208,6 +1288,26 @@
         {
           "en": "I enjoy meeting people.",
           "ar": "أستمتع بلقاء الناس."
+        }
+      ],
+      "introducedIn": "A2-U1-L4",
+      "recycledIn": [
+        "A2-U3-L3"
+      ]
+    },
+    {
+      "id": "A2.LEX.VOLUNTEER_V01",
+      "headword": "volunteer",
+      "partOfSpeech": "verb",
+      "arabic": "يتطوّع",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "volunteer",
+      "examples": [
+        {
+          "en": "My sister volunteers at the library.",
+          "ar": "تتطوّع أختي في المكتبة."
         }
       ],
       "introducedIn": "A2-U1-L4",
@@ -1276,6 +1376,46 @@
       ]
     },
     {
+      "id": "A2.LEX.PARTNER_N01",
+      "headword": "partner",
+      "partOfSpeech": "noun",
+      "arabic": "شريك",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "partner",
+      "examples": [
+        {
+          "en": "My language partner lives in Amman.",
+          "ar": "شريكي في اللغة يعيش في عمّان."
+        }
+      ],
+      "introducedIn": "A2-U1-L5",
+      "recycledIn": [
+        "A2-U4-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.ONLINE_ADV01",
+      "headword": "online",
+      "partOfSpeech": "adverb",
+      "arabic": "عبر الإنترنت",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "online",
+      "examples": [
+        {
+          "en": "She is learning Turkish online.",
+          "ar": "تتعلّم التركية عبر الإنترنت."
+        }
+      ],
+      "introducedIn": "A2-U1-L5",
+      "recycledIn": [
+        "A2-U4-L5"
+      ]
+    },
+    {
       "id": "A2.LEX.UPDATE_N01",
       "headword": "update",
       "partOfSpeech": "noun",
@@ -1328,6 +1468,26 @@
         {
           "en": "Describe your current situation.",
           "ar": "صف وضعك الحالي."
+        }
+      ],
+      "introducedIn": "A2-U1-L6",
+      "recycledIn": [
+        "A2-U4-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.ABROAD_ADV01",
+      "headword": "abroad",
+      "partOfSpeech": "adverb",
+      "arabic": "إلى الخارج",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "abroad",
+      "examples": [
+        {
+          "en": "Many of my old students have moved abroad.",
+          "ar": "انتقل كثير من طلابي القدامى إلى الخارج."
         }
       ],
       "introducedIn": "A2-U1-L6",
@@ -1870,8 +2030,9 @@
           "ar": "يشعر بثقة أكبر الآن."
         }
       ],
-      "introducedIn": "A2-U3-L3",
+      "introducedIn": "A2-U1-L3",
       "recycledIn": [
+        "A2-U3-L3",
         "A2-U5-L3"
       ]
     },
@@ -2030,8 +2191,9 @@
           "ar": "لكل عضو دور."
         }
       ],
-      "introducedIn": "A2-U3-L6",
+      "introducedIn": "A2-U1-L4",
       "recycledIn": [
+        "A2-U3-L6",
         "A2-U6-L5"
       ]
     },
@@ -4990,8 +5152,9 @@
           "ar": "هل يمكنك الانضمام إلينا؟"
         }
       ],
-      "introducedIn": "A2-U12-L1",
+      "introducedIn": "A2-U1-L4",
       "recycledIn": [
+        "A2-U12-L1",
         "A2-FINAL-MISSION"
       ]
     },
@@ -5230,8 +5393,9 @@
           "ar": "لنلتقِ يوم الأحد بدلاً من ذلك."
         }
       ],
-      "introducedIn": "A2-U12-L5",
+      "introducedIn": "A2-U1-L2",
       "recycledIn": [
+        "A2-U12-L5",
         "A2-FINAL-MISSION"
       ]
     },
@@ -5331,6 +5495,17 @@
       ]
     },
     {
+      "id": "A2.CHUNK.HOW_ARE_THINGS",
+      "text": "How are things?",
+      "arabic": "كيف الأحوال؟",
+      "cefr": "A2",
+      "introducedIn": "A2-U1-L2",
+      "productive": true,
+      "recycledIn": [
+        "A2-U2-L1"
+      ]
+    },
+    {
       "id": "A2.CHUNK.WHAT_ABOUT_YOU",
       "text": "What about you?",
       "arabic": "ماذا عنك؟",
@@ -5371,6 +5546,18 @@
       "introducedIn": "A2-U1-L5",
       "productive": true,
       "recycledIn": [
+        "A2-U4-L5"
+      ]
+    },
+    {
+      "id": "A2.CHUNK.THIS_TERM",
+      "text": "this term",
+      "arabic": "هذا الفصل الدراسي",
+      "cefr": "A2",
+      "introducedIn": "A2-U1-L5",
+      "productive": true,
+      "recycledIn": [
+        "A2-U1-L6",
         "A2-U4-L5"
       ]
     },
@@ -6380,7 +6567,9 @@
           ],
           "lexicon": [
             "A2.LEX.NORMALLY_ADV01",
-            "A2.LEX.WEEKDAY_N01"
+            "A2.LEX.WEEKDAY_N01",
+            "A2.LEX.EXCEPT_PREP01",
+            "A2.LEX.TRAFFIC_N01"
           ],
           "chunks": [
             "A2.CHUNK.ON_WEEKDAYS"
@@ -6582,11 +6771,14 @@
           ],
           "lexicon": [
             "A2.LEX.TEMPORARY_ADJ01",
-            "A2.LEX.CURRENTLY_ADV01"
+            "A2.LEX.CURRENTLY_ADV01",
+            "A2.LEX.ACTUALLY_ADV01",
+            "A2.LEX.INSTEAD_ADV01"
           ],
           "chunks": [
             "A2.CHUNK.AT_THE_MOMENT",
-            "A2.CHUNK.THIS_WEEK"
+            "A2.CHUNK.THIS_WEEK",
+            "A2.CHUNK.HOW_ARE_THINGS"
           ],
           "encounter": {
             "dialogue": [
@@ -6769,7 +6961,9 @@
           "lexicon": [
             "A2.LEX.FOLLOW_UP_N01",
             "A2.LEX.DETAIL_N01",
-            "A2.LEX.RECENTLY_ADV01"
+            "A2.LEX.RECENTLY_ADV01",
+            "A2.LEX.CONFIDENT_ADJ01",
+            "A2.LEX.LAST_V01"
           ],
           "chunks": [
             "A2.CHUNK.WHAT_ABOUT_YOU",
@@ -6967,7 +7161,10 @@
           ],
           "lexicon": [
             "A2.LEX.INTERESTED_ADJ01",
-            "A2.LEX.ENJOY_V01"
+            "A2.LEX.ENJOY_V01",
+            "A2.LEX.VOLUNTEER_V01",
+            "A2.LEX.MEMBER_N01",
+            "A2.LEX.JOIN_V01"
           ],
           "chunks": [
             "A2.CHUNK.THAT_SOUNDS_INTERESTING",
@@ -7159,10 +7356,13 @@
           "lexicon": [
             "A2.LEX.PROFILE_N01",
             "A2.LEX.BACKGROUND_N01",
-            "A2.LEX.SIMILAR_ADJ01"
+            "A2.LEX.SIMILAR_ADJ01",
+            "A2.LEX.PARTNER_N01",
+            "A2.LEX.ONLINE_ADV01"
           ],
           "chunks": [
-            "A2.CHUNK.HAVE_IN_COMMON"
+            "A2.CHUNK.HAVE_IN_COMMON",
+            "A2.CHUNK.THIS_TERM"
           ],
           "encounter": {
             "dialogue": [
@@ -7356,11 +7556,13 @@
           "lexicon": [
             "A2.LEX.UPDATE_N01",
             "A2.LEX.CHANGE_N01",
-            "A2.LEX.SITUATION_N01"
+            "A2.LEX.SITUATION_N01",
+            "A2.LEX.ABROAD_ADV01"
           ],
           "chunks": [
             "A2.CHUNK.RIGHT_NOW",
-            "A2.CHUNK.AT_THE_MOMENT"
+            "A2.CHUNK.AT_THE_MOMENT",
+            "A2.CHUNK.THIS_TERM"
           ],
           "readingText": {
             "title": "Rana's Update",
