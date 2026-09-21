@@ -278,6 +278,82 @@ void main() {
     }
   });
 
+  test('every phrase a lesson lists actually appears in that lesson', () {
+    // The companion of the vocabulary gate above, and it was left out on
+    // purpose: chunk texts carry placeholders ("have ... in common",
+    // "Could you tell me ...?"), and a literal match would fail correct
+    // content, since the lesson fills the slot rather than printing the
+    // ellipsis. That reasoning covers the 47 template chunks. It does not
+    // cover the other 98, which are plain phrases — "Tell me more.",
+    // "right now", "connect to Wi-Fi" — that either appear in their lesson
+    // or do not, and 31 listings did not: a word the Words & phrases screen
+    // says the learner has met, which the lesson never once used.
+    //
+    // So the check splits on the thing that actually differs. A chunk whose
+    // text has a placeholder is a pattern with a slot the lesson fills, and
+    // is skipped; a chunk without one is a fixed phrase, and has to be
+    // there. Matching is on tokens rather than raw substrings, because
+    // punctuation is not part of a phrase's identity — a lesson that says
+    // "Tell me more about it." has used "Tell me more." — but nothing
+    // looser than that: the phrase must appear as the registry spells it,
+    // which is how the learner will meet it again in Words & phrases.
+    //
+    // As with the vocabulary gate, an activity's PROMPT is not part of the
+    // haystack: "Ask a follow-up question" is an instruction, not the
+    // lesson using the phrase.
+    //
+    // The one way out of this gate is to write an ellipsis into a fixed
+    // phrase's registry text, which is deliberately not free: that text is
+    // what the learner reads in Words & phrases, so the dodge is visible on
+    // the screen the phrase is taught from.
+    final placeholder = RegExp(r'\.\.\.|…');
+    final token = RegExp(r"[a-z0-9']+");
+    String normalise(String value) =>
+        token.allMatches(value.toLowerCase()).map((m) => m[0]!).join(' ');
+
+    final byId = {for (final c in loadA2Bundle().chunks) c.id: c};
+    final offenders = <String>[];
+    var checked = 0;
+    for (final unit in finishedA2Units()) {
+      for (final lesson in unit.lessons) {
+        final haystack = normalise(
+          [
+            for (final line in lesson.encounterDialogue) line.en,
+            lesson.readingText?.text ?? '',
+            lesson.readingText?.title ?? '',
+            for (final a in lesson.activities) ...[
+              '${a.raw['partnerTurns'] ?? ''}',
+              '${a.raw['text'] ?? ''}',
+              '${a.raw['audioTranscript'] ?? ''}',
+              '${a.raw['sourceText'] ?? ''}',
+              '${a.raw['sourceCard'] ?? ''}',
+              '${a.raw['options'] ?? ''}',
+              '${a.raw['answer'] ?? ''}',
+              '${a.raw['pairs'] ?? ''}',
+            ],
+          ].join(' '),
+        );
+        for (final id in lesson.chunks) {
+          final chunk = byId[id];
+          if (chunk == null) continue; // an A1 reference, as above
+          if (placeholder.hasMatch(chunk.text)) continue;
+          checked++;
+          if (!haystack.contains(normalise(chunk.text))) {
+            offenders.add(
+              '${lesson.id} lists "${chunk.text}" ($id) but never uses it',
+            );
+          }
+        }
+      }
+    }
+    expect(
+      checked,
+      greaterThan(0),
+      reason: 'no fixed-phrase chunk listings were checked at all',
+    );
+    expect(offenders, isEmpty, reason: offenders.join('\n'));
+  });
+
   test('no A1 sense is re-registered by a finished unit', () {
     // The brief's original version of this gate walked the entire A2
     // lexicon — all 216 records, including the eleven units nobody has

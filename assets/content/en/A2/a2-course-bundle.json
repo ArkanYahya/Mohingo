@@ -9712,8 +9712,8 @@
           ],
           "readingText": {
             "title": "Rana's Update",
-            "text": "Hi Ahmed! Here is my news. I normally work in a small library in Basra, and I walk there every morning because it is close to my flat. But this month my situation is a little different. The library is closed for repairs, so I am working from home and answering emails all day. I miss the quiet rooms, but I like the extra sleep. It is only a temporary change, and we open again in May.",
-            "textAr": "أهلاً أحمد! إليكَ أخباري. أعمل عادةً في مكتبة صغيرة في البصرة، وأمشي إليها كل صباح لأنها قريبة من شقتي. لكن وضعي هذا الشهر مختلف قليلاً: المكتبة مغلقة للترميم، فصرتُ أعمل من البيت وأردّ على الرسائل طوال النهار. تنقصني القاعات الهادئة، لكن ساعة النوم الإضافية تعجبني. إنه تغيير مؤقت فقط، وسنفتح أبوابنا من جديد في أيار."
+            "text": "Hi Ahmed! Here is my news. I normally work in a small library in Basra, and I walk there every morning because it is close to my flat. But at the moment my situation is a little different. The library is closed for repairs, so right now I am working from home and answering emails all day. I miss the quiet rooms, but I like the extra sleep. It is only a temporary change, and we open again in May.",
+            "textAr": "أهلاً أحمد! إليكَ أخباري. أعمل عادةً في مكتبة صغيرة في البصرة، وأمشي إليها كل صباح لأنها قريبة من شقتي. لكن وضعي في الوقت الحالي مختلف قليلاً: المكتبة مغلقة للترميم، وأنا الآن أعمل من البيت وأردّ على الرسائل طوال النهار. تنقصني القاعات الهادئة، لكن ساعة النوم الإضافية تعجبني. إنه تغيير مؤقت فقط، وسنفتح أبوابنا من جديد في أيار."
           },
           "activities": [
             {
@@ -10798,7 +10798,7 @@
               ],
               "prompt": "Read the page from Ruba's notebook. What did she bring home from the trip?",
               "promptAr": "اقرأ الصفحة من دفتر ربى. ماذا أحضرت معها من الرحلة؟",
-              "sourceText": "From Ruba's notebook: Our college went to Babylon in March. The guide spoke for two hours and showed us the old walls. I bought a small book at the shop, and on the way back the driver sang with us.",
+              "sourceText": "From Ruba's notebook: Our college went to Babylon in March. The guide spoke for two hours and showed us the old walls. I bought a small book at the shop, and on the way back the driver sang with us. We always have a great time on these trips.",
               "options": [
                 "A small book from the shop",
                 "A photograph of the guide",
@@ -11334,8 +11334,8 @@
           ],
           "readingText": {
             "title": "A Story from the Road",
-            "text": "Two years ago I travelled from Baghdad to Sulaymaniyah for my cousin's wedding. I packed the night before and left at five in the morning. At first the road was quiet. Then, near Kirkuk, the bus stopped and the driver said we needed a new tyre. We waited three hours in the sun. I was sure I would miss the party. In the end I arrived at ten, and the music was still playing. I was lucky, and we had a great time until sunrise.",
-            "textAr": "قبل سنتين سافرتُ من بغداد إلى السليمانية لحضور عرس ابنة عمي. حزمتُ حقيبتي في الليلة السابقة وغادرتُ في الخامسة صباحاً. في البداية كان الطريق هادئاً، ثم توقفت الحافلة قرب كركوك وقال السائق إننا نحتاج إطاراً جديداً. انتظرنا ثلاث ساعات تحت الشمس، وكنتُ واثقة أنني سأفوّت الحفل. في النهاية وصلتُ في العاشرة، وكانت الموسيقى ما زالت تُعزف. كنتُ محظوظة، وقضينا وقتاً رائعاً حتى شروق الشمس."
+            "text": "Two years ago I travelled from Baghdad to Sulaymaniyah for my cousin's wedding. I packed the night before and left at five in the morning. At first the road was quiet. Then, near Kirkuk, the bus stopped and the driver said we needed a new tyre. We waited three hours in the sun. I was sure I would miss the party. In the end I arrived at ten, and the music was still playing. I was lucky, and we had a great time until sunrise. My advice is simple: leave early and you will have a great time.",
+            "textAr": "قبل سنتين سافرتُ من بغداد إلى السليمانية لحضور عرس ابنة عمي. حزمتُ حقيبتي في الليلة السابقة وغادرتُ في الخامسة صباحاً. في البداية كان الطريق هادئاً، ثم توقفت الحافلة قرب كركوك وقال السائق إننا نحتاج إطاراً جديداً. انتظرنا ثلاث ساعات تحت الشمس، وكنتُ واثقة أنني سأفوّت الحفل. في النهاية وصلتُ في العاشرة، وكانت الموسيقى ما زالت تُعزف. كنتُ محظوظة، وقضينا وقتاً رائعاً حتى شروق الشمس. ونصيحتي بسيطة: اخرجوا مبكراً وستقضون وقتاً رائعاً."
           },
           "activities": [
             {
@@ -12533,8 +12533,8 @@
               },
               {
                 "speaker": "Suad",
-                "en": "Nawal. She has the most experience with visitors.",
-                "ar": "نوال. لديها أكبر خبرة مع الزوّار."
+                "en": "Nawal is the best choice. She has the most experience with visitors.",
+                "ar": "نوال هي الخيار الأفضل. لديها أكبر خبرة مع الزوّار."
               },
               {
                 "speaker": "Hani",
@@ -12576,7 +12576,7 @@
                 "They cannot agree on anything"
               ],
               "answer": "Each person takes the job that suits them best",
-              "audioTranscript": "Three roles, three people. Who takes the welcome desk? Nawal. She has the most experience with visitors. And the posters? Karim is the most creative person here. Agreed. That leaves the children's games. Rania, then. She is the most active of all of us. Three different roles, three best choices. Nobody does everything."
+              "audioTranscript": "Three roles, three people. Who takes the welcome desk? Nawal is the best choice. She has the most experience with visitors. And the posters? Karim is the most creative person here. Agreed. That leaves the children's games. Rania, then. She is the most active of all of us. Three different roles, three best choices. Nobody does everything."
             },
             {
               "id": "A2-U3-L4-A02",
@@ -12925,8 +12925,8 @@
           ],
           "readingText": {
             "title": "Who I Would Choose",
-            "text": "Dear Mrs Zeinab, you asked me about the two new members for the reading team. I would choose Hind and Ayman. Hind is good at planning, and she is the most organised person in our group. Ayman is good with children, and he is patient as well. Hind is quieter than Ayman, but that is useful: he talks to the families and she keeps the lists. Their strengths are different, so they are a suitable pair. Warm regards, Nour.",
-            "textAr": "عزيزتي السيدة زينب، سألتِني عن العضوين الجديدين لفريق القراءة. أختار هند وأيمن. هند تجيد التخطيط، وهي أكثرنا تنظيماً في المجموعة. وأيمن يحسن التعامل مع الأطفال، وهو صبور أيضاً. هند أهدأ من أيمن، لكن ذلك مفيد: هو يتحدث إلى العائلات وهي تتولّى القوائم. نقاط قوتهما مختلفة، لذا فهما ثنائي مناسب. مع خالص التحية، نور."
+            "text": "Dear Mrs Zeinab, you asked me about the two new members for the reading team. I would choose Hind and Ayman. Hind is good at planning, and she is the most organised person in our group. Ayman is good with children, and he is patient as well. Hind is quieter than Ayman, but that is useful: he talks to the families and she keeps the lists. Their strengths are different, so they are a suitable pair. Nobody has to be good at everything. Warm regards, Nour.",
+            "textAr": "عزيزتي السيدة زينب، سألتِني عن العضوين الجديدين لفريق القراءة. أختار هند وأيمن. هند تجيد التخطيط، وهي أكثرنا تنظيماً في المجموعة. وأيمن يحسن التعامل مع الأطفال، وهو صبور أيضاً. هند أهدأ من أيمن، لكن ذلك مفيد: هو يتحدث إلى العائلات وهي تتولّى القوائم. نقاط قوتهما مختلفة، لذا فهما ثنائي مناسب. ولا أحد مضطر لأن يجيد كل شيء. مع خالص التحية، نور."
           },
           "activities": [
             {
@@ -14101,8 +14101,8 @@
               },
               {
                 "speaker": "Fouad",
-                "en": "There is a storage space next to it.",
-                "ar": "توجد مساحة تخزين بجانبه."
+                "en": "There is enough space for your things next to it.",
+                "ar": "توجد مساحة كافية لأغراضكِ بجانبه."
               },
               {
                 "speaker": "Maryam",
@@ -14139,7 +14139,7 @@
                 "What time the café closes"
               ],
               "answer": "Whether the flat suits her family",
-              "audioTranscript": "This is the living room. Is it bright enough for you? Yes, but the kitchen is too small for three children. There is a storage space next to it. Good. Is the street noisy? Not in the day. At night the café below is too loud. Then the bedrooms are not quiet enough for us."
+              "audioTranscript": "This is the living room. Is it bright enough for you? Yes, but the kitchen is too small for three children. There is enough space for your things next to it. Good. Is the street noisy? Not in the day. At night the café below is too loud. Then the bedrooms are not quiet enough for us."
             },
             {
               "id": "A2-U4-L4-A02",
@@ -14196,7 +14196,7 @@
                 "Come home after midnight"
               ],
               "answer": "Leave bags on the stairs",
-              "sourceText": "NOTICE TO ALL TENANTS. The lift will be switched off from Monday to Thursday for repairs. The stairs are wide enough for two people, but please do not leave bags on them. The basement storage will stay open. Sorry for the trouble. The Building Office."
+              "sourceText": "NOTICE TO ALL TENANTS. The lift will be switched off from Monday to Thursday for repairs. The stairs are wide enough for two people, but please do not leave bags on them. The basement storage will stay open, and it is not too far from the front door. Sorry for the trouble. The Building Office."
             },
             {
               "id": "A2-U4-L4-A05",
@@ -14499,8 +14499,8 @@
           ],
           "readingText": {
             "title": "Which Home for Samar?",
-            "text": "Samar, I looked at both options yesterday. The Karrada flat is furnished and the rent is 550 a month, with bills included. It is not as quiet as the other one, but it is only ten minutes from your office. The Zayouna flat is cheaper and more spacious, and the street is peaceful. However, it is unfurnished, the deposit is two months, and there is no bus after nine. For you, I recommend Karrada. The rent is higher, but you will not need a car.",
-            "textAr": "سمر، نظرتُ إلى الخيارين أمس. شقة الكرادة مفروشة، وإيجارها 550 في الشهر مع الفواتير. هي ليست هادئة مثل الشقة الأخرى، لكنها على بعد عشر دقائق فقط من مكتبكِ. شقة زيونة أرخص وأوسع، والشارع فيها هادئ. لكنها غير مفروشة، والتأمين إيجار شهرين، ولا توجد حافلة بعد التاسعة. بالنسبة لكِ، أنصحكِ بالكرادة: الإيجار أعلى، لكنكِ لن تحتاجي إلى سيارة."
+            "text": "Samar, I looked at both options yesterday. The Karrada flat is furnished and the rent is 550 a month, with bills included. It is not as quiet as the other one, but it is only ten minutes from your office. The Zayouna flat is cheaper and more spacious, and the street is peaceful. However, it is unfurnished, the deposit is two months, and there is no bus after nine. For you, Karrada is the best value. I recommend it: the rent is higher, but you will not need a car.",
+            "textAr": "سمر، نظرتُ إلى الخيارين أمس. شقة الكرادة مفروشة، وإيجارها 550 في الشهر مع الفواتير. هي ليست هادئة مثل الشقة الأخرى، لكنها على بعد عشر دقائق فقط من مكتبكِ. شقة زيونة أرخص وأوسع، والشارع فيها هادئ. لكنها غير مفروشة، والتأمين إيجار شهرين، ولا توجد حافلة بعد التاسعة. بالنسبة لكِ، الكرادة هي أفضل قيمة مقابل السعر: الإيجار أعلى، لكنكِ لن تحتاجي إلى سيارة."
           },
           "activities": [
             {
@@ -15884,13 +15884,13 @@
               },
               {
                 "speaker": "Nadia",
-                "en": "We waited fifty minutes for the fish, and it arrived cold.",
-                "ar": "انتظرنا السمك خمسين دقيقة، ووصل بارداً."
+                "en": "We waited fifty minutes for the fish, and it arrived cold. Could you replace it?",
+                "ar": "انتظرنا السمك خمسين دقيقة، ووصل بارداً. هل يمكنك استبداله؟"
               },
               {
                 "speaker": "Faris",
-                "en": "I am very sorry. Could I replace it with a hot one?",
-                "ar": "أنا آسف جداً. هل يمكنني أن أستبدله بآخر ساخن؟"
+                "en": "I am very sorry. Yes, I can bring you a hot plate now.",
+                "ar": "أنا آسف جداً. نعم، أستطيع أن أحضر لكِ طبقاً ساخناً الآن."
               },
               {
                 "speaker": "Nadia",
@@ -15922,7 +15922,7 @@
                 "Bring her a different menu"
               ],
               "answer": "Change the bill",
-              "audioTranscript": "Excuse me, could I speak to the manager, please? I am the manager. How can I help you? We waited fifty minutes for the fish, and it arrived cold. I am very sorry. Could I replace it with a hot one? We have finished now. Could you take it off the bill instead? Of course. I will remove the fish and the service charge, and bring you tea."
+              "audioTranscript": "Excuse me, could I speak to the manager, please? I am the manager. How can I help you? We waited fifty minutes for the fish, and it arrived cold. Could you replace it? I am very sorry. Yes, I can bring you a hot plate now. We have finished now. Could you take it off the bill instead? Of course. I will remove the fish and the service charge, and bring you tea."
             },
             {
               "id": "A2-U5-L5-A02",
@@ -18439,8 +18439,8 @@
               },
               {
                 "speaker": "Huda",
-                "en": "Yes. The instructions on the label say with food.",
-                "ar": "نعم. التعليمات المكتوبة على الملصق تقول: مع الطعام."
+                "en": "Yes. The instructions on the label say: take with food.",
+                "ar": "نعم. التعليمات المكتوبة على الملصق تقول: يُتناول مع الطعام."
               },
               {
                 "speaker": "Kareem",
@@ -18487,7 +18487,7 @@
                 "How much one packet costs"
               ],
               "answer": "How to take what he was given, and where to keep it",
-              "audioTranscript": "The doctor gave me this. Do I have to take it with food? Yes. The instructions on the label say with food. How often should I take it? And do I have to come back for more? The label answers that. No, you don't have to come back; one packet is enough. Can I keep it in my bag at work? Please don't. You have to keep it somewhere cool and dry, and read the label again before you use it. Thanks. I'll read it tonight."
+              "audioTranscript": "The doctor gave me this. Do I have to take it with food? Yes. The instructions on the label say: take with food. How often should I take it? And do I have to come back for more? The label answers that. No, you don't have to come back; one packet is enough. Can I keep it in my bag at work? Please don't. You have to keep it somewhere cool and dry, and read the label again before you use it. Thanks. I'll read it tonight."
             },
             {
               "id": "A2-U7-L2-A02",
@@ -19835,8 +19835,8 @@
               },
               {
                 "speaker": "Tamer",
-                "en": "No, Suha covers that. You don't have to touch it.",
-                "ar": "لا، سهى تغطّي ذلك. لا يلزمكِ الاقتراب منها."
+                "en": "No, Suha covers that. You don't have to be responsible for it.",
+                "ar": "لا، سهى تغطّي ذلك. لستِ مضطرة لأن تكوني مسؤولة عنها."
               },
               {
                 "speaker": "Ghada",
@@ -19878,7 +19878,7 @@
                 "Why she should change her hours"
               ],
               "answer": "Which jobs are hers and which are not",
-              "audioTranscript": "It's my first week. Do I have to work a shift on Saturday? Every second Saturday. You're responsible for the front desk that morning. Is the reading room my duty as well? No, Suha covers that. You don't have to touch it. And the monthly list? Nobody told me the deadline. The fifteenth. Send it to the supervisor, and hand in the key at six. So one duty on Saturday and one deadline a month. That's all. Nobody has to stay late here."
+              "audioTranscript": "It's my first week. Do I have to work a shift on Saturday? Every second Saturday. You're responsible for the front desk that morning. Is the reading room my duty as well? No, Suha covers that. You don't have to be responsible for it. And the monthly list? Nobody told me the deadline. The fifteenth. Send it to the supervisor, and hand in the key at six. So one duty on Saturday and one deadline a month. That's all. Nobody has to stay late here."
             },
             {
               "id": "A2-U8-L1-A02",
@@ -20268,8 +20268,8 @@
               },
               {
                 "speaker": "Lina",
-                "en": "And the delivery forms?",
-                "ar": "وماذا عن استمارات التسليم؟"
+                "en": "And the delivery forms? Do I fill in a form for every box?",
+                "ar": "وماذا عن استمارات التسليم؟ هل أملأ استمارة لكل صندوق؟"
               },
               {
                 "speaker": "Maher",
@@ -20306,7 +20306,7 @@
                 "When the delivery is going to arrive"
               ],
               "answer": "Not what to do, but how to do it",
-              "audioTranscript": "Two things today, Lina. Answer the phone politely, and write every message clearly. I wrote them quite quickly yesterday. Nobody could read my writing. Then slow down. A slow note that works beats a fast one that doesn't. And the delivery forms? Fill them in carefully. One wrong number and the whole morning goes badly. Understood. I work well with lists, so I'll make one. Good. Trainees who plan ahead work far more efficiently."
+              "audioTranscript": "Two things today, Lina. Answer the phone politely, and write every message clearly. I wrote them quite quickly yesterday. Nobody could read my writing. Then slow down. A slow note that works beats a fast one that doesn't. And the delivery forms? Do I fill in a form for every box? Fill them in carefully. One wrong number and the whole morning goes badly. Understood. I work well with lists, so I'll make one. Good. Trainees who plan ahead work far more efficiently."
             },
             {
               "id": "A2-U8-L3-A02",
@@ -21691,7 +21691,7 @@
             "dialogue": [
               {
                 "speaker": "Nizar",
-                "en": "The nurse says I can fill the form in on my phone. How do I connect to the Wi-Fi here?",
+                "en": "The nurse says I can fill the form in on my phone. How do I connect to Wi-Fi here?",
                 "ar": "تقول الممرضة إن بإمكاني تعبئة الاستمارة على هاتفي. كيف أتصل بشبكة الواي فاي هنا؟"
               },
               {
@@ -21749,7 +21749,7 @@
                 "Sending a photograph of his card to the nurse"
               ],
               "answer": "Getting onto the clinic's network and opening a form",
-              "audioTranscript": "The nurse says I can fill the form in on my phone. How do I connect to the Wi-Fi here? First go to settings and turn Wi-Fi on. Next choose 'Clinic Guest' from the list. It is asking me for a code. It is on the card by the door. Then open the message I sent you and tap the blue link. Done. It says I am connected. Finally, choose 'download'. The form opens by itself, and it stays in your downloads folder. And if it does not open? Look in that folder. It is usually sitting there, waiting for you."
+              "audioTranscript": "The nurse says I can fill the form in on my phone. How do I connect to Wi-Fi here? First go to settings and turn Wi-Fi on. Next choose 'Clinic Guest' from the list. It is asking me for a code. It is on the card by the door. Then open the message I sent you and tap the blue link. Done. It says I am connected. Finally, choose 'download'. The form opens by itself, and it stays in your downloads folder. And if it does not open? Look in that folder. It is usually sitting there, waiting for you."
             },
             {
               "id": "A2-U9-L2-A02",
@@ -21920,8 +21920,8 @@
               },
               {
                 "speaker": "Rawan",
-                "en": "That one is easy. If a printer goes offline, it has lost the network. Restart it: switch it off, count to ten, and switch it on again.",
-                "ar": "هذه سهلة. إذا صارت الطابعة غير متصلة فهذا يعني أنها فقدت الشبكة. أعِد تشغيلها: أطفئها، وعُدّ إلى عشرة، ثم شغّلها من جديد."
+                "en": "That one is easy. If a printer goes offline, it has lost the network. Restart it: switch it off and on again, and count to ten in between.",
+                "ar": "هذه سهلة. إذا صارت الطابعة غير متصلة فهذا يعني أنها فقدت الشبكة. أعِد تشغيلها: أطفئها ثم شغّلها من جديد، وعُدّ إلى عشرة بينهما."
               },
               {
                 "speaker": "Tamer",
@@ -21953,7 +21953,7 @@
                 "How to order more paper before the office runs out"
               ],
               "answer": "What each light and message on the printer means, and what to do about it",
-              "audioTranscript": "If the light is orange, the printer is only thinking. Give it a minute. It has been orange since I arrived, and nothing comes out. Then read the small screen. If it says 'no paper', the bottom tray is empty. It says 'offline'. That one is easy. If a printer goes offline, it has lost the network. Restart it: switch it off, count to ten, and switch it on again. And if the light turns red? If it turns red, do not open anything. You press the red button twice and it starts again. If that does not work, we ring the shop."
+              "audioTranscript": "If the light is orange, the printer is only thinking. Give it a minute. It has been orange since I arrived, and nothing comes out. Then read the small screen. If it says 'no paper', the bottom tray is empty. It says 'offline'. That one is easy. If a printer goes offline, it has lost the network. Restart it: switch it off and on again, and count to ten in between. And if the light turns red? If it turns red, do not open anything. You press the red button twice and it starts again. If that does not work, we ring the shop."
             },
             {
               "id": "A2-U9-L3-A02",
@@ -22096,8 +22096,8 @@
               },
               {
                 "speaker": "Ghassan",
-                "en": "It is in the shared folder. I put it there this morning.",
-                "ar": "إنها في المجلد المشترك. وضعتها هناك هذا الصباح."
+                "en": "Sign in to the shared folder and you will see it. I put it there this morning.",
+                "ar": "سجّلي الدخول إلى المجلد المشترك وستجدينها. وضعتها هناك هذا الصباح."
               },
               {
                 "speaker": "Dina",
@@ -22116,8 +22116,8 @@
               },
               {
                 "speaker": "Ghassan",
-                "en": "They are in the same folder. Do not send them as an attachment; the message becomes too heavy. Copy the link and send that instead.",
-                "ar": "هي في المجلد نفسه. لا ترسليها كمرفق، فالرسالة تصبح ثقيلة جداً. انسخي الرابط وأرسليه بدلاً منها."
+                "en": "They are in the same folder. If you send as an attachment, the message becomes too heavy. Copy the link and send that instead.",
+                "ar": "هي في المجلد نفسه. إذا أرسلتِها كمرفق تصبح الرسالة ثقيلة جداً. انسخي الرابط وأرسليه بدلاً منها."
               },
               {
                 "speaker": "Dina",
@@ -22149,7 +22149,7 @@
                 "Who is going to write the letter for the parents"
               ],
               "answer": "How to send one document and a set of photographs",
-              "audioTranscript": "Ghassan, the letter for the parents — have you finished it? It is in the shared folder. I put it there this morning. I can see two letters. Which one do I send? The one with today's date. Open that, and leave the other; it is last year's. And the photographs from the trip — where are they? They are in the same folder. Do not send them as an attachment; the message becomes too heavy. Copy the link and send that instead. So the letter is attached to the message, and the photographs stay behind the link. Exactly. That is the safe way round."
+              "audioTranscript": "Ghassan, the letter for the parents — have you finished it? Sign in to the shared folder and you will see it. I put it there this morning. I can see two letters. Which one do I send? The one with today's date. Open that, and leave the other; it is last year's. And the photographs from the trip — where are they? They are in the same folder. If you send as an attachment, the message becomes too heavy. Copy the link and send that instead. So the letter is attached to the message, and the photographs stay behind the link. Exactly. That is the safe way round."
             },
             {
               "id": "A2-U9-L4-A02",
@@ -26776,8 +26776,8 @@
               },
               {
                 "speaker": "Sami",
-                "en": "Good. I'm looking forward to this one.",
-                "ar": "جيد. أتطلع إلى هذه المرة."
+                "en": "Good. I'm looking forward to it.",
+                "ar": "جيد. أتطلع إليه."
               }
             ]
           },
@@ -26799,7 +26799,7 @@
                 "They have run out of time and want to cancel"
               ],
               "answer": "Almost everything is done, with one job left",
-              "audioTranscript": "The chairs have just arrived. Has anyone counted the guests yet? I've already checked the attendance list. Forty-one people are coming. Four of them can only attend after four o'clock. Is that a problem? No. But I haven't printed the name cards yet, and the speaker is arriving at one. I'll remind her about the parking. She hasn't driven here before. Has Munir opened the hall yet? He's already opened it, so every arrangement is finished. We're all set. Good. I'm looking forward to this one."
+              "audioTranscript": "The chairs have just arrived. Has anyone counted the guests yet? I've already checked the attendance list. Forty-one people are coming. Four of them can only attend after four o'clock. Is that a problem? No. But I haven't printed the name cards yet, and the speaker is arriving at one. I'll remind her about the parking. She hasn't driven here before. Has Munir opened the hall yet? He's already opened it, so every arrangement is finished. We're all set. Good. I'm looking forward to it."
             },
             {
               "id": "A2-U12-L3-A02",
@@ -27177,7 +27177,7 @@
             "dialogue": [
               {
                 "speaker": "Widad",
-                "en": "There's a change of plan. Unfortunately the hall has no heating.",
+                "en": "There is a change of plan. Unfortunately the hall has no heating.",
                 "ar": "هناك تغيير في الخطة. للأسف لا توجد تدفئة في القاعة."
               },
               {
@@ -27235,7 +27235,7 @@
                 "To ask the sixty guests to bring warm clothes"
               ],
               "answer": "To keep the day and move to a different room",
-              "audioTranscript": "There's a change of plan. Unfortunately the hall has no heating. At this time of year? We can't ask sixty people to sit in the cold. I know. So we'll use the library room instead, and start half an hour later. Or we postpone it to next Saturday and keep the hall. Next Saturday is the exam week. I'd rather not postpone at short notice. Then the library room. I'll pass it on to the choir tonight. And I'll ring the six people who never read messages. Thank you. The date, the food and the price are all the same; only the room and the time have changed."
+              "audioTranscript": "There is a change of plan. Unfortunately the hall has no heating. At this time of year? We can't ask sixty people to sit in the cold. I know. So we'll use the library room instead, and start half an hour later. Or we postpone it to next Saturday and keep the hall. Next Saturday is the exam week. I'd rather not postpone at short notice. Then the library room. I'll pass it on to the choir tonight. And I'll ring the six people who never read messages. Thank you. The date, the food and the price are all the same; only the room and the time have changed."
             },
             {
               "id": "A2-U12-L5-A02",
@@ -27433,7 +27433,7 @@
                 "A card, an address and a signature"
               ],
               "answer": "Numbers, dietary needs and a phone number",
-              "audioTranscript": "Hello, this is Nabil from number twelve, leaving a message for the people who haven't replied. Don't worry, there's nothing to pay. We only need three things from you: how many are coming, whether anybody has a dietary need, and a phone number we can contact on the day. The card came through your door on Monday. However, if you have lost it, everything is also on the noticeboard by the shop. Please let us know by Wednesday, because we order the bread on Thursday morning. Thank you."
+              "audioTranscript": "Hello, this is Nabil from number twelve, leaving a message for the people who haven't replied. Don't worry, there's nothing to pay. We only need three things from you: how many are coming, whether anybody has a dietary need, and a phone number we can contact on the day. The card came through your door on Monday. However, if you have lost it, everything is also on the noticeboard by the shop. Please let us know by Wednesday, because we order the bread on Thursday morning. I'm looking forward to it. Thank you."
             },
             {
               "id": "A2-U12-L6-A03",
