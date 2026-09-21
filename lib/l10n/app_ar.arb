@@ -103,6 +103,7 @@
   "learnUnitInProgressOverline": "الوحدة {unit} · قيد التعلّم",
   "learnUnitStartHereOverline": "الوحدة {unit} · ابدأ من هنا",
   "learnUnitLessonsDone": "الدروس المكتملة: {done} من {total}",
+  "learnUnitContentUpdated": "تغيّر محتوى هذه الوحدة منذ آخر مرة",
   "learnUnitNodeSemantics": "الوحدة {unit}: {state}",
   "learnUnitOverline": "الوحدة {unit}",
   "learnLessonInProgressOverline": "الدرس {lesson} · قيد التعلّم",

@@ -716,6 +716,12 @@ abstract class AppLocalizations {
   /// **'{done} of {total} lessons'**
   String learnUnitLessonsDone(int done, int total);
 
+  /// Status line on a unit whose content changed after the learner worked through it — an activity they answered is no longer in the unit, or the unit now asks for different Can-Do objectives. Their progress is kept: this informs, it never blocks. Written so it reads as the course improving rather than as something the learner did wrong.
+  ///
+  /// In en, this message translates to:
+  /// **'Updated since you last studied it'**
+  String get learnUnitContentUpdated;
+
   /// Screen-reader label of a unit's circle on the path.
   ///
   /// In en, this message translates to:

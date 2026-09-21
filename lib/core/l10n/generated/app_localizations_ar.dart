@@ -443,6 +443,9 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
+  String get learnUnitContentUpdated => 'تغيّر محتوى هذه الوحدة منذ آخر مرة';
+
+  @override
   String learnUnitNodeSemantics(int unit, String state) {
     return 'الوحدة $unit: $state';
   }

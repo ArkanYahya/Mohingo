@@ -210,6 +210,13 @@ class _CourseBody extends StatelessWidget {
     final stateByUnitId = {
       for (final p in unitProgress) p.unitId: ProgressState.fromRaw(p.state),
     };
+    // Units whose content moved under this learner since they last opened
+    // the level — written by recordContentVersionAndFlagDriftProvider. It
+    // informs, never blocks: a stale unit stays as tappable as any other.
+    final staleUnitIds = {
+      for (final p in unitProgress)
+        if (p.isContentStale) p.unitId,
+    };
     final unitIdsInLevel = {for (final unit in units) unit.id};
     // unitProgress spans every level the learner has touched; a caption,
     // a segment and the current-unit search all mean "in this level".
@@ -298,6 +305,7 @@ class _CourseBody extends StatelessWidget {
             unit: units[i],
             number: i + 1,
             state: stateByUnitId[units[i].id] ?? ProgressState.notStarted,
+            isContentStale: staleUnitIds.contains(units[i].id),
             isCurrent: units[i].id == currentId,
             isFirst: i == 0,
             isLast: isBrowsing && i == units.length - 1,
@@ -491,6 +499,7 @@ class _UnitRow extends StatelessWidget {
     required this.isCurrent,
     required this.isFirst,
     required this.unitLessonProgress,
+    this.isContentStale = false,
     this.isLast = false,
     this.isBrowsing = false,
   });
@@ -501,6 +510,9 @@ class _UnitRow extends StatelessWidget {
   final bool isCurrent;
   final bool isFirst;
   final List<LessonProgressData> unitLessonProgress;
+
+  /// This unit's content changed after the learner worked through it.
+  final bool isContentStale;
   final bool isLast;
 
   /// While browsing a level the learner isn't enrolled in, no unit is the
@@ -539,11 +551,13 @@ class _UnitRow extends StatelessWidget {
               unit: unit,
               number: number,
               unitLessonProgress: unitLessonProgress,
+              isContentStale: isContentStale,
               onOpenUnit: openUnit,
             )
           : _UnitSummary(
               unit: unit,
               state: state,
+              isContentStale: isContentStale,
               lessonsDone: _lessonsDone(unit, unitLessonProgress),
             ),
     );
@@ -618,11 +632,13 @@ class _UnitSummary extends StatelessWidget {
     required this.unit,
     required this.state,
     required this.lessonsDone,
+    this.isContentStale = false,
   });
 
   final Unit unit;
   final ProgressState state;
   final int lessonsDone;
+  final bool isContentStale;
 
   @override
   Widget build(BuildContext context) {
@@ -665,6 +681,12 @@ class _UnitSummary extends StatelessWidget {
             style: meta,
           ),
         },
+        // Added below the state, never instead of it: the learner still
+        // needs to know they mastered this unit.
+        if (isContentStale) ...[
+          const SizedBox(height: AppSpace.xxs),
+          Text(l10n.learnUnitContentUpdated, style: meta),
+        ],
       ],
     );
   }
@@ -680,12 +702,14 @@ class _CurrentUnitCard extends StatelessWidget {
     required this.number,
     required this.unitLessonProgress,
     required this.onOpenUnit,
+    this.isContentStale = false,
   });
 
   final Unit unit;
   final int number;
   final List<LessonProgressData> unitLessonProgress;
   final VoidCallback onOpenUnit;
+  final bool isContentStale;
 
   @override
   Widget build(BuildContext context) {
@@ -726,6 +750,10 @@ class _CurrentUnitCard extends StatelessWidget {
               ),
               const SizedBox(height: AppSpace.xxs),
               _UnitTitle(unit: unit, large: true),
+              if (isContentStale) ...[
+                const SizedBox(height: AppSpace.xxs),
+                Text(l10n.learnUnitContentUpdated, style: meta),
+              ],
               const SizedBox(height: AppSpace.sm),
               Row(
                 children: [

@@ -38,15 +38,50 @@ final _a2Index = CourseContentIndex.build(
 
 /// With [midCourse]: Unit 1 (A1-U0) mastered, and in A1-U1 the first two
 /// lessons finished and the third started. Otherwise a brand-new learner.
-Future<AppDatabase> _seed({required bool midCourse}) async {
+Future<AppDatabase> _seed({
+  required bool midCourse,
+  Set<String> staleUnitIds = const {},
+}) async {
   final db = AppDatabase(NativeDatabase.memory());
   final learner = await db
       .into(db.learners)
       .insert(
         LearnersCompanion.insert(uuid: 'l', createdAt: DateTime.utc(2026)),
       );
-  if (!midCourse) return db;
   final now = DateTime.utc(2026, 9, 18);
+
+  /// Rows the way `recordContentVersionAndFlagDriftProvider` would leave
+  /// them after an update took away content the learner had worked on.
+  Future<void> flagStale() async {
+    for (final unitId in staleUnitIds) {
+      final existing = await (db.select(
+        db.unitProgress,
+      )..where((t) => t.unitId.equals(unitId))).getSingleOrNull();
+      if (existing == null) {
+        await db
+            .into(db.unitProgress)
+            .insert(
+              UnitProgressCompanion.insert(
+                uuid: 'stale-$unitId',
+                learnerId: learner,
+                unitId: unitId,
+                state: 'inProgress',
+                isContentStale: const Value(true),
+                updatedAt: now,
+              ),
+            );
+      } else {
+        await (db.update(db.unitProgress)
+              ..where((t) => t.id.equals(existing.id)))
+            .write(const UnitProgressCompanion(isContentStale: Value(true)));
+      }
+    }
+  }
+
+  if (!midCourse) {
+    await flagStale();
+    return db;
+  }
   await db
       .into(db.unitProgress)
       .insert(
@@ -78,6 +113,7 @@ Future<AppDatabase> _seed({required bool midCourse}) async {
           ),
         );
   }
+  await flagStale();
   return db;
 }
 
@@ -120,13 +156,14 @@ Future<(ProviderContainer, AppLocalizations)> _pump(
   bool midCourse = true,
   Set<String> unlockedLevelIds = const {},
   Set<String> previewLevelIds = const {},
+  Set<String> staleUnitIds = const {},
   bool a2Fails = false,
 }) async {
   tester.view.physicalSize = const Size(800, 4000);
   tester.view.devicePixelRatio = 1;
   addTearDown(tester.view.resetPhysicalSize);
   addTearDown(tester.view.resetDevicePixelRatio);
-  final db = await _seed(midCourse: midCourse);
+  final db = await _seed(midCourse: midCourse, staleUnitIds: staleUnitIds);
   addTearDown(db.close);
   if (unlockedLevelIds.isNotEmpty) {
     final learner = await db.select(db.learners).getSingle();
@@ -463,6 +500,43 @@ void main() {
     );
     expect(find.text(l10n.learnLevelComingLaterBody('A1')), findsOneWidget);
     expect(await container.read(currentLevelIdProvider.future), 'a1');
+  });
+
+  testWidgets('a finished unit whose content moved under the learner says '
+      'so, without losing what it already said', (tester) async {
+    // A1-U0 is mastered in this seed and is not the current unit, so it
+    // renders as a summary row.
+    final (_, l10n) = await _pump(tester, staleUnitIds: const {'A1-U0'});
+
+    expect(find.text(l10n.learnUnitContentUpdated), findsOneWidget);
+    expect(
+      find.text(l10n.unitStateMastered),
+      findsWidgets,
+      reason:
+          'the learner still mastered it; this line is added, not '
+          'substituted',
+    );
+  });
+
+  testWidgets('the unit the learner is working in can say it too', (
+    tester,
+  ) async {
+    // A1-U1 is the current unit here, which renders as the emphasised card
+    // rather than a summary row — a different widget, and one a learner is
+    // far more likely to be looking at.
+    final (_, l10n) = await _pump(tester, staleUnitIds: const {'A1-U1'});
+
+    expect(find.text(l10n.learnUnitContentUpdated), findsOneWidget);
+  });
+
+  testWidgets('a course whose content never moved says nothing about it', (
+    tester,
+  ) async {
+    // The load-bearing negative: without it, a version of this that puts
+    // the line on every unit passes just as well.
+    final (_, l10n) = await _pump(tester);
+
+    expect(find.text(l10n.learnUnitContentUpdated), findsNothing);
   });
 
   testWidgets('a preview is not called "your course"', (tester) async {

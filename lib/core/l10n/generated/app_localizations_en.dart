@@ -422,6 +422,9 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String get learnUnitContentUpdated => 'Updated since you last studied it';
+
+  @override
   String learnUnitNodeSemantics(int unit, String state) {
     return 'Unit $unit: $state';
   }
