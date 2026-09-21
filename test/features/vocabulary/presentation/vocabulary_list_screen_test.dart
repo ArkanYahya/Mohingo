@@ -239,5 +239,25 @@ void main() {
         findsOneWidget,
       );
     });
+
+    testWidgets('a level whose words will not load says so in the learner\'s '
+        'own language, and offers the way back', (tester) async {
+      final (_, l10n) = await pumpVocabulary(
+        tester,
+        failingLevelIds: const {'a2'},
+      );
+
+      await tester.tap(_chip('A2'));
+      await tester.pumpAndSettle();
+
+      expect(find.text(l10n.contentErrorTitle), findsOneWidget);
+      expect(find.text(l10n.contentErrorBody), findsOneWidget);
+      // Never the raw Dart exception in front of an Arabic-only learner.
+      expect(find.textContaining('StateError'), findsNothing);
+
+      await tester.tap(find.text(l10n.learnPreviewBackToCurrent('A1')));
+      await tester.pumpAndSettle();
+      expect(find.text(_lex.first.headword), findsWidgets);
+    });
   });
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../content/catalog/level_catalog.dart';
 import '../../../content/index/course_content_index.dart';
 import '../../../content/models/registry_items.dart';
 import '../../../content/providers/course_content_providers.dart';
@@ -9,6 +10,7 @@ import '../../../core/l10n/generated/app_localizations.dart';
 import '../../../core/theme/app_tokens.dart';
 import '../../../core/theme/gamification_theme_extension.dart';
 import '../../../core/theme/overline_style.dart';
+import '../../../core/widgets/content_load_error.dart';
 import '../../../core/widgets/level_filter_chips.dart';
 import '../../../core/widgets/search_field.dart';
 import '../../progress/providers/level_providers.dart';
@@ -80,6 +82,14 @@ class _GrammarListScreenState extends ConsumerState<GrammarListScreen> {
             selectedLevelId: shownLevelId,
             onSelect: (levelId) => setState(() => _levelId = levelId),
           );
+    // The way back is offered only when the level that failed is one the
+    // learner was merely looking at — their own level failing has nowhere
+    // to go back to, and the app-level gate covers the base level.
+    final currentLevelId = currentLevelIdAsync.value;
+    final backToCode = currentLevelId == null || currentLevelId == shownLevelId
+        ? null
+        : levelCatalogEntryIn(catalog, currentLevelId)?.cefrCode ??
+              currentLevelId;
 
     return Scaffold(
       appBar: AppBar(title: Text(l10n.grammarSectionTitle)),
@@ -93,7 +103,12 @@ class _GrammarListScreenState extends ConsumerState<GrammarListScreen> {
         error: (error, _) => Column(
           children: [
             levelFilter,
-            Expanded(child: Center(child: Text('$error'))),
+            Expanded(
+              child: ContentLoadError(
+                currentCode: backToCode,
+                onBack: () => setState(() => _levelId = null),
+              ),
+            ),
           ],
         ),
         data: (index) {

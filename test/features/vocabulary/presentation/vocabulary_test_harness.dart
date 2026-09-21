@@ -31,11 +31,15 @@ export '../../review/presentation/review_test_harness.dart'
 /// [currentLevelId] is the level the learner is enrolled in — seeded the
 /// way `LevelSelectionController.select` would, so the screen resolves it
 /// through the real `currentLevelIdProvider`.
+///
+/// [failingLevelIds] makes those levels' bundles throw instead of loading,
+/// for the error path a level chip can now reach.
 Future<(ProviderContainer, AppLocalizations)> pumpVocabulary(
   WidgetTester tester, {
   String start = '/review/vocabulary',
   Future<void> Function(AppDatabase db, int learnerId)? seed,
   String currentLevelId = kBaseLevelId,
+  Set<String> failingLevelIds = const {},
 }) async {
   tester.view.physicalSize = const Size(800, 2400);
   tester.view.devicePixelRatio = 1;
@@ -50,9 +54,14 @@ Future<(ProviderContainer, AppLocalizations)> pumpVocabulary(
       sharedPreferencesProvider.overrideWithValue(prefs),
       appDatabaseProvider.overrideWithValue(db),
       levelCatalogProvider.overrideWithValue(twoLevelTestCatalog),
-      courseContentProvider('a1').overrideWith((ref) async => reviewTestIndex),
-      courseContentProvider('a2')
-          .overrideWith((ref) async => reviewTestA2Index),
+      // Kept lazy per level: a test that never reaches A2 never parses it.
+      for (final levelId in const ['a1', 'a2'])
+        courseContentProvider(levelId).overrideWith((ref) async {
+          if (failingLevelIds.contains(levelId)) {
+            throw StateError('bundle unavailable');
+          }
+          return levelId == 'a2' ? reviewTestA2Index : reviewTestIndex;
+        }),
       textToSpeechServiceProvider.overrideWithValue(FakeTextToSpeechService()),
     ],
   );

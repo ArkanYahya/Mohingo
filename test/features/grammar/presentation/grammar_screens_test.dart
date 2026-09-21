@@ -156,6 +156,28 @@ void main() {
       // Looking is a view, not a move.
       expect(await container.read(currentLevelIdProvider.future), 'a2');
     });
+
+    testWidgets('a level whose forms will not load says so in the learner\'s '
+        'own language, and offers the way back', (tester) async {
+      final (_, l10n) = await pumpGrammar(
+        tester,
+        failingLevelIds: const {'a2'},
+      );
+
+      await tester.tap(
+        find.ancestor(of: find.text('A2'), matching: find.byType(ChoiceChip)),
+      );
+      await tester.pumpAndSettle();
+
+      expect(find.text(l10n.contentErrorTitle), findsOneWidget);
+      expect(find.text(l10n.contentErrorBody), findsOneWidget);
+      // Never the raw Dart exception in front of an Arabic-only learner.
+      expect(find.textContaining('StateError'), findsNothing);
+
+      await tester.tap(find.text(l10n.learnPreviewBackToCurrent('A1')));
+      await tester.pumpAndSettle();
+      expect(find.text(_heading(l10n, 2, _units[1].title)), findsOneWidget);
+    });
   });
 
   group('grammar page', () {
