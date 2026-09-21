@@ -1,7 +1,7 @@
 # A2 Level — continuing the A1 course into CEFR A2
 
-**Status:** Approved design, ready for implementation planning
-**Date:** 2026-09-19
+**Status:** Implemented except step 2b — steps 1, 2a, 3, 4, 5 and 6 have landed and **A2 was released on 2026-09-21** (`feature/a2-pilot-u1`). Step 2b (Home, Tests, Review, Vocabulary, Grammar and placement following the current level) is designed here and not built. Read "What actually shipped" at the foot of this document before trusting any table above it: several were written before anyone counted what the import contained.
+**Date:** 2026-09-19 (design), 2026-09-21 (outcome recorded)
 
 ## Context
 
@@ -222,12 +222,12 @@ App work is covered by its own tests: cross-level lookup, current level, locks, 
 
 ### Order of work (each step gets its own implementation plan)
 
-1. **App foundations:** model/parser changes, prerequisite-aware index, cross-level lookup, rendering fixes (+ A1 `readingText` Arabic).
-2. **Multiple levels:** current level, switcher, locked preview, soft lock, tabs, wording, placement.
-3. **Import** the A2 reference (locked preview; full in development builds).
-4. **Pilot:** rewrite A2-U1; product owner review in the app, including the Arabic; adjust design/tests.
-5. **Batches:** U2–U4, U5–U7, U8–U10, then U11–U12 + Final Mission + Final Assessment.
-6. **Release:** A2 available (soft lock), reference marked out of date.
+1. **App foundations:** model/parser changes, prerequisite-aware index, cross-level lookup, rendering fixes (+ A1 `readingText` Arabic). — **Done**, `feature/a2-foundations`.
+2. **Multiple levels:** current level, switcher, locked preview, soft lock, tabs, wording, placement. — **Half done.** Step 2a (current level, switcher, locks, Learn tab) landed on `feature/a2-current-level`. **Step 2b — Home, Tests, Review, Vocabulary, Grammar, the ARB wording and the block placement test — is not built, and is now the only unfinished part of this spec.**
+3. **Import** the A2 reference (locked preview; full in development builds). — **Done**, commit `141e182`.
+4. **Pilot:** rewrite A2-U1; product owner review in the app, including the Arabic; adjust design/tests. — **Done**, `feature/a2-pilot-u1`. The review changed two things recorded above as "Superseded 2026-09-20": A2 stopped referencing A1 ids at all, and the duplicated A1 senses were deleted rather than referenced.
+5. **Batches:** U2–U4, U5–U7, U8–U10, then U11–U12 + Final Mission + Final Assessment. — **Done**, same branch, though not in those groupings: units were authored in the order U1, U3+U4, U2, U5, U6, U7, U10, U8, U11, U12, U9, then the Final Assessment and the Final Mission, each in its own commit.
+6. **Release:** A2 available (soft lock), reference marked out of date. — **Done**, commit `ba2a73f`; `reference/a2-modular-course/OUT_OF_DATE.md` added with the docs pass.
 
 ### Documentation (part of each step's definition of done)
 
@@ -247,6 +247,24 @@ Two things the step-1 execution decided that later steps must honour:
 - Rendering A1's `randomScenarioBank` (`A1-FINAL-ASSESS-S03`).
 - Changing mastery rules, the grading approach (keyword checklists + optional LanguageTool), or unit-level recommendation-only progression.
 - Regenerating A2 through the reference's `tools/authoring` generator.
+
+## What actually shipped (recorded 2026-09-21, after release)
+
+Verified against `assets/content/en/A2/a2-course-bundle.json` and the import at commit `141e182`, not against this document.
+
+**Held exactly.** Unit shape (12 units × 7 lessons × 36 activities, 6/12/18). Skill balance — every unit is 12 listening / 12 reading / 7 speaking / 3 writing / 2 mediation, tighter than the "≥10 / ≤12 / 6–8 / 3 / 2" this spec asked for. Conversations: all 60 guided lessons open on 5–8 lines and 2–3 speakers with Arabic on every line (the import: 72 single-line "Narrator" paragraphs, 38 with no Arabic). Length bands, exactly as tabled, including `wordGuide` 55–75 / 65–85 / 75–100. Capstones at 0.6 with unit mastery left at 0.75. Prompt repetition: the spec allowed three uses per unit; all 432 prompts are distinct (the import had 291 distinct in 432).
+
+**Diverged, and why it matters to know.**
+
+- **The grammar map above was written before anyone checked the import's registry.** It lists what each unit should teach, unit by unit, and never says that **the present perfect was absent from all 72 imported records** — in the level CEFR most defines by it. It is now `A2.G.PRESENT_PERFECT_EXPERIENCE` (U8-L2, *ever/never*) and `A2.G.PRESENT_PERFECT_JUST_ALREADY_YET` (U12-L3), both listed by three and two lessons respectively. Treat the table above as intent; the bundle is the record.
+- **"About 45 new A2 grammar records" did not happen and was the wrong frame.** The import's records were largely kept and rewritten in place. Net: 72 → 74, with 8 added and 6 retired.
+- **Consolidation went two deep, not three.** The first conditional had **two** import records (`FIRST_CONDITIONAL_INTRO`, `FIRST_CONDITIONAL_NATURE`), not three as commit `a0981c4`'s message says; they became one `A2.G.FIRST_CONDITIONAL`, now listed by six lessons across U6, U9, U11 and U12. `FUTURE_CONTRAST` + `FUTURE_EVENT_REVIEW` → `A2.G.FUTURE_FORMS_CONTRAST`. `WORK_HAVE_TO` → `HAVE_TO_OBLIGATION`, `PURPOSE_APPLICATION` → `INFINITIVE_PURPOSE`.
+- **Two consolidations this spec asked for were not made.** `A2.G.PURPOSE_TECH` (U9-L6) still exists beside `INFINITIVE_PURPOSE`, although Design 1 calls the latter "the only record"; and `A2.G.HOUSING_COMPARATIVES` (U4) survived alongside both `COMPARATIVE_ADJECTIVES` (U3) and the new `AS_AS_COMPARISON`, although Design 1 says the new record replaces it. Neither is caught by any gate — the gates check reference resolution and uniqueness, not that two records teach the same thing.
+- **Vocabulary landed on different arithmetic.** Not "~35 new senses per unit, ~420 total" but 35–43 words and phrases listed per unit (lexicon + chunks), 462 listings across the level, over registries of 305 senses and 145 chunks. 29 imported senses were deleted, 118 added.
+- **`onlineRefinement` went much wider than "for open paragraphs, as in A1".** Every one of A2's 144 speak/write tasks carries it, plus 8 capstone tasks — where A1 marks 23, all `write`, none in its capstones. Consequence: a spoken answer's recognised text now goes to the public LanguageTool API on the same bounded path. Unreviewed and undecided; recorded in [SECURITY.md](../../SECURITY.md)'s "Data handling".
+- **The bundle's `contentVersion` is still `A2-IMPORT-2026.09.20`.** Design 5's import step said to set a new one and nothing bumped it as the level was written, so the string names the file's origin rather than its contents. `course_enrolments.contentVersion` snapshots it, so changing it later is not free.
+- **Arabic was never read by a native speaker.** Design 5 step 3 required a native-speaker check of the pilot unit's Arabic before the batches; that did not happen, and units 3–12 were written by AI and machine-checked only for presence and script. The gates can prove a field contains Arabic and is not the English copied across; they cannot prove it reads naturally. Recorded in README's "Known limitations".
+- **The gates grew a rule this spec didn't ask for**: a per-unit vocabulary floor of 30 words and phrases, added after a unit reached its full 36 activities while teaching a handful of senses. Nothing else counted what the activities were supposed to teach.
 
 ## Risks
 

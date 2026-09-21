@@ -1,7 +1,7 @@
 > **What this file is:** The definition of what the app is, who it's for, and what counts as "done." Prevents scope from being reinvented differently in each session.
 > **How to use it:** Update when scope actually changes (a feature is added/cut/reprioritized). Keep it at the level of *what and why*, not *how* — implementation belongs in [ARCHITECTURE.md](ARCHITECTURE.md).
 
-_Last verified: 2026-09-20 (`feature/a2-current-level`) — corrected "CEFR levels beyond A1 are roadmapped, not built": A2's content now ships inside the app as a not-yet-released level — its units are browsable, its lessons aren't — while B1–C2 remain roadmapped only; see [ADR 0006](adr/0006-multiple-levels.md) and [ROADMAP.md](ROADMAP.md). Also noted that flow 5's "recommend, never block" principle now extends to levels, not just units. Previously verified 2026-09-09 — onboarding and progress-gating flows updated for the local-only, free-access v1 decided this session; see [ADR 0004](adr/0004-local-only-v1-no-firebase-backend.md). Phase 10 corrected stale "progress gating" wording in Success criteria (the actual v1 model is recommendation-only, per flow 5) and resolved 3 of the 4 Open questions below against what actually got built. Added flow 4's read-only lesson-answer-review step (Learn tab only) — see docs/superpowers/specs/2026-09-09-lesson-answer-review-design.md._
+_Last verified: 2026-09-21 (`feature/a2-pilot-u1`) — scope change: **A2 is no longer a preview, it is a second level a learner can study.** Its twelve units were authored to A1's standard and its two capstones written, so "in scope" now means A1 and A2 (B1-C2 remain roadmapped). Recorded below with the two honest caveats that come with it: A2's Arabic was written by AI and machine-checked for script, not read by a native speaker; and only the Learn tab follows the learner's level, so everything else in the app still shows A1. See [ROADMAP.md](ROADMAP.md) and [ADR 0006](adr/0006-multiple-levels.md). Previously verified 2026-09-20 (`feature/a2-current-level`) — corrected "CEFR levels beyond A1 are roadmapped, not built": A2's content now ships inside the app as a not-yet-released level — its units are browsable, its lessons aren't — while B1–C2 remain roadmapped only; see [ADR 0006](adr/0006-multiple-levels.md) and [ROADMAP.md](ROADMAP.md). Also noted that flow 5's "recommend, never block" principle now extends to levels, not just units. Previously verified 2026-09-09 — onboarding and progress-gating flows updated for the local-only, free-access v1 decided this session; see [ADR 0004](adr/0004-local-only-v1-no-firebase-backend.md). Phase 10 corrected stale "progress gating" wording in Success criteria (the actual v1 model is recommendation-only, per flow 5) and resolved 3 of the 4 Open questions below against what actually got built. Added flow 4's read-only lesson-answer-review step (Learn tab only) — see docs/superpowers/specs/2026-09-09-lesson-answer-review-design.md._
 
 # Product
 
@@ -30,6 +30,11 @@ Self-directed adult learners, native Arabic speakers, learning English on their 
 - AI-generated lesson content, curated and reviewed before publishing (content pipeline: generate → review → publish)
 - A recommended unit-by-unit path with mastery tracking (not a hard lock — see key user flow 5)
 
+### Also in scope, added after the MVP
+
+- **Full CEFR A2 level content**, released 2026-09-21 (the bundle estimates 95–130 minutes per unit, so 19–26 hours of material; the CEFR reference band that [ROADMAP.md](ROADMAP.md) scopes against is far larger, as it is for A1): twelve thematic units (Life Now, Past Experiences, People & Relationships, Home & Neighbourhood, Food/Cooking/Services, Travel Plans, Health & Well-being, Work & Study, Technology & Communication, Stories & Entertainment, Nature & Everyday Problems, Invitations & Events), 84 lessons, 432 activities, its own Final Mission ("Host a Visitor") and Final Assessment, built to the same shape and the same four-skill balance as A1. A learner reaches it from the Learn tab's level switcher — once A1 is complete, or by choosing to open it early, since progression recommends and never blocks (flow 5).
+  - **Two things this deliberately does not yet include.** A2's Arabic (units 3-12) was written by AI and checked by test only for presence and script — no native speaker has read it, and a gate that proves a field contains Arabic and isn't the English copied across cannot prove it reads naturally. And only the Learn tab follows the learner's level: Home, Tests, Review, Vocabulary, Grammar and the placement test still show A1, so A2's own capstones cannot be opened and some copy still says "A1" to a learner studying A2. Both are tracked in [ROADMAP.md](ROADMAP.md); the second is the level-design spec's step 2b.
+
 ### Explicitly out of scope (for now)
 
 - Monetization / payments (no paid tiers, subscriptions, or ads)
@@ -37,7 +42,7 @@ Self-directed adult learners, native Arabic speakers, learning English on their 
 - Teacher / classroom tools (no assigning content or tracking groups of students)
 - Any taught language other than English
 - Any native/interface language other than Arabic and English
-- CEFR levels beyond A1 as something a learner can actually study — A2's content is in the app as a not-yet-released level (its units are browsable, but its lessons stay closed until release, see [ADR 0006](adr/0006-multiple-levels.md) and [ROADMAP.md](ROADMAP.md)); B1–C2 remain roadmapped, not built
+- CEFR levels beyond A2 — B1–C2 remain roadmapped, not built, and the app never claims a placement result above the top released level (see [ROADMAP.md](ROADMAP.md))
 
 ## Success criteria
 
@@ -46,12 +51,12 @@ The MVP is "done" when all A1 content and mechanics are built and functional: al
 ## Key user flows
 
 1. **Onboarding** — learner creates a local profile (no account/sign-up in v1 — see [ADR 0004](adr/0004-local-only-v1-no-firebase-backend.md)), selects Arabic as native language, and is introduced to the app in bilingual UI.
-2. **Placement test** — learner takes a short test; MVP always confirms/assigns A1 as the starting level.
-3. **Level overview** — learner sees the A1 level broken into its 4 thematic blocks and the units within each.
+2. **Placement test** — learner takes a short test; it still only ever places into A1, which was the MVP design and is now a gap: A2 is released, but the test doesn't reach it and its results never name an A2 unit. Opening A2 early is done from the Learn tab's lock sheet instead ("Open A2 anyway"). Covering both levels is part of step 2b — see [ROADMAP.md](ROADMAP.md).
+3. **Level overview** — learner sees the level they're in broken into its units (A1's 13, A2's 12), and can switch between the levels that have content.
 4. **Unit lesson flow** — within a unit: vocabulary (with bilingual glosses) → grammar instruction (bilingual explanation) → guided practice/drills → reading passage → listening exercise → writing task → speaking task → end-of-unit assessment. Reopening a lesson that's already reached its final activity (Learn tab only) shows a read-only review of the learner's latest answer to each activity first — correct/incorrect, and the correct answer where one exists — rather than dropping back into a blank replay; an explicit "Practice again" button is the only way from there into a full live replay, which still appends fresh evidence rather than overwriting history (see [DATA_MODEL.md](DATA_MODEL.md)). The Tests tab's own retake flows (Final Mission, Final Assessment, the Placement Test) are unaffected — a separate, later decision.
 5. **Progress tracking, not hard gating** — the app recommends the next unit via mastery evidence (per-CanDo-objective, tracked separately per skill — see [DATA_MODEL.md](DATA_MODEL.md)), but a learner may freely open any unit, vocabulary, grammar, review, or test screen at any time; a block completes when all its units are mastered. The same recommend-don't-block principle now extends to levels: a level the learner hasn't reached, or one the app hasn't released, explains why and offers a way forward (take the placement test, open it anyway, or just look at what it covers) rather than a dead end — see [UX_PRINCIPLES.md](UX_PRINCIPLES.md) and [ADR 0006](adr/0006-multiple-levels.md).
-6. **Level completion** — after all 4 blocks are passed, the learner completes CEFR level A1.
-7. **Progress tracking** — learner can see their position within A1 (blocks/units completed, skills practiced) at any time.
+6. **Level completion** — a level is complete when every unit that counts towards it is mastered (`levelComplete`; a starter unit like `A1-U0` doesn't count). Completing A1 is what opens A2 without the learner having to unlock it. Note that passing a level's Final Assessment does **not** currently count as completing it, although the level-design spec proposed it should — see [ROADMAP.md](ROADMAP.md).
+7. **Progress tracking** — learner can see their position within a level (units completed, skills practiced) at any time. Progress is held per level, so a learner can hold progress in A1 and A2 at once.
 
 ## Open questions
 

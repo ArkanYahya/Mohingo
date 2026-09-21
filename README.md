@@ -1,6 +1,6 @@
 # Mohingo
 
-Offline-first, bilingual (Arabic/English) CEFR English-learning app for self-directed adult Arabic-speaking learners — currently a complete CEFR A1 level (Phases 3-9 of the build; see [CLAUDE.md](CLAUDE.md) for exact status).
+Offline-first, bilingual (Arabic/English) CEFR English-learning app for self-directed adult Arabic-speaking learners — two complete CEFR levels, A1 and A2 (see [CLAUDE.md](CLAUDE.md) for exact status, and "Known limitations" below for what "complete" does and doesn't cover).
 
 Full documentation — product scope, architecture, data model, and every other project decision — lives in [`docs/`](docs/), starting from [CLAUDE.md](CLAUDE.md). This file is a practical setup/build/troubleshooting guide, not a decision record — if something here and a doc in `docs/` disagree, `docs/` is the source of truth.
 
@@ -17,7 +17,7 @@ Full documentation — product scope, architecture, data model, and every other 
 flutter pub get
 ```
 
-No `.env` file, no secrets, no config to fill in. The curriculum content (`assets/content/en/A1/a1-course-bundle.json`) is already committed as a bundled asset.
+No `.env` file, no secrets, no config to fill in. The curriculum content is already committed as bundled assets — one file per released level (`assets/content/en/A1/a1-course-bundle.json`, `assets/content/en/A2/a2-course-bundle.json`). Those files are the source of truth for content: edit them directly, not the `reference/` packages they came from (each has an `OUT_OF_DATE.md` explaining why), and keep `test/content/` green — see [docs/TESTING.md](docs/TESTING.md).
 
 ## Common commands
 
@@ -45,7 +45,7 @@ After editing `lib/l10n/app_en.arb` or `lib/l10n/app_ar.arb`, run `flutter gen-l
 ## Running tests
 
 ```
-flutter test                      # unit + widget tests (134 passing as of the last full run — see CLAUDE.md)
+flutter test                      # unit + widget tests (705 passing as of the last full run — see CLAUDE.md)
 flutter test integration_test/    # not yet added — see "Known limitations" below
 ```
 
@@ -65,7 +65,9 @@ If a widget test hangs or times out, it's almost always a missing fake-service o
 - **No CI/CD is configured** — see [ROADMAP.md](docs/ROADMAP.md).
 - **Release builds sign with the debug key** on Android (`android/app/build.gradle.kts`) — a real signing config is needed before any Play Store upload.
 - **App icons are still the default Flutter template icons** on both platforms — no branded icon has been designed yet.
-- **App-store data-safety/privacy-label declarations and a privacy-policy update have not been addressed** for the app's first third-party network transmission: open-ended writing/speaking answers on the ~40 rubrics marked `onlineRefinement` may be sent to the free public LanguageTool API for a grammar-quality check (always optional — a bounded local-only fallback grades them if the device is never online; see [ADR 0005](docs/adr/0005-narrow-network-exception-for-open-ended-grading.md)). Google Play Data Safety and Apple Privacy Nutrition Label entries, and whatever privacy-policy text they require, still need to be decided and written before any store submission.
+- **A2's Arabic has never been read by a native speaker.** Units 3–12 were written by AI and checked only by test — that every learner-facing field contains Arabic script, and that it isn't the English string copied across. That is all a gate can prove. It cannot tell whether a line reads naturally, whether a register fits, or whether a translation is idiomatic where it is merely correct, and the project's own rule is that each language is written natively for that language rather than translated from the other ([docs/UX_PRINCIPLES.md](docs/UX_PRINCIPLES.md)). The level-design spec required a native-speaker check of the pilot unit's Arabic before the authoring batches began; it never happened, and units 3–12 were written and shipped without one. A native-speaker read of A2's Arabic is outstanding work, not a finished item.
+- **A2 is released, but only the Learn tab knows it.** Home, Tests, Review, Vocabulary, Grammar and the placement test still read A1 directly, so a learner studying A2 gets A1's continue card, A1's words and grammar, A1's tests, and twelve strings that say "A1" — including the "Finish A1" card at the end of A2's own unit path. A2's Final Mission and Final Assessment are in the bundle and covered by tests, but nothing opens them. This is the level-design spec's step 2b — see [docs/ROADMAP.md](docs/ROADMAP.md).
+- **App-store data-safety/privacy-label declarations and a privacy-policy update have not been addressed** for the app's first third-party network transmission: open-ended writing and speaking answers on rubrics marked `onlineRefinement` may be sent to the free public LanguageTool API for a grammar-quality check (always optional — a bounded local-only fallback grades them if the device is never online; see [ADR 0005](docs/adr/0005-narrow-network-exception-for-open-ended-grading.md)). Note the scope, which is larger than it was when this was written: 23 rubrics in A1 (all typed writing), but **all 144** speak/write tasks in A2's units plus 8 of its capstone tasks — so recognised speech text takes that path too. [docs/SECURITY.md](docs/SECURITY.md) flags that widening as needing a deliberate decision. Google Play Data Safety and Apple Privacy Nutrition Label entries, and whatever privacy-policy text they require, still need to be decided and written before any store submission.
 
 ## Project structure
 
