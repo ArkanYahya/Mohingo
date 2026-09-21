@@ -28,6 +28,7 @@ The three ways this breaks a learner, all currently possible in a single careles
 1. **An id is reused.** A learner's attempt on the old `A2-U3-L2-A07` is counted as evidence for a different activity that now wears that id.
 2. **A published `mode` changes.** `MasteryAggregationService` counts mastery-mode evidence. Re-tag one activity from `practice` to `mastery` and every learner who ever answered it retroactively gains evidence they never earned; go the other way and they lose mastery they did earn.
 3. **A published `canDo` tag is dropped.** The attempt rows still carry the old objective id. The unit's requirement now names an objective no stored evidence maps to, and a learner who had mastered the unit stops having mastered it.
+4. **Content changes and `contentVersion` does not.** Found while implementing the content-versioning plan: A2's bundle still declares `"contentVersion": "A2-IMPORT-2026.09.20"` although every unit in it was rewritten after that import. `recordContentVersionAndFlagDriftProvider` treats an unchanged `contentVersion` as "not an upgrade" and skips the whole diff, by design — otherwise an ordinary restart would recompute against itself. So a content change that forgets to bump the string is invisible to stale detection on every device, permanently.
 
 **The policy, decided by the product owner:** after a level is published, **`canDo` is append-only and `mode` is frozen.** An activity may gain an objective; it may never lose one, and it may never change mode. Removing either means a new activity id.
 
@@ -661,7 +662,42 @@ git commit -m "test: ids are permanent once a level has shipped"
 
 ---
 
-### Task 4: Write the policy down where it is followed
+### Task 4: The bump nobody will remember
+
+**Files:**
+- Modify: `lib/content/publication/published_id_snapshot.dart`, `test/content/published_id_stability_test.dart`, `tool/update_published_ids.dart`
+
+The snapshot already records the id surface. Record the `contentVersion` that published it too, and gate the pair: **if the published id set changed, `contentVersion` must have changed as well.** Without this, content versioning is one forgotten string away from doing nothing, on every device, silently.
+
+- [ ] **Step 1: Carry `contentVersion` in the snapshot**
+
+Add it to `PublishedIdSnapshot` beside `courseId`, in `fromBundle`, `fromJson` and `toJson`. The merge keeps `current`'s.
+
+- [ ] **Step 2: Gate it**
+
+In `publicationViolations`, when the two snapshots' id sets differ in any way — added or removed — and `published.contentVersion == current.contentVersion`, add a violation naming the version string and saying that stale detection will not fire for any learner until it is bumped. Note the asymmetry deliberately: a `contentVersion` bump with no id change is fine (prose, transcripts and rubrics change without ids moving), so this fires in one direction only.
+
+- [ ] **Step 3: Prove it**
+
+Add one activity to the A2 bundle without touching `contentVersion` → the gate fails naming the version string. Bump the string as well → it passes. Revert both. Record both observed outputs.
+
+- [ ] **Step 4: Regenerate and commit**
+
+```bash
+dart run tool/update_published_ids.dart
+flutter test test/content/published_id_stability_test.dart
+```
+
+```bash
+git add lib/content/publication tool/ test/content/
+git commit -m "test: content that changed must say it changed"
+```
+
+**Not in this task:** changing A2's own `contentVersion` string. It is misleading today (`A2-IMPORT-…` for content that was fully authored afterwards), but bumping it is a product call — it would make every existing learner's next launch read as an upgrade — so it is reported to the product owner rather than decided here. The gate above fires on the *next* content change, which is when it matters.
+
+---
+
+### Task 5: Write the policy down where it is followed
 
 **Files:**
 - Modify: `docs/CONVENTIONS.md`, `docs/DATA_MODEL.md`, `docs/TESTING.md`, `README.md`
@@ -702,4 +738,5 @@ Bump each edited doc's **Last verified** line to the day of the edit, naming the
 - **The script is a merge, not a regeneration.** This is the single design decision that decides whether the gate is real. A regenerating script would make every failure fixable with one command, and that is precisely what the guard exists to prevent.
 - **Both directions are tested** because only one of them is a gate. Stability without completeness protects a shrinking fraction of the content as the course grows.
 - **Task 2 Step 3 and Task 3 Step 3 are mutation tests**, not formalities. Every gate in `test/content/` that was found fakeable this month passed its own suite at the time.
+- **Task 4 was not in the original plan.** It was added after the content-versioning work showed that an unbumped `contentVersion` makes stale detection inert. An id guard that lets that through is guarding the wrong half.
 - **A1 is snapshotted too**, even though it shipped long before this guard existed. The snapshot then records A1 as it is today rather than as first published — which is the best available record, and must be stated as such in the docs so nobody later mistakes it for a launch-day artifact.
