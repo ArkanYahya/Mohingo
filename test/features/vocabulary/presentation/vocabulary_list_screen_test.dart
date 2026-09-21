@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:mohingo/data/local/database.dart';
+import 'package:mohingo/features/progress/providers/level_providers.dart';
 
 import 'vocabulary_test_harness.dart';
 
 final _lex = reviewTestIndex.bundle.lexicon;
 final _chunks = reviewTestIndex.bundle.chunks;
+final _a2Lex = reviewTestA2Index.bundle.lexicon;
 
 /// One due, one learning, one learned word; one saved phrase.
 Future<void> _seed(AppDatabase db, int id) async {
@@ -150,5 +152,92 @@ void main() {
     await tester.tap(find.text(_lex[2].headword));
     await tester.pumpAndSettle();
     expect(find.text(_lex[2].examples.first.en), findsOneWidget);
+  });
+
+  group('the level it shows', () {
+    testWidgets('an A1 learner gets A1\'s words — all of them, and no other '
+        'level\'s', (tester) async {
+      final (container, l10n) = await pumpVocabulary(tester);
+
+      expect(await container.read(currentLevelIdProvider.future), 'a1');
+      expect(find.text(_lex.first.headword), findsWidgets);
+      expect(
+        find.bySemanticsLabel(
+          l10n.vocabularyFilterSemantics(l10n.vocabularyFilterAll, _lex.length),
+        ),
+        findsOneWidget,
+      );
+    });
+
+    testWidgets('an A2 learner gets A2\'s words, not A1\'s', (tester) async {
+      final (container, l10n) = await pumpVocabulary(
+        tester,
+        currentLevelId: 'a2',
+      );
+
+      expect(await container.read(currentLevelIdProvider.future), 'a2');
+      expect(find.text(_a2Lex.first.headword), findsWidgets);
+      // The registry on screen is A2's whole registry, so A1's 354 senses
+      // cannot be in it.
+      expect(
+        find.bySemanticsLabel(
+          l10n.vocabularyFilterSemantics(
+            l10n.vocabularyFilterAll,
+            _a2Lex.length,
+          ),
+        ),
+        findsOneWidget,
+      );
+      expect(_a2Lex.length, isNot(_lex.length));
+    });
+
+    testWidgets('the level chips are announced with a noun, never a bare '
+        'code', (tester) async {
+      final (_, l10n) = await pumpVocabulary(tester);
+
+      expect(
+        find.bySemanticsLabel(l10n.levelFilterSemantics('A1')),
+        findsOneWidget,
+      );
+      expect(
+        find.bySemanticsLabel(l10n.levelFilterSemantics('A2')),
+        findsOneWidget,
+      );
+      expect(find.text(l10n.levelFilterLabel), findsOneWidget);
+    });
+
+    testWidgets('an A2 learner can look back at A1\'s words — and is still '
+        'in A2 afterwards', (tester) async {
+      final (container, l10n) = await pumpVocabulary(
+        tester,
+        currentLevelId: 'a2',
+      );
+
+      await tester.tap(_chip('A1'));
+      await tester.pumpAndSettle();
+
+      expect(find.text(_lex.first.headword), findsWidgets);
+      expect(
+        find.bySemanticsLabel(
+          l10n.vocabularyFilterSemantics(l10n.vocabularyFilterAll, _lex.length),
+        ),
+        findsOneWidget,
+      );
+      // Looking is a view, not a move.
+      expect(await container.read(currentLevelIdProvider.future), 'a2');
+
+      // And phrases follow the filtered level too.
+      await tester.tap(find.text(l10n.vocabularyTabChunks));
+      await tester.pumpAndSettle();
+      expect(
+        find.bySemanticsLabel(
+          l10n.vocabularyFilterSemantics(
+            l10n.vocabularyFilterAll,
+            _chunks.length,
+          ),
+        ),
+        findsOneWidget,
+      );
+    });
   });
 }

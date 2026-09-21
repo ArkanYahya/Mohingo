@@ -878,6 +878,18 @@ abstract class AppLocalizations {
   /// **'Back to {level}'**
   String learnPreviewBackToCurrent(String level);
 
+  /// Label before the level chips at the top of the words & phrases and grammar lists, saying which level's items the list is showing.
+  ///
+  /// In en, this message translates to:
+  /// **'Level'**
+  String get levelFilterLabel;
+
+  /// Screen-reader label of one level chip on the words & phrases and grammar lists — the chip itself shows only the bare CEFR code.
+  ///
+  /// In en, this message translates to:
+  /// **'Level {level}'**
+  String levelFilterSemantics(String level);
+
   /// Small word under the correct/total fraction inside the lesson-complete score ring, e.g. '3/4' over 'correct'.
   ///
   /// In en, this message translates to:

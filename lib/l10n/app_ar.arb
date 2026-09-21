@@ -130,6 +130,8 @@
   "learnPreviewBannerTitle": "نظرة على المستوى {level}",
   "learnPreviewBannerBody": "هذه وحدات المستوى {level} التي سيتناولها. ستُفتح دروسه عندما يصبح جاهزًا.",
   "learnPreviewBackToCurrent": "العودة إلى المستوى {level}",
+  "levelFilterLabel": "المستوى",
+  "levelFilterSemantics": "المستوى {level}",
   "lessonCompleteCorrectCaption": "صحيحة",
   "lessonCompleteStreakLabel": "التتابع",
   "lessonCompleteAccuracyLabel": "الدقة",

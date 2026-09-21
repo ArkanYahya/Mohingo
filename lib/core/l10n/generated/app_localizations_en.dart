@@ -542,6 +542,14 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String get levelFilterLabel => 'Level';
+
+  @override
+  String levelFilterSemantics(String level) {
+    return 'Level $level';
+  }
+
+  @override
   String get lessonCompleteCorrectCaption => 'correct';
 
   @override

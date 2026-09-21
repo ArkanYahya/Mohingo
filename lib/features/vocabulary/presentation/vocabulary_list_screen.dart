@@ -7,8 +7,10 @@ import '../../../content/providers/course_content_providers.dart';
 import '../../../core/l10n/generated/app_localizations.dart';
 import '../../../core/theme/app_tokens.dart';
 import '../../../core/theme/gamification_theme_extension.dart';
+import '../../../core/widgets/level_filter_chips.dart';
 import '../../../core/widgets/search_field.dart';
 import '../../../data/local/database.dart';
+import '../../progress/providers/level_providers.dart';
 import '../domain/vocabulary_status.dart';
 import '../providers/vocabulary_providers.dart';
 import 'vocabulary_status_pill.dart';
@@ -53,6 +55,14 @@ class _Entry {
 /// that share a headword (e.g. `A1.LEX.PICTURE.N01`/`N02`) are always
 /// distinct rows, keyed by id, never merged by spelling. See
 /// docs/ARCHITECTURE.md.
+///
+/// Opens on the level the learner is in ([currentLevelIdProvider]), so an
+/// A2 learner sees the words A2 teaches — and carries a [LevelFilterChips]
+/// row so they can still look back at A1's, which are in spaced review and
+/// turn up in A2's texts. Picking a level here only changes what the list
+/// shows; it never moves the learner between levels. Each row's id already
+/// carries its level, so tapping one opens the right word page whichever
+/// level is on screen (`contentIndexForIdProvider`).
 class VocabularyListScreen extends ConsumerStatefulWidget {
   const VocabularyListScreen({super.key});
 
@@ -66,6 +76,10 @@ class _VocabularyListScreenState extends ConsumerState<VocabularyListScreen> {
   bool _phrases = false;
   _Filter _filter = _Filter.all;
   bool _productiveOnly = false;
+
+  /// A level the learner has filtered to. Null until they pick one, when
+  /// the list follows the level they are actually in.
+  String? _levelId;
 
   @override
   void dispose() {
@@ -117,15 +131,49 @@ class _VocabularyListScreenState extends ConsumerState<VocabularyListScreen> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    final contentAsync = ref.watch(courseContentProvider('a1'));
+    final catalog = ref.watch(levelCatalogProvider);
+    final currentLevelIdAsync = ref.watch(currentLevelIdProvider);
+    final shownLevelId = _levelId ?? currentLevelIdAsync.value;
+    final AsyncValue<CourseContentIndex> contentAsync;
+    if (currentLevelIdAsync.hasError) {
+      contentAsync = AsyncValue.error(
+        currentLevelIdAsync.error!,
+        currentLevelIdAsync.stackTrace!,
+      );
+    } else if (shownLevelId != null) {
+      contentAsync = ref.watch(courseContentProvider(shownLevelId));
+    } else {
+      contentAsync = const AsyncValue.loading();
+    }
     final states =
         ref.watch(allVocabularyReviewStateProvider).value ?? const [];
+
+    // The level row sits outside the content's loading/error branch: a
+    // level whose bundle fails to load must not strand the learner on an
+    // error page with no way back to their own level.
+    final levelFilter = shownLevelId == null
+        ? const SizedBox.shrink()
+        : LevelFilterChips(
+            catalog: catalog,
+            selectedLevelId: shownLevelId,
+            onSelect: (levelId) => setState(() => _levelId = levelId),
+          );
 
     return Scaffold(
       appBar: AppBar(title: Text(l10n.reviewWordsTile)),
       body: contentAsync.when(
-        loading: () => const Center(child: CircularProgressIndicator()),
-        error: (error, _) => Center(child: Text('$error')),
+        loading: () => Column(
+          children: [
+            levelFilter,
+            const Expanded(child: Center(child: CircularProgressIndicator())),
+          ],
+        ),
+        error: (error, _) => Column(
+          children: [
+            levelFilter,
+            Expanded(child: Center(child: Text('$error'))),
+          ],
+        ),
         data: (index) {
           final query = _searchController.text.trim().toLowerCase();
           final kindEntries = _entries(
@@ -146,6 +194,7 @@ class _VocabularyListScreenState extends ConsumerState<VocabularyListScreen> {
 
           return Column(
             children: [
+              levelFilter,
               _Controls(
                 searchController: _searchController,
                 onSearch: () => setState(() {}),

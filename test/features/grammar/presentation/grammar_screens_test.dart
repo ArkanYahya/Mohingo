@@ -2,14 +2,40 @@ import 'package:drift/drift.dart' hide isNull, isNotNull;
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+import 'package:mohingo/content/index/course_content_index.dart';
+import 'package:mohingo/content/models/registry_items.dart';
+import 'package:mohingo/core/l10n/generated/app_localizations.dart';
 import 'package:mohingo/data/local/database.dart';
 import 'package:mohingo/features/progress/providers/current_learner_provider.dart';
+import 'package:mohingo/features/progress/providers/level_providers.dart';
 import 'package:mohingo/features/progress/providers/progress_providers.dart';
 
 import 'grammar_test_harness.dart';
 
 final _grammar = reviewTestIndex.bundle.grammar;
 final _units = reviewTestIndex.bundle.units;
+final _a2Units = reviewTestA2Index.bundle.units;
+
+/// The first form the screen files under [unitIndex] — resolved the way the
+/// screen resolves it, from the lesson that introduces it, inside one level's
+/// index only.
+GrammarItem _firstFormOf(CourseContentIndex index, int unitIndex) {
+  final lessonIds = {
+    for (final lesson in index.bundle.units[unitIndex].lessons) lesson.id,
+  };
+  return index.bundle.grammar.firstWhere(
+    (g) => lessonIds.contains(g.introducedIn),
+  );
+}
+
+/// A unit heading as the list draws it: "UNIT 2 · HELLO, I'M…".
+String _heading(AppLocalizations l10n, int number, String title) {
+  // The screen wraps the title in first-strong isolates; built from code
+  // points so the source file carries no invisible bidi characters.
+  final isolated =
+      '${String.fromCharCode(0x2068)}$title${String.fromCharCode(0x2069)}';
+  return '${l10n.learnUnitOverline(number)} · $isolated'.toUpperCase();
+}
 
 void main() {
   driftRuntimeOptions.dontWarnAboutMultipleDatabases = true;
@@ -75,6 +101,60 @@ void main() {
       await tester.tap(find.text(_grammar.first.form));
       await tester.pumpAndSettle();
       expect(find.text(l10n.grammarOverline(2).toUpperCase()), findsOneWidget);
+    });
+  });
+
+  group('grammar list — the level it shows', () {
+    testWidgets('an A1 learner gets A1\'s forms under A1\'s units', (
+      tester,
+    ) async {
+      final (container, l10n) = await pumpGrammar(tester);
+
+      expect(await container.read(currentLevelIdProvider.future), 'a1');
+      expect(find.text(_heading(l10n, 2, _units[1].title)), findsOneWidget);
+      expect(find.text(_firstFormOf(reviewTestIndex, 1).form), findsOneWidget);
+      expect(find.text(_heading(l10n, 1, _a2Units[0].title)), findsNothing);
+    });
+
+    testWidgets('an A2 learner gets A2\'s forms under A2\'s units, numbered '
+        'from A2\'s own path', (tester) async {
+      final (container, l10n) = await pumpGrammar(tester, currentLevelId: 'a2');
+
+      expect(await container.read(currentLevelIdProvider.future), 'a2');
+      // A2's path starts at A2-U1, so its first section is UNIT 1 — and
+      // its heading is A2's title, not the A1 unit sitting at that index.
+      expect(find.text(_heading(l10n, 1, _a2Units[0].title)), findsOneWidget);
+      expect(
+        find.text(_firstFormOf(reviewTestA2Index, 0).form),
+        findsOneWidget,
+      );
+      expect(find.text(_heading(l10n, 2, _units[1].title)), findsNothing);
+      // A lesson id that resolved against the wrong level would land here.
+      expect(
+        find.textContaining(l10n.learnUnitOverline(0).toUpperCase()),
+        findsNothing,
+      );
+      expect(find.textContaining('A2-U'), findsNothing);
+    });
+
+    testWidgets('an A2 learner can look back at A1\'s forms, grouped under '
+        'A1\'s units — and is still in A2 afterwards', (tester) async {
+      final (container, l10n) = await pumpGrammar(tester, currentLevelId: 'a2');
+
+      await tester.tap(
+        find.ancestor(of: find.text('A1'), matching: find.byType(ChoiceChip)),
+      );
+      await tester.pumpAndSettle();
+
+      expect(find.text(_heading(l10n, 2, _units[1].title)), findsOneWidget);
+      expect(find.text(_firstFormOf(reviewTestIndex, 1).form), findsOneWidget);
+      expect(find.text(_heading(l10n, 1, _a2Units[0].title)), findsNothing);
+      expect(
+        find.textContaining(l10n.learnUnitOverline(0).toUpperCase()),
+        findsNothing,
+      );
+      // Looking is a view, not a move.
+      expect(await container.read(currentLevelIdProvider.future), 'a2');
     });
   });
 
