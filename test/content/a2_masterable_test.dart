@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:drift/native.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mohingo/content/catalog/level_catalog.dart';
@@ -7,6 +9,7 @@ import 'package:mohingo/features/progress/data/drift_activity_attempt_repository
 import 'package:mohingo/features/progress/data/drift_unit_lesson_progress_repository.dart';
 import 'package:mohingo/features/progress/domain/mastery_aggregation_service.dart';
 
+import 'a2_capstone_checks.dart';
 import 'a2_finished_units.dart';
 
 void main() {
@@ -86,16 +89,44 @@ void main() {
     expect(bundleUnitIds.containsAll(a2FinishedUnitIds), isTrue);
   });
 
-  test('A2 stays a preview until every unit is finished', () {
+  test('A2 stays a preview until every unit is finished and both capstones '
+      'pass their gates', () {
     final a2 = kLevelCatalog.firstWhere((e) => e.levelId == 'a2');
     if (a2.availability != LevelAvailability.available) return;
-    final bundleUnitIds = {for (final u in loadA2Bundle().units) u.id};
+    final bundle = loadA2Bundle();
+    final bundleUnitIds = {for (final u in bundle.units) u.id};
     expect(
       a2FinishedUnitIds.toSet(),
       bundleUnitIds,
       reason:
           'A2 is marked available, but the finished list is not every '
           'unit in the bundle',
+    );
+
+    // Counting units is not enough. A2's exits are its Final Mission and its
+    // Final Assessment, and neither is a unit — so the check above would let
+    // A2 go live with twelve finished units behind two skeleton capstones.
+    // Re-run the real capstone rules here rather than restating them: they
+    // are the same functions `a2_capstones_test.dart` runs gate by gate, so
+    // this can never pass on a rule that file no longer enforces.
+    expect(
+      allCapstoneViolations(bundle),
+      isEmpty,
+      reason:
+          'A2 is marked available, but its capstones break these rules:\n'
+          '${allCapstoneViolations(bundle).join('\n')}',
+    );
+
+    // And the focused suite itself must still be there. Without this, the
+    // capstone gates could be deleted wholesale and release day would only
+    // notice the combined check above — which would still run, but nobody
+    // would be told which gate had gone missing from day-to-day CI.
+    expect(
+      File('test/content/a2_capstones_test.dart').existsSync(),
+      isTrue,
+      reason:
+          'the A2 capstone gate suite has been deleted; A2 cannot be marked '
+          'available without it',
     );
   });
 }
