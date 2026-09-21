@@ -7049,28 +7049,21 @@
             {
               "id": "A2-U1-L4-A03",
               "lessonId": "A2-U1-L4",
-              "type": "match",
+              "type": "audioChoice",
               "mode": "practice",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U1.READING.UNDERSTAND_PROFILE"
+                "A2.U1.LISTENING.UNDERSTAND_LIFE_UPDATE"
               ],
-              "prompt": "Match each question with the short answer that fits.",
-              "promptAr": "طابق كل سؤال بالإجابة القصيرة المناسبة له.",
-              "pairs": [
-                [
-                  "Do you enjoy the work?",
-                  "Yes, I do."
-                ],
-                [
-                  "Does Samir come on Sundays?",
-                  "No, he doesn't."
-                ],
-                [
-                  "Are you interested in music?",
-                  "Yes, I am."
-                ]
-              ]
+              "prompt": "Listen to the questions and the short answers. What does Nabil do when he is not at the museum?",
+              "promptAr": "استمع إلى الأسئلة والإجابات القصيرة. ماذا يعمل نبيل حين لا يكون في المتحف؟",
+              "options": [
+                "He teaches at a school",
+                "He works at a hospital",
+                "He stays at home with his wife"
+              ],
+              "answer": "He teaches at a school",
+              "audioTranscript": "Do you work at the museum every day, Nabil? Only three days a week. I teach at the school on the others. That sounds interesting. Does your wife work there too? She doesn't, no. She is a nurse, and she really enjoys it."
             },
             {
               "id": "A2-U1-L4-A04",
