@@ -146,6 +146,15 @@ class DriftActivityAttemptRepository implements ActivityAttemptRepository {
   }
 
   @override
+  Future<Set<String>> attemptedActivityIds({required int learnerId}) async {
+    final query = _db.selectOnly(_db.activityAttempts, distinct: true)
+      ..addColumns([_db.activityAttempts.activityId])
+      ..where(_db.activityAttempts.learnerId.equals(learnerId));
+    final rows = await query.get();
+    return {for (final row in rows) row.read(_db.activityAttempts.activityId)!};
+  }
+
+  @override
   Future<ActivityAttempt?> latestAttempt({
     required int learnerId,
     required String activityId,

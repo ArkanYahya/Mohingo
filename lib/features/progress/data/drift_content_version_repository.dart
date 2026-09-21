@@ -49,7 +49,14 @@ class DriftContentVersionRepository implements ContentVersionRepository {
   Future<ContentVersion?> latest({required String courseId}) {
     return (_db.select(_db.contentVersions)
           ..where((t) => t.courseId.equals(courseId))
-          ..orderBy([(t) => OrderingTerm.desc(t.installedAt)])
+          ..orderBy([
+            (t) => OrderingTerm.desc(t.installedAt),
+            // installedAt alone ties when an upgrade records its row in the
+            // same clock tick the previous one was read in, and a tie that
+            // resolves the wrong way makes the diff compare a version
+            // against itself — indistinguishable from "nothing changed".
+            (t) => OrderingTerm.desc(t.id),
+          ])
           ..limit(1))
         .getSingleOrNull();
   }

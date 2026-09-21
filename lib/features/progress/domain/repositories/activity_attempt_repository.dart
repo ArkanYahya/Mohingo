@@ -68,6 +68,14 @@ abstract interface class ActivityAttemptRepository {
     required DateTime asOf,
   });
 
+  /// Every activity id this learner has an attempt for, once each.
+  ///
+  /// Used to decide whether a content update stranded any of their
+  /// evidence: an attempt row outlives the activity it names, so an
+  /// activity that has left the bundle leaves the row behind pointing at
+  /// nothing. See [ContentDrift].
+  Future<Set<String>> attemptedActivityIds({required int learnerId});
+
   /// The most recently attempted row for one learner + activity, or `null`
   /// if none exists yet. Used to detect when a deferred
   /// `pending_online_refinements` grade has actually landed — see
