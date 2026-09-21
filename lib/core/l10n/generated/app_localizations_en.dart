@@ -140,7 +140,22 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get homeAllUnitsMastered => 'You\'ve mastered every A1 unit so far!';
+  String homeAllUnitsMastered(String level) {
+    return 'You\'ve mastered every $level unit so far!';
+  }
+
+  @override
+  String get homeNextLevelOverline => 'Next level';
+
+  @override
+  String homeNextLevelTitle(String level) {
+    return 'Start $level';
+  }
+
+  @override
+  String homeNextLevelBody(String current, String next) {
+    return 'Every $current unit is mastered, and $next builds straight on it — move when you\'re ready.';
+  }
 
   @override
   String homeLevelProgressCaption(int mastered, int total) {
@@ -169,9 +184,15 @@ class AppLocalizationsEn extends AppLocalizations {
   String get homeGreetingEvening => 'Good evening';
 
   @override
-  String homeLevelBadge(String cefr) {
-    return '$cefr · Beginner';
+  String homeLevelBadge(String cefr, String descriptor) {
+    return '$cefr · $descriptor';
   }
+
+  @override
+  String get cefrDescriptorA1 => 'Beginner';
+
+  @override
+  String get cefrDescriptorA2 => 'Elementary';
 
   @override
   String homeStreakChip(int days) {

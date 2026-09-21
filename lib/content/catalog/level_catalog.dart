@@ -104,6 +104,24 @@ LevelCatalogEntry? levelCatalogEntryIn(
   return null;
 }
 
+/// The level that builds on [levelId] — the one a learner who finishes it
+/// moves into next. Null when nothing builds on it: the last level with
+/// content, or a level no entry names as its prerequisite.
+///
+/// Structural only. Whether that level is actually open to this learner is
+/// a separate question — see `levelAccessFor`.
+LevelCatalogEntry? nextLevelEntryIn(
+  List<LevelCatalogEntry> catalog,
+  String levelId,
+) {
+  for (final entry in catalog) {
+    // A level is never its own next level, however the catalogue is edited.
+    if (entry.levelId == levelId) continue;
+    if (entry.prerequisiteLevelId == levelId) return entry;
+  }
+  return null;
+}
+
 /// [catalog] with every level in [openedLevelIds] promoted from
 /// [LevelAvailability.preview] to [LevelAvailability.available] — how a
 /// development build opens a level that isn't released yet. A level with no

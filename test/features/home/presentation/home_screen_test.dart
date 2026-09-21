@@ -9,6 +9,7 @@ import 'package:go_router/go_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:uuid/uuid.dart';
 
+import 'package:mohingo/content/catalog/level_catalog.dart';
 import 'package:mohingo/content/index/course_content_index.dart';
 import 'package:mohingo/content/parsing/course_bundle_parser.dart';
 import 'package:mohingo/content/providers/course_content_providers.dart';
@@ -25,13 +26,40 @@ import 'package:mohingo/features/home/presentation/widgets/continue_lesson_card.
 import 'package:mohingo/features/home/presentation/widgets/daily_goal_section.dart';
 import 'package:mohingo/features/home/presentation/widgets/home_header.dart';
 import 'package:mohingo/features/home/presentation/widgets/journey_card.dart';
+import 'package:mohingo/features/progress/data/drift_learner_repository.dart';
 import 'package:mohingo/features/progress/domain/repositories/daily_task_event_repository.dart';
+import 'package:mohingo/features/progress/providers/level_providers.dart';
 
 final CourseContentIndex _index = CourseContentIndex.build(
   CourseBundleParser.parse(
     File('assets/content/en/A1/a1-course-bundle.json').readAsStringSync(),
   ),
 );
+
+final CourseContentIndex _a2Index = CourseContentIndex.build(
+  CourseBundleParser.parse(
+    File('assets/content/en/A2/a2-course-bundle.json').readAsStringSync(),
+  ),
+);
+
+/// The shipped catalogue with A2 demoted to a level the app hasn't released
+/// — what Home saw before A2 shipped, and what it will see again the first
+/// time B1's content lands ahead of B1's release.
+final _a2NotReleasedCatalog = [
+  const LevelCatalogEntry(
+    levelId: 'a1',
+    cefrCode: 'A1',
+    availability: LevelAvailability.available,
+    bundleAssetPath: 'a1.json',
+  ),
+  const LevelCatalogEntry(
+    levelId: 'a2',
+    cefrCode: 'A2',
+    availability: LevelAvailability.preview,
+    bundleAssetPath: 'a2.json',
+    prerequisiteLevelId: 'a1',
+  ),
+];
 
 GoRouter _router() => GoRouter(
   initialLocation: '/home',
@@ -66,6 +94,10 @@ GoRouter _router() => GoRouter(
   ],
 );
 
+/// Pumps Home for a learner in [levelId] — enrolling and selecting anything
+/// but the base level first, the way `LevelSelectionController.select`
+/// would, so `currentLevelIdProvider` resolves to it. [catalog] replaces the
+/// shipped level catalogue.
 Future<void> _pumpHome(
   WidgetTester tester,
   AppDatabase db, {
@@ -73,6 +105,8 @@ Future<void> _pumpHome(
   double textScale = 1,
   double width = 390,
   double height = 1400,
+  String levelId = 'a1',
+  List<LevelCatalogEntry>? catalog,
 }) async {
   SharedPreferences.setMockInitialValues({});
   final prefs = await SharedPreferences.getInstance();
@@ -80,6 +114,18 @@ Future<void> _pumpHome(
   tester.view.devicePixelRatio = 1;
   addTearDown(tester.view.resetPhysicalSize);
   addTearDown(tester.view.resetDevicePixelRatio);
+  if (levelId != 'a1') {
+    final index = {'a2': _a2Index}[levelId]!;
+    final learner = await db.select(db.learners).getSingle();
+    final repository = DriftLearnerRepository(db);
+    await repository.ensureEnrolled(
+      learnerId: learner.id,
+      levelId: levelId,
+      courseId: index.bundle.course.id,
+      contentVersion: index.bundle.contentVersion,
+    );
+    await repository.markLevelSelected(learnerId: learner.id, levelId: levelId);
+  }
 
   await tester.pumpWidget(
     ProviderScope(
@@ -87,7 +133,9 @@ Future<void> _pumpHome(
       overrides: [
         sharedPreferencesProvider.overrideWithValue(prefs),
         appDatabaseProvider.overrideWithValue(db),
+        if (catalog != null) levelCatalogProvider.overrideWithValue(catalog),
         courseContentProvider('a1').overrideWith((ref) async => _index),
+        courseContentProvider('a2').overrideWith((ref) async => _a2Index),
       ],
       child: MaterialApp.router(
         theme: AppTheme.light(AppColorSeed.calmTeal),
@@ -142,6 +190,29 @@ Future<void> _lessonPosition(
       );
 }
 
+/// Marks every unit of [index] mastered \u2014 a learner who has finished the
+/// level, which is what opens the level after it.
+Future<void> _masterEveryUnit(
+  AppDatabase db,
+  int learnerId,
+  CourseContentIndex index,
+) async {
+  final now = DateTime.now();
+  for (final unit in index.bundle.units) {
+    await db
+        .into(db.unitProgress)
+        .insert(
+          UnitProgressCompanion.insert(
+            uuid: const Uuid().v4(),
+            learnerId: learnerId,
+            unitId: unit.id,
+            state: 'mastered',
+            updatedAt: now,
+          ),
+        );
+  }
+}
+
 /// Unit titles are wrapped in Unicode first-strong isolates on Home, so an
 /// English title keeps its own direction inside an Arabic sentence.
 String _isolated(String s) => '\u2068$s\u2069';
@@ -173,7 +244,10 @@ void main() {
         DayPart.evening => l10n.homeGreetingEvening,
       };
       expect(find.text(greeting), findsOneWidget);
-      expect(find.text(l10n.homeLevelBadge('A1')), findsOneWidget);
+      expect(
+        find.text(l10n.homeLevelBadge('A1', l10n.cefrDescriptorA1)),
+        findsOneWidget,
+      );
       expect(find.text(l10n.homeStreakChip(0)), findsOneWidget);
     });
 
@@ -435,6 +509,114 @@ void main() {
       await tester.tap(find.text(l10n.homeReviewNowCta));
       await tester.pumpAndSettle();
       expect(find.text('REVIEW'), findsOneWidget);
+    });
+  });
+
+  group('current level', () {
+    testWidgets('an A1 learner opens on A1 — its first lesson, its journey, '
+        'and no offer of a level they have not finished A1 for', (
+      tester,
+    ) async {
+      await _learner(db);
+      await _pumpHome(tester, db);
+      final l10n = _l10n(tester);
+
+      expect(
+        find.text(_index.unitsById['A1-U0']!.lessons.first.title),
+        findsOneWidget,
+      );
+      expect(
+        find.text(l10n.homeJourneyUnitOf(1, _index.bundle.units.length)),
+        findsOneWidget,
+      );
+      expect(find.text(l10n.homeNextLevelTitle('A2')), findsNothing);
+    });
+
+    testWidgets('an A2 learner opens on A2 — A2\'s first lesson, A2\'s '
+        'journey, and A2 in the header, with none of A1\'s', (tester) async {
+      await _learner(db);
+      await _pumpHome(tester, db, levelId: 'a2');
+      final l10n = _l10n(tester);
+      final a2Lesson = _a2Index.bundle.units.first.lessons.first;
+
+      expect(
+        find.text(l10n.homeLevelBadge('A2', l10n.cefrDescriptorA2)),
+        findsOneWidget,
+      );
+      expect(find.text(a2Lesson.title), findsOneWidget);
+      expect(
+        find.text(l10n.homeJourneyUnitOf(1, _a2Index.bundle.units.length)),
+        findsOneWidget,
+      );
+      // A1's first lesson is gone, not merely joined by A2's.
+      expect(
+        find.text(_index.unitsById['A1-U0']!.lessons.first.title),
+        findsNothing,
+      );
+    });
+
+    testWidgets('mastering every A1 unit turns the dead end into an offer of '
+        'A2, and tapping it moves the learner into A2', (tester) async {
+      final learnerId = await _learner(db);
+      await _masterEveryUnit(db, learnerId, _index);
+      await _pumpHome(tester, db, height: 1800);
+      final l10n = _l10n(tester);
+
+      // The old dead end still names the level the learner finished...
+      expect(find.text(l10n.homeAllUnitsMastered('A1')), findsNWidgets(2));
+      // ...and beside it, somewhere to go.
+      expect(
+        find.text(l10n.homeNextLevelOverline.toUpperCase()),
+        findsOneWidget,
+      );
+      expect(find.text(l10n.homeNextLevelBody('A1', 'A2')), findsOneWidget);
+
+      final offer = find.text(l10n.homeNextLevelTitle('A2'));
+      await tester.ensureVisible(offer);
+      await tester.tap(offer);
+      await tester.pumpAndSettle();
+
+      // Home is now A2's: A2's first lesson, A2 in the header, and the
+      // offer gone because it has been taken.
+      final container = ProviderScope.containerOf(
+        tester.element(find.byType(HomeScreen)),
+      );
+      expect(await container.read(currentLevelIdProvider.future), 'a2');
+      expect(
+        find.text(l10n.homeLevelBadge('A2', l10n.cefrDescriptorA2)),
+        findsOneWidget,
+      );
+      expect(
+        find.text(_a2Index.bundle.units.first.lessons.first.title),
+        findsOneWidget,
+      );
+      expect(find.text(l10n.homeNextLevelTitle('A2')), findsNothing);
+    });
+
+    testWidgets('a level the app has not released is never offered, however '
+        'finished the current one is', (tester) async {
+      final learnerId = await _learner(db);
+      await _masterEveryUnit(db, learnerId, _index);
+      await _pumpHome(tester, db, height: 1800, catalog: _a2NotReleasedCatalog);
+      final l10n = _l10n(tester);
+
+      expect(find.text(l10n.homeAllUnitsMastered('A1')), findsNWidgets(2));
+      expect(find.text(l10n.homeNextLevelTitle('A2')), findsNothing);
+      expect(find.text(l10n.homeNextLevelOverline.toUpperCase()), findsNothing);
+    });
+
+    testWidgets('a learner already in A2 is not offered A2 again', (
+      tester,
+    ) async {
+      final learnerId = await _learner(db);
+      await _masterEveryUnit(db, learnerId, _index);
+      await _pumpHome(tester, db, levelId: 'a2', height: 1800);
+      final l10n = _l10n(tester);
+
+      expect(find.text(l10n.homeNextLevelTitle('A2')), findsNothing);
+      expect(find.text(l10n.homeNextLevelOverline.toUpperCase()), findsNothing);
+      // They are in A2, working on it — not being told A1 is finished.
+      expect(find.text(l10n.homeAllUnitsMastered('A1')), findsNothing);
     });
   });
 

@@ -135,9 +135,22 @@
       "total": {"type": "int"}
     }
   },
-  "homeAllUnitsMastered": "You've mastered every A1 unit so far!",
+  "homeAllUnitsMastered": "You've mastered every {level} unit so far!",
   "@homeAllUnitsMastered": {
-    "description": "Shown on Home when there is no next unit to recommend."
+    "description": "Shown on Home when there is no next unit to recommend, naming the level the learner is in.",
+    "placeholders": {"level": {"type": "String", "example": "A2"}}
+  },
+  "homeNextLevelOverline": "Next level",
+  "@homeNextLevelOverline": {"description": "Overline on Home's next-level card, shown once the learner has mastered their level's units and the level after it is released."},
+  "homeNextLevelTitle": "Start {level}",
+  "@homeNextLevelTitle": {
+    "description": "Title and action of Home's next-level card. Tapping the card moves the learner into that level; the app never moves them on its own.",
+    "placeholders": {"level": {"type": "String", "example": "A2"}}
+  },
+  "homeNextLevelBody": "Every {current} unit is mastered, and {next} builds straight on it — move when you're ready.",
+  "@homeNextLevelBody": {
+    "description": "Body of Home's next-level card: why it's being offered, and that the choice is the learner's.",
+    "placeholders": {"current": {"type": "String", "example": "A1"}, "next": {"type": "String", "example": "A2"}}
   },
   "homeLevelProgressCaption": "{mastered} of {total} units mastered",
   "@homeLevelProgressCaption": {
@@ -158,11 +171,15 @@
   "@homeGreetingAfternoon": {"description": "Home header greeting, 12:00–16:59."},
   "homeGreetingEvening": "Good evening",
   "@homeGreetingEvening": {"description": "Home header greeting, 17:00–04:59."},
-  "homeLevelBadge": "{cefr} · Beginner",
+  "homeLevelBadge": "{cefr} · {descriptor}",
   "@homeLevelBadge": {
-    "description": "Home header chip: the learner's current CEFR level and its plain-language descriptor.",
-    "placeholders": {"cefr": {"type": "String"}}
+    "description": "Home header chip: the learner's current CEFR level and its plain-language descriptor. The descriptor comes from cefrDescriptorLabel; the chip shows the bare code for a level with no descriptor yet.",
+    "placeholders": {"cefr": {"type": "String", "example": "A2"}, "descriptor": {"type": "String", "example": "Elementary"}}
   },
+  "cefrDescriptorA1": "Beginner",
+  "@cefrDescriptorA1": {"description": "Plain-language descriptor for CEFR level A1, shown beside the code."},
+  "cefrDescriptorA2": "Elementary",
+  "@cefrDescriptorA2": {"description": "Plain-language descriptor for CEFR level A2, shown beside the code. Deliberately not \"Beginner\" — that is A1, and telling an A2 learner they are a beginner undoes what finishing A1 meant."},
   "homeStreakChip": "{days, plural, =0{No streak} =1{1 day} other{{days} days}}",
   "@homeStreakChip": {
     "description": "Home header streak chip, next to a flame icon.",

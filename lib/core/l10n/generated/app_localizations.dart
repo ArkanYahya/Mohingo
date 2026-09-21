@@ -314,11 +314,29 @@ abstract class AppLocalizations {
   /// **'{completed} of {total} lessons complete'**
   String unitOverviewLessonsComplete(int completed, int total);
 
-  /// Shown on Home when there is no next unit to recommend.
+  /// Shown on Home when there is no next unit to recommend, naming the level the learner is in.
   ///
   /// In en, this message translates to:
-  /// **'You\'ve mastered every A1 unit so far!'**
-  String get homeAllUnitsMastered;
+  /// **'You\'ve mastered every {level} unit so far!'**
+  String homeAllUnitsMastered(String level);
+
+  /// Overline on Home's next-level card, shown once the learner has mastered their level's units and the level after it is released.
+  ///
+  /// In en, this message translates to:
+  /// **'Next level'**
+  String get homeNextLevelOverline;
+
+  /// Title and action of Home's next-level card. Tapping the card moves the learner into that level; the app never moves them on its own.
+  ///
+  /// In en, this message translates to:
+  /// **'Start {level}'**
+  String homeNextLevelTitle(String level);
+
+  /// Body of Home's next-level card: why it's being offered, and that the choice is the learner's.
+  ///
+  /// In en, this message translates to:
+  /// **'Every {current} unit is mastered, and {next} builds straight on it — move when you\'re ready.'**
+  String homeNextLevelBody(String current, String next);
 
   /// Home level-progress card caption.
   ///
@@ -350,11 +368,23 @@ abstract class AppLocalizations {
   /// **'Good evening'**
   String get homeGreetingEvening;
 
-  /// Home header chip: the learner's current CEFR level and its plain-language descriptor.
+  /// Home header chip: the learner's current CEFR level and its plain-language descriptor. The descriptor comes from cefrDescriptorLabel; the chip shows the bare code for a level with no descriptor yet.
   ///
   /// In en, this message translates to:
-  /// **'{cefr} · Beginner'**
-  String homeLevelBadge(String cefr);
+  /// **'{cefr} · {descriptor}'**
+  String homeLevelBadge(String cefr, String descriptor);
+
+  /// Plain-language descriptor for CEFR level A1, shown beside the code.
+  ///
+  /// In en, this message translates to:
+  /// **'Beginner'**
+  String get cefrDescriptorA1;
+
+  /// Plain-language descriptor for CEFR level A2, shown beside the code. Deliberately not "Beginner" — that is A1, and telling an A2 learner they are a beginner undoes what finishing A1 meant.
+  ///
+  /// In en, this message translates to:
+  /// **'Elementary'**
+  String get cefrDescriptorA2;
 
   /// Home header streak chip, next to a flame icon.
   ///

@@ -144,7 +144,22 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get homeAllUnitsMastered => 'أتقنت جميع وحدات A1 حتى الآن!';
+  String homeAllUnitsMastered(String level) {
+    return 'أتقنت جميع وحدات المستوى $level حتى الآن!';
+  }
+
+  @override
+  String get homeNextLevelOverline => 'المستوى التالي';
+
+  @override
+  String homeNextLevelTitle(String level) {
+    return 'ابدأ المستوى $level';
+  }
+
+  @override
+  String homeNextLevelBody(String current, String next) {
+    return 'أتقنت جميع وحدات المستوى $current، والمستوى $next يُبنى عليه مباشرة — انتقل إليه متى شئت.';
+  }
 
   @override
   String homeLevelProgressCaption(int mastered, int total) {
@@ -176,9 +191,15 @@ class AppLocalizationsAr extends AppLocalizations {
   String get homeGreetingEvening => 'مساء الخير';
 
   @override
-  String homeLevelBadge(String cefr) {
-    return '$cefr · مبتدئ';
+  String homeLevelBadge(String cefr, String descriptor) {
+    return '$cefr · $descriptor';
   }
+
+  @override
+  String get cefrDescriptorA1 => 'مبتدئ';
+
+  @override
+  String get cefrDescriptorA2 => 'أساسي';
 
   @override
   String homeStreakChip(int days) {
