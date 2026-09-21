@@ -360,7 +360,7 @@
   "settingsResetProgressBody": "امسح كل الدروس ونتائج الاختبارات والمراجعات على هذا الجهاز.",
   "settingsVersion": "Mohingo · الإصدار {version}",
   "settingsNameEmpty": "أضف اسمك",
-  "settingsProfileMeta": "تتعلّم الإنجليزية · A1",
+  "settingsProfileMeta": "تتعلّم الإنجليزية · المستوى {level}",
   "settingsEdit": "تعديل",
   "settingsInterfaceLanguageTitle": "لغة التطبيق",
   "settingsThemeModeTitle": "السمة",

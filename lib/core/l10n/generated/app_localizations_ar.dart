@@ -1451,7 +1451,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get settingsNameEmpty => 'أضف اسمك';
 
   @override
-  String get settingsProfileMeta => 'تتعلّم الإنجليزية · A1';
+  String settingsProfileMeta(String level) {
+    return 'تتعلّم الإنجليزية · المستوى $level';
+  }
 
   @override
   String get settingsEdit => 'تعديل';

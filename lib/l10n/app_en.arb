@@ -870,8 +870,11 @@
   "@settingsVersion": {"description": "The app version at the foot of Settings.", "placeholders": {"version": {"type": "String"}}},
   "settingsNameEmpty": "Add your name",
   "@settingsNameEmpty": {"description": "Profile card when the learner has no name yet."},
-  "settingsProfileMeta": "Learning English · A1",
-  "@settingsProfileMeta": {"description": "Profile card line under the name."},
+  "settingsProfileMeta": "Learning English · {level}",
+  "@settingsProfileMeta": {
+    "description": "Settings profile card subtitle: the level the learner is in.",
+    "placeholders": {"level": {"type": "String"}}
+  },
   "settingsEdit": "Edit",
   "@settingsEdit": {"description": "Profile card button that edits the name."},
   "settingsInterfaceLanguageTitle": "App language",

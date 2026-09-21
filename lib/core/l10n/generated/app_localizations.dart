@@ -2258,11 +2258,11 @@ abstract class AppLocalizations {
   /// **'Add your name'**
   String get settingsNameEmpty;
 
-  /// Profile card line under the name.
+  /// Settings profile card subtitle: the level the learner is in.
   ///
   /// In en, this message translates to:
-  /// **'Learning English · A1'**
-  String get settingsProfileMeta;
+  /// **'Learning English · {level}'**
+  String settingsProfileMeta(String level);
 
   /// Profile card button that edits the name.
   ///

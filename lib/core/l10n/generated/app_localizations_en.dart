@@ -1419,7 +1419,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settingsNameEmpty => 'Add your name';
 
   @override
-  String get settingsProfileMeta => 'Learning English · A1';
+  String settingsProfileMeta(String level) {
+    return 'Learning English · $level';
+  }
 
   @override
   String get settingsEdit => 'Edit';

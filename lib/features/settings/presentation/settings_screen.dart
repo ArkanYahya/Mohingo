@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../content/catalog/level_catalog.dart';
+import '../../../content/providers/course_content_providers.dart';
 import '../../../core/app_version.dart';
 import '../../../core/l10n/generated/app_localizations.dart';
 import '../../../core/l10n/locale_preference_provider.dart';
@@ -326,6 +328,16 @@ class _ProfileCard extends ConsumerWidget {
     final l10n = AppLocalizations.of(context)!;
     final learner = ref.watch(currentLearnerProvider).value;
     final streak = ref.watch(currentStreakDaysProvider).value ?? 0;
+    // The profile line names the level the learner is in, not A1: this
+    // card is the one place Settings says what they are studying.
+    final levelId = ref.watch(currentLevelIdProvider).value;
+    final levelCode = levelId == null
+        ? null
+        : levelCatalogEntryIn(
+            ref.watch(levelCatalogProvider),
+            levelId,
+          )?.cefrCode;
+    final meta = levelCode == null ? null : l10n.settingsProfileMeta(levelCode);
     final name = learner?.name?.trim();
     final hasName = name != null && name.isNotEmpty;
     final narrow = _isNarrow(context);
@@ -371,10 +383,13 @@ class _ProfileCard extends ConsumerWidget {
                     ),
                     const SizedBox(height: 2),
                     Text(
-                      streak > 0
-                          ? '${l10n.settingsProfileMeta} · '
-                                '${l10n.homeStreakChip(streak)}'
-                          : l10n.settingsProfileMeta,
+                      switch ((meta, streak)) {
+                        (final m?, > 0) =>
+                          '$m · ${l10n.homeStreakChip(streak)}',
+                        (final m?, _) => m,
+                        (null, > 0) => l10n.homeStreakChip(streak),
+                        _ => '',
+                      },
                       style: theme.textTheme.bodySmall?.copyWith(
                         color: tokens.textSecondary,
                       ),
