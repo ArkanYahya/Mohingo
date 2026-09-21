@@ -63,7 +63,7 @@ const kLevelCatalog = <LevelCatalogEntry>[
   LevelCatalogEntry(
     levelId: 'a2',
     cefrCode: 'A2',
-    availability: LevelAvailability.preview,
+    availability: LevelAvailability.available,
     bundleAssetPath: 'assets/content/en/A2/a2-course-bundle.json',
     prerequisiteLevelId: 'a1',
   ),
