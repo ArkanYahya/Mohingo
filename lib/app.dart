@@ -7,6 +7,7 @@ import 'core/router/app_router.dart';
 import 'core/theme/app_theme.dart';
 import 'core/theme/theme_preferences_provider.dart';
 import 'features/activity_engine/providers/online_refinement_providers.dart';
+import 'features/progress/providers/content_version_providers.dart';
 import 'features/progress/providers/level_providers.dart';
 
 /// The root widget. Theme mode, colour theme, and interface language are all
@@ -27,6 +28,11 @@ class MohingoApp extends ConsumerWidget {
     final currentLevelId = ref.watch(currentLevelIdProvider).value;
     if (currentLevelId != null) {
       ref.watch(ensureLevelEnrolmentProvider(currentLevelId));
+      // Fire-and-forget: records the id snapshot of the bundle just loaded
+      // and flags any unit whose content moved under this learner since
+      // they last opened it. Re-fires on a level switch, because that
+      // invalidates currentLevelIdProvider.
+      ref.watch(recordContentVersionAndFlagDriftProvider(currentLevelId));
     }
     // Fire-and-forget: drains any queued open-ended answers immediately if
     // already online, and again whenever connectivity is regained. Never

@@ -45,6 +45,9 @@ Future<void> _pumpAppAndWaitForContent(
   WidgetTester tester,
   SharedPreferences prefs, {
   List<Override> overrides = const [],
+  AppDatabase? database,
+  Future<void> Function()? onEachPump,
+  bool Function()? until,
 }) async {
   await tester.runAsync(() async {
     // Widget tests must never touch a real on-disk database: AppDatabase.
@@ -63,7 +66,10 @@ Future<void> _pumpAppAndWaitForContent(
         overrides: [
           sharedPreferencesProvider.overrideWithValue(prefs),
           appDatabaseProvider.overrideWithValue(
-            AppDatabase(NativeDatabase.memory()),
+            // Riverpod 3 rejects the same provider being overridden twice,
+            // so a caller that wants to read the database back afterwards
+            // passes it here rather than in `overrides`.
+            database ?? AppDatabase(NativeDatabase.memory()),
           ),
           connectivityServiceProvider.overrideWithValue(
             FakeConnectivityService(online: false),
@@ -73,8 +79,11 @@ Future<void> _pumpAppAndWaitForContent(
         child: const MohingoApp(),
       ),
     );
+    var shellFound = false;
     for (var i = 0; i < 100; i++) {
-      if (find.byType(AppShellScaffold).evaluate().isNotEmpty) break;
+      shellFound |= find.byType(AppShellScaffold).evaluate().isNotEmpty;
+      await onEachPump?.call();
+      if (shellFound && (until?.call() ?? true)) break;
       await Future<void>.delayed(const Duration(milliseconds: 100));
       await tester.pump();
     }
@@ -97,6 +106,29 @@ void main() {
 
     expect(find.byType(NavigationBar), findsOneWidget);
     expect(find.byType(NavigationDestination), findsNWidgets(5));
+  });
+
+  testWidgets('starting the app records the bundle it loaded', (tester) async {
+    // content_versions was empty on every install until this landed: the
+    // repository was fully implemented and had no callers at all.
+    final prefs = await _mockPrefs();
+    final db = AppDatabase(NativeDatabase.memory());
+    addTearDown(db.close);
+
+    var rows = const <ContentVersion>[];
+    await _pumpAppAndWaitForContent(
+      tester,
+      prefs,
+      database: db,
+      // Runs inside the helper's own runAsync loop, beside the wait for
+      // the shell: the recorder's writes are real async and cannot
+      // complete under the widget test's fake clock afterwards.
+      onEachPump: () async => rows = await db.select(db.contentVersions).get(),
+      until: () => rows.isNotEmpty,
+    );
+
+    expect(rows, hasLength(1));
+    expect(rows.single.courseId, 'EN-A1-V2');
   });
 
   testWidgets('defaults to Arabic interface language and renders RTL', (
