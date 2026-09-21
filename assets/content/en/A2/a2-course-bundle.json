@@ -1044,6 +1044,22 @@
           "ar": "الشقة ليست كبيرة مثل المنزل."
         }
       ]
+    },
+    {
+      "id": "A2.G.PAST_TIME_MARKERS",
+      "form": "ago, last ..., yesterday",
+      "meaningAr": "دلالات الزمن الماضي: ago وlast وyesterday",
+      "introducedIn": "A2-U2-L1",
+      "examples": [
+        {
+          "en": "I was there two weeks ago.",
+          "ar": "كنتُ هناك منذ أسبوعين."
+        },
+        {
+          "en": "Last weekend we were in Kerbala.",
+          "ar": "في عطلة نهاية الأسبوع الماضية كنا في كربلاء."
+        }
+      ]
     }
   ],
   "lexicon": [
@@ -5726,6 +5742,222 @@
       ],
       "introducedIn": "A2-U3-L6",
       "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.EMPTY_ADJ01",
+      "headword": "empty",
+      "partOfSpeech": "adjective",
+      "arabic": "فارغ",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "empty",
+      "examples": [
+        {
+          "en": "Her desk was empty all day.",
+          "ar": "كان مكتبها فارغاً طوال اليوم."
+        }
+      ],
+      "introducedIn": "A2-U2-L1",
+      "recycledIn": [
+        "A2-U2-L5"
+      ]
+    },
+    {
+      "id": "A2.LEX.WEDDING_N01",
+      "headword": "wedding",
+      "partOfSpeech": "noun",
+      "arabic": "عرس",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "wedding",
+      "examples": [
+        {
+          "en": "I was at my cousin's wedding.",
+          "ar": "كنتُ في عرس ابنة خالتي."
+        }
+      ],
+      "introducedIn": "A2-U2-L1",
+      "recycledIn": [
+        "A2-U2-L6"
+      ]
+    },
+    {
+      "id": "A2.LEX.EXHAUSTED_ADJ01",
+      "headword": "exhausted",
+      "partOfSpeech": "adjective",
+      "arabic": "منهَك",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "exhausted",
+      "examples": [
+        {
+          "en": "Yesterday I was still exhausted.",
+          "ar": "أمس كنتُ ما زلتُ منهكاً."
+        }
+      ],
+      "introducedIn": "A2-U2-L1",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.STOP_V01",
+      "headword": "stop",
+      "partOfSpeech": "verb",
+      "arabic": "يتوقف",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "stop",
+      "examples": [
+        {
+          "en": "The van stopped twice on the road.",
+          "ar": "توقفت الشاحنة مرتين على الطريق."
+        }
+      ],
+      "introducedIn": "A2-U2-L2",
+      "recycledIn": [
+        "A2-U2-L5",
+        "A2-U2-L6"
+      ]
+    },
+    {
+      "id": "A2.LEX.WAIT_V01",
+      "headword": "wait",
+      "partOfSpeech": "verb",
+      "arabic": "ينتظر",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "wait",
+      "examples": [
+        {
+          "en": "We waited an hour outside Hilla.",
+          "ar": "انتظرنا ساعة خارج الحلة."
+        }
+      ],
+      "introducedIn": "A2-U2-L2",
+      "recycledIn": [
+        "A2-U2-L6",
+        "A2-U2-L7"
+      ]
+    },
+    {
+      "id": "A2.LEX.PACK_V01",
+      "headword": "pack",
+      "partOfSpeech": "verb",
+      "arabic": "يحزم",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "pack",
+      "examples": [
+        {
+          "en": "She packed a small bag.",
+          "ar": "حزمت حقيبة صغيرة."
+        }
+      ],
+      "introducedIn": "A2-U2-L2",
+      "recycledIn": [
+        "A2-U2-L6"
+      ]
+    },
+    {
+      "id": "A2.LEX.LOSE_V02",
+      "headword": "lose",
+      "partOfSpeech": "verb",
+      "arabic": "يفقد (ماضٍ: lost)",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "lose",
+      "examples": [
+        {
+          "en": "I lost my phone at the gate.",
+          "ar": "أضعتُ هاتفي عند البوابة."
+        }
+      ],
+      "introducedIn": "A2-U2-L3",
+      "recycledIn": [
+        "A2-U2-L7"
+      ]
+    },
+    {
+      "id": "A2.LEX.TELL_V02",
+      "headword": "tell",
+      "partOfSpeech": "verb",
+      "arabic": "يحكي (ماضٍ: told)",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "tell",
+      "examples": [
+        {
+          "en": "Tell me everything.",
+          "ar": "احكِ لي كل شيء."
+        }
+      ],
+      "introducedIn": "A2-U2-L3",
+      "recycledIn": [
+        "A2-U2-L7"
+      ]
+    },
+    {
+      "id": "A2.LEX.AMAZING_ADJ01",
+      "headword": "amazing",
+      "partOfSpeech": "adjective",
+      "arabic": "مذهل",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "amazing",
+      "examples": [
+        {
+          "en": "The food festival was amazing.",
+          "ar": "كان مهرجان الطعام مذهلاً."
+        }
+      ],
+      "introducedIn": "A2-U2-L4",
+      "recycledIn": [
+        "A2-U2-L7"
+      ]
+    },
+    {
+      "id": "A2.LEX.BREAK_DOWN_V01",
+      "headword": "break down",
+      "partOfSpeech": "verb",
+      "arabic": "يتعطل",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "break down",
+      "examples": [
+        {
+          "en": "Old buses often break down.",
+          "ar": "كثيراً ما تتعطل الحافلات القديمة."
+        }
+      ],
+      "introducedIn": "A2-U2-L5",
+      "recycledIn": []
+    },
+    {
+      "id": "A2.LEX.LUCKY_ADJ01",
+      "headword": "lucky",
+      "partOfSpeech": "adjective",
+      "arabic": "محظوظ",
+      "cefr": "A2",
+      "receptive": true,
+      "productive": true,
+      "meaning": "lucky",
+      "examples": [
+        {
+          "en": "I was lucky that evening.",
+          "ar": "كنتُ محظوظة تلك الأمسية."
+        }
+      ],
+      "introducedIn": "A2-U2-L6",
+      "recycledIn": []
     }
   ],
   "chunks": [
@@ -6866,6 +7098,53 @@
       "introducedIn": "A2-U3-L6",
       "productive": true,
       "recycledIn": []
+    },
+    {
+      "id": "A2.CHUNK.WHERE_WERE_YOU",
+      "text": "Where were you?",
+      "arabic": "أين كنتَ؟",
+      "cefr": "A2",
+      "introducedIn": "A2-U2-L1",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A2.CHUNK.ALL_AFTERNOON",
+      "text": "all afternoon",
+      "arabic": "طوال بعد الظهر",
+      "cefr": "A2",
+      "introducedIn": "A2-U2-L2",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A2.CHUNK.ON_THE_WAY_BACK",
+      "text": "on the way back",
+      "arabic": "في طريق العودة",
+      "cefr": "A2",
+      "introducedIn": "A2-U2-L3",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A2.CHUNK.NOT_REALLY",
+      "text": "not really",
+      "arabic": "ليس تماماً",
+      "cefr": "A2",
+      "introducedIn": "A2-U2-L4",
+      "productive": true,
+      "recycledIn": []
+    },
+    {
+      "id": "A2.CHUNK.AT_FIRST",
+      "text": "at first",
+      "arabic": "في البداية",
+      "cefr": "A2",
+      "introducedIn": "A2-U2-L5",
+      "productive": true,
+      "recycledIn": [
+        "A2-U2-L6"
+      ]
     }
   ],
   "units": [
@@ -8483,35 +8762,56 @@
           "lessonType": "encounter-focus-practice",
           "canDo": [
             "A2.U2.LISTENING.UNDERSTAND_PAST_EVENT",
+            "A2.U2.READING.FOLLOW_SHORT_NARRATIVE",
             "A2.U2.PRODUCTION.TELL_PAST_EXPERIENCE"
           ],
           "grammar": [
             "A2.G.BE_PAST",
-            "A2.G.PRESENT_SIMPLE_REVIEW",
-            "A2.G.PRESENT_CONTINUOUS_NOW"
+            "A2.G.PAST_TIME_MARKERS"
           ],
           "lexicon": [
             "A2.LEX.MEMORABLE_ADJ01",
-            "A2.LEX.TRIP_N01",
             "A2.LEX.YESTERDAY_ADV01",
-            "A2.LEX.NORMALLY_ADV01",
-            "A2.LEX.WEEKDAY_N01",
-            "A2.LEX.TEMPORARY_ADJ01",
-            "A2.LEX.CURRENTLY_ADV01"
+            "A2.LEX.EMPTY_ADJ01",
+            "A2.LEX.WEDDING_N01",
+            "A2.LEX.EXHAUSTED_ADJ01"
           ],
           "chunks": [
             "A2.CHUNK.LAST_WEEKEND",
             "A2.CHUNK.LAST_YEAR",
-            "A2.CHUNK.ON_WEEKDAYS",
-            "A2.CHUNK.AT_THE_MOMENT",
-            "A2.CHUNK.THIS_WEEK"
+            "A2.CHUNK.WHERE_WERE_YOU"
           ],
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "Last weekend, I was in Najaf with my cousins. The streets were busy, but the visit was memorable.",
-                "ar": "في عطلة الأسبوع الماضية كنت في النجف مع أبناء عمومتي. كانت الشوارع مزدحمة، لكن الزيارة لا تُنسى."
+                "speaker": "Basil",
+                "en": "Where were you on Thursday, Hind? Your desk was empty all day.",
+                "ar": "أين كنتِ يوم الخميس يا هند؟ كان مكتبكِ فارغاً طوال اليوم."
+              },
+              {
+                "speaker": "Hind",
+                "en": "I was at my cousin's wedding in Kerbala.",
+                "ar": "كنتُ في عرس ابنة خالتي في كربلاء."
+              },
+              {
+                "speaker": "Basil",
+                "en": "A wedding! How was it?",
+                "ar": "عرس! كيف كان؟"
+              },
+              {
+                "speaker": "Hind",
+                "en": "Wonderful, but the hall was very crowded. There were three hundred guests.",
+                "ar": "كان رائعاً، لكن القاعة كانت مزدحمة جداً. كان هناك ثلاثمئة مدعوّ."
+              },
+              {
+                "speaker": "Basil",
+                "en": "And the food?",
+                "ar": "وماذا عن الطعام؟"
+              },
+              {
+                "speaker": "Hind",
+                "en": "Excellent. It was a memorable evening. Yesterday I was still exhausted.",
+                "ar": "ممتاز. كانت أمسية لا تُنسى. وأمس كنتُ ما زلتُ منهكة."
               }
             ]
           },
@@ -8523,65 +8823,55 @@
               "mode": "encounter",
               "skill": "listening",
               "canDo": [
-                "A2.U2.LISTENING.UNDERSTAND_PAST_EVENT",
-                "A2.U2.PRODUCTION.TELL_PAST_EXPERIENCE"
+                "A2.U2.LISTENING.UNDERSTAND_PAST_EVENT"
               ],
-              "prompt": "Where was the speaker?",
-              "promptAr": "أين كان المتحدث؟",
+              "prompt": "What is Basil asking Hind about?",
+              "promptAr": "عمَّ يسأل باسل هند؟",
               "options": [
-                "In Najaf",
-                "At home",
-                "In Basra"
+                "Why she was not at work",
+                "Which city she works in",
+                "How she travels to Kerbala"
               ],
-              "answer": "In Najaf",
-              "audioTranscript": "Last weekend, I was in Najaf with my cousins. The streets were busy, but the visit was memorable."
+              "answer": "Why she was not at work",
+              "audioTranscript": "Where were you on Thursday, Hind? Your desk was empty all day. I was at my cousin's wedding in Kerbala. A wedding! How was it? Wonderful, but the hall was very crowded. There were three hundred guests. And the food? Excellent. It was a memorable evening. Yesterday I was still exhausted."
             },
             {
               "id": "A2-U2-L1-A02",
-              "lessonId": "A2-U2-L1",
-              "type": "match",
-              "mode": "practice",
-              "skill": "reading",
-              "canDo": [
-                "A2.U2.LISTENING.UNDERSTAND_PAST_EVENT",
-                "A2.U2.PRODUCTION.TELL_PAST_EXPERIENCE"
-              ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "memorable",
-                  "لا يُنسى"
-                ],
-                [
-                  "trip",
-                  "رحلة"
-                ],
-                [
-                  "yesterday",
-                  "أمس"
-                ]
-              ]
-            },
-            {
-              "id": "A2-U2-L1-A03",
               "lessonId": "A2-U2-L1",
               "type": "gap",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U2.LISTENING.UNDERSTAND_PAST_EVENT",
-                "A2.U2.PRODUCTION.TELL_PAST_EXPERIENCE"
+                "A2.U2.READING.FOLLOW_SHORT_NARRATIVE"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "The cafés ___ busy last night.",
+              "prompt": "Choose the past form of be that matches the subject of the second clause.",
+              "promptAr": "اختر صيغة الماضي من الفعل be التي تناسب فاعل الجملة الثانية.",
+              "text": "The streets were quiet, but the wedding hall ___ full.",
               "options": [
-                "were",
                 "was",
-                "are"
+                "were",
+                "is"
               ],
-              "answer": "were"
+              "answer": "was"
+            },
+            {
+              "id": "A2-U2-L1-A03",
+              "lessonId": "A2-U2-L1",
+              "type": "textChoice",
+              "mode": "practice",
+              "skill": "reading",
+              "canDo": [
+                "A2.U2.READING.FOLLOW_SHORT_NARRATIVE"
+              ],
+              "prompt": "Read the hall's notice. What was different about the old hall?",
+              "promptAr": "اقرأ إعلان القاعة. ما الذي كان مختلفاً في القاعة القديمة؟",
+              "sourceText": "Notice from Al Zahraa Hall: Last year our hall was small and the car park was full every weekend. There were only two entrances. The new building is ready now, and the doors open at six.",
+              "options": [
+                "It was smaller and had fewer entrances",
+                "It opened later in the evening",
+                "It had no car park at all"
+              ],
+              "answer": "It was smaller and had fewer entrances"
             },
             {
               "id": "A2-U2-L1-A04",
@@ -8590,18 +8880,17 @@
               "mode": "mastery",
               "skill": "listening",
               "canDo": [
-                "A2.U2.LISTENING.UNDERSTAND_PAST_EVENT",
-                "A2.U2.PRODUCTION.TELL_PAST_EXPERIENCE"
+                "A2.U2.LISTENING.UNDERSTAND_PAST_EVENT"
               ],
-              "prompt": "Who was at the party?",
-              "promptAr": "من كان في الحفلة؟",
+              "prompt": "How did the farm house compare with the speaker's memory of it?",
+              "promptAr": "كيف بدا بيت المزرعة مقارنةً بما تتذكره المتحدثة؟",
               "options": [
-                "Rita and her parents",
-                "Rita alone",
-                "Only her parents"
+                "It was smaller than she remembered",
+                "It was exactly as she remembered",
+                "It was new and much bigger"
               ],
-              "answer": "Rita and her parents",
-              "audioTranscript": "Rita was at a family party yesterday. Her parents were there too."
+              "answer": "It was smaller than she remembered",
+              "audioTranscript": "My grandparents were farmers near Hilla. Last weekend I was there for the first time in ten years. The house was smaller than I remembered, and the garden was full of lemon trees. It was a memorable afternoon."
             },
             {
               "id": "A2-U2-L1-A05",
@@ -8610,19 +8899,55 @@
               "mode": "mastery",
               "skill": "spokenProduction",
               "canDo": [
-                "A2.U2.LISTENING.UNDERSTAND_PAST_EVENT",
                 "A2.U2.PRODUCTION.TELL_PAST_EXPERIENCE"
               ],
-              "prompt": "Say where you were yesterday and how it was.",
-              "promptAr": "قل أين كنت أمس وكيف كان الأمر.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "Think of a day last month when you were not at home. Say where you were, who was with you, and what the place was like.",
+              "promptAr": "فكّر في يوم من الشهر الماضي لم تكن فيه في البيت. قل أين كنتَ، ومن كان معك، وكيف كان المكان.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "I was",
+                    "we were",
+                    "she was",
+                    "he was",
+                    "they were",
+                    "it was",
+                    "there were",
+                    "there was"
+                  ],
+                  [
+                    "last weekend",
+                    "last week",
+                    "last month",
+                    "last year",
+                    "yesterday",
+                    "last Friday",
+                    "last summer",
+                    "last night"
+                  ],
+                  [
+                    "crowded",
+                    "quiet",
+                    "busy",
+                    "noisy",
+                    "beautiful",
+                    "memorable",
+                    "hot",
+                    "cold",
+                    "full",
+                    "empty",
+                    "small",
+                    "big",
+                    "exhausted"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             }
           ]
         },
@@ -8633,25 +8958,53 @@
           "lessonType": "encounter-focus-practice",
           "canDo": [
             "A2.U2.LISTENING.UNDERSTAND_PAST_EVENT",
-            "A2.U2.PRODUCTION.TELL_PAST_EXPERIENCE"
+            "A2.U2.READING.FOLLOW_SHORT_NARRATIVE",
+            "A2.U2.INTERACTION.ASK_ABOUT_PAST"
           ],
           "grammar": [
             "A2.G.PAST_REGULAR"
           ],
           "lexicon": [
-            "A2.LEX.VISIT_V01",
-            "A2.LEX.ARRIVE_V01",
-            "A2.LEX.DECIDE_V01"
+            "A2.LEX.DECIDE_V01",
+            "A2.LEX.STOP_V01",
+            "A2.LEX.WAIT_V01",
+            "A2.LEX.PACK_V01"
           ],
           "chunks": [
-            "A2.CHUNK.TWO_DAYS_AGO"
+            "A2.CHUNK.TWO_DAYS_AGO",
+            "A2.CHUNK.ALL_AFTERNOON"
           ],
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "We arrived early, visited the castle and decided to eat near the river.",
-                "ar": "وصلنا مبكراً وزرنا القلعة وقررنا أن نأكل قرب النهر."
+                "speaker": "Fadi",
+                "en": "You packed the whole flat in one day?",
+                "ar": "حزمتِ أغراض الشقة كلها في يوم واحد؟"
+              },
+              {
+                "speaker": "Dalia",
+                "en": "Two days ago, yes. My brothers helped me all afternoon.",
+                "ar": "نعم، منذ يومين. ساعدني إخوتي طوال بعد الظهر."
+              },
+              {
+                "speaker": "Fadi",
+                "en": "And the van?",
+                "ar": "وماذا عن الشاحنة؟"
+              },
+              {
+                "speaker": "Dalia",
+                "en": "It stopped twice on the road. We waited an hour outside Hilla.",
+                "ar": "توقفت مرتين على الطريق. انتظرنا ساعة خارج الحلة."
+              },
+              {
+                "speaker": "Fadi",
+                "en": "That sounds slow.",
+                "ar": "يبدو ذلك بطيئاً."
+              },
+              {
+                "speaker": "Dalia",
+                "en": "It was. We decided to eat there and travel at night.",
+                "ar": "كان كذلك. قررنا أن نأكل هناك وأن نسافر ليلاً."
               }
             ]
           },
@@ -8663,65 +9016,60 @@
               "mode": "encounter",
               "skill": "listening",
               "canDo": [
-                "A2.U2.LISTENING.UNDERSTAND_PAST_EVENT",
-                "A2.U2.PRODUCTION.TELL_PAST_EXPERIENCE"
+                "A2.U2.LISTENING.UNDERSTAND_PAST_EVENT"
               ],
-              "prompt": "Where did they eat?",
-              "promptAr": "أين أكلوا؟",
+              "prompt": "What are Dalia and Fadi talking about?",
+              "promptAr": "عمَّ يتحدث فادي وداليا؟",
               "options": [
-                "Near the river",
-                "At the castle",
-                "At home"
+                "Her move to a new flat",
+                "A holiday near Hilla",
+                "A problem at the office"
               ],
-              "answer": "Near the river",
-              "audioTranscript": "We arrived early, visited the castle and decided to eat near the river."
+              "answer": "Her move to a new flat",
+              "audioTranscript": "You packed the whole flat in one day? Two days ago, yes. My brothers helped me all afternoon. And the van? It stopped twice on the road. We waited an hour outside Hilla. That sounds slow. It was. We decided to eat there and travel at night."
             },
             {
               "id": "A2-U2-L2-A02",
               "lessonId": "A2-U2-L2",
-              "type": "match",
+              "type": "order",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U2.LISTENING.UNDERSTAND_PAST_EVENT",
-                "A2.U2.PRODUCTION.TELL_PAST_EXPERIENCE"
+                "A2.U2.READING.FOLLOW_SHORT_NARRATIVE"
               ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "visit",
-                  "يزور"
-                ],
-                [
-                  "arrive",
-                  "يصل"
-                ],
-                [
-                  "decide",
-                  "يقرر"
-                ]
+              "prompt": "Put the three past verbs in order. Notice that only the -ed on waited adds a whole syllable.",
+              "promptAr": "رتّب الأفعال الماضية الثلاثة. لاحظ أن -ed في waited وحدها تضيف مقطعاً صوتياً كاملاً.",
+              "tokens": [
+                "waited",
+                "We",
+                "and arrived at noon.",
+                "packed,"
+              ],
+              "answer": [
+                "We",
+                "packed,",
+                "waited",
+                "and arrived at noon."
               ]
             },
             {
               "id": "A2-U2-L2-A03",
               "lessonId": "A2-U2-L2",
-              "type": "gap",
+              "type": "textChoice",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U2.LISTENING.UNDERSTAND_PAST_EVENT",
-                "A2.U2.PRODUCTION.TELL_PAST_EXPERIENCE"
+                "A2.U2.READING.FOLLOW_SHORT_NARRATIVE"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "Maya ___ her aunt on Monday.",
+              "prompt": "Read the company's message. Why did the team use the stairs?",
+              "promptAr": "اقرأ رسالة الشركة. لماذا استخدم الفريق الدرج؟",
+              "sourceText": "Message from the removal company: We collected your boxes at eight and arrived at the new building before noon. The lift was broken, so our team carried everything up the stairs. We finished at four and locked the door.",
               "options": [
-                "visited",
-                "visit",
-                "visits"
+                "The lift was broken",
+                "The boxes were too big for the lift",
+                "They arrived before the lift opened"
               ],
-              "answer": "visited"
+              "answer": "The lift was broken"
             },
             {
               "id": "A2-U2-L2-A04",
@@ -8730,39 +9078,83 @@
               "mode": "mastery",
               "skill": "listening",
               "canDo": [
-                "A2.U2.LISTENING.UNDERSTAND_PAST_EVENT",
-                "A2.U2.PRODUCTION.TELL_PAST_EXPERIENCE"
+                "A2.U2.LISTENING.UNDERSTAND_PAST_EVENT"
               ],
-              "prompt": "What happened at noon?",
-              "promptAr": "ماذا حدث ظهراً؟",
+              "prompt": "Why did Nadia spend two hours in Samarra?",
+              "promptAr": "لماذا أمضت نادية ساعتين في سامراء؟",
               "options": [
-                "Rain started.",
-                "Ali packed lunch.",
-                "The picnic ended early."
+                "Her train stopped at every village",
+                "She missed her train",
+                "Her aunt lived there"
               ],
-              "answer": "Rain started.",
-              "audioTranscript": "Ali planned a picnic, packed lunch and walked to the park. Rain started at noon."
+              "answer": "Her train stopped at every village",
+              "audioTranscript": "Yesterday Nadia packed a small bag and walked to the station. Her train stopped at every village, so she waited two hours in Samarra. She decided to call her aunt, and they talked all afternoon."
             },
             {
               "id": "A2-U2-L2-A05",
               "lessonId": "A2-U2-L2",
               "type": "speak",
               "mode": "mastery",
-              "skill": "spokenProduction",
+              "skill": "spokenInteraction",
               "canDo": [
-                "A2.U2.LISTENING.UNDERSTAND_PAST_EVENT",
-                "A2.U2.PRODUCTION.TELL_PAST_EXPERIENCE"
+                "A2.U2.INTERACTION.ASK_ABOUT_PAST"
               ],
-              "prompt": "Describe three regular past actions from a recent day.",
-              "promptAr": "صف ثلاثة أفعال ماضية منتظمة من يوم قريب.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
+              "prompt": "Your neighbour is telling you about her moving day. Tell her about a day when you packed or carried something heavy, and ask her two questions about hers.",
+              "promptAr": "جارتكَ تحدّثكَ عن يوم انتقالها. أخبرها عن يوم حزمتَ فيه أو حملتَ شيئاً ثقيلاً، واسألها سؤالين عن يومها.",
+              "partnerTurns": [
+                "We moved on Saturday. I packed the whole kitchen at six in the morning!",
+                "My brothers helped, but the van stopped twice and we waited an hour on the road.",
+                "We finished at midnight. Now tell me about your worst moving day, and ask me anything."
               ],
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "packed",
+                    "carried",
+                    "walked",
+                    "waited",
+                    "stopped",
+                    "decided",
+                    "helped",
+                    "arrived",
+                    "started",
+                    "finished",
+                    "cleaned",
+                    "moved",
+                    "called",
+                    "worked"
+                  ],
+                  [
+                    "last year",
+                    "last month",
+                    "last week",
+                    "last weekend",
+                    "two days ago",
+                    "years ago",
+                    "yesterday",
+                    "when I was",
+                    "all afternoon"
+                  ],
+                  [
+                    "did you",
+                    "how long",
+                    "how many",
+                    "what time",
+                    "who helped",
+                    "where did",
+                    "when did",
+                    "was it",
+                    "were you",
+                    "what about you"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             }
           ]
         },
@@ -8772,6 +9164,7 @@
           "titleAr": "أفعال الماضي الشاذة",
           "lessonType": "encounter-focus-practice",
           "canDo": [
+            "A2.U2.LISTENING.UNDERSTAND_PAST_EVENT",
             "A2.U2.READING.FOLLOW_SHORT_NARRATIVE",
             "A2.U2.PRODUCTION.TELL_PAST_EXPERIENCE"
           ],
@@ -8781,17 +9174,44 @@
           "lexicon": [
             "A2.LEX.GO_V02",
             "A2.LEX.BUY_V02",
-            "A2.LEX.MEET_V02"
+            "A2.LEX.LOSE_V02",
+            "A2.LEX.TELL_V02"
           ],
           "chunks": [
-            "A2.CHUNK.A_GREAT_TIME"
+            "A2.CHUNK.A_GREAT_TIME",
+            "A2.CHUNK.ON_THE_WAY_BACK"
           ],
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "I went to the market, bought some fruit and met my old teacher. We had a great time talking.",
-                "ar": ""
+                "speaker": "Hazim",
+                "en": "You came home very late last night, Ruba.",
+                "ar": "عدتِ إلى البيت متأخرة جداً ليلة أمس يا ربى."
+              },
+              {
+                "speaker": "Ruba",
+                "en": "Sorry, Baba. We went to Babylon with the college.",
+                "ar": "آسفة يا بابا. ذهبنا إلى بابل مع الكلية."
+              },
+              {
+                "speaker": "Hazim",
+                "en": "And your phone? You always lose that phone.",
+                "ar": "وأين هاتفكِ؟ أنتِ تضيّعين هذا الهاتف دائماً."
+              },
+              {
+                "speaker": "Ruba",
+                "en": "I lost it at the gate! A guard found it and kept it for me.",
+                "ar": "أضعتُه عند البوابة! وجده أحد الحراس واحتفظ به من أجلي."
+              },
+              {
+                "speaker": "Hazim",
+                "en": "Tell me everything.",
+                "ar": "احكي لي كل شيء."
+              },
+              {
+                "speaker": "Ruba",
+                "en": "On the way back we bought sweets in Hilla and had a great time.",
+                "ar": "في طريق العودة اشترينا حلويات في الحلة وقضينا وقتاً رائعاً."
               }
             ]
           },
@@ -8799,89 +9219,78 @@
             {
               "id": "A2-U2-L3-A01",
               "lessonId": "A2-U2-L3",
-              "type": "textChoice",
+              "type": "audioChoice",
               "mode": "encounter",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U2.READING.FOLLOW_SHORT_NARRATIVE",
-                "A2.U2.PRODUCTION.TELL_PAST_EXPERIENCE"
+                "A2.U2.LISTENING.UNDERSTAND_PAST_EVENT"
               ],
-              "prompt": "Who did the writer meet?",
-              "promptAr": "من التقى الكاتب؟",
+              "prompt": "What is Hazim asking his daughter about?",
+              "promptAr": "عمَّ يسأل حازم ابنته؟",
               "options": [
-                "An old teacher",
-                "A fruit seller",
-                "A cousin"
+                "Her late return from a college trip",
+                "A phone she wants to buy",
+                "Her exam next week"
               ],
-              "answer": "An old teacher",
-              "sourceText": "I went to the market, bought some fruit and met my old teacher. We had a great time talking."
+              "answer": "Her late return from a college trip",
+              "audioTranscript": "You came home very late last night, Ruba. Sorry, Baba. We went to Babylon with the college. And your phone? You always lose that phone. I lost it at the gate! A guard found it and kept it for me. Tell me everything. On the way back we bought sweets in Hilla and had a great time."
             },
             {
               "id": "A2-U2-L3-A02",
-              "lessonId": "A2-U2-L3",
-              "type": "match",
-              "mode": "practice",
-              "skill": "reading",
-              "canDo": [
-                "A2.U2.READING.FOLLOW_SHORT_NARRATIVE",
-                "A2.U2.PRODUCTION.TELL_PAST_EXPERIENCE"
-              ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "go",
-                  "يذهب (ماضٍ: went)"
-                ],
-                [
-                  "buy",
-                  "يشتري (ماضٍ: bought)"
-                ],
-                [
-                  "meet",
-                  "يلتقي (ماضٍ: met)"
-                ]
-              ]
-            },
-            {
-              "id": "A2-U2-L3-A03",
               "lessonId": "A2-U2-L3",
               "type": "gap",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U2.READING.FOLLOW_SHORT_NARRATIVE",
-                "A2.U2.PRODUCTION.TELL_PAST_EXPERIENCE"
+                "A2.U2.READING.FOLLOW_SHORT_NARRATIVE"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "We ___ a bus to the centre.",
+              "prompt": "This verb is irregular, so it never takes -ed. Choose its past form.",
+              "promptAr": "هذا الفعل شاذ، فهو لا يأخذ -ed أبداً. اختر صيغة الماضي منه.",
+              "text": "Yesterday I ___ two tickets at the station.",
               "options": [
-                "took",
-                "take",
-                "taking"
+                "bought",
+                "buy",
+                "buyed"
               ],
-              "answer": "took"
+              "answer": "bought"
+            },
+            {
+              "id": "A2-U2-L3-A03",
+              "lessonId": "A2-U2-L3",
+              "type": "textChoice",
+              "mode": "practice",
+              "skill": "reading",
+              "canDo": [
+                "A2.U2.READING.FOLLOW_SHORT_NARRATIVE"
+              ],
+              "prompt": "Read the page from Ruba's notebook. What did she bring home from the trip?",
+              "promptAr": "اقرأ الصفحة من دفتر ربى. ماذا أحضرت معها من الرحلة؟",
+              "sourceText": "From Ruba's notebook: Our college went to Babylon in March. The guide spoke for two hours and showed us the old walls. I bought a small book at the shop, and on the way back the driver sang with us.",
+              "options": [
+                "A small book from the shop",
+                "A photograph of the guide",
+                "A ticket from the college"
+              ],
+              "answer": "A small book from the shop"
             },
             {
               "id": "A2-U2-L3-A04",
               "lessonId": "A2-U2-L3",
-              "type": "textChoice",
+              "type": "audioChoice",
               "mode": "mastery",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U2.READING.FOLLOW_SHORT_NARRATIVE",
-                "A2.U2.PRODUCTION.TELL_PAST_EXPERIENCE"
+                "A2.U2.LISTENING.UNDERSTAND_PAST_EVENT"
               ],
-              "prompt": "What did Sara do before coming home?",
-              "promptAr": "ماذا فعلت سارة قبل عودتها؟",
+              "prompt": "How did Ghassan get his wallet back?",
+              "promptAr": "كيف استعاد غسان محفظته؟",
               "options": [
-                "She ate with friends.",
-                "She took a class.",
-                "She bought a film."
+                "A boy found it and returned it",
+                "He bought a new one in the market",
+                "The shopkeeper posted it to him"
               ],
-              "answer": "She ate with friends.",
-              "sourceText": "Sara saw a new film, ate dinner with friends and came home at eleven."
+              "answer": "A boy found it and returned it",
+              "audioTranscript": "Ghassan goes to Turkey every summer. Last May he lost his wallet in an Istanbul market on the first day. He told a shopkeeper, and an hour later a boy found it near the mosque. Nothing was missing, and he had a great time."
             },
             {
               "id": "A2-U2-L3-A05",
@@ -8890,19 +9299,68 @@
               "mode": "mastery",
               "skill": "spokenProduction",
               "canDo": [
-                "A2.U2.READING.FOLLOW_SHORT_NARRATIVE",
                 "A2.U2.PRODUCTION.TELL_PAST_EXPERIENCE"
               ],
-              "prompt": "Use three common irregular past verbs to describe a real or fictional outing.",
-              "promptAr": "استخدم ثلاثة أفعال ماضية شاذة شائعة لوصف نزهة حقيقية أو خيالية.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "Tell the story of a day out you still remember. Use at least three irregular past verbs, and say one thing that went wrong.",
+              "promptAr": "احكِ قصة نزهة ما زلتَ تتذكرها. استخدم ثلاثة أفعال ماضية شاذة على الأقل، واذكر شيئاً واحداً لم يسر كما يجب.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "went",
+                    "came",
+                    "bought",
+                    "found",
+                    "lost",
+                    "met",
+                    "saw",
+                    "ate",
+                    "took",
+                    "gave",
+                    "made",
+                    "had",
+                    "left",
+                    "told",
+                    "spoke",
+                    "drove",
+                    "sang",
+                    "wrote",
+                    "brought"
+                  ],
+                  [
+                    "with my",
+                    "my friend",
+                    "my brother",
+                    "my sister",
+                    "my family",
+                    "the market",
+                    "the beach",
+                    "the park",
+                    "the museum",
+                    "the village",
+                    "a restaurant",
+                    "the city"
+                  ],
+                  [
+                    "but",
+                    "lost",
+                    "forgot",
+                    "missed",
+                    "late",
+                    "broke",
+                    "rained",
+                    "closed",
+                    "wrong",
+                    "problem",
+                    "nothing worked"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             }
           ]
         },
@@ -8913,27 +9371,56 @@
           "lessonType": "encounter-focus-practice",
           "canDo": [
             "A2.U2.LISTENING.UNDERSTAND_PAST_EVENT",
-            "A2.U2.INTERACTION.ASK_ABOUT_PAST"
+            "A2.U2.READING.FOLLOW_SHORT_NARRATIVE",
+            "A2.U2.WRITING.WRITE_PAST_NARRATIVE"
           ],
           "grammar": [
             "A2.G.PAST_QUESTIONS",
-            "A2.G.PAST_NEGATIVE"
+            "A2.G.PAST_NEGATIVE",
+            "A2.G.PAST_TIME_MARKERS"
           ],
           "lexicon": [
             "A2.LEX.HAPPEN_V01",
             "A2.LEX.EXPERIENCE_N01",
-            "A2.LEX.AGO_ADV01"
+            "A2.LEX.AGO_ADV01",
+            "A2.LEX.AMAZING_ADJ01"
           ],
           "chunks": [
             "A2.CHUNK.WHAT_HAPPENED",
-            "A2.CHUNK.HOW_WAS_IT"
+            "A2.CHUNK.HOW_WAS_IT",
+            "A2.CHUNK.NOT_REALLY"
           ],
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "A: How was the concert? B: Great. A: Who did you go with? B: My sister. We didn't stay for the last song.",
-                "ar": "أ: كيف كانت الحفلة؟ ب: رائعة. أ: مع من ذهبت؟ ب: أختي. لم نبق للأغنية الأخيرة."
+                "speaker": "Ziad",
+                "en": "You went to the food festival, Amal. How was it?",
+                "ar": "ذهبتِ إلى مهرجان الطعام يا أمل. كيف كان؟"
+              },
+              {
+                "speaker": "Amal",
+                "en": "Amazing. We ate things I never tried before.",
+                "ar": "مذهل. أكلنا أشياء لم أجرّبها من قبل."
+              },
+              {
+                "speaker": "Ziad",
+                "en": "Did you go on Friday?",
+                "ar": "هل ذهبتِ يوم الجمعة؟"
+              },
+              {
+                "speaker": "Amal",
+                "en": "No, we didn't. We went two weeks ago, on the quiet day.",
+                "ar": "لا، لم نذهب. ذهبنا منذ أسبوعين، في اليوم الهادئ."
+              },
+              {
+                "speaker": "Ziad",
+                "en": "What happened to the cooking competition? Did they cancel it?",
+                "ar": "ماذا حدث لمسابقة الطبخ؟ هل ألغوها؟"
+              },
+              {
+                "speaker": "Amal",
+                "en": "Not really. They moved it to the evening, so we didn't see it.",
+                "ar": "ليس تماماً. نقلوها إلى المساء، فلم نرها."
               }
             ]
           },
@@ -8945,106 +9432,140 @@
               "mode": "encounter",
               "skill": "listening",
               "canDo": [
-                "A2.U2.LISTENING.UNDERSTAND_PAST_EVENT",
-                "A2.U2.INTERACTION.ASK_ABOUT_PAST"
+                "A2.U2.LISTENING.UNDERSTAND_PAST_EVENT"
               ],
-              "prompt": "Did they hear the last song?",
-              "promptAr": "هل سمعوا الأغنية الأخيرة؟",
+              "prompt": "What are the two colleagues discussing?",
+              "promptAr": "عمَّ يتحدث الزميلان؟",
               "options": [
-                "No",
-                "Yes",
-                "The speaker does not say"
+                "Amal's visit to a food festival",
+                "A cooking course they both joined",
+                "A competition at their office"
               ],
-              "answer": "No",
-              "audioTranscript": "A: How was the concert? B: Great. A: Who did you go with? B: My sister. We didn't stay for the last song."
+              "answer": "Amal's visit to a food festival",
+              "audioTranscript": "You went to the food festival, Amal. How was it? Amazing. We ate things I never tried before. Did you go on Friday? No, we didn't. We went two weeks ago, on the quiet day. What happened to the cooking competition? Did they cancel it? Not really. They moved it to the evening, so we didn't see it."
             },
             {
               "id": "A2-U2-L4-A02",
               "lessonId": "A2-U2-L4",
-              "type": "match",
+              "type": "order",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U2.LISTENING.UNDERSTAND_PAST_EVENT",
-                "A2.U2.INTERACTION.ASK_ABOUT_PAST"
+                "A2.U2.READING.FOLLOW_SHORT_NARRATIVE"
               ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "happen",
-                  "يحدث"
-                ],
-                [
-                  "experience",
-                  "تجربة"
-                ],
-                [
-                  "ago",
-                  "منذ"
-                ]
+              "prompt": "Build the past question. Remember that did is followed by the base verb.",
+              "promptAr": "كوّن سؤال الماضي. تذكّر أن did يأتي بعده الفعل في صيغته الأساسية.",
+              "tokens": [
+                "you",
+                "did",
+                "the competition?",
+                "When",
+                "see"
+              ],
+              "answer": [
+                "When",
+                "did",
+                "you",
+                "see",
+                "the competition?"
               ]
             },
             {
               "id": "A2-U2-L4-A03",
               "lessonId": "A2-U2-L4",
-              "type": "gap",
+              "type": "audioChoice",
               "mode": "practice",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U2.LISTENING.UNDERSTAND_PAST_EVENT",
-                "A2.U2.INTERACTION.ASK_ABOUT_PAST"
+                "A2.U2.LISTENING.UNDERSTAND_PAST_EVENT"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "Where did you ___ last summer?",
+              "prompt": "Listen to the two friends. Why did the speaker miss the visit?",
+              "promptAr": "استمع إلى الصديقين. لماذا فاتت المتحدثَ الزيارة؟",
               "options": [
-                "go",
-                "went",
-                "going"
+                "His car would not start",
+                "His uncle was away",
+                "He forgot the date"
               ],
-              "answer": "go"
+              "answer": "His car would not start",
+              "audioTranscript": "Did you visit your uncle last month? No, I didn't. I wanted to, but my car didn't start. What happened? Nothing serious. A mechanic fixed it two days later, and I travelled last Friday."
             },
             {
               "id": "A2-U2-L4-A04",
               "lessonId": "A2-U2-L4",
-              "type": "audioChoice",
+              "type": "textChoice",
               "mode": "mastery",
-              "skill": "listening",
+              "skill": "reading",
               "canDo": [
-                "A2.U2.LISTENING.UNDERSTAND_PAST_EVENT",
-                "A2.U2.INTERACTION.ASK_ABOUT_PAST"
+                "A2.U2.READING.FOLLOW_SHORT_NARRATIVE"
               ],
-              "prompt": "How did B avoid arriving late?",
-              "promptAr": "كيف تجنب ب الوصول متأخراً؟",
+              "prompt": "Read the entry in the visitor book. What changed between the writer's two visits?",
+              "promptAr": "اقرأ ما كُتب في دفتر الزوار. ما الذي تغيّر بين زيارتَي الكاتبة؟",
+              "sourceText": "Visitor book, Basra Heritage House: I came here ten years ago with my school and I did not understand much. This week I returned with my own students. The rooms did not change at all, but the experience was completely different.",
               "options": [
-                "By taking a taxi",
-                "By catching the bus",
-                "By walking"
+                "How much the writer understood",
+                "The rooms of the house",
+                "The number of visitors each day"
               ],
-              "answer": "By taking a taxi",
-              "audioTranscript": "A: What happened yesterday? B: I missed the bus. A: Did you arrive late? B: No, I took a taxi."
+              "answer": "How much the writer understood"
             },
             {
               "id": "A2-U2-L4-A05",
               "lessonId": "A2-U2-L4",
-              "type": "speak",
+              "type": "write",
               "mode": "mastery",
-              "skill": "spokenInteraction",
+              "skill": "writing",
               "canDo": [
-                "A2.U2.LISTENING.UNDERSTAND_PAST_EVENT",
-                "A2.U2.INTERACTION.ASK_ABOUT_PAST"
+                "A2.U2.WRITING.WRITE_PAST_NARRATIVE"
               ],
-              "prompt": "Ask a partner three connected questions about a past experience.",
-              "promptAr": "اسأل شريكاً ثلاثة أسئلة مترابطة عن تجربة سابقة.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "A friend writes: I went to the food festival last week. Write a reply. Say one thing you did recently and one thing you did not do, and ask her two questions with did.",
+              "promptAr": "تكتب لكَ صديقة: «ذهبتُ إلى مهرجان الطعام الأسبوع الماضي». اكتب رداً. اذكر شيئاً فعلتَه مؤخراً وشيئاً لم تفعله، واسألها سؤالين باستخدام did.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "did you",
+                    "did it",
+                    "did they",
+                    "did he",
+                    "did she",
+                    "how long did",
+                    "where did",
+                    "when did",
+                    "what did",
+                    "who did",
+                    "how was it"
+                  ],
+                  [
+                    "didn't",
+                    "did not",
+                    "couldn't",
+                    "could not",
+                    "wasn't",
+                    "was not",
+                    "weren't",
+                    "were not",
+                    "never"
+                  ],
+                  [
+                    "ago",
+                    "last week",
+                    "last month",
+                    "last year",
+                    "last night",
+                    "yesterday",
+                    "last weekend",
+                    "two days ago",
+                    "in March"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "wordGuide": [
+                55,
+                75
+              ]
             }
           ]
         },
@@ -9054,8 +9575,9 @@
           "titleAr": "رتب الأحداث",
           "lessonType": "encounter-focus-practice",
           "canDo": [
+            "A2.U2.LISTENING.UNDERSTAND_PAST_EVENT",
             "A2.U2.READING.FOLLOW_SHORT_NARRATIVE",
-            "A2.U2.MEDIATION.RELAY_EVENT_SEQUENCE"
+            "A2.U2.INTERACTION.ASK_ABOUT_PAST"
           ],
           "grammar": [
             "A2.G.PAST_TIME_LINKERS"
@@ -9063,18 +9585,45 @@
           "lexicon": [
             "A2.LEX.SUDDENLY_ADV01",
             "A2.LEX.FINALLY_ADV01",
-            "A2.LEX.SEQUENCE_N01"
+            "A2.LEX.SEQUENCE_N01",
+            "A2.LEX.BREAK_DOWN_V01"
           ],
           "chunks": [
+            "A2.CHUNK.AT_FIRST",
             "A2.CHUNK.AFTER_THAT",
             "A2.CHUNK.IN_THE_END"
           ],
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
-                "en": "First, we took the wrong road. After that, the car stopped. Finally, a farmer showed us the way.",
-                "ar": ""
+                "speaker": "Salim",
+                "en": "You arrived four hours late. What was the story?",
+                "ar": "وصلتُما متأخرتين أربع ساعات. ما القصة؟"
+              },
+              {
+                "speaker": "Hoda",
+                "en": "At first everything was fine. We left Ramadi at seven.",
+                "ar": "في البداية كان كل شيء على ما يرام. غادرنا الرمادي في السابعة."
+              },
+              {
+                "speaker": "Basma",
+                "en": "Then the old bus broke down near the lake.",
+                "ar": "ثم تعطلت الحافلة القديمة قرب البحيرة."
+              },
+              {
+                "speaker": "Hoda",
+                "en": "After that we waited for a mechanic. Suddenly it started to rain.",
+                "ar": "بعد ذلك انتظرنا ميكانيكياً. وفجأة بدأت تمطر."
+              },
+              {
+                "speaker": "Salim",
+                "en": "Poor you!",
+                "ar": "يا لكما من مسكينتين!"
+              },
+              {
+                "speaker": "Basma",
+                "en": "In the end a farmer drove us, and we finally reached the hotel at midnight.",
+                "ar": "في النهاية أوصلنا أحد المزارعين بسيارته، ووصلنا أخيراً إلى الفندق عند منتصف الليل."
               }
             ]
           },
@@ -9082,115 +9631,145 @@
             {
               "id": "A2-U2-L5-A01",
               "lessonId": "A2-U2-L5",
-              "type": "textChoice",
+              "type": "audioChoice",
               "mode": "encounter",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U2.READING.FOLLOW_SHORT_NARRATIVE",
-                "A2.U2.MEDIATION.RELAY_EVENT_SEQUENCE"
+                "A2.U2.LISTENING.UNDERSTAND_PAST_EVENT"
               ],
-              "prompt": "Who helped in the end?",
-              "promptAr": "من ساعد في النهاية؟",
+              "prompt": "What are the three friends explaining?",
+              "promptAr": "ما الذي يشرحه الأصدقاء الثلاثة؟",
               "options": [
-                "A farmer",
-                "A driver",
-                "A police officer"
+                "Why their journey took so long",
+                "Which hotel they chose",
+                "How much the bus ticket cost"
               ],
-              "answer": "A farmer",
-              "sourceText": "First, we took the wrong road. After that, the car stopped. Finally, a farmer showed us the way."
+              "answer": "Why their journey took so long",
+              "audioTranscript": "You arrived four hours late. What was the story? At first everything was fine. We left Ramadi at seven. Then the old bus broke down near the lake. After that we waited for a mechanic. Suddenly it started to rain. Poor you! In the end a farmer drove us, and we finally reached the hotel at midnight."
             },
             {
               "id": "A2-U2-L5-A02",
-              "lessonId": "A2-U2-L5",
-              "type": "match",
-              "mode": "practice",
-              "skill": "reading",
-              "canDo": [
-                "A2.U2.READING.FOLLOW_SHORT_NARRATIVE",
-                "A2.U2.MEDIATION.RELAY_EVENT_SEQUENCE"
-              ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "suddenly",
-                  "فجأة"
-                ],
-                [
-                  "finally",
-                  "أخيراً"
-                ],
-                [
-                  "sequence",
-                  "تسلسل"
-                ]
-              ]
-            },
-            {
-              "id": "A2-U2-L5-A03",
               "lessonId": "A2-U2-L5",
               "type": "order",
               "mode": "practice",
               "skill": "reading",
               "canDo": [
-                "A2.U2.READING.FOLLOW_SHORT_NARRATIVE",
-                "A2.U2.MEDIATION.RELAY_EVENT_SEQUENCE"
+                "A2.U2.READING.FOLLOW_SHORT_NARRATIVE"
               ],
-              "prompt": "Put the language in the best order.",
-              "promptAr": "رتب اللغة بالترتيب الأفضل.",
+              "prompt": "Rebuild the sentence so that the sequence linker comes first.",
+              "promptAr": "أعد بناء الجملة بحيث يأتي رابط التسلسل أولاً.",
               "tokens": [
-                "we",
-                "After that,",
-                "the museum.",
-                "visited"
+                "the driver",
+                "Finally,",
+                "us the way.",
+                "showed"
               ],
               "answer": [
-                "After that,",
-                "we",
-                "visited",
-                "the museum."
+                "Finally,",
+                "the driver",
+                "showed",
+                "us the way."
               ]
+            },
+            {
+              "id": "A2-U2-L5-A03",
+              "lessonId": "A2-U2-L5",
+              "type": "textChoice",
+              "mode": "practice",
+              "skill": "reading",
+              "canDo": [
+                "A2.U2.READING.FOLLOW_SHORT_NARRATIVE"
+              ],
+              "prompt": "Read the exhibition caption. Which photograph comes last?",
+              "promptAr": "اقرأ شرح المعرض. أي صورة تأتي في النهاية؟",
+              "sourceText": "Exhibition caption: These six photographs show the sequence of one night in Baghdad. At first the square was empty. Then the lights came on. After that, thousands of people arrived, and finally the fireworks started at midnight.",
+              "options": [
+                "The fireworks at midnight",
+                "The empty square",
+                "The lights coming on"
+              ],
+              "answer": "The fireworks at midnight"
             },
             {
               "id": "A2-U2-L5-A04",
               "lessonId": "A2-U2-L5",
-              "type": "textChoice",
+              "type": "audioChoice",
               "mode": "mastery",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U2.READING.FOLLOW_SHORT_NARRATIVE",
-                "A2.U2.MEDIATION.RELAY_EVENT_SEQUENCE"
+                "A2.U2.LISTENING.UNDERSTAND_PAST_EVENT"
               ],
-              "prompt": "What happened immediately after Nabil lost the key?",
-              "promptAr": "ماذا حدث مباشرة بعد أن أضاع نبيل المفتاح؟",
+              "prompt": "Who helped the driver in the end?",
+              "promptAr": "من الذي ساعد السائق في النهاية؟",
               "options": [
-                "He called his brother.",
-                "He entered the flat.",
-                "He found the key."
+                "A lorry driver",
+                "His brother",
+                "A mechanic from the next town"
               ],
-              "answer": "He called his brother.",
-              "sourceText": "Nabil lost his key. Then he called his brother. His brother brought a spare key, and finally Nabil entered the flat."
+              "answer": "A lorry driver",
+              "audioTranscript": "Old cars break down, and mine stopped on the motorway last winter. At first I tried to fix it myself. After that I called my brother, but his phone was off. In the end a lorry driver pulled me to the next town."
             },
             {
               "id": "A2-U2-L5-A05",
               "lessonId": "A2-U2-L5",
               "type": "speak",
               "mode": "mastery",
-              "skill": "mediation",
+              "skill": "spokenInteraction",
               "canDo": [
-                "A2.U2.READING.FOLLOW_SHORT_NARRATIVE",
-                "A2.U2.MEDIATION.RELAY_EVENT_SEQUENCE"
+                "A2.U2.INTERACTION.ASK_ABOUT_PAST"
               ],
-              "prompt": "Read a four-event timeline and relay the events in the correct order.",
-              "promptAr": "اقرأ خطاً زمنياً من أربعة أحداث وانقلها بالترتيب الصحيح.",
-              "evaluation": [
-                "selectRelevantInformation",
-                "clarity",
-                "audienceAwareness",
-                "accuracy"
+              "prompt": "Your friend's bus journey went wrong yesterday. Ask her what happened first, what happened next, and how it ended. Then tell her about a journey of your own that went wrong.",
+              "promptAr": "رحلة صديقتكَ بالحافلة أمس ساءت. اسألها ماذا حدث أولاً، وماذا حدث بعد ذلك، وكيف انتهى الأمر. ثم أخبرها عن رحلة لكَ ساءت هي الأخرى.",
+              "partnerTurns": [
+                "You will not believe my Thursday. I left the house at six and everything went wrong.",
+                "The bus was full, so I waited for the next one. After that the road to Kut was closed.",
+                "Ask me what happened next, because it gets worse. Then tell me about your worst journey."
               ],
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "what happened",
+                    "what did",
+                    "did you",
+                    "how long",
+                    "where did",
+                    "when did",
+                    "why",
+                    "and then",
+                    "what next",
+                    "how did it end"
+                  ],
+                  [
+                    "first",
+                    "then",
+                    "after that",
+                    "next",
+                    "finally",
+                    "in the end",
+                    "at first",
+                    "later"
+                  ],
+                  [
+                    "I was",
+                    "I went",
+                    "I waited",
+                    "I missed",
+                    "my bus",
+                    "my car",
+                    "last year",
+                    "last week",
+                    "once",
+                    "I took",
+                    "I had"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             }
           ]
         },
@@ -9200,8 +9779,11 @@
           "titleAr": "قصة قصيرة في الماضي",
           "lessonType": "integrated-production",
           "canDo": [
+            "A2.U2.LISTENING.UNDERSTAND_PAST_EVENT",
+            "A2.U2.READING.FOLLOW_SHORT_NARRATIVE",
+            "A2.U2.PRODUCTION.TELL_PAST_EXPERIENCE",
             "A2.U2.WRITING.WRITE_PAST_NARRATIVE",
-            "A2.U2.PRODUCTION.TELL_PAST_EXPERIENCE"
+            "A2.U2.MEDIATION.RELAY_EVENT_SEQUENCE"
           ],
           "grammar": [
             "A2.G.BE_PAST",
@@ -9212,20 +9794,17 @@
           "lexicon": [
             "A2.LEX.STORY_N01",
             "A2.LEX.EVENT_N01",
-            "A2.LEX.SURPRISED_ADJ01"
+            "A2.LEX.SURPRISED_ADJ01",
+            "A2.LEX.LUCKY_ADJ01"
           ],
           "chunks": [
             "A2.CHUNK.IN_THE_END",
             "A2.CHUNK.A_GREAT_TIME"
           ],
-          "encounter": {
-            "dialogue": [
-              {
-                "speaker": "Narrator",
-                "en": "Last Saturday, we went to the lake. Suddenly, we saw a small boat with no one in it. We called the police. In the end, they found the owner safely on the other side.",
-                "ar": ""
-              }
-            ]
+          "readingText": {
+            "title": "A Story from the Road",
+            "text": "Two years ago I travelled from Baghdad to Sulaymaniyah for my cousin's wedding. I packed the night before and left at five in the morning. At first the road was quiet. Then, near Kirkuk, the bus stopped and the driver said we needed a new tyre. We waited three hours in the sun. I was sure I would miss the party. In the end I arrived at ten, and the music was still playing. I was lucky, and we had a great time until sunrise.",
+            "textAr": "قبل سنتين سافرتُ من بغداد إلى السليمانية لحضور عرس ابنة عمي. حزمتُ حقيبتي في الليلة السابقة وغادرتُ في الخامسة صباحاً. في البداية كان الطريق هادئاً، ثم توقفت الحافلة قرب كركوك وقال السائق إننا نحتاج إطاراً جديداً. انتظرنا ثلاث ساعات تحت الشمس، وكنتُ واثقة أنني سأفوّت الحفل. في النهاية وصلتُ في العاشرة، وكانت الموسيقى ما زالت تُعزف. كنتُ محظوظة، وقضينا وقتاً رائعاً حتى شروق الشمس."
           },
           "activities": [
             {
@@ -9235,85 +9814,143 @@
               "mode": "encounter",
               "skill": "reading",
               "canDo": [
-                "A2.U2.WRITING.WRITE_PAST_NARRATIVE",
-                "A2.U2.PRODUCTION.TELL_PAST_EXPERIENCE"
+                "A2.U2.READING.FOLLOW_SHORT_NARRATIVE"
               ],
-              "prompt": "Why did the group call the police?",
-              "promptAr": "لماذا اتصلت المجموعة بالشرطة؟",
+              "prompt": "Read the story once. What kind of story is the writer telling?",
+              "promptAr": "اقرأ القصة مرة واحدة. أي نوع من القصص ترويه الكاتبة؟",
               "options": [
-                "They saw an empty boat.",
-                "They lost their bags.",
-                "They needed a ride."
+                "A long journey that ended well",
+                "A wedding she could not reach",
+                "A bus she decided not to take"
               ],
-              "answer": "They saw an empty boat.",
-              "sourceText": "Last Saturday, we went to the lake. Suddenly, we saw a small boat with no one in it. We called the police. In the end, they found the owner safely on the other side."
+              "answer": "A long journey that ended well"
             },
             {
               "id": "A2-U2-L6-A02",
               "lessonId": "A2-U2-L6",
-              "type": "match",
+              "type": "audioChoice",
               "mode": "practice",
-              "skill": "reading",
+              "skill": "listening",
               "canDo": [
-                "A2.U2.WRITING.WRITE_PAST_NARRATIVE",
-                "A2.U2.PRODUCTION.TELL_PAST_EXPERIENCE"
+                "A2.U2.LISTENING.UNDERSTAND_PAST_EVENT"
               ],
-              "prompt": "Match the key language to its Arabic meaning.",
-              "promptAr": "طابق اللغة الأساسية بمعناها العربي.",
-              "pairs": [
-                [
-                  "story",
-                  "قصة"
-                ],
-                [
-                  "event",
-                  "حدث"
-                ],
-                [
-                  "surprised",
-                  "متفاجئ"
-                ]
-              ]
+              "prompt": "Listen to a second story. Why does the speaker call the delay a good thing?",
+              "promptAr": "استمع إلى قصة ثانية. لماذا يعدّ المتحدث التأخير أمراً جيداً؟",
+              "options": [
+                "They met a family and got a free meal",
+                "The plane arrived early in the end",
+                "The airline paid for a hotel"
+              ],
+              "answer": "They met a family and got a free meal",
+              "audioTranscript": "Here is my story. Last summer our flight to Cairo left four hours late. At first we were angry. Then the airline gave every passenger a free meal, and we met a family from Mosul. In the end we were surprised: the delay was the best part."
             },
             {
               "id": "A2-U2-L6-A03",
               "lessonId": "A2-U2-L6",
-              "type": "gap",
+              "type": "speak",
               "mode": "practice",
-              "skill": "reading",
+              "skill": "spokenProduction",
               "canDo": [
-                "A2.U2.WRITING.WRITE_PAST_NARRATIVE",
                 "A2.U2.PRODUCTION.TELL_PAST_EXPERIENCE"
               ],
-              "prompt": "Complete the sentence.",
-              "promptAr": "أكمل الجملة.",
-              "text": "In the end, everyone ___ safe.",
-              "options": [
-                "was",
-                "were",
-                "is"
-              ],
-              "answer": "was"
+              "prompt": "Before you write anything, tell your own story aloud the way the model tells it. Give the time and place, two events in order, and how it ended.",
+              "promptAr": "قبل أن تكتب شيئاً، احكِ قصتكَ بصوت عالٍ كما يحكيها النموذج. اذكر الزمان والمكان، وحدثين بالترتيب، وكيف انتهت.",
+              "accepted": [],
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "last year",
+                    "two years ago",
+                    "last summer",
+                    "last month",
+                    "when I was",
+                    "one day",
+                    "a few years ago",
+                    "last winter"
+                  ],
+                  [
+                    "at first",
+                    "then",
+                    "after that",
+                    "later",
+                    "finally",
+                    "in the end",
+                    "suddenly",
+                    "next"
+                  ],
+                  [
+                    "lucky",
+                    "surprised",
+                    "glad",
+                    "happy",
+                    "tired",
+                    "relieved",
+                    "we had a great time",
+                    "I never forgot it",
+                    "nothing was wrong"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U2-L6-A04",
               "lessonId": "A2-U2-L6",
-              "type": "textChoice",
+              "type": "speak",
               "mode": "mastery",
-              "skill": "reading",
+              "skill": "mediation",
               "canDo": [
-                "A2.U2.WRITING.WRITE_PAST_NARRATIVE",
-                "A2.U2.PRODUCTION.TELL_PAST_EXPERIENCE"
+                "A2.U2.MEDIATION.RELAY_EVENT_SEQUENCE"
               ],
-              "prompt": "Why did Mona still catch the train?",
-              "promptAr": "لماذا لحقت منى بالقطار؟",
-              "options": [
-                "The train was delayed.",
-                "She arrived early.",
-                "She bought a new ticket."
-              ],
-              "answer": "The train was delayed.",
-              "sourceText": "Mona arrived at the station late, but the train was delayed. She bought coffee and finally got on the train at nine."
+              "prompt": "Mrs Haddad cannot read English. Tell her son what happened to his wallet, in the order the events happened, and where it is now.",
+              "promptAr": "السيدة حداد لا تقرأ الإنجليزية. أخبر ابنها بما حدث لمحفظته، بترتيب وقوع الأحداث، وأين هي الآن.",
+              "sourceCard": "Police note for Mrs Haddad: These are the events. A driver found your son's wallet on the number nine bus at two. He gave it to his manager at three, and the manager brought it to this station at four. Nothing is missing.",
+              "accepted": [],
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "driver",
+                    "found",
+                    "the bus",
+                    "number nine",
+                    "at two",
+                    "on the bus"
+                  ],
+                  [
+                    "manager",
+                    "gave",
+                    "at three",
+                    "his boss",
+                    "handed"
+                  ],
+                  [
+                    "station",
+                    "police",
+                    "at four",
+                    "it is there",
+                    "you can collect",
+                    "waiting"
+                  ],
+                  [
+                    "first",
+                    "then",
+                    "after that",
+                    "finally",
+                    "next",
+                    "in the end",
+                    "later"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U2-L6-A05",
@@ -9322,22 +9959,67 @@
               "mode": "mastery",
               "skill": "writing",
               "canDo": [
-                "A2.U2.WRITING.WRITE_PAST_NARRATIVE",
-                "A2.U2.PRODUCTION.TELL_PAST_EXPERIENCE"
+                "A2.U2.WRITING.WRITE_PAST_NARRATIVE"
               ],
-              "prompt": "Write a short past narrative with a beginning, ordered events and an ending.",
-              "promptAr": "اكتب سرداً قصيراً في الماضي له بداية وأحداث مرتبة ونهاية.",
-              "evaluation": [
-                "taskCompletion",
-                "clarity",
-                "organisation",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "Now write your own short story about a day that did not go as planned. Give the time and place, put the events in order, and finish with how it ended.",
+              "promptAr": "اكتب الآن قصتك القصيرة عن يوم لم يسر كما خُطّط له. اذكر الزمان والمكان، ورتّب الأحداث، واختم بكيفية انتهائه.",
               "accepted": [],
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "last year",
+                    "two years ago",
+                    "last summer",
+                    "last month",
+                    "last week",
+                    "when I was",
+                    "one day",
+                    "a few years ago"
+                  ],
+                  [
+                    "at first",
+                    "first",
+                    "then",
+                    "after that",
+                    "later",
+                    "finally",
+                    "in the end",
+                    "suddenly"
+                  ],
+                  [
+                    "was",
+                    "were",
+                    "went",
+                    "arrived",
+                    "waited",
+                    "stopped",
+                    "bought",
+                    "lost",
+                    "told",
+                    "packed",
+                    "decided",
+                    "met",
+                    "found",
+                    "left"
+                  ],
+                  [
+                    "lucky",
+                    "surprised",
+                    "glad",
+                    "happy",
+                    "tired",
+                    "we had a great time",
+                    "nothing was wrong",
+                    "I never forgot"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
               "wordGuide": [
-                70,
-                100
+                55,
+                75
               ]
             }
           ]
@@ -9371,15 +10053,15 @@
                 "A2.U2.READING.FOLLOW_SHORT_NARRATIVE",
                 "A2.U2.ACTION.SHARE_MEMORABLE_DAY"
               ],
-              "prompt": "Why did the delay become positive?",
-              "promptAr": "لماذا أصبح التأخير أمراً إيجابياً؟",
+              "prompt": "Read Hana's blog post. Why does she call a missed train a good day?",
+              "promptAr": "اقرأ تدوينة هناء. لماذا تصف فوات القطار بأنه يوم جيد؟",
+              "sourceText": "From Hana's blog: Last October I missed the early train to Mosul. I waited on the platform for two hours and met a woman from my old school. We travelled together and talked the whole way. I lost a morning and found a friend.",
               "options": [
-                "Hana met an old friend.",
-                "The ticket was cheaper.",
-                "The train was empty."
+                "She met an old schoolfriend and travelled with her",
+                "The next train was faster and cheaper",
+                "She had two quiet hours to read"
               ],
-              "answer": "Hana met an old friend.",
-              "sourceText": "On Friday, Hana missed her train. She waited for the next one, met an old friend on the platform and travelled with her. The delay became the best part of the day."
+              "answer": "She met an old schoolfriend and travelled with her"
             },
             {
               "id": "A2-U2-L7-A02",
@@ -9391,15 +10073,15 @@
                 "A2.U2.LISTENING.UNDERSTAND_PAST_EVENT",
                 "A2.U2.ACTION.SHARE_MEMORABLE_DAY"
               ],
-              "prompt": "Where did the speakers go when it rained?",
-              "promptAr": "إلى أين ذهب المتحدثون عندما أمطرت؟",
+              "prompt": "Listen to Hana's voice message. What did Ruqayya offer?",
+              "promptAr": "استمع إلى رسالة هناء الصوتية. ماذا عرضت رقية؟",
               "options": [
-                "A café",
-                "The market",
-                "The station"
+                "A visit to her school in May",
+                "A room in her flat in Mosul",
+                "A job at the station café"
               ],
-              "answer": "A café",
-              "audioTranscript": "First we visited the market. Then we ate by the river. Suddenly it rained, so we ran into a small café."
+              "answer": "A visit to her school in May",
+              "audioTranscript": "Hi, it's Hana. I forgot to tell you the best part. My friend's name is Ruqayya and she teaches in Mosul now. We ate lunch at the station café, and she invited me to her school in May. One missed train, one whole friendship."
             },
             {
               "id": "A2-U2-L7-A03",
@@ -9411,16 +10093,68 @@
                 "A2.U2.INTERACTION.ASK_ABOUT_PAST",
                 "A2.U2.ACTION.SHARE_MEMORABLE_DAY"
               ],
-              "prompt": "Tell a past experience and respond to at least three follow-up questions.",
-              "promptAr": "احك تجربة سابقة وأجب عن ثلاثة أسئلة متابعة على الأقل.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
+              "prompt": "Hana wants to hear about your memorable day. Tell her what happened, and answer at least three of her questions.",
+              "promptAr": "تريد هناء أن تسمع عن يومكَ الذي لا يُنسى. أخبرها بما حدث، وأجب عن ثلاثة من أسئلتها على الأقل.",
+              "partnerTurns": [
+                "That was my day. Now tell me about a day you still remember. When was it?",
+                "Really? And who were you with? What happened first?",
+                "That is amazing. How did it end, and why do you still remember it?"
               ],
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "last year",
+                    "two years ago",
+                    "last summer",
+                    "last month",
+                    "when I was",
+                    "a few years ago",
+                    "last winter",
+                    "last Eid"
+                  ],
+                  [
+                    "with my",
+                    "my friend",
+                    "my brother",
+                    "my sister",
+                    "my family",
+                    "my cousin",
+                    "alone",
+                    "we were",
+                    "at the"
+                  ],
+                  [
+                    "first",
+                    "then",
+                    "after that",
+                    "suddenly",
+                    "finally",
+                    "in the end",
+                    "we went",
+                    "we met",
+                    "we found",
+                    "I lost",
+                    "I bought"
+                  ],
+                  [
+                    "memorable",
+                    "I never forgot",
+                    "still remember",
+                    "lucky",
+                    "surprised",
+                    "the best",
+                    "special",
+                    "amazing",
+                    "it changed"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U2-L7-A04",
@@ -9432,16 +10166,59 @@
                 "A2.U2.PRODUCTION.TELL_PAST_EXPERIENCE",
                 "A2.U2.ACTION.SHARE_MEMORABLE_DAY"
               ],
-              "prompt": "Give a connected one-to-two-minute account of a memorable day.",
-              "promptAr": "قدّم رواية مترابطة من دقيقة إلى دقيقتين عن يوم لا يُنسى.",
-              "evaluation": [
-                "taskCompletion",
-                "intelligibility",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "Give your own one-to-two-minute account of a memorable day. Say when and where it was, tell the events in order, and say why you still remember it.",
+              "promptAr": "قدّم روايتك الخاصة في دقيقة إلى دقيقتين عن يوم لا يُنسى. قل متى كان وأين، واسرد الأحداث بالترتيب، وبيّن لماذا ما زلتَ تتذكره.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "last year",
+                    "two years ago",
+                    "last summer",
+                    "when I was",
+                    "a few years ago",
+                    "one morning",
+                    "one day",
+                    "last Eid"
+                  ],
+                  [
+                    "I was",
+                    "we were",
+                    "it was",
+                    "they were",
+                    "there were",
+                    "there was",
+                    "the weather was",
+                    "everyone was"
+                  ],
+                  [
+                    "first",
+                    "then",
+                    "after that",
+                    "later",
+                    "suddenly",
+                    "finally",
+                    "in the end",
+                    "before that",
+                    "next"
+                  ],
+                  [
+                    "memorable",
+                    "I never forgot",
+                    "still remember",
+                    "lucky",
+                    "the best day",
+                    "I was glad",
+                    "we had a great time",
+                    "special"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U2-L7-A05",
@@ -9453,16 +10230,52 @@
                 "A2.U2.MEDIATION.RELAY_EVENT_SEQUENCE",
                 "A2.U2.ACTION.SHARE_MEMORABLE_DAY"
               ],
-              "prompt": "Relay the main events from a provided timeline in the correct order.",
-              "promptAr": "انقل الأحداث الرئيسية من خط زمني معروض بالترتيب الصحيح.",
-              "evaluation": [
-                "selectRelevantInformation",
-                "clarity",
-                "audienceAwareness",
-                "accuracy"
-              ],
+              "prompt": "Your friend Firas missed the club's family day and does not read English. Tell him what the group did, in order, and what he must bring next time.",
+              "promptAr": "فاتَ صديقَكَ فراس يومُ العائلة في النادي، وهو لا يقرأ الإنجليزية. أخبره بما فعلته المجموعة بالترتيب، وبما عليه أن يحضره في المرة القادمة.",
+              "sourceCard": "Club newsletter: Our family day started at nine with a walk by the river. After that the children played football, and at one we all ate together. Finally the photographs were taken at four. Next time, please bring a chair and a hat.",
               "accepted": [],
-              "fallbackSkill": "writing"
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "walk",
+                    "river",
+                    "nine",
+                    "started",
+                    "morning",
+                    "began"
+                  ],
+                  [
+                    "football",
+                    "children",
+                    "played",
+                    "ate",
+                    "lunch",
+                    "together",
+                    "at one"
+                  ],
+                  [
+                    "photographs",
+                    "photos",
+                    "four",
+                    "pictures",
+                    "finally",
+                    "at the end"
+                  ],
+                  [
+                    "bring",
+                    "chair",
+                    "hat",
+                    "next time",
+                    "do not forget",
+                    "remember to"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
+              "fallbackSkill": "writing",
+              "fallbackCountsFor": "accessOnly"
             },
             {
               "id": "A2-U2-L7-A06",
@@ -9474,20 +10287,65 @@
                 "A2.U2.WRITING.WRITE_PAST_NARRATIVE",
                 "A2.U2.ACTION.SHARE_MEMORABLE_DAY"
               ],
-              "prompt": "Write the memorable day as a connected story with past forms and sequence linkers.",
-              "promptAr": "اكتب اليوم الذي لا يُنسى كقصة مترابطة مستخدماً صيغ الماضي وروابط التسلسل.",
-              "evaluation": [
-                "taskCompletion",
-                "clarity",
-                "organisation",
-                "appropriateLanguage",
-                "accuracy"
-              ],
+              "prompt": "Write the memorable day for Hana as a short story. Put the events in order, use past forms, and end with why the day stayed with you.",
+              "promptAr": "اكتب لهناء اليوم الذي لا يُنسى على شكل قصة قصيرة. رتّب الأحداث، واستخدم صيغ الماضي، واختم بسبب بقاء هذا اليوم في ذاكرتك.",
+              "accepted": [],
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "last year",
+                    "two years ago",
+                    "last summer",
+                    "last month",
+                    "when I was",
+                    "one day",
+                    "a few years ago",
+                    "last Eid"
+                  ],
+                  [
+                    "first",
+                    "then",
+                    "after that",
+                    "later",
+                    "suddenly",
+                    "finally",
+                    "in the end"
+                  ],
+                  [
+                    "was",
+                    "were",
+                    "went",
+                    "met",
+                    "bought",
+                    "lost",
+                    "found",
+                    "waited",
+                    "arrived",
+                    "stopped",
+                    "packed",
+                    "decided",
+                    "told",
+                    "ate"
+                  ],
+                  [
+                    "memorable",
+                    "still remember",
+                    "never forgot",
+                    "lucky",
+                    "surprised",
+                    "the best",
+                    "special",
+                    "changed"
+                  ]
+                ],
+                "minGroupsMatched": 3,
+                "onlineRefinement": "grammarCheck"
+              },
               "wordGuide": [
-                80,
-                110
-              ],
-              "accepted": []
+                55,
+                75
+              ]
             }
           ]
         }
