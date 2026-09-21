@@ -223,4 +223,30 @@ void main() {
       }
     }
   });
+
+  test('each unit teaches enough new vocabulary', () {
+    // The spec asks for "about 35 new senses per unit". The floor here is
+    // 30, not 35: a hard floor a good unit can miss by one is a gate people
+    // learn to work around, and 30 is the count below which a unit is
+    // clearly under-taught. Every other gate in this suite counts
+    // activities; nothing counted the words those activities are supposed
+    // to teach, so a unit could grow to its full 36 activities while still
+    // introducing a handful of senses.
+    const minimumSenses = 30;
+    for (final unit in finishedA2Units()) {
+      final taught = <String>{
+        for (final lesson in unit.lessons) ...[
+          ...lesson.lexicon,
+          ...lesson.chunks,
+        ],
+      };
+      expect(
+        taught.length,
+        greaterThanOrEqualTo(minimumSenses),
+        reason:
+            '${unit.id} teaches ${taught.length} senses; a unit needs at '
+            'least $minimumSenses',
+      );
+    }
+  });
 }
