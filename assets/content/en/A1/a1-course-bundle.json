@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "contentVersion": "A1-COMPLETE-2026.09.02",
+  "contentVersion": "A1-COMPLETE-2026.09.22",
   "locale": {
     "targetLanguage": "en",
     "supportLanguage": "ar",
@@ -8500,7 +8500,7 @@
                 "Match"
               ],
               "answer": "Repeat",
-              "audioTranscript": "Listen to the audio, read the sentence and repeat."
+              "audioTranscript": "Listen and repeat. Listen to the audio and read the sentence."
             },
             {
               "id": "A1-U0-L2-A04",
@@ -8767,8 +8767,8 @@
             "dialogue": [
               {
                 "speaker": "Maya",
-                "en": "How old are you, Omar?",
-                "ar": "كم عمرك يا عمر؟"
+                "en": "How old are you, Omar? What's your age?",
+                "ar": "كم عمرك يا عمر؟ ما سنّك؟"
               },
               {
                 "speaker": "Omar",
@@ -9215,8 +9215,8 @@
               },
               {
                 "speaker": "Ali",
-                "en": "I'm from Iraq. Are you from Italy?",
-                "ar": "أنا من العراق. هل أنتِ من إيطاليا؟"
+                "en": "I'm from Iraq. It's a big country. Are you from Italy?",
+                "ar": "أنا من العراق. إنه بلد كبير. هل أنتِ من إيطاليا؟"
               },
               {
                 "speaker": "Anna",
@@ -9375,8 +9375,8 @@
               },
               {
                 "speaker": "Sara",
-                "en": "I live in Basra, but my home is small.",
-                "ar": "أسكن في البصرة، لكن منزلي صغير."
+                "en": "I live in Basra. My country is Iraq, but my home is small.",
+                "ar": "أسكن في البصرة. بلدي العراق، لكن منزلي صغير."
               }
             ]
           }
@@ -9657,8 +9657,8 @@
               },
               {
                 "speaker": "Daniel",
-                "en": "No, he's a student. His father is a driver.",
-                "ar": "لا، هو طالب. والده سائق."
+                "en": "No, he's a student. His father is a driver, his mother is a manager, and his brother is a worker in a shop.",
+                "ar": "لا، هو طالب. والده سائق، ووالدته مديرة، وأخوه عامل في متجر."
               }
             ]
           }
@@ -10090,6 +10090,16 @@
                 "speaker": "Maya",
                 "en": "She's my sister, Noor.",
                 "ar": "إنها أختي نور."
+              },
+              {
+                "speaker": "Maya",
+                "en": "And who are they in the photo?",
+                "ar": "ومن هما في الصورة؟"
+              },
+              {
+                "speaker": "Omar",
+                "en": "My grandmother and my grandfather. She's his wife and he's her husband. And this is my brother, Omar.",
+                "ar": "جدتي وجدي. هي زوجته وهو زوجها. وهذا أخي عمر."
               }
             ]
           },
@@ -10290,8 +10300,8 @@
               },
               {
                 "speaker": "Ali",
-                "en": "I have one brother and two sisters.",
-                "ar": "لديّ أخ واحد وأختان."
+                "en": "I have one brother and two sisters. A lot of people! Every person is nice.",
+                "ar": "لديّ أخ واحد وأختان. أشخاص كثيرون! كل شخص لطيف."
               }
             ]
           },
@@ -10450,6 +10460,16 @@
                 "speaker": "Omar",
                 "en": "It's Karim's phone.",
                 "ar": "إنه هاتف كريم."
+              },
+              {
+                "speaker": "Maya",
+                "en": "What's her name?",
+                "ar": "ما اسمها؟"
+              },
+              {
+                "speaker": "Omar",
+                "en": "Her name is Noor.",
+                "ar": "اسمها نور."
               }
             ]
           },
@@ -10621,6 +10641,16 @@
                 "speaker": "Maya",
                 "en": "Karim is quiet, but friendly.",
                 "ar": "كريم هادئ لكنه ودود."
+              },
+              {
+                "speaker": "Omar",
+                "en": "Is your sister young?",
+                "ar": "هل أختك صغيرة السن؟"
+              },
+              {
+                "speaker": "Maya",
+                "en": "Yes, she's young and very nice.",
+                "ar": "نعم، هي صغيرة ولطيفة جداً."
               }
             ]
           },
@@ -10797,8 +10827,8 @@
               },
               {
                 "speaker": "Lina",
-                "en": "No, they aren't. They are doctors. We are a big family.",
-                "ar": "لا، ليسا كذلك. هما طبيبان. نحن عائلة كبيرة."
+                "en": "No, they aren't. They are doctors. We are a big family with many people.",
+                "ar": "لا، ليسا كذلك. هما طبيبان. نحن عائلة كبيرة فيها أشخاص كثيرون."
               }
             ]
           },
@@ -11403,6 +11433,16 @@
                 "speaker": "Sara",
                 "en": "Yes, there is.",
                 "ar": "نعم."
+              },
+              {
+                "speaker": "Sara",
+                "en": "Is there a window in the kitchen?",
+                "ar": "هل توجد نافذة في المطبخ؟"
+              },
+              {
+                "speaker": "Ali",
+                "en": "Yes, one window and one door.",
+                "ar": "نعم، نافذة واحدة وباب واحد."
               }
             ]
           },
@@ -11585,6 +11625,16 @@
                 "speaker": "Sara",
                 "en": "No, there isn't.",
                 "ar": "لا، لا يوجد."
+              },
+              {
+                "speaker": "Ali",
+                "en": "What's on the wall?",
+                "ar": "ما الذي على الجدار؟"
+              },
+              {
+                "speaker": "Sara",
+                "en": "There's a picture. And there's a cupboard next to the fridge.",
+                "ar": "توجد صورة. وتوجد خزانة بجانب الثلاجة."
               }
             ]
           },
@@ -12121,8 +12171,8 @@
               },
               {
                 "speaker": "Ali",
-                "en": "No, it isn't mine. It's Omar's.",
-                "ar": "لا، ليس لي. إنه لعمر."
+                "en": "No, it isn't mine. It's Omar's. But those keys are mine; I own them.",
+                "ar": "لا، ليس لي. إنه لعمر. لكن تلك المفاتيح لي؛ أنا أملكها."
               }
             ]
           },
@@ -12431,8 +12481,8 @@
               },
               {
                 "speaker": "Ali",
-                "en": "This is the living room. It's small but clean.",
-                "ar": "هذه غرفة المعيشة. إنها صغيرة لكنها نظيفة."
+                "en": "This is the living room. It's small but clean. The bedroom is big and quiet.",
+                "ar": "هذه غرفة المعيشة. إنها صغيرة لكنها نظيفة. غرفة النوم كبيرة وهادئة."
               },
               {
                 "speaker": "Sara",
@@ -12906,13 +12956,13 @@
               },
               {
                 "speaker": "Ali",
-                "en": "At quarter past twelve. I finish work at quarter to five.",
-                "ar": "في الثانية عشرة والربع. أنهي العمل في الخامسة إلا ربعاً."
+                "en": "At quarter past twelve. I finish work at quarter to five in the afternoon.",
+                "ar": "في الثانية عشرة والربع. أنهي العمل في الخامسة إلا ربعاً بعد الظهر."
               },
               {
                 "speaker": "Maya",
-                "en": "I have lunch at one o'clock.",
-                "ar": "أتناول الغداء في الواحدة."
+                "en": "I have lunch at one o'clock. In the evening I read, and at night I sleep.",
+                "ar": "أتناول الغداء في الواحدة. في المساء أقرأ، وفي الليل أنام."
               }
             ]
           },
@@ -14165,8 +14215,8 @@
               },
               {
                 "speaker": "Maya",
-                "en": "I like swimming and running. Do you like dancing?",
-                "ar": "أحب السباحة والجري. هل تحب الرقص؟"
+                "en": "I like swimming, running and walking. Do you like dancing or playing football?",
+                "ar": "أحب السباحة والجري والمشي. هل تحب الرقص أو لعب كرة القدم؟"
               },
               {
                 "speaker": "Omar",
@@ -15814,6 +15864,16 @@
                 "speaker": "Sara",
                 "en": "That's all, thank you.",
                 "ar": "هذا كل شيء، شكراً."
+              },
+              {
+                "speaker": "Waiter",
+                "en": "Waiter! The menu, please. I'm hungry and thirsty.",
+                "ar": "يا نادل! قائمة الطعام من فضلك. أنا جائع وعطشان."
+              },
+              {
+                "speaker": "Sara",
+                "en": "Here you are. The meal comes with water.",
+                "ar": "تفضّل. الوجبة تأتي مع الماء."
               }
             ]
           },
@@ -16584,13 +16644,13 @@
               },
               {
                 "speaker": "Assistant",
-                "en": "They're twenty dollars. They're cheap today.",
-                "ar": "سعره عشرون دولاراً. إنه رخيص اليوم."
+                "en": "They're twenty dollars. They're cheap here; they cost twenty-five in the other shop.",
+                "ar": "سعره عشرون دولاراً. إنه رخيص هنا؛ يكلّف خمسة وعشرين في المتجر الآخر."
               },
               {
                 "speaker": "Customer",
-                "en": "OK. Can I pay by cash?",
-                "ar": "حسناً. هل يمكنني الدفع نقداً؟"
+                "en": "OK. Can I pay by cash or card?",
+                "ar": "حسناً. هل يمكنني الدفع نقداً أم بالبطاقة؟"
               }
             ]
           },
@@ -18427,8 +18487,8 @@
               },
               {
                 "speaker": "Resident",
-                "en": "Go straight to the corner. It's on your right.",
-                "ar": "اذهب مباشرة إلى الزاوية. ستكون على يمينك."
+                "en": "Go straight to the corner of the street. It's on your right.",
+                "ar": "اذهب مباشرة إلى زاوية الشارع. ستكون على يمينك."
               },
               {
                 "speaker": "Visitor",
@@ -19190,8 +19250,8 @@
               },
               {
                 "speaker": "Ali",
-                "en": "I go on foot too. My work is near my home.",
-                "ar": "أنا أذهب سيراً على الأقدام أيضاً. عملي قريب من منزلي."
+                "en": "I go on foot too. My work is next to the bus stop.",
+                "ar": "أنا أذهب سيراً على الأقدام أيضاً. عملي بجانب موقف الحافلات."
               },
               {
                 "speaker": "Lina",
@@ -19200,8 +19260,8 @@
               },
               {
                 "speaker": "Ali",
-                "en": "No, by train. It's cheap.",
-                "ar": "لا، بالقطار. إنه رخيص."
+                "en": "No, by train. I don't have a car.",
+                "ar": "لا، بالقطار. ليس لديّ سيارة."
               }
             ]
           },
@@ -19731,8 +19791,8 @@
               },
               {
                 "speaker": "Clerk",
-                "en": "Go straight. It takes five minutes.",
-                "ar": "اذهب مباشرة. يستغرق خمس دقائق."
+                "en": "Go straight. It takes five minutes. It's the fastest route.",
+                "ar": "اذهب مباشرة. يستغرق خمس دقائق. إنه أسرع مسار."
               }
             ]
           },
@@ -20495,8 +20555,8 @@
               },
               {
                 "speaker": "Nurse",
-                "en": "Does your leg hurt too?",
-                "ar": "هل تؤلمك ساقك أيضاً؟"
+                "en": "Does your leg hurt too? And your eyes, ears and mouth?",
+                "ar": "هل تؤلمك ساقك أيضاً؟ وعيناك وأذناك وفمك؟"
               },
               {
                 "speaker": "Patient",
@@ -20857,8 +20917,8 @@
               },
               {
                 "speaker": "Patient",
-                "en": "Should I take medicine?",
-                "ar": "هل ينبغي أن آخذ دواءً؟"
+                "en": "Should I take medicine, nurse?",
+                "ar": "هل ينبغي أن آخذ دواءً يا ممرضة؟"
               },
               {
                 "speaker": "Nurse",
@@ -23123,8 +23183,8 @@
               },
               {
                 "speaker": "Ali",
-                "en": "I'm going to meet a friend this evening. Next week, I'm going on a trip.",
-                "ar": "سأقابل صديقاً هذا المساء. الأسبوع القادم سأذهب في رحلة."
+                "en": "My plan: I'm going to meet a friend this evening. Next week, I'm going on a trip.",
+                "ar": "خطتي: سأقابل صديقاً هذا المساء. الأسبوع القادم سأذهب في رحلة."
               },
               {
                 "speaker": "Maya",
@@ -23651,13 +23711,13 @@
               },
               {
                 "speaker": "Maya",
-                "en": "Yes, that works for me. Is there a problem with the café?",
-                "ar": "نعم، يناسبني. هل هناك مشكلة في المقهى؟"
+                "en": "Yes, that works for me. Don't cancel! Is there a problem with the café?",
+                "ar": "نعم، يناسبني. لا تلغِ الموعد! هل هناك مشكلة في المقهى؟"
               },
               {
                 "speaker": "Ali",
-                "en": "No. But can we change the place to the park? It's near my work.",
-                "ar": "لا. لكن هل يمكننا تغيير المكان إلى الحديقة؟ إنها قريبة من عملي."
+                "en": "No. But can we change the place to the park? I can't come earlier.",
+                "ar": "لا. لكن هل يمكننا تغيير المكان إلى الحديقة؟ لا أستطيع الحضور أبكر."
               },
               {
                 "speaker": "Maya",
@@ -23822,18 +23882,18 @@
               },
               {
                 "speaker": "Noor",
-                "en": "Hi Lina. Please confirm the place and time again. River Café at 5:30?",
-                "ar": "مرحباً لينا. أكّدي المكان والوقت مرة أخرى من فضلك. مقهى النهر في الخامسة والنصف؟"
+                "en": "Hi Lina. Thanks for your message. Please confirm the place and time: River Café at 5:30?",
+                "ar": "مرحباً لينا. شكراً على رسالتكِ. أكّدي المكان والوقت من فضلك: مقهى النهر في الخامسة والنصف؟"
               },
               {
                 "speaker": "Lina",
-                "en": "Yes. Friday at 5:30.",
-                "ar": "نعم. الجمعة في الخامسة والنصف."
+                "en": "Yes, Friday at 5:30. Reply soon.",
+                "ar": "نعم، الجمعة في الخامسة والنصف. ردّي قريباً."
               },
               {
                 "speaker": "Noor",
-                "en": "OK, confirmed. I'll bring the tickets. See you then.",
-                "ar": "حسناً، تم التأكيد. سأحضر التذاكر. أراكِ حينها."
+                "en": "Confirmed. I'll bring the tickets. See you then.",
+                "ar": "تم التأكيد. سأحضر التذاكر. أراكِ حينها."
               }
             ]
           },
@@ -24151,8 +24211,8 @@
             "dialogue": [
               {
                 "speaker": "Omar",
-                "en": "Hi Maya. I'm going to walk in the park on Saturday. Does four work for you?",
-                "ar": "مرحباً مايا. سأمشي في الحديقة يوم السبت. هل تناسبكِ الرابعة؟"
+                "en": "Hi Maya. I'm going to walk in the park this weekend, on Saturday. Does four work for you?",
+                "ar": "مرحباً مايا. سأمشي في الحديقة في عطلة نهاية الأسبوع، يوم السبت. هل تناسبكِ الرابعة؟"
               },
               {
                 "speaker": "Maya",
@@ -24161,8 +24221,8 @@
               },
               {
                 "speaker": "Omar",
-                "en": "River Park, at the entrance. Please confirm the place and time.",
-                "ar": "حديقة النهر، عند المدخل. أكّدي المكان والوقت من فضلك."
+                "en": "River Park, at the entrance. Please confirm the place and time. Reply today!",
+                "ar": "حديقة النهر، عند المدخل. أكّدي المكان والوقت من فضلك. ردّي اليوم!"
               },
               {
                 "speaker": "Maya",
