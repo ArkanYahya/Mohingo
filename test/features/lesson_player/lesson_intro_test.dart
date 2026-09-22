@@ -128,16 +128,20 @@ void main() {
       'Nice to meet you.',
       'Nice to meet you too.',
     ]);
+    // Each line is asked for in its own character's voice.
+    expect(tts.speakers, ['Maya', 'Omar', 'Maya', 'Omar']);
   });
 
   testWidgets('tapping a line reads just that line', (tester) async {
     final tts = await _pumpPlayer(tester);
     tts.spoken.clear();
+    tts.speakers.clear();
 
     await tester.tap(find.text("I'm Omar."));
     await tester.pumpAndSettle();
 
     expect(tts.spoken, ["I'm Omar."]);
+    expect(tts.speakers, ['Omar']);
   });
 
   testWidgets('the Arabic translation switch hides and shows every Arabic '

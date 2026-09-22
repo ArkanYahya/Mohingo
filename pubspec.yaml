@@ -60,3 +60,9 @@ flutter:
     - assets/content/en/A2/a2-course-bundle.json
     - assets/sounds/correct.wav
     - assets/sounds/incorrect.wav
+    # Bundled speech clips, one manifest and one clips folder per level
+    # (ADR 0008). Regenerate with tool/audio/generate_audio.py.
+    - assets/audio/en/A1/
+    - assets/audio/en/A1/clips/
+    - assets/audio/en/A2/
+    - assets/audio/en/A2/clips/

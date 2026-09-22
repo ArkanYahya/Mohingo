@@ -55,10 +55,12 @@ class LessonKeyPhrasesStep extends ConsumerWidget {
       return l10n.lessonIntroFromLevel(itemLevel.toUpperCase());
     }
 
+    // The raw phrase, slots and all: a bundled clip is keyed by it and
+    // renders each slot as a pause; the device engine does the same itself.
     void speak(String text) => ref
         .read(textToSpeechServiceProvider)
         .speak(
-          phraseForSpeech(text),
+          text,
           localeCode: 'en',
           rate: ref.read(ttsRatePreferenceProvider),
           pitch: ref.read(ttsPitchPreferenceProvider),

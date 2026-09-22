@@ -12,7 +12,9 @@ class BundledAudioTextToSpeechService implements TextToSpeechService {
     required ClipPlayer player,
     required TextToSpeechService fallback,
   }) : _index = index.catchError((Object _) => const AudioClipIndex.empty()),
+       // ignore: prefer_initializing_formals
        _player = player,
+       // ignore: prefer_initializing_formals
        _fallback = fallback {
     // The audio card auto-reveals its transcript on an engine error, which
     // only the device engine can report — pass its states through.

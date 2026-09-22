@@ -131,9 +131,11 @@ void main() {
     for (final seed in AppColorSeed.values) {
       expect(find.text(seed.labelEn), findsOneWidget);
     }
-    expect(find.byType(Slider), findsNWidgets(2));
+    // One slider: voice speed. Pitch went with the device engine — bundled
+    // clips have none to change (ADR 0008).
+    expect(find.byType(Slider), findsOneWidget);
     expect(find.text(l10n.settingsSlower), findsOneWidget);
-    expect(find.text(l10n.settingsHigher), findsOneWidget);
+    expect(find.text(l10n.settingsFaster), findsOneWidget);
     expect(find.text(l10n.settingsVersion(kAppVersion)), findsOneWidget);
     expect(find.text(l10n.settingsResetProgressTitle), findsOneWidget);
   });
