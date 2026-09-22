@@ -2,7 +2,7 @@
  "schemaVersion": 1,
  "levelId": "a1",
  "contentVersion": "A1-COMPLETE-2026.09.22-3",
- "generatedAt": "2026-09-22T20:15:15Z",
+ "generatedAt": "2026-09-22T20:56:28Z",
  "engine": {
   "name": "kokoro-onnx/kokoro-v1.0",
   "speed": 1.0
@@ -1212,7 +1212,7 @@
    "_": "clips/dfa8ee31a91ce1c4.m4a"
   },
   "425b4a6e22018c9b": {
-   "_": "clips/a5f4363114b7f0b7.m4a"
+   "_": "clips/7a3c527449cbb4c4.m4a"
   },
   "42685f11da91a55b": {
    "_": "clips/ddb2b38615c70cf9.m4a"
@@ -2166,7 +2166,7 @@
    "_": "clips/3258e066f26baf04.m4a"
   },
   "7890208a110eaf1c": {
-   "B": "clips/05ec9d4693ed733c.m4a"
+   "B": "clips/7b20c75d7495dd7f.m4a"
   },
   "78988010b890ce6f": {
    "_": "clips/093a8df5904126ab.m4a"
@@ -2362,7 +2362,7 @@
    "_": "clips/035c6b018253bed6.m4a"
   },
   "82b67723be8a9a45": {
-   "_": "clips/816ae4bcec7cfdc8.m4a"
+   "_": "clips/e83dd158d2547ebe.m4a"
   },
   "834c5b81026f63e0": {
    "Sara": "clips/0909c4f23058c303.m4a"
@@ -2963,7 +2963,7 @@
    "_": "clips/0ede572f07dc3c3c.m4a"
   },
   "a422a9a28c7a582c": {
-   "_": "clips/531ae12f5ac860ab.m4a"
+   "_": "clips/93d7408e5ce7212d.m4a"
   },
   "a4b48a81cdab1e1a": {
    "_": "clips/40a9113a9c7fefb0.m4a"

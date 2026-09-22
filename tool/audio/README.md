@@ -23,7 +23,7 @@ python tool/audio/generate_audio.py --level A1            # generate what is mis
 python tool/audio/generate_audio.py --level A1 --prune    # also delete clips nothing references
 python tool/audio/generate_audio.py --level A1 --dry-run  # counts and unmapped speakers only
 python tool/audio/generate_audio.py --level A1 --limit 5  # smoke run
-python tool/audio/generate_audio.py --level A1 --check    # transcribe new clips and flag drift
+python tool/audio/generate_audio.py --level A1 --check    # transcribe new clips (from the WAV cache) and flag drift
 python -m pytest tool/audio/tests -q                      # the tool's own tests
 ```
 
@@ -33,7 +33,7 @@ A full level takes about 0.5 s of compute per second of audio on a laptop CPU: r
 
 `mohingo_audio/speakables.py` lists every bundle string the app speaks and the role it is spoken in (`_` teacher, a dialogue speaker, a speaking task's `partnerSpeaker` for its partner turns, or `partner` for a task that names nobody). It mirrors `lib/content/audio/speakable_strings.dart`; the level gate `test/content/levels/level_audio_test.dart` holds the manifest to the Dart list, so a new call site in the app must be added to both.
 
-For each string the tool chooses a voice from `cast.json`, turns the text into what the engine should say (`speech.py`: `{slots}`, `...` and ` / ` become pauses, a `Name: …` transcript is rendered per speaker), applies `lexicon.json` for names the engine mispronounces, renders with Kokoro, pads and normalises, encodes to mono AAC at 32 kbps, and writes `assets/audio/en/<LEVEL>/manifest.json` keyed by the shared text key (`textkey.py`).
+For each string the tool chooses a voice from `cast.json`, turns the text into what the engine should say (`speech.py`: `{slots}`, `...` and ` / ` become pauses, a `Name: …` transcript is rendered per speaker, and a name spelled out with hyphens — `S-A-R-A` — is read letter by letter, which the phonemizer would otherwise run together as one word), applies `lexicon.json` for names the engine mispronounces, renders with Kokoro, pads and normalises, encodes to mono AAC at 32 kbps, and writes `assets/audio/en/<LEVEL>/manifest.json` keyed by the shared text key (`textkey.py`).
 
 Clip ids are hashes of the recipe (engine, speed, rules version, voice, phonemes). Changing a voice in the cast or a word in the lexicon changes the ids of the affected clips, so the next run regenerates exactly those; `--prune` removes the old files.
 

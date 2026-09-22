@@ -162,12 +162,15 @@ def main() -> int:
         print(f"WARNING: {len(missing)} clips still missing (limit reached?)")
 
     if a.check and made:
-        check(made, clips_dir, texts_by_key, clips)
+        check(made, cache_dir, texts_by_key, clips)
     return 0
 
 
-def check(made, clips_dir, texts_by_key, clips):
-    """Transcribe the clips generated in this run and print the ones whose words drift."""
+def check(made, cache_dir, texts_by_key, clips):
+    """Transcribe the clips generated in this run and print the ones whose words drift.
+
+    Reads the WAV cached for each clip, not the .m4a: libsndfile does not decode AAC.
+    """
     import difflib
     import re
 
@@ -186,7 +189,7 @@ def check(made, clips_dir, texts_by_key, clips):
     model = WhisperModel("base.en", device="cpu", compute_type="int8")
     flagged = 0
     for cid in made:
-        audio, _sr = sf.read(str(clips_dir / f"{cid}.m4a"), dtype="float32")
+        audio, _sr = sf.read(str(cache_dir / f"{cid}.wav"), dtype="float32")
         segs, _ = model.transcribe(audio, language="en", beam_size=5, condition_on_previous_text=False)
         heard = " ".join(s.text for s in segs).strip()
         ratio = difflib.SequenceMatcher(None, norm(text_for[cid]), norm(heard)).ratio()

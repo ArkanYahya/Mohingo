@@ -1,4 +1,4 @@
-from mohingo_audio.speech import segments_for, split_labelled
+from mohingo_audio.speech import segments_for, spell_out, split_labelled
 
 
 def test_placeholders_become_pauses_and_keep_question():
@@ -18,6 +18,23 @@ def test_slash_and_ellipsis():
 def test_plain_text_untouched():
     assert segments_for("Where do you live?") == ["Where do you live?"]
     assert segments_for("Good morning.") == ["Good morning."]
+
+
+def test_a_spelled_name_is_read_letter_by_letter():
+    # The phonemizer read "S-A-R-A" as one word, schwas and all; with a stop
+    # after each capital every letter gets its name and a beat.
+    assert spell_out("S-A-R-A") == "S. A. R. A."
+    assert spell_out("O-M-A-R.") == "O. M. A. R."
+    assert spell_out("My name is Nadia Karim. Nadia: N-A-D-I-A. Karim: K-A-R-I-M.") == (
+        "My name is Nadia Karim. Nadia: N. A. D. I. A. Karim: K. A. R. I. M."
+    )
+    assert segments_for("S-A-R-A") == ["S. A. R. A."]
+    assert segments_for("Spell it: {name}. O-M-A-R.") == ["Spell it:", "O. M. A. R"]
+
+
+def test_ordinary_hyphenated_words_are_not_spellings():
+    for text in ["well-known", "twenty-five", "e-mail", "a well-known place", "A-1 service"]:
+        assert spell_out(text) == text
 
 
 def test_split_labelled_only_on_known_speakers():
