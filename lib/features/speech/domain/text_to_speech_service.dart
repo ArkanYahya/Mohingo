@@ -9,16 +9,19 @@ class TtsVoice {
   final String localeCode;
 }
 
-/// Reads text aloud via the OS's on-device text-to-speech engine.
+/// flutter_tts's rate scale runs 0.0–1.0 with this value as normal speed;
+/// bundled clips map it to a playback rate (see
+/// `BundledAudioTextToSpeechService.playbackRateFor`).
+const kNormalTtsRate = 0.5;
+
+/// Reads text aloud.
 ///
-/// The bundle ships no pre-recorded audio for listening/pronunciation
-/// content — every `audioTranscript`/vocabulary/grammar example is read via
-/// this interface at runtime. See docs/DATA_MODEL.md.
-///
-/// This is the seam a future `CloudTextToSpeechService` swaps into via a
-/// provider override (see `speech_providers.dart`) — callers only ever
-/// depend on this interface, never on `flutter_tts` directly. See
-/// docs/ARCHITECTURE.md's speech-capability strategy.
+/// The app's binding plays the pre-generated clip a level ships for the
+/// text (ADR 0008, docs/DATA_MODEL.md's audio manifest) and hands anything
+/// without a clip to the OS's on-device text-to-speech engine. Callers only
+/// ever depend on this interface, never on `flutter_tts` or `audioplayers`
+/// directly (see `speech_providers.dart` and docs/ARCHITECTURE.md's
+/// speech-capability strategy).
 abstract interface class TextToSpeechService {
   /// Voices the device reports for [localeCode] (e.g. `"en"` or `"en-US"`).
   /// May be empty on platforms/OS versions that don't expose voice listing —
@@ -35,6 +38,11 @@ abstract interface class TextToSpeechService {
     double? rate,
     double? pitch,
     String? voiceName,
+
+    /// Who is speaking, when the content says: a dialogue speaker label or
+    /// `kPartnerSpeaker`. Chooses the voice of a bundled clip; the device
+    /// engine ignores it.
+    String? speaker,
   });
 
   Future<void> stop();

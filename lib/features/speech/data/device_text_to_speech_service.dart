@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter_tts/flutter_tts.dart';
 
+import '../domain/speech_text.dart';
 import '../domain/text_to_speech_service.dart';
 
 /// Wraps `package:flutter_tts` (Android `TextToSpeech` / iOS
@@ -67,6 +68,7 @@ class DeviceTextToSpeechService implements TextToSpeechService {
     double? rate,
     double? pitch,
     String? voiceName,
+    String? speaker,
   }) async {
     await _tts.setLanguage(localeCode);
     if (rate != null) await _tts.setSpeechRate(rate);
@@ -74,7 +76,10 @@ class DeviceTextToSpeechService implements TextToSpeechService {
     if (voiceName != null) {
       await _tts.setVoice({'name': voiceName, 'locale': localeCode});
     }
-    await _tts.speak(text).timeout(_speakTimeout(text), onTimeout: () => null);
+    // A phrase's `{slots}` become pauses here; a bundled clip renders them.
+    await _tts
+        .speak(phraseForSpeech(text))
+        .timeout(_speakTimeout(text), onTimeout: () => null);
   }
 
   @override

@@ -1,13 +1,14 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../../core/preferences/shared_preferences_provider.dart';
+import '../domain/text_to_speech_service.dart';
 
 part 'tts_preferences_provider.g.dart';
 
 const _rateKey = 'settings.tts.rate';
 const _pitchKey = 'settings.tts.pitch';
 
-const kDefaultTtsRate = 0.5; // flutter_tts's 0.0-1.0 scale; 0.5 ~= normal
+const kDefaultTtsRate = kNormalTtsRate; // flutter_tts's 0.0-1.0 scale
 const kDefaultTtsPitch = 1.0; // flutter_tts's ~0.5-2.0 scale; 1.0 = normal
 
 /// Speaking rate, persisted immediately on change — see

@@ -82,6 +82,10 @@ class FakeTextToSpeechService implements TextToSpeechService {
 
   /// The `rate` each [spoken] entry was requested at, index for index.
   final List<double?> rates = [];
+
+  /// The `speaker` each [spoken] entry was requested for, index for index.
+  final List<String?> speakers = [];
+  int stopCalls = 0;
   final _playbackStateController =
       StreamController<TtsPlaybackState>.broadcast();
 
@@ -96,13 +100,17 @@ class FakeTextToSpeechService implements TextToSpeechService {
     double? rate,
     double? pitch,
     String? voiceName,
+    String? speaker,
   }) async {
     spoken.add(text);
     rates.add(rate);
+    speakers.add(speaker);
   }
 
   @override
-  Future<void> stop() async {}
+  Future<void> stop() async {
+    stopCalls++;
+  }
 
   @override
   Stream<TtsPlaybackState> get playbackState => _playbackStateController.stream;
