@@ -1,0 +1,37 @@
+{
+  "_comment": "Kokoro v1.0 voice ids. teacher reads everything without a speaker; partner reads the other person in speaking tasks; speakers are dialogue labels. Unlisted labels get a voice from the pool of their gender (genders below), else by a stable hash, and the tool prints them.",
+  "teacher": "af_bella",
+  "partner": "am_michael",
+  "speakers": {
+    "Maya": "af_heart",
+    "Sara": "af_aoede",
+    "Anna": "af_sarah",
+    "Lina": "af_kore",
+    "Noor": "af_kore",
+    "Huda": "af_sarah",
+    "Omar": "am_michael",
+    "Ali": "am_fenrir",
+    "Daniel": "am_puck",
+    "A": "af_heart",
+    "B": "am_fenrir"
+  },
+  "female": ["af_heart", "af_sarah", "af_aoede", "af_kore"],
+  "male": ["am_michael", "am_fenrir", "am_puck"],
+  "genders": {
+    "Rania": "f", "Basma": "f", "Faris": "m", "Yousef": "m", "Karim": "m", "Suha": "f", "Ruba": "f",
+    "Nadia": "f", "Salma": "f", "Ghada": "f", "Iman": "f", "Sawsan": "f", "Maha": "f", "Dina": "f",
+    "Adel": "m", "Tamer": "m", "Sami": "m", "Ghassan": "m", "Layla": "f", "Bashar": "m", "Hind": "f",
+    "Dalia": "f", "Ziad": "m", "Hanan": "f", "Kamal": "m", "Fouad": "m", "Widad": "f", "Zaid": "m",
+    "Kareem": "m", "Maher": "m", "Idris": "m", "Yaser": "m", "Nizar": "m", "Salwa": "f", "Rawan": "f",
+    "Maysoon": "f", "Basel": "m", "Samah": "f", "Tariq": "m", "Hiba": "f", "Basil": "m", "Fadi": "m",
+    "Hazim": "m", "Amal": "f", "Dima": "f", "Sameer": "m", "Nour": "f", "Ammar": "m", "Maryam": "f",
+    "Ilham": "f", "Mr Jabbar": "m", "Tareq": "m", "Hadeel": "f", "Muna": "f", "Hisham": "m", "Bilal": "m",
+    "Yusuf": "m", "Adnan": "m", "Jamal": "m", "Munir": "m", "Rana": "f", "Hala": "f", "Ruqayya": "f",
+    "Marwan": "m", "Nawal": "f", "Dalal": "f", "Salim": "m", "Hoda": "f", "Samer": "m", "Suad": "f",
+    "Hani": "m", "Bashir": "m", "Tarek": "m", "Nabil": "m", "Tawfiq": "m", "Bushra": "f", "Rashid": "m",
+    "Jalal": "m", "Amjad": "m", "Samir": "m", "Rami": "m",
+    "Waiter": "m", "Guard": "m", "Doctor": "m", "Nurse": "f", "Receptionist": "f", "Clerk": "m",
+    "Assistant": "f", "Operator": "f", "Customer": "m", "Visitor": "f", "Passenger": "m", "Patient": "f",
+    "Resident": "m"
+  }
+}

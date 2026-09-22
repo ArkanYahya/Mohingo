@@ -1,0 +1,9 @@
+{
+  "_comment": "word -> Kokoro/espeak IPA. Replaces the phonemes Kokoro would give the word on its own. Add a word when a clip mispronounces a name or place; every clip containing it is regenerated on the next run.",
+  "Kirkuk": "kɪɹkˈuːk",
+  "Basra": "bˈʌsɹə",
+  "Mosul": "mˈoʊsəl",
+  "Erbil": "ˈɛɹbɪl",
+  "Najaf": "nˈædʒæf",
+  "Karbala": "kˈɑːɹbələ"
+}

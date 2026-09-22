@@ -17,6 +17,8 @@ def segments_for(text: str) -> list[str]:
     "/" as "slash" and turn a bare "..." into noise.
     """
     text = text.strip()
+    if " / " not in text and not _SLOT_OR_ELLIPSIS.search(text):
+        return [text]
     parts = re.split(r"\s*/\s*", text) if " / " in text else [text]
     out: list[str] = []
     for p in parts:
