@@ -34,10 +34,9 @@ class BundledAudioTextToSpeechService implements TextToSpeechService {
 
   /// Longer than any clip could be at [playbackRate], so a player that
   /// never reports completion cannot pin a play button forever.
-  static Duration playbackTimeout(String text, double playbackRate) =>
-      Duration(
-        milliseconds: ((5 + text.length / 6) * 1000 / playbackRate).round(),
-      );
+  static Duration playbackTimeout(String text, double playbackRate) => Duration(
+    milliseconds: ((5 + text.length / 6) * 1000 / playbackRate).round(),
+  );
 
   @override
   Stream<TtsPlaybackState> get playbackState => _state.stream;

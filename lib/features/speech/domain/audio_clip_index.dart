@@ -90,8 +90,7 @@ class AudioClipIndex {
 
   final Map<String, Map<String, String>> _clips;
 
-  int get clipCount =>
-      _clips.values.fold(0, (n, roles) => n + roles.length);
+  int get clipCount => _clips.values.fold(0, (n, roles) => n + roles.length);
 
   /// The clip for [text] in [speaker]'s voice, else the teacher's, else any
   /// voice at all — a clip in the wrong voice beats the device engine.

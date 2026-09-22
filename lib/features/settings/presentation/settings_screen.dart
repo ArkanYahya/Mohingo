@@ -681,7 +681,6 @@ class _TtsRateBlock extends ConsumerWidget {
   }
 }
 
-
 /// A slider with its two ends named under it.
 class _LabelledSlider extends StatelessWidget {
   const _LabelledSlider({

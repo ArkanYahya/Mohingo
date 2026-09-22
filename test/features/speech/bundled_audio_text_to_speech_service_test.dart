@@ -58,24 +58,27 @@ void main() {
     );
   });
 
-  test('plays the clip for the speaker and reports playing then stopped', () async {
-    final states = <TtsPlaybackState>[];
-    final sub = service.playbackState.listen(states.add);
-    final done = service.speak(
-      'Good morning.',
-      localeCode: 'en',
-      speaker: 'Omar',
-      rate: 0.5,
-    );
-    await Future<void>.delayed(Duration.zero);
-    expect(player.played, [('assets/audio/en/A1/clips/o.m4a', 1.0)]);
-    expect(fallback.spoken, isEmpty);
-    player.current!.complete();
-    await done;
-    await Future<void>.delayed(Duration.zero);
-    expect(states, [TtsPlaybackState.playing, TtsPlaybackState.stopped]);
-    await sub.cancel();
-  });
+  test(
+    'plays the clip for the speaker and reports playing then stopped',
+    () async {
+      final states = <TtsPlaybackState>[];
+      final sub = service.playbackState.listen(states.add);
+      final done = service.speak(
+        'Good morning.',
+        localeCode: 'en',
+        speaker: 'Omar',
+        rate: 0.5,
+      );
+      await Future<void>.delayed(Duration.zero);
+      expect(player.played, [('assets/audio/en/A1/clips/o.m4a', 1.0)]);
+      expect(fallback.spoken, isEmpty);
+      player.current!.complete();
+      await done;
+      await Future<void>.delayed(Duration.zero);
+      expect(states, [TtsPlaybackState.playing, TtsPlaybackState.stopped]);
+      await sub.cancel();
+    },
+  );
 
   test('falls back to the device engine when there is no clip', () async {
     await service.speak(
@@ -107,7 +110,10 @@ void main() {
   });
 
   test('the timeout scales with the text and the rate', () {
-    final normal = BundledAudioTextToSpeechService.playbackTimeout('x' * 60, 1.0);
+    final normal = BundledAudioTextToSpeechService.playbackTimeout(
+      'x' * 60,
+      1.0,
+    );
     final slow = BundledAudioTextToSpeechService.playbackTimeout('x' * 60, 0.6);
     expect(normal, const Duration(seconds: 15));
     expect(slow, const Duration(seconds: 25));
