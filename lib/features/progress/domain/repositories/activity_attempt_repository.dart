@@ -68,6 +68,19 @@ abstract interface class ActivityAttemptRepository {
     required DateTime asOf,
   });
 
+  /// Every activity this learner has an attempt for, mapped to the lesson
+  /// they answered it in (`null` where no attempt of theirs recorded one —
+  /// a review session, or a capstone task).
+  ///
+  /// Used to decide whether a content update stranded any of their
+  /// evidence: an attempt row outlives the activity it names, so an
+  /// activity that has left the bundle leaves the row behind pointing at
+  /// nothing. The lesson is what places that row in a unit afterwards,
+  /// since the activity is no longer in the bundle to be looked up.
+  Future<Map<String, String?>> attemptedActivityLessons({
+    required int learnerId,
+  });
+
   /// The most recently attempted row for one learner + activity, or `null`
   /// if none exists yet. Used to detect when a deferred
   /// `pending_online_refinements` grade has actually landed — see

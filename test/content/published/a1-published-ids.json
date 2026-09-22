@@ -1,0 +1,3612 @@
+{
+  "courseId": "EN-A1-V2",
+  "contentVersion": "A1-COMPLETE-2026.09.22",
+  "unitIds": [
+    "A1-U0",
+    "A1-U1",
+    "A1-U10",
+    "A1-U11",
+    "A1-U12",
+    "A1-U2",
+    "A1-U3",
+    "A1-U4",
+    "A1-U5",
+    "A1-U6",
+    "A1-U7",
+    "A1-U8",
+    "A1-U9"
+  ],
+  "lessonIds": [
+    "A1-U0-L1",
+    "A1-U0-L2",
+    "A1-U0-L3",
+    "A1-U0-L4",
+    "A1-U0-L5",
+    "A1-U1-L1",
+    "A1-U1-L2",
+    "A1-U1-L3",
+    "A1-U1-L4",
+    "A1-U1-L5",
+    "A1-U1-L6",
+    "A1-U1-L7",
+    "A1-U10-L1",
+    "A1-U10-L2",
+    "A1-U10-L3",
+    "A1-U10-L4",
+    "A1-U10-L5",
+    "A1-U10-L6",
+    "A1-U10-L7",
+    "A1-U11-L1",
+    "A1-U11-L2",
+    "A1-U11-L3",
+    "A1-U11-L4",
+    "A1-U11-L5",
+    "A1-U11-L6",
+    "A1-U11-L7",
+    "A1-U12-L1",
+    "A1-U12-L2",
+    "A1-U12-L3",
+    "A1-U12-L4",
+    "A1-U12-L5",
+    "A1-U12-L6",
+    "A1-U12-L7",
+    "A1-U2-L1",
+    "A1-U2-L2",
+    "A1-U2-L3",
+    "A1-U2-L4",
+    "A1-U2-L5",
+    "A1-U2-L6",
+    "A1-U2-L7",
+    "A1-U3-L1",
+    "A1-U3-L2",
+    "A1-U3-L3",
+    "A1-U3-L4",
+    "A1-U3-L5",
+    "A1-U3-L6",
+    "A1-U3-L7",
+    "A1-U4-L1",
+    "A1-U4-L2",
+    "A1-U4-L3",
+    "A1-U4-L4",
+    "A1-U4-L5",
+    "A1-U4-L6",
+    "A1-U4-L7",
+    "A1-U5-L1",
+    "A1-U5-L2",
+    "A1-U5-L3",
+    "A1-U5-L4",
+    "A1-U5-L5",
+    "A1-U5-L6",
+    "A1-U5-L7",
+    "A1-U6-L1",
+    "A1-U6-L2",
+    "A1-U6-L3",
+    "A1-U6-L4",
+    "A1-U6-L5",
+    "A1-U6-L6",
+    "A1-U6-L7",
+    "A1-U7-L1",
+    "A1-U7-L2",
+    "A1-U7-L3",
+    "A1-U7-L4",
+    "A1-U7-L5",
+    "A1-U7-L6",
+    "A1-U7-L7",
+    "A1-U8-L1",
+    "A1-U8-L2",
+    "A1-U8-L3",
+    "A1-U8-L4",
+    "A1-U8-L5",
+    "A1-U8-L6",
+    "A1-U8-L7",
+    "A1-U9-L1",
+    "A1-U9-L2",
+    "A1-U9-L3",
+    "A1-U9-L4",
+    "A1-U9-L5",
+    "A1-U9-L6",
+    "A1-U9-L7"
+  ],
+  "activities": {
+    "A1-FINAL-ASSESS-L01": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.LISTENING.UNDERSTAND_EVERYDAY_INFO"
+      ]
+    },
+    "A1-FINAL-ASSESS-L02": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.LISTENING.UNDERSTAND_EVERYDAY_INFO"
+      ]
+    },
+    "A1-FINAL-ASSESS-L03": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.LISTENING.UNDERSTAND_EVERYDAY_INFO"
+      ]
+    },
+    "A1-FINAL-ASSESS-L04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.LISTENING.UNDERSTAND_EVERYDAY_INFO"
+      ]
+    },
+    "A1-FINAL-ASSESS-L05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.LISTENING.UNDERSTAND_EVERYDAY_INFO"
+      ]
+    },
+    "A1-FINAL-ASSESS-L06": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.LISTENING.UNDERSTAND_EVERYDAY_INFO"
+      ]
+    },
+    "A1-FINAL-ASSESS-L07": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.LISTENING.UNDERSTAND_EVERYDAY_INFO"
+      ]
+    },
+    "A1-FINAL-ASSESS-L08": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.LISTENING.UNDERSTAND_EVERYDAY_INFO"
+      ]
+    },
+    "A1-FINAL-ASSESS-L09": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.LISTENING.UNDERSTAND_EVERYDAY_INFO"
+      ]
+    },
+    "A1-FINAL-ASSESS-L10": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.LISTENING.UNDERSTAND_EVERYDAY_INFO"
+      ]
+    },
+    "A1-FINAL-ASSESS-L11": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.LISTENING.UNDERSTAND_EVERYDAY_INFO"
+      ]
+    },
+    "A1-FINAL-ASSESS-L12": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.LISTENING.UNDERSTAND_EVERYDAY_INFO"
+      ]
+    },
+    "A1-FINAL-ASSESS-L13": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.LISTENING.UNDERSTAND_EVERYDAY_INFO"
+      ]
+    },
+    "A1-FINAL-ASSESS-L14": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.LISTENING.UNDERSTAND_EVERYDAY_INFO"
+      ]
+    },
+    "A1-FINAL-ASSESS-L15": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.LISTENING.UNDERSTAND_EVERYDAY_INFO"
+      ]
+    },
+    "A1-FINAL-ASSESS-L16": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.LISTENING.UNDERSTAND_EVERYDAY_INFO"
+      ]
+    },
+    "A1-FINAL-ASSESS-M01": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.MEDIATION.RELAY_SIMPLE_INFORMATION"
+      ]
+    },
+    "A1-FINAL-ASSESS-M02": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.MEDIATION.RELAY_SIMPLE_INFORMATION"
+      ]
+    },
+    "A1-FINAL-ASSESS-R01": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.READING.UNDERSTAND_SIMPLE_TEXTS"
+      ]
+    },
+    "A1-FINAL-ASSESS-R02": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.READING.UNDERSTAND_SIMPLE_TEXTS"
+      ]
+    },
+    "A1-FINAL-ASSESS-R03": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.READING.UNDERSTAND_SIMPLE_TEXTS"
+      ]
+    },
+    "A1-FINAL-ASSESS-R04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.READING.UNDERSTAND_SIMPLE_TEXTS"
+      ]
+    },
+    "A1-FINAL-ASSESS-R05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.READING.UNDERSTAND_SIMPLE_TEXTS"
+      ]
+    },
+    "A1-FINAL-ASSESS-R06": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.READING.UNDERSTAND_SIMPLE_TEXTS"
+      ]
+    },
+    "A1-FINAL-ASSESS-R07": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.READING.UNDERSTAND_SIMPLE_TEXTS"
+      ]
+    },
+    "A1-FINAL-ASSESS-R08": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.READING.UNDERSTAND_SIMPLE_TEXTS"
+      ]
+    },
+    "A1-FINAL-ASSESS-R09": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.READING.UNDERSTAND_SIMPLE_TEXTS"
+      ]
+    },
+    "A1-FINAL-ASSESS-R10": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.READING.UNDERSTAND_SIMPLE_TEXTS"
+      ]
+    },
+    "A1-FINAL-ASSESS-R11": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.READING.UNDERSTAND_SIMPLE_TEXTS"
+      ]
+    },
+    "A1-FINAL-ASSESS-R12": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.READING.UNDERSTAND_SIMPLE_TEXTS"
+      ]
+    },
+    "A1-FINAL-ASSESS-R13": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.READING.UNDERSTAND_SIMPLE_TEXTS"
+      ]
+    },
+    "A1-FINAL-ASSESS-R14": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.READING.UNDERSTAND_SIMPLE_TEXTS"
+      ]
+    },
+    "A1-FINAL-ASSESS-R15": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.READING.UNDERSTAND_SIMPLE_TEXTS"
+      ]
+    },
+    "A1-FINAL-ASSESS-R16": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.READING.UNDERSTAND_SIMPLE_TEXTS"
+      ]
+    },
+    "A1-FINAL-ASSESS-S01": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.PRODUCTION.DESCRIBE_FAMILIAR_MATTER"
+      ]
+    },
+    "A1-FINAL-ASSESS-S02": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.INTERACTION.HANDLE_SIMPLE_EXCHANGE"
+      ]
+    },
+    "A1-FINAL-ASSESS-S03": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.INTERACTION.HANDLE_SIMPLE_EXCHANGE"
+      ]
+    },
+    "A1-FINAL-ASSESS-S04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.PRODUCTION.DESCRIBE_FAMILIAR_MATTER"
+      ]
+    },
+    "A1-FINAL-ASSESS-W01": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.WRITING.WRITE_SIMPLE_CONNECTED_TEXT"
+      ]
+    },
+    "A1-FINAL-ASSESS-W02": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.WRITING.WRITE_SIMPLE_CONNECTED_TEXT"
+      ]
+    },
+    "A1-FINAL-MISSION-A01": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.ACTION.COMPLETE_MULTI_STEP_MISSION",
+        "A1.EXIT.LISTENING.UNDERSTAND_EVERYDAY_INFO"
+      ]
+    },
+    "A1-FINAL-MISSION-A02": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.ACTION.COMPLETE_MULTI_STEP_MISSION",
+        "A1.EXIT.WRITING.WRITE_SIMPLE_CONNECTED_TEXT"
+      ]
+    },
+    "A1-FINAL-MISSION-A03": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.ACTION.COMPLETE_MULTI_STEP_MISSION",
+        "A1.EXIT.INTERACTION.HANDLE_SIMPLE_EXCHANGE"
+      ]
+    },
+    "A1-FINAL-MISSION-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.ACTION.COMPLETE_MULTI_STEP_MISSION",
+        "A1.EXIT.LISTENING.UNDERSTAND_EVERYDAY_INFO"
+      ]
+    },
+    "A1-FINAL-MISSION-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.ACTION.COMPLETE_MULTI_STEP_MISSION",
+        "A1.EXIT.READING.UNDERSTAND_SIMPLE_TEXTS"
+      ]
+    },
+    "A1-FINAL-MISSION-A06": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.ACTION.COMPLETE_MULTI_STEP_MISSION",
+        "A1.EXIT.MEDIATION.RELAY_SIMPLE_INFORMATION"
+      ]
+    },
+    "A1-FINAL-MISSION-A07": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.ACTION.COMPLETE_MULTI_STEP_MISSION",
+        "A1.EXIT.READING.UNDERSTAND_SIMPLE_TEXTS"
+      ]
+    },
+    "A1-FINAL-MISSION-A08": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.ACTION.COMPLETE_MULTI_STEP_MISSION",
+        "A1.EXIT.INTERACTION.HANDLE_SIMPLE_EXCHANGE"
+      ]
+    },
+    "A1-FINAL-MISSION-A09": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.ACTION.COMPLETE_MULTI_STEP_MISSION",
+        "A1.EXIT.LISTENING.UNDERSTAND_EVERYDAY_INFO"
+      ]
+    },
+    "A1-FINAL-MISSION-A10": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.ACTION.COMPLETE_MULTI_STEP_MISSION",
+        "A1.EXIT.MEDIATION.RELAY_SIMPLE_INFORMATION"
+      ]
+    },
+    "A1-FINAL-MISSION-A11": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.ACTION.COMPLETE_MULTI_STEP_MISSION",
+        "A1.EXIT.INTERACTION.HANDLE_SIMPLE_EXCHANGE"
+      ]
+    },
+    "A1-FINAL-MISSION-A12": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.EXIT.ACTION.COMPLETE_MULTI_STEP_MISSION",
+        "A1.EXIT.WRITING.WRITE_SIMPLE_CONNECTED_TEXT"
+      ]
+    },
+    "A1-U0-L1-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U0.INTERACTION.RESPOND_GREETING"
+      ]
+    },
+    "A1-U0-L1-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U0.INTERACTION.RESPOND_GREETING"
+      ]
+    },
+    "A1-U0-L1-A03": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U0.INTERACTION.RESPOND_GREETING"
+      ]
+    },
+    "A1-U0-L1-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U0.INTERACTION.RESPOND_GREETING"
+      ]
+    },
+    "A1-U0-L2-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U0.LISTENING.FOLLOW_APP_INSTRUCTION"
+      ]
+    },
+    "A1-U0-L2-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U0.LISTENING.FOLLOW_APP_INSTRUCTION"
+      ]
+    },
+    "A1-U0-L2-A03": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U0.LISTENING.FOLLOW_APP_INSTRUCTION"
+      ]
+    },
+    "A1-U0-L2-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U0.LISTENING.FOLLOW_APP_INSTRUCTION"
+      ]
+    },
+    "A1-U0-L3-A01": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U0.LISTENING.UNDERSTAND_SPELLED_NAME"
+      ]
+    },
+    "A1-U0-L3-A02": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U0.LISTENING.UNDERSTAND_SPELLED_NAME"
+      ]
+    },
+    "A1-U0-L3-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U0.PRODUCTION.SPELL_NAME"
+      ]
+    },
+    "A1-U0-L3-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U0.PRODUCTION.SPELL_NAME"
+      ]
+    },
+    "A1-U0-L4-A01": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U0.LISTENING.UNDERSTAND_PERSONAL_NUMBER"
+      ]
+    },
+    "A1-U0-L4-A02": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U0.LISTENING.UNDERSTAND_PERSONAL_NUMBER"
+      ]
+    },
+    "A1-U0-L4-A03": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U0.LISTENING.UNDERSTAND_PERSONAL_NUMBER"
+      ]
+    },
+    "A1-U0-L5-A01": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U0.INTERACTION.REGISTER_FOR_CLASS"
+      ]
+    },
+    "A1-U0-L5-A02": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U0.PRODUCTION.SPELL_NAME"
+      ]
+    },
+    "A1-U0-L5-A03": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U0.LISTENING.UNDERSTAND_PERSONAL_NUMBER"
+      ]
+    },
+    "A1-U0-L5-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U0.LISTENING.FOLLOW_APP_INSTRUCTION"
+      ]
+    },
+    "A1-U0-L5-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U0.INTERACTION.REGISTER_FOR_CLASS"
+      ]
+    },
+    "A1-U1-L1-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U1.LISTENING.UNDERSTAND_PERSONAL_INFO"
+      ]
+    },
+    "A1-U1-L1-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U1.PRODUCTION.INTRODUCE_SELF"
+      ]
+    },
+    "A1-U1-L1-A03": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U1.PRODUCTION.INTRODUCE_SELF"
+      ]
+    },
+    "A1-U1-L1-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U1.INTERACTION.ASK_NAME"
+      ]
+    },
+    "A1-U1-L2-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U1.LISTENING.UNDERSTAND_PERSONAL_INFO"
+      ]
+    },
+    "A1-U1-L2-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U1.PRODUCTION.STATE_ORIGIN"
+      ]
+    },
+    "A1-U1-L2-A03": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U1.PRODUCTION.STATE_ORIGIN"
+      ]
+    },
+    "A1-U1-L2-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U1.INTERACTION.ASK_ORIGIN"
+      ]
+    },
+    "A1-U1-L3-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U1.PRODUCTION.STATE_RESIDENCE"
+      ]
+    },
+    "A1-U1-L3-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U1.PRODUCTION.STATE_RESIDENCE"
+      ]
+    },
+    "A1-U1-L3-A03": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U1.PRODUCTION.STATE_RESIDENCE"
+      ]
+    },
+    "A1-U1-L3-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U1.INTERACTION.ASK_RESIDENCE"
+      ]
+    },
+    "A1-U1-L4-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U1.LISTENING.UNDERSTAND_PERSONAL_INFO"
+      ]
+    },
+    "A1-U1-L4-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U1.PRODUCTION.INTRODUCE_OTHER"
+      ]
+    },
+    "A1-U1-L4-A03": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U1.PRODUCTION.INTRODUCE_OTHER"
+      ]
+    },
+    "A1-U1-L4-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U1.LISTENING.UNDERSTAND_PERSONAL_INFO"
+      ]
+    },
+    "A1-U1-L5-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U1.LISTENING.UNDERSTAND_PERSONAL_INFO"
+      ]
+    },
+    "A1-U1-L5-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U1.PRODUCTION.STATE_JOB"
+      ]
+    },
+    "A1-U1-L5-A03": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U1.LISTENING.UNDERSTAND_PERSONAL_INFO"
+      ]
+    },
+    "A1-U1-L5-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U1.PRODUCTION.STATE_JOB"
+      ]
+    },
+    "A1-U1-L6-A01": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U1.INTERACTION.USE_REPAIR_PHRASE"
+      ]
+    },
+    "A1-U1-L6-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U1.INTERACTION.USE_REPAIR_PHRASE"
+      ]
+    },
+    "A1-U1-L6-A03": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U1.INTERACTION.USE_REPAIR_PHRASE"
+      ]
+    },
+    "A1-U1-L6-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U1.INTERACTION.USE_REPAIR_PHRASE"
+      ]
+    },
+    "A1-U1-L7-A01": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U1.INTERACTION.NEW_COLLEAGUE_MISSION",
+        "A1.U1.PRODUCTION.INTRODUCE_SELF"
+      ]
+    },
+    "A1-U1-L7-A02": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U1.INTERACTION.NEW_COLLEAGUE_MISSION",
+        "A1.U1.PRODUCTION.STATE_ORIGIN"
+      ]
+    },
+    "A1-U1-L7-A03": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U1.INTERACTION.NEW_COLLEAGUE_MISSION",
+        "A1.U1.PRODUCTION.STATE_RESIDENCE"
+      ]
+    },
+    "A1-U1-L7-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U1.LISTENING.UNDERSTAND_PERSONAL_INFO"
+      ]
+    },
+    "A1-U1-L7-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U1.LISTENING.UNDERSTAND_PERSONAL_INFO",
+        "A1.U1.PRODUCTION.INTRODUCE_OTHER"
+      ]
+    },
+    "A1-U1-L7-A06": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U1.INTERACTION.ASK_NAME",
+        "A1.U1.INTERACTION.NEW_COLLEAGUE_MISSION"
+      ]
+    },
+    "A1-U10-L1-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U10.PRODUCTION.DESCRIBE_SIMPLE_SYMPTOM",
+        "A1.U10.READING.IDENTIFY_BODY_AND_BASIC_HEALTH"
+      ]
+    },
+    "A1-U10-L1-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U10.PRODUCTION.DESCRIBE_SIMPLE_SYMPTOM",
+        "A1.U10.READING.IDENTIFY_BODY_AND_BASIC_HEALTH"
+      ]
+    },
+    "A1-U10-L1-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U10.PRODUCTION.DESCRIBE_SIMPLE_SYMPTOM",
+        "A1.U10.READING.IDENTIFY_BODY_AND_BASIC_HEALTH"
+      ]
+    },
+    "A1-U10-L1-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U10.PRODUCTION.DESCRIBE_SIMPLE_SYMPTOM",
+        "A1.U10.READING.IDENTIFY_BODY_AND_BASIC_HEALTH"
+      ]
+    },
+    "A1-U10-L1-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U10.PRODUCTION.DESCRIBE_SIMPLE_SYMPTOM",
+        "A1.U10.READING.IDENTIFY_BODY_AND_BASIC_HEALTH"
+      ]
+    },
+    "A1-U10-L2-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U10.INTERACTION.ASK_FOR_HEALTH_HELP",
+        "A1.U10.PRODUCTION.DESCRIBE_SIMPLE_SYMPTOM"
+      ]
+    },
+    "A1-U10-L2-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U10.INTERACTION.ASK_FOR_HEALTH_HELP",
+        "A1.U10.PRODUCTION.DESCRIBE_SIMPLE_SYMPTOM"
+      ]
+    },
+    "A1-U10-L2-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U10.INTERACTION.ASK_FOR_HEALTH_HELP",
+        "A1.U10.PRODUCTION.DESCRIBE_SIMPLE_SYMPTOM"
+      ]
+    },
+    "A1-U10-L2-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U10.INTERACTION.ASK_FOR_HEALTH_HELP",
+        "A1.U10.PRODUCTION.DESCRIBE_SIMPLE_SYMPTOM"
+      ]
+    },
+    "A1-U10-L2-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U10.INTERACTION.ASK_FOR_HEALTH_HELP",
+        "A1.U10.PRODUCTION.DESCRIBE_SIMPLE_SYMPTOM"
+      ]
+    },
+    "A1-U10-L3-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U10.INTERACTION.ASK_FOR_HEALTH_HELP",
+        "A1.U10.LISTENING.UNDERSTAND_BASIC_ADVICE"
+      ]
+    },
+    "A1-U10-L3-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U10.INTERACTION.ASK_FOR_HEALTH_HELP",
+        "A1.U10.LISTENING.UNDERSTAND_BASIC_ADVICE"
+      ]
+    },
+    "A1-U10-L3-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U10.INTERACTION.ASK_FOR_HEALTH_HELP",
+        "A1.U10.LISTENING.UNDERSTAND_BASIC_ADVICE"
+      ]
+    },
+    "A1-U10-L3-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U10.INTERACTION.ASK_FOR_HEALTH_HELP",
+        "A1.U10.LISTENING.UNDERSTAND_BASIC_ADVICE"
+      ]
+    },
+    "A1-U10-L3-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U10.INTERACTION.ASK_FOR_HEALTH_HELP",
+        "A1.U10.LISTENING.UNDERSTAND_BASIC_ADVICE"
+      ]
+    },
+    "A1-U10-L4-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U10.INTERACTION.ASK_FOR_HEALTH_HELP",
+        "A1.U10.READING.UNDERSTAND_HEALTH_INSTRUCTION"
+      ]
+    },
+    "A1-U10-L4-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U10.INTERACTION.ASK_FOR_HEALTH_HELP",
+        "A1.U10.READING.UNDERSTAND_HEALTH_INSTRUCTION"
+      ]
+    },
+    "A1-U10-L4-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U10.INTERACTION.ASK_FOR_HEALTH_HELP",
+        "A1.U10.READING.UNDERSTAND_HEALTH_INSTRUCTION"
+      ]
+    },
+    "A1-U10-L4-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U10.INTERACTION.ASK_FOR_HEALTH_HELP",
+        "A1.U10.READING.UNDERSTAND_HEALTH_INSTRUCTION"
+      ]
+    },
+    "A1-U10-L4-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U10.INTERACTION.ASK_FOR_HEALTH_HELP",
+        "A1.U10.READING.UNDERSTAND_HEALTH_INSTRUCTION"
+      ]
+    },
+    "A1-U10-L5-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U10.LISTENING.UNDERSTAND_BASIC_ADVICE",
+        "A1.U10.READING.UNDERSTAND_HEALTH_INSTRUCTION"
+      ]
+    },
+    "A1-U10-L5-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U10.LISTENING.UNDERSTAND_BASIC_ADVICE",
+        "A1.U10.READING.UNDERSTAND_HEALTH_INSTRUCTION"
+      ]
+    },
+    "A1-U10-L5-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U10.LISTENING.UNDERSTAND_BASIC_ADVICE",
+        "A1.U10.READING.UNDERSTAND_HEALTH_INSTRUCTION"
+      ]
+    },
+    "A1-U10-L5-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U10.LISTENING.UNDERSTAND_BASIC_ADVICE",
+        "A1.U10.READING.UNDERSTAND_HEALTH_INSTRUCTION"
+      ]
+    },
+    "A1-U10-L5-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U10.LISTENING.UNDERSTAND_BASIC_ADVICE",
+        "A1.U10.READING.UNDERSTAND_HEALTH_INSTRUCTION"
+      ]
+    },
+    "A1-U10-L6-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U10.LISTENING.UNDERSTAND_BASIC_ADVICE",
+        "A1.U10.PRODUCTION.DESCRIBE_SIMPLE_SYMPTOM",
+        "A1.U10.WRITING.WRITE_HEALTH_NOTE"
+      ]
+    },
+    "A1-U10-L6-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U10.LISTENING.UNDERSTAND_BASIC_ADVICE",
+        "A1.U10.PRODUCTION.DESCRIBE_SIMPLE_SYMPTOM",
+        "A1.U10.WRITING.WRITE_HEALTH_NOTE"
+      ]
+    },
+    "A1-U10-L6-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U10.LISTENING.UNDERSTAND_BASIC_ADVICE",
+        "A1.U10.PRODUCTION.DESCRIBE_SIMPLE_SYMPTOM",
+        "A1.U10.WRITING.WRITE_HEALTH_NOTE"
+      ]
+    },
+    "A1-U10-L6-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U10.LISTENING.UNDERSTAND_BASIC_ADVICE",
+        "A1.U10.PRODUCTION.DESCRIBE_SIMPLE_SYMPTOM",
+        "A1.U10.WRITING.WRITE_HEALTH_NOTE"
+      ]
+    },
+    "A1-U10-L6-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U10.LISTENING.UNDERSTAND_BASIC_ADVICE",
+        "A1.U10.PRODUCTION.DESCRIBE_SIMPLE_SYMPTOM",
+        "A1.U10.WRITING.WRITE_HEALTH_NOTE"
+      ]
+    },
+    "A1-U10-L7-A01": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U10.MEDIATION.SOLVE_SIMPLE_HEALTH_PROBLEM",
+        "A1.U10.READING.UNDERSTAND_HEALTH_INSTRUCTION"
+      ]
+    },
+    "A1-U10-L7-A02": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U10.PRODUCTION.DESCRIBE_SIMPLE_SYMPTOM"
+      ]
+    },
+    "A1-U10-L7-A03": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U10.INTERACTION.ASK_FOR_HEALTH_HELP"
+      ]
+    },
+    "A1-U10-L7-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U10.LISTENING.UNDERSTAND_BASIC_ADVICE"
+      ]
+    },
+    "A1-U10-L7-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U10.MEDIATION.SOLVE_SIMPLE_HEALTH_PROBLEM",
+        "A1.U10.READING.UNDERSTAND_HEALTH_INSTRUCTION"
+      ]
+    },
+    "A1-U10-L7-A06": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U10.WRITING.WRITE_HEALTH_NOTE"
+      ]
+    },
+    "A1-U11-L1-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U11.LISTENING.UNDERSTAND_CURRENT_WEATHER",
+        "A1.U11.PRODUCTION.GIVE_SIMPLE_REASON"
+      ]
+    },
+    "A1-U11-L1-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U11.LISTENING.UNDERSTAND_CURRENT_WEATHER",
+        "A1.U11.PRODUCTION.GIVE_SIMPLE_REASON"
+      ]
+    },
+    "A1-U11-L1-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U11.LISTENING.UNDERSTAND_CURRENT_WEATHER",
+        "A1.U11.PRODUCTION.GIVE_SIMPLE_REASON"
+      ]
+    },
+    "A1-U11-L1-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U11.LISTENING.UNDERSTAND_CURRENT_WEATHER",
+        "A1.U11.PRODUCTION.GIVE_SIMPLE_REASON"
+      ]
+    },
+    "A1-U11-L1-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U11.LISTENING.UNDERSTAND_CURRENT_WEATHER",
+        "A1.U11.PRODUCTION.GIVE_SIMPLE_REASON"
+      ]
+    },
+    "A1-U11-L2-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U11.LISTENING.UNDERSTAND_CURRENT_WEATHER",
+        "A1.U11.PRODUCTION.DESCRIBE_ACTION_NOW"
+      ]
+    },
+    "A1-U11-L2-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U11.LISTENING.UNDERSTAND_CURRENT_WEATHER",
+        "A1.U11.PRODUCTION.DESCRIBE_ACTION_NOW"
+      ]
+    },
+    "A1-U11-L2-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U11.LISTENING.UNDERSTAND_CURRENT_WEATHER",
+        "A1.U11.PRODUCTION.DESCRIBE_ACTION_NOW"
+      ]
+    },
+    "A1-U11-L2-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U11.LISTENING.UNDERSTAND_CURRENT_WEATHER",
+        "A1.U11.PRODUCTION.DESCRIBE_ACTION_NOW"
+      ]
+    },
+    "A1-U11-L2-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U11.LISTENING.UNDERSTAND_CURRENT_WEATHER",
+        "A1.U11.PRODUCTION.DESCRIBE_ACTION_NOW"
+      ]
+    },
+    "A1-U11-L3-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U11.PRODUCTION.DESCRIBE_ACTION_NOW",
+        "A1.U11.READING.CHOOSE_WEATHER_CLOTHES"
+      ]
+    },
+    "A1-U11-L3-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U11.PRODUCTION.DESCRIBE_ACTION_NOW",
+        "A1.U11.READING.CHOOSE_WEATHER_CLOTHES"
+      ]
+    },
+    "A1-U11-L3-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U11.PRODUCTION.DESCRIBE_ACTION_NOW",
+        "A1.U11.READING.CHOOSE_WEATHER_CLOTHES"
+      ]
+    },
+    "A1-U11-L3-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U11.PRODUCTION.DESCRIBE_ACTION_NOW",
+        "A1.U11.READING.CHOOSE_WEATHER_CLOTHES"
+      ]
+    },
+    "A1-U11-L3-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U11.INTERACTION.ASK_ABOUT_CLOTHES_AND_WEATHER",
+        "A1.U11.PRODUCTION.DESCRIBE_ACTION_NOW",
+        "A1.U11.READING.CHOOSE_WEATHER_CLOTHES"
+      ]
+    },
+    "A1-U11-L4-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U11.PRODUCTION.GIVE_SIMPLE_REASON",
+        "A1.U11.READING.CHOOSE_WEATHER_CLOTHES"
+      ]
+    },
+    "A1-U11-L4-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U11.PRODUCTION.GIVE_SIMPLE_REASON",
+        "A1.U11.READING.CHOOSE_WEATHER_CLOTHES"
+      ]
+    },
+    "A1-U11-L4-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U11.PRODUCTION.GIVE_SIMPLE_REASON",
+        "A1.U11.READING.CHOOSE_WEATHER_CLOTHES"
+      ]
+    },
+    "A1-U11-L4-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U11.PRODUCTION.GIVE_SIMPLE_REASON",
+        "A1.U11.READING.CHOOSE_WEATHER_CLOTHES"
+      ]
+    },
+    "A1-U11-L4-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U11.PRODUCTION.GIVE_SIMPLE_REASON",
+        "A1.U11.READING.CHOOSE_WEATHER_CLOTHES"
+      ]
+    },
+    "A1-U11-L5-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U11.MEDIATION.PREPARE_FOR_TOMORROW_WEATHER",
+        "A1.U11.READING.UNDERSTAND_SIMPLE_FORECAST"
+      ]
+    },
+    "A1-U11-L5-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U11.MEDIATION.PREPARE_FOR_TOMORROW_WEATHER",
+        "A1.U11.READING.UNDERSTAND_SIMPLE_FORECAST"
+      ]
+    },
+    "A1-U11-L5-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U11.MEDIATION.PREPARE_FOR_TOMORROW_WEATHER",
+        "A1.U11.READING.UNDERSTAND_SIMPLE_FORECAST"
+      ]
+    },
+    "A1-U11-L5-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U11.MEDIATION.PREPARE_FOR_TOMORROW_WEATHER",
+        "A1.U11.READING.UNDERSTAND_SIMPLE_FORECAST"
+      ]
+    },
+    "A1-U11-L5-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U11.MEDIATION.PREPARE_FOR_TOMORROW_WEATHER",
+        "A1.U11.READING.UNDERSTAND_SIMPLE_FORECAST"
+      ]
+    },
+    "A1-U11-L6-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U11.LISTENING.UNDERSTAND_CURRENT_WEATHER",
+        "A1.U11.PRODUCTION.DESCRIBE_ACTION_NOW",
+        "A1.U11.READING.UNDERSTAND_SIMPLE_FORECAST",
+        "A1.U11.WRITING.WRITE_WEATHER_UPDATE"
+      ]
+    },
+    "A1-U11-L6-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U11.LISTENING.UNDERSTAND_CURRENT_WEATHER",
+        "A1.U11.PRODUCTION.DESCRIBE_ACTION_NOW",
+        "A1.U11.READING.UNDERSTAND_SIMPLE_FORECAST",
+        "A1.U11.WRITING.WRITE_WEATHER_UPDATE"
+      ]
+    },
+    "A1-U11-L6-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U11.LISTENING.UNDERSTAND_CURRENT_WEATHER",
+        "A1.U11.PRODUCTION.DESCRIBE_ACTION_NOW",
+        "A1.U11.READING.UNDERSTAND_SIMPLE_FORECAST",
+        "A1.U11.WRITING.WRITE_WEATHER_UPDATE"
+      ]
+    },
+    "A1-U11-L6-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U11.LISTENING.UNDERSTAND_CURRENT_WEATHER",
+        "A1.U11.PRODUCTION.DESCRIBE_ACTION_NOW",
+        "A1.U11.READING.UNDERSTAND_SIMPLE_FORECAST",
+        "A1.U11.WRITING.WRITE_WEATHER_UPDATE"
+      ]
+    },
+    "A1-U11-L6-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U11.LISTENING.UNDERSTAND_CURRENT_WEATHER",
+        "A1.U11.PRODUCTION.DESCRIBE_ACTION_NOW",
+        "A1.U11.READING.UNDERSTAND_SIMPLE_FORECAST",
+        "A1.U11.WRITING.WRITE_WEATHER_UPDATE"
+      ]
+    },
+    "A1-U11-L7-A01": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U11.MEDIATION.PREPARE_FOR_TOMORROW_WEATHER",
+        "A1.U11.READING.UNDERSTAND_SIMPLE_FORECAST"
+      ]
+    },
+    "A1-U11-L7-A02": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U11.LISTENING.UNDERSTAND_CURRENT_WEATHER"
+      ]
+    },
+    "A1-U11-L7-A03": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U11.PRODUCTION.GIVE_SIMPLE_REASON",
+        "A1.U11.READING.CHOOSE_WEATHER_CLOTHES"
+      ]
+    },
+    "A1-U11-L7-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U11.INTERACTION.ASK_ABOUT_CLOTHES_AND_WEATHER",
+        "A1.U11.PRODUCTION.DESCRIBE_ACTION_NOW"
+      ]
+    },
+    "A1-U11-L7-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U11.MEDIATION.PREPARE_FOR_TOMORROW_WEATHER",
+        "A1.U11.READING.UNDERSTAND_SIMPLE_FORECAST"
+      ]
+    },
+    "A1-U11-L7-A06": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U11.WRITING.WRITE_WEATHER_UPDATE"
+      ]
+    },
+    "A1-U12-L1-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U12.PRODUCTION.STATE_FUTURE_PLAN",
+        "A1.U12.READING.UNDERSTAND_SHORT_MESSAGE"
+      ]
+    },
+    "A1-U12-L1-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U12.PRODUCTION.STATE_FUTURE_PLAN",
+        "A1.U12.READING.UNDERSTAND_SHORT_MESSAGE"
+      ]
+    },
+    "A1-U12-L1-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U12.PRODUCTION.STATE_FUTURE_PLAN",
+        "A1.U12.READING.UNDERSTAND_SHORT_MESSAGE"
+      ]
+    },
+    "A1-U12-L1-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U12.LISTENING.UNDERSTAND_SPOKEN_PLAN",
+        "A1.U12.PRODUCTION.STATE_FUTURE_PLAN",
+        "A1.U12.READING.UNDERSTAND_SHORT_MESSAGE"
+      ]
+    },
+    "A1-U12-L1-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U12.PRODUCTION.STATE_FUTURE_PLAN",
+        "A1.U12.READING.UNDERSTAND_SHORT_MESSAGE"
+      ]
+    },
+    "A1-U12-L2-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U12.INTERACTION.ASK_ABOUT_PLAN",
+        "A1.U12.PRODUCTION.STATE_FUTURE_PLAN"
+      ]
+    },
+    "A1-U12-L2-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U12.INTERACTION.ASK_ABOUT_PLAN",
+        "A1.U12.PRODUCTION.STATE_FUTURE_PLAN"
+      ]
+    },
+    "A1-U12-L2-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U12.INTERACTION.ASK_ABOUT_PLAN",
+        "A1.U12.PRODUCTION.STATE_FUTURE_PLAN"
+      ]
+    },
+    "A1-U12-L2-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U12.INTERACTION.ASK_ABOUT_PLAN",
+        "A1.U12.LISTENING.UNDERSTAND_SPOKEN_PLAN",
+        "A1.U12.PRODUCTION.STATE_FUTURE_PLAN"
+      ]
+    },
+    "A1-U12-L2-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U12.INTERACTION.ASK_ABOUT_PLAN",
+        "A1.U12.PRODUCTION.STATE_FUTURE_PLAN"
+      ]
+    },
+    "A1-U12-L3-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U12.INTERACTION.ARRANGE_MEETING",
+        "A1.U12.INTERACTION.ASK_ABOUT_PLAN"
+      ]
+    },
+    "A1-U12-L3-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U12.INTERACTION.ARRANGE_MEETING",
+        "A1.U12.INTERACTION.ASK_ABOUT_PLAN"
+      ]
+    },
+    "A1-U12-L3-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U12.INTERACTION.ARRANGE_MEETING",
+        "A1.U12.INTERACTION.ASK_ABOUT_PLAN"
+      ]
+    },
+    "A1-U12-L3-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U12.INTERACTION.ARRANGE_MEETING",
+        "A1.U12.INTERACTION.ASK_ABOUT_PLAN",
+        "A1.U12.LISTENING.UNDERSTAND_SPOKEN_PLAN"
+      ]
+    },
+    "A1-U12-L3-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U12.INTERACTION.ARRANGE_MEETING",
+        "A1.U12.INTERACTION.ASK_ABOUT_PLAN"
+      ]
+    },
+    "A1-U12-L4-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U12.INTERACTION.ACCEPT_REFUSE_CHANGE_PLAN",
+        "A1.U12.INTERACTION.ARRANGE_MEETING"
+      ]
+    },
+    "A1-U12-L4-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U12.INTERACTION.ACCEPT_REFUSE_CHANGE_PLAN",
+        "A1.U12.INTERACTION.ARRANGE_MEETING"
+      ]
+    },
+    "A1-U12-L4-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U12.INTERACTION.ACCEPT_REFUSE_CHANGE_PLAN",
+        "A1.U12.INTERACTION.ARRANGE_MEETING"
+      ]
+    },
+    "A1-U12-L4-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U12.INTERACTION.ACCEPT_REFUSE_CHANGE_PLAN",
+        "A1.U12.INTERACTION.ARRANGE_MEETING",
+        "A1.U12.LISTENING.UNDERSTAND_SPOKEN_PLAN"
+      ]
+    },
+    "A1-U12-L4-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U12.INTERACTION.ACCEPT_REFUSE_CHANGE_PLAN",
+        "A1.U12.INTERACTION.ARRANGE_MEETING"
+      ]
+    },
+    "A1-U12-L5-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U12.INTERACTION.ACCEPT_REFUSE_CHANGE_PLAN",
+        "A1.U12.READING.UNDERSTAND_SHORT_MESSAGE",
+        "A1.U12.WRITING.WRITE_SIMPLE_PERSONAL_MESSAGE"
+      ]
+    },
+    "A1-U12-L5-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U12.INTERACTION.ACCEPT_REFUSE_CHANGE_PLAN",
+        "A1.U12.READING.UNDERSTAND_SHORT_MESSAGE",
+        "A1.U12.WRITING.WRITE_SIMPLE_PERSONAL_MESSAGE"
+      ]
+    },
+    "A1-U12-L5-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U12.INTERACTION.ACCEPT_REFUSE_CHANGE_PLAN",
+        "A1.U12.READING.UNDERSTAND_SHORT_MESSAGE",
+        "A1.U12.WRITING.WRITE_SIMPLE_PERSONAL_MESSAGE"
+      ]
+    },
+    "A1-U12-L5-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U12.INTERACTION.ACCEPT_REFUSE_CHANGE_PLAN",
+        "A1.U12.LISTENING.UNDERSTAND_SPOKEN_PLAN",
+        "A1.U12.READING.UNDERSTAND_SHORT_MESSAGE",
+        "A1.U12.WRITING.WRITE_SIMPLE_PERSONAL_MESSAGE"
+      ]
+    },
+    "A1-U12-L5-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U12.INTERACTION.ACCEPT_REFUSE_CHANGE_PLAN",
+        "A1.U12.READING.UNDERSTAND_SHORT_MESSAGE",
+        "A1.U12.WRITING.WRITE_SIMPLE_PERSONAL_MESSAGE"
+      ]
+    },
+    "A1-U12-L6-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U12.INTERACTION.ACCEPT_REFUSE_CHANGE_PLAN",
+        "A1.U12.INTERACTION.ARRANGE_MEETING",
+        "A1.U12.PRODUCTION.STATE_FUTURE_PLAN",
+        "A1.U12.WRITING.WRITE_SIMPLE_PERSONAL_MESSAGE"
+      ]
+    },
+    "A1-U12-L6-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U12.INTERACTION.ACCEPT_REFUSE_CHANGE_PLAN",
+        "A1.U12.INTERACTION.ARRANGE_MEETING",
+        "A1.U12.PRODUCTION.STATE_FUTURE_PLAN",
+        "A1.U12.WRITING.WRITE_SIMPLE_PERSONAL_MESSAGE"
+      ]
+    },
+    "A1-U12-L6-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U12.INTERACTION.ACCEPT_REFUSE_CHANGE_PLAN",
+        "A1.U12.INTERACTION.ARRANGE_MEETING",
+        "A1.U12.PRODUCTION.STATE_FUTURE_PLAN",
+        "A1.U12.WRITING.WRITE_SIMPLE_PERSONAL_MESSAGE"
+      ]
+    },
+    "A1-U12-L6-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U12.INTERACTION.ACCEPT_REFUSE_CHANGE_PLAN",
+        "A1.U12.INTERACTION.ARRANGE_MEETING",
+        "A1.U12.LISTENING.UNDERSTAND_SPOKEN_PLAN",
+        "A1.U12.PRODUCTION.STATE_FUTURE_PLAN",
+        "A1.U12.WRITING.WRITE_SIMPLE_PERSONAL_MESSAGE"
+      ]
+    },
+    "A1-U12-L6-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U12.INTERACTION.ACCEPT_REFUSE_CHANGE_PLAN",
+        "A1.U12.INTERACTION.ARRANGE_MEETING",
+        "A1.U12.PRODUCTION.STATE_FUTURE_PLAN",
+        "A1.U12.WRITING.WRITE_SIMPLE_PERSONAL_MESSAGE"
+      ]
+    },
+    "A1-U12-L7-A01": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U12.MEDIATION.COORDINATE_WEEKEND_PLAN",
+        "A1.U12.READING.UNDERSTAND_SHORT_MESSAGE"
+      ]
+    },
+    "A1-U12-L7-A02": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U12.LISTENING.UNDERSTAND_SPOKEN_PLAN",
+        "A1.U12.PRODUCTION.STATE_FUTURE_PLAN"
+      ]
+    },
+    "A1-U12-L7-A03": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U12.INTERACTION.ARRANGE_MEETING",
+        "A1.U12.INTERACTION.ASK_ABOUT_PLAN"
+      ]
+    },
+    "A1-U12-L7-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U12.INTERACTION.ACCEPT_REFUSE_CHANGE_PLAN",
+        "A1.U12.LISTENING.UNDERSTAND_SPOKEN_PLAN"
+      ]
+    },
+    "A1-U12-L7-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U12.INTERACTION.ACCEPT_REFUSE_CHANGE_PLAN",
+        "A1.U12.MEDIATION.COORDINATE_WEEKEND_PLAN"
+      ]
+    },
+    "A1-U12-L7-A06": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U12.WRITING.WRITE_SIMPLE_PERSONAL_MESSAGE"
+      ]
+    },
+    "A1-U2-L1-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U2.LISTENING.UNDERSTAND_PEOPLE_DESCRIPTION"
+      ]
+    },
+    "A1-U2-L1-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U2.PRODUCTION.STATE_RELATIONSHIP"
+      ]
+    },
+    "A1-U2-L1-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U2.PRODUCTION.DESCRIBE_FAMILY"
+      ]
+    },
+    "A1-U2-L1-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U2.PRODUCTION.DESCRIBE_FAMILY",
+        "A1.U2.PRODUCTION.STATE_RELATIONSHIP"
+      ]
+    },
+    "A1-U2-L1-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U2.LISTENING.UNDERSTAND_PEOPLE_DESCRIPTION"
+      ]
+    },
+    "A1-U2-L2-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U2.LISTENING.UNDERSTAND_PEOPLE_DESCRIPTION"
+      ]
+    },
+    "A1-U2-L2-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U2.PRODUCTION.DESCRIBE_FAMILY"
+      ]
+    },
+    "A1-U2-L2-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U2.PRODUCTION.DESCRIBE_FAMILY"
+      ]
+    },
+    "A1-U2-L2-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U2.LISTENING.UNDERSTAND_PEOPLE_DESCRIPTION",
+        "A1.U2.PRODUCTION.STATE_AGE"
+      ]
+    },
+    "A1-U2-L2-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U2.PRODUCTION.DESCRIBE_FAMILY",
+        "A1.U2.PRODUCTION.STATE_AGE"
+      ]
+    },
+    "A1-U2-L3-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U2.LISTENING.UNDERSTAND_PEOPLE_DESCRIPTION"
+      ]
+    },
+    "A1-U2-L3-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U2.PRODUCTION.STATE_RELATIONSHIP"
+      ]
+    },
+    "A1-U2-L3-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U2.INTERACTION.ASK_IDENTIFY_PERSON"
+      ]
+    },
+    "A1-U2-L3-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U2.INTERACTION.ASK_IDENTIFY_PERSON"
+      ]
+    },
+    "A1-U2-L3-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U2.PRODUCTION.STATE_RELATIONSHIP"
+      ]
+    },
+    "A1-U2-L4-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U2.LISTENING.UNDERSTAND_PEOPLE_DESCRIPTION"
+      ]
+    },
+    "A1-U2-L4-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U2.PRODUCTION.DESCRIBE_PERSON"
+      ]
+    },
+    "A1-U2-L4-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U2.PRODUCTION.DESCRIBE_PERSON"
+      ]
+    },
+    "A1-U2-L4-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U2.LISTENING.UNDERSTAND_PEOPLE_DESCRIPTION"
+      ]
+    },
+    "A1-U2-L4-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U2.PRODUCTION.DESCRIBE_PERSON"
+      ]
+    },
+    "A1-U2-L5-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U2.LISTENING.UNDERSTAND_PEOPLE_DESCRIPTION"
+      ]
+    },
+    "A1-U2-L5-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U2.PRODUCTION.STATE_RELATIONSHIP"
+      ]
+    },
+    "A1-U2-L5-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U2.PRODUCTION.DESCRIBE_FAMILY"
+      ]
+    },
+    "A1-U2-L5-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U2.LISTENING.UNDERSTAND_PEOPLE_DESCRIPTION"
+      ]
+    },
+    "A1-U2-L5-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U2.PRODUCTION.STATE_RELATIONSHIP"
+      ]
+    },
+    "A1-U2-L6-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U2.LISTENING.UNDERSTAND_PEOPLE_DESCRIPTION"
+      ]
+    },
+    "A1-U2-L6-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U2.LISTENING.UNDERSTAND_PEOPLE_DESCRIPTION"
+      ]
+    },
+    "A1-U2-L6-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U2.WRITING.WRITE_PEOPLE_PROFILE"
+      ]
+    },
+    "A1-U2-L6-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U2.WRITING.WRITE_PEOPLE_PROFILE"
+      ]
+    },
+    "A1-U2-L6-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U2.PRODUCTION.DESCRIBE_PERSON"
+      ]
+    },
+    "A1-U2-L7-A01": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U2.MEDIATION.EXPLAIN_PEOPLE_MAP"
+      ]
+    },
+    "A1-U2-L7-A02": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U2.LISTENING.UNDERSTAND_PEOPLE_DESCRIPTION"
+      ]
+    },
+    "A1-U2-L7-A03": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U2.MEDIATION.EXPLAIN_PEOPLE_MAP",
+        "A1.U2.PRODUCTION.DESCRIBE_FAMILY"
+      ]
+    },
+    "A1-U2-L7-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U2.INTERACTION.ASK_IDENTIFY_PERSON"
+      ]
+    },
+    "A1-U2-L7-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U2.PRODUCTION.DESCRIBE_PERSON",
+        "A1.U2.PRODUCTION.STATE_AGE"
+      ]
+    },
+    "A1-U2-L7-A06": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U2.MEDIATION.EXPLAIN_PEOPLE_MAP",
+        "A1.U2.WRITING.WRITE_PEOPLE_PROFILE"
+      ]
+    },
+    "A1-U3-L1-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U3.LISTENING.UNDERSTAND_ROOM_DESCRIPTION"
+      ]
+    },
+    "A1-U3-L1-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U3.PRODUCTION.DESCRIBE_ROOM"
+      ]
+    },
+    "A1-U3-L1-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U3.PRODUCTION.STATE_EXISTENCE"
+      ]
+    },
+    "A1-U3-L1-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U3.LISTENING.UNDERSTAND_ROOM_DESCRIPTION"
+      ]
+    },
+    "A1-U3-L1-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U3.PRODUCTION.DESCRIBE_ROOM",
+        "A1.U3.PRODUCTION.STATE_EXISTENCE"
+      ]
+    },
+    "A1-U3-L2-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U3.LISTENING.UNDERSTAND_ROOM_DESCRIPTION"
+      ]
+    },
+    "A1-U3-L2-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U3.PRODUCTION.STATE_EXISTENCE"
+      ]
+    },
+    "A1-U3-L2-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U3.PRODUCTION.STATE_EXISTENCE"
+      ]
+    },
+    "A1-U3-L2-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U3.LISTENING.UNDERSTAND_ROOM_DESCRIPTION"
+      ]
+    },
+    "A1-U3-L2-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U3.PRODUCTION.STATE_EXISTENCE"
+      ]
+    },
+    "A1-U3-L3-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U3.LISTENING.UNDERSTAND_ROOM_DESCRIPTION"
+      ]
+    },
+    "A1-U3-L3-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U3.PRODUCTION.LOCATE_OBJECTS"
+      ]
+    },
+    "A1-U3-L3-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U3.PRODUCTION.LOCATE_OBJECTS"
+      ]
+    },
+    "A1-U3-L3-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U3.LISTENING.UNDERSTAND_ROOM_DESCRIPTION"
+      ]
+    },
+    "A1-U3-L3-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U3.PRODUCTION.LOCATE_OBJECTS"
+      ]
+    },
+    "A1-U3-L4-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U3.INTERACTION.IDENTIFY_NEAR_FAR_OBJECTS"
+      ]
+    },
+    "A1-U3-L4-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U3.INTERACTION.IDENTIFY_NEAR_FAR_OBJECTS"
+      ]
+    },
+    "A1-U3-L4-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U3.INTERACTION.IDENTIFY_NEAR_FAR_OBJECTS"
+      ]
+    },
+    "A1-U3-L4-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U3.INTERACTION.IDENTIFY_NEAR_FAR_OBJECTS",
+        "A1.U3.LISTENING.UNDERSTAND_ROOM_DESCRIPTION"
+      ]
+    },
+    "A1-U3-L4-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U3.INTERACTION.IDENTIFY_NEAR_FAR_OBJECTS"
+      ]
+    },
+    "A1-U3-L5-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U3.INTERACTION.ASK_ANSWER_OWNERSHIP"
+      ]
+    },
+    "A1-U3-L5-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U3.INTERACTION.ASK_ANSWER_OWNERSHIP"
+      ]
+    },
+    "A1-U3-L5-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U3.INTERACTION.ASK_ANSWER_OWNERSHIP"
+      ]
+    },
+    "A1-U3-L5-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U3.INTERACTION.ASK_ANSWER_OWNERSHIP"
+      ]
+    },
+    "A1-U3-L5-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U3.INTERACTION.ASK_ANSWER_OWNERSHIP"
+      ]
+    },
+    "A1-U3-L6-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U3.LISTENING.UNDERSTAND_ROOM_DESCRIPTION"
+      ]
+    },
+    "A1-U3-L6-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U3.LISTENING.UNDERSTAND_ROOM_DESCRIPTION"
+      ]
+    },
+    "A1-U3-L6-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U3.WRITING.WRITE_HOME_DESCRIPTION"
+      ]
+    },
+    "A1-U3-L6-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U3.WRITING.WRITE_HOME_DESCRIPTION"
+      ]
+    },
+    "A1-U3-L6-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U3.PRODUCTION.DESCRIBE_ROOM",
+        "A1.U3.PRODUCTION.LOCATE_OBJECTS"
+      ]
+    },
+    "A1-U3-L7-A01": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U3.LISTENING.UNDERSTAND_ROOM_DESCRIPTION"
+      ]
+    },
+    "A1-U3-L7-A02": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U3.MEDIATION.SHOW_NEW_HOME",
+        "A1.U3.PRODUCTION.DESCRIBE_ROOM"
+      ]
+    },
+    "A1-U3-L7-A03": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U3.PRODUCTION.LOCATE_OBJECTS",
+        "A1.U3.PRODUCTION.STATE_EXISTENCE"
+      ]
+    },
+    "A1-U3-L7-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U3.PRODUCTION.LOCATE_OBJECTS"
+      ]
+    },
+    "A1-U3-L7-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U3.INTERACTION.ASK_ANSWER_OWNERSHIP"
+      ]
+    },
+    "A1-U3-L7-A06": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U3.MEDIATION.SHOW_NEW_HOME",
+        "A1.U3.WRITING.WRITE_HOME_DESCRIPTION"
+      ]
+    },
+    "A1-U4-L1-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U4.PRODUCTION.DESCRIBE_DAILY_ROUTINE"
+      ]
+    },
+    "A1-U4-L1-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U4.PRODUCTION.DESCRIBE_DAILY_ROUTINE"
+      ]
+    },
+    "A1-U4-L1-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U4.PRODUCTION.DESCRIBE_DAILY_ROUTINE"
+      ]
+    },
+    "A1-U4-L1-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U4.PRODUCTION.DESCRIBE_DAILY_ROUTINE"
+      ]
+    },
+    "A1-U4-L1-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U4.PRODUCTION.DESCRIBE_DAILY_ROUTINE"
+      ]
+    },
+    "A1-U4-L2-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U4.INTERACTION.ASK_ABOUT_ROUTINE",
+        "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE"
+      ]
+    },
+    "A1-U4-L2-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U4.INTERACTION.ASK_ABOUT_ROUTINE",
+        "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE"
+      ]
+    },
+    "A1-U4-L2-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U4.INTERACTION.ASK_ABOUT_ROUTINE",
+        "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE"
+      ]
+    },
+    "A1-U4-L2-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U4.INTERACTION.ASK_ABOUT_ROUTINE",
+        "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE"
+      ]
+    },
+    "A1-U4-L2-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U4.INTERACTION.ASK_ABOUT_ROUTINE",
+        "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE"
+      ]
+    },
+    "A1-U4-L3-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE",
+        "A1.U4.PRODUCTION.DESCRIBE_OTHER_ROUTINE"
+      ]
+    },
+    "A1-U4-L3-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE",
+        "A1.U4.PRODUCTION.DESCRIBE_OTHER_ROUTINE"
+      ]
+    },
+    "A1-U4-L3-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE",
+        "A1.U4.PRODUCTION.DESCRIBE_OTHER_ROUTINE"
+      ]
+    },
+    "A1-U4-L3-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE",
+        "A1.U4.PRODUCTION.DESCRIBE_OTHER_ROUTINE"
+      ]
+    },
+    "A1-U4-L3-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE",
+        "A1.U4.PRODUCTION.DESCRIBE_OTHER_ROUTINE"
+      ]
+    },
+    "A1-U4-L4-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U4.INTERACTION.ASK_ABOUT_ROUTINE",
+        "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE"
+      ]
+    },
+    "A1-U4-L4-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U4.INTERACTION.ASK_ABOUT_ROUTINE",
+        "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE"
+      ]
+    },
+    "A1-U4-L4-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U4.INTERACTION.ASK_ABOUT_ROUTINE",
+        "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE"
+      ]
+    },
+    "A1-U4-L4-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U4.INTERACTION.ASK_ABOUT_ROUTINE",
+        "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE"
+      ]
+    },
+    "A1-U4-L4-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U4.INTERACTION.ASK_ABOUT_ROUTINE",
+        "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE"
+      ]
+    },
+    "A1-U4-L5-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U4.PRODUCTION.DESCRIBE_OTHER_ROUTINE",
+        "A1.U4.PRODUCTION.STATE_FREQUENCY"
+      ]
+    },
+    "A1-U4-L5-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U4.PRODUCTION.DESCRIBE_OTHER_ROUTINE",
+        "A1.U4.PRODUCTION.STATE_FREQUENCY"
+      ]
+    },
+    "A1-U4-L5-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U4.PRODUCTION.DESCRIBE_OTHER_ROUTINE",
+        "A1.U4.PRODUCTION.STATE_FREQUENCY"
+      ]
+    },
+    "A1-U4-L5-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U4.PRODUCTION.DESCRIBE_OTHER_ROUTINE",
+        "A1.U4.PRODUCTION.STATE_FREQUENCY"
+      ]
+    },
+    "A1-U4-L5-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U4.PRODUCTION.DESCRIBE_OTHER_ROUTINE",
+        "A1.U4.PRODUCTION.STATE_FREQUENCY"
+      ]
+    },
+    "A1-U4-L6-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE",
+        "A1.U4.MEDIATION.COMPARE_ROUTINES",
+        "A1.U4.WRITING.WRITE_ROUTINE"
+      ]
+    },
+    "A1-U4-L6-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE",
+        "A1.U4.MEDIATION.COMPARE_ROUTINES",
+        "A1.U4.WRITING.WRITE_ROUTINE"
+      ]
+    },
+    "A1-U4-L6-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE",
+        "A1.U4.MEDIATION.COMPARE_ROUTINES",
+        "A1.U4.WRITING.WRITE_ROUTINE"
+      ]
+    },
+    "A1-U4-L6-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE",
+        "A1.U4.MEDIATION.COMPARE_ROUTINES",
+        "A1.U4.WRITING.WRITE_ROUTINE"
+      ]
+    },
+    "A1-U4-L6-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE",
+        "A1.U4.MEDIATION.COMPARE_ROUTINES",
+        "A1.U4.WRITING.WRITE_ROUTINE"
+      ]
+    },
+    "A1-U4-L7-A01": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE",
+        "A1.U4.MEDIATION.COMPARE_ROUTINES"
+      ]
+    },
+    "A1-U4-L7-A02": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U4.MEDIATION.COMPARE_ROUTINES"
+      ]
+    },
+    "A1-U4-L7-A03": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U4.INTERACTION.ASK_ABOUT_ROUTINE"
+      ]
+    },
+    "A1-U4-L7-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U4.MEDIATION.COMPARE_ROUTINES",
+        "A1.U4.PRODUCTION.DESCRIBE_OTHER_ROUTINE"
+      ]
+    },
+    "A1-U4-L7-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U4.PRODUCTION.STATE_FREQUENCY",
+        "A1.U4.WRITING.WRITE_ROUTINE"
+      ]
+    },
+    "A1-U4-L7-A06": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U4.PRODUCTION.DESCRIBE_DAILY_ROUTINE"
+      ]
+    },
+    "A1-U5-L1-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U5.LISTENING.UNDERSTAND_PREFERENCES",
+        "A1.U5.PRODUCTION.EXPRESS_PREFERENCE"
+      ]
+    },
+    "A1-U5-L1-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U5.LISTENING.UNDERSTAND_PREFERENCES",
+        "A1.U5.PRODUCTION.EXPRESS_PREFERENCE"
+      ]
+    },
+    "A1-U5-L1-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U5.LISTENING.UNDERSTAND_PREFERENCES",
+        "A1.U5.PRODUCTION.EXPRESS_PREFERENCE"
+      ]
+    },
+    "A1-U5-L1-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U5.LISTENING.UNDERSTAND_PREFERENCES",
+        "A1.U5.PRODUCTION.EXPRESS_PREFERENCE"
+      ]
+    },
+    "A1-U5-L1-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U5.LISTENING.UNDERSTAND_PREFERENCES",
+        "A1.U5.PRODUCTION.EXPRESS_PREFERENCE"
+      ]
+    },
+    "A1-U5-L2-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U5.LISTENING.UNDERSTAND_PREFERENCES",
+        "A1.U5.PRODUCTION.DESCRIBE_HOBBIES"
+      ]
+    },
+    "A1-U5-L2-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U5.LISTENING.UNDERSTAND_PREFERENCES",
+        "A1.U5.PRODUCTION.DESCRIBE_HOBBIES"
+      ]
+    },
+    "A1-U5-L2-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U5.LISTENING.UNDERSTAND_PREFERENCES",
+        "A1.U5.PRODUCTION.DESCRIBE_HOBBIES"
+      ]
+    },
+    "A1-U5-L2-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U5.LISTENING.UNDERSTAND_PREFERENCES",
+        "A1.U5.PRODUCTION.DESCRIBE_HOBBIES"
+      ]
+    },
+    "A1-U5-L2-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U5.LISTENING.UNDERSTAND_PREFERENCES",
+        "A1.U5.PRODUCTION.DESCRIBE_HOBBIES"
+      ]
+    },
+    "A1-U5-L3-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U5.INTERACTION.ASK_ANSWER_ABILITY",
+        "A1.U5.LISTENING.UNDERSTAND_PREFERENCES"
+      ]
+    },
+    "A1-U5-L3-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U5.INTERACTION.ASK_ANSWER_ABILITY",
+        "A1.U5.LISTENING.UNDERSTAND_PREFERENCES"
+      ]
+    },
+    "A1-U5-L3-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U5.INTERACTION.ASK_ANSWER_ABILITY",
+        "A1.U5.LISTENING.UNDERSTAND_PREFERENCES"
+      ]
+    },
+    "A1-U5-L3-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U5.INTERACTION.ASK_ANSWER_ABILITY",
+        "A1.U5.LISTENING.UNDERSTAND_PREFERENCES"
+      ]
+    },
+    "A1-U5-L3-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U5.INTERACTION.ASK_ANSWER_ABILITY",
+        "A1.U5.LISTENING.UNDERSTAND_PREFERENCES"
+      ]
+    },
+    "A1-U5-L4-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U5.PRODUCTION.DESCRIBE_HOBBIES",
+        "A1.U5.PRODUCTION.EXPRESS_PREFERENCE"
+      ]
+    },
+    "A1-U5-L4-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U5.PRODUCTION.DESCRIBE_HOBBIES",
+        "A1.U5.PRODUCTION.EXPRESS_PREFERENCE"
+      ]
+    },
+    "A1-U5-L4-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U5.PRODUCTION.DESCRIBE_HOBBIES",
+        "A1.U5.PRODUCTION.EXPRESS_PREFERENCE"
+      ]
+    },
+    "A1-U5-L4-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U5.PRODUCTION.DESCRIBE_HOBBIES",
+        "A1.U5.PRODUCTION.EXPRESS_PREFERENCE"
+      ]
+    },
+    "A1-U5-L4-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U5.PRODUCTION.DESCRIBE_HOBBIES",
+        "A1.U5.PRODUCTION.EXPRESS_PREFERENCE"
+      ]
+    },
+    "A1-U5-L5-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U5.INTERACTION.ASK_ANSWER_ABILITY",
+        "A1.U5.INTERACTION.MAKE_RESPOND_INVITATION"
+      ]
+    },
+    "A1-U5-L5-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U5.INTERACTION.ASK_ANSWER_ABILITY",
+        "A1.U5.INTERACTION.MAKE_RESPOND_INVITATION"
+      ]
+    },
+    "A1-U5-L5-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U5.INTERACTION.ASK_ANSWER_ABILITY",
+        "A1.U5.INTERACTION.MAKE_RESPOND_INVITATION"
+      ]
+    },
+    "A1-U5-L5-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U5.INTERACTION.ASK_ANSWER_ABILITY",
+        "A1.U5.INTERACTION.MAKE_RESPOND_INVITATION"
+      ]
+    },
+    "A1-U5-L5-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U5.INTERACTION.ASK_ANSWER_ABILITY",
+        "A1.U5.INTERACTION.MAKE_RESPOND_INVITATION"
+      ]
+    },
+    "A1-U5-L6-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U5.INTERACTION.MAKE_RESPOND_INVITATION",
+        "A1.U5.PRODUCTION.DESCRIBE_HOBBIES",
+        "A1.U5.WRITING.WRITE_FREE_TIME_MESSAGE"
+      ]
+    },
+    "A1-U5-L6-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U5.INTERACTION.MAKE_RESPOND_INVITATION",
+        "A1.U5.PRODUCTION.DESCRIBE_HOBBIES",
+        "A1.U5.WRITING.WRITE_FREE_TIME_MESSAGE"
+      ]
+    },
+    "A1-U5-L6-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U5.INTERACTION.MAKE_RESPOND_INVITATION",
+        "A1.U5.PRODUCTION.DESCRIBE_HOBBIES",
+        "A1.U5.WRITING.WRITE_FREE_TIME_MESSAGE"
+      ]
+    },
+    "A1-U5-L6-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U5.INTERACTION.MAKE_RESPOND_INVITATION",
+        "A1.U5.PRODUCTION.DESCRIBE_HOBBIES",
+        "A1.U5.WRITING.WRITE_FREE_TIME_MESSAGE"
+      ]
+    },
+    "A1-U5-L6-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U5.INTERACTION.MAKE_RESPOND_INVITATION",
+        "A1.U5.PRODUCTION.DESCRIBE_HOBBIES",
+        "A1.U5.WRITING.WRITE_FREE_TIME_MESSAGE"
+      ]
+    },
+    "A1-U5-L7-A01": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U5.LISTENING.UNDERSTAND_PREFERENCES"
+      ]
+    },
+    "A1-U5-L7-A02": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U5.MEDIATION.PLAN_FREE_AFTERNOON"
+      ]
+    },
+    "A1-U5-L7-A03": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U5.INTERACTION.MAKE_RESPOND_INVITATION"
+      ]
+    },
+    "A1-U5-L7-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U5.INTERACTION.ASK_ANSWER_ABILITY",
+        "A1.U5.MEDIATION.PLAN_FREE_AFTERNOON",
+        "A1.U5.PRODUCTION.EXPRESS_PREFERENCE"
+      ]
+    },
+    "A1-U5-L7-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U5.WRITING.WRITE_FREE_TIME_MESSAGE"
+      ]
+    },
+    "A1-U5-L7-A06": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U5.MEDIATION.PLAN_FREE_AFTERNOON"
+      ]
+    },
+    "A1-U6-L1-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U6.PRODUCTION.STATE_FOOD_WANTS",
+        "A1.U6.READING.UNDERSTAND_BASIC_MENU"
+      ]
+    },
+    "A1-U6-L1-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U6.PRODUCTION.STATE_FOOD_WANTS",
+        "A1.U6.READING.UNDERSTAND_BASIC_MENU"
+      ]
+    },
+    "A1-U6-L1-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U6.PRODUCTION.STATE_FOOD_WANTS",
+        "A1.U6.READING.UNDERSTAND_BASIC_MENU"
+      ]
+    },
+    "A1-U6-L1-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U6.PRODUCTION.STATE_FOOD_WANTS",
+        "A1.U6.READING.UNDERSTAND_BASIC_MENU"
+      ]
+    },
+    "A1-U6-L1-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U6.PRODUCTION.STATE_FOOD_WANTS",
+        "A1.U6.READING.UNDERSTAND_BASIC_MENU"
+      ]
+    },
+    "A1-U6-L2-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U6.LISTENING.UNDERSTAND_FOOD_QUANTITY",
+        "A1.U6.PRODUCTION.STATE_FOOD_WANTS"
+      ]
+    },
+    "A1-U6-L2-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U6.LISTENING.UNDERSTAND_FOOD_QUANTITY",
+        "A1.U6.PRODUCTION.STATE_FOOD_WANTS"
+      ]
+    },
+    "A1-U6-L2-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U6.LISTENING.UNDERSTAND_FOOD_QUANTITY",
+        "A1.U6.PRODUCTION.STATE_FOOD_WANTS"
+      ]
+    },
+    "A1-U6-L2-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U6.LISTENING.UNDERSTAND_FOOD_QUANTITY",
+        "A1.U6.PRODUCTION.STATE_FOOD_WANTS"
+      ]
+    },
+    "A1-U6-L2-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U6.LISTENING.UNDERSTAND_FOOD_QUANTITY",
+        "A1.U6.PRODUCTION.STATE_FOOD_WANTS"
+      ]
+    },
+    "A1-U6-L3-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U6.LISTENING.UNDERSTAND_FOOD_QUANTITY",
+        "A1.U6.READING.UNDERSTAND_BASIC_MENU"
+      ]
+    },
+    "A1-U6-L3-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U6.LISTENING.UNDERSTAND_FOOD_QUANTITY",
+        "A1.U6.READING.UNDERSTAND_BASIC_MENU"
+      ]
+    },
+    "A1-U6-L3-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U6.LISTENING.UNDERSTAND_FOOD_QUANTITY",
+        "A1.U6.READING.UNDERSTAND_BASIC_MENU"
+      ]
+    },
+    "A1-U6-L3-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U6.LISTENING.UNDERSTAND_FOOD_QUANTITY",
+        "A1.U6.READING.UNDERSTAND_BASIC_MENU"
+      ]
+    },
+    "A1-U6-L3-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U6.LISTENING.UNDERSTAND_FOOD_QUANTITY",
+        "A1.U6.READING.UNDERSTAND_BASIC_MENU"
+      ]
+    },
+    "A1-U6-L4-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U6.INTERACTION.ORDER_MEAL",
+        "A1.U6.PRODUCTION.STATE_FOOD_WANTS"
+      ]
+    },
+    "A1-U6-L4-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U6.INTERACTION.ORDER_MEAL",
+        "A1.U6.PRODUCTION.STATE_FOOD_WANTS"
+      ]
+    },
+    "A1-U6-L4-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U6.INTERACTION.ORDER_MEAL",
+        "A1.U6.PRODUCTION.STATE_FOOD_WANTS"
+      ]
+    },
+    "A1-U6-L4-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U6.INTERACTION.ORDER_MEAL",
+        "A1.U6.PRODUCTION.STATE_FOOD_WANTS"
+      ]
+    },
+    "A1-U6-L4-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U6.INTERACTION.ORDER_MEAL",
+        "A1.U6.PRODUCTION.STATE_FOOD_WANTS"
+      ]
+    },
+    "A1-U6-L5-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U6.INTERACTION.CHECK_MEAL",
+        "A1.U6.INTERACTION.ORDER_MEAL"
+      ]
+    },
+    "A1-U6-L5-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U6.INTERACTION.CHECK_MEAL",
+        "A1.U6.INTERACTION.ORDER_MEAL"
+      ]
+    },
+    "A1-U6-L5-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U6.INTERACTION.CHECK_MEAL",
+        "A1.U6.INTERACTION.ORDER_MEAL"
+      ]
+    },
+    "A1-U6-L5-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U6.INTERACTION.CHECK_MEAL",
+        "A1.U6.INTERACTION.ORDER_MEAL"
+      ]
+    },
+    "A1-U6-L5-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U6.INTERACTION.CHECK_MEAL",
+        "A1.U6.INTERACTION.ORDER_MEAL"
+      ]
+    },
+    "A1-U6-L6-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U6.PRODUCTION.STATE_FOOD_WANTS",
+        "A1.U6.READING.UNDERSTAND_BASIC_MENU",
+        "A1.U6.WRITING.WRITE_SIMPLE_ORDER"
+      ]
+    },
+    "A1-U6-L6-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U6.PRODUCTION.STATE_FOOD_WANTS",
+        "A1.U6.READING.UNDERSTAND_BASIC_MENU",
+        "A1.U6.WRITING.WRITE_SIMPLE_ORDER"
+      ]
+    },
+    "A1-U6-L6-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U6.PRODUCTION.STATE_FOOD_WANTS",
+        "A1.U6.READING.UNDERSTAND_BASIC_MENU",
+        "A1.U6.WRITING.WRITE_SIMPLE_ORDER"
+      ]
+    },
+    "A1-U6-L6-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U6.PRODUCTION.STATE_FOOD_WANTS",
+        "A1.U6.READING.UNDERSTAND_BASIC_MENU",
+        "A1.U6.WRITING.WRITE_SIMPLE_ORDER"
+      ]
+    },
+    "A1-U6-L6-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U6.PRODUCTION.STATE_FOOD_WANTS",
+        "A1.U6.READING.UNDERSTAND_BASIC_MENU",
+        "A1.U6.WRITING.WRITE_SIMPLE_ORDER"
+      ]
+    },
+    "A1-U6-L7-A01": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U6.PRODUCTION.STATE_FOOD_WANTS",
+        "A1.U6.READING.UNDERSTAND_BASIC_MENU"
+      ]
+    },
+    "A1-U6-L7-A02": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U6.LISTENING.UNDERSTAND_FOOD_QUANTITY"
+      ]
+    },
+    "A1-U6-L7-A03": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U6.INTERACTION.ORDER_MEAL"
+      ]
+    },
+    "A1-U6-L7-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U6.INTERACTION.CHECK_MEAL"
+      ]
+    },
+    "A1-U6-L7-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U6.INTERACTION.CHECK_MEAL",
+        "A1.U6.MEDIATION.COMPLETE_MEAL_MISSION"
+      ]
+    },
+    "A1-U6-L7-A06": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U6.MEDIATION.COMPLETE_MEAL_MISSION",
+        "A1.U6.WRITING.WRITE_SIMPLE_ORDER"
+      ]
+    },
+    "A1-U7-L1-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U7.INTERACTION.ASK_ABOUT_PRODUCT",
+        "A1.U7.LISTENING.UNDERSTAND_PRICE"
+      ]
+    },
+    "A1-U7-L1-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U7.INTERACTION.ASK_ABOUT_PRODUCT",
+        "A1.U7.LISTENING.UNDERSTAND_PRICE"
+      ]
+    },
+    "A1-U7-L1-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U7.INTERACTION.ASK_ABOUT_PRODUCT",
+        "A1.U7.LISTENING.UNDERSTAND_PRICE"
+      ]
+    },
+    "A1-U7-L1-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U7.INTERACTION.ASK_ABOUT_PRODUCT",
+        "A1.U7.LISTENING.UNDERSTAND_PRICE"
+      ]
+    },
+    "A1-U7-L1-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U7.INTERACTION.ASK_ABOUT_PRODUCT",
+        "A1.U7.LISTENING.UNDERSTAND_PRICE"
+      ]
+    },
+    "A1-U7-L2-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U7.INTERACTION.ASK_ABOUT_PRODUCT",
+        "A1.U7.READING.CHOOSE_PRODUCT"
+      ]
+    },
+    "A1-U7-L2-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U7.INTERACTION.ASK_ABOUT_PRODUCT",
+        "A1.U7.READING.CHOOSE_PRODUCT"
+      ]
+    },
+    "A1-U7-L2-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U7.INTERACTION.ASK_ABOUT_PRODUCT",
+        "A1.U7.READING.CHOOSE_PRODUCT"
+      ]
+    },
+    "A1-U7-L2-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U7.INTERACTION.ASK_ABOUT_PRODUCT",
+        "A1.U7.READING.CHOOSE_PRODUCT"
+      ]
+    },
+    "A1-U7-L2-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U7.INTERACTION.ASK_ABOUT_PRODUCT",
+        "A1.U7.READING.CHOOSE_PRODUCT"
+      ]
+    },
+    "A1-U7-L3-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U7.INTERACTION.ASK_ABOUT_PRODUCT",
+        "A1.U7.READING.CHOOSE_PRODUCT"
+      ]
+    },
+    "A1-U7-L3-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U7.INTERACTION.ASK_ABOUT_PRODUCT",
+        "A1.U7.READING.CHOOSE_PRODUCT"
+      ]
+    },
+    "A1-U7-L3-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U7.INTERACTION.ASK_ABOUT_PRODUCT",
+        "A1.U7.READING.CHOOSE_PRODUCT"
+      ]
+    },
+    "A1-U7-L3-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U7.INTERACTION.ASK_ABOUT_PRODUCT",
+        "A1.U7.READING.CHOOSE_PRODUCT"
+      ]
+    },
+    "A1-U7-L3-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U7.INTERACTION.ASK_ABOUT_PRODUCT",
+        "A1.U7.READING.CHOOSE_PRODUCT"
+      ]
+    },
+    "A1-U7-L4-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U7.INTERACTION.BUY_ITEM",
+        "A1.U7.LISTENING.UNDERSTAND_PRICE"
+      ]
+    },
+    "A1-U7-L4-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U7.INTERACTION.BUY_ITEM",
+        "A1.U7.LISTENING.UNDERSTAND_PRICE"
+      ]
+    },
+    "A1-U7-L4-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U7.INTERACTION.BUY_ITEM",
+        "A1.U7.LISTENING.UNDERSTAND_PRICE"
+      ]
+    },
+    "A1-U7-L4-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U7.INTERACTION.BUY_ITEM",
+        "A1.U7.LISTENING.UNDERSTAND_PRICE"
+      ]
+    },
+    "A1-U7-L4-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U7.INTERACTION.BUY_ITEM",
+        "A1.U7.LISTENING.UNDERSTAND_PRICE"
+      ]
+    },
+    "A1-U7-L5-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U7.INTERACTION.BUY_ITEM",
+        "A1.U7.INTERACTION.SOLVE_SHOPPING_PROBLEM"
+      ]
+    },
+    "A1-U7-L5-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U7.INTERACTION.BUY_ITEM",
+        "A1.U7.INTERACTION.SOLVE_SHOPPING_PROBLEM"
+      ]
+    },
+    "A1-U7-L5-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U7.INTERACTION.BUY_ITEM",
+        "A1.U7.INTERACTION.SOLVE_SHOPPING_PROBLEM"
+      ]
+    },
+    "A1-U7-L5-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U7.INTERACTION.BUY_ITEM",
+        "A1.U7.INTERACTION.SOLVE_SHOPPING_PROBLEM"
+      ]
+    },
+    "A1-U7-L5-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U7.INTERACTION.BUY_ITEM",
+        "A1.U7.INTERACTION.SOLVE_SHOPPING_PROBLEM"
+      ]
+    },
+    "A1-U7-L6-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U7.LISTENING.UNDERSTAND_PRICE",
+        "A1.U7.READING.CHOOSE_PRODUCT",
+        "A1.U7.WRITING.WRITE_SHOPPING_REQUEST"
+      ]
+    },
+    "A1-U7-L6-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U7.LISTENING.UNDERSTAND_PRICE",
+        "A1.U7.READING.CHOOSE_PRODUCT",
+        "A1.U7.WRITING.WRITE_SHOPPING_REQUEST"
+      ]
+    },
+    "A1-U7-L6-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U7.LISTENING.UNDERSTAND_PRICE",
+        "A1.U7.READING.CHOOSE_PRODUCT",
+        "A1.U7.WRITING.WRITE_SHOPPING_REQUEST"
+      ]
+    },
+    "A1-U7-L6-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U7.LISTENING.UNDERSTAND_PRICE",
+        "A1.U7.READING.CHOOSE_PRODUCT",
+        "A1.U7.WRITING.WRITE_SHOPPING_REQUEST"
+      ]
+    },
+    "A1-U7-L6-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U7.LISTENING.UNDERSTAND_PRICE",
+        "A1.U7.READING.CHOOSE_PRODUCT",
+        "A1.U7.WRITING.WRITE_SHOPPING_REQUEST"
+      ]
+    },
+    "A1-U7-L7-A01": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U7.MEDIATION.COMPLETE_BUDGET_PURCHASE",
+        "A1.U7.READING.CHOOSE_PRODUCT"
+      ]
+    },
+    "A1-U7-L7-A02": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U7.LISTENING.UNDERSTAND_PRICE"
+      ]
+    },
+    "A1-U7-L7-A03": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U7.INTERACTION.ASK_ABOUT_PRODUCT",
+        "A1.U7.INTERACTION.BUY_ITEM"
+      ]
+    },
+    "A1-U7-L7-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U7.INTERACTION.SOLVE_SHOPPING_PROBLEM"
+      ]
+    },
+    "A1-U7-L7-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U7.INTERACTION.SOLVE_SHOPPING_PROBLEM",
+        "A1.U7.MEDIATION.COMPLETE_BUDGET_PURCHASE"
+      ]
+    },
+    "A1-U7-L7-A06": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U7.WRITING.WRITE_SHOPPING_REQUEST"
+      ]
+    },
+    "A1-U8-L1-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U8.PRODUCTION.STATE_LOCATION",
+        "A1.U8.READING.IDENTIFY_TOWN_PLACE"
+      ]
+    },
+    "A1-U8-L1-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U8.PRODUCTION.STATE_LOCATION",
+        "A1.U8.READING.IDENTIFY_TOWN_PLACE"
+      ]
+    },
+    "A1-U8-L1-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U8.PRODUCTION.STATE_LOCATION",
+        "A1.U8.READING.IDENTIFY_TOWN_PLACE"
+      ]
+    },
+    "A1-U8-L1-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U8.LISTENING.UNDERSTAND_SPOKEN_DIRECTIONS",
+        "A1.U8.PRODUCTION.STATE_LOCATION",
+        "A1.U8.READING.IDENTIFY_TOWN_PLACE"
+      ]
+    },
+    "A1-U8-L1-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U8.PRODUCTION.STATE_LOCATION",
+        "A1.U8.READING.IDENTIFY_TOWN_PLACE"
+      ]
+    },
+    "A1-U8-L2-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U8.INTERACTION.ASK_FOR_DIRECTIONS",
+        "A1.U8.PRODUCTION.STATE_LOCATION"
+      ]
+    },
+    "A1-U8-L2-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U8.INTERACTION.ASK_FOR_DIRECTIONS",
+        "A1.U8.PRODUCTION.STATE_LOCATION"
+      ]
+    },
+    "A1-U8-L2-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U8.INTERACTION.ASK_FOR_DIRECTIONS",
+        "A1.U8.PRODUCTION.STATE_LOCATION"
+      ]
+    },
+    "A1-U8-L2-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U8.INTERACTION.ASK_FOR_DIRECTIONS",
+        "A1.U8.LISTENING.UNDERSTAND_SPOKEN_DIRECTIONS",
+        "A1.U8.PRODUCTION.STATE_LOCATION"
+      ]
+    },
+    "A1-U8-L2-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U8.INTERACTION.ASK_FOR_DIRECTIONS",
+        "A1.U8.PRODUCTION.STATE_LOCATION"
+      ]
+    },
+    "A1-U8-L3-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U8.INTERACTION.ASK_FOR_DIRECTIONS",
+        "A1.U8.PRODUCTION.GIVE_SIMPLE_DIRECTIONS"
+      ]
+    },
+    "A1-U8-L3-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U8.INTERACTION.ASK_FOR_DIRECTIONS",
+        "A1.U8.PRODUCTION.GIVE_SIMPLE_DIRECTIONS"
+      ]
+    },
+    "A1-U8-L3-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U8.INTERACTION.ASK_FOR_DIRECTIONS",
+        "A1.U8.PRODUCTION.GIVE_SIMPLE_DIRECTIONS"
+      ]
+    },
+    "A1-U8-L3-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U8.INTERACTION.ASK_FOR_DIRECTIONS",
+        "A1.U8.LISTENING.UNDERSTAND_SPOKEN_DIRECTIONS",
+        "A1.U8.PRODUCTION.GIVE_SIMPLE_DIRECTIONS"
+      ]
+    },
+    "A1-U8-L3-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U8.INTERACTION.ASK_FOR_DIRECTIONS",
+        "A1.U8.PRODUCTION.GIVE_SIMPLE_DIRECTIONS"
+      ]
+    },
+    "A1-U8-L4-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U8.INTERACTION.ASK_FOR_DIRECTIONS",
+        "A1.U8.PRODUCTION.GIVE_SIMPLE_DIRECTIONS",
+        "A1.U8.WRITING.WRITE_DIRECTIONS"
+      ]
+    },
+    "A1-U8-L4-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U8.INTERACTION.ASK_FOR_DIRECTIONS",
+        "A1.U8.PRODUCTION.GIVE_SIMPLE_DIRECTIONS",
+        "A1.U8.WRITING.WRITE_DIRECTIONS"
+      ]
+    },
+    "A1-U8-L4-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U8.INTERACTION.ASK_FOR_DIRECTIONS",
+        "A1.U8.PRODUCTION.GIVE_SIMPLE_DIRECTIONS",
+        "A1.U8.WRITING.WRITE_DIRECTIONS"
+      ]
+    },
+    "A1-U8-L4-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U8.INTERACTION.ASK_FOR_DIRECTIONS",
+        "A1.U8.LISTENING.UNDERSTAND_SPOKEN_DIRECTIONS",
+        "A1.U8.PRODUCTION.GIVE_SIMPLE_DIRECTIONS",
+        "A1.U8.WRITING.WRITE_DIRECTIONS"
+      ]
+    },
+    "A1-U8-L4-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U8.INTERACTION.ASK_FOR_DIRECTIONS",
+        "A1.U8.PRODUCTION.GIVE_SIMPLE_DIRECTIONS",
+        "A1.U8.WRITING.WRITE_DIRECTIONS"
+      ]
+    },
+    "A1-U8-L5-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U8.PRODUCTION.STATE_LOCATION",
+        "A1.U8.READING.UNDERSTAND_PUBLIC_SIGN"
+      ]
+    },
+    "A1-U8-L5-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U8.PRODUCTION.STATE_LOCATION",
+        "A1.U8.READING.UNDERSTAND_PUBLIC_SIGN"
+      ]
+    },
+    "A1-U8-L5-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U8.PRODUCTION.STATE_LOCATION",
+        "A1.U8.READING.UNDERSTAND_PUBLIC_SIGN"
+      ]
+    },
+    "A1-U8-L5-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U8.LISTENING.UNDERSTAND_SPOKEN_DIRECTIONS",
+        "A1.U8.PRODUCTION.STATE_LOCATION",
+        "A1.U8.READING.UNDERSTAND_PUBLIC_SIGN"
+      ]
+    },
+    "A1-U8-L5-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U8.PRODUCTION.STATE_LOCATION",
+        "A1.U8.READING.UNDERSTAND_PUBLIC_SIGN"
+      ]
+    },
+    "A1-U8-L6-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U8.PRODUCTION.GIVE_SIMPLE_DIRECTIONS",
+        "A1.U8.READING.UNDERSTAND_PUBLIC_SIGN",
+        "A1.U8.WRITING.WRITE_DIRECTIONS"
+      ]
+    },
+    "A1-U8-L6-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U8.PRODUCTION.GIVE_SIMPLE_DIRECTIONS",
+        "A1.U8.READING.UNDERSTAND_PUBLIC_SIGN",
+        "A1.U8.WRITING.WRITE_DIRECTIONS"
+      ]
+    },
+    "A1-U8-L6-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U8.PRODUCTION.GIVE_SIMPLE_DIRECTIONS",
+        "A1.U8.READING.UNDERSTAND_PUBLIC_SIGN",
+        "A1.U8.WRITING.WRITE_DIRECTIONS"
+      ]
+    },
+    "A1-U8-L6-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U8.LISTENING.UNDERSTAND_SPOKEN_DIRECTIONS",
+        "A1.U8.PRODUCTION.GIVE_SIMPLE_DIRECTIONS",
+        "A1.U8.READING.UNDERSTAND_PUBLIC_SIGN",
+        "A1.U8.WRITING.WRITE_DIRECTIONS"
+      ]
+    },
+    "A1-U8-L6-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U8.PRODUCTION.GIVE_SIMPLE_DIRECTIONS",
+        "A1.U8.READING.UNDERSTAND_PUBLIC_SIGN",
+        "A1.U8.WRITING.WRITE_DIRECTIONS"
+      ]
+    },
+    "A1-U8-L7-A01": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U8.PRODUCTION.STATE_LOCATION",
+        "A1.U8.READING.IDENTIFY_TOWN_PLACE"
+      ]
+    },
+    "A1-U8-L7-A02": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U8.LISTENING.UNDERSTAND_SPOKEN_DIRECTIONS",
+        "A1.U8.READING.UNDERSTAND_PUBLIC_SIGN"
+      ]
+    },
+    "A1-U8-L7-A03": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U8.INTERACTION.ASK_FOR_DIRECTIONS"
+      ]
+    },
+    "A1-U8-L7-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U8.PRODUCTION.GIVE_SIMPLE_DIRECTIONS"
+      ]
+    },
+    "A1-U8-L7-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U8.MEDIATION.GUIDE_VISITOR",
+        "A1.U8.READING.UNDERSTAND_PUBLIC_SIGN"
+      ]
+    },
+    "A1-U8-L7-A06": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U8.MEDIATION.GUIDE_VISITOR",
+        "A1.U8.WRITING.WRITE_DIRECTIONS"
+      ]
+    },
+    "A1-U9-L1-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U9.LISTENING.UNDERSTAND_TRANSPORT_INFO",
+        "A1.U9.PRODUCTION.DESCRIBE_JOURNEY"
+      ]
+    },
+    "A1-U9-L1-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U9.LISTENING.UNDERSTAND_TRANSPORT_INFO",
+        "A1.U9.PRODUCTION.DESCRIBE_JOURNEY"
+      ]
+    },
+    "A1-U9-L1-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U9.LISTENING.UNDERSTAND_TRANSPORT_INFO",
+        "A1.U9.PRODUCTION.DESCRIBE_JOURNEY"
+      ]
+    },
+    "A1-U9-L1-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U9.LISTENING.UNDERSTAND_TRANSPORT_INFO",
+        "A1.U9.PRODUCTION.DESCRIBE_JOURNEY"
+      ]
+    },
+    "A1-U9-L1-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U9.LISTENING.UNDERSTAND_TRANSPORT_INFO",
+        "A1.U9.PRODUCTION.DESCRIBE_JOURNEY"
+      ]
+    },
+    "A1-U9-L2-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U9.INTERACTION.BUY_TICKET",
+        "A1.U9.READING.UNDERSTAND_SIMPLE_ROUTE"
+      ]
+    },
+    "A1-U9-L2-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U9.INTERACTION.BUY_TICKET",
+        "A1.U9.READING.UNDERSTAND_SIMPLE_ROUTE"
+      ]
+    },
+    "A1-U9-L2-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U9.INTERACTION.BUY_TICKET",
+        "A1.U9.READING.UNDERSTAND_SIMPLE_ROUTE"
+      ]
+    },
+    "A1-U9-L2-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U9.INTERACTION.BUY_TICKET",
+        "A1.U9.READING.UNDERSTAND_SIMPLE_ROUTE"
+      ]
+    },
+    "A1-U9-L2-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U9.INTERACTION.BUY_TICKET",
+        "A1.U9.READING.UNDERSTAND_SIMPLE_ROUTE"
+      ]
+    },
+    "A1-U9-L3-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U9.INTERACTION.ASK_DEPARTURE_INFO",
+        "A1.U9.LISTENING.UNDERSTAND_TRANSPORT_INFO"
+      ]
+    },
+    "A1-U9-L3-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U9.INTERACTION.ASK_DEPARTURE_INFO",
+        "A1.U9.LISTENING.UNDERSTAND_TRANSPORT_INFO"
+      ]
+    },
+    "A1-U9-L3-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U9.INTERACTION.ASK_DEPARTURE_INFO",
+        "A1.U9.LISTENING.UNDERSTAND_TRANSPORT_INFO"
+      ]
+    },
+    "A1-U9-L3-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U9.INTERACTION.ASK_DEPARTURE_INFO",
+        "A1.U9.LISTENING.UNDERSTAND_TRANSPORT_INFO"
+      ]
+    },
+    "A1-U9-L3-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U9.INTERACTION.ASK_DEPARTURE_INFO",
+        "A1.U9.LISTENING.UNDERSTAND_TRANSPORT_INFO"
+      ]
+    },
+    "A1-U9-L4-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U9.INTERACTION.ASK_DEPARTURE_INFO",
+        "A1.U9.MEDIATION.PLAN_SIMPLE_JOURNEY",
+        "A1.U9.READING.UNDERSTAND_SIMPLE_ROUTE"
+      ]
+    },
+    "A1-U9-L4-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U9.INTERACTION.ASK_DEPARTURE_INFO",
+        "A1.U9.MEDIATION.PLAN_SIMPLE_JOURNEY",
+        "A1.U9.READING.UNDERSTAND_SIMPLE_ROUTE"
+      ]
+    },
+    "A1-U9-L4-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U9.INTERACTION.ASK_DEPARTURE_INFO",
+        "A1.U9.MEDIATION.PLAN_SIMPLE_JOURNEY",
+        "A1.U9.READING.UNDERSTAND_SIMPLE_ROUTE"
+      ]
+    },
+    "A1-U9-L4-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U9.INTERACTION.ASK_DEPARTURE_INFO",
+        "A1.U9.MEDIATION.PLAN_SIMPLE_JOURNEY",
+        "A1.U9.READING.UNDERSTAND_SIMPLE_ROUTE"
+      ]
+    },
+    "A1-U9-L4-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U9.INTERACTION.ASK_DEPARTURE_INFO",
+        "A1.U9.MEDIATION.PLAN_SIMPLE_JOURNEY",
+        "A1.U9.READING.UNDERSTAND_SIMPLE_ROUTE"
+      ]
+    },
+    "A1-U9-L5-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U9.LISTENING.UNDERSTAND_TRANSPORT_INFO",
+        "A1.U9.PRODUCTION.DESCRIBE_JOURNEY"
+      ]
+    },
+    "A1-U9-L5-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U9.LISTENING.UNDERSTAND_TRANSPORT_INFO",
+        "A1.U9.PRODUCTION.DESCRIBE_JOURNEY"
+      ]
+    },
+    "A1-U9-L5-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U9.LISTENING.UNDERSTAND_TRANSPORT_INFO",
+        "A1.U9.PRODUCTION.DESCRIBE_JOURNEY"
+      ]
+    },
+    "A1-U9-L5-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U9.LISTENING.UNDERSTAND_TRANSPORT_INFO",
+        "A1.U9.PRODUCTION.DESCRIBE_JOURNEY"
+      ]
+    },
+    "A1-U9-L5-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U9.LISTENING.UNDERSTAND_TRANSPORT_INFO",
+        "A1.U9.PRODUCTION.DESCRIBE_JOURNEY"
+      ]
+    },
+    "A1-U9-L6-A01": {
+      "mode": "encounter",
+      "canDo": [
+        "A1.U9.INTERACTION.ASK_DEPARTURE_INFO",
+        "A1.U9.READING.UNDERSTAND_SIMPLE_ROUTE",
+        "A1.U9.WRITING.WRITE_TRAVEL_PLAN"
+      ]
+    },
+    "A1-U9-L6-A02": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U9.INTERACTION.ASK_DEPARTURE_INFO",
+        "A1.U9.READING.UNDERSTAND_SIMPLE_ROUTE",
+        "A1.U9.WRITING.WRITE_TRAVEL_PLAN"
+      ]
+    },
+    "A1-U9-L6-A03": {
+      "mode": "practice",
+      "canDo": [
+        "A1.U9.INTERACTION.ASK_DEPARTURE_INFO",
+        "A1.U9.READING.UNDERSTAND_SIMPLE_ROUTE",
+        "A1.U9.WRITING.WRITE_TRAVEL_PLAN"
+      ]
+    },
+    "A1-U9-L6-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U9.INTERACTION.ASK_DEPARTURE_INFO",
+        "A1.U9.READING.UNDERSTAND_SIMPLE_ROUTE",
+        "A1.U9.WRITING.WRITE_TRAVEL_PLAN"
+      ]
+    },
+    "A1-U9-L6-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U9.INTERACTION.ASK_DEPARTURE_INFO",
+        "A1.U9.READING.UNDERSTAND_SIMPLE_ROUTE",
+        "A1.U9.WRITING.WRITE_TRAVEL_PLAN"
+      ]
+    },
+    "A1-U9-L7-A01": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U9.MEDIATION.PLAN_SIMPLE_JOURNEY",
+        "A1.U9.READING.UNDERSTAND_SIMPLE_ROUTE"
+      ]
+    },
+    "A1-U9-L7-A02": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U9.INTERACTION.ASK_DEPARTURE_INFO"
+      ]
+    },
+    "A1-U9-L7-A03": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U9.INTERACTION.BUY_TICKET"
+      ]
+    },
+    "A1-U9-L7-A04": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U9.PRODUCTION.DESCRIBE_JOURNEY"
+      ]
+    },
+    "A1-U9-L7-A05": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U9.MEDIATION.PLAN_SIMPLE_JOURNEY"
+      ]
+    },
+    "A1-U9-L7-A06": {
+      "mode": "mastery",
+      "canDo": [
+        "A1.U9.WRITING.WRITE_TRAVEL_PLAN"
+      ]
+    }
+  },
+  "canDoIds": [
+    "A1.EXIT.ACTION.COMPLETE_MULTI_STEP_MISSION",
+    "A1.EXIT.INTERACTION.HANDLE_SIMPLE_EXCHANGE",
+    "A1.EXIT.LISTENING.UNDERSTAND_EVERYDAY_INFO",
+    "A1.EXIT.MEDIATION.RELAY_SIMPLE_INFORMATION",
+    "A1.EXIT.PRODUCTION.DESCRIBE_FAMILIAR_MATTER",
+    "A1.EXIT.READING.UNDERSTAND_SIMPLE_TEXTS",
+    "A1.EXIT.WRITING.WRITE_SIMPLE_CONNECTED_TEXT",
+    "A1.U0.INTERACTION.REGISTER_FOR_CLASS",
+    "A1.U0.INTERACTION.RESPOND_GREETING",
+    "A1.U0.LISTENING.FOLLOW_APP_INSTRUCTION",
+    "A1.U0.LISTENING.UNDERSTAND_PERSONAL_NUMBER",
+    "A1.U0.LISTENING.UNDERSTAND_SPELLED_NAME",
+    "A1.U0.PRODUCTION.SPELL_NAME",
+    "A1.U1.INTERACTION.ASK_NAME",
+    "A1.U1.INTERACTION.ASK_ORIGIN",
+    "A1.U1.INTERACTION.ASK_RESIDENCE",
+    "A1.U1.INTERACTION.NEW_COLLEAGUE_MISSION",
+    "A1.U1.INTERACTION.USE_REPAIR_PHRASE",
+    "A1.U1.LISTENING.UNDERSTAND_PERSONAL_INFO",
+    "A1.U1.PRODUCTION.INTRODUCE_OTHER",
+    "A1.U1.PRODUCTION.INTRODUCE_SELF",
+    "A1.U1.PRODUCTION.STATE_JOB",
+    "A1.U1.PRODUCTION.STATE_ORIGIN",
+    "A1.U1.PRODUCTION.STATE_RESIDENCE",
+    "A1.U10.INTERACTION.ASK_FOR_HEALTH_HELP",
+    "A1.U10.LISTENING.UNDERSTAND_BASIC_ADVICE",
+    "A1.U10.MEDIATION.SOLVE_SIMPLE_HEALTH_PROBLEM",
+    "A1.U10.PRODUCTION.DESCRIBE_SIMPLE_SYMPTOM",
+    "A1.U10.READING.IDENTIFY_BODY_AND_BASIC_HEALTH",
+    "A1.U10.READING.UNDERSTAND_HEALTH_INSTRUCTION",
+    "A1.U10.WRITING.WRITE_HEALTH_NOTE",
+    "A1.U11.INTERACTION.ASK_ABOUT_CLOTHES_AND_WEATHER",
+    "A1.U11.LISTENING.UNDERSTAND_CURRENT_WEATHER",
+    "A1.U11.MEDIATION.PREPARE_FOR_TOMORROW_WEATHER",
+    "A1.U11.PRODUCTION.DESCRIBE_ACTION_NOW",
+    "A1.U11.PRODUCTION.GIVE_SIMPLE_REASON",
+    "A1.U11.READING.CHOOSE_WEATHER_CLOTHES",
+    "A1.U11.READING.UNDERSTAND_SIMPLE_FORECAST",
+    "A1.U11.WRITING.WRITE_WEATHER_UPDATE",
+    "A1.U12.INTERACTION.ACCEPT_REFUSE_CHANGE_PLAN",
+    "A1.U12.INTERACTION.ARRANGE_MEETING",
+    "A1.U12.INTERACTION.ASK_ABOUT_PLAN",
+    "A1.U12.LISTENING.UNDERSTAND_SPOKEN_PLAN",
+    "A1.U12.MEDIATION.COORDINATE_WEEKEND_PLAN",
+    "A1.U12.PRODUCTION.STATE_FUTURE_PLAN",
+    "A1.U12.READING.UNDERSTAND_SHORT_MESSAGE",
+    "A1.U12.WRITING.WRITE_SIMPLE_PERSONAL_MESSAGE",
+    "A1.U2.INTERACTION.ASK_IDENTIFY_PERSON",
+    "A1.U2.LISTENING.UNDERSTAND_PEOPLE_DESCRIPTION",
+    "A1.U2.MEDIATION.EXPLAIN_PEOPLE_MAP",
+    "A1.U2.PRODUCTION.DESCRIBE_FAMILY",
+    "A1.U2.PRODUCTION.DESCRIBE_PERSON",
+    "A1.U2.PRODUCTION.STATE_AGE",
+    "A1.U2.PRODUCTION.STATE_RELATIONSHIP",
+    "A1.U2.WRITING.WRITE_PEOPLE_PROFILE",
+    "A1.U3.INTERACTION.ASK_ANSWER_OWNERSHIP",
+    "A1.U3.INTERACTION.IDENTIFY_NEAR_FAR_OBJECTS",
+    "A1.U3.LISTENING.UNDERSTAND_ROOM_DESCRIPTION",
+    "A1.U3.MEDIATION.SHOW_NEW_HOME",
+    "A1.U3.PRODUCTION.DESCRIBE_ROOM",
+    "A1.U3.PRODUCTION.LOCATE_OBJECTS",
+    "A1.U3.PRODUCTION.STATE_EXISTENCE",
+    "A1.U3.WRITING.WRITE_HOME_DESCRIPTION",
+    "A1.U4.INTERACTION.ASK_ABOUT_ROUTINE",
+    "A1.U4.LISTENING.UNDERSTAND_TIME_SCHEDULE",
+    "A1.U4.MEDIATION.COMPARE_ROUTINES",
+    "A1.U4.PRODUCTION.DESCRIBE_DAILY_ROUTINE",
+    "A1.U4.PRODUCTION.DESCRIBE_OTHER_ROUTINE",
+    "A1.U4.PRODUCTION.STATE_FREQUENCY",
+    "A1.U4.WRITING.WRITE_ROUTINE",
+    "A1.U5.INTERACTION.ASK_ANSWER_ABILITY",
+    "A1.U5.INTERACTION.MAKE_RESPOND_INVITATION",
+    "A1.U5.LISTENING.UNDERSTAND_PREFERENCES",
+    "A1.U5.MEDIATION.PLAN_FREE_AFTERNOON",
+    "A1.U5.PRODUCTION.DESCRIBE_HOBBIES",
+    "A1.U5.PRODUCTION.EXPRESS_PREFERENCE",
+    "A1.U5.WRITING.WRITE_FREE_TIME_MESSAGE",
+    "A1.U6.INTERACTION.CHECK_MEAL",
+    "A1.U6.INTERACTION.ORDER_MEAL",
+    "A1.U6.LISTENING.UNDERSTAND_FOOD_QUANTITY",
+    "A1.U6.MEDIATION.COMPLETE_MEAL_MISSION",
+    "A1.U6.PRODUCTION.STATE_FOOD_WANTS",
+    "A1.U6.READING.UNDERSTAND_BASIC_MENU",
+    "A1.U6.WRITING.WRITE_SIMPLE_ORDER",
+    "A1.U7.INTERACTION.ASK_ABOUT_PRODUCT",
+    "A1.U7.INTERACTION.BUY_ITEM",
+    "A1.U7.INTERACTION.SOLVE_SHOPPING_PROBLEM",
+    "A1.U7.LISTENING.UNDERSTAND_PRICE",
+    "A1.U7.MEDIATION.COMPLETE_BUDGET_PURCHASE",
+    "A1.U7.READING.CHOOSE_PRODUCT",
+    "A1.U7.WRITING.WRITE_SHOPPING_REQUEST",
+    "A1.U8.INTERACTION.ASK_FOR_DIRECTIONS",
+    "A1.U8.LISTENING.UNDERSTAND_SPOKEN_DIRECTIONS",
+    "A1.U8.MEDIATION.GUIDE_VISITOR",
+    "A1.U8.PRODUCTION.GIVE_SIMPLE_DIRECTIONS",
+    "A1.U8.PRODUCTION.STATE_LOCATION",
+    "A1.U8.READING.IDENTIFY_TOWN_PLACE",
+    "A1.U8.READING.UNDERSTAND_PUBLIC_SIGN",
+    "A1.U8.WRITING.WRITE_DIRECTIONS",
+    "A1.U9.INTERACTION.ASK_DEPARTURE_INFO",
+    "A1.U9.INTERACTION.BUY_TICKET",
+    "A1.U9.LISTENING.UNDERSTAND_TRANSPORT_INFO",
+    "A1.U9.MEDIATION.PLAN_SIMPLE_JOURNEY",
+    "A1.U9.PRODUCTION.DESCRIBE_JOURNEY",
+    "A1.U9.READING.UNDERSTAND_SIMPLE_ROUTE",
+    "A1.U9.WRITING.WRITE_TRAVEL_PLAN"
+  ]
+}

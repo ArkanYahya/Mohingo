@@ -92,6 +92,11 @@ class _FakeActivityAttemptRepository implements ActivityAttemptRepository {
     required int learnerId,
     required String activityId,
   }) async => throw UnimplementedError('not needed by these tests');
+
+  @override
+  Future<Map<String, String?>> attemptedActivityLessons({
+    required int learnerId,
+  }) async => throw UnimplementedError('not needed by these tests');
 }
 
 class _FakeUnitLessonProgressRepository
@@ -118,10 +123,19 @@ class _FakeUnitLessonProgressRepository
       unitId: unitId,
       state: state.name,
       masteredAt: masteredAt,
-      isContentStale: false,
+      // Preserved, not reset: the real repository's upsert leaves this
+      // column alone, so a fake that cleared it would teach the opposite
+      // contract to anything written against it.
+      isContentStale: _byUnitId[unitId]?.isContentStale ?? false,
       updatedAt: DateTime.utc(2026, 9, 2),
     );
   }
+
+  @override
+  Future<void> markUnitsContentStale({
+    required int learnerId,
+    required Set<String> unitIds,
+  }) async => throw UnimplementedError('not needed by these tests');
 
   @override
   Future<List<UnitProgressData>> allUnitProgress({

@@ -68,6 +68,24 @@ class DriftUnitLessonProgressRepository
   }
 
   @override
+  Future<void> markUnitsContentStale({
+    required int learnerId,
+    required Set<String> unitIds,
+  }) async {
+    await _db.transaction(() async {
+      await (_db.update(_db.unitProgress)
+            ..where((t) => t.learnerId.equals(learnerId)))
+          .write(const UnitProgressCompanion(isContentStale: Value(false)));
+      if (unitIds.isEmpty) return;
+      await (_db.update(_db.unitProgress)..where(
+            (t) =>
+                t.learnerId.equals(learnerId) & t.unitId.isIn(unitIds.toList()),
+          ))
+          .write(const UnitProgressCompanion(isContentStale: Value(true)));
+    });
+  }
+
+  @override
   Future<LessonProgressData?> lessonProgress({
     required int learnerId,
     required String lessonId,

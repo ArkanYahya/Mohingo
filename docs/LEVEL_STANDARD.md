@@ -1,0 +1,65 @@
+> **What this file is:** What a CEFR level must contain to ship in this app, and what adding one costs. Every rule below names the test that enforces it, or says plainly that nothing does yet.
+> **How to use it:** Read it before authoring B1, B2, C1 or C2. Transcribe the numbers from `test/content/levels/level_gate_config.dart` rather than from here if the two ever disagree — the config is what runs.
+
+_Last verified: 2026-09-22 (`feature/level-standard-and-content-versioning`) — written. A1 and A2 both meet everything below; A1 was brought up to it the same day. See [ADR 0007](adr/0007-one-standard-for-every-level.md) for why there is one standard rather than one per level._
+
+# Level standard
+
+## What adding a level costs
+
+Four things. Each is verified against the code as of this document's date; if adding B1 turns out to need a fifth, that is a defect in the app or in this list, and this list is where to record it.
+
+1. **A catalogue entry** in `kLevelCatalog` (`lib/content/catalog/level_catalog.dart`): `levelId`, `cefrCode`, `availability`, `bundleAssetPath`, `prerequisiteLevelId`. A level ships as `comingSoon` with no bundle; becomes `preview` once its bundle exists (its content loads and can be browsed, its lessons stay closed); becomes `available` only when its release rule passes. A development build opens a preview level with `--dart-define=MOHINGO_PREVIEW_LEVELS=<id>`, and only the levels named.
+2. **A bundle** at `assets/content/en/<CEFR>/<level>-course-bundle.json`, listed under `flutter: assets:` in `pubspec.yaml`. Same schema as the two that ship (`schemaVersion` `2.0.0`); the parser and index are level-agnostic.
+3. **A gate config row** in `test/content/levels/level_gate_config.dart` — a `LevelGateConfig` added to `kLevelGates`, holding the level's numbers and its finished-units list. Every gate under `test/content/levels/` then runs over it. Nothing else in `test/` needs a level named: the published-id gate, the update script and the prerequisite lookup all read the catalogue.
+4. **A published-id snapshot**: `dart run tool/update_published_ids.dart`, then commit `test/content/published/<level>-published-ids.json`. From that commit the level's ids are permanent, its activities' `mode` frozen, and their `canDo` lists append-only (see [CONVENTIONS.md](CONVENTIONS.md)).
+
+What it does **not** cost: a screen, a provider, a repository, a migration, or a string. Every screen follows the learner's current level through `currentCourseProvider`; no ARB string names a level; the placement test spans every released level. One optional pair of strings: Home shows a descriptor beside the level code (`cefrDescriptorA1` "Beginner" / "مبتدئ", `cefrDescriptorA2` "Elementary" / "أساسي", read by `lib/core/l10n/cefr_descriptor_label.dart`); a level without one shows its bare code, which is correct rather than broken, so add `cefrDescriptorB1` in both ARBs when the level ships and run `flutter gen-l10n`. This was true for A2 only after its step 2b, and the standard exists partly so that nobody ships a third level while ten screens still name the first.
+
+**One rule on the way in, easy to forget:** a content change must bump the bundle's `contentVersion`. The app treats an unchanged version as "not an upgrade" and never diffs the content, so a change that keeps the old string is invisible to stale-unit detection on every device. The update script refuses to record new ids under an unchanged version; for changes that move no ids (prose, transcripts, rubrics) nothing will refuse you, so bump it anyway.
+
+## What a level must contain
+
+The numbers are per level and live in the config; the rules are the same for every level. Each is enforced by the file named.
+
+- **Shape** — 7 lessons and 36 activities per unit, 6 encounter / 12 practice / 18 mastery. `level_structure_test.dart`.
+- **Skill balance** — each unit inside the level's ranges for listening, reading, speaking (production and interaction together), writing and mediation. A2's are 10–36 / 0–12 / 6–8 / 3 / 2; A1's lean on listening and ask for less writing, as a level for learners who cannot yet read should. `level_design_limits_test.dart`.
+- **Opens on a conversation** — every guided lesson starts with 4–8 lines between 2–3 speakers, Arabic on every line. `level_design_limits_test.dart`.
+- **Bilingual throughout** — Arabic on every prompt, conversation line, model text, title, and on every word, phrase and structure a unit teaches; English fields free of Arabic script; Arabic that is written as Arabic, not the English copied across. `level_bilingual_test.dart`, and [UX_PRINCIPLES.md](UX_PRINCIPLES.md) for how to write it.
+- **Answerable** — every listening item has a transcript, every reading question a text, every mediation task a source card, every interaction task partner turns, every closed question a right answer among its options and a wrong one to pick. `level_answerable_test.dart`.
+- **Gradeable** — every mastery `speak` or `write` task carries a rubric the evaluator grades (`keywordChecklist`, `letterSequence`, `numericRange`, `nonEmpty`), and **no `speak` rubric in any bundle carries `onlineRefinement`** — the boundary from [ADR 0005](adr/0005-narrow-network-exception-for-open-ended-grading.md), which would otherwise send recognised speech to a public API. `level_answerable_test.dart`; `test/content/online_refinement_boundary_test.dart`, which walks every bundle it finds.
+- **Taught means used** — every word and phrase a lesson lists appears in that lesson. Template phrases (`{name}`, `...`) are patterns the lesson fills; a phrase card with alternatives (`Yes, I can. / No, I can't.`) needs each one. `level_answerable_test.dart`.
+- **Masterable, and failable** — answering every mastery item correctly masters the unit, through the real `MasteryAggregationService`; the unit requires objectives and skill groups it could fail; every skill it teaches in enough mastery activities to be requirable is required; every required objective is carried by an activity of its own skill, so it can be earned by doing that kind of work. `level_masterable_test.dart`, `level_design_limits_test.dart`.
+- **Length bands** — conversations, transcripts, model texts and writing guides inside the unit's tier. A2's texts climb across the level (conversations ~50 words at U1, ~100 at U12); A1's do not, and have one tier. `level_design_limits_test.dart`.
+- **Vocabulary** — at least 30 new senses per unit. `level_design_limits_test.dart`.
+- **Capstones** — a Final Mission and a Final Assessment; every skill the assessment's decision rule requires is a section it contains; both exits marked to the same pass mark; inputs unseen in the units. `level_capstones_test.dart`, over the rules in `level_capstone_checks.dart`.
+- **Distinct ids** — no id shared with any other level; no prompt repeated more than the level allows within a unit. `level_config_test.dart`, `level_design_limits_test.dart`.
+- **Release** — a level may be `available` only when its finished-units list is every unit in its bundle and both capstones pass their gates; the release rule also asserts the capstone suite file still exists, so the gates cannot be deleted and a release left standing. `level_masterable_test.dart`.
+
+## Self-containment
+
+Decided by the product owner and now enforced: **a level is self-contained for vocabulary and may reference an earlier level's grammar.**
+
+A word or phrase a lesson lists must be registered in that level's own `lexicon` or `chunks` — never an earlier level's id — because a re-listed word would split its spaced-review history across two ids, and a learner's Words & phrases screen would show the word under the wrong level. A lesson may list an earlier level's grammar record where it revises that structure, because grammar is a small, stable set learners genuinely return to and duplicating a record would be worse than pointing at it. `level_structure_test.dart` checks both directions. A2 lists no A1 id of either kind today.
+
+## Exceptions
+
+An exception is a value with a written reason in the level's config — `DeclaredException` — never a skip. An excepted unit is still checked, against its own numbers, and the reason prints in the failure message. `level_config_test.dart` refuses an exception that names a unit which does not exist or gives no reason.
+
+A1 carries these, and **a new level carries none**; there is nothing to grandfather in content authored to this standard:
+
+- **A1-U0 is 5 lessons / 20 activities / 2-5-13** — an onboarding unit, deliberately shorter, and `levelRole: prerequisite`, so it does not count towards A1 mastery.
+- **A1-U1 is 7 / 30 / 5-7-18** — authored before the shape settled.
+- Both have their own skill balance (no reading, writing or mediation yet), and neither carries a model text; A1 has no one-model-text-per-unit design at all.
+- **A1's Can-Do tags cross skill categories** (most activities carry their lesson's whole list), so the "earned through its own skill" rule is checked at unit level rather than per activity.
+- **A1 gives each writing task its own word guide** inside the unit's band, where A2 gives a unit one guide for all of them.
+
+Every one of these exists because changing it would move a published id, freeze-break a mode or drop a tag, and [CONVENTIONS.md](CONVENTIONS.md) forbids all three after a level ships.
+
+## What this document does not decide
+
+- **How content reaches the device.** A level ships as a bundled asset today ([ADR 0004](adr/0004-local-only-v1-no-firebase-backend.md)). Whether that moves to SQLite is open, and nothing above depends on the answer: the gates read a bundle wherever it lives.
+- **Whether content updates over the air.** Open. The content-versioning layer records what loaded and notices what changed; it does not fetch.
+- **What a level costs to author.** This is the shape, not the schedule. A2 took a full authoring pass after its import; A1 took roughly 290 additive changes to reach the same standard. Budget for that, not for a copy-and-level-up.
+
+One known limitation a level author will hit: **passing a Final Assessment does not yet mark a level complete** — see README's "Known limitations" and [ROADMAP.md](ROADMAP.md).

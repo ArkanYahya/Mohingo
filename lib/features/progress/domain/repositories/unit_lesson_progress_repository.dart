@@ -36,6 +36,19 @@ abstract interface class UnitLessonProgressRepository {
     DateTime? masteredAt,
   });
 
+  /// Flags exactly [unitIds] as holding content that moved under the
+  /// learner, and clears the flag on all their other units.
+  ///
+  /// Clearing is half the contract: a later bundle that restores what was
+  /// missing must un-flag the unit, or the message would stick forever.
+  /// Unlike [upsertUnitProgress], this is not derived from attempt
+  /// evidence — it is decided by comparing the loaded bundle against the
+  /// id snapshot recorded when the learner last opened this course.
+  Future<void> markUnitsContentStale({
+    required int learnerId,
+    required Set<String> unitIds,
+  });
+
   Future<LessonProgressData?> lessonProgress({
     required int learnerId,
     required String lessonId,

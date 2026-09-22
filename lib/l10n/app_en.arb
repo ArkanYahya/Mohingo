@@ -337,6 +337,10 @@
   "@learnUnitStartHereOverline": {"description": "Overline on the highlighted card for the unit a learner who hasn't started it yet should begin with.", "placeholders": {"unit": {"type": "int"}}},
   "learnUnitLessonsDone": "{done} of {total} lessons",
   "@learnUnitLessonsDone": {"description": "Lessons finished in a unit.", "placeholders": {"done": {"type": "int"}, "total": {"type": "int"}}},
+  "learnUnitContentUpdated": "Updated since you last studied it",
+  "@learnUnitContentUpdated": {
+    "description": "Status line on a unit whose content changed after the learner worked through it — an activity they answered is no longer in the unit, or the unit now asks for different Can-Do objectives. Their progress is kept: this informs, it never blocks. Written so it reads as the course improving rather than as something the learner did wrong."
+  },
   "learnUnitNodeSemantics": "Unit {unit}: {state}",
   "@learnUnitNodeSemantics": {"description": "Screen-reader label of a unit's circle on the path.", "placeholders": {"unit": {"type": "int"}, "state": {"type": "String"}}},
   "learnUnitOverline": "Unit {unit}",

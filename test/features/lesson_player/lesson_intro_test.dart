@@ -216,7 +216,10 @@ void main() {
 
   testWidgets('a lesson without a conversation starts on its first '
       'question', (tester) async {
-    await _pumpPlayer(tester, lessonId: 'A1-U1-L4');
+    // A1-U0-L2 is the app-instructions drill: no conversation, no model
+    // text, four questions. (A1-U1-L4 served here until every A1 guided
+    // lesson was given an opening conversation on 2026-09-22.)
+    await _pumpPlayer(tester, unitId: 'A1-U0', lessonId: 'A1-U0-L2');
 
     expect(find.byType(LessonConversationStep), findsNothing);
     expect(find.byType(ActivityChrome), findsOneWidget);
