@@ -48,7 +48,7 @@ After editing `lib/l10n/app_en.arb` or `lib/l10n/app_ar.arb`, run `flutter gen-l
 ## Running tests
 
 ```
-flutter test                      # unit + widget tests (879 passing as of the last full run — see CLAUDE.md)
+flutter test                      # unit + widget tests (904 passing as of the last full run — see CLAUDE.md)
 flutter test integration_test/    # not yet added — see "Known limitations" below
 ```
 
