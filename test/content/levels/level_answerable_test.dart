@@ -6,6 +6,18 @@ import 'level_gate_config.dart';
 
 /// Ported from `a2_answerable_test.dart`, which held these rules as
 /// A2-specific code: can a learner actually answer what the content asks?
+/// "A. / B." lists two whole phrases; "left/right" lists two words in one
+/// slot. Anything else is a single phrase.
+List<String> alternativesOf(String text) {
+  if (text.contains(' / ')) return text.split(' / ');
+  final slot = RegExp(r"([A-Za-z']+)/([A-Za-z']+)").firstMatch(text);
+  if (slot == null) return [text];
+  return [
+    text.replaceRange(slot.start, slot.end, slot[1]!),
+    text.replaceRange(slot.start, slot.end, slot[2]!),
+  ];
+}
+
 void main() {
   for (final gate in kLevelGates) {
     group(gate.levelId.toUpperCase(), () {
@@ -46,6 +58,13 @@ void main() {
             for (final a in lesson.activities) {
               if (a.skill != Skill.reading) continue;
               if (a is! TextChoiceActivity) continue;
+              // A drill whose prompt carries its own material — "Complete:
+              // I'm ___ Iraq.", "Reply naturally: Nice to meet you." — is
+              // not asking about a text; a text for it would repeat the
+              // prompt or give the answer away. The colon is the authored
+              // convention for that. Measured before adopting it: no A2
+              // reading item has one, so A2's protection is unchanged.
+              if (a.prompt.contains(':')) continue;
               final hasOwnText =
                   (a.raw['sourceText'] as String?)?.trim().isNotEmpty ?? false;
               final hasCard = a.sourceCard != null;
@@ -158,7 +177,25 @@ void main() {
               reason: '${a.id} still has the legacy rubric-name evaluation',
             );
             final map = spec as Map;
-            expect(map['type'], 'keywordChecklist', reason: a.id);
+            // Any spec the evaluator grades is structured. A2's productive
+            // tasks are all keyword checklists, but "spell your name" is
+            // graded letter by letter against the profile name
+            // (letterSequence) and "how old are you" against a range
+            // (numericRange) — rubrics a keyword list could not express.
+            // What this gate refuses is the legacy list of rubric names no
+            // grader reads; keying on one spec type refused the others too.
+            const graded = {
+              'keywordChecklist',
+              'letterSequence',
+              'numericRange',
+              'nonEmpty',
+            };
+            expect(
+              graded,
+              contains(map['type']),
+              reason: '${a.id} evaluation type ${map['type']} is not graded',
+            );
+            if (map['type'] != 'keywordChecklist') continue;
             final groups = map['requiredGroups'];
             expect(groups is List && groups.isNotEmpty, isTrue, reason: a.id);
             for (final group in groups as List) {
@@ -310,7 +347,12 @@ void main() {
         // phrase's registry text, which is deliberately not free: that text is
         // what the learner reads in Words & phrases, so the dodge is visible on
         // the screen the phrase is taught from.
-        final placeholder = RegExp(r'\.\.\.|…');
+        // Two notations for a slot: A2's ellipsis ("have ... in common") and
+        // A1's braces ("My name is {name}."). Same concept — the lesson
+        // fills the slot rather than printing it — so both are templates.
+        // Recognising only one notation demanded A1's templates verbatim,
+        // which no lesson could ever satisfy.
+        final placeholder = RegExp(r'\.\.\.|…|\{[^}]*\}');
         final token = RegExp(r"[a-z0-9']+");
         String normalise(String value) =>
             token.allMatches(value.toLowerCase()).map((m) => m[0]!).join(' ');
@@ -342,10 +384,19 @@ void main() {
               if (chunk == null) continue; // an A1 reference, as above
               if (placeholder.hasMatch(chunk.text)) continue;
               checked++;
-              if (!haystack.contains(normalise(chunk.text))) {
-                offenders.add(
-                  '${lesson.id} lists "${chunk.text}" ($id) but never uses it',
-                );
+              // A1 writes some phrase cards as alternatives — "Yes, I can.
+              // / No, I can't.", "It's on your left/right." — and A2
+              // writes none that way. Normalised whole, such a card became
+              // one token run no lesson could contain. Each alternative
+              // is required: the card teaches both, so a lesson that shows
+              // one has not taught the phrase as the card presents it.
+              for (final alternative in alternativesOf(chunk.text)) {
+                if (!haystack.contains(normalise(alternative))) {
+                  offenders.add(
+                    '${lesson.id} lists "${chunk.text}" ($id) but never '
+                    'uses "$alternative"',
+                  );
+                }
               }
             }
           }

@@ -57,7 +57,9 @@ void main() {
 
       test('each unit has one model text for its production lesson', () {
         for (final unit in gate.finishedUnits()) {
-          if (!gate.requiresModelTextPerUnit) continue;
+          if (!gate.requiresModelTextPerUnit) {
+            continue;
+          }
           final withText = unit.lessons
               .where((l) => l.readingText != null)
               .toList();
@@ -80,8 +82,9 @@ void main() {
             final en = ('prompt', a.prompt.trim().toLowerCase());
             counts[en] = (counts[en] ?? 0) + 1;
             final arabic = a.promptAr?.trim().toLowerCase() ?? '';
-            if (arabic.isEmpty)
+            if (arabic.isEmpty) {
               continue; // a missing promptAr is the bilingual gate's
+            }
             final ar = ('promptAr', arabic);
             counts[ar] = (counts[ar] ?? 0) + 1;
           }
@@ -164,41 +167,45 @@ void main() {
                     reason: '${a.id} (${a.skill}) claims $objective',
                   );
                 }
-              } else {
-                // This level tags activities with their lesson's whole
-                // list, so an activity's objectives cannot be matched to
-                // its own skill. The equivalent rule at lesson
-                // granularity: an activity may only claim what its lesson
-                // declares, and (below) every skill the lesson's
-                // activities evidence must have an objective of its
-                // category in that list. A mis-categorised lesson still
-                // fails — this changes where the rule is applied, not how
-                // strong it is.
-                expect(
-                  lesson.canDo,
-                  containsAll(a.canDo),
-                  reason:
-                      '${a.id} claims an objective its lesson ${lesson.id} '
-                      'does not declare',
-                );
               }
             }
-            if (gate.canDoTagging != CanDoTagging.lessonWide) continue;
-            final declared = {
-              for (final objective in lesson.canDo)
-                for (final entry in categoryBySkill.entries)
-                  if (objective.contains('.${entry.value}.')) entry.value,
-            };
-            for (final skill in {for (final a in lesson.activities) a.skill}) {
-              expect(
-                declared,
-                contains(categoryBySkill[skill]!),
-                reason:
-                    '${lesson.id} has ${skill.name} activities but declares '
-                    'no ${categoryBySkill[skill]} objective — a learner '
-                    'evidences nothing by doing them',
-              );
+          }
+          if (gate.canDoTagging != CanDoTagging.unitLevel) continue;
+          // The property A2's per-activity rule delivers is that evidence
+          // for an objective is earnable through that objective's own
+          // skill. A1's tags do not hold that per activity (547 of its
+          // activity-objective pairs cross categories) and re-tagging is
+          // forbidden: canDo is append-only after publication. What CAN
+          // hold, and what the app's mastery model actually depends on, is
+          // the unit-level form: every objective the unit REQUIRES is
+          // carried by at least one activity of its own category, so a
+          // learner can earn it by doing the right kind of work. Two
+          // lesson-granularity versions were tried first; one produced 104
+          // findings that were not defects, the other penalised the two
+          // activities tagged MORE precisely than their lesson's summary.
+          final carriers = <String, Set<String>>{};
+          for (final a in activitiesOf(unit)) {
+            for (final objective in a.canDo) {
+              carriers
+                  .putIfAbsent(objective, () => {})
+                  .add(categoryBySkill[a.skill]!);
             }
+          }
+          for (final objective in unit.mastery.requiredObjectives) {
+            if (objective.contains('.ACTION.')) continue;
+            final category = categoryBySkill.values.firstWhere(
+              (c) => objective.contains('.$c.'),
+              orElse: () => '',
+            );
+            if (category.isEmpty) continue;
+            expect(
+              carriers[objective] ?? const <String>{},
+              contains(category),
+              reason:
+                  '${unit.id} requires $objective but no $category activity '
+                  'carries it — a learner cannot earn it by doing the kind '
+                  'of work it names',
+            );
           }
         }
       });

@@ -165,7 +165,10 @@
       "EXIT_INTERACT": "A1.EXIT.INTERACTION.HANDLE_SIMPLE_EXCHANGE",
       "EXIT_SPEAK": "A1.EXIT.PRODUCTION.DESCRIBE_FAMILIAR_MATTER",
       "EXIT_MEDIATE": "A1.EXIT.MEDIATION.RELAY_SIMPLE_INFORMATION",
-      "EXIT_MISSION": "A1.EXIT.ACTION.COMPLETE_MULTI_STEP_MISSION"
+      "EXIT_MISSION": "A1.EXIT.ACTION.COMPLETE_MULTI_STEP_MISSION",
+      "U8_UNDERSTAND_SPOKEN_DIRECTIONS": "A1.U8.LISTENING.UNDERSTAND_SPOKEN_DIRECTIONS",
+      "U11_ASK_ABOUT_CLOTHES_AND_WEATHER": "A1.U11.INTERACTION.ASK_ABOUT_CLOTHES_AND_WEATHER",
+      "U12_UNDERSTAND_SPOKEN_PLAN": "A1.U12.LISTENING.UNDERSTAND_SPOKEN_PLAN"
     },
     "MASTERY_POLICY": {
       "minimumObjectiveScore": 0.75,
@@ -8395,7 +8398,15 @@
                 "Thanks."
               ],
               "fallbackSkill": "writing",
-              "promptAr": "شخصٌ يساعدك. ردّ عليه بأدب."
+              "promptAr": "شخصٌ يساعدك. ردّ عليه بأدب.",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  ["thank you", "thanks", "thank"]
+                ],
+                "minGroupsMatched": 1
+              },
+              "partnerTurns": ["Hi! Here is your bag."]
             }
           ]
         },
@@ -8451,7 +8462,7 @@
                 "Sound"
               ],
               "answer": "Picture",
-              "audioTranscript": "Choose the picture."
+              "audioTranscript": "Look at the question and choose the picture."
             },
             {
               "id": "A1-U0-L2-A02",
@@ -8470,7 +8481,7 @@
               ],
               "answer": "cat",
               "promptAr": "اختر الكلمة: cat",
-              "sourceText": "cat"
+              "sourceText": "I have a cat. The cat is black. I like my cat."
             },
             {
               "id": "A1-U0-L2-A03",
@@ -8489,7 +8500,7 @@
                 "Match"
               ],
               "answer": "Repeat",
-              "audioTranscript": "Listen and repeat."
+              "audioTranscript": "Listen to the audio, read the sentence and repeat."
             },
             {
               "id": "A1-U0-L2-A04",
@@ -8508,7 +8519,7 @@
                 "Read"
               ],
               "answer": "Match",
-              "audioTranscript": "Match the words."
+              "audioTranscript": "Match the words. Then check your answer."
             }
           ]
         },
@@ -8748,9 +8759,39 @@
                 "max": 120
               },
               "fallbackSkill": "writing",
-              "promptAr": "كم عمرك؟"
+              "promptAr": "كم عمرك؟",
+              "partnerTurns": ["How old are you?"]
             }
-          ]
+          ],
+          "encounter": {
+            "dialogue": [
+              {
+                "speaker": "Maya",
+                "en": "How old are you, Omar?",
+                "ar": "كم عمرك يا عمر؟"
+              },
+              {
+                "speaker": "Omar",
+                "en": "I'm nineteen. And you?",
+                "ar": "عمري تسعة عشر عاماً. وأنتِ؟"
+              },
+              {
+                "speaker": "Maya",
+                "en": "I'm twenty. What's your phone number?",
+                "ar": "عمري عشرون عاماً. ما رقم هاتفك؟"
+              },
+              {
+                "speaker": "Omar",
+                "en": "It's zero seven seven zero, three one four, eight six two five.",
+                "ar": "إنه صفر سبعة سبعة صفر، ثلاثة واحد أربعة، ثمانية ستة اثنان خمسة."
+              },
+              {
+                "speaker": "Maya",
+                "en": "Thank you!",
+                "ar": "شكراً لك!"
+              }
+            ]
+          }
         },
         {
           "id": "A1-U0-L5",
@@ -8782,7 +8823,10 @@
                 "type": "nonEmpty"
               },
               "fallbackSkill": "writing",
-              "promptAr": "ما اسمك؟"
+              "promptAr": "ما اسمك؟",
+              "partnerTurns": [
+                "Hello! Welcome to the English class. What's your name?"
+              ]
             },
             {
               "id": "A1-U0-L5-A02",
@@ -8819,7 +8863,8 @@
                 "max": 120
               },
               "fallbackSkill": "writing",
-              "promptAr": "كم عمرك؟"
+              "promptAr": "كم عمرك؟",
+              "partnerTurns": ["Thank you. And how old are you?"]
             },
             {
               "id": "A1-U0-L5-A04",
@@ -8872,7 +8917,8 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "partnerTurns": ["Good morning. Can I help you?"]
             }
           ]
         }
@@ -8987,7 +9033,8 @@
                 "My / Ahmed."
               ],
               "answer": "I'm / Ahmed.",
-              "promptAr": "كوّن الجملة."
+              "promptAr": "كوّن الجملة.",
+              "sourceText": "A new student, Ahmed, says his name to the class."
             },
             {
               "id": "A1-U1-L1-A03",
@@ -9030,7 +9077,15 @@
                 "What's your name?"
               ],
               "fallbackSkill": "writing",
-              "promptAr": "اسأل المتعلّم الجديد عن اسمه."
+              "promptAr": "اسأل المتعلّم الجديد عن اسمه.",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  ["what's your name", "what is your name", "your name"]
+                ],
+                "minGroupsMatched": 1
+              },
+              "partnerTurns": ["Hi! I'm new here."]
             }
           ]
         },
@@ -9140,9 +9195,46 @@
                 "Where are you from?"
               ],
               "fallbackSkill": "writing",
-              "promptAr": "اسأل الشخص من أين هو."
+              "promptAr": "اسأل الشخص من أين هو.",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  ["where are you from", "where you from", "are you from"]
+                ],
+                "minGroupsMatched": 1
+              },
+              "partnerTurns": ["Hello. I'm Anna."]
             }
-          ]
+          ],
+          "encounter": {
+            "dialogue": [
+              {
+                "speaker": "Anna",
+                "en": "Hi, I'm Anna. Where are you from?",
+                "ar": "مرحباً، أنا آنا. من أين أنت؟"
+              },
+              {
+                "speaker": "Ali",
+                "en": "I'm from Iraq. Are you from Italy?",
+                "ar": "أنا من العراق. هل أنتِ من إيطاليا؟"
+              },
+              {
+                "speaker": "Anna",
+                "en": "Yes, I am. Is Omar from Iraq too?",
+                "ar": "نعم، أنا كذلك. هل عمر من العراق أيضاً؟"
+              },
+              {
+                "speaker": "Ali",
+                "en": "No, he isn't. He's from Jordan. Are you from Rome?",
+                "ar": "لا، ليس كذلك. هو من الأردن. هل أنتِ من روما؟"
+              },
+              {
+                "speaker": "Anna",
+                "en": "No, I'm not. I'm from Milan.",
+                "ar": "لا، لستُ كذلك. أنا من ميلانو."
+              }
+            ]
+          }
         },
         {
           "id": "A1-U1-L3",
@@ -9205,7 +9297,8 @@
                 "I am live Baghdad."
               ],
               "answer": "I live in Baghdad.",
-              "promptAr": "كوّن الإجابة."
+              "promptAr": "كوّن الإجابة.",
+              "sourceText": "Sara asks Ali where he lives. Ali lives in Baghdad."
             },
             {
               "id": "A1-U1-L3-A03",
@@ -9247,9 +9340,46 @@
                 "Where do you live?"
               ],
               "fallbackSkill": "writing",
-              "promptAr": "اسأل الشخص أين يسكن."
+              "promptAr": "اسأل الشخص أين يسكن.",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  ["where do you live", "where you live", "do you live"]
+                ],
+                "minGroupsMatched": 1
+              },
+              "partnerTurns": ["I'm from Italy, but I don't live there now."]
             }
-          ]
+          ],
+          "encounter": {
+            "dialogue": [
+              {
+                "speaker": "Sara",
+                "en": "Where do you live, Ali?",
+                "ar": "أين تسكن يا علي؟"
+              },
+              {
+                "speaker": "Ali",
+                "en": "I live in Baghdad. It's a big city.",
+                "ar": "أسكن في بغداد. إنها مدينة كبيرة."
+              },
+              {
+                "speaker": "Sara",
+                "en": "Do you live here with your family?",
+                "ar": "هل تسكن هنا مع عائلتك؟"
+              },
+              {
+                "speaker": "Ali",
+                "en": "Yes. I live with my family. And you?",
+                "ar": "نعم. أسكن مع عائلتي. وأنتِ؟"
+              },
+              {
+                "speaker": "Sara",
+                "en": "I live in Basra, but my home is small.",
+                "ar": "أسكن في البصرة، لكن منزلي صغير."
+              }
+            ]
+          }
         },
         {
           "id": "A1-U1-L4",
@@ -9330,7 +9460,15 @@
                 "This is Sara. She's my friend."
               ],
               "fallbackSkill": "writing",
-              "promptAr": "قدّم سارة على أنها صديقتك."
+              "promptAr": "قدّم سارة على أنها صديقتك.",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  ["this is sara", "sara"],
+                  ["she's my friend", "she is my friend", "my friend", "friend"]
+                ],
+                "minGroupsMatched": 2
+              }
             },
             {
               "id": "A1-U1-L4-A04",
@@ -9351,7 +9489,36 @@
               "audioTranscript": "Her name is Maya. She's my sister.",
               "promptAr": "اختر البطاقة الصحيحة."
             }
-          ]
+          ],
+          "encounter": {
+            "dialogue": [
+              {
+                "speaker": "Omar",
+                "en": "Hi Sara. This is Ali. He's my brother.",
+                "ar": "مرحباً سارة. هذا علي. هو أخي."
+              },
+              {
+                "speaker": "Sara",
+                "en": "Nice to meet you, Ali.",
+                "ar": "سعدت بلقائك يا علي."
+              },
+              {
+                "speaker": "Ali",
+                "en": "Nice to meet you too. Who's that woman?",
+                "ar": "وأنا سعدت بلقائكِ أيضاً. من تلك المرأة؟"
+              },
+              {
+                "speaker": "Sara",
+                "en": "This is Huda. She's my friend.",
+                "ar": "هذه هدى. هي صديقتي."
+              },
+              {
+                "speaker": "Omar",
+                "en": "And the man next to her is Sami. He's her father.",
+                "ar": "والرجل الذي بجانبها هو سامي. هو والدها."
+              }
+            ]
+          }
         },
         {
           "id": "A1-U1-L5",
@@ -9465,7 +9632,36 @@
               "fallbackSkill": "writing",
               "promptAr": "قل ما وظيفتك. وإن كنت لا تعمل فقل إنك طالب."
             }
-          ]
+          ],
+          "encounter": {
+            "dialogue": [
+              {
+                "speaker": "Daniel",
+                "en": "What's your job, Maya?",
+                "ar": "ما وظيفتكِ يا مايا؟"
+              },
+              {
+                "speaker": "Maya",
+                "en": "I'm a nurse. I work in a hospital. And you?",
+                "ar": "أنا ممرضة. أعمل في مستشفى. وأنت؟"
+              },
+              {
+                "speaker": "Daniel",
+                "en": "I'm an engineer. My sister is a teacher.",
+                "ar": "أنا مهندس. أختي معلّمة."
+              },
+              {
+                "speaker": "Maya",
+                "en": "Is Ali a doctor?",
+                "ar": "هل علي طبيب؟"
+              },
+              {
+                "speaker": "Daniel",
+                "en": "No, he's a student. His father is a driver.",
+                "ar": "لا، هو طالب. والده سائق."
+              }
+            ]
+          }
         },
         {
           "id": "A1-U1-L6",
@@ -9541,7 +9737,24 @@
                 "I don't understand."
               ],
               "fallbackSkill": "writing",
-              "promptAr": "لم تفهم. اطلب المساعدة."
+              "promptAr": "لم تفهم. اطلب المساعدة.",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "sorry",
+                    "please repeat",
+                    "repeat",
+                    "i don't understand",
+                    "don't understand",
+                    "i do not understand",
+                    "again",
+                    "say that again"
+                  ]
+                ],
+                "minGroupsMatched": 1
+              },
+              "partnerTurns": ["I'm from Novosibirsk, in Russia."]
             },
             {
               "id": "A1-U1-L6-A04",
@@ -9557,9 +9770,46 @@
                 "And you?"
               ],
               "fallbackSkill": "writing",
-              "promptAr": "يقول الشخص الآخر: I'm from Jordan. تابع بسؤالٍ قصير في المقابل."
+              "promptAr": "يقول الشخص الآخر: I'm from Jordan. تابع بسؤالٍ قصير في المقابل.",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "and you",
+                    "what about you",
+                    "how about you",
+                    "and where are you from"
+                  ]
+                ],
+                "minGroupsMatched": 1
+              },
+              "partnerTurns": ["I'm from Jordan."]
             }
-          ]
+          ],
+          "encounter": {
+            "dialogue": [
+              {
+                "speaker": "Daniel",
+                "en": "I'm from Jordan. And you?",
+                "ar": "أنا من الأردن. وأنتِ؟"
+              },
+              {
+                "speaker": "Maya",
+                "en": "Sorry? I don't understand.",
+                "ar": "عفواً؟ لا أفهم."
+              },
+              {
+                "speaker": "Daniel",
+                "en": "Where — are — you — from?",
+                "ar": "من - أين - أنتِ؟"
+              },
+              {
+                "speaker": "Maya",
+                "en": "Ah! I'm from Iraq. Thank you.",
+                "ar": "آه! أنا من العراق. شكراً لك."
+              }
+            ]
+          }
         },
         {
           "id": "A1-U1-L7",
@@ -9606,7 +9856,8 @@
                 "minGroupsMatched": 1
               },
               "fallbackSkill": "writing",
-              "promptAr": "يقول دانيال: «Hi. I'm Daniel. What's your name?» ردّ عليه."
+              "promptAr": "يقول دانيال: «Hi. I'm Daniel. What's your name?» ردّ عليه.",
+              "partnerTurns": ["Hi. I'm Daniel. What's your name?"]
             },
             {
               "id": "A1-U1-L7-A02",
@@ -9635,7 +9886,8 @@
                 "minGroupsMatched": 2
               },
               "fallbackSkill": "writing",
-              "promptAr": "يقول دانيال: «Nice to meet you. Where are you from?» ردّ عليه."
+              "promptAr": "يقول دانيال: «Nice to meet you. Where are you from?» ردّ عليه.",
+              "partnerTurns": ["Nice to meet you. Where are you from?"]
             },
             {
               "id": "A1-U1-L7-A03",
@@ -9662,7 +9914,8 @@
                 "minGroupsMatched": 2
               },
               "fallbackSkill": "writing",
-              "promptAr": "يقول دانيال: «Where do you live?» ردّ عليه."
+              "promptAr": "يقول دانيال: «Where do you live?» ردّ عليه.",
+              "partnerTurns": ["Where do you live?"]
             },
             {
               "id": "A1-U1-L7-A04",
@@ -9720,7 +9973,24 @@
                 "Where do you live?"
               ],
               "fallbackSkill": "writing",
-              "promptAr": "اسأل آنا سؤالاً شخصياً واحداً."
+              "promptAr": "اسأل آنا سؤالاً شخصياً واحداً.",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "what's your name",
+                    "what is your name",
+                    "where are you from",
+                    "where do you live",
+                    "how old are you",
+                    "what's your job",
+                    "what is your job",
+                    "what do you do"
+                  ]
+                ],
+                "minGroupsMatched": 1
+              },
+              "partnerTurns": ["Hello, I'm Anna. Ask me anything!"]
             }
           ]
         }
@@ -10012,6 +10282,16 @@
                 "speaker": "Sara",
                 "en": "He's twenty years old.",
                 "ar": "عمره عشرون سنة."
+              },
+              {
+                "speaker": "Sara",
+                "en": "And you? How many brothers and sisters do you have?",
+                "ar": "وأنت؟ كم أخاً وأختاً لديك؟"
+              },
+              {
+                "speaker": "Ali",
+                "en": "I have one brother and two sisters.",
+                "ar": "لديّ أخ واحد وأختان."
               }
             ]
           },
@@ -10228,7 +10508,8 @@
                 "Whose phone is this?",
                 "Where is this?"
               ],
-              "answer": "Who's this?"
+              "answer": "Who's this?",
+              "sourceText": "You see a photo of a person you don't know."
             },
             {
               "id": "A1-U2-L3-A04",
@@ -10244,7 +10525,24 @@
               "accepted": [
                 "Who's this?"
               ],
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "who's this",
+                    "who is this",
+                    "who's that",
+                    "who is that",
+                    "who's he",
+                    "who is he",
+                    "who's she",
+                    "who is she"
+                  ]
+                ],
+                "minGroupsMatched": 1
+              },
+              "partnerTurns": ["Look, this is a photo of my family."]
             },
             {
               "id": "A1-U2-L3-A05",
@@ -10260,7 +10558,16 @@
               "accepted": [
                 "Noor is Sami's daughter and Omar's sister."
               ],
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  ["noor"],
+                  ["sami's daughter", "sami", "daughter"],
+                  ["omar's sister", "omar", "sister"]
+                ],
+                "minGroupsMatched": 3
+              }
             }
           ]
         },
@@ -10482,6 +10789,16 @@
                 "speaker": "Lina",
                 "en": "They are my parents. Their names are Noor and Sami.",
                 "ar": "هما والداي. اسماهما نور وسامي."
+              },
+              {
+                "speaker": "Huda",
+                "en": "Nice to meet you. Are they teachers?",
+                "ar": "سعدت بلقائكما. هل هما معلّمان؟"
+              },
+              {
+                "speaker": "Lina",
+                "en": "No, they aren't. They are doctors. We are a big family.",
+                "ar": "لا، ليسا كذلك. هما طبيبان. نحن عائلة كبيرة."
               }
             ]
           },
@@ -10869,7 +11186,8 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "sourceCard": "People map: Omar (you). Sami and Lina are Omar's parents. Noor is Omar's sister; she is eighteen and a student. Huda is Omar's friend; she is twenty and a nurse."
             },
             {
               "id": "A1-U2-L7-A04",
@@ -10887,7 +11205,24 @@
                 "Who is he?",
                 "Who is she?"
               ],
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "who's this",
+                    "who is this",
+                    "who's that",
+                    "who is that",
+                    "who's he",
+                    "who is he",
+                    "who's she",
+                    "who is she"
+                  ]
+                ],
+                "minGroupsMatched": 1
+              },
+              "partnerTurns": ["This is my people map. Do you know everyone?"]
             },
             {
               "id": "A1-U2-L7-A05",
@@ -10982,7 +11317,8 @@
           "A1.U2.PRODUCTION.DESCRIBE_PERSON",
           "A1.U2.LISTENING.UNDERSTAND_PEOPLE_DESCRIPTION",
           "A1.U2.WRITING.WRITE_PEOPLE_PROFILE",
-          "A1.U2.MEDIATION.EXPLAIN_PEOPLE_MAP"
+          "A1.U2.MEDIATION.EXPLAIN_PEOPLE_MAP",
+          "A1.U2.INTERACTION.ASK_IDENTIFY_PERSON"
         ],
         "requiredSkillGroups": [
           [
@@ -11307,7 +11643,8 @@
                 "Is there a chairs?",
                 "There are chairs?"
               ],
-              "answer": "Are there any chairs?"
+              "answer": "Are there any chairs?",
+              "sourceText": "You want to know about the chairs in the room."
             },
             {
               "id": "A1-U3-L2-A04",
@@ -11593,6 +11930,16 @@
                 "speaker": "Ali",
                 "en": "Yes. These are my keys, and those are my shoes.",
                 "ar": "نعم. هذه مفاتيحي، وذلك حذائي."
+              },
+              {
+                "speaker": "Sara",
+                "en": "And what's that on the table?",
+                "ar": "وما ذاك الذي على الطاولة؟"
+              },
+              {
+                "speaker": "Ali",
+                "en": "That's my book. This is my bag, and those are Sara's keys.",
+                "ar": "ذاك كتابي. هذه حقيبتي، وتلك مفاتيح سارة."
               }
             ]
           },
@@ -11713,7 +12060,8 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "partnerTurns": ["What's in your room? Show me."]
             }
           ]
         },
@@ -11765,6 +12113,16 @@
                 "speaker": "Ali",
                 "en": "It isn't mine. It's Maya's.",
                 "ar": "ليس لي. إنه لمايا."
+              },
+              {
+                "speaker": "Sara",
+                "en": "Is this your book?",
+                "ar": "هل هذا كتابكَ؟"
+              },
+              {
+                "speaker": "Ali",
+                "en": "No, it isn't mine. It's Omar's.",
+                "ar": "لا، ليس لي. إنه لعمر."
               }
             ]
           },
@@ -11845,7 +12203,21 @@
               "accepted": [
                 "Is this your phone?"
               ],
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "is this your phone",
+                    "is that your phone",
+                    "your phone",
+                    "is this yours",
+                    "is it your phone"
+                  ]
+                ],
+                "minGroupsMatched": 1
+              },
+              "partnerTurns": ["There's a phone on the table."]
             },
             {
               "id": "A1-U3-L5-A05",
@@ -11861,7 +12233,22 @@
               "accepted": [
                 "No, it isn't mine. It's Sara's."
               ],
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "evaluation": {
+                "type": "keywordChecklist",
+                "requiredGroups": [
+                  [
+                    "no",
+                    "it isn't mine",
+                    "it's not mine",
+                    "not mine",
+                    "isn't mine"
+                  ],
+                  ["sara's", "sara", "it's sara's", "her book", "hers"]
+                ],
+                "minGroupsMatched": 2
+              },
+              "partnerTurns": ["Is this your book?"]
             }
           ]
         },
@@ -12029,7 +12416,31 @@
               },
               "fallbackSkill": "writing"
             }
-          ]
+          ],
+          "encounter": {
+            "dialogue": [
+              {
+                "speaker": "Ali",
+                "en": "Welcome to my home! Come in.",
+                "ar": "أهلاً بكِ في منزلي! تفضّلي."
+              },
+              {
+                "speaker": "Sara",
+                "en": "Thank you. It's beautiful.",
+                "ar": "شكراً. إنه جميل."
+              },
+              {
+                "speaker": "Ali",
+                "en": "This is the living room. It's small but clean.",
+                "ar": "هذه غرفة المعيشة. إنها صغيرة لكنها نظيفة."
+              },
+              {
+                "speaker": "Sara",
+                "en": "And where is the kitchen?",
+                "ar": "وأين المطبخ؟"
+              }
+            ]
+          }
         },
         {
           "id": "A1-U3-L7",
@@ -12102,7 +12513,8 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "sourceCard": "Apartment plan C: two bedrooms, one bathroom, a kitchen next to the living room, and a small garden behind the home. The big bedroom has a window. The keys are on the kitchen table."
             },
             {
               "id": "A1-U3-L7-A03",
@@ -12187,7 +12599,11 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "partnerTurns": [
+                "Hi! What's that in your hand?",
+                "No, it isn't mine. My phone is black."
+              ]
             },
             {
               "id": "A1-U3-L7-A06",
@@ -12299,6 +12715,21 @@
                 "speaker": "Omar",
                 "en": "I get up at seven. I wash, get dressed and have breakfast.",
                 "ar": "أستيقظ في السابعة، وأغتسل وأرتدي ملابسي وأتناول الفطور."
+              },
+              {
+                "speaker": "Maya",
+                "en": "What time do you go home?",
+                "ar": "في أي وقت تعود إلى المنزل؟"
+              },
+              {
+                "speaker": "Omar",
+                "en": "At five. I have dinner and then I sleep at eleven.",
+                "ar": "في الخامسة. أتناول العشاء ثم أنام في الحادية عشرة."
+              },
+              {
+                "speaker": "Maya",
+                "en": "I get up at six and I sleep at ten.",
+                "ar": "أستيقظ في السادسة وأنام في العاشرة."
               }
             ]
           },
@@ -12467,6 +12898,21 @@
                 "speaker": "Ali",
                 "en": "At half past seven.",
                 "ar": "في السابعة والنصف."
+              },
+              {
+                "speaker": "Maya",
+                "en": "And what time do you have lunch?",
+                "ar": "وفي أي وقت تتناول الغداء؟"
+              },
+              {
+                "speaker": "Ali",
+                "en": "At quarter past twelve. I finish work at quarter to five.",
+                "ar": "في الثانية عشرة والربع. أنهي العمل في الخامسة إلا ربعاً."
+              },
+              {
+                "speaker": "Maya",
+                "en": "I have lunch at one o'clock.",
+                "ar": "أتناول الغداء في الواحدة."
               }
             ]
           },
@@ -12583,7 +13029,11 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "partnerTurns": [
+                "Good morning! I'm hungry already.",
+                "I have breakfast at seven. And you?"
+              ]
             }
           ]
         },
@@ -12613,9 +13063,24 @@
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
+                "speaker": "Sara",
+                "en": "What time does Lina start work?",
+                "ar": "في أي وقت تبدأ لينا العمل؟"
+              },
+              {
+                "speaker": "Omar",
                 "en": "Lina starts work at eight. She finishes at three and goes home.",
                 "ar": "تبدأ لينا العمل في الثامنة وتنهيه في الثالثة ثم تعود إلى المنزل."
+              },
+              {
+                "speaker": "Sara",
+                "en": "And Ali? When does he have lunch?",
+                "ar": "وعلي؟ متى يتناول الغداء؟"
+              },
+              {
+                "speaker": "Omar",
+                "en": "He has lunch at twelve and dinner at seven.",
+                "ar": "يتناول الغداء في الثانية عشرة والعشاء في السابعة."
               }
             ]
           },
@@ -12777,6 +13242,16 @@
                 "speaker": "Omar",
                 "en": "At six. I'm early.",
                 "ar": "في السادسة. أنا مبكر."
+              },
+              {
+                "speaker": "Sara",
+                "en": "What time does your brother get up?",
+                "ar": "في أي وقت يستيقظ أخوك؟"
+              },
+              {
+                "speaker": "Omar",
+                "en": "At nine. He's always late!",
+                "ar": "في التاسعة. هو متأخر دائماً!"
               }
             ]
           },
@@ -12892,7 +13367,11 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "partnerTurns": [
+                "Ask me about my day.",
+                "I get up at six. My brother gets up late."
+              ]
             }
           ]
         },
@@ -12924,6 +13403,21 @@
                 "speaker": "Ali",
                 "en": "I usually walk to work, but I sometimes go by car.",
                 "ar": "عادة أمشي إلى العمل لكنني أذهب بالسيارة أحياناً."
+              },
+              {
+                "speaker": "Sara",
+                "en": "How often do you cook?",
+                "ar": "كم مرة تطبخ؟"
+              },
+              {
+                "speaker": "Ali",
+                "en": "I never cook. My mother always cooks. And you?",
+                "ar": "لا أطبخ أبداً. أمي تطبخ دائماً. وأنتِ؟"
+              },
+              {
+                "speaker": "Sara",
+                "en": "I usually cook at the weekend.",
+                "ar": "أطبخ عادةً في عطلة نهاية الأسبوع."
               }
             ]
           },
@@ -13214,7 +13708,31 @@
                 65
               ]
             }
-          ]
+          ],
+          "encounter": {
+            "dialogue": [
+              {
+                "speaker": "Maya",
+                "en": "Tell me about your routine, Omar.",
+                "ar": "حدّثني عن روتينك اليومي يا عمر."
+              },
+              {
+                "speaker": "Omar",
+                "en": "First, I get up at seven. Then, I have breakfast.",
+                "ar": "أولاً، أستيقظ في السابعة. ثم أتناول الفطور."
+              },
+              {
+                "speaker": "Maya",
+                "en": "And after work?",
+                "ar": "وبعد العمل؟"
+              },
+              {
+                "speaker": "Omar",
+                "en": "First, I go home. Then, I have dinner with my family.",
+                "ar": "أولاً، أعود إلى المنزل. ثم أتناول العشاء مع عائلتي."
+              }
+            ]
+          }
         },
         {
           "id": "A1-U4-L7",
@@ -13298,7 +13816,10 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "partnerTurns": [
+                "Rana starts at seven thirty and finishes at three."
+              ]
             },
             {
               "id": "A1-U4-L7-A04",
@@ -13330,7 +13851,8 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "sourceCard": "Rana: gets up at 6:30, starts work at 7:30, has lunch at 12:00, finishes at 3:00. Hassan: gets up at 7:00, starts work at 8:00, has lunch at 1:00, finishes at 2:00."
             },
             {
               "id": "A1-U4-L7-A05",
@@ -13466,6 +13988,21 @@
                 "speaker": "Sara",
                 "en": "I love music and films, but I don't like football.",
                 "ar": "أحب الموسيقى والأفلام لكنني لا أحب كرة القدم."
+              },
+              {
+                "speaker": "Omar",
+                "en": "I like football! Do you like games?",
+                "ar": "أحب كرة القدم! هل تحبين الألعاب؟"
+              },
+              {
+                "speaker": "Sara",
+                "en": "Yes, I like chess. It's my hobby.",
+                "ar": "نعم، أحب الشطرنج. إنها هوايتي."
+              },
+              {
+                "speaker": "Omar",
+                "en": "I don't like chess. I like tennis in my free time.",
+                "ar": "لا أحب الشطرنج. أحب التنس في وقت فراغي."
               }
             ]
           },
@@ -13625,6 +14162,21 @@
                 "speaker": "Omar",
                 "en": "I like cooking and watching films. My sister loves drawing.",
                 "ar": "أحب الطبخ ومشاهدة الأفلام. أختي تحب الرسم."
+              },
+              {
+                "speaker": "Maya",
+                "en": "I like swimming and running. Do you like dancing?",
+                "ar": "أحب السباحة والجري. هل تحب الرقص؟"
+              },
+              {
+                "speaker": "Omar",
+                "en": "No, but I like singing!",
+                "ar": "لا، لكنني أحب الغناء!"
+              },
+              {
+                "speaker": "Maya",
+                "en": "Me too. Let's sing!",
+                "ar": "وأنا أيضاً. لنغنِّ!"
               }
             ]
           },
@@ -13794,6 +14346,21 @@
                 "speaker": "Ali",
                 "en": "Yes, I can, but I can't dance.",
                 "ar": "نعم، لكنني لا أستطيع الرقص."
+              },
+              {
+                "speaker": "Maya",
+                "en": "Can you sing?",
+                "ar": "هل تستطيع الغناء؟"
+              },
+              {
+                "speaker": "Ali",
+                "en": "No, I can't. Can you play chess?",
+                "ar": "لا، لا أستطيع. هل تستطيعين لعب الشطرنج؟"
+              },
+              {
+                "speaker": "Maya",
+                "en": "Yes, I can.",
+                "ar": "نعم، أستطيع."
               }
             ]
           },
@@ -13908,7 +14475,11 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "partnerTurns": [
+                "Let's talk about sports and hobbies.",
+                "Yes, I can swim. Can you?"
+              ]
             }
           ]
         },
@@ -13941,6 +14512,16 @@
                 "speaker": "Sara",
                 "en": "No, I don't. My brother likes it, but he doesn't run every day.",
                 "ar": "لا. أخي يحبه لكنه لا يجري كل يوم."
+              },
+              {
+                "speaker": "Ali",
+                "en": "Does he like football?",
+                "ar": "هل يحب كرة القدم؟"
+              },
+              {
+                "speaker": "Sara",
+                "en": "Yes, he does. But he doesn't like swimming.",
+                "ar": "نعم، يحبها. لكنه لا يحب السباحة."
               }
             ]
           },
@@ -14065,7 +14646,11 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "partnerTurns": [
+                "I have free time this weekend.",
+                "I like football and music. Do you like running?"
+              ]
             }
           ]
         },
@@ -14105,6 +14690,16 @@
                 "speaker": "Omar",
                 "en": "Yes, I'd love to.",
                 "ar": "نعم، بكل سرور."
+              },
+              {
+                "speaker": "Maya",
+                "en": "Great! Are you free on Sunday too?",
+                "ar": "رائع! هل أنت متفرغ يوم الأحد أيضاً؟"
+              },
+              {
+                "speaker": "Omar",
+                "en": "Sorry, I'm busy on Sunday. Maybe Monday?",
+                "ar": "آسف، أنا مشغول يوم الأحد. ربما يوم الاثنين؟"
               }
             ]
           },
@@ -14228,7 +14823,11 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "partnerTurns": [
+                "Hi! Are you free this afternoon?",
+                "Sorry, I'm busy this afternoon. Maybe tomorrow?"
+              ]
             }
           ]
         },
@@ -14383,7 +14982,31 @@
                 55
               ]
             }
-          ]
+          ],
+          "encounter": {
+            "dialogue": [
+              {
+                "speaker": "Lina",
+                "en": "Hi Noor! Are you free this evening?",
+                "ar": "مرحباً نور! هل أنتِ متفرغة هذا المساء؟"
+              },
+              {
+                "speaker": "Noor",
+                "en": "Yes, I am. Why?",
+                "ar": "نعم، متفرغة. لماذا؟"
+              },
+              {
+                "speaker": "Lina",
+                "en": "Would you like to watch a film?",
+                "ar": "هل ترغبين في مشاهدة فيلم؟"
+              },
+              {
+                "speaker": "Noor",
+                "en": "I'd love to! I have free time after six.",
+                "ar": "بكل سرور! لديّ وقت فراغ بعد السادسة."
+              }
+            ]
+          }
         },
         {
           "id": "A1-U5-L7",
@@ -14465,7 +15088,11 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "partnerTurns": [
+                "Hi! It's Omar. What's the plan for Saturday?",
+                "A film? Yes, I'd love to. What time?"
+              ]
             },
             {
               "id": "A1-U5-L7-A04",
@@ -14497,7 +15124,8 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "sourceCard": "Lina likes films and can't swim. Omar likes films and swimming, but he can't play tennis. Both are free on Saturday afternoon. The cinema is next to the park."
             },
             {
               "id": "A1-U5-L7-A05",
@@ -14629,6 +15257,21 @@
                 "speaker": "Maya",
                 "en": "For lunch, I have chicken and rice. Omar has a cheese sandwich and an apple.",
                 "ar": "أتناول الدجاج والأرز للغداء. عمر يتناول شطيرة جبن وتفاحة."
+              },
+              {
+                "speaker": "Ali",
+                "en": "I like soup and salad. Do you like eggs?",
+                "ar": "أحب الحساء والسلطة. هل تحبين البيض؟"
+              },
+              {
+                "speaker": "Maya",
+                "en": "Yes, I have eggs and bread for breakfast.",
+                "ar": "نعم، أتناول البيض والخبز في الفطور."
+              },
+              {
+                "speaker": "Ali",
+                "en": "I have a banana.",
+                "ar": "أنا أتناول موزة."
               }
             ]
           },
@@ -14799,6 +15442,16 @@
                 "speaker": "Sara",
                 "en": "No, but we have some juice.",
                 "ar": "لا، لكن لدينا بعض العصير."
+              },
+              {
+                "speaker": "Ali",
+                "en": "Is there any coffee?",
+                "ar": "هل يوجد قهوة؟"
+              },
+              {
+                "speaker": "Sara",
+                "en": "Yes, there's some coffee, but there isn't any tea.",
+                "ar": "نعم، يوجد بعض القهوة، لكن لا يوجد شاي."
               }
             ]
           },
@@ -14922,7 +15575,11 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "partnerTurns": [
+                "We're in the kitchen. What do we need?",
+                "Do you have any juice?"
+              ]
             }
           ]
         },
@@ -14961,6 +15618,26 @@
                 "speaker": "Ali",
                 "en": "Two, please. And one bowl of soup.",
                 "ar": "اثنتان، ووعاء حساء واحد."
+              },
+              {
+                "speaker": "Waiter",
+                "en": "And how much rice?",
+                "ar": "وكم من الأرز؟"
+              },
+              {
+                "speaker": "Ali",
+                "en": "One plate, please. And two cups of tea.",
+                "ar": "طبق واحد من فضلك. وكوبان من الشاي."
+              },
+              {
+                "speaker": "Waiter",
+                "en": "Two glasses of juice?",
+                "ar": "كوبان من العصير؟"
+              },
+              {
+                "speaker": "Ali",
+                "en": "No, tea, please.",
+                "ar": "لا، شاي من فضلك."
               }
             ]
           },
@@ -15261,7 +15938,12 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "partnerTurns": [
+                "Good evening. Are you ready to order?",
+                "And to drink?",
+                "Anything else?"
+              ]
             }
           ]
         },
@@ -15299,6 +15981,26 @@
                 "speaker": "Waiter",
                 "en": "I'm sorry. One soup.",
                 "ar": "أنا آسف. حساء واحد."
+              },
+              {
+                "speaker": "Sara",
+                "en": "Sorry? Please repeat.",
+                "ar": "عفواً؟ أعد من فضلك."
+              },
+              {
+                "speaker": "Waiter",
+                "en": "One soup. It's coming now.",
+                "ar": "حساء واحد. سيأتي الآن."
+              },
+              {
+                "speaker": "Sara",
+                "en": "Thank you. Can I have the bill, please?",
+                "ar": "شكراً. هل يمكنني الحصول على الفاتورة من فضلك؟"
+              },
+              {
+                "speaker": "Waiter",
+                "en": "Of course. One moment.",
+                "ar": "بالطبع. لحظة واحدة."
               }
             ]
           },
@@ -15426,7 +16128,11 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "partnerTurns": [
+                "Here is your order: chicken and rice, and a tea.",
+                "Oh, I'm sorry. What did you order?"
+              ]
             }
           ]
         },
@@ -15585,7 +16291,36 @@
                 45
               ]
             }
-          ]
+          ],
+          "encounter": {
+            "dialogue": [
+              {
+                "speaker": "Waiter",
+                "en": "Here is the menu.",
+                "ar": "إليك قائمة الطعام."
+              },
+              {
+                "speaker": "Omar",
+                "en": "Thank you. I'd like the chicken and rice, please.",
+                "ar": "شكراً. أريد الدجاج والأرز من فضلك."
+              },
+              {
+                "speaker": "Waiter",
+                "en": "And to drink?",
+                "ar": "وماذا تشرب؟"
+              },
+              {
+                "speaker": "Omar",
+                "en": "Can I have a glass of juice, please?",
+                "ar": "هل يمكنني الحصول على كوب عصير من فضلك؟"
+              },
+              {
+                "speaker": "Waiter",
+                "en": "Of course. The soup is delicious today.",
+                "ar": "بالطبع. الحساء لذيذ اليوم."
+              }
+            ]
+          }
         },
         {
           "id": "A1-U6-L7",
@@ -15671,7 +16406,11 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "partnerTurns": [
+                "Hello. What would you like?",
+                "Two cheese sandwiches. And to drink?"
+              ]
             },
             {
               "id": "A1-U6-L7-A04",
@@ -15720,7 +16459,8 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "sourceCard": "Original order: two cheese sandwiches and one tea. Delivered: two chicken sandwiches and one tea. The sandwiches are wrong; the tea is right."
             },
             {
               "id": "A1-U6-L7-A06",
@@ -15836,6 +16576,21 @@
                 "speaker": "Assistant",
                 "en": "It's twelve dollars.",
                 "ar": "سعرها اثنا عشر دولاراً."
+              },
+              {
+                "speaker": "Customer",
+                "en": "That's expensive. How much are these shoes?",
+                "ar": "هذا غالٍ. كم سعر هذا الحذاء؟"
+              },
+              {
+                "speaker": "Assistant",
+                "en": "They're twenty dollars. They're cheap today.",
+                "ar": "سعره عشرون دولاراً. إنه رخيص اليوم."
+              },
+              {
+                "speaker": "Customer",
+                "en": "OK. Can I pay by cash?",
+                "ar": "حسناً. هل يمكنني الدفع نقداً؟"
               }
             ]
           },
@@ -15952,7 +16707,11 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "partnerTurns": [
+                "Welcome! Can I help you?",
+                "The bag is twelve dollars."
+              ]
             }
           ]
         },
@@ -15994,6 +16753,21 @@
                 "speaker": "Customer",
                 "en": "Medium. Do you have this in blue?",
                 "ar": "متوسط. هل لديكم هذا بالأزرق؟"
+              },
+              {
+                "speaker": "Assistant",
+                "en": "Yes. Here's a medium blue one.",
+                "ar": "نعم. إليك واحداً أزرق بمقاس متوسط."
+              },
+              {
+                "speaker": "Customer",
+                "en": "Do you have it in black too?",
+                "ar": "هل لديكم منه باللون الأسود أيضاً؟"
+              },
+              {
+                "speaker": "Assistant",
+                "en": "Sorry, only small in black.",
+                "ar": "آسف، المقاس الصغير فقط بالأسود."
               }
             ]
           },
@@ -16124,7 +16898,11 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "partnerTurns": [
+                "Hello. Are you looking for something?",
+                "What size do you need?"
+              ]
             }
           ]
         },
@@ -16162,6 +16940,21 @@
                 "speaker": "Assistant",
                 "en": "Yes. The changing room is there.",
                 "ar": "نعم. غرفة القياس هناك."
+              },
+              {
+                "speaker": "Customer",
+                "en": "This one is small. It doesn't fit. Can I try it on in medium?",
+                "ar": "هذا صغير. لا يناسبني. هل يمكنني تجربته بالمقاس المتوسط؟"
+              },
+              {
+                "speaker": "Assistant",
+                "en": "Of course. Here you are.",
+                "ar": "بالطبع. تفضّل."
+              },
+              {
+                "speaker": "Customer",
+                "en": "Yes, it fits. Thank you.",
+                "ar": "نعم، إنه مناسب. شكراً."
               }
             ]
           },
@@ -16278,7 +17071,11 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "partnerTurns": [
+                "The blue one or the black one?",
+                "Yes, of course. The changing room is there. How is it?"
+              ]
             }
           ]
         },
@@ -16316,6 +17113,16 @@
                 "speaker": "Assistant",
                 "en": "Yes. Here is your receipt.",
                 "ar": "نعم. هذا إيصالك."
+              },
+              {
+                "speaker": "Assistant",
+                "en": "Do you need anything else?",
+                "ar": "هل تحتاج شيئاً آخر؟"
+              },
+              {
+                "speaker": "Customer",
+                "en": "No, that's all, thank you.",
+                "ar": "لا، هذا كل شيء، شكراً."
               }
             ]
           },
@@ -16439,7 +17246,11 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "partnerTurns": [
+                "Is that everything?",
+                "That's fifteen dollars. Cash or card?"
+              ]
             }
           ]
         },
@@ -16476,6 +17287,16 @@
                 "speaker": "Assistant",
                 "en": "Yes. Do you have the receipt?",
                 "ar": "نعم. هل لديك الإيصال؟"
+              },
+              {
+                "speaker": "Customer",
+                "en": "Yes, here it is. And this isn't my order. I ordered a red shirt, not a blue one.",
+                "ar": "نعم، ها هو. وهذا ليس طلبي. طلبت قميصاً أحمر لا أزرق."
+              },
+              {
+                "speaker": "Assistant",
+                "en": "I'm sorry. I'll change it now.",
+                "ar": "أنا آسف. سأستبدله الآن."
               }
             ]
           },
@@ -16603,7 +17424,11 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "partnerTurns": [
+                "Hello. How can I help you?",
+                "I'm sorry. Do you have the receipt?"
+              ]
             }
           ]
         },
@@ -16766,7 +17591,36 @@
                 50
               ]
             }
-          ]
+          ],
+          "encounter": {
+            "dialogue": [
+              {
+                "speaker": "Customer",
+                "en": "I need a bag. My budget is twenty dollars.",
+                "ar": "أحتاج حقيبة. ميزانيتي عشرون دولاراً."
+              },
+              {
+                "speaker": "Assistant",
+                "en": "This bag is fifteen dollars.",
+                "ar": "هذه الحقيبة بخمسة عشر دولاراً."
+              },
+              {
+                "speaker": "Customer",
+                "en": "Good price. Do you have this in black?",
+                "ar": "سعر جيد. هل لديكم منها باللون الأسود؟"
+              },
+              {
+                "speaker": "Assistant",
+                "en": "Yes. Cash or card?",
+                "ar": "نعم. نقداً أم بالبطاقة؟"
+              },
+              {
+                "speaker": "Customer",
+                "en": "Can I pay by card?",
+                "ar": "هل يمكنني الدفع بالبطاقة؟"
+              }
+            ]
+          }
         },
         {
           "id": "A1-U7-L7",
@@ -16856,7 +17710,12 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "partnerTurns": [
+                "Hi. The blue shirt and the black trousers?",
+                "What sizes do you need?",
+                "That's thirty-three dollars. Cash or card?"
+              ]
             },
             {
               "id": "A1-U7-L7-A04",
@@ -16904,7 +17763,8 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "sourceCard": "Budget: $40. Bought: a medium blue shirt for $15 and medium black trousers for $18, total $33, paid by card. Problem: the trousers are broken. Needed: exchange the trousers for the same size."
             },
             {
               "id": "A1-U7-L7-A06",
@@ -17014,6 +17874,26 @@
                 "speaker": "Maya",
                 "en": "There's a bank, a pharmacy and a café on this street.",
                 "ar": "يوجد مصرف وصيدلية ومقهى في هذا الشارع."
+              },
+              {
+                "speaker": "Visitor",
+                "en": "Is there a post office?",
+                "ar": "هل يوجد مكتب بريد؟"
+              },
+              {
+                "speaker": "Maya",
+                "en": "Yes, next to the library. The hospital is near the station.",
+                "ar": "نعم، بجانب المكتبة. المستشفى قريب من المحطة."
+              },
+              {
+                "speaker": "Visitor",
+                "en": "And a supermarket?",
+                "ar": "وسوبرماركت؟"
+              },
+              {
+                "speaker": "Maya",
+                "en": "Opposite the hospital.",
+                "ar": "مقابل المستشفى."
               }
             ]
           },
@@ -17097,7 +17977,8 @@
               "skill": "listening",
               "canDo": [
                 "A1.U8.READING.IDENTIFY_TOWN_PLACE",
-                "A1.U8.PRODUCTION.STATE_LOCATION"
+                "A1.U8.PRODUCTION.STATE_LOCATION",
+                "A1.U8.LISTENING.UNDERSTAND_SPOKEN_DIRECTIONS"
               ],
               "prompt": "Where should the visitor go for medicine?",
               "promptAr": "أين يجب أن يذهب الزائر للدواء؟",
@@ -17184,6 +18065,26 @@
                 "speaker": "Resident",
                 "en": "Yes. It's opposite the café.",
                 "ar": "نعم. إنه مقابل المقهى."
+              },
+              {
+                "speaker": "Visitor",
+                "en": "And where is the pharmacy?",
+                "ar": "وأين الصيدلية؟"
+              },
+              {
+                "speaker": "Resident",
+                "en": "It's between the bank and the post office, on the corner.",
+                "ar": "إنها بين المصرف ومكتب البريد، عند الزاوية."
+              },
+              {
+                "speaker": "Visitor",
+                "en": "Is it far?",
+                "ar": "هل هي بعيدة؟"
+              },
+              {
+                "speaker": "Resident",
+                "en": "No, it's near. Two minutes on foot.",
+                "ar": "لا، إنها قريبة. دقيقتان سيراً."
               }
             ]
           },
@@ -17263,7 +18164,8 @@
               "skill": "listening",
               "canDo": [
                 "A1.U8.PRODUCTION.STATE_LOCATION",
-                "A1.U8.INTERACTION.ASK_FOR_DIRECTIONS"
+                "A1.U8.INTERACTION.ASK_FOR_DIRECTIONS",
+                "A1.U8.LISTENING.UNDERSTAND_SPOKEN_DIRECTIONS"
               ],
               "prompt": "Choose the correct map statement.",
               "promptAr": "اختر وصف الخريطة الصحيح.",
@@ -17306,7 +18208,11 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "partnerTurns": [
+                "Excuse me, I'm new here.",
+                "The pharmacy? It's on this street."
+              ]
             }
           ]
         },
@@ -17338,9 +18244,24 @@
           "encounter": {
             "dialogue": [
               {
+                "speaker": "Visitor",
+                "en": "Excuse me, how do I get to the station?",
+                "ar": "عفواً، كيف أصل إلى المحطة؟"
+              },
+              {
                 "speaker": "Resident",
                 "en": "Go straight, turn left at the bank and go past the café.",
                 "ar": "اذهب مباشرة ثم انعطف يساراً عند المصرف وتجاوز المقهى."
+              },
+              {
+                "speaker": "Visitor",
+                "en": "Do I cross the street?",
+                "ar": "هل أعبر الشارع؟"
+              },
+              {
+                "speaker": "Resident",
+                "en": "Yes. Cross at the corner and turn right.",
+                "ar": "نعم. اعبر عند الزاوية ثم انعطف يميناً."
               }
             ]
           },
@@ -17423,7 +18344,8 @@
               "skill": "listening",
               "canDo": [
                 "A1.U8.PRODUCTION.GIVE_SIMPLE_DIRECTIONS",
-                "A1.U8.INTERACTION.ASK_FOR_DIRECTIONS"
+                "A1.U8.INTERACTION.ASK_FOR_DIRECTIONS",
+                "A1.U8.LISTENING.UNDERSTAND_SPOKEN_DIRECTIONS"
               ],
               "prompt": "Choose the route.",
               "promptAr": "اختر المسار.",
@@ -17497,6 +18419,21 @@
                 "speaker": "Resident",
                 "en": "First, go straight. Then turn right. It's on your left.",
                 "ar": "اذهب مباشرة أولاً ثم انعطف يميناً. ستكون على يسارك."
+              },
+              {
+                "speaker": "Visitor",
+                "en": "And the library?",
+                "ar": "والمكتبة؟"
+              },
+              {
+                "speaker": "Resident",
+                "en": "Go straight to the corner. It's on your right.",
+                "ar": "اذهب مباشرة إلى الزاوية. ستكون على يمينك."
+              },
+              {
+                "speaker": "Visitor",
+                "en": "Thank you very much!",
+                "ar": "شكراً جزيلاً!"
               }
             ]
           },
@@ -17583,7 +18520,8 @@
               "canDo": [
                 "A1.U8.INTERACTION.ASK_FOR_DIRECTIONS",
                 "A1.U8.PRODUCTION.GIVE_SIMPLE_DIRECTIONS",
-                "A1.U8.WRITING.WRITE_DIRECTIONS"
+                "A1.U8.WRITING.WRITE_DIRECTIONS",
+                "A1.U8.LISTENING.UNDERSTAND_SPOKEN_DIRECTIONS"
               ],
               "prompt": "Which destination matches the directions?",
               "promptAr": "أي وجهة تطابق الاتجاهات؟",
@@ -17624,7 +18562,11 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "partnerTurns": [
+                "Excuse me. How do I get to the station?",
+                "Thank you! And the library?"
+              ]
             }
           ]
         },
@@ -17652,9 +18594,29 @@
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Narrator",
+                "speaker": "Guard",
+                "en": "Stop, please. You can't enter here.",
+                "ar": "توقّف من فضلك. لا يمكنك الدخول من هنا."
+              },
+              {
+                "speaker": "Visitor",
+                "en": "Why? Is the bank closed?",
+                "ar": "لماذا؟ هل المصرف مغلق؟"
+              },
+              {
+                "speaker": "Guard",
                 "en": "The bank is closed. Use the side entrance. Don't enter through this door.",
                 "ar": "المصرف مغلق. استخدم المدخل الجانبي. لا تدخل من هذا الباب."
+              },
+              {
+                "speaker": "Visitor",
+                "en": "OK. Where is the exit?",
+                "ar": "حسناً. أين المخرج؟"
+              },
+              {
+                "speaker": "Guard",
+                "en": "It's open. Go straight and turn left.",
+                "ar": "إنه مفتوح. اذهب مباشرة ثم انعطف يساراً."
               }
             ]
           },
@@ -17734,7 +18696,8 @@
               "skill": "listening",
               "canDo": [
                 "A1.U8.READING.UNDERSTAND_PUBLIC_SIGN",
-                "A1.U8.PRODUCTION.STATE_LOCATION"
+                "A1.U8.PRODUCTION.STATE_LOCATION",
+                "A1.U8.LISTENING.UNDERSTAND_SPOKEN_DIRECTIONS"
               ],
               "prompt": "What should the visitor do?",
               "promptAr": "ماذا يجب أن يفعل الزائر؟",
@@ -17892,7 +18855,8 @@
               "canDo": [
                 "A1.U8.WRITING.WRITE_DIRECTIONS",
                 "A1.U8.PRODUCTION.GIVE_SIMPLE_DIRECTIONS",
-                "A1.U8.READING.UNDERSTAND_PUBLIC_SIGN"
+                "A1.U8.READING.UNDERSTAND_PUBLIC_SIGN",
+                "A1.U8.LISTENING.UNDERSTAND_SPOKEN_DIRECTIONS"
               ],
               "prompt": "Which final landmark identifies the place?",
               "promptAr": "أي معلم نهائي يحدد المكان؟",
@@ -17938,7 +18902,31 @@
                 65
               ]
             }
-          ]
+          ],
+          "encounter": {
+            "dialogue": [
+              {
+                "speaker": "Lina",
+                "en": "Hi Omar. How do I get to the café?",
+                "ar": "مرحباً عمر. كيف أصل إلى المقهى؟"
+              },
+              {
+                "speaker": "Omar",
+                "en": "Go straight. Turn right at the pharmacy.",
+                "ar": "اذهب مباشرة. انعطف يميناً عند الصيدلية."
+              },
+              {
+                "speaker": "Lina",
+                "en": "Is the entrance on the street?",
+                "ar": "هل المدخل على الشارع؟"
+              },
+              {
+                "speaker": "Omar",
+                "en": "No, use the side entrance, next to the exit of the bank.",
+                "ar": "لا، استخدمي المدخل الجانبي، بجانب مخرج المصرف."
+              }
+            ]
+          }
         },
         {
           "id": "A1-U8-L7",
@@ -17986,7 +18974,8 @@
               "type": "audioChoice",
               "skill": "listening",
               "canDo": [
-                "A1.U8.READING.UNDERSTAND_PUBLIC_SIGN"
+                "A1.U8.READING.UNDERSTAND_PUBLIC_SIGN",
+                "A1.U8.LISTENING.UNDERSTAND_SPOKEN_DIRECTIONS"
               ],
               "prompt": "Why can't the visitor use the first door?",
               "promptAr": "لماذا لا يستطيع الزائر استخدام الباب الأول؟",
@@ -18023,7 +19012,8 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "partnerTurns": ["Hello! You're at the station now, yes?"]
             },
             {
               "id": "A1-U8-L7-A04",
@@ -18085,7 +19075,8 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "sourceCard": "Route: from the station, go straight to the bank and turn left. The library is opposite the bank. The library's front entrance is closed today. Use the side entrance on Green Street, next to the café."
             },
             {
               "id": "A1-U8-L7-A06",
@@ -18131,7 +19122,8 @@
           "A1.U8.PRODUCTION.GIVE_SIMPLE_DIRECTIONS",
           "A1.U8.READING.UNDERSTAND_PUBLIC_SIGN",
           "A1.U8.WRITING.WRITE_DIRECTIONS",
-          "A1.U8.MEDIATION.GUIDE_VISITOR"
+          "A1.U8.MEDIATION.GUIDE_VISITOR",
+          "A1.U8.LISTENING.UNDERSTAND_SPOKEN_DIRECTIONS"
         ],
         "requiredSkillGroups": [
           [
@@ -18195,6 +19187,21 @@
                 "speaker": "Lina",
                 "en": "I go to work by bus. My brother goes by bicycle, and my sister goes on foot.",
                 "ar": "أذهب إلى العمل بالحافلة. أخي يذهب بالدراجة وأختي تمشي."
+              },
+              {
+                "speaker": "Ali",
+                "en": "I go on foot too. My work is near my home.",
+                "ar": "أنا أذهب سيراً على الأقدام أيضاً. عملي قريب من منزلي."
+              },
+              {
+                "speaker": "Lina",
+                "en": "Do you go to the airport by taxi?",
+                "ar": "هل تذهب إلى المطار بسيارة أجرة؟"
+              },
+              {
+                "speaker": "Ali",
+                "en": "No, by train. It's cheap.",
+                "ar": "لا، بالقطار. إنه رخيص."
               }
             ]
           },
@@ -18353,6 +19360,21 @@
                 "speaker": "Clerk",
                 "en": "Platform two.",
                 "ar": "الرصيف الثاني."
+              },
+              {
+                "speaker": "Passenger",
+                "en": "How much is it?",
+                "ar": "كم ثمنها؟"
+              },
+              {
+                "speaker": "Clerk",
+                "en": "Twenty dollars. A single is twelve.",
+                "ar": "عشرون دولاراً. تذكرة الذهاب فقط باثني عشر."
+              },
+              {
+                "speaker": "Passenger",
+                "en": "Return, please. Which route is faster?",
+                "ar": "ذهاب وعودة من فضلك. أي مسار أسرع؟"
               }
             ]
           },
@@ -18471,7 +19493,12 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "partnerTurns": [
+                "Good morning. Where to?",
+                "Single or return?",
+                "Platform four."
+              ]
             }
           ]
         },
@@ -18510,6 +19537,26 @@
                 "speaker": "Clerk",
                 "en": "It leaves at eight fifteen and arrives at nine.",
                 "ar": "تغادر في الثامنة والربع وتصل في التاسعة."
+              },
+              {
+                "speaker": "Passenger",
+                "en": "Which platform?",
+                "ar": "أي رصيف؟"
+              },
+              {
+                "speaker": "Clerk",
+                "en": "Platform three. There's a small delay today.",
+                "ar": "الرصيف الثالث. هناك تأخير بسيط اليوم."
+              },
+              {
+                "speaker": "Passenger",
+                "en": "When does it arrive?",
+                "ar": "متى يصل؟"
+              },
+              {
+                "speaker": "Clerk",
+                "en": "At nine fifteen, not nine.",
+                "ar": "في التاسعة والربع، لا التاسعة."
               }
             ]
           },
@@ -18634,7 +19681,11 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "partnerTurns": [
+                "Can I help you?",
+                "The next train leaves at nine fifteen."
+              ]
             }
           ]
         },
@@ -18664,9 +19715,24 @@
           "encounter": {
             "dialogue": [
               {
+                "speaker": "Passenger",
+                "en": "How do I get to the museum?",
+                "ar": "كيف أصل إلى المتحف؟"
+              },
+              {
                 "speaker": "Clerk",
                 "en": "You can take bus 12 to Central Station, then change to train 3.",
                 "ar": "يمكنك أخذ الحافلة 12 إلى المحطة المركزية ثم التبديل إلى القطار 3."
+              },
+              {
+                "speaker": "Passenger",
+                "en": "And from the station?",
+                "ar": "ومن المحطة؟"
+              },
+              {
+                "speaker": "Clerk",
+                "en": "Go straight. It takes five minutes.",
+                "ar": "اذهب مباشرة. يستغرق خمس دقائق."
               }
             ]
           },
@@ -18824,6 +19890,21 @@
                 "speaker": "Omar",
                 "en": "I travel from Kirkuk to Erbil by bus. I leave at seven and arrive at nine. It takes two hours.",
                 "ar": "أسافر من كركوك إلى أربيل بالحافلة. أغادر في السابعة وأصل في التاسعة. تستغرق ساعتين."
+              },
+              {
+                "speaker": "Sara",
+                "en": "Is the journey long?",
+                "ar": "هل الرحلة طويلة؟"
+              },
+              {
+                "speaker": "Omar",
+                "en": "A little. First, I take the bus. Then, I walk to work.",
+                "ar": "قليلاً. أولاً، آخذ الحافلة. ثم أمشي إلى العمل."
+              },
+              {
+                "speaker": "Sara",
+                "en": "I leave home at eight and arrive at half past eight.",
+                "ar": "أغادر المنزل في الثامنة وأصل في الثامنة والنصف."
               }
             ]
           },
@@ -19113,7 +20194,41 @@
                 65
               ]
             }
-          ]
+          ],
+          "encounter": {
+            "dialogue": [
+              {
+                "speaker": "Lina",
+                "en": "What time does the train leave?",
+                "ar": "في أي وقت يغادر القطار؟"
+              },
+              {
+                "speaker": "Omar",
+                "en": "At ten. Change at Central Station.",
+                "ar": "في العاشرة. بدّلي في المحطة المركزية."
+              },
+              {
+                "speaker": "Lina",
+                "en": "How long does it take?",
+                "ar": "كم يستغرق؟"
+              },
+              {
+                "speaker": "Omar",
+                "en": "It takes one hour. Buy the ticket now; platform two.",
+                "ar": "يستغرق ساعة واحدة. اشتري التذكرة الآن؛ الرصيف الثاني."
+              },
+              {
+                "speaker": "Lina",
+                "en": "Is there a delay?",
+                "ar": "هل هناك تأخير؟"
+              },
+              {
+                "speaker": "Omar",
+                "en": "No, not today.",
+                "ar": "لا، ليس اليوم."
+              }
+            ]
+          }
         },
         {
           "id": "A1-U9-L7",
@@ -19199,7 +20314,11 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "partnerTurns": [
+                "Next, please. Where are you going?",
+                "A single to Central Station is four dollars."
+              ]
             },
             {
               "id": "A1-U9-L7-A04",
@@ -19255,7 +20374,8 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "sourceCard": "Route A: bus at 8:00, change at Central Station, train at 8:45, arrive 9:40. Update: the 8:45 train has a fifteen-minute delay. It now leaves at 9:00 and arrives at 9:55."
             },
             {
               "id": "A1-U9-L7-A06",
@@ -19372,6 +20492,21 @@
                 "speaker": "Patient",
                 "en": "My left foot hurts.",
                 "ar": "قدمي اليسرى تؤلمني."
+              },
+              {
+                "speaker": "Nurse",
+                "en": "Does your leg hurt too?",
+                "ar": "هل تؤلمك ساقك أيضاً؟"
+              },
+              {
+                "speaker": "Patient",
+                "en": "No, but my back hurts a little.",
+                "ar": "لا، لكن ظهري يؤلمني قليلاً."
+              },
+              {
+                "speaker": "Nurse",
+                "en": "OK. Sit here, please.",
+                "ar": "حسناً. اجلس هنا من فضلك."
               }
             ]
           },
@@ -19540,6 +20675,21 @@
                 "speaker": "Patient",
                 "en": "I have a headache and a cough. I feel tired.",
                 "ar": "لدي صداع وسعال. أشعر بالتعب."
+              },
+              {
+                "speaker": "Doctor",
+                "en": "Do you have a cold?",
+                "ar": "هل لديك زكام؟"
+              },
+              {
+                "speaker": "Patient",
+                "en": "Yes, and I feel sick. My throat hurts.",
+                "ar": "نعم، وأشعر بالغثيان. حلقي يؤلمني."
+              },
+              {
+                "speaker": "Doctor",
+                "en": "I see. You have a small fever.",
+                "ar": "فهمت. لديك حمى خفيفة."
               }
             ]
           },
@@ -19704,6 +20854,16 @@
                 "speaker": "Nurse",
                 "en": "You should rest and drink water.",
                 "ar": "ينبغي أن ترتاح وتشرب الماء."
+              },
+              {
+                "speaker": "Patient",
+                "en": "Should I take medicine?",
+                "ar": "هل ينبغي أن آخذ دواءً؟"
+              },
+              {
+                "speaker": "Nurse",
+                "en": "One tablet after food. You shouldn't work today.",
+                "ar": "قرص واحد بعد الطعام. لا ينبغي أن تعمل اليوم."
               }
             ]
           },
@@ -19824,7 +20984,11 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "partnerTurns": [
+                "I don't feel well today.",
+                "Yes, I have a headache. What should I do?"
+              ]
             }
           ]
         },
@@ -19867,6 +21031,16 @@
                 "speaker": "Receptionist",
                 "en": "Please sit here and wait.",
                 "ar": "اجلس هنا وانتظر من فضلك."
+              },
+              {
+                "speaker": "Patient",
+                "en": "Can I have an appointment with the doctor?",
+                "ar": "هل يمكنني الحصول على موعد مع الطبيب؟"
+              },
+              {
+                "speaker": "Receptionist",
+                "en": "Yes, at three. The nurse will give you medicine.",
+                "ar": "نعم، في الثالثة. ستعطيك الممرضة الدواء."
               }
             ]
           },
@@ -19995,7 +21169,11 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "partnerTurns": [
+                "Good morning. How can I help?",
+                "Please sit here and wait for the nurse."
+              ]
             }
           ]
         },
@@ -20023,9 +21201,24 @@
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Announcement",
+                "speaker": "Sara",
+                "en": "Please call for help! My friend is sick.",
+                "ar": "اتصل لطلب المساعدة من فضلك! صديقي مريض."
+              },
+              {
+                "speaker": "Operator",
                 "en": "In an emergency, call 112. Give your location. Stay with the person and follow the operator's instructions.",
                 "ar": "في الطوارئ اتصل بالرقم 112 واذكر موقعك وابق مع الشخص واتبع التعليمات."
+              },
+              {
+                "speaker": "Sara",
+                "en": "I need a doctor. We are at the station.",
+                "ar": "أحتاج طبيباً. نحن في المحطة."
+              },
+              {
+                "speaker": "Operator",
+                "en": "Be careful. Help is coming. He will feel better soon.",
+                "ar": "كوني حذرة. المساعدة قادمة. سيشعر بتحسن قريباً."
               }
             ]
           },
@@ -20316,7 +21509,36 @@
                 60
               ]
             }
-          ]
+          ],
+          "encounter": {
+            "dialogue": [
+              {
+                "speaker": "Nurse",
+                "en": "Hello Omar. How do you feel today?",
+                "ar": "مرحباً عمر. كيف تشعر اليوم؟"
+              },
+              {
+                "speaker": "Omar",
+                "en": "I feel better, thank you.",
+                "ar": "أشعر بتحسن، شكراً."
+              },
+              {
+                "speaker": "Nurse",
+                "en": "Good. You should rest for two more days.",
+                "ar": "جيد. ينبغي أن ترتاح يومين آخرين."
+              },
+              {
+                "speaker": "Omar",
+                "en": "Do I need another appointment?",
+                "ar": "هل أحتاج موعداً آخر؟"
+              },
+              {
+                "speaker": "Nurse",
+                "en": "Yes, on Monday at ten.",
+                "ar": "نعم، يوم الاثنين في العاشرة."
+              }
+            ]
+          }
         },
         {
           "id": "A1-U10-L7",
@@ -20406,7 +21628,12 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "partnerTurns": [
+                "City Clinic, good morning.",
+                "I see. Is it for today?",
+                "We have three o'clock. Is that OK?"
+              ]
             },
             {
               "id": "A1-U10-L7-A04",
@@ -20454,7 +21681,8 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "sourceCard": "The visitor has a high fever and a bad cough and feels very tired. Clinic: appointment at 3:00 today. Advice: rest, drink water, and don't go to work. Bring your ID card."
             },
             {
               "id": "A1-U10-L7-A06",
@@ -20573,6 +21801,21 @@
                 "speaker": "Ali",
                 "en": "It's cloudy, cold and windy.",
                 "ar": "الجو غائم وبارد وعاصف."
+              },
+              {
+                "speaker": "Maya",
+                "en": "Is it hot in Basra today?",
+                "ar": "هل الجو حار في البصرة اليوم؟"
+              },
+              {
+                "speaker": "Ali",
+                "en": "No, it's warm and sunny there.",
+                "ar": "لا، الجو دافئ ومشمس هناك."
+              },
+              {
+                "speaker": "Maya",
+                "en": "Here it's rainy. I hate rain!",
+                "ar": "هنا الجو ممطر. أكره المطر!"
               }
             ]
           },
@@ -20741,6 +21984,21 @@
                 "speaker": "Sara",
                 "en": "It's raining. I'm waiting inside, and Omar is walking outside with an umbrella.",
                 "ar": "تمطر الآن. أنتظر في الداخل وعمر يمشي في الخارج مع مظلة."
+              },
+              {
+                "speaker": "Omar",
+                "en": "Hi Sara! What are you doing?",
+                "ar": "مرحباً سارة! ماذا تفعلين؟"
+              },
+              {
+                "speaker": "Sara",
+                "en": "I'm reading. Is it snowing?",
+                "ar": "أقرأ. هل تثلج؟"
+              },
+              {
+                "speaker": "Omar",
+                "en": "No, it's raining. I'm wearing my coat.",
+                "ar": "لا، إنها تمطر. أرتدي معطفي."
               }
             ]
           },
@@ -20907,6 +22165,21 @@
                 "speaker": "Ali",
                 "en": "Yes. I'm wearing a warm black coat and boots.",
                 "ar": "نعم. أرتدي معطفاً أسود دافئاً وحذاءً طويلاً."
+              },
+              {
+                "speaker": "Maya",
+                "en": "Is it raining there?",
+                "ar": "هل تمطر هناك؟"
+              },
+              {
+                "speaker": "Ali",
+                "en": "Yes. I have an umbrella. Are you wearing a sweater?",
+                "ar": "نعم. معي مظلة. هل ترتدين كنزة؟"
+              },
+              {
+                "speaker": "Maya",
+                "en": "Yes, a sweater and a hat.",
+                "ar": "نعم، كنزة وقبعة."
               }
             ]
           },
@@ -21015,7 +22288,8 @@
               "skill": "spokenInteraction",
               "canDo": [
                 "A1.U11.READING.CHOOSE_WEATHER_CLOTHES",
-                "A1.U11.PRODUCTION.DESCRIBE_ACTION_NOW"
+                "A1.U11.PRODUCTION.DESCRIBE_ACTION_NOW",
+                "A1.U11.INTERACTION.ASK_ABOUT_CLOTHES_AND_WEATHER"
               ],
               "prompt": "Ask what someone is wearing and answer with two clothing details.",
               "promptAr": "اسأل ماذا يرتدي شخص وأجب بتفصيلين عن الملابس.",
@@ -21038,7 +22312,11 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "partnerTurns": [
+                "I'm outside now. It's cold!",
+                "I'm wearing a jacket and a hat. And you?"
+              ]
             }
           ]
         },
@@ -21070,6 +22348,21 @@
                 "speaker": "Sara",
                 "en": "Take an umbrella because it's raining. Wear boots because the streets are wet.",
                 "ar": "خذ مظلة لأن المطر يهطل. ارتدِ حذاءً طويلاً لأن الشوارع مبللة."
+              },
+              {
+                "speaker": "Omar",
+                "en": "It's very windy too.",
+                "ar": "الجو عاصف جداً أيضاً."
+              },
+              {
+                "speaker": "Sara",
+                "en": "Then stay inside. Wear a coat if you go out.",
+                "ar": "إذاً ابقَ في الداخل. ارتدِ معطفاً إن خرجت."
+              },
+              {
+                "speaker": "Omar",
+                "en": "OK, I'll stay inside today.",
+                "ar": "حسناً، سأبقى في الداخل اليوم."
               }
             ]
           },
@@ -21224,9 +22517,24 @@
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Forecast",
+                "speaker": "Ali",
+                "en": "What's the forecast for tomorrow?",
+                "ar": "ما توقعات الطقس لغد؟"
+              },
+              {
+                "speaker": "Maya",
                 "en": "Tomorrow morning will be cloudy and twelve degrees. It will rain in the afternoon.",
                 "ar": "سيكون صباح الغد غائماً واثنتي عشرة درجة. ستمطر بعد الظهر."
+              },
+              {
+                "speaker": "Ali",
+                "en": "Twelve degrees? I'll take a jacket.",
+                "ar": "اثنتا عشرة درجة؟ سآخذ سترة."
+              },
+              {
+                "speaker": "Maya",
+                "en": "And an umbrella!",
+                "ar": "ومظلة!"
               }
             ]
           },
@@ -21518,7 +22826,31 @@
                 65
               ]
             }
-          ]
+          ],
+          "encounter": {
+            "dialogue": [
+              {
+                "speaker": "Lina",
+                "en": "Hi Noor. What's the weather like today?",
+                "ar": "مرحباً نور. كيف حال الطقس اليوم؟"
+              },
+              {
+                "speaker": "Noor",
+                "en": "It's cold and windy. I'm staying inside.",
+                "ar": "الجو بارد وعاصف. أنا باقية في الداخل."
+              },
+              {
+                "speaker": "Lina",
+                "en": "It will be sunny tomorrow. Let's go outside!",
+                "ar": "سيكون الجو مشمساً غداً. لنخرج!"
+              },
+              {
+                "speaker": "Noor",
+                "en": "Great. I'm going to wear my new jacket.",
+                "ar": "رائع. سأرتدي سترتي الجديدة."
+              }
+            ]
+          }
         },
         {
           "id": "A1-U11-L7",
@@ -21617,7 +22949,8 @@
               "type": "speak",
               "skill": "spokenInteraction",
               "canDo": [
-                "A1.U11.PRODUCTION.DESCRIBE_ACTION_NOW"
+                "A1.U11.PRODUCTION.DESCRIBE_ACTION_NOW",
+                "A1.U11.INTERACTION.ASK_ABOUT_CLOTHES_AND_WEATHER"
               ],
               "prompt": "Call a friend: say what the group is doing now and check what the friend is wearing.",
               "promptAr": "اتصل بصديق: اذكر ما تفعله المجموعة الآن وتحقق مما يرتديه.",
@@ -21636,7 +22969,11 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "partnerTurns": [
+                "Hi! Where are you all?",
+                "I'm coming now. It's windy outside."
+              ]
             },
             {
               "id": "A1-U11-L7-A05",
@@ -21665,7 +23002,8 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "sourceCard": "Original plan: a short walk at 9:00, sunny and 18 degrees, in light clothes. Update: a light wind starts at 10:00 and heavy rain at 3:00. New plan: walk at 9:00, back by 10:00, and take a jacket."
             },
             {
               "id": "A1-U11-L7-A06",
@@ -21716,7 +23054,8 @@
           "A1.U11.PRODUCTION.GIVE_SIMPLE_REASON",
           "A1.U11.READING.UNDERSTAND_SIMPLE_FORECAST",
           "A1.U11.WRITING.WRITE_WEATHER_UPDATE",
-          "A1.U11.MEDIATION.PREPARE_FOR_TOMORROW_WEATHER"
+          "A1.U11.MEDIATION.PREPARE_FOR_TOMORROW_WEATHER",
+          "A1.U11.INTERACTION.ASK_ABOUT_CLOTHES_AND_WEATHER"
         ],
         "requiredSkillGroups": [
           [
@@ -21781,6 +23120,21 @@
                 "speaker": "Maya",
                 "en": "I'm going to visit my family this weekend. On Sunday, I'm going to stay home.",
                 "ar": "سأزور عائلتي في عطلة نهاية الأسبوع. يوم الأحد سأبقى في المنزل."
+              },
+              {
+                "speaker": "Ali",
+                "en": "I'm going to meet a friend this evening. Next week, I'm going on a trip.",
+                "ar": "سأقابل صديقاً هذا المساء. الأسبوع القادم سأذهب في رحلة."
+              },
+              {
+                "speaker": "Maya",
+                "en": "Where are you going to stay?",
+                "ar": "أين ستقيم؟"
+              },
+              {
+                "speaker": "Ali",
+                "en": "With my brother, in Erbil.",
+                "ar": "عند أخي، في أربيل."
               }
             ]
           },
@@ -21860,7 +23214,8 @@
               "skill": "listening",
               "canDo": [
                 "A1.U12.PRODUCTION.STATE_FUTURE_PLAN",
-                "A1.U12.READING.UNDERSTAND_SHORT_MESSAGE"
+                "A1.U12.READING.UNDERSTAND_SHORT_MESSAGE",
+                "A1.U12.LISTENING.UNDERSTAND_SPOKEN_PLAN"
               ],
               "prompt": "Choose Omar's weekend plan.",
               "promptAr": "اختر خطة عمر لعطلة نهاية الأسبوع.",
@@ -21938,6 +23293,16 @@
                 "speaker": "Sara",
                 "en": "I'm going to meet a friend. Are you going to work?",
                 "ar": "سأقابل صديقة. هل ستعمل؟"
+              },
+              {
+                "speaker": "Ali",
+                "en": "No, I'm not. Are you going to visit your family?",
+                "ar": "لا، لن أعمل. هل ستزورين عائلتكِ؟"
+              },
+              {
+                "speaker": "Sara",
+                "en": "Yes, at the weekend. We're going on a trip.",
+                "ar": "نعم، في عطلة نهاية الأسبوع. سنذهب في رحلة."
               }
             ]
           },
@@ -22022,7 +23387,8 @@
               "skill": "listening",
               "canDo": [
                 "A1.U12.INTERACTION.ASK_ABOUT_PLAN",
-                "A1.U12.PRODUCTION.STATE_FUTURE_PLAN"
+                "A1.U12.PRODUCTION.STATE_FUTURE_PLAN",
+                "A1.U12.LISTENING.UNDERSTAND_SPOKEN_PLAN"
               ],
               "prompt": "Which plan is not happening?",
               "promptAr": "أي خطة لن تحدث؟",
@@ -22062,7 +23428,11 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "partnerTurns": [
+                "Hi! It's the weekend soon.",
+                "Are you going to visit your family?"
+              ]
             }
           ]
         },
@@ -22101,6 +23471,21 @@
                 "speaker": "Sara",
                 "en": "Yes, that works for me.",
                 "ar": "نعم، يناسبني."
+              },
+              {
+                "speaker": "Maya",
+                "en": "Great. Can you confirm with Omar?",
+                "ar": "رائع. هل يمكنكِ التأكيد مع عمر؟"
+              },
+              {
+                "speaker": "Sara",
+                "en": "Yes. Is he available at six?",
+                "ar": "نعم. هل هو متاح في السادسة؟"
+              },
+              {
+                "speaker": "Maya",
+                "en": "Yes, we arranged it yesterday.",
+                "ar": "نعم، رتّبنا ذلك أمس."
               }
             ]
           },
@@ -22183,7 +23568,8 @@
               "skill": "listening",
               "canDo": [
                 "A1.U12.INTERACTION.ARRANGE_MEETING",
-                "A1.U12.INTERACTION.ASK_ABOUT_PLAN"
+                "A1.U12.INTERACTION.ASK_ABOUT_PLAN",
+                "A1.U12.LISTENING.UNDERSTAND_SPOKEN_PLAN"
               ],
               "prompt": "Choose the confirmed arrangement.",
               "promptAr": "اختر الترتيب المؤكد.",
@@ -22221,7 +23607,12 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "partnerTurns": [
+                "Let's meet this week!",
+                "Saturday is good for me. Where?",
+                "Four o'clock works. See you then."
+              ]
             }
           ]
         },
@@ -22260,8 +23651,18 @@
               },
               {
                 "speaker": "Maya",
-                "en": "Yes, that works.",
-                "ar": "نعم، يناسبني."
+                "en": "Yes, that works for me. Is there a problem with the café?",
+                "ar": "نعم، يناسبني. هل هناك مشكلة في المقهى؟"
+              },
+              {
+                "speaker": "Ali",
+                "en": "No. But can we change the place to the park? It's near my work.",
+                "ar": "لا. لكن هل يمكننا تغيير المكان إلى الحديقة؟ إنها قريبة من عملي."
+              },
+              {
+                "speaker": "Maya",
+                "en": "OK. See you later, at seven.",
+                "ar": "حسناً. أراك لاحقاً، في السابعة."
               }
             ]
           },
@@ -22341,7 +23742,8 @@
               "skill": "listening",
               "canDo": [
                 "A1.U12.INTERACTION.ACCEPT_REFUSE_CHANGE_PLAN",
-                "A1.U12.INTERACTION.ARRANGE_MEETING"
+                "A1.U12.INTERACTION.ARRANGE_MEETING",
+                "A1.U12.LISTENING.UNDERSTAND_SPOKEN_PLAN"
               ],
               "prompt": "Which detail changes?",
               "promptAr": "أي تفصيل يتغير؟",
@@ -22381,7 +23783,11 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "partnerTurns": [
+                "Can we meet at five on Friday?",
+                "OK. What time is good for you?"
+              ]
             }
           ]
         },
@@ -22410,9 +23816,24 @@
           "encounter": {
             "dialogue": [
               {
-                "speaker": "Message",
+                "speaker": "Lina",
                 "en": "Hi Noor. We're meeting at River Café on Friday at 5:30. Please bring the tickets and confirm today. See you, Lina.",
-                "ar": "مرحباً نور. سنلتقي في مقهى النهر يوم الجمعة في الخامسة والنصف. أحضر التذاكر وأكد اليوم."
+                "ar": "مرحباً نور. سنلتقي في مقهى النهر يوم الجمعة في الخامسة والنصف. أحضري التذاكر وأكدي اليوم. أراكِ، لينا."
+              },
+              {
+                "speaker": "Noor",
+                "en": "Hi Lina. Please confirm the place and time again. River Café at 5:30?",
+                "ar": "مرحباً لينا. أكّدي المكان والوقت مرة أخرى من فضلك. مقهى النهر في الخامسة والنصف؟"
+              },
+              {
+                "speaker": "Lina",
+                "en": "Yes. Friday at 5:30.",
+                "ar": "نعم. الجمعة في الخامسة والنصف."
+              },
+              {
+                "speaker": "Noor",
+                "en": "OK, confirmed. I'll bring the tickets. See you then.",
+                "ar": "حسناً، تم التأكيد. سأحضر التذاكر. أراكِ حينها."
               }
             ]
           },
@@ -22505,7 +23926,8 @@
               "canDo": [
                 "A1.U12.READING.UNDERSTAND_SHORT_MESSAGE",
                 "A1.U12.INTERACTION.ACCEPT_REFUSE_CHANGE_PLAN",
-                "A1.U12.WRITING.WRITE_SIMPLE_PERSONAL_MESSAGE"
+                "A1.U12.WRITING.WRITE_SIMPLE_PERSONAL_MESSAGE",
+                "A1.U12.LISTENING.UNDERSTAND_SPOKEN_PLAN"
               ],
               "prompt": "Which reply answers every request?",
               "promptAr": "أي رد يجيب عن كل الطلبات؟",
@@ -22677,7 +24099,8 @@
                 "A1.U12.WRITING.WRITE_SIMPLE_PERSONAL_MESSAGE",
                 "A1.U12.PRODUCTION.STATE_FUTURE_PLAN",
                 "A1.U12.INTERACTION.ARRANGE_MEETING",
-                "A1.U12.INTERACTION.ACCEPT_REFUSE_CHANGE_PLAN"
+                "A1.U12.INTERACTION.ACCEPT_REFUSE_CHANGE_PLAN",
+                "A1.U12.LISTENING.UNDERSTAND_SPOKEN_PLAN"
               ],
               "prompt": "What change must the reply include?",
               "promptAr": "ما التغيير الذي يجب أن يتضمنه الرد؟",
@@ -22723,7 +24146,31 @@
                 70
               ]
             }
-          ]
+          ],
+          "encounter": {
+            "dialogue": [
+              {
+                "speaker": "Omar",
+                "en": "Hi Maya. I'm going to walk in the park on Saturday. Does four work for you?",
+                "ar": "مرحباً مايا. سأمشي في الحديقة يوم السبت. هل تناسبكِ الرابعة؟"
+              },
+              {
+                "speaker": "Maya",
+                "en": "Yes, four works for me. Where?",
+                "ar": "نعم، تناسبني الرابعة. أين؟"
+              },
+              {
+                "speaker": "Omar",
+                "en": "River Park, at the entrance. Please confirm the place and time.",
+                "ar": "حديقة النهر، عند المدخل. أكّدي المكان والوقت من فضلك."
+              },
+              {
+                "speaker": "Maya",
+                "en": "Confirmed: River Park, Saturday at four. Good plan!",
+                "ar": "تم التأكيد: حديقة النهر، السبت في الرابعة. خطة جيدة!"
+              }
+            ]
+          }
         },
         {
           "id": "A1-U12-L7",
@@ -22771,7 +24218,8 @@
               "type": "audioChoice",
               "skill": "listening",
               "canDo": [
-                "A1.U12.PRODUCTION.STATE_FUTURE_PLAN"
+                "A1.U12.PRODUCTION.STATE_FUTURE_PLAN",
+                "A1.U12.LISTENING.UNDERSTAND_SPOKEN_PLAN"
               ],
               "prompt": "What activity and place does the group prefer?",
               "promptAr": "ما النشاط والمكان اللذان تفضلهما المجموعة؟",
@@ -22809,7 +24257,11 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "partnerTurns": [
+                "Hi! Are we meeting this weekend?",
+                "River Park at four? Let me check."
+              ]
             },
             {
               "id": "A1-U12-L7-A04",
@@ -22818,7 +24270,8 @@
               "type": "audioChoice",
               "skill": "listening",
               "canDo": [
-                "A1.U12.INTERACTION.ACCEPT_REFUSE_CHANGE_PLAN"
+                "A1.U12.INTERACTION.ACCEPT_REFUSE_CHANGE_PLAN",
+                "A1.U12.LISTENING.UNDERSTAND_SPOKEN_PLAN"
               ],
               "prompt": "What change is needed after the forecast?",
               "promptAr": "ما التغيير المطلوب بعد التوقعات؟",
@@ -22857,7 +24310,8 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "sourceCard": "Availability: Maya is free on Saturday after 3:00; Omar on Saturday from 12:00 to 6:00; Lina on Saturday from 4:00 to 8:00. Original plan: a walk in River Park at 4:00. Update: rain at 4:00. New plan: the café opposite the park at 4:00."
             },
             {
               "id": "A1-U12-L7-A06",
@@ -22901,7 +24355,8 @@
           "A1.U12.READING.UNDERSTAND_SHORT_MESSAGE",
           "A1.U12.INTERACTION.ACCEPT_REFUSE_CHANGE_PLAN",
           "A1.U12.WRITING.WRITE_SIMPLE_PERSONAL_MESSAGE",
-          "A1.U12.MEDIATION.COORDINATE_WEEKEND_PLAN"
+          "A1.U12.MEDIATION.COORDINATE_WEEKEND_PLAN",
+          "A1.U12.LISTENING.UNDERSTAND_SPOKEN_PLAN"
         ],
         "requiredSkillGroups": [
           [
@@ -24569,7 +26024,12 @@
         },
         "accepted": [],
         "fallbackSkill": "writing",
-        "fallbackCountsFor": "accessOnly"
+        "fallbackCountsFor": "accessOnly",
+        "partnerTurns": [
+          "Hi! I'm Sam. Are you new here too?",
+          "I'm from Canada, but I live in Erbil now.",
+          "I'm a teacher. And you?"
+        ]
       },
       {
         "id": "A1-FINAL-MISSION-A04",
@@ -24639,7 +26099,8 @@
         },
         "accepted": [],
         "fallbackSkill": "writing",
-        "fallbackCountsFor": "accessOnly"
+        "fallbackCountsFor": "accessOnly",
+        "sourceCard": "Map note: from the activity centre, walk straight ahead until the bank, then turn left. The information office is beside the pharmacy. Today its main door is locked, so go in through the side door."
       },
       {
         "id": "A1-FINAL-MISSION-A07",
@@ -24691,7 +26152,12 @@
         },
         "accepted": [],
         "fallbackSkill": "writing",
-        "fallbackCountsFor": "accessOnly"
+        "fallbackCountsFor": "accessOnly",
+        "partnerTurns": [
+          "Hello. Can I help you?",
+          "The blue rain jacket? Yes, twenty-four dollars.",
+          "Cash or card?"
+        ]
       },
       {
         "id": "A1-FINAL-MISSION-A09",
@@ -24740,7 +26206,8 @@
         },
         "accepted": [],
         "fallbackSkill": "writing",
-        "fallbackCountsFor": "accessOnly"
+        "fallbackCountsFor": "accessOnly",
+        "sourceCard": "Shop: you asked for the blue rain jacket in medium; the bag has a large one. Pharmacy advice for Sam's headache: rest, drink water, and take one tablet after food."
       },
       {
         "id": "A1-FINAL-MISSION-A11",
@@ -24771,7 +26238,12 @@
         },
         "accepted": [],
         "fallbackSkill": "writing",
-        "fallbackCountsFor": "accessOnly"
+        "fallbackCountsFor": "accessOnly",
+        "partnerTurns": [
+          "Let's meet tomorrow! What would you like to do?",
+          "The park at ten? Great.",
+          "Oh, sorry, can we make it eleven? I have a class at ten."
+        ]
       },
       {
         "id": "A1-FINAL-MISSION-A12",
@@ -24984,7 +26456,7 @@
               "dance"
             ],
             "answer": "play chess",
-            "audioTranscript": "I can play chess and swim. Sara can play chess, but she can't swim.",
+            "audioTranscript": "I can sing and play chess. My friend Ali can play chess too, but he can't sing.",
             "assessmentMode": "secure",
             "sourcePolicy": "unseen"
           },
@@ -25084,7 +26556,7 @@
               "headache"
             ],
             "answer": "fever",
-            "audioTranscript": "I have a cough and a headache, but I don't have a fever.",
+            "audioTranscript": "Today I've got a headache, and I'm coughing, but my temperature is normal, so no fever.",
             "assessmentMode": "secure",
             "sourcePolicy": "unseen"
           },
@@ -25329,7 +26801,7 @@
               "Yes, with $6 left."
             ],
             "answer": "Yes, with $4 left.",
-            "sourceText": "Blue bag $14. Black shoes $22. Customer budget: $40.",
+            "sourceText": "Shop prices today: a blue bag is $14 and black shoes are $22. The customer has a budget of $40.",
             "assessmentMode": "secure",
             "sourcePolicy": "unseen"
           },
@@ -25681,6 +27153,11 @@
               "directions",
               "ticket",
               "meal"
+            ],
+            "partnerTurns": [
+              "Hello. Can I help you?",
+              "Yes, of course.",
+              "Anything else?"
             ]
           },
           {

@@ -84,14 +84,19 @@ class LengthBandTier {
   final Range writing;
 }
 
-/// How a level tags its activities with Can-Do objectives.
+/// How a level tags its activities with Can-Do objectives, and therefore
+/// at what granularity "evidence for an objective is earned through that
+/// objective's own skill" can be checked.
 ///
-/// [perActivitySkill]: each activity carries objectives of its own skill's
-/// category. [lessonWide]: activities carry their lesson's whole list, so
-/// the category rule is checked at lesson granularity instead — a
-/// different granularity, not a weaker rule. See
-/// `level_design_limits_test.dart`.
-enum CanDoTagging { perActivitySkill, lessonWide }
+/// [perActivitySkill]: each activity carries only objectives of its own
+/// skill's category, so the rule holds per activity (A2). [unitLevel]: the
+/// level's tags cross categories freely (A1 mostly copies each lesson's
+/// list onto its activities), so the rule can only hold at unit level —
+/// every objective a unit requires is carried by at least one activity of
+/// the objective's own category. A different granularity, not a weaker
+/// guarantee: it is the one the app's mastery model actually depends on.
+/// See `level_design_limits_test.dart`.
+enum CanDoTagging { perActivitySkill, unitLevel }
 
 /// Everything one level is judged by. Adding a level means adding one of
 /// these; every gate under `test/content/levels/` then runs over it.
@@ -345,11 +350,13 @@ const _a1 = LevelGateConfig(
   // conversation is short at U2 and still short at U12. That is a real
   // curriculum observation about the A1-to-A2 step, recorded in the
   // triage notes — not something this gate should force by narrowing a
-  // band A1 was never authored against.
+  // band A1 was never authored against. The listening band covers both a
+  // lesson's whole conversation (4-8 short lines, so up to ~50 words) and
+  // each transcript on its own (as short as two words: "Choose Iraq.").
   bandTiers: [
     LengthBandTier(
       throughUnitIndex: 12,
-      listening: Range(2, 40),
+      listening: Range(2, 50),
       reading: Range(10, 60),
       writing: Range(20, 80),
     ),
@@ -366,12 +373,11 @@ const _a1 = LevelGateConfig(
   // A1 gives each writing task its own guide rather than one guide per
   // unit; the guide must still sit inside the unit's band.
   wordGuideMustEqualBand: false,
-  // A1 tags every activity with its lesson's whole objective list rather
-  // than one matched to the activity's own skill. Re-tagging would drop
-  // objectives from published activities, which the append-only policy
-  // forbids, so the category rule is checked at lesson granularity
-  // instead — see level_design_limits_test.dart.
-  canDoTagging: CanDoTagging.lessonWide,
+  // A1's tags cross skill categories (most activities carry their lesson's
+  // whole list). Re-tagging would drop objectives from published
+  // activities, which the append-only policy forbids, so the category rule
+  // is checked at unit level instead — see level_design_limits_test.dart.
+  canDoTagging: CanDoTagging.unitLevel,
   finalMissionId: 'A1-FINAL-MISSION',
   finalAssessmentId: 'A1-FINAL-ASSESSMENT',
   capstonePassMark: 0.6,

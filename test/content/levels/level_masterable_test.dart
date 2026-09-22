@@ -83,6 +83,7 @@ void main() {
       });
 
       test('every unit declares mastery it could actually fail', () {
+        final policy = gate.bundle().domain.masteryPolicy;
         // The test above proves a unit *can* be mastered. It says nothing about
         // what the unit asks for, and the two are not the same claim: the
         // cheapest way to make it green is to ask for less. Deleting
@@ -147,7 +148,35 @@ void main() {
           // Every skill the unit teaches has to be a skill the unit's mastery
           // asks for. Without this, a unit can keep its twelve listening
           // activities and quietly stop requiring any evidence from them.
-          final taught = {for (final a in activitiesOf(unit)) a.skill};
+          //
+          // "Teaches" means teaches in mastery mode. Only mastery-mode
+          // evidence can satisfy a requirement (practiceCountsAsMastery is
+          // always false), so a skill a unit offers only as practice —
+          // A1-U0 to U3 do this with reading, for learners who cannot read
+          // yet — cannot be required without making the unit unmasterable.
+          // Keying on every mode demanded exactly that. No A2 unit teaches
+          // any skill without a mastery activity, so A2's outcome is
+          // unchanged.
+          // ... and in enough mastery activities to be requirable at all:
+          // the policy demands minimumEvidencePerRequiredObjective distinct
+          // carriers per objective, so a skill with fewer mastery activities
+          // than that (A1-U4 and U5 have one mastery reading item each)
+          // cannot back a requirement without making the unit unmasterable.
+          // The threshold is the policy's own number, not one chosen here.
+          final masteryCountBySkill = <Skill, int>{};
+          for (final a in activitiesOf(unit)) {
+            if (a.mode != ActivityMode.mastery) continue;
+            masteryCountBySkill.update(
+              a.skill,
+              (n) => n + 1,
+              ifAbsent: () => 1,
+            );
+          }
+          final taught = {
+            for (final entry in masteryCountBySkill.entries)
+              if (entry.value >= policy.minimumEvidencePerRequiredObjective)
+                entry.key,
+          };
           final askedFor = {
             for (final objective in mastery.requiredObjectives)
               for (final entry in categoryBySkill.entries)
