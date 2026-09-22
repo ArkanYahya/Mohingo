@@ -329,6 +329,35 @@ void main() {
         expect(offenders, isEmpty, reason: offenders.join('\n'));
       });
 
+      test('every interaction task names its partner, so the lines are read '
+          "in that person's voice", () {
+        // The partner card reads its lines in the voice of `partnerSpeaker`
+        // — a dialogue character (Anna), or a role (Waiter, Receptionist,
+        // Examiner) — and without one, in a single fallback voice that read
+        // Anna's line as a man. A learner heard that. Naming the partner is
+        // part of writing the task; the cast (tool/audio/cast.json) gives
+        // each label its voice, and the audio gate then wants a clip in it.
+        final missing = <String>[];
+        void check(Activity a, String where) {
+          if (a is! SpeakActivity || a.partnerTurns.isEmpty) return;
+          if (a.partnerSpeaker == null) {
+            missing.add(
+              '$where ${a.id} has partner turns but no partnerSpeaker',
+            );
+          }
+        }
+
+        for (final unit in gate.finishedUnits()) {
+          for (final a in activitiesOf(unit)) {
+            check(a, unit.id);
+          }
+        }
+        for (final e in capstoneActivities(gate.bundle())) {
+          check(e.activity, e.where);
+        }
+        expect(missing, isEmpty, reason: missing.join('\n'));
+      });
+
       test('every word a lesson lists actually appears in that lesson', () {
         // The spec's rule: "Every listed word appears in its lesson's
         // conversation or text and is practised in at least one activity."

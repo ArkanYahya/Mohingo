@@ -23,6 +23,7 @@ def test_roles_from_a_tiny_bundle():
                 {"id": "A2", "partnerTurns": ["Turn one.", ""]},
                 {"id": "A3", "examinerTurns": ["Old turn."]},
                 {"id": "A4", "audioTranscript": ""},
+                {"id": "A5", "partnerTurns": ["Named turn."], "partnerSpeaker": "Anna"},
             ],
         }]}],
         "chunks": [{"id": "C1", "text": "My name is {name}."}],
@@ -35,7 +36,7 @@ def test_roles_from_a_tiny_bundle():
     got = {(s.text, s.role) for s in speakables_of(b)}
     assert got == {
         ("Hi.", "Maya"), ("A text.", TEACHER), ("Listen.", TEACHER), ("Turn one.", PARTNER),
-        ("Old turn.", PARTNER), ("My name is {name}.", TEACHER), ("name", TEACHER),
+        ("Old turn.", PARTNER), ("Named turn.", "Anna"), ("My name is {name}.", TEACHER), ("name", TEACHER),
         ("My name is Omar.", TEACHER), ("Name?", TEACHER), ("I am", TEACHER), ("I'm Omar.", TEACHER),
         ("Mission.", TEACHER), ("Assess.", PARTNER),
     }
@@ -47,5 +48,5 @@ def test_real_bundles_have_the_census_counts():
     # pins the same numbers from the Dart side.
     a1 = speakables_of(_bundle("A1"))
     a2 = speakables_of(_bundle("A2"))
-    assert len({(text_key(s.text), s.role) for s in a1}) == 1577
+    assert len({(text_key(s.text), s.role) for s in a1}) == 1576
     assert len({(text_key(s.text), s.role) for s in a2}) == 1624

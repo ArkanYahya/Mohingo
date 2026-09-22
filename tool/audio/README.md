@@ -31,7 +31,7 @@ A full level takes about 0.5 s of compute per second of audio on a laptop CPU: r
 
 ## What it does
 
-`mohingo_audio/speakables.py` lists every bundle string the app speaks and the role it is spoken in (`_` teacher, a dialogue speaker, `partner`). It mirrors `lib/content/audio/speakable_strings.dart`; the level gate `test/content/levels/level_audio_test.dart` holds the manifest to the Dart list, so a new call site in the app must be added to both.
+`mohingo_audio/speakables.py` lists every bundle string the app speaks and the role it is spoken in (`_` teacher, a dialogue speaker, a speaking task's `partnerSpeaker` for its partner turns, or `partner` for a task that names nobody). It mirrors `lib/content/audio/speakable_strings.dart`; the level gate `test/content/levels/level_audio_test.dart` holds the manifest to the Dart list, so a new call site in the app must be added to both.
 
 For each string the tool chooses a voice from `cast.json`, turns the text into what the engine should say (`speech.py`: `{slots}`, `...` and ` / ` become pauses, a `Name: …` transcript is rendered per speaker), applies `lexicon.json` for names the engine mispronounces, renders with Kokoro, pads and normalises, encodes to mono AAC at 32 kbps, and writes `assets/audio/en/<LEVEL>/manifest.json` keyed by the shared text key (`textkey.py`).
 
@@ -39,6 +39,6 @@ Clip ids are hashes of the recipe (engine, speed, rules version, voice, phonemes
 
 ## Editing the cast or lexicon
 
-- A new dialogue speaker: add it to `speakers` in `cast.json`, or at least to `genders` so the pool is right. The run prints every label it had to guess.
+- A new dialogue speaker or `partnerSpeaker` label: add it to `speakers` in `cast.json`, or at least to `genders` so the pool is right. The run prints every label it had to guess. A partner named after a dialogue character (`Anna`) shares that character's voice; a role (`Waiter`, `Receptionist`, `Examiner`) has its own.
 - A mispronounced word: add `"Word": "IPA"` to `lexicon.json` using Kokoro's espeak-style IPA (see the existing entries), rerun the level with `--prune`, and listen.
 - After any content change to a bundle: rerun the level, then `flutter test test/content/levels`. The gate fails until the manifest's `contentVersion` matches the bundle's and every spoken string has a clip.

@@ -9,6 +9,7 @@ import '../../../../content/models/evaluation_spec.dart';
 import '../../../../core/l10n/generated/app_localizations.dart';
 import '../../../../core/theme/app_tokens.dart';
 import '../../../../data/local/database.dart' show ActivityAttempt;
+import '../../../speech/domain/audio_clip_index.dart';
 import '../../../speech/domain/speech_capability_service.dart';
 import '../../../speech/domain/speech_recognition_service.dart';
 import '../../../speech/providers/speech_providers.dart';
@@ -389,6 +390,7 @@ class _SpeakActivityViewState extends ConsumerState<SpeakActivityView> {
       children: [
         ActivityPartnerTurnsCard(
           turns: turns,
+          speaker: widget.activity.partnerSpeaker ?? kPartnerSpeaker,
           autoPlay: widget.reviewAttempt == null,
         ),
         if (fallbackNote != null) ...[

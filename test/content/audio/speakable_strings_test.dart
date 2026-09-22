@@ -81,6 +81,15 @@ void main() {
         },
       ),
       _activity('textChoice', 'A5', skill: 'reading'),
+      _activity(
+        'speak',
+        'A6',
+        skill: 'spokenInteraction',
+        extra: {
+          'partnerTurns': ['Named turn.'],
+          'partnerSpeaker': 'Anna',
+        },
+      ),
     ];
     (json['finalMission'] as Map<String, dynamic>)['activities'] = [
       _activity('audioChoice', 'M1', extra: {'audioTranscript': 'Mission.'}),
@@ -109,6 +118,7 @@ void main() {
       ('Listen.', kTeacherRole),
       ('Turn one.', kPartnerSpeaker),
       ('Old turn.', kPartnerSpeaker),
+      ('Named turn.', 'Anna'),
       ('Mission.', kTeacherRole),
       ('Assess.', kPartnerSpeaker),
       ('My name is {name}.', kTeacherRole),
@@ -133,7 +143,7 @@ void main() {
       }.length;
     }
 
-    expect(distinct('assets/content/en/A1/a1-course-bundle.json'), 1577);
+    expect(distinct('assets/content/en/A1/a1-course-bundle.json'), 1576);
     expect(distinct('assets/content/en/A2/a2-course-bundle.json'), 1624);
   });
 }

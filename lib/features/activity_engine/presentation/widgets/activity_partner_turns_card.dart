@@ -13,15 +13,23 @@ import '../../../speech/providers/tts_preferences_provider.dart';
 /// answers: each line in English, read aloud in order when the question
 /// opens (never in answer review — see [autoPlay]), with a button to hear
 /// them again. Spoken interaction means responding to someone; this is the
-/// someone. Shown in test mode too: it's the task's input, not its answer.
+/// someone, read in their own voice ([speaker]). Shown in test mode too:
+/// it's the task's input, not its answer.
 class ActivityPartnerTurnsCard extends ConsumerStatefulWidget {
   const ActivityPartnerTurnsCard({
     required this.turns,
+    required this.speaker,
     this.autoPlay = true,
     super.key,
   });
 
   final List<String> turns;
+
+  /// Whose voice the lines are read in: the task's `partnerSpeaker` — a
+  /// dialogue character or a role — or [kPartnerSpeaker] when it names
+  /// nobody. Anna's lines in a man's voice is what a learner heard before
+  /// tasks named their partner.
+  final String speaker;
 
   /// False on a review screen, which can show several at once and where
   /// nothing is being asked right now.
@@ -71,7 +79,7 @@ class _ActivityPartnerTurnsCardState
         localeCode: 'en',
         rate: rate,
         pitch: pitch,
-        speaker: kPartnerSpeaker,
+        speaker: widget.speaker,
       );
     }
     if (mounted && token == _playToken) setState(() => _playing = false);

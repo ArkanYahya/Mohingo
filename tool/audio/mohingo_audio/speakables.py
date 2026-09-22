@@ -27,10 +27,14 @@ def _activity(a: dict, where: str, out: list) -> None:
     turns = a.get("partnerTurns")
     if turns is None:
         turns = a.get("examinerTurns")  # A1's older name for the same field
+    # In the voice of whoever the task says the partner is (a dialogue
+    # character or a role), or the one generic partner voice when it says
+    # nobody — the same rule as speakable_strings.dart.
+    role = _clean(a.get("partnerSpeaker")) or PARTNER
     for i, turn in enumerate(turns or []):
         t = _clean(turn)
         if t:
-            out.append(Speakable(t, PARTNER, f"{where}/{a.get('id')}.partnerTurns[{i}]"))
+            out.append(Speakable(t, role, f"{where}/{a.get('id')}.partnerTurns[{i}]"))
 
 
 def _example_en(ex) -> str | None:

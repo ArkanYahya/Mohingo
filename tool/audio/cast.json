@@ -1,5 +1,5 @@
 {
-  "_comment": "Kokoro v1.0 voice ids. teacher reads everything without a speaker; partner reads the other person in speaking tasks; speakers are dialogue labels. Unlisted labels get a voice from the pool of their gender (genders below), else by a stable hash, and the tool prints them.",
+  "_comment": "Kokoro v1.0 voice ids. teacher reads everything without a speaker; partner is the fallback for a speaking task that names no partnerSpeaker; speakers are dialogue labels and partnerSpeaker labels (characters and roles). Unlisted labels get a voice from the pool of their gender (genders below), else by a stable hash, and the tool prints them.",
   "teacher": "af_bella",
   "partner": "am_michael",
   "speakers": {
@@ -13,7 +13,11 @@
     "Ali": "am_fenrir",
     "Daniel": "am_puck",
     "A": "af_heart",
-    "B": "am_fenrir"
+    "B": "am_fenrir",
+    "Teacher": "af_bella",
+    "Examiner": "af_aoede",
+    "Sam": "am_fenrir",
+    "Sabri": "am_michael"
   },
   "female": ["af_heart", "af_sarah", "af_aoede", "af_kore"],
   "male": ["am_michael", "am_fenrir", "am_puck"],
@@ -32,6 +36,7 @@
     "Jalal": "m", "Amjad": "m", "Samir": "m", "Rami": "m",
     "Waiter": "m", "Guard": "m", "Doctor": "m", "Nurse": "f", "Receptionist": "f", "Clerk": "m",
     "Assistant": "f", "Operator": "f", "Customer": "m", "Visitor": "f", "Passenger": "m", "Patient": "f",
-    "Resident": "m"
+    "Resident": "m",
+    "Hana": "f", "Yara": "f", "Pharmacist": "f", "Project leader": "f", "Organiser": "m", "Stranger": "m"
   }
 }
