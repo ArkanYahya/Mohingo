@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mohingo/content/catalog/level_catalog.dart';
 import 'package:mohingo/content/parsing/course_bundle_parser.dart';
 import 'package:mohingo/content/publication/published_id_snapshot.dart';
 
@@ -21,9 +22,9 @@ import 'package:mohingo/content/publication/published_id_snapshot.dart';
 ///
 /// and commit the diff. The script merges — it will not drop an id, and it
 /// will not record new ids under an unchanged `contentVersion`.
-const _levelBundles = {
-  'a1': 'assets/content/en/A1/a1-course-bundle.json',
-  'a2': 'assets/content/en/A2/a2-course-bundle.json',
+final _levelBundles = {
+  for (final e in kLevelCatalog)
+    if (e.bundleAssetPath != null) e.levelId: e.bundleAssetPath!,
 };
 
 PublishedIdSnapshot _published(String levelId) => PublishedIdSnapshot.fromJson(

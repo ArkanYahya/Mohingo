@@ -51,31 +51,42 @@ void main() {
         }
       });
 
-      test('every grammar, lexicon and chunk reference resolves in this '
-          'level or the one it builds on', () {
+      test('every grammar reference resolves in this level or the one it '
+          'builds on, and every word and phrase in this level alone', () {
+        // The self-containment rule, as decided: a level registers its own
+        // vocabulary (a word listed from an earlier level would split that
+        // word's review history across two ids), but may revise an earlier
+        // level's grammar by referencing its record rather than duplicating
+        // it. A2 lists no A1 id of any kind, so this changes no outcome
+        // today; it stops the next level from quietly doing either the
+        // wrong way round.
         final bundle = gate.bundle();
         final prerequisite = prerequisiteBundleOf(gate);
-        final known = {
-          ...bundle.grammar.map((g) => g.id),
+        final ownWords = {
           ...bundle.lexicon.map((l) => l.id),
           ...bundle.chunks.map((c) => c.id),
-          if (prerequisite != null) ...[
-            ...prerequisite.grammar.map((g) => g.id),
-            ...prerequisite.lexicon.map((l) => l.id),
-            ...prerequisite.chunks.map((c) => c.id),
-          ],
+        };
+        final grammar = {
+          ...bundle.grammar.map((g) => g.id),
+          if (prerequisite != null) ...prerequisite.grammar.map((g) => g.id),
         };
         for (final unit in gate.finishedUnits()) {
           for (final lesson in unit.lessons) {
-            for (final id in [
-              ...lesson.grammar,
-              ...lesson.lexicon,
-              ...lesson.chunks,
-            ]) {
+            for (final id in lesson.grammar) {
               expect(
-                known,
+                grammar,
                 contains(id),
-                reason: '${lesson.id} references $id',
+                reason: '${lesson.id} references grammar $id',
+              );
+            }
+            for (final id in [...lesson.lexicon, ...lesson.chunks]) {
+              expect(
+                ownWords,
+                contains(id),
+                reason:
+                    '${lesson.id} lists $id, which is not one of '
+                    "${gate.levelId}'s own words or phrases — a level "
+                    'registers its own vocabulary',
               );
             }
           }

@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:mohingo/content/catalog/level_catalog.dart';
 import 'package:mohingo/content/models/activity.dart';
 import 'package:mohingo/content/models/course_bundle.dart';
 import 'package:mohingo/content/models/curriculum_structure.dart';
@@ -228,15 +229,15 @@ Iterable<Activity> activitiesOf(Unit unit) =>
     unit.lessons.expand((l) => l.activities);
 
 /// Where each level's shipped bundle lives, whether or not that level is
-/// gated yet.
+/// gated yet — read from the catalogue, the one place that knows.
 ///
 /// Kept separate from [kLevelGates] deliberately: a level's earlier-level
 /// references must resolve even when the earlier level has no gate config,
 /// and reading the path out of the gate list would tie one concern to the
 /// other for no reason.
-const kLevelBundlePaths = {
-  'a1': 'assets/content/en/A1/a1-course-bundle.json',
-  'a2': 'assets/content/en/A2/a2-course-bundle.json',
+final kLevelBundlePaths = {
+  for (final e in kLevelCatalog)
+    if (e.bundleAssetPath != null) e.levelId: e.bundleAssetPath!,
 };
 
 /// The bundle of [gate]'s prerequisite level, or null if it builds on

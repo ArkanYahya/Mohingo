@@ -15,12 +15,16 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:mohingo/content/catalog/level_catalog.dart';
 import 'package:mohingo/content/parsing/course_bundle_parser.dart';
 import 'package:mohingo/content/publication/published_id_snapshot.dart';
 
-const levelBundles = {
-  'a1': 'assets/content/en/A1/a1-course-bundle.json',
-  'a2': 'assets/content/en/A2/a2-course-bundle.json',
+/// Every level whose bundle ships, read from the catalogue rather than
+/// listed here, so adding a level is a catalogue entry and not a hunt
+/// for every file that names a bundle path.
+final levelBundles = {
+  for (final e in kLevelCatalog)
+    if (e.bundleAssetPath != null) e.levelId: e.bundleAssetPath!,
 };
 
 String snapshotPathFor(String levelId) =>
