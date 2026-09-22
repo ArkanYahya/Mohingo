@@ -1,7 +1,7 @@
 > **What this file is:** The boring-but-expensive-if-inconsistent rules — naming, file layout, error handling shape, commit/branch format. The stuff that's cheap to follow if written down and expensive to reconcile if not.
 > **How to use it:** Follow as default behavior in every session, no exceptions unless the code being touched already established a different local pattern (match it, then flag the inconsistency here).
 
-_Last verified: 2026-09-21 (`feature/level-standard-and-content-versioning`) — added "Content ids, after a level ships": ids are permanent, an activity's `mode` is frozen and its `canDo` is append-only once a level is published, with what each one does to a learner who has already studied it, and the `contentVersion` bump a content change must carry. All of it was previously a comment in one table file. Previously verified: 2026-09-19 — added Versioning (`kAppVersion` kept in step with pubspec.yaml). Previously verified 2026-09-01 — initial conventions established via brainstorming session._
+_Last verified: 2026-09-22 (`feature/bundled-audio`) — `tool/` may hold a Python tool: `tool/audio/` generates the bundled speech clips, with its own `requirements.txt` and tests, and nothing under it ships ([ADR 0008](adr/0008-bundled-pre-generated-speech-audio.md)). Previously verified 2026-09-21 (`feature/level-standard-and-content-versioning`) — added "Content ids, after a level ships": ids are permanent, an activity's `mode` is frozen and its `canDo` is append-only once a level is published, with what each one does to a learner who has already studied it, and the `contentVersion` bump a content change must carry. All of it was previously a comment in one table file. Previously verified: 2026-09-19 — added Versioning (`kAppVersion` kept in step with pubspec.yaml). Previously verified 2026-09-01 — initial conventions established via brainstorming session._
 
 # Conventions
 
@@ -14,7 +14,7 @@ _Last verified: 2026-09-21 (`feature/level-standard-and-content-versioning`) —
 
 ## File & module organization
 
-Feature-first, per [ARCHITECTURE.md](ARCHITECTURE.md)'s folder structure: new code lives under `lib/features/<feature>/{presentation,application,domain,data}`; shared/cross-feature code goes in `lib/core/`; local/remote data access code goes in `lib/data/`.
+Feature-first, per [ARCHITECTURE.md](ARCHITECTURE.md)'s folder structure: new code lives under `lib/features/<feature>/{presentation,application,domain,data}`; shared/cross-feature code goes in `lib/core/`; local/remote data access code goes in `lib/data/`. Dev-time tools live in `tool/`: Dart scripts run with `dart run tool/<name>.dart`; `tool/audio/` is Python because the speech engine is a Python library — it keeps its own `requirements.txt`, its tests in `tool/audio/tests/` (pytest), its downloaded models gitignored under `tool/audio/models/`, and nothing under it is imported by the app.
 
 ## Error handling
 

@@ -120,8 +120,9 @@ class AudioChoiceActivity extends Activity {
   final List<String> options;
   final String answer;
 
-  /// Read aloud by on-device TTS at runtime — the bundle ships no
-  /// pre-recorded audio files. See docs/DATA_MODEL.md.
+  /// What the learner hears: played from the level's bundled clip, or read
+  /// by the device engine when there is none (ADR 0008). See
+  /// docs/DATA_MODEL.md.
   final String? audioTranscript;
 }
 
