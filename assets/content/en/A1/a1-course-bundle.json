@@ -7402,7 +7402,7 @@
     {
       "id": "A1.CHUNK.OBJECT_IS_PLACE",
       "text": "The {object} is {place}.",
-      "arabic": "{object} {place}.",
+      "arabic": "الـ{object} {place}.",
       "cefr": "A1",
       "introducedIn": "A1-U3-L3",
       "productive": true,
@@ -8302,8 +8302,8 @@
             "dialogue": [
               {
                 "speaker": "A",
-                "en": "Good morning.",
-                "ar": "صباح الخير."
+                "en": "Hello. Good morning.",
+                "ar": "أهلاً. صباح الخير."
               },
               {
                 "speaker": "B",
@@ -8358,7 +8358,8 @@
                 "Sorry?"
               ],
               "answer": "You're welcome.",
-              "audioTranscript": "Thank you."
+              "audioTranscript": "Thank you.",
+              "promptAr": "ما الردّ الطبيعي؟"
             },
             {
               "id": "A1-U0-L1-A03",
@@ -8376,7 +8377,8 @@
                 "Please repeat."
               ],
               "answer": "Good morning.",
-              "audioTranscript": "Good morning."
+              "audioTranscript": "Good morning.",
+              "promptAr": "ما الردّ الطبيعي؟"
             },
             {
               "id": "A1-U0-L1-A04",
@@ -8392,7 +8394,8 @@
                 "Thank you.",
                 "Thanks."
               ],
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "promptAr": "شخصٌ يساعدك. ردّ عليه بأدب."
             }
           ]
         },
@@ -8465,7 +8468,9 @@
                 "dog",
                 "book"
               ],
-              "answer": "cat"
+              "answer": "cat",
+              "promptAr": "اختر الكلمة: cat",
+              "sourceText": "cat"
             },
             {
               "id": "A1-U0-L2-A03",
@@ -8551,7 +8556,7 @@
               {
                 "speaker": "B",
                 "en": "O-M-A-R.",
-                "ar": "O-M-A-R."
+                "ar": "أو-إم-إيه-آر."
               }
             ]
           },
@@ -8572,7 +8577,8 @@
                 "Sora"
               ],
               "answer": "Sara",
-              "audioTranscript": "S-A-R-A"
+              "audioTranscript": "S-A-R-A",
+              "promptAr": "اختر الاسم."
             },
             {
               "id": "A1-U0-L3-A02",
@@ -8590,7 +8596,8 @@
                 "Omer"
               ],
               "answer": "Omar",
-              "audioTranscript": "O-M-A-R"
+              "audioTranscript": "O-M-A-R",
+              "promptAr": "اختر الاسم."
             },
             {
               "id": "A1-U0-L3-A03",
@@ -8605,7 +8612,8 @@
               "accepted": [
                 "A-L-I"
               ],
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "promptAr": "تهجَّ الاسم Ali."
             },
             {
               "id": "A1-U0-L3-A04",
@@ -8622,7 +8630,8 @@
                 "type": "letterSequence",
                 "reference": "profileName"
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "promptAr": "تهجَّ اسمك."
             }
           ]
         },
@@ -8700,7 +8709,8 @@
                 "90"
               ],
               "answer": "19",
-              "audioTranscript": "I'm nineteen."
+              "audioTranscript": "I'm nineteen.",
+              "promptAr": "كم عمره؟"
             },
             {
               "id": "A1-U0-L4-A02",
@@ -8718,7 +8728,8 @@
                 "0770 314 8652"
               ],
               "answer": "0770 314 8625",
-              "audioTranscript": "My phone number is zero seven seven zero, three one four, eight six two five."
+              "audioTranscript": "My phone number is zero seven seven zero, three one four, eight six two five.",
+              "promptAr": "اختر رقم الهاتف."
             },
             {
               "id": "A1-U0-L4-A03",
@@ -8736,7 +8747,8 @@
                 "min": 1,
                 "max": 120
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "promptAr": "كم عمرك؟"
             }
           ]
         },
@@ -8769,7 +8781,8 @@
               "evaluation": {
                 "type": "nonEmpty"
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "promptAr": "ما اسمك؟"
             },
             {
               "id": "A1-U0-L5-A02",
@@ -8786,7 +8799,8 @@
                 "type": "letterSequence",
                 "reference": "profileName"
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "promptAr": "كيف تتهجّاه؟"
             },
             {
               "id": "A1-U0-L5-A03",
@@ -8804,7 +8818,8 @@
                 "min": 1,
                 "max": 120
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "promptAr": "كم عمرك؟"
             },
             {
               "id": "A1-U0-L5-A04",
@@ -8870,7 +8885,11 @@
           "A1.U0.INTERACTION.REGISTER_FOR_CLASS"
         ],
         "unlocks": "A1-U1",
-        "retry": "targeted-by-objective"
+        "retry": "targeted-by-objective",
+        "requiredSkillGroups": [
+          ["listening"],
+          ["spokenInteraction", "spokenProduction"]
+        ]
       }
     },
     {
@@ -8949,7 +8968,8 @@
                 "Ali"
               ],
               "answer": "Omar",
-              "audioTranscript": "Maya: Hi. I'm Maya. What's your name? Omar: I'm Omar."
+              "audioTranscript": "Maya: Hi. I'm Maya. What's your name? Omar: I'm Omar.",
+              "promptAr": "ما اسم الرجل؟"
             },
             {
               "id": "A1-U1-L1-A02",
@@ -8966,7 +8986,8 @@
                 "Ahmed / I'm.",
                 "My / Ahmed."
               ],
-              "answer": "I'm / Ahmed."
+              "answer": "I'm / Ahmed.",
+              "promptAr": "كوّن الجملة."
             },
             {
               "id": "A1-U1-L1-A03",
@@ -8992,7 +9013,8 @@
                 ],
                 "minGroupsMatched": 1
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "promptAr": "عرّف بنفسك."
             },
             {
               "id": "A1-U1-L1-A04",
@@ -9007,7 +9029,8 @@
               "accepted": [
                 "What's your name?"
               ],
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "promptAr": "اسأل المتعلّم الجديد عن اسمه."
             }
           ]
         },
@@ -9054,7 +9077,8 @@
                 "Iraq"
               ],
               "answer": "Italy",
-              "audioTranscript": "Hi, I'm Anna. I'm from Italy."
+              "audioTranscript": "Hi, I'm Anna. I'm from Italy.",
+              "promptAr": "من أين آنا؟"
             },
             {
               "id": "A1-U1-L2-A02",
@@ -9071,7 +9095,8 @@
                 "in",
                 "is"
               ],
-              "answer": "from"
+              "answer": "from",
+              "promptAr": "أكمل: I'm ___ Iraq."
             },
             {
               "id": "A1-U1-L2-A03",
@@ -9098,7 +9123,8 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "promptAr": "قل من أين أنت."
             },
             {
               "id": "A1-U1-L2-A04",
@@ -9113,7 +9139,8 @@
               "accepted": [
                 "Where are you from?"
               ],
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "promptAr": "اسأل الشخص من أين هو."
             }
           ]
         },
@@ -9159,7 +9186,8 @@
                 "Iraq"
               ],
               "answer": "Kirkuk",
-              "audioTranscript": "I'm Ali. I live in Kirkuk."
+              "audioTranscript": "I'm Ali. I live in Kirkuk.",
+              "promptAr": "أين يسكن علي؟"
             },
             {
               "id": "A1-U1-L3-A02",
@@ -9176,7 +9204,8 @@
                 "I in live Baghdad.",
                 "I am live Baghdad."
               ],
-              "answer": "I live in Baghdad."
+              "answer": "I live in Baghdad.",
+              "promptAr": "كوّن الإجابة."
             },
             {
               "id": "A1-U1-L3-A03",
@@ -9201,7 +9230,8 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "promptAr": "قل أين تسكن."
             },
             {
               "id": "A1-U1-L3-A04",
@@ -9216,7 +9246,8 @@
               "accepted": [
                 "Where do you live?"
               ],
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "promptAr": "اسأل الشخص أين يسكن."
             }
           ]
         },
@@ -9264,7 +9295,8 @@
                 "Maya"
               ],
               "answer": "Sara",
-              "audioTranscript": "This is Sara. She's my friend."
+              "audioTranscript": "This is Sara. She's my friend.",
+              "promptAr": "ما اسمها؟"
             },
             {
               "id": "A1-U1-L4-A02",
@@ -9281,7 +9313,8 @@
                 "She's",
                 "I'm"
               ],
-              "answer": "He's"
+              "answer": "He's",
+              "promptAr": "أكمل: This is Ali. ___ my brother."
             },
             {
               "id": "A1-U1-L4-A03",
@@ -9296,7 +9329,8 @@
               "accepted": [
                 "This is Sara. She's my friend."
               ],
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "promptAr": "قدّم سارة على أنها صديقتك."
             },
             {
               "id": "A1-U1-L4-A04",
@@ -9314,7 +9348,8 @@
                 "woman-Sara"
               ],
               "answer": "woman-Maya",
-              "audioTranscript": "Her name is Maya. She's my sister."
+              "audioTranscript": "Her name is Maya. She's my sister.",
+              "promptAr": "اختر البطاقة الصحيحة."
             }
           ]
         },
@@ -9361,7 +9396,8 @@
                 "driver"
               ],
               "answer": "engineer",
-              "audioTranscript": "I'm Daniel. I'm an engineer."
+              "audioTranscript": "I'm Daniel. I'm an engineer.",
+              "promptAr": "ما وظيفة دانيال؟"
             },
             {
               "id": "A1-U1-L5-A02",
@@ -9378,7 +9414,8 @@
                 "a",
                 "the"
               ],
-              "answer": "an"
+              "answer": "an",
+              "promptAr": "أكمل: She's ___ engineer."
             },
             {
               "id": "A1-U1-L5-A03",
@@ -9396,7 +9433,8 @@
                 "She's a teacher."
               ],
               "answer": "She's a doctor.",
-              "audioTranscript": "Her name is Lina. She's a doctor."
+              "audioTranscript": "Her name is Lina. She's a doctor.",
+              "promptAr": "اختر الشخص."
             },
             {
               "id": "A1-U1-L5-A04",
@@ -9424,7 +9462,8 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "promptAr": "قل ما وظيفتك. وإن كنت لا تعمل فقل إنك طالب."
             }
           ]
         },
@@ -9465,7 +9504,8 @@
                 "Goodbye."
               ],
               "answer": "Please repeat.",
-              "audioTranscript": "Where do you live?"
+              "audioTranscript": "Where do you live?",
+              "promptAr": "لم تسمع جيداً. اختر ردّاً مفيداً."
             },
             {
               "id": "A1-U1-L6-A02",
@@ -9482,7 +9522,8 @@
                 "You're welcome.",
                 "I'm from Iraq."
               ],
-              "answer": "Nice to meet you too."
+              "answer": "Nice to meet you too.",
+              "promptAr": "ردّ بشكل طبيعي على: Nice to meet you."
             },
             {
               "id": "A1-U1-L6-A03",
@@ -9499,7 +9540,8 @@
                 "Please repeat.",
                 "I don't understand."
               ],
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "promptAr": "لم تفهم. اطلب المساعدة."
             },
             {
               "id": "A1-U1-L6-A04",
@@ -9514,7 +9556,8 @@
               "accepted": [
                 "And you?"
               ],
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "promptAr": "يقول الشخص الآخر: I'm from Jordan. تابع بسؤالٍ قصير في المقابل."
             }
           ]
         },
@@ -9562,7 +9605,8 @@
                 ],
                 "minGroupsMatched": 1
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "promptAr": "يقول دانيال: «Hi. I'm Daniel. What's your name?» ردّ عليه."
             },
             {
               "id": "A1-U1-L7-A02",
@@ -9590,7 +9634,8 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "promptAr": "يقول دانيال: «Nice to meet you. Where are you from?» ردّ عليه."
             },
             {
               "id": "A1-U1-L7-A03",
@@ -9616,7 +9661,8 @@
                 ],
                 "minGroupsMatched": 2
               },
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "promptAr": "يقول دانيال: «Where do you live?» ردّ عليه."
             },
             {
               "id": "A1-U1-L7-A04",
@@ -9634,7 +9680,8 @@
                 "Iraq"
               ],
               "answer": "Canada",
-              "audioTranscript": "I'm from Canada. I'm an engineer."
+              "audioTranscript": "I'm from Canada. I'm an engineer.",
+              "promptAr": "من أين دانيال؟"
             },
             {
               "id": "A1-U1-L7-A05",
@@ -9653,7 +9700,8 @@
                 "Sara"
               ],
               "answer": "Anna",
-              "audioTranscript": "This is Anna. She's my friend."
+              "audioTranscript": "This is Anna. She's my friend.",
+              "promptAr": "ما اسمها؟"
             },
             {
               "id": "A1-U1-L7-A06",
@@ -9671,7 +9719,8 @@
                 "Where are you from?",
                 "Where do you live?"
               ],
-              "fallbackSkill": "writing"
+              "fallbackSkill": "writing",
+              "promptAr": "اسأل آنا سؤالاً شخصياً واحداً."
             }
           ]
         }
