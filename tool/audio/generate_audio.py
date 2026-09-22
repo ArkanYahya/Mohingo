@@ -82,12 +82,20 @@ def main() -> int:
             planned[(key, s.role)] = [(cast.voice_for(s.role), segments_for(s.text))]
 
     # 2. Phonemes for every distinct segment in one batch, then the recipe that names each clip.
+    # A dry run still uses the real recipe when the models are present, so its
+    # "to generate / reused" counts are the ones a real run would see.
     segments = sorted({seg for parts in planned.values() for _, segs in parts for seg in segs})
-    if a.dry_run:
+    try:
+        eng = get_engine()
+    except Exception as e:  # noqa: BLE001 - a dry run must work without the models
+        if not a.dry_run:
+            raise
+        print(f"(models not loadable: {e}; dry-run counts use text recipes and cannot report reuse)")
+        eng = None
+    if eng is None:
         phoneme_of = {seg: seg for seg in segments}
         stamp = [ENGINE_ID, a.speed, RULES_VERSION, lex_hash]
     else:
-        eng = get_engine()
         phoneme_of = {seg: eng.apply_lexicon(ph, seg) for seg, ph in zip(segments, eng.phonemize_many(segments))}
         stamp = [ENGINE_ID, a.speed, RULES_VERSION]
     clips: dict[str, dict[str, str]] = {}
