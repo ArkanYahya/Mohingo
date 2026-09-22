@@ -52,3 +52,8 @@ app.*.map.json
 
 # Local design mockups and preview screenshots (published as artifacts, not source)
 .scratch/
+
+# Speech-audio authoring tool: model files are downloaded, never committed
+/tool/audio/models/
+__pycache__/
+.pytest_cache/
