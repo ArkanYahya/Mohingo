@@ -48,4 +48,4 @@ def test_real_bundles_have_the_census_counts():
     a1 = speakables_of(_bundle("A1"))
     a2 = speakables_of(_bundle("A2"))
     assert len({(text_key(s.text), s.role) for s in a1}) == 1577
-    assert len({(text_key(s.text), s.role) for s in a2}) == 1623
+    assert len({(text_key(s.text), s.role) for s in a2}) == 1624
