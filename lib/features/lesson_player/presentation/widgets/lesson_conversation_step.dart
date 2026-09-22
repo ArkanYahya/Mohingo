@@ -88,6 +88,7 @@ class _LessonConversationStepState
         localeCode: 'en',
         rate: rate,
         pitch: pitch,
+        speaker: widget.lines[i].speaker,
       );
     }
     if (mounted && token == _playToken) setState(() => _playingIndex = null);

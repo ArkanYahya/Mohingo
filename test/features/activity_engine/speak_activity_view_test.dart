@@ -19,6 +19,7 @@ import 'package:mohingo/content/models/evaluation_spec.dart';
 import 'package:mohingo/features/activity_engine/presentation/views/speak_activity_view.dart';
 import 'package:mohingo/features/activity_engine/presentation/widgets/activity_partner_turns_card.dart';
 import 'package:mohingo/features/activity_engine/providers/sound_effects_providers.dart';
+import 'package:mohingo/features/speech/domain/audio_clip_index.dart';
 import 'package:mohingo/features/speech/domain/speech_capability_service.dart';
 import 'package:mohingo/features/speech/domain/speech_recognition_service.dart';
 import 'package:mohingo/features/speech/providers/speech_providers.dart';
@@ -794,6 +795,8 @@ void main() {
       expect(find.text('Good morning.'), findsOneWidget);
       expect(find.text('What time do you start your day?'), findsOneWidget);
       expect(tts.spoken, ['Good morning.', 'What time do you start your day?']);
+      // The other person's lines are asked for in the partner voice.
+      expect(tts.speakers, [kPartnerSpeaker, kPartnerSpeaker]);
     });
 
     testWidgets('the lines can be heard again', (tester) async {

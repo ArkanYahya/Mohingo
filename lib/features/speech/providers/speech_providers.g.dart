@@ -8,18 +8,112 @@ part of 'speech_providers.dart';
 
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, type=warning
-/// Bound to the `Device*` implementations today. A future cloud service is
-/// added by writing a new implementation and changing only this binding
-/// (e.g. behind a config flag) — no caller changes, since every caller only
-/// ever depends on [TextToSpeechService]. See docs/ARCHITECTURE.md.
+/// Every released level's clip manifest, merged (ADR 0008). A level whose
+/// manifest is missing or malformed contributes nothing and is logged —
+/// the app must never fail to start over audio; its text simply falls back
+/// to the device engine.
+
+@ProviderFor(audioClipIndex)
+final audioClipIndexProvider = AudioClipIndexProvider._();
+
+/// Every released level's clip manifest, merged (ADR 0008). A level whose
+/// manifest is missing or malformed contributes nothing and is logged —
+/// the app must never fail to start over audio; its text simply falls back
+/// to the device engine.
+
+final class AudioClipIndexProvider
+    extends
+        $FunctionalProvider<
+          AsyncValue<AudioClipIndex>,
+          AudioClipIndex,
+          FutureOr<AudioClipIndex>
+        >
+    with $FutureModifier<AudioClipIndex>, $FutureProvider<AudioClipIndex> {
+  /// Every released level's clip manifest, merged (ADR 0008). A level whose
+  /// manifest is missing or malformed contributes nothing and is logged —
+  /// the app must never fail to start over audio; its text simply falls back
+  /// to the device engine.
+  AudioClipIndexProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'audioClipIndexProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$audioClipIndexHash();
+
+  @$internal
+  @override
+  $FutureProviderElement<AudioClipIndex> $createElement(
+    $ProviderPointer pointer,
+  ) => $FutureProviderElement(pointer);
+
+  @override
+  FutureOr<AudioClipIndex> create(Ref ref) {
+    return audioClipIndex(ref);
+  }
+}
+
+String _$audioClipIndexHash() => r'b8406df98f2721053248cbf1f57f66975f5700da';
+
+@ProviderFor(clipPlayer)
+final clipPlayerProvider = ClipPlayerProvider._();
+
+final class ClipPlayerProvider
+    extends $FunctionalProvider<ClipPlayer, ClipPlayer, ClipPlayer>
+    with $Provider<ClipPlayer> {
+  ClipPlayerProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'clipPlayerProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$clipPlayerHash();
+
+  @$internal
+  @override
+  $ProviderElement<ClipPlayer> $createElement($ProviderPointer pointer) =>
+      $ProviderElement(pointer);
+
+  @override
+  ClipPlayer create(Ref ref) {
+    return clipPlayer(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(ClipPlayer value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<ClipPlayer>(value),
+    );
+  }
+}
+
+String _$clipPlayerHash() => r'7a1666efbfbe8c80535263c79eb2043d2d8e767f';
+
+/// Bundled clips first, the device engine for anything without one. A
+/// different engine is added by writing a new implementation and changing
+/// only this binding — no caller changes, since every caller only ever
+/// depends on [TextToSpeechService]. See docs/ARCHITECTURE.md.
 
 @ProviderFor(textToSpeechService)
 final textToSpeechServiceProvider = TextToSpeechServiceProvider._();
 
-/// Bound to the `Device*` implementations today. A future cloud service is
-/// added by writing a new implementation and changing only this binding
-/// (e.g. behind a config flag) — no caller changes, since every caller only
-/// ever depends on [TextToSpeechService]. See docs/ARCHITECTURE.md.
+/// Bundled clips first, the device engine for anything without one. A
+/// different engine is added by writing a new implementation and changing
+/// only this binding — no caller changes, since every caller only ever
+/// depends on [TextToSpeechService]. See docs/ARCHITECTURE.md.
 
 final class TextToSpeechServiceProvider
     extends
@@ -29,10 +123,10 @@ final class TextToSpeechServiceProvider
           TextToSpeechService
         >
     with $Provider<TextToSpeechService> {
-  /// Bound to the `Device*` implementations today. A future cloud service is
-  /// added by writing a new implementation and changing only this binding
-  /// (e.g. behind a config flag) — no caller changes, since every caller only
-  /// ever depends on [TextToSpeechService]. See docs/ARCHITECTURE.md.
+  /// Bundled clips first, the device engine for anything without one. A
+  /// different engine is added by writing a new implementation and changing
+  /// only this binding — no caller changes, since every caller only ever
+  /// depends on [TextToSpeechService]. See docs/ARCHITECTURE.md.
   TextToSpeechServiceProvider._()
     : super(
         from: null,
@@ -68,7 +162,7 @@ final class TextToSpeechServiceProvider
 }
 
 String _$textToSpeechServiceHash() =>
-    r'7a73aca30d64b724f8ac9cdcf28785a148eee0a6';
+    r'07020dc725ff2e4d5365a78024aa8d059decb9c2';
 
 @ProviderFor(speechRecognitionService)
 final speechRecognitionServiceProvider = SpeechRecognitionServiceProvider._();

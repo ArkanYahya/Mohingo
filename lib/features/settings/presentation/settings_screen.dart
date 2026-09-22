@@ -82,10 +82,6 @@ class SettingsScreen extends ConsumerWidget {
             _Group(
               children: [
                 const _TtsRateBlock(),
-                _Block(
-                  title: l10n.settingsSpeechPitch,
-                  child: const _TtsPitchSlider(),
-                ),
                 const _MicrophoneRow(),
                 const _SpeechRecognitionRow(),
               ],
@@ -664,7 +660,6 @@ class _TtsRateBlock extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context)!;
     final rate = ref.watch(ttsRatePreferenceProvider);
-    final pitch = ref.watch(ttsPitchPreferenceProvider);
     return _Block(
       title: l10n.settingsSpeechRate,
       trailing: _SmallAction(
@@ -672,7 +667,7 @@ class _TtsRateBlock extends ConsumerWidget {
         icon: Icons.volume_up_rounded,
         onPressed: () => ref
             .read(textToSpeechServiceProvider)
-            .speak(_sample, localeCode: 'en', rate: rate, pitch: pitch),
+            .speak(_sample, localeCode: 'en', rate: rate),
       ),
       child: _LabelledSlider(
         value: rate,
@@ -682,24 +677,6 @@ class _TtsRateBlock extends ConsumerWidget {
         high: l10n.settingsFaster,
         onChanged: (v) => ref.read(ttsRatePreferenceProvider.notifier).set(v),
       ),
-    );
-  }
-}
-
-class _TtsPitchSlider extends ConsumerWidget {
-  const _TtsPitchSlider();
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final l10n = AppLocalizations.of(context)!;
-    final pitch = ref.watch(ttsPitchPreferenceProvider);
-    return _LabelledSlider(
-      value: pitch,
-      min: 0.5,
-      max: 2.0,
-      low: l10n.settingsLower,
-      high: l10n.settingsHigher,
-      onChanged: (v) => ref.read(ttsPitchPreferenceProvider.notifier).set(v),
     );
   }
 }

@@ -125,6 +125,8 @@ class LevelGateConfig {
     required this.capstoneSourceWords,
     required this.capstoneWordGuide,
     required this.capstoneSuiteFile,
+    required this.audioManifestAssetPath,
+    this.audioBudgetBytes = 60 * 1024 * 1024,
     this.unitShapeExceptions = const {},
     this.skillBalanceExceptions = const {},
   });
@@ -175,6 +177,13 @@ class LevelGateConfig {
   /// The focused capstone suite whose existence the release rule asserts,
   /// so the gates cannot be deleted and a release left standing.
   final String capstoneSuiteFile;
+
+  /// The manifest of the speech clips the level ships (ADR 0008), and how
+  /// many bytes of clips it may ship: 60 MB, so no level can push the app
+  /// past Play's 200 MB mobile-data threshold without a decision. See
+  /// `level_audio_test.dart` and docs/LEVEL_STANDARD.md.
+  final String audioManifestAssetPath;
+  final int audioBudgetBytes;
 
   CourseBundle bundle() =>
       CourseBundleParser.parse(File(bundleAssetPath).readAsStringSync());
@@ -386,6 +395,7 @@ const _a1 = LevelGateConfig(
   capstoneSourceWords: Range(8, 40),
   capstoneWordGuide: Range(30, 60),
   capstoneSuiteFile: 'test/content/levels/level_capstones_test.dart',
+  audioManifestAssetPath: 'assets/audio/en/A1/manifest.json',
 );
 
 const _a2 = LevelGateConfig(
@@ -459,6 +469,7 @@ const _a2 = LevelGateConfig(
   capstoneSourceWords: Range(15, 60),
   capstoneWordGuide: Range(70, 90),
   capstoneSuiteFile: 'test/content/levels/level_capstones_test.dart',
+  audioManifestAssetPath: 'assets/audio/en/A2/manifest.json',
 );
 
 /// Every level this suite holds to the standard. Adding B1 means adding a

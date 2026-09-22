@@ -28,6 +28,7 @@ class LevelCatalogEntry {
     required this.availability,
     this.bundleAssetPath,
     this.prerequisiteLevelId,
+    this.audioManifestAssetPath,
   });
 
   /// Lowercase catalogue key (e.g. `"a1"`), used as the route path segment
@@ -48,6 +49,12 @@ class LevelCatalogEntry {
   /// words and phrases by id — shown to learners as "From A1". App-owned,
   /// like the rest of this table: bundles never declare it.
   final String? prerequisiteLevelId;
+
+  /// The manifest of the level's bundled speech clips (ADR 0008,
+  /// docs/DATA_MODEL.md), or null while a level ships none — its text then
+  /// falls back to the device engine. A released level must have one; the
+  /// gate in `test/content/levels/level_audio_test.dart` says so.
+  final String? audioManifestAssetPath;
 }
 
 /// The full CEFR level catalogue for v1: A1 and A2 available, B1-C2 Coming
@@ -60,6 +67,7 @@ const kLevelCatalog = <LevelCatalogEntry>[
     cefrCode: 'A1',
     availability: LevelAvailability.available,
     bundleAssetPath: 'assets/content/en/A1/a1-course-bundle.json',
+    audioManifestAssetPath: 'assets/audio/en/A1/manifest.json',
   ),
   LevelCatalogEntry(
     levelId: 'a2',
@@ -67,6 +75,7 @@ const kLevelCatalog = <LevelCatalogEntry>[
     availability: LevelAvailability.available,
     bundleAssetPath: 'assets/content/en/A2/a2-course-bundle.json',
     prerequisiteLevelId: 'a1',
+    audioManifestAssetPath: 'assets/audio/en/A2/manifest.json',
   ),
   LevelCatalogEntry(
     levelId: 'b1',
@@ -144,6 +153,7 @@ List<LevelCatalogEntry> applyPreviewOverrides(
           availability: LevelAvailability.available,
           bundleAssetPath: entry.bundleAssetPath,
           prerequisiteLevelId: entry.prerequisiteLevelId,
+          audioManifestAssetPath: entry.audioManifestAssetPath,
         )
       else
         entry,

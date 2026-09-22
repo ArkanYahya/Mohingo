@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../core/l10n/generated/app_localizations.dart';
 import '../../../../core/theme/app_tokens.dart';
+import '../../../speech/domain/audio_clip_index.dart';
 import '../../../speech/domain/text_to_speech_service.dart';
 import '../../../speech/providers/speech_providers.dart';
 import '../../../speech/providers/tts_preferences_provider.dart';
@@ -64,7 +65,13 @@ class _ActivityPartnerTurnsCardState
     final pitch = ref.read(ttsPitchPreferenceProvider);
     for (final turn in widget.turns) {
       if (!mounted || token != _playToken) return;
-      await _tts.speak(turn, localeCode: 'en', rate: rate, pitch: pitch);
+      await _tts.speak(
+        turn,
+        localeCode: 'en',
+        rate: rate,
+        pitch: pitch,
+        speaker: kPartnerSpeaker,
+      );
     }
     if (mounted && token == _playToken) setState(() => _playing = false);
   }

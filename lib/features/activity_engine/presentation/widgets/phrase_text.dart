@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/theme/app_tokens.dart';
 
+export '../../../speech/domain/speech_text.dart' show phraseForSpeech;
+
 /// A registry phrase's fill-in slots — `"My name is {name}."`.
 final _placeholder = RegExp(r'\{(\w+)\}');
-
-/// [text] as it should be spoken: each placeholder becomes a pause.
-String phraseForSpeech(String text) => text.replaceAll(_placeholder, '…');
 
 /// A chunk-registry phrase with its `{placeholder}` slots made visible.
 ///

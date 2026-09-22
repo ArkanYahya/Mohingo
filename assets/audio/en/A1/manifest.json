@@ -1,0 +1,4649 @@
+{
+ "schemaVersion": 1,
+ "levelId": "a1",
+ "contentVersion": "A1-COMPLETE-2026.09.22",
+ "generatedAt": "2026-09-22T13:17:46Z",
+ "engine": {
+  "name": "kokoro-onnx/kokoro-v1.0",
+  "speed": 1.0
+ },
+ "audio": {
+  "container": "m4a",
+  "codec": "aac",
+  "bitrateKbps": 32,
+  "sampleRateHz": 24000,
+  "channels": 1
+ },
+ "clips": {
+  "00299a408dc3498a": {
+   "_": "clips/a552b881dfe645e7.m4a"
+  },
+  "009e058c883c683e": {
+   "_": "clips/5f8901081d8341ab.m4a"
+  },
+  "00b0fb111a542331": {
+   "Omar": "clips/aa9c5e7e8c8a1152.m4a"
+  },
+  "00b385908fc7129f": {
+   "_": "clips/c1bd2f9f60710f12.m4a"
+  },
+  "00d239724eb7b760": {
+   "_": "clips/6285750a2bc03030.m4a"
+  },
+  "011ae4bb6f3d4e1e": {
+   "_": "clips/febc38bcf85994b1.m4a"
+  },
+  "012da8a947ea870d": {
+   "_": "clips/1b38cb8153045ba2.m4a"
+  },
+  "0154c0dabe7145db": {
+   "_": "clips/05a0e96ff1e80deb.m4a"
+  },
+  "018c49f84bd1bb7b": {
+   "_": "clips/d9d76b80a1143461.m4a"
+  },
+  "020bbd64975e461d": {
+   "partner": "clips/56c00235b5bfb606.m4a"
+  },
+  "0230d2b7a4b3d58e": {
+   "_": "clips/a36fc36021c09eac.m4a"
+  },
+  "0266b3b72a0bda50": {
+   "_": "clips/2c0f5efe0013e7f9.m4a"
+  },
+  "02a8e3f0c78ad2ce": {
+   "Sara": "clips/c5a7c37ad07f21f6.m4a"
+  },
+  "02f288fd14d9a9f0": {
+   "partner": "clips/ca88350636f4694d.m4a"
+  },
+  "036881ac18fe8aa3": {
+   "_": "clips/18812a7419647bb6.m4a"
+  },
+  "037217f885fde725": {
+   "_": "clips/baa7ffd685a33d5a.m4a"
+  },
+  "038dea470bd3447a": {
+   "_": "clips/93730d4968d5b1c8.m4a"
+  },
+  "039794a643ef56ff": {
+   "_": "clips/249b17243b5b0e87.m4a"
+  },
+  "03dacd900d25e8e9": {
+   "_": "clips/8e4e86515e7bf235.m4a"
+  },
+  "03e85e15e6438ffa": {
+   "_": "clips/d125831ba77c88fa.m4a"
+  },
+  "047be23044655e82": {
+   "Visitor": "clips/55823becf72ccb28.m4a"
+  },
+  "04887526a80e5ec9": {
+   "_": "clips/f4f7dd56392ce53d.m4a"
+  },
+  "050bb2b04de6d7bc": {
+   "Sara": "clips/94e60a0bb9be75a3.m4a"
+  },
+  "051b07eb06b518ba": {
+   "_": "clips/cfc885210fdcae85.m4a"
+  },
+  "0521445364bf4447": {
+   "_": "clips/5a9b743d778ccdd1.m4a"
+  },
+  "054a427b49c4fa7d": {
+   "_": "clips/55ba27be43513ae0.m4a"
+  },
+  "054dbc6719e7e700": {
+   "_": "clips/39a7cad83508770f.m4a"
+  },
+  "058fc4b968a48fa9": {
+   "Waiter": "clips/d0e9dbde66bfe4ae.m4a"
+  },
+  "05be3861e8433f3e": {
+   "_": "clips/c25038c1cf9a3926.m4a"
+  },
+  "05eb75cc52831f28": {
+   "_": "clips/8df10977ca17cfad.m4a"
+  },
+  "064e9070a8a04519": {
+   "_": "clips/42eead3c49df99c5.m4a"
+  },
+  "0699f9e031ddeeb5": {
+   "Ali": "clips/7059676cf5d2b812.m4a",
+   "_": "clips/3ef2d3471b4eb0cd.m4a"
+  },
+  "06b2995683003ac3": {
+   "_": "clips/45a41f56f3ec2acc.m4a"
+  },
+  "072905987c5a745e": {
+   "_": "clips/f48cca6b36b5ba15.m4a"
+  },
+  "079020c5a046506e": {
+   "_": "clips/fc0b88859b43d988.m4a"
+  },
+  "07a9d7ac3324464c": {
+   "_": "clips/449e8013ea4df8a8.m4a"
+  },
+  "07da74aabb005d7a": {
+   "partner": "clips/2978a08a45fe589d.m4a"
+  },
+  "07ef879175424a11": {
+   "_": "clips/69322f707b4438d1.m4a"
+  },
+  "0807fde8daa5d61f": {
+   "_": "clips/6e1eb2e91ca71481.m4a"
+  },
+  "089cd6423a706bbc": {
+   "Omar": "clips/57178a3ccf61a82d.m4a"
+  },
+  "08cd28d352d74fcc": {
+   "Ali": "clips/c36bd619b31c8b17.m4a"
+  },
+  "0934af72cda0cce6": {
+   "_": "clips/264bdcc1d9b9bde3.m4a"
+  },
+  "094530549b5e2046": {
+   "_": "clips/fb6bc139c068a864.m4a"
+  },
+  "09649207a9b5da67": {
+   "_": "clips/98a1d360086f11f6.m4a"
+  },
+  "096c5f4193467761": {
+   "partner": "clips/9dd7117afc0f98e8.m4a"
+  },
+  "097f7243d45decd7": {
+   "_": "clips/e0fca398e605e4ad.m4a"
+  },
+  "09b5cd541cfaf075": {
+   "_": "clips/63b5e8f7e0961e65.m4a"
+  },
+  "09b696504ac8bfe0": {
+   "_": "clips/09d7d2f8e1f7dc75.m4a"
+  },
+  "09d5f620386e878a": {
+   "_": "clips/8110cc627940bc87.m4a"
+  },
+  "09ef6b585ef58cbf": {
+   "Clerk": "clips/feb89c684688ca17.m4a"
+  },
+  "09fc3e3ace2af1bc": {
+   "_": "clips/ebd467345c1ea71c.m4a"
+  },
+  "0a0fc55610e4a231": {
+   "_": "clips/310dfa2964c975ba.m4a"
+  },
+  "0a20030d973d1fed": {
+   "Maya": "clips/97ee8e4bd04b6361.m4a",
+   "Omar": "clips/f0fff9e47cf53967.m4a",
+   "_": "clips/6c4e2f36c03eae52.m4a"
+  },
+  "0a2d6aa6ca59b6d2": {
+   "Sara": "clips/d4b2c1521efafe79.m4a",
+   "_": "clips/23b5cb8ec536bbf7.m4a"
+  },
+  "0a490cb02d53aa9e": {
+   "_": "clips/d3a4da74f0f0fc49.m4a"
+  },
+  "0ac42b9202866574": {
+   "Operator": "clips/94874f1f9a967c62.m4a"
+  },
+  "0af22582e029bf80": {
+   "Customer": "clips/487f8e6691b876d1.m4a"
+  },
+  "0b1e95cfd9775191": {
+   "_": "clips/ff9ac130cd203cfb.m4a"
+  },
+  "0b55ebd9f8ce5b58": {
+   "_": "clips/ad56e25a52803079.m4a"
+  },
+  "0b6659c933d434f3": {
+   "_": "clips/7d67a2419854b458.m4a"
+  },
+  "0b7bc95123c25cbf": {
+   "_": "clips/bf848c136c4ad84f.m4a"
+  },
+  "0b7df8a86ae34e0b": {
+   "_": "clips/9bbf49194a4a191c.m4a"
+  },
+  "0b8a1caec23d75d1": {
+   "_": "clips/04561898b1c4bef6.m4a"
+  },
+  "0b8dd0154d478fde": {
+   "partner": "clips/5e1cf85f57f58184.m4a"
+  },
+  "0bca7fe652a0c3b3": {
+   "_": "clips/421d257a097b2e52.m4a"
+  },
+  "0c2d0e4477d3b240": {
+   "_": "clips/00ff0951bc550b52.m4a"
+  },
+  "0d26f6f6b3ca96b4": {
+   "_": "clips/cff6102982bda23b.m4a"
+  },
+  "0d3fcdfb873f2b2e": {
+   "_": "clips/e7c59eb2467d6bec.m4a"
+  },
+  "0d47f2fe72f2da17": {
+   "_": "clips/4c16267f0ee8cca9.m4a"
+  },
+  "0d7410f1e825573d": {
+   "Maya": "clips/4307111dc2c25d5d.m4a",
+   "_": "clips/c2869a2b5812b1f1.m4a"
+  },
+  "0d8176934a3bdbee": {
+   "_": "clips/464d556816a2093a.m4a"
+  },
+  "0e66b49d04a43c19": {
+   "_": "clips/20b29fd1f1ab6e4d.m4a"
+  },
+  "0e93069c40111cd6": {
+   "_": "clips/fa9cd60bc89bc7e6.m4a"
+  },
+  "0ea59e3f93aa4878": {
+   "_": "clips/d4de76002e1f72d4.m4a"
+  },
+  "0ec0261e49185644": {
+   "Omar": "clips/e056a1751ffe8c3b.m4a"
+  },
+  "0ef25ae00f40c847": {
+   "_": "clips/a9ba6f4081dbf936.m4a"
+  },
+  "0f0c622714d4f5ae": {
+   "_": "clips/f0fd82f782f09c22.m4a"
+  },
+  "0f31c72e54b79833": {
+   "_": "clips/a21bb9361b2143ca.m4a"
+  },
+  "0f894c6908cea537": {
+   "_": "clips/7eb2421f26747772.m4a"
+  },
+  "1043137d27d39d74": {
+   "_": "clips/6f842e04c6d11c9e.m4a"
+  },
+  "1075832e65594296": {
+   "_": "clips/2d0235502edef7ed.m4a"
+  },
+  "10e5866050d20afe": {
+   "_": "clips/7c5934c897f2e615.m4a"
+  },
+  "10f5ebe6acb4467b": {
+   "_": "clips/d11de029af02b480.m4a"
+  },
+  "112a95d43e45c1aa": {
+   "_": "clips/ae7a155ba675fd21.m4a"
+  },
+  "1183c8cc3225c315": {
+   "_": "clips/e6cdba00e87c4134.m4a"
+  },
+  "11aae4f24bb7650f": {
+   "Resident": "clips/2408181082951f1f.m4a"
+  },
+  "122604decb5a6e39": {
+   "_": "clips/2ae7503ff1dbb89a.m4a"
+  },
+  "12580b20a38726fe": {
+   "_": "clips/451acd2f36405e02.m4a"
+  },
+  "126464dbdcfbd4cd": {
+   "_": "clips/bc0b36de99f19bbc.m4a"
+  },
+  "12690cd7c5ba481e": {
+   "_": "clips/0f60a43b5e820747.m4a"
+  },
+  "12c0f1fbadc4046b": {
+   "_": "clips/e9fbcd35a4fb75bb.m4a"
+  },
+  "12ed0d88f759544f": {
+   "_": "clips/62bd360f97ff94b9.m4a"
+  },
+  "131846410451514f": {
+   "Sara": "clips/ee97639bbe3eb906.m4a",
+   "_": "clips/cc58a0cd7a98ea9b.m4a"
+  },
+  "133dba6802b8daad": {
+   "_": "clips/912027357451e715.m4a"
+  },
+  "133e6818d0226cbe": {
+   "_": "clips/7087a969c7bd57b1.m4a"
+  },
+  "13c5b8409d5afd88": {
+   "_": "clips/8fbd17aa9e4dc0e3.m4a"
+  },
+  "142210d285f99ee8": {
+   "_": "clips/85ac72a15a85366b.m4a"
+  },
+  "14a80965a8fa99e7": {
+   "_": "clips/565774be62f62bf9.m4a"
+  },
+  "14beca199c7fac11": {
+   "_": "clips/fa1a95264e680b5e.m4a"
+  },
+  "14dd836616c0325c": {
+   "_": "clips/b42ba1402bb71a54.m4a"
+  },
+  "14e60ace3d83eeb2": {
+   "_": "clips/7b4f36330e9dc604.m4a"
+  },
+  "151863efd320c98e": {
+   "Maya": "clips/0c391eb9e5ffc9cd.m4a"
+  },
+  "153037ea792966d7": {
+   "_": "clips/82a91c6a81c61b67.m4a"
+  },
+  "1588dd77ee16debb": {
+   "Maya": "clips/4c7fbcebada533ce.m4a"
+  },
+  "15aa020102b7ab6c": {
+   "_": "clips/945590d36de199d7.m4a"
+  },
+  "15ccbf62b4888e43": {
+   "_": "clips/838ba36b519af1c1.m4a"
+  },
+  "1613aa424bd5a807": {
+   "Maya": "clips/448cf69517f4fd57.m4a"
+  },
+  "163001e2903323eb": {
+   "_": "clips/d9e2aefc85531a1a.m4a"
+  },
+  "1647ffa26c7c71ea": {
+   "partner": "clips/a348fb8faf2a9f39.m4a"
+  },
+  "164caa75f64e855d": {
+   "Customer": "clips/38aceaa81f6365e9.m4a",
+   "_": "clips/ca48d5ce687f6483.m4a"
+  },
+  "1673a926f3f6b481": {
+   "_": "clips/1d52403094846260.m4a"
+  },
+  "168533c77af4ada3": {
+   "Maya": "clips/904d2a6e4dc1d4f9.m4a"
+  },
+  "16895ac349df6cff": {
+   "partner": "clips/efa5584c05d05e15.m4a"
+  },
+  "16d41cf8d4b468a5": {
+   "Customer": "clips/e094999c4e51ad90.m4a"
+  },
+  "16eaf0c9919b892b": {
+   "Maya": "clips/330d43b0543df20f.m4a"
+  },
+  "16eb0b3ceb623cbb": {
+   "_": "clips/135f93e3650ea156.m4a"
+  },
+  "170fd7e84a1b2f97": {
+   "_": "clips/d7585c604b53c39c.m4a"
+  },
+  "1723bcde3d286187": {
+   "_": "clips/9a16b8e95c182d19.m4a"
+  },
+  "173c669139e73a88": {
+   "_": "clips/666fb9f82540738e.m4a"
+  },
+  "174534c6b3882921": {
+   "A": "clips/54b64d8623ae4d8c.m4a",
+   "_": "clips/c8998163bc39a920.m4a"
+  },
+  "1776244feea5b31b": {
+   "_": "clips/e9c80517d5acb3a7.m4a"
+  },
+  "17821f392e90733c": {
+   "_": "clips/f41edadcde70cdf4.m4a"
+  },
+  "17b4c560b9d90cf4": {
+   "_": "clips/c8b564608dc639f0.m4a"
+  },
+  "17bcb7869dfeee59": {
+   "Ali": "clips/11e0888faceeb3d7.m4a"
+  },
+  "17d53e0e6a68acdf": {
+   "_": "clips/76c8cbcf4b942753.m4a"
+  },
+  "17dea2aaf66ae7ce": {
+   "_": "clips/35a77db130cc034d.m4a"
+  },
+  "17e092b01a40fb78": {
+   "Maya": "clips/85c3b667e92fb61b.m4a"
+  },
+  "1811f64013d331f3": {
+   "_": "clips/9e9d78c6387253be.m4a"
+  },
+  "181eb5ba36c05400": {
+   "_": "clips/c911bd7968ab8589.m4a"
+  },
+  "184eb63a906e3136": {
+   "Maya": "clips/ecc352e12b210d78.m4a"
+  },
+  "185c421630fc3bb0": {
+   "_": "clips/bd38a71acb90aca6.m4a"
+  },
+  "1866d477947985b4": {
+   "_": "clips/ae115b98057666d9.m4a"
+  },
+  "1868091e60627100": {
+   "_": "clips/785d1f8e7b5bb3ff.m4a"
+  },
+  "188fb9eaec75a7b6": {
+   "_": "clips/5ef662b66be4fe41.m4a"
+  },
+  "18944563b53e9093": {
+   "Ali": "clips/728069aa04160d7e.m4a"
+  },
+  "18d9de5320818d91": {
+   "_": "clips/14352c95eddbe201.m4a"
+  },
+  "191347119d62e4c3": {
+   "Ali": "clips/e9d8ed6692acae29.m4a"
+  },
+  "19458d63496ff5a0": {
+   "_": "clips/98c48f47dd0fbfcb.m4a"
+  },
+  "19693f30bc4fb9d8": {
+   "Assistant": "clips/5aaa6bf3869fc81c.m4a"
+  },
+  "1a8565a9dc72048b": {
+   "_": "clips/5b71ca2c33cbfd8b.m4a"
+  },
+  "1a954628a960aaef": {
+   "_": "clips/13d04c8589d41387.m4a"
+  },
+  "1ad53081c0904b3b": {
+   "_": "clips/01af056fb94c60da.m4a"
+  },
+  "1aed9ecc6e1be8ea": {
+   "_": "clips/b25b8bffaab09c3d.m4a"
+  },
+  "1b1a674aeb488b6c": {
+   "_": "clips/4c58f48c1920694e.m4a"
+  },
+  "1b3afa35342d2a2b": {
+   "_": "clips/32b7014a2474bca7.m4a"
+  },
+  "1b5501dc64c6cf03": {
+   "_": "clips/d0d17e015618196e.m4a"
+  },
+  "1b9bcbed0d26155a": {
+   "_": "clips/88626c7e22494a43.m4a"
+  },
+  "1be2a44cb53dde90": {
+   "_": "clips/ca6b0d5134956a8b.m4a"
+  },
+  "1bed86213e3ddcf8": {
+   "_": "clips/41291101703cd239.m4a"
+  },
+  "1bf6b30c615c20fd": {
+   "_": "clips/9198159d2873daea.m4a"
+  },
+  "1c39abf68e93e438": {
+   "_": "clips/adf4a4ce586f5892.m4a"
+  },
+  "1c69a47368f4b8e4": {
+   "_": "clips/40603865da9ef8e6.m4a"
+  },
+  "1cbeb0e3eda38bd1": {
+   "Maya": "clips/4fdb38e1e9e7e647.m4a"
+  },
+  "1cdbba9665eec106": {
+   "_": "clips/43ee7195710ad57e.m4a"
+  },
+  "1cf2059d30d1e0d6": {
+   "Omar": "clips/47cf78320256ba5d.m4a"
+  },
+  "1cfe6cf17a3f2da9": {
+   "Ali": "clips/1283e413c4488f23.m4a"
+  },
+  "1d9960e2aff6b7a2": {
+   "_": "clips/16d6846fd98496d6.m4a"
+  },
+  "1daec180566cb1c6": {
+   "Visitor": "clips/749527b50a32215c.m4a"
+  },
+  "1dd09baa19dc7688": {
+   "_": "clips/dbe82b2e3443ec99.m4a"
+  },
+  "1ddfb215a98ac85d": {
+   "Nurse": "clips/7d247ebd82e134da.m4a"
+  },
+  "1e12ca4c2dac4ebd": {
+   "Maya": "clips/0ea605d4d314c1c6.m4a"
+  },
+  "1e1a1a851177e049": {
+   "partner": "clips/9e00c80840b2561a.m4a"
+  },
+  "1e1d6a36a73b6865": {
+   "partner": "clips/65dcaa69a4d76cb5.m4a"
+  },
+  "1e346c1e2700fb86": {
+   "_": "clips/bbd2d8e6e7e19f8d.m4a"
+  },
+  "1e712bc214318304": {
+   "Passenger": "clips/5a9ad00bb6a9f1c9.m4a",
+   "_": "clips/e4ca4410fdbdf786.m4a"
+  },
+  "1e7976cab9db24e3": {
+   "Sara": "clips/b7208cfa4e3dfea1.m4a"
+  },
+  "1ed970edc98aba9c": {
+   "Sara": "clips/6a09dbcda1743de5.m4a"
+  },
+  "1f0160076c9f42a1": {
+   "_": "clips/66bd7f1e697fa338.m4a"
+  },
+  "1f0695ee26f85d74": {
+   "_": "clips/b336e8a6a2f8b165.m4a"
+  },
+  "1f7a7912b3588c92": {
+   "_": "clips/608d85f7b1499b0e.m4a"
+  },
+  "1f96f56e249dcebf": {
+   "_": "clips/a82d0050f1d43810.m4a"
+  },
+  "1f985c706888134b": {
+   "Lina": "clips/5e62a207a6b21ef1.m4a"
+  },
+  "1fb2eab52020b09e": {
+   "_": "clips/3a8b196d0796f504.m4a"
+  },
+  "1feacf6ca67f3731": {
+   "_": "clips/a1dd80934906948d.m4a"
+  },
+  "202fe7aa4603fff6": {
+   "Assistant": "clips/2f2d2c12dd695916.m4a"
+  },
+  "204036a1ef6e7360": {
+   "_": "clips/73bf04dee9317c3b.m4a"
+  },
+  "2094d8941fdc22a4": {
+   "_": "clips/1631370c1b2e81b8.m4a"
+  },
+  "2097c33723b61c7e": {
+   "_": "clips/fecb5635982faa9f.m4a"
+  },
+  "20af418657698863": {
+   "_": "clips/d68be818ed5e429a.m4a"
+  },
+  "20bb52c4449797e4": {
+   "_": "clips/0249d26f6b72d470.m4a"
+  },
+  "20cec707d894b09b": {
+   "_": "clips/1490c50fa1d47f0d.m4a"
+  },
+  "210e7830b07e363a": {
+   "_": "clips/b5cb64ddd5d8dbb1.m4a",
+   "partner": "clips/3479c67ece50b863.m4a"
+  },
+  "2147a9e5f9e89b70": {
+   "_": "clips/1308260b6cd98f97.m4a"
+  },
+  "215326937a03a7e6": {
+   "_": "clips/00e016a43656a4ca.m4a"
+  },
+  "215cfdd12f701e6a": {
+   "_": "clips/c179a1d471738821.m4a"
+  },
+  "216a2902be4e42f1": {
+   "_": "clips/e8e17f345b78b99c.m4a"
+  },
+  "2174eac0c9868b04": {
+   "Visitor": "clips/c774331876938c92.m4a"
+  },
+  "21db504f74a88b5a": {
+   "Ali": "clips/768a0fd2ff237420.m4a"
+  },
+  "22286fa349f134bd": {
+   "_": "clips/14505064d6f9b247.m4a"
+  },
+  "22668bf14ea73f0e": {
+   "_": "clips/c533a693b038c9d2.m4a"
+  },
+  "2292450985ada2d6": {
+   "Waiter": "clips/6469f10ed69edb7a.m4a"
+  },
+  "22bc0d46665ab207": {
+   "Receptionist": "clips/a1a13db6edc76e78.m4a"
+  },
+  "22cb71e7c2aa37de": {
+   "partner": "clips/4d245160d3c87d4e.m4a"
+  },
+  "22f6521b3349bd49": {
+   "_": "clips/ad04c9cc3d97535b.m4a"
+  },
+  "2320f0332a98bde6": {
+   "Waiter": "clips/cd85fb1afae854fc.m4a",
+   "partner": "clips/c1fbefd4b96b1e6f.m4a"
+  },
+  "243f247b84b783bb": {
+   "_": "clips/ef916a94be159f3d.m4a"
+  },
+  "2470e40462f80efd": {
+   "_": "clips/0e8dc1aabd4d0e18.m4a"
+  },
+  "250e77f12a5ab697": {
+   "_": "clips/4139aa9905a48c12.m4a"
+  },
+  "252259bf8bca41b3": {
+   "_": "clips/d61eeae9f199a59a.m4a"
+  },
+  "252a25667dc7c65f": {
+   "_": "clips/f0db95a112c23c83.m4a"
+  },
+  "25819a29fa731a71": {
+   "Visitor": "clips/83a4741f1eaae0f2.m4a"
+  },
+  "25af6cd59121ce19": {
+   "partner": "clips/298013f57548037c.m4a"
+  },
+  "25b02b6f1b5d3c25": {
+   "B": "clips/fc2bd6bc5ff8e248.m4a",
+   "_": "clips/3ad2b193882ada8e.m4a"
+  },
+  "25cc72101088240b": {
+   "_": "clips/48f0a994c6ba25c5.m4a"
+  },
+  "25dc282b5a3dcba6": {
+   "_": "clips/fc931844e3052dff.m4a"
+  },
+  "25ebf1660babc11a": {
+   "_": "clips/dff38598b3785025.m4a"
+  },
+  "26052976f3d95f21": {
+   "_": "clips/9f158121257e26d6.m4a"
+  },
+  "261a86af2d1b1260": {
+   "_": "clips/eb7f1ac6cfa8246f.m4a"
+  },
+  "261e5ea6651ab9be": {
+   "_": "clips/fab7016306ec3e77.m4a"
+  },
+  "264c9430c75ded7b": {
+   "_": "clips/97e2d6e8c15b13a9.m4a"
+  },
+  "2680b6746cf8291f": {
+   "_": "clips/5b8fe1bef06d3b84.m4a"
+  },
+  "272b18eb03d20793": {
+   "Omar": "clips/099d9120ca3d00b7.m4a"
+  },
+  "2736b0ce1985aef3": {
+   "Maya": "clips/0fe4e59da89f1b7c.m4a"
+  },
+  "2752b456fffa4b16": {
+   "_": "clips/09bfd18b69b5e000.m4a"
+  },
+  "2753b3ecaa79a5c3": {
+   "_": "clips/685139f8274c766b.m4a"
+  },
+  "27790a180c3bdc5c": {
+   "_": "clips/329d6ac7c256f55f.m4a"
+  },
+  "2797e86c0f9f41db": {
+   "_": "clips/f8671ffe3be46520.m4a"
+  },
+  "27a5a05c01ee6e7b": {
+   "_": "clips/0012df59e7eed444.m4a"
+  },
+  "27ad1672d8c97d74": {
+   "_": "clips/2ebb374f15005791.m4a"
+  },
+  "27ba7bec2b9acca3": {
+   "_": "clips/f073b86ef1d05682.m4a"
+  },
+  "27e6dfcc46b711c8": {
+   "_": "clips/fe2d30551960fb0b.m4a"
+  },
+  "285f9a003f671c24": {
+   "_": "clips/68ded4d813362ae4.m4a"
+  },
+  "289343129b712c9e": {
+   "Omar": "clips/f38c3a02b250ce63.m4a"
+  },
+  "28ecbf128d80b334": {
+   "Ali": "clips/6ac92fa56c71c4c5.m4a"
+  },
+  "292b0901993f7e9d": {
+   "_": "clips/88c69fdaea6a6f93.m4a"
+  },
+  "296041b34f93c5d5": {
+   "_": "clips/238ebbbe96a1468c.m4a"
+  },
+  "297f31f02b99ab3f": {
+   "_": "clips/19124c2dde343e7f.m4a"
+  },
+  "2990b4a1d32afd63": {
+   "_": "clips/bd651f7a568a52a7.m4a"
+  },
+  "29ac93f3814f19fd": {
+   "_": "clips/78e0a2ed1e283c44.m4a"
+  },
+  "29d1aea86a9c4cd2": {
+   "_": "clips/26f851b154e7b42e.m4a"
+  },
+  "2a5cf22a5049be40": {
+   "Assistant": "clips/5c963532c8e0e9e5.m4a"
+  },
+  "2a9e6738e32344d0": {
+   "Maya": "clips/5f0e17a921df1424.m4a"
+  },
+  "2ab0591dbcf5fefd": {
+   "_": "clips/57734d107debf3e2.m4a"
+  },
+  "2ac40573460bfa65": {
+   "_": "clips/6c797fb45be6cc8e.m4a"
+  },
+  "2ae503c4203027c2": {
+   "_": "clips/8c31f660be2baade.m4a"
+  },
+  "2ae7c3ce7cab4089": {
+   "Customer": "clips/61da8accec5a0554.m4a"
+  },
+  "2b020927d3c6eb40": {
+   "_": "clips/52e2a95ea8ac32f7.m4a"
+  },
+  "2b2d005e88ce14a4": {
+   "_": "clips/84cb08cef969ba25.m4a"
+  },
+  "2b2ed8fd339051a1": {
+   "_": "clips/d86002b801b5240a.m4a"
+  },
+  "2b93528dc8e4c660": {
+   "partner": "clips/52f631cf351c6b45.m4a"
+  },
+  "2bcea95f4dbc799b": {
+   "_": "clips/d8573c6d017ef91c.m4a"
+  },
+  "2be741c8f2771625": {
+   "_": "clips/e64bd631af58423f.m4a"
+  },
+  "2c524fda4e65a317": {
+   "Doctor": "clips/c8f8f241962c34e4.m4a"
+  },
+  "2c54892c40a17516": {
+   "_": "clips/ec728a5b40fd7a32.m4a"
+  },
+  "2c551cacf05b722e": {
+   "_": "clips/a7f2ca3c1dfa10d1.m4a"
+  },
+  "2c59183fc54b0854": {
+   "_": "clips/461ccd6283226ea3.m4a"
+  },
+  "2c5d3db2b41b625a": {
+   "Ali": "clips/792cd7c701d71f17.m4a"
+  },
+  "2c794c11b2b1b3cb": {
+   "_": "clips/a61eb4a835431eb5.m4a"
+  },
+  "2c99bb293753d0ba": {
+   "Lina": "clips/22f6cacd43482834.m4a"
+  },
+  "2ca0a7fa027bbf8a": {
+   "_": "clips/8e21455a052702ac.m4a"
+  },
+  "2cc26804660bc28b": {
+   "_": "clips/62bcd747cf56412d.m4a"
+  },
+  "2cce4a92f41fe3d5": {
+   "_": "clips/67128eabace190ec.m4a"
+  },
+  "2ceb4d91d33248b7": {
+   "Nurse": "clips/053f325795057408.m4a"
+  },
+  "2d255edc6bbb739a": {
+   "Ali": "clips/04aff7b5b20d253f.m4a"
+  },
+  "2d27b62c597ec858": {
+   "_": "clips/5bf1efb00190b224.m4a"
+  },
+  "2d2ad59c278bb378": {
+   "_": "clips/7d03b3c8ee6fa48b.m4a"
+  },
+  "2d38acd7d6456eb2": {
+   "Maya": "clips/ae151bd6a1755596.m4a"
+  },
+  "2d6540e1060a8f76": {
+   "Huda": "clips/a8288ead30670107.m4a"
+  },
+  "2d70f9cfa7922c60": {
+   "Ali": "clips/bcaa4a5fa023f445.m4a"
+  },
+  "2da36ff30a38777c": {
+   "_": "clips/73699a4349e40642.m4a"
+  },
+  "2dac81d65dd44b5d": {
+   "_": "clips/cd6963395205329d.m4a"
+  },
+  "2dd2bed725678b4f": {
+   "_": "clips/1025f4eb1b720a18.m4a"
+  },
+  "2de2a7e239204daa": {
+   "_": "clips/cefeb8d788ac4e34.m4a"
+  },
+  "2df44475db22067b": {
+   "Passenger": "clips/1858d57c6f15403d.m4a"
+  },
+  "2e190f3d22a749c0": {
+   "Omar": "clips/e77c99d914d1d133.m4a"
+  },
+  "2e4421e6d1be306a": {
+   "_": "clips/2bc7ef8cd35603e7.m4a"
+  },
+  "2e942cef4655ddfb": {
+   "_": "clips/8daf06a9395255b3.m4a"
+  },
+  "2ed784e035afd62f": {
+   "_": "clips/007592950cb8aa74.m4a"
+  },
+  "2efcb31073941cf1": {
+   "_": "clips/4a7930f637687bd7.m4a"
+  },
+  "2f11daf0f4773acc": {
+   "Clerk": "clips/5ce8feaf1851a879.m4a"
+  },
+  "2f17472ad3ba36f2": {
+   "partner": "clips/3b282ba6f86e9ee3.m4a"
+  },
+  "2f2ce29c156bfbfa": {
+   "_": "clips/b8a9a4afa6f1a25d.m4a"
+  },
+  "2f3f8964eb7e3c13": {
+   "_": "clips/9131c9c951790971.m4a"
+  },
+  "2f48e7f6f24261b8": {
+   "_": "clips/5adc78b56c6b7006.m4a"
+  },
+  "2f56c0ac09ef740a": {
+   "_": "clips/84a76438093e3b83.m4a"
+  },
+  "2fa39075e8daa638": {
+   "Sara": "clips/517d3cd3a8abe1d8.m4a"
+  },
+  "2fcc3df37c6b720d": {
+   "_": "clips/80b2bc2b4a560129.m4a"
+  },
+  "304e312606aea3a8": {
+   "_": "clips/53a2d3a4541d4cd5.m4a"
+  },
+  "3094d4b4d25e83ff": {
+   "_": "clips/0e0f5b19971fb58e.m4a"
+  },
+  "30ad52a9d52531fb": {
+   "_": "clips/ad253354c0a6c2f1.m4a"
+  },
+  "30ca4b4b96411f3e": {
+   "Omar": "clips/cda3ad87da849c45.m4a"
+  },
+  "30e9d042d8d06e0f": {
+   "_": "clips/47a03eb17312d4f9.m4a"
+  },
+  "316be803af63cd39": {
+   "_": "clips/1065e70764116a83.m4a"
+  },
+  "31a02cf9383990ce": {
+   "_": "clips/801304744f4d6f68.m4a"
+  },
+  "31aed9e37eb93350": {
+   "_": "clips/806657987dd05074.m4a"
+  },
+  "31bbca7fd92e9274": {
+   "_": "clips/0e90f665cd145a52.m4a"
+  },
+  "31cb6489f488ad23": {
+   "Sara": "clips/ef91923b30dad079.m4a"
+  },
+  "31e4eed848b05180": {
+   "_": "clips/d2cd9d325305a516.m4a"
+  },
+  "320ad267d8d969f2": {
+   "_": "clips/b0f3a8e3a47bad25.m4a"
+  },
+  "321d6cc5177a8d6e": {
+   "_": "clips/eddda6bd430e5cb1.m4a"
+  },
+  "32259ac23067b16e": {
+   "_": "clips/92988a7a48b664f2.m4a"
+  },
+  "325623b932ce189d": {
+   "_": "clips/a55a507e42b8f166.m4a"
+  },
+  "326796e857fbbcc6": {
+   "Lina": "clips/90734749a9abe8d3.m4a"
+  },
+  "326f8cecd05c8be8": {
+   "_": "clips/278608e7e1fb02e0.m4a"
+  },
+  "32a01ab097cd0cb7": {
+   "Ali": "clips/5b3a0bf082613c83.m4a"
+  },
+  "32c70cebf110eedb": {
+   "_": "clips/26bb9b2b390c60a6.m4a"
+  },
+  "32c8bbff09c35626": {
+   "_": "clips/7fd7648b2499e8a0.m4a"
+  },
+  "32cb9138ce24c9c5": {
+   "_": "clips/94816376878a02bf.m4a"
+  },
+  "3314731a33b33c7a": {
+   "Maya": "clips/a2ce13b3427b5d9b.m4a"
+  },
+  "332c2056c59c2ada": {
+   "_": "clips/2b3d933a635ba501.m4a"
+  },
+  "333932fd7bfce64b": {
+   "Omar": "clips/bf42d4e37886a946.m4a"
+  },
+  "338af145baa07f06": {
+   "Visitor": "clips/7412b93a509998b4.m4a"
+  },
+  "33a866a12af9c2eb": {
+   "_": "clips/9c58e95caa0f70b0.m4a"
+  },
+  "33ede8ac5cc3a5a7": {
+   "Sara": "clips/f4186c7442f94671.m4a"
+  },
+  "342eabc2ff4bbd19": {
+   "Visitor": "clips/2e7e0b7f3a2b5cfe.m4a"
+  },
+  "344547575ca4bcb5": {
+   "_": "clips/b123f72af4df3724.m4a"
+  },
+  "345d357d9ec28850": {
+   "_": "clips/c8b32a56f8ec2ca1.m4a"
+  },
+  "346d34a0f0d96dda": {
+   "_": "clips/ff35ad5c14e018be.m4a"
+  },
+  "346e7f202c67c8f6": {
+   "_": "clips/d96bf0c33d9059f2.m4a"
+  },
+  "34b15ece7e5559b3": {
+   "_": "clips/0ae432af5078987a.m4a"
+  },
+  "34be24e76af49803": {
+   "partner": "clips/71cd0ff299cb900b.m4a"
+  },
+  "34e8e51aac208d96": {
+   "_": "clips/188c66330ea1b782.m4a"
+  },
+  "34ea842c8b844027": {
+   "_": "clips/174eeb5e95400750.m4a"
+  },
+  "35359e7e4df2c036": {
+   "_": "clips/5e784be020012402.m4a"
+  },
+  "35e34aac3ffad787": {
+   "_": "clips/51c93f2a8613590c.m4a"
+  },
+  "35f6267d2f4de624": {
+   "_": "clips/e44948df251c1e92.m4a"
+  },
+  "36316881135b2e67": {
+   "_": "clips/fcefa54a4bde6fee.m4a"
+  },
+  "3641efd616b5bf83": {
+   "Sara": "clips/d5269c6b7c3384b9.m4a"
+  },
+  "36441bb2c5115687": {
+   "_": "clips/f601f5d8a3ccbe17.m4a"
+  },
+  "3654f46e7a3bd0b2": {
+   "Nurse": "clips/ff783d29b8f8e662.m4a",
+   "_": "clips/2fc0e3f4b4af490b.m4a"
+  },
+  "36623d0775923cc1": {
+   "_": "clips/9043946917763d15.m4a"
+  },
+  "366d7f39749c9953": {
+   "_": "clips/44c65802fbd8ccb2.m4a"
+  },
+  "36a64c6cc37f1e4f": {
+   "_": "clips/5d501a49d8480ceb.m4a"
+  },
+  "36bbdde2e737b810": {
+   "_": "clips/a1b1a1875fecc212.m4a"
+  },
+  "3709e81005ef57b3": {
+   "Sara": "clips/a7832d04da03a2b8.m4a"
+  },
+  "37160d2625b90895": {
+   "_": "clips/2894253b12b57f81.m4a"
+  },
+  "37497aa5a2272c49": {
+   "_": "clips/b9438b677046649e.m4a"
+  },
+  "374b9926e57e4a4d": {
+   "_": "clips/9a6ee2c92e8aa528.m4a"
+  },
+  "376eb94bac0f087d": {
+   "_": "clips/74adcaea0a1093ef.m4a"
+  },
+  "37864b34b3e5d5ee": {
+   "Nurse": "clips/ade5b3da1af1786c.m4a"
+  },
+  "3795f00137f3eede": {
+   "_": "clips/38461f44696475d3.m4a"
+  },
+  "37c6282297fa218e": {
+   "partner": "clips/ae7d02bcc8d33db2.m4a"
+  },
+  "38030d9e7b145a65": {
+   "_": "clips/905f76292834cd2e.m4a"
+  },
+  "38311542becb245f": {
+   "_": "clips/d3190446efd17f37.m4a"
+  },
+  "383125b0dedc86ff": {
+   "_": "clips/a445dfdf491ec448.m4a"
+  },
+  "387f1fe4b7f07681": {
+   "_": "clips/0c3656f92ccd6a9a.m4a"
+  },
+  "38e55c289fdf6d94": {
+   "_": "clips/9f29714c3a7d648a.m4a"
+  },
+  "38f202cece919d81": {
+   "_": "clips/9c0a0726d911769d.m4a"
+  },
+  "38fbdbc8c1534c75": {
+   "_": "clips/d632a54b44887c60.m4a"
+  },
+  "39027e23ba06a9bb": {
+   "Ali": "clips/12dc91dc6d2b2fe5.m4a"
+  },
+  "39275cce481a174e": {
+   "Sara": "clips/46833509a2945134.m4a"
+  },
+  "392d7871944af9f8": {
+   "_": "clips/48c8f9ebb1f2580e.m4a"
+  },
+  "394ad402115393b8": {
+   "_": "clips/45e40c3a03027c4a.m4a"
+  },
+  "395b23d7b8acf347": {
+   "Ali": "clips/12422afa198450b7.m4a"
+  },
+  "3963e9274a60cd55": {
+   "_": "clips/1ce2e8f1b4f47151.m4a"
+  },
+  "396e48fa16777fd1": {
+   "Assistant": "clips/f05488c85e6ee2e6.m4a",
+   "_": "clips/091ad3a0212ab85d.m4a",
+   "partner": "clips/2aa302ddedd88a10.m4a"
+  },
+  "396f9974da4e60ff": {
+   "_": "clips/55aa4e1a2a1c6541.m4a"
+  },
+  "39736679cb35de1c": {
+   "_": "clips/3f77077a0a35594d.m4a"
+  },
+  "397cc638af9c2ab3": {
+   "_": "clips/325c418f8afaadff.m4a"
+  },
+  "39a05fe043eb0e53": {
+   "Nurse": "clips/29295ed4fbb91e64.m4a"
+  },
+  "3a01be17246d588c": {
+   "_": "clips/6c6a8b31a340bf8a.m4a"
+  },
+  "3a2e5f01c7717a25": {
+   "_": "clips/decaf5ca0963c3b8.m4a"
+  },
+  "3a46df4e00feab04": {
+   "_": "clips/cd461705ef20a98a.m4a"
+  },
+  "3a82c7a5e37077d5": {
+   "_": "clips/8b4715ad16330342.m4a"
+  },
+  "3a95358293a51dfb": {
+   "_": "clips/f69d2f0637c42459.m4a"
+  },
+  "3aaaed36c53fbe0d": {
+   "Lina": "clips/473af3140db89a53.m4a"
+  },
+  "3b2914c4ea4ebb50": {
+   "_": "clips/fea9ad8665948a3a.m4a"
+  },
+  "3b2be2e26344d52b": {
+   "_": "clips/f4787de33eeadfb0.m4a"
+  },
+  "3b32513b45fee30b": {
+   "_": "clips/70e2602e534dfe07.m4a"
+  },
+  "3c568c804aa549e5": {
+   "_": "clips/1d1dbe5a8e29bc75.m4a"
+  },
+  "3c5e3408995dca5f": {
+   "_": "clips/484a2de3df5da71c.m4a"
+  },
+  "3c72abbe626f27d1": {
+   "_": "clips/a1c5e12163808b4c.m4a"
+  },
+  "3c8ec4874488f609": {
+   "_": "clips/7d06060f700cf511.m4a"
+  },
+  "3cb330373480dd12": {
+   "_": "clips/1ab6aef951067d2c.m4a"
+  },
+  "3cbcd90adc4b192a": {
+   "_": "clips/1f14d1ef5861a901.m4a"
+  },
+  "3d01f71761544d5a": {
+   "Sara": "clips/b56ef87587974533.m4a"
+  },
+  "3d7ec8bf8fdd382e": {
+   "Assistant": "clips/3f1fe43d6095b8d7.m4a"
+  },
+  "3da385b05031eedf": {
+   "Ali": "clips/f8a02b5f22ecd6a6.m4a"
+  },
+  "3da93b411e3abd1c": {
+   "partner": "clips/c4cd311ea322d671.m4a"
+  },
+  "3daaa9bba9fb468f": {
+   "_": "clips/33b231216fbe80d6.m4a"
+  },
+  "3dc156257fd06967": {
+   "Receptionist": "clips/78f26503e0bbf7ef.m4a"
+  },
+  "3dc4ff43099a2a7c": {
+   "_": "clips/a2da03be4790575e.m4a"
+  },
+  "3dd0f261ee414830": {
+   "Lina": "clips/bb21a0d37af0682e.m4a"
+  },
+  "3dd4c30816cf2d0a": {
+   "_": "clips/dd2681970081a9da.m4a"
+  },
+  "3dd9e2c066fbe606": {
+   "partner": "clips/783d7e03f240f767.m4a"
+  },
+  "3df1db3704e8550c": {
+   "_": "clips/95bcd7e6e1deb635.m4a"
+  },
+  "3e065221f0580092": {
+   "_": "clips/7534b1d3e877b8ab.m4a"
+  },
+  "3e1be294c5245a53": {
+   "_": "clips/e72077ad5b75e56b.m4a"
+  },
+  "3ed29ed275a4dc67": {
+   "Patient": "clips/ea5e90c1cbb096e5.m4a"
+  },
+  "3f14ecc8cc777b55": {
+   "_": "clips/ea2c058ba11768a7.m4a"
+  },
+  "3f2d515e5af85306": {
+   "_": "clips/64d5cafc3eb3aae5.m4a"
+  },
+  "3f4d221be0d86e2c": {
+   "_": "clips/5a023ddebd14d4b9.m4a"
+  },
+  "3f76a198c328df28": {
+   "Visitor": "clips/e02972cd97a4f151.m4a"
+  },
+  "3ff95ac9e6b1526f": {
+   "_": "clips/ed1815429b21fd37.m4a"
+  },
+  "403a2a1a6ac58f75": {
+   "Patient": "clips/c827f2fa512a600d.m4a",
+   "_": "clips/d67089f669526d06.m4a"
+  },
+  "41209342f3614110": {
+   "_": "clips/dc609400ecba98e7.m4a"
+  },
+  "41856316c72e8b87": {
+   "_": "clips/9464fd6432778e4c.m4a"
+  },
+  "4185a3182c031ef6": {
+   "_": "clips/11fbdec26a9807f2.m4a"
+  },
+  "42083c8550e0dc6e": {
+   "partner": "clips/6f716e61882292ab.m4a"
+  },
+  "420e8a17e0ab6132": {
+   "_": "clips/aaeb19330ae964f7.m4a"
+  },
+  "422702c21d01e25a": {
+   "_": "clips/1c9f23517897d178.m4a"
+  },
+  "42282bc704e58f73": {
+   "_": "clips/54a15f130dfed91c.m4a"
+  },
+  "42362329283be6fd": {
+   "partner": "clips/6c23c2807bed0241.m4a"
+  },
+  "424fa43965bde21e": {
+   "_": "clips/dfa8ee31a91ce1c4.m4a"
+  },
+  "425b4a6e22018c9b": {
+   "_": "clips/a5f4363114b7f0b7.m4a"
+  },
+  "42685f11da91a55b": {
+   "_": "clips/ddb2b38615c70cf9.m4a"
+  },
+  "428e01459d843e82": {
+   "_": "clips/20bb91cd417a415e.m4a"
+  },
+  "4293df85c741233c": {
+   "Ali": "clips/c2a9eb927e742155.m4a"
+  },
+  "434081ceb2c90de0": {
+   "_": "clips/b345bc6be3e45729.m4a"
+  },
+  "434ab2b9e227446d": {
+   "_": "clips/f694e71cc7e0f13c.m4a"
+  },
+  "4362981285a2e539": {
+   "_": "clips/255e20f1be6d6815.m4a"
+  },
+  "4366bdec00f92af5": {
+   "partner": "clips/a7559cfa5a6c1cf7.m4a"
+  },
+  "4378d96c53eacd08": {
+   "Maya": "clips/db67cf8301274ec2.m4a"
+  },
+  "43b3ff635712c706": {
+   "_": "clips/cf2b90ab882341c2.m4a"
+  },
+  "43e5dc2b3d8ac744": {
+   "Omar": "clips/ca8a8845c0d4cd8a.m4a"
+  },
+  "441784b25b441e56": {
+   "_": "clips/c6e88a383bebd70d.m4a"
+  },
+  "441f229c61bba136": {
+   "Omar": "clips/ff7ba753fe06dc71.m4a"
+  },
+  "44213f9f4d59b557": {
+   "_": "clips/ced1458856d94aaf.m4a"
+  },
+  "442c59751ff7644d": {
+   "_": "clips/191dae539f5ffa48.m4a"
+  },
+  "4435e5883eff2c49": {
+   "_": "clips/d94a787b7a41c272.m4a"
+  },
+  "443bc6602035e9f7": {
+   "_": "clips/67ced40afae539f8.m4a"
+  },
+  "443e668b4d0fe0ab": {
+   "_": "clips/e120f561901e4819.m4a"
+  },
+  "44bc6c387ec6fb17": {
+   "Lina": "clips/93ceb29cd79bf330.m4a"
+  },
+  "44cca1a91a704f9f": {
+   "partner": "clips/c12055a152814d77.m4a"
+  },
+  "44ed11ba0cdc5b11": {
+   "_": "clips/b7df6bacf6c564fc.m4a"
+  },
+  "451a286b39d1eb82": {
+   "Customer": "clips/9cb2653418b6219c.m4a"
+  },
+  "453d522c33ef91f9": {
+   "_": "clips/0f4b00b10f7442cc.m4a"
+  },
+  "4582cd02ee9fd9bc": {
+   "_": "clips/0ccc6e96ea0fad3f.m4a"
+  },
+  "459a8152f96e4d3b": {
+   "_": "clips/24569a7c80750b4f.m4a"
+  },
+  "45a21e4b5b2a90eb": {
+   "_": "clips/8ad2570891d04047.m4a"
+  },
+  "45bf01a821bc1ef9": {
+   "_": "clips/dc399041b770ee35.m4a"
+  },
+  "45e18dad51fd9e88": {
+   "_": "clips/b7bfea9d414375dc.m4a"
+  },
+  "466bc8cef3e71de7": {
+   "_": "clips/9d5c8de5ceff252b.m4a"
+  },
+  "46777c7583ef0a25": {
+   "Ali": "clips/c2032280e84d5587.m4a"
+  },
+  "467fba6599947b28": {
+   "_": "clips/afbd96d3d3240f1a.m4a"
+  },
+  "4689b4128b3d4d26": {
+   "Waiter": "clips/3d62189c8f05a2bf.m4a",
+   "_": "clips/df60b94bbc57182e.m4a",
+   "partner": "clips/234b79ff711d90d6.m4a"
+  },
+  "46e7cfa080913f4d": {
+   "_": "clips/9e14bbc7fd6d27ad.m4a"
+  },
+  "474c83771068eb7b": {
+   "partner": "clips/50255ca8cbc678ca.m4a"
+  },
+  "47c6bc2a16627916": {
+   "partner": "clips/da10bc28bc52fde9.m4a"
+  },
+  "47ca1764178fcd93": {
+   "_": "clips/1b2f1828953a78f9.m4a"
+  },
+  "48bd1b6d3d7e570a": {
+   "_": "clips/a88172941a3c67ea.m4a"
+  },
+  "48c51003e2272d84": {
+   "_": "clips/50ca48c83fadc476.m4a"
+  },
+  "48e8c454cb567126": {
+   "Clerk": "clips/a778409cbce5888b.m4a"
+  },
+  "48eda733f81c9658": {
+   "_": "clips/67655821e18afee1.m4a"
+  },
+  "492b5080825a2083": {
+   "_": "clips/64fe7ff3ca514c2b.m4a"
+  },
+  "4962f17c531292c3": {
+   "_": "clips/d52d0c4373c91462.m4a"
+  },
+  "49b0da611ae69748": {
+   "Guard": "clips/adddc02bae4a8c99.m4a"
+  },
+  "49d86f47512486f1": {
+   "_": "clips/43d7e8be96168586.m4a"
+  },
+  "4a07eca0993872fe": {
+   "_": "clips/b21f8badf18dc536.m4a"
+  },
+  "4a712aa44408d872": {
+   "_": "clips/d3db1f9773354662.m4a"
+  },
+  "4a82cb6db537ef6c": {
+   "_": "clips/7ccbda3cc29b31fc.m4a"
+  },
+  "4a89148fc374a6be": {
+   "Sara": "clips/3e9951edd15a706c.m4a",
+   "_": "clips/f0e3f46589bc7587.m4a"
+  },
+  "4a8c1625ac29239b": {
+   "_": "clips/0a1e3accc416f97f.m4a"
+  },
+  "4accab5462100cc6": {
+   "_": "clips/97e2d6e8c15b13a9.m4a"
+  },
+  "4ae8e26221595d54": {
+   "_": "clips/7e9f9876da68ba02.m4a"
+  },
+  "4b3f7ac99d5b7ee3": {
+   "partner": "clips/b67299ce1f1e6327.m4a"
+  },
+  "4b55eb6628d55727": {
+   "partner": "clips/2c31bd2fd7b4e269.m4a"
+  },
+  "4bd8eddacb60b412": {
+   "_": "clips/66a9ce4901cd9170.m4a"
+  },
+  "4c30f442b9207a99": {
+   "_": "clips/03533e1858e6fb30.m4a"
+  },
+  "4c5cec6b519c0a5c": {
+   "_": "clips/ab8098816ebfbe6b.m4a"
+  },
+  "4c740d48698bbe56": {
+   "Sara": "clips/4b83409270c24c61.m4a"
+  },
+  "4c812a1aa3e186ca": {
+   "_": "clips/d580f8928edbadc3.m4a"
+  },
+  "4c9a82ce72ca2519": {
+   "_": "clips/d032989a01cfdd97.m4a"
+  },
+  "4cb2192899372a52": {
+   "Sara": "clips/49fd871acf5f23b6.m4a",
+   "_": "clips/39557460e9425a4e.m4a"
+  },
+  "4d82205a20287450": {
+   "_": "clips/65e465638d4a1336.m4a"
+  },
+  "4d885ba9ac376079": {
+   "partner": "clips/cfe7f129f5a29fe6.m4a"
+  },
+  "4daffa60a9199735": {
+   "_": "clips/d7d46190bdab57f5.m4a"
+  },
+  "4db2c1df4610cd6c": {
+   "_": "clips/375b71bd88b23cdb.m4a"
+  },
+  "4e4592a9786751ee": {
+   "_": "clips/dee029945ea810d9.m4a"
+  },
+  "4e4cefe4f03aeb6f": {
+   "Maya": "clips/2d829619df944493.m4a"
+  },
+  "4ecd3ebf39e5a815": {
+   "Ali": "clips/d795de610a7b98c5.m4a"
+  },
+  "4ed37733ac9ad938": {
+   "_": "clips/a412f3f226e3db44.m4a"
+  },
+  "4ef55af0d25f032e": {
+   "Sara": "clips/403cf4800e4229f4.m4a"
+  },
+  "4f206895bea990ad": {
+   "_": "clips/d6f92641a2976f9b.m4a"
+  },
+  "4f6db83be6aa8b38": {
+   "Lina": "clips/bc8d7092098b73d4.m4a",
+   "_": "clips/3f02a942a253ddaf.m4a"
+  },
+  "4f7da5b94d360a0b": {
+   "_": "clips/a50ee453f30f193c.m4a"
+  },
+  "4fa6024f12494d3a": {
+   "_": "clips/922d97ae47039687.m4a"
+  },
+  "4fd0653c4f2aef3b": {
+   "_": "clips/fd5ef3c8b363433a.m4a"
+  },
+  "4fe5c279d9e0edc2": {
+   "_": "clips/d5d8d0d1aa0fa086.m4a"
+  },
+  "4ff88aaddbd209d8": {
+   "_": "clips/e0d75e86c6223a28.m4a"
+  },
+  "5042d146667518a1": {
+   "_": "clips/628f10b70ccdc16d.m4a"
+  },
+  "505eabdfb8082f91": {
+   "_": "clips/2f5368487169d99d.m4a"
+  },
+  "506227fcb1adc7b7": {
+   "_": "clips/376cfc016e0abed8.m4a"
+  },
+  "50d57209c856a170": {
+   "_": "clips/db009cb463ab567b.m4a"
+  },
+  "510d51dec171d35a": {
+   "partner": "clips/1778d5f8f64e344d.m4a"
+  },
+  "510e57ad39396ed8": {
+   "partner": "clips/e43d4ebcc76af6d5.m4a"
+  },
+  "5116e40694ac48f6": {
+   "_": "clips/9da70ffa1e0c1ea2.m4a"
+  },
+  "511e99115957b672": {
+   "_": "clips/5c6244a0c5158de5.m4a"
+  },
+  "516626bf8a5006ec": {
+   "_": "clips/280c9d901005b3a3.m4a"
+  },
+  "51ae40451c729695": {
+   "_": "clips/91e2198671dc2b38.m4a"
+  },
+  "51b0353ac53eb56d": {
+   "_": "clips/cc6d7933e5972289.m4a"
+  },
+  "51bcd1d82b065412": {
+   "Omar": "clips/3c85311d9a981f7f.m4a"
+  },
+  "51c8a20fe64bca37": {
+   "_": "clips/3fe5cd143d6c64e8.m4a"
+  },
+  "5220fbd2b8ec8d7d": {
+   "_": "clips/97131562ff1c02cd.m4a"
+  },
+  "52540ca034a3406b": {
+   "_": "clips/dda4ee48d4f8494e.m4a"
+  },
+  "528cef87d0bfb947": {
+   "_": "clips/64eec541006f8270.m4a"
+  },
+  "5296d5cced2aa1cf": {
+   "_": "clips/ccdf0cd227ecbc2e.m4a"
+  },
+  "52a2a3a4afe0155e": {
+   "_": "clips/0c204810ab3d2c9a.m4a"
+  },
+  "52ce1b1dbb188861": {
+   "Omar": "clips/446ca45c98231883.m4a"
+  },
+  "52ddf315cfab89b3": {
+   "_": "clips/00c20835d645891b.m4a"
+  },
+  "52e4894cde18b07b": {
+   "Visitor": "clips/976bc547325e764f.m4a",
+   "_": "clips/4476d259ca062d36.m4a"
+  },
+  "52f68155179874ec": {
+   "_": "clips/1d7000d9c7df7639.m4a"
+  },
+  "532b99ee8e1cc3e8": {
+   "Maya": "clips/9766d76bd47023da.m4a"
+  },
+  "5336dd6452a7e79f": {
+   "partner": "clips/90597dcbbd4fb863.m4a"
+  },
+  "533e3bfac8050652": {
+   "_": "clips/51cfd99d79db7beb.m4a"
+  },
+  "535e37810a5d7630": {
+   "partner": "clips/9aeaf73465923684.m4a"
+  },
+  "5385337e63671945": {
+   "Omar": "clips/141636edefc629b3.m4a"
+  },
+  "53bd7d992ed7edf9": {
+   "_": "clips/249e5f423523e09e.m4a"
+  },
+  "53ea79ed214f5be9": {
+   "_": "clips/e3998961a119f5cc.m4a"
+  },
+  "543c9e4408dc6620": {
+   "_": "clips/bd4ad458e71abdc4.m4a"
+  },
+  "5453540b4af2a3a4": {
+   "_": "clips/faf2a57e768b3b76.m4a"
+  },
+  "54b7e849c6d2b68a": {
+   "_": "clips/a25cdec8b162c8de.m4a"
+  },
+  "54c97a56d41b4bb9": {
+   "Sara": "clips/fe80386820c80710.m4a"
+  },
+  "54e4be0ea11ddaec": {
+   "_": "clips/c7bcadbcd4cc1841.m4a"
+  },
+  "54f8f2145948f130": {
+   "_": "clips/9595149b924b867b.m4a"
+  },
+  "550f4f3144595afb": {
+   "_": "clips/8e026b2f12d754b3.m4a"
+  },
+  "5523c06aafd06b93": {
+   "_": "clips/3574a8c945884880.m4a"
+  },
+  "559e5ffeeb4a402e": {
+   "_": "clips/4c6fd6ac80ac7265.m4a"
+  },
+  "55d8dde20a49287c": {
+   "_": "clips/03d2bc74ee240f5f.m4a"
+  },
+  "56326ea907ee848e": {
+   "_": "clips/5bbd3dc44d80f842.m4a"
+  },
+  "56ab49a5c68f11cc": {
+   "_": "clips/a2bf1929c41ac2f0.m4a"
+  },
+  "56c285f929dcafdf": {
+   "partner": "clips/04f676324aedcc37.m4a"
+  },
+  "579db7d667a21ecf": {
+   "_": "clips/51aebb04cf4026f4.m4a"
+  },
+  "57e1893c59915f00": {
+   "_": "clips/b874bb83e967f95d.m4a"
+  },
+  "58094a5d501d79e1": {
+   "_": "clips/b13ad053b3ac94bc.m4a"
+  },
+  "58743dfc37bdc03e": {
+   "_": "clips/1b87b7fb961809d7.m4a"
+  },
+  "58bdb05d89f53f18": {
+   "_": "clips/5dda59f091a8d27b.m4a"
+  },
+  "58cbc6a2f5040710": {
+   "_": "clips/c8aa6516ba016718.m4a"
+  },
+  "5929e58a5aa1fde3": {
+   "_": "clips/69ef428f99fabe2a.m4a"
+  },
+  "5944ae25418ceabc": {
+   "_": "clips/158805b1a803eee8.m4a"
+  },
+  "59640b702c90c118": {
+   "_": "clips/840c011b8142c486.m4a"
+  },
+  "5972982fd30bd5eb": {
+   "_": "clips/ee843afb3798b4ee.m4a"
+  },
+  "598910c451db075f": {
+   "_": "clips/119bc90ab4d6b82b.m4a"
+  },
+  "5996bd20f22814b2": {
+   "_": "clips/6b86f39a599d82fd.m4a"
+  },
+  "59b100cd9c2f37d5": {
+   "_": "clips/05108f7876702ddc.m4a"
+  },
+  "5a013c49508291c6": {
+   "_": "clips/66ba6ce8099a6abc.m4a"
+  },
+  "5a048682b26740b7": {
+   "partner": "clips/95a8cd323243d606.m4a"
+  },
+  "5a4555f36f0f23af": {
+   "Omar": "clips/d6d87c70bda1c0e8.m4a"
+  },
+  "5a4a50e50e48dcea": {
+   "_": "clips/c32ace09647e5584.m4a"
+  },
+  "5a53260b3d6e1d0d": {
+   "_": "clips/e7b86e27362327d7.m4a"
+  },
+  "5a94837987197c3b": {
+   "Maya": "clips/48570c5d26bae0ad.m4a"
+  },
+  "5ab0b4de29db682b": {
+   "_": "clips/aab9b12c8b2f2624.m4a"
+  },
+  "5ae24a0b261add44": {
+   "_": "clips/6dbb14e7d5d9988f.m4a"
+  },
+  "5b01e589fce07c2a": {
+   "Maya": "clips/3bec6e3d0f993540.m4a"
+  },
+  "5b0ff935679aa987": {
+   "partner": "clips/9b9679d59df7241a.m4a"
+  },
+  "5b11cc3aac825f2a": {
+   "Receptionist": "clips/91508de1de562cab.m4a"
+  },
+  "5ba1f33ac4e2c3d7": {
+   "Customer": "clips/5b0745aa40af93a0.m4a"
+  },
+  "5bd40ffd8ed340fe": {
+   "_": "clips/ec1c41d9d4419ecb.m4a"
+  },
+  "5c1729154ffa2458": {
+   "partner": "clips/7fe59e87f311596d.m4a"
+  },
+  "5c3e9f7ad0c9c2b8": {
+   "B": "clips/545b523b511a55d9.m4a",
+   "_": "clips/53cd2b6c1b835763.m4a",
+   "partner": "clips/f24edbf8c5e77e8e.m4a"
+  },
+  "5c47841652e7324a": {
+   "_": "clips/7e1aab3341953cbf.m4a"
+  },
+  "5c7b8efb1198de78": {
+   "_": "clips/f559b8ed5d8aad92.m4a"
+  },
+  "5ce6844655c5ea56": {
+   "Ali": "clips/edcf17f47b8044ec.m4a"
+  },
+  "5cf896e678bdf951": {
+   "_": "clips/4699adb9f36e9331.m4a"
+  },
+  "5d6200f8cf98af47": {
+   "_": "clips/f049a97af66eb84a.m4a"
+  },
+  "5d6b2f2ccf008da7": {
+   "_": "clips/044d5bd044b270a8.m4a"
+  },
+  "5d6dd75b83c9faf0": {
+   "_": "clips/fb4edb887984b087.m4a"
+  },
+  "5d77b0622404d5d8": {
+   "_": "clips/57e05faa1e05eefe.m4a"
+  },
+  "5d7e8ef479aa2803": {
+   "_": "clips/7eb2421f26747772.m4a"
+  },
+  "5dc56b9aab618672": {
+   "_": "clips/8405fbd8d03f97a6.m4a"
+  },
+  "5de87e08d4b1ed42": {
+   "Doctor": "clips/104661de2adc21a9.m4a"
+  },
+  "5dfe7894a42b01de": {
+   "_": "clips/a5c8e55d4dacf399.m4a"
+  },
+  "5e9aa093adb2085c": {
+   "Maya": "clips/33ee70c84eafcbee.m4a"
+  },
+  "5ebc89da2dd57f15": {
+   "_": "clips/b9166e21bae0f69d.m4a"
+  },
+  "5fc7e38bffe00ca4": {
+   "_": "clips/dab11465dedb4894.m4a"
+  },
+  "5fd09cf80b0f4333": {
+   "_": "clips/3849cfdb87afcb6e.m4a"
+  },
+  "606e0fa952edd120": {
+   "_": "clips/3d7d4674976a1226.m4a"
+  },
+  "606f99c89734c927": {
+   "partner": "clips/fd0d36f240dd4567.m4a"
+  },
+  "6079a01f41690369": {
+   "_": "clips/a1e1e3b82f1e699d.m4a"
+  },
+  "608afd9867df3d47": {
+   "partner": "clips/396edc1b465655f4.m4a"
+  },
+  "60ba1a81b93fb89b": {
+   "_": "clips/0c4346ce5916a419.m4a"
+  },
+  "60ca20f585baa87d": {
+   "_": "clips/eebe2364dd38e762.m4a"
+  },
+  "60ee36c456df155d": {
+   "_": "clips/32880aa226dfd4b0.m4a"
+  },
+  "6129bd06cd4bb998": {
+   "_": "clips/5e094d112616a819.m4a"
+  },
+  "613c1e3c758661e3": {
+   "_": "clips/a0220bbbc48a3a7b.m4a"
+  },
+  "6179020e71cd5193": {
+   "_": "clips/895b004aee9e8d66.m4a"
+  },
+  "61840abad4717611": {
+   "_": "clips/d503830ea25e574a.m4a"
+  },
+  "6188c21df2aa0ff2": {
+   "_": "clips/7f9232cc16df0f35.m4a"
+  },
+  "618a80f46d2f9ae8": {
+   "partner": "clips/2bf97ceed333ce00.m4a"
+  },
+  "61bb8d29b5be7db3": {
+   "_": "clips/f5526c330fbee72b.m4a"
+  },
+  "61e25e39139e88f3": {
+   "_": "clips/cba2aebec5c254e3.m4a"
+  },
+  "61edca7be7394d06": {
+   "Ali": "clips/fd0cd3c6927d8305.m4a"
+  },
+  "620c38818f22297d": {
+   "Sara": "clips/61a156382fc1710a.m4a"
+  },
+  "621c5f32d21c2b01": {
+   "partner": "clips/b430fce0c09f6b73.m4a"
+  },
+  "624170b8129a2189": {
+   "_": "clips/62bcd747cf56412d.m4a"
+  },
+  "624a9f82b4796bf2": {
+   "_": "clips/a1723039df47554d.m4a"
+  },
+  "627f345727a17e6a": {
+   "Ali": "clips/8e7d3751b59af0ce.m4a"
+  },
+  "62cc61f795b3f197": {
+   "Omar": "clips/7e519c42fd128dff.m4a"
+  },
+  "62d0afd707270f2c": {
+   "partner": "clips/a6fe7e754028de8e.m4a"
+  },
+  "63143b6f8007b98c": {
+   "_": "clips/04292ba987584b4a.m4a"
+  },
+  "640f95b02be5497a": {
+   "partner": "clips/2ef75542e166b3d7.m4a"
+  },
+  "642cc362978510b6": {
+   "_": "clips/494609eddd22846c.m4a"
+  },
+  "642d0bd0d611014a": {
+   "_": "clips/831f485f0dbeaee2.m4a"
+  },
+  "64753c6fe019c4da": {
+   "Maya": "clips/a24d72c527d160a8.m4a",
+   "_": "clips/bf08559156993aef.m4a"
+  },
+  "64757fc7f855f8f8": {
+   "partner": "clips/7cb74bc35131313a.m4a"
+  },
+  "6490e67e8283047e": {
+   "_": "clips/184ae2214dfb00e6.m4a"
+  },
+  "64d1df7e4950ad7e": {
+   "partner": "clips/64c50e7b177b81fd.m4a"
+  },
+  "652c8a468fef2061": {
+   "_": "clips/3d4600ff689cfaef.m4a"
+  },
+  "653da98609d02524": {
+   "_": "clips/59a92b8a78b60556.m4a"
+  },
+  "65407413678b7ccc": {
+   "Omar": "clips/db83baf3dd2465bf.m4a"
+  },
+  "661554194b2f74fa": {
+   "_": "clips/f157452496bfd9af.m4a"
+  },
+  "6622e810d05cb7f8": {
+   "_": "clips/7534b1d3e877b8ab.m4a"
+  },
+  "664bd5200650a55c": {
+   "_": "clips/56fa8e69579ed1fa.m4a"
+  },
+  "6656018ac96d0295": {
+   "_": "clips/1dfa658548f346c5.m4a"
+  },
+  "668a1095b62f7b0e": {
+   "_": "clips/c31f03b6d09e595d.m4a"
+  },
+  "66c2fa4e9e566957": {
+   "_": "clips/0c74114bc3985a0e.m4a"
+  },
+  "66dd254a80554585": {
+   "_": "clips/e1220fea9de19ad2.m4a"
+  },
+  "670c354cc32a0529": {
+   "Ali": "clips/c5cb3fe380130e54.m4a"
+  },
+  "673306b98d23f678": {
+   "_": "clips/2745396e6f892304.m4a"
+  },
+  "673b040257ee8838": {
+   "_": "clips/329b65b92caed63f.m4a"
+  },
+  "674027e17b0ed64e": {
+   "_": "clips/ae777c4e054ce0eb.m4a"
+  },
+  "674cb8d9b77c195d": {
+   "_": "clips/fdb1fac1b267b962.m4a"
+  },
+  "6765e9f3802a40fd": {
+   "_": "clips/76330c10353b3161.m4a"
+  },
+  "6773d0d4add0bec1": {
+   "_": "clips/13f9fbee47206246.m4a"
+  },
+  "678fb3dbe593443b": {
+   "_": "clips/664d2b53be2b69bf.m4a"
+  },
+  "6795d1c106f09253": {
+   "Patient": "clips/bb34ed12f2fe8b2c.m4a",
+   "_": "clips/a52830df021bd864.m4a"
+  },
+  "67d86e2a6f1b515b": {
+   "_": "clips/9cd5b72fae1824f6.m4a"
+  },
+  "6814a21e90f4f5d5": {
+   "_": "clips/4459932e7e076fa9.m4a"
+  },
+  "68800642f3e3b965": {
+   "_": "clips/18e306810621b03a.m4a"
+  },
+  "68886114da2b7828": {
+   "partner": "clips/f5c3c6f1881b6c80.m4a"
+  },
+  "6896d4f971f61199": {
+   "_": "clips/87014838efcf862a.m4a"
+  },
+  "68aa09e4e29d8088": {
+   "partner": "clips/39377da71ad46228.m4a"
+  },
+  "68d0bd33deb18fc9": {
+   "_": "clips/8c2faccde29a0937.m4a"
+  },
+  "68e0dce54a9e2e87": {
+   "_": "clips/57abfce5ae8f940f.m4a"
+  },
+  "68f372fbdf0d8a97": {
+   "_": "clips/a15ab0561216cbd8.m4a"
+  },
+  "69133baecd9279d6": {
+   "_": "clips/e41b3cc725405ddb.m4a"
+  },
+  "6922ef6122202365": {
+   "_": "clips/27b40aa4ab36675c.m4a"
+  },
+  "6939278d66e34fcf": {
+   "_": "clips/5a2e3665211c2e06.m4a"
+  },
+  "6973aac71347a551": {
+   "Customer": "clips/2469a57a6edc9b0e.m4a"
+  },
+  "6a070b8e5d2038f9": {
+   "partner": "clips/46cff14061036aa4.m4a"
+  },
+  "6a1cec45eaf37b34": {
+   "_": "clips/216ed38bb93c1b25.m4a"
+  },
+  "6a2c2a83dea689ce": {
+   "Ali": "clips/950265327b1f4711.m4a"
+  },
+  "6a48f579b6962ded": {
+   "Waiter": "clips/c1178403e099b66b.m4a"
+  },
+  "6ae999552a0d2dca": {
+   "_": "clips/61f202ada64609b8.m4a"
+  },
+  "6b277c16ed5a28ef": {
+   "_": "clips/244639781a2ac9a9.m4a"
+  },
+  "6b36064e4a998dec": {
+   "Sara": "clips/31c6c6079c235f5d.m4a"
+  },
+  "6b5465bf0bccf06b": {
+   "_": "clips/9ac3d6f2de15cdf3.m4a"
+  },
+  "6b6839be94858881": {
+   "_": "clips/ff9ea693f1c917fd.m4a"
+  },
+  "6ba8189394e3c992": {
+   "_": "clips/eef26247691ad552.m4a"
+  },
+  "6c0f3302e455a42c": {
+   "Patient": "clips/f9e05559c2cf2736.m4a"
+  },
+  "6c1cb004c41ed1d0": {
+   "_": "clips/23fd91ea8a329a95.m4a"
+  },
+  "6c3118979c88f9ff": {
+   "Sara": "clips/e1a83737a6a89609.m4a"
+  },
+  "6c39e8516e4121e2": {
+   "_": "clips/dbf450e9a0275b3a.m4a"
+  },
+  "6cacd75677b55650": {
+   "_": "clips/53c5114914efc90d.m4a"
+  },
+  "6cadbdfc93dc5810": {
+   "partner": "clips/70f166fdb9f0cda1.m4a"
+  },
+  "6d06238e70eff966": {
+   "_": "clips/fbe9abade1b359d1.m4a"
+  },
+  "6d10f00b7f5c06a7": {
+   "_": "clips/12975a14ad563e24.m4a"
+  },
+  "6d5a45920a15adea": {
+   "_": "clips/3804378e3e2b2130.m4a"
+  },
+  "6d6fc327d031c6c2": {
+   "Sara": "clips/71d862c062b51d27.m4a"
+  },
+  "6d72ed7cce85c729": {
+   "Passenger": "clips/3d11874f8eed2d49.m4a",
+   "_": "clips/90c976fb26f9f7f8.m4a"
+  },
+  "6d912e4b4a5d0aa9": {
+   "_": "clips/64b5d2ff2ed9acaa.m4a"
+  },
+  "6d91ada9284ad55f": {
+   "_": "clips/ef15977448389281.m4a"
+  },
+  "6de6e91b8d74ca45": {
+   "_": "clips/ed954fcaf53dbbfa.m4a"
+  },
+  "6de7382d33c5a20d": {
+   "_": "clips/3834694ee04a202e.m4a"
+  },
+  "6e0a0fe2422687ff": {
+   "Omar": "clips/efdb439182f85216.m4a"
+  },
+  "6e222daffa9ca3ac": {
+   "_": "clips/b3431ddd63826557.m4a"
+  },
+  "6eb2d3ba4ef0d452": {
+   "_": "clips/5412027ba93394ac.m4a"
+  },
+  "6ec09feb3f1285b3": {
+   "_": "clips/241bc8cfde36498b.m4a"
+  },
+  "6efa968837ec0dd5": {
+   "_": "clips/9579024ccaff344c.m4a"
+  },
+  "6f1ce754ce78decb": {
+   "Maya": "clips/577d7125511206cf.m4a"
+  },
+  "6f21c17f1652cc10": {
+   "partner": "clips/1d7e6684cb89dbc0.m4a"
+  },
+  "6f2e8f05523a167e": {
+   "_": "clips/1423655ec7e0e3a9.m4a"
+  },
+  "6f390ce6ca791560": {
+   "_": "clips/f05254ad23bc0125.m4a"
+  },
+  "6f476e0c2c70c7b1": {
+   "Maya": "clips/1bee9b3d691d666e.m4a"
+  },
+  "6f49c31192f5681e": {
+   "_": "clips/62b3765195121d90.m4a"
+  },
+  "6f4d3f36ea02fab5": {
+   "_": "clips/ce45059b0d69247a.m4a"
+  },
+  "6f5b7881d8000cd2": {
+   "Noor": "clips/0804063d63efd173.m4a"
+  },
+  "6f9164a8f944f38d": {
+   "partner": "clips/9edcad6908b0012a.m4a"
+  },
+  "6f9b9af3cd6e8b8a": {
+   "_": "clips/df2836d404c0686b.m4a"
+  },
+  "6ff291d8175b1d62": {
+   "_": "clips/198764eae61207e2.m4a"
+  },
+  "701aa10aef2bc3d7": {
+   "_": "clips/9ccfc9af48d03820.m4a"
+  },
+  "702af017f5f075d8": {
+   "partner": "clips/5e0f7ffdd6653e33.m4a"
+  },
+  "703520fc7c388f61": {
+   "_": "clips/5975d997b59a5426.m4a"
+  },
+  "70404fdb137cdf25": {
+   "_": "clips/ca90b18b4a93c8a9.m4a"
+  },
+  "7080fd1b8c9b0d6d": {
+   "partner": "clips/05bb8abe5a650eda.m4a"
+  },
+  "709634051471385a": {
+   "_": "clips/b9710e17bcf5623f.m4a"
+  },
+  "70b2db8ae957dc9c": {
+   "_": "clips/caf6fb98312e2cdb.m4a"
+  },
+  "70c6adb61515ca0e": {
+   "_": "clips/82ff677aed215b3f.m4a"
+  },
+  "70da147bcc18a5ac": {
+   "_": "clips/8864e688879d8486.m4a"
+  },
+  "7185643728c1c414": {
+   "Lina": "clips/7643e7b65627e526.m4a"
+  },
+  "71af411838bec179": {
+   "_": "clips/97337e35a14e4482.m4a"
+  },
+  "71dc40098bcb504f": {
+   "Maya": "clips/1f9fdb54c35ccd01.m4a"
+  },
+  "7255d09bfffb35f5": {
+   "_": "clips/c08b9ff57938aa22.m4a"
+  },
+  "7271843e0936588c": {
+   "Sara": "clips/75951baf363d16d1.m4a"
+  },
+  "7284989e7266a975": {
+   "_": "clips/ff13eb8ef2183af3.m4a"
+  },
+  "728f8b69ef646254": {
+   "_": "clips/9ef38df9915a0b34.m4a"
+  },
+  "72aa917a853b61d6": {
+   "_": "clips/6f23df6c7ba1fe53.m4a"
+  },
+  "72bfb05496f96364": {
+   "_": "clips/c80747152cd29d74.m4a"
+  },
+  "72d35b047306a307": {
+   "Maya": "clips/0aa94c568527dc01.m4a"
+  },
+  "72d53607a1d4bf69": {
+   "_": "clips/b3ef1f74be1c5083.m4a"
+  },
+  "73156bea72f4b108": {
+   "_": "clips/9f1678421e7c2622.m4a"
+  },
+  "731ed9d2d303f0d4": {
+   "_": "clips/6878263aabd05c48.m4a"
+  },
+  "73320e43d6d61c93": {
+   "_": "clips/7cde34b1a4e0ce9c.m4a"
+  },
+  "73723a2ec033149a": {
+   "Guard": "clips/1cca044009146027.m4a"
+  },
+  "7388e6ea3f17af72": {
+   "_": "clips/c5236df10165944b.m4a"
+  },
+  "73a145b77ceb853f": {
+   "Sara": "clips/550f23b16e9f2b99.m4a",
+   "_": "clips/a1818ec7686abcf8.m4a"
+  },
+  "73f937a29b7a95d2": {
+   "partner": "clips/bfb1db0bfa47c730.m4a"
+  },
+  "743e095aa3aa4b6c": {
+   "_": "clips/e0bc443f93993dd4.m4a"
+  },
+  "74643b8de9962370": {
+   "_": "clips/92a801522768dd33.m4a"
+  },
+  "74b518ed5512d0ca": {
+   "_": "clips/2d1c46f9bd089fe8.m4a"
+  },
+  "751e54cc947fd808": {
+   "_": "clips/065f4bb90f31a7bf.m4a"
+  },
+  "75490f32c06a5005": {
+   "_": "clips/a5a3117cfc4fbe64.m4a"
+  },
+  "7550b672e162c224": {
+   "_": "clips/c34f53cbe579a3b8.m4a"
+  },
+  "756baaf5aefcfa9d": {
+   "Customer": "clips/59406c6c503d5d20.m4a"
+  },
+  "75a5813a375d34f5": {
+   "_": "clips/ff4e801b898a5a66.m4a"
+  },
+  "75ae64de883bc1a7": {
+   "_": "clips/2c19d923fccf04ea.m4a"
+  },
+  "75ef1779f2caee04": {
+   "Passenger": "clips/e57f4cab0a8b7216.m4a"
+  },
+  "76895feead583d45": {
+   "_": "clips/fed37bf2bfe9cf85.m4a"
+  },
+  "76a4e12c213db0ac": {
+   "_": "clips/9ca45a9ca318c432.m4a"
+  },
+  "76ab27ebb626260b": {
+   "_": "clips/8eff8c3defd7a0b5.m4a"
+  },
+  "772178feedf50206": {
+   "Sara": "clips/e983e80ba72afdda.m4a"
+  },
+  "7733ba32825bca3d": {
+   "_": "clips/fe3ea32462176a1b.m4a"
+  },
+  "775adfc3692942f3": {
+   "_": "clips/4a9d7a6bcd755bf9.m4a"
+  },
+  "779b09676ac38e78": {
+   "_": "clips/e249ae7738a288e6.m4a"
+  },
+  "77eb7a65da43a1be": {
+   "_": "clips/e9e0d761ef242acc.m4a"
+  },
+  "7804851372138443": {
+   "_": "clips/5ba188b5efebe571.m4a"
+  },
+  "7807dec2bc8f068c": {
+   "_": "clips/5c876625ee8685b3.m4a"
+  },
+  "78539cc5b041fff6": {
+   "partner": "clips/bf5f85485c3e9680.m4a"
+  },
+  "787663d820b648f8": {
+   "_": "clips/3258e066f26baf04.m4a"
+  },
+  "7890208a110eaf1c": {
+   "B": "clips/05ec9d4693ed733c.m4a"
+  },
+  "78988010b890ce6f": {
+   "_": "clips/093a8df5904126ab.m4a"
+  },
+  "78c205de9c7044b1": {
+   "A": "clips/78f52862c3b59952.m4a"
+  },
+  "78cbc77f583dd808": {
+   "_": "clips/4e26062aea38f898.m4a"
+  },
+  "78daa3faf6bc763d": {
+   "Omar": "clips/afb5ef5aaeb032a1.m4a"
+  },
+  "7955b936c48c9e75": {
+   "_": "clips/54dc171cf8de657a.m4a"
+  },
+  "7967f11ad5927119": {
+   "_": "clips/a64ff897212c11ef.m4a"
+  },
+  "79cfb385f07ee83b": {
+   "Sara": "clips/5943edf71d2891e0.m4a"
+  },
+  "79db035a4f3eb6ec": {
+   "_": "clips/982277dd480481f9.m4a"
+  },
+  "79df4b1718127a8c": {
+   "_": "clips/8d6ddb4fcdd182e5.m4a"
+  },
+  "7a10f399752fedfa": {
+   "_": "clips/aa59d5720e2ac6c8.m4a"
+  },
+  "7a1f8e8502ca0a4c": {
+   "_": "clips/bbc70e0a0d38b8e3.m4a"
+  },
+  "7a37512d7f6e48af": {
+   "_": "clips/916dfce4ed69b5b0.m4a"
+  },
+  "7a38397b60411a89": {
+   "_": "clips/c9a83b960644ed19.m4a"
+  },
+  "7a5f9f43f6bf9182": {
+   "_": "clips/d974a569bff100b8.m4a"
+  },
+  "7a6d5cfb66ee2797": {
+   "_": "clips/46ad8f6d80a0bf6b.m4a"
+  },
+  "7a8b9833bf7c7749": {
+   "_": "clips/e3c4a060a352f0b2.m4a"
+  },
+  "7ab9d1883a9724bf": {
+   "_": "clips/0af1733513f238c4.m4a"
+  },
+  "7ac59404505678fc": {
+   "Maya": "clips/545255bd35286ad3.m4a"
+  },
+  "7acd315d50b55802": {
+   "_": "clips/bf3fe7c60f2d48db.m4a"
+  },
+  "7af81d735f8907a9": {
+   "_": "clips/1a53a0df9beaadcb.m4a"
+  },
+  "7b231a50a498ef15": {
+   "_": "clips/e94b654e7141d9df.m4a"
+  },
+  "7b29e0bf6d79daca": {
+   "_": "clips/231d4cbb16e7ad44.m4a"
+  },
+  "7b2c7a24bbafb225": {
+   "_": "clips/c70c900023bccd12.m4a"
+  },
+  "7b5faf857e215747": {
+   "Sara": "clips/e4e91dc60472ee77.m4a"
+  },
+  "7b665b980aa2f974": {
+   "_": "clips/dfe21e18d641f010.m4a"
+  },
+  "7b8568bb3428c6c3": {
+   "Omar": "clips/aaa92d722061f2a7.m4a"
+  },
+  "7bb26cd16296345c": {
+   "Omar": "clips/45b35c5e30693e9c.m4a"
+  },
+  "7bc5e7f6b5915a1e": {
+   "_": "clips/53d1d0dfa138f233.m4a"
+  },
+  "7bdb81eb31679c39": {
+   "_": "clips/6fe31d69a71eead0.m4a"
+  },
+  "7bf0b9d1f4c4cae0": {
+   "_": "clips/3d04d155927b1bb5.m4a"
+  },
+  "7c41bee11e416b7a": {
+   "_": "clips/7799d57d2c7b5fd9.m4a"
+  },
+  "7c6d98bca3b7b9b9": {
+   "partner": "clips/edfcfcdd330ef43e.m4a"
+  },
+  "7ce695e7caeb7c92": {
+   "_": "clips/14906c58c9442d61.m4a"
+  },
+  "7cffa583a790f236": {
+   "Customer": "clips/f0c2a24d15fe6d19.m4a"
+  },
+  "7d63a1c69828e175": {
+   "_": "clips/9e5e602fb3945b89.m4a"
+  },
+  "7d94321df03853c8": {
+   "_": "clips/ef04f88942e077bb.m4a"
+  },
+  "7da33f49740772bd": {
+   "_": "clips/e7b299b10cb37225.m4a"
+  },
+  "7dc6b3763eca8b5a": {
+   "_": "clips/dd744e538f7a07f2.m4a"
+  },
+  "7df703f104fda28d": {
+   "Sara": "clips/06b9ae48fcdb7718.m4a"
+  },
+  "7e82a17a1ea8b842": {
+   "_": "clips/d2654ae806fe9732.m4a"
+  },
+  "7eb37c9a1570721b": {
+   "partner": "clips/38b541f3a07518f2.m4a"
+  },
+  "7eb9a09acd4f890d": {
+   "_": "clips/183558964a80be8e.m4a"
+  },
+  "7f13eece338a9826": {
+   "partner": "clips/7aaf5865211040e6.m4a"
+  },
+  "7f51a40cca54949c": {
+   "_": "clips/bd6b4d2aefa576b3.m4a"
+  },
+  "7f60fc0db74e0290": {
+   "Sara": "clips/5fe0296be92fddb3.m4a"
+  },
+  "7f7dfb181432bb5c": {
+   "_": "clips/66fa7ac3307e5307.m4a"
+  },
+  "7f925f4ffe97992d": {
+   "Maya": "clips/aa9340f80bd39498.m4a"
+  },
+  "7fcf7d8a5e22ebf7": {
+   "_": "clips/2256c167ba910896.m4a"
+  },
+  "801f98b8275bbe85": {
+   "_": "clips/d8625dad452cdd2b.m4a"
+  },
+  "804fbc46c042b739": {
+   "partner": "clips/33aca2a1d437da22.m4a"
+  },
+  "8055eee6a0505d91": {
+   "partner": "clips/3a709fff23b2d34a.m4a"
+  },
+  "805ac15045b6b20d": {
+   "_": "clips/42442f53c2d8b291.m4a"
+  },
+  "8067fa3f327789ba": {
+   "_": "clips/97454841314bce5b.m4a"
+  },
+  "80959cd65e8c0953": {
+   "_": "clips/d364c712cc86d98d.m4a"
+  },
+  "80d438f4cde60f76": {
+   "_": "clips/cb2f2b0342663bae.m4a"
+  },
+  "80eb484a0be44ccf": {
+   "_": "clips/1d67989d48c01e28.m4a"
+  },
+  "8158f7b0479518d7": {
+   "Maya": "clips/61433bee643fce91.m4a"
+  },
+  "815c644c80d77c53": {
+   "Sara": "clips/84f742f5c8845e3b.m4a",
+   "partner": "clips/deceac8b3408afaf.m4a"
+  },
+  "8175e3c8753aeb16": {
+   "_": "clips/f850d0c2edf6abc6.m4a"
+  },
+  "818743b967a1fdbf": {
+   "_": "clips/c98376313d8385f7.m4a"
+  },
+  "81b23a7eee710966": {
+   "Waiter": "clips/20369fb25f23d7f5.m4a"
+  },
+  "81bec4a4da68265b": {
+   "_": "clips/5a21be67565af9c0.m4a"
+  },
+  "81e4a5523e4e1843": {
+   "_": "clips/0f1fd27263b03b05.m4a"
+  },
+  "8235ac66b98454f1": {
+   "_": "clips/035c6b018253bed6.m4a"
+  },
+  "82b67723be8a9a45": {
+   "_": "clips/816ae4bcec7cfdc8.m4a"
+  },
+  "834c5b81026f63e0": {
+   "partner": "clips/68927a4b7b3c1f10.m4a"
+  },
+  "83aac9a83cd4ec7c": {
+   "_": "clips/7f4a1ef97aca4479.m4a"
+  },
+  "83d76684488a9b15": {
+   "Omar": "clips/1e959163a1a8737e.m4a",
+   "_": "clips/02cb2d9f72e02ffa.m4a"
+  },
+  "83deb595d9e01b68": {
+   "_": "clips/bd7949fd77b67265.m4a"
+  },
+  "8461c2f9535a328c": {
+   "_": "clips/72b9a6d4ad088f39.m4a"
+  },
+  "847d9146321d082d": {
+   "Ali": "clips/e3ef0b6f4351b176.m4a"
+  },
+  "84846cb2220d5422": {
+   "_": "clips/2795c79d783a1049.m4a"
+  },
+  "8504d96b1782466c": {
+   "_": "clips/12eecbea9e72a23d.m4a"
+  },
+  "851a562b2e4bb1a1": {
+   "Ali": "clips/61d80c2105b2e80e.m4a"
+  },
+  "851e13a65333f914": {
+   "_": "clips/c0d08bb9a1eac25c.m4a"
+  },
+  "854d2ed65445ed93": {
+   "_": "clips/ff48da37e795d3b5.m4a"
+  },
+  "8559539d77fe1eec": {
+   "_": "clips/bc6dfa9b6bf9503b.m4a"
+  },
+  "85777c03b72554cd": {
+   "_": "clips/0b546e71ab3ee6a2.m4a"
+  },
+  "85b03775b09321fc": {
+   "_": "clips/f7cdbd75f478f744.m4a"
+  },
+  "85d75d15b561aa75": {
+   "_": "clips/6eac9825fa073636.m4a"
+  },
+  "85dd7a55e1ec7d05": {
+   "_": "clips/10ec060b8b03948b.m4a"
+  },
+  "8663c19941b445fd": {
+   "_": "clips/f563bc3e994fc80a.m4a"
+  },
+  "8665d479bd7e6372": {
+   "_": "clips/c27fecb83973d2e1.m4a"
+  },
+  "867f79eb45cd4006": {
+   "A": "clips/b190ab7de9823b55.m4a"
+  },
+  "86a7178a48b43f0e": {
+   "_": "clips/143d890466b189fc.m4a"
+  },
+  "86eff07ecbbfbe4f": {
+   "Ali": "clips/de3a411b327ec931.m4a"
+  },
+  "872aa2de37e9d7d4": {
+   "_": "clips/3844533b0639ffc3.m4a"
+  },
+  "872d58777d4662cf": {
+   "_": "clips/c5cd1307a2471fc7.m4a"
+  },
+  "8740528f3a4bb0ba": {
+   "_": "clips/59a791b044646be0.m4a"
+  },
+  "875a7f45ba9b8ec2": {
+   "_": "clips/53d3fb98e8e27175.m4a"
+  },
+  "87d17825792d2d34": {
+   "_": "clips/e3c9fb72ae3b19f7.m4a"
+  },
+  "8852a32f980c4367": {
+   "_": "clips/cadc2953eca30e87.m4a"
+  },
+  "885c39aca07c0a1e": {
+   "_": "clips/287d1660d4952cb8.m4a"
+  },
+  "885dc4a9b362094f": {
+   "_": "clips/c1a8d57c7044fa9e.m4a"
+  },
+  "88a78861825b4734": {
+   "Ali": "clips/fe743e2b35fd6da0.m4a"
+  },
+  "88ddff0da7c9c2be": {
+   "_": "clips/bd8cd5f6c0953180.m4a"
+  },
+  "88dff8615fdbd1c9": {
+   "partner": "clips/871984df0c7573fd.m4a"
+  },
+  "89368e1d68015693": {
+   "_": "clips/89708562082c2560.m4a"
+  },
+  "8960d5136828c600": {
+   "Nurse": "clips/f65f0e6645cab233.m4a"
+  },
+  "89916506f204529e": {
+   "_": "clips/b20597016e904244.m4a"
+  },
+  "89aa1df0e350c421": {
+   "_": "clips/fec23086326d51cc.m4a"
+  },
+  "89f6229a11ac4eba": {
+   "_": "clips/6c77b2c9f6e9b03b.m4a"
+  },
+  "89f6f4fbe9bfe89a": {
+   "Guard": "clips/604e8235e4cb69ea.m4a"
+  },
+  "8a03064dbd0ee0d4": {
+   "Sara": "clips/aecd296b31622e87.m4a"
+  },
+  "8a0794e8508c2499": {
+   "Sara": "clips/f28b6fa9de4a963d.m4a"
+  },
+  "8a0e1770578d57bc": {
+   "_": "clips/dde204ad14ea28c2.m4a"
+  },
+  "8a13a01d705b372b": {
+   "_": "clips/1d1b1e7855d4a9df.m4a"
+  },
+  "8aa5cc5d7483b0c0": {
+   "_": "clips/fec23086326d51cc.m4a"
+  },
+  "8af115259ca6b899": {
+   "partner": "clips/ebcc6a6f7646aeaf.m4a"
+  },
+  "8af29aef8aa9aa07": {
+   "_": "clips/1384dabf5115ad5e.m4a"
+  },
+  "8b40d3cc669eb721": {
+   "_": "clips/4335b6e2a6716606.m4a"
+  },
+  "8b51f7b945d839f9": {
+   "_": "clips/f6451cd4da2c437b.m4a"
+  },
+  "8bf481a127e035b6": {
+   "_": "clips/a3b7f0a0f63d0791.m4a"
+  },
+  "8c6601180e32aed7": {
+   "Ali": "clips/4ad08a0cb156dfd6.m4a"
+  },
+  "8c884438cc7c1c2d": {
+   "_": "clips/21c5342615afc504.m4a"
+  },
+  "8c8f05046bb19ae8": {
+   "Sara": "clips/5985fca17d8f966a.m4a"
+  },
+  "8d3b4d1e6718e1ab": {
+   "_": "clips/94b4cc46309368b4.m4a"
+  },
+  "8d3cd7490d594fa4": {
+   "_": "clips/26e0687e6535c35e.m4a"
+  },
+  "8d4930074dbe585c": {
+   "Resident": "clips/efb34f8c0a8e1703.m4a"
+  },
+  "8d7050ffcf7a2ee2": {
+   "_": "clips/f2fdc90258323f42.m4a"
+  },
+  "8d7ab58b431da3ca": {
+   "_": "clips/86b43d068655cace.m4a"
+  },
+  "8dd82f3160a6f31f": {
+   "Lina": "clips/d2e48719f5dc3889.m4a"
+  },
+  "8e00c69162d6666b": {
+   "_": "clips/07709e1d8f845b33.m4a"
+  },
+  "8e2f37f988ae04ce": {
+   "Nurse": "clips/3e33805ee6f6bba9.m4a",
+   "_": "clips/6e83017e329342cc.m4a"
+  },
+  "8e68b3e5af636475": {
+   "_": "clips/0f7ab58824565200.m4a"
+  },
+  "8e8d19e6616933b0": {
+   "Clerk": "clips/86b2da993876b841.m4a"
+  },
+  "8e983f2f836684e7": {
+   "_": "clips/c65e9aeff5b56aef.m4a"
+  },
+  "8f1c67543580477b": {
+   "Maya": "clips/4d92451923ab7a8b.m4a"
+  },
+  "8fbeccf350453c2d": {
+   "_": "clips/b75522a37d47de20.m4a"
+  },
+  "8fe63c015a9b530b": {
+   "_": "clips/a71badf3d00bf892.m4a"
+  },
+  "8ff280e958dc6d9d": {
+   "B": "clips/82e68f4be38eb043.m4a",
+   "_": "clips/2617c3ef508f53b7.m4a"
+  },
+  "9003ab289d0551c6": {
+   "Sara": "clips/1749ab0d511a9cdb.m4a"
+  },
+  "9006546b07f572bb": {
+   "_": "clips/16bd9074ab32f9d9.m4a"
+  },
+  "9012c45d7bd54d45": {
+   "_": "clips/df90406cb3d26cc2.m4a"
+  },
+  "9023bc9bd0350c38": {
+   "_": "clips/fa8f2a82856c1065.m4a"
+  },
+  "9046aa047fca6f7d": {
+   "_": "clips/cc7f5b1b6ff1344d.m4a"
+  },
+  "90751bfe4fe5447f": {
+   "_": "clips/bce6866eea6363cc.m4a"
+  },
+  "90892dca178dbeda": {
+   "_": "clips/801e8132052dd8c5.m4a"
+  },
+  "909078b7d2e30f4a": {
+   "Sara": "clips/92a5da3d736e96a0.m4a"
+  },
+  "9091ec070761e058": {
+   "_": "clips/d425c16a06d757d6.m4a"
+  },
+  "90ba86fbeb1e7cd9": {
+   "_": "clips/2fc1c79d2ea16014.m4a"
+  },
+  "90ddcdeb8c1b6df6": {
+   "_": "clips/f930beabd4a16e59.m4a"
+  },
+  "910811779246c214": {
+   "_": "clips/ad6ea25ce4cc888c.m4a"
+  },
+  "913874193cb9e9b2": {
+   "_": "clips/33b54d58d7ea8f71.m4a"
+  },
+  "914e3309568e944f": {
+   "_": "clips/20b19499362b002c.m4a"
+  },
+  "9261bcdaa60659ab": {
+   "partner": "clips/2d9ca101e97494c5.m4a"
+  },
+  "92ad0348b43088fb": {
+   "_": "clips/03ea870bbad990e5.m4a"
+  },
+  "92adef49782fbfd1": {
+   "_": "clips/0dc1f48d28d2d8d0.m4a"
+  },
+  "92f921d707ba4545": {
+   "_": "clips/1b37e87af7a279dc.m4a"
+  },
+  "930a4d86ba834a2e": {
+   "partner": "clips/7d2e019ad99b0a3e.m4a"
+  },
+  "932bd4d21c45c748": {
+   "Maya": "clips/18492a8526eac16e.m4a"
+  },
+  "938460cf71f1b39d": {
+   "partner": "clips/d022328ab8be9eea.m4a"
+  },
+  "9393c0382200a054": {
+   "Maya": "clips/a8072427bd0740ee.m4a"
+  },
+  "93aa64902caebe5d": {
+   "_": "clips/491ca430378482f1.m4a"
+  },
+  "93ad1edafafa81c4": {
+   "_": "clips/5d9f5cb3be952098.m4a"
+  },
+  "93e0606f96ef8cce": {
+   "_": "clips/73d6ef6709fc9805.m4a"
+  },
+  "9477fdc83bfd8feb": {
+   "_": "clips/932c7bd1d7006e1e.m4a"
+  },
+  "94ccdaa82766d7df": {
+   "Sara": "clips/2a297ee503381563.m4a"
+  },
+  "94d3e0dbaaf29e17": {
+   "_": "clips/5fe77c78d2970e91.m4a"
+  },
+  "94e308bce42a14a0": {
+   "Daniel": "clips/3564e7da5c47c01b.m4a"
+  },
+  "94efdd6f628eda9c": {
+   "_": "clips/e6154a172cf93433.m4a"
+  },
+  "94fc42b68d18c36e": {
+   "_": "clips/42a0f5b14bdcb1c4.m4a"
+  },
+  "950ff264207f7349": {
+   "_": "clips/513024de7e9b3d57.m4a"
+  },
+  "9528fface2fa05f6": {
+   "_": "clips/8defff4c05ff319a.m4a"
+  },
+  "952d4b39219cd3ea": {
+   "Ali": "clips/01ab9186a247978a.m4a"
+  },
+  "95448938e90a2b35": {
+   "_": "clips/f86a9f7150afdc6f.m4a"
+  },
+  "9547be08062edd18": {
+   "_": "clips/4c3fa128bc5252a7.m4a"
+  },
+  "95862b1fda17b7be": {
+   "_": "clips/1cdf5ed0b35e4724.m4a"
+  },
+  "95901050a1d6d3d7": {
+   "_": "clips/584eb2acd100f1b3.m4a"
+  },
+  "95ab0494666458f5": {
+   "_": "clips/425d33d6d3578fe8.m4a"
+  },
+  "95bee5b22ed009f5": {
+   "_": "clips/ce9d0fd479e4da3f.m4a"
+  },
+  "95c4bea12e4edcf8": {
+   "_": "clips/1038e2d16cf69973.m4a"
+  },
+  "95f30a69faa73455": {
+   "_": "clips/77735b1a8d380cdc.m4a"
+  },
+  "95f49d06c44f4d35": {
+   "Maya": "clips/69d61aa9ddaf817c.m4a"
+  },
+  "9621a244a447ec74": {
+   "_": "clips/ff7d21f2bb46e4bf.m4a"
+  },
+  "9621d7d089a9ef05": {
+   "_": "clips/2567b3b819be77fa.m4a"
+  },
+  "962e69cbea397c9a": {
+   "_": "clips/ccd0b31775af17c1.m4a"
+  },
+  "9637bb6408c4cdbc": {
+   "Sara": "clips/22db3327474311b3.m4a"
+  },
+  "9664f4f9f49fe17b": {
+   "_": "clips/26f456c0f0abeedd.m4a"
+  },
+  "967ce367d89dccc1": {
+   "_": "clips/868196575b575cb3.m4a"
+  },
+  "967ef9d5502c551c": {
+   "_": "clips/35c745e82a98ae10.m4a"
+  },
+  "96969f070bedc71e": {
+   "_": "clips/bff657165c93e561.m4a"
+  },
+  "969f921200f37f0a": {
+   "_": "clips/9a6a09d7c80e80ae.m4a"
+  },
+  "96dcc8202a497bd7": {
+   "_": "clips/98f84f85b855595c.m4a"
+  },
+  "97017c08e4755a5b": {
+   "_": "clips/14cf26384399f873.m4a"
+  },
+  "97de19d8ffa5382b": {
+   "partner": "clips/c2c5d843ab25f9c1.m4a"
+  },
+  "9844f8b7454cd507": {
+   "_": "clips/75f6b5e1cd6c8ac5.m4a"
+  },
+  "985ee0fd8763f775": {
+   "_": "clips/25ad7dd3b0f29c7e.m4a"
+  },
+  "986229ef3e675101": {
+   "_": "clips/8c0a82c255e75716.m4a"
+  },
+  "98aadb37083eddd8": {
+   "_": "clips/a180660d5d617c3f.m4a"
+  },
+  "991eccffe16f2da8": {
+   "_": "clips/7396b309f2568755.m4a"
+  },
+  "9925a7a158f7d8e5": {
+   "_": "clips/2fdd3d9ca9ea9349.m4a"
+  },
+  "9966332f4880ca77": {
+   "_": "clips/842e5d0f3ba28efd.m4a"
+  },
+  "996e82f41fcdc9bd": {
+   "Ali": "clips/71ee13e5491ed923.m4a"
+  },
+  "99d1c5c12094beb9": {
+   "_": "clips/e8f4e5d662bd849b.m4a"
+  },
+  "99d4a700e26b7997": {
+   "_": "clips/07801165c4611001.m4a"
+  },
+  "99f55b4121757136": {
+   "_": "clips/6508b0ffdbd425d8.m4a"
+  },
+  "99fc4a2a5ac7eb6e": {
+   "_": "clips/0128ddf95b82bcc0.m4a"
+  },
+  "9a7863396cd5346e": {
+   "_": "clips/107f8f4f8d8439fb.m4a"
+  },
+  "9a8466de9f8c60f0": {
+   "_": "clips/6453f07e608d7411.m4a"
+  },
+  "9a8696188def0798": {
+   "Ali": "clips/af59f713084e0be5.m4a"
+  },
+  "9aa5325a955dcda1": {
+   "_": "clips/5b4cf07244984ef1.m4a"
+  },
+  "9aa98943c85c7832": {
+   "_": "clips/d149eda55e57d2b1.m4a"
+  },
+  "9af40e3379ed987b": {
+   "Omar": "clips/df48e8641d0af8a2.m4a"
+  },
+  "9b0a3c6d5c6ed84b": {
+   "_": "clips/8f7456ee67c4bbb5.m4a"
+  },
+  "9b317c9f2810d672": {
+   "Omar": "clips/57e9ac5305a61458.m4a"
+  },
+  "9b48cdad39e40d96": {
+   "Maya": "clips/3feac10f40ef0894.m4a"
+  },
+  "9b4e473e4de7949c": {
+   "_": "clips/2e59e89ac225d99e.m4a"
+  },
+  "9bc27e4f861ed1e6": {
+   "_": "clips/380a7ef30e7bcf34.m4a"
+  },
+  "9bfed865f0de57ba": {
+   "_": "clips/9c9ad50da5d6d07d.m4a"
+  },
+  "9c20b9ba55a293ba": {
+   "_": "clips/3ebbcb9c025fac45.m4a"
+  },
+  "9c881bdb6bc930d1": {
+   "_": "clips/94175738820547f6.m4a"
+  },
+  "9c972cc895786cad": {
+   "_": "clips/852fe81bc75a78c3.m4a"
+  },
+  "9ce8db4eaa862df5": {
+   "_": "clips/126cdb2af372c091.m4a"
+  },
+  "9d59e2cde0642fb4": {
+   "_": "clips/1bb217a7d6ddd7fb.m4a"
+  },
+  "9d94a26164597bb6": {
+   "Patient": "clips/f6f96e6c49b2776f.m4a",
+   "_": "clips/cadf8119f40861e8.m4a"
+  },
+  "9db36807991dbca2": {
+   "_": "clips/72f4a656629d8cbc.m4a"
+  },
+  "9dfb5f81a73717a1": {
+   "_": "clips/f25fb9a777eab564.m4a"
+  },
+  "9e01d0c1a1cb21c1": {
+   "partner": "clips/66476ce0f4b81ccc.m4a"
+  },
+  "9e2ecb283f24e03f": {
+   "Omar": "clips/bec13c932511aec1.m4a"
+  },
+  "9e32521dd2f8b27b": {
+   "_": "clips/6617145ad27ba599.m4a"
+  },
+  "9e3a8225470fb3b9": {
+   "_": "clips/cb4d6b36821b125c.m4a"
+  },
+  "9e6593ffab0ce412": {
+   "Ali": "clips/b1dc22e2b9fef7ee.m4a"
+  },
+  "9e8fbda8d5ff24c8": {
+   "_": "clips/c4811c669debd605.m4a"
+  },
+  "9ea62ecb49403a38": {
+   "_": "clips/dd97fc558818e28e.m4a"
+  },
+  "9f1e0797b094e7dd": {
+   "_": "clips/400f8c3e65060c7d.m4a"
+  },
+  "9f2feb0f1ef425b2": {
+   "_": "clips/88d542c5c5f09ee9.m4a"
+  },
+  "9f8f7eec5dea5ac4": {
+   "_": "clips/3d9edcf2b3820ef0.m4a"
+  },
+  "9fa0cd53569ecf74": {
+   "_": "clips/fec23086326d51cc.m4a"
+  },
+  "9fa7e18e7c705373": {
+   "partner": "clips/a921785195426fc0.m4a"
+  },
+  "9fbe56402fdaafba": {
+   "Omar": "clips/f818067ddbec606b.m4a"
+  },
+  "9fdaf6284b207da0": {
+   "_": "clips/8defff4c05ff319a.m4a"
+  },
+  "9fdd6ab5de27b81b": {
+   "_": "clips/0ec4e63f1fe08817.m4a"
+  },
+  "a00bbe560e6b0f52": {
+   "_": "clips/ca0431730fc7af37.m4a"
+  },
+  "a02aaa53bd1f724d": {
+   "_": "clips/eab2256bf7fdcce6.m4a"
+  },
+  "a04249dba718306a": {
+   "_": "clips/182250067cd00311.m4a"
+  },
+  "a06a492959ce12b3": {
+   "_": "clips/a85a492ebe60f838.m4a"
+  },
+  "a080a161ae4bc51d": {
+   "_": "clips/651416b2a9aee252.m4a"
+  },
+  "a08ab25513ab3651": {
+   "Omar": "clips/a1eaa1cec9aa8bf9.m4a"
+  },
+  "a094aee856a3aa39": {
+   "_": "clips/82797d0f08518726.m4a"
+  },
+  "a0d5b7ccdb756a57": {
+   "_": "clips/a0153816b48637cb.m4a"
+  },
+  "a0f4ea7d91495df9": {
+   "_": "clips/25ce8125e16b5918.m4a"
+  },
+  "a13f57f41350051f": {
+   "_": "clips/b17c541ab5037a70.m4a"
+  },
+  "a15e6469f51fc8c2": {
+   "partner": "clips/14d8def7c599a819.m4a"
+  },
+  "a17dbb9a6b3ff869": {
+   "_": "clips/67fab3d0718ff287.m4a"
+  },
+  "a19e31d69f080de0": {
+   "_": "clips/bdea5368392a9917.m4a"
+  },
+  "a1a02eeefb46179e": {
+   "Lina": "clips/05583808b25cf960.m4a"
+  },
+  "a1c5414c426814ea": {
+   "_": "clips/5131cccf5dd84076.m4a"
+  },
+  "a21507e456d483da": {
+   "_": "clips/40787fe2867c5cf5.m4a"
+  },
+  "a2328d535c740f0e": {
+   "_": "clips/72d1955b7941790e.m4a"
+  },
+  "a236c7c417129bf0": {
+   "_": "clips/8fac2b9202bbd1b1.m4a"
+  },
+  "a29bdc5852db5cbf": {
+   "_": "clips/a0f8fc5c62d213d5.m4a"
+  },
+  "a2cb8f8d64f7e6b6": {
+   "_": "clips/db771b8c18f8506f.m4a"
+  },
+  "a31e44e0548b4c99": {
+   "_": "clips/e97f7e3e41f2f664.m4a"
+  },
+  "a326da7ea907628d": {
+   "_": "clips/cfec4e808defd613.m4a"
+  },
+  "a34c860a9909dd2e": {
+   "_": "clips/e4c71dc6a912df11.m4a"
+  },
+  "a34ccf1feb53fcd1": {
+   "_": "clips/3e0aa32dd80b5ee8.m4a"
+  },
+  "a3a7bde8c7f5de31": {
+   "_": "clips/0d8ed35b9a110372.m4a"
+  },
+  "a3e3318b0a3061f0": {
+   "_": "clips/420f63fcc5be89b6.m4a"
+  },
+  "a3eb3b6d0c169231": {
+   "Nurse": "clips/b949135d7ae73496.m4a"
+  },
+  "a3ed41796a04f025": {
+   "Maya": "clips/ea7505afc118f760.m4a"
+  },
+  "a3ff7ef48b7860d4": {
+   "Visitor": "clips/fbeaec7a185b5ef3.m4a"
+  },
+  "a41f18cb110cde31": {
+   "_": "clips/0ede572f07dc3c3c.m4a"
+  },
+  "a422a9a28c7a582c": {
+   "_": "clips/531ae12f5ac860ab.m4a"
+  },
+  "a4b48a81cdab1e1a": {
+   "_": "clips/40a9113a9c7fefb0.m4a"
+  },
+  "a4b7517fba785ebf": {
+   "_": "clips/2d64de754dc9082e.m4a"
+  },
+  "a5a0d15d4ae8ea37": {
+   "_": "clips/ef9afb2b5aca980e.m4a"
+  },
+  "a5b0c27d61717824": {
+   "_": "clips/48328a855b141a05.m4a"
+  },
+  "a5bebdeee4b57c02": {
+   "Omar": "clips/8f771eedc9d79393.m4a"
+  },
+  "a5ca9edc6e2b5da8": {
+   "_": "clips/0e36e0590ccd48e1.m4a"
+  },
+  "a5dfd1e2a15413c2": {
+   "_": "clips/dbd1cbf19ac4a5ea.m4a"
+  },
+  "a5efe384fd22e23f": {
+   "Daniel": "clips/e1acec2312e7175c.m4a"
+  },
+  "a613982ec913aa7c": {
+   "_": "clips/e7ab71978cbfdeee.m4a"
+  },
+  "a62f2225bf70bfac": {
+   "_": "clips/2d18cbbf4bc861c5.m4a"
+  },
+  "a63f269cd8bc5c6d": {
+   "Customer": "clips/5efa0d34c49e5265.m4a"
+  },
+  "a65265946e25560c": {
+   "_": "clips/94ed03aba755c0c7.m4a"
+  },
+  "a664f10b5e580cdd": {
+   "_": "clips/62445e43fe428112.m4a"
+  },
+  "a69214e5afa52759": {
+   "Waiter": "clips/315bb1a02b419e13.m4a"
+  },
+  "a6a32ee55a9d7d3b": {
+   "_": "clips/bd41b108a7c20da0.m4a"
+  },
+  "a6aec91e493efee3": {
+   "_": "clips/8aee6718695f2f26.m4a"
+  },
+  "a6bc2b8db5b7e7a8": {
+   "partner": "clips/77d6b218232ff500.m4a"
+  },
+  "a6ec3468d3593693": {
+   "partner": "clips/5a0632a9b6085a78.m4a"
+  },
+  "a6ffab1d0698e902": {
+   "Omar": "clips/639aed261811b9e0.m4a"
+  },
+  "a703c398ca0814f6": {
+   "Lina": "clips/3eeca373a095c0b7.m4a"
+  },
+  "a7090b835e579702": {
+   "_": "clips/e05d70f170ec22e5.m4a"
+  },
+  "a79c1040929bd0e3": {
+   "_": "clips/f98d7a9aad5b2b8d.m4a"
+  },
+  "a7afddb68260a60f": {
+   "_": "clips/ebf3a8b1a9f17830.m4a"
+  },
+  "a8774e162caafcd2": {
+   "_": "clips/a8129772acb6dee9.m4a"
+  },
+  "a944f9f14a32894c": {
+   "Sara": "clips/769836982033e33c.m4a"
+  },
+  "a97857a1815f887f": {
+   "partner": "clips/ed398923c4483510.m4a"
+  },
+  "a9a9102b547e3520": {
+   "Maya": "clips/a9e422ca3d9a9694.m4a",
+   "_": "clips/51f14f4d512f6ebd.m4a"
+  },
+  "a9e5aa3c53011f6a": {
+   "partner": "clips/cefe43273e8b55ce.m4a"
+  },
+  "a9f1475dbd4d1441": {
+   "_": "clips/96b648043ca308c6.m4a"
+  },
+  "aa3e018fed448a2f": {
+   "_": "clips/41dc8728e60868f4.m4a"
+  },
+  "aa8c41330509455e": {
+   "_": "clips/6a70a4ccc282b404.m4a"
+  },
+  "aaf4c61ddcc5e8a2": {
+   "_": "clips/0b3b9ae5f083f865.m4a"
+  },
+  "ab3ccc8dba2a0cf7": {
+   "_": "clips/1c85b231fccab6c4.m4a"
+  },
+  "ab464f0252045aaf": {
+   "_": "clips/a915ca3fe181c73a.m4a"
+  },
+  "abc5311ba8b143ca": {
+   "Sara": "clips/bf6ebd95bb7e70e7.m4a"
+  },
+  "abd320115dc1ba80": {
+   "Omar": "clips/dbfd739361a546fe.m4a"
+  },
+  "abe3dd9c1c2e85bd": {
+   "_": "clips/c5805d09a5b2e50c.m4a"
+  },
+  "abe6dd95e2df0f53": {
+   "partner": "clips/b69dafbd6e668684.m4a"
+  },
+  "ac1cc42ffc022cd0": {
+   "Omar": "clips/6cbde1dfffca0a80.m4a",
+   "_": "clips/cfe84d08baddd6c7.m4a"
+  },
+  "ac3d24240e0ae290": {
+   "Maya": "clips/12e303a355b8452f.m4a",
+   "_": "clips/84a361647b70b3d8.m4a"
+  },
+  "ac4280ba23311677": {
+   "_": "clips/66938a3fc2f182e7.m4a"
+  },
+  "accd702db3748484": {
+   "_": "clips/d46c6bd57e334c63.m4a"
+  },
+  "ad00c690d667f9dc": {
+   "_": "clips/11639391dd48d396.m4a"
+  },
+  "ad363a93848bc486": {
+   "_": "clips/9668a6ef1b661214.m4a"
+  },
+  "ad62cfd9325a75f7": {
+   "Ali": "clips/3edc0963d6a1d97b.m4a",
+   "_": "clips/a22c945e4c8635e4.m4a"
+  },
+  "ad782ecdac770fc6": {
+   "_": "clips/2e3997c6b3dbd8ec.m4a"
+  },
+  "ad79ef0f076d3a68": {
+   "_": "clips/a0a05fea3cfb8edc.m4a"
+  },
+  "adfa59cc50d2bd2c": {
+   "_": "clips/fc3e7bbbe2c920ea.m4a"
+  },
+  "ae2eb9f8372ef8a1": {
+   "Assistant": "clips/f92162a50d3ffc24.m4a"
+  },
+  "ae3f079ad4975427": {
+   "Assistant": "clips/3d389b3990ade230.m4a"
+  },
+  "ae44f1c25aa73a96": {
+   "_": "clips/49fda816b925fe3f.m4a"
+  },
+  "ae808dcd96e1657e": {
+   "partner": "clips/f2edab30d21ad32e.m4a"
+  },
+  "af3fb193e32e8c5a": {
+   "_": "clips/54e6a6b39f8ddc07.m4a"
+  },
+  "afbab6af1f62dd4c": {
+   "Sara": "clips/3e5d772d98718133.m4a"
+  },
+  "afcac3549c932cb9": {
+   "_": "clips/d3874fc0417fbb49.m4a"
+  },
+  "afebfe9244589ec4": {
+   "Maya": "clips/6035ac82fce9a983.m4a"
+  },
+  "b00562e9b3db3223": {
+   "_": "clips/6792e9f0c6afbbd6.m4a"
+  },
+  "b01b8deb66e9e63a": {
+   "_": "clips/78264387c2cc96ba.m4a"
+  },
+  "b06ddb442aead0cd": {
+   "_": "clips/6b407c863d4e9e82.m4a"
+  },
+  "b09c738b597622e8": {
+   "_": "clips/d8a2bd72ec3e1420.m4a"
+  },
+  "b10bae554cd10f8a": {
+   "_": "clips/91580d913affa51b.m4a"
+  },
+  "b121c7fbd568120a": {
+   "Ali": "clips/3f318c6c11e551bc.m4a"
+  },
+  "b18d09bd71fac5dd": {
+   "Ali": "clips/101323f5ada80340.m4a"
+  },
+  "b1ade531057f51c2": {
+   "_": "clips/e2b38c3e3a613d9b.m4a"
+  },
+  "b1b9b5be0be19451": {
+   "_": "clips/fa699a83c04208d9.m4a"
+  },
+  "b242061e93f4240a": {
+   "_": "clips/1121eed677317c21.m4a"
+  },
+  "b295790166762fb7": {
+   "_": "clips/1e802601384ae56c.m4a"
+  },
+  "b298106c7c022083": {
+   "Waiter": "clips/bdfc53c26abb3d7f.m4a"
+  },
+  "b2c24763915216b0": {
+   "_": "clips/5403a6447d01c9dd.m4a"
+  },
+  "b2e1ec51ca505514": {
+   "_": "clips/17d46911d8538d08.m4a"
+  },
+  "b41961c420cb58e6": {
+   "_": "clips/5139eae26289c950.m4a"
+  },
+  "b47da5c1cce1bf6c": {
+   "_": "clips/5fd76f7bc319356e.m4a"
+  },
+  "b4ba2273497df744": {
+   "Ali": "clips/a5d984b4ba5cd753.m4a",
+   "_": "clips/5f4febaef8ee0fc4.m4a"
+  },
+  "b4ddce182ecfb739": {
+   "_": "clips/b75569818925dd07.m4a"
+  },
+  "b519229689c0d346": {
+   "Maya": "clips/7381945102f1b322.m4a",
+   "_": "clips/ee5dd134fae6d325.m4a"
+  },
+  "b521f9394fabb794": {
+   "_": "clips/18b7e640c8500033.m4a"
+  },
+  "b54cf557f4e2fbf1": {
+   "partner": "clips/457286dbdb0abc0a.m4a"
+  },
+  "b56cf9fcdadd9da4": {
+   "Omar": "clips/5f2ec883ba7711a2.m4a"
+  },
+  "b5b01406411b6a90": {
+   "Omar": "clips/092946fedfca9782.m4a"
+  },
+  "b5bf58dc20d257d0": {
+   "_": "clips/bbd1ae94bbdd72e1.m4a"
+  },
+  "b5fc46776ba0b85c": {
+   "_": "clips/725700cd91651939.m4a"
+  },
+  "b61a1b81271db5f9": {
+   "_": "clips/1b851b8635037e15.m4a"
+  },
+  "b64f6c0792859a44": {
+   "Lina": "clips/d7e3e5fa18960f8e.m4a"
+  },
+  "b66d68f8b8781e86": {
+   "_": "clips/807f017beae76843.m4a"
+  },
+  "b682a20e508ae63b": {
+   "_": "clips/faf7269bb9d699bd.m4a"
+  },
+  "b69ec676b082c4f1": {
+   "_": "clips/d7d33394cdb4546f.m4a"
+  },
+  "b6f5f24d477be718": {
+   "_": "clips/703bfabebad7eacc.m4a"
+  },
+  "b74c9a03bbc32202": {
+   "partner": "clips/585d28db99c3aaef.m4a"
+  },
+  "b7e8ac4354de22dd": {
+   "_": "clips/dfb2989b2a364089.m4a"
+  },
+  "b7e90cbcb223c03f": {
+   "_": "clips/9119a9c3fe1797d0.m4a"
+  },
+  "b802f384302cb24f": {
+   "_": "clips/c5c4c8266c977b37.m4a"
+  },
+  "b81c9657773a65bd": {
+   "_": "clips/90485736afdbdd71.m4a"
+  },
+  "b892f067921d2314": {
+   "_": "clips/82650f8496f97464.m4a"
+  },
+  "b89c2d2e1a34f796": {
+   "_": "clips/4f406b75e7694be9.m4a"
+  },
+  "b89f90f328fa7e77": {
+   "_": "clips/39c11da4ceeee531.m4a"
+  },
+  "b8a492ce175cd443": {
+   "_": "clips/2862b183976b9cc4.m4a"
+  },
+  "b8b3ddef4466c06c": {
+   "_": "clips/3468a51b33d9ce14.m4a"
+  },
+  "b8d3da9f703df2f7": {
+   "_": "clips/6d968b5a826dffad.m4a"
+  },
+  "b916b47124c5c346": {
+   "_": "clips/4b862e72d50ab303.m4a"
+  },
+  "b932ba2597b02e8a": {
+   "_": "clips/886c08ec37fbc5a4.m4a"
+  },
+  "b94e9f3d7e001981": {
+   "_": "clips/88de52f99b7fe13b.m4a"
+  },
+  "b95d6d0cbbcc43b7": {
+   "_": "clips/8938f2933298aeac.m4a"
+  },
+  "b9a935ed2a858b53": {
+   "_": "clips/ef3857bd8f1d6088.m4a"
+  },
+  "b9c7d90d26d84f02": {
+   "Omar": "clips/15ed26b7b49b7fc8.m4a"
+  },
+  "ba1b1f41bcf31109": {
+   "Resident": "clips/a41be65f198e0ad8.m4a"
+  },
+  "ba3b6acb0ee4c6b7": {
+   "Ali": "clips/4c1a0b9d6618934b.m4a"
+  },
+  "ba682da7c54fdd99": {
+   "_": "clips/ad9fd089b524aad1.m4a"
+  },
+  "ba8d34c14b8fea4d": {
+   "Maya": "clips/73c4b96b4b5fa794.m4a",
+   "_": "clips/2fcdb274dfaf1e52.m4a"
+  },
+  "ba9266ffa84b5aef": {
+   "_": "clips/4c86b0889a325b24.m4a"
+  },
+  "bae7251997f71b27": {
+   "_": "clips/ab16d1107ab62e8e.m4a"
+  },
+  "baf49886d2850056": {
+   "Sara": "clips/e33d4efed647432f.m4a"
+  },
+  "bb0c0c867fdca2a3": {
+   "_": "clips/dcbfb9e4b25b33dd.m4a"
+  },
+  "bb6edd252117f76c": {
+   "_": "clips/a67216c4a4259ae1.m4a"
+  },
+  "bb8315fd5b371097": {
+   "_": "clips/c340e57f3412a02a.m4a"
+  },
+  "bbf0660cc47da601": {
+   "_": "clips/f573892f5f25bf8a.m4a"
+  },
+  "bc24c1660508814b": {
+   "_": "clips/34581aafc2f144af.m4a"
+  },
+  "bc3334feacf3d0f5": {
+   "_": "clips/e9c037ec3ac17e9e.m4a"
+  },
+  "bc4edcce8a85405e": {
+   "_": "clips/7747fbd20d87de11.m4a"
+  },
+  "bc586ee175065b04": {
+   "partner": "clips/dba499dce37b19fd.m4a"
+  },
+  "bc6d2a612a5d9df1": {
+   "_": "clips/927828a7c57cb0b2.m4a"
+  },
+  "bc83b80c17f878c2": {
+   "Assistant": "clips/4b02684526bcf6e2.m4a"
+  },
+  "bc8ec206dbba0287": {
+   "_": "clips/e910c10151284fe1.m4a"
+  },
+  "bcef7a0462580829": {
+   "_": "clips/dbd74f967ec32342.m4a"
+  },
+  "bd0251ee8a0518ab": {
+   "_": "clips/159d387b0f3fda49.m4a"
+  },
+  "bd5cdeabf268ce80": {
+   "_": "clips/7c39415506a8eec8.m4a"
+  },
+  "bd75dfb3e8dc04e6": {
+   "Operator": "clips/b401a39753c1b62e.m4a"
+  },
+  "bda55eb01505bf9c": {
+   "_": "clips/8b184f47d727b6b1.m4a"
+  },
+  "bdd240c8fe7174e6": {
+   "_": "clips/40fcdbd28fa2e9d2.m4a"
+  },
+  "bdd564292340d9e3": {
+   "Maya": "clips/3305238b28ed394c.m4a"
+  },
+  "be27088df20a743a": {
+   "Maya": "clips/239c6f9e622338bf.m4a"
+  },
+  "be5b786677c817d4": {
+   "_": "clips/2d44ab4f7bf721eb.m4a"
+  },
+  "beb74b839f066734": {
+   "_": "clips/e2f69a12b7779ad6.m4a"
+  },
+  "bec49420002d410a": {
+   "Maya": "clips/aaa1fe07e93fa7c4.m4a"
+  },
+  "bec9703f7a456cd2": {
+   "_": "clips/509ecbabac0aea88.m4a"
+  },
+  "bed97175b06e68eb": {
+   "_": "clips/7a879c4e336fcb9f.m4a"
+  },
+  "bf48095db4e17be2": {
+   "_": "clips/27c5399e1246342f.m4a"
+  },
+  "bf9d1299a22c7ce8": {
+   "Waiter": "clips/3a4605cce56b03b3.m4a"
+  },
+  "bfece535025662ca": {
+   "Ali": "clips/d4f882ebe50704ab.m4a"
+  },
+  "c00089bebb8a5089": {
+   "_": "clips/05419fe073bd2798.m4a"
+  },
+  "c00dbbc9dadfbe1e": {
+   "_": "clips/04c4055d04a8d8ab.m4a"
+  },
+  "c03d849c94105028": {
+   "_": "clips/a42d68867aab0caf.m4a"
+  },
+  "c052063151b33688": {
+   "_": "clips/9bc8a0923c082856.m4a"
+  },
+  "c07d9c45447de102": {
+   "_": "clips/8b1e9b9a0b63fb5f.m4a"
+  },
+  "c082b382ba717070": {
+   "Sara": "clips/bab6fa525cb94fb1.m4a"
+  },
+  "c098beb15f537d61": {
+   "Passenger": "clips/3eeeeb9ea808010d.m4a"
+  },
+  "c0ac4842418e3458": {
+   "_": "clips/df77aeefdd6243cc.m4a"
+  },
+  "c0d94d09a927e42b": {
+   "_": "clips/dc491d18178eda6e.m4a"
+  },
+  "c0dcba11d4cfd9ff": {
+   "_": "clips/f536974f4ef90ed2.m4a",
+   "partner": "clips/5505a838a972a611.m4a"
+  },
+  "c1777d8e848654ca": {
+   "_": "clips/d52b995ed080ea69.m4a"
+  },
+  "c1a9474fe8774785": {
+   "_": "clips/2540f36c29b160b6.m4a"
+  },
+  "c1becd99a4a04d86": {
+   "_": "clips/5c29cc608e05615d.m4a"
+  },
+  "c1f93982939e3048": {
+   "_": "clips/93535803b83a1318.m4a"
+  },
+  "c1faccaab509ae6e": {
+   "partner": "clips/a7339ffc397ae0fb.m4a"
+  },
+  "c22b5f9178342609": {
+   "_": "clips/fbf3189727ebc7c6.m4a"
+  },
+  "c24f5cff02c08728": {
+   "_": "clips/4aa8c0d21fb42fd2.m4a"
+  },
+  "c278218cdfbf59a7": {
+   "_": "clips/4e42cb882acb9099.m4a"
+  },
+  "c2ba57cbca146c65": {
+   "Ali": "clips/a883e3680f8631dc.m4a"
+  },
+  "c32fab9c89bd63d3": {
+   "_": "clips/7d0f0629ec594ad0.m4a"
+  },
+  "c33f059b0ca7725f": {
+   "_": "clips/adb100973a725f21.m4a"
+  },
+  "c362751c5cdde401": {
+   "Sara": "clips/ec1b3e8c8057f8a7.m4a"
+  },
+  "c364293753c62524": {
+   "Customer": "clips/bf20f1d278ed7cda.m4a",
+   "_": "clips/d114128306714da9.m4a"
+  },
+  "c365a7bf24c5a8ea": {
+   "_": "clips/68f2ec860624656d.m4a"
+  },
+  "c3808a6c9acdea1e": {
+   "Sara": "clips/250c2339687500eb.m4a"
+  },
+  "c3a25d1f13f7db3d": {
+   "Noor": "clips/c4029a035c62e213.m4a"
+  },
+  "c3a9e17be890aadd": {
+   "Omar": "clips/cc4bfe3bf52b3b49.m4a"
+  },
+  "c3ace180d336809b": {
+   "_": "clips/d01ce61e46df4334.m4a"
+  },
+  "c3ca5f787365eae0": {
+   "_": "clips/adf5d85f08e2ff42.m4a"
+  },
+  "c3ee137d4f22eb06": {
+   "_": "clips/5b1cac3a21fe3b26.m4a"
+  },
+  "c40e0f3b96cf619d": {
+   "Omar": "clips/6e02c279d4dde980.m4a"
+  },
+  "c4121f6a6c697280": {
+   "_": "clips/ebbaf6542c3ac29e.m4a"
+  },
+  "c43306cbb6545daa": {
+   "_": "clips/443ecfd3d1b31cc2.m4a"
+  },
+  "c43e96139edc03fd": {
+   "partner": "clips/62d2af173decaf7e.m4a"
+  },
+  "c47044a1b3307cc4": {
+   "Assistant": "clips/2b62889e9536009b.m4a"
+  },
+  "c48a35808c9a9133": {
+   "_": "clips/c9bd2033429744d9.m4a"
+  },
+  "c4eb7d7fea3c62a8": {
+   "_": "clips/da53f13a413e1d87.m4a"
+  },
+  "c51e0a0de80bfedd": {
+   "partner": "clips/048a54658702835d.m4a"
+  },
+  "c52846f84cf86d09": {
+   "_": "clips/8ea682a8cab77db9.m4a"
+  },
+  "c54450b325c13c06": {
+   "_": "clips/28e115539b6f1224.m4a"
+  },
+  "c5b325facb0b5aac": {
+   "_": "clips/c22171f287fc1fcb.m4a"
+  },
+  "c63177e852a7c7fd": {
+   "_": "clips/8b5f11726365480d.m4a"
+  },
+  "c6871ef69a128656": {
+   "_": "clips/776b10c3a0cccefb.m4a"
+  },
+  "c692d6a10598e0a8": {
+   "_": "clips/88654a03d07578b8.m4a"
+  },
+  "c6976a6c5cd31487": {
+   "_": "clips/6584893080444400.m4a"
+  },
+  "c718c6ea3ace87f6": {
+   "Waiter": "clips/410bf909dd85283e.m4a"
+  },
+  "c72f442bcaff3d77": {
+   "_": "clips/225569df0f66e554.m4a"
+  },
+  "c736cb1295151d02": {
+   "_": "clips/8bc3611666177b99.m4a"
+  },
+  "c760134b34ba8b70": {
+   "_": "clips/e0c3c257859cc814.m4a"
+  },
+  "c84afde0f096f748": {
+   "partner": "clips/22eb5d61fa113b2a.m4a"
+  },
+  "c88dda5d6ced0121": {
+   "A": "clips/5485f653b58b4b0b.m4a",
+   "_": "clips/9fb5e37da8c84be1.m4a"
+  },
+  "c8bdad5390d09cb6": {
+   "Sara": "clips/b09cd00b268f218a.m4a"
+  },
+  "c8ecd9a744cdf387": {
+   "_": "clips/f4fb56c7f1ab4e88.m4a"
+  },
+  "c8f4e1eef18c3da6": {
+   "_": "clips/12386d69e1e50668.m4a"
+  },
+  "ca1c58e55c57bf54": {
+   "_": "clips/cd4d242ad93b942c.m4a"
+  },
+  "ca5bfdc89d4ac335": {
+   "_": "clips/3a5c7942ec7e8fce.m4a"
+  },
+  "caa8edb782581ad1": {
+   "_": "clips/df35abc37ffc8476.m4a"
+  },
+  "cae355b615b61313": {
+   "_": "clips/bb9140618d5d9e26.m4a"
+  },
+  "cae7add1d0eb5779": {
+   "_": "clips/6987c1d6c7a6bcdc.m4a"
+  },
+  "cafb545f114cae77": {
+   "_": "clips/7fa8f2726bbca011.m4a"
+  },
+  "cb079fb04756968e": {
+   "_": "clips/99e7307cdb77cb3d.m4a"
+  },
+  "cb28f2da7bf1d860": {
+   "Ali": "clips/023952c62ebcf3f4.m4a"
+  },
+  "cc0cd85eaeead354": {
+   "_": "clips/5abad411eab62d46.m4a"
+  },
+  "cc1d2d33731b78f4": {
+   "Resident": "clips/2971c806a820ebee.m4a"
+  },
+  "cc5a0c506761ce68": {
+   "_": "clips/0e77edbcbb137caa.m4a"
+  },
+  "cc60978a31f6d8e4": {
+   "partner": "clips/e769644e715e5c84.m4a"
+  },
+  "cce55e4309a75398": {
+   "_": "clips/ece05a7eda090b43.m4a"
+  },
+  "cd1b646ebd1f6844": {
+   "_": "clips/320ce5c1e2d7f0df.m4a"
+  },
+  "cd2a29534cac2603": {
+   "_": "clips/18bdcb319bd7b5d6.m4a"
+  },
+  "cd44bc68a3395506": {
+   "Passenger": "clips/11df4933d7feb533.m4a"
+  },
+  "cd47ccc51ca76e14": {
+   "_": "clips/d005baa50a6d51cd.m4a"
+  },
+  "cd96efb6a2c7d592": {
+   "_": "clips/3b539a066c4bef23.m4a"
+  },
+  "cd97787df9fc05ca": {
+   "_": "clips/dd30501212ee33e0.m4a"
+  },
+  "cda051c901386f0e": {
+   "_": "clips/a9548a239013c7f4.m4a"
+  },
+  "cde2f651fe002f33": {
+   "Ali": "clips/0f3428dea40c7596.m4a"
+  },
+  "ce0b1612aa711b78": {
+   "_": "clips/f965052f25699e5c.m4a"
+  },
+  "ce4151ff856b629d": {
+   "_": "clips/bd2d633fd0d2787a.m4a"
+  },
+  "ce6474dcf4b42acb": {
+   "_": "clips/492be36aff4118c8.m4a"
+  },
+  "ce9fc287d9f736f5": {
+   "_": "clips/c72b50632b979e3b.m4a"
+  },
+  "cef7e59218e3a7e1": {
+   "_": "clips/d56594305ea77042.m4a"
+  },
+  "cf0b10d6f58352da": {
+   "_": "clips/f60e3849fc8db879.m4a"
+  },
+  "cf2a5a07c5e36760": {
+   "partner": "clips/4ab5eb12cfb3c08f.m4a"
+  },
+  "cf5dbf0ec57dff5d": {
+   "_": "clips/0a2e840a08eef5a0.m4a"
+  },
+  "cf6153167561695c": {
+   "_": "clips/02c132bc06c1a565.m4a"
+  },
+  "cfa81d59225647d2": {
+   "_": "clips/1fe48cc18cc5c7b7.m4a"
+  },
+  "cfc82b7810566067": {
+   "Patient": "clips/a73833f7dc6b4876.m4a"
+  },
+  "cfda720365eb5b9a": {
+   "_": "clips/3b8a762fd5a0c23a.m4a"
+  },
+  "cfe5a6d4d4b72db3": {
+   "Maya": "clips/1ed0a3b94e4d80d4.m4a"
+  },
+  "d0be2dc421be4fcd": {
+   "_": "clips/eaca51754dcf2485.m4a"
+  },
+  "d0c4047caa5bbe26": {
+   "_": "clips/fb93bc88116e1d00.m4a"
+  },
+  "d14411cd479a2a4d": {
+   "_": "clips/c1057c1aef194ca5.m4a"
+  },
+  "d14be32ed7c34389": {
+   "Lina": "clips/6fae3f01dcee8c63.m4a",
+   "_": "clips/4757ad5a7c27e803.m4a"
+  },
+  "d151a4e4f9f16b2e": {
+   "_": "clips/680a34a756360748.m4a"
+  },
+  "d162692f0622e8da": {
+   "_": "clips/a69ab86a0b54f99b.m4a"
+  },
+  "d166ea38ff54d8e0": {
+   "_": "clips/550b26d7d7970b7e.m4a"
+  },
+  "d167dc3abed83122": {
+   "_": "clips/45bf6670e32695da.m4a"
+  },
+  "d17464d0dd2b1340": {
+   "_": "clips/d644291abcc72fb1.m4a"
+  },
+  "d17cf4a0422d7c3c": {
+   "_": "clips/8161f3b7760a2e74.m4a",
+   "partner": "clips/1b33ee7227098eea.m4a"
+  },
+  "d185cba830a8de03": {
+   "_": "clips/43237bf14280345d.m4a"
+  },
+  "d1eabfae34104c6c": {
+   "_": "clips/0d246bb5975ab1b7.m4a"
+  },
+  "d1eb2a05278813d8": {
+   "Ali": "clips/44eb5d11cead1b99.m4a"
+  },
+  "d1ef4731ec5c2e1f": {
+   "_": "clips/e382f38370cb87ac.m4a"
+  },
+  "d1f89e1151dbd3cf": {
+   "_": "clips/62fa208e252d1c5a.m4a"
+  },
+  "d20b77daf5490de3": {
+   "_": "clips/944a900008148b24.m4a"
+  },
+  "d27a1f1177120094": {
+   "_": "clips/1661293c609d50b7.m4a"
+  },
+  "d2dfaedcb4fe8de1": {
+   "_": "clips/45cd8e167025c7fb.m4a"
+  },
+  "d2eaf2aa1512d659": {
+   "_": "clips/2d7cdfdb86e92e30.m4a"
+  },
+  "d30b1a085568a0c9": {
+   "_": "clips/d5f35297b1423be9.m4a"
+  },
+  "d315be8d3558c342": {
+   "Ali": "clips/8512ee25902a4475.m4a"
+  },
+  "d33b287fec1b3580": {
+   "_": "clips/6c243e88c7830c45.m4a"
+  },
+  "d375a00cb5ecfaac": {
+   "_": "clips/f6996f917156f1cb.m4a"
+  },
+  "d39a47507bbe27c2": {
+   "_": "clips/fad6a5356efaabf7.m4a"
+  },
+  "d3a9fb075d49be97": {
+   "_": "clips/bd710aaff4dd7889.m4a"
+  },
+  "d3aaadc2159c0254": {
+   "_": "clips/7afdee523efb14a2.m4a"
+  },
+  "d3cd0ef63fca6e29": {
+   "Maya": "clips/aa1c9e387a4adf8b.m4a"
+  },
+  "d3ece2a713b30af1": {
+   "Customer": "clips/cd792f13c364a8b0.m4a"
+  },
+  "d406112574daf67e": {
+   "_": "clips/40349a113613e9ec.m4a"
+  },
+  "d44013fefc7ea561": {
+   "_": "clips/91410a0d9391dead.m4a"
+  },
+  "d4545c238db063d5": {
+   "Omar": "clips/142035e8c5f8a7ff.m4a"
+  },
+  "d466a9148953152b": {
+   "_": "clips/53577b5ff8053e57.m4a"
+  },
+  "d479fa0ef92542c8": {
+   "_": "clips/a6b5889cfa79bd24.m4a"
+  },
+  "d4fd788bfdb78631": {
+   "_": "clips/3e980bc9a32ca60a.m4a"
+  },
+  "d501da77d80cb3b2": {
+   "_": "clips/74fc56f58e1fbbf0.m4a"
+  },
+  "d5184258085bb05a": {
+   "_": "clips/bd764f4ca5e8a111.m4a"
+  },
+  "d528e0fb6dee9f72": {
+   "_": "clips/642edf69006e8e2c.m4a"
+  },
+  "d57fd91679ff5808": {
+   "_": "clips/5b0a00390a5d7e2d.m4a"
+  },
+  "d5a797040efa0111": {
+   "_": "clips/ef7b9ca7399d05a6.m4a"
+  },
+  "d5b10e7ab211a846": {
+   "_": "clips/6ab962610ce1b99e.m4a"
+  },
+  "d5b417165eaf5b9e": {
+   "_": "clips/b988f7b1b90e2b41.m4a"
+  },
+  "d5bd4bff689de046": {
+   "partner": "clips/6d155d1909adfacd.m4a"
+  },
+  "d5c5aeb180f556a8": {
+   "Assistant": "clips/969f7acc0b74f116.m4a"
+  },
+  "d6132a750561657c": {
+   "_": "clips/a5778fa4798db84b.m4a"
+  },
+  "d6168b5cf1d14d18": {
+   "Nurse": "clips/96374d7b19392d7b.m4a"
+  },
+  "d67cca5aaed6ead2": {
+   "_": "clips/07237911440d4ea7.m4a"
+  },
+  "d713b629aeeec13c": {
+   "_": "clips/1c6adaa7104a46f9.m4a"
+  },
+  "d7153e6702b4ea48": {
+   "_": "clips/0d14e4d1b92bdd51.m4a"
+  },
+  "d737e21c647a88d1": {
+   "_": "clips/230e0bc77c3bbfe9.m4a"
+  },
+  "d788e0b4fa5445c0": {
+   "Maya": "clips/48fe4af6ee86fbe1.m4a"
+  },
+  "d7be082d0ca796b1": {
+   "_": "clips/ddf1284ae55b4ee0.m4a"
+  },
+  "d80794b7648ac907": {
+   "_": "clips/4b1f60fa05c64f76.m4a"
+  },
+  "d82fc2c6cd3a73c0": {
+   "_": "clips/76da6b2be59413cc.m4a"
+  },
+  "d83fc386ba33f5d5": {
+   "_": "clips/47556f8960453a12.m4a"
+  },
+  "d8554322774cc4eb": {
+   "Noor": "clips/743495a972dc80b3.m4a"
+  },
+  "d8ad8927984f52c8": {
+   "Daniel": "clips/67a2d29ca2aad162.m4a"
+  },
+  "d8c46683a8f9c868": {
+   "_": "clips/7c3ea9bce8411975.m4a"
+  },
+  "d8dca6b16009fd9e": {
+   "_": "clips/4e998c8bebb806b4.m4a"
+  },
+  "d8f4d79f56fd1bd8": {
+   "partner": "clips/87e1521ecf05fc47.m4a"
+  },
+  "d8fd39d0bbdd2dcf": {
+   "_": "clips/ac8566fc4bd9b59f.m4a"
+  },
+  "d91c63925556885b": {
+   "_": "clips/920ea522316b74e8.m4a"
+  },
+  "d93968dc551340ea": {
+   "Waiter": "clips/962327a7a5c7b2ea.m4a"
+  },
+  "d93e8eecff3c4f98": {
+   "_": "clips/7f4544088ab51d3a.m4a"
+  },
+  "d99a543f5a6edd64": {
+   "_": "clips/68e133168d282f88.m4a"
+  },
+  "d9ddae97785c5698": {
+   "_": "clips/594d90a7673563ac.m4a"
+  },
+  "da51aa99980fb102": {
+   "Noor": "clips/85df46951d46d166.m4a"
+  },
+  "da6768d38c833480": {
+   "Customer": "clips/e621674b0e61c186.m4a"
+  },
+  "dacb486f4711d8e3": {
+   "_": "clips/33a2cfe96b26024e.m4a"
+  },
+  "dacfe07134c701e3": {
+   "_": "clips/7c1c18ddd9e6cc08.m4a"
+  },
+  "db3237c2610fc9f5": {
+   "_": "clips/5855c3a7c8eba703.m4a"
+  },
+  "db5c6d32e39e99fb": {
+   "_": "clips/0c1e33af7d53d51c.m4a"
+  },
+  "db766dff0d2ba1f9": {
+   "_": "clips/966c8bb43623aea4.m4a"
+  },
+  "db91e6ca4cb90138": {
+   "_": "clips/1cf04ff5c084d96b.m4a"
+  },
+  "db926e1448ca471f": {
+   "_": "clips/09de946f45512f98.m4a"
+  },
+  "dba7babda36ff6fe": {
+   "_": "clips/d0e98126af76a490.m4a"
+  },
+  "dbc66b96adfcbde8": {
+   "_": "clips/1238be12ba35f508.m4a"
+  },
+  "dc0171970ec79c5e": {
+   "Lina": "clips/f63488a39092ca88.m4a"
+  },
+  "dc0db6e04ff6a41e": {
+   "_": "clips/6e358f94e7d7ef7a.m4a"
+  },
+  "dc52f279269d00dd": {
+   "_": "clips/b2c3ce21dce2938f.m4a"
+  },
+  "dc9c9c624e5e4ff0": {
+   "Maya": "clips/13fede6bbfe51d82.m4a"
+  },
+  "dcccbbc3b3b133ef": {
+   "partner": "clips/eea210e3481eb82e.m4a"
+  },
+  "dd131be79e003b4c": {
+   "_": "clips/2b93faf728395933.m4a"
+  },
+  "dd28a3fd963b319d": {
+   "Omar": "clips/88a15807967f8353.m4a"
+  },
+  "dd3562449147ffc7": {
+   "_": "clips/c1866b0ee4680206.m4a"
+  },
+  "dd3f9b8852c5d0c9": {
+   "_": "clips/1bc6023a7d5b1fb8.m4a"
+  },
+  "dd63f9c7c7064abc": {
+   "Ali": "clips/1f18fe864c04fa23.m4a"
+  },
+  "dd6708dd64fabdf0": {
+   "_": "clips/0076559012de955d.m4a"
+  },
+  "dd7b1d0288f0f511": {
+   "_": "clips/48f641fe0237ab9f.m4a"
+  },
+  "dd8be7ef312c50f6": {
+   "_": "clips/8849d281c6481ddf.m4a"
+  },
+  "ddbc6188203df73f": {
+   "_": "clips/ed7c5d578dab5dea.m4a"
+  },
+  "ddcb38f46acf528a": {
+   "_": "clips/d09ec07d8d2fc473.m4a"
+  },
+  "ddf1e4d296f651a9": {
+   "_": "clips/8ade1d7dd18d36f6.m4a"
+  },
+  "de022a042cef35cb": {
+   "_": "clips/f6e0b2c8d9ec91e5.m4a"
+  },
+  "de138da7faa97c91": {
+   "_": "clips/45e818ef1ebd7529.m4a"
+  },
+  "de20a555eaa27f7f": {
+   "_": "clips/377c8bb7f3cdc047.m4a"
+  },
+  "de2a437c3a274e57": {
+   "_": "clips/5ce51f3bda5841dd.m4a"
+  },
+  "de3ac21778e51de1": {
+   "_": "clips/56b5d309cdedb55a.m4a"
+  },
+  "dee662c5997432aa": {
+   "_": "clips/c7a24a6cfac1fd19.m4a"
+  },
+  "def0d6c73b71484d": {
+   "_": "clips/2c123986b140d741.m4a"
+  },
+  "df06b147f778d46f": {
+   "_": "clips/6212a86e2fa048b6.m4a"
+  },
+  "df1587454386a738": {
+   "_": "clips/51be5327d55826db.m4a"
+  },
+  "df1be857d5fbed48": {
+   "_": "clips/d10c94f1e3fc66a0.m4a"
+  },
+  "df33994d15593333": {
+   "_": "clips/909d9225343b0937.m4a"
+  },
+  "df3db95d3c988eaf": {
+   "partner": "clips/7020b9c7efee8525.m4a"
+  },
+  "df479c4bc8932efc": {
+   "Sara": "clips/8567d5e3da2b27e7.m4a"
+  },
+  "df6ad19037c97987": {
+   "_": "clips/816cee12757cb3fa.m4a"
+  },
+  "dfc2d13bd4b63b67": {
+   "_": "clips/9798b74423c52a3c.m4a"
+  },
+  "e040f6fe44bdbfe5": {
+   "Ali": "clips/5bbac7536e0b9a8b.m4a"
+  },
+  "e06fe09c39d93480": {
+   "partner": "clips/bc35c9a6102f315b.m4a"
+  },
+  "e07508824e895e25": {
+   "_": "clips/258b56daf4f7fc84.m4a"
+  },
+  "e09315fa02d775f3": {
+   "_": "clips/8f4bc981882bff7a.m4a"
+  },
+  "e09d5bdfba51324e": {
+   "_": "clips/e276435bffafdae9.m4a"
+  },
+  "e0c0812d375c4ebb": {
+   "partner": "clips/c6c3c3242f4ea3c2.m4a"
+  },
+  "e0d587ce038c01af": {
+   "_": "clips/e10e72020c0e0619.m4a"
+  },
+  "e1249459937a76aa": {
+   "partner": "clips/19d5665ea916e833.m4a"
+  },
+  "e18a89f9cc5b6b19": {
+   "_": "clips/3b5aab52d02162b0.m4a"
+  },
+  "e1a15d141df77e99": {
+   "_": "clips/2a722d746d09a5e4.m4a"
+  },
+  "e1d0c6c1c29e6ad5": {
+   "_": "clips/1661293c609d50b7.m4a"
+  },
+  "e1e0c2cad4261afb": {
+   "_": "clips/ffe768143207191a.m4a"
+  },
+  "e25cfa643ce8f65b": {
+   "_": "clips/aeed59de7bbb843e.m4a"
+  },
+  "e26ddd764953bdb3": {
+   "_": "clips/335e5e346aba5939.m4a"
+  },
+  "e274eeff768c6396": {
+   "_": "clips/a1a06e6cc4b9b366.m4a"
+  },
+  "e2d64d5103cbf315": {
+   "_": "clips/1c1fdd8b4a3cc29e.m4a"
+  },
+  "e2f347fb47ff25ff": {
+   "_": "clips/d197aace1426eba2.m4a"
+  },
+  "e365ad02a257efea": {
+   "_": "clips/1ab11ef8489edb9d.m4a"
+  },
+  "e3683d0554cb0566": {
+   "_": "clips/118296d8672d3587.m4a"
+  },
+  "e3772ac4b4db87b4": {
+   "_": "clips/d7b04ebae956e341.m4a"
+  },
+  "e3daf685eb3f909a": {
+   "_": "clips/bd45ae7d3f164562.m4a"
+  },
+  "e3f43099dd969582": {
+   "_": "clips/d155698d94ac182c.m4a"
+  },
+  "e422806674aa8bac": {
+   "partner": "clips/2b8dc9d3cb9ea39b.m4a"
+  },
+  "e472c29b3c5cf78d": {
+   "Omar": "clips/bfea3497010641ba.m4a",
+   "_": "clips/440955509c593938.m4a"
+  },
+  "e4c1c97cd645d42f": {
+   "_": "clips/318f0650351dc4e2.m4a"
+  },
+  "e4d78884d5a13cd9": {
+   "_": "clips/b2decc11b2ca4ea0.m4a"
+  },
+  "e50e922ef8c54207": {
+   "_": "clips/f45b68998c45a725.m4a"
+  },
+  "e57413a527b482cd": {
+   "Sara": "clips/3d7a00cd86ec7368.m4a",
+   "_": "clips/0152335c5f430bb9.m4a"
+  },
+  "e63c4ae8ca04fb4e": {
+   "_": "clips/be40b59bfdb67096.m4a"
+  },
+  "e6442113b614971a": {
+   "_": "clips/9afa99e8e7af35d5.m4a"
+  },
+  "e653659f8b3c8ec5": {
+   "Clerk": "clips/c66215a172720d08.m4a",
+   "_": "clips/a392a72a42f7425d.m4a"
+  },
+  "e6642789c8e22028": {
+   "Sara": "clips/849ea3adc38b06eb.m4a"
+  },
+  "e69682c04b5b537e": {
+   "_": "clips/092c24d2ead4ba4b.m4a"
+  },
+  "e69867ca7d5a7b0a": {
+   "_": "clips/1f0a8c39d160767d.m4a"
+  },
+  "e771793ca0ae4f1a": {
+   "partner": "clips/5febdb89028f1614.m4a"
+  },
+  "e77a326033696c0e": {
+   "_": "clips/7487016776348d4d.m4a"
+  },
+  "e77a5f05cf500a7f": {
+   "Lina": "clips/24d83e4602db77fb.m4a"
+  },
+  "e783eb40e391590c": {
+   "_": "clips/a564154d0a4276a9.m4a"
+  },
+  "e7ad524dc351889f": {
+   "Daniel": "clips/13b00c9a207dc4b8.m4a"
+  },
+  "e7e694c58cd50e03": {
+   "_": "clips/62f96fd8140cf550.m4a"
+  },
+  "e81ccba6b510c431": {
+   "_": "clips/d377c6e98522ed71.m4a"
+  },
+  "e81d65a77e98bed8": {
+   "_": "clips/22d83202372d67dc.m4a"
+  },
+  "e83249bd3ba79932": {
+   "_": "clips/cebef5f6aafcd006.m4a"
+  },
+  "e84c90cd182e5da7": {
+   "Passenger": "clips/9d9bf19f747089f5.m4a"
+  },
+  "e84fc94c149a8592": {
+   "_": "clips/99a3ec31f252bdb7.m4a"
+  },
+  "e869faf880cc1437": {
+   "Visitor": "clips/89abdfa488600462.m4a"
+  },
+  "e8773bc6e3a11b56": {
+   "Passenger": "clips/4c538c3786b208ce.m4a"
+  },
+  "e88355024fb95259": {
+   "Patient": "clips/3bb8813ebd776d0d.m4a"
+  },
+  "e8afaa73a3224060": {
+   "Sara": "clips/5c8bee04cafbdc59.m4a"
+  },
+  "e8b82b6ddf9891c6": {
+   "Customer": "clips/34f7ec17711c668f.m4a"
+  },
+  "e8e0a9f4af45d3bd": {
+   "_": "clips/495ea7faf16c9527.m4a"
+  },
+  "e900afba4cbfdef3": {
+   "_": "clips/4c5fc0450fde5dd3.m4a"
+  },
+  "e9580018faafd41d": {
+   "Noor": "clips/ef88396480155595.m4a"
+  },
+  "e98bd582eca29920": {
+   "Assistant": "clips/4e58050a4693bf33.m4a"
+  },
+  "e9a3b716a8f2e6f1": {
+   "Anna": "clips/ac2b50c1c77db100.m4a"
+  },
+  "e9c9137ed7e56b5c": {
+   "_": "clips/1a43fdf0c9b1e2b7.m4a"
+  },
+  "e9cd6041c0888ad2": {
+   "Resident": "clips/92746cba624e1f37.m4a"
+  },
+  "ea38e65be7ee8176": {
+   "_": "clips/d64055531f3581dd.m4a"
+  },
+  "ea39210a09e76cf4": {
+   "_": "clips/87ca9f264a1272bd.m4a"
+  },
+  "ea573f4a97d984a5": {
+   "_": "clips/b52fa148cdb087f5.m4a"
+  },
+  "ea5eb8e27f6e7dd7": {
+   "_": "clips/68b927c4f1a285c0.m4a"
+  },
+  "ea755c9f67f5fe1f": {
+   "_": "clips/cd8d4dc75cbcde4c.m4a"
+  },
+  "ea88fbaa99b73225": {
+   "_": "clips/94b6cc881622ca3f.m4a"
+  },
+  "eaed3160448dba38": {
+   "_": "clips/79101593497e5689.m4a"
+  },
+  "eb1cdb28c868ec41": {
+   "_": "clips/cd5ce38d90164e10.m4a"
+  },
+  "eb49b5843ad91a29": {
+   "Maya": "clips/2a69d8e722e2dd13.m4a"
+  },
+  "eb4e3be8603e6bae": {
+   "_": "clips/b0e0a69225dcecf0.m4a"
+  },
+  "eb542d914033eac0": {
+   "_": "clips/c7feed7e41c6b669.m4a"
+  },
+  "eb7ada766135202f": {
+   "_": "clips/2fa30d39895a592e.m4a"
+  },
+  "ebb471c413614b3c": {
+   "_": "clips/dca4e277a7257173.m4a"
+  },
+  "ebc0cde82482a395": {
+   "_": "clips/2a77ec30cefc81d0.m4a"
+  },
+  "ec644f7b02526434": {
+   "_": "clips/c5ec912133376da9.m4a"
+  },
+  "ec6ffa6832aa0af3": {
+   "_": "clips/364590336df6066b.m4a"
+  },
+  "ec83bbdd05c7a242": {
+   "_": "clips/883ac028a172efe3.m4a"
+  },
+  "ec9240f53e202f8c": {
+   "Sara": "clips/22f3eff5ad120ef5.m4a"
+  },
+  "ecc0693c70bc09a4": {
+   "Ali": "clips/89f530c0184c335f.m4a"
+  },
+  "ecc074ccb8f1d598": {
+   "_": "clips/1b952dd463660b63.m4a"
+  },
+  "ecc3746255b907f3": {
+   "_": "clips/ded6937cbf3099c0.m4a"
+  },
+  "ece705d2227cf5b9": {
+   "_": "clips/0c5e0903ad7e4c6a.m4a"
+  },
+  "ed1850af553a01b8": {
+   "_": "clips/62bc838908d94346.m4a"
+  },
+  "ed24d438a34dbfd4": {
+   "_": "clips/537dcfffdf4054aa.m4a"
+  },
+  "ed2bf76584d29c1b": {
+   "Anna": "clips/5b6db0cf3c6b2357.m4a"
+  },
+  "ed893ac47d42f6c8": {
+   "_": "clips/d483d3dcafc85e2d.m4a"
+  },
+  "ed945d6b996ff456": {
+   "_": "clips/b91877a7b73fc7ff.m4a"
+  },
+  "edb1f42a0bd4ff4b": {
+   "_": "clips/6f913567ac3d6e0b.m4a"
+  },
+  "edb9f803adc06a4b": {
+   "Maya": "clips/380fd5be88e64095.m4a"
+  },
+  "edd4db55f638ec5b": {
+   "_": "clips/0e1f059410671d51.m4a"
+  },
+  "edee9402d198b04a": {
+   "_": "clips/ae0ac83408b3f9c6.m4a"
+  },
+  "edf171263bafe058": {
+   "Ali": "clips/6bd715262afa427f.m4a"
+  },
+  "ee0624b961436390": {
+   "Omar": "clips/4e6c8422aa673577.m4a"
+  },
+  "ee38aa5f447c4bbe": {
+   "_": "clips/0a282e9d483a8266.m4a"
+  },
+  "ee6a3289cec744ff": {
+   "Visitor": "clips/6f4c5cf7d427951a.m4a"
+  },
+  "ee6e533905045b27": {
+   "_": "clips/964764aa92dc542a.m4a"
+  },
+  "ee97d2f28ccffbc4": {
+   "_": "clips/6690b0386fbaa931.m4a"
+  },
+  "eeb4505f3ac5878d": {
+   "_": "clips/c0d0daf049ed3276.m4a"
+  },
+  "ef4a23f555cc5b09": {
+   "_": "clips/f45c0816f3e5b730.m4a"
+  },
+  "ef5c844eab88bcac": {
+   "_": "clips/529286312619274f.m4a"
+  },
+  "ef72c394e97e6cf9": {
+   "_": "clips/88059d0ffc98f18a.m4a"
+  },
+  "efd1c8648e967bbd": {
+   "Maya": "clips/09b8edcddd0b0c0f.m4a",
+   "_": "clips/a6a84565db74ff19.m4a"
+  },
+  "efebb02c8b8f542e": {
+   "_": "clips/b638b08c2c121ffc.m4a"
+  },
+  "eff2146bfbc05835": {
+   "_": "clips/ef90de9f68552308.m4a"
+  },
+  "f01c690b52e78f0d": {
+   "Waiter": "clips/16798d0ad4855b98.m4a"
+  },
+  "f04323cc8a26af5f": {
+   "_": "clips/93b0faf82895c6bb.m4a"
+  },
+  "f076d36022da7d46": {
+   "_": "clips/d8add8b7f8549eec.m4a"
+  },
+  "f0cbc0ee7d5556a0": {
+   "_": "clips/f7c7c9aa3839f742.m4a"
+  },
+  "f0e7246f8eeeaaed": {
+   "_": "clips/7a6bdc7f8a3947aa.m4a"
+  },
+  "f0f6c3c275f8e2be": {
+   "Maya": "clips/3373e316f57fa9a5.m4a"
+  },
+  "f102109db81239ac": {
+   "Maya": "clips/817ac9cc5591e42c.m4a"
+  },
+  "f113c304b16730de": {
+   "Assistant": "clips/599892046c409a40.m4a"
+  },
+  "f12e996adf405952": {
+   "_": "clips/4dce8304828c3515.m4a"
+  },
+  "f13448d8311c0be7": {
+   "_": "clips/e5083ffd2d044461.m4a"
+  },
+  "f1400c1228fcc994": {
+   "_": "clips/b4aca83ab43d2471.m4a"
+  },
+  "f14d202ae66a1afa": {
+   "partner": "clips/4d5bf850cd25b1fd.m4a"
+  },
+  "f1b58e1d9e1990aa": {
+   "_": "clips/ddc988fd45221fe9.m4a"
+  },
+  "f1fb5263016ba24f": {
+   "Customer": "clips/d208b09265abb0fb.m4a",
+   "_": "clips/0622fc97fb9c09e7.m4a"
+  },
+  "f20427678703fc74": {
+   "_": "clips/43f6417dd7c3cc72.m4a"
+  },
+  "f21d5324fdbf7fac": {
+   "Sara": "clips/1b7bf37dd3e51e23.m4a"
+  },
+  "f25129b34c74b646": {
+   "_": "clips/b671ce845e9dd335.m4a"
+  },
+  "f29ddaa59b1771ab": {
+   "_": "clips/be8355f832872559.m4a"
+  },
+  "f2bfaaef4a414d88": {
+   "Resident": "clips/80716315f8a13050.m4a"
+  },
+  "f2c3da3566cf18ef": {
+   "_": "clips/701293ba0aefc5c7.m4a"
+  },
+  "f2f9f62d2b6e6ab1": {
+   "_": "clips/a18d8d97268528a9.m4a"
+  },
+  "f3557cb6ba865d0a": {
+   "_": "clips/b313667c944118db.m4a"
+  },
+  "f3619af6b122959c": {
+   "_": "clips/f6c5b2cdb950259a.m4a"
+  },
+  "f369864640282ed1": {
+   "Ali": "clips/119133ade0f3cbef.m4a"
+  },
+  "f3ba4d993e2dbcd8": {
+   "_": "clips/a712622681a7c14d.m4a"
+  },
+  "f41c041baa45ef88": {
+   "_": "clips/5384bb23a032ef35.m4a"
+  },
+  "f424452a9673918c": {
+   "_": "clips/503903a30de03b0a.m4a"
+  },
+  "f44ec0f3618a51d7": {
+   "Sara": "clips/e73cee1d8da7addd.m4a"
+  },
+  "f456eca5d7db122d": {
+   "_": "clips/20649e341d2b6c52.m4a"
+  },
+  "f459c3465146daaf": {
+   "_": "clips/0c91c233d85cfc77.m4a"
+  },
+  "f4908819b91a17e2": {
+   "_": "clips/70e7d343506c95eb.m4a"
+  },
+  "f490c4998f036301": {
+   "Patient": "clips/42236a8b36d56dc4.m4a"
+  },
+  "f4b21c34e155d7bc": {
+   "_": "clips/c8c006349f9cbb36.m4a"
+  },
+  "f4b772180c28f944": {
+   "_": "clips/1a0f50bacf9d9d29.m4a"
+  },
+  "f4e13b5d568b9931": {
+   "_": "clips/eb33ae48603cf280.m4a"
+  },
+  "f4e666ddfead01cd": {
+   "Resident": "clips/47e5a2d8a35eea2b.m4a"
+  },
+  "f4f048aec9956640": {
+   "_": "clips/133fc8e3697263bb.m4a"
+  },
+  "f528c732fb3567f0": {
+   "_": "clips/3bd43f94ba92165a.m4a"
+  },
+  "f52bc44a34340cbf": {
+   "_": "clips/0abbcb6d097d6af7.m4a"
+  },
+  "f52d1ccf2656bab0": {
+   "Sara": "clips/0085bc2c2ab127e1.m4a"
+  },
+  "f53f6f6547b9d752": {
+   "_": "clips/61123a325543b08f.m4a"
+  },
+  "f57e4927ed40bd64": {
+   "Maya": "clips/2f621db419e35950.m4a"
+  },
+  "f5e18f31ac8ba99f": {
+   "Clerk": "clips/17a712dff4b99751.m4a"
+  },
+  "f5fc6174c7a4e259": {
+   "Omar": "clips/704d93550f7a8469.m4a"
+  },
+  "f60b516e7544066b": {
+   "Omar": "clips/57523e8a272b8171.m4a"
+  },
+  "f62d135a916c6330": {
+   "_": "clips/637685aafcf4c451.m4a"
+  },
+  "f676ec66afeb196f": {
+   "_": "clips/fc17eca7c12dbe48.m4a"
+  },
+  "f6be6ca910984ef0": {
+   "_": "clips/720adffccb6aab20.m4a"
+  },
+  "f6be6d84d35c4262": {
+   "_": "clips/4a769e7cf3e7cf76.m4a"
+  },
+  "f6c2316b2b21a121": {
+   "_": "clips/28ca157278723f18.m4a"
+  },
+  "f6eaa649325efcb0": {
+   "_": "clips/49ff5af2df925cf9.m4a"
+  },
+  "f74bf14d918c9634": {
+   "_": "clips/df39b5cae199df41.m4a"
+  },
+  "f75bb786b2a056ad": {
+   "Ali": "clips/09d6f16b13c6c071.m4a",
+   "_": "clips/dc9bb40e36092f88.m4a"
+  },
+  "f765381372c56da3": {
+   "_": "clips/241b707a6393d203.m4a"
+  },
+  "f7694cf6b65676a7": {
+   "_": "clips/b4d0f9656df2daea.m4a"
+  },
+  "f790fc96f5268285": {
+   "Lina": "clips/6368b1d69e03f9d0.m4a"
+  },
+  "f7956b2763e6ff17": {
+   "_": "clips/1fecadfed57ac0d4.m4a"
+  },
+  "f7bf27db657bf8c5": {
+   "_": "clips/c937256a29d626d8.m4a"
+  },
+  "f7cc391a6d7a63eb": {
+   "_": "clips/f5fe0815c384defe.m4a"
+  },
+  "f7db8c9b2d603b31": {
+   "Ali": "clips/fd84d9791dbe5d88.m4a"
+  },
+  "f7f94a5c6ec6b69c": {
+   "_": "clips/f6e5542ba5987346.m4a"
+  },
+  "f827768f2b8fd4c8": {
+   "Assistant": "clips/01804de1063083cb.m4a"
+  },
+  "f830e02ef00ee216": {
+   "Sara": "clips/e31cd7daca2a77b0.m4a"
+  },
+  "f837425f738f22e6": {
+   "_": "clips/1bcc747634a4a0a9.m4a"
+  },
+  "f8930758bead4471": {
+   "_": "clips/881a70dea0124f1f.m4a"
+  },
+  "f94827eae898d14b": {
+   "_": "clips/1a9a51d8df4f2d23.m4a"
+  },
+  "f96590586bdd59d4": {
+   "partner": "clips/c645d7a63d8c3853.m4a"
+  },
+  "f983c38179352343": {
+   "Maya": "clips/0fded5a7a074c0e7.m4a"
+  },
+  "f98669cc9b81fea7": {
+   "_": "clips/2e808609f78a99c0.m4a"
+  },
+  "f9bef9c232cea359": {
+   "_": "clips/63bcb737c7924510.m4a"
+  },
+  "fa18ab707ca196dd": {
+   "_": "clips/382f4f455a0f592b.m4a"
+  },
+  "fa3346465ae277a1": {
+   "_": "clips/04b7d2efee3c72a2.m4a"
+  },
+  "fa6602443a2fcbc2": {
+   "_": "clips/113115d5838e049c.m4a"
+  },
+  "fa6953c7ebf6e878": {
+   "_": "clips/696bc8f7b773afee.m4a"
+  },
+  "faa400fbca18dca5": {
+   "_": "clips/1f37ef71ad4c5950.m4a"
+  },
+  "faf6f836f9048f73": {
+   "_": "clips/2bee5571f66eb3c4.m4a"
+  },
+  "fb0110de23081eae": {
+   "_": "clips/6660d93c55e8a427.m4a"
+  },
+  "fb6deeea943c1fea": {
+   "_": "clips/ee00bc1ec6534465.m4a"
+  },
+  "fb722e13f0c20b6b": {
+   "partner": "clips/e599afad2e6f66b8.m4a"
+  },
+  "fb8df41a16b4b1c2": {
+   "_": "clips/c19acf08b339a045.m4a"
+  },
+  "fbad321967228159": {
+   "_": "clips/9051a28862e1ac1f.m4a"
+  },
+  "fbc8fae6b1390136": {
+   "_": "clips/2ab981e2630e4772.m4a"
+  },
+  "fbec17cb2fcbbd1c": {
+   "_": "clips/1c2b3ce250d76613.m4a"
+  },
+  "fbf63c6adba57ff2": {
+   "_": "clips/1da22cde9d7a387b.m4a"
+  },
+  "fc166eb81361ff31": {
+   "_": "clips/c520487eee55a8c8.m4a"
+  },
+  "fc188d90c07d7377": {
+   "Clerk": "clips/ae29ed8cd5e9da8d.m4a"
+  },
+  "fc1e730417480774": {
+   "_": "clips/52e33603c90c8ee3.m4a"
+  },
+  "fc4e6fa55f36162e": {
+   "Visitor": "clips/dd6e33ea95ad2a77.m4a"
+  },
+  "fc5ddb4bafd97d4f": {
+   "Omar": "clips/f6574e24e2b0e314.m4a"
+  },
+  "fc955a19ae4f82e1": {
+   "_": "clips/5ebb26fc44d714b2.m4a"
+  },
+  "fcbf4d4f6833ad0f": {
+   "_": "clips/68d38d3645bab2cb.m4a"
+  },
+  "fcc19fb16909ce2a": {
+   "Noor": "clips/07215240702bf921.m4a"
+  },
+  "fcc537881cd1d5bc": {
+   "_": "clips/93c94e7922e56beb.m4a"
+  },
+  "fccd403d5bae869b": {
+   "_": "clips/b3036961e4dab7a5.m4a"
+  },
+  "fcf29f6cad323270": {
+   "_": "clips/713632f362b4b5a9.m4a"
+  },
+  "fd201d84739e1070": {
+   "Maya": "clips/b1ac6f087f5f51d6.m4a"
+  },
+  "fd3575d2ba5cf0d7": {
+   "_": "clips/f0b3a2fe09143d2e.m4a"
+  },
+  "fd9e529be5fced5d": {
+   "Huda": "clips/5ad192f831b0c62d.m4a"
+  },
+  "fdadc48d9c3ebfe2": {
+   "_": "clips/243ae233bee891ac.m4a"
+  },
+  "fdd91fbac0e5654a": {
+   "_": "clips/efc774e5534a4159.m4a"
+  },
+  "fdda0c46f953c1a4": {
+   "_": "clips/f918f874316b6fd4.m4a"
+  },
+  "fe05bcdcdc492801": {
+   "_": "clips/911955893404288d.m4a"
+  },
+  "fe3b2590ac29abeb": {
+   "Daniel": "clips/c1d0fbc109505a72.m4a"
+  },
+  "fe4dfaf8dcc6d176": {
+   "_": "clips/421ba2f2d5a2d62f.m4a"
+  },
+  "fe69d774cfd057ee": {
+   "Omar": "clips/a23e0d55bae3458a.m4a",
+   "_": "clips/52d73fb97fbf54e1.m4a"
+  },
+  "fe777faac05e90a0": {
+   "_": "clips/a935ab32f01d3c96.m4a"
+  },
+  "fe8ff39b34a03c96": {
+   "_": "clips/5bc2690952f25d5b.m4a"
+  },
+  "fee054901d404676": {
+   "_": "clips/722688bff9f56e97.m4a"
+  },
+  "feed731d262d2c45": {
+   "_": "clips/a10c324898ed0b08.m4a"
+  },
+  "fefe2393a7fc8eaf": {
+   "_": "clips/3fe826d4182aba36.m4a"
+  },
+  "ff054f4e31ad31d0": {
+   "Anna": "clips/f3723e59d2ec9e04.m4a"
+  },
+  "ff0fdb2f04830d10": {
+   "_": "clips/b0c7a5362407fd50.m4a"
+  },
+  "ff1399831942efaf": {
+   "_": "clips/c4335ef452a9493f.m4a"
+  },
+  "ff1b1b5ca40f0745": {
+   "_": "clips/f9649f0242475555.m4a"
+  },
+  "ff26cc9b8cb30552": {
+   "Ali": "clips/7736bfbd6d0ebc78.m4a"
+  },
+  "ff87cea4a48b7734": {
+   "_": "clips/a5e86992d29d3f4d.m4a"
+  },
+  "ffa6f739017c76f2": {
+   "Ali": "clips/36d9b1db9a26a6ff.m4a"
+  },
+  "ffe2234c07a3ca03": {
+   "_": "clips/90dcd56e7d3f9944.m4a"
+  }
+ }
+}

@@ -1,0 +1,4892 @@
+{
+ "schemaVersion": 1,
+ "levelId": "a2",
+ "contentVersion": "A2-IMPORT-2026.09.20",
+ "generatedAt": "2026-09-22T14:50:58Z",
+ "engine": {
+  "name": "kokoro-onnx/kokoro-v1.0",
+  "speed": 1.0
+ },
+ "audio": {
+  "container": "m4a",
+  "codec": "aac",
+  "bitrateKbps": 32,
+  "sampleRateHz": 24000,
+  "channels": 1
+ },
+ "clips": {
+  "005a528549bf2f48": {
+   "Sawsan": "clips/8c360c1585cbfb14.m4a"
+  },
+  "006442b3906c8431": {
+   "_": "clips/60c314a13386ffcb.m4a"
+  },
+  "0083f7f57f07c420": {
+   "_": "clips/b85dea055d1d6014.m4a"
+  },
+  "008b9c80c3f6a36b": {
+   "Tamer": "clips/820a98d7f6d22076.m4a"
+  },
+  "00b2528ceb706b5d": {
+   "_": "clips/2e866863dc8fd886.m4a"
+  },
+  "00da05607a393170": {
+   "_": "clips/bea83e6e19a5379c.m4a"
+  },
+  "00f31ab3ddf17189": {
+   "Basma": "clips/5cdb101a2479ac43.m4a"
+  },
+  "00f74c9df553d35b": {
+   "_": "clips/bdd18124c1effb36.m4a"
+  },
+  "00f97cb506e7cfbb": {
+   "_": "clips/df75ab6ef6a25954.m4a"
+  },
+  "0133337e895df3ee": {
+   "_": "clips/bc95399609821fbb.m4a"
+  },
+  "0163ede964e2fe67": {
+   "partner": "clips/e0e35c1b1ea1f370.m4a"
+  },
+  "0167562988f35591": {
+   "_": "clips/b88433fe35f86c01.m4a"
+  },
+  "0188da9f192c4a35": {
+   "_": "clips/85e6699f85989d7b.m4a"
+  },
+  "0197f16d98866f38": {
+   "_": "clips/502970e988e005dd.m4a"
+  },
+  "01a2dbfcf6a2a493": {
+   "_": "clips/33d25ce41f33b0f4.m4a"
+  },
+  "0214b4b355d11ca8": {
+   "_": "clips/59d65d44e37a321c.m4a"
+  },
+  "02ab610f42452d70": {
+   "_": "clips/2e9c7742b8388f21.m4a"
+  },
+  "031c996cf2e840be": {
+   "_": "clips/7488109b0ed1b52e.m4a"
+  },
+  "031e388c52e14354": {
+   "_": "clips/a747031ba57996f5.m4a"
+  },
+  "0337908b78a0e66d": {
+   "partner": "clips/7eb1d17c0c848e72.m4a"
+  },
+  "0349b39bb31bc17b": {
+   "Omar": "clips/2a8b29fcb18b7e83.m4a"
+  },
+  "036598912484da0b": {
+   "_": "clips/17db1c3d01bd67d0.m4a"
+  },
+  "03aa4a2a848e562b": {
+   "Sawsan": "clips/4d96f74555cd3f99.m4a"
+  },
+  "03ded2c7b23757a9": {
+   "Mr Jabbar": "clips/5a92f2ec296b3b12.m4a"
+  },
+  "03e45a11b528d09b": {
+   "_": "clips/dedc4908022e5984.m4a"
+  },
+  "03f8f12d2f587aac": {
+   "_": "clips/278e8b65d9273503.m4a"
+  },
+  "03fcf2ffe03006d4": {
+   "_": "clips/f75899cac2fc805a.m4a"
+  },
+  "04b9d3ec1aed179f": {
+   "Karim": "clips/c02a085d3d92b2ce.m4a"
+  },
+  "04fbbfcd1fcef8d3": {
+   "_": "clips/0784b47bbc1ecadc.m4a"
+  },
+  "0517dc15ace78f45": {
+   "_": "clips/2b2cdcd4e5545dad.m4a"
+  },
+  "05241a14818c14e5": {
+   "_": "clips/2d230536f4f1ec3a.m4a"
+  },
+  "056acfeac5571914": {
+   "_": "clips/acb5fd41a97c9dd5.m4a"
+  },
+  "0570b92fa1d62502": {
+   "_": "clips/59b5249f0be48181.m4a"
+  },
+  "0576d1b319ed6bee": {
+   "_": "clips/a2246691ce67ed6b.m4a"
+  },
+  "05e7ca9af85fb976": {
+   "Nadia": "clips/4968da527accf25d.m4a"
+  },
+  "065c5c297f3c4990": {
+   "_": "clips/8946265b7d82e896.m4a"
+  },
+  "066386a76689500b": {
+   "_": "clips/c3a8357a8465a5d0.m4a"
+  },
+  "07018ce6dd908a66": {
+   "_": "clips/59b3348e0d71ca12.m4a"
+  },
+  "071e9ea2321a9b4c": {
+   "Ziad": "clips/868bde2585a7fda2.m4a"
+  },
+  "0735fa608ec0d008": {
+   "_": "clips/9d58eb88df475d8e.m4a"
+  },
+  "075352eccc7f20bb": {
+   "_": "clips/23d54a24f3fdf32e.m4a"
+  },
+  "076df7153a50d682": {
+   "_": "clips/308a8363da173c65.m4a"
+  },
+  "0774b33474858470": {
+   "_": "clips/063fb422b8936d47.m4a"
+  },
+  "0803df4ff1650933": {
+   "_": "clips/648f1742ccc9afef.m4a"
+  },
+  "0861b221a73e1bca": {
+   "_": "clips/adcbce0e743ed8da.m4a"
+  },
+  "08656029437581c2": {
+   "_": "clips/6600b2639cfa14e9.m4a"
+  },
+  "08947a624d4399b5": {
+   "_": "clips/ecc8ddaf4a042a75.m4a"
+  },
+  "08be986c4801233c": {
+   "_": "clips/2e576df0db0099be.m4a"
+  },
+  "090aa6211b0d7848": {
+   "_": "clips/1e845ee0035b264e.m4a"
+  },
+  "091226dd0eca7dc3": {
+   "Maryam": "clips/6a5c544df2b9e476.m4a"
+  },
+  "0914b71d9a69f732": {
+   "_": "clips/5f71c3be6d0be5f2.m4a"
+  },
+  "091fa42144981b2f": {
+   "Omar": "clips/a9317edf7fa4c33b.m4a"
+  },
+  "0947fcc917eb1d3c": {
+   "_": "clips/c09f9e8c0db5ba76.m4a"
+  },
+  "0964ddfeb01c77d7": {
+   "_": "clips/d44ddb607b177a68.m4a"
+  },
+  "09682f99cb04dbc5": {
+   "_": "clips/c69a8c4bdbc99302.m4a"
+  },
+  "09d4eff2b7048436": {
+   "Basma": "clips/b13833d5a6333770.m4a"
+  },
+  "09d763b851e4f030": {
+   "Omar": "clips/117da75bb5cbbec4.m4a"
+  },
+  "09e5d83538bb9068": {
+   "_": "clips/bdea4f65c2a74054.m4a"
+  },
+  "09eed9d6204e2815": {
+   "_": "clips/c18b06f3ad57a8fc.m4a"
+  },
+  "09fafa6a03e74282": {
+   "_": "clips/d316ea91c08b67d3.m4a"
+  },
+  "0a229a2ce2429ed4": {
+   "_": "clips/cc7efdd622b155fc.m4a"
+  },
+  "0a25ba5991316bdd": {
+   "_": "clips/b0097fa00c68a770.m4a"
+  },
+  "0a2b9827e548969e": {
+   "_": "clips/e00927541bee1d18.m4a"
+  },
+  "0a2ccceee77b0b5a": {
+   "_": "clips/f3329c2854102558.m4a"
+  },
+  "0a36c9470a259465": {
+   "_": "clips/dda01a34605a1467.m4a"
+  },
+  "0a5ac49c042ea364": {
+   "Muna": "clips/8b3ccd3002698307.m4a"
+  },
+  "0a9efaa148bd7560": {
+   "partner": "clips/afd6d2c920f3f428.m4a"
+  },
+  "0ad9fe0060d2cc62": {
+   "_": "clips/78682b7c9eaea85e.m4a"
+  },
+  "0b47eed52b656c8f": {
+   "_": "clips/b8dce5b5f24187a8.m4a"
+  },
+  "0b7f1523bd5c76ca": {
+   "_": "clips/e5fe68b4b334aac4.m4a"
+  },
+  "0bbe8d2a1b30d7dd": {
+   "_": "clips/17f715983a0c7c20.m4a"
+  },
+  "0bc909ebf6b20012": {
+   "partner": "clips/8e701ed9b0a29356.m4a"
+  },
+  "0bf9aac484099801": {
+   "_": "clips/04d18e0ced3d2b18.m4a"
+  },
+  "0c383ba5c9bc459d": {
+   "_": "clips/bdccbc9169b89f51.m4a"
+  },
+  "0c890ea5e3badb98": {
+   "_": "clips/3611769713af836a.m4a"
+  },
+  "0c89266c69b89bf6": {
+   "Rawan": "clips/3b01b718c8c08c62.m4a"
+  },
+  "0c8a1291da8fadb1": {
+   "Jamal": "clips/0e7247e85ae61ada.m4a"
+  },
+  "0c8d051d3c7eada5": {
+   "_": "clips/7cf2d21dec2151df.m4a"
+  },
+  "0cc8ba05e6b5eed7": {
+   "partner": "clips/159c72f7b92146dd.m4a"
+  },
+  "0cf1bc84bb8baca8": {
+   "_": "clips/0b6a2691a4cc247d.m4a"
+  },
+  "0d1022854d802133": {
+   "Nadia": "clips/78b7ea4e7ccdbe22.m4a"
+  },
+  "0d567e5718800d8b": {
+   "Yousef": "clips/6ed126c31da86574.m4a"
+  },
+  "0da9f3a38b91ccba": {
+   "_": "clips/a18874c248cfb9c9.m4a"
+  },
+  "0dc505fa086f5cd1": {
+   "_": "clips/11ddbce58e7b4716.m4a"
+  },
+  "0dca0e3b5a9eef57": {
+   "_": "clips/8aa02b4a4db9e407.m4a"
+  },
+  "0e2e2a287ffc3a2a": {
+   "_": "clips/ed10cfd84eb64404.m4a"
+  },
+  "0e48896a266e80b5": {
+   "_": "clips/84670d8320db3a26.m4a"
+  },
+  "0e96f8e16dfe9ad3": {
+   "Suad": "clips/445a5c6580cbd6e0.m4a"
+  },
+  "0e9a6c86bc61e6bf": {
+   "Basma": "clips/0e68206c28c1503f.m4a"
+  },
+  "0eb97d8e0acdd57c": {
+   "_": "clips/71de58a2262970fc.m4a"
+  },
+  "0ee0d66b6566086b": {
+   "_": "clips/941fa68664ac1c56.m4a"
+  },
+  "0ee91904d263d412": {
+   "_": "clips/593da97a256b6f61.m4a"
+  },
+  "0f1a611701177ee7": {
+   "Samir": "clips/84cfdaa114847b20.m4a"
+  },
+  "0f375e5abbccee9f": {
+   "_": "clips/1670e9e297c655f7.m4a"
+  },
+  "0f4d09e43d208d5e": {
+   "_": "clips/4385547490f7b854.m4a"
+  },
+  "0fa23346d827df9f": {
+   "_": "clips/c00d933de4e9e17e.m4a"
+  },
+  "0fd28f43389bfdc6": {
+   "_": "clips/81e7bb94dbf1a554.m4a"
+  },
+  "0fd715923ec7ee38": {
+   "partner": "clips/195f9e2395356b6d.m4a"
+  },
+  "0fee558eeb6a2c01": {
+   "_": "clips/e91736e7c3e756e2.m4a"
+  },
+  "0ff9bc77796268a3": {
+   "Bilal": "clips/eab1d6b5d727b1aa.m4a"
+  },
+  "101d2c2113094dc5": {
+   "_": "clips/681f18a65248f685.m4a"
+  },
+  "10395e9ee559dbac": {
+   "partner": "clips/31e9715860491b48.m4a"
+  },
+  "10488bdf46fe747c": {
+   "_": "clips/4b0ef0ff54cf5604.m4a"
+  },
+  "1056392a300ae27f": {
+   "_": "clips/3a18d1ca063d7c1e.m4a"
+  },
+  "10596518ae3bdc0a": {
+   "Rania": "clips/c9ffc0640ce16b5e.m4a"
+  },
+  "106ea513742568fe": {
+   "_": "clips/13798b322491f643.m4a"
+  },
+  "107116afaa0d4170": {
+   "_": "clips/305c07bea40a9350.m4a"
+  },
+  "108cb6c77aab3bd8": {
+   "_": "clips/f17f7e3e03068ff4.m4a"
+  },
+  "109f5130edc14e4c": {
+   "Layla": "clips/c5e1a21d2ce0e56e.m4a"
+  },
+  "10bdb7040f59f52a": {
+   "partner": "clips/9aa6f40ea424c2ef.m4a"
+  },
+  "10d735e581f1e250": {
+   "_": "clips/5a54904a7f8cc992.m4a"
+  },
+  "110a4e3aecd6fe41": {
+   "_": "clips/b83403ba9527d0de.m4a"
+  },
+  "11a0db73bb20d96a": {
+   "_": "clips/415f54b621f04c0b.m4a"
+  },
+  "11b2ece0d1ca9c52": {
+   "partner": "clips/51f80e35a27d5870.m4a"
+  },
+  "11b4bb70b9c34fb8": {
+   "_": "clips/1e07b7fa9cc0251f.m4a"
+  },
+  "11e9ba26c91a2db7": {
+   "_": "clips/bb51542a9c026900.m4a"
+  },
+  "11f9578d05e6f7bb": {
+   "_": "clips/018e37195c848431.m4a"
+  },
+  "1209f4cd8e8b4a86": {
+   "_": "clips/4c05c0a7bdde095f.m4a"
+  },
+  "1253ab9b5c30b75b": {
+   "_": "clips/046e7142f6d8a899.m4a"
+  },
+  "1269eba5fd7c5e2d": {
+   "Hanan": "clips/8dbb66cd5ca324d2.m4a"
+  },
+  "128df232b97c2e76": {
+   "_": "clips/3a25d4d37b657e19.m4a"
+  },
+  "12903f5e141844ae": {
+   "_": "clips/1ffa8695c29c6340.m4a"
+  },
+  "1347d9c7a22ad45d": {
+   "_": "clips/a0db77a9c379e7be.m4a"
+  },
+  "135527bdaeb057d7": {
+   "_": "clips/3e7ab6ad1b6ceacd.m4a"
+  },
+  "13627b6f43dd2d33": {
+   "_": "clips/519f4e7132ac9e01.m4a"
+  },
+  "1376aa95e3c05c9b": {
+   "_": "clips/af912603227f8d1e.m4a"
+  },
+  "13be2f23cb60def1": {
+   "Yousef": "clips/893cde5524af60cc.m4a"
+  },
+  "13ce071f68958ab4": {
+   "_": "clips/d70e1aa8ec8043a1.m4a"
+  },
+  "13f3dd7ad7fc2fa4": {
+   "Widad": "clips/b885d3fa9bdfc646.m4a"
+  },
+  "14431dad2755f89d": {
+   "_": "clips/605e32ae9d2a4571.m4a"
+  },
+  "144a8b3dfe6d2552": {
+   "_": "clips/a457acade4d260ad.m4a"
+  },
+  "1462eab639bff3e2": {
+   "_": "clips/3cceaafbf8bbf817.m4a"
+  },
+  "14731e30633f4c15": {
+   "_": "clips/28462a98fda633ed.m4a"
+  },
+  "147a4d68452e2ec8": {
+   "_": "clips/801145a88c4d30bd.m4a"
+  },
+  "147ad5428cf442a6": {
+   "_": "clips/c3160d15242828c8.m4a"
+  },
+  "14b393830f74127f": {
+   "_": "clips/0636925149ca4000.m4a"
+  },
+  "14d63a71f4598b9b": {
+   "Bashar": "clips/422509ee29389229.m4a"
+  },
+  "14eb14ece52df99c": {
+   "_": "clips/b7963eb8d901760a.m4a"
+  },
+  "1524d15fe4bdcfd5": {
+   "_": "clips/f415e1365e8e2ba8.m4a"
+  },
+  "15284ebc23c97c1e": {
+   "_": "clips/e7cb7e422530ba2b.m4a"
+  },
+  "152f67977589d3f6": {
+   "Fadi": "clips/f6704141922b0252.m4a"
+  },
+  "15822948584efb49": {
+   "_": "clips/8288360d2b4e289a.m4a"
+  },
+  "15c329ad8d492fdf": {
+   "_": "clips/726d3d89628cfc83.m4a"
+  },
+  "15f7b904b183b324": {
+   "_": "clips/92204804c8cc039a.m4a"
+  },
+  "16199d86527dd91f": {
+   "_": "clips/4dc70ce3296cbeda.m4a"
+  },
+  "161c5f836fe7992d": {
+   "partner": "clips/0e4db38e66265e14.m4a"
+  },
+  "1682f8f33bd17739": {
+   "_": "clips/7d2a81cdb2a78969.m4a"
+  },
+  "1686bd160e5b0a98": {
+   "_": "clips/0917ea18344986a6.m4a"
+  },
+  "168cbb2ea52b9e34": {
+   "_": "clips/384b64414bce99d8.m4a"
+  },
+  "16967604c1b496bb": {
+   "Maryam": "clips/c3d505a3f9effd1a.m4a"
+  },
+  "16ab1e3fd54a62ab": {
+   "_": "clips/ae9c5ad64f6c0d24.m4a"
+  },
+  "16aea13159643efb": {
+   "_": "clips/18a6a662f08acbab.m4a"
+  },
+  "16eacefb984eeeba": {
+   "_": "clips/e002e48e3fee076f.m4a"
+  },
+  "16f766f2f5d7ff50": {
+   "_": "clips/87e5fe0fdb58065a.m4a"
+  },
+  "170101304e155a54": {
+   "_": "clips/8f2d7b20c931674c.m4a"
+  },
+  "170b163651390b6c": {
+   "_": "clips/90143f833855ebe0.m4a"
+  },
+  "170d160d90648d03": {
+   "_": "clips/d5463098f2becb31.m4a"
+  },
+  "1717c87ff96f530b": {
+   "Ziad": "clips/fc56ef3d3bdd1d58.m4a"
+  },
+  "173d9168467e6c36": {
+   "_": "clips/195778edcb4d1af8.m4a"
+  },
+  "178ad9f41fb49072": {
+   "_": "clips/32fed33b5c688e20.m4a"
+  },
+  "17999ec92ae3d084": {
+   "_": "clips/49cb321950432cff.m4a"
+  },
+  "179ca5aca9d3285a": {
+   "_": "clips/2efca60011c05e37.m4a"
+  },
+  "17c01f3c5ac5a32b": {
+   "Ilham": "clips/430107fb16ac3187.m4a"
+  },
+  "186f52ede0e5d3f6": {
+   "_": "clips/10cfc2c1b2dc96f4.m4a"
+  },
+  "18904f8b9ce2d6b1": {
+   "_": "clips/1c743f2242d65128.m4a"
+  },
+  "1898d9f525c564c2": {
+   "_": "clips/b550d8c08bb4de36.m4a"
+  },
+  "18c6f52353f1b6d4": {
+   "partner": "clips/09ad8661373fbbee.m4a"
+  },
+  "18fd97b9ab5b1660": {
+   "Basma": "clips/3a2fb74082db3245.m4a"
+  },
+  "191ff253d280fc98": {
+   "Ghada": "clips/e75bbb6cfed8c72f.m4a"
+  },
+  "194615d5c0dad098": {
+   "_": "clips/dcede98584032ef2.m4a"
+  },
+  "19591ab8f6381752": {
+   "_": "clips/05222fa5f43b0cd8.m4a"
+  },
+  "19679a76ba76f88b": {
+   "_": "clips/8a2d5aa3436fe45f.m4a"
+  },
+  "1986683247406879": {
+   "Huda": "clips/0e450574205ef70c.m4a"
+  },
+  "19eb7f62f191e4ca": {
+   "Yousef": "clips/e8895a280a5c17c4.m4a"
+  },
+  "1a73af9e7ae00182": {
+   "_": "clips/1172550a09421961.m4a"
+  },
+  "1aa08f9672face11": {
+   "_": "clips/bc378bca37ef5405.m4a"
+  },
+  "1aa4e95f52a305a3": {
+   "partner": "clips/6ccd511f2735e3ad.m4a"
+  },
+  "1aa96b8f44f6515a": {
+   "_": "clips/ceb9140bcccd9fb1.m4a"
+  },
+  "1b332200903e2dcd": {
+   "Basma": "clips/b05b418a4139c119.m4a"
+  },
+  "1b480158e1f30e0b": {
+   "_": "clips/b785d1fc514c8ef3.m4a"
+  },
+  "1b4ab59c9c0920d9": {
+   "Nizar": "clips/89f16e365de4cefb.m4a"
+  },
+  "1ba76fdbb0c2fa1e": {
+   "_": "clips/07cbdc093cf80b09.m4a"
+  },
+  "1baa6c9eba602746": {
+   "partner": "clips/4626bf2ff629a567.m4a"
+  },
+  "1bb12d01575ee3b6": {
+   "_": "clips/1d15883be9f14cc1.m4a"
+  },
+  "1be0bd62e2a35404": {
+   "_": "clips/06e52d3ac75cb928.m4a"
+  },
+  "1bedbb8c8a602cd8": {
+   "partner": "clips/ebc02a8831128956.m4a"
+  },
+  "1c0eb2b841b43e9f": {
+   "Maysoon": "clips/bf0ba775ecf8c2d8.m4a"
+  },
+  "1cc3778e53741e61": {
+   "Karim": "clips/ad443dd11bc6e807.m4a"
+  },
+  "1ce1416347075b60": {
+   "_": "clips/9e0c77996e035f2d.m4a"
+  },
+  "1cfc14df64b7e137": {
+   "_": "clips/fea8036c3370e22c.m4a"
+  },
+  "1d53836087ccfd03": {
+   "_": "clips/c8c5fbac7a1e89d9.m4a"
+  },
+  "1d61d5d44a22a6ab": {
+   "_": "clips/c9a3a95a66feaced.m4a"
+  },
+  "1d86294bb19aa4e9": {
+   "Dina": "clips/e8b994e0af742fad.m4a"
+  },
+  "1d8d01526c4f19ff": {
+   "_": "clips/120a51cc3249d716.m4a"
+  },
+  "1d8df5a899e715af": {
+   "_": "clips/f9464cd78bffaace.m4a"
+  },
+  "1e3960a4650c6a1d": {
+   "_": "clips/eabaf0cb150bfdfc.m4a"
+  },
+  "1e60b9d494a7bfd0": {
+   "_": "clips/5057b8819927183d.m4a"
+  },
+  "1e866c21a800c37c": {
+   "_": "clips/eb169187c0eae5c6.m4a"
+  },
+  "1e86ffab5519a089": {
+   "_": "clips/895a93f89cc327ae.m4a"
+  },
+  "1eb0b8dc987b82e5": {
+   "_": "clips/65ff5f814045e9b8.m4a"
+  },
+  "1eb93fd470d79a9a": {
+   "_": "clips/3c5749a719a831dd.m4a"
+  },
+  "1ebadb6d15d21256": {
+   "_": "clips/9cdc5d9cad78fff3.m4a"
+  },
+  "1ec558a60b5dda24": {
+   "_": "clips/a7453ef7c657e9ff.m4a"
+  },
+  "1ee0941f8126d0c5": {
+   "Bashar": "clips/e8c968128bb3e378.m4a"
+  },
+  "1f6de5802609b3e5": {
+   "_": "clips/1745468e0ded6820.m4a"
+  },
+  "1fe94581df8b76b2": {
+   "_": "clips/819b8b5dd5dad596.m4a"
+  },
+  "1ffb8796edd9f71b": {
+   "_": "clips/39ce1829983b8852.m4a"
+  },
+  "2017347af04d5130": {
+   "Yaser": "clips/6955fc2815660935.m4a"
+  },
+  "2058cc0e3a441ba5": {
+   "partner": "clips/5823505261626cdf.m4a"
+  },
+  "206791e3fd0ec4b5": {
+   "_": "clips/d1776e7aa05e8621.m4a"
+  },
+  "212a310ff3bc04b4": {
+   "_": "clips/995c53741ae49c14.m4a"
+  },
+  "212e1d3823c8c9af": {
+   "_": "clips/011cc38b94515bc7.m4a"
+  },
+  "212f70a622fe3b95": {
+   "_": "clips/642aacd6d5e494e2.m4a"
+  },
+  "213ed3ea453bf610": {
+   "_": "clips/e1a2823ccd959d18.m4a"
+  },
+  "2159229bb8ef73b2": {
+   "Hind": "clips/c9fe016a22c3b945.m4a"
+  },
+  "21eba95937854be3": {
+   "Adel": "clips/276f04736811f49c.m4a"
+  },
+  "2202f95b4e86ee40": {
+   "_": "clips/f24d79398a9cc085.m4a"
+  },
+  "222d2854d3475781": {
+   "_": "clips/549bb9e2df5157d9.m4a"
+  },
+  "224396ce8db0f72e": {
+   "_": "clips/77a4455f52be5dce.m4a"
+  },
+  "22dcacdc150a4d18": {
+   "_": "clips/3ea326018eddad0e.m4a"
+  },
+  "23039fe6be39cf22": {
+   "_": "clips/2d212786877ecceb.m4a"
+  },
+  "233e4bb561c194bb": {
+   "Ghada": "clips/76050e06b65d2d83.m4a"
+  },
+  "239c9e44d1dd894b": {
+   "_": "clips/ff397f37685cf7ab.m4a"
+  },
+  "23c86a0104b5cb7e": {
+   "_": "clips/b74d24af0dfa6648.m4a"
+  },
+  "23df49e0b7f3d443": {
+   "_": "clips/d3591572b8c1330f.m4a"
+  },
+  "23e0d93b83d15d2a": {
+   "_": "clips/db4aeca5322bfd6d.m4a"
+  },
+  "23eb27805ae2b836": {
+   "_": "clips/132eb9dd248baedc.m4a"
+  },
+  "23ebd083d4615117": {
+   "_": "clips/5af2ec9b5ce93d58.m4a"
+  },
+  "23edf9bde525cc6c": {
+   "Nabil": "clips/e990e0c9a3924ae1.m4a"
+  },
+  "23f903e6f024a23f": {
+   "Dina": "clips/4a75695ef0443f90.m4a"
+  },
+  "242063509e9e0a27": {
+   "_": "clips/8d2b5be1b304c4f2.m4a"
+  },
+  "244583d1f2ca73be": {
+   "_": "clips/af56910ab76b52f7.m4a"
+  },
+  "24788edc04ddc53f": {
+   "_": "clips/ae16a1fb3cbed274.m4a"
+  },
+  "248a20b62efba8f4": {
+   "_": "clips/9264c49f20571c70.m4a"
+  },
+  "248efe525ef4cd82": {
+   "partner": "clips/7b330bb3c790a5ab.m4a"
+  },
+  "249c00f2115e6379": {
+   "_": "clips/c8ca1ddd4b635504.m4a"
+  },
+  "24a1733ca8bb0ae4": {
+   "_": "clips/b3909565c56abb59.m4a"
+  },
+  "24b409c074b98d0d": {
+   "_": "clips/07fd1fe091e438aa.m4a"
+  },
+  "2535a3929aceb4b1": {
+   "_": "clips/a05cf7db5768c2cd.m4a"
+  },
+  "25456f5085f268b7": {
+   "_": "clips/4871301993184a1d.m4a"
+  },
+  "254ed7b8d9dc8888": {
+   "_": "clips/1b5f492d143218d8.m4a"
+  },
+  "256b361b355fd69a": {
+   "partner": "clips/ef77eee9b068ec62.m4a"
+  },
+  "256cdce24938999b": {
+   "Ghassan": "clips/11a3c85be8522d5b.m4a"
+  },
+  "256dc7e044bc5a22": {
+   "Yousef": "clips/a822d0ca4fb89e68.m4a"
+  },
+  "259acc5df9724067": {
+   "_": "clips/82591bd687924a87.m4a"
+  },
+  "25fa28dca0ea3e34": {
+   "Kamal": "clips/a4bdddbedbed038d.m4a"
+  },
+  "2608b23e810eac83": {
+   "_": "clips/fbfc0bf7f932baff.m4a"
+  },
+  "2643efa20746cd87": {
+   "_": "clips/673425ca1de8e2f0.m4a"
+  },
+  "264f630335abc945": {
+   "_": "clips/7aba49810231bd7d.m4a"
+  },
+  "26614661fcf9e672": {
+   "Nadia": "clips/a89f725d305d7eff.m4a"
+  },
+  "2682d1e0819d6ae9": {
+   "_": "clips/3e11f643825b4057.m4a"
+  },
+  "2697d663b2096b1b": {
+   "_": "clips/547833fb9f326352.m4a"
+  },
+  "26dfa0bcb308c9ee": {
+   "_": "clips/94298f2d818492a2.m4a"
+  },
+  "270d955f55525389": {
+   "_": "clips/0703ece22be50eae.m4a"
+  },
+  "270fdbaac5aff8e5": {
+   "_": "clips/6ad645eeb9ae3b1e.m4a"
+  },
+  "275fbf667eb2e8a4": {
+   "_": "clips/1a19b09719ba79cc.m4a"
+  },
+  "27749052e20e708e": {
+   "Layla": "clips/8795b62ee4e10059.m4a"
+  },
+  "277511dc21544744": {
+   "Dalia": "clips/bc114f73b5d519f7.m4a"
+  },
+  "2780acf0b9085624": {
+   "_": "clips/eb4214b984de58ce.m4a"
+  },
+  "279985959e4bb789": {
+   "partner": "clips/886456030888f439.m4a"
+  },
+  "27ad1672d8c97d74": {
+   "_": "clips/2ebb374f15005791.m4a"
+  },
+  "27c1555332bb6cad": {
+   "Rania": "clips/e4313500315c3009.m4a"
+  },
+  "27cef208b88285d4": {
+   "_": "clips/2ddd92d409e1f5cd.m4a"
+  },
+  "27eddd83f261606a": {
+   "_": "clips/32bbfe664501d54c.m4a"
+  },
+  "28986ecbda4f61e9": {
+   "Ziad": "clips/7a1b3f644433514b.m4a"
+  },
+  "28b1f4de58a4f5bb": {
+   "_": "clips/ce4f7034dd5df0b2.m4a"
+  },
+  "28e89430b370ba8a": {
+   "Tariq": "clips/2208be7549527f0f.m4a"
+  },
+  "28f3ad64fa45d0e3": {
+   "Rana": "clips/0b4a8a91d75ba170.m4a"
+  },
+  "2921a87e6cf6605b": {
+   "_": "clips/0be2555f2d76c266.m4a"
+  },
+  "292426f91f835a79": {
+   "Sami": "clips/6bed49d0dafc3cc0.m4a"
+  },
+  "2935fdc3aa1278ca": {
+   "_": "clips/9f853f728c27e01a.m4a"
+  },
+  "2937134ef75565b5": {
+   "Huda": "clips/a0fde691f85c2c17.m4a"
+  },
+  "2961d01e96bbea3c": {
+   "Dalal": "clips/7809322a641aa247.m4a"
+  },
+  "29715c182636b619": {
+   "_": "clips/52edcf2f210e3fd8.m4a"
+  },
+  "298a6ad4007742c7": {
+   "_": "clips/5213c38d6651d7a1.m4a"
+  },
+  "2a04295245353874": {
+   "_": "clips/005eed01a4a37ecc.m4a"
+  },
+  "2a07f661e14e5232": {
+   "Kareem": "clips/b6d040b20b294c85.m4a"
+  },
+  "2a48afe788a7a4c0": {
+   "Mr Jabbar": "clips/424da6d1936cc952.m4a"
+  },
+  "2a61c85dfde6b696": {
+   "_": "clips/d1dae138d4cf0b3a.m4a"
+  },
+  "2a6bb779dcc25118": {
+   "_": "clips/2dd28677b865c66c.m4a"
+  },
+  "2a7306767de2a0b0": {
+   "_": "clips/b7248268bd9b528a.m4a"
+  },
+  "2ac5b423aa36169f": {
+   "_": "clips/92d40805c542b9b1.m4a"
+  },
+  "2af5d8caaffe6242": {
+   "partner": "clips/9602325f686b0c11.m4a"
+  },
+  "2b2b949ae4ff95fb": {
+   "_": "clips/9e23d4f7a55cd3cf.m4a"
+  },
+  "2b3d3ebfb5adae48": {
+   "Maher": "clips/81166af4ebbed16f.m4a"
+  },
+  "2b4d6ff14ae7585a": {
+   "_": "clips/e3ba66c9dda71703.m4a"
+  },
+  "2b6b290febbc3725": {
+   "_": "clips/544f6d95da8a03b6.m4a"
+  },
+  "2ba9d2bb422f9fb5": {
+   "_": "clips/a165f4af2d5ac3da.m4a"
+  },
+  "2bb6b986c5d6fb26": {
+   "_": "clips/7ef560bcc179ccac.m4a"
+  },
+  "2bbd1587e20cdd4b": {
+   "_": "clips/5c3cbcb4c9ee59e2.m4a"
+  },
+  "2bbf3f3b804f7135": {
+   "_": "clips/bd6b3052072f4280.m4a"
+  },
+  "2bc742698268067e": {
+   "Samah": "clips/ebea61036042dba8.m4a"
+  },
+  "2bc8f61f72d275d3": {
+   "_": "clips/a63a1f20442b3f94.m4a"
+  },
+  "2c71d32d5c2f929c": {
+   "Rania": "clips/c5dd952523e6179f.m4a"
+  },
+  "2c910f822751c7db": {
+   "partner": "clips/298f3367e09c5da6.m4a"
+  },
+  "2c942552f83396cd": {
+   "_": "clips/878ec9e6bd74117b.m4a"
+  },
+  "2c96b2cf2a85d606": {
+   "Ziad": "clips/95154c17c99ba52f.m4a"
+  },
+  "2cd2767ce7440886": {
+   "_": "clips/b81d7ed7cea63c15.m4a"
+  },
+  "2cfb9f12d0fca4e2": {
+   "_": "clips/3b964f27df19d9a1.m4a"
+  },
+  "2d314da3b7388d05": {
+   "_": "clips/0a532bd44bb83b71.m4a"
+  },
+  "2d53d693ca367d21": {
+   "_": "clips/26cbfc225251e515.m4a"
+  },
+  "2d5be162265f2a3b": {
+   "_": "clips/497da68d0d5eaf24.m4a"
+  },
+  "2d5c262bde859cae": {
+   "Fouad": "clips/fa4e71b1d4a8ac6c.m4a"
+  },
+  "2d8fffd7dd87b4f4": {
+   "_": "clips/0a1c2f268ff8d870.m4a"
+  },
+  "2d91883ebf8981c5": {
+   "Rana": "clips/1953dea7c38588f9.m4a"
+  },
+  "2dbc2fd2358e1ea1": {
+   "_": "clips/c0657c05d27634dc.m4a"
+  },
+  "2e1c05af6ca171ea": {
+   "_": "clips/8cecc3e7b57546a9.m4a"
+  },
+  "2e6e0321b2465ce4": {
+   "_": "clips/4f15ac51b74a56ed.m4a"
+  },
+  "2ec3d0c752de172c": {
+   "_": "clips/93768ddd082b8714.m4a"
+  },
+  "2f233e6a45ee5005": {
+   "_": "clips/f9560126f34319c7.m4a"
+  },
+  "2f2459629af9b6e7": {
+   "partner": "clips/cd3beae41ef2b219.m4a"
+  },
+  "2fd4af3156da7745": {
+   "partner": "clips/97c4e33d01db078d.m4a"
+  },
+  "300d56fab9c21536": {
+   "Karim": "clips/3d941daf7274cc28.m4a"
+  },
+  "303d2528d56433c5": {
+   "_": "clips/cbc5cf9e05218f5b.m4a"
+  },
+  "306eee4ec9c8842b": {
+   "_": "clips/076a7df39380c78f.m4a"
+  },
+  "30973a3de08e0d2d": {
+   "_": "clips/d458e5518482d1f0.m4a"
+  },
+  "309e953a1ad2a96e": {
+   "Fouad": "clips/711b7088275af616.m4a"
+  },
+  "30b049ba97806caf": {
+   "Nizar": "clips/dd0cb2e653b2f6bf.m4a"
+  },
+  "30c805cb7b9bb340": {
+   "_": "clips/0b0e28b5993db3bb.m4a"
+  },
+  "31081835ee209339": {
+   "partner": "clips/34ab1ecff92e2c12.m4a"
+  },
+  "3150ecd5e0294534": {
+   "_": "clips/d9cc814198ecbd04.m4a"
+  },
+  "316a0a60096b1859": {
+   "_": "clips/c7e76f947a9de90b.m4a"
+  },
+  "31735457310d81e5": {
+   "_": "clips/ac834b3257001eae.m4a"
+  },
+  "3177a98c038fd4ff": {
+   "_": "clips/bf11f92e568f3687.m4a"
+  },
+  "319f64f420c6b254": {
+   "_": "clips/e6f8126d50dc2289.m4a"
+  },
+  "31ea69373db6315e": {
+   "_": "clips/8ddebad02fb3b8e9.m4a"
+  },
+  "320d9c4bfbb44c6d": {
+   "_": "clips/65fa7680171bba1d.m4a"
+  },
+  "32185118d94a1840": {
+   "_": "clips/637339e35b4eee10.m4a"
+  },
+  "3266b421b8573b5a": {
+   "_": "clips/b940270fb010b848.m4a"
+  },
+  "3295589dc96ac590": {
+   "Kareem": "clips/b1e152f3fd166501.m4a"
+  },
+  "32a72d88360ac915": {
+   "_": "clips/a6e20db9374f2305.m4a"
+  },
+  "336f9cff139558b0": {
+   "Nadia": "clips/0b0923d626c01eb3.m4a"
+  },
+  "33e834237e6ec186": {
+   "partner": "clips/573079dea72b78a9.m4a"
+  },
+  "33f74ce57b5deb29": {
+   "Sawsan": "clips/3ed183425f7fafa1.m4a"
+  },
+  "342d1b67d99aeef2": {
+   "Hisham": "clips/90db86bb79540f5d.m4a"
+  },
+  "34420cf5d681717f": {
+   "_": "clips/ad1761beaabcfd92.m4a"
+  },
+  "348fdfa3e50d4ee7": {
+   "_": "clips/ff75e4e74e305563.m4a"
+  },
+  "34b33e00b199d35f": {
+   "_": "clips/cfef32c351b102e0.m4a"
+  },
+  "35480368ee024f89": {
+   "_": "clips/2cabc4407abe763a.m4a"
+  },
+  "35675e68f4b5af7b": {
+   "_": "clips/8deb782d9836aed9.m4a"
+  },
+  "356f353a30dcf353": {
+   "Bashar": "clips/2fc156f6be67a7a7.m4a"
+  },
+  "3583bd01f7423385": {
+   "_": "clips/a4cba0c58fb65a4f.m4a"
+  },
+  "35a0801f693ac9a4": {
+   "partner": "clips/dd50c0867f011c3c.m4a"
+  },
+  "35b19fa87f2e1737": {
+   "_": "clips/8ee82e35079e3fb8.m4a"
+  },
+  "362306f9fb19aa95": {
+   "_": "clips/64f94f116ec68337.m4a"
+  },
+  "3624db883007efa1": {
+   "_": "clips/646bfac705cbf604.m4a"
+  },
+  "364292902792982a": {
+   "Adel": "clips/9d134e5826d89ef7.m4a"
+  },
+  "37434ae26a04d9a0": {
+   "_": "clips/26bb28335cf3fb62.m4a"
+  },
+  "37603c5ae8bd2001": {
+   "_": "clips/27158059c09c0b9d.m4a"
+  },
+  "376de9c7344e1744": {
+   "_": "clips/c1f5ce1d4f076682.m4a"
+  },
+  "377f9022475a9865": {
+   "_": "clips/b67ddcee170d102f.m4a"
+  },
+  "37822bda594f4556": {
+   "_": "clips/5dc53c06485d8ed2.m4a"
+  },
+  "379d21b7fd2b0931": {
+   "Kamal": "clips/479dc1a704785a0f.m4a"
+  },
+  "379d6ce99a8a95a7": {
+   "_": "clips/47c1b0351c4fb304.m4a"
+  },
+  "37aa2b9a60f42654": {
+   "_": "clips/63f5aa7094d239b9.m4a"
+  },
+  "37d7af36b63677a4": {
+   "partner": "clips/69bbf2f9559090c5.m4a"
+  },
+  "3800515d4b6d29f1": {
+   "_": "clips/f9999b755d0df2c2.m4a"
+  },
+  "3829a9693ef9ae99": {
+   "_": "clips/6ef46fe0f0f6cf19.m4a"
+  },
+  "383fd7bf84aa027b": {
+   "_": "clips/f09d2722497986f6.m4a"
+  },
+  "38743fbb4474f988": {
+   "_": "clips/68eb1ed8decf7088.m4a"
+  },
+  "389f0eb1f01ea56f": {
+   "Iman": "clips/574cea5e6c445b69.m4a"
+  },
+  "38fc722aadc1d320": {
+   "_": "clips/ce9af45f0786a87b.m4a"
+  },
+  "391cb1e07c5f1f4e": {
+   "_": "clips/da1b82336e28528f.m4a"
+  },
+  "39a449bf0e1bc04e": {
+   "_": "clips/32c982f263ff04a6.m4a"
+  },
+  "39ae6b3c825b8108": {
+   "_": "clips/79c369fb01590f09.m4a"
+  },
+  "39da98e5cdf61a2e": {
+   "_": "clips/7cc93a2095e51c0e.m4a"
+  },
+  "39e3f1828f21721c": {
+   "Dina": "clips/90146cfee2044b84.m4a"
+  },
+  "39f3bd3ef3bafd38": {
+   "_": "clips/3472547db1232ce8.m4a"
+  },
+  "3a10209e714708b3": {
+   "Kareem": "clips/b4d3a3f662fdd87b.m4a"
+  },
+  "3a3c2036066a67a3": {
+   "_": "clips/d86def0b33712841.m4a"
+  },
+  "3a9654f828e53060": {
+   "_": "clips/f57c778bcfaf2272.m4a"
+  },
+  "3a9ef4e725193391": {
+   "_": "clips/666ed1a391976df6.m4a"
+  },
+  "3b548d7498032090": {
+   "Sawsan": "clips/2320eeac1f28990e.m4a"
+  },
+  "3b5e1c40c0a20813": {
+   "_": "clips/596eb410bd705fdc.m4a"
+  },
+  "3b6f5b1c6ffdf5e9": {
+   "_": "clips/bfcce61513e87aef.m4a"
+  },
+  "3bafa646aec601f8": {
+   "_": "clips/1165482b96dee68b.m4a"
+  },
+  "3bc7737a8d8c4a50": {
+   "_": "clips/f764f0f7144620f8.m4a"
+  },
+  "3bcfa747d1716cbd": {
+   "_": "clips/f20e5300c5505cd3.m4a"
+  },
+  "3c0b6b5f1ea8e4c1": {
+   "_": "clips/c0ab1b8029491abd.m4a"
+  },
+  "3c0d82417da382bb": {
+   "_": "clips/8536253fc0f79396.m4a"
+  },
+  "3c2d687ef032e625": {
+   "_": "clips/6efaa800d767ef23.m4a"
+  },
+  "3c57a51d5e52c3eb": {
+   "Basma": "clips/6034a2cec021751a.m4a"
+  },
+  "3c6d4e708fdf6205": {
+   "Marwan": "clips/eb7c88f422ad25cc.m4a"
+  },
+  "3cacc7bfac0a382c": {
+   "_": "clips/3a2f4749d37ac846.m4a"
+  },
+  "3cc1d5a427a45820": {
+   "_": "clips/fa7f25be61482ec5.m4a"
+  },
+  "3cfc85122641e707": {
+   "partner": "clips/200775cd87a76656.m4a"
+  },
+  "3d48292e4d2714f1": {
+   "_": "clips/64e8292661dd1549.m4a"
+  },
+  "3d6be45eea6ac3c9": {
+   "_": "clips/60485ae7b80248d5.m4a"
+  },
+  "3d87d3954edde993": {
+   "Salim": "clips/b382acba2c8a144e.m4a"
+  },
+  "3dd3164fb4c19bfd": {
+   "_": "clips/80d0e683df325428.m4a"
+  },
+  "3dfc6943687f7610": {
+   "_": "clips/8afa1ddfa1e30ce9.m4a"
+  },
+  "3dfd4b5928afcb91": {
+   "_": "clips/5a2b867c6818d416.m4a"
+  },
+  "3e15bf38ad06bd1c": {
+   "_": "clips/2040a346c92d0a78.m4a"
+  },
+  "3e3b6544eec7a86e": {
+   "_": "clips/b312eb9b937c3527.m4a"
+  },
+  "3e56e6a43d0de25d": {
+   "_": "clips/445dcefb4a71761f.m4a"
+  },
+  "3ea68c99d95fb730": {
+   "_": "clips/eba0f57d42aaa675.m4a"
+  },
+  "3eacbc352607710d": {
+   "_": "clips/1cdf98912b0974cf.m4a"
+  },
+  "3ebd8a6322a5256f": {
+   "_": "clips/4d9d58cd8d7cbff2.m4a"
+  },
+  "3ec2b8b7ce9f96ea": {
+   "_": "clips/8a9dbe9404296344.m4a"
+  },
+  "3eefb11192c021a5": {
+   "_": "clips/3e65981af5036073.m4a"
+  },
+  "3efe0e0120ef6a83": {
+   "Mr Jabbar": "clips/0d1aeaef55f7aa89.m4a"
+  },
+  "3f3a6b3e04baffd9": {
+   "Faris": "clips/3ba5c98be938776f.m4a"
+  },
+  "3f3c58ae42b9b422": {
+   "_": "clips/c4c0e8027b78dff5.m4a"
+  },
+  "3f463018cc8f4827": {
+   "_": "clips/59a1058c049d63eb.m4a"
+  },
+  "3f5b7d0e7b8ccec8": {
+   "_": "clips/4c1ffd4062630f37.m4a"
+  },
+  "3f824d9802d651e4": {
+   "partner": "clips/be33d208fede3c1d.m4a"
+  },
+  "3fa307aef5aaf3a5": {
+   "_": "clips/f6d4b72920ad05d9.m4a"
+  },
+  "3fac9bc513cca00c": {
+   "_": "clips/e7a24276168da320.m4a"
+  },
+  "40526d593c4ebb7c": {
+   "_": "clips/b877a62d4d7ca66c.m4a"
+  },
+  "405b3ed3ad619d1a": {
+   "partner": "clips/0ec4b51033236e88.m4a"
+  },
+  "40ca1560b5e785a0": {
+   "_": "clips/6160f53c71a2f143.m4a"
+  },
+  "40d2d72ba7b1e07c": {
+   "partner": "clips/5a8e13349d2ca1cc.m4a"
+  },
+  "4105cfdd95205679": {
+   "_": "clips/3f0c8c77f993414d.m4a"
+  },
+  "4117f7b3b37c8f2d": {
+   "Maha": "clips/ee7bbbf742ff5cfc.m4a"
+  },
+  "41401d4c2bce0baa": {
+   "partner": "clips/da63413d0b45950e.m4a"
+  },
+  "416195e7d394c042": {
+   "Idris": "clips/0a562c02c11c1fd7.m4a"
+  },
+  "41732dc9004e3dd9": {
+   "_": "clips/6f565ac52e8434e3.m4a"
+  },
+  "418b1c734e5c6981": {
+   "_": "clips/4ebd73a4e45fd435.m4a"
+  },
+  "419c0d04e8830ee3": {
+   "_": "clips/7787a06e4fcfbe58.m4a"
+  },
+  "4200abca45489c1e": {
+   "_": "clips/a1392de8a22c6c39.m4a"
+  },
+  "424abc94ba0654ff": {
+   "_": "clips/bab5e707a97a7a73.m4a"
+  },
+  "427c781be56d0946": {
+   "Bilal": "clips/55da8330151f2ebb.m4a"
+  },
+  "42a89202d3ff6c82": {
+   "Fadi": "clips/49426fd93adb92a2.m4a"
+  },
+  "42d74f6829f73c90": {
+   "_": "clips/b8ae5ae10b7cd5bb.m4a"
+  },
+  "42dc345e6bef35b0": {
+   "_": "clips/976e2a41290e0957.m4a"
+  },
+  "42e40f5db1dcde6a": {
+   "_": "clips/504e31538c57c881.m4a"
+  },
+  "42f20691f70bca51": {
+   "Jalal": "clips/e8b96dd60caa8093.m4a"
+  },
+  "430c701b487ecc1a": {
+   "_": "clips/4dfd15faa699ff9e.m4a"
+  },
+  "4378cc0fd86700d7": {
+   "_": "clips/67d366d0a96cc6f0.m4a"
+  },
+  "43df202c24392f63": {
+   "_": "clips/994ba0510469a21d.m4a"
+  },
+  "43ed497b6036fb9b": {
+   "_": "clips/b19d0191ffd0056f.m4a"
+  },
+  "4420a6279daffba7": {
+   "_": "clips/61a657e6c1faa050.m4a"
+  },
+  "443ee58a3e861a3b": {
+   "_": "clips/3af0413bebb4ba17.m4a"
+  },
+  "4493b14a4a8a0dbf": {
+   "_": "clips/b3e17f53272dd382.m4a"
+  },
+  "44caa671a8683494": {
+   "_": "clips/f86421f08ebc139f.m4a"
+  },
+  "44ce26bed0185f5b": {
+   "Dima": "clips/8a2e75e716200242.m4a"
+  },
+  "44e2fd2ef1a637a5": {
+   "Ghada": "clips/72bfba34dd5e45e0.m4a"
+  },
+  "4505000edb54e543": {
+   "_": "clips/3792e3949886f54d.m4a"
+  },
+  "45732d2d158f37f9": {
+   "Amal": "clips/e45c276e054223d1.m4a"
+  },
+  "4576a91f0b2ee29e": {
+   "Suha": "clips/96df3213e1d2abdb.m4a"
+  },
+  "458c7667032b0ec5": {
+   "_": "clips/5e32d3897750f0bf.m4a"
+  },
+  "45d5591ac9b6c364": {
+   "_": "clips/e750c5c3bf59ad35.m4a"
+  },
+  "45dcadeeb62b1985": {
+   "_": "clips/3803257df99466a1.m4a"
+  },
+  "46138112a14f890e": {
+   "_": "clips/5d359cd4d45fa7af.m4a"
+  },
+  "461de6a44e0c552a": {
+   "partner": "clips/b357ac9edebd5da4.m4a"
+  },
+  "4673039c63f7bf54": {
+   "_": "clips/b2152473c87966f8.m4a"
+  },
+  "469342764c059045": {
+   "_": "clips/d9d057c07f3227cd.m4a"
+  },
+  "46f77559291c9caa": {
+   "Bashar": "clips/3874701bdb98785d.m4a"
+  },
+  "47044ac7762821b6": {
+   "Rawan": "clips/2d5b959ca195806f.m4a"
+  },
+  "471908a238049466": {
+   "_": "clips/20dcf78f74fec91e.m4a"
+  },
+  "479f3d572cc869a2": {
+   "Karim": "clips/ff56475de9cb680b.m4a"
+  },
+  "47a17624129f0a8f": {
+   "_": "clips/b219c5a91244aa92.m4a"
+  },
+  "47ae6d091650cbd2": {
+   "_": "clips/e1bcaa06b99e4ab6.m4a"
+  },
+  "47b3bc34cf19fb86": {
+   "_": "clips/f15f2b18e614bc4f.m4a"
+  },
+  "47b8015d98d5103a": {
+   "_": "clips/6bc8cb16e00f0a23.m4a"
+  },
+  "47d61a499f8ad2aa": {
+   "partner": "clips/b1013012927e9610.m4a"
+  },
+  "47ef5ccae915860d": {
+   "_": "clips/da13e4a3be506dd7.m4a"
+  },
+  "4801571a4668eec5": {
+   "_": "clips/0bbed969f2df5f62.m4a"
+  },
+  "480198fdb7fc5c8f": {
+   "_": "clips/0d3908451fcfe8db.m4a"
+  },
+  "480914d4e1763463": {
+   "partner": "clips/d71a62e4d0202d48.m4a"
+  },
+  "483e6f1a9b747fc5": {
+   "Dalia": "clips/06c60fcd6845707c.m4a"
+  },
+  "486aa338bd3ff8e5": {
+   "_": "clips/df1af7ca556cd7d5.m4a"
+  },
+  "48a1c7dac361923a": {
+   "Rania": "clips/107560b6b229b163.m4a"
+  },
+  "491571e4a883554c": {
+   "_": "clips/b69ab0769ee44623.m4a"
+  },
+  "4956faddb70fe7e0": {
+   "_": "clips/4b2f78777cc8f45c.m4a"
+  },
+  "49860a66bb5edea5": {
+   "Rania": "clips/4a6b5e67f723b5cd.m4a"
+  },
+  "4987ed84dca1b2c0": {
+   "_": "clips/d431df6dda23bf1e.m4a"
+  },
+  "49d31c7195884b40": {
+   "Suha": "clips/34a1157fb4c8f062.m4a"
+  },
+  "49f0da12635f8dc8": {
+   "partner": "clips/abfda3da6369b675.m4a"
+  },
+  "4a0734b0694de30f": {
+   "_": "clips/200ec47b7738e683.m4a"
+  },
+  "4a0b62e9f423da36": {
+   "_": "clips/c753acdace1bc599.m4a"
+  },
+  "4a1705f06d9c53ee": {
+   "_": "clips/7a804808f868e69e.m4a"
+  },
+  "4a4b1ab4fa1a544d": {
+   "_": "clips/18b73bb8d377b889.m4a"
+  },
+  "4a4d8be8691c6042": {
+   "_": "clips/e3320b2b20c16660.m4a"
+  },
+  "4a5981d1c246956c": {
+   "_": "clips/bf873009e99074f0.m4a"
+  },
+  "4a71ef2af7bd919c": {
+   "Karim": "clips/bec8d0c66abd0759.m4a"
+  },
+  "4a8ce0dae30a903f": {
+   "_": "clips/5339937b67e975c6.m4a"
+  },
+  "4a8d6aa068bbfd98": {
+   "Faris": "clips/7d51a2185b30e2c3.m4a"
+  },
+  "4af9fca1f0e728d6": {
+   "_": "clips/723395c9635cc811.m4a"
+  },
+  "4b12c11ec1420092": {
+   "Tamer": "clips/030a84cd6715a8fb.m4a"
+  },
+  "4b21939f84d8068c": {
+   "_": "clips/d1ff9516f83c8ca2.m4a"
+  },
+  "4b260bd94f835b4d": {
+   "_": "clips/c692de92f44243c1.m4a"
+  },
+  "4b3eb6a10f80a474": {
+   "_": "clips/21bc24da066b437d.m4a"
+  },
+  "4b4cc11dbd39f116": {
+   "Rania": "clips/e24f83c34a4ed9bc.m4a"
+  },
+  "4b4eaf8a5326752e": {
+   "Maha": "clips/02b68ae70e1b88f9.m4a"
+  },
+  "4b7392910ae3d09b": {
+   "_": "clips/b57ec0ca0cf68e5d.m4a"
+  },
+  "4bd4e2a7a207034c": {
+   "Rania": "clips/dc8d97dcc0131893.m4a"
+  },
+  "4be7b227b5734fae": {
+   "_": "clips/1e7e647b105ab9cf.m4a"
+  },
+  "4be916ba2cf2fc92": {
+   "partner": "clips/b8a29ee02c6aea88.m4a"
+  },
+  "4c08251e6cf4517a": {
+   "_": "clips/ea918fbcacc53985.m4a"
+  },
+  "4c55252093c51288": {
+   "_": "clips/a6790f5d6204e36b.m4a"
+  },
+  "4c56bc6cca4deac6": {
+   "_": "clips/3dadee8534adccf0.m4a"
+  },
+  "4c5c198fda4b1d59": {
+   "_": "clips/f1e909bacf6beafe.m4a"
+  },
+  "4c6a44673d144988": {
+   "_": "clips/4224648fbd27672d.m4a"
+  },
+  "4c799e78effd25d8": {
+   "Amal": "clips/be1556c2bdd67add.m4a"
+  },
+  "4c8ea4760fcb5dff": {
+   "_": "clips/289717acc62df8ae.m4a"
+  },
+  "4ca1ba2ec2726638": {
+   "_": "clips/2f78b8535d7ca860.m4a"
+  },
+  "4cf5bc59bee9e1c4": {
+   "_": "clips/c0d9a8748342edf5.m4a"
+  },
+  "4d2558edf164fb9e": {
+   "_": "clips/58bde65084eed2d6.m4a"
+  },
+  "4d53b96ef0ae52a8": {
+   "_": "clips/9169f55ecbcfdde1.m4a"
+  },
+  "4db924a2e861f8da": {
+   "_": "clips/9425367f1f88416e.m4a"
+  },
+  "4dcb37fa87759764": {
+   "_": "clips/25b8e2fcc697a0ba.m4a"
+  },
+  "4e11f36b76fc08e6": {
+   "_": "clips/1a3b39425189e55c.m4a"
+  },
+  "4e17c63a0e1096a5": {
+   "Basma": "clips/e54fb4f2834067c6.m4a"
+  },
+  "4e698e5fbe9a3329": {
+   "Kareem": "clips/2f8f6ace7a71f9d1.m4a"
+  },
+  "4e76213a7580f10e": {
+   "_": "clips/bfc56de4ae103d7d.m4a"
+  },
+  "4ebbfae3efc5b803": {
+   "_": "clips/7f8b293477ccf2a7.m4a"
+  },
+  "4ecdb6cabf77da98": {
+   "_": "clips/f4a479a209fd8a5a.m4a"
+  },
+  "4ed3655ea94ba490": {
+   "_": "clips/bd7e8d7823117dce.m4a"
+  },
+  "4edb2be2a1a68014": {
+   "_": "clips/83b51f0209991520.m4a"
+  },
+  "4f0aa52d656a3d75": {
+   "_": "clips/8ee73c470032a6a0.m4a"
+  },
+  "4f2b05f4a5b0aa27": {
+   "Amal": "clips/4ad51b81e971a7d9.m4a"
+  },
+  "4f3e4359896a2931": {
+   "_": "clips/373110300ac331d2.m4a"
+  },
+  "4f8180239c18b3c6": {
+   "_": "clips/2deef90437f0543c.m4a"
+  },
+  "4f81e85da02f9deb": {
+   "_": "clips/6e83168d7c1ac01b.m4a"
+  },
+  "4f8fca2b1519687f": {
+   "_": "clips/4dd6ae46f2979116.m4a"
+  },
+  "4fd7861ac10c5837": {
+   "_": "clips/8db5c721909280ed.m4a"
+  },
+  "500569f0bfd9ebd7": {
+   "_": "clips/aa5daac141d43782.m4a"
+  },
+  "5006ed0248a01971": {
+   "_": "clips/39c4a18e1d91bd43.m4a"
+  },
+  "500f872eb1983c61": {
+   "_": "clips/870d5e540b066152.m4a"
+  },
+  "50692b6575a5c082": {
+   "partner": "clips/af31a4f698e0c26b.m4a"
+  },
+  "511bd3eb8a85954f": {
+   "_": "clips/2a3714669606f51c.m4a"
+  },
+  "513f9f42a737de6e": {
+   "Maha": "clips/fe2d9ce75e8f6fd1.m4a"
+  },
+  "51def4872b6e4d5b": {
+   "Ruba": "clips/0fb1e3fb0569e0c6.m4a"
+  },
+  "51e76d994863dbc1": {
+   "Widad": "clips/885195ed46a26e0d.m4a"
+  },
+  "51ea8131a44b0ae9": {
+   "_": "clips/699154d627fb9194.m4a"
+  },
+  "51f4a0cb675452e9": {
+   "partner": "clips/07c27f6aac502dc2.m4a"
+  },
+  "5269daab6cf602b5": {
+   "_": "clips/3453971d055e0ef9.m4a"
+  },
+  "5273df4f0624d729": {
+   "_": "clips/baafeaa8f63ccb3e.m4a"
+  },
+  "527e75fcfa74c37a": {
+   "_": "clips/a13f629e84376b80.m4a"
+  },
+  "52f948f2ce15b186": {
+   "_": "clips/00cca2e69b9647bf.m4a"
+  },
+  "5313e80080c0d3db": {
+   "Salwa": "clips/e49cfae87da40113.m4a"
+  },
+  "53571adf08ca262f": {
+   "_": "clips/4740c01ebfb18e50.m4a"
+  },
+  "535780ac033343b9": {
+   "_": "clips/75cb60cc51ff817d.m4a"
+  },
+  "535aafad9e7938ee": {
+   "partner": "clips/031d6dc77421ffde.m4a"
+  },
+  "535d97f8ccba7a12": {
+   "_": "clips/cfba77072652762b.m4a"
+  },
+  "538708316dd9dddd": {
+   "_": "clips/4f133ba31cb442dd.m4a"
+  },
+  "5392fadc49833c19": {
+   "_": "clips/7d6993f415e8a31e.m4a"
+  },
+  "539993abed5aa8ea": {
+   "_": "clips/4e85bd2ca97a99d2.m4a"
+  },
+  "53bde2d866ec9b67": {
+   "Idris": "clips/80258e351bc16cc6.m4a"
+  },
+  "53da1a84d21a6771": {
+   "Ghada": "clips/bfc0a6314356edee.m4a"
+  },
+  "540601b3ada82f42": {
+   "_": "clips/0478bd38254298df.m4a"
+  },
+  "540e181495e58ae3": {
+   "_": "clips/44e52cf9b1ca8429.m4a"
+  },
+  "54174d2039d59754": {
+   "_": "clips/f6d0c3396b05e52d.m4a"
+  },
+  "54198309009a3741": {
+   "_": "clips/586bbeebf340e183.m4a"
+  },
+  "54353df17645ace9": {
+   "Hazim": "clips/44c044a700711ace.m4a",
+   "_": "clips/0dfb792b2ec3d83e.m4a"
+  },
+  "54477da88ef83996": {
+   "Nadia": "clips/b1c968c81b31d109.m4a"
+  },
+  "5456f612b10a9dab": {
+   "_": "clips/e24f72d6c6dee014.m4a"
+  },
+  "545777e16620ab62": {
+   "Kamal": "clips/7ce5c5d8dcea7ecc.m4a"
+  },
+  "547d85d70afea600": {
+   "Ruba": "clips/22544a50c046e3f0.m4a"
+  },
+  "5485d65ad625e032": {
+   "partner": "clips/deeb1023b9afafec.m4a"
+  },
+  "5497861ccdbe410f": {
+   "Kamal": "clips/f01795726f4e7466.m4a"
+  },
+  "54eea977ebeb8248": {
+   "partner": "clips/a9f54b1712ae6431.m4a"
+  },
+  "552b293f3141232f": {
+   "_": "clips/8653d9406c0d337d.m4a"
+  },
+  "55ac2f5cdf38a5ee": {
+   "_": "clips/0e6de725c2efdce3.m4a"
+  },
+  "55bc5de4ad739fc0": {
+   "_": "clips/f300941eed80fa0d.m4a"
+  },
+  "55c97d4b718e98ae": {
+   "_": "clips/c10f0fee50e15682.m4a"
+  },
+  "55cf0c7a8e2b7ba6": {
+   "_": "clips/66c867ee7b678a1e.m4a"
+  },
+  "55f2754de6a8d466": {
+   "_": "clips/231e9858b1864e6a.m4a"
+  },
+  "55fc4ba84b48423d": {
+   "_": "clips/7b4afa258075837a.m4a"
+  },
+  "56104db6c9680f77": {
+   "Suha": "clips/f694a196075b9764.m4a"
+  },
+  "5611517b6e0b6bf9": {
+   "_": "clips/7940a1a51a59a75c.m4a"
+  },
+  "563bc1476abd047f": {
+   "_": "clips/1493ea12f2bfc076.m4a"
+  },
+  "5640204a7fc4945c": {
+   "Jalal": "clips/524a4c76f53576b9.m4a"
+  },
+  "56806fce0bd940d1": {
+   "_": "clips/b04b8861f7d8d094.m4a"
+  },
+  "56966032db4ae93e": {
+   "Omar": "clips/2bda1546e3ff5488.m4a"
+  },
+  "56b80b6fe946900e": {
+   "Salwa": "clips/835da75d00ce7e86.m4a"
+  },
+  "56efca664df2766e": {
+   "_": "clips/0134198eb1e3544f.m4a"
+  },
+  "56ffe10a5f7ba228": {
+   "partner": "clips/d621434c6d4f99e0.m4a"
+  },
+  "571d5bc739cc9f7b": {
+   "_": "clips/f53d1079a88b768e.m4a"
+  },
+  "5743a60c1ec45b09": {
+   "_": "clips/14f1982af7a0fe18.m4a"
+  },
+  "5749570a404b690f": {
+   "_": "clips/cdecd53c67297ae7.m4a"
+  },
+  "576955f9b9df9aa1": {
+   "_": "clips/64e668b997f500b4.m4a"
+  },
+  "57a4e7ca7f6cbd2e": {
+   "_": "clips/f21398d4089d3c46.m4a"
+  },
+  "583f189fd45ffe64": {
+   "_": "clips/5a4ddd6639532274.m4a"
+  },
+  "5888232047cc7daf": {
+   "Karim": "clips/f53ad75f612e2ee3.m4a"
+  },
+  "58af27327877acb2": {
+   "_": "clips/2ba7b8692569ecb5.m4a"
+  },
+  "58c9f1fafb381e55": {
+   "partner": "clips/65cff4afa17d3598.m4a"
+  },
+  "58d67c9d43cfd11d": {
+   "_": "clips/43e0159b74b5aafe.m4a"
+  },
+  "590a8f23e1e3f3f3": {
+   "_": "clips/c1f362e4ed8dc998.m4a"
+  },
+  "5943554b7dde1c42": {
+   "_": "clips/211d22e742d5a4c7.m4a"
+  },
+  "5958054389037a89": {
+   "_": "clips/dad5e88d18d41641.m4a"
+  },
+  "597edb7aeea4f843": {
+   "Faris": "clips/ef134a298748e5c2.m4a"
+  },
+  "59ac5f7c7b489cd2": {
+   "_": "clips/b4118f2e2d49b98b.m4a"
+  },
+  "59ad756267d5277f": {
+   "_": "clips/196ac02398291b06.m4a"
+  },
+  "59ad864735f4285c": {
+   "_": "clips/a77d03d7a9ef177c.m4a"
+  },
+  "59c3fb19c0deb116": {
+   "partner": "clips/2b532af4d7455f4a.m4a"
+  },
+  "59d66c449db7fc6f": {
+   "_": "clips/9374c5e062208fce.m4a"
+  },
+  "5a09057d1c1c4701": {
+   "_": "clips/58ef7068aed4a785.m4a"
+  },
+  "5a663334a286076a": {
+   "_": "clips/eeabd8479e997d2a.m4a"
+  },
+  "5a7627e395a157a8": {
+   "_": "clips/3d88acbe0ebe97b8.m4a"
+  },
+  "5ae7061eac830cd4": {
+   "_": "clips/a9389e63337b9619.m4a"
+  },
+  "5af09f4994a78736": {
+   "_": "clips/be821a15320cdebd.m4a"
+  },
+  "5afd64341f042291": {
+   "partner": "clips/75d049afa3ace096.m4a"
+  },
+  "5b0fac11139306f6": {
+   "_": "clips/9d10de8ef73556aa.m4a"
+  },
+  "5baa61e4c9b93f3f": {
+   "_": "clips/bbbc7a4b671ce83c.m4a"
+  },
+  "5bb5bf693db3db16": {
+   "_": "clips/02f298627d3d9eaf.m4a"
+  },
+  "5bb9f399d95d42a7": {
+   "partner": "clips/4a2c0309243afce4.m4a"
+  },
+  "5bccaca18dd58b4e": {
+   "_": "clips/f12b919bf63782e1.m4a"
+  },
+  "5bd4bf68d6ba4d38": {
+   "_": "clips/c931fb19077d190a.m4a"
+  },
+  "5c3b41f973dc099c": {
+   "_": "clips/85599d6f39847b7d.m4a"
+  },
+  "5c5cc4785580012a": {
+   "partner": "clips/67980b4b40dfa9ce.m4a"
+  },
+  "5c73c5da3bcfb853": {
+   "_": "clips/01a260e0bf07300a.m4a"
+  },
+  "5c9a256fc9496d8d": {
+   "Rania": "clips/e3287c563e3a5332.m4a"
+  },
+  "5caf10c33d02e0b8": {
+   "_": "clips/9a86402e42ef03f3.m4a"
+  },
+  "5ccf107f18c712da": {
+   "_": "clips/c2b71c5ce2b720ee.m4a"
+  },
+  "5ceb1c5999c194e6": {
+   "Bushra": "clips/99b3b6909fcc6cfc.m4a"
+  },
+  "5cf3094c6a307fed": {
+   "Basma": "clips/4436e193c9984cfd.m4a"
+  },
+  "5d1745530ed4419e": {
+   "Hoda": "clips/5f5a3476898a52dc.m4a"
+  },
+  "5d45a009b0383b5b": {
+   "_": "clips/a6804cc3db6aaf64.m4a"
+  },
+  "5d520916463ddfcb": {
+   "_": "clips/95228c9206cf063a.m4a"
+  },
+  "5d67f25b5fb8db9b": {
+   "_": "clips/c55a682eac4e6db5.m4a"
+  },
+  "5da89d11df0d33da": {
+   "_": "clips/1c09adcd2679f31f.m4a"
+  },
+  "5db094443a14e7d2": {
+   "_": "clips/263d17def088b727.m4a"
+  },
+  "5dc622d391c31cdb": {
+   "_": "clips/353909e3da7ed758.m4a"
+  },
+  "5e3b287c52eeb7da": {
+   "Rania": "clips/447c0fcfb4859636.m4a"
+  },
+  "5ea2b797c8f6ea5e": {
+   "_": "clips/25c576a5ce5ee530.m4a"
+  },
+  "5ea9c348e59fe73a": {
+   "_": "clips/3eeee0bab640f9ea.m4a"
+  },
+  "5eb50c936c7a9a1a": {
+   "Ghada": "clips/934638038ec97d17.m4a"
+  },
+  "5fb801f2f30ac5b8": {
+   "_": "clips/817c3bdd1a8fb8ff.m4a"
+  },
+  "5fcf5cdf976e8e38": {
+   "_": "clips/d5c28defa14c761f.m4a"
+  },
+  "5fff42a4a082c7cf": {
+   "_": "clips/d7fcb590b51560b3.m4a"
+  },
+  "600f311cf31f8446": {
+   "_": "clips/f4bab2d0a58ffc63.m4a"
+  },
+  "611a2ab1db7d3380": {
+   "_": "clips/ddf2f8034a6a65c9.m4a"
+  },
+  "6126f707cf2bdbea": {
+   "_": "clips/ddeafcd78d0901aa.m4a"
+  },
+  "61521a58cf4a6592": {
+   "_": "clips/de2f9b2d06d71e73.m4a"
+  },
+  "616b5a32cb4b5220": {
+   "_": "clips/fb00c0826c935c9f.m4a"
+  },
+  "61e62b213a1a56f7": {
+   "_": "clips/a5998ca00b18ef26.m4a"
+  },
+  "6202cbcc27afcea9": {
+   "Rania": "clips/6d956c87a915e5e3.m4a"
+  },
+  "621330299c2c89fc": {
+   "_": "clips/2265c7f5616f1885.m4a"
+  },
+  "62510024d687ea4b": {
+   "_": "clips/6d2ea6a76b0fdcce.m4a"
+  },
+  "6259ae6c9e4bf605": {
+   "_": "clips/0c5c5c7a917ac4d2.m4a"
+  },
+  "625f8ee18fb7ce52": {
+   "_": "clips/9d2342bfa693e41a.m4a"
+  },
+  "626c3010ca50cdcc": {
+   "partner": "clips/22034e2b40bc97fc.m4a"
+  },
+  "627ae753d0eae85b": {
+   "partner": "clips/182da958c112d582.m4a"
+  },
+  "6286d4468a27b4d4": {
+   "_": "clips/110b9206bfe60d67.m4a"
+  },
+  "62ab7bf8a91b2336": {
+   "Rania": "clips/45b67a5c13837716.m4a"
+  },
+  "62d4bb07ab3221fd": {
+   "Idris": "clips/43a1f5547888e6da.m4a"
+  },
+  "62dd1bee8b0d0d61": {
+   "_": "clips/958332be35580b6e.m4a"
+  },
+  "6309f3404a3ba331": {
+   "_": "clips/b528bb2040f80da4.m4a"
+  },
+  "63371d540f013d91": {
+   "_": "clips/3586608de9a8b31a.m4a"
+  },
+  "636600120ecd7af7": {
+   "Tarek": "clips/be4b948a815e5d57.m4a"
+  },
+  "6391d284df9da4b6": {
+   "_": "clips/1df25da6aa9d1319.m4a"
+  },
+  "639df2595834cf5b": {
+   "Hala": "clips/041483856ef3d506.m4a"
+  },
+  "63b2e2887727fc0d": {
+   "partner": "clips/0f7f89bb42e409bc.m4a"
+  },
+  "6467baa3b187373e": {
+   "_": "clips/4de3f83065a83cea.m4a"
+  },
+  "648a04ab855078c9": {
+   "_": "clips/3883839a9273ecfa.m4a"
+  },
+  "64c65374dbab6fe3": {
+   "_": "clips/e3c5c3977bbef39a.m4a"
+  },
+  "64d7b1696ee32505": {
+   "partner": "clips/d77e3b243291e0df.m4a"
+  },
+  "655ce0d2bce1af32": {
+   "_": "clips/cfb42c2318942446.m4a"
+  },
+  "65b0cfa2ea6d87a3": {
+   "_": "clips/76b6ecd0c5898320.m4a"
+  },
+  "65c523e771d42ae9": {
+   "_": "clips/42e48549fb213764.m4a"
+  },
+  "65fe639fbfefa16e": {
+   "_": "clips/2e8d3b73138e6013.m4a"
+  },
+  "660ef0df4a84fa7d": {
+   "_": "clips/a5e425d5b0ae696f.m4a"
+  },
+  "6637c2dcc1966713": {
+   "_": "clips/5f6d25a94996b3fe.m4a"
+  },
+  "66ee7980b1e6276b": {
+   "_": "clips/e8acf28c34dc0122.m4a"
+  },
+  "66eef4dab7606f51": {
+   "_": "clips/4f92268f8f75bd98.m4a"
+  },
+  "672fccd70b672edf": {
+   "_": "clips/ab0c14a3fd41e265.m4a"
+  },
+  "676df8428ca163af": {
+   "Nadia": "clips/b246a267c2c3456d.m4a"
+  },
+  "676e930317953946": {
+   "_": "clips/625b4d363abf0926.m4a"
+  },
+  "67951df6d90c6042": {
+   "Suha": "clips/405a55e6a7c25d7a.m4a"
+  },
+  "67a4335442b9c074": {
+   "Ghassan": "clips/4c5324c0b2041b27.m4a"
+  },
+  "67a4c84cb8378800": {
+   "_": "clips/a930c29f4101ca23.m4a"
+  },
+  "67fadfc9e225aae5": {
+   "_": "clips/d18585dc75787302.m4a"
+  },
+  "68041a980b0f8c07": {
+   "_": "clips/727e0ec10c54a426.m4a"
+  },
+  "68082b081416c11a": {
+   "Nadia": "clips/36197dc3f27360fb.m4a"
+  },
+  "681cc2ae94ab6916": {
+   "_": "clips/ab2ccbece359fe46.m4a"
+  },
+  "6831fac5a7d1be94": {
+   "_": "clips/ab12cc59d2051748.m4a"
+  },
+  "683b29fc1d259e2a": {
+   "_": "clips/552a2214d9abba85.m4a"
+  },
+  "68d52ebd13ceaacb": {
+   "Salma": "clips/9d52519ebc5c0959.m4a"
+  },
+  "68e81639f3ace405": {
+   "_": "clips/1219fef35a64c82a.m4a"
+  },
+  "69047260a033ad5a": {
+   "Iman": "clips/32b2a03b95cf1b9c.m4a"
+  },
+  "691911bb26d8155e": {
+   "_": "clips/b9c397f2f7473a61.m4a"
+  },
+  "692ea1c4fcdffbcf": {
+   "_": "clips/3f56e19d887791de.m4a"
+  },
+  "698a995bf7f23fed": {
+   "_": "clips/1996f39e269a193c.m4a"
+  },
+  "69d1ac9455c99d0f": {
+   "_": "clips/10ba1c052cacf358.m4a"
+  },
+  "69f45da1683c5016": {
+   "_": "clips/77df0952f91d2c7f.m4a"
+  },
+  "69f9c0de05410f95": {
+   "_": "clips/f57a7c5148b413a8.m4a"
+  },
+  "6a1c10f412a5aa65": {
+   "_": "clips/fe7210dd86e26530.m4a"
+  },
+  "6a3014b901147c0b": {
+   "_": "clips/575683012eb20ef7.m4a"
+  },
+  "6a352b81de99c9b6": {
+   "_": "clips/865d86a2ee001cd4.m4a"
+  },
+  "6a5aa3d4f9e713bd": {
+   "Hisham": "clips/8c1b7ca0be98890b.m4a"
+  },
+  "6a6546fae1f7672a": {
+   "Basma": "clips/422986d4a424ab99.m4a"
+  },
+  "6a73a9121a5de293": {
+   "_": "clips/a17a5c13d3ec76ec.m4a"
+  },
+  "6ac387b5a67a08cd": {
+   "_": "clips/747882d984f296c0.m4a"
+  },
+  "6acd621280932e6f": {
+   "_": "clips/0dc289c6099763b4.m4a"
+  },
+  "6ad3a9478f1c4162": {
+   "_": "clips/ea437085d423dd93.m4a"
+  },
+  "6ae3415e3cf88ea7": {
+   "_": "clips/de876aaf73a66bef.m4a"
+  },
+  "6ae6bedb3294c6e7": {
+   "_": "clips/362868daf5442f1c.m4a"
+  },
+  "6af94c600722dbcf": {
+   "Bashir": "clips/ecd7d9073aa5a3a2.m4a"
+  },
+  "6b2b82cfea71058f": {
+   "_": "clips/b26d877b0e2d8e4a.m4a"
+  },
+  "6b3d2aac0ce5770e": {
+   "Tariq": "clips/4791970966c30733.m4a"
+  },
+  "6b6d41551a4f134d": {
+   "_": "clips/b0e892a35de8b4dd.m4a"
+  },
+  "6b719d2b4022e630": {
+   "_": "clips/53ed118642b51aea.m4a"
+  },
+  "6bc495d1462f85c3": {
+   "_": "clips/8384a0c08213f923.m4a"
+  },
+  "6bd4ecf132916f90": {
+   "Karim": "clips/622de094308f5e8a.m4a"
+  },
+  "6bf9122209915f20": {
+   "partner": "clips/07f2eb84ac7691a0.m4a"
+  },
+  "6c2813c55279f8f6": {
+   "_": "clips/c9cd776e7b09c257.m4a"
+  },
+  "6c6b65dbce743423": {
+   "_": "clips/b0bf68ae4a60792a.m4a"
+  },
+  "6c942f6047c59fac": {
+   "_": "clips/09e6725506e0b716.m4a"
+  },
+  "6ca4c016a589e9f8": {
+   "Faris": "clips/a1a9b9d1d8857913.m4a"
+  },
+  "6cb759ec58088e50": {
+   "_": "clips/e2b0d13cf9143208.m4a"
+  },
+  "6cbab4df10465d6b": {
+   "_": "clips/ce51b219bf7d0157.m4a"
+  },
+  "6cfc70ebc1905720": {
+   "_": "clips/2d648839a29c638c.m4a"
+  },
+  "6d2ad18b3e5a45cf": {
+   "_": "clips/bba32136b496ad2e.m4a"
+  },
+  "6d55c0974cae7bb4": {
+   "_": "clips/b534ad26341f47cf.m4a"
+  },
+  "6d61972a9f36427e": {
+   "_": "clips/ae792e36f85cf1f0.m4a"
+  },
+  "6de8a320862880f3": {
+   "_": "clips/d4870b5d2ad8a06f.m4a"
+  },
+  "6e0f55aa2d8baab0": {
+   "Ammar": "clips/ecd0540831fd9187.m4a"
+  },
+  "6e15c623197fe2dd": {
+   "_": "clips/38c555805ba89742.m4a"
+  },
+  "6e1c6c9e2cf64e48": {
+   "_": "clips/319ad4c41d109541.m4a"
+  },
+  "6e1e52a0e01b2c45": {
+   "_": "clips/e643919b8820cd16.m4a"
+  },
+  "6eb691bcd78417e2": {
+   "_": "clips/1f33b4dd7a72aba8.m4a"
+  },
+  "6ec6588acb1fd8da": {
+   "_": "clips/ba4f605a2e4e2dfd.m4a"
+  },
+  "6f346a3f680c61cb": {
+   "_": "clips/6d913be6b6b060ed.m4a"
+  },
+  "6f47ab86f4ecd863": {
+   "partner": "clips/3d69a8633d59ffb1.m4a"
+  },
+  "6f7636894b4a4adc": {
+   "Rania": "clips/12f5d5b0f3997eec.m4a"
+  },
+  "6f95614b9a6898f9": {
+   "_": "clips/4fc77195065bbc6d.m4a"
+  },
+  "6ffb281ab2812b59": {
+   "partner": "clips/de2ba3fa62946deb.m4a"
+  },
+  "702546d754c61a0f": {
+   "Bushra": "clips/2b3fcb4e50bd033c.m4a"
+  },
+  "704802dad807624d": {
+   "_": "clips/ce2ace397f7d5288.m4a"
+  },
+  "706d8cf142e53c4e": {
+   "_": "clips/61b2e9db3d00d214.m4a"
+  },
+  "7078e1203fdd7f4e": {
+   "Ghassan": "clips/0f86b60185b0eba3.m4a"
+  },
+  "7083ae7b950f9c5a": {
+   "Ruqayya": "clips/fd4189af1f8644c1.m4a"
+  },
+  "708a91a8593043c9": {
+   "_": "clips/bb3b2849c1395b9b.m4a"
+  },
+  "709ae0244f3ffbf0": {
+   "_": "clips/a53bcb83baad85be.m4a"
+  },
+  "70c2a24b8c331fd2": {
+   "_": "clips/dc7fd3bea599831d.m4a"
+  },
+  "711bf2cd0578cd58": {
+   "_": "clips/1342404c1d350974.m4a"
+  },
+  "712be0c84eba8177": {
+   "_": "clips/c273b07690783e6f.m4a"
+  },
+  "7152e5bd03bcaaf1": {
+   "_": "clips/d7c94c75936d4627.m4a"
+  },
+  "7196be7da780e93a": {
+   "_": "clips/8075d9b4bbc526f6.m4a"
+  },
+  "71ab933860cb54bb": {
+   "_": "clips/add445be7b62a55e.m4a"
+  },
+  "71cb96f58fb3d41f": {
+   "_": "clips/002b0af3861dac9c.m4a"
+  },
+  "71e5b50cbe8d9e2c": {
+   "_": "clips/a9fb75ff03a86424.m4a"
+  },
+  "72471a2d38057c9e": {
+   "_": "clips/6fa3908f024edae8.m4a"
+  },
+  "724a5d525050fdd0": {
+   "Sameer": "clips/de35d5f1d660204f.m4a"
+  },
+  "726c64769f56e3ac": {
+   "Suha": "clips/17874968da64d7bb.m4a"
+  },
+  "72c5fda44d067730": {
+   "Salma": "clips/efb9542026ee8f73.m4a"
+  },
+  "73404809603063b3": {
+   "_": "clips/103b689c77717dc7.m4a"
+  },
+  "739e4ce27db865d0": {
+   "partner": "clips/e59ab229ffa700ac.m4a"
+  },
+  "74699616123fb641": {
+   "_": "clips/9ba5dcc0bab1a466.m4a"
+  },
+  "746aa82c788a0dc4": {
+   "Samah": "clips/407e079bf67e7fd4.m4a"
+  },
+  "7480a2acec4e3beb": {
+   "_": "clips/ba5bf31208b0de7f.m4a"
+  },
+  "74b673dcb85ea96a": {
+   "Nadia": "clips/83e3f825575bae9a.m4a"
+  },
+  "750e916b669fb1fb": {
+   "Ghada": "clips/91bd2f3c212ff089.m4a"
+  },
+  "753202c4f0bc593e": {
+   "_": "clips/4f42c59856236312.m4a"
+  },
+  "754d2e97bafe87cf": {
+   "_": "clips/32748cda1501b273.m4a"
+  },
+  "7550b672e162c224": {
+   "_": "clips/c34f53cbe579a3b8.m4a"
+  },
+  "75809e758315bedc": {
+   "Tamer": "clips/881cb1f2ead07db2.m4a"
+  },
+  "75d8224f1e560a39": {
+   "_": "clips/b7a2f61a6a24eed7.m4a"
+  },
+  "760009c64d536414": {
+   "_": "clips/ed33eae7df093b45.m4a"
+  },
+  "768b988785af3d02": {
+   "_": "clips/38fe55a75755e61e.m4a"
+  },
+  "76f49caf9c639774": {
+   "Basil": "clips/e244afbbfc47b34d.m4a"
+  },
+  "76f4f48bbf5b9ecd": {
+   "Muna": "clips/385236cbeb459e40.m4a"
+  },
+  "76f9305e04cd6820": {
+   "Omar": "clips/e4e77874b5b98ebd.m4a"
+  },
+  "774090334f44db62": {
+   "_": "clips/b5c4293d52634811.m4a"
+  },
+  "776a5219123e5d51": {
+   "_": "clips/b29baccbba5c8892.m4a"
+  },
+  "776a93c885b724ae": {
+   "_": "clips/c8b51f06f5d78302.m4a"
+  },
+  "777350259fd12fd2": {
+   "Ruba": "clips/d81d2c3dba920df7.m4a"
+  },
+  "77ac5640d0e707f3": {
+   "partner": "clips/53b661a83e2406c3.m4a"
+  },
+  "7817f9653410ef50": {
+   "Basel": "clips/016e0a765e323f63.m4a"
+  },
+  "78709aca7f5134a0": {
+   "Basma": "clips/91663b31eb607077.m4a"
+  },
+  "787f2737a52bbfd8": {
+   "_": "clips/aad5fd091b7ac199.m4a"
+  },
+  "78c59129b075b2bb": {
+   "_": "clips/496421bffb0e0ba7.m4a"
+  },
+  "78ca7f916a5b6cba": {
+   "_": "clips/b4c5aff3bf8131b0.m4a"
+  },
+  "78dc7db822b8475c": {
+   "_": "clips/c7d4e52a9a8a4c0e.m4a"
+  },
+  "791cca7abb2db511": {
+   "_": "clips/72d1caeb05a59736.m4a"
+  },
+  "7933e585a909e05b": {
+   "_": "clips/3f86756f44f3978e.m4a"
+  },
+  "795f66b008b06106": {
+   "_": "clips/ee650b00f175f0e1.m4a"
+  },
+  "79c0621a150e5db4": {
+   "_": "clips/16c3e6854feb50a8.m4a"
+  },
+  "79c670ca12a88b5c": {
+   "_": "clips/ca7afbb191da64e9.m4a"
+  },
+  "79fd28452420b7ab": {
+   "Lina": "clips/52059ba34202792f.m4a"
+  },
+  "7a18516271c8f5e7": {
+   "partner": "clips/7232db45792e96b9.m4a"
+  },
+  "7a59adff08e2bd11": {
+   "Faris": "clips/a814fe6b0923adb7.m4a"
+  },
+  "7a621606ed44d21a": {
+   "_": "clips/0faf2e179d37a3f2.m4a"
+  },
+  "7a8fee336437c152": {
+   "_": "clips/9c1c2c051cf5d2fa.m4a"
+  },
+  "7ace561f664f72ad": {
+   "_": "clips/8dcb6c46a5b7509c.m4a"
+  },
+  "7aee3eb4246088cc": {
+   "_": "clips/abb0e9be5006a482.m4a"
+  },
+  "7af76ba3b2eac04f": {
+   "Samer": "clips/cf4a0d53ecd53a87.m4a"
+  },
+  "7afc62b8cbf82df1": {
+   "_": "clips/755ce01b37851858.m4a"
+  },
+  "7b474cb0b39c1773": {
+   "_": "clips/dd4758e54d65d83a.m4a"
+  },
+  "7b6f510803b6b32a": {
+   "_": "clips/a00f0543210b859c.m4a"
+  },
+  "7b7fcc78d6cd1507": {
+   "_": "clips/fc81e54f327213e8.m4a"
+  },
+  "7b813d63813f66e6": {
+   "_": "clips/f96a804c64a57857.m4a"
+  },
+  "7b8adeef5d6347b2": {
+   "Adel": "clips/71bedcc32bd77e9e.m4a"
+  },
+  "7b8baa9c862d4adb": {
+   "Dima": "clips/94ce62d4c3f36312.m4a"
+  },
+  "7bbc922bc0e6ff43": {
+   "Nawal": "clips/8b12e3c91701d38c.m4a"
+  },
+  "7bc86cc6d0dcdb27": {
+   "_": "clips/3b435ee6aef25aa5.m4a"
+  },
+  "7c00497e5336988a": {
+   "Iman": "clips/4cd38199fe7fb00e.m4a"
+  },
+  "7c05204dcfaf173d": {
+   "_": "clips/7bf13f4549b8d760.m4a"
+  },
+  "7c2cc2c154c25cf6": {
+   "Hisham": "clips/718c693be31e3b30.m4a"
+  },
+  "7c6c28e22ad12aca": {
+   "_": "clips/902b0e2ea368bc40.m4a"
+  },
+  "7c7198a878b6aa30": {
+   "Faris": "clips/c5550ac7ef3f1562.m4a"
+  },
+  "7c74d595abd2a02f": {
+   "_": "clips/59d5e84a682b12c8.m4a"
+  },
+  "7c844ea4ea1a33a4": {
+   "_": "clips/3e2e4e53dce45e69.m4a"
+  },
+  "7cba24f8dcea98c6": {
+   "partner": "clips/695d44b93c6986a5.m4a"
+  },
+  "7cc8efec99989b79": {
+   "Rania": "clips/43e6858d64443e6e.m4a"
+  },
+  "7d0981e1df57a67b": {
+   "_": "clips/d891619a8c721889.m4a"
+  },
+  "7dc574deba080464": {
+   "_": "clips/825c3f8234a22606.m4a"
+  },
+  "7de50bcbce8487fa": {
+   "_": "clips/844eb2c8a4187543.m4a"
+  },
+  "7e1c8b6edea06929": {
+   "_": "clips/643304e1fd7be790.m4a"
+  },
+  "7e28faff3c10b89b": {
+   "Marwan": "clips/3332d920fb1b7424.m4a"
+  },
+  "7e8777acb54cbd88": {
+   "_": "clips/b2887694232e53f5.m4a"
+  },
+  "7ebc0b7d7d915813": {
+   "_": "clips/c47ebb44154dce6e.m4a"
+  },
+  "7ee201fb09fb76dc": {
+   "_": "clips/10744f181639ab41.m4a"
+  },
+  "7f094230afb3ef0d": {
+   "Zaid": "clips/d52b6e211fa19926.m4a"
+  },
+  "7f1e6c76a425ded2": {
+   "_": "clips/09f31952d8bf2a1f.m4a"
+  },
+  "7f207e5651a19f8b": {
+   "_": "clips/748b576a8df29955.m4a"
+  },
+  "7f504a016d0ea60b": {
+   "_": "clips/2e663ab2aa55e86f.m4a"
+  },
+  "7f55aa8957ff7a01": {
+   "_": "clips/7147060e9056efe8.m4a"
+  },
+  "7f6f0b5a5d31594d": {
+   "Nour": "clips/5e40508b8041cd73.m4a"
+  },
+  "7f7636df8d9bc59b": {
+   "Iman": "clips/6f30e897643e8b3c.m4a"
+  },
+  "7f79188ace1f8e23": {
+   "_": "clips/189c15d7c46dd3b0.m4a"
+  },
+  "7f891770ada20c5a": {
+   "_": "clips/b13a7edde86fd8cb.m4a"
+  },
+  "806b1918bb6ef02f": {
+   "Rania": "clips/086c0572ea3e3309.m4a"
+  },
+  "807a11e7b9317200": {
+   "_": "clips/91d8ca34a80e7999.m4a"
+  },
+  "80a4ba77f65df28a": {
+   "_": "clips/d368285f610fd6b7.m4a"
+  },
+  "80c6229dc96df441": {
+   "_": "clips/83981b96ce535708.m4a"
+  },
+  "80e6e79c90aacb66": {
+   "_": "clips/29084e251fb732d9.m4a"
+  },
+  "80ed1d4764b8ac74": {
+   "_": "clips/af9e4d2a0ea7ddd6.m4a"
+  },
+  "810adbc16675e56f": {
+   "Yaser": "clips/6f84d190d162bf4e.m4a"
+  },
+  "81529fbdf906c26e": {
+   "_": "clips/c3dad12c1ff57180.m4a"
+  },
+  "815847b426839f12": {
+   "_": "clips/08a261c8dae421a9.m4a"
+  },
+  "816b79f7cfa9fad4": {
+   "_": "clips/09bb19ea11b645c8.m4a"
+  },
+  "816d63e63c53fbbc": {
+   "_": "clips/9056ee1a2af3401a.m4a"
+  },
+  "817248fb77fb5c2c": {
+   "_": "clips/f67bd1312c2b8ac6.m4a"
+  },
+  "818c1903849c2683": {
+   "Faris": "clips/0b09867fd8156704.m4a"
+  },
+  "81cd214b3213b6f9": {
+   "Rana": "clips/5fecaddfd30dba76.m4a"
+  },
+  "81ce213bb32d7d43": {
+   "Dalia": "clips/4a2c8e42ae0844ae.m4a"
+  },
+  "821195bd8f1dc0cc": {
+   "_": "clips/3a8a4c99ac73eb3c.m4a"
+  },
+  "821325e44c229d1e": {
+   "_": "clips/ec8e72b560ffe640.m4a"
+  },
+  "8218061170a65192": {
+   "_": "clips/b3dbe9ffb04786f2.m4a"
+  },
+  "822834d5d12f3902": {
+   "Yaser": "clips/82e0cc3dfe423978.m4a"
+  },
+  "8272ad283ad7be1b": {
+   "_": "clips/a9b9d26d9dc164cb.m4a"
+  },
+  "82b7122e2639c960": {
+   "_": "clips/2edecc3a9d2f4c00.m4a"
+  },
+  "82d4a42a6719efff": {
+   "_": "clips/96cd466734a45c5b.m4a"
+  },
+  "82f54a6881687605": {
+   "partner": "clips/2313779752c1349a.m4a"
+  },
+  "82f9f0423ebebc24": {
+   "_": "clips/ebbb243a0322972f.m4a"
+  },
+  "835f08fa97b832ab": {
+   "_": "clips/4e5251d2c035a291.m4a"
+  },
+  "8360ecfb8660fedd": {
+   "Dina": "clips/c795ec7cad4da617.m4a"
+  },
+  "83961ebae952c3cf": {
+   "Hala": "clips/d3609f6cf8f980a5.m4a"
+  },
+  "83dd9d6af43f8cbe": {
+   "_": "clips/89ad1b809310ffe1.m4a"
+  },
+  "84510f00a7a9a7a9": {
+   "_": "clips/0df080b1e49c2f03.m4a"
+  },
+  "84e3414962a867ab": {
+   "_": "clips/cc3acd24b43c54f2.m4a"
+  },
+  "84eeb8492554774f": {
+   "_": "clips/d6efc3cc499c7260.m4a"
+  },
+  "8508fc3bcf09d0be": {
+   "_": "clips/9ef05ec69cba9cd8.m4a"
+  },
+  "852f2e7d98e9377f": {
+   "_": "clips/7c26d4205f2dbd72.m4a"
+  },
+  "8540398326a60f00": {
+   "_": "clips/74054eb24c28b2a2.m4a"
+  },
+  "8573619f53239a50": {
+   "_": "clips/85f3012aa5f1e428.m4a"
+  },
+  "85a52b5bb32b8cae": {
+   "_": "clips/3a281899c8fb58b7.m4a"
+  },
+  "85a7b4e8d512e969": {
+   "_": "clips/0f10caec8f3102ff.m4a"
+  },
+  "85ae1763938de0e1": {
+   "_": "clips/214bf2e173860493.m4a"
+  },
+  "85c26c2a13441038": {
+   "Tamer": "clips/73c1c74baa86a772.m4a"
+  },
+  "85ce71ad24a2cb95": {
+   "_": "clips/bfb4258fd7f002cf.m4a"
+  },
+  "85e59138310eb687": {
+   "Dalia": "clips/ce98588d0eecba53.m4a"
+  },
+  "8624919492dedf5e": {
+   "_": "clips/f89a86fde5bf575e.m4a"
+  },
+  "865f4d02916f2df9": {
+   "Tamer": "clips/e1ba01baa69ded0f.m4a"
+  },
+  "866991d044d4c2f5": {
+   "_": "clips/7a58825b1ee9d2a8.m4a"
+  },
+  "86d9d74a040a6655": {
+   "partner": "clips/dcbf9b1b9d256358.m4a"
+  },
+  "86db0edf12ab3282": {
+   "_": "clips/3ff55cab2c2e68e8.m4a"
+  },
+  "86dd1cf45142e904": {
+   "_": "clips/2896b1a99c11a4d4.m4a"
+  },
+  "86f1ca89f5bb2dcd": {
+   "_": "clips/e371950a9dba50c1.m4a"
+  },
+  "870033a9f08b536c": {
+   "_": "clips/f0936e82288f1994.m4a"
+  },
+  "8715c95f52e20552": {
+   "_": "clips/5d25ca1eed47dc73.m4a"
+  },
+  "874a22ab67ba9a32": {
+   "_": "clips/f987af0269d06cd0.m4a"
+  },
+  "8756e323374ad1ea": {
+   "_": "clips/e52a05366db07ff7.m4a"
+  },
+  "875bc995f4254784": {
+   "_": "clips/c522507d253ffe99.m4a"
+  },
+  "87645514e9469d78": {
+   "Sami": "clips/6d7722371879f66f.m4a"
+  },
+  "877d603ccb5dace1": {
+   "_": "clips/8277e251c43f31a9.m4a"
+  },
+  "87aca24384c32614": {
+   "_": "clips/1745566a81144c34.m4a"
+  },
+  "87de69865d28a59d": {
+   "partner": "clips/6db221b220ba6245.m4a"
+  },
+  "87f790de67e23023": {
+   "partner": "clips/91e6889a4b311586.m4a"
+  },
+  "88090209e5feb45d": {
+   "_": "clips/cb6c9b3c39b4cbd4.m4a"
+  },
+  "88495c2782334cc7": {
+   "_": "clips/4dd29c00f7ed02e6.m4a"
+  },
+  "884fdd9be625faff": {
+   "Idris": "clips/e34a313c2b475ffb.m4a"
+  },
+  "889191884c1c0401": {
+   "_": "clips/d53886a0e30190af.m4a"
+  },
+  "891073ff5584febd": {
+   "_": "clips/3d702d26bc3d6c8c.m4a"
+  },
+  "89121dc99c7db9ce": {
+   "_": "clips/8d1f309c98c2d008.m4a"
+  },
+  "893d5f1ca0ead29d": {
+   "_": "clips/6bd141c4a7b9c7d4.m4a"
+  },
+  "89b3184d9030bc0d": {
+   "Hind": "clips/693701a7060090ce.m4a"
+  },
+  "89b3ba1d6f055d35": {
+   "_": "clips/eb5564f91f542446.m4a"
+  },
+  "89b8a86b2e417113": {
+   "_": "clips/280e91909e87c249.m4a"
+  },
+  "89be8e3911b8558d": {
+   "_": "clips/36e8aa6381a1836c.m4a"
+  },
+  "89fb511ffe93ee78": {
+   "_": "clips/758b920643c4f323.m4a"
+  },
+  "89fbf2eef3e8d2da": {
+   "Dalia": "clips/02cfd6bc109b7c84.m4a"
+  },
+  "8a8928989a27e475": {
+   "_": "clips/379d1a6e1c9b456b.m4a"
+  },
+  "8a89ed2be4d013e1": {
+   "Hanan": "clips/aa0bcc0737d290e2.m4a"
+  },
+  "8acd1fcdd523f0e9": {
+   "partner": "clips/f677751c7806fc65.m4a"
+  },
+  "8af6b911beee65f7": {
+   "_": "clips/ac6b99e7a623d43b.m4a"
+  },
+  "8afac41d663a8621": {
+   "_": "clips/15162242b6f45f44.m4a"
+  },
+  "8b080522253c66ad": {
+   "_": "clips/8f26aa48ef44f72f.m4a"
+  },
+  "8b41e0e2dd76a62c": {
+   "_": "clips/44c820e0cb550b7d.m4a"
+  },
+  "8b8d0eb383f3bb5f": {
+   "_": "clips/2b48c00b99a537e7.m4a"
+  },
+  "8bd8c4facee3849d": {
+   "_": "clips/8adc6f46929b0931.m4a"
+  },
+  "8c1183cd9ce2f372": {
+   "_": "clips/d3adf77b0440c68d.m4a"
+  },
+  "8c2bc7f99f905edf": {
+   "partner": "clips/4b2318e7b21afadb.m4a"
+  },
+  "8c59d73371ea471f": {
+   "Muna": "clips/dd5d9f4047f70914.m4a"
+  },
+  "8c882dcaf4b4a34e": {
+   "_": "clips/e418679d94b00351.m4a"
+  },
+  "8c8954c2460a8075": {
+   "_": "clips/93b1c9e13213f288.m4a"
+  },
+  "8ce8dc8e7d150eb6": {
+   "partner": "clips/b4226ce037e93f50.m4a"
+  },
+  "8cf67d4358814bec": {
+   "_": "clips/a65e528a8eef3f8d.m4a"
+  },
+  "8d3b42b7533be0b5": {
+   "_": "clips/2a046a57e77dd104.m4a"
+  },
+  "8db1eca53a2614e8": {
+   "Dina": "clips/1475fc4a3e6affae.m4a"
+  },
+  "8db4b25f910e9e47": {
+   "partner": "clips/9d0614752a6505cd.m4a"
+  },
+  "8dca46428d005a2f": {
+   "_": "clips/7acb161f09c19096.m4a"
+  },
+  "8de39bd3b1923e2e": {
+   "Zaid": "clips/66173d8749de8ae5.m4a"
+  },
+  "8e65f2e9df4e10e1": {
+   "_": "clips/be067cd61e970619.m4a"
+  },
+  "8e8de74d6dc0969f": {
+   "Hind": "clips/6f959a19a8e2c4a0.m4a"
+  },
+  "8eb9612e70b5f246": {
+   "_": "clips/1f144826b0e8c12d.m4a"
+  },
+  "8f3ba4d97f23731d": {
+   "partner": "clips/1143694c4a034ce2.m4a"
+  },
+  "8f405fcfeed1ff5d": {
+   "Adnan": "clips/a03a457578b1b706.m4a"
+  },
+  "8f4e3e3c24bac71b": {
+   "_": "clips/9f40bd2ce3fb28ba.m4a"
+  },
+  "8f6c77999ffa5afa": {
+   "_": "clips/e3268608f73f5665.m4a"
+  },
+  "8fe62d5cf7225fc4": {
+   "Maryam": "clips/2f9e911ee238a80b.m4a"
+  },
+  "8fff1e8d29be418b": {
+   "_": "clips/b14746a198ca6ed7.m4a"
+  },
+  "903571af4865e39f": {
+   "_": "clips/3e01cf06e6a9843c.m4a"
+  },
+  "904656b26c3850c0": {
+   "_": "clips/3c8f1b524e8f163f.m4a"
+  },
+  "90a2d331c26e28bf": {
+   "_": "clips/12af6dfc8a65d8bc.m4a"
+  },
+  "90b4d9cacda9a689": {
+   "_": "clips/78635464b2989b75.m4a"
+  },
+  "90de45aab5c8c9ae": {
+   "Nawal": "clips/36bf486e8e776129.m4a"
+  },
+  "90ee9172a43e3306": {
+   "_": "clips/1aff8c317db778e1.m4a"
+  },
+  "912d681870ef0355": {
+   "_": "clips/cf75c045743b8da2.m4a"
+  },
+  "913905a582e02950": {
+   "Tariq": "clips/e45ec6b5049d8cee.m4a"
+  },
+  "9139b8fd476f0f2b": {
+   "_": "clips/458d79a8314041b2.m4a"
+  },
+  "914bd8e3a08009b1": {
+   "Nawal": "clips/d21493b7a7ad6539.m4a"
+  },
+  "917021bbe71bc794": {
+   "_": "clips/94edad7f3e4e9960.m4a"
+  },
+  "918d5ca468a72191": {
+   "partner": "clips/ab9fe9e0962a1cf8.m4a"
+  },
+  "9193f47788444232": {
+   "Salma": "clips/e2acbd8f0c105bf5.m4a"
+  },
+  "9196d8a0340ee4de": {
+   "Nour": "clips/9afc1560b946fb58.m4a"
+  },
+  "91aa14fa806822d4": {
+   "Hadeel": "clips/dcd15dda28cc4eb3.m4a"
+  },
+  "91c9f341fd2b878c": {
+   "_": "clips/05dee0fa87f25a07.m4a"
+  },
+  "923cba465a819d56": {
+   "_": "clips/9c57df5befc8b67b.m4a"
+  },
+  "9246e9369662b91f": {
+   "partner": "clips/5a8b6c002d4f2d2c.m4a"
+  },
+  "92504616ed595e2e": {
+   "_": "clips/22658b9da1343093.m4a"
+  },
+  "926e364df58eabbc": {
+   "Layla": "clips/12fd2c7eb9ce77b9.m4a"
+  },
+  "92d4821bfe53a807": {
+   "_": "clips/6c93a49444b2f83d.m4a"
+  },
+  "93164d91d834b7d8": {
+   "Huda": "clips/2ee27fd8448c15ff.m4a"
+  },
+  "931d7c6d9e9f61b4": {
+   "Ghassan": "clips/0969356017ad8f9c.m4a"
+  },
+  "933fc4e3bf84f0a6": {
+   "_": "clips/b52150c5cd50d735.m4a"
+  },
+  "934ff2d8f6b170dc": {
+   "Yousef": "clips/ddc79cc45e7badda.m4a"
+  },
+  "93a603d7bdc3e950": {
+   "partner": "clips/7c32cb1b5765d47f.m4a"
+  },
+  "93c7549e178f7340": {
+   "_": "clips/b593b8018ecb55fa.m4a"
+  },
+  "9444f4c1b8526d5b": {
+   "Rania": "clips/26fa0b727417ff21.m4a"
+  },
+  "94773a4cfe2020ce": {
+   "_": "clips/252495026d5a6302.m4a"
+  },
+  "9495385c1e29ca75": {
+   "partner": "clips/2ebe27f373e07b8a.m4a"
+  },
+  "94c0c95ed33b4088": {
+   "partner": "clips/cdb1af3088e0913a.m4a"
+  },
+  "951657f907f87402": {
+   "_": "clips/72a1b9a8a0d344f2.m4a"
+  },
+  "955d491442cee329": {
+   "Adnan": "clips/13efe16ece3dd6dc.m4a"
+  },
+  "959e0a743ee03a39": {
+   "_": "clips/f6beee8c760ce630.m4a"
+  },
+  "95a2b1975fdb5e47": {
+   "partner": "clips/984e42d7f7a4eec2.m4a"
+  },
+  "95bd95fc4efccf1c": {
+   "_": "clips/ac70a40809d89ef6.m4a"
+  },
+  "95dee1381a6f63e1": {
+   "Adnan": "clips/0da63b9854ef990b.m4a"
+  },
+  "95e1c2eca8888cea": {
+   "_": "clips/e282fa335a46c10f.m4a"
+  },
+  "95f3a06c69313bd0": {
+   "_": "clips/3f4d18ec8e45312c.m4a"
+  },
+  "96b6768e45ffae5f": {
+   "Hiba": "clips/134565b4a3422219.m4a"
+  },
+  "96d787e87068603d": {
+   "Tareq": "clips/851bdf462577e8d6.m4a"
+  },
+  "97389c47c510ea46": {
+   "_": "clips/741c2050e520e5c8.m4a"
+  },
+  "974ffb0ee5de895b": {
+   "_": "clips/a82e49a7ad8d76a8.m4a"
+  },
+  "9770c8b486b495aa": {
+   "Samah": "clips/2b97301287333b46.m4a"
+  },
+  "977b313649bfc304": {
+   "_": "clips/ea2d21a7b20cf888.m4a"
+  },
+  "978a4b53621e238a": {
+   "_": "clips/628fe6dc8d7e7d2b.m4a"
+  },
+  "97d9bde2d8a812ea": {
+   "Karim": "clips/264a010c28dfd70a.m4a"
+  },
+  "98007a762daae776": {
+   "_": "clips/8801f3944625a7ba.m4a"
+  },
+  "98508d5aacb5cc20": {
+   "Jamal": "clips/aba2b178b1520914.m4a"
+  },
+  "988b30f9ee5a543a": {
+   "_": "clips/2ecdee97c6b2530f.m4a"
+  },
+  "98cc0128ec83643d": {
+   "_": "clips/a8f5ff4f90f7effa.m4a"
+  },
+  "990a0d010298233f": {
+   "Bilal": "clips/48b57a0f558d5eba.m4a"
+  },
+  "992c424ada154e5a": {
+   "_": "clips/882af770661daaa3.m4a"
+  },
+  "9944054abf5babee": {
+   "_": "clips/347c0a07e5b722ff.m4a"
+  },
+  "997795dc5eda8925": {
+   "_": "clips/33dc81012e2d6c5f.m4a"
+  },
+  "99bbbcc9ef83f4a6": {
+   "Yousef": "clips/abb4cca663435c28.m4a"
+  },
+  "99cfa08bb8e368b1": {
+   "Yousef": "clips/d0fcb8472c29ee4b.m4a"
+  },
+  "99f30c97ea64cddd": {
+   "Hanan": "clips/70b2d1d5ca23749f.m4a"
+  },
+  "9a08842685c9d2cf": {
+   "Amjad": "clips/fb1ad6335523b985.m4a"
+  },
+  "9a5f2e3a23877c8a": {
+   "Salim": "clips/076e6f3947baff00.m4a"
+  },
+  "9a62645f4085fa8a": {
+   "_": "clips/4f9d3f6de00606ef.m4a"
+  },
+  "9a641d4eb5a2730b": {
+   "_": "clips/078592d55460a210.m4a"
+  },
+  "9ac3d479fca2a917": {
+   "Faris": "clips/fd79d6d10a38611f.m4a"
+  },
+  "9ac6113fb04d9d76": {
+   "_": "clips/c649d05875a3ba63.m4a"
+  },
+  "9b0147a4d2ace293": {
+   "_": "clips/4f171706cdff8d97.m4a"
+  },
+  "9b144cddd5f0ee6f": {
+   "_": "clips/b3030947c50fa8a1.m4a"
+  },
+  "9b4394c368f7859a": {
+   "_": "clips/d51cf3bd9e519563.m4a"
+  },
+  "9b9aaeee33045d11": {
+   "_": "clips/4a1ff63be1003cbf.m4a"
+  },
+  "9be665bf6867cc67": {
+   "Ghada": "clips/27b7b7dd327b6ccc.m4a"
+  },
+  "9bf066940c412f75": {
+   "_": "clips/fd86062f5c4e78d8.m4a"
+  },
+  "9c15cdadc082faa8": {
+   "_": "clips/b933e782dae595a2.m4a"
+  },
+  "9c3050f16c8934b0": {
+   "Bashir": "clips/48ca0a97066292ef.m4a"
+  },
+  "9c6b35d469a3283e": {
+   "Fouad": "clips/8790414cef290745.m4a"
+  },
+  "9c6dad3c7f356dc9": {
+   "Adel": "clips/65abe5169fa2cb2c.m4a"
+  },
+  "9cbdf2ad7b547d25": {
+   "Yusuf": "clips/530e85fe6b715ca2.m4a"
+  },
+  "9cfc097828dde6d7": {
+   "_": "clips/bf445a59ba1464b4.m4a"
+  },
+  "9d41aa472dc119a4": {
+   "Sami": "clips/213a92c84e264fa2.m4a"
+  },
+  "9d6172ea024ad0f4": {
+   "_": "clips/3de94a8a066cf71b.m4a"
+  },
+  "9db55adfc9e91e98": {
+   "Dina": "clips/8d29dc2d6686292b.m4a"
+  },
+  "9dd734f10f5b933d": {
+   "_": "clips/90dbdecb66e57678.m4a"
+  },
+  "9ea638947ccfd33d": {
+   "_": "clips/696235d72664ed67.m4a"
+  },
+  "9efb334c911db360": {
+   "Hind": "clips/f744d6476154d4be.m4a"
+  },
+  "9f264d8f72826886": {
+   "Suad": "clips/8fafa7fc6333f100.m4a"
+  },
+  "9f40539c358e7d07": {
+   "partner": "clips/06c0a825f50aa86b.m4a"
+  },
+  "9f4e49611be513c6": {
+   "_": "clips/7b6718fd271b4b37.m4a"
+  },
+  "9f6efe640b01da74": {
+   "_": "clips/e0d6fe52766a1743.m4a"
+  },
+  "9fa545f088342088": {
+   "_": "clips/e9747c5cae2ca5c5.m4a"
+  },
+  "9fa8db0208709260": {
+   "partner": "clips/ac30bc4696376829.m4a"
+  },
+  "9ff68b2ddd3fe4cf": {
+   "Munir": "clips/0964519ca36ce265.m4a"
+  },
+  "a02f85c025b3272e": {
+   "Omar": "clips/e60705f615669d24.m4a"
+  },
+  "a066f070178f3141": {
+   "_": "clips/9c771b5a4cfc5b05.m4a"
+  },
+  "a0740cfef31e65c1": {
+   "Ruba": "clips/e53df1019bf2abe1.m4a"
+  },
+  "a0b2a731e577a1a3": {
+   "_": "clips/fa2d997f28ac3fd6.m4a"
+  },
+  "a0b34458f20bcb22": {
+   "_": "clips/e15cff4c3173f44b.m4a"
+  },
+  "a0ba606b60280285": {
+   "_": "clips/b7aed3a55dda0fdd.m4a"
+  },
+  "a18d5eaa2a72f578": {
+   "_": "clips/2ba1258bd7cfe427.m4a"
+  },
+  "a19315ce6dd8ffa7": {
+   "_": "clips/2623712a481176a2.m4a"
+  },
+  "a19f2168072817ae": {
+   "Rashid": "clips/de78f67a6edf858c.m4a"
+  },
+  "a1c063713040763d": {
+   "_": "clips/d82d5faab860690f.m4a"
+  },
+  "a1f5804f3a8937e8": {
+   "Maher": "clips/078e7b2f7345911e.m4a"
+  },
+  "a2421a0ce3c01c71": {
+   "partner": "clips/31ff40e871835c20.m4a"
+  },
+  "a24ac53d41815885": {
+   "_": "clips/e1e2e863b1302c7f.m4a"
+  },
+  "a25830cb551098a5": {
+   "_": "clips/40c4c5b18c20261f.m4a"
+  },
+  "a27ff7f7633df6d0": {
+   "_": "clips/3e75f1c8c554863d.m4a"
+  },
+  "a28100fa6a50a3cb": {
+   "_": "clips/c981de251a99fd82.m4a"
+  },
+  "a29bdc5852db5cbf": {
+   "_": "clips/a0f8fc5c62d213d5.m4a"
+  },
+  "a2c32d6575019fa7": {
+   "_": "clips/a6e5f13895b5868c.m4a"
+  },
+  "a3c9300bbb3f1f7c": {
+   "_": "clips/c508951d97f8d975.m4a"
+  },
+  "a41d93d54e77c3ca": {
+   "Marwan": "clips/89a64085d55af6d6.m4a"
+  },
+  "a460abdc512babac": {
+   "_": "clips/ff7bf8f167ed3b77.m4a"
+  },
+  "a47f3ecb8b1c496c": {
+   "_": "clips/0a1a2d8d661a7111.m4a"
+  },
+  "a481bb63fb87cdc9": {
+   "_": "clips/ef2935fc1d665b0c.m4a"
+  },
+  "a4930bb876228cc2": {
+   "_": "clips/44e659e04bc5a0d1.m4a"
+  },
+  "a493fe0d3003b96c": {
+   "partner": "clips/ca2495ed300dec18.m4a"
+  },
+  "a4a5bc76464ea456": {
+   "Salma": "clips/d2970be1106ae1b6.m4a"
+  },
+  "a4b174f17589fbc6": {
+   "Dalal": "clips/3bb7dbddaece7f1e.m4a"
+  },
+  "a4e7b92afd708d6b": {
+   "partner": "clips/84bbfc8146a91f34.m4a"
+  },
+  "a51d06ba94eee98e": {
+   "_": "clips/dad8fdf1202fc3af.m4a"
+  },
+  "a5b06bd365def646": {
+   "_": "clips/d5dd6729e1a5c3f6.m4a"
+  },
+  "a5dfd1e2a15413c2": {
+   "_": "clips/dbd1cbf19ac4a5ea.m4a"
+  },
+  "a6227d0e1f0fd765": {
+   "_": "clips/7a7ce6904a9599a1.m4a"
+  },
+  "a62a39bfd0ad6b0e": {
+   "_": "clips/f43918ae7d512e4c.m4a"
+  },
+  "a64c69a19425e8c2": {
+   "_": "clips/3bd87877af8e4d41.m4a"
+  },
+  "a6726e3d288ae652": {
+   "Tarek": "clips/d4b49acd8c576d8b.m4a"
+  },
+  "a68056f1353dd31f": {
+   "Hind": "clips/e50867f2d8427ac9.m4a"
+  },
+  "a6a64d7bb6906ce4": {
+   "_": "clips/2d45a59035ca4da2.m4a"
+  },
+  "a6d0a184d67b89e6": {
+   "_": "clips/37492529c6877b44.m4a"
+  },
+  "a6f289991ecbb9c9": {
+   "_": "clips/2069c6bad1beaece.m4a"
+  },
+  "a6f73158dfd087a2": {
+   "Ruba": "clips/2babb09641226e4f.m4a"
+  },
+  "a70739306a8eea28": {
+   "_": "clips/3aaf1d59b4118f03.m4a"
+  },
+  "a722852af0358a6a": {
+   "_": "clips/332712ab81a34ee3.m4a"
+  },
+  "a742c0be9bf3b982": {
+   "Salma": "clips/0937d6472356a0b4.m4a"
+  },
+  "a744ec7dba03a715": {
+   "Munir": "clips/9d700ff503318d3b.m4a"
+  },
+  "a7bd6e1976b03c89": {
+   "partner": "clips/aeee126e72b4baa2.m4a"
+  },
+  "a7d16ee6fb39b24e": {
+   "_": "clips/df9c43a48d8f9129.m4a"
+  },
+  "a7e50513eb3d16ac": {
+   "_": "clips/3a65ca8e07baa5d8.m4a"
+  },
+  "a831a8bf79dfacf5": {
+   "_": "clips/e07c0ada7cb19eb3.m4a"
+  },
+  "a837acbf21172e3f": {
+   "Zaid": "clips/17e942ae066219e4.m4a"
+  },
+  "a8824a1ec78fa4a9": {
+   "_": "clips/6a1e1797d6d2238b.m4a"
+  },
+  "a8c622c203356082": {
+   "partner": "clips/3e81be38869218f0.m4a"
+  },
+  "a8cafd9239f9b514": {
+   "Hanan": "clips/ed006c679a3b1ca4.m4a"
+  },
+  "a8dcdc3ec6d8bcd3": {
+   "_": "clips/cc317d5d85379c60.m4a"
+  },
+  "a8f108ba52a2f102": {
+   "_": "clips/f994c5860826d2c1.m4a"
+  },
+  "a97ba51f55add3f9": {
+   "_": "clips/486d5c73251d5c1f.m4a"
+  },
+  "a98372a76f2250ce": {
+   "Maha": "clips/db6ab11bc3e920ce.m4a"
+  },
+  "a9bd7a5b583cbe08": {
+   "_": "clips/f5ab56ab1eab3726.m4a"
+  },
+  "a9de8df9a8a8b5c2": {
+   "_": "clips/393bc267c02c8690.m4a"
+  },
+  "a9e0c802e6655e25": {
+   "_": "clips/0a8adddb7e110844.m4a"
+  },
+  "a9f4a8409f06456b": {
+   "_": "clips/af33c9734efb20f9.m4a"
+  },
+  "aa26df4a01e0eca7": {
+   "partner": "clips/51a8b66d4a208b4a.m4a"
+  },
+  "aa3e4db0a76f31ed": {
+   "_": "clips/b621ce339d4dafb0.m4a"
+  },
+  "aa3ff542f9279379": {
+   "Tamer": "clips/9915d98cfba2e19a.m4a"
+  },
+  "aa462de29c1e5cf8": {
+   "_": "clips/13ff32e6ab260fcf.m4a"
+  },
+  "aa4835f776c66f2d": {
+   "_": "clips/06a5435fbc83bec7.m4a"
+  },
+  "aa6f937291fa7350": {
+   "_": "clips/fe11008099991ae8.m4a"
+  },
+  "aab90dfe8c6f152a": {
+   "_": "clips/6190024f710cad92.m4a"
+  },
+  "aac19e3f89b9f487": {
+   "Basel": "clips/8d5f6c580cc0510f.m4a"
+  },
+  "aae35d04307eff34": {
+   "_": "clips/cfe9d104ac35711c.m4a"
+  },
+  "ab10b468dd13d2bf": {
+   "_": "clips/ab83f3a14eca6c52.m4a"
+  },
+  "ab244f4bee8167cd": {
+   "partner": "clips/6d9294b4f4f16725.m4a"
+  },
+  "ab2dc30cf0f60cdf": {
+   "_": "clips/8c03e8d68cd1da2a.m4a"
+  },
+  "ab46731381e6395f": {
+   "partner": "clips/bd2d6931145d6f0c.m4a"
+  },
+  "ab50e8e0b4c67783": {
+   "Basel": "clips/7d127eb5bdc4b3ff.m4a"
+  },
+  "ab67fc6a909c1740": {
+   "_": "clips/994c6f2133548d92.m4a"
+  },
+  "aba0f546c759807c": {
+   "_": "clips/3d5b0faba0817252.m4a"
+  },
+  "abee20847d146032": {
+   "_": "clips/5a27a7009e9e93a5.m4a"
+  },
+  "abfbd7c4a22bf032": {
+   "_": "clips/ce3f81c62718c3ab.m4a"
+  },
+  "ac37f973704910a3": {
+   "_": "clips/df2374a347a45542.m4a"
+  },
+  "ac3aef344801a045": {
+   "Hind": "clips/01bdfa7271ee2826.m4a"
+  },
+  "ac4c0d6f504b3953": {
+   "_": "clips/64632c2fbeb9a7aa.m4a"
+  },
+  "ac5d84bfae726a96": {
+   "_": "clips/75c525f2e50d8568.m4a"
+  },
+  "ac6636e36f5e2f03": {
+   "_": "clips/247ff2db952eb64c.m4a"
+  },
+  "ac7126e70759bbbc": {
+   "partner": "clips/58b18f07e430b63b.m4a"
+  },
+  "ac9c1275b0f24138": {
+   "_": "clips/5a3a01e0820c4e9c.m4a"
+  },
+  "ace6752be4cc2485": {
+   "_": "clips/51a154bec6ad991c.m4a"
+  },
+  "ad01eb4f05f9539c": {
+   "_": "clips/2fbebbb24432e57a.m4a"
+  },
+  "ad56dd544262618d": {
+   "_": "clips/28f24bc6d73f9bb9.m4a"
+  },
+  "ad87109bfff0765f": {
+   "_": "clips/037398329329adb8.m4a"
+  },
+  "adc8316897bcb137": {
+   "Widad": "clips/159b84f4a9c5964c.m4a"
+  },
+  "adcdee7c29e76d6c": {
+   "_": "clips/6d6a44acb0c930d2.m4a"
+  },
+  "ae43606f99e2df1e": {
+   "_": "clips/b308a13234f1da06.m4a"
+  },
+  "ae4faa3598dd6b32": {
+   "partner": "clips/e6b55d61eb3e8dcb.m4a"
+  },
+  "ae6c44717a338205": {
+   "_": "clips/eb345416cbd642f1.m4a"
+  },
+  "aecb01b0394cd0ee": {
+   "Lina": "clips/1247120858817536.m4a"
+  },
+  "af0157504cce41be": {
+   "_": "clips/b314711bea853424.m4a"
+  },
+  "af4851a447c0ef4f": {
+   "_": "clips/a309023fc032cb51.m4a"
+  },
+  "af62f3021051fbc9": {
+   "_": "clips/cf5cf221cf458d91.m4a"
+  },
+  "af7a902fe753d597": {
+   "_": "clips/194f1b98ea9e407a.m4a"
+  },
+  "af7ed7cc63524bfc": {
+   "_": "clips/723b4b6d640eda90.m4a"
+  },
+  "afd56b50876eb8d3": {
+   "_": "clips/aa921022a1ccc18f.m4a"
+  },
+  "afea8273189bbd32": {
+   "Basma": "clips/2b12e7f1917642e3.m4a"
+  },
+  "afffdd08d81dd168": {
+   "_": "clips/452e91397c54936e.m4a"
+  },
+  "b021df71688f6cbf": {
+   "_": "clips/ce3044041bf707b5.m4a"
+  },
+  "b043a2f9afc3a603": {
+   "Ruba": "clips/d00a00cdd272182c.m4a"
+  },
+  "b0869b66eb76703c": {
+   "Ruba": "clips/3f613f0fab563f76.m4a"
+  },
+  "b10dedc1b1d4497b": {
+   "Yusuf": "clips/d0ab20275aa75917.m4a"
+  },
+  "b16c48c694325359": {
+   "_": "clips/bcebbd464914d49c.m4a"
+  },
+  "b1b0b8de8a6228f6": {
+   "_": "clips/96daa34e138a41a6.m4a"
+  },
+  "b1ba6697307609a5": {
+   "_": "clips/b9e613e50b156c66.m4a"
+  },
+  "b1e4e4432bc498b2": {
+   "Maysoon": "clips/d13e045ac8b1fa21.m4a"
+  },
+  "b295d117135a9763": {
+   "_": "clips/8db063119d1012d2.m4a"
+  },
+  "b29e347df8d56d22": {
+   "_": "clips/7abba79e344630ed.m4a"
+  },
+  "b2a4093ee9be58ac": {
+   "_": "clips/eb9e7e094ff1840a.m4a"
+  },
+  "b2aaafb41d7ac0e5": {
+   "Fouad": "clips/e89940db45468028.m4a"
+  },
+  "b2ea42e07a131cd4": {
+   "_": "clips/2fe47e9dfb4b3714.m4a"
+  },
+  "b2fa93a29e452490": {
+   "_": "clips/9db550997463818f.m4a"
+  },
+  "b3195fe1ad0c027a": {
+   "Samer": "clips/3985bb96f49cc79c.m4a"
+  },
+  "b320d34fe34eb332": {
+   "Ruqayya": "clips/e2bbd85428187d57.m4a"
+  },
+  "b32394c27ed0d2c0": {
+   "Samah": "clips/d80622c91801dd16.m4a"
+  },
+  "b3282e493cc58c6c": {
+   "Munir": "clips/f4428b8e809ba82a.m4a"
+  },
+  "b39f008e318efd2b": {
+   "_": "clips/85ad29e971231f9c.m4a"
+  },
+  "b3d0a8449e072283": {
+   "_": "clips/0666b49fe89da6cb.m4a"
+  },
+  "b40e1a7ef3a0d714": {
+   "_": "clips/5d56c02320fe233b.m4a"
+  },
+  "b433a0bf1d47e686": {
+   "_": "clips/3136aaa09ee3606c.m4a"
+  },
+  "b43c4b82570e182e": {
+   "_": "clips/f8b41369739ab6e5.m4a"
+  },
+  "b498962b5054cb7f": {
+   "_": "clips/3c9288affe7331f3.m4a"
+  },
+  "b51118f58785274e": {
+   "_": "clips/741f130af5322685.m4a"
+  },
+  "b51960a71ad02062": {
+   "Hadeel": "clips/1340594eaaa5fb6f.m4a"
+  },
+  "b569afbd06d96524": {
+   "_": "clips/c254a331e96bfc1c.m4a"
+  },
+  "b57975f034ef17ec": {
+   "_": "clips/ac21f0a08c019df0.m4a"
+  },
+  "b5acb8539c05ce3c": {
+   "_": "clips/3e50992d2614dbe4.m4a"
+  },
+  "b5d15b586e1dfb5a": {
+   "_": "clips/67e7d3acc8b611f0.m4a"
+  },
+  "b5ee946cf0018264": {
+   "_": "clips/07cbcf759c7c9e26.m4a"
+  },
+  "b63080adfc16dc1e": {
+   "_": "clips/0af4443cfb0d0774.m4a"
+  },
+  "b63c0987a1a5c230": {
+   "_": "clips/99a3defd9319479e.m4a"
+  },
+  "b65701c6716e9268": {
+   "_": "clips/fb4e589e96b836cc.m4a"
+  },
+  "b6769c703e132688": {
+   "_": "clips/e5892885d78648d8.m4a"
+  },
+  "b6909f586df8346c": {
+   "_": "clips/450d804d22b024f1.m4a"
+  },
+  "b69a59a04b854b51": {
+   "_": "clips/797982374fb25d6e.m4a"
+  },
+  "b6a8cc835213edb7": {
+   "_": "clips/673956fc7c4fe5b7.m4a"
+  },
+  "b6be71cf2de043cd": {
+   "partner": "clips/d5ef2e0855f0eeee.m4a"
+  },
+  "b6cb4ecf01c8b823": {
+   "_": "clips/42851ba9c88b070c.m4a"
+  },
+  "b6d1984829275132": {
+   "_": "clips/28b832138bad265a.m4a"
+  },
+  "b6f0ddd2ceab4006": {
+   "_": "clips/85d218796b55b4ac.m4a"
+  },
+  "b71736f3c3a93c65": {
+   "_": "clips/ce9160b57fe44dda.m4a"
+  },
+  "b759f8bd5929f2ee": {
+   "_": "clips/eeef183b20813d3f.m4a"
+  },
+  "b79a10b3567b9a5b": {
+   "Zaid": "clips/a2eed784f44ffd09.m4a"
+  },
+  "b7bdf51b880e0d29": {
+   "_": "clips/a4ac5ad1d391f231.m4a"
+  },
+  "b7f90d4c10dc4a03": {
+   "_": "clips/876531d1bb29d073.m4a"
+  },
+  "b8108e1e71babc24": {
+   "_": "clips/68f5b20bb616f653.m4a"
+  },
+  "b86871cce9575583": {
+   "Suha": "clips/b11cdabbe5333f39.m4a"
+  },
+  "b872eeda4d7dd5e7": {
+   "_": "clips/e125652005d6819c.m4a"
+  },
+  "b88fb872d7518241": {
+   "_": "clips/bd52aa3ca6f49df0.m4a"
+  },
+  "b8980af52a40b60f": {
+   "Salma": "clips/e67f5eb9563a0cb8.m4a"
+  },
+  "b8a818857cbe63e1": {
+   "_": "clips/95d22374dc34c183.m4a"
+  },
+  "b8dc43305814b732": {
+   "Ammar": "clips/ddad7caaa4138af6.m4a"
+  },
+  "b91b61fb069d1b82": {
+   "_": "clips/21e0cd5321dd8d12.m4a"
+  },
+  "b93a956fa2f92804": {
+   "_": "clips/315b01da89a30466.m4a"
+  },
+  "b93c7a5d0adf344b": {
+   "partner": "clips/e3009958580e167e.m4a"
+  },
+  "b989197e80027ab8": {
+   "partner": "clips/bed5372c0ca7b760.m4a"
+  },
+  "b98bdffc18e4dbed": {
+   "_": "clips/ebd4da3f635b46ba.m4a"
+  },
+  "b9d5aec52cb1997c": {
+   "_": "clips/63bb73c178087767.m4a"
+  },
+  "ba25cb9379c6d48c": {
+   "Salma": "clips/861857b32caa5af7.m4a"
+  },
+  "ba4bf7b92f1df362": {
+   "_": "clips/8211cfabe3540723.m4a"
+  },
+  "baa8c182598e6c78": {
+   "Layla": "clips/d1dc7e0016926fc4.m4a"
+  },
+  "bab4c3dbad3e8a9a": {
+   "_": "clips/76c1acf0faa38306.m4a"
+  },
+  "babefe6869d95f44": {
+   "_": "clips/a10f5de19d325e1a.m4a"
+  },
+  "bad30a062bff2828": {
+   "Ammar": "clips/d32966d8aeed7a6a.m4a"
+  },
+  "bad73c91cff86447": {
+   "Yaser": "clips/e43358ad0c2f6ffe.m4a"
+  },
+  "badcfa3c62742b3b": {
+   "_": "clips/201cb955527ac0fd.m4a"
+  },
+  "baf7c4c139e29865": {
+   "_": "clips/24bb5b227781a50b.m4a"
+  },
+  "baffad43c7573a18": {
+   "_": "clips/14b1a0cf5676eddb.m4a"
+  },
+  "bb2b1ed22ebffa9d": {
+   "_": "clips/37bf39457dcb5b90.m4a"
+  },
+  "bb300872a5444296": {
+   "Hiba": "clips/6b64dfa80a8abb3a.m4a"
+  },
+  "bb51cbab56f5a26d": {
+   "_": "clips/327f9881d341f4c0.m4a"
+  },
+  "bb6a802c660cff12": {
+   "_": "clips/bdf38de02502629b.m4a"
+  },
+  "bb6e03960fe63429": {
+   "_": "clips/d85c3398c4d87546.m4a"
+  },
+  "bb73aaafa1596e54": {
+   "_": "clips/f6bf9bc6fda8201e.m4a"
+  },
+  "bb8888d559c0574c": {
+   "_": "clips/067ad81854fbae4f.m4a"
+  },
+  "bbb6bd988db17ab0": {
+   "Faris": "clips/1e22d2899319f2d1.m4a"
+  },
+  "bbd9546311d15095": {
+   "_": "clips/2c02463025324eff.m4a"
+  },
+  "bbe57728ccebb0f5": {
+   "_": "clips/cd10fb822b8939b8.m4a"
+  },
+  "bc34699b49592e36": {
+   "partner": "clips/e533febbab0fa6b3.m4a"
+  },
+  "bc63e8f603526bf4": {
+   "_": "clips/13fb426fb40bc43d.m4a"
+  },
+  "bc71c65c96674d41": {
+   "_": "clips/a5e5b12290f2e7be.m4a"
+  },
+  "bcf112ef01156f52": {
+   "_": "clips/3d5e050db02de147.m4a"
+  },
+  "bd1eb0b022cbe0ba": {
+   "_": "clips/978650bda2c1963b.m4a"
+  },
+  "bd45fc6a57201dfc": {
+   "Sameer": "clips/5630712b7a6fa1c4.m4a"
+  },
+  "bd63359087819026": {
+   "_": "clips/739250540f4402f5.m4a"
+  },
+  "be229788319bb86c": {
+   "_": "clips/dd8119397d5e1ea6.m4a"
+  },
+  "be3561299e0bd7b9": {
+   "partner": "clips/2f23b1c58964c31b.m4a"
+  },
+  "be45a7c3d5f2619c": {
+   "Ilham": "clips/cd02e2ba28c1f851.m4a"
+  },
+  "be5976a17fcca8cf": {
+   "_": "clips/da26203fb25ce6c3.m4a"
+  },
+  "be8c92aeab5da12d": {
+   "_": "clips/87e29e4773ca7f75.m4a"
+  },
+  "be8ffaada1c631bf": {
+   "Hala": "clips/287357f1a38a3b4f.m4a"
+  },
+  "be92478f744b0c40": {
+   "Basma": "clips/6b874b270f0c8e78.m4a"
+  },
+  "beb25de737e2b730": {
+   "partner": "clips/0969406a8faa62eb.m4a"
+  },
+  "bec85e25bca4a4e1": {
+   "_": "clips/41bab32716f822a4.m4a"
+  },
+  "bed97175b06e68eb": {
+   "_": "clips/7a879c4e336fcb9f.m4a"
+  },
+  "bedbf37852e05768": {
+   "_": "clips/f40bd0072dcaedc8.m4a"
+  },
+  "bee2d79a267d4a72": {
+   "_": "clips/93600027bc9359d9.m4a"
+  },
+  "bf31c52c32b0fcda": {
+   "_": "clips/c1e2faccd8e5714e.m4a"
+  },
+  "bf443a6f3341c1e5": {
+   "_": "clips/976487065258f87d.m4a"
+  },
+  "bf4debaf5a3ff44c": {
+   "_": "clips/03ab071984ec46f1.m4a"
+  },
+  "bf9d6230aaaf73f3": {
+   "_": "clips/92242149affaab27.m4a"
+  },
+  "bfb395c04e13a9d7": {
+   "_": "clips/cff4c09bd7017a85.m4a"
+  },
+  "bfbaf8b2d1cdf92b": {
+   "_": "clips/e1b11d72cacbf481.m4a"
+  },
+  "bfe1ddafd72a79f9": {
+   "Dima": "clips/925f1b9abe1d1041.m4a"
+  },
+  "c0026a5ce44acd25": {
+   "_": "clips/7176bd64f11b723a.m4a"
+  },
+  "c0755c8ac8b27b61": {
+   "_": "clips/984e93bd800cff98.m4a"
+  },
+  "c082e0d212f808f3": {
+   "_": "clips/eb6f2c8738ccf15c.m4a"
+  },
+  "c0ea5c7bb68df852": {
+   "_": "clips/d736ba8bc6da90ac.m4a"
+  },
+  "c0ef65c04dedbe0f": {
+   "Sami": "clips/fd087069830013e4.m4a"
+  },
+  "c112e88173d4d3c5": {
+   "_": "clips/7c1e88567650adc1.m4a"
+  },
+  "c157214fdba90fd8": {
+   "_": "clips/26ecd5651094010e.m4a"
+  },
+  "c1874f591b800bad": {
+   "_": "clips/5c1ed20bfeadd1a2.m4a"
+  },
+  "c1c108bf022e7001": {
+   "Maha": "clips/680d43e7a62944fc.m4a"
+  },
+  "c1cf2f19719e56cf": {
+   "_": "clips/18978979265e0d1e.m4a"
+  },
+  "c1de20dea5b711df": {
+   "_": "clips/b6a8f61dfc987d85.m4a"
+  },
+  "c1e5e827fd9a9670": {
+   "_": "clips/1a58d8af54ddea27.m4a"
+  },
+  "c23fa32c3c3a56b1": {
+   "Rania": "clips/4227130b79ffe15a.m4a"
+  },
+  "c279e0ae7ff9b284": {
+   "_": "clips/7cb166143bccbefa.m4a"
+  },
+  "c27fc159d31c7eeb": {
+   "_": "clips/42d58e6be720747a.m4a"
+  },
+  "c2d3e0333b011f3f": {
+   "Dina": "clips/a149b415b5224ab8.m4a"
+  },
+  "c3704af3c30c65c8": {
+   "_": "clips/0e41587f6146fdab.m4a"
+  },
+  "c375b636ea349c3f": {
+   "Ziad": "clips/50f7d0d4303968bf.m4a"
+  },
+  "c383bda323b42cb7": {
+   "Hazim": "clips/397f81467b2841ce.m4a"
+  },
+  "c3a58f7b081ccf76": {
+   "_": "clips/f283dbb6c4a25fab.m4a"
+  },
+  "c3bd87ad7652ee18": {
+   "_": "clips/ce1ec5457e48a272.m4a"
+  },
+  "c408148b65d252b7": {
+   "_": "clips/b1a46ae4c6c453e6.m4a"
+  },
+  "c455b38e07622839": {
+   "_": "clips/4c9050e175be1bae.m4a"
+  },
+  "c49295d2cfc74d42": {
+   "Dalal": "clips/bc83faf5d35359c8.m4a"
+  },
+  "c4bdd0e668bbd3b2": {
+   "_": "clips/34826c9dec3f7721.m4a"
+  },
+  "c4effbbbc66cd084": {
+   "_": "clips/b6402e0684366617.m4a"
+  },
+  "c4fd81f5e969ec87": {
+   "_": "clips/a1447ad1b31d3d7d.m4a"
+  },
+  "c50cbe2a7225893f": {
+   "_": "clips/41f673525c2a4d69.m4a"
+  },
+  "c5263c0cb2b778b7": {
+   "_": "clips/a190b184e18d9c00.m4a"
+  },
+  "c53a6fbacbf17388": {
+   "partner": "clips/a08bf27a9938618c.m4a"
+  },
+  "c5675e9623555ebe": {
+   "_": "clips/99203cbda3041faa.m4a"
+  },
+  "c5725867b5d8bc04": {
+   "Tamer": "clips/4a91b30e891dc098.m4a"
+  },
+  "c57e440336d143c0": {
+   "_": "clips/40e45bfcb9557391.m4a"
+  },
+  "c59772518b5ab5cd": {
+   "Hanan": "clips/9638f9f5a08fbaf8.m4a"
+  },
+  "c5b34a4bffca7889": {
+   "Sawsan": "clips/74e8004f4a71cbeb.m4a"
+  },
+  "c5bb000bc72fcf14": {
+   "_": "clips/ee948495280f87fa.m4a"
+  },
+  "c5bfeff3c3d6dc19": {
+   "Suha": "clips/9152e9bf5cb274dc.m4a"
+  },
+  "c5e8cfa79b53d0af": {
+   "_": "clips/579d3ef11cbc449f.m4a"
+  },
+  "c63c8ec7f6e23088": {
+   "_": "clips/96eb5679978d0e1f.m4a"
+  },
+  "c6db6c948300f5f2": {
+   "_": "clips/94acc2d32ff84727.m4a"
+  },
+  "c70eb1909cfe2183": {
+   "_": "clips/9de0a90c30765ac5.m4a"
+  },
+  "c71ba3ceeeed813b": {
+   "_": "clips/bc6c7b6cae4b88bf.m4a"
+  },
+  "c74fcf9f94287242": {
+   "_": "clips/1fd155e3d45431ec.m4a"
+  },
+  "c7643c7a93a8a324": {
+   "Ruba": "clips/699c82c54f9dfb0f.m4a"
+  },
+  "c76ebf5a014f500b": {
+   "_": "clips/7492a499a480d400.m4a"
+  },
+  "c77c33846e4f93be": {
+   "Hazim": "clips/3be400991a529e5a.m4a"
+  },
+  "c7a398df0596f265": {
+   "_": "clips/e106fcd2dee08802.m4a"
+  },
+  "c7ab786ffdb7b516": {
+   "_": "clips/c7656782e13b225c.m4a"
+  },
+  "c8871819d92f0bbb": {
+   "Tawfiq": "clips/9f41ef56cb7f0563.m4a"
+  },
+  "c8ab51895da8a2a3": {
+   "_": "clips/3301cbfcd244deaf.m4a"
+  },
+  "c8b47f0c20f577f4": {
+   "_": "clips/3259a3ada7dce12d.m4a"
+  },
+  "c8c5b3fbab10151d": {
+   "Amjad": "clips/79e7c1b5a8c4ec56.m4a"
+  },
+  "c8dc9f4db4b2fa2c": {
+   "_": "clips/763a0f1cbb38dd97.m4a"
+  },
+  "c93357c98ac39bc8": {
+   "_": "clips/ad9af4702dd6bb2f.m4a"
+  },
+  "c958c7590fe5e4d8": {
+   "_": "clips/1650403ea576f313.m4a"
+  },
+  "c9b5855298fedb9d": {
+   "_": "clips/f530b8296028fa9c.m4a"
+  },
+  "c9c2689045ca83ed": {
+   "_": "clips/1d03a130fff9f0be.m4a"
+  },
+  "ca156c1290be16bc": {
+   "_": "clips/71583d4ebd0cfd1d.m4a"
+  },
+  "ca20728d35f00c3a": {
+   "_": "clips/89cf6a8c96543eea.m4a"
+  },
+  "ca54acc651a786e9": {
+   "_": "clips/e1202930ccf8daed.m4a"
+  },
+  "ca5e24d4ade05b41": {
+   "partner": "clips/3772f4700b1a53a8.m4a"
+  },
+  "ca5f1ed295e674d7": {
+   "_": "clips/6e56e95d15b7996f.m4a"
+  },
+  "ca70c86eaf29c36e": {
+   "_": "clips/70a1508f10739caa.m4a"
+  },
+  "ca7f67180ecac5c3": {
+   "Zaid": "clips/11abfe62045fa087.m4a"
+  },
+  "ca826c5fd116a59b": {
+   "partner": "clips/a4441db147f90440.m4a"
+  },
+  "ca863cc2e4c57b7a": {
+   "_": "clips/714b1d39f225818f.m4a"
+  },
+  "ca89a8bb65d12176": {
+   "_": "clips/46235c77e42dd48d.m4a"
+  },
+  "caee3e9d54b49ae5": {
+   "_": "clips/71bfff2ca93e41dd.m4a"
+  },
+  "cb201aa8deb46206": {
+   "_": "clips/ade60d15e150819a.m4a"
+  },
+  "cb79bd0ce2a8c435": {
+   "_": "clips/0a2e2c29c35d08d5.m4a"
+  },
+  "cb97fb29c8c1d665": {
+   "partner": "clips/9c07e5bf4d8af4a9.m4a"
+  },
+  "cbb9c6882ac076e9": {
+   "_": "clips/e27f40715a47d21a.m4a"
+  },
+  "cbdf3f0f1103a9d3": {
+   "_": "clips/e83d6909b5c02e3b.m4a"
+  },
+  "cc22360544f3d2f3": {
+   "_": "clips/c05979252658a7e6.m4a"
+  },
+  "cc5cd3854d5232f3": {
+   "_": "clips/2a7706abe3662920.m4a"
+  },
+  "cc6f46529e675b27": {
+   "_": "clips/17bc0f4572eab064.m4a"
+  },
+  "cce317a97fd6de41": {
+   "_": "clips/d99539e8d037e82c.m4a"
+  },
+  "ccf902fd59376026": {
+   "Nizar": "clips/8db851dc4589a795.m4a"
+  },
+  "cd070d90566c5eb1": {
+   "_": "clips/e6c9b266874a05b4.m4a"
+  },
+  "cd07fa4c8d9eb8b6": {
+   "partner": "clips/6bfc62bd5dce179d.m4a"
+  },
+  "cd569c76c3c16d9b": {
+   "_": "clips/2f41748bb731114a.m4a"
+  },
+  "cd9765a97ca3c0ab": {
+   "Adel": "clips/9da5db01d9315d9c.m4a"
+  },
+  "cda4379adebd778d": {
+   "_": "clips/02b1eae314a50e7c.m4a"
+  },
+  "cdb86a961b284ab1": {
+   "Faris": "clips/469bd9c99ba85ee5.m4a"
+  },
+  "cdbd03bc394f0a12": {
+   "_": "clips/41d3cda25e639793.m4a"
+  },
+  "cdc7608ff7414466": {
+   "Rami": "clips/94aca09bdcb671c2.m4a"
+  },
+  "ce4e8eda96959e6d": {
+   "Maha": "clips/76bbd214efa17461.m4a"
+  },
+  "ce559087419b6157": {
+   "Bashar": "clips/12f25983f1790be6.m4a"
+  },
+  "ce8042d12dec6aa2": {
+   "_": "clips/a0ef907e173d5c90.m4a"
+  },
+  "ce94ab61edd8c2ec": {
+   "_": "clips/e362700a315def3f.m4a"
+  },
+  "cf0c97302cfba09d": {
+   "Rania": "clips/905604a271664906.m4a"
+  },
+  "cf2026c15fc28afd": {
+   "_": "clips/85b33e1b125b6c46.m4a"
+  },
+  "cf86ce14aad6c77f": {
+   "_": "clips/cfafd0c88f7d1648.m4a"
+  },
+  "cf94811aa05de32a": {
+   "_": "clips/50eb9377ff31956e.m4a"
+  },
+  "cfbd33e428a31bd1": {
+   "_": "clips/65504101c7f61bac.m4a"
+  },
+  "d0004cfc2b679829": {
+   "_": "clips/62a5d1bcf6473264.m4a"
+  },
+  "d00b277158fba249": {
+   "_": "clips/6729e7e578f53cee.m4a"
+  },
+  "d01593a7b3919244": {
+   "_": "clips/cc2b83bb9b1c5cbe.m4a"
+  },
+  "d015cc465bdb4e51": {
+   "_": "clips/5f5ab552accf8375.m4a"
+  },
+  "d074110bc6c616b3": {
+   "_": "clips/b05cf19380c8244d.m4a"
+  },
+  "d09b488b346791ae": {
+   "_": "clips/2745d8f79c0fa0c8.m4a"
+  },
+  "d0b20d25d9be77a5": {
+   "_": "clips/a4afca67ce6bd805.m4a"
+  },
+  "d0c18034a8637008": {
+   "_": "clips/0253080509d3a8d8.m4a"
+  },
+  "d0c2c26f9f444962": {
+   "Layla": "clips/264fc4f4225c4faa.m4a"
+  },
+  "d1189f5216e891c0": {
+   "Karim": "clips/6b86902692436ace.m4a"
+  },
+  "d14809f05ad6075c": {
+   "_": "clips/51784ddd4385744c.m4a"
+  },
+  "d155c607fc64f61f": {
+   "partner": "clips/3b2e0e2f3e4e9634.m4a"
+  },
+  "d1b70f42d982a1ee": {
+   "_": "clips/b4c04a305f7c3e7a.m4a"
+  },
+  "d1f30ba13f7633d8": {
+   "_": "clips/e5c3f67557953966.m4a"
+  },
+  "d1f763e8d9bc6012": {
+   "_": "clips/b4ad1404288c5513.m4a"
+  },
+  "d1ffda5dc9903c9a": {
+   "_": "clips/145dcc54ae62b329.m4a"
+  },
+  "d25187dc137f35c8": {
+   "_": "clips/bfd95c08709149ae.m4a"
+  },
+  "d25dfd7e8097aae5": {
+   "_": "clips/24cfbe5a4f990859.m4a"
+  },
+  "d28eb1950faf09b4": {
+   "_": "clips/4b60b6dc393f27fb.m4a"
+  },
+  "d299af117c5c5546": {
+   "_": "clips/248928127bffd1f2.m4a"
+  },
+  "d2a98eb88515d87d": {
+   "_": "clips/f322a28f2f5f6bcd.m4a"
+  },
+  "d2b329849d9a71df": {
+   "_": "clips/bd3262574db2e9cc.m4a"
+  },
+  "d2f2af7a1ac486e9": {
+   "_": "clips/f5f0109c9e39d64b.m4a"
+  },
+  "d3712a24cfcf32a7": {
+   "Fouad": "clips/ed02f532d699fc2d.m4a"
+  },
+  "d37552bc0c39ffa6": {
+   "_": "clips/bbd378e4670cf2e4.m4a"
+  },
+  "d3b8a873bbdc6076": {
+   "_": "clips/3ad831bff19bf897.m4a"
+  },
+  "d41178b0305d8f9d": {
+   "Basil": "clips/ca868383895b0f9f.m4a"
+  },
+  "d4395f648ee94bf7": {
+   "_": "clips/bb7164d9700a57ed.m4a"
+  },
+  "d43fd03ebb9dc060": {
+   "Widad": "clips/a44ffa248adbba56.m4a"
+  },
+  "d4652d1742228b17": {
+   "Suha": "clips/36457cfe9329621c.m4a"
+  },
+  "d47fc36c60588723": {
+   "_": "clips/7bcbf20a6ebd47c2.m4a"
+  },
+  "d4d2a6686ee0e759": {
+   "_": "clips/b4fa6a52c6780bc4.m4a"
+  },
+  "d50a5b58736afbe0": {
+   "_": "clips/1d7000d9c7df7639.m4a"
+  },
+  "d51c3156f6c1986b": {
+   "_": "clips/d7f485136f260e97.m4a"
+  },
+  "d5246fce29b0d48f": {
+   "Fouad": "clips/86e3e8a1ec5a981b.m4a"
+  },
+  "d52619bf0fa6e195": {
+   "Karim": "clips/2c9ed61cad6020d5.m4a"
+  },
+  "d574ce88fe7687a2": {
+   "_": "clips/dfee8ae3b707f780.m4a"
+  },
+  "d599ed5fa2f5e823": {
+   "Hadeel": "clips/017a1e3366c4ebb6.m4a"
+  },
+  "d5ee66bd1058e8f2": {
+   "_": "clips/6d932fe15a11307c.m4a"
+  },
+  "d617b5ef5a36ed1c": {
+   "_": "clips/fbac67eeea3d3f03.m4a"
+  },
+  "d652df89391aff4f": {
+   "partner": "clips/c70d6bed4216f09f.m4a"
+  },
+  "d6ec7a8a82caaaf8": {
+   "Salwa": "clips/0bd37c44b6db8775.m4a"
+  },
+  "d6f64278b4284662": {
+   "Hanan": "clips/9f2823661c00c732.m4a"
+  },
+  "d713bf0d30d502bf": {
+   "_": "clips/9c5bedc2177300af.m4a"
+  },
+  "d7701aacba94c140": {
+   "_": "clips/abaf861f196e1a23.m4a"
+  },
+  "d7970e2343e3614c": {
+   "_": "clips/6c11fe385d033577.m4a"
+  },
+  "d79c660cbb20278c": {
+   "_": "clips/a1091265e6563ca3.m4a"
+  },
+  "d7c3cb5833660f7f": {
+   "Lina": "clips/7c4c5f1d2fcff4ec.m4a"
+  },
+  "d880fc3a13d9c14d": {
+   "_": "clips/fc09f0a44cadbb2f.m4a"
+  },
+  "d894c75d0d3a76bf": {
+   "_": "clips/5829818bb428db55.m4a"
+  },
+  "d8e554b50be98678": {
+   "Suha": "clips/c1fe3c7715bedf8b.m4a"
+  },
+  "d9090bfdcd31d975": {
+   "_": "clips/4360620cf155bfeb.m4a"
+  },
+  "d90d1284ba4af20d": {
+   "_": "clips/82f45c8d8dad67b1.m4a"
+  },
+  "d93989ad4464c95d": {
+   "_": "clips/b275dd33a37de252.m4a"
+  },
+  "d96857d8847e80ae": {
+   "Rawan": "clips/48d02fa18bfaf70c.m4a"
+  },
+  "d9b0d9bbb3d77349": {
+   "Maher": "clips/bf74930af81d60ae.m4a"
+  },
+  "d9f85f3191264bdd": {
+   "_": "clips/2c12dc0bc3c3c362.m4a"
+  },
+  "da21a9386fcbd7c0": {
+   "_": "clips/517cff1a4a8468d5.m4a"
+  },
+  "da508947f11cb99e": {
+   "_": "clips/92358466a7bd2981.m4a"
+  },
+  "da53f72b00a4ebaa": {
+   "partner": "clips/78a572ca4bc5354c.m4a"
+  },
+  "da6b69f9e1b8dadb": {
+   "_": "clips/12b153d0285dd2ee.m4a"
+  },
+  "da7d0f1584cf3555": {
+   "_": "clips/cc71732866564034.m4a"
+  },
+  "daaad336276d1559": {
+   "_": "clips/0d156d8a8884366b.m4a"
+  },
+  "dac594fd64df182f": {
+   "_": "clips/0691562afd262c91.m4a"
+  },
+  "dac7d915341e8a29": {
+   "_": "clips/3f11b3453b95d58c.m4a"
+  },
+  "dae1e5f83a746e44": {
+   "_": "clips/aa6c01ed38a12a57.m4a"
+  },
+  "db33e4b42f2196cd": {
+   "Jamal": "clips/52ad47b5f7a51813.m4a"
+  },
+  "db3fb52f4f6c9cbd": {
+   "_": "clips/d657b5a906da57bf.m4a"
+  },
+  "db746cbcf3d5fb47": {
+   "Tareq": "clips/cafcc297a426a00e.m4a"
+  },
+  "db93f727a297c7ca": {
+   "_": "clips/a2dd3e09a4d4e22f.m4a"
+  },
+  "dbaa889cd3ab9b92": {
+   "Maysoon": "clips/de164e4bb9b4a4e2.m4a"
+  },
+  "dbd79b319f5c1e5d": {
+   "_": "clips/24c55cc4815c084d.m4a"
+  },
+  "dbdb79c790de5248": {
+   "partner": "clips/5bf35b2118b579e3.m4a"
+  },
+  "dbec95941dfcfb27": {
+   "_": "clips/249711929679f307.m4a"
+  },
+  "dbf78129f75fbdc8": {
+   "_": "clips/df5724d708ceb15b.m4a"
+  },
+  "dc113e7cc8e26e15": {
+   "_": "clips/e4e643bb60095ebb.m4a"
+  },
+  "dc14ae649529fdb4": {
+   "_": "clips/3d663a71ddbb15d6.m4a"
+  },
+  "dc2cae0381add193": {
+   "_": "clips/76835b0a3378b900.m4a"
+  },
+  "dc5a260a7eec1c62": {
+   "_": "clips/0c2fcd49e5ecabc1.m4a"
+  },
+  "dc70d7c6d005c1a7": {
+   "_": "clips/75dc8dbc1191acdc.m4a"
+  },
+  "dcd8f7e6997f668e": {
+   "Yousef": "clips/378525cd5c43bfab.m4a"
+  },
+  "dcdc8b2d0a795513": {
+   "_": "clips/626d16802dff5faa.m4a"
+  },
+  "dcdfc0c0045b399a": {
+   "Omar": "clips/6bd3e8a3ef74532a.m4a"
+  },
+  "dcee488dd6592521": {
+   "_": "clips/8dbbb3ccd8548cc2.m4a"
+  },
+  "dcf6321f8a8bfbdf": {
+   "_": "clips/2fe0c18db904077f.m4a"
+  },
+  "dcfc39285fcbcadf": {
+   "Basel": "clips/9e3122c3cca422eb.m4a"
+  },
+  "dd0274793f687d32": {
+   "_": "clips/7824aeef96f359c3.m4a"
+  },
+  "dd0a29900a4095be": {
+   "_": "clips/65861436efe6994e.m4a"
+  },
+  "ddb3ef2a323048e7": {
+   "_": "clips/86abad3ff8ad06b8.m4a"
+  },
+  "ddba6a5c4f762a62": {
+   "_": "clips/026e0bde0de5176e.m4a"
+  },
+  "ddd6e648c11b6b71": {
+   "_": "clips/94028447ce895457.m4a"
+  },
+  "de29f9846d4597f4": {
+   "_": "clips/512bcbb645b3bb8b.m4a"
+  },
+  "de4030a2141c2298": {
+   "_": "clips/7216d966c0c6b87b.m4a"
+  },
+  "de943f2844cf19c1": {
+   "_": "clips/accc2c9b9d21bb89.m4a"
+  },
+  "dec0734503a971da": {
+   "_": "clips/8a4ed464e72f351f.m4a"
+  },
+  "dedc0363379110f1": {
+   "Yousef": "clips/5ab7f6726da1ac3b.m4a"
+  },
+  "df0b6c410fc70cee": {
+   "_": "clips/e1774a893332eebb.m4a"
+  },
+  "df14b98400c3f2bb": {
+   "_": "clips/08ebcd4311ab6d6a.m4a"
+  },
+  "df226a84c0c1e761": {
+   "Sawsan": "clips/c3eab0001339fd2a.m4a"
+  },
+  "df259d344b313ce9": {
+   "Hani": "clips/a5d6c21cb2f3e569.m4a"
+  },
+  "df2923f873874515": {
+   "Maysoon": "clips/a75794a7eeb40e33.m4a"
+  },
+  "df399330d331a0c6": {
+   "_": "clips/efd3be72e6c82675.m4a"
+  },
+  "df5a311b78315a32": {
+   "_": "clips/80b722290481f4e8.m4a"
+  },
+  "df5b40ddd4ac07ff": {
+   "_": "clips/e9a02e9a32632638.m4a"
+  },
+  "df67650b70f79e51": {
+   "_": "clips/89fb0f09b2dd9c75.m4a"
+  },
+  "df7b90dd704b0f84": {
+   "_": "clips/0fe652a22a0a7aa0.m4a"
+  },
+  "dfebbda7af181853": {
+   "_": "clips/e7da5581327249a0.m4a"
+  },
+  "e0201b72a8baba45": {
+   "Iman": "clips/e1bd5755ed20f94b.m4a"
+  },
+  "e030f9afa50d4961": {
+   "_": "clips/cdf27b6b40bbf78b.m4a"
+  },
+  "e03331ef01bafd3d": {
+   "partner": "clips/4515406a80363783.m4a"
+  },
+  "e03615909a9a6aee": {
+   "Kamal": "clips/22ca4bab470fc691.m4a"
+  },
+  "e06d174b2f23bc35": {
+   "_": "clips/d38627f39f2469b9.m4a"
+  },
+  "e082e122e5892a4d": {
+   "_": "clips/1dd14e40b7160919.m4a"
+  },
+  "e098e86a2f2c3f3d": {
+   "partner": "clips/dcb1e1dcd659c8b1.m4a"
+  },
+  "e09cce570f8b10f4": {
+   "_": "clips/632b1e6fdaeba022.m4a"
+  },
+  "e0b11000aafc0688": {
+   "partner": "clips/36b4e97c8b0747b7.m4a"
+  },
+  "e0bdeb26c92e8fee": {
+   "partner": "clips/48be48a824cce4f3.m4a"
+  },
+  "e10eb95b0c79fdcb": {
+   "_": "clips/df582f7eb5c1b02c.m4a"
+  },
+  "e122d28c768ab44c": {
+   "_": "clips/284706bc90b0f4df.m4a"
+  },
+  "e154c78245f2f97b": {
+   "_": "clips/27aba35e06b2b556.m4a"
+  },
+  "e15522a3b9509955": {
+   "Lina": "clips/9af84568f4b5a408.m4a"
+  },
+  "e16556282f9933b2": {
+   "Ghassan": "clips/53ffdfd289bb46de.m4a"
+  },
+  "e175c2bd5f0af786": {
+   "Dalia": "clips/1616089e5910fd4b.m4a"
+  },
+  "e1fed21772a6b8e2": {
+   "_": "clips/76c2a6ff609624fd.m4a"
+  },
+  "e23839cd729a3f60": {
+   "_": "clips/91ad7cbb163f89d0.m4a"
+  },
+  "e2457b2d4d3715c1": {
+   "_": "clips/9c7a72d09ca8aa26.m4a"
+  },
+  "e2a2270c8ad2b82d": {
+   "_": "clips/a38611425cea0998.m4a"
+  },
+  "e2d8d841691b0fe9": {
+   "partner": "clips/2353bcec396b8fcd.m4a"
+  },
+  "e2d979e0e2d0f39f": {
+   "_": "clips/a355af77941a264a.m4a"
+  },
+  "e2dfaa285d45a83c": {
+   "Adel": "clips/b82774e3132c6a07.m4a"
+  },
+  "e2f24060f0e4f110": {
+   "Bashar": "clips/a21d98b965b51b61.m4a"
+  },
+  "e2f4ef3d9989496f": {
+   "_": "clips/02e45405bdedafa6.m4a"
+  },
+  "e341447b78a73905": {
+   "_": "clips/335a9a8b9aaa2ca4.m4a"
+  },
+  "e3559e78164e2a91": {
+   "_": "clips/3443ee4bdbcd687c.m4a"
+  },
+  "e397f134786cbb52": {
+   "partner": "clips/3cd0ef7f9c599f4a.m4a"
+  },
+  "e3a446ca1def0d33": {
+   "_": "clips/ab1c6119dfe044a9.m4a"
+  },
+  "e3cab7901442175d": {
+   "_": "clips/2bb6741841ea1ade.m4a"
+  },
+  "e3d8703568eb1539": {
+   "partner": "clips/590e0793bc54c36f.m4a"
+  },
+  "e3f3cc8109843971": {
+   "Salwa": "clips/cc9003f702ca4b9c.m4a"
+  },
+  "e41eb96165434823": {
+   "_": "clips/459d684116cd03c2.m4a"
+  },
+  "e48c5223b7895226": {
+   "Nizar": "clips/655a93268f4d38f1.m4a"
+  },
+  "e4c2951e139a4617": {
+   "Yousef": "clips/e4d4573662f65357.m4a"
+  },
+  "e4ef7d5071aab56e": {
+   "_": "clips/c3bccec243232806.m4a"
+  },
+  "e52c035aaa4903cf": {
+   "partner": "clips/21362be93eb24e97.m4a"
+  },
+  "e53ac934cbe85164": {
+   "Widad": "clips/9a5433a6a5606a31.m4a"
+  },
+  "e5532f9a71b74b82": {
+   "_": "clips/4be5b0776b5c74ca.m4a"
+  },
+  "e55b2c7766e2eb40": {
+   "_": "clips/38a266d1b427e358.m4a"
+  },
+  "e55d64189e2583f7": {
+   "Omar": "clips/c5fa8d91ddef579e.m4a"
+  },
+  "e5654b308b9ffca8": {
+   "Ghassan": "clips/bfe84f712e7c2dc7.m4a"
+  },
+  "e570e577ed480b02": {
+   "_": "clips/3a09c2f49ad5ddb8.m4a"
+  },
+  "e5a868d66c1f8e2c": {
+   "_": "clips/8e47e0fc42705078.m4a"
+  },
+  "e5b45b26ffdcf7e1": {
+   "_": "clips/ab4d29e6b9590425.m4a"
+  },
+  "e5c8bb39aa673f73": {
+   "Ilham": "clips/379cc4b3854ac785.m4a"
+  },
+  "e5cf2d057b80963a": {
+   "_": "clips/7dd6ff7dfabaef41.m4a"
+  },
+  "e5edb94ec7c2fc31": {
+   "_": "clips/7dce93fb12dcf69c.m4a"
+  },
+  "e631409db786040d": {
+   "_": "clips/3a7544507a935f42.m4a"
+  },
+  "e63611c85d21eca6": {
+   "_": "clips/58504836b3d49762.m4a"
+  },
+  "e64f9d07eddef06b": {
+   "_": "clips/883d52c3a4e79c23.m4a"
+  },
+  "e6639ec254ef5bab": {
+   "_": "clips/4786e9865a031cea.m4a"
+  },
+  "e6d3eb43d343815a": {
+   "_": "clips/cb4a0cef5c9d25a2.m4a"
+  },
+  "e71e154440d729de": {
+   "_": "clips/64946405d8df01c6.m4a"
+  },
+  "e74ea992c3888a2e": {
+   "_": "clips/37e5811fba251315.m4a"
+  },
+  "e75cb533831595ed": {
+   "_": "clips/2c5f82d5b292c4fb.m4a"
+  },
+  "e78eecafe457d3f4": {
+   "_": "clips/17e50787f78c8930.m4a"
+  },
+  "e7de9e6263e25245": {
+   "_": "clips/cb06ce6562c888c4.m4a"
+  },
+  "e7e351eaddc50087": {
+   "_": "clips/61338ffa7ae69c1e.m4a"
+  },
+  "e7e694c58cd50e03": {
+   "_": "clips/62f96fd8140cf550.m4a"
+  },
+  "e81a85b46a12362b": {
+   "_": "clips/b8ffeff7713fb2f2.m4a"
+  },
+  "e828ead0beccb3ee": {
+   "Ghassan": "clips/2a9b12bd9ced2806.m4a"
+  },
+  "e86104fe913533bf": {
+   "Rashid": "clips/c6130cb5c061108c.m4a"
+  },
+  "e87075f18bfd60c2": {
+   "_": "clips/2f796eee30a9afb7.m4a"
+  },
+  "e8a5bf796b7030d3": {
+   "Layla": "clips/db79de8e7bcfb56a.m4a"
+  },
+  "e8a7d6f2bc4132a0": {
+   "_": "clips/52dac2178136b5f4.m4a"
+  },
+  "e8d62521078189fe": {
+   "_": "clips/3becb14e84012d30.m4a"
+  },
+  "e9296cf65a039c0c": {
+   "_": "clips/2e2a4d4b5164d285.m4a"
+  },
+  "e93ca6d903c57f44": {
+   "_": "clips/0eee6d52b483f238.m4a"
+  },
+  "e94093ba7cdfb31d": {
+   "partner": "clips/79a972ed6fb15e08.m4a"
+  },
+  "e97ba6aed5561a3d": {
+   "_": "clips/b60d8bfc13cb9c8f.m4a"
+  },
+  "e99813c5d04bba51": {
+   "Maher": "clips/fd390ba740756506.m4a"
+  },
+  "e9ef659a9f0dd7f7": {
+   "_": "clips/6d3c8caa05eba36a.m4a"
+  },
+  "e9efd53bfa94b18c": {
+   "Faris": "clips/28b2315889d08a7f.m4a"
+  },
+  "ea4f68128baf99b5": {
+   "partner": "clips/e1253d4cccce8d06.m4a"
+  },
+  "ea5e044532f9bdaa": {
+   "_": "clips/74a55e492acba554.m4a"
+  },
+  "ea6d997be0623631": {
+   "_": "clips/4cc47e49a5c12e41.m4a"
+  },
+  "ea8ba00638396e31": {
+   "_": "clips/b8f9f3d04f33b3c4.m4a"
+  },
+  "eaca07345ea9e558": {
+   "_": "clips/8838b5e89e8438d6.m4a"
+  },
+  "eafa3ec6a2e1f3ee": {
+   "_": "clips/62b08cb3f6e847d2.m4a"
+  },
+  "eb07f5e61a839602": {
+   "Kamal": "clips/921c401ce31c6f93.m4a"
+  },
+  "eb28d2989b6c4709": {
+   "Tawfiq": "clips/2d49a97787592dde.m4a"
+  },
+  "ebab6bf01b7f75c9": {
+   "_": "clips/29c6dc979fc09be7.m4a"
+  },
+  "ebd35f3824f26334": {
+   "Lina": "clips/801ee173c7ea115e.m4a"
+  },
+  "ebfb2e9c2ac20e1a": {
+   "_": "clips/19881b66cb37e270.m4a"
+  },
+  "ebfc15fa3ae22742": {
+   "_": "clips/55d7d770607a92e7.m4a"
+  },
+  "ec0b3d80bf1d0963": {
+   "partner": "clips/400f6784010b5d3f.m4a"
+  },
+  "ec640076cb101d53": {
+   "_": "clips/acc4250a5040f8cf.m4a"
+  },
+  "ec9c5cab95419c12": {
+   "Nadia": "clips/b790328c6d36a3e6.m4a"
+  },
+  "ecab58fb975c8d08": {
+   "Iman": "clips/20d3203980d89ebe.m4a"
+  },
+  "ece9c53d9dd1c38a": {
+   "_": "clips/181acef65cc2c526.m4a"
+  },
+  "eceb779d4b3c2b31": {
+   "_": "clips/217af82bd1f7ff7e.m4a"
+  },
+  "ed21b0131b6376d4": {
+   "_": "clips/99553bb23089175a.m4a"
+  },
+  "ed2bd8973fc7f35a": {
+   "_": "clips/c2925dda589fb1ab.m4a"
+  },
+  "edb44c7269b67d8a": {
+   "_": "clips/5dfd355cd511c7e3.m4a"
+  },
+  "eddaaca70c4e87e2": {
+   "_": "clips/c5c130a0d1bcb1be.m4a"
+  },
+  "ee6463745e7274e1": {
+   "_": "clips/f7503b68bdb05ffb.m4a"
+  },
+  "eea0325f09ff8e01": {
+   "_": "clips/bad7ae3c19d23ca6.m4a"
+  },
+  "eed3aa51f0883dd0": {
+   "Basil": "clips/5c7e93a1ea91994c.m4a"
+  },
+  "eefaabcf047f6258": {
+   "Nabil": "clips/0fca50ff7e28960a.m4a"
+  },
+  "ef67caa27876df52": {
+   "Basma": "clips/28f2134aa96d6a84.m4a"
+  },
+  "ef7943b93d46a5c6": {
+   "_": "clips/73c8611ca4c25b2d.m4a"
+  },
+  "efadb4eacfec865e": {
+   "Tareq": "clips/9aeca8ce15e7556b.m4a"
+  },
+  "efcadfdff86f0c29": {
+   "_": "clips/b9a61d6e283a7386.m4a"
+  },
+  "efcb512016dd2394": {
+   "_": "clips/faad26f4e99408b8.m4a"
+  },
+  "f0017e5821049bb4": {
+   "_": "clips/9724ee8ab4a16ec1.m4a"
+  },
+  "f010e7b731bc1d70": {
+   "_": "clips/946b1e77625a45ee.m4a"
+  },
+  "f01139405ec19914": {
+   "Hoda": "clips/9172713f6011d630.m4a"
+  },
+  "f03c0a59c59454ee": {
+   "_": "clips/9c2e39a192a96b29.m4a"
+  },
+  "f03f4678885c4dc2": {
+   "partner": "clips/e092da41505955ae.m4a"
+  },
+  "f053dc6fa443ce15": {
+   "_": "clips/99d094dddc13c345.m4a"
+  },
+  "f0db3fa401aea04b": {
+   "_": "clips/001110d2adc00dc5.m4a"
+  },
+  "f0e51366f26427e0": {
+   "Iman": "clips/092894a837ca9ff0.m4a"
+  },
+  "f104990b36855357": {
+   "_": "clips/17c9e9cb2a9a447a.m4a"
+  },
+  "f11a107f38328604": {
+   "_": "clips/8a980ebce3009bdc.m4a"
+  },
+  "f1b6d8380c72aa84": {
+   "_": "clips/366e8a9cfa7930c0.m4a"
+  },
+  "f2335c798a82591c": {
+   "_": "clips/d41c7184a0a9b19e.m4a"
+  },
+  "f239b0c6ba3108f1": {
+   "Sameer": "clips/9d395ab9003efaf0.m4a"
+  },
+  "f25e9dc3d46090f2": {
+   "_": "clips/8bd25d8091a54371.m4a"
+  },
+  "f28fafda3902ce1f": {
+   "_": "clips/aad691dd352c7645.m4a"
+  },
+  "f2c1b76db30d870f": {
+   "_": "clips/2adb676d58b2ed87.m4a"
+  },
+  "f2c6804cdd6e095e": {
+   "_": "clips/ff60ac76ab87845a.m4a"
+  },
+  "f2d4f03460013a00": {
+   "_": "clips/7f7b0aad4a2949dc.m4a"
+  },
+  "f2e99f4b0ebebcba": {
+   "_": "clips/3b2030a68e75ab7a.m4a"
+  },
+  "f3a51c09eb67f8d2": {
+   "_": "clips/b507972b8e216f52.m4a"
+  },
+  "f4108f7bdb9d2c17": {
+   "_": "clips/173e49fe682581be.m4a"
+  },
+  "f447f7a0ca5d9286": {
+   "_": "clips/8f7b015e4626344a.m4a"
+  },
+  "f44922b0d7b8b493": {
+   "_": "clips/c76ae34a3a7dd836.m4a"
+  },
+  "f44ed09001011d18": {
+   "_": "clips/a42330fc93e95f97.m4a"
+  },
+  "f464a143a23d39fc": {
+   "_": "clips/6a69a5e62bb5abf0.m4a"
+  },
+  "f46e7f93a9292670": {
+   "_": "clips/9beecf86d7bed714.m4a"
+  },
+  "f475514d9eb804ba": {
+   "_": "clips/137ed59c15afe821.m4a"
+  },
+  "f485867cc6d9bafd": {
+   "_": "clips/5cc02ac31bd72bc0.m4a"
+  },
+  "f4c63ed3d7b91682": {
+   "_": "clips/287f46ec65313d8a.m4a"
+  },
+  "f4d86d36019180b4": {
+   "_": "clips/352bd044e979e0cb.m4a"
+  },
+  "f513e15f35621aed": {
+   "_": "clips/dff2222807d068bf.m4a"
+  },
+  "f550541a9d01c0e4": {
+   "_": "clips/aeefb24a4449467e.m4a"
+  },
+  "f55a54b77b2165b5": {
+   "_": "clips/f72fb2a550a76436.m4a"
+  },
+  "f5818e80e87cab17": {
+   "_": "clips/3bb3dc5771aec082.m4a"
+  },
+  "f5bf517d457e4124": {
+   "Maha": "clips/4584c96e6b1c9964.m4a"
+  },
+  "f5e2e360d28214bc": {
+   "_": "clips/e6a3259c81fe105a.m4a"
+  },
+  "f5ed364e6a34bba7": {
+   "partner": "clips/a8cbf1dd99ae2b1b.m4a"
+  },
+  "f6093d1b7c5909bd": {
+   "_": "clips/c9272138cd765ffb.m4a"
+  },
+  "f6109124ca4bb35b": {
+   "_": "clips/63f5647c05cc01a4.m4a"
+  },
+  "f61b43b4164a1f11": {
+   "_": "clips/99bd1463ef6356f3.m4a"
+  },
+  "f62984f88685462c": {
+   "partner": "clips/fb10a07076d298e1.m4a"
+  },
+  "f6661a79fb80d2ed": {
+   "_": "clips/adfba28e90341752.m4a"
+  },
+  "f6a0d6c96c1f47bc": {
+   "_": "clips/3e8ad462ab007e01.m4a"
+  },
+  "f6aa9eba9bac527a": {
+   "Sawsan": "clips/84ca72d356c77255.m4a"
+  },
+  "f6c24db6a64d144f": {
+   "Fadi": "clips/7e6ff0d3efaf2e67.m4a"
+  },
+  "f6dac0011c260082": {
+   "_": "clips/973ba29c603064a5.m4a"
+  },
+  "f6de668e90aea5f7": {
+   "_": "clips/ce41c57391b53700.m4a"
+  },
+  "f6eeba664b279bf3": {
+   "Nour": "clips/591010f6e7cd0f7c.m4a"
+  },
+  "f7079cdbc5681b2a": {
+   "_": "clips/91aba431dd88fbaf.m4a"
+  },
+  "f77668977bdd7182": {
+   "partner": "clips/fc3fd1e0debba725.m4a"
+  },
+  "f78357a74c54e2de": {
+   "_": "clips/5e74b8a8062aaaa6.m4a"
+  },
+  "f7a945df1e2af9ac": {
+   "partner": "clips/e4399ab1a6467dec.m4a"
+  },
+  "f7aa74ffb3d66f5e": {
+   "Salma": "clips/a5c6965367a78798.m4a"
+  },
+  "f7c03cbd5a340599": {
+   "_": "clips/5facaca709da18f6.m4a"
+  },
+  "f7db00c282373404": {
+   "_": "clips/84805cb7333f060d.m4a"
+  },
+  "f7f1cba0e1210467": {
+   "_": "clips/14dfe6d33a07adbb.m4a"
+  },
+  "f84e2e2dadd87384": {
+   "_": "clips/c3846e8598d8e29c.m4a"
+  },
+  "f86fb07a6f4f65ed": {
+   "Hani": "clips/2b17d2bf4cb44a2d.m4a"
+  },
+  "f891ba972ac61c35": {
+   "Lina": "clips/31be78d6747cc6a7.m4a"
+  },
+  "f897a425123c2bef": {
+   "Ruqayya": "clips/23f079016eb0da8b.m4a"
+  },
+  "f8c9d30523bc2fba": {
+   "_": "clips/e3ccf72afa3f3a62.m4a"
+  },
+  "f905ff12dbe5da72": {
+   "_": "clips/099f4c65563a094c.m4a"
+  },
+  "f9362a96bc6fbe3c": {
+   "Suha": "clips/1df089857427b157.m4a"
+  },
+  "f96da029a6daa432": {
+   "_": "clips/e5f4265272e0c6c2.m4a"
+  },
+  "f979301ca8e4747d": {
+   "partner": "clips/48c70da7ae1041d8.m4a"
+  },
+  "f991720fef9abfa4": {
+   "partner": "clips/0e4adc8d69ff0470.m4a"
+  },
+  "f9f67f273ca60359": {
+   "partner": "clips/9f7f60232fdcc139.m4a"
+  },
+  "fa9025259c8733bf": {
+   "_": "clips/55b5936f7c14ff36.m4a"
+  },
+  "fab409ebde9983f4": {
+   "_": "clips/e0b234791a37c806.m4a"
+  },
+  "fac40e01fef1e0f7": {
+   "_": "clips/a517511a2f45d5a8.m4a"
+  },
+  "fb06330d90200c52": {
+   "_": "clips/bf67ef93a57a0ca6.m4a"
+  },
+  "fb7852bdbcdee350": {
+   "_": "clips/0f7cf8575a9320d3.m4a"
+  },
+  "fc0f043066b8487d": {
+   "_": "clips/3262cb1fda5a055d.m4a"
+  },
+  "fc50f22d1fc673e6": {
+   "_": "clips/543106b33680e0e0.m4a"
+  },
+  "fc7637ade57e22c5": {
+   "_": "clips/1dd0f9a78128cdcb.m4a"
+  },
+  "fc7f3f2a6de5dfbf": {
+   "Hiba": "clips/9aa40c2736d22836.m4a"
+  },
+  "fc92d7483a48c560": {
+   "Ruba": "clips/8e43ec92e22d414b.m4a"
+  },
+  "fcbc333bd18271e9": {
+   "_": "clips/16c6286636aa18f6.m4a"
+  },
+  "fcbdbbc135b07f2f": {
+   "_": "clips/23c8c67e26524d9d.m4a"
+  },
+  "fcfa9fe834857d07": {
+   "Rawan": "clips/e5752114dc2690ed.m4a"
+  },
+  "fd0a47d37f3a9f1a": {
+   "Basma": "clips/0cd5c6b3045fe1b1.m4a"
+  },
+  "fd0bc7ffb94bd68b": {
+   "Sami": "clips/ae99450476f90c88.m4a"
+  },
+  "fd54fa350b4749a9": {
+   "Adel": "clips/453d79160584e2da.m4a"
+  },
+  "fd571784c6dac8f6": {
+   "Yusuf": "clips/f37d26ce142f6be8.m4a"
+  },
+  "fd7141a2dc92459b": {
+   "Ziad": "clips/4eacfa6c0043d2af.m4a"
+  },
+  "fd89e79d7ddbe6c9": {
+   "Sami": "clips/93b14df2cf38ae55.m4a"
+  },
+  "fd92cc8545a9475c": {
+   "_": "clips/bd61e2d5b825ccb6.m4a"
+  },
+  "fdb75cc630f80fb5": {
+   "_": "clips/0cbcd51dbc3caaa1.m4a"
+  },
+  "fdfddf319c72c77d": {
+   "_": "clips/0740e76d695b9773.m4a"
+  },
+  "fe131e032a90112d": {
+   "_": "clips/5c81dafabe276a37.m4a"
+  },
+  "fe2a1dd0354103f4": {
+   "_": "clips/9d90e16eaa6a03fb.m4a"
+  },
+  "feb97d0e31b03b31": {
+   "_": "clips/7eda7982da7c432f.m4a"
+  },
+  "ff0db992256ad5c4": {
+   "_": "clips/aae80bc64f1b647d.m4a"
+  },
+  "ff183aa5b9934751": {
+   "_": "clips/b7172d1875b3851f.m4a"
+  },
+  "ff1b9ddda2aefbc5": {
+   "_": "clips/43ba9f01d7c1cfdc.m4a"
+  },
+  "ff3321ae4c225f00": {
+   "_": "clips/91d58953d0f44293.m4a"
+  },
+  "ff375a17e98a2c15": {
+   "partner": "clips/37c93813175ca20e.m4a"
+  },
+  "ff866831029d67ac": {
+   "_": "clips/6e082f52a683c00c.m4a"
+  },
+  "ff88b9568167ab5f": {
+   "Sami": "clips/b174c9bf857437c5.m4a"
+  },
+  "ff89cd1bc01a9f94": {
+   "_": "clips/9df8bc7f3baacbba.m4a"
+  },
+  "ff9289d52e2f2777": {
+   "Widad": "clips/9f2b504e06ca9bdb.m4a"
+  },
+  "ffd98a27d538b2df": {
+   "_": "clips/c4820474c397614e.m4a"
+  },
+  "fffac7fb3e0b6691": {
+   "partner": "clips/539633e86ef24de7.m4a"
+  },
+  "ffff2a3ce77f6f1c": {
+   "_": "clips/06793c52298d038c.m4a"
+  }
+ }
+}

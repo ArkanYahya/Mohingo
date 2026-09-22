@@ -113,7 +113,7 @@ final class RecordContentVersionAndFlagDriftProvider
 }
 
 String _$recordContentVersionAndFlagDriftHash() =>
-    r'9e53916966a8797b14129c19e792e35c4052b0b0';
+    r'541fc020865e5bcec6abafb148eed297ba8ae38e';
 
 /// Records the id snapshot of [levelId]'s loaded bundle, and flags any unit
 /// whose content moved under this learner. Returns the unit ids it flagged.
