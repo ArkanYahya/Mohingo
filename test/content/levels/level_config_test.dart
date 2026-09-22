@@ -35,6 +35,16 @@ void main() {
         expect(gate.bundle().course.id, gate.courseId);
       });
 
+      test('the config names the audio manifest the app actually loads', () {
+        expect(
+          levelCatalogEntry(gate.levelId)!.audioManifestAssetPath,
+          gate.audioManifestAssetPath,
+          reason:
+              'the catalogue and the gate must agree, or the app plays '
+              'clips the gate never checked',
+        );
+      });
+
       test('the finished list is not empty and names real, distinct '
           'units', () {
         expect(gate.finishedUnitIds, isNotEmpty);
