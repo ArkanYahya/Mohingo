@@ -4,6 +4,7 @@ import '../../../core/l10n/generated/app_localizations.dart';
 import '../../../core/theme/app_tokens.dart';
 import '../../../core/theme/feedback_theme_extension.dart';
 import '../../../core/theme/overline_style.dart';
+import '../../../core/widgets/content_text.dart';
 import '../domain/activity_submission.dart';
 
 /// The lesson player's bottom bar before an answer is submitted: a
@@ -199,14 +200,10 @@ class ActivityFeedbackPanel extends StatelessWidget {
                   style: overlineStyle(context, color: foreground),
                 ),
                 const SizedBox(height: 2),
-                Align(
-                  alignment: AlignmentDirectional.centerStart,
-                  child: Text(
-                    answer,
-                    textDirection: TextDirection.ltr,
-                    style: theme.textTheme.titleMedium?.copyWith(
-                      color: foreground,
-                    ),
+                ContentText.en(
+                  answer,
+                  style: theme.textTheme.titleMedium?.copyWith(
+                    color: foreground,
                   ),
                 ),
               ],

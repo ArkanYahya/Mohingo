@@ -734,13 +734,10 @@ class _UsefulPhrasesState extends State<_UsefulPhrases> {
                       horizontal: AppSpace.md,
                       vertical: AppSpace.sm,
                     ),
-                    child: Align(
-                      alignment: AlignmentDirectional.centerStart,
-                      child: PhraseText(
-                        widget.phrases[i],
-                        style: theme.textTheme.bodyLarge?.copyWith(
-                          color: tokens.textPrimary,
-                        ),
+                    child: PhraseText(
+                      widget.phrases[i],
+                      style: theme.textTheme.bodyLarge?.copyWith(
+                        color: tokens.textPrimary,
                       ),
                     ),
                   ),

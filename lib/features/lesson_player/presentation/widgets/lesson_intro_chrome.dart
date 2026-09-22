@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/theme/app_tokens.dart';
 import '../../../../core/theme/overline_style.dart';
+import '../../../../core/widgets/content_text.dart';
 
 /// The top of a lesson-intro screen: "UNIT 2 · LESSON 1", then the title
-/// (English content reads left-to-right) and, when given, its Arabic line —
-/// both starting at the layout's start edge.
+/// and, when given, its Arabic line. A lesson title is content, so each
+/// language starts from its own edge — English from the left, Arabic from
+/// the right — whatever the interface language ([ContentText]).
 class LessonIntroHeader extends StatelessWidget {
   const LessonIntroHeader({
     required this.overline,
@@ -27,6 +29,9 @@ class LessonIntroHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final tokens = theme.extension<AppTokens>()!;
+    final titleStyle = theme.textTheme.headlineSmall?.copyWith(
+      color: tokens.textPrimary,
+    );
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -35,18 +40,14 @@ class LessonIntroHeader extends StatelessWidget {
           style: overlineStyle(context, color: tokens.textSecondary),
         ),
         const SizedBox(height: AppSpace.xs),
-        Text(
-          title,
-          textDirection: titleIsContent ? TextDirection.ltr : null,
-          style: theme.textTheme.headlineSmall?.copyWith(
-            color: tokens.textPrimary,
-          ),
-        ),
+        if (titleIsContent)
+          ContentText.en(title, style: titleStyle)
+        else
+          Text(title, style: titleStyle),
         if (titleAr != null) ...[
           const SizedBox(height: AppSpace.xxs),
-          Text(
+          ContentText.ar(
             titleAr!,
-            textDirection: TextDirection.rtl,
             style: theme.textTheme.bodyLarge?.copyWith(
               color: tokens.textSecondary,
             ),

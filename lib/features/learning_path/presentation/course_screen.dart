@@ -13,6 +13,7 @@ import '../../../core/theme/app_tokens.dart';
 import '../../../core/theme/feedback_theme_extension.dart';
 import '../../../core/theme/overline_style.dart';
 import '../../../core/widgets/content_load_error.dart';
+import '../../../core/widgets/content_text.dart';
 import '../../../core/widgets/status_indicator.dart';
 import '../../../data/local/database.dart';
 import '../../progress/domain/level_access.dart';
@@ -253,24 +254,16 @@ class _CourseBody extends StatelessWidget {
           ),
           const SizedBox(height: AppSpace.xxs),
         ],
-        Align(
-          alignment: AlignmentDirectional.centerStart,
-          child: Text(
-            index.bundle.course.title,
-            textDirection: TextDirection.ltr,
-            style: theme.textTheme.headlineSmall?.copyWith(
-              color: tokens.textPrimary,
-            ),
+        ContentText.en(
+          index.bundle.course.title,
+          style: theme.textTheme.headlineSmall?.copyWith(
+            color: tokens.textPrimary,
           ),
         ),
-        Align(
-          alignment: AlignmentDirectional.centerStart,
-          child: Text(
-            index.bundle.course.titleAr,
-            textDirection: TextDirection.rtl,
-            style: theme.textTheme.bodyLarge?.copyWith(
-              color: tokens.textSecondary,
-            ),
+        ContentText.ar(
+          index.bundle.course.titleAr,
+          style: theme.textTheme.bodyLarge?.copyWith(
+            color: tokens.textSecondary,
           ),
         ),
         const SizedBox(height: AppSpace.md),
@@ -593,31 +586,37 @@ class _UnitTitle extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Wrap(
-          crossAxisAlignment: WrapCrossAlignment.center,
-          spacing: AppSpace.xs,
-          runSpacing: AppSpace.xxs,
-          children: [
-            Text(
-              unit.title,
-              textDirection: TextDirection.ltr,
-              style:
-                  (large
-                          ? theme.textTheme.titleLarge
-                          : theme.textTheme.titleMedium)
-                      ?.copyWith(color: tokens.textPrimary),
+        // The English title is content: it reads from the left edge, its
+        // tag after it, in either interface language (see ContentText).
+        Align(
+          alignment: contentAlignment(TextDirection.ltr),
+          child: Directionality(
+            textDirection: TextDirection.ltr,
+            child: Wrap(
+              crossAxisAlignment: WrapCrossAlignment.center,
+              spacing: AppSpace.xs,
+              runSpacing: AppSpace.xxs,
+              children: [
+                Text(
+                  unit.title,
+                  style:
+                      (large
+                              ? theme.textTheme.titleLarge
+                              : theme.textTheme.titleMedium)
+                          ?.copyWith(color: tokens.textPrimary),
+                ),
+                if (unit.levelRole == 'prerequisite')
+                  _Tag(
+                    label: l10n.learnUnitStarter.toUpperCase(),
+                    background: tokens.cardMuted,
+                    foreground: tokens.textSecondary,
+                  ),
+              ],
             ),
-            if (unit.levelRole == 'prerequisite')
-              _Tag(
-                label: l10n.learnUnitStarter.toUpperCase(),
-                background: tokens.cardMuted,
-                foreground: tokens.textSecondary,
-              ),
-          ],
+          ),
         ),
-        Text(
+        ContentText.ar(
           unit.titleAr,
-          textDirection: TextDirection.rtl,
           style: theme.textTheme.bodyMedium?.copyWith(
             color: tokens.textSecondary,
           ),

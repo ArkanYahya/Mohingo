@@ -8,13 +8,14 @@ import '../../../content/providers/course_content_providers.dart';
 import '../../../core/l10n/generated/app_localizations.dart';
 import '../../../core/theme/app_tokens.dart';
 import '../../../core/theme/overline_style.dart';
+import '../../../core/widgets/content_text.dart';
 import '../../../core/widgets/hairline_card.dart';
 import '../../../core/widgets/lesson_reference_list.dart';
 import '../../../core/widgets/section_heading.dart';
 import '../../progress/providers/current_learner_provider.dart';
 import '../../progress/providers/progress_providers.dart';
-import '../../speech/presentation/listen_button.dart';
 import '../../review/domain/practice_set.dart';
+import '../../speech/presentation/listen_button.dart';
 import '../providers/grammar_providers.dart';
 
 /// One grammar form's page: "GRAMMAR · UNIT 2", the form with audio, its
@@ -115,15 +116,11 @@ class GrammarDetailScreen extends ConsumerWidget {
               Row(
                 children: [
                   Expanded(
-                    child: Align(
-                      alignment: AlignmentDirectional.centerStart,
-                      child: Text(
-                        item.form,
-                        textDirection: TextDirection.ltr,
-                        style: theme.textTheme.headlineLarge?.copyWith(
-                          color: tokens.textPrimary,
-                          fontWeight: FontWeight.w700,
-                        ),
+                    child: ContentText.en(
+                      item.form,
+                      style: theme.textTheme.headlineLarge?.copyWith(
+                        color: tokens.textPrimary,
+                        fontWeight: FontWeight.w700,
                       ),
                     ),
                   ),
@@ -138,14 +135,10 @@ class GrammarDetailScreen extends ConsumerWidget {
                   ),
                 ),
               const SizedBox(height: AppSpace.xs),
-              Align(
-                alignment: AlignmentDirectional.centerStart,
-                child: Text(
-                  item.meaningAr,
-                  textDirection: TextDirection.rtl,
-                  style: theme.textTheme.headlineSmall?.copyWith(
-                    color: tokens.textPrimary,
-                  ),
+              ContentText.ar(
+                item.meaningAr,
+                style: theme.textTheme.headlineSmall?.copyWith(
+                  color: tokens.textPrimary,
                 ),
               ),
               if (item.examples.isNotEmpty) ...[
@@ -164,24 +157,16 @@ class GrammarDetailScreen extends ConsumerWidget {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
-                              Align(
-                                alignment: AlignmentDirectional.centerStart,
-                                child: Text(
-                                  example.en,
-                                  textDirection: TextDirection.ltr,
-                                  style: theme.textTheme.bodyLarge?.copyWith(
-                                    color: tokens.textPrimary,
-                                  ),
+                              ContentText.en(
+                                example.en,
+                                style: theme.textTheme.bodyLarge?.copyWith(
+                                  color: tokens.textPrimary,
                                 ),
                               ),
-                              Align(
-                                alignment: AlignmentDirectional.centerStart,
-                                child: Text(
-                                  example.ar,
-                                  textDirection: TextDirection.rtl,
-                                  style: theme.textTheme.bodyMedium?.copyWith(
-                                    color: tokens.textSecondary,
-                                  ),
+                              ContentText.ar(
+                                example.ar,
+                                style: theme.textTheme.bodyMedium?.copyWith(
+                                  color: tokens.textSecondary,
                                 ),
                               ),
                             ],

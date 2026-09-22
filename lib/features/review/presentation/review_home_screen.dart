@@ -8,6 +8,7 @@ import '../../../core/theme/app_tokens.dart';
 import '../../../core/theme/feedback_theme_extension.dart';
 import '../../../core/theme/gamification_theme_extension.dart';
 import '../../../core/theme/overline_style.dart';
+import '../../../core/widgets/content_text.dart';
 import '../../../data/local/database.dart';
 import '../../grammar/providers/grammar_providers.dart';
 import '../../lesson_player/presentation/widgets/activity_eyebrow.dart';
@@ -467,24 +468,16 @@ class _TwoLanguageText extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Align(
-          alignment: AlignmentDirectional.centerStart,
-          child: Text(
-            english,
-            textDirection: TextDirection.ltr,
-            style: theme.textTheme.titleMedium?.copyWith(
-              color: tokens.textPrimary,
-            ),
+        ContentText.en(
+          english,
+          style: theme.textTheme.titleMedium?.copyWith(
+            color: tokens.textPrimary,
           ),
         ),
-        Align(
-          alignment: AlignmentDirectional.centerStart,
-          child: Text(
-            arabic,
-            textDirection: TextDirection.rtl,
-            style: theme.textTheme.bodyMedium?.copyWith(
-              color: tokens.textSecondary,
-            ),
+        ContentText.ar(
+          arabic,
+          style: theme.textTheme.bodyMedium?.copyWith(
+            color: tokens.textSecondary,
           ),
         ),
         if (meta != null)

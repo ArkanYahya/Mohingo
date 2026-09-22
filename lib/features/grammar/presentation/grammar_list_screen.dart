@@ -11,6 +11,7 @@ import '../../../core/theme/app_tokens.dart';
 import '../../../core/theme/gamification_theme_extension.dart';
 import '../../../core/theme/overline_style.dart';
 import '../../../core/widgets/content_load_error.dart';
+import '../../../core/widgets/content_text.dart';
 import '../../../core/widgets/level_filter_chips.dart';
 import '../../../core/widgets/search_field.dart';
 import '../../progress/providers/level_providers.dart';
@@ -223,25 +224,17 @@ class _GrammarRow extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Align(
-                    alignment: AlignmentDirectional.centerStart,
-                    child: Text(
-                      item.form,
-                      textDirection: TextDirection.ltr,
-                      style: theme.textTheme.titleMedium?.copyWith(
-                        color: tokens.textPrimary,
-                        fontWeight: FontWeight.w500,
-                      ),
+                  ContentText.en(
+                    item.form,
+                    style: theme.textTheme.titleMedium?.copyWith(
+                      color: tokens.textPrimary,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
-                  Align(
-                    alignment: AlignmentDirectional.centerStart,
-                    child: Text(
-                      item.meaningAr,
-                      textDirection: TextDirection.rtl,
-                      style: theme.textTheme.bodyMedium?.copyWith(
-                        color: tokens.textSecondary,
-                      ),
+                  ContentText.ar(
+                    item.meaningAr,
+                    style: theme.textTheme.bodyMedium?.copyWith(
+                      color: tokens.textSecondary,
                     ),
                   ),
                 ],

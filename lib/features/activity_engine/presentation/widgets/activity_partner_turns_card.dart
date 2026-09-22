@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../core/l10n/generated/app_localizations.dart';
 import '../../../../core/theme/app_tokens.dart';
+import '../../../../core/widgets/content_text.dart';
 import '../../../speech/domain/audio_clip_index.dart';
 import '../../../speech/domain/text_to_speech_service.dart';
 import '../../../speech/providers/speech_providers.dart';
@@ -117,14 +118,10 @@ class _ActivityPartnerTurnsCardState
               ],
             ),
             for (final turn in widget.turns) ...[
-              Align(
-                alignment: AlignmentDirectional.centerStart,
-                child: Text(
-                  turn,
-                  textDirection: TextDirection.ltr,
-                  style: theme.textTheme.bodyLarge?.copyWith(
-                    color: tokens.textPrimary,
-                  ),
+              ContentText.en(
+                turn,
+                style: theme.textTheme.bodyLarge?.copyWith(
+                  color: tokens.textPrimary,
                 ),
               ),
               const SizedBox(height: AppSpace.xxs),

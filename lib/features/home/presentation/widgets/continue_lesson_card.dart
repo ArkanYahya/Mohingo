@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 
 import '../../../../core/theme/app_tokens.dart';
 import '../../../../core/theme/overline_style.dart';
+import '../../../../core/widgets/content_text.dart';
 
 /// Home's one primary action: resume the lesson the learner should be on.
 ///
@@ -109,18 +110,16 @@ class ContinueLessonCard extends StatelessWidget {
                             ),
                           ),
                           const SizedBox(height: AppSpace.xxs),
-                          Text(
+                          ContentText.en(
                             title,
-                            textDirection: TextDirection.ltr,
                             style: text.titleLarge?.copyWith(
                               color: tokens.textPrimary,
                             ),
                           ),
                           if (titleAr != null) ...[
                             const SizedBox(height: 2),
-                            Text(
+                            ContentText.ar(
                               titleAr!,
-                              textDirection: TextDirection.rtl,
                               style: text.bodyMedium?.copyWith(
                                 color: tokens.textSecondary,
                               ),

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import '../../../core/l10n/generated/app_localizations.dart';
 import '../../../core/theme/app_tokens.dart';
 import '../../../core/theme/feedback_theme_extension.dart';
+import '../../../core/widgets/content_text.dart';
 import '../domain/activity_submission.dart';
 import 'activity_feedback_panel.dart';
 import 'widgets/activity_source_card.dart';
@@ -120,31 +121,23 @@ class ActivityChrome extends StatelessWidget {
           frame!.header!,
           const SizedBox(height: AppSpace.xs),
         ],
-        Align(
-          alignment: AlignmentDirectional.centerStart,
-          child: Text(
-            prompt,
-            textDirection: TextDirection.ltr,
-            style:
-                (framed
-                        ? theme.textTheme.titleLarge
-                        : theme.textTheme.titleMedium)
-                    ?.copyWith(color: tokens.textPrimary),
-          ),
+        ContentText.en(
+          prompt,
+          style:
+              (framed
+                      ? theme.textTheme.titleLarge
+                      : theme.textTheme.titleMedium)
+                  ?.copyWith(color: tokens.textPrimary),
         ),
         if (promptAr != null) ...[
           const SizedBox(height: AppSpace.xxs),
-          Align(
-            alignment: AlignmentDirectional.centerStart,
-            child: Text(
-              promptAr!,
-              textDirection: TextDirection.rtl,
-              style:
-                  (framed
-                          ? theme.textTheme.bodyLarge
-                          : theme.textTheme.bodyMedium)
-                      ?.copyWith(color: tokens.textSecondary),
-            ),
+          ContentText.ar(
+            promptAr!,
+            style:
+                (framed
+                        ? theme.textTheme.bodyLarge
+                        : theme.textTheme.bodyMedium)
+                    ?.copyWith(color: tokens.textSecondary),
           ),
         ],
         if (source != null) ...[

@@ -5,6 +5,7 @@ import '../../../core/l10n/generated/app_localizations.dart';
 import '../../../core/theme/app_tokens.dart';
 import '../../../core/theme/feedback_theme_extension.dart';
 import '../../../core/theme/overline_style.dart';
+import '../../../core/widgets/content_text.dart';
 import '../../lesson_player/presentation/widgets/lesson_intro_chrome.dart';
 import '../../progress/providers/current_learner_provider.dart';
 import '../../speech/presentation/listen_button.dart';
@@ -272,14 +273,10 @@ class _CardView extends StatelessWidget {
                   child: Row(
                     children: [
                       Expanded(
-                        child: Align(
-                          alignment: AlignmentDirectional.centerStart,
-                          child: Text(
-                            card.example!,
-                            textDirection: TextDirection.ltr,
-                            style: theme.textTheme.bodyLarge?.copyWith(
-                              color: tokens.textPrimary,
-                            ),
+                        child: ContentText.en(
+                          card.example!,
+                          style: theme.textTheme.bodyLarge?.copyWith(
+                            color: tokens.textPrimary,
                           ),
                         ),
                       ),

@@ -17,6 +17,7 @@ import 'package:mohingo/data/local/database_provider.dart';
 import 'package:mohingo/features/activity_engine/presentation/activity_chrome.dart';
 import 'package:mohingo/features/lesson_player/presentation/lesson_player_screen.dart';
 import 'package:mohingo/features/lesson_player/presentation/widgets/lesson_conversation_step.dart';
+import 'package:mohingo/features/lesson_player/presentation/widgets/lesson_intro_chrome.dart';
 import 'package:mohingo/features/lesson_player/presentation/widgets/lesson_key_phrases_step.dart';
 import 'package:mohingo/features/lesson_player/presentation/widgets/lesson_progress_bar.dart';
 import 'package:mohingo/features/lesson_player/presentation/widgets/lesson_reading_step.dart';
@@ -41,6 +42,7 @@ Future<FakeTextToSpeechService> _pumpPlayer(
   String unitId = 'A1-U1',
   String lessonId = 'A1-U1-L1',
   int resumeAfter = 0,
+  Locale locale = const Locale('en'),
 }) async {
   final db = AppDatabase(NativeDatabase.memory());
   addTearDown(db.close);
@@ -88,7 +90,7 @@ Future<FakeTextToSpeechService> _pumpPlayer(
       ],
       child: MaterialApp(
         theme: AppTheme.light(AppColorSeed.calmTeal),
-        locale: const Locale('en'),
+        locale: locale,
         supportedLocales: AppLocalizations.supportedLocales,
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         home: LessonPlayerScreen(unitId: unitId, lessonId: lessonId),
@@ -277,5 +279,19 @@ void main() {
 
     expect(find.text('Nice to meet you.'), findsOneWidget);
     expect(find.text(l10n.speakHideUsefulPhrases), findsOneWidget);
+  });
+
+  testWidgets('under the Arabic interface the English lesson title starts '
+      'at the left edge and its Arabic at the right edge — each language '
+      'reads from its own side', (tester) async {
+    await _pumpPlayer(tester, locale: const Locale('ar'));
+
+    final header = tester.getRect(find.byType(LessonIntroHeader));
+    final english = tester.getRect(find.text('My Name'));
+    final arabic = tester.getRect(find.text('اسمي'));
+    expect(english.left, header.left);
+    expect(english.right, lessThan(header.right));
+    expect(arabic.right, header.right);
+    expect(arabic.left, greaterThan(header.left));
   });
 }
