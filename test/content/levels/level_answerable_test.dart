@@ -2,6 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mohingo/content/models/activity.dart';
 import 'package:mohingo/content/models/domain_definitions.dart';
 
+import 'level_capstone_checks.dart';
 import 'level_gate_config.dart';
 
 /// Ported from `a2_answerable_test.dart`, which held these rules as
@@ -274,6 +275,58 @@ void main() {
             );
           }
         }
+      });
+
+      test("an interaction prompt tells the learner what to do; it never "
+          "restates the partner's line", () {
+        // The question frame shows the prompt as its title and the partner's
+        // lines on the card under it, read aloud. A prompt that is the
+        // partner's line — "How old are you?" over a card saying "How old
+        // are you?" — puts the same words on screen twice and leaves the
+        // learner with no instruction; "Daniel: Hi. I'm Daniel." is the same
+        // fault with a name in front, and a prompt that quotes the line
+        // ("Answer the question: Is this your book?") repeats it too.
+        //
+        // The comparison is sentence by sentence, on words alone: a prompt
+        // sentence that is a partner sentence, or that a partner sentence
+        // contains ("How old are you?" in "And how old are you?"). Sharing
+        // words mid-sentence is not restating — "Buy a single or return
+        // ticket" is an instruction even though the clerk asks "Single or
+        // return?" — so a contained sentence must be one the learner would
+        // read as the same line: three words or more. Capstone tasks are
+        // held to it as well.
+        final token = RegExp(r"[a-z0-9']+");
+        List<String> sentences(String value) => [
+          for (final part in value.toLowerCase().split(RegExp(r'[.?!:;]')))
+            if (token.allMatches(part).isNotEmpty)
+              token.allMatches(part).map((m) => m[0]!).join(' '),
+        ];
+        final offenders = <String>[];
+        void check(Activity a, String where) {
+          if (a is! SpeakActivity || a.partnerTurns.isEmpty) return;
+          final promptSentences = sentences(a.prompt);
+          for (final turn in a.partnerTurns) {
+            final restated = sentences(turn).any(
+              (line) => promptSentences.any(
+                (p) =>
+                    p == line || (p.split(' ').length >= 3 && line.contains(p)),
+              ),
+            );
+            if (restated) {
+              offenders.add('$where ${a.id}: "${a.prompt}" restates "$turn"');
+            }
+          }
+        }
+
+        for (final unit in gate.finishedUnits()) {
+          for (final a in activitiesOf(unit)) {
+            check(a, unit.id);
+          }
+        }
+        for (final e in capstoneActivities(gate.bundle())) {
+          check(e.activity, e.where);
+        }
+        expect(offenders, isEmpty, reason: offenders.join('\n'));
       });
 
       test('every word a lesson lists actually appears in that lesson', () {

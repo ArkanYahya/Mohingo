@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "contentVersion": "A1-COMPLETE-2026.09.22",
+  "contentVersion": "A1-COMPLETE-2026.09.22-2",
   "locale": {
     "targetLanguage": "en",
     "supportLanguage": "ar",
@@ -8751,7 +8751,7 @@
               "canDo": [
                 "A1.U0.LISTENING.UNDERSTAND_PERSONAL_NUMBER"
               ],
-              "prompt": "How old are you?",
+              "prompt": "Say how old you are.",
               "accepted": [],
               "evaluation": {
                 "type": "numericRange",
@@ -8759,7 +8759,7 @@
                 "max": 120
               },
               "fallbackSkill": "writing",
-              "promptAr": "كم عمرك؟",
+              "promptAr": "قل كم عمرك.",
               "partnerTurns": ["How old are you?"]
             }
           ],
@@ -8817,13 +8817,13 @@
               "canDo": [
                 "A1.U0.INTERACTION.REGISTER_FOR_CLASS"
               ],
-              "prompt": "What's your name?",
+              "prompt": "Answer the teacher. Say your name.",
               "accepted": [],
               "evaluation": {
                 "type": "nonEmpty"
               },
               "fallbackSkill": "writing",
-              "promptAr": "ما اسمك؟",
+              "promptAr": "أجب المعلّم. قل اسمك.",
               "partnerTurns": [
                 "Hello! Welcome to the English class. What's your name?"
               ]
@@ -8855,7 +8855,7 @@
               "canDo": [
                 "A1.U0.LISTENING.UNDERSTAND_PERSONAL_NUMBER"
               ],
-              "prompt": "How old are you?",
+              "prompt": "Answer the teacher. Say how old you are.",
               "accepted": [],
               "evaluation": {
                 "type": "numericRange",
@@ -8863,7 +8863,7 @@
                 "max": 120
               },
               "fallbackSkill": "writing",
-              "promptAr": "كم عمرك؟",
+              "promptAr": "أجب المعلّم. قل كم عمرك.",
               "partnerTurns": ["Thank you. And how old are you?"]
             },
             {
@@ -9190,12 +9190,12 @@
               "canDo": [
                 "A1.U1.INTERACTION.ASK_ORIGIN"
               ],
-              "prompt": "Ask where the person is from.",
+              "prompt": "Ask Anna where she is from.",
               "accepted": [
                 "Where are you from?"
               ],
               "fallbackSkill": "writing",
-              "promptAr": "اسأل الشخص من أين هو.",
+              "promptAr": "اسأل آنا من أين هي.",
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -9203,7 +9203,7 @@
                 ],
                 "minGroupsMatched": 1
               },
-              "partnerTurns": ["Hello. I'm Anna."]
+              "partnerTurns": ["Hello. I'm Anna. I'm not from here."]
             }
           ],
           "encounter": {
@@ -9765,12 +9765,12 @@
               "canDo": [
                 "A1.U1.INTERACTION.USE_REPAIR_PHRASE"
               ],
-              "prompt": "The other person says: I'm from Jordan. Continue with a short reciprocal prompt.",
+              "prompt": "Now ask the other person the same question.",
               "accepted": [
                 "And you?"
               ],
               "fallbackSkill": "writing",
-              "promptAr": "يقول الشخص الآخر: I'm from Jordan. تابع بسؤالٍ قصير في المقابل.",
+              "promptAr": "الآن اسأل الشخص الآخر السؤال نفسه.",
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -9840,7 +9840,7 @@
                 "A1.U1.INTERACTION.NEW_COLLEAGUE_MISSION",
                 "A1.U1.PRODUCTION.INTRODUCE_SELF"
               ],
-              "prompt": "Daniel: Hi. I'm Daniel. What's your name?",
+              "prompt": "Answer Daniel. Say your name.",
               "accepted": [],
               "evaluation": {
                 "type": "keywordChecklist",
@@ -9856,7 +9856,7 @@
                 "minGroupsMatched": 1
               },
               "fallbackSkill": "writing",
-              "promptAr": "يقول دانيال: «Hi. I'm Daniel. What's your name?» ردّ عليه.",
+              "promptAr": "ردّ على دانيال. قل اسمك.",
               "partnerTurns": ["Hi. I'm Daniel. What's your name?"]
             },
             {
@@ -9869,7 +9869,7 @@
                 "A1.U1.INTERACTION.NEW_COLLEAGUE_MISSION",
                 "A1.U1.PRODUCTION.STATE_ORIGIN"
               ],
-              "prompt": "Daniel: Nice to meet you. Where are you from?",
+              "prompt": "Answer Daniel. Say where you are from.",
               "accepted": [],
               "evaluation": {
                 "type": "keywordChecklist",
@@ -9886,7 +9886,7 @@
                 "minGroupsMatched": 2
               },
               "fallbackSkill": "writing",
-              "promptAr": "يقول دانيال: «Nice to meet you. Where are you from?» ردّ عليه.",
+              "promptAr": "ردّ على دانيال. قل من أين أنت.",
               "partnerTurns": ["Nice to meet you. Where are you from?"]
             },
             {
@@ -9899,7 +9899,7 @@
                 "A1.U1.INTERACTION.NEW_COLLEAGUE_MISSION",
                 "A1.U1.PRODUCTION.STATE_RESIDENCE"
               ],
-              "prompt": "Daniel: Where do you live?",
+              "prompt": "Answer Daniel. Say where you live.",
               "accepted": [],
               "evaluation": {
                 "type": "keywordChecklist",
@@ -9914,7 +9914,7 @@
                 "minGroupsMatched": 2
               },
               "fallbackSkill": "writing",
-              "promptAr": "يقول دانيال: «Where do you live?» ردّ عليه.",
+              "promptAr": "ردّ على دانيال. قل أين تسكن.",
               "partnerTurns": ["Where do you live?"]
             },
             {
@@ -12278,8 +12278,8 @@
               "canDo": [
                 "A1.U3.INTERACTION.ASK_ANSWER_OWNERSHIP"
               ],
-              "prompt": "The book is not yours; it belongs to Sara. Answer the question: Is this your book?",
-              "promptAr": "الكتاب ليس لك، بل لسارة. أجب عن السؤال: Is this your book?",
+              "prompt": "The book is not yours; it belongs to Sara. Answer the question.",
+              "promptAr": "الكتاب ليس لك، بل لسارة. أجب عن السؤال.",
               "accepted": [
                 "No, it isn't mine. It's Sara's."
               ],

@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
  "levelId": "a1",
- "contentVersion": "A1-COMPLETE-2026.09.22",
- "generatedAt": "2026-09-22T13:17:46Z",
+ "contentVersion": "A1-COMPLETE-2026.09.22-2",
+ "generatedAt": "2026-09-22T17:31:26Z",
  "engine": {
   "name": "kokoro-onnx/kokoro-v1.0",
   "speed": 1.0
@@ -1797,9 +1797,6 @@
   },
   "6490e67e8283047e": {
    "_": "clips/184ae2214dfb00e6.m4a"
-  },
-  "64d1df7e4950ad7e": {
-   "partner": "clips/64c50e7b177b81fd.m4a"
   },
   "652c8a468fef2061": {
    "_": "clips/3d4600ff689cfaef.m4a"
@@ -4178,6 +4175,9 @@
   },
   "eb1cdb28c868ec41": {
    "_": "clips/cd5ce38d90164e10.m4a"
+  },
+  "eb2407978c16160a": {
+   "partner": "clips/bf604d11a15cc946.m4a"
   },
   "eb49b5843ad91a29": {
    "Maya": "clips/2a69d8e722e2dd13.m4a"
