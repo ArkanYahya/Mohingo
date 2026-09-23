@@ -1,7 +1,7 @@
 > **What this file is:** How this repository is connected to its Firebase project, and how to redo it — for a new machine, a new developer, or a new platform. The design is [ADR 0010](adr/0010-optional-accounts-and-progress-sync.md); the data contract is [API_CONTRACT.md](API_CONTRACT.md).
 > **How to use it:** Follow the steps in order. Anything that needs the project owner's Google account is marked **(console)** or **(your machine)**; everything else is already in the repository.
 
-_Last verified: 2026-09-23 (`claude/firebase-auth-sync-ji1cww`) — written with the Firebase integration. Android is the only configured platform; iOS steps are listed but not done._
+_Last verified: 2026-09-23 (`claude/firebase-auth-sync-ji1cww`) — the project is connected: **`mohingo`**, Android app `1:219416710516:android:484ea34d5b308574bd3021`, Email/Password and Google enabled, Firestore `(default)` in **`me-central2` (Dammam)**, rules and indexes deployed, the owner's debug SHA-1/SHA-256 registered. Steps 1-6 below are done; step 7 and iOS are not._
 
 # Firebase setup
 
