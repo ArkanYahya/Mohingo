@@ -1016,13 +1016,14 @@ class _SignOutRow extends ConsumerWidget {
         ],
       ),
     );
-    if (confirmed != true) return;
-    await ref.read(accountSessionProvider.notifier).signOut();
-    refreshLearnerProgress(ref.invalidate);
-    if (context.mounted) {
-      ScaffoldMessenger.of(context)
-          .showSnackBar(SnackBar(content: Text(l10n.accountSignedOut)));
-    }
+    if (confirmed != true || !context.mounted) return;
+    // This row is gone as soon as the session becomes a guest's, so
+    // everything needed afterwards is taken from the context now.
+    final container = ProviderScope.containerOf(context, listen: false);
+    final messenger = ScaffoldMessenger.of(context);
+    await container.read(accountSessionProvider.notifier).signOut();
+    refreshLearnerProgress(container.invalidate);
+    messenger.showSnackBar(SnackBar(content: Text(l10n.accountSignedOut)));
   }
 
   @override

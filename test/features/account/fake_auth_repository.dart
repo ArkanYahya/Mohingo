@@ -87,6 +87,14 @@ class FakeAuthRepository implements AuthRepository {
     return user;
   }
 
+  /// When set, [signOut] announces the sign-out on the stream at once but
+  /// returns only once this completes — as Firebase does on a device, where
+  /// listeners hear of it before the call itself returns.
+  Completer<void>? signOutGate;
+
   @override
-  Future<void> signOut() async => _set(null);
+  Future<void> signOut() async {
+    _set(null);
+    await signOutGate?.future;
+  }
 }

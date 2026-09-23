@@ -1,4 +1,6 @@
-import 'package:drift/drift.dart';
+import 'dart:async';
+
+import 'package:drift/drift.dart' hide isNull;
 import 'package:drift/native.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -12,6 +14,7 @@ import 'package:mohingo/core/theme/color_seed.dart';
 import 'package:mohingo/core/theme/theme_preferences_provider.dart';
 import 'package:mohingo/data/local/database.dart';
 import 'package:mohingo/data/local/database_provider.dart';
+import 'package:mohingo/features/account/providers/account_providers.dart';
 import 'package:mohingo/features/settings/presentation/settings_screen.dart';
 import 'package:mohingo/features/speech/domain/speech_capability_service.dart';
 import 'package:mohingo/features/speech/domain/speech_recognition_service.dart';
@@ -21,6 +24,7 @@ import 'package:mohingo/features/speech/providers/speech_providers.dart';
 import 'package:riverpod/misc.dart' show Override;
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../account/fake_auth_repository.dart';
 import '../speech/fake_speech_services.dart';
 
 /// Plays `MohingoApp`'s own role of reacting to locale/theme-mode
@@ -381,4 +385,60 @@ void main() {
       expect(row.name, 'Ali');
     },
   );
+
+  testWidgets('signing out returns to the guest and says so, although the '
+      'Sign out row itself disappears with the account', (tester) async {
+    _useTallViewport(tester);
+    final (db, prefs) = await _setupBacking();
+    final auth = FakeAuthRepository(
+      signedIn: FakeAuthRepository.userFor('sara@example.com'),
+    );
+
+    await tester.pumpWidget(
+      ProviderScope(
+        overrides: [
+          ..._baseOverrides(prefs, db),
+          authRepositoryProvider.overrideWithValue(auth),
+        ],
+        child: MaterialApp(
+          theme: AppTheme.light(AppColorSeed.calmTeal),
+          locale: const Locale('en'),
+          supportedLocales: AppLocalizations.supportedLocales,
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          home: const SettingsScreen(),
+        ),
+      ),
+    );
+    await tester.runAsync(
+      () => Future<void>.delayed(const Duration(milliseconds: 200)),
+    );
+    await tester.pumpAndSettle();
+    expect(find.text('sara@example.com'), findsOneWidget);
+
+    await tester.tap(find.text('Sign out'));
+    await tester.pumpAndSettle();
+    // As on a device: the sign-out reaches the session — and the row
+    // unmounts — before the sign-out call itself returns.
+    final gate = auth.signOutGate = Completer<void>();
+    await tester.tap(find.widgetWithText(FilledButton, 'Sign out'));
+    await tester.runAsync(
+      () => Future<void>.delayed(const Duration(milliseconds: 200)),
+    );
+    await tester.pumpAndSettle();
+    expect(find.text('Sign out'), findsNothing);
+    gate.complete();
+    await tester.runAsync(
+      () => Future<void>.delayed(const Duration(milliseconds: 200)),
+    );
+    await tester.pumpAndSettle();
+
+    expect(tester.takeException(), isNull);
+    expect(auth.currentUser, isNull);
+    expect(find.text('Signed out.'), findsOneWidget);
+    expect(find.text('Save your progress to an account'), findsOneWidget);
+    final container = ProviderScope.containerOf(
+      tester.element(find.byType(SettingsScreen)),
+    );
+    expect(container.read(accountSessionProvider).value, isA<GuestSession>());
+  });
 }
