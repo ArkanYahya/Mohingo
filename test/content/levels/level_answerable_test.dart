@@ -1,6 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mohingo/content/models/activity.dart';
 import 'package:mohingo/content/models/domain_definitions.dart';
+import 'package:mohingo/features/activity_engine/domain/activity_submission.dart';
+import 'package:mohingo/features/activity_engine/domain/evaluation/evaluator.dart';
 
 import 'level_capstone_checks.dart';
 import 'level_gate_config.dart';
@@ -356,6 +358,41 @@ void main() {
           check(e.activity, e.where);
         }
         expect(missing, isEmpty, reason: missing.join('\n'));
+      });
+
+      test("a task's model answer passes its own rubric", () {
+        // A speak or write task may carry both an `accepted` list and a
+        // structured rubric. The rubric grades; the accepted list is the
+        // model answer shown after a miss (until 2026-09-23 the app graded
+        // by the list and ignored the rubric, so a learner who said what
+        // the rubric asked for, in other words, was marked wrong). A model
+        // answer the task's own rubric would fail is a rubric that cannot
+        // be meant — an author who wrote both wrote one of them wrong.
+        final failing = <String>[];
+        void check(Activity a, String where) {
+          final (accepted, spec) = switch (a) {
+            SpeakActivity s => (s.accepted, s.evaluation),
+            WriteActivity w => (w.accepted, w.evaluation),
+            _ => (const <String>[], null),
+          };
+          if (spec == null) return;
+          for (final answer in accepted) {
+            if (evaluate(spec, answer).correctness !=
+                ActivityCorrectness.correct) {
+              failing.add('$where ${a.id}: "$answer" fails its own rubric');
+            }
+          }
+        }
+
+        for (final unit in gate.finishedUnits()) {
+          for (final a in activitiesOf(unit)) {
+            check(a, unit.id);
+          }
+        }
+        for (final e in capstoneActivities(gate.bundle())) {
+          check(e.activity, e.where);
+        }
+        expect(failing, isEmpty, reason: failing.join('\n'));
       });
 
       test('every word a lesson lists actually appears in that lesson', () {

@@ -17,6 +17,7 @@ import '../../domain/activity_submission.dart';
 import '../../domain/answer_matching.dart';
 import '../../domain/evaluation/evaluation_context.dart';
 import '../../domain/evaluation/evaluator.dart';
+import '../../domain/spoken_answer.dart';
 import '../../domain/sound_effects_service.dart';
 import '../../providers/online_refinement_providers.dart';
 import '../../providers/sound_effects_providers.dart';
@@ -233,27 +234,21 @@ class _SpeakActivityViewState extends ConsumerState<SpeakActivityView> {
     _submit(text, wasFallback: true);
   }
 
+  /// Grades [text]. The task's rubric grades when it has one; its
+  /// `accepted` list grades only a task without a rubric, and is otherwise
+  /// the model answer shown after a miss. A recognised transcript is graded
+  /// as it was said ([SpokenAnswer], ADR 0009); a typed fallback as written.
   void _submit(String text, {required bool wasFallback}) {
     if (_submission != null) return;
 
     final ActivitySubmission submission;
     final evaluation = widget.activity.evaluation;
-    if (widget.activity.accepted.isNotEmpty) {
-      final isCorrect = widget.activity.accepted.any(
-        (a) => answersMatch(a, text),
-      );
-      submission = ActivitySubmission(
-        correctness: isCorrect
-            ? ActivityCorrectness.correct
-            : ActivityCorrectness.incorrect,
-        score: isCorrect ? 1.0 : 0.0,
-        rawAnswerJson: jsonEncode(text),
-        wasFallback: wasFallback,
-        correctAnswerLabel: _correctAnswerLabel(),
-      );
-    } else if (evaluation is KeywordChecklistEvaluationSpec &&
+    final spoken = wasFallback
+        ? null
+        : SpokenAnswer(names: namesInTask(widget.activity));
+    if (evaluation is KeywordChecklistEvaluationSpec &&
         evaluation.onlineRefinement != null) {
-      final localResult = evaluate(evaluation, text);
+      final localResult = evaluate(evaluation, text, spoken: spoken);
       submission = ActivitySubmission(
         correctness: ActivityCorrectness.notAutoGraded,
         score: localResult.score,
@@ -267,10 +262,24 @@ class _SpeakActivityViewState extends ConsumerState<SpeakActivityView> {
         evaluation,
         text,
         context: widget.evaluationContext,
+        spoken: spoken,
       );
       submission = ActivitySubmission(
         correctness: result.correctness,
         score: result.score,
+        rawAnswerJson: jsonEncode(text),
+        wasFallback: wasFallback,
+        correctAnswerLabel: _correctAnswerLabel(),
+      );
+    } else if (widget.activity.accepted.isNotEmpty) {
+      final isCorrect = widget.activity.accepted.any(
+        (a) => answersMatch(a, text, spoken: spoken),
+      );
+      submission = ActivitySubmission(
+        correctness: isCorrect
+            ? ActivityCorrectness.correct
+            : ActivityCorrectness.incorrect,
+        score: isCorrect ? 1.0 : 0.0,
         rawAnswerJson: jsonEncode(text),
         wasFallback: wasFallback,
         correctAnswerLabel: _correctAnswerLabel(),

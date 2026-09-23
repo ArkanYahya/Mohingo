@@ -500,4 +500,56 @@ void main() {
       expect(find.byType(FilledButton), findsNothing);
     });
   });
+
+  testWidgets('a write with both a model answer and a rubric is graded by '
+      'the rubric; the model answer is what is shown after a miss (ADR '
+      '0009)', (tester) async {
+    final activity = WriteActivity(
+      id: 'A1-U6-L1-A04',
+      lessonId: 'A1-U6-L1',
+      mode: ActivityMode.mastery,
+      skill: Skill.writing,
+      canDo: const ['A1.U6.WRITING.WRITE_SIMPLE_ORDER'],
+      prompt: 'Write your order.',
+      promptAr: 'اكتب طلبك.',
+      raw: const {},
+      accepted: const ['One coffee, please.'],
+      evaluation: EvaluationSpec.fromJson({
+        'type': 'keywordChecklist',
+        'requiredGroups': [
+          ['coffee', 'tea'],
+          ['please'],
+        ],
+        'minGroupsMatched': 2,
+      }),
+    );
+
+    Future<ActivitySubmission?> submit(String text) async {
+      ActivitySubmission? reported;
+      await tester.pumpActivityView(
+        WriteActivityView(
+          // A fresh view per answer: without a key the second pump keeps
+          // the first submission's state.
+          key: ValueKey(text),
+          activity: activity,
+          learnerId: 1,
+          onSubmitted: (s) => reported = s,
+        ),
+      );
+      await tester.enterText(find.byType(TextField), text);
+      await tester.pump();
+      await tester.tap(find.byType(FilledButton));
+      await tester.pump();
+      return reported;
+    }
+
+    // Not the model answer word for word, but everything the rubric asks.
+    expect(
+      (await submit('A tea, please.'))?.correctness,
+      ActivityCorrectness.correct,
+    );
+    final missed = await submit('One coffee.');
+    expect(missed?.correctness, ActivityCorrectness.incorrect);
+    expect(missed?.correctAnswerLabel, 'One coffee, please.');
+  });
 }
