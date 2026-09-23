@@ -45,6 +45,13 @@ enum AuthFailure {
   /// This account was created with another sign-in method.
   accountExistsWithDifferentMethod,
 
+  /// Firebase wants a fresh sign-in before a sensitive change (deleting
+  /// the account) and the learner has not just confirmed who they are.
+  requiresRecentLogin,
+
+  /// The learner confirmed with a different account from the one signed in.
+  wrongAccount,
+
   /// Accounts aren't set up in this build (no Firebase configuration).
   unavailable,
   unknown,
@@ -89,6 +96,20 @@ abstract interface class AuthRepository {
   Future<AuthUser> signInWithGoogle();
 
   Future<void> signOut();
+
+  /// Confirms again that the signed-in learner is who they say, with the
+  /// account's password — Firebase asks for this before deleting an
+  /// account.
+  Future<void> reauthenticateWithPassword(String password);
+
+  /// As [reauthenticateWithPassword], for an account that signs in with
+  /// Google: the learner picks their Google account again.
+  Future<void> reauthenticateWithGoogle();
+
+  /// Permanently deletes the signed-in account from the sign-in service.
+  /// Call right after a reauthentication; the caller deletes the account's
+  /// progress first (see `AccountSessionController.deleteAccount`).
+  Future<void> deleteCurrentUser();
 }
 
 /// The repository used when Firebase isn't configured or failed to start:
@@ -131,4 +152,14 @@ class UnavailableAuthRepository implements AuthRepository {
 
   @override
   Future<void> signOut() async {}
+
+  @override
+  Future<void> reauthenticateWithPassword(String password) async =>
+      _unavailable();
+
+  @override
+  Future<void> reauthenticateWithGoogle() async => _unavailable();
+
+  @override
+  Future<void> deleteCurrentUser() async => _unavailable();
 }

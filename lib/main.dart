@@ -7,12 +7,14 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'app.dart';
 import 'core/preferences/shared_preferences_provider.dart';
+import 'core/theme/theme_preferences_provider.dart';
 import 'features/account/providers/account_providers.dart';
 import 'firebase_options.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final sharedPreferences = await SharedPreferences.getInstance();
+  await removeRetiredPreferences(sharedPreferences);
   final firebaseReady = await _startFirebase();
 
   runApp(

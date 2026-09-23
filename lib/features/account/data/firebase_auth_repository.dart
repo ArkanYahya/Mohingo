@@ -91,6 +91,44 @@ class FirebaseAuthRepository implements AuthRepository {
     }
   }
 
+  @override
+  Future<void> reauthenticateWithPassword(String password) => _guard(() async {
+    final user = _auth.currentUser;
+    final email = user?.email;
+    if (user == null || email == null) {
+      throw const AuthException(AuthFailure.unknown);
+    }
+    await user.reauthenticateWithCredential(
+      fb.EmailAuthProvider.credential(email: email, password: password),
+    );
+  });
+
+  @override
+  Future<void> reauthenticateWithGoogle() => _guard(() async {
+    final user = _auth.currentUser;
+    if (user == null) throw const AuthException(AuthFailure.unknown);
+    if (!supportsGoogle) throw const AuthException(AuthFailure.unavailable);
+    await (_googleReady ??= _google.initialize());
+    final account = await _google.authenticate();
+    final idToken = account.authentication.idToken;
+    if (idToken == null) throw const AuthException(AuthFailure.unknown);
+    await user.reauthenticateWithCredential(
+      fb.GoogleAuthProvider.credential(idToken: idToken),
+    );
+  });
+
+  @override
+  Future<void> deleteCurrentUser() => _guard(() async {
+    final user = _auth.currentUser;
+    if (user == null) return;
+    await user.delete();
+    if (supportsGoogle && _googleReady != null) {
+      try {
+        await _google.signOut();
+      } on Object catch (_) {}
+    }
+  });
+
   AuthUser? _toUser(fb.User? user) {
     if (user == null) return null;
     return AuthUser(
@@ -139,6 +177,8 @@ class FirebaseAuthRepository implements AuthRepository {
     'account-exists-with-different-credential' =>
       AuthFailure.accountExistsWithDifferentMethod,
     'operation-not-allowed' => AuthFailure.unavailable,
+    'requires-recent-login' => AuthFailure.requiresRecentLogin,
+    'user-mismatch' => AuthFailure.wrongAccount,
     _ => AuthFailure.unknown,
   };
 }

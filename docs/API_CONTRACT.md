@@ -1,7 +1,7 @@
 > **What this file is:** The source of truth for what the API looks like from the outside — endpoints, request/response shapes, status codes. Prevents the frontend and backend (or different sessions working on either) from silently diverging.
 > **How to use it:** Update *before or alongside* changing an endpoint, not after. If the project adopts a formal schema (OpenAPI/GraphQL SDL), that generated/authored file becomes the real source of truth — keep this doc as a human-readable index pointing to it.
 
-_Last verified: 2026-09-23 (`claude/firebase-auth-sync-ji1cww`) — now the Firestore contract of progress sync ([ADR 0010](adr/0010-optional-accounts-and-progress-sync.md)). Previously (2026-09-02) a placeholder: v1 had no backend ([ADR 0004](adr/0004-local-only-v1-no-firebase-backend.md))._
+_Last verified: 2026-09-23 (`release/v1.0.0`) — added the **Delete account** operation ([ADR 0011](adr/0011-first-run-agreement-app-guide-and-account-deletion.md)): it deletes every record of every collection under `users/{uid}` and then the account document, while signed in and with sync paused, before deleting the Firebase Auth user. No rules change: owners could already delete. Previously verified 2026-09-23 (`claude/firebase-auth-sync-ji1cww`) — now the Firestore contract of progress sync ([ADR 0010](adr/0010-optional-accounts-and-progress-sync.md)). Previously (2026-09-02) a placeholder: v1 had no backend ([ADR 0004](adr/0004-local-only-v1-no-firebase-backend.md))._
 
 # API Contract
 
@@ -49,6 +49,7 @@ Document ids are URI-encoded (`Uri.encodeComponent`). `?` marks a field that may
 - **Upload** — append-only records by batched `set`; mergeable records inside a transaction that reads the stored copy, merges ([ADR 0010](adr/0010-optional-accounts-and-progress-sync.md) decision 4) and writes the result. A stored copy under a *newer* epoch aborts the upload (another device reset progress).
 - **Download** — per collection: `orderBy(serverUpdatedAt).orderBy(__name__)`, after the saved cursor, 300 per page. Served by Firestore's automatic single-field index; no composite index is required.
 - **Reset** — transaction on `users/{uid}` raising `epoch`; then delete records `where epoch < newEpoch`.
+- **Delete account** — after a fresh sign-in and with sync paused: delete every document of every collection under `users/{uid}` (batches of 400), then `users/{uid}` itself; then the app deletes the Firebase Auth user ([ADR 0011](adr/0011-first-run-agreement-app-guide-and-account-deletion.md)).
 
 ## Security Rules (summary of `firestore.rules`)
 

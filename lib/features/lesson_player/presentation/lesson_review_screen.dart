@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../core/widgets/error_state_view.dart';
 import '../../../content/models/activity.dart';
 import '../../../content/models/curriculum_structure.dart';
 import '../../../content/models/media_specification.dart';
@@ -228,7 +229,8 @@ class _LessonReviewBodyState extends ConsumerState<_LessonReviewBody> {
             Expanded(
               child: attemptsAsync.when(
                 loading: () => const Center(child: CircularProgressIndicator()),
-                error: (error, _) => Center(child: Text('$error')),
+                error: (error, stackTrace) =>
+                    ErrorStateView(error: error, stackTrace: stackTrace),
                 data: (attempts) {
                   final latest = latestAttemptPerActivity(attempts, lesson);
                   final outcomes = [

@@ -1,6 +1,6 @@
 import 'dart:async';
+import 'dart:developer' as developer;
 
-import 'package:flutter/foundation.dart' show debugPrint;
 import 'package:flutter_riverpod/flutter_riverpod.dart'
     show FutureProvider, Provider;
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -77,8 +77,11 @@ class PendingRefinementDrainer {
   void triggerDrain() {
     unawaited(
       _drain().catchError((Object error, StackTrace stackTrace) {
-        debugPrint(
-          'Pending online-refinement drain failed: $error\n$stackTrace',
+        developer.log(
+          'Pending online-refinement drain failed',
+          name: 'mohingo.grading',
+          error: error,
+          stackTrace: stackTrace,
         );
       }),
     );

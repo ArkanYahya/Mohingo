@@ -201,6 +201,18 @@ class FakeCloudProgressStore implements CloudProgressStore {
     }
     return deleted;
   }
+
+  final deletedAccounts = <String>[];
+
+  @override
+  Future<void> deleteAccount(String uid) async {
+    _call();
+    _accounts.remove(uid);
+    deletedAccounts.add(uid);
+  }
+
+  /// Whether anything is stored for [uid].
+  bool hasAccount(String uid) => _accounts.containsKey(uid);
 }
 
 class _Account {

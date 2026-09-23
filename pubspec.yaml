@@ -1,7 +1,7 @@
 name: mohingo
-description: "Offline-first, bilingual (Arabic/English) CEFR English-learning app."
+description: "Mohingo: an offline-first, bilingual (Arabic/English) CEFR English course."
 publish_to: 'none'
-version: 0.1.0+1
+version: 1.0.0+1
 
 environment:
   sdk: ^3.13.2
@@ -26,6 +26,7 @@ dependencies:
   google_sign_in: ^7.2.0
   http: ^1.6.0
   intl: ^0.20.3
+  package_info_plus: ^10.2.1
   path: ^1.9.1
   path_provider: ^2.1.6
   permission_handler: ^13.0.1
@@ -65,6 +66,12 @@ flutter:
     - assets/content/en/A2/a2-course-bundle.json
     - assets/sounds/correct.wav
     - assets/sounds/incorrect.wav
+    # The app icon shown inside the app (splash, first-run, About).
+    - assets/brand/mohingo_mark.png
+    # The privacy policy and terms of use, one Markdown file per language
+    # (lib/features/legal/). Edit them there; raise kAgreementVersion only
+    # for a change learners must accept again.
+    - assets/legal/
     # Bundled speech clips, one manifest and one clips folder per level
     # (ADR 0008). Regenerate with tool/audio/generate_audio.py.
     - assets/audio/en/A1/

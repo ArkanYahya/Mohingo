@@ -1,7 +1,7 @@
 > **What this file is:** The boring-but-expensive-if-inconsistent rules — naming, file layout, error handling shape, commit/branch format. The stuff that's cheap to follow if written down and expensive to reconcile if not.
 > **How to use it:** Follow as default behavior in every session, no exceptions unless the code being touched already established a different local pattern (match it, then flag the inconsistency here).
 
-_Last verified: 2026-09-22 (`feature/bundled-audio`) — `tool/` may hold a Python tool: `tool/audio/` generates the bundled speech clips, with its own `requirements.txt` and tests, and nothing under it ships ([ADR 0008](adr/0008-bundled-pre-generated-speech-audio.md)). Previously verified 2026-09-21 (`feature/level-standard-and-content-versioning`) — added "Content ids, after a level ships": ids are permanent, an activity's `mode` is frozen and its `canDo` is append-only once a level is published, with what each one does to a learner who has already studied it, and the `contentVersion` bump a content change must carry. All of it was previously a comment in one table file. Previously verified: 2026-09-19 — added Versioning (`kAppVersion` kept in step with pubspec.yaml). Previously verified 2026-09-01 — initial conventions established via brainstorming session._
+_Last verified: 2026-09-23 (`release/v1.0.0`) — Versioning: the version is set only in `pubspec.yaml` and read at runtime; the agreement and app-guide versions are separate constants ([ADR 0011](adr/0011-first-run-agreement-app-guide-and-account-deletion.md)). Previously verified 2026-09-22 (`feature/bundled-audio`) — `tool/` may hold a Python tool: `tool/audio/` generates the bundled speech clips, with its own `requirements.txt` and tests, and nothing under it ships ([ADR 0008](adr/0008-bundled-pre-generated-speech-audio.md)). Previously verified 2026-09-21 (`feature/level-standard-and-content-versioning`) — added "Content ids, after a level ships": ids are permanent, an activity's `mode` is frozen and its `canDo` is append-only once a level is published, with what each one does to a learner who has already studied it, and the `contentVersion` bump a content change must carry. All of it was previously a comment in one table file. Previously verified: 2026-09-19 — added Versioning (`kAppVersion` kept in step with pubspec.yaml). Previously verified 2026-09-01 — initial conventions established via brainstorming session._
 
 # Conventions
 
@@ -56,7 +56,7 @@ and commit the diff. The script merges rather than regenerates — it refuses to
 
 ## Versioning
 
-The app version lives in `pubspec.yaml` and is shown in Settings from `kAppVersion` (`lib/core/app_version.dart`). Bump both together — `test/core/app_version_test.dart` fails if they differ.
+The app version lives only in `pubspec.yaml` (`version: 1.0.0+1` — name + build number; raise the build number for every store upload). About reads it from the installed package (`appPackageInfoProvider`), so there is no second copy. Two other versions are independent of it: `kAgreementVersion` (raise only when the privacy policy or terms change materially — learners must accept again) and `kAppGuideVersion` (raise when the guide should run once more for everyone).
 
 ## Dependencies
 

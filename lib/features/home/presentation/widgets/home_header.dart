@@ -17,6 +17,7 @@ class HomeHeader extends StatelessWidget {
     required this.name,
     required this.levelCode,
     required this.streakDays,
+    this.badgesKey,
     super.key,
   });
 
@@ -28,6 +29,9 @@ class HomeHeader extends StatelessWidget {
   final String levelCode;
 
   final int streakDays;
+
+  /// Attached to the level and streak pills, for the app guide to point at.
+  final Key? badgesKey;
 
   @override
   Widget build(BuildContext context) {
@@ -62,6 +66,7 @@ class HomeHeader extends StatelessWidget {
         ),
         const SizedBox(height: AppSpace.sm),
         Row(
+          key: badgesKey,
           children: [
             Expanded(
               child: Align(

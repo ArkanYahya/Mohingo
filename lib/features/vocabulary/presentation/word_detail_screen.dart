@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../core/widgets/error_state_view.dart';
 import '../../../content/providers/course_content_providers.dart';
 import '../../../core/l10n/generated/app_localizations.dart';
 import '../../../core/l10n/part_of_speech_label.dart';
@@ -21,7 +22,10 @@ class WordDetailScreen extends ConsumerWidget {
     return contentAsync.when(
       loading: () =>
           const Scaffold(body: Center(child: CircularProgressIndicator())),
-      error: (error, _) => Scaffold(body: Center(child: Text('$error'))),
+      error: (error, stackTrace) => Scaffold(
+        appBar: AppBar(),
+        body: ErrorStateView(error: error, stackTrace: stackTrace),
+      ),
       data: (index) {
         final l10n = AppLocalizations.of(context)!;
         final item = index.lexiconById[lexiconId];

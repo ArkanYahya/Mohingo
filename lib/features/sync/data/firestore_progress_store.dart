@@ -232,6 +232,25 @@ class FirestoreProgressStore implements CloudProgressStore {
     return deleted;
   });
 
+  @override
+  Future<void> deleteAccount(String uid) => _guard(() async {
+    for (final collection in SyncCollection.values) {
+      while (true) {
+        final snapshot = await _collection(
+          uid,
+          collection,
+        ).limit(_batchSize).get();
+        if (snapshot.docs.isEmpty) break;
+        final batch = _db.batch();
+        for (final doc in snapshot.docs) {
+          batch.delete(doc.reference);
+        }
+        await batch.commit();
+      }
+    }
+    await _account(uid).delete();
+  });
+
   Map<String, Object?> _toCloud(SyncRecord record, int epoch) => {
     for (final MapEntry(:key, :value) in record.fields.entries)
       key: value is DateTime ? Timestamp.fromDate(value) : value,

@@ -97,4 +97,35 @@ class FakeAuthRepository implements AuthRepository {
     _set(null);
     await signOutGate?.future;
   }
+
+  /// How many times the learner confirmed who they are, and whether the
+  /// account was then deleted.
+  int reauthentications = 0;
+  final deletedUids = <String>[];
+
+  @override
+  Future<void> reauthenticateWithPassword(String password) async {
+    _maybeFail();
+    final email = _user?.email;
+    if (email == null || accounts[email] != password) {
+      throw const AuthException(AuthFailure.wrongCredentials);
+    }
+    reauthentications++;
+  }
+
+  @override
+  Future<void> reauthenticateWithGoogle() async {
+    _maybeFail();
+    reauthentications++;
+  }
+
+  @override
+  Future<void> deleteCurrentUser() async {
+    _maybeFail();
+    final user = _user;
+    if (user == null) return;
+    accounts.remove(user.email);
+    deletedUids.add(user.uid);
+    _set(null);
+  }
 }

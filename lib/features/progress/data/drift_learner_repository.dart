@@ -37,6 +37,13 @@ class DriftLearnerRepository implements LearnerRepository {
   }
 
   @override
+  Future<void> forgetAccountLearner(String firebaseUid) async {
+    final learner = await learnerForAccount(firebaseUid);
+    if (learner == null || learner.isActive) return;
+    await _db.deleteLearner(learner.id);
+  }
+
+  @override
   Future<Learner?> guestLearner() {
     return (_db.select(_db.learners)
           ..where((t) => t.firebaseUid.isNull())

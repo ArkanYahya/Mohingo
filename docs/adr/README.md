@@ -17,3 +17,4 @@ _Last verified: 2026-09-23 (`claude/firebase-auth-sync-ji1cww`) — added ADR 00
 | [0008](0008-bundled-pre-generated-speech-audio.md) | Speech audio is pre-generated at authoring time and bundled, not synthesized on the device | Accepted |
 | [0009](0009-spoken-answers-graded-by-sound.md) | A spoken answer is graded by what was said, a typed one by what was written | Accepted |
 | [0010](0010-optional-accounts-and-progress-sync.md) | Optional accounts and cross-device progress sync (Firebase Auth + Firestore) | Accepted |
+| [0011](0011-first-run-agreement-app-guide-and-account-deletion.md) | First-run agreement (versioned), the app guide, and in-app account deletion (1.0.0) | Accepted |

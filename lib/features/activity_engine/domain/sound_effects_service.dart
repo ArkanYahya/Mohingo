@@ -1,6 +1,5 @@
 import 'dart:async';
-
-import 'package:flutter/foundation.dart' show debugPrint;
+import 'dart:developer' as developer;
 
 /// Which short feedback sound to play when a live submission resolves.
 enum ActivityFeedbackSound { correct, incorrect }
@@ -28,7 +27,12 @@ void playFeedbackSoundSafely(
 ) {
   unawaited(
     service.play(sound).catchError((Object error, StackTrace stackTrace) {
-      debugPrint('Sound effect playback failed: $error\n$stackTrace');
+      developer.log(
+        'Sound effect playback failed',
+        name: 'mohingo.audio',
+        error: error,
+        stackTrace: stackTrace,
+      );
     }),
   );
 }

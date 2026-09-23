@@ -5,16 +5,16 @@ import 'package:intl/intl.dart';
 
 import '../../../content/catalog/level_catalog.dart';
 import '../../../content/providers/course_content_providers.dart';
-import '../../../core/app_version.dart';
 import '../../../core/l10n/generated/app_localizations.dart';
 import '../../../core/l10n/locale_preference_provider.dart';
 import '../../../core/theme/app_tokens.dart';
-import '../../../core/theme/color_seed.dart';
 import '../../../core/theme/theme_preferences_provider.dart';
 import '../../../core/widgets/section_heading.dart';
 import '../../../core/widgets/status_pill.dart';
+import '../../account/presentation/delete_account_flow.dart';
 import '../../account/presentation/guest_progress_dialog.dart';
 import '../../account/providers/account_providers.dart';
+import '../../app_guide/providers/app_guide_providers.dart';
 import '../../progress/providers/current_learner_provider.dart';
 import '../../progress/providers/learner_progress_refresh.dart';
 import '../../progress/providers/level_providers.dart';
@@ -29,14 +29,15 @@ import '../../sync/providers/sync_providers.dart';
 /// The Settings tab.
 ///
 /// A profile card (name, what the learner is learning, streak; Edit opens a
-/// sheet), then grouped cards: Appearance (app language, theme, colour —
-/// each applies immediately, per docs/DESIGN_SYSTEM.md), Listening &
-/// speaking (voice speed and pitch with a sample to hear them, microphone
-/// access with an Allow button, speech-recognition availability), Account
-/// & sync (sign in, sync status, sign out — only in builds with Firebase;
-/// see docs/adr/0010-optional-accounts-and-progress-sync.md), and Your data
-/// (offline privacy and — last — reset progress). The app version sits at
-/// the foot.
+/// sheet), then grouped cards: Appearance (app language and light / dark /
+/// automatic — each applies immediately, per docs/DESIGN_SYSTEM.md; there
+/// is no colour choice since 1.0.0), Listening & speaking (voice speed with
+/// a sample to hear it, microphone access with an Allow button,
+/// speech-recognition availability), Account & sync (sign in, sync status,
+/// sign out, delete account — only in builds with Firebase; see
+/// docs/adr/0010-optional-accounts-and-progress-sync.md), Your data
+/// (offline privacy and reset progress), and Help & information (the app
+/// guide again, and About with the version, privacy policy and terms).
 class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
 
@@ -78,10 +79,6 @@ class SettingsScreen extends ConsumerWidget {
                   title: l10n.settingsThemeModeTitle,
                   child: const _ThemeModePicker(),
                 ),
-                _Block(
-                  title: l10n.settingsColorThemeTitle,
-                  child: const _ColorThemePicker(),
-                ),
               ],
             ),
             SectionHeading(l10n.settingsSpeechTitle),
@@ -118,13 +115,25 @@ class SettingsScreen extends ConsumerWidget {
                 const _ResetProgressRow(),
               ],
             ),
-            const SizedBox(height: AppSpace.lg),
-            Text(
-              l10n.settingsVersion(kAppVersion),
-              textAlign: TextAlign.center,
-              style: theme.textTheme.bodySmall?.copyWith(
-                color: tokens.textSecondary,
-              ),
+            SectionHeading(l10n.settingsHelpOverline),
+            _Group(
+              children: [
+                _Row(
+                  icon: Icons.explore_outlined,
+                  title: l10n.settingsGuideTitle,
+                  subtitle: l10n.settingsGuideBody,
+                  trailing: const _Chevron(),
+                  onTap: () =>
+                      ref.read(appGuideControllerProvider.notifier).start(),
+                ),
+                _Row(
+                  icon: Icons.info_outline_rounded,
+                  title: l10n.settingsAboutTitle,
+                  subtitle: l10n.settingsAboutBody,
+                  trailing: const _Chevron(),
+                  onTap: () => context.push('/settings/about'),
+                ),
+              ],
             ),
           ],
         ),
@@ -577,92 +586,6 @@ class _ThemeModePicker extends ConsumerWidget {
   }
 }
 
-class _ColorThemePicker extends ConsumerWidget {
-  const _ColorThemePicker();
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final theme = Theme.of(context);
-    final tokens = theme.extension<AppTokens>()!;
-    final selected = ref.watch(colorSeedPreferenceProvider);
-    final isArabic = Localizations.localeOf(context).languageCode == 'ar';
-    final narrow = _isNarrow(context);
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        for (final seed in AppColorSeed.values)
-          Expanded(
-            child: Semantics(
-              button: true,
-              selected: seed == selected,
-              child: InkWell(
-                borderRadius: BorderRadius.circular(AppRadius.control),
-                onTap: () =>
-                    ref.read(colorSeedPreferenceProvider.notifier).set(seed),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: AppSpace.xs),
-                  child: Column(
-                    children: [
-                      DecoratedBox(
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          border: Border.all(
-                            color: seed == selected
-                                ? tokens.textPrimary
-                                : Colors.transparent,
-                            width: 2,
-                          ),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(3),
-                          child: CircleAvatar(
-                            radius: 18,
-                            // The seed's *applied* accent, not the raw seed
-                            // — see AppColorSeed.brandPrimary's doc comment.
-                            // The picker must preview what selecting this
-                            // theme actually produces.
-                            backgroundColor: seed.brandPrimary,
-                            child: seed == selected
-                                ? Icon(
-                                    Icons.check_rounded,
-                                    color: seed.onBrandPrimary,
-                                  )
-                                : null,
-                          ),
-                        ),
-                      ),
-                      const SizedBox(height: AppSpace.xs - 2),
-                      // Scales down rather than breaking a long word.
-                      FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Text(
-                          // On a narrow screen, one word per line first.
-                          narrow
-                              ? (isArabic ? seed.labelAr : seed.labelEn)
-                                    .replaceAll(' ', '\n')
-                              : (isArabic ? seed.labelAr : seed.labelEn),
-                          textAlign: TextAlign.center,
-                          style: theme.textTheme.bodySmall?.copyWith(
-                            color: seed == selected
-                                ? tokens.textPrimary
-                                : tokens.textSecondary,
-                            fontWeight: seed == selected
-                                ? FontWeight.w600
-                                : FontWeight.w400,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ),
-      ],
-    );
-  }
-}
-
 /// Voice speed, with a sample to hear it.
 class _TtsRateBlock extends ConsumerWidget {
   const _TtsRateBlock();
@@ -872,12 +795,7 @@ class _ResetProgressRow extends ConsumerWidget {
           ? l10n.settingsResetProgressBodyAccount
           : l10n.settingsResetProgressBody,
       destructive: true,
-      trailing: _isNarrow(context)
-          ? null
-          : Icon(
-              Icons.chevron_right_rounded,
-              color: Theme.of(context).extension<AppTokens>()!.textSecondary,
-            ),
+      trailing: const _Chevron(),
       onTap: () => _confirmAndReset(context, ref, everywhere: everywhere),
     );
   }
@@ -899,6 +817,7 @@ class _AccountGroup extends ConsumerWidget {
         SignedInSession(:final user) => [
           _SyncStatusRow(email: user.email),
           const _SignOutRow(),
+          const _DeleteAccountRow(),
         ],
         GuestProgressDecision() => [
           _Row(
@@ -911,6 +830,7 @@ class _AccountGroup extends ConsumerWidget {
             ),
           ),
           const _SignOutRow(),
+          const _DeleteAccountRow(),
         ],
         GuestSession() || null => [
           _Row(
@@ -1034,6 +954,40 @@ class _SignOutRow extends ConsumerWidget {
       title: l10n.accountSignOutTitle,
       subtitle: l10n.accountSignOutBody,
       onTap: () => _confirmAndSignOut(context, ref),
+    );
+  }
+}
+
+/// The "opens something" mark at the end of a tappable row; hidden on a
+/// narrow screen, where the row's text needs the room.
+class _Chevron extends StatelessWidget {
+  const _Chevron();
+
+  @override
+  Widget build(BuildContext context) {
+    if (_isNarrow(context)) return const SizedBox.shrink();
+    return Icon(
+      Icons.chevron_right_rounded,
+      color: Theme.of(context).extension<AppTokens>()!.textSecondary,
+    );
+  }
+}
+
+/// Deletes the signed-in account and its cloud copy, after a confirmation
+/// and a fresh sign-in — see [runDeleteAccountFlow].
+class _DeleteAccountRow extends ConsumerWidget {
+  const _DeleteAccountRow();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
+    return _Row(
+      icon: Icons.person_remove_outlined,
+      title: l10n.accountDeleteTitle,
+      subtitle: l10n.accountDeleteBody,
+      destructive: true,
+      trailing: const _Chevron(),
+      onTap: () => runDeleteAccountFlow(context),
     );
   }
 }

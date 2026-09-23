@@ -59,7 +59,7 @@ final class AudioClipIndexProvider
   }
 }
 
-String _$audioClipIndexHash() => r'b8406df98f2721053248cbf1f57f66975f5700da';
+String _$audioClipIndexHash() => r'793b14d115907ab188c8caf30b52ee583cfbd70f';
 
 @ProviderFor(clipPlayer)
 final clipPlayerProvider = ClipPlayerProvider._();

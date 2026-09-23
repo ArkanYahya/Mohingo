@@ -15,6 +15,8 @@ String? authFailureMessage(AppLocalizations l10n, AuthFailure failure) =>
       AuthFailure.network => l10n.authErrorNetwork,
       AuthFailure.accountExistsWithDifferentMethod =>
         l10n.authErrorDifferentMethod,
+      AuthFailure.requiresRecentLogin => l10n.authErrorRecentLogin,
+      AuthFailure.wrongAccount => l10n.authErrorWrongAccount,
       AuthFailure.unavailable => l10n.authErrorUnavailable,
       AuthFailure.unknown => l10n.authErrorUnknown,
       AuthFailure.cancelled => null,

@@ -166,6 +166,20 @@ class AppDatabase extends _$AppDatabase {
         "VALUES ('learners', NEW.id, NEW.id); END",
   ];
 
+  /// Removes [learnerId] from this device entirely: every progress row
+  /// ([resetProgressForLearner]), its sync state, and the `Learners` row
+  /// itself. Used only when the account that owned the learner has been
+  /// deleted ("Delete account"); a reset keeps the learner.
+  Future<void> deleteLearner(int learnerId) {
+    return transaction(() async {
+      await resetProgressForLearner(learnerId);
+      await (delete(
+        accountSyncStates,
+      )..where((t) => t.learnerId.equals(learnerId))).go();
+      await (delete(learners)..where((t) => t.id.equals(learnerId))).go();
+    });
+  }
+
   /// Erases every progress row for [learnerId] — mastery evidence, attempt
   /// history (lesson/placement/mission/assessment alike), vocabulary/grammar
   /// review state (including favourites), the course enrolment record

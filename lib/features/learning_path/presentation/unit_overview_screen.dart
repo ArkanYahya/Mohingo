@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../core/widgets/error_state_view.dart';
 import '../../../content/models/curriculum_structure.dart';
 import '../../../content/providers/course_content_providers.dart';
 import '../../../core/l10n/generated/app_localizations.dart';
@@ -48,7 +49,10 @@ class UnitOverviewScreen extends ConsumerWidget {
     return contentAsync.when(
       loading: () =>
           const Scaffold(body: Center(child: CircularProgressIndicator())),
-      error: (error, _) => Scaffold(body: Center(child: Text('$error'))),
+      error: (error, stackTrace) => Scaffold(
+        appBar: AppBar(),
+        body: ErrorStateView(error: error, stackTrace: stackTrace),
+      ),
       data: (index) {
         final unit = index.unitsById[unitId];
         if (unit == null) {
@@ -58,7 +62,10 @@ class UnitOverviewScreen extends ConsumerWidget {
         return learnerAsync.when(
           loading: () =>
               const Scaffold(body: Center(child: CircularProgressIndicator())),
-          error: (error, _) => Scaffold(body: Center(child: Text('$error'))),
+          error: (error, stackTrace) => Scaffold(
+            appBar: AppBar(),
+            body: ErrorStateView(error: error, stackTrace: stackTrace),
+          ),
           data: (learner) => _UnitOverviewBody(
             unit: unit,
             unitNumber:
@@ -94,7 +101,10 @@ class _UnitOverviewBody extends ConsumerWidget {
     return progressAsync.when(
       loading: () =>
           const Scaffold(body: Center(child: CircularProgressIndicator())),
-      error: (error, _) => Scaffold(body: Center(child: Text('$error'))),
+      error: (error, stackTrace) => Scaffold(
+        appBar: AppBar(),
+        body: ErrorStateView(error: error, stackTrace: stackTrace),
+      ),
       data: (rows) {
         final progressByLessonId = {for (final row in rows) row.lessonId: row};
         final lessonAttempts = attemptsAsync.value ?? const [];

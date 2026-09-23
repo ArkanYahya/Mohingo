@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- The app's page colour (AppTokens.page, light), so the launch screen
+         hands over to the first Flutter frame without a flash. -->
+    <color name="launch_background">#F5F3F0</color>
+</resources>

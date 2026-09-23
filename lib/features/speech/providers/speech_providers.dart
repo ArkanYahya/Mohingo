@@ -1,4 +1,5 @@
-import 'package:flutter/foundation.dart';
+import 'dart:developer' as developer;
+
 import 'package:flutter/services.dart';
 import 'package:path/path.dart' as p;
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -31,7 +32,7 @@ Future<AudioClipIndex> audioClipIndex(Ref ref) async {
       final json = await rootBundle.loadString(path);
       manifests.add(AudioManifest.parse(json, assetDirectory: p.dirname(path)));
     } catch (e) {
-      debugPrint('audio manifest $path unusable: $e');
+      developer.log('audio manifest $path unusable: $e', name: 'mohingo.audio');
     }
   }
   return AudioClipIndex.fromManifests(manifests);

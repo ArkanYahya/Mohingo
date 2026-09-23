@@ -17,6 +17,13 @@ part of 'app_router.dart';
 /// where that level is shown and never blocks the app. See
 /// docs/ARCHITECTURE.md's content-loading strategy.
 ///
+/// Once content is ready, the first-run agreement gates everything else:
+/// until the current agreement version is accepted, every route leads to
+/// `/welcome` (whose privacy policy and terms, `/legal/*`, stay readable).
+/// Accepting opens `/home`, where the app guide starts. Sign-in is never a
+/// gate — accounts are optional and live in Settings.
+/// See docs/adr/0011-first-run-agreement-app-guide-and-account-deletion.md.
+///
 /// The lesson player, and any future placement/final-mission/
 /// final-assessment flows, are deliberately full-screen pushes *outside*
 /// the 5-tab `StatefulShellRoute` (hides the bottom nav during a lesson).
@@ -33,6 +40,13 @@ final appRouterProvider = AppRouterProvider._();
 /// where that level is shown and never blocks the app. See
 /// docs/ARCHITECTURE.md's content-loading strategy.
 ///
+/// Once content is ready, the first-run agreement gates everything else:
+/// until the current agreement version is accepted, every route leads to
+/// `/welcome` (whose privacy policy and terms, `/legal/*`, stay readable).
+/// Accepting opens `/home`, where the app guide starts. Sign-in is never a
+/// gate — accounts are optional and live in Settings.
+/// See docs/adr/0011-first-run-agreement-app-guide-and-account-deletion.md.
+///
 /// The lesson player, and any future placement/final-mission/
 /// final-assessment flows, are deliberately full-screen pushes *outside*
 /// the 5-tab `StatefulShellRoute` (hides the bottom nav during a lesson).
@@ -48,6 +62,13 @@ final class AppRouterProvider
   /// otherwise the normal tree. A later level failing to load is handled
   /// where that level is shown and never blocks the app. See
   /// docs/ARCHITECTURE.md's content-loading strategy.
+  ///
+  /// Once content is ready, the first-run agreement gates everything else:
+  /// until the current agreement version is accepted, every route leads to
+  /// `/welcome` (whose privacy policy and terms, `/legal/*`, stay readable).
+  /// Accepting opens `/home`, where the app guide starts. Sign-in is never a
+  /// gate — accounts are optional and live in Settings.
+  /// See docs/adr/0011-first-run-agreement-app-guide-and-account-deletion.md.
   ///
   /// The lesson player, and any future placement/final-mission/
   /// final-assessment flows, are deliberately full-screen pushes *outside*
@@ -85,4 +106,4 @@ final class AppRouterProvider
   }
 }
 
-String _$appRouterHash() => r'06401e329007c1be1042dfa6eb4c41a1093a5e7e';
+String _$appRouterHash() => r'15f658589c3bea4b534f5f9efd121272cb1a6355';
