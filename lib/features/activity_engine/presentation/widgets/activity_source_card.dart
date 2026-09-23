@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/theme/app_tokens.dart';
+import '../../../../core/widgets/content_text.dart';
 
 /// The text a question is about — a message, a notice, a menu, two short
 /// profiles — shown between the prompt and the answers. English content,
-/// so always left-to-right, starting at the layout's start edge in either
-/// interface language. Shown in test mode too: it is the question's input,
+/// so always left-to-right from the left edge in either interface language
+/// ([ContentText]). Shown in test mode too: it is the question's input,
 /// not its answer.
 class ActivitySourceCard extends StatelessWidget {
   const ActivitySourceCard({required this.text, super.key});
@@ -24,15 +25,11 @@ class ActivitySourceCard extends StatelessWidget {
       ),
       child: Padding(
         padding: const EdgeInsets.all(AppSpace.md),
-        child: Align(
-          alignment: AlignmentDirectional.centerStart,
-          child: Text(
-            text,
-            textDirection: TextDirection.ltr,
-            style: theme.textTheme.bodyLarge?.copyWith(
-              color: tokens.textPrimary,
-              height: 1.45,
-            ),
+        child: ContentText.en(
+          text,
+          style: theme.textTheme.bodyLarge?.copyWith(
+            color: tokens.textPrimary,
+            height: 1.45,
           ),
         ),
       ),

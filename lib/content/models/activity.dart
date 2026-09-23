@@ -363,6 +363,16 @@ class SpeakActivity extends Activity {
         if (turn is String && turn.trim().isNotEmpty) turn,
     ];
   }
+
+  /// Who the other person is — the bundle's `partnerSpeaker`: a dialogue
+  /// character ("Anna") or a role ("Waiter", "Examiner"). The voice the
+  /// partner's lines are read in; null when the task names nobody, and
+  /// the card falls back to the one generic partner voice.
+  String? get partnerSpeaker {
+    final value = raw['partnerSpeaker'];
+    if (value is! String || value.trim().isEmpty) return null;
+    return value.trim();
+  }
 }
 
 class WriteActivity extends Activity {

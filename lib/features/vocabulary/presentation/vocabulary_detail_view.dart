@@ -6,6 +6,7 @@ import '../../../content/models/registry_items.dart';
 import '../../../core/l10n/generated/app_localizations.dart';
 import '../../../core/theme/app_tokens.dart';
 import '../../../core/theme/overline_style.dart';
+import '../../../core/widgets/content_text.dart';
 import '../../../core/widgets/hairline_card.dart';
 import '../../../core/widgets/lesson_reference_list.dart';
 import '../../../core/widgets/section_heading.dart';
@@ -148,29 +149,21 @@ class _VocabularyDetailViewState extends ConsumerState<VocabularyDetailView> {
           Row(
             children: [
               Expanded(
-                child: Align(
-                  alignment: AlignmentDirectional.centerStart,
-                  child: Text(
-                    widget.text,
-                    textDirection: TextDirection.ltr,
-                    style: theme.textTheme.headlineLarge?.copyWith(
-                      color: tokens.textPrimary,
-                      fontWeight: FontWeight.w700,
-                    ),
+                child: ContentText.en(
+                  widget.text,
+                  style: theme.textTheme.headlineLarge?.copyWith(
+                    color: tokens.textPrimary,
+                    fontWeight: FontWeight.w700,
                   ),
                 ),
               ),
               ListenButton(text: widget.text),
             ],
           ),
-          Align(
-            alignment: AlignmentDirectional.centerStart,
-            child: Text(
-              widget.arabic,
-              textDirection: TextDirection.rtl,
-              style: theme.textTheme.headlineSmall?.copyWith(
-                color: tokens.textPrimary,
-              ),
+          ContentText.ar(
+            widget.arabic,
+            style: theme.textTheme.headlineSmall?.copyWith(
+              color: tokens.textPrimary,
             ),
           ),
           if (widget.usage != null) ...[
@@ -221,17 +214,15 @@ class _VocabularyDetailViewState extends ConsumerState<VocabularyDetailView> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
+                          ContentText.en(
                             example.en,
-                            textDirection: TextDirection.ltr,
                             style: theme.textTheme.bodyLarge?.copyWith(
                               color: tokens.textPrimary,
                             ),
                           ),
                           if (example.ar != null)
-                            Text(
+                            ContentText.ar(
                               example.ar!,
-                              textDirection: TextDirection.rtl,
                               style: theme.textTheme.bodyMedium?.copyWith(
                                 color: tokens.textSecondary,
                               ),

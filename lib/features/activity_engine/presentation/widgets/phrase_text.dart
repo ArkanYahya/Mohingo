@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/theme/app_tokens.dart';
+import '../../../../core/widgets/content_text.dart';
 
 export '../../../speech/domain/speech_text.dart' show phraseForSpeech;
 
@@ -14,6 +15,10 @@ final _placeholder = RegExp(r'\{(\w+)\}');
 /// there. Arabic phrases show an ellipsis instead: the keys are English,
 /// and the Arabic text often attaches a suffix straight to the slot
 /// (`هو {relation}ي`), which a boxed label would break apart.
+///
+/// A phrase is content, so like [ContentText] it starts from its own
+/// script's edge — English from the left, Arabic from the right — in
+/// either interface language.
 class PhraseText extends StatelessWidget {
   const PhraseText(
     this.text, {
@@ -29,11 +34,9 @@ class PhraseText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (textDirection == TextDirection.rtl || !_placeholder.hasMatch(text)) {
-      return Text(
-        text.replaceAll(_placeholder, '…'),
-        textDirection: textDirection,
-        style: style,
-      );
+      return textDirection == TextDirection.rtl
+          ? ContentText.ar(text.replaceAll(_placeholder, '…'), style: style)
+          : ContentText.en(text, style: style);
     }
 
     final spans = <InlineSpan>[];
@@ -52,13 +55,17 @@ class PhraseText extends StatelessWidget {
     }
     if (cursor < text.length) spans.add(TextSpan(text: text.substring(cursor)));
 
-    return Text.rich(
-      TextSpan(children: spans),
-      textDirection: TextDirection.ltr,
-      style: style,
-      semanticsLabel: text.replaceAllMapped(
-        _placeholder,
-        (m) => m.group(1)!.toLowerCase(),
+    return Align(
+      alignment: contentAlignment(TextDirection.ltr),
+      child: Text.rich(
+        TextSpan(children: spans),
+        textDirection: TextDirection.ltr,
+        textAlign: TextAlign.start,
+        style: style,
+        semanticsLabel: text.replaceAllMapped(
+          _placeholder,
+          (m) => m.group(1)!.toLowerCase(),
+        ),
       ),
     );
   }

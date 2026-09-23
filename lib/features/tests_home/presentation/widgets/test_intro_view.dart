@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/theme/app_tokens.dart';
 import '../../../../core/theme/overline_style.dart';
+import '../../../../core/widgets/content_text.dart';
 import '../../../../core/widgets/hairline_card.dart';
 import '../../../../core/widgets/section_heading.dart';
 import '../../../lesson_player/presentation/widgets/lesson_intro_chrome.dart';
@@ -98,25 +99,25 @@ class TestIntroView extends StatelessWidget {
                     style: overlineStyle(context, color: tokens.textSecondary),
                   ),
                   const SizedBox(height: AppSpace.xxs),
-                  Align(
-                    alignment: AlignmentDirectional.centerStart,
-                    child: Text(
+                  if (titleAr == null)
+                    Text(
                       title,
-                      textDirection: titleAr == null ? null : TextDirection.ltr,
+                      style: theme.textTheme.headlineSmall?.copyWith(
+                        color: tokens.textPrimary,
+                      ),
+                    )
+                  else
+                    ContentText.en(
+                      title,
                       style: theme.textTheme.headlineSmall?.copyWith(
                         color: tokens.textPrimary,
                       ),
                     ),
-                  ),
                   if (titleAr != null)
-                    Align(
-                      alignment: AlignmentDirectional.centerStart,
-                      child: Text(
-                        titleAr!,
-                        textDirection: TextDirection.rtl,
-                        style: theme.textTheme.bodyLarge?.copyWith(
-                          color: tokens.textSecondary,
-                        ),
+                    ContentText.ar(
+                      titleAr!,
+                      style: theme.textTheme.bodyLarge?.copyWith(
+                        color: tokens.textSecondary,
                       ),
                     ),
                   const SizedBox(height: AppSpace.sm),
@@ -227,27 +228,25 @@ class _IntroRowTile extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Align(
-                    alignment: AlignmentDirectional.centerStart,
-                    child: Text(
+                  if (row.titleAr == null)
+                    Text(
                       row.title,
-                      textDirection: row.titleAr == null
-                          ? null
-                          : TextDirection.ltr,
+                      style: theme.textTheme.bodyLarge?.copyWith(
+                        color: tokens.textPrimary,
+                      ),
+                    )
+                  else
+                    ContentText.en(
+                      row.title,
                       style: theme.textTheme.bodyLarge?.copyWith(
                         color: tokens.textPrimary,
                       ),
                     ),
-                  ),
                   if (row.titleAr != null)
-                    Align(
-                      alignment: AlignmentDirectional.centerStart,
-                      child: Text(
-                        row.titleAr!,
-                        textDirection: TextDirection.rtl,
-                        style: theme.textTheme.bodySmall?.copyWith(
-                          color: tokens.textSecondary,
-                        ),
+                    ContentText.ar(
+                      row.titleAr!,
+                      style: theme.textTheme.bodySmall?.copyWith(
+                        color: tokens.textSecondary,
                       ),
                     ),
                 ],

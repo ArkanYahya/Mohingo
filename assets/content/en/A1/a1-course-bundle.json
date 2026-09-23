@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "contentVersion": "A1-COMPLETE-2026.09.22",
+  "contentVersion": "A1-COMPLETE-2026.09.22-3",
   "locale": {
     "targetLanguage": "en",
     "supportLanguage": "ar",
@@ -8406,6 +8406,7 @@
                 ],
                 "minGroupsMatched": 1
               },
+              "partnerSpeaker": "Stranger",
               "partnerTurns": ["Hi! Here is your bag."]
             }
           ]
@@ -8751,7 +8752,7 @@
               "canDo": [
                 "A1.U0.LISTENING.UNDERSTAND_PERSONAL_NUMBER"
               ],
-              "prompt": "How old are you?",
+              "prompt": "Say how old you are.",
               "accepted": [],
               "evaluation": {
                 "type": "numericRange",
@@ -8759,7 +8760,8 @@
                 "max": 120
               },
               "fallbackSkill": "writing",
-              "promptAr": "كم عمرك؟",
+              "promptAr": "قل كم عمرك.",
+              "partnerSpeaker": "Maya",
               "partnerTurns": ["How old are you?"]
             }
           ],
@@ -8817,13 +8819,14 @@
               "canDo": [
                 "A1.U0.INTERACTION.REGISTER_FOR_CLASS"
               ],
-              "prompt": "What's your name?",
+              "prompt": "Answer the teacher. Say your name.",
               "accepted": [],
               "evaluation": {
                 "type": "nonEmpty"
               },
               "fallbackSkill": "writing",
-              "promptAr": "ما اسمك؟",
+              "promptAr": "أجب المعلّم. قل اسمك.",
+              "partnerSpeaker": "Teacher",
               "partnerTurns": [
                 "Hello! Welcome to the English class. What's your name?"
               ]
@@ -8855,7 +8858,7 @@
               "canDo": [
                 "A1.U0.LISTENING.UNDERSTAND_PERSONAL_NUMBER"
               ],
-              "prompt": "How old are you?",
+              "prompt": "Answer the teacher. Say how old you are.",
               "accepted": [],
               "evaluation": {
                 "type": "numericRange",
@@ -8863,7 +8866,8 @@
                 "max": 120
               },
               "fallbackSkill": "writing",
-              "promptAr": "كم عمرك؟",
+              "promptAr": "أجب المعلّم. قل كم عمرك.",
+              "partnerSpeaker": "Teacher",
               "partnerTurns": ["Thank you. And how old are you?"]
             },
             {
@@ -8918,6 +8922,7 @@
                 "minGroupsMatched": 2
               },
               "fallbackSkill": "writing",
+              "partnerSpeaker": "Receptionist",
               "partnerTurns": ["Good morning. Can I help you?"]
             }
           ]
@@ -9085,6 +9090,7 @@
                 ],
                 "minGroupsMatched": 1
               },
+              "partnerSpeaker": "Omar",
               "partnerTurns": ["Hi! I'm new here."]
             }
           ]
@@ -9190,12 +9196,12 @@
               "canDo": [
                 "A1.U1.INTERACTION.ASK_ORIGIN"
               ],
-              "prompt": "Ask where the person is from.",
+              "prompt": "Ask Anna where she is from.",
               "accepted": [
                 "Where are you from?"
               ],
               "fallbackSkill": "writing",
-              "promptAr": "اسأل الشخص من أين هو.",
+              "promptAr": "اسأل آنا من أين هي.",
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -9203,7 +9209,8 @@
                 ],
                 "minGroupsMatched": 1
               },
-              "partnerTurns": ["Hello. I'm Anna."]
+              "partnerSpeaker": "Anna",
+              "partnerTurns": ["Hello. I'm Anna. I'm not from here."]
             }
           ],
           "encounter": {
@@ -9348,6 +9355,7 @@
                 ],
                 "minGroupsMatched": 1
               },
+              "partnerSpeaker": "Anna",
               "partnerTurns": ["I'm from Italy, but I don't live there now."]
             }
           ],
@@ -9754,6 +9762,7 @@
                 ],
                 "minGroupsMatched": 1
               },
+              "partnerSpeaker": "Daniel",
               "partnerTurns": ["I'm from Novosibirsk, in Russia."]
             },
             {
@@ -9765,12 +9774,12 @@
               "canDo": [
                 "A1.U1.INTERACTION.USE_REPAIR_PHRASE"
               ],
-              "prompt": "The other person says: I'm from Jordan. Continue with a short reciprocal prompt.",
+              "prompt": "Now ask the other person the same question.",
               "accepted": [
                 "And you?"
               ],
               "fallbackSkill": "writing",
-              "promptAr": "يقول الشخص الآخر: I'm from Jordan. تابع بسؤالٍ قصير في المقابل.",
+              "promptAr": "الآن اسأل الشخص الآخر السؤال نفسه.",
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -9783,6 +9792,7 @@
                 ],
                 "minGroupsMatched": 1
               },
+              "partnerSpeaker": "Omar",
               "partnerTurns": ["I'm from Jordan."]
             }
           ],
@@ -9840,7 +9850,7 @@
                 "A1.U1.INTERACTION.NEW_COLLEAGUE_MISSION",
                 "A1.U1.PRODUCTION.INTRODUCE_SELF"
               ],
-              "prompt": "Daniel: Hi. I'm Daniel. What's your name?",
+              "prompt": "Answer Daniel. Say your name.",
               "accepted": [],
               "evaluation": {
                 "type": "keywordChecklist",
@@ -9856,7 +9866,8 @@
                 "minGroupsMatched": 1
               },
               "fallbackSkill": "writing",
-              "promptAr": "يقول دانيال: «Hi. I'm Daniel. What's your name?» ردّ عليه.",
+              "promptAr": "ردّ على دانيال. قل اسمك.",
+              "partnerSpeaker": "Daniel",
               "partnerTurns": ["Hi. I'm Daniel. What's your name?"]
             },
             {
@@ -9869,7 +9880,7 @@
                 "A1.U1.INTERACTION.NEW_COLLEAGUE_MISSION",
                 "A1.U1.PRODUCTION.STATE_ORIGIN"
               ],
-              "prompt": "Daniel: Nice to meet you. Where are you from?",
+              "prompt": "Answer Daniel. Say where you are from.",
               "accepted": [],
               "evaluation": {
                 "type": "keywordChecklist",
@@ -9886,7 +9897,8 @@
                 "minGroupsMatched": 2
               },
               "fallbackSkill": "writing",
-              "promptAr": "يقول دانيال: «Nice to meet you. Where are you from?» ردّ عليه.",
+              "promptAr": "ردّ على دانيال. قل من أين أنت.",
+              "partnerSpeaker": "Daniel",
               "partnerTurns": ["Nice to meet you. Where are you from?"]
             },
             {
@@ -9899,7 +9911,7 @@
                 "A1.U1.INTERACTION.NEW_COLLEAGUE_MISSION",
                 "A1.U1.PRODUCTION.STATE_RESIDENCE"
               ],
-              "prompt": "Daniel: Where do you live?",
+              "prompt": "Answer Daniel. Say where you live.",
               "accepted": [],
               "evaluation": {
                 "type": "keywordChecklist",
@@ -9914,7 +9926,8 @@
                 "minGroupsMatched": 2
               },
               "fallbackSkill": "writing",
-              "promptAr": "يقول دانيال: «Where do you live?» ردّ عليه.",
+              "promptAr": "ردّ على دانيال. قل أين تسكن.",
+              "partnerSpeaker": "Daniel",
               "partnerTurns": ["Where do you live?"]
             },
             {
@@ -9990,6 +10003,7 @@
                 ],
                 "minGroupsMatched": 1
               },
+              "partnerSpeaker": "Anna",
               "partnerTurns": ["Hello, I'm Anna. Ask me anything!"]
             }
           ]
@@ -10562,6 +10576,7 @@
                 ],
                 "minGroupsMatched": 1
               },
+              "partnerSpeaker": "Maya",
               "partnerTurns": ["Look, this is a photo of my family."]
             },
             {
@@ -11252,6 +11267,7 @@
                 ],
                 "minGroupsMatched": 1
               },
+              "partnerSpeaker": "Omar",
               "partnerTurns": ["This is my people map. Do you know everyone?"]
             },
             {
@@ -12111,6 +12127,7 @@
                 "minGroupsMatched": 2
               },
               "fallbackSkill": "writing",
+              "partnerSpeaker": "Sara",
               "partnerTurns": ["What's in your room? Show me."]
             }
           ]
@@ -12267,6 +12284,7 @@
                 ],
                 "minGroupsMatched": 1
               },
+              "partnerSpeaker": "Ali",
               "partnerTurns": ["There's a phone on the table."]
             },
             {
@@ -12278,8 +12296,8 @@
               "canDo": [
                 "A1.U3.INTERACTION.ASK_ANSWER_OWNERSHIP"
               ],
-              "prompt": "The book is not yours; it belongs to Sara. Answer the question: Is this your book?",
-              "promptAr": "الكتاب ليس لك، بل لسارة. أجب عن السؤال: Is this your book?",
+              "prompt": "The book is not yours; it belongs to Sara. Answer the question.",
+              "promptAr": "الكتاب ليس لك، بل لسارة. أجب عن السؤال.",
               "accepted": [
                 "No, it isn't mine. It's Sara's."
               ],
@@ -12298,6 +12316,7 @@
                 ],
                 "minGroupsMatched": 2
               },
+              "partnerSpeaker": "Ali",
               "partnerTurns": ["Is this your book?"]
             }
           ]
@@ -12650,6 +12669,7 @@
                 "minGroupsMatched": 2
               },
               "fallbackSkill": "writing",
+              "partnerSpeaker": "Sara",
               "partnerTurns": [
                 "Hi! What's that in your hand?",
                 "No, it isn't mine. My phone is black."
@@ -13080,6 +13100,7 @@
                 "minGroupsMatched": 2
               },
               "fallbackSkill": "writing",
+              "partnerSpeaker": "Maya",
               "partnerTurns": [
                 "Good morning! I'm hungry already.",
                 "I have breakfast at seven. And you?"
@@ -13418,6 +13439,7 @@
                 "minGroupsMatched": 2
               },
               "fallbackSkill": "writing",
+              "partnerSpeaker": "Sara",
               "partnerTurns": [
                 "Ask me about my day.",
                 "I get up at six. My brother gets up late."
@@ -13867,6 +13889,7 @@
                 "minGroupsMatched": 2
               },
               "fallbackSkill": "writing",
+              "partnerSpeaker": "Omar",
               "partnerTurns": [
                 "Rana starts at seven thirty and finishes at three."
               ]
@@ -14526,6 +14549,7 @@
                 "minGroupsMatched": 2
               },
               "fallbackSkill": "writing",
+              "partnerSpeaker": "Ali",
               "partnerTurns": [
                 "Let's talk about sports and hobbies.",
                 "Yes, I can swim. Can you?"
@@ -14697,6 +14721,7 @@
                 "minGroupsMatched": 2
               },
               "fallbackSkill": "writing",
+              "partnerSpeaker": "Sara",
               "partnerTurns": [
                 "I have free time this weekend.",
                 "I like football and music. Do you like running?"
@@ -14874,6 +14899,7 @@
                 "minGroupsMatched": 2
               },
               "fallbackSkill": "writing",
+              "partnerSpeaker": "Maya",
               "partnerTurns": [
                 "Hi! Are you free this afternoon?",
                 "Sorry, I'm busy this afternoon. Maybe tomorrow?"
@@ -15139,6 +15165,7 @@
                 "minGroupsMatched": 2
               },
               "fallbackSkill": "writing",
+              "partnerSpeaker": "Omar",
               "partnerTurns": [
                 "Hi! It's Omar. What's the plan for Saturday?",
                 "A film? Yes, I'd love to. What time?"
@@ -15626,6 +15653,7 @@
                 "minGroupsMatched": 2
               },
               "fallbackSkill": "writing",
+              "partnerSpeaker": "Sara",
               "partnerTurns": [
                 "We're in the kitchen. What do we need?",
                 "Do you have any juice?"
@@ -15999,6 +16027,7 @@
                 "minGroupsMatched": 2
               },
               "fallbackSkill": "writing",
+              "partnerSpeaker": "Waiter",
               "partnerTurns": [
                 "Good evening. Are you ready to order?",
                 "And to drink?",
@@ -16189,6 +16218,7 @@
                 "minGroupsMatched": 2
               },
               "fallbackSkill": "writing",
+              "partnerSpeaker": "Waiter",
               "partnerTurns": [
                 "Here is your order: chicken and rice, and a tea.",
                 "Oh, I'm sorry. What did you order?"
@@ -16467,6 +16497,7 @@
                 "minGroupsMatched": 2
               },
               "fallbackSkill": "writing",
+              "partnerSpeaker": "Waiter",
               "partnerTurns": [
                 "Hello. What would you like?",
                 "Two cheese sandwiches. And to drink?"
@@ -16768,6 +16799,7 @@
                 "minGroupsMatched": 2
               },
               "fallbackSkill": "writing",
+              "partnerSpeaker": "Assistant",
               "partnerTurns": [
                 "Welcome! Can I help you?",
                 "The bag is twelve dollars."
@@ -16959,6 +16991,7 @@
                 "minGroupsMatched": 2
               },
               "fallbackSkill": "writing",
+              "partnerSpeaker": "Assistant",
               "partnerTurns": [
                 "Hello. Are you looking for something?",
                 "What size do you need?"
@@ -17132,6 +17165,7 @@
                 "minGroupsMatched": 2
               },
               "fallbackSkill": "writing",
+              "partnerSpeaker": "Assistant",
               "partnerTurns": [
                 "The blue one or the black one?",
                 "Yes, of course. The changing room is there. How is it?"
@@ -17307,6 +17341,7 @@
                 "minGroupsMatched": 2
               },
               "fallbackSkill": "writing",
+              "partnerSpeaker": "Assistant",
               "partnerTurns": [
                 "Is that everything?",
                 "That's fifteen dollars. Cash or card?"
@@ -17485,6 +17520,7 @@
                 "minGroupsMatched": 2
               },
               "fallbackSkill": "writing",
+              "partnerSpeaker": "Assistant",
               "partnerTurns": [
                 "Hello. How can I help you?",
                 "I'm sorry. Do you have the receipt?"
@@ -17771,6 +17807,7 @@
                 "minGroupsMatched": 2
               },
               "fallbackSkill": "writing",
+              "partnerSpeaker": "Assistant",
               "partnerTurns": [
                 "Hi. The blue shirt and the black trousers?",
                 "What sizes do you need?",
@@ -18269,6 +18306,7 @@
                 "minGroupsMatched": 2
               },
               "fallbackSkill": "writing",
+              "partnerSpeaker": "Visitor",
               "partnerTurns": [
                 "Excuse me, I'm new here.",
                 "The pharmacy? It's on this street."
@@ -18623,6 +18661,7 @@
                 "minGroupsMatched": 2
               },
               "fallbackSkill": "writing",
+              "partnerSpeaker": "Visitor",
               "partnerTurns": [
                 "Excuse me. How do I get to the station?",
                 "Thank you! And the library?"
@@ -19073,6 +19112,7 @@
                 "minGroupsMatched": 2
               },
               "fallbackSkill": "writing",
+              "partnerSpeaker": "Resident",
               "partnerTurns": ["Hello! You're at the station now, yes?"]
             },
             {
@@ -19554,6 +19594,7 @@
                 "minGroupsMatched": 2
               },
               "fallbackSkill": "writing",
+              "partnerSpeaker": "Clerk",
               "partnerTurns": [
                 "Good morning. Where to?",
                 "Single or return?",
@@ -19742,6 +19783,7 @@
                 "minGroupsMatched": 2
               },
               "fallbackSkill": "writing",
+              "partnerSpeaker": "Clerk",
               "partnerTurns": [
                 "Can I help you?",
                 "The next train leaves at nine fifteen."
@@ -20375,6 +20417,7 @@
                 "minGroupsMatched": 2
               },
               "fallbackSkill": "writing",
+              "partnerSpeaker": "Clerk",
               "partnerTurns": [
                 "Next, please. Where are you going?",
                 "A single to Central Station is four dollars."
@@ -21045,6 +21088,7 @@
                 "minGroupsMatched": 2
               },
               "fallbackSkill": "writing",
+              "partnerSpeaker": "Patient",
               "partnerTurns": [
                 "I don't feel well today.",
                 "Yes, I have a headache. What should I do?"
@@ -21230,6 +21274,7 @@
                 "minGroupsMatched": 2
               },
               "fallbackSkill": "writing",
+              "partnerSpeaker": "Receptionist",
               "partnerTurns": [
                 "Good morning. How can I help?",
                 "Please sit here and wait for the nurse."
@@ -21689,6 +21734,7 @@
                 "minGroupsMatched": 2
               },
               "fallbackSkill": "writing",
+              "partnerSpeaker": "Receptionist",
               "partnerTurns": [
                 "City Clinic, good morning.",
                 "I see. Is it for today?",
@@ -22373,6 +22419,7 @@
                 "minGroupsMatched": 2
               },
               "fallbackSkill": "writing",
+              "partnerSpeaker": "Ali",
               "partnerTurns": [
                 "I'm outside now. It's cold!",
                 "I'm wearing a jacket and a hat. And you?"
@@ -23030,6 +23077,7 @@
                 "minGroupsMatched": 2
               },
               "fallbackSkill": "writing",
+              "partnerSpeaker": "Maya",
               "partnerTurns": [
                 "Hi! Where are you all?",
                 "I'm coming now. It's windy outside."
@@ -23489,6 +23537,7 @@
                 "minGroupsMatched": 2
               },
               "fallbackSkill": "writing",
+              "partnerSpeaker": "Sara",
               "partnerTurns": [
                 "Hi! It's the weekend soon.",
                 "Are you going to visit your family?"
@@ -23668,6 +23717,7 @@
                 "minGroupsMatched": 2
               },
               "fallbackSkill": "writing",
+              "partnerSpeaker": "Maya",
               "partnerTurns": [
                 "Let's meet this week!",
                 "Saturday is good for me. Where?",
@@ -23844,6 +23894,7 @@
                 "minGroupsMatched": 2
               },
               "fallbackSkill": "writing",
+              "partnerSpeaker": "Ali",
               "partnerTurns": [
                 "Can we meet at five on Friday?",
                 "OK. What time is good for you?"
@@ -24318,6 +24369,7 @@
                 "minGroupsMatched": 2
               },
               "fallbackSkill": "writing",
+              "partnerSpeaker": "Sara",
               "partnerTurns": [
                 "Hi! Are we meeting this weekend?",
                 "River Park at four? Let me check."
@@ -26085,6 +26137,7 @@
         "accepted": [],
         "fallbackSkill": "writing",
         "fallbackCountsFor": "accessOnly",
+        "partnerSpeaker": "Sam",
         "partnerTurns": [
           "Hi! I'm Sam. Are you new here too?",
           "I'm from Canada, but I live in Erbil now.",
@@ -26213,6 +26266,7 @@
         "accepted": [],
         "fallbackSkill": "writing",
         "fallbackCountsFor": "accessOnly",
+        "partnerSpeaker": "Assistant",
         "partnerTurns": [
           "Hello. Can I help you?",
           "The blue rain jacket? Yes, twenty-four dollars.",
@@ -26299,6 +26353,7 @@
         "accepted": [],
         "fallbackSkill": "writing",
         "fallbackCountsFor": "accessOnly",
+        "partnerSpeaker": "Sam",
         "partnerTurns": [
           "Let's meet tomorrow! What would you like to do?",
           "The park at ten? Great.",
@@ -27171,6 +27226,7 @@
             "fallbackSkill": "writing",
             "fallbackCountsFor": "accessOnly",
             "assessmentMode": "secure",
+            "partnerSpeaker": "Examiner",
             "examinerTurns": [
               "Good morning.",
               "What time do you start your day?",
@@ -27214,6 +27270,7 @@
               "ticket",
               "meal"
             ],
+            "partnerSpeaker": "Examiner",
             "partnerTurns": [
               "Hello. Can I help you?",
               "Yes, of course.",

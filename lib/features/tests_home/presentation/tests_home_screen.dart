@@ -10,6 +10,7 @@ import '../../../core/l10n/generated/app_localizations.dart';
 import '../../../core/theme/app_tokens.dart';
 import '../../../core/theme/feedback_theme_extension.dart';
 import '../../../core/theme/overline_style.dart';
+import '../../../core/widgets/content_text.dart';
 import '../../../core/widgets/section_heading.dart';
 import '../../../core/widgets/status_pill.dart';
 import '../../../data/local/database.dart';
@@ -488,25 +489,25 @@ class _TestRow extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Align(
-                    alignment: AlignmentDirectional.centerStart,
-                    child: Text(
+                  if (titleAr == null)
+                    Text(
                       title,
-                      textDirection: titleAr == null ? null : TextDirection.ltr,
+                      style: theme.textTheme.titleMedium?.copyWith(
+                        color: tokens.textPrimary,
+                      ),
+                    )
+                  else
+                    ContentText.en(
+                      title,
                       style: theme.textTheme.titleMedium?.copyWith(
                         color: tokens.textPrimary,
                       ),
                     ),
-                  ),
                   if (titleAr != null)
-                    Align(
-                      alignment: AlignmentDirectional.centerStart,
-                      child: Text(
-                        titleAr!,
-                        textDirection: TextDirection.rtl,
-                        style: theme.textTheme.bodyMedium?.copyWith(
-                          color: tokens.textSecondary,
-                        ),
+                    ContentText.ar(
+                      titleAr!,
+                      style: theme.textTheme.bodyMedium?.copyWith(
+                        color: tokens.textSecondary,
                       ),
                     ),
                   const SizedBox(height: AppSpace.xxs),

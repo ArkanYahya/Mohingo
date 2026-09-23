@@ -3,23 +3,28 @@ import 'dart:math' show min;
 import '../../../../content/models/evaluation_spec.dart';
 import '../activity_submission.dart';
 import '../answer_matching.dart';
+import '../spoken_answer.dart';
+import '../spoken_numbers.dart';
 import 'evaluation_context.dart';
-
-final _numberPattern = RegExp(r'\d+(\.\d+)?');
 
 /// Grades [answer] against [spec]. Pure and synchronous — every spec type
 /// this dispatches to is fully offline. See docs/superpowers/specs/
 /// 2026-09-07-offline-answer-evaluation-design.md.
+///
+/// With [spoken], [answer] is a speech transcript and a keyword checklist
+/// compares it as it was said, not as the recogniser spelled it — see
+/// [SpokenAnswer] (ADR 0009). A typed answer is graded as written.
 ({ActivityCorrectness correctness, double? score}) evaluate(
   EvaluationSpec spec,
   String answer, {
   EvaluationContext context = const EvaluationContext.empty(),
+  SpokenAnswer? spoken,
 }) {
   return switch (spec) {
     NonEmptyEvaluationSpec() => _nonEmpty(answer),
     NumericRangeEvaluationSpec s => _numericRange(s, answer),
     LetterSequenceEvaluationSpec s => _letterSequence(s, answer, context),
-    KeywordChecklistEvaluationSpec s => _keywordChecklist(s, answer),
+    KeywordChecklistEvaluationSpec s => _keywordChecklist(s, answer, spoken),
   };
 }
 
@@ -69,11 +74,12 @@ String _formatNumber(double value) => value == value.roundToDouble()
   NumericRangeEvaluationSpec spec,
   String answer,
 ) {
-  final match = _numberPattern.firstMatch(answer);
-  if (match == null) {
+  // In digits or in words: a recogniser returns "25" for one speaker and
+  // "twenty-five" for the next, and a learner may type either.
+  final value = spokenNumberIn(answer);
+  if (value == null) {
     return (correctness: ActivityCorrectness.incorrect, score: 0.0);
   }
-  final value = double.parse(match.group(0)!);
   final isCorrect = value >= spec.min && value <= spec.max;
   return (
     correctness: isCorrect
@@ -153,13 +159,41 @@ final _whitespaceRun = RegExp(r'\s+');
 /// written in a non-Latin script, where Dart's ASCII `\b` would never
 /// match — still behaves like the old substring check rather than silently
 /// never matching.
-bool _mentionsKeyword(String answer, String keyword) {
+bool _mentionsKeyword(String answer, String keyword, SpokenAnswer? spoken) {
   final trimmed = keyword.trim();
   if (trimmed.isEmpty) return false;
+  if (spoken != null) return _mentionsSpokenKeyword(answer, trimmed, spoken);
   final body = trimmed.split(_whitespaceRun).map(RegExp.escape).join(r'\s+');
   final prefix = _leadingWordCharacter.hasMatch(trimmed) ? r'\b' : '';
   final suffix = _trailingWordCharacter.hasMatch(trimmed) ? r'\b' : '';
   return RegExp('$prefix$body$suffix', caseSensitive: false).hasMatch(answer);
+}
+
+/// The spoken form of [_mentionsKeyword]: the keyword's words, as said,
+/// appear in order somewhere in the transcript's words, each pair judged
+/// by [spokenWordsMatch] — so "sara" is met by "Sarah", "at seven" by
+/// "at 7", "two" by "to". Both sides go through the same normalisation
+/// (contractions spelled out, punctuation dropped), which is why a rubric's
+/// "she's my friend" also meets a transcript's "she is my friend".
+bool _mentionsSpokenKeyword(
+  String answer,
+  String keyword,
+  SpokenAnswer spoken,
+) {
+  final wanted = normalizedWords(keyword, spoken: true);
+  final heard = normalizedWords(answer, spoken: true);
+  if (wanted.isEmpty || heard.length < wanted.length) return false;
+  for (var start = 0; start + wanted.length <= heard.length; start++) {
+    var all = true;
+    for (var i = 0; i < wanted.length; i++) {
+      if (!spokenWordsMatch(wanted[i], heard[start + i], spoken)) {
+        all = false;
+        break;
+      }
+    }
+    if (all) return true;
+  }
+  return false;
 }
 
 /// The score is measured against the rubric's own pass bar
@@ -178,9 +212,10 @@ bool _mentionsKeyword(String answer, String keyword) {
 ({ActivityCorrectness correctness, double? score}) _keywordChecklist(
   KeywordChecklistEvaluationSpec spec,
   String answer,
+  SpokenAnswer? spoken,
 ) {
   final matchedGroups = spec.requiredGroups
-      .where((group) => group.any((kw) => _mentionsKeyword(answer, kw)))
+      .where((group) => group.any((kw) => _mentionsKeyword(answer, kw, spoken)))
       .length;
   final isCorrect = matchedGroups >= spec.minGroupsMatched;
   // Guards both a rubric with no groups at all and a non-positive pass bar

@@ -414,8 +414,8 @@ void main() {
       (const Locale('en'), 'LTR'),
       (const Locale('ar'), 'RTL'),
     ]) {
-      testWidgets('the Arabic prompt starts at the same edge as the English '
-          'prompt ($name layout)', (tester) async {
+      testWidgets('each prompt starts from its own edge — the English from '
+          'the left, the Arabic from the right ($name layout)', (tester) async {
         await _pump(
           tester,
           const ActivityChrome(
@@ -427,11 +427,11 @@ void main() {
         );
         final en = find.text('Choose the answer.');
         final ar = find.text('اختر الإجابة.');
-        if (locale.languageCode == 'ar') {
-          expect(tester.getTopRight(ar).dx, tester.getTopRight(en).dx);
-        } else {
-          expect(tester.getTopLeft(ar).dx, tester.getTopLeft(en).dx);
-        }
+        final question = tester.getRect(
+          find.ancestor(of: en, matching: find.byType(Column)).first,
+        );
+        expect(tester.getTopLeft(en).dx, question.left);
+        expect(tester.getTopRight(ar).dx, question.right);
       });
     }
   });

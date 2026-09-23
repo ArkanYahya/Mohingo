@@ -70,4 +70,32 @@ void main() {
       expect(Directionality.of(context), TextDirection.rtl);
     },
   );
+
+  testWidgets(
+    'under an Arabic locale the English prompt starts at the left edge of '
+    'the question and the Arabic prompt at its right edge — each language '
+    "from its own side, not both from the layout's start edge",
+    (tester) async {
+      const prompt = 'Ask where the person is from.';
+      const promptAr = 'اسأل الشخص من أين هو.';
+      await tester.pumpActivityView(
+        const ActivityChrome(
+          prompt: prompt,
+          promptAr: promptAr,
+          body: SizedBox.shrink(),
+        ),
+        locale: const Locale('ar'),
+      );
+
+      final question = tester.getRect(
+        find.ancestor(of: find.text(prompt), matching: find.byType(Column)),
+      );
+      final english = tester.getRect(find.text(prompt));
+      final arabic = tester.getRect(find.text(promptAr));
+      expect(english.left, question.left);
+      expect(english.right, lessThan(question.right));
+      expect(arabic.right, question.right);
+      expect(arabic.left, greaterThan(question.left));
+    },
+  );
 }

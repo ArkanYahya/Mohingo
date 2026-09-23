@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../core/l10n/generated/app_localizations.dart';
 import '../../../../core/theme/app_tokens.dart';
+import '../../../../core/widgets/content_text.dart';
 import '../../../speech/domain/audio_clip_index.dart';
 import '../../../speech/domain/text_to_speech_service.dart';
 import '../../../speech/providers/speech_providers.dart';
@@ -12,15 +13,23 @@ import '../../../speech/providers/tts_preferences_provider.dart';
 /// answers: each line in English, read aloud in order when the question
 /// opens (never in answer review — see [autoPlay]), with a button to hear
 /// them again. Spoken interaction means responding to someone; this is the
-/// someone. Shown in test mode too: it's the task's input, not its answer.
+/// someone, read in their own voice ([speaker]). Shown in test mode too:
+/// it's the task's input, not its answer.
 class ActivityPartnerTurnsCard extends ConsumerStatefulWidget {
   const ActivityPartnerTurnsCard({
     required this.turns,
+    required this.speaker,
     this.autoPlay = true,
     super.key,
   });
 
   final List<String> turns;
+
+  /// Whose voice the lines are read in: the task's `partnerSpeaker` — a
+  /// dialogue character or a role — or [kPartnerSpeaker] when it names
+  /// nobody. Anna's lines in a man's voice is what a learner heard before
+  /// tasks named their partner.
+  final String speaker;
 
   /// False on a review screen, which can show several at once and where
   /// nothing is being asked right now.
@@ -70,7 +79,7 @@ class _ActivityPartnerTurnsCardState
         localeCode: 'en',
         rate: rate,
         pitch: pitch,
-        speaker: kPartnerSpeaker,
+        speaker: widget.speaker,
       );
     }
     if (mounted && token == _playToken) setState(() => _playing = false);
@@ -117,14 +126,10 @@ class _ActivityPartnerTurnsCardState
               ],
             ),
             for (final turn in widget.turns) ...[
-              Align(
-                alignment: AlignmentDirectional.centerStart,
-                child: Text(
-                  turn,
-                  textDirection: TextDirection.ltr,
-                  style: theme.textTheme.bodyLarge?.copyWith(
-                    color: tokens.textPrimary,
-                  ),
+              ContentText.en(
+                turn,
+                style: theme.textTheme.bodyLarge?.copyWith(
+                  color: tokens.textPrimary,
                 ),
               ),
               const SizedBox(height: AppSpace.xxs),

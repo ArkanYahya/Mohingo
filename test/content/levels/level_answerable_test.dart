@@ -1,7 +1,10 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mohingo/content/models/activity.dart';
 import 'package:mohingo/content/models/domain_definitions.dart';
+import 'package:mohingo/features/activity_engine/domain/activity_submission.dart';
+import 'package:mohingo/features/activity_engine/domain/evaluation/evaluator.dart';
 
+import 'level_capstone_checks.dart';
 import 'level_gate_config.dart';
 
 /// Ported from `a2_answerable_test.dart`, which held these rules as
@@ -274,6 +277,122 @@ void main() {
             );
           }
         }
+      });
+
+      test("an interaction prompt tells the learner what to do; it never "
+          "restates the partner's line", () {
+        // The question frame shows the prompt as its title and the partner's
+        // lines on the card under it, read aloud. A prompt that is the
+        // partner's line — "How old are you?" over a card saying "How old
+        // are you?" — puts the same words on screen twice and leaves the
+        // learner with no instruction; "Daniel: Hi. I'm Daniel." is the same
+        // fault with a name in front, and a prompt that quotes the line
+        // ("Answer the question: Is this your book?") repeats it too.
+        //
+        // The comparison is sentence by sentence, on words alone: a prompt
+        // sentence that is a partner sentence, or that a partner sentence
+        // contains ("How old are you?" in "And how old are you?"). Sharing
+        // words mid-sentence is not restating — "Buy a single or return
+        // ticket" is an instruction even though the clerk asks "Single or
+        // return?" — so a contained sentence must be one the learner would
+        // read as the same line: three words or more. Capstone tasks are
+        // held to it as well.
+        final token = RegExp(r"[a-z0-9']+");
+        List<String> sentences(String value) => [
+          for (final part in value.toLowerCase().split(RegExp(r'[.?!:;]')))
+            if (token.allMatches(part).isNotEmpty)
+              token.allMatches(part).map((m) => m[0]!).join(' '),
+        ];
+        final offenders = <String>[];
+        void check(Activity a, String where) {
+          if (a is! SpeakActivity || a.partnerTurns.isEmpty) return;
+          final promptSentences = sentences(a.prompt);
+          for (final turn in a.partnerTurns) {
+            final restated = sentences(turn).any(
+              (line) => promptSentences.any(
+                (p) =>
+                    p == line || (p.split(' ').length >= 3 && line.contains(p)),
+              ),
+            );
+            if (restated) {
+              offenders.add('$where ${a.id}: "${a.prompt}" restates "$turn"');
+            }
+          }
+        }
+
+        for (final unit in gate.finishedUnits()) {
+          for (final a in activitiesOf(unit)) {
+            check(a, unit.id);
+          }
+        }
+        for (final e in capstoneActivities(gate.bundle())) {
+          check(e.activity, e.where);
+        }
+        expect(offenders, isEmpty, reason: offenders.join('\n'));
+      });
+
+      test('every interaction task names its partner, so the lines are read '
+          "in that person's voice", () {
+        // The partner card reads its lines in the voice of `partnerSpeaker`
+        // — a dialogue character (Anna), or a role (Waiter, Receptionist,
+        // Examiner) — and without one, in a single fallback voice that read
+        // Anna's line as a man. A learner heard that. Naming the partner is
+        // part of writing the task; the cast (tool/audio/cast.json) gives
+        // each label its voice, and the audio gate then wants a clip in it.
+        final missing = <String>[];
+        void check(Activity a, String where) {
+          if (a is! SpeakActivity || a.partnerTurns.isEmpty) return;
+          if (a.partnerSpeaker == null) {
+            missing.add(
+              '$where ${a.id} has partner turns but no partnerSpeaker',
+            );
+          }
+        }
+
+        for (final unit in gate.finishedUnits()) {
+          for (final a in activitiesOf(unit)) {
+            check(a, unit.id);
+          }
+        }
+        for (final e in capstoneActivities(gate.bundle())) {
+          check(e.activity, e.where);
+        }
+        expect(missing, isEmpty, reason: missing.join('\n'));
+      });
+
+      test("a task's model answer passes its own rubric", () {
+        // A speak or write task may carry both an `accepted` list and a
+        // structured rubric. The rubric grades; the accepted list is the
+        // model answer shown after a miss (until 2026-09-23 the app graded
+        // by the list and ignored the rubric, so a learner who said what
+        // the rubric asked for, in other words, was marked wrong). A model
+        // answer the task's own rubric would fail is a rubric that cannot
+        // be meant — an author who wrote both wrote one of them wrong.
+        final failing = <String>[];
+        void check(Activity a, String where) {
+          final (accepted, spec) = switch (a) {
+            SpeakActivity s => (s.accepted, s.evaluation),
+            WriteActivity w => (w.accepted, w.evaluation),
+            _ => (const <String>[], null),
+          };
+          if (spec == null) return;
+          for (final answer in accepted) {
+            if (evaluate(spec, answer).correctness !=
+                ActivityCorrectness.correct) {
+              failing.add('$where ${a.id}: "$answer" fails its own rubric');
+            }
+          }
+        }
+
+        for (final unit in gate.finishedUnits()) {
+          for (final a in activitiesOf(unit)) {
+            check(a, unit.id);
+          }
+        }
+        for (final e in capstoneActivities(gate.bundle())) {
+          check(e.activity, e.where);
+        }
+        expect(failing, isEmpty, reason: failing.join('\n'));
       });
 
       test('every word a lesson lists actually appears in that lesson', () {

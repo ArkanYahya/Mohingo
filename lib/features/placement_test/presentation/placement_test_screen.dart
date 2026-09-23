@@ -11,6 +11,7 @@ import '../../../core/l10n/generated/app_localizations.dart';
 import '../../../core/l10n/skill_label.dart';
 import '../../../core/theme/app_tokens.dart';
 import '../../../core/theme/overline_style.dart';
+import '../../../core/widgets/content_text.dart';
 import '../../../core/widgets/section_heading.dart';
 import '../../activity_engine/domain/activity_submission.dart';
 import '../../activity_engine/domain/evidence_skill_resolver.dart';
@@ -27,8 +28,8 @@ import '../../tests_home/presentation/widgets/test_question_frame.dart';
 import '../../tests_home/presentation/widgets/test_result_view.dart';
 import '../../tests_home/providers/tests_home_providers.dart';
 import '../domain/placement_classifier.dart';
-import '../domain/placement_outcome.dart';
 import '../domain/placement_item_sampler.dart';
+import '../domain/placement_outcome.dart';
 import '../domain/placement_plan.dart';
 import '../providers/placement_providers.dart';
 
@@ -756,24 +757,16 @@ class _ResultView extends ConsumerWidget {
                     style: overlineStyle(context, color: tokens.primaryInk),
                   ),
                   const SizedBox(height: AppSpace.xxs),
-                  Align(
-                    alignment: AlignmentDirectional.centerStart,
-                    child: Text(
-                      recommendation.unit.title,
-                      textDirection: TextDirection.ltr,
-                      style: theme.textTheme.titleLarge?.copyWith(
-                        color: tokens.textPrimary,
-                      ),
+                  ContentText.en(
+                    recommendation.unit.title,
+                    style: theme.textTheme.titleLarge?.copyWith(
+                      color: tokens.textPrimary,
                     ),
                   ),
-                  Align(
-                    alignment: AlignmentDirectional.centerStart,
-                    child: Text(
-                      recommendation.unit.titleAr,
-                      textDirection: TextDirection.rtl,
-                      style: theme.textTheme.bodyMedium?.copyWith(
-                        color: tokens.textSecondary,
-                      ),
+                  ContentText.ar(
+                    recommendation.unit.titleAr,
+                    style: theme.textTheme.bodyMedium?.copyWith(
+                      color: tokens.textSecondary,
                     ),
                   ),
                   if (recommendation.unit.estimatedMinutes.length == 2) ...[

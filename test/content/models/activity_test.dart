@@ -95,5 +95,27 @@ void main() {
         isEmpty,
       );
     });
+
+    test("a speaking task's partner is whoever partnerSpeaker names — the "
+        'voice its lines are read in — or nobody in particular', () {
+      final anna = Activity.fromJson(
+        speak({
+          'partnerTurns': ["Hello. I'm Anna."],
+          'partnerSpeaker': 'Anna',
+        }),
+      ) as SpeakActivity;
+      expect(anna.partnerSpeaker, 'Anna');
+
+      expect(
+        (Activity.fromJson(
+          speak({'partnerSpeaker': '  '}),
+        ) as SpeakActivity).partnerSpeaker,
+        isNull,
+      );
+      expect(
+        (Activity.fromJson(speak({})) as SpeakActivity).partnerSpeaker,
+        isNull,
+      );
+    });
   });
 }

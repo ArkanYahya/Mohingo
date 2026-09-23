@@ -41,8 +41,11 @@ List<Speakable> speakableStringsOf(CourseBundle bundle) {
       add(a.audioTranscript, kTeacherRole, '$where/${a.id}.audioTranscript');
     }
     if (a is SpeakActivity) {
+      // In the voice of whoever the task says the partner is, or the one
+      // generic partner voice when it says nobody.
+      final role = a.partnerSpeaker ?? kPartnerSpeaker;
       for (final (i, turn) in a.partnerTurns.indexed) {
-        add(turn, kPartnerSpeaker, '$where/${a.id}.partnerTurns[$i]');
+        add(turn, role, '$where/${a.id}.partnerTurns[$i]');
       }
     }
   }

@@ -7,6 +7,22 @@ RULES_VERSION = 1
 
 _SLOT_OR_ELLIPSIS = re.compile(r"\{[^}]+\}|\.\.\.|…")
 _LABEL = re.compile(r"(?:^|(?<=\s))([A-Z][A-Za-z']{1,20}):\s")
+# A name spelled out, as the bundle writes it: capital letters joined by hyphens
+# ("S-A-R-A", "N-A-D-I-A"). Lower-case hyphenated words ("well-known",
+# "twenty-five") are ordinary words and are left alone.
+_SPELLING = re.compile(r"\b[A-Z](?:-[A-Z])+\b\.?")
+
+
+def spell_out(text: str) -> str:
+    """'S-A-R-A' -> 'S. A. R. A.'; 'O-M-A-R.' -> 'O. M. A. R.'
+
+    Given the hyphenated run, the phonemizer reads the letters as one word —
+    the A's become a schwa and nothing separates them, so "S-A-R-A" came out
+    as something like "s-uh-ar-ay". Written as "S. A. R. A." each capital is
+    read by its letter name (A -> /eɪ/, S -> /ɛs/) with a short pause after
+    it, which is how a name is dictated.
+    """
+    return _SPELLING.sub(lambda m: ". ".join(m.group(0).rstrip(".").split("-")) + ".", text)
 
 
 def segments_for(text: str) -> list[str]:
@@ -16,7 +32,7 @@ def segments_for(text: str) -> list[str]:
     Pieces are joined with a pause by the engine. Kokoro would otherwise read
     "/" as "slash" and turn a bare "..." into noise.
     """
-    text = text.strip()
+    text = spell_out(text.strip())
     if " / " not in text and not _SLOT_OR_ELLIPSIS.search(text):
         return [text]
     parts = re.split(r"\s*/\s*", text) if " / " in text else [text]

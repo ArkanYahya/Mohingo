@@ -10,6 +10,7 @@ import '../../../core/theme/app_tokens.dart';
 import '../../../core/theme/feedback_theme_extension.dart';
 import '../../../core/theme/gamification_theme_extension.dart';
 import '../../../core/theme/overline_style.dart';
+import '../../../core/widgets/content_text.dart';
 import '../../../core/widgets/status_indicator.dart';
 import '../../../data/local/database.dart';
 import '../../progress/providers/current_learner_provider.dart';
@@ -191,24 +192,16 @@ class _UnitHeader extends StatelessWidget {
           style: overlineStyle(context, color: tokens.textSecondary),
         ),
         const SizedBox(height: AppSpace.xxs),
-        Align(
-          alignment: AlignmentDirectional.centerStart,
-          child: Text(
-            unit.title,
-            textDirection: TextDirection.ltr,
-            style: theme.textTheme.headlineSmall?.copyWith(
-              color: tokens.textPrimary,
-            ),
+        ContentText.en(
+          unit.title,
+          style: theme.textTheme.headlineSmall?.copyWith(
+            color: tokens.textPrimary,
           ),
         ),
-        Align(
-          alignment: AlignmentDirectional.centerStart,
-          child: Text(
-            unit.titleAr,
-            textDirection: TextDirection.rtl,
-            style: theme.textTheme.bodyLarge?.copyWith(
-              color: tokens.textSecondary,
-            ),
+        ContentText.ar(
+          unit.titleAr,
+          style: theme.textTheme.bodyLarge?.copyWith(
+            color: tokens.textSecondary,
           ),
         ),
         const SizedBox(height: AppSpace.xs),
@@ -401,22 +394,14 @@ class _LessonTitle extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Align(
-          alignment: AlignmentDirectional.centerStart,
-          child: Text(
-            lesson.title,
-            textDirection: TextDirection.ltr,
-            style: titleStyle?.copyWith(color: tokens.textPrimary),
-          ),
+        ContentText.en(
+          lesson.title,
+          style: titleStyle?.copyWith(color: tokens.textPrimary),
         ),
-        Align(
-          alignment: AlignmentDirectional.centerStart,
-          child: Text(
-            lesson.titleAr,
-            textDirection: TextDirection.rtl,
-            style: theme.textTheme.bodyMedium?.copyWith(
-              color: tokens.textSecondary,
-            ),
+        ContentText.ar(
+          lesson.titleAr,
+          style: theme.textTheme.bodyMedium?.copyWith(
+            color: tokens.textSecondary,
           ),
         ),
       ],

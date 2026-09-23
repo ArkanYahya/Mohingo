@@ -1,3 +1,5 @@
+import 'spoken_answer.dart';
+
 /// Whether [given] (a learner's typed or transcribed answer) matches
 /// [accepted] (one entry from an activity's `accepted` list) closely enough
 /// to count as correct.
@@ -10,14 +12,38 @@
 /// where the shipped content's `accepted` answers are written
 /// hyphen-joined (e.g. `"A-L-I"`) but a spoken or typed answer commonly
 /// comes back space-separated ("a l i") or run together ("ali").
-bool answersMatch(String accepted, String given) {
+///
+/// With [spoken], [given] is a speech transcript and is compared word by
+/// word as it was said rather than as the recogniser spelled it — see
+/// [SpokenAnswer] for exactly what that forgives.
+bool answersMatch(String accepted, String given, {SpokenAnswer? spoken}) {
   if (_normalize(accepted) == _normalize(given)) return true;
 
   if (_isLetterSpellingAnswer(accepted)) {
     return lettersOnlyMatch(accepted, given);
   }
 
+  if (spoken != null) {
+    final expected = normalizedWords(accepted, spoken: true);
+    final heard = normalizedWords(given, spoken: true);
+    if (expected.length != heard.length) return false;
+    for (var i = 0; i < expected.length; i++) {
+      if (!spokenWordsMatch(expected[i], heard[i], spoken)) return false;
+    }
+    return expected.isNotEmpty;
+  }
+
   return false;
+}
+
+/// [text] as the words [answersMatch] compares: lower-case, contractions
+/// spelled out, punctuation gone. With [spoken], digits become the words
+/// they are said as, so a transcript's "at 7" is a rubric's "at seven".
+List<String> normalizedWords(String text, {bool spoken = false}) {
+  final normalized = _normalize(text);
+  if (normalized.isEmpty) return const [];
+  final words = normalized.split(' ');
+  return spoken ? withNumbersAsWords(words) : words;
 }
 
 final _curlyApostrophes = RegExp('[‘’ʼ]');

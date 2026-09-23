@@ -4,6 +4,7 @@ import '../../content/index/course_content_index.dart';
 import '../../content/models/curriculum_structure.dart';
 import '../l10n/generated/app_localizations.dart';
 import '../theme/app_tokens.dart';
+import './content_text.dart';
 import 'hairline_card.dart';
 
 /// One hairline card listing [lessons] — each its English title, Arabic,
@@ -39,24 +40,16 @@ class LessonReferenceList extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Align(
-              alignment: AlignmentDirectional.centerStart,
-              child: Text(
-                lesson.title,
-                textDirection: TextDirection.ltr,
-                style: theme.textTheme.titleMedium?.copyWith(
-                  color: tokens.textPrimary,
-                ),
+            ContentText.en(
+              lesson.title,
+              style: theme.textTheme.titleMedium?.copyWith(
+                color: tokens.textPrimary,
               ),
             ),
-            Align(
-              alignment: AlignmentDirectional.centerStart,
-              child: Text(
-                lesson.titleAr,
-                textDirection: TextDirection.rtl,
-                style: theme.textTheme.bodyMedium?.copyWith(
-                  color: tokens.textSecondary,
-                ),
+            ContentText.ar(
+              lesson.titleAr,
+              style: theme.textTheme.bodyMedium?.copyWith(
+                color: tokens.textSecondary,
               ),
             ),
             Text(

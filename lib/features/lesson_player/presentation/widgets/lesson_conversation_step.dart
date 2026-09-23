@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../content/models/curriculum_structure.dart';
 import '../../../../core/l10n/generated/app_localizations.dart';
 import '../../../../core/theme/app_tokens.dart';
+import '../../../../core/widgets/content_text.dart';
 import '../../../speech/domain/text_to_speech_service.dart';
 import '../../../speech/providers/speech_providers.dart';
 import '../../../speech/providers/tts_preferences_provider.dart';
@@ -16,7 +18,9 @@ import 'lesson_intro_chrome.dart';
 /// second at the end — each with its speaker, its Arabic (behind a switch,
 /// on by default) and a tap to hear it. The whole conversation reads aloud
 /// once, line by line, when the screen opens; the play button replays or
-/// stops it, and the line being read is outlined.
+/// stops it, and the line being read is outlined. The page scrolls to keep
+/// that line in view: a conversation runs past a phone screen, and the
+/// learner reads along with the voice.
 class LessonConversationStep extends ConsumerStatefulWidget {
   const LessonConversationStep({
     required this.overline,
@@ -53,6 +57,21 @@ class _LessonConversationStepState
   /// Bumped to cancel whatever is playing — a newer request wins.
   int _playToken = 0;
 
+  final _scroll = ScrollController();
+
+  /// One key per line, to find the bubble being read and bring it on screen.
+  late final List<GlobalKey> _lineKeys = [
+    for (final _ in widget.lines) GlobalKey(),
+  ];
+
+  /// True while the learner's own scroll (a drag, or the fling after it) is
+  /// in progress: a reveal never fights a finger.
+  bool _dragging = false;
+
+  /// How much of the page past the line comes into view with it, so the
+  /// learner can see the next line coming.
+  static const _revealMargin = AppSpace.lg;
+
   /// Distinct speakers in order of first appearance: the first gets the
   /// start edge, the second the end edge.
   late final List<String> _speakers = {
@@ -71,6 +90,7 @@ class _LessonConversationStepState
   void dispose() {
     if (_playingIndex != null) _tts.stop();
     _playToken++;
+    _scroll.dispose();
     super.dispose();
   }
 
@@ -83,6 +103,9 @@ class _LessonConversationStepState
     for (var i = from; i < to; i++) {
       if (!mounted || token != _playToken) return;
       setState(() => _playingIndex = i);
+      // After the frame that outlines the line, so the layout it scrolls
+      // to is the one on screen.
+      WidgetsBinding.instance.addPostFrameCallback((_) => _reveal(i));
       await _tts.speak(
         widget.lines[i].en,
         localeCode: 'en',
@@ -100,6 +123,44 @@ class _LessonConversationStepState
     setState(() => _playingIndex = null);
   }
 
+  /// Scrolls just enough for line [index] to be fully on screen — down when
+  /// it is below the fold, up when the learner replays from the top — and
+  /// not at all when it already is, or while the learner is scrolling.
+  void _reveal(int index) {
+    if (!mounted || _dragging || !_scroll.hasClients) return;
+    final object = _lineKeys[index].currentContext?.findRenderObject();
+    final viewport = object == null
+        ? null
+        : RenderAbstractViewport.maybeOf(object);
+    if (object == null || viewport == null) return;
+    final position = _scroll.position;
+    // The offsets at which the line's top meets the viewport's top, and its
+    // bottom the viewport's bottom.
+    final top = viewport.getOffsetToReveal(object, 0).offset;
+    final bottom = viewport.getOffsetToReveal(object, 1).offset;
+    final double target;
+    if (bottom > position.pixels) {
+      target = bottom + _revealMargin;
+    } else if (top < position.pixels) {
+      target = top - _revealMargin;
+    } else {
+      return;
+    }
+    final clamped = target.clamp(
+      position.minScrollExtent,
+      position.maxScrollExtent,
+    );
+    if (MediaQuery.maybeDisableAnimationsOf(context) ?? false) {
+      position.jumpTo(clamped);
+    } else {
+      position.animateTo(
+        clamped,
+        duration: const Duration(milliseconds: 350),
+        curve: Curves.easeOutCubic,
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -114,167 +175,181 @@ class _LessonConversationStepState
     return Column(
       children: [
         Expanded(
-          child: SingleChildScrollView(
-            padding: const EdgeInsets.fromLTRB(
-              AppSpace.md,
-              AppSpace.xs,
-              AppSpace.md,
-              AppSpace.lg,
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                LessonIntroHeader(
-                  overline: widget.overline,
-                  title: widget.title,
-                  titleAr: widget.titleAr,
-                ),
-                const SizedBox(height: AppSpace.md),
-                Material(
-                  color: tokens.card,
-                  clipBehavior: Clip.antiAlias,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(AppRadius.card),
-                    side: BorderSide(color: tokens.border),
+          child: NotificationListener<ScrollNotification>(
+            onNotification: (notification) {
+              if (notification is ScrollStartNotification) {
+                _dragging = notification.dragDetails != null;
+              } else if (notification is ScrollEndNotification) {
+                _dragging = false;
+              }
+              return false;
+            },
+            child: SingleChildScrollView(
+              controller: _scroll,
+              padding: const EdgeInsets.fromLTRB(
+                AppSpace.md,
+                AppSpace.xs,
+                AppSpace.md,
+                AppSpace.lg,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  LessonIntroHeader(
+                    overline: widget.overline,
+                    title: widget.title,
+                    titleAr: widget.titleAr,
                   ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                          AppSpace.md,
-                          AppSpace.sm,
-                          AppSpace.sm,
-                          AppSpace.sm,
-                        ),
-                        child: Row(
-                          children: [
-                            // Decorative, so they give way first: on a
-                            // narrow screen or at large text the title
-                            // keeps the room instead of breaking mid-word.
-                            if (roomy) ...[
-                              _SpeakerAvatars(speakers: _speakers),
-                              const SizedBox(width: AppSpace.sm),
-                            ],
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    l10n.lessonIntroListenTitle,
-                                    style: theme.textTheme.titleSmall?.copyWith(
-                                      color: tokens.textPrimary,
+                  const SizedBox(height: AppSpace.md),
+                  Material(
+                    color: tokens.card,
+                    clipBehavior: Clip.antiAlias,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(AppRadius.card),
+                      side: BorderSide(color: tokens.border),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                            AppSpace.md,
+                            AppSpace.sm,
+                            AppSpace.sm,
+                            AppSpace.sm,
+                          ),
+                          child: Row(
+                            children: [
+                              // Decorative, so they give way first: on a
+                              // narrow screen or at large text the title
+                              // keeps the room instead of breaking mid-word.
+                              if (roomy) ...[
+                                _SpeakerAvatars(speakers: _speakers),
+                                const SizedBox(width: AppSpace.sm),
+                              ],
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      l10n.lessonIntroListenTitle,
+                                      style: theme.textTheme.titleSmall
+                                          ?.copyWith(color: tokens.textPrimary),
                                     ),
-                                  ),
-                                  const SizedBox(height: 2),
-                                  Text(
-                                    l10n.lessonIntroListenHint,
-                                    style: theme.textTheme.bodySmall?.copyWith(
-                                      color: tokens.textSecondary,
-                                    ),
-                                  ),
-                                  if (widget.sceneAr != null) ...[
                                     const SizedBox(height: 2),
                                     Text(
-                                      widget.sceneAr!,
-                                      textDirection: TextDirection.rtl,
+                                      l10n.lessonIntroListenHint,
                                       style: theme.textTheme.bodySmall
                                           ?.copyWith(
                                             color: tokens.textSecondary,
                                           ),
                                     ),
+                                    if (widget.sceneAr != null) ...[
+                                      const SizedBox(height: 2),
+                                      ContentText.ar(
+                                        widget.sceneAr!,
+                                        style: theme.textTheme.bodySmall
+                                            ?.copyWith(
+                                              color: tokens.textSecondary,
+                                            ),
+                                      ),
+                                    ],
                                   ],
+                                ),
+                              ),
+                              const SizedBox(width: AppSpace.xs),
+                              IconButton.filled(
+                                onPressed: playing
+                                    ? _stop
+                                    : () => _play(
+                                        from: 0,
+                                        to: widget.lines.length,
+                                      ),
+                                tooltip: playing
+                                    ? l10n.lessonIntroStopConversation
+                                    : l10n.lessonIntroPlayConversation,
+                                style: IconButton.styleFrom(
+                                  backgroundColor: tokens.primaryInk,
+                                  foregroundColor: tokens.onPrimaryInk,
+                                  fixedSize: const Size.square(48),
+                                ),
+                                icon: Icon(
+                                  playing
+                                      ? Icons.stop_rounded
+                                      : Icons.play_arrow_rounded,
+                                  size: 28,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Divider(height: 1, color: tokens.border),
+                        MergeSemantics(
+                          child: InkWell(
+                            onTap: () =>
+                                setState(() => _showArabic = !_showArabic),
+                            child: Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                AppSpace.md,
+                                AppSpace.xxs,
+                                AppSpace.sm,
+                                AppSpace.xxs,
+                              ),
+                              child: Row(
+                                children: [
+                                  Icon(
+                                    Icons.translate_rounded,
+                                    size: 20,
+                                    color: tokens.textSecondary,
+                                  ),
+                                  const SizedBox(width: AppSpace.sm),
+                                  Expanded(
+                                    child: Text(
+                                      l10n.lessonIntroArabicToggle,
+                                      style: theme.textTheme.bodyMedium
+                                          ?.copyWith(
+                                            color: tokens.textPrimary,
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                    ),
+                                  ),
+                                  Switch(
+                                    value: _showArabic,
+                                    onChanged: (value) =>
+                                        setState(() => _showArabic = value),
+                                  ),
                                 ],
                               ),
                             ),
-                            const SizedBox(width: AppSpace.xs),
-                            IconButton.filled(
-                              onPressed: playing
-                                  ? _stop
-                                  : () =>
-                                        _play(from: 0, to: widget.lines.length),
-                              tooltip: playing
-                                  ? l10n.lessonIntroStopConversation
-                                  : l10n.lessonIntroPlayConversation,
-                              style: IconButton.styleFrom(
-                                backgroundColor: tokens.primaryInk,
-                                foregroundColor: tokens.onPrimaryInk,
-                                fixedSize: const Size.square(48),
-                              ),
-                              icon: Icon(
-                                playing
-                                    ? Icons.stop_rounded
-                                    : Icons.play_arrow_rounded,
-                                size: 28,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Divider(height: 1, color: tokens.border),
-                      MergeSemantics(
-                        child: InkWell(
-                          onTap: () =>
-                              setState(() => _showArabic = !_showArabic),
-                          child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                              AppSpace.md,
-                              AppSpace.xxs,
-                              AppSpace.sm,
-                              AppSpace.xxs,
-                            ),
-                            child: Row(
-                              children: [
-                                Icon(
-                                  Icons.translate_rounded,
-                                  size: 20,
-                                  color: tokens.textSecondary,
-                                ),
-                                const SizedBox(width: AppSpace.sm),
-                                Expanded(
-                                  child: Text(
-                                    l10n.lessonIntroArabicToggle,
-                                    style: theme.textTheme.bodyMedium?.copyWith(
-                                      color: tokens.textPrimary,
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  ),
-                                ),
-                                Switch(
-                                  value: _showArabic,
-                                  onChanged: (value) =>
-                                      setState(() => _showArabic = value),
-                                ),
-                              ],
-                            ),
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                ),
-                const SizedBox(height: AppSpace.md),
-                LayoutBuilder(
-                  builder: (context, constraints) => Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      for (var i = 0; i < widget.lines.length; i++) ...[
-                        if (i > 0) const SizedBox(height: AppSpace.sm),
-                        _DialogueBubble(
-                          line: widget.lines[i],
-                          atEnd: _speakers
-                              .indexOf(widget.lines[i].speaker)
-                              .isOdd,
-                          showArabic: _showArabic,
-                          playing: _playingIndex == i,
-                          maxWidth: constraints.maxWidth * 0.84,
-                          onTap: () => _play(from: i, to: i + 1),
-                        ),
                       ],
-                    ],
+                    ),
                   ),
-                ),
-              ],
+                  const SizedBox(height: AppSpace.md),
+                  LayoutBuilder(
+                    builder: (context, constraints) => Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        for (var i = 0; i < widget.lines.length; i++) ...[
+                          if (i > 0) const SizedBox(height: AppSpace.sm),
+                          _DialogueBubble(
+                            key: _lineKeys[i],
+                            line: widget.lines[i],
+                            atEnd: _speakers
+                                .indexOf(widget.lines[i].speaker)
+                                .isOdd,
+                            showArabic: _showArabic,
+                            playing: _playingIndex == i,
+                            maxWidth: constraints.maxWidth * 0.84,
+                            onTap: () => _play(from: i, to: i + 1),
+                          ),
+                        ],
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
@@ -336,9 +411,11 @@ class _SpeakerAvatars extends StatelessWidget {
 }
 
 /// One line of the conversation as a chat bubble: speaker above, the
-/// English line (LTR) and, when shown, its Arabic (RTL) inside. The first
-/// speaker's lines sit at the start edge on a card; the second speaker's at
-/// the end edge on an ink tint. Tap to hear the line.
+/// English line and, when shown, its Arabic inside — the bubble hugs its
+/// longest line, and within it each language starts from its own edge
+/// ([ContentText]). The first speaker's lines sit at the start edge on a
+/// card; the second speaker's at the end edge on an ink tint. Tap to hear
+/// the line.
 class _DialogueBubble extends StatelessWidget {
   const _DialogueBubble({
     required this.line,
@@ -347,6 +424,7 @@ class _DialogueBubble extends StatelessWidget {
     required this.playing,
     required this.maxWidth,
     required this.onTap,
+    super.key,
   });
 
   final EncounterDialogueLine line;
@@ -425,28 +503,28 @@ class _DialogueBubble extends StatelessWidget {
                     horizontal: AppSpace.sm + 2,
                     vertical: AppSpace.xs + 2,
                   ),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        line.en,
-                        textDirection: TextDirection.ltr,
-                        style: theme.textTheme.bodyLarge?.copyWith(
-                          color: tokens.textPrimary,
-                        ),
-                      ),
-                      if (showArabic) ...[
-                        const SizedBox(height: 2),
-                        Text(
-                          line.ar,
-                          textDirection: TextDirection.rtl,
-                          style: theme.textTheme.bodyMedium?.copyWith(
-                            color: tokens.textSecondary,
+                  child: IntrinsicWidth(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        ContentText.en(
+                          line.en,
+                          style: theme.textTheme.bodyLarge?.copyWith(
+                            color: tokens.textPrimary,
                           ),
                         ),
+                        if (showArabic) ...[
+                          const SizedBox(height: 2),
+                          ContentText.ar(
+                            line.ar,
+                            style: theme.textTheme.bodyMedium?.copyWith(
+                              color: tokens.textSecondary,
+                            ),
+                          ),
+                        ],
                       ],
-                    ],
+                    ),
                   ),
                 ),
               ),

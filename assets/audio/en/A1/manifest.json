@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
  "levelId": "a1",
- "contentVersion": "A1-COMPLETE-2026.09.22",
- "generatedAt": "2026-09-22T13:17:46Z",
+ "contentVersion": "A1-COMPLETE-2026.09.22-3",
+ "generatedAt": "2026-09-22T20:56:28Z",
  "engine": {
   "name": "kokoro-onnx/kokoro-v1.0",
   "speed": 1.0
@@ -43,7 +43,7 @@
    "_": "clips/d9d76b80a1143461.m4a"
   },
   "020bbd64975e461d": {
-   "partner": "clips/56c00235b5bfb606.m4a"
+   "Omar": "clips/56c00235b5bfb606.m4a"
   },
   "0230d2b7a4b3d58e": {
    "_": "clips/a36fc36021c09eac.m4a"
@@ -55,7 +55,7 @@
    "Sara": "clips/c5a7c37ad07f21f6.m4a"
   },
   "02f288fd14d9a9f0": {
-   "partner": "clips/ca88350636f4694d.m4a"
+   "Sara": "clips/843d7ed90a4228da.m4a"
   },
   "036881ac18fe8aa3": {
    "_": "clips/18812a7419647bb6.m4a"
@@ -125,7 +125,7 @@
    "_": "clips/449e8013ea4df8a8.m4a"
   },
   "07da74aabb005d7a": {
-   "partner": "clips/2978a08a45fe589d.m4a"
+   "Receptionist": "clips/8e42cc79d0212182.m4a"
   },
   "07ef879175424a11": {
    "_": "clips/69322f707b4438d1.m4a"
@@ -149,7 +149,7 @@
    "_": "clips/98a1d360086f11f6.m4a"
   },
   "096c5f4193467761": {
-   "partner": "clips/9dd7117afc0f98e8.m4a"
+   "Receptionist": "clips/62f54cbc0d1c0bfa.m4a"
   },
   "097f7243d45decd7": {
    "_": "clips/e0fca398e605e4ad.m4a"
@@ -209,7 +209,7 @@
    "_": "clips/04561898b1c4bef6.m4a"
   },
   "0b8dd0154d478fde": {
-   "partner": "clips/5e1cf85f57f58184.m4a"
+   "Assistant": "clips/c9daa50cc6da1875.m4a"
   },
   "0bca7fe652a0c3b3": {
    "_": "clips/421d257a097b2e52.m4a"
@@ -346,7 +346,7 @@
    "_": "clips/d9e2aefc85531a1a.m4a"
   },
   "1647ffa26c7c71ea": {
-   "partner": "clips/a348fb8faf2a9f39.m4a"
+   "Sara": "clips/55e7aa03e9b32089.m4a"
   },
   "164caa75f64e855d": {
    "Customer": "clips/38aceaa81f6365e9.m4a",
@@ -359,7 +359,7 @@
    "Maya": "clips/904d2a6e4dc1d4f9.m4a"
   },
   "16895ac349df6cff": {
-   "partner": "clips/efa5584c05d05e15.m4a"
+   "Daniel": "clips/2aee5c04194bc55b.m4a"
   },
   "16d41cf8d4b468a5": {
    "Customer": "clips/e094999c4e51ad90.m4a"
@@ -507,10 +507,10 @@
    "Maya": "clips/0ea605d4d314c1c6.m4a"
   },
   "1e1a1a851177e049": {
-   "partner": "clips/9e00c80840b2561a.m4a"
+   "Sara": "clips/859e830e8d070a85.m4a"
   },
   "1e1d6a36a73b6865": {
-   "partner": "clips/65dcaa69a4d76cb5.m4a"
+   "Waiter": "clips/37c1d3683b5bf770.m4a"
   },
   "1e346c1e2700fb86": {
    "_": "clips/bbd2d8e6e7e19f8d.m4a"
@@ -568,8 +568,8 @@
    "_": "clips/1490c50fa1d47f0d.m4a"
   },
   "210e7830b07e363a": {
-   "_": "clips/b5cb64ddd5d8dbb1.m4a",
-   "partner": "clips/3479c67ece50b863.m4a"
+   "Daniel": "clips/18fa3a236e616754.m4a",
+   "_": "clips/b5cb64ddd5d8dbb1.m4a"
   },
   "2147a9e5f9e89b70": {
    "_": "clips/1308260b6cd98f97.m4a"
@@ -602,14 +602,13 @@
    "Receptionist": "clips/a1a13db6edc76e78.m4a"
   },
   "22cb71e7c2aa37de": {
-   "partner": "clips/4d245160d3c87d4e.m4a"
+   "Sara": "clips/fa787966787a991b.m4a"
   },
   "22f6521b3349bd49": {
    "_": "clips/ad04c9cc3d97535b.m4a"
   },
   "2320f0332a98bde6": {
-   "Waiter": "clips/cd85fb1afae854fc.m4a",
-   "partner": "clips/c1fbefd4b96b1e6f.m4a"
+   "Waiter": "clips/cd85fb1afae854fc.m4a"
   },
   "243f247b84b783bb": {
    "_": "clips/ef916a94be159f3d.m4a"
@@ -630,7 +629,7 @@
    "Visitor": "clips/83a4741f1eaae0f2.m4a"
   },
   "25af6cd59121ce19": {
-   "partner": "clips/298013f57548037c.m4a"
+   "Omar": "clips/298013f57548037c.m4a"
   },
   "25b02b6f1b5d3c25": {
    "B": "clips/fc2bd6bc5ff8e248.m4a",
@@ -745,7 +744,7 @@
    "_": "clips/d86002b801b5240a.m4a"
   },
   "2b93528dc8e4c660": {
-   "partner": "clips/52f631cf351c6b45.m4a"
+   "Maya": "clips/8242b8a65b9332a9.m4a"
   },
   "2bcea95f4dbc799b": {
    "_": "clips/d8573c6d017ef91c.m4a"
@@ -838,7 +837,7 @@
    "Clerk": "clips/5ce8feaf1851a879.m4a"
   },
   "2f17472ad3ba36f2": {
-   "partner": "clips/3b282ba6f86e9ee3.m4a"
+   "Examiner": "clips/9dc9fa00e82b4ab8.m4a"
   },
   "2f2ce29c156bfbfa": {
    "_": "clips/b8a9a4afa6f1a25d.m4a"
@@ -958,7 +957,7 @@
    "_": "clips/0ae432af5078987a.m4a"
   },
   "34be24e76af49803": {
-   "partner": "clips/71cd0ff299cb900b.m4a"
+   "Assistant": "clips/16887f3fe9f6db91.m4a"
   },
   "34e8e51aac208d96": {
    "_": "clips/188c66330ea1b782.m4a"
@@ -1022,7 +1021,7 @@
    "_": "clips/38461f44696475d3.m4a"
   },
   "37c6282297fa218e": {
-   "partner": "clips/ae7d02bcc8d33db2.m4a"
+   "Daniel": "clips/a75a1a65a0ef33b3.m4a"
   },
   "38030d9e7b145a65": {
    "_": "clips/905f76292834cd2e.m4a"
@@ -1065,8 +1064,7 @@
   },
   "396e48fa16777fd1": {
    "Assistant": "clips/f05488c85e6ee2e6.m4a",
-   "_": "clips/091ad3a0212ab85d.m4a",
-   "partner": "clips/2aa302ddedd88a10.m4a"
+   "_": "clips/091ad3a0212ab85d.m4a"
   },
   "396f9974da4e60ff": {
    "_": "clips/55aa4e1a2a1c6541.m4a"
@@ -1135,7 +1133,7 @@
    "Ali": "clips/f8a02b5f22ecd6a6.m4a"
   },
   "3da93b411e3abd1c": {
-   "partner": "clips/c4cd311ea322d671.m4a"
+   "Maya": "clips/7e5875ac67f45a21.m4a"
   },
   "3daaa9bba9fb468f": {
    "_": "clips/33b231216fbe80d6.m4a"
@@ -1153,7 +1151,7 @@
    "_": "clips/dd2681970081a9da.m4a"
   },
   "3dd9e2c066fbe606": {
-   "partner": "clips/783d7e03f240f767.m4a"
+   "Maya": "clips/632a8d96764b9280.m4a"
   },
   "3df1db3704e8550c": {
    "_": "clips/95bcd7e6e1deb635.m4a"
@@ -1196,7 +1194,7 @@
    "_": "clips/11fbdec26a9807f2.m4a"
   },
   "42083c8550e0dc6e": {
-   "partner": "clips/6f716e61882292ab.m4a"
+   "Examiner": "clips/3f7b9950fc974053.m4a"
   },
   "420e8a17e0ab6132": {
    "_": "clips/aaeb19330ae964f7.m4a"
@@ -1208,13 +1206,13 @@
    "_": "clips/54a15f130dfed91c.m4a"
   },
   "42362329283be6fd": {
-   "partner": "clips/6c23c2807bed0241.m4a"
+   "Maya": "clips/ac956371b55ede54.m4a"
   },
   "424fa43965bde21e": {
    "_": "clips/dfa8ee31a91ce1c4.m4a"
   },
   "425b4a6e22018c9b": {
-   "_": "clips/a5f4363114b7f0b7.m4a"
+   "_": "clips/7a3c527449cbb4c4.m4a"
   },
   "42685f11da91a55b": {
    "_": "clips/ddb2b38615c70cf9.m4a"
@@ -1235,7 +1233,7 @@
    "_": "clips/255e20f1be6d6815.m4a"
   },
   "4366bdec00f92af5": {
-   "partner": "clips/a7559cfa5a6c1cf7.m4a"
+   "Waiter": "clips/6ee644f8ab7261a3.m4a"
   },
   "4378d96c53eacd08": {
    "Maya": "clips/db67cf8301274ec2.m4a"
@@ -1271,7 +1269,7 @@
    "Lina": "clips/93ceb29cd79bf330.m4a"
   },
   "44cca1a91a704f9f": {
-   "partner": "clips/c12055a152814d77.m4a"
+   "Waiter": "clips/e55a0fb6593f5fb7.m4a"
   },
   "44ed11ba0cdc5b11": {
    "_": "clips/b7df6bacf6c564fc.m4a"
@@ -1307,18 +1305,18 @@
    "_": "clips/afbd96d3d3240f1a.m4a"
   },
   "4689b4128b3d4d26": {
+   "Examiner": "clips/90259505a10ffeab.m4a",
    "Waiter": "clips/3d62189c8f05a2bf.m4a",
-   "_": "clips/df60b94bbc57182e.m4a",
-   "partner": "clips/234b79ff711d90d6.m4a"
+   "_": "clips/df60b94bbc57182e.m4a"
   },
   "46e7cfa080913f4d": {
    "_": "clips/9e14bbc7fd6d27ad.m4a"
   },
   "474c83771068eb7b": {
-   "partner": "clips/50255ca8cbc678ca.m4a"
+   "Patient": "clips/5743a04d799a4638.m4a"
   },
   "47c6bc2a16627916": {
-   "partner": "clips/da10bc28bc52fde9.m4a"
+   "Omar": "clips/da10bc28bc52fde9.m4a"
   },
   "47ca1764178fcd93": {
    "_": "clips/1b2f1828953a78f9.m4a"
@@ -1370,10 +1368,10 @@
    "_": "clips/7e9f9876da68ba02.m4a"
   },
   "4b3f7ac99d5b7ee3": {
-   "partner": "clips/b67299ce1f1e6327.m4a"
+   "Sara": "clips/9a68af94c77ce5e6.m4a"
   },
   "4b55eb6628d55727": {
-   "partner": "clips/2c31bd2fd7b4e269.m4a"
+   "Daniel": "clips/5f6736e1984bb4dd.m4a"
   },
   "4bd8eddacb60b412": {
    "_": "clips/66a9ce4901cd9170.m4a"
@@ -1401,7 +1399,7 @@
    "_": "clips/65e465638d4a1336.m4a"
   },
   "4d885ba9ac376079": {
-   "partner": "clips/cfe7f129f5a29fe6.m4a"
+   "Assistant": "clips/1a3a6df4448c67a2.m4a"
   },
   "4daffa60a9199735": {
    "_": "clips/d7d46190bdab57f5.m4a"
@@ -1459,10 +1457,10 @@
    "_": "clips/db009cb463ab567b.m4a"
   },
   "510d51dec171d35a": {
-   "partner": "clips/1778d5f8f64e344d.m4a"
+   "Assistant": "clips/515e6bc8035bf358.m4a"
   },
   "510e57ad39396ed8": {
-   "partner": "clips/e43d4ebcc76af6d5.m4a"
+   "Clerk": "clips/15a01b63fdb05f39.m4a"
   },
   "5116e40694ac48f6": {
    "_": "clips/9da70ffa1e0c1ea2.m4a"
@@ -1517,13 +1515,13 @@
    "Maya": "clips/9766d76bd47023da.m4a"
   },
   "5336dd6452a7e79f": {
-   "partner": "clips/90597dcbbd4fb863.m4a"
+   "Sam": "clips/677b2545a5e72a30.m4a"
   },
   "533e3bfac8050652": {
    "_": "clips/51cfd99d79db7beb.m4a"
   },
   "535e37810a5d7630": {
-   "partner": "clips/9aeaf73465923684.m4a"
+   "Assistant": "clips/bf8d5926a21ab3d6.m4a"
   },
   "5385337e63671945": {
    "Omar": "clips/141636edefc629b3.m4a"
@@ -1571,7 +1569,7 @@
    "_": "clips/a2bf1929c41ac2f0.m4a"
   },
   "56c285f929dcafdf": {
-   "partner": "clips/04f676324aedcc37.m4a"
+   "Clerk": "clips/aad6c217226edf91.m4a"
   },
   "579db7d667a21ecf": {
    "_": "clips/51aebb04cf4026f4.m4a"
@@ -1616,7 +1614,7 @@
    "_": "clips/66ba6ce8099a6abc.m4a"
   },
   "5a048682b26740b7": {
-   "partner": "clips/95a8cd323243d606.m4a"
+   "Ali": "clips/8dc7d4d0355a65b2.m4a"
   },
   "5a4555f36f0f23af": {
    "Omar": "clips/d6d87c70bda1c0e8.m4a"
@@ -1640,7 +1638,7 @@
    "Maya": "clips/3bec6e3d0f993540.m4a"
   },
   "5b0ff935679aa987": {
-   "partner": "clips/9b9679d59df7241a.m4a"
+   "Sam": "clips/71996307b9c67172.m4a"
   },
   "5b11cc3aac825f2a": {
    "Receptionist": "clips/91508de1de562cab.m4a"
@@ -1652,12 +1650,12 @@
    "_": "clips/ec1c41d9d4419ecb.m4a"
   },
   "5c1729154ffa2458": {
-   "partner": "clips/7fe59e87f311596d.m4a"
+   "Omar": "clips/7fe59e87f311596d.m4a"
   },
   "5c3e9f7ad0c9c2b8": {
    "B": "clips/545b523b511a55d9.m4a",
-   "_": "clips/53cd2b6c1b835763.m4a",
-   "partner": "clips/f24edbf8c5e77e8e.m4a"
+   "Examiner": "clips/fe6de892e451d31d.m4a",
+   "_": "clips/53cd2b6c1b835763.m4a"
   },
   "5c47841652e7324a": {
    "_": "clips/7e1aab3341953cbf.m4a"
@@ -1711,13 +1709,13 @@
    "_": "clips/3d7d4674976a1226.m4a"
   },
   "606f99c89734c927": {
-   "partner": "clips/fd0d36f240dd4567.m4a"
+   "Anna": "clips/73cbf55561a0a7de.m4a"
   },
   "6079a01f41690369": {
    "_": "clips/a1e1e3b82f1e699d.m4a"
   },
   "608afd9867df3d47": {
-   "partner": "clips/396edc1b465655f4.m4a"
+   "Ali": "clips/6b42b6bda53d4f14.m4a"
   },
   "60ba1a81b93fb89b": {
    "_": "clips/0c4346ce5916a419.m4a"
@@ -1744,7 +1742,7 @@
    "_": "clips/7f9232cc16df0f35.m4a"
   },
   "618a80f46d2f9ae8": {
-   "partner": "clips/2bf97ceed333ce00.m4a"
+   "Sara": "clips/aeb6ac1f19a37f4a.m4a"
   },
   "61bb8d29b5be7db3": {
    "_": "clips/f5526c330fbee72b.m4a"
@@ -1759,7 +1757,7 @@
    "Sara": "clips/61a156382fc1710a.m4a"
   },
   "621c5f32d21c2b01": {
-   "partner": "clips/b430fce0c09f6b73.m4a"
+   "Sara": "clips/f9256db8501a808b.m4a"
   },
   "624170b8129a2189": {
    "_": "clips/62bcd747cf56412d.m4a"
@@ -1774,13 +1772,13 @@
    "Omar": "clips/7e519c42fd128dff.m4a"
   },
   "62d0afd707270f2c": {
-   "partner": "clips/a6fe7e754028de8e.m4a"
+   "Anna": "clips/7d0c7c5a972d5a23.m4a"
   },
   "63143b6f8007b98c": {
    "_": "clips/04292ba987584b4a.m4a"
   },
   "640f95b02be5497a": {
-   "partner": "clips/2ef75542e166b3d7.m4a"
+   "Teacher": "clips/5dda09fb26ee30a9.m4a"
   },
   "642cc362978510b6": {
    "_": "clips/494609eddd22846c.m4a"
@@ -1793,13 +1791,10 @@
    "_": "clips/bf08559156993aef.m4a"
   },
   "64757fc7f855f8f8": {
-   "partner": "clips/7cb74bc35131313a.m4a"
+   "Clerk": "clips/7250f7b76444dfae.m4a"
   },
   "6490e67e8283047e": {
    "_": "clips/184ae2214dfb00e6.m4a"
-  },
-  "64d1df7e4950ad7e": {
-   "partner": "clips/64c50e7b177b81fd.m4a"
   },
   "652c8a468fef2061": {
    "_": "clips/3d4600ff689cfaef.m4a"
@@ -1869,13 +1864,13 @@
    "_": "clips/18e306810621b03a.m4a"
   },
   "68886114da2b7828": {
-   "partner": "clips/f5c3c6f1881b6c80.m4a"
+   "Sam": "clips/8f552662d20d1a6c.m4a"
   },
   "6896d4f971f61199": {
    "_": "clips/87014838efcf862a.m4a"
   },
   "68aa09e4e29d8088": {
-   "partner": "clips/39377da71ad46228.m4a"
+   "Assistant": "clips/f0435aad596255bc.m4a"
   },
   "68d0bd33deb18fc9": {
    "_": "clips/8c2faccde29a0937.m4a"
@@ -1899,7 +1894,7 @@
    "Customer": "clips/2469a57a6edc9b0e.m4a"
   },
   "6a070b8e5d2038f9": {
-   "partner": "clips/46cff14061036aa4.m4a"
+   "Examiner": "clips/ce26c88826298718.m4a"
   },
   "6a1cec45eaf37b34": {
    "_": "clips/216ed38bb93c1b25.m4a"
@@ -1944,7 +1939,7 @@
    "_": "clips/53c5114914efc90d.m4a"
   },
   "6cadbdfc93dc5810": {
-   "partner": "clips/70f166fdb9f0cda1.m4a"
+   "Maya": "clips/138a3f37d37b44a3.m4a"
   },
   "6d06238e70eff966": {
    "_": "clips/fbe9abade1b359d1.m4a"
@@ -1993,7 +1988,7 @@
    "Maya": "clips/577d7125511206cf.m4a"
   },
   "6f21c17f1652cc10": {
-   "partner": "clips/1d7e6684cb89dbc0.m4a"
+   "Patient": "clips/b39997f1bc81e113.m4a"
   },
   "6f2e8f05523a167e": {
    "_": "clips/1423655ec7e0e3a9.m4a"
@@ -2014,7 +2009,7 @@
    "Noor": "clips/0804063d63efd173.m4a"
   },
   "6f9164a8f944f38d": {
-   "partner": "clips/9edcad6908b0012a.m4a"
+   "Assistant": "clips/96dc96f8ebd086a7.m4a"
   },
   "6f9b9af3cd6e8b8a": {
    "_": "clips/df2836d404c0686b.m4a"
@@ -2026,7 +2021,7 @@
    "_": "clips/9ccfc9af48d03820.m4a"
   },
   "702af017f5f075d8": {
-   "partner": "clips/5e0f7ffdd6653e33.m4a"
+   "Omar": "clips/5e0f7ffdd6653e33.m4a"
   },
   "703520fc7c388f61": {
    "_": "clips/5975d997b59a5426.m4a"
@@ -2035,7 +2030,7 @@
    "_": "clips/ca90b18b4a93c8a9.m4a"
   },
   "7080fd1b8c9b0d6d": {
-   "partner": "clips/05bb8abe5a650eda.m4a"
+   "Assistant": "clips/a08a8cdaff8575d5.m4a"
   },
   "709634051471385a": {
    "_": "clips/b9710e17bcf5623f.m4a"
@@ -2102,7 +2097,7 @@
    "_": "clips/a1818ec7686abcf8.m4a"
   },
   "73f937a29b7a95d2": {
-   "partner": "clips/bfb1db0bfa47c730.m4a"
+   "Ali": "clips/274a64a779b7dc11.m4a"
   },
   "743e095aa3aa4b6c": {
    "_": "clips/e0bc443f93993dd4.m4a"
@@ -2165,13 +2160,13 @@
    "_": "clips/5c876625ee8685b3.m4a"
   },
   "78539cc5b041fff6": {
-   "partner": "clips/bf5f85485c3e9680.m4a"
+   "Ali": "clips/d3029d352dc54cc6.m4a"
   },
   "787663d820b648f8": {
    "_": "clips/3258e066f26baf04.m4a"
   },
   "7890208a110eaf1c": {
-   "B": "clips/05ec9d4693ed733c.m4a"
+   "B": "clips/7b20c75d7495dd7f.m4a"
   },
   "78988010b890ce6f": {
    "_": "clips/093a8df5904126ab.m4a"
@@ -2267,7 +2262,7 @@
    "_": "clips/7799d57d2c7b5fd9.m4a"
   },
   "7c6d98bca3b7b9b9": {
-   "partner": "clips/edfcfcdd330ef43e.m4a"
+   "Clerk": "clips/838bea06a2459461.m4a"
   },
   "7ce695e7caeb7c92": {
    "_": "clips/14906c58c9442d61.m4a"
@@ -2294,13 +2289,13 @@
    "_": "clips/d2654ae806fe9732.m4a"
   },
   "7eb37c9a1570721b": {
-   "partner": "clips/38b541f3a07518f2.m4a"
+   "Sara": "clips/01bc6329cb8c978b.m4a"
   },
   "7eb9a09acd4f890d": {
    "_": "clips/183558964a80be8e.m4a"
   },
   "7f13eece338a9826": {
-   "partner": "clips/7aaf5865211040e6.m4a"
+   "Maya": "clips/95781021f8da08ed.m4a"
   },
   "7f51a40cca54949c": {
    "_": "clips/bd6b4d2aefa576b3.m4a"
@@ -2321,10 +2316,10 @@
    "_": "clips/d8625dad452cdd2b.m4a"
   },
   "804fbc46c042b739": {
-   "partner": "clips/33aca2a1d437da22.m4a"
+   "Stranger": "clips/33aca2a1d437da22.m4a"
   },
   "8055eee6a0505d91": {
-   "partner": "clips/3a709fff23b2d34a.m4a"
+   "Receptionist": "clips/52ecc529f9bea29d.m4a"
   },
   "805ac15045b6b20d": {
    "_": "clips/42442f53c2d8b291.m4a"
@@ -2345,8 +2340,8 @@
    "Maya": "clips/61433bee643fce91.m4a"
   },
   "815c644c80d77c53": {
-   "Sara": "clips/84f742f5c8845e3b.m4a",
-   "partner": "clips/deceac8b3408afaf.m4a"
+   "Ali": "clips/4ccbb4e877728008.m4a",
+   "Sara": "clips/84f742f5c8845e3b.m4a"
   },
   "8175e3c8753aeb16": {
    "_": "clips/f850d0c2edf6abc6.m4a"
@@ -2367,10 +2362,10 @@
    "_": "clips/035c6b018253bed6.m4a"
   },
   "82b67723be8a9a45": {
-   "_": "clips/816ae4bcec7cfdc8.m4a"
+   "_": "clips/e83dd158d2547ebe.m4a"
   },
   "834c5b81026f63e0": {
-   "partner": "clips/68927a4b7b3c1f10.m4a"
+   "Sara": "clips/0909c4f23058c303.m4a"
   },
   "83aac9a83cd4ec7c": {
    "_": "clips/7f4a1ef97aca4479.m4a"
@@ -2464,7 +2459,7 @@
    "_": "clips/bd8cd5f6c0953180.m4a"
   },
   "88dff8615fdbd1c9": {
-   "partner": "clips/871984df0c7573fd.m4a"
+   "Visitor": "clips/a70264378e279f91.m4a"
   },
   "89368e1d68015693": {
    "_": "clips/89708562082c2560.m4a"
@@ -2500,7 +2495,7 @@
    "_": "clips/fec23086326d51cc.m4a"
   },
   "8af115259ca6b899": {
-   "partner": "clips/ebcc6a6f7646aeaf.m4a"
+   "Visitor": "clips/fcdbac85aac59740.m4a"
   },
   "8af29aef8aa9aa07": {
    "_": "clips/1384dabf5115ad5e.m4a"
@@ -2613,7 +2608,7 @@
    "_": "clips/20b19499362b002c.m4a"
   },
   "9261bcdaa60659ab": {
-   "partner": "clips/2d9ca101e97494c5.m4a"
+   "Receptionist": "clips/fdfe6ed185717018.m4a"
   },
   "92ad0348b43088fb": {
    "_": "clips/03ea870bbad990e5.m4a"
@@ -2625,13 +2620,13 @@
    "_": "clips/1b37e87af7a279dc.m4a"
   },
   "930a4d86ba834a2e": {
-   "partner": "clips/7d2e019ad99b0a3e.m4a"
+   "Ali": "clips/3d3ac7a90a13a6eb.m4a"
   },
   "932bd4d21c45c748": {
    "Maya": "clips/18492a8526eac16e.m4a"
   },
   "938460cf71f1b39d": {
-   "partner": "clips/d022328ab8be9eea.m4a"
+   "Ali": "clips/52c8bb33a55aeab6.m4a"
   },
   "9393c0382200a054": {
    "Maya": "clips/a8072427bd0740ee.m4a"
@@ -2733,7 +2728,7 @@
    "_": "clips/14cf26384399f873.m4a"
   },
   "97de19d8ffa5382b": {
-   "partner": "clips/c2c5d843ab25f9c1.m4a"
+   "Sam": "clips/efd32d93f19e4336.m4a"
   },
   "9844f8b7454cd507": {
    "_": "clips/75f6b5e1cd6c8ac5.m4a"
@@ -2833,7 +2828,7 @@
    "_": "clips/f25fb9a777eab564.m4a"
   },
   "9e01d0c1a1cb21c1": {
-   "partner": "clips/66476ce0f4b81ccc.m4a"
+   "Sam": "clips/eb6f7b971bb31299.m4a"
   },
   "9e2ecb283f24e03f": {
    "Omar": "clips/bec13c932511aec1.m4a"
@@ -2866,7 +2861,7 @@
    "_": "clips/fec23086326d51cc.m4a"
   },
   "9fa7e18e7c705373": {
-   "partner": "clips/a921785195426fc0.m4a"
+   "Waiter": "clips/96c1bb9810da0409.m4a"
   },
   "9fbe56402fdaafba": {
    "Omar": "clips/f818067ddbec606b.m4a"
@@ -2908,7 +2903,7 @@
    "_": "clips/b17c541ab5037a70.m4a"
   },
   "a15e6469f51fc8c2": {
-   "partner": "clips/14d8def7c599a819.m4a"
+   "Ali": "clips/70a7dcdee7af177b.m4a"
   },
   "a17dbb9a6b3ff869": {
    "_": "clips/67fab3d0718ff287.m4a"
@@ -2968,7 +2963,7 @@
    "_": "clips/0ede572f07dc3c3c.m4a"
   },
   "a422a9a28c7a582c": {
-   "_": "clips/531ae12f5ac860ab.m4a"
+   "_": "clips/93d7408e5ce7212d.m4a"
   },
   "a4b48a81cdab1e1a": {
    "_": "clips/40a9113a9c7fefb0.m4a"
@@ -3019,10 +3014,10 @@
    "_": "clips/8aee6718695f2f26.m4a"
   },
   "a6bc2b8db5b7e7a8": {
-   "partner": "clips/77d6b218232ff500.m4a"
+   "Receptionist": "clips/1cc15817cba355c1.m4a"
   },
   "a6ec3468d3593693": {
-   "partner": "clips/5a0632a9b6085a78.m4a"
+   "Resident": "clips/177fbad9784b3ad5.m4a"
   },
   "a6ffab1d0698e902": {
    "Omar": "clips/639aed261811b9e0.m4a"
@@ -3046,14 +3041,14 @@
    "Sara": "clips/769836982033e33c.m4a"
   },
   "a97857a1815f887f": {
-   "partner": "clips/ed398923c4483510.m4a"
+   "Teacher": "clips/4e2f0650f56c9641.m4a"
   },
   "a9a9102b547e3520": {
    "Maya": "clips/a9e422ca3d9a9694.m4a",
    "_": "clips/51f14f4d512f6ebd.m4a"
   },
   "a9e5aa3c53011f6a": {
-   "partner": "clips/cefe43273e8b55ce.m4a"
+   "Clerk": "clips/1e68099d199deeaa.m4a"
   },
   "a9f1475dbd4d1441": {
    "_": "clips/96b648043ca308c6.m4a"
@@ -3083,7 +3078,7 @@
    "_": "clips/c5805d09a5b2e50c.m4a"
   },
   "abe6dd95e2df0f53": {
-   "partner": "clips/b69dafbd6e668684.m4a"
+   "Sara": "clips/00be2f3e9b8a8ca9.m4a"
   },
   "ac1cc42ffc022cd0": {
    "Omar": "clips/6cbde1dfffca0a80.m4a",
@@ -3128,7 +3123,7 @@
    "_": "clips/49fda816b925fe3f.m4a"
   },
   "ae808dcd96e1657e": {
-   "partner": "clips/f2edab30d21ad32e.m4a"
+   "Waiter": "clips/2da4bb85fff5195c.m4a"
   },
   "af3fb193e32e8c5a": {
    "_": "clips/54e6a6b39f8ddc07.m4a"
@@ -3205,7 +3200,7 @@
    "_": "clips/18b7e640c8500033.m4a"
   },
   "b54cf557f4e2fbf1": {
-   "partner": "clips/457286dbdb0abc0a.m4a"
+   "Maya": "clips/535f1bb8cf9d004a.m4a"
   },
   "b56cf9fcdadd9da4": {
    "Omar": "clips/5f2ec883ba7711a2.m4a"
@@ -3238,7 +3233,7 @@
    "_": "clips/703bfabebad7eacc.m4a"
   },
   "b74c9a03bbc32202": {
-   "partner": "clips/585d28db99c3aaef.m4a"
+   "Clerk": "clips/1d59eded4054e20a.m4a"
   },
   "b7e8ac4354de22dd": {
    "_": "clips/dfb2989b2a364089.m4a"
@@ -3332,7 +3327,7 @@
    "_": "clips/7747fbd20d87de11.m4a"
   },
   "bc586ee175065b04": {
-   "partner": "clips/dba499dce37b19fd.m4a"
+   "Sara": "clips/817c5cb75ead2bbc.m4a"
   },
   "bc6d2a612a5d9df1": {
    "_": "clips/927828a7c57cb0b2.m4a"
@@ -3419,8 +3414,8 @@
    "_": "clips/dc491d18178eda6e.m4a"
   },
   "c0dcba11d4cfd9ff": {
-   "_": "clips/f536974f4ef90ed2.m4a",
-   "partner": "clips/5505a838a972a611.m4a"
+   "Maya": "clips/f4b9c5b99072541e.m4a",
+   "_": "clips/f536974f4ef90ed2.m4a"
   },
   "c1777d8e848654ca": {
    "_": "clips/d52b995ed080ea69.m4a"
@@ -3435,7 +3430,7 @@
    "_": "clips/93535803b83a1318.m4a"
   },
   "c1faccaab509ae6e": {
-   "partner": "clips/a7339ffc397ae0fb.m4a"
+   "Sam": "clips/b6fd3d09016d24ea.m4a"
   },
   "c22b5f9178342609": {
    "_": "clips/fbf3189727ebc7c6.m4a"
@@ -3493,7 +3488,7 @@
    "_": "clips/443ecfd3d1b31cc2.m4a"
   },
   "c43e96139edc03fd": {
-   "partner": "clips/62d2af173decaf7e.m4a"
+   "Sara": "clips/9adba09b76a0f271.m4a"
   },
   "c47044a1b3307cc4": {
    "Assistant": "clips/2b62889e9536009b.m4a"
@@ -3505,7 +3500,7 @@
    "_": "clips/da53f13a413e1d87.m4a"
   },
   "c51e0a0de80bfedd": {
-   "partner": "clips/048a54658702835d.m4a"
+   "Assistant": "clips/f73fee69497d76a2.m4a"
   },
   "c52846f84cf86d09": {
    "_": "clips/8ea682a8cab77db9.m4a"
@@ -3541,7 +3536,7 @@
    "_": "clips/e0c3c257859cc814.m4a"
   },
   "c84afde0f096f748": {
-   "partner": "clips/22eb5d61fa113b2a.m4a"
+   "Maya": "clips/cd6b29db8cc1bea0.m4a"
   },
   "c88dda5d6ced0121": {
    "A": "clips/5485f653b58b4b0b.m4a",
@@ -3590,7 +3585,7 @@
    "_": "clips/0e77edbcbb137caa.m4a"
   },
   "cc60978a31f6d8e4": {
-   "partner": "clips/e769644e715e5c84.m4a"
+   "Sara": "clips/c06320074d90ba60.m4a"
   },
   "cce55e4309a75398": {
    "_": "clips/ece05a7eda090b43.m4a"
@@ -3638,7 +3633,7 @@
    "_": "clips/f60e3849fc8db879.m4a"
   },
   "cf2a5a07c5e36760": {
-   "partner": "clips/4ab5eb12cfb3c08f.m4a"
+   "Assistant": "clips/439ea06ffe2ab6cf.m4a"
   },
   "cf5dbf0ec57dff5d": {
    "_": "clips/0a2e840a08eef5a0.m4a"
@@ -3687,8 +3682,8 @@
    "_": "clips/d644291abcc72fb1.m4a"
   },
   "d17cf4a0422d7c3c": {
-   "_": "clips/8161f3b7760a2e74.m4a",
-   "partner": "clips/1b33ee7227098eea.m4a"
+   "Omar": "clips/1b33ee7227098eea.m4a",
+   "_": "clips/8161f3b7760a2e74.m4a"
   },
   "d185cba830a8de03": {
    "_": "clips/43237bf14280345d.m4a"
@@ -3784,7 +3779,7 @@
    "_": "clips/b988f7b1b90e2b41.m4a"
   },
   "d5bd4bff689de046": {
-   "partner": "clips/6d155d1909adfacd.m4a"
+   "Assistant": "clips/75ba351fbd1318e1.m4a"
   },
   "d5c5aeb180f556a8": {
    "Assistant": "clips/969f7acc0b74f116.m4a"
@@ -3835,7 +3830,7 @@
    "_": "clips/4e998c8bebb806b4.m4a"
   },
   "d8f4d79f56fd1bd8": {
-   "partner": "clips/87e1521ecf05fc47.m4a"
+   "Clerk": "clips/5e80096d0df340b6.m4a"
   },
   "d8fd39d0bbdd2dcf": {
    "_": "clips/ac8566fc4bd9b59f.m4a"
@@ -3901,7 +3896,7 @@
    "Maya": "clips/13fede6bbfe51d82.m4a"
   },
   "dcccbbc3b3b133ef": {
-   "partner": "clips/eea210e3481eb82e.m4a"
+   "Visitor": "clips/c8cfd0528693778e.m4a"
   },
   "dd131be79e003b4c": {
    "_": "clips/2b93faf728395933.m4a"
@@ -3970,7 +3965,7 @@
    "_": "clips/909d9225343b0937.m4a"
   },
   "df3db95d3c988eaf": {
-   "partner": "clips/7020b9c7efee8525.m4a"
+   "Assistant": "clips/122e81b8b3abd0e9.m4a"
   },
   "df479c4bc8932efc": {
    "Sara": "clips/8567d5e3da2b27e7.m4a"
@@ -3985,7 +3980,8 @@
    "Ali": "clips/5bbac7536e0b9a8b.m4a"
   },
   "e06fe09c39d93480": {
-   "partner": "clips/bc35c9a6102f315b.m4a"
+   "Assistant": "clips/168d88d8e0fea345.m4a",
+   "Examiner": "clips/4b5045ac6e1486ff.m4a"
   },
   "e07508824e895e25": {
    "_": "clips/258b56daf4f7fc84.m4a"
@@ -3997,13 +3993,13 @@
    "_": "clips/e276435bffafdae9.m4a"
   },
   "e0c0812d375c4ebb": {
-   "partner": "clips/c6c3c3242f4ea3c2.m4a"
+   "Examiner": "clips/8e4e732336462b63.m4a"
   },
   "e0d587ce038c01af": {
    "_": "clips/e10e72020c0e0619.m4a"
   },
   "e1249459937a76aa": {
-   "partner": "clips/19d5665ea916e833.m4a"
+   "Assistant": "clips/812735ee532b83c6.m4a"
   },
   "e18a89f9cc5b6b19": {
    "_": "clips/3b5aab52d02162b0.m4a"
@@ -4048,7 +4044,7 @@
    "_": "clips/d155698d94ac182c.m4a"
   },
   "e422806674aa8bac": {
-   "partner": "clips/2b8dc9d3cb9ea39b.m4a"
+   "Receptionist": "clips/c6ba91eba67e97a0.m4a"
   },
   "e472c29b3c5cf78d": {
    "Omar": "clips/bfea3497010641ba.m4a",
@@ -4087,7 +4083,7 @@
    "_": "clips/1f0a8c39d160767d.m4a"
   },
   "e771793ca0ae4f1a": {
-   "partner": "clips/5febdb89028f1614.m4a"
+   "Assistant": "clips/d483fca8634f8d48.m4a"
   },
   "e77a326033696c0e": {
    "_": "clips/7487016776348d4d.m4a"
@@ -4178,6 +4174,9 @@
   },
   "eb1cdb28c868ec41": {
    "_": "clips/cd5ce38d90164e10.m4a"
+  },
+  "eb2407978c16160a": {
+   "Anna": "clips/701a0587e7ce00be.m4a"
   },
   "eb49b5843ad91a29": {
    "Maya": "clips/2a69d8e722e2dd13.m4a"
@@ -4322,7 +4321,7 @@
    "_": "clips/b4aca83ab43d2471.m4a"
   },
   "f14d202ae66a1afa": {
-   "partner": "clips/4d5bf850cd25b1fd.m4a"
+   "Maya": "clips/a61d1ff97b275dfe.m4a"
   },
   "f1b58e1d9e1990aa": {
    "_": "clips/ddc988fd45221fe9.m4a"
@@ -4489,7 +4488,7 @@
    "_": "clips/1a9a51d8df4f2d23.m4a"
   },
   "f96590586bdd59d4": {
-   "partner": "clips/c645d7a63d8c3853.m4a"
+   "Maya": "clips/8ba6165f14436a5d.m4a"
   },
   "f983c38179352343": {
    "Maya": "clips/0fded5a7a074c0e7.m4a"
@@ -4525,7 +4524,7 @@
    "_": "clips/ee00bc1ec6534465.m4a"
   },
   "fb722e13f0c20b6b": {
-   "partner": "clips/e599afad2e6f66b8.m4a"
+   "Visitor": "clips/fa6f6daf30f075f7.m4a"
   },
   "fb8df41a16b4b1c2": {
    "_": "clips/c19acf08b339a045.m4a"

@@ -6,6 +6,7 @@ import '../../../../content/models/registry_items.dart';
 import '../../../../core/l10n/generated/app_localizations.dart';
 import '../../../../core/theme/app_tokens.dart';
 import '../../../../core/theme/overline_style.dart';
+import '../../../../core/widgets/content_text.dart';
 import '../../../activity_engine/presentation/widgets/phrase_text.dart';
 import '../../../speech/providers/speech_providers.dart';
 import '../../../speech/providers/tts_preferences_provider.dart';
@@ -255,14 +256,13 @@ class _GrammarRow extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // English grammar reads left-to-right in either interface
-          // language, arrow included — while still starting at the
-          // layout's start edge.
+          // English grammar reads left-to-right from the left edge in
+          // either interface language, arrow included (see ContentText).
           Row(
             children: [
               Expanded(
                 child: Align(
-                  alignment: AlignmentDirectional.centerStart,
+                  alignment: contentAlignment(TextDirection.ltr),
                   child: Directionality(
                     textDirection: TextDirection.ltr,
                     child: Wrap(
@@ -291,9 +291,8 @@ class _GrammarRow extends StatelessWidget {
           ),
           if (item.examples.isNotEmpty) ...[
             const SizedBox(height: 2),
-            Text(
+            ContentText.en(
               item.examples.first.en,
-              textDirection: TextDirection.ltr,
               style: theme.textTheme.bodyMedium?.copyWith(
                 color: tokens.textSecondary,
               ),

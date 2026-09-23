@@ -19,7 +19,6 @@ import 'package:mohingo/content/models/evaluation_spec.dart';
 import 'package:mohingo/features/activity_engine/presentation/views/speak_activity_view.dart';
 import 'package:mohingo/features/activity_engine/presentation/widgets/activity_partner_turns_card.dart';
 import 'package:mohingo/features/activity_engine/providers/sound_effects_providers.dart';
-import 'package:mohingo/features/speech/domain/audio_clip_index.dart';
 import 'package:mohingo/features/speech/domain/speech_capability_service.dart';
 import 'package:mohingo/features/speech/domain/speech_recognition_service.dart';
 import 'package:mohingo/features/speech/providers/speech_providers.dart';
@@ -738,6 +737,7 @@ void main() {
       promptAr: 'ردّ على كل جملة.',
       raw: {
         'examinerTurns': ['Good morning.', 'What time do you start your day?'],
+        'partnerSpeaker': 'Examiner',
       },
       accepted: [],
       fallbackSkill: 'writing',
@@ -795,8 +795,9 @@ void main() {
       expect(find.text('Good morning.'), findsOneWidget);
       expect(find.text('What time do you start your day?'), findsOneWidget);
       expect(tts.spoken, ['Good morning.', 'What time do you start your day?']);
-      // The other person's lines are asked for in the partner voice.
-      expect(tts.speakers, [kPartnerSpeaker, kPartnerSpeaker]);
+      // The other person's lines are asked for in that person's own voice
+      // — the task names them — never in one voice for every partner.
+      expect(tts.speakers, ['Examiner', 'Examiner']);
     });
 
     testWidgets('the lines can be heard again', (tester) async {
@@ -838,6 +839,107 @@ void main() {
 
       expect(find.text('Good morning.'), findsOneWidget);
       expect(tts.spoken, isEmpty);
+    });
+  });
+
+  group('grading a spoken answer (ADR 0009)', () {
+    // A1-U1-L4-A03 as shipped: a model answer and a rubric.
+    SpeakActivity introduceSara() => SpeakActivity(
+      id: 'A1-U1-L4-A03',
+      lessonId: 'A1-U1-L4',
+      mode: ActivityMode.mastery,
+      skill: Skill.spokenProduction,
+      canDo: const ['A1.U1.PRODUCTION.INTRODUCE_OTHERS'],
+      prompt: 'Introduce Sara as your friend.',
+      promptAr: 'قدّم سارة بوصفها صديقتك.',
+      raw: const {},
+      accepted: const ["This is Sara. She's my friend."],
+      fallbackSkill: 'writing',
+      evaluation: EvaluationSpec.fromJson({
+        'type': 'keywordChecklist',
+        'requiredGroups': [
+          ['this is sara', 'sara'],
+          ["she's my friend", 'she is my friend', 'my friend', 'friend'],
+        ],
+        'minGroupsMatched': 2,
+      }),
+    );
+
+    Future<ActivitySubmission?> speakAndCheck(
+      WidgetTester tester,
+      String transcript,
+    ) async {
+      ActivitySubmission? reported;
+      await _pumpSpeak(
+        tester,
+        capabilities: const DeviceSpeechCapabilities(
+          sttAvailableForLocale: true,
+          micPermission: SpeechPermissionStatus.granted,
+        ),
+        recognitionService: FakeSpeechRecognitionService(
+          results: [
+            SpeechRecognitionResult(transcript: transcript, isFinal: true),
+          ],
+        ),
+        activity: introduceSara(),
+        onSubmitted: (s) => reported = s,
+      );
+      await tester.tap(find.byTooltip('Record'));
+      await tester.pumpAndSettle();
+      await tester.tap(find.byType(FilledButton));
+      await tester.pump();
+      return reported;
+    }
+
+    testWidgets("the learner's own case: \"Sarah\" from the recogniser is "
+        'Sara, and the rubric grades it correct', (tester) async {
+      final reported = await speakAndCheck(
+        tester,
+        "this is Sarah she's my friend",
+      );
+      expect(reported?.correctness, ActivityCorrectness.correct);
+      expect(reported?.wasFallback, isFalse);
+    });
+
+    testWidgets('the rubric grades, not the model answer: other words that '
+        'meet the rubric pass', (tester) async {
+      final reported = await speakAndCheck(
+        tester,
+        'this is my friend Sara, she is very nice',
+      );
+      expect(reported?.correctness, ActivityCorrectness.correct);
+    });
+
+    testWidgets('a spoken answer that misses the rubric still fails, and '
+        'the model answer is what is shown', (tester) async {
+      final reported = await speakAndCheck(tester, 'this is my brother');
+      expect(reported?.correctness, ActivityCorrectness.incorrect);
+      expect(reported?.correctAnswerLabel, "This is Sara. She's my friend.");
+    });
+
+    testWidgets('a typed fallback is graded as written: Sarah is not Sara', (
+      tester,
+    ) async {
+      ActivitySubmission? reported;
+      await _pumpSpeak(
+        tester,
+        capabilities: const DeviceSpeechCapabilities(
+          sttAvailableForLocale: false,
+          micPermission: SpeechPermissionStatus.notDetermined,
+        ),
+        activity: introduceSara(),
+        onSubmitted: (s) => reported = s,
+      );
+      await tester.enterText(
+        find.byType(TextField),
+        'This is Sarah. She is my friend.',
+      );
+      await tester.pump();
+      await tester.tap(find.byType(FilledButton));
+      await tester.pump();
+
+      expect(reported?.wasFallback, isTrue);
+      expect(reported?.correctness, ActivityCorrectness.incorrect);
     });
   });
 }

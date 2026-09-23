@@ -9,6 +9,7 @@ import '../../../core/l10n/generated/app_localizations.dart';
 import '../../../core/theme/app_tokens.dart';
 import '../../../core/theme/gamification_theme_extension.dart';
 import '../../../core/widgets/content_load_error.dart';
+import '../../../core/widgets/content_text.dart';
 import '../../../core/widgets/level_filter_chips.dart';
 import '../../../core/widgets/search_field.dart';
 import '../../../data/local/database.dart';
@@ -432,25 +433,17 @@ class _EntryRow extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
-                        Align(
-                          alignment: AlignmentDirectional.centerStart,
-                          child: Text(
-                            entry.text,
-                            textDirection: TextDirection.ltr,
-                            style: theme.textTheme.titleMedium?.copyWith(
-                              color: tokens.textPrimary,
-                              fontWeight: FontWeight.w500,
-                            ),
+                        ContentText.en(
+                          entry.text,
+                          style: theme.textTheme.titleMedium?.copyWith(
+                            color: tokens.textPrimary,
+                            fontWeight: FontWeight.w500,
                           ),
                         ),
-                        Align(
-                          alignment: AlignmentDirectional.centerStart,
-                          child: Text(
-                            entry.arabic,
-                            textDirection: TextDirection.rtl,
-                            style: theme.textTheme.bodyMedium?.copyWith(
-                              color: tokens.textSecondary,
-                            ),
+                        ContentText.ar(
+                          entry.arabic,
+                          style: theme.textTheme.bodyMedium?.copyWith(
+                            color: tokens.textSecondary,
                           ),
                         ),
                       ],

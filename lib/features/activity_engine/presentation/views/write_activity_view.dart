@@ -106,25 +106,17 @@ class _WriteActivityViewState extends ConsumerState<WriteActivityView> {
     }
   }
 
+  /// Grades the text. The task's rubric grades when it has one; its
+  /// `accepted` list grades only a task without a rubric, and is otherwise
+  /// the model answer shown after a miss. Written answers are graded as
+  /// written — spelling is the learner's own (ADR 0009).
   void _submit() {
     final text = _controller.text.trim();
     if (text.isEmpty || _submission != null) return;
 
     final ActivitySubmission submission;
     final evaluation = widget.activity.evaluation;
-    if (widget.activity.accepted.isNotEmpty) {
-      final isCorrect = widget.activity.accepted.any(
-        (a) => answersMatch(a, text),
-      );
-      submission = ActivitySubmission(
-        correctness: isCorrect
-            ? ActivityCorrectness.correct
-            : ActivityCorrectness.incorrect,
-        score: isCorrect ? 1.0 : 0.0,
-        rawAnswerJson: jsonEncode(text),
-        correctAnswerLabel: _correctAnswerLabel(),
-      );
-    } else if (evaluation is KeywordChecklistEvaluationSpec &&
+    if (evaluation is KeywordChecklistEvaluationSpec &&
         evaluation.onlineRefinement != null) {
       // Open-ended, deferred-grading path: the local score is computed now
       // but never used as the graded score directly — it's carried through
@@ -148,6 +140,18 @@ class _WriteActivityViewState extends ConsumerState<WriteActivityView> {
       submission = ActivitySubmission(
         correctness: result.correctness,
         score: result.score,
+        rawAnswerJson: jsonEncode(text),
+        correctAnswerLabel: _correctAnswerLabel(),
+      );
+    } else if (widget.activity.accepted.isNotEmpty) {
+      final isCorrect = widget.activity.accepted.any(
+        (a) => answersMatch(a, text),
+      );
+      submission = ActivitySubmission(
+        correctness: isCorrect
+            ? ActivityCorrectness.correct
+            : ActivityCorrectness.incorrect,
+        score: isCorrect ? 1.0 : 0.0,
         rawAnswerJson: jsonEncode(text),
         correctAnswerLabel: _correctAnswerLabel(),
       );

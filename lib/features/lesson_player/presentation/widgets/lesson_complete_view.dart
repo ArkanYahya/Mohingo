@@ -11,6 +11,7 @@ import '../../../../core/theme/app_tokens.dart';
 import '../../../../core/theme/feedback_theme_extension.dart';
 import '../../../../core/theme/gamification_theme_extension.dart';
 import '../../../../core/theme/overline_style.dart';
+import '../../../../core/widgets/content_text.dart';
 import '../../../activity_engine/domain/activity_submission.dart';
 import 'activity_eyebrow.dart';
 import 'lesson_intro_chrome.dart';
@@ -558,16 +559,14 @@ class _UpNextCard extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: AppSpace.xxs),
-                    Text(
+                    ContentText.en(
                       lesson.title,
-                      textDirection: TextDirection.ltr,
                       style: theme.textTheme.titleMedium?.copyWith(
                         color: tokens.textPrimary,
                       ),
                     ),
-                    Text(
+                    ContentText.ar(
                       lesson.titleAr,
-                      textDirection: TextDirection.rtl,
                       style: theme.textTheme.bodyMedium?.copyWith(
                         color: tokens.textSecondary,
                       ),
