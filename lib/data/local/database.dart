@@ -9,6 +9,7 @@ import 'tables/learner_tables.dart';
 import 'tables/lesson_progress_tables.dart';
 import 'tables/pending_online_refinement_tables.dart';
 import 'tables/review_state_tables.dart';
+import 'tables/sync_tables.dart';
 
 part 'database.g.dart';
 
@@ -35,6 +36,8 @@ part 'database.g.dart';
     ContentVersions,
     PendingOnlineRefinements,
     DailyTaskEvents,
+    SyncOutbox,
+    AccountSyncStates,
   ],
 )
 class AppDatabase extends _$AppDatabase {
@@ -47,11 +50,16 @@ class AppDatabase extends _$AppDatabase {
   AppDatabase.defaults() : super(driftDatabase(name: 'mohingo_progress'));
 
   @override
-  int get schemaVersion => 5;
+  int get schemaVersion => 6;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
-    onCreate: (migrator) => migrator.createAll(),
+    onCreate: (migrator) async {
+      await migrator.createAll();
+      for (final statement in syncTriggerStatements()) {
+        await customStatement(statement);
+      }
+    },
     onUpgrade: (migrator, from, to) async {
       if (from < 2) {
         await migrator.addColumn(learners, learners.name);
@@ -70,8 +78,93 @@ class AppDatabase extends _$AppDatabase {
         );
         await migrator.addColumn(courseEnrolments, courseEnrolments.unlockedAt);
       }
+      if (from < 6) {
+        // Every real install has every table by now; the guard only spares
+        // hand-built upgrade fixtures that model an older install with just
+        // the tables their own step touches.
+        final existing = {
+          for (final row in await customSelect(
+            "SELECT name FROM sqlite_master WHERE type = 'table'",
+          ).get())
+            row.read<String>('name'),
+        };
+        // SQLite can't ADD COLUMN ... UNIQUE, so the uniqueness of
+        // firebase_uid comes from an index instead — the same guarantee.
+        await customStatement(
+          'ALTER TABLE learners ADD COLUMN firebase_uid TEXT NULL',
+        );
+        await customStatement(
+          'CREATE UNIQUE INDEX IF NOT EXISTS learners_firebase_uid '
+          'ON learners (firebase_uid)',
+        );
+        await migrator.addColumn(learners, learners.updatedAt);
+        if (existing.contains('vocabulary_review_state')) {
+          await migrator.addColumn(
+            vocabularyReviewState,
+            vocabularyReviewState.favoriteUpdatedAt,
+          );
+        }
+        if (existing.contains('grammar_review_state')) {
+          await migrator.addColumn(
+            grammarReviewState,
+            grammarReviewState.favoriteUpdatedAt,
+          );
+        }
+        await migrator.createTable(syncOutbox);
+        await migrator.createTable(accountSyncStates);
+        for (final statement in syncTriggerStatements(existing.contains)) {
+          await customStatement(statement);
+        }
+        // Progress recorded before accounts existed is queued like any new
+        // write, so attaching it to an account later uploads all of it.
+        for (final table in syncedLearnerTables.where(existing.contains)) {
+          await customStatement(
+            'INSERT INTO sync_outbox (entity, row_id, learner_id) '
+            "SELECT '$table', id, learner_id FROM $table",
+          );
+        }
+        await customStatement(
+          'INSERT INTO sync_outbox (entity, row_id, learner_id) '
+          "SELECT 'learners', id, id FROM learners WHERE name IS NOT NULL",
+        );
+      }
     },
   );
+
+  /// Every table whose rows are a learner's progress and are synced to
+  /// their account. `unit_progress` is absent on purpose: it is recomputed
+  /// from `activity_attempts`, so syncing the evidence is enough.
+  /// `activity_attempt_can_dos` travels inside its attempt.
+  static const syncedLearnerTables = [
+    'activity_attempts',
+    'lesson_progress',
+    'vocabulary_review_state',
+    'grammar_review_state',
+    'course_enrolments',
+    'placement_attempts',
+    'final_mission_attempts',
+    'final_assessment_attempts',
+    'daily_task_events',
+  ];
+
+  /// The triggers that feed [SyncOutbox]: every insert or update of a synced
+  /// row enqueues it, and so does a learner's name change. Idempotent, so
+  /// safe to run on both create and upgrade. [include] limits it to the
+  /// tables that exist (see the v6 upgrade).
+  static List<String> syncTriggerStatements([
+    bool Function(String table)? include,
+  ]) => [
+    for (final table in syncedLearnerTables.where(include ?? (_) => true))
+      for (final event in const ['INSERT', 'UPDATE'])
+        'CREATE TRIGGER IF NOT EXISTS sync_outbox_${table}_${event.toLowerCase()} '
+            'AFTER $event ON $table BEGIN '
+            'INSERT INTO sync_outbox (entity, row_id, learner_id) '
+            "VALUES ('$table', NEW.id, NEW.learner_id); END",
+    'CREATE TRIGGER IF NOT EXISTS sync_outbox_learners_name '
+        'AFTER UPDATE OF name ON learners BEGIN '
+        'INSERT INTO sync_outbox (entity, row_id, learner_id) '
+        "VALUES ('learners', NEW.id, NEW.id); END",
+  ];
 
   /// Erases every progress row for [learnerId] — mastery evidence, attempt
   /// history (lesson/placement/mission/assessment alike), vocabulary/grammar
@@ -84,6 +177,9 @@ class AppDatabase extends _$AppDatabase {
   /// UUID, and
   /// `content_versions` (a course-level log, not learner-level) are
   /// untouched — this resets a learner's *progress*, not their identity.
+  /// Queued uploads of the erased rows go too: a reset is never followed by
+  /// an upload of what it erased. (Telling the learner's *account* about the
+  /// reset is the sync layer's job — `ProgressResetService`.)
   /// See docs/UX_PRINCIPLES.md's "resetting progress" confirmation-copy rule
   /// and docs/DATA_MODEL.md.
   Future<void> resetProgressForLearner(int learnerId) {
@@ -131,6 +227,9 @@ class AppDatabase extends _$AppDatabase {
       )..where((t) => t.learnerId.equals(learnerId))).go();
       await (delete(
         dailyTaskEvents,
+      )..where((t) => t.learnerId.equals(learnerId))).go();
+      await (delete(
+        syncOutbox,
       )..where((t) => t.learnerId.equals(learnerId))).go();
     });
   }

@@ -22,8 +22,157 @@ void main() {
     await database.close();
   });
 
-  test('schema version is 5', () {
-    expect(database.schemaVersion, 5);
+  test('schema version is 6', () {
+    expect(database.schemaVersion, 6);
+  });
+
+  test('a v5 install upgrades to 6: existing progress is kept, belongs to '
+      'the guest, and is queued so attaching it to an account uploads it', () async {
+    final raw = sqlite3.sqlite3.openInMemory();
+    raw.execute('''
+        CREATE TABLE learners (
+          id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+          uuid TEXT NOT NULL UNIQUE,
+          name TEXT NULL,
+          native_language TEXT NOT NULL DEFAULT 'ar',
+          target_language TEXT NOT NULL DEFAULT 'en',
+          created_at INTEGER NOT NULL,
+          is_active INTEGER NOT NULL DEFAULT 1
+        )
+      ''');
+    raw.execute('''
+        CREATE TABLE activity_attempts (
+          id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+          uuid TEXT NOT NULL UNIQUE,
+          learner_id INTEGER NOT NULL REFERENCES learners (id),
+          activity_id TEXT NOT NULL,
+          lesson_id TEXT NULL,
+          session_type TEXT NOT NULL,
+          session_id TEXT NULL,
+          mode TEXT NOT NULL,
+          evidence_skill TEXT NOT NULL,
+          raw_answer TEXT NULL,
+          is_correct INTEGER NULL,
+          score REAL NULL,
+          criteria_scores TEXT NULL,
+          was_fallback INTEGER NOT NULL DEFAULT 0,
+          attempted_at INTEGER NOT NULL,
+          updated_at INTEGER NOT NULL
+        )
+      ''');
+    raw.execute('''
+        CREATE TABLE vocabulary_review_state (
+          id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+          uuid TEXT NOT NULL UNIQUE,
+          learner_id INTEGER NOT NULL REFERENCES learners (id),
+          lexicon_id TEXT NULL,
+          chunk_id TEXT NULL,
+          is_favorite INTEGER NOT NULL DEFAULT 0,
+          confidence_marker TEXT NULL,
+          ease_factor REAL NOT NULL DEFAULT 2.5,
+          interval_days INTEGER NOT NULL DEFAULT 0,
+          repetitions INTEGER NOT NULL DEFAULT 0,
+          due_at INTEGER NULL,
+          last_reviewed_at INTEGER NULL,
+          updated_at INTEGER NOT NULL
+        )
+      ''');
+    raw.execute(
+      "INSERT INTO learners (uuid, name, created_at) VALUES ('l-1', 'Ali', 0)",
+    );
+    raw.execute(
+      "INSERT INTO activity_attempts (uuid, learner_id, activity_id, "
+      "session_type, mode, evidence_skill, attempted_at, updated_at) "
+      "VALUES ('a-1', 1, 'A1-U1-L1-A01', 'lesson', 'mastery', 'reading', 0, 0)",
+    );
+    raw.execute(
+      "INSERT INTO vocabulary_review_state (uuid, learner_id, lexicon_id, "
+      "is_favorite, updated_at) VALUES ('v-1', 1, 'lex-1', 1, 0)",
+    );
+    raw.execute('PRAGMA user_version = 5');
+
+    final upgraded = AppDatabase(NativeDatabase.opened(raw));
+    addTearDown(upgraded.close);
+
+    final learner = await upgraded.select(upgraded.learners).getSingle();
+    expect(learner.name, 'Ali');
+    expect(
+      learner.firebaseUid,
+      isNull,
+      reason: 'existing progress is the guest\'s',
+    );
+    final word = await upgraded
+        .select(upgraded.vocabularyReviewState)
+        .getSingle();
+    expect(word.isFavorite, isTrue);
+    expect(word.favoriteUpdatedAt, isNull);
+
+    final queued = await upgraded.select(upgraded.syncOutbox).get();
+    expect(
+      {for (final e in queued) e.entity},
+      {'activity_attempts', 'vocabulary_review_state', 'learners'},
+    );
+
+    // The triggers are live after the upgrade: a new answer is queued too.
+    await upgraded
+        .into(upgraded.activityAttempts)
+        .insert(
+          ActivityAttemptsCompanion.insert(
+            uuid: 'a-2',
+            learnerId: learner.id,
+            activityId: 'A1-U1-L1-A02',
+            sessionType: 'lesson',
+            mode: 'mastery',
+            evidenceSkill: 'reading',
+            attemptedAt: DateTime.utc(2026),
+            updatedAt: DateTime.utc(2026),
+          ),
+        );
+    expect(await upgraded.select(upgraded.syncOutbox).get(), hasLength(4));
+
+    // An account owns at most one learner row.
+    await (upgraded.update(upgraded.learners)
+          ..where((t) => t.id.equals(learner.id)))
+        .write(const LearnersCompanion(firebaseUid: Value('uid-1')));
+    await expectLater(
+      upgraded
+          .into(upgraded.learners)
+          .insert(
+            LearnersCompanion.insert(
+              uuid: 'l-2',
+              createdAt: DateTime.utc(2026),
+              firebaseUid: const Value('uid-1'),
+            ),
+          ),
+      throwsA(isA<sqlite3.SqliteException>()),
+    );
+  });
+
+  test('every insert or update of synced progress is queued for upload, '
+      'and a reset clears the queue with the progress', () async {
+    final learner = await upgradedLearner(database);
+    await database
+        .into(database.dailyTaskEvents)
+        .insert(
+          DailyTaskEventsCompanion.insert(
+            uuid: 'd-1',
+            learnerId: learner,
+            taskType: 'lesson',
+            occurredAt: DateTime.utc(2026),
+          ),
+        );
+    await (database.update(database.learners)
+          ..where((t) => t.id.equals(learner)))
+        .write(const LearnersCompanion(isActive: Value(false)));
+    final queued = await database.select(database.syncOutbox).get();
+    expect(
+      [for (final e in queued) e.entity],
+      ['daily_task_events'],
+      reason: 'switching the active learner is not progress',
+    );
+
+    await database.resetProgressForLearner(learner);
+    expect(await database.select(database.syncOutbox).get(), isEmpty);
   });
 
   test('migrating from schemaVersion 1 adds a nullable name column without '
@@ -653,3 +802,9 @@ void main() {
     });
   });
 }
+
+Future<int> upgradedLearner(AppDatabase db) => db
+    .into(db.learners)
+    .insert(
+      LearnersCompanion.insert(uuid: 'l-x', createdAt: DateTime.utc(2026)),
+    );

@@ -20,6 +20,8 @@ import '../../features/review/domain/practice_set.dart';
 import '../../features/review/presentation/quick_practice_screen.dart';
 import '../../features/review/presentation/review_home_screen.dart';
 import '../../features/review/presentation/review_session_screen.dart';
+import '../../features/account/presentation/auth_screen.dart';
+import '../../features/account/presentation/forgot_password_screen.dart';
 import '../../features/settings/presentation/settings_screen.dart';
 import '../../features/tests_home/presentation/tests_home_screen.dart';
 import '../../features/vocabulary/presentation/chunk_detail_screen.dart';
@@ -212,6 +214,19 @@ GoRouter appRouter(Ref ref) {
       GoRoute(
         path: '/tests/final-assessment',
         builder: (_, _) => const FinalAssessmentScreen(),
+      ),
+      // Accounts are optional and reached from Settings — full screen,
+      // above the tab bar.
+      GoRoute(path: '/account/sign-in', builder: (_, _) => const AuthScreen()),
+      GoRoute(
+        path: '/account/create',
+        builder: (_, _) => const AuthScreen(createAccount: true),
+      ),
+      GoRoute(
+        // `extra`: the email typed on the sign-in screen, if any.
+        path: '/account/forgot-password',
+        builder: (_, state) =>
+            ForgotPasswordScreen(initialEmail: state.extra as String? ?? ''),
       ),
     ],
   );

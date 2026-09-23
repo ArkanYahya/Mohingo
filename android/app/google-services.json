@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "219416710516",
+    "project_id": "mohingo",
+    "storage_bucket": "mohingo.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:219416710516:android:484ea34d5b308574bd3021",
+        "android_client_info": {
+          "package_name": "com.mohingo.mohingo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "219416710516-incrrr7k7ra6vgom8vja346h0pn9rjuj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mohingo.mohingo",
+            "certificate_hash": "2821f650bbcaf7a2625d13d9dfb66bbde764b310"
+          }
+        },
+        {
+          "client_id": "219416710516-jqevlueojmt8rcn1tarahnbh971aqb0q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaHJVg8VCRiEP5po_bVNpWjE8SsfokQms"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "219416710516-jqevlueojmt8rcn1tarahnbh971aqb0q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

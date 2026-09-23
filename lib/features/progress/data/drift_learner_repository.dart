@@ -12,19 +12,131 @@ class DriftLearnerRepository implements LearnerRepository {
 
   @override
   Future<Learner> getOrCreateLearner() async {
-    final existing = await (_db.select(
-      _db.learners,
-    )..where((t) => t.isActive.equals(true))).getSingleOrNull();
+    final existing =
+        await (_db.select(_db.learners)
+              ..where((t) => t.isActive.equals(true))
+              ..orderBy([(t) => OrderingTerm.asc(t.id)])
+              ..limit(1))
+            .getSingleOrNull();
     if (existing != null) return existing;
+    return activateGuest();
+  }
 
-    final id = await _db
-        .into(_db.learners)
-        .insert(
-          LearnersCompanion.insert(uuid: _uuid.v4(), createdAt: DateTime.now()),
-        );
+  @override
+  Future<Learner> learnerById(int learnerId) {
     return (_db.select(
       _db.learners,
-    )..where((t) => t.id.equals(id))).getSingle();
+    )..where((t) => t.id.equals(learnerId))).getSingle();
+  }
+
+  @override
+  Future<Learner?> learnerForAccount(String firebaseUid) {
+    return (_db.select(
+      _db.learners,
+    )..where((t) => t.firebaseUid.equals(firebaseUid))).getSingleOrNull();
+  }
+
+  @override
+  Future<Learner?> guestLearner() {
+    return (_db.select(_db.learners)
+          ..where((t) => t.firebaseUid.isNull())
+          ..orderBy([(t) => OrderingTerm.asc(t.id)])
+          ..limit(1))
+        .getSingleOrNull();
+  }
+
+  @override
+  Future<Learner> activateGuest() {
+    return _db.transaction(() async {
+      final guest = await guestLearner();
+      final id =
+          guest?.id ??
+          await _db
+              .into(_db.learners)
+              .insert(
+                LearnersCompanion.insert(
+                  uuid: _uuid.v4(),
+                  createdAt: DateTime.now(),
+                ),
+              );
+      await activate(id);
+      return learnerById(id);
+    });
+  }
+
+  @override
+  Future<void> activate(int learnerId) {
+    return _db.transaction(() async {
+      await (_db.update(_db.learners)
+            ..where((t) => t.id.equals(learnerId).not()))
+          .write(const LearnersCompanion(isActive: Value(false)));
+      await (_db.update(_db.learners)..where((t) => t.id.equals(learnerId)))
+          .write(const LearnersCompanion(isActive: Value(true)));
+    });
+  }
+
+  @override
+  Future<Learner> createAccountLearner(String firebaseUid) {
+    return _db.transaction(() async {
+      final id = await _db
+          .into(_db.learners)
+          .insert(
+            LearnersCompanion.insert(
+              uuid: _uuid.v4(),
+              createdAt: DateTime.now(),
+              firebaseUid: Value(firebaseUid),
+              isActive: const Value(false),
+            ),
+          );
+      await activate(id);
+      return learnerById(id);
+    });
+  }
+
+  @override
+  Future<Learner> bindGuestToAccount({
+    required int learnerId,
+    required String firebaseUid,
+  }) {
+    return _db.transaction(() async {
+      final updated =
+          await (_db.update(_db.learners)
+                ..where((t) => t.id.equals(learnerId) & t.firebaseUid.isNull()))
+              .write(LearnersCompanion(firebaseUid: Value(firebaseUid)));
+      if (updated != 1) {
+        throw StateError('learner $learnerId is not a guest');
+      }
+      await activate(learnerId);
+      return learnerById(learnerId);
+    });
+  }
+
+  @override
+  Future<bool> hasProgress(int learnerId) async {
+    Future<bool> any(TableInfo<Table, Object?> table) async {
+      final row = await _db
+          .customSelect(
+            'SELECT 1 FROM ${table.actualTableName} '
+            'WHERE learner_id = ? LIMIT 1',
+            variables: [Variable.withInt(learnerId)],
+            readsFrom: {table},
+          )
+          .getSingleOrNull();
+      return row != null;
+    }
+
+    for (final table in <TableInfo<Table, Object?>>[
+      _db.activityAttempts,
+      _db.lessonProgress,
+      _db.vocabularyReviewState,
+      _db.grammarReviewState,
+      _db.placementAttempts,
+      _db.finalMissionAttempts,
+      _db.finalAssessmentAttempts,
+    ]) {
+      if (await any(table)) return true;
+    }
+    return false;
   }
 
   @override
@@ -126,7 +238,10 @@ class DriftLearnerRepository implements LearnerRepository {
     await (_db.update(
       _db.learners,
     )..where((t) => t.id.equals(learnerId))).write(
-      LearnersCompanion(name: Value(name.trim().isEmpty ? null : name.trim())),
+      LearnersCompanion(
+        name: Value(name.trim().isEmpty ? null : name.trim()),
+        updatedAt: Value(DateTime.now()),
+      ),
     );
   }
 }

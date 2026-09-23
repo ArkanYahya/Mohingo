@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
+import 'package:intl/intl.dart';
 
 import '../../../content/catalog/level_catalog.dart';
 import '../../../content/providers/course_content_providers.dart';
@@ -11,18 +13,18 @@ import '../../../core/theme/color_seed.dart';
 import '../../../core/theme/theme_preferences_provider.dart';
 import '../../../core/widgets/section_heading.dart';
 import '../../../core/widgets/status_pill.dart';
-import '../../../data/local/database_provider.dart';
-import '../../grammar/providers/grammar_providers.dart';
-import '../../learning_path/providers/unit_progress_providers.dart';
+import '../../account/presentation/guest_progress_dialog.dart';
+import '../../account/providers/account_providers.dart';
 import '../../progress/providers/current_learner_provider.dart';
+import '../../progress/providers/learner_progress_refresh.dart';
 import '../../progress/providers/level_providers.dart';
 import '../../progress/providers/progress_providers.dart';
-import '../../review/providers/review_providers.dart';
 import '../../speech/domain/speech_recognition_service.dart';
 import '../../speech/providers/speech_providers.dart';
 import '../../speech/providers/tts_preferences_provider.dart';
-import '../../tests_home/providers/tests_home_providers.dart';
-import '../../vocabulary/providers/vocabulary_providers.dart';
+import '../../sync/domain/cloud_progress_store.dart';
+import '../../sync/domain/sync_engine.dart';
+import '../../sync/providers/sync_providers.dart';
 
 /// The Settings tab.
 ///
@@ -30,9 +32,11 @@ import '../../vocabulary/providers/vocabulary_providers.dart';
 /// sheet), then grouped cards: Appearance (app language, theme, colour —
 /// each applies immediately, per docs/DESIGN_SYSTEM.md), Listening &
 /// speaking (voice speed and pitch with a sample to hear them, microphone
-/// access with an Allow button, speech-recognition availability), and Your
-/// data (offline privacy, backup coming soon, and — last — reset
-/// progress). The app version sits at the foot.
+/// access with an Allow button, speech-recognition availability), Account
+/// & sync (sign in, sync status, sign out — only in builds with Firebase;
+/// see docs/adr/0010-optional-accounts-and-progress-sync.md), and Your data
+/// (offline privacy and — last — reset progress). The app version sits at
+/// the foot.
 class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
 
@@ -41,6 +45,8 @@ class SettingsScreen extends ConsumerWidget {
     final theme = Theme.of(context);
     final tokens = theme.extension<AppTokens>()!;
     final l10n = AppLocalizations.of(context)!;
+    final accountsAvailable = ref.watch(authRepositoryProvider).isAvailable;
+    final signedIn = ref.watch(accountSessionProvider).value is SignedInSession;
     return Scaffold(
       body: SafeArea(
         bottom: false,
@@ -86,20 +92,29 @@ class SettingsScreen extends ConsumerWidget {
                 const _SpeechRecognitionRow(),
               ],
             ),
+            if (accountsAvailable) ...[
+              SectionHeading(l10n.accountSectionTitle),
+              const _AccountGroup(),
+            ],
             SectionHeading(l10n.settingsDataOverline),
             _Group(
               children: [
                 _Row(
                   icon: Icons.lock_outline_rounded,
-                  title: l10n.settingsOfflineTitle,
-                  subtitle: l10n.settingsOfflineBody,
+                  title: signedIn
+                      ? l10n.settingsOfflineTitleAccount
+                      : l10n.settingsOfflineTitle,
+                  subtitle: signedIn
+                      ? l10n.settingsOfflineBodyAccount
+                      : l10n.settingsOfflineBody,
                 ),
-                _Row(
-                  icon: Icons.cloud_sync_outlined,
-                  title: l10n.settingsBackupTitle,
-                  subtitle: l10n.settingsBackupBody,
-                  trailing: StatusPill(label: l10n.comingSoon),
-                ),
+                if (!accountsAvailable)
+                  _Row(
+                    icon: Icons.cloud_sync_outlined,
+                    title: l10n.settingsBackupTitle,
+                    subtitle: l10n.settingsBackupBody,
+                    trailing: StatusPill(label: l10n.comingSoon),
+                  ),
                 const _ResetProgressRow(),
               ],
             ),
@@ -284,7 +299,7 @@ class _SmallAction extends StatelessWidget {
 
   final String label;
   final IconData? icon;
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -791,11 +806,16 @@ class _SpeechRecognitionRow extends ConsumerWidget {
 }
 
 /// The last setting on the page: erase this learner's progress, after a
-/// confirmation. The learner row itself survives.
+/// confirmation — on every device of the account when signed in, and the
+/// confirmation says so. The learner row itself survives.
 class _ResetProgressRow extends ConsumerWidget {
   const _ResetProgressRow();
 
-  Future<void> _confirmAndReset(BuildContext context, WidgetRef ref) async {
+  Future<void> _confirmAndReset(
+    BuildContext context,
+    WidgetRef ref, {
+    required bool everywhere,
+  }) async {
     final l10n = AppLocalizations.of(context)!;
     final confirmed = await showDialog<bool>(
       context: context,
@@ -804,7 +824,11 @@ class _ResetProgressRow extends ConsumerWidget {
         return AlertDialog(
           icon: Icon(Icons.restart_alt_rounded, color: colorScheme.error),
           title: Text(l10n.settingsResetProgressConfirmTitle),
-          content: Text(l10n.settingsResetProgressConfirmBody),
+          content: Text(
+            everywhere
+                ? l10n.settingsResetProgressConfirmBodyAccount
+                : l10n.settingsResetProgressConfirmBody,
+          ),
           actions: [
             TextButton(
               onPressed: () => Navigator.of(dialogContext).pop(false),
@@ -824,28 +848,9 @@ class _ResetProgressRow extends ConsumerWidget {
     );
     if (confirmed != true) return;
 
-    final db = ref.read(appDatabaseProvider);
-    final learner = await ref.read(currentLearnerProvider.future);
-    await db.resetProgressForLearner(learner.id);
+    await ref.read(resetProgressProvider)();
 
-    ref.invalidate(allUnitProgressProvider);
-    ref.invalidate(allLessonProgressProvider);
-    ref.invalidate(allVocabularyReviewStateProvider);
-    ref.invalidate(allGrammarReviewStateProvider);
-    ref.invalidate(reviewContentProvider);
-    ref.invalidate(weakSpotsProvider);
-    ref.invalidate(dueVocabularyProvider);
-    ref.invalidate(currentLevelIdProvider);
-    // A family: invalidating the family itself clears every already-built
-    // levelId's enrolment-ensure state, matching the wipe below.
-    ref.invalidate(ensureLevelEnrolmentProvider);
-    ref.invalidate(currentStreakDaysProvider);
-    ref.invalidate(latestPlacementAttemptProvider);
-    ref.invalidate(latestFinalMissionAttemptProvider);
-    ref.invalidate(latestFinalAssessmentAttemptProvider);
-    // A family: invalidating the family itself clears every already-built
-    // (learnerId, unitId) instance, which is what a full wipe needs.
-    ref.invalidate(lessonProgressForUnitProvider);
+    refreshLearnerProgress(ref.invalidate);
 
     if (context.mounted) {
       ScaffoldMessenger.of(
@@ -857,10 +862,15 @@ class _ResetProgressRow extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context)!;
+    // An account's progress is reset on every device signed in to it.
+    final everywhere =
+        ref.watch(currentLearnerProvider).value?.firebaseUid != null;
     return _Row(
       icon: Icons.restart_alt_rounded,
       title: l10n.settingsResetProgressTitle,
-      subtitle: l10n.settingsResetProgressBody,
+      subtitle: everywhere
+          ? l10n.settingsResetProgressBodyAccount
+          : l10n.settingsResetProgressBody,
       destructive: true,
       trailing: _isNarrow(context)
           ? null
@@ -868,7 +878,162 @@ class _ResetProgressRow extends ConsumerWidget {
               Icons.chevron_right_rounded,
               color: Theme.of(context).extension<AppTokens>()!.textSecondary,
             ),
-      onTap: () => _confirmAndReset(context, ref),
+      onTap: () => _confirmAndReset(context, ref, everywhere: everywhere),
+    );
+  }
+}
+
+/// Account & sync: a guest is offered sign-in; a signed-in learner sees
+/// their account, how syncing is going (with Sync now) and Sign out; a
+/// learner who hasn't yet decided what happens to this phone's guest
+/// progress is offered that choice again.
+class _AccountGroup extends ConsumerWidget {
+  const _AccountGroup();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
+    final session = ref.watch(accountSessionProvider).value;
+    return _Group(
+      children: switch (session) {
+        SignedInSession(:final user) => [
+          _SyncStatusRow(email: user.email),
+          const _SignOutRow(),
+        ],
+        GuestProgressDecision() => [
+          _Row(
+            icon: Icons.sync_problem_outlined,
+            title: l10n.accountDecisionPendingTitle,
+            subtitle: l10n.accountDecisionPendingBody,
+            trailing: _SmallAction(
+              label: l10n.accountDecisionAction,
+              onPressed: () => showGuestProgressDecision(context, ref),
+            ),
+          ),
+          const _SignOutRow(),
+        ],
+        GuestSession() || null => [
+          _Row(
+            icon: Icons.cloud_outlined,
+            title: l10n.accountGuestTitle,
+            subtitle: l10n.accountGuestBody,
+            trailing: _SmallAction(
+              label: l10n.accountSignInAction,
+              onPressed: () => context.push('/account/sign-in'),
+            ),
+          ),
+        ],
+      },
+    );
+  }
+}
+
+class _SyncStatusRow extends ConsumerWidget {
+  const _SyncStatusRow({required this.email});
+
+  final String? email;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
+    final status = ref.watch(syncControllerProvider);
+    final failure = status.lastOutcome?.result == SyncResult.succeeded
+        ? null
+        : status.lastOutcome?.failure;
+    final line = status.running
+        ? l10n.accountSyncing
+        : switch (failure) {
+            SyncFailure.offline => l10n.accountSyncOffline,
+            SyncFailure.signedOut => l10n.accountSyncSignedOut,
+            SyncFailure.permissionDenied ||
+            SyncFailure.unexpected => l10n.accountSyncFailed,
+            null => switch (status.lastSyncedAt) {
+              final at? => l10n.accountSyncedAt(
+                DateFormat.yMMMd(
+                  Localizations.localeOf(context).toLanguageTag(),
+                ).add_jm().format(at.toLocal()),
+              ),
+              null => l10n.accountNotSyncedYet,
+            },
+          };
+    return _Row(
+      icon: switch ((status.running, failure)) {
+        (true, _) => Icons.cloud_sync_outlined,
+        (false, null) => Icons.cloud_done_outlined,
+        (false, _) => Icons.cloud_off_outlined,
+      },
+      title: email ?? l10n.accountYourAccount,
+      subtitle: [
+        line,
+        if (!status.running && status.pendingUploads > 0)
+          l10n.accountPendingChanges(status.pendingUploads),
+      ].join('\n'),
+      trailing: _SmallAction(
+        icon: Icons.sync_rounded,
+        label: l10n.accountSyncNow,
+        onPressed: status.running
+            ? null
+            : () => ref.read(syncControllerProvider.notifier).syncNow(),
+      ),
+    );
+  }
+}
+
+class _SignOutRow extends ConsumerWidget {
+  const _SignOutRow();
+
+  Future<void> _confirmAndSignOut(BuildContext context, WidgetRef ref) async {
+    final l10n = AppLocalizations.of(context)!;
+    final sync = ref.read(syncControllerProvider.notifier);
+    // One last chance to upload before leaving; never blocks for long.
+    if (ref.read(syncControllerProvider).pendingUploads > 0) {
+      await sync.syncNow().timeout(
+        const Duration(seconds: 8),
+        onTimeout: () => null,
+      );
+    }
+    if (!context.mounted) return;
+    final pending = ref.read(syncControllerProvider).pendingUploads > 0;
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (dialogContext) => AlertDialog(
+        icon: const Icon(Icons.logout_rounded),
+        title: Text(l10n.accountSignOutConfirmTitle),
+        content: Text(
+          pending
+              ? l10n.accountSignOutPendingBody
+              : l10n.accountSignOutConfirmBody,
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(dialogContext).pop(false),
+            child: Text(l10n.accountCancel),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.of(dialogContext).pop(true),
+            child: Text(l10n.accountSignOutTitle),
+          ),
+        ],
+      ),
+    );
+    if (confirmed != true || !context.mounted) return;
+    // This row is gone as soon as the session becomes a guest's, so
+    // everything needed afterwards is taken from the context now.
+    final container = ProviderScope.containerOf(context, listen: false);
+    final messenger = ScaffoldMessenger.of(context);
+    await container.read(accountSessionProvider.notifier).signOut();
+    refreshLearnerProgress(container.invalidate);
+    messenger.showSnackBar(SnackBar(content: Text(l10n.accountSignedOut)));
+  }
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
+    return _Row(
+      icon: Icons.logout_rounded,
+      title: l10n.accountSignOutTitle,
+      subtitle: l10n.accountSignOutBody,
+      onTap: () => _confirmAndSignOut(context, ref),
     );
   }
 }

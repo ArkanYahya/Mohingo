@@ -54,6 +54,7 @@ class DriftReviewStateRepository implements ReviewStateRepository {
               lexiconId: Value(lexiconId),
               chunkId: Value(chunkId),
               isFavorite: Value(isFavorite),
+              favoriteUpdatedAt: Value(now),
               updatedAt: now,
             ),
           );
@@ -63,6 +64,7 @@ class DriftReviewStateRepository implements ReviewStateRepository {
       )..where((t) => t.id.equals(existing.id))).write(
         VocabularyReviewStateCompanion(
           isFavorite: Value(isFavorite),
+          favoriteUpdatedAt: Value(now),
           updatedAt: Value(now),
         ),
       );
@@ -228,6 +230,7 @@ class DriftReviewStateRepository implements ReviewStateRepository {
               learnerId: learnerId,
               grammarId: grammarId,
               isFavorite: Value(isFavorite),
+              favoriteUpdatedAt: Value(now),
               updatedAt: now,
             ),
           );
@@ -237,6 +240,7 @@ class DriftReviewStateRepository implements ReviewStateRepository {
       )..where((t) => t.id.equals(existing.id))).write(
         GrammarReviewStateCompanion(
           isFavorite: Value(isFavorite),
+          favoriteUpdatedAt: Value(now),
           updatedAt: Value(now),
         ),
       );

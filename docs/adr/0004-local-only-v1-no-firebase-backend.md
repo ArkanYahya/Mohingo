@@ -1,6 +1,6 @@
 # 0004: Local-only v1 — zero Firebase, no accounts, content shipped as a bundled asset
 
-**Status:** Accepted
+**Status:** Accepted — superseded in part by [0010](0010-optional-accounts-and-progress-sync.md) (2026-09-23): optional Firebase accounts and progress sync. The bundled-content decision below still stands.
 
 ## Context
 

@@ -1407,7 +1407,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get settingsOfflineBody =>
-      'Works fully offline. Nothing is uploaded and there is no account.';
+      'Works fully offline. Without an account, nothing leaves this phone.';
 
   @override
   String get settingsResetProgressBody =>
@@ -1494,4 +1494,237 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get lessonIntroReadTitle => 'Read the text';
+
+  @override
+  String get accountSectionTitle => 'Account & sync';
+
+  @override
+  String get accountGuestTitle => 'Save your progress to an account';
+
+  @override
+  String get accountGuestBody =>
+      'Sign in to keep your progress safe and carry on from another phone.';
+
+  @override
+  String get accountSignInAction => 'Sign in';
+
+  @override
+  String get accountYourAccount => 'Your account';
+
+  @override
+  String get accountSyncing => 'Syncing…';
+
+  @override
+  String get accountNotSyncedYet => 'Not synced yet';
+
+  @override
+  String accountSyncedAt(String time) {
+    return 'Last synced $time';
+  }
+
+  @override
+  String get accountSyncOffline =>
+      'You\'re offline. Your progress is saved on this phone and will sync when you\'re back online.';
+
+  @override
+  String get accountSyncFailed =>
+      'Couldn\'t sync just now. We\'ll try again shortly.';
+
+  @override
+  String get accountSyncSignedOut =>
+      'Your sign-in has expired. Sign out and sign in again to keep syncing.';
+
+  @override
+  String accountPendingChanges(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count changes waiting to sync',
+      one: '1 change waiting to sync',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get accountSyncNow => 'Sync now';
+
+  @override
+  String get accountSignOutTitle => 'Sign out';
+
+  @override
+  String get accountSignOutBody => 'Your progress stays in your account.';
+
+  @override
+  String get accountSignOutConfirmTitle => 'Sign out?';
+
+  @override
+  String get accountSignOutConfirmBody =>
+      'This phone will show guest progress until you sign in again. Your account keeps its progress.';
+
+  @override
+  String get accountSignOutPendingBody =>
+      'Some progress hasn\'t synced yet. It stays on this phone and syncs the next time you sign in here.';
+
+  @override
+  String get accountCancel => 'Cancel';
+
+  @override
+  String get accountSignedOut => 'Signed out.';
+
+  @override
+  String get accountSignedIn => 'Signed in. Your progress will sync.';
+
+  @override
+  String get accountDecisionPendingTitle =>
+      'Choose what to do with this phone\'s progress';
+
+  @override
+  String get accountDecisionPendingBody =>
+      'Your account won\'t sync until you choose.';
+
+  @override
+  String get accountDecisionAction => 'Choose';
+
+  @override
+  String get guestProgressTitle =>
+      'Add this phone\'s progress to your account?';
+
+  @override
+  String get guestProgressBody =>
+      'This phone has progress from before you signed in. You can add it to your account, where it joins anything your account already has, or keep it on this phone only.';
+
+  @override
+  String get guestProgressAttach => 'Add to my account';
+
+  @override
+  String get guestProgressKeepSeparate => 'Keep it on this phone';
+
+  @override
+  String get authSignInTitle => 'Sign in';
+
+  @override
+  String get authCreateTitle => 'Create an account';
+
+  @override
+  String get authIntro =>
+      'Your account keeps your lessons, reviews and test results, so you can carry on from any phone. You can keep learning without one.';
+
+  @override
+  String get authEmailLabel => 'Email';
+
+  @override
+  String get authPasswordLabel => 'Password';
+
+  @override
+  String get authConfirmPasswordLabel => 'Confirm password';
+
+  @override
+  String get authPasswordHint => 'At least 6 characters';
+
+  @override
+  String get authShowPassword => 'Show password';
+
+  @override
+  String get authHidePassword => 'Hide password';
+
+  @override
+  String get authSignInAction => 'Sign in';
+
+  @override
+  String get authCreateAction => 'Create account';
+
+  @override
+  String get authForgotPasswordLink => 'Forgot password?';
+
+  @override
+  String get authOr => 'or';
+
+  @override
+  String get authGoogleAction => 'Continue with Google';
+
+  @override
+  String get authSwitchToCreate => 'New here? Create an account';
+
+  @override
+  String get authSwitchToSignIn => 'Already have an account? Sign in';
+
+  @override
+  String get authEmailInvalid => 'Enter a valid email address.';
+
+  @override
+  String get authPasswordRequired => 'Enter your password.';
+
+  @override
+  String get authPasswordTooShort => 'Use at least 6 characters.';
+
+  @override
+  String get authPasswordsDontMatch => 'The passwords don\'t match.';
+
+  @override
+  String get authErrorInvalidEmail => 'That email address doesn\'t look right.';
+
+  @override
+  String get authErrorWrongCredentials => 'The email or password is incorrect.';
+
+  @override
+  String get authErrorEmailInUse =>
+      'An account with this email already exists. Try signing in instead.';
+
+  @override
+  String get authErrorWeakPassword =>
+      'Choose a stronger password with at least 6 characters.';
+
+  @override
+  String get authErrorUserDisabled => 'This account has been disabled.';
+
+  @override
+  String get authErrorTooManyRequests =>
+      'Too many attempts. Wait a few minutes and try again.';
+
+  @override
+  String get authErrorNetwork =>
+      'No internet connection. Connect and try again. You can keep learning offline meanwhile.';
+
+  @override
+  String get authErrorDifferentMethod =>
+      'This email is registered with another sign-in method. Try that method instead.';
+
+  @override
+  String get authErrorUnavailable => 'Accounts aren\'t available right now.';
+
+  @override
+  String get authErrorUnknown => 'Something went wrong. Please try again.';
+
+  @override
+  String get authResetTitle => 'Reset your password';
+
+  @override
+  String get authResetBody =>
+      'Enter your account\'s email and we\'ll send you a link to choose a new password.';
+
+  @override
+  String get authResetAction => 'Send link';
+
+  @override
+  String authResetSent(String email) {
+    return 'If an account exists for $email, a reset link is on its way. Check your inbox.';
+  }
+
+  @override
+  String get authBackToSignIn => 'Back to sign in';
+
+  @override
+  String get settingsResetProgressBodyAccount =>
+      'Erase every lesson, test result and review on all your devices.';
+
+  @override
+  String get settingsResetProgressConfirmBodyAccount =>
+      'This erases every lesson and unit, test result, review schedule and saved word, on this phone and on every other phone signed in to your account. It can\'t be undone.';
+
+  @override
+  String get settingsOfflineTitleAccount => 'Works offline';
+
+  @override
+  String get settingsOfflineBodyAccount =>
+      'Every lesson works without internet. Your progress is also copied to your account.';
 }

@@ -2,11 +2,14 @@ import 'package:drift/drift.dart';
 
 /// A single local learner profile.
 ///
-/// v1 auto-creates exactly one row on first launch and never exposes profile
-/// switching; kept as a real table (not a single-row preferences blob) so a
-/// future multi-profile or sync-merge scenario needs no schema change.
-/// Identity is a locally-generated [uuid], never a Firebase Auth UID — see
-/// docs/adr/0004-local-only-v1-no-firebase-backend.md.
+/// One row per *owner* of progress on this device: at most one guest (no
+/// [firebaseUid]) plus one per account that has signed in here. Exactly one
+/// row is [isActive] — the learner every screen reads. Signing out makes the
+/// guest active again; the account's row stays on the device, invisible,
+/// until that same account signs back in, so one account's progress can
+/// never surface under another. [uuid] is the local identity; the account
+/// identity is [firebaseUid]. See
+/// docs/adr/0010-optional-accounts-and-progress-sync.md.
 class Learners extends Table {
   IntColumn get id => integer().autoIncrement()();
   TextColumn get uuid => text().unique()();
@@ -15,6 +18,14 @@ class Learners extends Table {
   TextColumn get targetLanguage => text().withDefault(const Constant('en'))();
   DateTimeColumn get createdAt => dateTime()();
   BoolColumn get isActive => boolean().withDefault(const Constant(true))();
+
+  /// The Firebase Auth UID this learner's progress belongs to; null for the
+  /// guest. Unique: an account owns at most one learner row per device.
+  TextColumn get firebaseUid => text().nullable().unique()();
+
+  /// When [name] last changed — the last-writer-wins clock for syncing it.
+  /// Null on rows written before schema v6 and on never-named learners.
+  DateTimeColumn get updatedAt => dateTime().nullable()();
 }
 
 /// One row per learner per curriculum bundle they've started.

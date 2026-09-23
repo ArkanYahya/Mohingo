@@ -7,7 +7,8 @@ Full documentation — product scope, architecture, data model, and every other 
 ## Prerequisites
 
 - Flutter SDK (stable channel; this project was built against Flutter 3.47.2 / Dart 3.13.2 — see `environment.sdk` in `pubspec.yaml` for the minimum supported Dart version)
-- No Firebase project, no API keys, no account of any kind — v1 is fully local and offline (see [ADR 0004](docs/adr/0004-local-only-v1-no-firebase-backend.md)). `flutter pub get` and `flutter run` work with zero external setup.
+- No Firebase project is needed to build or run: until the project is connected (`flutterfire configure`, [docs/FIREBASE_SETUP.md](docs/FIREBASE_SETUP.md)), the app runs local-only and Settings offers no sign-in. With the project connected, learners can optionally sign in and sync progress across devices ([ADR 0010](docs/adr/0010-optional-accounts-and-progress-sync.md)).
+- Node.js 18+ and Java 11+ **only to test the Firestore Security Rules** (`tool/firestore_rules_test/`).
 - Python 3.11+ **only if you regenerate speech audio** — every spoken string ships as a pre-generated clip ([ADR 0008](docs/adr/0008-bundled-pre-generated-speech-audio.md)); the clips are committed, so building and running the app needs no Python. Setup for the tool is in [tool/audio/README.md](tool/audio/README.md).
 - Android: no separate Android SDK setup beyond what `flutter doctor` already checks for.
 - iOS: a Mac with Xcode is required to build/run the iOS target — not available in every dev environment (this project has been built and tested on Windows without one; iOS-specific configuration like `Info.plist` has been hand-edited and verified by reading the file, not by an actual Xcode build).
@@ -18,7 +19,7 @@ Full documentation — product scope, architecture, data model, and every other 
 flutter pub get
 ```
 
-No `.env` file, no secrets, no config to fill in. The curriculum content is already committed as bundled assets — one file per released level (`assets/content/en/A1/a1-course-bundle.json`, `assets/content/en/A2/a2-course-bundle.json`). Those files are the source of truth for content: edit them directly, not the `reference/` packages they came from (each has an `OUT_OF_DATE.md` explaining why), and keep `test/content/` green — see [docs/TESTING.md](docs/TESTING.md). Every string those bundles speak also ships as an audio clip under `assets/audio/en/<LEVEL>/` (about 50 MB for A1 and A2 together); after editing a spoken string, regenerate that level's clips with `python tool/audio/generate_audio.py --level A1 --prune`, or `test/content/levels/level_audio_test.dart` will tell you to.
+No `.env` file and no secrets. The Firebase client configuration (`lib/firebase_options.dart`, `android/app/google-services.json`) is committed once the project is connected — it identifies the project and is not a secret ([docs/SECURITY.md](docs/SECURITY.md)). The curriculum content is already committed as bundled assets — one file per released level (`assets/content/en/A1/a1-course-bundle.json`, `assets/content/en/A2/a2-course-bundle.json`). Those files are the source of truth for content: edit them directly, not the `reference/` packages they came from (each has an `OUT_OF_DATE.md` explaining why), and keep `test/content/` green — see [docs/TESTING.md](docs/TESTING.md). Every string those bundles speak also ships as an audio clip under `assets/audio/en/<LEVEL>/` (about 50 MB for A1 and A2 together); after editing a spoken string, regenerate that level's clips with `python tool/audio/generate_audio.py --level A1 --prune`, or `test/content/levels/level_audio_test.dart` will tell you to.
 
 ## Common commands
 
@@ -29,6 +30,7 @@ flutter gen-l10n                                              # regenerate AppLo
 dart format --set-exit-if-changed .                           # format check (also just `dart format .` to apply)
 flutter analyze                                               # static analysis — must report "No issues found!"
 flutter test                                                  # the full test suite (unit + widget)
+(cd tool/firestore_rules_test && npm install && npm test)     # Firestore Security Rules, on the emulator
 dart run tool/update_published_ids.dart                       # after ADDING curriculum content — records its ids, then commit the diff
 python tool/audio/generate_audio.py --level A1 --prune       # after EDITING any spoken bundle string — regenerates that level's clips (tool/audio/README.md)
 flutter run                                                   # run on a connected device/emulator
@@ -48,7 +50,7 @@ After editing `lib/l10n/app_en.arb` or `lib/l10n/app_ar.arb`, run `flutter gen-l
 ## Running tests
 
 ```
-flutter test                      # unit + widget tests (904 passing as of the last full run — see CLAUDE.md)
+flutter test                      # unit + widget tests (999 passing as of the last full run)
 flutter test integration_test/    # not yet added — see "Known limitations" below
 ```
 
@@ -64,6 +66,9 @@ A widget test that reads the database after `_pumpAppAndWaitForContent` returns 
 If a widget test hangs or times out otherwise, it's almost always a missing fake-service override — see `test/features/speech/fake_speech_services.dart` and how existing tests use it. Real device-backed plugins (`flutter_tts`, `speech_to_text`, `permission_handler`) have no platform channel to answer in `flutter test`, so any widget that reads their providers needs `textToSpeechServiceProvider`/`speechCapabilityServiceProvider` overridden with a fake, or the test will hang waiting for a response that never comes.
 
 ## Known limitations (honestly, not swept under the rug)
+
+- **Accounts and sync have been tested against a simulated cloud and the Firestore emulator, not yet on real devices against the real project.** The sync engine, merge rules, reset, account switching and migration run in `flutter test` over real SQLite with an in-memory cloud; the Security Rules run on the Firestore emulator. The Firebase adapters themselves (`FirebaseAuthRepository`, `FirestoreProgressStore`) and Google sign-in need a device and the connected project — see [docs/FIREBASE_SETUP.md](docs/FIREBASE_SETUP.md) "Verifying end to end". No APK was built in the development environment (its network policy blocks the Android SDK download).
+- **Accounts still owe the stores two things** before release: in-app account deletion (Google Play) and, on iOS, Sign in with Apple — see [docs/ROADMAP.md](docs/ROADMAP.md) item 10.
 
 - **No real Android/iOS device or emulator has been used to build or run this app** in the environment this was developed in. Every device-dependent guarantee (speech permission flows, playback of the bundled speech clips through `audioplayers`, the device TTS/STT fallbacks, actual frame performance, real app-store build signing) is verified as far as it can be without one — see [TESTING.md](docs/TESTING.md) and [TECH_STACK.md](docs/TECH_STACK.md) for exactly what that means per area — and flagged as unverified where it can't be. Building and running on a real device is the natural next step before any store submission.
 - **The bundled voices have been checked by machine, not yet by ear across the whole course.** Every clip was generated by Kokoro-82M and a transcription check flags clips whose words drift from their text, but whether a name is pronounced well is a human judgement; the owner listened to the first A1 lessons only. Known and accepted: A2's two-person listening transcripts carry no speaker labels, so they play in the teacher's single voice until the content marks its turns (see [ROADMAP.md](docs/ROADMAP.md)).
