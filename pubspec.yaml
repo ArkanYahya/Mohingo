@@ -43,6 +43,7 @@ dev_dependencies:
   riverpod_generator: ^4.0.8
   drift_dev: ^2.34.5
   riverpod: ^3.4.2
+  flutter_launcher_icons: ^0.14.4
 
 # permission_handler_android 14.0.0 (a transitive dep of permission_handler
 # ^13.0.1) bumped its own compileSdk requirement to 37 — but Android SDK 37
@@ -70,3 +71,17 @@ flutter:
     - assets/audio/en/A1/clips/
     - assets/audio/en/A2/
     - assets/audio/en/A2/clips/
+
+# App icon (Android + iOS). Sources live in assets/icon/ and are not bundled
+# into the app. Regenerate after changing them:
+#   dart run flutter_launcher_icons
+flutter_launcher_icons:
+  image_path: assets/icon/app_icon.png
+  android: true
+  ios: true
+  remove_alpha_ios: true
+  # Android 8+ masks the icon to the launcher's shape; the background carries
+  # the whole artwork inside the 66dp safe zone so no mask clips the M.
+  adaptive_icon_background: assets/icon/app_icon_adaptive_background.png
+  adaptive_icon_foreground: assets/icon/app_icon_adaptive_foreground.png
+  min_sdk_android: 21
