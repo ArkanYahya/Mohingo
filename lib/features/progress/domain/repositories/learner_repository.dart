@@ -2,17 +2,48 @@ import '../../../../data/local/database.dart';
 
 /// The learner profile and course-enrolment repository.
 ///
-/// v1 has no multi-profile support and no accounts — see
-/// docs/adr/0004-local-only-v1-no-firebase-backend.md — so
-/// [getOrCreateLearner] always resolves to the same single local profile,
-/// created on first call. Only one implementation exists in v1
-/// ([DriftLearnerRepository]); the interface is written so a future
-/// account-sync implementation can be swapped in via provider override
-/// without touching callers. See docs/ARCHITECTURE.md.
+/// A device holds at most one guest learner plus one learner per account
+/// that has signed in on it; exactly one is active, and every screen reads
+/// the active one ([getOrCreateLearner]). Which one is active is decided by
+/// `AccountSessionController`, through the account methods below. See
+/// docs/adr/0010-optional-accounts-and-progress-sync.md.
 abstract interface class LearnerRepository {
-  /// Returns the single active learner, creating one (with a fresh local
-  /// UUID — never a Firebase Auth UID) if none exists yet.
+  /// Returns the active learner, creating a guest (with a fresh local UUID)
+  /// if the device has no learner yet.
   Future<Learner> getOrCreateLearner();
+
+  /// The learner with local id [learnerId].
+  Future<Learner> learnerById(int learnerId);
+
+  /// The learner bound to the account [firebaseUid] on this device, if that
+  /// account has signed in here before.
+  Future<Learner?> learnerForAccount(String firebaseUid);
+
+  /// The guest learner (bound to no account), if the device has one.
+  Future<Learner?> guestLearner();
+
+  /// Makes the guest the active learner, creating a fresh guest if the
+  /// device has none. Used on sign-out.
+  Future<Learner> activateGuest();
+
+  /// Makes [learnerId] the one active learner.
+  Future<void> activate(int learnerId);
+
+  /// Creates a learner owned by [firebaseUid] and makes it active.
+  Future<Learner> createAccountLearner(String firebaseUid);
+
+  /// Hands the guest [learnerId] — and with it all its progress — to the
+  /// account [firebaseUid], and makes it active. The device is left without
+  /// a guest until one is next needed.
+  Future<Learner> bindGuestToAccount({
+    required int learnerId,
+    required String firebaseUid,
+  });
+
+  /// Whether [learnerId] has any progress worth keeping: an answer, a lesson
+  /// position, a review state or a test attempt. An enrolment alone does not
+  /// count — the app creates one on first launch.
+  Future<bool> hasProgress(int learnerId);
 
   /// Records that [learnerId] has started the catalogue level [levelId]
   /// (bundle [courseId]) at [contentVersion]. Idempotent: a level the

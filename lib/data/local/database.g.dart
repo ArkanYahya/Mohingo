@@ -90,6 +90,29 @@ class $LearnersTable extends Learners with TableInfo<$LearnersTable, Learner> {
     ),
     defaultValue: const Constant(true),
   );
+  static const VerificationMeta _firebaseUidMeta = const VerificationMeta(
+    'firebaseUid',
+  );
+  @override
+  late final GeneratedColumn<String> firebaseUid = GeneratedColumn<String>(
+    'firebase_uid',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways('UNIQUE'),
+  );
+  static const VerificationMeta _updatedAtMeta = const VerificationMeta(
+    'updatedAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> updatedAt = GeneratedColumn<DateTime>(
+    'updated_at',
+    aliasedName,
+    true,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: false,
+  );
   @override
   List<GeneratedColumn> get $columns => [
     id,
@@ -99,6 +122,8 @@ class $LearnersTable extends Learners with TableInfo<$LearnersTable, Learner> {
     targetLanguage,
     createdAt,
     isActive,
+    firebaseUid,
+    updatedAt,
   ];
   @override
   String get aliasedName => _alias ?? actualTableName;
@@ -161,6 +186,21 @@ class $LearnersTable extends Learners with TableInfo<$LearnersTable, Learner> {
         isActive.isAcceptableOrUnknown(data['is_active']!, _isActiveMeta),
       );
     }
+    if (data.containsKey('firebase_uid')) {
+      context.handle(
+        _firebaseUidMeta,
+        firebaseUid.isAcceptableOrUnknown(
+          data['firebase_uid']!,
+          _firebaseUidMeta,
+        ),
+      );
+    }
+    if (data.containsKey('updated_at')) {
+      context.handle(
+        _updatedAtMeta,
+        updatedAt.isAcceptableOrUnknown(data['updated_at']!, _updatedAtMeta),
+      );
+    }
     return context;
   }
 
@@ -198,6 +238,14 @@ class $LearnersTable extends Learners with TableInfo<$LearnersTable, Learner> {
         DriftSqlType.bool,
         data['${effectivePrefix}is_active'],
       )!,
+      firebaseUid: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}firebase_uid'],
+      ),
+      updatedAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}updated_at'],
+      ),
     );
   }
 
@@ -215,6 +263,14 @@ class Learner extends DataClass implements Insertable<Learner> {
   final String targetLanguage;
   final DateTime createdAt;
   final bool isActive;
+
+  /// The Firebase Auth UID this learner's progress belongs to; null for the
+  /// guest. Unique: an account owns at most one learner row per device.
+  final String? firebaseUid;
+
+  /// When [name] last changed — the last-writer-wins clock for syncing it.
+  /// Null on rows written before schema v6 and on never-named learners.
+  final DateTime? updatedAt;
   const Learner({
     required this.id,
     required this.uuid,
@@ -223,6 +279,8 @@ class Learner extends DataClass implements Insertable<Learner> {
     required this.targetLanguage,
     required this.createdAt,
     required this.isActive,
+    this.firebaseUid,
+    this.updatedAt,
   });
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
@@ -236,6 +294,12 @@ class Learner extends DataClass implements Insertable<Learner> {
     map['target_language'] = Variable<String>(targetLanguage);
     map['created_at'] = Variable<DateTime>(createdAt);
     map['is_active'] = Variable<bool>(isActive);
+    if (!nullToAbsent || firebaseUid != null) {
+      map['firebase_uid'] = Variable<String>(firebaseUid);
+    }
+    if (!nullToAbsent || updatedAt != null) {
+      map['updated_at'] = Variable<DateTime>(updatedAt);
+    }
     return map;
   }
 
@@ -248,6 +312,12 @@ class Learner extends DataClass implements Insertable<Learner> {
       targetLanguage: Value(targetLanguage),
       createdAt: Value(createdAt),
       isActive: Value(isActive),
+      firebaseUid: firebaseUid == null && nullToAbsent
+          ? const Value.absent()
+          : Value(firebaseUid),
+      updatedAt: updatedAt == null && nullToAbsent
+          ? const Value.absent()
+          : Value(updatedAt),
     );
   }
 
@@ -264,6 +334,8 @@ class Learner extends DataClass implements Insertable<Learner> {
       targetLanguage: serializer.fromJson<String>(json['targetLanguage']),
       createdAt: serializer.fromJson<DateTime>(json['createdAt']),
       isActive: serializer.fromJson<bool>(json['isActive']),
+      firebaseUid: serializer.fromJson<String?>(json['firebaseUid']),
+      updatedAt: serializer.fromJson<DateTime?>(json['updatedAt']),
     );
   }
   @override
@@ -277,6 +349,8 @@ class Learner extends DataClass implements Insertable<Learner> {
       'targetLanguage': serializer.toJson<String>(targetLanguage),
       'createdAt': serializer.toJson<DateTime>(createdAt),
       'isActive': serializer.toJson<bool>(isActive),
+      'firebaseUid': serializer.toJson<String?>(firebaseUid),
+      'updatedAt': serializer.toJson<DateTime?>(updatedAt),
     };
   }
 
@@ -288,6 +362,8 @@ class Learner extends DataClass implements Insertable<Learner> {
     String? targetLanguage,
     DateTime? createdAt,
     bool? isActive,
+    Value<String?> firebaseUid = const Value.absent(),
+    Value<DateTime?> updatedAt = const Value.absent(),
   }) => Learner(
     id: id ?? this.id,
     uuid: uuid ?? this.uuid,
@@ -296,6 +372,8 @@ class Learner extends DataClass implements Insertable<Learner> {
     targetLanguage: targetLanguage ?? this.targetLanguage,
     createdAt: createdAt ?? this.createdAt,
     isActive: isActive ?? this.isActive,
+    firebaseUid: firebaseUid.present ? firebaseUid.value : this.firebaseUid,
+    updatedAt: updatedAt.present ? updatedAt.value : this.updatedAt,
   );
   Learner copyWithCompanion(LearnersCompanion data) {
     return Learner(
@@ -310,6 +388,10 @@ class Learner extends DataClass implements Insertable<Learner> {
           : this.targetLanguage,
       createdAt: data.createdAt.present ? data.createdAt.value : this.createdAt,
       isActive: data.isActive.present ? data.isActive.value : this.isActive,
+      firebaseUid: data.firebaseUid.present
+          ? data.firebaseUid.value
+          : this.firebaseUid,
+      updatedAt: data.updatedAt.present ? data.updatedAt.value : this.updatedAt,
     );
   }
 
@@ -322,7 +404,9 @@ class Learner extends DataClass implements Insertable<Learner> {
           ..write('nativeLanguage: $nativeLanguage, ')
           ..write('targetLanguage: $targetLanguage, ')
           ..write('createdAt: $createdAt, ')
-          ..write('isActive: $isActive')
+          ..write('isActive: $isActive, ')
+          ..write('firebaseUid: $firebaseUid, ')
+          ..write('updatedAt: $updatedAt')
           ..write(')'))
         .toString();
   }
@@ -336,6 +420,8 @@ class Learner extends DataClass implements Insertable<Learner> {
     targetLanguage,
     createdAt,
     isActive,
+    firebaseUid,
+    updatedAt,
   );
   @override
   bool operator ==(Object other) =>
@@ -347,7 +433,9 @@ class Learner extends DataClass implements Insertable<Learner> {
           other.nativeLanguage == this.nativeLanguage &&
           other.targetLanguage == this.targetLanguage &&
           other.createdAt == this.createdAt &&
-          other.isActive == this.isActive);
+          other.isActive == this.isActive &&
+          other.firebaseUid == this.firebaseUid &&
+          other.updatedAt == this.updatedAt);
 }
 
 class LearnersCompanion extends UpdateCompanion<Learner> {
@@ -358,6 +446,8 @@ class LearnersCompanion extends UpdateCompanion<Learner> {
   final Value<String> targetLanguage;
   final Value<DateTime> createdAt;
   final Value<bool> isActive;
+  final Value<String?> firebaseUid;
+  final Value<DateTime?> updatedAt;
   const LearnersCompanion({
     this.id = const Value.absent(),
     this.uuid = const Value.absent(),
@@ -366,6 +456,8 @@ class LearnersCompanion extends UpdateCompanion<Learner> {
     this.targetLanguage = const Value.absent(),
     this.createdAt = const Value.absent(),
     this.isActive = const Value.absent(),
+    this.firebaseUid = const Value.absent(),
+    this.updatedAt = const Value.absent(),
   });
   LearnersCompanion.insert({
     this.id = const Value.absent(),
@@ -375,6 +467,8 @@ class LearnersCompanion extends UpdateCompanion<Learner> {
     this.targetLanguage = const Value.absent(),
     required DateTime createdAt,
     this.isActive = const Value.absent(),
+    this.firebaseUid = const Value.absent(),
+    this.updatedAt = const Value.absent(),
   }) : uuid = Value(uuid),
        createdAt = Value(createdAt);
   static Insertable<Learner> custom({
@@ -385,6 +479,8 @@ class LearnersCompanion extends UpdateCompanion<Learner> {
     Expression<String>? targetLanguage,
     Expression<DateTime>? createdAt,
     Expression<bool>? isActive,
+    Expression<String>? firebaseUid,
+    Expression<DateTime>? updatedAt,
   }) {
     return RawValuesInsertable({
       if (id != null) 'id': id,
@@ -394,6 +490,8 @@ class LearnersCompanion extends UpdateCompanion<Learner> {
       if (targetLanguage != null) 'target_language': targetLanguage,
       if (createdAt != null) 'created_at': createdAt,
       if (isActive != null) 'is_active': isActive,
+      if (firebaseUid != null) 'firebase_uid': firebaseUid,
+      if (updatedAt != null) 'updated_at': updatedAt,
     });
   }
 
@@ -405,6 +503,8 @@ class LearnersCompanion extends UpdateCompanion<Learner> {
     Value<String>? targetLanguage,
     Value<DateTime>? createdAt,
     Value<bool>? isActive,
+    Value<String?>? firebaseUid,
+    Value<DateTime?>? updatedAt,
   }) {
     return LearnersCompanion(
       id: id ?? this.id,
@@ -414,6 +514,8 @@ class LearnersCompanion extends UpdateCompanion<Learner> {
       targetLanguage: targetLanguage ?? this.targetLanguage,
       createdAt: createdAt ?? this.createdAt,
       isActive: isActive ?? this.isActive,
+      firebaseUid: firebaseUid ?? this.firebaseUid,
+      updatedAt: updatedAt ?? this.updatedAt,
     );
   }
 
@@ -441,6 +543,12 @@ class LearnersCompanion extends UpdateCompanion<Learner> {
     if (isActive.present) {
       map['is_active'] = Variable<bool>(isActive.value);
     }
+    if (firebaseUid.present) {
+      map['firebase_uid'] = Variable<String>(firebaseUid.value);
+    }
+    if (updatedAt.present) {
+      map['updated_at'] = Variable<DateTime>(updatedAt.value);
+    }
     return map;
   }
 
@@ -453,7 +561,9 @@ class LearnersCompanion extends UpdateCompanion<Learner> {
           ..write('nativeLanguage: $nativeLanguage, ')
           ..write('targetLanguage: $targetLanguage, ')
           ..write('createdAt: $createdAt, ')
-          ..write('isActive: $isActive')
+          ..write('isActive: $isActive, ')
+          ..write('firebaseUid: $firebaseUid, ')
+          ..write('updatedAt: $updatedAt')
           ..write(')'))
         .toString();
   }
@@ -5258,6 +5368,18 @@ class $VocabularyReviewStateTable extends VocabularyReviewState
         type: DriftSqlType.dateTime,
         requiredDuringInsert: false,
       );
+  static const VerificationMeta _favoriteUpdatedAtMeta = const VerificationMeta(
+    'favoriteUpdatedAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> favoriteUpdatedAt =
+      GeneratedColumn<DateTime>(
+        'favorite_updated_at',
+        aliasedName,
+        true,
+        type: DriftSqlType.dateTime,
+        requiredDuringInsert: false,
+      );
   static const VerificationMeta _updatedAtMeta = const VerificationMeta(
     'updatedAt',
   );
@@ -5283,6 +5405,7 @@ class $VocabularyReviewStateTable extends VocabularyReviewState
     repetitions,
     dueAt,
     lastReviewedAt,
+    favoriteUpdatedAt,
     updatedAt,
   ];
   @override
@@ -5382,6 +5505,15 @@ class $VocabularyReviewStateTable extends VocabularyReviewState
         ),
       );
     }
+    if (data.containsKey('favorite_updated_at')) {
+      context.handle(
+        _favoriteUpdatedAtMeta,
+        favoriteUpdatedAt.isAcceptableOrUnknown(
+          data['favorite_updated_at']!,
+          _favoriteUpdatedAtMeta,
+        ),
+      );
+    }
     if (data.containsKey('updated_at')) {
       context.handle(
         _updatedAtMeta,
@@ -5450,6 +5582,10 @@ class $VocabularyReviewStateTable extends VocabularyReviewState
         DriftSqlType.dateTime,
         data['${effectivePrefix}last_reviewed_at'],
       ),
+      favoriteUpdatedAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}favorite_updated_at'],
+      ),
       updatedAt: attachedDatabase.typeMapping.read(
         DriftSqlType.dateTime,
         data['${effectivePrefix}updated_at'],
@@ -5477,6 +5613,11 @@ class VocabularyReviewStateData extends DataClass
   final int repetitions;
   final DateTime? dueAt;
   final DateTime? lastReviewedAt;
+
+  /// When [isFavorite] last changed — kept apart from [updatedAt] so that,
+  /// when two devices' copies meet, a newer review elsewhere never undoes a
+  /// favourite set here (docs/adr/0010-optional-accounts-and-progress-sync.md).
+  final DateTime? favoriteUpdatedAt;
   final DateTime updatedAt;
   const VocabularyReviewStateData({
     required this.id,
@@ -5491,6 +5632,7 @@ class VocabularyReviewStateData extends DataClass
     required this.repetitions,
     this.dueAt,
     this.lastReviewedAt,
+    this.favoriteUpdatedAt,
     required this.updatedAt,
   });
   @override
@@ -5517,6 +5659,9 @@ class VocabularyReviewStateData extends DataClass
     }
     if (!nullToAbsent || lastReviewedAt != null) {
       map['last_reviewed_at'] = Variable<DateTime>(lastReviewedAt);
+    }
+    if (!nullToAbsent || favoriteUpdatedAt != null) {
+      map['favorite_updated_at'] = Variable<DateTime>(favoriteUpdatedAt);
     }
     map['updated_at'] = Variable<DateTime>(updatedAt);
     return map;
@@ -5546,6 +5691,9 @@ class VocabularyReviewStateData extends DataClass
       lastReviewedAt: lastReviewedAt == null && nullToAbsent
           ? const Value.absent()
           : Value(lastReviewedAt),
+      favoriteUpdatedAt: favoriteUpdatedAt == null && nullToAbsent
+          ? const Value.absent()
+          : Value(favoriteUpdatedAt),
       updatedAt: Value(updatedAt),
     );
   }
@@ -5568,6 +5716,9 @@ class VocabularyReviewStateData extends DataClass
       repetitions: serializer.fromJson<int>(json['repetitions']),
       dueAt: serializer.fromJson<DateTime?>(json['dueAt']),
       lastReviewedAt: serializer.fromJson<DateTime?>(json['lastReviewedAt']),
+      favoriteUpdatedAt: serializer.fromJson<DateTime?>(
+        json['favoriteUpdatedAt'],
+      ),
       updatedAt: serializer.fromJson<DateTime>(json['updatedAt']),
     );
   }
@@ -5587,6 +5738,7 @@ class VocabularyReviewStateData extends DataClass
       'repetitions': serializer.toJson<int>(repetitions),
       'dueAt': serializer.toJson<DateTime?>(dueAt),
       'lastReviewedAt': serializer.toJson<DateTime?>(lastReviewedAt),
+      'favoriteUpdatedAt': serializer.toJson<DateTime?>(favoriteUpdatedAt),
       'updatedAt': serializer.toJson<DateTime>(updatedAt),
     };
   }
@@ -5604,6 +5756,7 @@ class VocabularyReviewStateData extends DataClass
     int? repetitions,
     Value<DateTime?> dueAt = const Value.absent(),
     Value<DateTime?> lastReviewedAt = const Value.absent(),
+    Value<DateTime?> favoriteUpdatedAt = const Value.absent(),
     DateTime? updatedAt,
   }) => VocabularyReviewStateData(
     id: id ?? this.id,
@@ -5622,6 +5775,9 @@ class VocabularyReviewStateData extends DataClass
     lastReviewedAt: lastReviewedAt.present
         ? lastReviewedAt.value
         : this.lastReviewedAt,
+    favoriteUpdatedAt: favoriteUpdatedAt.present
+        ? favoriteUpdatedAt.value
+        : this.favoriteUpdatedAt,
     updatedAt: updatedAt ?? this.updatedAt,
   );
   VocabularyReviewStateData copyWithCompanion(
@@ -5652,6 +5808,9 @@ class VocabularyReviewStateData extends DataClass
       lastReviewedAt: data.lastReviewedAt.present
           ? data.lastReviewedAt.value
           : this.lastReviewedAt,
+      favoriteUpdatedAt: data.favoriteUpdatedAt.present
+          ? data.favoriteUpdatedAt.value
+          : this.favoriteUpdatedAt,
       updatedAt: data.updatedAt.present ? data.updatedAt.value : this.updatedAt,
     );
   }
@@ -5671,6 +5830,7 @@ class VocabularyReviewStateData extends DataClass
           ..write('repetitions: $repetitions, ')
           ..write('dueAt: $dueAt, ')
           ..write('lastReviewedAt: $lastReviewedAt, ')
+          ..write('favoriteUpdatedAt: $favoriteUpdatedAt, ')
           ..write('updatedAt: $updatedAt')
           ..write(')'))
         .toString();
@@ -5690,6 +5850,7 @@ class VocabularyReviewStateData extends DataClass
     repetitions,
     dueAt,
     lastReviewedAt,
+    favoriteUpdatedAt,
     updatedAt,
   );
   @override
@@ -5708,6 +5869,7 @@ class VocabularyReviewStateData extends DataClass
           other.repetitions == this.repetitions &&
           other.dueAt == this.dueAt &&
           other.lastReviewedAt == this.lastReviewedAt &&
+          other.favoriteUpdatedAt == this.favoriteUpdatedAt &&
           other.updatedAt == this.updatedAt);
 }
 
@@ -5725,6 +5887,7 @@ class VocabularyReviewStateCompanion
   final Value<int> repetitions;
   final Value<DateTime?> dueAt;
   final Value<DateTime?> lastReviewedAt;
+  final Value<DateTime?> favoriteUpdatedAt;
   final Value<DateTime> updatedAt;
   const VocabularyReviewStateCompanion({
     this.id = const Value.absent(),
@@ -5739,6 +5902,7 @@ class VocabularyReviewStateCompanion
     this.repetitions = const Value.absent(),
     this.dueAt = const Value.absent(),
     this.lastReviewedAt = const Value.absent(),
+    this.favoriteUpdatedAt = const Value.absent(),
     this.updatedAt = const Value.absent(),
   });
   VocabularyReviewStateCompanion.insert({
@@ -5754,6 +5918,7 @@ class VocabularyReviewStateCompanion
     this.repetitions = const Value.absent(),
     this.dueAt = const Value.absent(),
     this.lastReviewedAt = const Value.absent(),
+    this.favoriteUpdatedAt = const Value.absent(),
     required DateTime updatedAt,
   }) : uuid = Value(uuid),
        learnerId = Value(learnerId),
@@ -5771,6 +5936,7 @@ class VocabularyReviewStateCompanion
     Expression<int>? repetitions,
     Expression<DateTime>? dueAt,
     Expression<DateTime>? lastReviewedAt,
+    Expression<DateTime>? favoriteUpdatedAt,
     Expression<DateTime>? updatedAt,
   }) {
     return RawValuesInsertable({
@@ -5786,6 +5952,7 @@ class VocabularyReviewStateCompanion
       if (repetitions != null) 'repetitions': repetitions,
       if (dueAt != null) 'due_at': dueAt,
       if (lastReviewedAt != null) 'last_reviewed_at': lastReviewedAt,
+      if (favoriteUpdatedAt != null) 'favorite_updated_at': favoriteUpdatedAt,
       if (updatedAt != null) 'updated_at': updatedAt,
     });
   }
@@ -5803,6 +5970,7 @@ class VocabularyReviewStateCompanion
     Value<int>? repetitions,
     Value<DateTime?>? dueAt,
     Value<DateTime?>? lastReviewedAt,
+    Value<DateTime?>? favoriteUpdatedAt,
     Value<DateTime>? updatedAt,
   }) {
     return VocabularyReviewStateCompanion(
@@ -5818,6 +5986,7 @@ class VocabularyReviewStateCompanion
       repetitions: repetitions ?? this.repetitions,
       dueAt: dueAt ?? this.dueAt,
       lastReviewedAt: lastReviewedAt ?? this.lastReviewedAt,
+      favoriteUpdatedAt: favoriteUpdatedAt ?? this.favoriteUpdatedAt,
       updatedAt: updatedAt ?? this.updatedAt,
     );
   }
@@ -5861,6 +6030,9 @@ class VocabularyReviewStateCompanion
     if (lastReviewedAt.present) {
       map['last_reviewed_at'] = Variable<DateTime>(lastReviewedAt.value);
     }
+    if (favoriteUpdatedAt.present) {
+      map['favorite_updated_at'] = Variable<DateTime>(favoriteUpdatedAt.value);
+    }
     if (updatedAt.present) {
       map['updated_at'] = Variable<DateTime>(updatedAt.value);
     }
@@ -5882,6 +6054,7 @@ class VocabularyReviewStateCompanion
           ..write('repetitions: $repetitions, ')
           ..write('dueAt: $dueAt, ')
           ..write('lastReviewedAt: $lastReviewedAt, ')
+          ..write('favoriteUpdatedAt: $favoriteUpdatedAt, ')
           ..write('updatedAt: $updatedAt')
           ..write(')'))
         .toString();
@@ -5969,6 +6142,18 @@ class $GrammarReviewStateTable extends GrammarReviewState
         type: DriftSqlType.dateTime,
         requiredDuringInsert: false,
       );
+  static const VerificationMeta _favoriteUpdatedAtMeta = const VerificationMeta(
+    'favoriteUpdatedAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> favoriteUpdatedAt =
+      GeneratedColumn<DateTime>(
+        'favorite_updated_at',
+        aliasedName,
+        true,
+        type: DriftSqlType.dateTime,
+        requiredDuringInsert: false,
+      );
   static const VerificationMeta _updatedAtMeta = const VerificationMeta(
     'updatedAt',
   );
@@ -5988,6 +6173,7 @@ class $GrammarReviewStateTable extends GrammarReviewState
     grammarId,
     isFavorite,
     markedReviewedAt,
+    favoriteUpdatedAt,
     updatedAt,
   ];
   @override
@@ -6044,6 +6230,15 @@ class $GrammarReviewStateTable extends GrammarReviewState
         ),
       );
     }
+    if (data.containsKey('favorite_updated_at')) {
+      context.handle(
+        _favoriteUpdatedAtMeta,
+        favoriteUpdatedAt.isAcceptableOrUnknown(
+          data['favorite_updated_at']!,
+          _favoriteUpdatedAtMeta,
+        ),
+      );
+    }
     if (data.containsKey('updated_at')) {
       context.handle(
         _updatedAtMeta,
@@ -6085,6 +6280,10 @@ class $GrammarReviewStateTable extends GrammarReviewState
         DriftSqlType.dateTime,
         data['${effectivePrefix}marked_reviewed_at'],
       ),
+      favoriteUpdatedAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}favorite_updated_at'],
+      ),
       updatedAt: attachedDatabase.typeMapping.read(
         DriftSqlType.dateTime,
         data['${effectivePrefix}updated_at'],
@@ -6106,6 +6305,10 @@ class GrammarReviewStateData extends DataClass
   final String grammarId;
   final bool isFavorite;
   final DateTime? markedReviewedAt;
+
+  /// When [isFavorite] last changed; see
+  /// `VocabularyReviewState.favoriteUpdatedAt`.
+  final DateTime? favoriteUpdatedAt;
   final DateTime updatedAt;
   const GrammarReviewStateData({
     required this.id,
@@ -6114,6 +6317,7 @@ class GrammarReviewStateData extends DataClass
     required this.grammarId,
     required this.isFavorite,
     this.markedReviewedAt,
+    this.favoriteUpdatedAt,
     required this.updatedAt,
   });
   @override
@@ -6126,6 +6330,9 @@ class GrammarReviewStateData extends DataClass
     map['is_favorite'] = Variable<bool>(isFavorite);
     if (!nullToAbsent || markedReviewedAt != null) {
       map['marked_reviewed_at'] = Variable<DateTime>(markedReviewedAt);
+    }
+    if (!nullToAbsent || favoriteUpdatedAt != null) {
+      map['favorite_updated_at'] = Variable<DateTime>(favoriteUpdatedAt);
     }
     map['updated_at'] = Variable<DateTime>(updatedAt);
     return map;
@@ -6141,6 +6348,9 @@ class GrammarReviewStateData extends DataClass
       markedReviewedAt: markedReviewedAt == null && nullToAbsent
           ? const Value.absent()
           : Value(markedReviewedAt),
+      favoriteUpdatedAt: favoriteUpdatedAt == null && nullToAbsent
+          ? const Value.absent()
+          : Value(favoriteUpdatedAt),
       updatedAt: Value(updatedAt),
     );
   }
@@ -6159,6 +6369,9 @@ class GrammarReviewStateData extends DataClass
       markedReviewedAt: serializer.fromJson<DateTime?>(
         json['markedReviewedAt'],
       ),
+      favoriteUpdatedAt: serializer.fromJson<DateTime?>(
+        json['favoriteUpdatedAt'],
+      ),
       updatedAt: serializer.fromJson<DateTime>(json['updatedAt']),
     );
   }
@@ -6172,6 +6385,7 @@ class GrammarReviewStateData extends DataClass
       'grammarId': serializer.toJson<String>(grammarId),
       'isFavorite': serializer.toJson<bool>(isFavorite),
       'markedReviewedAt': serializer.toJson<DateTime?>(markedReviewedAt),
+      'favoriteUpdatedAt': serializer.toJson<DateTime?>(favoriteUpdatedAt),
       'updatedAt': serializer.toJson<DateTime>(updatedAt),
     };
   }
@@ -6183,6 +6397,7 @@ class GrammarReviewStateData extends DataClass
     String? grammarId,
     bool? isFavorite,
     Value<DateTime?> markedReviewedAt = const Value.absent(),
+    Value<DateTime?> favoriteUpdatedAt = const Value.absent(),
     DateTime? updatedAt,
   }) => GrammarReviewStateData(
     id: id ?? this.id,
@@ -6193,6 +6408,9 @@ class GrammarReviewStateData extends DataClass
     markedReviewedAt: markedReviewedAt.present
         ? markedReviewedAt.value
         : this.markedReviewedAt,
+    favoriteUpdatedAt: favoriteUpdatedAt.present
+        ? favoriteUpdatedAt.value
+        : this.favoriteUpdatedAt,
     updatedAt: updatedAt ?? this.updatedAt,
   );
   GrammarReviewStateData copyWithCompanion(GrammarReviewStateCompanion data) {
@@ -6207,6 +6425,9 @@ class GrammarReviewStateData extends DataClass
       markedReviewedAt: data.markedReviewedAt.present
           ? data.markedReviewedAt.value
           : this.markedReviewedAt,
+      favoriteUpdatedAt: data.favoriteUpdatedAt.present
+          ? data.favoriteUpdatedAt.value
+          : this.favoriteUpdatedAt,
       updatedAt: data.updatedAt.present ? data.updatedAt.value : this.updatedAt,
     );
   }
@@ -6220,6 +6441,7 @@ class GrammarReviewStateData extends DataClass
           ..write('grammarId: $grammarId, ')
           ..write('isFavorite: $isFavorite, ')
           ..write('markedReviewedAt: $markedReviewedAt, ')
+          ..write('favoriteUpdatedAt: $favoriteUpdatedAt, ')
           ..write('updatedAt: $updatedAt')
           ..write(')'))
         .toString();
@@ -6233,6 +6455,7 @@ class GrammarReviewStateData extends DataClass
     grammarId,
     isFavorite,
     markedReviewedAt,
+    favoriteUpdatedAt,
     updatedAt,
   );
   @override
@@ -6245,6 +6468,7 @@ class GrammarReviewStateData extends DataClass
           other.grammarId == this.grammarId &&
           other.isFavorite == this.isFavorite &&
           other.markedReviewedAt == this.markedReviewedAt &&
+          other.favoriteUpdatedAt == this.favoriteUpdatedAt &&
           other.updatedAt == this.updatedAt);
 }
 
@@ -6256,6 +6480,7 @@ class GrammarReviewStateCompanion
   final Value<String> grammarId;
   final Value<bool> isFavorite;
   final Value<DateTime?> markedReviewedAt;
+  final Value<DateTime?> favoriteUpdatedAt;
   final Value<DateTime> updatedAt;
   const GrammarReviewStateCompanion({
     this.id = const Value.absent(),
@@ -6264,6 +6489,7 @@ class GrammarReviewStateCompanion
     this.grammarId = const Value.absent(),
     this.isFavorite = const Value.absent(),
     this.markedReviewedAt = const Value.absent(),
+    this.favoriteUpdatedAt = const Value.absent(),
     this.updatedAt = const Value.absent(),
   });
   GrammarReviewStateCompanion.insert({
@@ -6273,6 +6499,7 @@ class GrammarReviewStateCompanion
     required String grammarId,
     this.isFavorite = const Value.absent(),
     this.markedReviewedAt = const Value.absent(),
+    this.favoriteUpdatedAt = const Value.absent(),
     required DateTime updatedAt,
   }) : uuid = Value(uuid),
        learnerId = Value(learnerId),
@@ -6285,6 +6512,7 @@ class GrammarReviewStateCompanion
     Expression<String>? grammarId,
     Expression<bool>? isFavorite,
     Expression<DateTime>? markedReviewedAt,
+    Expression<DateTime>? favoriteUpdatedAt,
     Expression<DateTime>? updatedAt,
   }) {
     return RawValuesInsertable({
@@ -6294,6 +6522,7 @@ class GrammarReviewStateCompanion
       if (grammarId != null) 'grammar_id': grammarId,
       if (isFavorite != null) 'is_favorite': isFavorite,
       if (markedReviewedAt != null) 'marked_reviewed_at': markedReviewedAt,
+      if (favoriteUpdatedAt != null) 'favorite_updated_at': favoriteUpdatedAt,
       if (updatedAt != null) 'updated_at': updatedAt,
     });
   }
@@ -6305,6 +6534,7 @@ class GrammarReviewStateCompanion
     Value<String>? grammarId,
     Value<bool>? isFavorite,
     Value<DateTime?>? markedReviewedAt,
+    Value<DateTime?>? favoriteUpdatedAt,
     Value<DateTime>? updatedAt,
   }) {
     return GrammarReviewStateCompanion(
@@ -6314,6 +6544,7 @@ class GrammarReviewStateCompanion
       grammarId: grammarId ?? this.grammarId,
       isFavorite: isFavorite ?? this.isFavorite,
       markedReviewedAt: markedReviewedAt ?? this.markedReviewedAt,
+      favoriteUpdatedAt: favoriteUpdatedAt ?? this.favoriteUpdatedAt,
       updatedAt: updatedAt ?? this.updatedAt,
     );
   }
@@ -6339,6 +6570,9 @@ class GrammarReviewStateCompanion
     if (markedReviewedAt.present) {
       map['marked_reviewed_at'] = Variable<DateTime>(markedReviewedAt.value);
     }
+    if (favoriteUpdatedAt.present) {
+      map['favorite_updated_at'] = Variable<DateTime>(favoriteUpdatedAt.value);
+    }
     if (updatedAt.present) {
       map['updated_at'] = Variable<DateTime>(updatedAt.value);
     }
@@ -6354,6 +6588,7 @@ class GrammarReviewStateCompanion
           ..write('grammarId: $grammarId, ')
           ..write('isFavorite: $isFavorite, ')
           ..write('markedReviewedAt: $markedReviewedAt, ')
+          ..write('favoriteUpdatedAt: $favoriteUpdatedAt, ')
           ..write('updatedAt: $updatedAt')
           ..write(')'))
         .toString();
@@ -8176,6 +8411,734 @@ class DailyTaskEventsCompanion extends UpdateCompanion<DailyTaskEvent> {
   }
 }
 
+class $SyncOutboxTable extends SyncOutbox
+    with TableInfo<$SyncOutboxTable, SyncOutboxData> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $SyncOutboxTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<int> id = GeneratedColumn<int>(
+    'id',
+    aliasedName,
+    false,
+    hasAutoIncrement: true,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'PRIMARY KEY AUTOINCREMENT',
+    ),
+  );
+  static const VerificationMeta _entityMeta = const VerificationMeta('entity');
+  @override
+  late final GeneratedColumn<String> entity = GeneratedColumn<String>(
+    'entity',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _rowIdMeta = const VerificationMeta('rowId');
+  @override
+  late final GeneratedColumn<int> rowId = GeneratedColumn<int>(
+    'row_id',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _learnerIdMeta = const VerificationMeta(
+    'learnerId',
+  );
+  @override
+  late final GeneratedColumn<int> learnerId = GeneratedColumn<int>(
+    'learner_id',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: true,
+  );
+  @override
+  List<GeneratedColumn> get $columns => [id, entity, rowId, learnerId];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'sync_outbox';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<SyncOutboxData> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    }
+    if (data.containsKey('entity')) {
+      context.handle(
+        _entityMeta,
+        entity.isAcceptableOrUnknown(data['entity']!, _entityMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_entityMeta);
+    }
+    if (data.containsKey('row_id')) {
+      context.handle(
+        _rowIdMeta,
+        rowId.isAcceptableOrUnknown(data['row_id']!, _rowIdMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_rowIdMeta);
+    }
+    if (data.containsKey('learner_id')) {
+      context.handle(
+        _learnerIdMeta,
+        learnerId.isAcceptableOrUnknown(data['learner_id']!, _learnerIdMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_learnerIdMeta);
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  SyncOutboxData map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return SyncOutboxData(
+      id: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}id'],
+      )!,
+      entity: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}entity'],
+      )!,
+      rowId: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}row_id'],
+      )!,
+      learnerId: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}learner_id'],
+      )!,
+    );
+  }
+
+  @override
+  $SyncOutboxTable createAlias(String alias) {
+    return $SyncOutboxTable(attachedDatabase, alias);
+  }
+}
+
+class SyncOutboxData extends DataClass implements Insertable<SyncOutboxData> {
+  final int id;
+
+  /// The SQL table name of the changed row (`activity_attempts`, ...).
+  final String entity;
+  final int rowId;
+  final int learnerId;
+  const SyncOutboxData({
+    required this.id,
+    required this.entity,
+    required this.rowId,
+    required this.learnerId,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<int>(id);
+    map['entity'] = Variable<String>(entity);
+    map['row_id'] = Variable<int>(rowId);
+    map['learner_id'] = Variable<int>(learnerId);
+    return map;
+  }
+
+  SyncOutboxCompanion toCompanion(bool nullToAbsent) {
+    return SyncOutboxCompanion(
+      id: Value(id),
+      entity: Value(entity),
+      rowId: Value(rowId),
+      learnerId: Value(learnerId),
+    );
+  }
+
+  factory SyncOutboxData.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return SyncOutboxData(
+      id: serializer.fromJson<int>(json['id']),
+      entity: serializer.fromJson<String>(json['entity']),
+      rowId: serializer.fromJson<int>(json['rowId']),
+      learnerId: serializer.fromJson<int>(json['learnerId']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<int>(id),
+      'entity': serializer.toJson<String>(entity),
+      'rowId': serializer.toJson<int>(rowId),
+      'learnerId': serializer.toJson<int>(learnerId),
+    };
+  }
+
+  SyncOutboxData copyWith({
+    int? id,
+    String? entity,
+    int? rowId,
+    int? learnerId,
+  }) => SyncOutboxData(
+    id: id ?? this.id,
+    entity: entity ?? this.entity,
+    rowId: rowId ?? this.rowId,
+    learnerId: learnerId ?? this.learnerId,
+  );
+  SyncOutboxData copyWithCompanion(SyncOutboxCompanion data) {
+    return SyncOutboxData(
+      id: data.id.present ? data.id.value : this.id,
+      entity: data.entity.present ? data.entity.value : this.entity,
+      rowId: data.rowId.present ? data.rowId.value : this.rowId,
+      learnerId: data.learnerId.present ? data.learnerId.value : this.learnerId,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('SyncOutboxData(')
+          ..write('id: $id, ')
+          ..write('entity: $entity, ')
+          ..write('rowId: $rowId, ')
+          ..write('learnerId: $learnerId')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(id, entity, rowId, learnerId);
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is SyncOutboxData &&
+          other.id == this.id &&
+          other.entity == this.entity &&
+          other.rowId == this.rowId &&
+          other.learnerId == this.learnerId);
+}
+
+class SyncOutboxCompanion extends UpdateCompanion<SyncOutboxData> {
+  final Value<int> id;
+  final Value<String> entity;
+  final Value<int> rowId;
+  final Value<int> learnerId;
+  const SyncOutboxCompanion({
+    this.id = const Value.absent(),
+    this.entity = const Value.absent(),
+    this.rowId = const Value.absent(),
+    this.learnerId = const Value.absent(),
+  });
+  SyncOutboxCompanion.insert({
+    this.id = const Value.absent(),
+    required String entity,
+    required int rowId,
+    required int learnerId,
+  }) : entity = Value(entity),
+       rowId = Value(rowId),
+       learnerId = Value(learnerId);
+  static Insertable<SyncOutboxData> custom({
+    Expression<int>? id,
+    Expression<String>? entity,
+    Expression<int>? rowId,
+    Expression<int>? learnerId,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (entity != null) 'entity': entity,
+      if (rowId != null) 'row_id': rowId,
+      if (learnerId != null) 'learner_id': learnerId,
+    });
+  }
+
+  SyncOutboxCompanion copyWith({
+    Value<int>? id,
+    Value<String>? entity,
+    Value<int>? rowId,
+    Value<int>? learnerId,
+  }) {
+    return SyncOutboxCompanion(
+      id: id ?? this.id,
+      entity: entity ?? this.entity,
+      rowId: rowId ?? this.rowId,
+      learnerId: learnerId ?? this.learnerId,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<int>(id.value);
+    }
+    if (entity.present) {
+      map['entity'] = Variable<String>(entity.value);
+    }
+    if (rowId.present) {
+      map['row_id'] = Variable<int>(rowId.value);
+    }
+    if (learnerId.present) {
+      map['learner_id'] = Variable<int>(learnerId.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('SyncOutboxCompanion(')
+          ..write('id: $id, ')
+          ..write('entity: $entity, ')
+          ..write('rowId: $rowId, ')
+          ..write('learnerId: $learnerId')
+          ..write(')'))
+        .toString();
+  }
+}
+
+class $AccountSyncStatesTable extends AccountSyncStates
+    with TableInfo<$AccountSyncStatesTable, AccountSyncState> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $AccountSyncStatesTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _learnerIdMeta = const VerificationMeta(
+    'learnerId',
+  );
+  @override
+  late final GeneratedColumn<int> learnerId = GeneratedColumn<int>(
+    'learner_id',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'REFERENCES learners (id)',
+    ),
+  );
+  static const VerificationMeta _firebaseUidMeta = const VerificationMeta(
+    'firebaseUid',
+  );
+  @override
+  late final GeneratedColumn<String> firebaseUid = GeneratedColumn<String>(
+    'firebase_uid',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _epochMeta = const VerificationMeta('epoch');
+  @override
+  late final GeneratedColumn<int> epoch = GeneratedColumn<int>(
+    'epoch',
+    aliasedName,
+    true,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _resetPendingMeta = const VerificationMeta(
+    'resetPending',
+  );
+  @override
+  late final GeneratedColumn<bool> resetPending = GeneratedColumn<bool>(
+    'reset_pending',
+    aliasedName,
+    false,
+    type: DriftSqlType.bool,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'CHECK ("reset_pending" IN (0, 1))',
+    ),
+    defaultValue: const Constant(false),
+  );
+  static const VerificationMeta _cursorsJsonMeta = const VerificationMeta(
+    'cursorsJson',
+  );
+  @override
+  late final GeneratedColumn<String> cursorsJson = GeneratedColumn<String>(
+    'cursors_json',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+    defaultValue: const Constant('{}'),
+  );
+  static const VerificationMeta _lastSyncedAtMeta = const VerificationMeta(
+    'lastSyncedAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> lastSyncedAt = GeneratedColumn<DateTime>(
+    'last_synced_at',
+    aliasedName,
+    true,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: false,
+  );
+  @override
+  List<GeneratedColumn> get $columns => [
+    learnerId,
+    firebaseUid,
+    epoch,
+    resetPending,
+    cursorsJson,
+    lastSyncedAt,
+  ];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'account_sync_states';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<AccountSyncState> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('learner_id')) {
+      context.handle(
+        _learnerIdMeta,
+        learnerId.isAcceptableOrUnknown(data['learner_id']!, _learnerIdMeta),
+      );
+    }
+    if (data.containsKey('firebase_uid')) {
+      context.handle(
+        _firebaseUidMeta,
+        firebaseUid.isAcceptableOrUnknown(
+          data['firebase_uid']!,
+          _firebaseUidMeta,
+        ),
+      );
+    } else if (isInserting) {
+      context.missing(_firebaseUidMeta);
+    }
+    if (data.containsKey('epoch')) {
+      context.handle(
+        _epochMeta,
+        epoch.isAcceptableOrUnknown(data['epoch']!, _epochMeta),
+      );
+    }
+    if (data.containsKey('reset_pending')) {
+      context.handle(
+        _resetPendingMeta,
+        resetPending.isAcceptableOrUnknown(
+          data['reset_pending']!,
+          _resetPendingMeta,
+        ),
+      );
+    }
+    if (data.containsKey('cursors_json')) {
+      context.handle(
+        _cursorsJsonMeta,
+        cursorsJson.isAcceptableOrUnknown(
+          data['cursors_json']!,
+          _cursorsJsonMeta,
+        ),
+      );
+    }
+    if (data.containsKey('last_synced_at')) {
+      context.handle(
+        _lastSyncedAtMeta,
+        lastSyncedAt.isAcceptableOrUnknown(
+          data['last_synced_at']!,
+          _lastSyncedAtMeta,
+        ),
+      );
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {learnerId};
+  @override
+  AccountSyncState map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return AccountSyncState(
+      learnerId: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}learner_id'],
+      )!,
+      firebaseUid: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}firebase_uid'],
+      )!,
+      epoch: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}epoch'],
+      ),
+      resetPending: attachedDatabase.typeMapping.read(
+        DriftSqlType.bool,
+        data['${effectivePrefix}reset_pending'],
+      )!,
+      cursorsJson: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}cursors_json'],
+      )!,
+      lastSyncedAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}last_synced_at'],
+      ),
+    );
+  }
+
+  @override
+  $AccountSyncStatesTable createAlias(String alias) {
+    return $AccountSyncStatesTable(attachedDatabase, alias);
+  }
+}
+
+class AccountSyncState extends DataClass
+    implements Insertable<AccountSyncState> {
+  final int learnerId;
+  final String firebaseUid;
+  final int? epoch;
+  final bool resetPending;
+  final String cursorsJson;
+  final DateTime? lastSyncedAt;
+  const AccountSyncState({
+    required this.learnerId,
+    required this.firebaseUid,
+    this.epoch,
+    required this.resetPending,
+    required this.cursorsJson,
+    this.lastSyncedAt,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['learner_id'] = Variable<int>(learnerId);
+    map['firebase_uid'] = Variable<String>(firebaseUid);
+    if (!nullToAbsent || epoch != null) {
+      map['epoch'] = Variable<int>(epoch);
+    }
+    map['reset_pending'] = Variable<bool>(resetPending);
+    map['cursors_json'] = Variable<String>(cursorsJson);
+    if (!nullToAbsent || lastSyncedAt != null) {
+      map['last_synced_at'] = Variable<DateTime>(lastSyncedAt);
+    }
+    return map;
+  }
+
+  AccountSyncStatesCompanion toCompanion(bool nullToAbsent) {
+    return AccountSyncStatesCompanion(
+      learnerId: Value(learnerId),
+      firebaseUid: Value(firebaseUid),
+      epoch: epoch == null && nullToAbsent
+          ? const Value.absent()
+          : Value(epoch),
+      resetPending: Value(resetPending),
+      cursorsJson: Value(cursorsJson),
+      lastSyncedAt: lastSyncedAt == null && nullToAbsent
+          ? const Value.absent()
+          : Value(lastSyncedAt),
+    );
+  }
+
+  factory AccountSyncState.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return AccountSyncState(
+      learnerId: serializer.fromJson<int>(json['learnerId']),
+      firebaseUid: serializer.fromJson<String>(json['firebaseUid']),
+      epoch: serializer.fromJson<int?>(json['epoch']),
+      resetPending: serializer.fromJson<bool>(json['resetPending']),
+      cursorsJson: serializer.fromJson<String>(json['cursorsJson']),
+      lastSyncedAt: serializer.fromJson<DateTime?>(json['lastSyncedAt']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'learnerId': serializer.toJson<int>(learnerId),
+      'firebaseUid': serializer.toJson<String>(firebaseUid),
+      'epoch': serializer.toJson<int?>(epoch),
+      'resetPending': serializer.toJson<bool>(resetPending),
+      'cursorsJson': serializer.toJson<String>(cursorsJson),
+      'lastSyncedAt': serializer.toJson<DateTime?>(lastSyncedAt),
+    };
+  }
+
+  AccountSyncState copyWith({
+    int? learnerId,
+    String? firebaseUid,
+    Value<int?> epoch = const Value.absent(),
+    bool? resetPending,
+    String? cursorsJson,
+    Value<DateTime?> lastSyncedAt = const Value.absent(),
+  }) => AccountSyncState(
+    learnerId: learnerId ?? this.learnerId,
+    firebaseUid: firebaseUid ?? this.firebaseUid,
+    epoch: epoch.present ? epoch.value : this.epoch,
+    resetPending: resetPending ?? this.resetPending,
+    cursorsJson: cursorsJson ?? this.cursorsJson,
+    lastSyncedAt: lastSyncedAt.present ? lastSyncedAt.value : this.lastSyncedAt,
+  );
+  AccountSyncState copyWithCompanion(AccountSyncStatesCompanion data) {
+    return AccountSyncState(
+      learnerId: data.learnerId.present ? data.learnerId.value : this.learnerId,
+      firebaseUid: data.firebaseUid.present
+          ? data.firebaseUid.value
+          : this.firebaseUid,
+      epoch: data.epoch.present ? data.epoch.value : this.epoch,
+      resetPending: data.resetPending.present
+          ? data.resetPending.value
+          : this.resetPending,
+      cursorsJson: data.cursorsJson.present
+          ? data.cursorsJson.value
+          : this.cursorsJson,
+      lastSyncedAt: data.lastSyncedAt.present
+          ? data.lastSyncedAt.value
+          : this.lastSyncedAt,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('AccountSyncState(')
+          ..write('learnerId: $learnerId, ')
+          ..write('firebaseUid: $firebaseUid, ')
+          ..write('epoch: $epoch, ')
+          ..write('resetPending: $resetPending, ')
+          ..write('cursorsJson: $cursorsJson, ')
+          ..write('lastSyncedAt: $lastSyncedAt')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(
+    learnerId,
+    firebaseUid,
+    epoch,
+    resetPending,
+    cursorsJson,
+    lastSyncedAt,
+  );
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is AccountSyncState &&
+          other.learnerId == this.learnerId &&
+          other.firebaseUid == this.firebaseUid &&
+          other.epoch == this.epoch &&
+          other.resetPending == this.resetPending &&
+          other.cursorsJson == this.cursorsJson &&
+          other.lastSyncedAt == this.lastSyncedAt);
+}
+
+class AccountSyncStatesCompanion extends UpdateCompanion<AccountSyncState> {
+  final Value<int> learnerId;
+  final Value<String> firebaseUid;
+  final Value<int?> epoch;
+  final Value<bool> resetPending;
+  final Value<String> cursorsJson;
+  final Value<DateTime?> lastSyncedAt;
+  const AccountSyncStatesCompanion({
+    this.learnerId = const Value.absent(),
+    this.firebaseUid = const Value.absent(),
+    this.epoch = const Value.absent(),
+    this.resetPending = const Value.absent(),
+    this.cursorsJson = const Value.absent(),
+    this.lastSyncedAt = const Value.absent(),
+  });
+  AccountSyncStatesCompanion.insert({
+    this.learnerId = const Value.absent(),
+    required String firebaseUid,
+    this.epoch = const Value.absent(),
+    this.resetPending = const Value.absent(),
+    this.cursorsJson = const Value.absent(),
+    this.lastSyncedAt = const Value.absent(),
+  }) : firebaseUid = Value(firebaseUid);
+  static Insertable<AccountSyncState> custom({
+    Expression<int>? learnerId,
+    Expression<String>? firebaseUid,
+    Expression<int>? epoch,
+    Expression<bool>? resetPending,
+    Expression<String>? cursorsJson,
+    Expression<DateTime>? lastSyncedAt,
+  }) {
+    return RawValuesInsertable({
+      if (learnerId != null) 'learner_id': learnerId,
+      if (firebaseUid != null) 'firebase_uid': firebaseUid,
+      if (epoch != null) 'epoch': epoch,
+      if (resetPending != null) 'reset_pending': resetPending,
+      if (cursorsJson != null) 'cursors_json': cursorsJson,
+      if (lastSyncedAt != null) 'last_synced_at': lastSyncedAt,
+    });
+  }
+
+  AccountSyncStatesCompanion copyWith({
+    Value<int>? learnerId,
+    Value<String>? firebaseUid,
+    Value<int?>? epoch,
+    Value<bool>? resetPending,
+    Value<String>? cursorsJson,
+    Value<DateTime?>? lastSyncedAt,
+  }) {
+    return AccountSyncStatesCompanion(
+      learnerId: learnerId ?? this.learnerId,
+      firebaseUid: firebaseUid ?? this.firebaseUid,
+      epoch: epoch ?? this.epoch,
+      resetPending: resetPending ?? this.resetPending,
+      cursorsJson: cursorsJson ?? this.cursorsJson,
+      lastSyncedAt: lastSyncedAt ?? this.lastSyncedAt,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (learnerId.present) {
+      map['learner_id'] = Variable<int>(learnerId.value);
+    }
+    if (firebaseUid.present) {
+      map['firebase_uid'] = Variable<String>(firebaseUid.value);
+    }
+    if (epoch.present) {
+      map['epoch'] = Variable<int>(epoch.value);
+    }
+    if (resetPending.present) {
+      map['reset_pending'] = Variable<bool>(resetPending.value);
+    }
+    if (cursorsJson.present) {
+      map['cursors_json'] = Variable<String>(cursorsJson.value);
+    }
+    if (lastSyncedAt.present) {
+      map['last_synced_at'] = Variable<DateTime>(lastSyncedAt.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('AccountSyncStatesCompanion(')
+          ..write('learnerId: $learnerId, ')
+          ..write('firebaseUid: $firebaseUid, ')
+          ..write('epoch: $epoch, ')
+          ..write('resetPending: $resetPending, ')
+          ..write('cursorsJson: $cursorsJson, ')
+          ..write('lastSyncedAt: $lastSyncedAt')
+          ..write(')'))
+        .toString();
+  }
+}
+
 abstract class _$AppDatabase extends GeneratedDatabase {
   _$AppDatabase(QueryExecutor e) : super(e);
   $AppDatabaseManager get managers => $AppDatabaseManager(this);
@@ -8208,6 +9171,9 @@ abstract class _$AppDatabase extends GeneratedDatabase {
   late final $DailyTaskEventsTable dailyTaskEvents = $DailyTaskEventsTable(
     this,
   );
+  late final $SyncOutboxTable syncOutbox = $SyncOutboxTable(this);
+  late final $AccountSyncStatesTable accountSyncStates =
+      $AccountSyncStatesTable(this);
   @override
   Iterable<TableInfo<Table, Object?>> get allTables =>
       allSchemaEntities.whereType<TableInfo<Table, Object?>>();
@@ -8227,6 +9193,8 @@ abstract class _$AppDatabase extends GeneratedDatabase {
     contentVersions,
     pendingOnlineRefinements,
     dailyTaskEvents,
+    syncOutbox,
+    accountSyncStates,
   ];
 }
 
@@ -8238,6 +9206,8 @@ typedef $$LearnersTableCreateCompanionBuilder = LearnersCompanion Function({
   Value<String> targetLanguage,
   required DateTime createdAt,
   Value<bool> isActive,
+  Value<String?> firebaseUid,
+  Value<DateTime?> updatedAt,
 });
 typedef $$LearnersTableUpdateCompanionBuilder = LearnersCompanion Function({
   Value<int> id,
@@ -8247,6 +9217,8 @@ typedef $$LearnersTableUpdateCompanionBuilder = LearnersCompanion Function({
   Value<String> targetLanguage,
   Value<DateTime> createdAt,
   Value<bool> isActive,
+  Value<String?> firebaseUid,
+  Value<DateTime?> updatedAt,
 });
 
 final class $$LearnersTableReferences
@@ -8493,6 +9465,27 @@ final class $$LearnersTableReferences
       manager.$state.copyWith(prefetchedData: cache),
     );
   }
+
+  static MultiTypedResultKey<$AccountSyncStatesTable, List<AccountSyncState>>
+  _accountSyncStatesRefsTable(_$AppDatabase db) =>
+      MultiTypedResultKey.fromTable(
+        db.accountSyncStates,
+        aliasName: 'learners__id__account_sync_states__learner_id',
+      );
+
+  $$AccountSyncStatesTableProcessedTableManager get accountSyncStatesRefs {
+    final manager = $$AccountSyncStatesTableTableManager(
+      $_db,
+      $_db.accountSyncStates,
+    ).filter((f) => f.learnerId.id.sqlEquals($_itemColumn<int>('id')!));
+
+    final cache = $_typedResult.readTableOrNull(
+      _accountSyncStatesRefsTable($_db),
+    );
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: cache),
+    );
+  }
 }
 
 class $$LearnersTableFilterComposer
@@ -8536,6 +9529,16 @@ class $$LearnersTableFilterComposer
 
   ColumnFilters<bool> get isActive => $composableBuilder(
     column: $table.isActive,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get firebaseUid => $composableBuilder(
+    column: $table.firebaseUid,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get updatedAt => $composableBuilder(
+    column: $table.updatedAt,
     builder: (column) => ColumnFilters(column),
   );
 
@@ -8817,6 +9820,31 @@ class $$LearnersTableFilterComposer
     );
     return f(composer);
   }
+
+  Expression<bool> accountSyncStatesRefs(
+    Expression<bool> Function($$AccountSyncStatesTableFilterComposer f) f,
+  ) {
+    final $$AccountSyncStatesTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.id,
+      referencedTable: $db.accountSyncStates,
+      getReferencedColumn: (t) => t.learnerId,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$AccountSyncStatesTableFilterComposer(
+            $db: $db,
+            $table: $db.accountSyncStates,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return f(composer);
+  }
 }
 
 class $$LearnersTableOrderingComposer
@@ -8862,6 +9890,16 @@ class $$LearnersTableOrderingComposer
     column: $table.isActive,
     builder: (column) => ColumnOrderings(column),
   );
+
+  ColumnOrderings<String> get firebaseUid => $composableBuilder(
+    column: $table.firebaseUid,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get updatedAt => $composableBuilder(
+    column: $table.updatedAt,
+    builder: (column) => ColumnOrderings(column),
+  );
 }
 
 class $$LearnersTableAnnotationComposer
@@ -8897,6 +9935,14 @@ class $$LearnersTableAnnotationComposer
 
   GeneratedColumn<bool> get isActive =>
       $composableBuilder(column: $table.isActive, builder: (column) => column);
+
+  GeneratedColumn<String> get firebaseUid => $composableBuilder(
+    column: $table.firebaseUid,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<DateTime> get updatedAt =>
+      $composableBuilder(column: $table.updatedAt, builder: (column) => column);
 
   Expression<T> courseEnrolmentsRefs<T extends Object>(
     Expression<T> Function($$CourseEnrolmentsTableAnnotationComposer a) f,
@@ -9180,6 +10226,32 @@ class $$LearnersTableAnnotationComposer
     );
     return f(composer);
   }
+
+  Expression<T> accountSyncStatesRefs<T extends Object>(
+    Expression<T> Function($$AccountSyncStatesTableAnnotationComposer a) f,
+  ) {
+    final $$AccountSyncStatesTableAnnotationComposer composer =
+        $composerBuilder(
+          composer: this,
+          getCurrentColumn: (t) => t.id,
+          referencedTable: $db.accountSyncStates,
+          getReferencedColumn: (t) => t.learnerId,
+          builder:
+              (
+                joinBuilder, {
+                $addJoinBuilderToRootComposer,
+                $removeJoinBuilderFromRootComposer,
+              }) => $$AccountSyncStatesTableAnnotationComposer(
+                $db: $db,
+                $table: $db.accountSyncStates,
+                $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+                joinBuilder: joinBuilder,
+                $removeJoinBuilderFromRootComposer:
+                    $removeJoinBuilderFromRootComposer,
+              ),
+        );
+    return f(composer);
+  }
 }
 
 class $$LearnersTableTableManager
@@ -9207,6 +10279,7 @@ class $$LearnersTableTableManager
             bool grammarReviewStateRefs,
             bool pendingOnlineRefinementsRefs,
             bool dailyTaskEventsRefs,
+            bool accountSyncStatesRefs,
           })
         > {
   $$LearnersTableTableManager(_$AppDatabase db, $LearnersTable table)
@@ -9229,6 +10302,8 @@ class $$LearnersTableTableManager
                 Value<String> targetLanguage = const Value.absent(),
                 Value<DateTime> createdAt = const Value.absent(),
                 Value<bool> isActive = const Value.absent(),
+                Value<String?> firebaseUid = const Value.absent(),
+                Value<DateTime?> updatedAt = const Value.absent(),
               }) => LearnersCompanion(
                 id: id,
                 uuid: uuid,
@@ -9237,6 +10312,8 @@ class $$LearnersTableTableManager
                 targetLanguage: targetLanguage,
                 createdAt: createdAt,
                 isActive: isActive,
+                firebaseUid: firebaseUid,
+                updatedAt: updatedAt,
               ),
           createCompanionCallback:
               ({
@@ -9247,6 +10324,8 @@ class $$LearnersTableTableManager
                 Value<String> targetLanguage = const Value.absent(),
                 required DateTime createdAt,
                 Value<bool> isActive = const Value.absent(),
+                Value<String?> firebaseUid = const Value.absent(),
+                Value<DateTime?> updatedAt = const Value.absent(),
               }) => LearnersCompanion.insert(
                 id: id,
                 uuid: uuid,
@@ -9255,6 +10334,8 @@ class $$LearnersTableTableManager
                 targetLanguage: targetLanguage,
                 createdAt: createdAt,
                 isActive: isActive,
+                firebaseUid: firebaseUid,
+                updatedAt: updatedAt,
               ),
           withReferenceMapper: (p0) => p0
               .map(
@@ -9277,6 +10358,7 @@ class $$LearnersTableTableManager
                 grammarReviewStateRefs = false,
                 pendingOnlineRefinementsRefs = false,
                 dailyTaskEventsRefs = false,
+                accountSyncStatesRefs = false,
               }) {
                 return PrefetchHooks(
                   db: db,
@@ -9293,6 +10375,7 @@ class $$LearnersTableTableManager
                     if (pendingOnlineRefinementsRefs)
                       db.pendingOnlineRefinements,
                     if (dailyTaskEventsRefs) db.dailyTaskEvents,
+                    if (accountSyncStatesRefs) db.accountSyncStates,
                   ],
                   addJoins: null,
                   getPrefetchedDataCallback: (items) async {
@@ -9528,6 +10611,27 @@ class $$LearnersTableTableManager
                               ),
                           typedResults: items,
                         ),
+                      if (accountSyncStatesRefs)
+                        await $_getPrefetchedData<
+                          Learner,
+                          $LearnersTable,
+                          AccountSyncState
+                        >(
+                          currentTable: table,
+                          referencedTable: $$LearnersTableReferences
+                              ._accountSyncStatesRefsTable(db),
+                          managerFromTypedResult: (p0) =>
+                              $$LearnersTableReferences(
+                                db,
+                                table,
+                                p0,
+                              ).accountSyncStatesRefs,
+                          referencedItemsForCurrentItem:
+                              (item, referencedItems) => referencedItems.where(
+                                (e) => e.learnerId == item.id,
+                              ),
+                          typedResults: items,
+                        ),
                     ];
                   },
                 );
@@ -9560,6 +10664,7 @@ typedef $$LearnersTableProcessedTableManager =
         bool grammarReviewStateRefs,
         bool pendingOnlineRefinementsRefs,
         bool dailyTaskEventsRefs,
+        bool accountSyncStatesRefs,
       })
     >;
 typedef $$CourseEnrolmentsTableCreateCompanionBuilder =
@@ -12932,6 +14037,7 @@ typedef $$VocabularyReviewStateTableCreateCompanionBuilder =
       Value<int> repetitions,
       Value<DateTime?> dueAt,
       Value<DateTime?> lastReviewedAt,
+      Value<DateTime?> favoriteUpdatedAt,
       required DateTime updatedAt,
     });
 typedef $$VocabularyReviewStateTableUpdateCompanionBuilder =
@@ -12948,6 +14054,7 @@ typedef $$VocabularyReviewStateTableUpdateCompanionBuilder =
       Value<int> repetitions,
       Value<DateTime?> dueAt,
       Value<DateTime?> lastReviewedAt,
+      Value<DateTime?> favoriteUpdatedAt,
       Value<DateTime> updatedAt,
     });
 
@@ -13046,6 +14153,11 @@ class $$VocabularyReviewStateTableFilterComposer
     builder: (column) => ColumnFilters(column),
   );
 
+  ColumnFilters<DateTime> get favoriteUpdatedAt => $composableBuilder(
+    column: $table.favoriteUpdatedAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
   ColumnFilters<DateTime> get updatedAt => $composableBuilder(
     column: $table.updatedAt,
     builder: (column) => ColumnFilters(column),
@@ -13139,6 +14251,11 @@ class $$VocabularyReviewStateTableOrderingComposer
     builder: (column) => ColumnOrderings(column),
   );
 
+  ColumnOrderings<DateTime> get favoriteUpdatedAt => $composableBuilder(
+    column: $table.favoriteUpdatedAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
   ColumnOrderings<DateTime> get updatedAt => $composableBuilder(
     column: $table.updatedAt,
     builder: (column) => ColumnOrderings(column),
@@ -13222,6 +14339,11 @@ class $$VocabularyReviewStateTableAnnotationComposer
     builder: (column) => column,
   );
 
+  GeneratedColumn<DateTime> get favoriteUpdatedAt => $composableBuilder(
+    column: $table.favoriteUpdatedAt,
+    builder: (column) => column,
+  );
+
   GeneratedColumn<DateTime> get updatedAt =>
       $composableBuilder(column: $table.updatedAt, builder: (column) => column);
 
@@ -13300,6 +14422,7 @@ class $$VocabularyReviewStateTableTableManager
                 Value<int> repetitions = const Value.absent(),
                 Value<DateTime?> dueAt = const Value.absent(),
                 Value<DateTime?> lastReviewedAt = const Value.absent(),
+                Value<DateTime?> favoriteUpdatedAt = const Value.absent(),
                 Value<DateTime> updatedAt = const Value.absent(),
               }) => VocabularyReviewStateCompanion(
                 id: id,
@@ -13314,6 +14437,7 @@ class $$VocabularyReviewStateTableTableManager
                 repetitions: repetitions,
                 dueAt: dueAt,
                 lastReviewedAt: lastReviewedAt,
+                favoriteUpdatedAt: favoriteUpdatedAt,
                 updatedAt: updatedAt,
               ),
           createCompanionCallback:
@@ -13330,6 +14454,7 @@ class $$VocabularyReviewStateTableTableManager
                 Value<int> repetitions = const Value.absent(),
                 Value<DateTime?> dueAt = const Value.absent(),
                 Value<DateTime?> lastReviewedAt = const Value.absent(),
+                Value<DateTime?> favoriteUpdatedAt = const Value.absent(),
                 required DateTime updatedAt,
               }) => VocabularyReviewStateCompanion.insert(
                 id: id,
@@ -13344,6 +14469,7 @@ class $$VocabularyReviewStateTableTableManager
                 repetitions: repetitions,
                 dueAt: dueAt,
                 lastReviewedAt: lastReviewedAt,
+                favoriteUpdatedAt: favoriteUpdatedAt,
                 updatedAt: updatedAt,
               ),
           withReferenceMapper: (p0) => p0
@@ -13419,6 +14545,7 @@ typedef $$GrammarReviewStateTableCreateCompanionBuilder =
       required String grammarId,
       Value<bool> isFavorite,
       Value<DateTime?> markedReviewedAt,
+      Value<DateTime?> favoriteUpdatedAt,
       required DateTime updatedAt,
     });
 typedef $$GrammarReviewStateTableUpdateCompanionBuilder =
@@ -13429,6 +14556,7 @@ typedef $$GrammarReviewStateTableUpdateCompanionBuilder =
       Value<String> grammarId,
       Value<bool> isFavorite,
       Value<DateTime?> markedReviewedAt,
+      Value<DateTime?> favoriteUpdatedAt,
       Value<DateTime> updatedAt,
     });
 
@@ -13497,6 +14625,11 @@ class $$GrammarReviewStateTableFilterComposer
     builder: (column) => ColumnFilters(column),
   );
 
+  ColumnFilters<DateTime> get favoriteUpdatedAt => $composableBuilder(
+    column: $table.favoriteUpdatedAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
   ColumnFilters<DateTime> get updatedAt => $composableBuilder(
     column: $table.updatedAt,
     builder: (column) => ColumnFilters(column),
@@ -13560,6 +14693,11 @@ class $$GrammarReviewStateTableOrderingComposer
     builder: (column) => ColumnOrderings(column),
   );
 
+  ColumnOrderings<DateTime> get favoriteUpdatedAt => $composableBuilder(
+    column: $table.favoriteUpdatedAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
   ColumnOrderings<DateTime> get updatedAt => $composableBuilder(
     column: $table.updatedAt,
     builder: (column) => ColumnOrderings(column),
@@ -13614,6 +14752,11 @@ class $$GrammarReviewStateTableAnnotationComposer
 
   GeneratedColumn<DateTime> get markedReviewedAt => $composableBuilder(
     column: $table.markedReviewedAt,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<DateTime> get favoriteUpdatedAt => $composableBuilder(
+    column: $table.favoriteUpdatedAt,
     builder: (column) => column,
   );
 
@@ -13683,6 +14826,7 @@ class $$GrammarReviewStateTableTableManager
                 Value<String> grammarId = const Value.absent(),
                 Value<bool> isFavorite = const Value.absent(),
                 Value<DateTime?> markedReviewedAt = const Value.absent(),
+                Value<DateTime?> favoriteUpdatedAt = const Value.absent(),
                 Value<DateTime> updatedAt = const Value.absent(),
               }) => GrammarReviewStateCompanion(
                 id: id,
@@ -13691,6 +14835,7 @@ class $$GrammarReviewStateTableTableManager
                 grammarId: grammarId,
                 isFavorite: isFavorite,
                 markedReviewedAt: markedReviewedAt,
+                favoriteUpdatedAt: favoriteUpdatedAt,
                 updatedAt: updatedAt,
               ),
           createCompanionCallback:
@@ -13701,6 +14846,7 @@ class $$GrammarReviewStateTableTableManager
                 required String grammarId,
                 Value<bool> isFavorite = const Value.absent(),
                 Value<DateTime?> markedReviewedAt = const Value.absent(),
+                Value<DateTime?> favoriteUpdatedAt = const Value.absent(),
                 required DateTime updatedAt,
               }) => GrammarReviewStateCompanion.insert(
                 id: id,
@@ -13709,6 +14855,7 @@ class $$GrammarReviewStateTableTableManager
                 grammarId: grammarId,
                 isFavorite: isFavorite,
                 markedReviewedAt: markedReviewedAt,
+                favoriteUpdatedAt: favoriteUpdatedAt,
                 updatedAt: updatedAt,
               ),
           withReferenceMapper: (p0) => p0
@@ -14919,6 +16066,529 @@ typedef $$DailyTaskEventsTableProcessedTableManager =
       DailyTaskEvent,
       PrefetchHooks Function({bool learnerId})
     >;
+typedef $$SyncOutboxTableCreateCompanionBuilder = SyncOutboxCompanion Function({
+  Value<int> id,
+  required String entity,
+  required int rowId,
+  required int learnerId,
+});
+typedef $$SyncOutboxTableUpdateCompanionBuilder = SyncOutboxCompanion Function({
+  Value<int> id,
+  Value<String> entity,
+  Value<int> rowId,
+  Value<int> learnerId,
+});
+
+class $$SyncOutboxTableFilterComposer
+    extends Composer<_$AppDatabase, $SyncOutboxTable> {
+  $$SyncOutboxTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<int> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get entity => $composableBuilder(
+    column: $table.entity,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get rowId => $composableBuilder(
+    column: $table.rowId,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get learnerId => $composableBuilder(
+    column: $table.learnerId,
+    builder: (column) => ColumnFilters(column),
+  );
+}
+
+class $$SyncOutboxTableOrderingComposer
+    extends Composer<_$AppDatabase, $SyncOutboxTable> {
+  $$SyncOutboxTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<int> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get entity => $composableBuilder(
+    column: $table.entity,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get rowId => $composableBuilder(
+    column: $table.rowId,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get learnerId => $composableBuilder(
+    column: $table.learnerId,
+    builder: (column) => ColumnOrderings(column),
+  );
+}
+
+class $$SyncOutboxTableAnnotationComposer
+    extends Composer<_$AppDatabase, $SyncOutboxTable> {
+  $$SyncOutboxTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<int> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<String> get entity =>
+      $composableBuilder(column: $table.entity, builder: (column) => column);
+
+  GeneratedColumn<int> get rowId =>
+      $composableBuilder(column: $table.rowId, builder: (column) => column);
+
+  GeneratedColumn<int> get learnerId =>
+      $composableBuilder(column: $table.learnerId, builder: (column) => column);
+}
+
+class $$SyncOutboxTableTableManager
+    extends
+        RootTableManager<
+          _$AppDatabase,
+          $SyncOutboxTable,
+          SyncOutboxData,
+          $$SyncOutboxTableFilterComposer,
+          $$SyncOutboxTableOrderingComposer,
+          $$SyncOutboxTableAnnotationComposer,
+          $$SyncOutboxTableCreateCompanionBuilder,
+          $$SyncOutboxTableUpdateCompanionBuilder,
+          (
+            SyncOutboxData,
+            BaseReferences<_$AppDatabase, $SyncOutboxTable, SyncOutboxData>,
+          ),
+          SyncOutboxData,
+          PrefetchHooks Function()
+        > {
+  $$SyncOutboxTableTableManager(_$AppDatabase db, $SyncOutboxTable table)
+    : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$SyncOutboxTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$SyncOutboxTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$SyncOutboxTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback:
+              ({
+                Value<int> id = const Value.absent(),
+                Value<String> entity = const Value.absent(),
+                Value<int> rowId = const Value.absent(),
+                Value<int> learnerId = const Value.absent(),
+              }) => SyncOutboxCompanion(
+                id: id,
+                entity: entity,
+                rowId: rowId,
+                learnerId: learnerId,
+              ),
+          createCompanionCallback:
+              ({
+                Value<int> id = const Value.absent(),
+                required String entity,
+                required int rowId,
+                required int learnerId,
+              }) => SyncOutboxCompanion.insert(
+                id: id,
+                entity: entity,
+                rowId: rowId,
+                learnerId: learnerId,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map((e) => (e.readTable(table), BaseReferences(db, table, e)))
+              .toList(),
+          prefetchHooksCallback: null,
+        ),
+      );
+}
+
+typedef $$SyncOutboxTableProcessedTableManager =
+    ProcessedTableManager<
+      _$AppDatabase,
+      $SyncOutboxTable,
+      SyncOutboxData,
+      $$SyncOutboxTableFilterComposer,
+      $$SyncOutboxTableOrderingComposer,
+      $$SyncOutboxTableAnnotationComposer,
+      $$SyncOutboxTableCreateCompanionBuilder,
+      $$SyncOutboxTableUpdateCompanionBuilder,
+      (
+        SyncOutboxData,
+        BaseReferences<_$AppDatabase, $SyncOutboxTable, SyncOutboxData>,
+      ),
+      SyncOutboxData,
+      PrefetchHooks Function()
+    >;
+typedef $$AccountSyncStatesTableCreateCompanionBuilder =
+    AccountSyncStatesCompanion Function({
+      Value<int> learnerId,
+      required String firebaseUid,
+      Value<int?> epoch,
+      Value<bool> resetPending,
+      Value<String> cursorsJson,
+      Value<DateTime?> lastSyncedAt,
+    });
+typedef $$AccountSyncStatesTableUpdateCompanionBuilder =
+    AccountSyncStatesCompanion Function({
+      Value<int> learnerId,
+      Value<String> firebaseUid,
+      Value<int?> epoch,
+      Value<bool> resetPending,
+      Value<String> cursorsJson,
+      Value<DateTime?> lastSyncedAt,
+    });
+
+final class $$AccountSyncStatesTableReferences
+    extends
+        BaseReferences<
+          _$AppDatabase,
+          $AccountSyncStatesTable,
+          AccountSyncState
+        > {
+  $$AccountSyncStatesTableReferences(
+    super.$_db,
+    super.$_table,
+    super.$_typedResult,
+  );
+
+  static $LearnersTable _learnerIdTable(_$AppDatabase db) =>
+      db.learners.createAlias('account_sync_states__learner_id__learners__id');
+
+  $$LearnersTableProcessedTableManager get learnerId {
+    final $_column = $_itemColumn<int>('learner_id')!;
+
+    final manager = $$LearnersTableTableManager(
+      $_db,
+      $_db.learners,
+    ).filter((f) => f.id.sqlEquals($_column));
+    final item = $_typedResult.readTableOrNull(_learnerIdTable($_db));
+    if (item == null) return manager;
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: [item]),
+    );
+  }
+}
+
+class $$AccountSyncStatesTableFilterComposer
+    extends Composer<_$AppDatabase, $AccountSyncStatesTable> {
+  $$AccountSyncStatesTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<String> get firebaseUid => $composableBuilder(
+    column: $table.firebaseUid,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get epoch => $composableBuilder(
+    column: $table.epoch,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<bool> get resetPending => $composableBuilder(
+    column: $table.resetPending,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get cursorsJson => $composableBuilder(
+    column: $table.cursorsJson,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get lastSyncedAt => $composableBuilder(
+    column: $table.lastSyncedAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  $$LearnersTableFilterComposer get learnerId {
+    final $$LearnersTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.learnerId,
+      referencedTable: $db.learners,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$LearnersTableFilterComposer(
+            $db: $db,
+            $table: $db.learners,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$AccountSyncStatesTableOrderingComposer
+    extends Composer<_$AppDatabase, $AccountSyncStatesTable> {
+  $$AccountSyncStatesTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<String> get firebaseUid => $composableBuilder(
+    column: $table.firebaseUid,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get epoch => $composableBuilder(
+    column: $table.epoch,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<bool> get resetPending => $composableBuilder(
+    column: $table.resetPending,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get cursorsJson => $composableBuilder(
+    column: $table.cursorsJson,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get lastSyncedAt => $composableBuilder(
+    column: $table.lastSyncedAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  $$LearnersTableOrderingComposer get learnerId {
+    final $$LearnersTableOrderingComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.learnerId,
+      referencedTable: $db.learners,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$LearnersTableOrderingComposer(
+            $db: $db,
+            $table: $db.learners,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$AccountSyncStatesTableAnnotationComposer
+    extends Composer<_$AppDatabase, $AccountSyncStatesTable> {
+  $$AccountSyncStatesTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<String> get firebaseUid => $composableBuilder(
+    column: $table.firebaseUid,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<int> get epoch =>
+      $composableBuilder(column: $table.epoch, builder: (column) => column);
+
+  GeneratedColumn<bool> get resetPending => $composableBuilder(
+    column: $table.resetPending,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get cursorsJson => $composableBuilder(
+    column: $table.cursorsJson,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<DateTime> get lastSyncedAt => $composableBuilder(
+    column: $table.lastSyncedAt,
+    builder: (column) => column,
+  );
+
+  $$LearnersTableAnnotationComposer get learnerId {
+    final $$LearnersTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.learnerId,
+      referencedTable: $db.learners,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$LearnersTableAnnotationComposer(
+            $db: $db,
+            $table: $db.learners,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$AccountSyncStatesTableTableManager
+    extends
+        RootTableManager<
+          _$AppDatabase,
+          $AccountSyncStatesTable,
+          AccountSyncState,
+          $$AccountSyncStatesTableFilterComposer,
+          $$AccountSyncStatesTableOrderingComposer,
+          $$AccountSyncStatesTableAnnotationComposer,
+          $$AccountSyncStatesTableCreateCompanionBuilder,
+          $$AccountSyncStatesTableUpdateCompanionBuilder,
+          (AccountSyncState, $$AccountSyncStatesTableReferences),
+          AccountSyncState,
+          PrefetchHooks Function({bool learnerId})
+        > {
+  $$AccountSyncStatesTableTableManager(
+    _$AppDatabase db,
+    $AccountSyncStatesTable table,
+  ) : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$AccountSyncStatesTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$AccountSyncStatesTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$AccountSyncStatesTableAnnotationComposer(
+                $db: db,
+                $table: table,
+              ),
+          updateCompanionCallback:
+              ({
+                Value<int> learnerId = const Value.absent(),
+                Value<String> firebaseUid = const Value.absent(),
+                Value<int?> epoch = const Value.absent(),
+                Value<bool> resetPending = const Value.absent(),
+                Value<String> cursorsJson = const Value.absent(),
+                Value<DateTime?> lastSyncedAt = const Value.absent(),
+              }) => AccountSyncStatesCompanion(
+                learnerId: learnerId,
+                firebaseUid: firebaseUid,
+                epoch: epoch,
+                resetPending: resetPending,
+                cursorsJson: cursorsJson,
+                lastSyncedAt: lastSyncedAt,
+              ),
+          createCompanionCallback:
+              ({
+                Value<int> learnerId = const Value.absent(),
+                required String firebaseUid,
+                Value<int?> epoch = const Value.absent(),
+                Value<bool> resetPending = const Value.absent(),
+                Value<String> cursorsJson = const Value.absent(),
+                Value<DateTime?> lastSyncedAt = const Value.absent(),
+              }) => AccountSyncStatesCompanion.insert(
+                learnerId: learnerId,
+                firebaseUid: firebaseUid,
+                epoch: epoch,
+                resetPending: resetPending,
+                cursorsJson: cursorsJson,
+                lastSyncedAt: lastSyncedAt,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map(
+                (e) => (
+                  e.readTable(table),
+                  $$AccountSyncStatesTableReferences(db, table, e),
+                ),
+              )
+              .toList(),
+          prefetchHooksCallback: ({learnerId = false}) {
+            return PrefetchHooks(
+              db: db,
+              explicitlyWatchedTables: [],
+              addJoins:
+                  <
+                    T extends TableManagerState<
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic
+                    >
+                  >(state) {
+                    if (learnerId) {
+                      state = state.withJoin(
+                        currentTable: table,
+                        currentColumn: table.learnerId,
+                        referencedTable: $$AccountSyncStatesTableReferences
+                            ._learnerIdTable(db),
+                        referencedColumn: $$AccountSyncStatesTableReferences
+                            ._learnerIdTable(db)
+                            .id,
+                      ) as T;
+                    }
+
+                    return state;
+                  },
+              getPrefetchedDataCallback: (items) async {
+                return [];
+              },
+            );
+          },
+        ),
+      );
+}
+
+typedef $$AccountSyncStatesTableProcessedTableManager =
+    ProcessedTableManager<
+      _$AppDatabase,
+      $AccountSyncStatesTable,
+      AccountSyncState,
+      $$AccountSyncStatesTableFilterComposer,
+      $$AccountSyncStatesTableOrderingComposer,
+      $$AccountSyncStatesTableAnnotationComposer,
+      $$AccountSyncStatesTableCreateCompanionBuilder,
+      $$AccountSyncStatesTableUpdateCompanionBuilder,
+      (AccountSyncState, $$AccountSyncStatesTableReferences),
+      AccountSyncState,
+      PrefetchHooks Function({bool learnerId})
+    >;
 
 class $AppDatabaseManager {
   final _$AppDatabase _db;
@@ -14957,4 +16627,8 @@ class $AppDatabaseManager {
       );
   $$DailyTaskEventsTableTableManager get dailyTaskEvents =>
       $$DailyTaskEventsTableTableManager(_db, _db.dailyTaskEvents);
+  $$SyncOutboxTableTableManager get syncOutbox =>
+      $$SyncOutboxTableTableManager(_db, _db.syncOutbox);
+  $$AccountSyncStatesTableTableManager get accountSyncStates =>
+      $$AccountSyncStatesTableTableManager(_db, _db.accountSyncStates);
 }

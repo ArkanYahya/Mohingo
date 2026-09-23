@@ -7,6 +7,7 @@ import 'core/router/app_router.dart';
 import 'core/theme/app_theme.dart';
 import 'core/theme/theme_preferences_provider.dart';
 import 'features/activity_engine/providers/online_refinement_providers.dart';
+import 'features/sync/providers/sync_providers.dart';
 import 'features/progress/providers/content_version_providers.dart';
 import 'features/progress/providers/level_providers.dart';
 
@@ -39,6 +40,10 @@ class MohingoApp extends ConsumerWidget {
     // required for a learning feature to function — see
     // pendingRefinementDrainerProvider's doc comment.
     ref.watch(pendingRefinementDrainerProvider);
+    // Fire-and-forget: keeps a signed-in learner's progress in sync with
+    // their account in the background. Idle for guests and for builds
+    // without Firebase — see docs/adr/0010-optional-accounts-and-progress-sync.md.
+    ref.watch(syncControllerProvider);
 
     return MaterialApp.router(
       onGenerateTitle: (context) => AppLocalizations.of(context)!.appTitle,

@@ -1439,7 +1439,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get settingsOfflineBody =>
-      'يعمل دون إنترنت بالكامل. لا يُرفع شيء ولا يوجد حساب.';
+      'يعمل دون إنترنت بالكامل. ومن دون حساب لا يغادر شيء هذا الهاتف.';
 
   @override
   String get settingsResetProgressBody =>
@@ -1526,4 +1526,241 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get lessonIntroReadTitle => 'اقرأ النص';
+
+  @override
+  String get accountSectionTitle => 'الحساب والمزامنة';
+
+  @override
+  String get accountGuestTitle => 'احفظ تقدّمك في حساب';
+
+  @override
+  String get accountGuestBody =>
+      'سجّل الدخول ليبقى تقدّمك محفوظاً وتكمل من هاتف آخر.';
+
+  @override
+  String get accountSignInAction => 'تسجيل الدخول';
+
+  @override
+  String get accountYourAccount => 'حسابك';
+
+  @override
+  String get accountSyncing => 'جارٍ المزامنة…';
+
+  @override
+  String get accountNotSyncedYet => 'لم تتم المزامنة بعد';
+
+  @override
+  String accountSyncedAt(String time) {
+    return 'آخر مزامنة: $time';
+  }
+
+  @override
+  String get accountSyncOffline =>
+      'لا يوجد اتصال. تقدّمك محفوظ على هذا الهاتف وستتم مزامنته عند عودة الاتصال.';
+
+  @override
+  String get accountSyncFailed =>
+      'تعذّرت المزامنة الآن. سنحاول مرة أخرى بعد قليل.';
+
+  @override
+  String get accountSyncSignedOut =>
+      'انتهت صلاحية تسجيل دخولك. سجّل الخروج ثم ادخل مجدداً لمتابعة المزامنة.';
+
+  @override
+  String accountPendingChanges(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count تغيير بانتظار المزامنة',
+      many: '$count تغييراً بانتظار المزامنة',
+      few: '$count تغييرات بانتظار المزامنة',
+      two: 'تغييران بانتظار المزامنة',
+      one: 'تغيير واحد بانتظار المزامنة',
+      zero: 'لا توجد تغييرات بانتظار المزامنة',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get accountSyncNow => 'زامِن الآن';
+
+  @override
+  String get accountSignOutTitle => 'تسجيل الخروج';
+
+  @override
+  String get accountSignOutBody => 'يبقى تقدّمك محفوظاً في حسابك.';
+
+  @override
+  String get accountSignOutConfirmTitle => 'تسجيل الخروج؟';
+
+  @override
+  String get accountSignOutConfirmBody =>
+      'سيعرض هذا الهاتف تقدّم الضيف حتى تسجّل الدخول مجدداً. ويبقى تقدّم حسابك محفوظاً فيه.';
+
+  @override
+  String get accountSignOutPendingBody =>
+      'جزء من تقدّمك لم تتم مزامنته بعد. سيبقى على هذا الهاتف، وستتم مزامنته في المرة القادمة التي تسجّل فيها الدخول هنا.';
+
+  @override
+  String get accountCancel => 'إلغاء';
+
+  @override
+  String get accountSignedOut => 'تم تسجيل الخروج.';
+
+  @override
+  String get accountSignedIn => 'تم تسجيل الدخول. ستتم مزامنة تقدّمك.';
+
+  @override
+  String get accountDecisionPendingTitle =>
+      'اختر ما تريد فعله بتقدّم هذا الهاتف';
+
+  @override
+  String get accountDecisionPendingBody => 'لن تبدأ مزامنة حسابك حتى تختار.';
+
+  @override
+  String get accountDecisionAction => 'اختر';
+
+  @override
+  String get guestProgressTitle => 'هل تضيف تقدّم هذا الهاتف إلى حسابك؟';
+
+  @override
+  String get guestProgressBody =>
+      'على هذا الهاتف تقدّم سابق لتسجيل دخولك. يمكنك إضافته إلى حسابك ليُضمّ إلى ما فيه من تقدّم، أو إبقاؤه على هذا الهاتف فقط.';
+
+  @override
+  String get guestProgressAttach => 'أضِفه إلى حسابي';
+
+  @override
+  String get guestProgressKeepSeparate => 'أبقِه على هذا الهاتف';
+
+  @override
+  String get authSignInTitle => 'تسجيل الدخول';
+
+  @override
+  String get authCreateTitle => 'إنشاء حساب';
+
+  @override
+  String get authIntro =>
+      'يحفظ حسابك دروسك ومراجعاتك ونتائج اختباراتك، لتكمل من أي هاتف. ويمكنك متابعة التعلّم دون حساب أيضاً.';
+
+  @override
+  String get authEmailLabel => 'البريد الإلكتروني';
+
+  @override
+  String get authPasswordLabel => 'كلمة المرور';
+
+  @override
+  String get authConfirmPasswordLabel => 'تأكيد كلمة المرور';
+
+  @override
+  String get authPasswordHint => '6 أحرف على الأقل';
+
+  @override
+  String get authShowPassword => 'إظهار كلمة المرور';
+
+  @override
+  String get authHidePassword => 'إخفاء كلمة المرور';
+
+  @override
+  String get authSignInAction => 'تسجيل الدخول';
+
+  @override
+  String get authCreateAction => 'إنشاء الحساب';
+
+  @override
+  String get authForgotPasswordLink => 'نسيت كلمة المرور؟';
+
+  @override
+  String get authOr => 'أو';
+
+  @override
+  String get authGoogleAction => 'المتابعة باستخدام Google';
+
+  @override
+  String get authSwitchToCreate => 'جديد هنا؟ أنشئ حساباً';
+
+  @override
+  String get authSwitchToSignIn => 'لديك حساب؟ سجّل الدخول';
+
+  @override
+  String get authEmailInvalid => 'أدخل بريداً إلكترونياً صحيحاً.';
+
+  @override
+  String get authPasswordRequired => 'أدخل كلمة المرور.';
+
+  @override
+  String get authPasswordTooShort => 'استخدم 6 أحرف على الأقل.';
+
+  @override
+  String get authPasswordsDontMatch => 'كلمتا المرور غير متطابقتين.';
+
+  @override
+  String get authErrorInvalidEmail =>
+      'يبدو أن عنوان البريد الإلكتروني غير صحيح.';
+
+  @override
+  String get authErrorWrongCredentials =>
+      'البريد الإلكتروني أو كلمة المرور غير صحيحة.';
+
+  @override
+  String get authErrorEmailInUse =>
+      'يوجد حساب بهذا البريد الإلكتروني. جرّب تسجيل الدخول بدلاً من ذلك.';
+
+  @override
+  String get authErrorWeakPassword =>
+      'اختر كلمة مرور أقوى من 6 أحرف على الأقل.';
+
+  @override
+  String get authErrorUserDisabled => 'تم إيقاف هذا الحساب.';
+
+  @override
+  String get authErrorTooManyRequests =>
+      'محاولات كثيرة. انتظر بضع دقائق ثم حاول مرة أخرى.';
+
+  @override
+  String get authErrorNetwork =>
+      'لا يوجد اتصال بالإنترنت. اتصل ثم حاول مجدداً، ويمكنك متابعة التعلّم دون اتصال في هذه الأثناء.';
+
+  @override
+  String get authErrorDifferentMethod =>
+      'هذا البريد مسجّل بطريقة دخول أخرى. جرّب الدخول بها.';
+
+  @override
+  String get authErrorUnavailable => 'الحسابات غير متاحة حالياً.';
+
+  @override
+  String get authErrorUnknown => 'حدث خطأ ما. حاول مرة أخرى.';
+
+  @override
+  String get authResetTitle => 'إعادة تعيين كلمة المرور';
+
+  @override
+  String get authResetBody =>
+      'أدخل البريد الإلكتروني لحسابك وسنرسل إليك رابطاً لاختيار كلمة مرور جديدة.';
+
+  @override
+  String get authResetAction => 'أرسل الرابط';
+
+  @override
+  String authResetSent(String email) {
+    return 'إن كان هناك حساب مرتبط بـ $email فرابط إعادة التعيين في طريقه إليك. تفقّد بريدك الوارد.';
+  }
+
+  @override
+  String get authBackToSignIn => 'العودة إلى تسجيل الدخول';
+
+  @override
+  String get settingsResetProgressBodyAccount =>
+      'امسح كل الدروس ونتائج الاختبارات والمراجعات على جميع أجهزتك.';
+
+  @override
+  String get settingsResetProgressConfirmBodyAccount =>
+      'سيُمسح كل تقدّمك في الدروس والوحدات ونتائج الاختبارات وجداول المراجعة والكلمات المحفوظة، على هذا الهاتف وعلى كل هاتف آخر مسجّل الدخول إلى حسابك. لا يمكن التراجع عن ذلك.';
+
+  @override
+  String get settingsOfflineTitleAccount => 'يعمل دون اتصال';
+
+  @override
+  String get settingsOfflineBodyAccount =>
+      'كل الدروس تعمل دون إنترنت، وتُحفظ نسخة من تقدّمك في حسابك أيضاً.';
 }

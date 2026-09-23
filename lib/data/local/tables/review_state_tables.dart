@@ -20,6 +20,11 @@ class VocabularyReviewState extends Table {
   IntColumn get repetitions => integer().withDefault(const Constant(0))();
   DateTimeColumn get dueAt => dateTime().nullable()();
   DateTimeColumn get lastReviewedAt => dateTime().nullable()();
+
+  /// When [isFavorite] last changed — kept apart from [updatedAt] so that,
+  /// when two devices' copies meet, a newer review elsewhere never undoes a
+  /// favourite set here (docs/adr/0010-optional-accounts-and-progress-sync.md).
+  DateTimeColumn get favoriteUpdatedAt => dateTime().nullable()();
   DateTimeColumn get updatedAt => dateTime()();
 }
 
@@ -33,5 +38,9 @@ class GrammarReviewState extends Table {
   TextColumn get grammarId => text()();
   BoolColumn get isFavorite => boolean().withDefault(const Constant(false))();
   DateTimeColumn get markedReviewedAt => dateTime().nullable()();
+
+  /// When [isFavorite] last changed; see
+  /// `VocabularyReviewState.favoriteUpdatedAt`.
+  DateTimeColumn get favoriteUpdatedAt => dateTime().nullable()();
   DateTimeColumn get updatedAt => dateTime()();
 }

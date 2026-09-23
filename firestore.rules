@@ -1,0 +1,198 @@
+rules_version = '2';
+
+// Mohingo's Firestore rules. The only data is each learner's own progress,
+// under users/{uid}; nobody but that signed-in account can read or write
+// it, and every write must match the shape the app writes
+// (lib/features/sync/domain/sync_records.dart; docs/API_CONTRACT.md).
+// Everything else is denied. Tested against the emulator by
+// tool/firestore_rules_test/ (docs/TESTING.md).
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isOwner(uid) {
+      return request.auth != null && request.auth.uid == uid;
+    }
+
+    // Field checks. "opt" fields may be absent or null.
+    function reqStr(d, k, max) {
+      return k in d && d[k] is string && d[k].size() > 0 && d[k].size() <= max;
+    }
+    function optStr(d, k, max) {
+      return !(k in d) || d[k] == null || (d[k] is string && d[k].size() <= max);
+    }
+    function reqTime(d, k) { return k in d && d[k] is timestamp; }
+    function optTime(d, k) { return !(k in d) || d[k] == null || d[k] is timestamp; }
+    function reqBool(d, k) { return k in d && d[k] is bool; }
+    function optBool(d, k) { return !(k in d) || d[k] == null || d[k] is bool; }
+    function reqInt(d, k) { return k in d && d[k] is int && d[k] >= 0; }
+    function optInt(d, k) { return !(k in d) || d[k] == null || (d[k] is int && d[k] >= 0); }
+    function reqNum(d, k) { return k in d && d[k] is number; }
+    function optNum(d, k) { return !(k in d) || d[k] == null || d[k] is number; }
+
+    // What the sync layer adds to every record: the account epoch, the
+    // server write time (the download cursor — it must really be the
+    // server's time) and the record schema version.
+    function envelope(d) {
+      return d.epoch is int && d.epoch >= 0
+        && d.serverUpdatedAt == request.time
+        && d.v == 1;
+    }
+    function envelopeKeys() { return ['epoch', 'serverUpdatedAt', 'v']; }
+
+    // A record that never changes once written may only be re-written
+    // unchanged (a retried upload).
+    function unchangedApartFromEnvelope() {
+      return request.resource.data.diff(resource.data).affectedKeys()
+        .hasOnly(envelopeKeys());
+    }
+
+    function validAccount(d) {
+      return d.keys().hasOnly(['epoch', 'name', 'nameUpdatedAt', 'createdAt',
+                               'serverUpdatedAt', 'v'])
+        && d.epoch is int && d.epoch >= 0
+        && optStr(d, 'name', 100)
+        && optTime(d, 'nameUpdatedAt')
+        && d.createdAt is timestamp
+        && d.serverUpdatedAt == request.time
+        && d.v == 1;
+    }
+
+    function validAttempt(d) {
+      return d.keys().hasOnly(['uuid', 'activityId', 'lessonId', 'sessionType',
+          'sessionId', 'mode', 'evidenceSkill', 'rawAnswer', 'isCorrect',
+          'score', 'criteriaScores', 'wasFallback', 'attemptedAt', 'updatedAt',
+          'canDoIds'].concat(envelopeKeys()))
+        && reqStr(d, 'uuid', 64) && reqStr(d, 'activityId', 120)
+        && optStr(d, 'lessonId', 120) && reqStr(d, 'sessionType', 40)
+        && optStr(d, 'sessionId', 64) && reqStr(d, 'mode', 40)
+        && reqStr(d, 'evidenceSkill', 40) && optStr(d, 'rawAnswer', 20000)
+        && optBool(d, 'isCorrect') && optNum(d, 'score')
+        && optStr(d, 'criteriaScores', 5000) && reqBool(d, 'wasFallback')
+        && reqTime(d, 'attemptedAt') && reqTime(d, 'updatedAt')
+        && d.canDoIds is list && d.canDoIds.size() <= 50
+        && envelope(d);
+    }
+
+    function validTestAttempt(d) {
+      return d.keys().hasOnly(['uuid', 'kind', 'courseId', 'startedAt',
+          'completedAt', 'stageReached', 'outcome', 'recommendedUnitId',
+          'confidenceSelfReports', 'itemSamplingSeed', 'stagesCompleted',
+          'sectionResults', 'outcomeSummary'].concat(envelopeKeys()))
+        && reqStr(d, 'uuid', 64)
+        && d.kind in ['placement', 'finalMission', 'finalAssessment']
+        && optStr(d, 'courseId', 80) && reqTime(d, 'startedAt')
+        && optTime(d, 'completedAt') && optInt(d, 'stageReached')
+        && optStr(d, 'outcome', 200) && optStr(d, 'recommendedUnitId', 120)
+        && optStr(d, 'confidenceSelfReports', 20000)
+        && optStr(d, 'itemSamplingSeed', 200)
+        && optStr(d, 'stagesCompleted', 20000)
+        && optStr(d, 'sectionResults', 50000)
+        && optStr(d, 'outcomeSummary', 20000)
+        && envelope(d);
+    }
+
+    function validLessonProgress(d) {
+      return d.keys().hasOnly(['lessonId', 'unitId', 'state', 'lastActivityId',
+          'lastPositionUpdatedAt', 'updatedAt'].concat(envelopeKeys()))
+        && reqStr(d, 'lessonId', 120) && reqStr(d, 'unitId', 120)
+        && reqStr(d, 'state', 40) && optStr(d, 'lastActivityId', 120)
+        && optTime(d, 'lastPositionUpdatedAt') && reqTime(d, 'updatedAt')
+        && envelope(d);
+    }
+
+    function validVocabulary(d) {
+      return d.keys().hasOnly(['lexiconId', 'chunkId', 'isFavorite',
+          'favoriteUpdatedAt', 'confidenceMarker', 'easeFactor', 'intervalDays',
+          'repetitions', 'dueAt', 'lastReviewedAt', 'updatedAt']
+          .concat(envelopeKeys()))
+        && optStr(d, 'lexiconId', 120) && optStr(d, 'chunkId', 120)
+        && reqBool(d, 'isFavorite') && optTime(d, 'favoriteUpdatedAt')
+        && optStr(d, 'confidenceMarker', 40) && reqNum(d, 'easeFactor')
+        && reqInt(d, 'intervalDays') && reqInt(d, 'repetitions')
+        && optTime(d, 'dueAt') && optTime(d, 'lastReviewedAt')
+        && reqTime(d, 'updatedAt')
+        && envelope(d);
+    }
+
+    function validGrammar(d) {
+      return d.keys().hasOnly(['grammarId', 'isFavorite', 'favoriteUpdatedAt',
+          'markedReviewedAt', 'updatedAt'].concat(envelopeKeys()))
+        && reqStr(d, 'grammarId', 120) && reqBool(d, 'isFavorite')
+        && optTime(d, 'favoriteUpdatedAt') && optTime(d, 'markedReviewedAt')
+        && reqTime(d, 'updatedAt')
+        && envelope(d);
+    }
+
+    function validEnrolment(d) {
+      return d.keys().hasOnly(['levelId', 'courseId', 'contentVersion',
+          'enrolledAt', 'status', 'lastSelectedAt', 'unlockedAt']
+          .concat(envelopeKeys()))
+        && reqStr(d, 'levelId', 20) && reqStr(d, 'courseId', 80)
+        && reqStr(d, 'contentVersion', 120) && reqTime(d, 'enrolledAt')
+        && reqStr(d, 'status', 40) && optTime(d, 'lastSelectedAt')
+        && optTime(d, 'unlockedAt')
+        && envelope(d);
+    }
+
+    function validDailyTask(d) {
+      return d.keys().hasOnly(['uuid', 'taskType', 'occurredAt']
+          .concat(envelopeKeys()))
+        && reqStr(d, 'uuid', 64) && reqStr(d, 'taskType', 40)
+        && reqTime(d, 'occurredAt')
+        && envelope(d);
+    }
+
+    match /users/{uid} {
+      allow get: if isOwner(uid);
+      allow create: if isOwner(uid) && validAccount(request.resource.data);
+      // The epoch only moves forward: a reset can't be undone by an old
+      // device.
+      allow update: if isOwner(uid) && validAccount(request.resource.data)
+        && request.resource.data.epoch >= resource.data.epoch
+        && request.resource.data.createdAt == resource.data.createdAt;
+      allow delete: if isOwner(uid);
+
+      match /attempts/{docId} {
+        allow read, delete: if isOwner(uid);
+        allow create: if isOwner(uid) && validAttempt(request.resource.data)
+          && request.resource.data.uuid == docId;
+        allow update: if isOwner(uid) && validAttempt(request.resource.data)
+          && unchangedApartFromEnvelope();
+      }
+      match /dailyTasks/{docId} {
+        allow read, delete: if isOwner(uid);
+        allow create: if isOwner(uid) && validDailyTask(request.resource.data)
+          && request.resource.data.uuid == docId;
+        allow update: if isOwner(uid) && validDailyTask(request.resource.data)
+          && unchangedApartFromEnvelope();
+      }
+      match /testAttempts/{docId} {
+        allow read, delete: if isOwner(uid);
+        allow create, update: if isOwner(uid)
+          && validTestAttempt(request.resource.data)
+          && request.resource.data.uuid == docId;
+      }
+      match /lessonProgress/{docId} {
+        allow read, delete: if isOwner(uid);
+        allow create, update: if isOwner(uid)
+          && validLessonProgress(request.resource.data);
+      }
+      match /vocabularyReview/{docId} {
+        allow read, delete: if isOwner(uid);
+        allow create, update: if isOwner(uid)
+          && validVocabulary(request.resource.data);
+      }
+      match /grammarReview/{docId} {
+        allow read, delete: if isOwner(uid);
+        allow create, update: if isOwner(uid)
+          && validGrammar(request.resource.data);
+      }
+      match /enrolments/{docId} {
+        allow read, delete: if isOwner(uid);
+        allow create, update: if isOwner(uid)
+          && validEnrolment(request.resource.data)
+          && request.resource.data.levelId == docId;
+      }
+    }
+  }
+}

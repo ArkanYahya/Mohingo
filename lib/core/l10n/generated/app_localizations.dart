@@ -2243,7 +2243,7 @@ abstract class AppLocalizations {
   /// Settings row body: privacy.
   ///
   /// In en, this message translates to:
-  /// **'Works fully offline. Nothing is uploaded and there is no account.'**
+  /// **'Works fully offline. Without an account, nothing leaves this phone.'**
   String get settingsOfflineBody;
 
   /// Under the Reset progress row.
@@ -2401,6 +2401,408 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Read the text'**
   String get lessonIntroReadTitle;
+
+  /// Settings section heading for sign-in and progress sync.
+  ///
+  /// In en, this message translates to:
+  /// **'Account & sync'**
+  String get accountSectionTitle;
+
+  /// Settings row title shown to a guest (not signed in).
+  ///
+  /// In en, this message translates to:
+  /// **'Save your progress to an account'**
+  String get accountGuestTitle;
+
+  /// Under the guest account row — why signing in is worth it. Signing in is optional.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in to keep your progress safe and carry on from another phone.'**
+  String get accountGuestBody;
+
+  /// Small action on the guest account row; opens the sign-in screen.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in'**
+  String get accountSignInAction;
+
+  /// Account row title when the account has no email to show.
+  ///
+  /// In en, this message translates to:
+  /// **'Your account'**
+  String get accountYourAccount;
+
+  /// Account row subtitle while a sync is running.
+  ///
+  /// In en, this message translates to:
+  /// **'Syncing…'**
+  String get accountSyncing;
+
+  /// Account row subtitle before the first successful sync.
+  ///
+  /// In en, this message translates to:
+  /// **'Not synced yet'**
+  String get accountNotSyncedYet;
+
+  /// Account row subtitle after a successful sync. {time} is a formatted date and time.
+  ///
+  /// In en, this message translates to:
+  /// **'Last synced {time}'**
+  String accountSyncedAt(String time);
+
+  /// Account row subtitle when the last sync could not reach the internet.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re offline. Your progress is saved on this phone and will sync when you\'re back online.'**
+  String get accountSyncOffline;
+
+  /// Account row subtitle when the last sync failed for another reason; it retries on its own.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t sync just now. We\'ll try again shortly.'**
+  String get accountSyncFailed;
+
+  /// Account row subtitle when the account's sign-in is no longer valid.
+  ///
+  /// In en, this message translates to:
+  /// **'Your sign-in has expired. Sign out and sign in again to keep syncing.'**
+  String get accountSyncSignedOut;
+
+  /// Account row note: local changes not uploaded yet.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 change waiting to sync} other{{count} changes waiting to sync}}'**
+  String accountPendingChanges(int count);
+
+  /// Small action on the account row; starts a sync immediately.
+  ///
+  /// In en, this message translates to:
+  /// **'Sync now'**
+  String get accountSyncNow;
+
+  /// Settings row title for signing out.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign out'**
+  String get accountSignOutTitle;
+
+  /// Under the Sign out row.
+  ///
+  /// In en, this message translates to:
+  /// **'Your progress stays in your account.'**
+  String get accountSignOutBody;
+
+  /// Sign-out confirmation dialog title.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign out?'**
+  String get accountSignOutConfirmTitle;
+
+  /// Sign-out confirmation body when everything has synced.
+  ///
+  /// In en, this message translates to:
+  /// **'This phone will show guest progress until you sign in again. Your account keeps its progress.'**
+  String get accountSignOutConfirmBody;
+
+  /// Sign-out confirmation body when local changes are still waiting to upload.
+  ///
+  /// In en, this message translates to:
+  /// **'Some progress hasn\'t synced yet. It stays on this phone and syncs the next time you sign in here.'**
+  String get accountSignOutPendingBody;
+
+  /// Cancel button in account dialogs.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get accountCancel;
+
+  /// Snackbar after signing out.
+  ///
+  /// In en, this message translates to:
+  /// **'Signed out.'**
+  String get accountSignedOut;
+
+  /// Snackbar after signing in.
+  ///
+  /// In en, this message translates to:
+  /// **'Signed in. Your progress will sync.'**
+  String get accountSignedIn;
+
+  /// Account row title while the learner hasn't decided whether guest progress joins the account.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose what to do with this phone\'s progress'**
+  String get accountDecisionPendingTitle;
+
+  /// Under the pending-decision account row.
+  ///
+  /// In en, this message translates to:
+  /// **'Your account won\'t sync until you choose.'**
+  String get accountDecisionPendingBody;
+
+  /// Small action on the pending-decision row; opens the choice dialog.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose'**
+  String get accountDecisionAction;
+
+  /// Dialog title after first sign-in on a phone that already has guest progress.
+  ///
+  /// In en, this message translates to:
+  /// **'Add this phone\'s progress to your account?'**
+  String get guestProgressTitle;
+
+  /// Dialog body explaining the two choices. Neither choice deletes anything.
+  ///
+  /// In en, this message translates to:
+  /// **'This phone has progress from before you signed in. You can add it to your account, where it joins anything your account already has, or keep it on this phone only.'**
+  String get guestProgressBody;
+
+  /// Dialog action: the guest progress becomes the account's.
+  ///
+  /// In en, this message translates to:
+  /// **'Add to my account'**
+  String get guestProgressAttach;
+
+  /// Dialog action: the account starts from its own progress; guest progress stays on the phone and returns on sign-out.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep it on this phone'**
+  String get guestProgressKeepSeparate;
+
+  /// Sign-in screen title.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in'**
+  String get authSignInTitle;
+
+  /// Create-account screen title.
+  ///
+  /// In en, this message translates to:
+  /// **'Create an account'**
+  String get authCreateTitle;
+
+  /// Intro under the sign-in/create-account title.
+  ///
+  /// In en, this message translates to:
+  /// **'Your account keeps your lessons, reviews and test results, so you can carry on from any phone. You can keep learning without one.'**
+  String get authIntro;
+
+  /// Email field label.
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get authEmailLabel;
+
+  /// Password field label.
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
+  String get authPasswordLabel;
+
+  /// Second password field on the create-account screen.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm password'**
+  String get authConfirmPasswordLabel;
+
+  /// Helper under the password field on the create-account screen.
+  ///
+  /// In en, this message translates to:
+  /// **'At least 6 characters'**
+  String get authPasswordHint;
+
+  /// Accessibility label of the eye button that reveals the password.
+  ///
+  /// In en, this message translates to:
+  /// **'Show password'**
+  String get authShowPassword;
+
+  /// Accessibility label of the eye button that hides the password.
+  ///
+  /// In en, this message translates to:
+  /// **'Hide password'**
+  String get authHidePassword;
+
+  /// Primary button on the sign-in screen.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in'**
+  String get authSignInAction;
+
+  /// Primary button on the create-account screen.
+  ///
+  /// In en, this message translates to:
+  /// **'Create account'**
+  String get authCreateAction;
+
+  /// Link to the password-reset screen.
+  ///
+  /// In en, this message translates to:
+  /// **'Forgot password?'**
+  String get authForgotPasswordLink;
+
+  /// Divider text between email sign-in and Google sign-in.
+  ///
+  /// In en, this message translates to:
+  /// **'or'**
+  String get authOr;
+
+  /// Google sign-in button. 'Google' is a brand name — keep it in Latin script.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue with Google'**
+  String get authGoogleAction;
+
+  /// Link from sign-in to create-account.
+  ///
+  /// In en, this message translates to:
+  /// **'New here? Create an account'**
+  String get authSwitchToCreate;
+
+  /// Link from create-account to sign-in.
+  ///
+  /// In en, this message translates to:
+  /// **'Already have an account? Sign in'**
+  String get authSwitchToSignIn;
+
+  /// Validation error under the email field.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a valid email address.'**
+  String get authEmailInvalid;
+
+  /// Validation error when the password field is empty.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your password.'**
+  String get authPasswordRequired;
+
+  /// Validation error when a new password is too short.
+  ///
+  /// In en, this message translates to:
+  /// **'Use at least 6 characters.'**
+  String get authPasswordTooShort;
+
+  /// Validation error when the confirmation differs.
+  ///
+  /// In en, this message translates to:
+  /// **'The passwords don\'t match.'**
+  String get authPasswordsDontMatch;
+
+  /// Sign-in error: malformed email.
+  ///
+  /// In en, this message translates to:
+  /// **'That email address doesn\'t look right.'**
+  String get authErrorInvalidEmail;
+
+  /// Sign-in error: wrong email or password. Deliberately doesn't say which.
+  ///
+  /// In en, this message translates to:
+  /// **'The email or password is incorrect.'**
+  String get authErrorWrongCredentials;
+
+  /// Create-account error: the email is taken.
+  ///
+  /// In en, this message translates to:
+  /// **'An account with this email already exists. Try signing in instead.'**
+  String get authErrorEmailInUse;
+
+  /// Create-account error: password too weak.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a stronger password with at least 6 characters.'**
+  String get authErrorWeakPassword;
+
+  /// Sign-in error: account disabled by the developer.
+  ///
+  /// In en, this message translates to:
+  /// **'This account has been disabled.'**
+  String get authErrorUserDisabled;
+
+  /// Sign-in error: rate limited.
+  ///
+  /// In en, this message translates to:
+  /// **'Too many attempts. Wait a few minutes and try again.'**
+  String get authErrorTooManyRequests;
+
+  /// Sign-in error: offline. Reassures the learner the app still works.
+  ///
+  /// In en, this message translates to:
+  /// **'No internet connection. Connect and try again. You can keep learning offline meanwhile.'**
+  String get authErrorNetwork;
+
+  /// Sign-in error: the account uses another provider.
+  ///
+  /// In en, this message translates to:
+  /// **'This email is registered with another sign-in method. Try that method instead.'**
+  String get authErrorDifferentMethod;
+
+  /// Sign-in error: accounts not configured in this build.
+  ///
+  /// In en, this message translates to:
+  /// **'Accounts aren\'t available right now.'**
+  String get authErrorUnavailable;
+
+  /// Sign-in error: anything else.
+  ///
+  /// In en, this message translates to:
+  /// **'Something went wrong. Please try again.'**
+  String get authErrorUnknown;
+
+  /// Password-reset screen title.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset your password'**
+  String get authResetTitle;
+
+  /// Password-reset screen intro.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your account\'s email and we\'ll send you a link to choose a new password.'**
+  String get authResetBody;
+
+  /// Password-reset screen primary button.
+  ///
+  /// In en, this message translates to:
+  /// **'Send link'**
+  String get authResetAction;
+
+  /// Shown after requesting a reset. Doesn't confirm whether the account exists.
+  ///
+  /// In en, this message translates to:
+  /// **'If an account exists for {email}, a reset link is on its way. Check your inbox.'**
+  String authResetSent(String email);
+
+  /// Button returning from the password-reset screen.
+  ///
+  /// In en, this message translates to:
+  /// **'Back to sign in'**
+  String get authBackToSignIn;
+
+  /// Under the Reset progress row when signed in: the reset applies to every device on the account.
+  ///
+  /// In en, this message translates to:
+  /// **'Erase every lesson, test result and review on all your devices.'**
+  String get settingsResetProgressBodyAccount;
+
+  /// Reset confirmation body when signed in, stating plainly that other devices are affected too.
+  ///
+  /// In en, this message translates to:
+  /// **'This erases every lesson and unit, test result, review schedule and saved word, on this phone and on every other phone signed in to your account. It can\'t be undone.'**
+  String get settingsResetProgressConfirmBodyAccount;
+
+  /// Offline row title when signed in (progress is also copied to the account).
+  ///
+  /// In en, this message translates to:
+  /// **'Works offline'**
+  String get settingsOfflineTitleAccount;
+
+  /// Offline row body when signed in.
+  ///
+  /// In en, this message translates to:
+  /// **'Every lesson works without internet. Your progress is also copied to your account.'**
+  String get settingsOfflineBodyAccount;
 }
 
 class _AppLocalizationsDelegate
