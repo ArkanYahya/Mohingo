@@ -51,19 +51,19 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyAaHJVg8VCRiEP5po_bVNpWjE8SsfokQms',
-    appId: '1:219416710516:android:484ea34d5b308574bd3021',
+    appId: '1:219416710516:android:6a72382d69964d7abd3021',
     messagingSenderId: '219416710516',
     projectId: 'mohingo',
     storageBucket: 'mohingo.firebasestorage.app',
   );
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyC7tsjPMFCKi_WQUPyDNsZ_TIq7BD8SM2k',
-    appId: '1:219416710516:ios:e5a916eebbf91de0bd3021',
+    appId: '1:219416710516:ios:52f73b11cfb2eddbbd3021',
     messagingSenderId: '219416710516',
     projectId: 'mohingo',
     storageBucket: 'mohingo.firebasestorage.app',
     androidClientId: '219416710516-7225qi4nfropju5en7jv0k2dl71gucpf.apps.googleusercontent.com',
-    iosClientId: '219416710516-al1detfqn9847oi7fo7l455addonaq5q.apps.googleusercontent.com',
-    iosBundleId: 'com.mohingo.mohingo',
+    iosClientId: '219416710516-stlj07n1rqtvsq89avmr0n5ugcpcof4h.apps.googleusercontent.com',
+    iosBundleId: 'com.northstorm.mohingo',
   );
 }

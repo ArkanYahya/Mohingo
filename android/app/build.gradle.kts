@@ -24,7 +24,7 @@ val keystoreProperties = Properties().apply {
 val hasReleaseKeystore = keystorePropertiesFile.exists()
 
 android {
-    namespace = "com.mohingo.mohingo"
+    namespace = "com.northstorm.mohingo"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -36,7 +36,7 @@ android {
     defaultConfig {
         // Permanent once published: it is the Play Store identity and the
         // Android app registered in Firebase (google-services.json).
-        applicationId = "com.mohingo.mohingo"
+        applicationId = "com.northstorm.mohingo"
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         // Both come from `version:` in pubspec.yaml (name+code).

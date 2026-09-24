@@ -1,7 +1,7 @@
 > **What this file is:** How this repository is connected to its Firebase project, and how to redo it — for a new machine, a new developer, or a new platform. The design is [ADR 0010](adr/0010-optional-accounts-and-progress-sync.md); the data contract is [API_CONTRACT.md](API_CONTRACT.md).
 > **How to use it:** Follow the steps in order. Anything that needs the project owner's Google account is marked **(console)** or **(your machine)**; everything else is already in the repository.
 
-_Last verified: 2026-09-24 (`release/v1.0.0`) — **iOS app registered and pages live**: iOS app `1:219416710516:ios:e5a916eebbf91de0bd3021` (`com.mohingo.mohingo`), `GoogleService-Info.plist` and the Google URL scheme committed (iOS steps 1-2 done; 3-5 not yet); the public pages are deployed at `https://mohingo.web.app`. Previously verified 2026-09-23 (`release/v1.0.0`) — **iOS and the public pages** ([ADR 0012](adr/0012-ios-release-sign-in-with-apple.md)): the iOS section below is now the real procedure (register the app, Google URL scheme, Apple provider with its key for token revocation), and "Public pages" deploys the support, privacy, terms and delete-account pages to Firebase Hosting. Neither has been run yet. Previously verified 2026-09-23 (`claude/firebase-auth-sync-ji1cww`) — the project is connected: **`mohingo`**, Android app `1:219416710516:android:484ea34d5b308574bd3021`, Email/Password and Google enabled, Firestore `(default)` in **`me-central2` (Dammam)**, rules and indexes deployed, the owner's debug SHA-1/SHA-256 registered. Steps 1-6 below are done; step 7 and iOS are not._
+_Last verified: 2026-09-24 (`release/v1.0.0`) — **One app id, `com.northstorm.mohingo`, on both platforms** ([ADR 0012](adr/0012-ios-release-sign-in-with-apple.md)): Android app `1:219416710516:android:6a72382d69964d7abd3021` and iOS app `1:219416710516:ios:52f73b11cfb2eddbbd3021`; the Android app carries the owner's debug SHA-1s (including the Mac's, `4945f2d4…`) and SHA-256s. The earlier `com.mohingo.mohingo` registrations (`…android:484ea34d5b308574bd3021`, `…ios:e5a916eebbf91de0bd3021`) are no longer used by the app. Earlier the same day — **iOS app registered and pages live**: iOS app `1:219416710516:ios:52f73b11cfb2eddbbd3021`, bundle id **`com.northstorm.mohingo`** (Apple had `com.mohingo.mohingo` taken, so iOS differs from the Android package, which stays `com.mohingo.mohingo`; the first iOS registration, `…ios:e5a916eebbf91de0bd3021` for `com.mohingo.mohingo`, is unused), `GoogleService-Info.plist` and the Google URL scheme committed (iOS steps 1-2 done; 3-5 not yet); the public pages are deployed at `https://mohingo.web.app`. Previously verified 2026-09-23 (`release/v1.0.0`) — **iOS and the public pages** ([ADR 0012](adr/0012-ios-release-sign-in-with-apple.md)): the iOS section below is now the real procedure (register the app, Google URL scheme, Apple provider with its key for token revocation), and "Public pages" deploys the support, privacy, terms and delete-account pages to Firebase Hosting. Neither has been run yet. Previously verified 2026-09-23 (`claude/firebase-auth-sync-ji1cww`) — the project is connected: **`mohingo`**, Android app `1:219416710516:android:484ea34d5b308574bd3021`, Email/Password and Google enabled, Firestore `(default)` in **`me-central2` (Dammam)**, rules and indexes deployed, the owner's debug SHA-1/SHA-256 registered. Steps 1-6 below are done; step 7 and iOS are not._
 
 # Firebase setup
 
@@ -27,7 +27,7 @@ firebase login                          # (your machine) opens a browser
 2. **Connect the app** (your machine), from the repository root:
    ```sh
    flutterfire configure --project=<your-project-id> --platforms=android \
-     --android-package-name=com.mohingo.mohingo
+     --android-package-name=com.northstorm.mohingo
    ```
    This registers the Android app, writes `lib/firebase_options.dart` and `android/app/google-services.json`, and adds the `com.google.gms.google-services` Gradle plugin. Commit all three.
 3. **Enable sign-in providers** (console): Authentication → Get started → Sign-in method → enable **Email/Password**, then **Google** (choose a support email). Leave email-enumeration protection on (the default).
@@ -43,7 +43,7 @@ firebase login                          # (your machine) opens a browser
    firebase deploy --only firestore:rules,firestore:indexes
    ```
    Never leave the database in test mode: until this deploy, production mode denies everything, which is safe.
-7. **Restrict the API key** (console, recommended): Google Cloud console → APIs & Services → Credentials → the Android key → restrict to Android apps with package `com.mohingo.mohingo` and your SHA-1s.
+7. **Restrict the API key** (console, recommended): Google Cloud console → APIs & Services → Credentials → the Android key → restrict to Android apps with package `com.northstorm.mohingo` and your SHA-1s.
 
 ## Why these files are committed
 
@@ -79,7 +79,7 @@ The code, the Sign in with Apple entitlement (`ios/Runner/Runner.entitlements`) 
 1. **Register the iOS app** (your machine), from the repository root:
    ```sh
    flutterfire configure --project=mohingo --platforms=android,ios \
-     --android-package-name=com.mohingo.mohingo --ios-bundle-id=com.mohingo.mohingo
+     --android-package-name=com.northstorm.mohingo --ios-bundle-id=com.northstorm.mohingo
    ```
    This fills the iOS entry of `lib/firebase_options.dart` (including `iosClientId`, which Google sign-in reads) and writes `ios/Runner/GoogleService-Info.plist`. Commit both. If `iosClientId` is missing from the iOS options, Google was not enabled when the app was registered: check step 3 of the Android setup and run this again.
 2. **Add the Google URL scheme** (your machine). Print the reversed client id:
@@ -103,12 +103,12 @@ The code, the Sign in with Apple entitlement (`ios/Runner/Runner.entitlements`) 
    Without it, tapping "Continue with Google" crashes the app on iOS (the Google SDK throws when the scheme is missing). Done for the current iOS app; redo it only if the iOS app is registered again, since that changes the client id.
 3. **Enable Apple sign-in** (console): Authentication → Sign-in method → Add new provider → **Apple** → Enable. That is enough for the native sign-in on iPhone.
 4. **Let deletion revoke Apple tokens** (Apple Developer + console). Apple requires this when an Apple account is deleted ([ADR 0012](adr/0012-ios-release-sign-in-with-apple.md)):
-   1. [developer.apple.com](https://developer.apple.com/account/resources) → Identifiers → **+** → **Services IDs** → e.g. `com.mohingo.mohingo.signin`, with Sign in with Apple enabled, primary App ID `com.mohingo.mohingo`, and return URL `https://mohingo.firebaseapp.com/__/auth/handler`.
-   2. Keys → **+** → enable **Sign in with Apple**, configure it with the primary App ID → download the `.p8` file (it can be downloaded only once) and note its **Key ID**.
+   1. [developer.apple.com](https://developer.apple.com/account/resources) → Identifiers → **+** → **Services IDs** → e.g. `com.northstorm.mohingo.signin`, with Sign in with Apple enabled, primary App ID `com.northstorm.mohingo`, and return URL `https://mohingo.firebaseapp.com/__/auth/handler`.
+   2. Keys → **+** → enable **Sign in with Apple**, configure it with the primary App ID (`com.northstorm.mohingo`) → download the `.p8` file (it can be downloaded only once) and note its **Key ID**.
    3. Firebase console → Authentication → Sign-in method → Apple → fill **Services ID**, **Apple team ID**, **Key ID** and the **private key** (the `.p8` contents). Save.
 
    Never commit the `.p8`: it is a secret ([SECURITY.md](SECURITY.md)). To check: sign in with Apple on an iPhone, delete the account in Settings → the app disappears from iOS Settings → your name → Sign in with Apple.
-5. **Restrict the iOS API key** (console, recommended): as step 7 of the Android setup, restricted to iOS apps with bundle id `com.mohingo.mohingo`.
+5. **Restrict the iOS API key** (console, recommended): as step 7 of the Android setup, restricted to iOS apps with bundle id `com.northstorm.mohingo`.
 
 Then build and upload as [README.md](../README.md), "Releasing (iOS)", describes. Plugins come through Swift Package Manager, except `flutter_tts`, which has no Swift package yet and comes through CocoaPods (`ios/Podfile`). Commit `ios/Podfile.lock` and both `xcshareddata/swiftpm/Package.resolved` files: they pin every pod and Swift package, the Firebase iOS SDK included, to an exact version.
 
