@@ -7,58 +7,6 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:219416710516:android:484ea34d5b308574bd3021",
-        "android_client_info": {
-          "package_name": "com.mohingo.mohingo"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "219416710516-7225qi4nfropju5en7jv0k2dl71gucpf.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.mohingo.mohingo",
-            "certificate_hash": "96a1f4f4b99a742fb9bd1429474ac7c2138f9ba4"
-          }
-        },
-        {
-          "client_id": "219416710516-incrrr7k7ra6vgom8vja346h0pn9rjuj.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.mohingo.mohingo",
-            "certificate_hash": "2821f650bbcaf7a2625d13d9dfb66bbde764b310"
-          }
-        },
-        {
-          "client_id": "219416710516-jqevlueojmt8rcn1tarahnbh971aqb0q.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyAaHJVg8VCRiEP5po_bVNpWjE8SsfokQms"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "219416710516-jqevlueojmt8rcn1tarahnbh971aqb0q.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "219416710516-al1detfqn9847oi7fo7l455addonaq5q.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.mohingo.mohingo"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
         "mobilesdk_app_id": "1:219416710516:android:6a72382d69964d7abd3021",
         "android_client_info": {
           "package_name": "com.northstorm.mohingo"
