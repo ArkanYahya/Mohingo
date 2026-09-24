@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "219416710516-7225qi4nfropju5en7jv0k2dl71gucpf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mohingo.mohingo",
+            "certificate_hash": "96a1f4f4b99a742fb9bd1429474ac7c2138f9ba4"
+          }
+        },
+        {
           "client_id": "219416710516-incrrr7k7ra6vgom8vja346h0pn9rjuj.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

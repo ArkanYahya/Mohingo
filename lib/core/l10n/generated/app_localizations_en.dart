@@ -1618,6 +1618,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get authGoogleAction => 'Continue with Google';
 
   @override
+  String get authAppleAction => 'Continue with Apple';
+
+  @override
   String get authSwitchToCreate => 'New here? Create an account';
 
   @override
@@ -1914,6 +1917,10 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get accountDeleteGoogleBody =>
       'To delete the account, choose your Google account again.';
+
+  @override
+  String get accountDeleteAppleBody =>
+      'To delete the account, confirm with Apple that it\'s you.';
 
   @override
   String get accountDeleting => 'Deleting your account…';

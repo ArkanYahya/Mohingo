@@ -2600,7 +2600,7 @@ abstract class AppLocalizations {
   /// **'Forgot password?'**
   String get authForgotPasswordLink;
 
-  /// Divider text between email sign-in and Google sign-in.
+  /// Divider text between email sign-in and the Apple and Google sign-in buttons.
   ///
   /// In en, this message translates to:
   /// **'or'**
@@ -2611,6 +2611,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Continue with Google'**
   String get authGoogleAction;
+
+  /// Sign in with Apple button, iPhone only. Apple's own approved title; 'Apple' is a brand name — keep it in Latin script.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue with Apple'**
+  String get authAppleAction;
 
   /// Link from sign-in to create-account.
   ///
@@ -3127,6 +3133,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'To delete the account, choose your Google account again.'**
   String get accountDeleteGoogleBody;
+
+  /// Asks an account made with Sign in with Apple to confirm with Apple before deleting it.
+  ///
+  /// In en, this message translates to:
+  /// **'To delete the account, confirm with Apple that it\'s you.'**
+  String get accountDeleteAppleBody;
 
   /// Shown while the account is being deleted.
   ///

@@ -14,6 +14,11 @@
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>en</string>
+		<string>ar</string>
+	</array>
 	<key>CFBundleName</key>
 	<string>Mohingo</string>
 	<key>CFBundlePackageType</key>
@@ -22,22 +27,23 @@
 	<string>$(FLUTTER_BUILD_NAME)</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.219416710516-al1detfqn9847oi7fo7l455addonaq5q</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
-	<key>LSRequiresIPhoneOS</key>
-	<true/>
-	<!-- Standard HTTPS only (Firebase, LanguageTool): exempt from export
-	     compliance documentation. -->
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
-	<!-- Required by speech_to_text (both keys — see its README) and by
-	     permission_handler's Permission.microphone. Checked/requested only
-	     when a learner deliberately starts a speaking task, never on
-	     launch — see docs/SECURITY.md. Not yet localized to Arabic: doing
-	     that correctly needs an ios/Runner/*.lproj/InfoPlist.strings setup
-	     wired into the Xcode project, which this environment has no Xcode
-	     install to verify actually gets bundled — see docs/TESTING.md's
-	     real-device-testing limitation. -->
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Mohingo uses the microphone only when you tap to record an answer to a speaking task.</string>
 	<key>NSSpeechRecognitionUsageDescription</key>

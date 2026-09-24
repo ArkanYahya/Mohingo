@@ -10,9 +10,10 @@ import '../providers/account_providers.dart';
 import 'auth_failure_message.dart';
 
 /// "Delete account", from Settings: a confirmation that says exactly what
-/// goes and what stays, then a fresh sign-in (the account's password, or
-/// picking the Google account again — Firebase deletes only an account that
-/// has just proved who it is), then the deletion ([deleteAccountProvider]).
+/// goes and what stays, then a fresh sign-in (the account's password,
+/// picking the Google account again, or confirming with Apple — Firebase
+/// deletes only an account that has just proved who it is), then the
+/// deletion ([deleteAccountProvider]).
 /// Errors are explained in the learner's language inside the dialog, which
 /// stays open so they can try again or cancel.
 Future<void> runDeleteAccountFlow(BuildContext context) async {
@@ -63,6 +64,9 @@ Future<void> runDeleteAccountFlow(BuildContext context) async {
   messenger.showSnackBar(SnackBar(content: Text(l10n.accountDeleted)));
 }
 
+/// How the learner proves who they are before the deletion.
+enum _Confirmation { password, google, apple }
+
 class _ConfirmIdentityDialog extends ConsumerStatefulWidget {
   const _ConfirmIdentityDialog({required this.user});
 
@@ -80,11 +84,19 @@ class _ConfirmIdentityDialogState
   var _busy = false;
   String? _error;
 
-  /// Email accounts confirm with their password; Google accounts by picking
-  /// the Google account again.
-  bool get _usesPassword =>
-      widget.user.providers.contains(AuthProvider.emailPassword) ||
-      !widget.user.providers.contains(AuthProvider.google);
+  /// Email accounts confirm with their password; Google and Apple accounts
+  /// with the provider they signed in with.
+  _Confirmation get _confirmation {
+    final providers = widget.user.providers;
+    if (providers.contains(AuthProvider.emailPassword)) {
+      return _Confirmation.password;
+    }
+    if (providers.contains(AuthProvider.apple)) return _Confirmation.apple;
+    if (providers.contains(AuthProvider.google)) return _Confirmation.google;
+    return _Confirmation.password;
+  }
+
+  bool get _usesPassword => _confirmation == _Confirmation.password;
 
   @override
   void dispose() {
@@ -105,16 +117,20 @@ class _ConfirmIdentityDialogState
     String? error;
     try {
       final auth = ref.read(authRepositoryProvider);
-      if (_usesPassword) {
-        await auth.reauthenticateWithPassword(_password.text);
-      } else {
-        await auth.reauthenticateWithGoogle();
+      switch (_confirmation) {
+        case _Confirmation.password:
+          await auth.reauthenticateWithPassword(_password.text);
+        case _Confirmation.google:
+          await auth.reauthenticateWithGoogle();
+        case _Confirmation.apple:
+          await auth.reauthenticateWithApple();
       }
       await ref.read(deleteAccountProvider)();
       if (mounted) Navigator.of(context).pop(true);
       return;
     } on AuthException catch (e) {
-      // Null for a closed Google sheet: not an error, just not done.
+      // Null for a closed Google or Apple sheet: not an error, just not
+      // done.
       error = authFailureMessage(l10n, e.failure);
     } on Object {
       error = l10n.accountDeleteFailed;
@@ -144,13 +160,14 @@ class _ConfirmIdentityDialogState
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Text(
-                _usesPassword
-                    ? (email == null
-                          ? l10n.accountDeletePasswordBodyNoEmail
-                          : l10n.accountDeletePasswordBody(email))
-                    : l10n.accountDeleteGoogleBody,
-              ),
+              Text(switch (_confirmation) {
+                _Confirmation.password =>
+                  email == null
+                      ? l10n.accountDeletePasswordBodyNoEmail
+                      : l10n.accountDeletePasswordBody(email),
+                _Confirmation.google => l10n.accountDeleteGoogleBody,
+                _Confirmation.apple => l10n.accountDeleteAppleBody,
+              }),
               if (_usesPassword) ...[
                 const SizedBox(height: AppSpace.md),
                 TextField(
@@ -224,8 +241,12 @@ class _ConfirmIdentityDialogState
               foregroundColor: colorScheme.onError,
             ),
             onPressed: _busy ? null : _delete,
+            // Apple's sheet opens from "Delete account": a red button may
+            // not be dressed as Sign in with Apple.
             child: Text(
-              _usesPassword ? l10n.accountDeleteTitle : l10n.authGoogleAction,
+              _confirmation == _Confirmation.google
+                  ? l10n.authGoogleAction
+                  : l10n.accountDeleteTitle,
             ),
           ),
         ],

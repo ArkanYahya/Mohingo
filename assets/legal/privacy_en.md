@@ -24,7 +24,7 @@ If your phone's own backup is turned on, Android or iOS may include the app's da
 
 An account lets you keep your progress when you change phones and use it on more than one device. Accounts are provided by Firebase, a Google service.
 
-- Signing in: Firebase Authentication receives your email address and password (Mohingo never stores your password), or, if you continue with Google, the basic details of your Google account (email address, name and profile picture).
+- Signing in: Firebase Authentication receives your email address and password (Mohingo never stores your password); or, if you continue with Google, the basic details of your Google account (email address, name and profile picture); or, if you continue with Apple on an iPhone, your email address — or, if you choose to hide it, an address Apple creates that forwards to yours. Mohingo does not ask Apple for your name.
 - Your progress copy: while you are signed in, your progress (as listed above, including your answers) and the name you entered are copied to Cloud Firestore, Google's database, in its Dammam, Saudi Arabia region. This is only done so your progress appears on your other devices.
 - Only you can read your copy. Mohingo's server rules allow a signed-in account to reach its own records and nothing else.
 - Signing out stops syncing and keeps your account. Settings → Delete account permanently deletes your account and its copy of your progress.

@@ -1652,6 +1652,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get authGoogleAction => 'المتابعة باستخدام Google';
 
   @override
+  String get authAppleAction => 'المتابعة باستخدام Apple';
+
+  @override
   String get authSwitchToCreate => 'جديد هنا؟ أنشئ حساباً';
 
   @override
@@ -1948,6 +1951,10 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get accountDeleteGoogleBody =>
       'لحذف الحساب، اختر حسابك في Google مرة أخرى.';
+
+  @override
+  String get accountDeleteAppleBody =>
+      'لحذف الحساب، أكّد هويتك باستخدام Apple.';
 
   @override
   String get accountDeleting => 'جارٍ حذف حسابك…';
