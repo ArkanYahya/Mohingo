@@ -26,6 +26,7 @@ A CEFR-structured (A1–C2) English-learning mobile app for self-directed adult 
 | [docs/UX_PRINCIPLES.md](docs/UX_PRINCIPLES.md) | Voice, tone, error/empty states, accessibility |
 | [docs/TESTING.md](docs/TESTING.md) | What must be tested and how to run it |
 | [docs/SECURITY.md](docs/SECURITY.md) | Auth model, secrets handling, hard limits |
+| [docs/STORE_LISTING.md](docs/STORE_LISTING.md) | What the app stores are told — listing text in both languages, privacy answers, age rating, review notes |
 
 ## Non-negotiable rules
 
@@ -55,7 +56,8 @@ Docs drift the moment a change lands without its matching doc update. If a task 
 | Scope — a feature added, cut, or reprioritized | [docs/PRODUCT.md](docs/PRODUCT.md) |
 | Level/phase sequencing (A1→C2) or a feature deferred/pulled forward | [docs/ROADMAP.md](docs/ROADMAP.md) |
 | A new CEFR level, or a change to what a level must contain | [docs/LEVEL_STANDARD.md](docs/LEVEL_STANDARD.md) + the level's row in `test/content/levels/level_gate_config.dart` |
-| Anything that changes what leaves the device (a new SDK, endpoint, synced field or permission) | `assets/legal/privacy_en.md` + `privacy_ar.md`, and raise `kAgreementVersion` if the change is material ([ADR 0011](docs/adr/0011-first-run-agreement-app-guide-and-account-deletion.md)) |
+| Anything that changes what leaves the device (a new SDK, endpoint, synced field or permission) | `assets/legal/privacy_en.md` + `privacy_ar.md`, and raise `kAgreementVersion` if the change is material ([ADR 0011](docs/adr/0011-first-run-agreement-app-guide-and-account-deletion.md)); the App Privacy table in [docs/STORE_LISTING.md](docs/STORE_LISTING.md) |
+| Anything a store listing states (levels, unit and lesson counts, features, sign-in methods) | [docs/STORE_LISTING.md](docs/STORE_LISTING.md), then the listings themselves |
 | A spoken bundle string added or changed, or a new place the app speaks | Regenerate that level's clips with `tool/audio/generate_audio.py` and commit `assets/audio/`; a new call site also joins `lib/content/audio/speakable_strings.dart` and `tool/audio/mohingo_audio/speakables.py`. `test/content/levels/level_audio_test.dart` is the check |
 
 If a doc's **Last verified** line is older than the code it describes, treat the doc as suspect — verify against the actual code before trusting it, and correct it while you're there.
