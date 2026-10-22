@@ -142,7 +142,9 @@ class ActivityFeedbackPanel extends StatelessWidget {
         testMode
             ? l10n.testAnswerSavedBody
             : submission.pendingOnlineRefinement
-            ? l10n.activityFeedbackPendingOnlineRefinement
+            ? (submission.onlineRefinementAllowed
+                  ? l10n.activityFeedbackPendingOnlineRefinement
+                  : l10n.activityFeedbackPendingLocalJudgement)
             : l10n.activityFeedbackSavedForReview,
       ),
     };
@@ -216,6 +218,10 @@ class ActivityFeedbackPanel extends StatelessWidget {
                   ),
                 ),
               ],
+              if (!testMode &&
+                  correctness != ActivityCorrectness.notAutoGraded) ...[
+                ActivityExplanation(submission: submission, color: foreground),
+              ],
               const SizedBox(height: AppSpace.md),
               FilledButton(
                 style: FilledButton.styleFrom(
@@ -238,6 +244,67 @@ class ActivityFeedbackPanel extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+/// The AI pack's explanation of a verdict (ADR 0011): an "Explanation"
+/// overline, the English, the Arabic when the pack managed one, and the
+/// "Generated on your phone" label that always accompanies it. Feedback
+/// only — it never changes the verdict above it. Renders nothing when the
+/// submission carries no explanation, which is every answer graded without
+/// the pack.
+class ActivityExplanation extends StatelessWidget {
+  const ActivityExplanation({
+    required this.submission,
+    required this.color,
+    super.key,
+  });
+
+  final ActivitySubmission submission;
+
+  /// The text colour of the surface this sits on.
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) {
+    final en = submission.explanationEn;
+    final ar = submission.explanationAr;
+    if ((en == null || en.isEmpty) && (ar == null || ar.isEmpty)) {
+      return const SizedBox.shrink();
+    }
+    final theme = Theme.of(context);
+    final l10n = AppLocalizations.of(context)!;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        const SizedBox(height: AppSpace.md),
+        Text(
+          l10n.activityFeedbackExplanationLabel.toUpperCase(),
+          style: overlineStyle(context, color: color),
+        ),
+        if (en != null && en.isNotEmpty) ...[
+          const SizedBox(height: 2),
+          ContentText.en(
+            en,
+            style: theme.textTheme.bodyMedium?.copyWith(color: color),
+          ),
+        ],
+        if (ar != null && ar.isNotEmpty) ...[
+          const SizedBox(height: AppSpace.xxs),
+          ContentText.ar(
+            ar,
+            style: theme.textTheme.bodyMedium?.copyWith(color: color),
+          ),
+        ],
+        const SizedBox(height: AppSpace.xxs),
+        Text(
+          l10n.activityFeedbackGeneratedLabel,
+          style: theme.textTheme.bodySmall?.copyWith(
+            color: color.withValues(alpha: 0.8),
+          ),
+        ),
+      ],
     );
   }
 }

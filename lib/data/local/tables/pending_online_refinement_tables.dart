@@ -41,4 +41,17 @@ class PendingOnlineRefinements extends Table {
   DateTimeColumn get submittedAt => dateTime()();
   IntColumn get attemptCount => integer().withDefault(const Constant(0))();
   DateTimeColumn get lastAttemptAt => dateTime().nullable()();
+
+  /// The on-device meaning signal computed at submission (ADR 0011), 0..1,
+  /// or null when none was available — carried separately from
+  /// [localScore] so the drain can apply the one bounded combination rule
+  /// over every signal at once rather than compounding adjustments.
+  RealColumn get meaningSignal => real().nullable()();
+
+  /// Whether this answer may be sent to the online grammar check: true for
+  /// a rubric marked `onlineRefinement` (ADR 0005's scope), false for an
+  /// answer queued only because an AI pack was installed to judge it
+  /// locally. A false row never reaches the network, whatever happens to
+  /// the pack.
+  BoolColumn get onlineAllowed => boolean().withDefault(const Constant(true))();
 }

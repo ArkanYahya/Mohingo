@@ -17,6 +17,7 @@ import '../../domain/activity_submission.dart';
 import '../../domain/answer_matching.dart';
 import '../../domain/evaluation/evaluation_context.dart';
 import '../../domain/evaluation/evaluator.dart';
+import '../../domain/evaluation/grading_signals.dart';
 import '../../domain/spoken_answer.dart';
 import '../../domain/sound_effects_service.dart';
 import '../../providers/online_refinement_providers.dart';
@@ -117,6 +118,7 @@ class _SpeakActivityViewState extends ConsumerState<SpeakActivityView> {
     }
     _liveTranscript = _decodeText(reviewAttempt.rawAnswer) ?? '';
     _mode = _SpeakMode.reviewTranscript;
+    final explanation = explanationIn(reviewAttempt.criteriaScores);
     _submission = ActivitySubmission(
       correctness: switch (reviewAttempt.isCorrect) {
         true => ActivityCorrectness.correct,
@@ -126,6 +128,8 @@ class _SpeakActivityViewState extends ConsumerState<SpeakActivityView> {
       score: reviewAttempt.score,
       rawAnswerJson: reviewAttempt.rawAnswer,
       wasFallback: reviewAttempt.wasFallback,
+      explanationEn: explanation?.en,
+      explanationAr: explanation?.ar,
     );
   }
 
@@ -234,29 +238,81 @@ class _SpeakActivityViewState extends ConsumerState<SpeakActivityView> {
     _submit(text, wasFallback: true);
   }
 
+  /// True while the meaning signal is being computed for a submitted
+  /// answer — Check is disabled, and a second tap is ignored.
+  var _grading = false;
+
   /// Grades [text]. The task's rubric grades when it has one; its
   /// `accepted` list grades only a task without a rubric, and is otherwise
   /// the model answer shown after a miss. A recognised transcript is graded
   /// as it was said ([SpokenAnswer], ADR 0009); a typed fallback as written.
-  void _submit(String text, {required bool wasFallback}) {
-    if (_submission != null) return;
+  ///
+  /// A `keywordChecklist` task with model answers also gets the on-device
+  /// meaning signal (ADR 0011) — see `WriteActivityView._submit` for the
+  /// rule, which is the same here. Nothing a learner says ever goes online:
+  /// a speak rubric is never marked `onlineRefinement` (a gate), so a
+  /// spoken answer is queued only for an installed AI pack to judge on the
+  /// device.
+  Future<void> _submit(String text, {required bool wasFallback}) async {
+    if (_submission != null || _grading) return;
 
     final ActivitySubmission submission;
     final evaluation = widget.activity.evaluation;
     final spoken = wasFallback
         ? null
         : SpokenAnswer(names: namesInTask(widget.activity));
-    if (evaluation is KeywordChecklistEvaluationSpec &&
-        evaluation.onlineRefinement != null) {
-      final localResult = evaluate(evaluation, text, spoken: spoken);
-      submission = ActivitySubmission(
-        correctness: ActivityCorrectness.notAutoGraded,
-        score: localResult.score,
-        rawAnswerJson: jsonEncode(text),
-        wasFallback: wasFallback,
-        pendingOnlineRefinement: true,
-      );
-      _pendingSince = _truncatedToSeconds(DateTime.now());
+    if (evaluation is KeywordChecklistEvaluationSpec) {
+      final rubric = evaluate(evaluation, text, spoken: spoken);
+      final signalsOn = gradingSignalsEnabled(context);
+      setState(() => _grading = true);
+      // No model answers, no meaning to compare: the service is not asked,
+      // so a task without them never waits on the model.
+      final meaning = signalsOn && widget.activity.accepted.isNotEmpty
+          ? await ref
+                .read(meaningSignalServiceProvider)
+                .meaning(text, modelAnswers: widget.activity.accepted)
+          : null;
+      final packAvailable = signalsOn
+          ? await ref.read(localJudgementServiceProvider).isAvailable
+          : false;
+      if (!mounted) return;
+      _grading = false;
+      final onlineAllowed = evaluation.onlineRefinement != null;
+      if (onlineAllowed || packAvailable) {
+        submission = ActivitySubmission(
+          correctness: ActivityCorrectness.notAutoGraded,
+          score: rubric.score,
+          rawAnswerJson: jsonEncode(text),
+          wasFallback: wasFallback,
+          pendingOnlineRefinement: true,
+          onlineRefinementAllowed: onlineAllowed,
+          meaningSignal: meaning,
+        );
+        _pendingSince = _truncatedToSeconds(DateTime.now());
+      } else {
+        final signals = GradingSignals(
+          rubric: rubric.score ?? 0.0,
+          meaning: meaning,
+        );
+        final finalScore = combineSignals(signals);
+        final passes = passesWithSignals(
+          rubricCorrect: rubric.correctness == ActivityCorrectness.correct,
+          rubricScore: signals.rubric,
+          finalScore: finalScore,
+        );
+        submission = ActivitySubmission(
+          correctness: passes
+              ? ActivityCorrectness.correct
+              : ActivityCorrectness.incorrect,
+          score: finalScore,
+          rawAnswerJson: jsonEncode(text),
+          wasFallback: wasFallback,
+          criteriaScoresJson: meaning == null
+              ? null
+              : criteriaScoresJson(signals, finalScore: finalScore),
+          correctAnswerLabel: _correctAnswerLabel(),
+        );
+      }
     } else if (evaluation != null) {
       final result = evaluate(
         evaluation,
@@ -295,7 +351,7 @@ class _SpeakActivityViewState extends ConsumerState<SpeakActivityView> {
     widget.onSubmitted(submission);
     // Never for notAutoGraded — nothing definitive to celebrate or flag
     // yet, whether it's a "no automatic check exists" answer or one still
-    // queued for deferred online-refinement grading.
+    // queued for deferred grading.
     if (submission.correctness != ActivityCorrectness.notAutoGraded) {
       if (marksAnswers(context)) {
         playFeedbackSoundSafely(
@@ -315,6 +371,7 @@ class _SpeakActivityViewState extends ConsumerState<SpeakActivityView> {
   ActivitySubmission? _resolvedSubmission(ActivityAttempt? attempt) {
     if (attempt == null) return null;
     if (attempt.attemptedAt.isBefore(_pendingSince!)) return null;
+    final explanation = explanationIn(attempt.criteriaScores);
     return ActivitySubmission(
       correctness: attempt.isCorrect == true
           ? ActivityCorrectness.correct
@@ -322,6 +379,8 @@ class _SpeakActivityViewState extends ConsumerState<SpeakActivityView> {
       score: attempt.score,
       rawAnswerJson: _submission!.rawAnswerJson,
       wasFallback: _submission!.wasFallback,
+      explanationEn: explanation?.en,
+      explanationAr: explanation?.ar,
     );
   }
 
@@ -410,11 +469,13 @@ class _SpeakActivityViewState extends ConsumerState<SpeakActivityView> {
     );
   }
 
-  bool get _canSubmit => switch (_mode) {
-    _SpeakMode.reviewTranscript => _liveTranscript.trim().isNotEmpty,
-    _SpeakMode.typedFallback => _typedController.text.trim().isNotEmpty,
-    _ => false,
-  };
+  bool get _canSubmit =>
+      !_grading &&
+      switch (_mode) {
+        _SpeakMode.reviewTranscript => _liveTranscript.trim().isNotEmpty,
+        _SpeakMode.typedFallback => _typedController.text.trim().isNotEmpty,
+        _ => false,
+      };
 
   void _submitCurrent() {
     switch (_mode) {

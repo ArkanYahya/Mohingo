@@ -25,6 +25,8 @@ class DriftPendingRefinementRepository implements PendingRefinementRepository {
     required String mode,
     required double localScore,
     bool wasFallback = false,
+    double? meaningSignal,
+    bool onlineAllowed = true,
   }) {
     final now = DateTime.now();
     return _db
@@ -43,6 +45,8 @@ class DriftPendingRefinementRepository implements PendingRefinementRepository {
             mode: mode,
             localScore: localScore,
             submittedAt: now,
+            meaningSignal: Value(meaningSignal),
+            onlineAllowed: Value(onlineAllowed),
           ),
         );
   }

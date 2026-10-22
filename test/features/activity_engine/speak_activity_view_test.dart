@@ -18,6 +18,7 @@ import 'package:mohingo/features/activity_engine/domain/sound_effects_service.da
 import 'package:mohingo/content/models/evaluation_spec.dart';
 import 'package:mohingo/features/activity_engine/presentation/views/speak_activity_view.dart';
 import 'package:mohingo/features/activity_engine/presentation/widgets/activity_partner_turns_card.dart';
+import 'package:mohingo/features/activity_engine/providers/online_refinement_providers.dart';
 import 'package:mohingo/features/activity_engine/providers/sound_effects_providers.dart';
 import 'package:mohingo/features/speech/domain/speech_capability_service.dart';
 import 'package:mohingo/features/speech/domain/speech_recognition_service.dart';
@@ -28,6 +29,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:riverpod/misc.dart' show Override;
 
 import '../../features/speech/fake_speech_services.dart';
+import 'fake_meaning_signal_service.dart';
 import 'fake_sound_effects_service.dart';
 
 SpeakActivity _speakActivity() {
@@ -887,7 +889,9 @@ void main() {
       await tester.tap(find.byTooltip('Record'));
       await tester.pumpAndSettle();
       await tester.tap(find.byType(FilledButton));
-      await tester.pump();
+      // A task with model answers asks the meaning signal before it reports,
+      // which takes a few turns of the event loop (ADR 0011).
+      await tester.pumpAndSettle();
       return reported;
     }
 
@@ -936,10 +940,97 @@ void main() {
       );
       await tester.pump();
       await tester.tap(find.byType(FilledButton));
-      await tester.pump();
+      await tester.pumpAndSettle();
 
       expect(reported?.wasFallback, isTrue);
       expect(reported?.correctness, ActivityCorrectness.incorrect);
+    });
+  });
+
+  group('ADR 0011: the meaning signal on a spoken answer', () {
+    SpeakActivity describeWeek() => SpeakActivity(
+      id: 'A2-U1-L1-A05',
+      lessonId: 'A2-U1-L1',
+      mode: ActivityMode.mastery,
+      skill: Skill.spokenProduction,
+      canDo: const ['A2.U1.PRODUCTION.DESCRIBE_CURRENT_LIFE'],
+      prompt: 'Talk about your regular week.',
+      promptAr: 'تحدّث عن أسبوعك المعتاد.',
+      raw: const {},
+      accepted: const [
+        'I usually work in the morning and cook in the evening.',
+      ],
+      fallbackSkill: 'writing',
+      evaluation: EvaluationSpec.fromJson({
+        'type': 'keywordChecklist',
+        'requiredGroups': [
+          ['usually', 'always', 'often'],
+          ['work', 'study', 'cook'],
+          ['morning', 'evening', 'weekend'],
+        ],
+        'minGroupsMatched': 3,
+      }),
+    );
+
+    Future<ActivitySubmission?> speak(
+      WidgetTester tester,
+      String transcript, {
+      required FakeMeaningSignalService meaning,
+    }) async {
+      ActivitySubmission? reported;
+      await _pumpSpeak(
+        tester,
+        capabilities: const DeviceSpeechCapabilities(
+          sttAvailableForLocale: true,
+          micPermission: SpeechPermissionStatus.granted,
+        ),
+        recognitionService: FakeSpeechRecognitionService(
+          results: [
+            SpeechRecognitionResult(transcript: transcript, isFinal: true),
+          ],
+        ),
+        activity: describeWeek(),
+        onSubmitted: (s) => reported = s,
+        overrides: [meaningSignalServiceProvider.overrideWithValue(meaning)],
+      );
+      await tester.tap(find.byTooltip('Record'));
+      await tester.pumpAndSettle();
+      await tester.tap(find.byType(FilledButton));
+      await tester.pumpAndSettle();
+      return reported;
+    }
+
+    testWidgets('a transcript that says the right thing in other words '
+        'passes through the meaning signal, graded as spoken', (tester) async {
+      final meaning = FakeMeaningSignalService(signal: 1.0);
+      // Two of three groups by keyword (work, evening) — 0.667, a miss —
+      // and the meaning signal lifts it over the bar.
+      final s = await speak(
+        tester,
+        'every day I work and in the evening I make dinner',
+        meaning: meaning,
+      );
+      expect(meaning.calls.single.answer, contains('make dinner'));
+      expect(s!.correctness, ActivityCorrectness.correct);
+      expect(s.score, closeTo(0.917, 1e-3));
+      expect(s.wasFallback, isFalse);
+      expect(
+        s.pendingOnlineRefinement,
+        isFalse,
+        reason: 'nothing a learner says is ever queued for the network',
+      );
+    });
+
+    testWidgets('an off-topic transcript stays wrong whatever the signal', (
+      tester,
+    ) async {
+      final s = await speak(
+        tester,
+        'the weather is nice today',
+        meaning: FakeMeaningSignalService(signal: 1.0),
+      );
+      expect(s!.correctness, ActivityCorrectness.incorrect);
+      expect(s.score, closeTo(0.25, 1e-9));
     });
   });
 }

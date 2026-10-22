@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "contentVersion": "A2-COMPLETE-2026.09.22",
+  "contentVersion": "A2-COMPLETE-2026.10.22",
   "locale": {
     "targetLanguage": "en",
     "supportLanguage": "ar",
@@ -8848,7 +8848,7 @@
               ],
               "prompt": "Talk about your regular week. Say how often you do something, what you do, and when you do it.",
               "promptAr": "تحدّث عن أسبوعك المعتاد. اذكر كم مرة تفعل شيئاً ما، وما الذي تفعله، ومتى تفعله.",
-              "accepted": [],
+              "accepted": ["I usually work from Sunday to Thursday. I get up at seven and start work at nine. In the evening I cook dinner, and at the weekend I play football with my friends."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -9057,7 +9057,7 @@
                 "I'm staying at my sister's flat this month, because some workers are painting my kitchen.",
                 "It's fine, but I get up an hour earlier now. Ask me anything you like."
               ],
-              "accepted": [],
+              "accepted": ["Things are a bit different for me at the moment. I'm working from home this month, because our office is being painted. It's quiet, but I miss my colleagues. And you? How long are you staying at your sister's flat?"],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -9247,7 +9247,7 @@
               ],
               "prompt": "Talk about something you are learning at the moment. Answer the two follow-up questions before your friend asks them: how often you do it, and how long it takes. Then add one more detail.",
               "promptAr": "تحدّث عن شيء تتعلمه في الوقت الحالي. أجب عن سؤالَي المتابعة قبل أن يسألهما صديقك: كم مرة تفعل ذلك، وكم يستغرق من وقت. ثم أضف تفصيلاً آخر.",
-              "accepted": [],
+              "accepted": ["At the moment I'm learning to drive. I have a lesson twice a week, on Tuesdays and Saturdays. Each lesson takes an hour. My teacher is very patient, and I'm starting to enjoy it."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -9440,7 +9440,7 @@
               ],
               "prompt": "A friend writes: I am volunteering at the library on Saturdays now. Write a reply. Show that you are interested, ask two questions with do, does or are, and say one thing you enjoy doing at the moment.",
               "promptAr": "يكتب لك صديق: «أتطوّع في المكتبة أيام السبت الآن». اكتب رداً تُظهر فيه اهتمامك، واسأل سؤالين باستخدام do أو does أو are، واذكر شيئاً واحداً تستمتع بفعله في الوقت الحالي.",
-              "accepted": [],
+              "accepted": ["Hi! That sounds great. Volunteering at the library is a lovely idea. Do you help the children with their reading, or do you work at the desk? Does the library open early on Saturdays? I'm enjoying something new too: I'm learning to cook at the moment. Every Friday I try a new dish. Tell me more about your Saturdays when you have time!"],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -9640,7 +9640,7 @@
                 "Really? I usually study alone, but these days I am practising with my sister.",
                 "We have that in common, then. Now ask me something about my week."
               ],
-              "accepted": [],
+              "accepted": ["Nice to meet you, Ghada! I study English every evening too, so we have that in common. But my life is a bit different at the moment: I'm working at my uncle's shop this month, because he is in hospital. How long have you worked at the hospital, and what do you do there?"],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -9817,7 +9817,7 @@
               "prompt": "Suhad sent you this message, and your friend Dina never saw it. Tell Dina what Suhad usually does, what is new this term and why, and how Dina can join.",
               "promptAr": "أرسلت لكَ سُهاد هذه الرسالة، ولم ترَها صديقتكَ دينا. أخبر دينا بما تفعله سُهاد عادةً، وما الجديد هذا الفصل ولماذا، وكيف تستطيع دينا الانضمام.",
               "sourceCard": "Message from Suhad: I still teach Arabic at the centre on Mondays and Wednesdays. This term I am also giving a free online class on Saturday mornings, because many of my old students have moved abroad. Anyone can join; just send me your email.",
-              "accepted": [],
+              "accepted": ["Dina, Suhad sent a message. She still teaches Arabic at the centre on Mondays and Wednesdays. This term she is also giving a free online class on Saturday mornings, because many of her old students have moved abroad. Anyone can join. You just need to email her and she will send you the link."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -9877,7 +9877,7 @@
               ],
               "prompt": "Now write your own life update to an old classmate. Say what you usually do, what is different at the moment, and why. Join your ideas with and, but and because.",
               "promptAr": "اكتب الآن تحديثاً عن حياتك إلى زميل دراسة قديم. اذكر ما تفعله عادةً، وما المختلف في الوقت الحالي، والسبب. اربط أفكارك بـ and وbut وbecause.",
-              "accepted": [],
+              "accepted": ["Hi Nour! It's good to hear from you after so long. I usually work in a bank in Basra, and I study English at the weekend. But at the moment things are different, because I'm staying with my parents in Baghdad for a month. My mother is ill, so I'm helping at home and working online. It's tiring, but I'm happy to be with my family. What about you? Write soon!"],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -9998,7 +9998,7 @@
                 "Me? I'm fine, but busy. I'm staying with my brother's family this year, because my flat is too far from the agency.",
                 "It's only until the summer. Now tell me about your week, and ask me whatever you want to know."
               ],
-              "accepted": [],
+              "accepted": ["That sounds interesting, Maha! I'm glad you're fine. My week is busy at the moment. I'm working at a new café these days, and I'm studying English most evenings. I usually finish late. How long are you staying with your brother's family? And what time do you start at the agency? Do you like the work?"],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -10059,7 +10059,7 @@
               ],
               "prompt": "Give Maha your own update, one to two minutes long. Say what you usually do, one thing that is different at the moment, why it is different, and how you feel about it.",
               "promptAr": "قدّم لمها تحديثك أنتَ، في دقيقة إلى دقيقتين. اذكر ما تفعله عادةً، وشيئاً واحداً مختلفاً في الوقت الحالي، وسبب اختلافه، وكيف تشعر حياله.",
-              "accepted": [],
+              "accepted": ["Here is my update, Maha. I usually work at the hospital five days a week and I study English on Fridays. At the moment things are different, because my sister is away this month, so I'm looking after her children every afternoon. I get up at six and I'm busy all day. I'm tired, but I like it, because the children are funny and I enjoy being with them."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -10131,7 +10131,7 @@
               "prompt": "Maha sent you this message, and your friend Firas works at a hotel. Tell him what the trip is, who can go, what is included, and what he must do before Friday.",
               "promptAr": "أرسلت لكَ مها هذه الرسالة، وصديقكَ فراس يعمل في فندق. أخبره ما هي الرحلة، ومن يستطيع الذهاب، وما الذي تشمله، وما عليه فعله قبل الجمعة.",
               "sourceCard": "Message from Maha: My agency has two free places on a weekend English trip to Babylon in April. It is for people who work in tourism. The bus and the room are included, but not the food. Send me a name before Friday and I can add it to the list.",
-              "accepted": [],
+              "accepted": ["Firas, Maha sent a message about a trip. Her agency has two free places on a weekend English trip to Babylon in April. It's for people who work in tourism, so you can go because you work in a hotel. The bus and the room are included, but not the food. You must send her your name before Friday."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -10192,7 +10192,7 @@
               ],
               "prompt": "Write your message back to Maha. Say what you usually do and what is different at the moment, give the reason, and ask her two questions about her course. Join your ideas with and, but and because.",
               "promptAr": "اكتب رسالتك الجوابية إلى مها. اذكر ما تفعله عادةً وما المختلف في الوقت الحالي، وبيّن السبب، واسألها سؤالين عن دورتها. اربط أفكارك بـ and وbut وbecause.",
-              "accepted": [],
+              "accepted": ["Hi Maha! Great to hear from you. I usually work at the hospital on weekdays and I study English at the weekend. At the moment things are different, because my sister is away this month, so I'm looking after her children every afternoon. I'm tired but happy. Now tell me about your course: how long does it last, and what time do you start in the morning? Are you enjoying it?"],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -10441,7 +10441,7 @@
               ],
               "prompt": "Think of a day last month when you were not at home. Say where you were, who was with you, and what the place was like.",
               "promptAr": "فكّر في يوم من الشهر الماضي لم تكن فيه في البيت. قل أين كنتَ، ومن كان معك، وكيف كان المكان.",
-              "accepted": [],
+              "accepted": ["Last month I was at my cousin's wedding in Mosul. My parents and my brother were with me. The hall was crowded and very noisy, but it was beautiful and everyone was happy."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -10644,7 +10644,7 @@
                 "My brothers helped, but the van stopped twice and we waited an hour on the road.",
                 "We finished at midnight. Now tell me about your worst moving day, and ask me anything."
               ],
-              "accepted": [],
+              "accepted": ["That sounds hard, Dalia! Last year we moved too. I packed twenty boxes and carried them down four floors, because the lift stopped working. We started at seven and finished at ten at night. How many boxes did you have? And who helped you unpack?"],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -10840,7 +10840,7 @@
               ],
               "prompt": "Tell the story of a day out you still remember. Use at least three irregular past verbs, and say one thing that went wrong.",
               "promptAr": "احكِ قصة نزهة ما زلتَ تتذكرها. استخدم ثلاثة أفعال ماضية شاذة على الأقل، واذكر شيئاً واحداً لم يسر كما يجب.",
-              "accepted": [],
+              "accepted": ["Last summer I went to the beach with my friend Ali. We took the early bus and bought breakfast at the market. We ate fish by the sea and saw the sunset. But I lost my phone in the sand, and we came home late, so my mother was angry."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -11055,7 +11055,7 @@
               ],
               "prompt": "A friend writes: I went to the food festival last week. Write a reply. Say one thing you did recently and one thing you did not do, and ask her two questions with did.",
               "promptAr": "تكتب لكَ صديقة: «ذهبتُ إلى مهرجان الطعام الأسبوع الماضي». اكتب رداً. اذكر شيئاً فعلتَه مؤخراً وشيئاً لم تفعله، واسألها سؤالين باستخدام did.",
-              "accepted": [],
+              "accepted": ["Hi! The food festival sounds fun. Did you try anything new there? Last weekend I went to my grandmother's village with my cousins. We cooked outside and I made bread for the first time. I didn't go to the market, because it rained all afternoon. Did you take any photos of the food? And how long did you stay at the festival?"],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -11262,7 +11262,7 @@
                 "The bus was full, so I waited for the next one. After that the road to Kut was closed.",
                 "Ask me what happened next, because it gets worse. Then tell me about your worst journey."
               ],
-              "accepted": [],
+              "accepted": ["What happened first, Hoda? Did you miss the bus? And then what did you do when the road was closed? How did it end? My journey last year was bad too. I took the train to Basra, but it stopped for two hours in the desert. I missed my meeting and I waited all day at the station."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -11444,7 +11444,7 @@
               "prompt": "Mrs Haddad cannot read English. Tell her son what happened to his wallet, in the order the events happened, and where it is now.",
               "promptAr": "السيدة حداد لا تقرأ الإنجليزية. أخبر ابنها بما حدث لمحفظته، بترتيب وقوع الأحداث، وأين هي الآن.",
               "sourceCard": "Police note for Mrs Haddad: These are the events. A driver found your son's wallet on the number nine bus at two. He gave it to his manager at three, and the manager brought it to this station at four. Nothing is missing.",
-              "accepted": [],
+              "accepted": ["Your wallet is safe. First, a driver found it on the number nine bus at two o'clock. Then he gave it to his manager at three. After that, the manager brought it to the police station at four. Nothing is missing. It is at the station now, and you can collect it."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -11497,7 +11497,7 @@
               ],
               "prompt": "Now write your own short story about a day that did not go as planned. Give the time and place, put the events in order, and finish with how it ended.",
               "promptAr": "اكتب الآن قصتك القصيرة عن يوم لم يسر كما خُطّط له. اذكر الزمان والمكان، ورتّب الأحداث، واختم بكيفية انتهائه.",
-              "accepted": [],
+              "accepted": ["Last summer my family planned a day at the river near Hilla. We left at seven in the morning. At first everything was fine, but then the car stopped on the road and we waited an hour for my uncle. After that it started to rain, so we couldn't eat outside. Finally we ate in the car and told stories. In the end we were tired but happy, and we had a great time."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -11635,7 +11635,7 @@
                 "Really? And who were you with? What happened first?",
                 "That is amazing. How did it end, and why do you still remember it?"
               ],
-              "accepted": [],
+              "accepted": ["It was two years ago, in the summer. I was with my brother and my cousin in the old city of Erbil. First we walked to the castle, then we found a small café and met a very kind old man. In the end he gave us tea for free and told us stories. I still remember it because it was special and we laughed all day."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -11702,7 +11702,7 @@
               ],
               "prompt": "Give your own one-to-two-minute account of a memorable day. Say when and where it was, tell the events in order, and say why you still remember it.",
               "promptAr": "قدّم روايتك الخاصة في دقيقة إلى دقيقتين عن يوم لا يُنسى. قل متى كان وأين، واسرد الأحداث بالترتيب، وبيّن لماذا ما زلتَ تتذكره.",
-              "accepted": [],
+              "accepted": ["My memorable day was last Eid, in my grandmother's village. The weather was warm and everyone was there. First we visited the neighbours, then we cooked lunch together, and after that the children played by the river. Suddenly my uncle arrived from Jordan, and nobody knew he was coming. In the end we ate at ten at night. I still remember it because the whole family was together and we were so happy."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -11766,7 +11766,7 @@
               "prompt": "Your friend Firas missed the club's family day and does not read English. Tell him what the group did, in order, and what he must bring next time.",
               "promptAr": "فاتَ صديقَكَ فراس يومُ العائلة في النادي، وهو لا يقرأ الإنجليزية. أخبره بما فعلته المجموعة بالترتيب، وبما عليه أن يحضره في المرة القادمة.",
               "sourceCard": "Club newsletter: Our family day started at nine with a walk by the river. After that the children played football, and at one we all ate together. Finally the photographs were taken at four. Next time, please bring a chair and a hat.",
-              "accepted": [],
+              "accepted": ["Firas, here is what the club did on family day. It started at nine with a walk by the river. After that the children played football. At one o'clock we all ate lunch together. Finally, the photographs were taken at four. Next time, please bring a chair and a hat, and remember to come early."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -11821,7 +11821,7 @@
               ],
               "prompt": "Write the memorable day for Hana as a short story. Put the events in order, use past forms, and end with why the day stayed with you.",
               "promptAr": "اكتب لهناء اليوم الذي لا يُنسى على شكل قصة قصيرة. رتّب الأحداث، واستخدم صيغ الماضي، واختم بسبب بقاء هذا اليوم في ذاكرتك.",
-              "accepted": [],
+              "accepted": ["Two years ago I spent a day in Erbil that I still remember. I was with my brother and my cousin. First we walked to the castle, then we found a small café behind the market. There we met an old man who told us stories about the city. After that he gave us tea for free. In the end we missed our bus and walked home at midnight. I never forgot that day."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -12075,7 +12075,7 @@
               ],
               "prompt": "A driver is meeting your friend at the airport tomorrow and has never seen her. Describe her out loud: her height, her hair, and one detail he will find quickly.",
               "promptAr": "سيستقبل سائقٌ صديقتَك في المطار غداً، وهو لم يرها من قبل. صِفها بصوت عالٍ: طولها، وشعرها، وتفصيلاً واحداً يلاحظه بسرعة.",
-              "accepted": [],
+              "accepted": ["My friend is quite tall and thin, about one metre seventy. She has long dark curly hair and brown eyes. She wears glasses, and tomorrow she is wearing a red coat and holding a big blue suitcase."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -12276,7 +12276,7 @@
                 "That is good to hear. And is she easy to talk to? I am a bit shy myself.",
                 "Thank you. Tell me one more thing about her, and then ask me anything you want."
               ],
-              "accepted": [],
+              "accepted": ["Hala is very patient and kind. For example, she always helps new people in the office, and she never gets angry when someone makes a mistake. She is also reliable: last year she finished every report on time. What about you, Dima? How long will you share the office with her?"],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -12465,7 +12465,7 @@
               ],
               "prompt": "Think of two people you could ask for help with a difficult form. Compare them using at least two comparative forms, then say which one you will ask and why.",
               "promptAr": "فكّر في شخصين يمكنك أن تطلب منهما المساعدة في استمارة صعبة. قارن بينهما بصيغتَي مقارنة على الأقل، ثم قل مَن ستسأل ولماذا.",
-              "accepted": [],
+              "accepted": ["I could ask my sister or my neighbour Omar. My sister is more patient than Omar, but Omar is more organised and quicker with forms. My sister is busier than him this week. So I'm going to ask Omar, because he fills in forms every day at work."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -12653,7 +12653,7 @@
               ],
               "prompt": "Two colleagues are waiting for their jobs at a school open day: one is very organised, the other is very good with children. Write a short note to the head teacher. Give each of them one role, and say why each one is the best choice for it.",
               "promptAr": "زميلان ينتظران مهمتيهما في يوم مفتوح بالمدرسة: أحدهما منظّم جداً، والآخر يجيد التعامل مع الأطفال. اكتب ملاحظة قصيرة إلى مدير المدرسة. امنح كل واحد منهما دوراً، وبيّن لماذا هو الخيار الأفضل له.",
-              "accepted": [],
+              "accepted": ["Dear Mrs Haddad, here are my suggestions for the open day. Rana is the most organised person in the team, so she should lead the welcome desk and keep the list of visitors. Karim is the best with children, so he should take the children's group and run the games. Rana is the quickest with names and papers, and Karim is the most patient with young children. That is why they are the best choices."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -12853,7 +12853,7 @@
                 "That is kind of you. Is she someone my mother will trust? My mother is very shy with new people.",
                 "Thank you. Tell me how you know her, and then ask me anything you need to know."
               ],
-              "accepted": [],
+              "accepted": ["Good morning, Iman. You could ask Um Ali, a neighbour who lives on the first floor. She is someone who is very patient and kind. She helped my grandmother every week for two years, and my grandmother was shy too. Does your mother need help with cooking, or just company? What time do you leave in the morning?"],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -13034,7 +13034,7 @@
               "prompt": "Mrs Zeinab sent you this message and Ayman never saw it. Tell him when and where the team meets, the two kinds of person it needs, and the one condition.",
               "promptAr": "أرسلت لكَ السيدة زينب هذه الرسالة، ولم يرَها أيمن. أخبره متى يجتمع الفريق وأين، وأي نوعين من الأشخاص يحتاج، والشرط الوحيد.",
               "sourceCard": "Message from Mrs Zeinab: the reading team meets on Saturdays from nine to eleven, in the room behind the mosque. We need one person who is good with children and one who can keep the lists. No experience is needed, but please come for both hours.",
-              "accepted": [],
+              "accepted": ["Ayman, Mrs Zeinab sent a message. The reading team meets on Saturdays from nine to eleven in the room behind the mosque. They need two people: one person who is good with children, and one who can keep the lists. You don't need experience, but you must stay for both hours."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -13088,7 +13088,7 @@
               ],
               "prompt": "Write your own note recommending two people for a small team. Say what each one is good at, add one quality they share with too or also, and explain with and, but and because why the two of them fit together.",
               "promptAr": "اكتب ملاحظتك الخاصة توصي فيها بشخصين لفريق صغير. اذكر ما يجيده كل منهما، وأضف صفة مشتركة بينهما بـ too أو also، واشرح بـ and وbut وbecause لماذا يتكاملان معاً.",
-              "accepted": [],
+              "accepted": ["I recommend Sara and Bilal for the small team. Sara is good at organising, and she is very reliable, so she can keep the lists. Bilal is good with children and very patient, so he can lead the games. Both of them are friendly and calm too. They are different, but they work well together, because Sara plans and Bilal talks to people. That is why they fit together."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -13217,7 +13217,7 @@
                 "That is true, but she cannot start before four, and the cooking starts at seven. Who else, then?",
                 "Good. Tell me your two names, and I will write them on the list."
               ],
-              "accepted": [],
+              "accepted": ["I agree that Hanaa has the most experience, but she is busier than the others. Nadia is calmer and quicker than Hanaa, and she can start at four. I'm not sure about Sami, because he is the quietest. However, he drives and cooks well. So let's take Nadia and Sami, please."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -13274,7 +13274,7 @@
               ],
               "prompt": "Explain your choice to the whole group in one minute. Describe the two people you chose, compare them with each other, and say which part of the work each one is best at.",
               "promptAr": "اشرح اختيارك أمام المجموعة كلها في دقيقة واحدة. صف الشخصين اللذين اخترتهما، وقارن بينهما، وقل أي جزء من العمل يجيده كل واحد منهما أكثر.",
-              "accepted": [],
+              "accepted": ["I chose Nadia and Sami. Nadia is organised and calm, and she is quicker than Sami with lists, so she is best at the morning kitchen work. Sami is more patient than Nadia and he drives, so he is best at driving the van. Both have experience with cooking for big groups."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -13336,7 +13336,7 @@
               "prompt": "The two people you chose do not read English. Tell them when the training is, what to bring, what the centre pays for, and what to do if they cannot come.",
               "promptAr": "الشخصان اللذان اخترتهما لا يقرآن الإنجليزية. أخبرهما متى التدريب، وماذا يُحضران، وما الذي يدفع المركز ثمنه، وماذا يفعلان إن تعذّر حضورهما.",
               "sourceCard": "Message from the community centre: both new volunteers must come to a short training on Thursday evening, from six to seven. Bring an identity card. The centre pays for the bus, but not for food. If you cannot come on Thursday, tell us before Tuesday.",
-              "accepted": [],
+              "accepted": ["Nadia, Sami, the centre sent a message. Both of you must come to a short training on Thursday evening, from six to seven. Bring an identity card with you. The centre pays for the bus, but not for food. If you cannot come on Thursday, please tell them before Tuesday."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -13389,7 +13389,7 @@
               ],
               "prompt": "Write your recommendation to the community centre. Name the two people you chose, give each one a job, compare them with the candidate you did not choose, and explain your reasons with and, but and because.",
               "promptAr": "اكتب توصيتك إلى المركز المجتمعي. سمِّ الشخصين اللذين اخترتهما، وامنح كلاً منهما مهمة، وقارنهما بالمرشح الذي لم تختره، واشرح أسبابك بـ and وbut وbecause.",
-              "accepted": [],
+              "accepted": ["Dear community centre, I recommend Nadia and Sami for the two places. Nadia should work in the kitchen in the morning, because she is calm, organised and quicker with lists than Hanaa. Sami should be the driver, because he is patient and he drives every day. Hanaa has the most experience, but she cannot start before four, and the cooking starts at seven. That is why Nadia and Sami are the best choice."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -13636,7 +13636,7 @@
               ],
               "prompt": "Describe a home you lived in before. Say what there was, what there wasn't, and one thing you miss about it.",
               "promptAr": "صف منزلاً سكنتَ فيه سابقاً. اذكر ما كان فيه، وما لم يكن فيه، وشيئاً واحداً تفتقده منه.",
-              "accepted": [],
+              "accepted": ["Before this flat we lived in a small house in the old town. There was a big garden with lemon trees, and there were three bedrooms. There wasn't any heating, and there was no lift, so winters were cold. I miss the garden the most."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -13828,7 +13828,7 @@
                 "That sounds good. Is there much noise in the evening?",
                 "One more thing: are there many shops within walking distance? Tell me, and then ask me what I need."
               ],
-              "accepted": [],
+              "accepted": ["Hi Rana! The area is good. There are a lot of shops and a supermarket within walking distance, and the bus stop is close to the flat. There isn't much noise in the evening, only a few cars. There are many cafés nearby too. What do you need most, a quiet street or shops?"],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -14025,7 +14025,7 @@
               ],
               "prompt": "Compare two areas you know. Say which one is cheaper, bigger or quieter, use not as ... as once, and say where you would live and why.",
               "promptAr": "قارن بين منطقتين تعرفهما. قل أيّهما أرخص أو أوسع أو أهدأ، واستخدم not as ... as مرة واحدة، ثم قل أين تفضّل السكن ولماذا.",
-              "accepted": [],
+              "accepted": ["I know Karrada and Mansour. Karrada is cheaper and busier, and Mansour is quieter and greener. Karrada isn't as expensive as Mansour, but it is more crowded. I would live in Mansour, because I prefer a quiet street and it is closer to my work."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -14219,7 +14219,7 @@
               ],
               "prompt": "You saw a flat yesterday with the friend who is moving with you. Write her a message. Say one thing that is good enough, two things that are too small, too noisy or too far, and what you want to do next.",
               "promptAr": "شاهدتَ شقة أمس مع صديقتك التي ستنتقل معك. اكتب لها رسالة. اذكر شيئاً واحداً جيداً بما يكفي، وشيئين أصغر أو أصخب أو أبعد من اللازم، وما الذي تريد فعله بعد ذلك.",
-              "accepted": [],
+              "accepted": ["Hi Dalia! I thought about the flat we saw yesterday. The living room is big enough for both of us, and it is bright enough in the morning. But the kitchen is too small for two people, and the street is too noisy at night, because the café is under the window. It is also too far from your work. I think we should see another flat on Thursday. What do you think?"],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -14431,7 +14431,7 @@
                 "I see. And how long has this been a problem?",
                 "All right. Tell me exactly what you want us to do, and when we can come."
               ],
-              "accepted": [],
+              "accepted": ["Hello, Mr Jabbar. There is a problem in my flat: the heating doesn't work. It stopped working on Sunday, so the flat is very cold at night and my children can't sleep. Could you send someone to repair it this week, please? Tomorrow morning is good for me."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -14613,7 +14613,7 @@
               "prompt": "Your friend Bilal does not read English, and this listing is on the door of the bakery. Tell him what the flat costs, what is included, what the deposit is, and when he can see it.",
               "promptAr": "صديقك بلال لا يقرأ الإنجليزية، وهذا الإعلان معلّق على باب المخبز. أخبره كم يكلّف إيجار الشقة، وما الذي يشمله، وكم مبلغ التأمين، ومتى يستطيع معاينتها.",
               "sourceCard": "FOR RENT: one-bedroom flat above the bakery, Al-Wahda Street. Furnished. 400,000 IQD monthly, bills included. Deposit: one month. No pets. The room at the back is not as bright as the front one. Viewings Thursday and Friday only. Call Um Ahmed.",
-              "accepted": [],
+              "accepted": ["Bilal, there is a flat above the bakery on Al-Wahda Street. The rent is four hundred thousand a month, and the bills are included. It is furnished, with one bedroom. The deposit is one month. No pets. The back room is not as bright as the front one. You can see it on Thursday or Friday. Call Um Ahmed."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -14665,7 +14665,7 @@
               ],
               "prompt": "Now write your own recommendation to a friend who is moving. Compare two homes, say which one you recommend, give your reason, and warn her about one thing she should check.",
               "promptAr": "اكتب الآن توصيتك أنتَ إلى صديقة ستنتقل إلى سكن جديد. قارن بين منزلين، وقل بأيّهما توصي، واذكر سببك، ونبّهها إلى أمر واحد عليها التحقق منه.",
-              "accepted": [],
+              "accepted": ["Hi Sara! I looked at both homes for you. The flat near the station is cheaper and closer to your work, but the house in the old town is bigger and quieter. The flat isn't as bright as the house. I recommend the flat, because you don't drive and the bus stop is next to the door. But be careful: there is no lift, so ask about the deposit before you sign."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -14796,7 +14796,7 @@
                 "Well, I work from home four days a week, and my mother visits every weekend.",
                 "Money is not the main thing. So which one, and why?"
               ],
-              "accepted": [],
+              "accepted": ["First, Yara, what matters most to you: space, a quiet street or the price? OK. Home A is bigger and has a room for your work, but it is further from the centre and the lift is broken. Home B is cheaper and closer, however it is not as quiet, and the second room is too small for your mother. So Home A has more space, but Home B has a better location."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -14852,7 +14852,7 @@
               ],
               "prompt": "Give Yara your recommendation, one to two minutes long. Compare the two homes, say clearly which one she should take, and give a practical reason.",
               "promptAr": "قدّم ليارا توصيتك، في دقيقة إلى دقيقتين. قارن بين المنزلين، وقل بوضوح أيّهما ينبغي أن تأخذ، واذكر سبباً عملياً.",
-              "accepted": [],
+              "accepted": ["Yara, here is my recommendation. Home A, the riverside flat, is bigger and quieter than Home B, and it has a second room for your work and for your mother at the weekend. Home B in the centre is cheaper and closer to the shops, but it is not as quiet, and the small room is too small for a guest. So I recommend Home A. You should take it, because you work from home four days a week and you need space and silence."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -14913,7 +14913,7 @@
               "prompt": "Yara cannot read the owner's English. Tell her the new rent and its condition, what the deposit is, what will change in March, and the two rules.",
               "promptAr": "يارا لا تستطيع قراءة رسالة المالك بالإنجليزية. أخبرها بالإيجار الجديد وشرطه، وبمبلغ التأمين، وبما سيتغيّر في آذار، وبالقاعدتين.",
               "sourceCard": "Reply from the owner of Home A: I can lower the rent to 590 if your friend signs for two years. The deposit is one month. The lift will be repaired in March. I cannot allow pets, and the rent does not include water.",
-              "accepted": [],
+              "accepted": ["Yara, the owner of Home A replied. He can lower the rent to five hundred and ninety, but only if you sign a contract for two years. The deposit is one month. The lift will be repaired in March. There are two rules: no pets, and the rent does not include water, so you pay for the water extra."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -14964,7 +14964,7 @@
               ],
               "prompt": "Write Yara your recommendation. Compare the two homes, choose one for her, give your reason, and warn her about one possible problem.",
               "promptAr": "اكتب ليارا توصيتك. قارن بين المنزلين، واختر أحدهما لها، واذكر سببك، ونبّهها إلى مشكلة محتملة واحدة.",
-              "accepted": [],
+              "accepted": ["Hi Yara! I compared the two homes. Home A, the riverside flat, is bigger and quieter, with a second room for your work. Home B in the centre is cheaper and closer to the shops, but it is not as quiet, and the small room is too small for your mother. I recommend Home A, because you work from home. But remember: the lift is broken until March, and water is not included."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -15215,7 +15215,7 @@
               ],
               "prompt": "Describe a dish you cook often. Say how much of two ingredients it needs, how many of one more, and where you buy them.",
               "promptAr": "صف طبقاً تطبخه كثيراً. قل كم يحتاج من مكوّنين، وكم عدد مكوّن ثالث، ومن أين تشتريها.",
-              "accepted": [],
+              "accepted": ["I often cook rice with chicken. It needs half a kilo of rice and a lot of oil, and a little salt. It also needs two onions and three tomatoes. I buy the rice at the supermarket and the vegetables at the market stall near my home."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -15433,7 +15433,7 @@
                 "The onion is in the pot now. What comes next?",
                 "It smells good. Tell me the last two steps and how long they take."
               ],
-              "accepted": [],
+              "accepted": ["First, chop the onion and fry it in a little oil. Then add the tomatoes and stir for five minutes. Next, wash the rice and add it with two cups of water. Finally, cook it on a low heat for twenty minutes. It takes about half an hour."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -15625,7 +15625,7 @@
               ],
               "prompt": "Look in your own kitchen. Say what there is a little of, what there is a few of, and one dish you could make with them.",
               "promptAr": "تفقّد مطبخك أنت. قل ما الذي يوجد منه قليل، وما الذي توجد منه بضع قطع، وطبقاً واحداً يمكنك إعداده منها.",
-              "accepted": [],
+              "accepted": ["In my kitchen there is a little rice and a little oil. There are a few eggs and a few tomatoes, and a couple of onions. I could make an omelette with tomatoes, because that is enough for two people."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -15810,7 +15810,7 @@
               ],
               "prompt": "Write a message to the restaurant about a delivery that went wrong. Say what you ordered, what arrived, what is missing, and what you want them to do.",
               "promptAr": "اكتب رسالة إلى المطعم عن طلب توصيل وصل خاطئاً. اذكر ما طلبته، وما الذي وصل، وما هو الناقص، وما تريد منهم أن يفعلوه.",
-              "accepted": [],
+              "accepted": ["Hello, this is Omar from Al-Wahda Street. Tonight I ordered two chicken plates, one vegetable soup and bread. Your driver arrived at eight, but you sent two meat plates instead of the chicken, and the bread is missing. The soup is fine. This isn't what I asked for. Could you send the two chicken plates and the bread as soon as possible, please? If that is not possible, I would like a refund for the chicken. Thank you."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -16024,7 +16024,7 @@
                 "I am sorry to hear that. What would you like us to do?",
                 "I can do that. Tell me your name and when you can come, and I will write it down."
               ],
-              "accepted": [],
+              "accepted": ["Good evening. I ordered a chicken meal from you tonight, but it was cold and the rice was wrong. I'd like you to replace it, please. Could you bring another meal this evening? My name is Omar, and I can come at nine o'clock. Thank you."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -16203,7 +16203,7 @@
               "prompt": "Your neighbour Um Kareem cannot read the English on this packet. Tell her how many it serves, what she must add, how long it cooks, and the warning at the bottom.",
               "promptAr": "جارتك أم كريم لا تستطيع قراءة الإنجليزية المكتوبة على هذه العبوة. أخبرها كم شخصاً تكفي، وما الذي عليها إضافته، وكم مدة الطهي، وما التحذير المكتوب في الأسفل.",
               "sourceCard": "QUICK BEAN MIX — serves three. Add one bottle of cold water and two spoons of oil. Boil for fifteen minutes, then stir and leave it for five. Do not add salt: the mix already contains a lot. Keep the packet closed in a dry place.",
-              "accepted": [],
+              "accepted": ["Um Kareem, this packet serves three people. You must add one bottle of cold water and two spoons of oil. Boil it for fifteen minutes, then stir and leave it for five minutes. Don't add salt, because the mix already has a lot of salt. Keep the packet closed in a dry place."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -16254,7 +16254,7 @@
               ],
               "prompt": "Now write your own recipe for a friend. Give it a title, say how many it serves, list what it needs with the amounts, and put the steps in order.",
               "promptAr": "اكتب الآن وصفتك أنت لصديق. ضع لها عنواناً، وقل كم شخصاً تكفي، واذكر ما تحتاجه مع الكميات، ورتّب الخطوات.",
-              "accepted": [],
+              "accepted": ["Quick Tomato Rice. This serves four people. You need two cups of rice, three tomatoes, one onion, a little oil, a few spices and half a teaspoon of salt. First, chop the onion and the tomatoes. Then heat a little oil in a pot and fry the onion. After that, add the tomatoes and stir for five minutes. Next, wash the rice and add it with four cups of water. Finally, cook for twenty minutes and serve hot with yoghurt."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -16389,7 +16389,7 @@
                 "I see. So which plates are wrong, and what is missing?",
                 "We can send a driver in twenty minutes, or take it off your bill. Which do you prefer, and why?"
               ],
-              "accepted": [],
+              "accepted": ["Good evening. Yes, it is order forty-two. We ordered two vegetable plates, but you sent two meat plates instead, and the bread is missing. Could you please send the two vegetable plates and the bread? We prefer the driver, because my friend doesn't eat meat and we are eating now."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -16451,7 +16451,7 @@
               ],
               "prompt": "Explain tonight's dish to a friend who wants to cook it. Give the amounts, the steps in order, and one thing not to do.",
               "promptAr": "اشرح طبق هذه الليلة لصديق يريد طبخه. اذكر الكميات، والخطوات بالترتيب، وأمراً واحداً يجب تجنّبه.",
-              "accepted": [],
+              "accepted": ["Tonight's dish is vegetable rice. You need two cups of rice, a bottle of water, three tomatoes and a little oil. First, chop the vegetables. Then fry them in a little oil. After that, add the rice and the water. Finally, cook for twenty minutes. Don't add too much salt, because the spices are already salty."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -16514,7 +16514,7 @@
               "prompt": "Samia cannot read the restaurant's English reply. Tell her what they are sending, what they will not charge for, when the driver comes, and the one thing they need from her.",
               "promptAr": "سامية لا تستطيع قراءة رد المطعم بالإنجليزية. أخبرها بما سيرسلونه، وبما لن يحاسبوها عليه، ومتى يصل السائق، وبالأمر الوحيد الذي يريدونه منها.",
               "sourceCard": "Reply from the Palm Restaurant: we are sending two vegetable plates and the bread now. We will not charge for the two meat plates you did not order. The driver leaves in twenty minutes. Please give him the wrong plates at the door.",
-              "accepted": [],
+              "accepted": ["Samia, the restaurant replied. They are sending two vegetable plates and the bread now. They will not charge for the two meat plates we didn't order. The driver leaves in twenty minutes. The one thing they need from you: please give him the wrong plates at the door."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -16567,7 +16567,7 @@
               ],
               "prompt": "Write one message to Samia. Give the recipe steps for tonight in order, then say what you agreed with the restaurant about the wrong order.",
               "promptAr": "اكتب رسالة واحدة إلى سامية. اذكر خطوات وصفة هذه الليلة بالترتيب، ثم قل ما اتفقت عليه مع المطعم بشأن الطلب الخطأ.",
-              "accepted": [],
+              "accepted": ["Hi Samia! Here is tonight's recipe. First, chop two onions and three tomatoes. Then fry them in a little oil. After that, add two cups of rice and a bottle of water with a few spices. Finally, cook for twenty minutes. It serves four. About the order: the restaurant sent two meat plates instead of the vegetable plates, and the bread was missing. They are sending the right plates and the bread now, and they will not charge for the meat."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -16812,7 +16812,7 @@
               ],
               "prompt": "Tell a friend about a short trip you have decided to take. Say where you are going, how long you are going to stay, and two things you plan to do there.",
               "promptAr": "أخبر صديقاً برحلة قصيرة قررت القيام بها. قل إلى أين ستذهب، وكم ستبقى، وأمرين تنوي فعلهما هناك.",
-              "accepted": [],
+              "accepted": ["I'm going to Erbil next weekend. I'm going to stay two nights at my cousin's house. I plan to see the castle and the old market, and we are going to walk in the mountains on Saturday."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -17013,7 +17013,7 @@
                 "Let me look. We have a double room and a small twin. Which nights do you need?",
                 "That's fine. And what time are you arriving? The desk closes at eleven."
               ],
-              "accepted": [],
+              "accepted": ["Good afternoon. I'd like to book a room for Friday and Saturday night, please. Do you have a double room available? We're arriving at about nine in the evening, before the desk closes. How much is it per night, and does the price include breakfast?"],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -17214,7 +17214,7 @@
               ],
               "prompt": "Compare two ways of getting to a city you know: the times, the fare and how direct each one is. Then decide which one you will take, and offer to do one thing for the person travelling with you.",
               "promptAr": "قارن طريقتين للوصول إلى مدينة تعرفها: المواعيد والأجرة ومدى كون كل منهما مباشرة. ثم قرر أيهما ستأخذ، واعرض أن تقوم بأمر واحد لمن يسافر معك.",
-              "accepted": [],
+              "accepted": ["To get to Basra you can take the train or the bus. The train is faster, it takes five hours, and it is more comfortable, but it is more expensive. The bus is cheaper, but it takes seven hours and stops in every town. I think I'll take the train. Shall I book your ticket too? I'll collect them from the station tomorrow."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -17409,7 +17409,7 @@
               ],
               "prompt": "Your colleague is flying on the morning of an important meeting. Write her a short message: say what the plan is, give two things that could go wrong, and say what you will do in each case.",
               "promptAr": "زميلتك ستسافر جواً صباح اجتماع مهم. اكتب لها رسالة قصيرة: اذكر الخطة، وأمرين قد يسيران على غير ما يُراد، وما ستفعله في كل حالة.",
-              "accepted": [],
+              "accepted": ["Hi Sawsan! Here is the plan for Tuesday. You land at seven, I'll meet you at the airport, and we'll drive to the office for the meeting at ten. Two things could go wrong. If the flight is late, I'll call the office and we'll move the meeting to the afternoon. If there is heavy traffic on the road, we'll join the meeting online from the car. Don't worry, we have a Plan B for everything. See you on Tuesday!"],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -17618,7 +17618,7 @@
                 "That's kind of you. Do I wait inside, or come out to the car park?",
                 "Fine. And is there anything I should do before I leave the airport?"
               ],
-              "accepted": [],
+              "accepted": ["No problem, Sawsan. So you land at twenty past nine now, not seven. When you land, I'll be in the car park with the car, so come out to the car park. Before you leave the airport, make sure you collect your bag and send me a message, so I know you are coming."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -17789,7 +17789,7 @@
               "prompt": "Hanan sent you this in a hurry, and Ziad has not seen it. Tell Ziad what has changed, what time she now gets in, what she plans to do instead, and what he must do before Friday.",
               "promptAr": "أرسلت حنان هذه الرسالة على عجل، ولم يرها زياد. أخبر زياد بما تغيّر، وفي أي ساعة ستصل الآن، وما الذي تنوي فعله بدلاً من ذلك، وما عليه فعله قبل الجمعة.",
               "sourceCard": "From Hanan: The seven o'clock coach is full, so I'm taking the nine o'clock one and getting in at one. I'm going to skip the market and see the old bridge instead. If Ziad can't meet me at one, tell him to leave the key with his neighbour before Friday.",
-              "accepted": [],
+              "accepted": ["Ziad, Hanan sent a message. The seven o'clock coach is full, so she is taking the nine o'clock one, and she gets in at one. She is going to skip the market and see the old bridge instead. If you can't meet her at one, you must leave the key with your neighbour before Friday."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -17840,7 +17840,7 @@
               ],
               "prompt": "Now write your own two-day plan for a visitor. Give the travel times you have fixed, what you are going to do on each day, and one alternative if the weather is bad.",
               "promptAr": "اكتب الآن خطتك أنت ليومين من أجل زائر. اذكر مواعيد السفر التي ثبّتها، وما ستفعله في كل يوم، وبديلاً واحداً إذا كان الطقس سيئاً.",
-              "accepted": [],
+              "accepted": ["Here is the plan for your visit. I'm collecting you at the coach station at ten on Saturday morning. On Saturday we're going to see the old town and the castle, and we'll eat at my mother's house at seven. On Sunday we are going to walk by the river in the morning and visit the market in the afternoon. Your coach home leaves at six, so we're leaving the house at five. If it rains on Sunday, we'll go to the museum instead."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -17973,7 +17973,7 @@
                 "Forty dinars is fine if I can sleep. The flat above the bakery sounds loud.",
                 "Saturday is yours, then. What are we doing first?"
               ],
-              "accepted": [],
+              "accepted": ["Basma, what matters most to you: a quiet night, the price or being close to the centre? The guest house is quieter and three minutes from the square, but it is more expensive than the flat above the bakery. The flat is cheaper, but it is noisy in the morning. So let's book the guest house. On Saturday we're going to walk around the old town first, then we'll have lunch at the market."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -18027,7 +18027,7 @@
               ],
               "prompt": "Present the finished weekend to Basma: the arrangements that are fixed, what you are going to do on each day, and one Plan B if the weather changes.",
               "promptAr": "قدّم لبسمة عطلة نهاية الأسبوع في صيغتها النهائية: الترتيبات الثابتة، وما ستفعلانه في كل يوم، وخطة بديلة واحدة إذا تغيّر الطقس.",
-              "accepted": [],
+              "accepted": ["Here is the weekend, Basma. I'm collecting you at the coach station at half past ten on Saturday. The room at the guest house is booked. On Saturday we're going to walk around the old town and have lunch at the market, and in the evening we'll eat at my mother's. On Sunday we are going to walk by the river. If it rains, we'll visit the museum instead, and we'll have tea in the café next to it."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -18079,7 +18079,7 @@
               "prompt": "The coach company sent you this notice, and Basma has not seen it. Tell her what has changed, what it means for Sunday, and what she must do before she travels.",
               "promptAr": "أرسلت شركة الحافلات هذا الإشعار، ولم ترَه بسمة. أخبرها بما تغيّر، وما يعنيه ذلك ليوم الأحد، وما عليها فعله قبل السفر.",
               "sourceCard": "Notice: from Sunday the four o'clock coach does not run. The last coach leaves at half past two. Passengers holding a four o'clock ticket must change it at any office before Saturday evening, or it will not be valid.",
-              "accepted": [],
+              "accepted": ["Basma, the coach company sent a notice. From Sunday the four o'clock coach does not run any more. The last coach leaves at half past two, so you must leave two hours earlier on Sunday. You must change your four o'clock ticket at any office before Saturday evening, or it will not be valid."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -18132,7 +18132,7 @@
               ],
               "prompt": "Write the weekend plan for Basma. Give the times that are fixed, what you are going to do on Saturday and on Sunday, one alternative if it rains, and the new Sunday coach time.",
               "promptAr": "اكتب خطة عطلة نهاية الأسبوع لبسمة. اذكر المواعيد الثابتة، وما ستفعلانه يوم السبت ويوم الأحد، وبديلاً واحداً إذا أمطرت، وموعد حافلة الأحد الجديد.",
-              "accepted": [],
+              "accepted": ["Hi Basma! Here is the plan. I'm collecting you at the coach station at half past ten on Saturday, and the guest house is booked. On Saturday we're going to walk around the old town and have lunch at the market. On Sunday we are going to walk by the river. If it rains, we'll visit the museum instead. One change: the four o'clock coach does not run on Sunday, so the last coach is at half past two. Change your ticket before Saturday."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -18376,7 +18376,7 @@
               ],
               "prompt": "A friend asks how you are, and you are not well today. Say two things you feel, then give yourself the advice a sensible friend would give.",
               "promptAr": "يسألكَ صديق عن حالكَ، ولستَ بخير اليوم. اذكر شيئين تشعر بهما، ثم قدّم لنفسكَ النصيحة التي يقدمها صديق عاقل.",
-              "accepted": [],
+              "accepted": ["I don't feel well today. My throat is sore and I feel very tired. I should stay at home and rest, and I should drink warm water with honey. I shouldn't go to work today."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -18581,7 +18581,7 @@
                 "Then I have to see the paper from the clinic, please. Ask me anything you like.",
                 "Of course. Tell me what you still need to know, and what you were worried about."
               ],
-              "accepted": [],
+              "accepted": ["Yes, it's my first time here. Excuse me, do I have to show the paper from the clinic every time, or only today? And do I have to pay now? One more question, please: the label says 'with food'. Does that mean after breakfast? Thank you."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -18771,7 +18771,7 @@
               ],
               "prompt": "You are ordering food for a friend who is allergic to something. Say what your friend must not eat, ask the waiter one question about the kitchen, and make sure he checks the bread as well.",
               "promptAr": "أنتَ تطلب الطعام لصديق لديه حساسية من شيء ما. قل ما الذي يجب ألا يأكله صديقكَ، واسأل النادل سؤالاً واحداً عن المطبخ، وتأكّد من أنه يفحص الخبز أيضاً.",
-              "accepted": [],
+              "accepted": ["Excuse me. My friend is allergic to nuts, so she must not eat anything with nuts in it. Does the kitchen use nut oil in the sauce? Please make sure the bread has no nuts as well. Could you check with the chef? Thank you."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -18967,7 +18967,7 @@
               ],
               "prompt": "Your team is starting a good-habits week at work. Write a short message to your colleagues. Suggest three small changes and give the purpose of each one with to + verb. Then say one thing nobody has to do.",
               "promptAr": "يبدأ فريقكَ أسبوع العادات الطيبة في العمل. اكتب رسالة قصيرة إلى زملائكَ. اقترح ثلاثة تغييرات صغيرة، وبيّن غرض كل منها بـ to + الفعل، ثم اذكر أمراً واحداً لا يلزم أحداً أن يفعله.",
-              "accepted": [],
+              "accepted": ["Hi team! Good-habits week starts on Sunday. Here are three small changes. First, take the stairs instead of the lift, to get a little exercise every day. Second, drink a glass of water every hour, to stay awake in the afternoon. Third, stand up and stretch for two minutes every hour, to rest your back and your eyes. One more thing: nobody has to join the morning walk. It is only for people who want to come. Good luck!"],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -19177,7 +19177,7 @@
                 "I see. And how long have you had it?",
                 "Has anything made it better or worse? Tell me what you have noticed."
               ],
-              "accepted": [],
+              "accepted": ["Good morning, doctor. My back hurts, here, on the right side. I've had it for about two weeks. It started after I carried some heavy boxes at work. It is worse at night and in the morning, and a little better after a warm shower."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -19364,7 +19364,7 @@
               "prompt": "Amal's mother does not read English. Tell her what the clinic wrote: what Amal doesn't have to do, the two habits she should keep, and when she must ring the desk.",
               "promptAr": "والدة أمل لا تقرأ الإنجليزية. أخبرها بما كتبته العيادة: ما الذي لا يلزم أمل فعله، والعادتان اللتان ينبغي أن تحافظ عليهما، ومتى يجب عليها أن تتصل بالاستقبال.",
               "sourceCard": "Note from the clinic: Amal's results are normal, so she doesn't have to come back this month. She should walk for twenty minutes most days and sleep at a regular time. If the headaches get worse, or if anything new starts, she must ring the desk the same day.",
-              "accepted": [],
+              "accepted": ["Good news: the clinic says Amal's results are normal, so she doesn't have to come back this month. She should keep two habits: walk for twenty minutes most days, and sleep at the same time every night. If the headaches get worse, or if anything new starts, she must ring the desk the same day."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -19419,7 +19419,7 @@
               ],
               "prompt": "Now write your own message to a friend who has been at home all week. Say what he should do and why, one thing he doesn't have to do, and what to do if it gets worse. Keep to rest, sleep, food and water, and do not add advice of your own.",
               "promptAr": "اكتب الآن رسالتكَ إلى صديق بقي في البيت طوال الأسبوع. اذكر ما ينبغي أن يفعله ولماذا، وأمراً واحداً لا يلزمه فعله، وما العمل إذا ساء الأمر. اقتصر على الراحة والنوم والطعام والماء، ولا تضف نصيحة من عندكَ.",
-              "accepted": [],
+              "accepted": ["Hi Karim! I'm sorry you are still at home. You should rest as much as you can, because your body needs time. You should sleep early and drink a lot of water. You don't have to eat big meals; eat slowly and a little at a time. Try to take a short walk in fresh air when you feel better. If it gets worse, or if you have a fever again, ring the clinic the same day. Get well soon!"],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -19551,7 +19551,7 @@
                 "It's my shoulder. I've had it a while now, and I'm not sure it's worth anyone's time.",
                 "Ask me whatever you need for the card, and then tell me what happens next."
               ],
-              "accepted": [],
+              "accepted": ["Yes, this is the right desk. Good morning. What's wrong today? Where does it hurt exactly? How long have you had it? And has it changed, is it worse at night? Thank you. I'll write it on the card, and then the nurse at desk three will see you. Please wait here."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -19610,7 +19610,7 @@
               ],
               "prompt": "Now tell the nurse at desk three about the visitor, in under a minute. Say where it hurts, how long he has had it, whether it has changed, and what he asked you. Add nothing he did not say.",
               "promptAr": "أخبر الممرضة في الطاولة الثالثة عن الزائر في أقل من دقيقة. قل أين يؤلمه، ومنذ متى يعاني منه، وهل تغيّر، وماذا سألكَ. ولا تضف شيئاً لم يقله.",
-              "accepted": [],
+              "accepted": ["This is Adnan. His shoulder hurts, the right one. He has had it for about ten days, since he carried something heavy. It isn't worse, but it is no better either, and it wakes him at night. He asked if it is worth your time, because he isn't sure he should be here."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -19668,7 +19668,7 @@
               "prompt": "Mr Sabah left his glasses at home. Read him the nurse's card: what he should keep doing, what he doesn't have to do, when to come back, and when to ring instead.",
               "promptAr": "نسي السيد صباح نظارته في البيت. اقرأ له بطاقة الممرضة: ما الذي ينبغي أن يستمر في فعله، وما الذي لا يلزمه فعله، ومتى يعود، ومتى يتصل بدل ذلك.",
               "sourceCard": "Nurse's card for Mr Sabah: keep the arm moving gently through the day; you don't have to rest it completely. Something cool in the evening helps some people. Come back in two weeks if it is the same, and ring us straight away if it gets worse.",
-              "accepted": [],
+              "accepted": ["Mr Sabah, the nurse's card says this. Keep the arm moving gently through the day. You don't have to rest it completely. Something cool on it in the evening helps some people. Come back in two weeks if it is the same. But if it gets worse, ring the clinic straight away."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -19721,7 +19721,7 @@
               ],
               "prompt": "Write the follow-up message to Mr Sabah's daughter. Say where the pain is and how long he has had it, what the nurse wrote on the card, what he doesn't have to do, and when the family should ring the clinic. Use only what you were told.",
               "promptAr": "اكتب رسالة المتابعة إلى ابنة السيد صباح. اذكر مكان الألم ومنذ متى يعاني منه، وما كتبته الممرضة على البطاقة، وما الذي لا يلزمه فعله، ومتى ينبغي للعائلة أن تتصل بالعيادة. استخدم فقط ما قيل لكَ.",
-              "accepted": [],
+              "accepted": ["Hello. This is about your father, Mr Sabah. His right shoulder hurts, and he has had the pain for about ten days. The nurse wrote on his card that he should keep the arm moving gently through the day, and that something cool in the evening may help. He doesn't have to rest it completely. If it is the same in two weeks, he should come back. If it gets worse, the family must ring the clinic straight away."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -19976,7 +19976,7 @@
               ],
               "prompt": "Your cousin starts the same job as you next week. Tell her two things she has to do, one thing she doesn't have to do, and when the deadline is.",
               "promptAr": "تبدأ ابنة عمّكَ العمل نفسه الأسبوع المقبل. أخبرها بأمرين عليها فعلهما، وأمرٍ واحد لا يلزمها، وبموعد التسليم النهائي.",
-              "accepted": [],
+              "accepted": ["Welcome to the job! You have to open the front desk at eight every morning, and you have to hand in the visitor list to the supervisor every evening. You don't have to lock the building; the guard does that. The deadline for your first report is Saturday the fifteenth."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -20194,7 +20194,7 @@
                 "I see. And is there anything on our list you have never tried?",
                 "One last thing: what could you do well a few years ago that you are out of practice with now?"
               ],
-              "accepted": [],
+              "accepted": ["Thank you for seeing me. Yes, I've worked at a front desk before, at my uncle's hotel. I have never used the ticket machine on your list, but I can learn. A few years ago I could speak French quite well, but I'm out of practice now."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -20398,7 +20398,7 @@
               ],
               "prompt": "A new trainee joins your team tomorrow. Tell him three things to do, and say how to do each one — not only what, but how.",
               "promptAr": "ينضم متدرب جديد إلى فريقكَ غداً. أخبره بثلاثة أمور عليه فعلها، وبيّن كيف يفعل كلاً منها — لا ماذا فقط، بل كيف.",
-              "accepted": [],
+              "accepted": ["Welcome, Hassan. Three things for your first day. First, answer the phone politely and clearly, and always say your name. Second, write every message carefully on the form, with the time and the number. Third, check the visitor list quickly but properly before you close the desk. Make sure you ask me if something is not clear."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -20600,7 +20600,7 @@
               ],
               "prompt": "A friend has sent you two course pages and asked which one you would choose. Write your reply. Say what you enjoy doing, what you want to learn, one thing you hope to do afterwards, and why you chose that course.",
               "promptAr": "أرسل إليكَ صديق صفحتَي دورتين وسألكَ أيهما تختار. اكتب ردكَ: قل ما تستمتع بفعله، وما تريد أن تتعلمه، وأمراً تأمل أن تفعله بعد ذلك، ولماذا اخترت تلك الدورة.",
-              "accepted": [],
+              "accepted": ["Hi Zainab! I looked at both course pages. I would choose the practical cooking course. I enjoy working with my hands, and I want to learn to cook for big groups. The course has a placement in a real kitchen, and the tutor has worked in hotels. Afterwards I hope to work in a café. I chose it because the other course is only theory, and I learn better by doing. What do you think?"],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -20816,7 +20816,7 @@
                 "Of course. Ask me whatever you need, and I will check the file while you talk.",
                 "Let me repeat that back to you. Is there anything else before I close the call?"
               ],
-              "accepted": [],
+              "accepted": ["Good afternoon. My name is Omar, and I'm calling about the evening English course. Could you tell me how much the fee is, please? And when does the course start? Is it possible to pay in two parts? Just to check: you said I have to enrol by the tenth, is that right? Thank you, that's very helpful."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -21007,7 +21007,7 @@
               "prompt": "Your neighbour cannot read the notice on the centre's door, and her son wants to apply. Tell her what he has to send, what he does not need, and the last day.",
               "promptAr": "جارتكَ لا تستطيع قراءة الإعلان على باب المركز، وابنها يريد التقدم. أخبرها بما عليه إرساله، وبما لا يحتاج إليه، وبآخر يوم للتقديم.",
               "sourceCard": "Saturday assistant vacancy. Send a short letter and the name of one referee by 9 May. Applicants do not need a qualification. Please state the hours you are available. We answer every applicant within a week.",
-              "accepted": [],
+              "accepted": ["The notice is for a Saturday assistant. Your son has to send a short letter and the name of one referee by the ninth of May. He doesn't need a qualification. He should say which hours he is available. They answer every applicant within a week."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -21064,7 +21064,7 @@
               ],
               "prompt": "Now write your own application, the way Karim wrote his. Name the role, say two things you can do and one thing you have done before, give your free hours, and say why you want it. Keep to what a stranger needs to know.",
               "promptAr": "اكتب الآن طلبكَ أنتَ، كما كتب كريم طلبه. سمِّ الوظيفة، واذكر أمرين تستطيع فعلهما وأمراً سبق أن فعلته، وساعات فراغكَ، وسبب رغبتكَ فيها. اقتصر على ما يحتاج غريب إلى معرفته.",
-              "accepted": [],
+              "accepted": ["Dear Sir or Madam, I am writing to apply for the Saturday assistant role at the centre. I can speak to visitors politely and I can use a computer well. I have worked at my uncle's shop for two summers, so I know how to serve customers. I am free every Saturday from nine until five, and most evenings after six. I would like the job to gain work experience and to improve my English. Yours faithfully, Omar Hassan."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -21199,7 +21199,7 @@
                 "Ask me whatever the notice didn't say, and then tell me a little about yourself.",
                 "One last question: have you ever done anything like this before?"
               ],
-              "accepted": [],
+              "accepted": ["Good morning. Yes, I'm calling about the Saturday guide role. Could you tell me if there is a training day before the start? And is the role paid, or is it voluntary? About me: I can speak politely to visitors and I'm free every Saturday. Yes, I have worked at a hotel desk before, for two summers. Thank you, that's very helpful."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -21266,7 +21266,7 @@
               ],
               "prompt": "Explain to a friend why the museum role suits you. Say what the job needs, what you can do, one thing you have done before, and one thing you have never done.",
               "promptAr": "اشرح لصديق لماذا تناسبكَ وظيفة المتحف. قل ما تتطلبه الوظيفة، وما تستطيع فعله، وأمراً سبق أن فعلته، وأمراً لم يسبق لكَ فعله.",
-              "accepted": [],
+              "accepted": ["The museum role suits me well. The job needs someone who can welcome visitors politely and answer questions at the desk on Saturdays. I can speak clearly and I am good at explaining things. I have worked at a hotel front desk before, so I know how to help strangers. I have never guided a group, but I want to learn."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -21327,7 +21327,7 @@
               "prompt": "Your cousin does not read English and has had the same reply. Tell him the day and time, what he has to bring, what he does not have to do, and what to do if he cannot come.",
               "promptAr": "ابن عمّكَ لا يقرأ الإنجليزية وقد وصله الرد نفسه. أخبره باليوم والساعة، وبما عليه إحضاره، وبما لا يلزمه فعله، وبما يفعله إن تعذّر عليه الحضور.",
               "sourceCard": "Reply from the museum: we have read your letter and would like to meet you on 12 April at eleven. Please bring something with your name and photograph on it. You do not have to prepare anything. If that morning is difficult, ring the office and we will move it.",
-              "accepted": [],
+              "accepted": ["Good news! The museum wants to meet you on the twelfth of April at eleven in the morning. You have to bring something with your name and photograph on it, like your ID card. You don't have to prepare anything. If you can't come that morning, ring the office and they will change the day."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -21386,7 +21386,7 @@
               ],
               "prompt": "Write the letter that goes with your application for the museum role. Say which role you want and where you saw it, two things you can do, one thing you have done before, your free hours, and why you want it.",
               "promptAr": "اكتب الرسالة المرافقة لطلبكَ لوظيفة المتحف. قل أي وظيفة تريد وأين رأيتها، وأمرين تستطيع فعلهما، وأمراً سبق أن فعلته، وساعات فراغكَ، ولماذا تريدها.",
-              "accepted": [],
+              "accepted": ["Dear Museum Office, I am writing to apply for the Saturday guide role, which I saw on the notice at the entrance. I can welcome visitors politely and answer questions clearly, and I can use a spreadsheet for the visitor list. I have worked at a hotel front desk before, for two summers. I have never guided a group, but I learn quickly. I am free every Saturday from ten until four. I would like the role to gain experience and to improve my English."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -21644,7 +21644,7 @@
               ],
               "prompt": "A neighbour's phone will not switch on and he has rung you. Give him three instructions in the order he should try them, and say what to do if the screen is still dark after all three.",
               "promptAr": "هاتف جاركَ لا يعمل وقد اتصل بكَ. أعطه ثلاث تعليمات بالترتيب الذي ينبغي أن يجرّبها به، وقل له ماذا يفعل إذا بقيت الشاشة مظلمة بعدها جميعاً.",
-              "accepted": [],
+              "accepted": ["First, press and hold the power button for ten seconds. Second, plug in the charger and wait five minutes, because the battery may be flat. Third, try a different cable. If the screen is still dark after all three, bring it to me and we'll take it to the shop."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -21858,7 +21858,7 @@
                 "All right, Wi-Fi is on. There is a long list of names here, and now it is asking me for something.",
                 "It says I am connected. So where is this form, and what do I do with it?"
               ],
-              "accepted": [],
+              "accepted": ["OK, Salwa. First, open settings and tap Wi-Fi. Now you see the list of names: choose the clinic's network, the one on the card at the desk. Then type the code from the card. Good, you are connected. Next, open the message from the clinic and tap the link. Finally, the form opens; fill it in and tap Send."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -22048,7 +22048,7 @@
               ],
               "prompt": "A friend's laptop will not reach her home network. Say what she should check, in the order you would check it yourself, and start each step with 'if'.",
               "promptAr": "حاسوب صديقتكَ لا يصل إلى شبكة بيتها. قل ما الذي ينبغي أن تتحقق منه، بالترتيب الذي كنتَ ستتبعه بنفسكَ، وابدأ كل خطوة بـ if.",
-              "accepted": [],
+              "accepted": ["If the laptop can't see the network, first switch the router off and on again, and count to ten. If it sees the network but doesn't connect, check the password in the settings. If that is correct, restart the laptop. If nothing works, try the cable instead of Wi-Fi."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -22251,7 +22251,7 @@
               ],
               "prompt": "Your study group cannot find last week's notes. Write them a short message saying where everything is: send the notes with the message, put the photographs behind a link, and use 'it', 'them' and 'that' so that nobody has to guess what each step points to.",
               "promptAr": "مجموعة دراستكَ لا تجد ملاحظات الأسبوع الماضي. اكتب لهم رسالة قصيرة توضح أين كل شيء: أرسل الملاحظات مع الرسالة، وضع الصور خلف رابط، واستخدم it وthem وthat حتى لا يضطر أحد إلى التخمين.",
-              "accepted": [],
+              "accepted": ["Hi everyone! Here is where everything is. I have attached last week's notes to this message, so open the attachment and read it before Thursday. The photographs of the board are too big to send, so I put them in the shared folder; here is the link. Download them if you need them. First read the notes, then look at the photos, because the notes explain them. The list of homework is in the same folder, so that nobody has to ask again. Tell me if a link doesn't open."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -22486,7 +22486,7 @@
                 "I see. And what happens when you sign in — does it stop straight away, or after a moment?",
                 "Right. Have you tried anything yourself before you rang us?"
               ],
-              "accepted": [],
+              "accepted": ["Good morning. The banking app freezes when I open it. The screen goes white for a second and then it closes itself. It stops straight away, before I can sign in. I've already tried restarting the phone twice and I've reinstalled the app. There is an error at the bottom: it says 'Error 403: connection refused'."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -22657,7 +22657,7 @@
               "prompt": "Your mother does not read English. She has photographed a warning on her screen and wants to know what it says. Tell her what has happened, what she does not have to do if it was her, and the two things to do if it was not.",
               "promptAr": "والدتكَ لا تقرأ الإنجليزية. صوّرت تحذيراً ظهر على شاشتها وتريد أن تعرف ما فيه. أخبرها بما حدث، وبما لا يلزمها فعله إن كانت هي، وبالأمرين اللذين تفعلهما إن لم تكن هي.",
               "sourceCard": "Security warning: somebody signed in to your account from a new device in another city. If this was you, no action is needed. If it was not you, change your password now and sign out of every device. We will never ask you for your password in a message.",
-              "accepted": [],
+              "accepted": ["Mum, this is a security warning. Somebody signed in to your account from a new device in another city. If it was you, you don't have to do anything. If it wasn't you, you must do two things: change your password now, and sign out of every device. And remember, they will never ask for your password in a message."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -22712,7 +22712,7 @@
               ],
               "prompt": "Write your own guide for somebody who has just been given a first smartphone. Give three steps in order with the purpose of each, one 'if' sentence for the moment something goes wrong, and one clear warning about what never to share. Keep to the advice in Rania's guide.",
               "promptAr": "اكتب دليلكَ الخاص لشخص حصل للتو على أول هاتف ذكي. اذكر ثلاث خطوات مرتبة مع غرض كل منها، وجملة واحدة بـ if لما يحدث عند حصول خلل، وتحذيراً واضحاً بشأن ما لا يُشارَك أبداً. التزم بما ورد في دليل رانيا.",
-              "accepted": [],
+              "accepted": ["Here is a guide for your first smartphone. First, set a screen lock with a code, to protect your phone if you lose it. Second, connect to your home Wi-Fi, so that you don't use all your data. Third, save your family's numbers, to call them quickly when you need help. If a message asks you to tap a link from a bank, do not tap it; ask me first. And one warning: never share your password or your bank code with anyone, not even someone who says they are from the bank."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -22840,7 +22840,7 @@
                 "All right, I am in room 18 and I can see everyone. Oh — it has frozen again. Shall I just tell you my password and you do it from your side?",
                 "Fine, no password. So what do I do about the picture, and where is this worksheet?"
               ],
-              "accepted": [],
+              "accepted": ["Hi Nour. First, open the class page and tap the link for room 18. Then sign in with your own account. What happens when the picture freezes, does it stop for a long time? Have you tried turning the camera off? No, don't tell me your password, I don't need it. Keep your password private. Turn the camera off and move closer to the router. Finally, the worksheet is in the folder on the class page; download it."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -22898,7 +22898,7 @@
               ],
               "prompt": "Now say the whole procedure aloud, so that Nour can follow it on her own next week: the steps in order, and one 'if' sentence for the moment the picture freezes. Add nothing she has not already agreed to.",
               "promptAr": "قل الآن الإجراء كاملاً بصوت عالٍ لتتمكن نور من اتباعه وحدها الأسبوع المقبل: الخطوات مرتبة، وجملة واحدة بـ if للحظة تجمّد الصورة. ولا تضف شيئاً لم توافق عليه.",
-              "accepted": [],
+              "accepted": ["Here is the whole procedure, Nour. First, open the class page and tap the link. Next, sign in with your own account and enter room 18. Then open the folder and download the worksheet. If the picture freezes, turn the camera off, wait ten seconds, and turn it on again. Finally, sit closer to the router if it happens again."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -22953,7 +22953,7 @@
               "prompt": "Nour's mother wants to know what the class page says, and she does not read English. Tell her where and when the session is, what Nour has to do before Friday, and the one rule about passwords.",
               "promptAr": "تريد والدة نور أن تعرف ما في صفحة الصف، وهي لا تقرأ الإنجليزية. أخبرها بموعد الجلسة ومكانها، وبما على نور فعله قبل الجمعة، وبالقاعدة الوحيدة الخاصة بكلمات المرور.",
               "sourceCard": "Wednesday at six in the evening, room 18. Bring nothing with you; everything is on the class page. Download the worksheet before five o'clock on Friday, because the folder closes at five. Tutors and classmates will never ask you for a password, and you should never give one.",
-              "accepted": [],
+              "accepted": ["The session is on Wednesday at six in the evening, in room 18. Nour doesn't need to bring anything, because everything is on the class page. Before five o'clock on Friday she has to download the worksheet, because the folder closes at five. And one rule: nobody will ever ask for her password. She must never give it to anyone."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -23007,7 +23007,7 @@
               ],
               "prompt": "Write Nour the guide she can keep. Cover how to get in, where the worksheet is and when the folder closes, what to do if the picture freezes, and the rule about passwords. Use 'it', 'them' and 'that' so that she knows what each step points to.",
               "promptAr": "اكتب لنور الدليل الذي تحتفظ به. غطِّ كيفية الدخول، وأين ورقة العمل ومتى يُغلق المجلد، وماذا تفعل إذا تجمّدت الصورة، وقاعدة كلمات المرور. استخدم it وthem وthat لتعرف إلامَ تشير كل خطوة.",
-              "accepted": [],
+              "accepted": ["Hi Nour, here is your guide. First, open the class page and tap the link for room 18. Then sign in with your own account and enter it. The worksheet is in the folder on the same page; download it before five o'clock on Friday, because the folder closes at five. If the picture freezes, turn the camera off, wait ten seconds and turn it on again. If that happens a lot, sit closer to the router. And remember: nobody will ever ask for your password. Keep it private and never share it."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -23251,7 +23251,7 @@
               ],
               "prompt": "Set the scene of a story you know. Say where it was happening, and what two different people were doing before anything went wrong.",
               "promptAr": "هيّئ مشهد البداية لقصة تعرفها. قل أين كان الحدث يجري، وماذا كان شخصان مختلفان يفعلان قبل أن يسوء أي شيء.",
-              "accepted": [],
+              "accepted": ["It was happening in a small village by the river, one evening last summer. My grandmother was cooking dinner in the kitchen, and my brother was sitting on the roof, watching the sky. The neighbours were talking in the street. Nobody knew what was coming."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -23458,7 +23458,7 @@
                 "I was carrying pots to my sister's kitchen when it started to rain, and I lost half the rice on the stairs.",
                 "We ate at ten at night in the end. Now tell me about your day, and ask me whatever you like."
               ],
-              "accepted": [],
+              "accepted": ["That sounds terrible, Suha! Last year I was cooking for my family when the power went out. Suddenly everything was dark, and the rice was half cooked. We ate bread and cheese by candlelight. How long did you wait for the water? And who was helping you carry the pots?"],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -23657,7 +23657,7 @@
               ],
               "prompt": "Describe a busy scene you remember - a market, a wedding, a match. Say what three different people or groups were doing at the same time, and what you were doing.",
               "promptAr": "صف مشهداً مزدحماً تتذكره: سوقاً أو عرساً أو مباراة. قل ماذا كان ثلاثة أشخاص أو ثلاث مجموعات يفعلون في الوقت نفسه، وماذا كنتَ تفعل أنت.",
-              "accepted": [],
+              "accepted": ["I remember my cousin's wedding last spring. While the musicians were playing, the women were dancing in the middle of the hall. At the same time the men were standing outside, talking and drinking tea. The children were running everywhere. I was sitting with my grandmother, watching everyone and taking photos."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -23853,7 +23853,7 @@
               ],
               "prompt": "A friend asks you to describe a film, series or book without naming it. Write your description: what kind it is, who the main character is, and what happens. Use who, which or that at least twice.",
               "promptAr": "يطلب منكَ صديق أن تصف فيلماً أو مسلسلاً أو كتاباً من دون تسميته. اكتب وصفك: ما نوعه، ومن الشخصية الرئيسية، وماذا يحدث. استخدم who أو which أو that مرتين على الأقل.",
-              "accepted": [],
+              "accepted": ["It is a comedy series about a family who run a small restaurant in a big city. The main character is a young woman who wants to be a doctor, but her father, who owns the restaurant, needs her help every evening. In each episode something goes wrong in the kitchen. She meets a customer that changes her plans, and in the end she decides what she really wants. It is funny and warm, and the actors are very good."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -24071,7 +24071,7 @@
                 "My sister says the first hour is slow. Is that true, or was she asleep?",
                 "So should I watch it tonight, or should I choose something else? Tell me honestly."
               ],
-              "accepted": [],
+              "accepted": ["Yes, I saw it last week. I liked the acting, and the ending is really moving. Although the first hour is slow, it is not boring, and the second half is excellent. Your sister is partly right. But I recommend it: watch it tonight, it is worth three hours, especially if you like family stories."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -24260,7 +24260,7 @@
               "prompt": "Your aunt does not read English and is choosing a film for her grandchildren. Tell her what it is about, what the warning says, and which showing she should book.",
               "promptAr": "عمتكَ لا تقرأ الإنجليزية، وهي تختار فيلماً لأحفادها. أخبرها بموضوعه، وبما يقوله التنبيه، وبأي عرض ينبغي أن تحجز.",
               "sourceCard": "Cinema listing: Paper Boats. A ninety-minute film about a girl who builds a radio. Warning: one long scene shows a storm at sea and may frighten young children. Rating: suitable from ten years. Arabic subtitles at the three o'clock showing only.",
-              "accepted": [],
+              "accepted": ["Auntie, the film is called Paper Boats. It is a ninety-minute film about a girl who builds a radio. The warning says one long scene shows a storm at sea, and it may frighten young children. It is suitable from ten years old. You should book the three o'clock showing, because it has Arabic subtitles."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -24313,7 +24313,7 @@
               ],
               "prompt": "Now write your own review of a film, series or book. Say what kind it is and who is in it, give one strength and one limitation with although, say who it is for, and finish with a rating.",
               "promptAr": "اكتب الآن مراجعتكَ لفيلم أو مسلسل أو كتاب. قل ما نوعه ومن فيه، واذكر نقطة قوة وقيداً باستخدام although، وقل لمن هو، واختم بتقييم.",
-              "accepted": [],
+              "accepted": ["Paper Boats is a family film that follows a girl who builds a radio to talk to her father at sea. The main character is played by a young actress who is very natural. The best part is the storm scene, which is beautiful and moving. Although the middle of the film is a little slow, the ending is strong. I recommend it to families and to anyone who likes quiet stories about courage. It is for children from ten years and for adults too. My rating: four out of five."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -24447,7 +24447,7 @@
                 "My cousin was bored, although she watches everything. Do you think it is only for older people?",
                 "So who do we tell to watch it, and who do we warn? Give me one sentence I can send."
               ],
-              "accepted": [],
+              "accepted": ["I agree, Omar. For me the best part was the storm, and the acting worked very well. Although my brother said it was too slow at the start, I think the first hour is important. The ending did not work for me, because it was too quick. We should tell people who like quiet films to watch it, but we should warn families with young children. Do you agree?"],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -24503,7 +24503,7 @@
               ],
               "prompt": "Give your own short spoken review of the film. Describe it with who, which or that, give a balanced opinion with although, and recommend it without revealing the ending.",
               "promptAr": "قدّم مراجعتكَ المنطوقة القصيرة للفيلم. صفه مستخدماً who أو which أو that، وقدّم رأياً متوازناً باستخدام although، وأوصِ به من دون كشف النهاية.",
-              "accepted": [],
+              "accepted": ["This is a film about a woman who repairs radios in a small town by the sea. The story, which happens over one long winter, is quiet but moving. Although the start is slow and the ending feels too quick, the acting is excellent. I recommend it to anyone who likes stories about ordinary people. I won't tell you how it ends; you should watch it yourself."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -24563,7 +24563,7 @@
               "prompt": "Your uncle does not read English and is choosing a film for Friday. Relay what the board says about the film, what the audience wrote, and which showing suits him.",
               "promptAr": "عمّكَ لا يقرأ الإنجليزية وهو يختار فيلماً ليوم الجمعة. انقل له ما تقوله اللوحة عن الفيلم، وما كتبه الجمهور، وأي عرض يناسبه.",
               "sourceCard": "Festival board, The Ninth Floor: Best First Film. Audience score four out of five. Comments on the board read moving, slow at the start and not for small children. Two showings left: Friday at four with Arabic subtitles, Saturday at nine without.",
-              "accepted": [],
+              "accepted": ["Uncle, the festival board says The Ninth Floor won Best First Film. The audience score is four out of five. People wrote that it is moving, slow at the start and not for small children. There are two showings left: Friday at four with Arabic subtitles, and Saturday at nine without subtitles. The Friday showing suits you, because of the subtitles."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -24615,7 +24615,7 @@
               ],
               "prompt": "Write the review your friends will read before they book. Summarise the story without the ending, give a balanced opinion, name the audience it suits, and add your rating.",
               "promptAr": "اكتب المراجعة التي سيقرؤها أصدقاؤك قبل الحجز. لخّص القصة من دون النهاية، وقدّم رأياً متوازناً، وحدّد الجمهور الذي يناسبه، وأضف تقييمك.",
-              "accepted": [],
+              "accepted": ["The Ninth Floor is a film about a woman who repairs lifts in an old building. One night a storm cuts the power, and she is trapped on the ninth floor with a boy who cannot speak. The story is slow at the start, but it becomes moving and strong. Although the ending is too quick, the acting is excellent and the music is beautiful. I recommend it to anyone who likes quiet, serious films, but it is not for small children. My rating: four out of five."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -24861,7 +24861,7 @@
               ],
               "prompt": "Something in your street stopped working after bad weather. Say what happened, what caused it, and two results the people there are living with today.",
               "promptAr": "توقّف شيء في شارعكَ عن العمل بعد طقس سيئ. قل ماذا حدث وما سببه، ونتيجتين يعيشهما الناس هناك اليوم.",
-              "accepted": [],
+              "accepted": ["After the storm last week, the power went off in our street. A tree fell on the line because of the strong wind. As a result, nobody has electricity in the evening, and we have to cook on gas. The lift doesn't work either, so the old people can't go out."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -25061,7 +25061,7 @@
                 "All right, say it does happen. What actually goes wrong if we leave it another week?",
                 "Fine. Tell me exactly what you will do, and what you want me to do."
               ],
-              "accepted": [],
+              "accepted": ["Rania, if nobody reports the drain, the water will come into the ground floor when it rains again, and it will reach the shop. If we wait another week, the road will flood. So I'll send the photos to the council tonight and ring them tomorrow. Could you talk to the shop owner and take more photos before Thursday?"],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -25257,7 +25257,7 @@
               ],
               "prompt": "A friend asks about tomorrow before a long journey. Say one thing the weather will almost certainly do, two things it may or might do, and what you will change because of them.",
               "promptAr": "يسألكَ صديق عن الغد قبل رحلة طويلة. قل أمراً سيفعله الطقس بشبه تأكيد، وأمرين قد يفعلهما، وما ستغيّره بسببهما.",
-              "accepted": [],
+              "accepted": ["Tomorrow it will certainly be cold in the morning, about five degrees. It may rain in the afternoon, and there might be fog on the road near the river. So I'll leave earlier, at six instead of eight, and I'll take a warm coat and a torch."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -25455,7 +25455,7 @@
               ],
               "prompt": "Fill in the reporting form for a problem in your own street. Say where it is, what you can see, how long nothing has happened, and what you have already tried. Use someone, something, anyone and nobody where they fit, and add nothing you have not seen yourself.",
               "promptAr": "املأ استمارة الإبلاغ عن مشكلة في شارعكَ. اذكر أين هي، وما الذي تراه، ومنذ متى لم يحدث شيء، وما الذي جرّبته بالفعل. استعمل someone و something و anyone و nobody في مواضعها، ولا تضف شيئاً لم ترَه بنفسكَ.",
-              "accepted": [],
+              "accepted": ["Problem report: there is a pile of rubbish bags blocking the path behind number twelve, Al-Wahda Street. Someone left about ten bags there two weeks ago, and nobody has collected them. Nothing has happened since, and something smells bad now. There is also a broken fence next to the bags. I rang the council twice last week and left a message, but nobody answered. I knocked on the door of number twelve too, but no one was at home. Please send someone this week."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -25682,7 +25682,7 @@
                 "That is one idea. What else could we do, and what would it cost us?",
                 "All right. Say which one you want, and I will go along with it."
               ],
-              "accepted": [],
+              "accepted": ["Samah, we could do two things. One idea is to move the boxes to the storeroom ourselves, to keep the path safe for the children. Or we could leave him a polite note and wait until Sunday, to avoid an argument. The first costs us an hour, the second costs nothing. I'd rather move them, because someone could fall. Agreed? Let's do it this evening."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -25871,7 +25871,7 @@
               "prompt": "Your neighbour does not read English, and the park notice is in English only. Tell her what has closed and why, what may happen on Sunday, which way in to use, and what the park says it is not responsible for.",
               "promptAr": "جارتكَ لا تقرأ الإنجليزية، وإعلان الحديقة بالإنجليزية وحدها. أخبرها بما أُغلق ولماذا، وما قد يحدث يوم الأحد، وأي مدخل تستعمل، وما الذي تقول الحديقة إنها غير مسؤولة عنه.",
               "sourceCard": "City Parks notice: the riverside path is closed until further notice after flood damage. Sunday may be wet again, and the lower gate might not open. Use the east gate and the hard path. Anything left on the grass is not our responsibility.",
-              "accepted": [],
+              "accepted": ["The park notice says the riverside path is closed until further notice, because of flood damage. Sunday may be wet again, and the lower gate might not open. You should use the east gate and the hard path. Also, the park is not responsible for anything left on the grass, so don't leave your things there."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -25925,7 +25925,7 @@
               ],
               "prompt": "Now write your own message to your building before a bad-weather weekend. Say what is likely and what may happen, give two instructions with a reason for each, and make one suggestion the neighbours can agree to. Keep to what Salwa covers, and invent no new services.",
               "promptAr": "اكتب الآن رسالتكَ إلى سكان بنايتكَ قبل عطلة نهاية أسبوع سيئة الطقس. اذكر ما هو مرجّح وما قد يحدث، وأعطِ تعليمتين مع سبب لكل منهما، وقدّم اقتراحاً واحداً يمكن للجيران الموافقة عليه. اقتصر على ما تناولته سلوى، ولا تخترع خدمات جديدة.",
-              "accepted": [],
+              "accepted": ["Hello neighbours! Bad weather is likely this weekend. Heavy rain will probably start on Friday night, and the power may go off for a few hours on Saturday. Please move your cars from the lower car park, because it floods when it rains. Please also close the windows on the stairs, so that the water doesn't come in. I suggest we check on Um Ahmed on the ground floor on Saturday morning. Shall we take turns? Stay safe!"],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -26052,7 +26052,7 @@
                 "Both of those cost us something. Which would you choose, and why?",
                 "Fine — say it clearly, because I am going to repeat it to forty people."
               ],
-              "accepted": [],
+              "accepted": ["The forecast says rain is likely all morning, and there might be thunder after two. We could move the stalls from the grass to the hard path, or we could open an hour later and finish early. I'd rather move the stalls, because the grass is already soft and the path is safer. Agreed? Then let's announce the hard path."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -26111,7 +26111,7 @@
               ],
               "prompt": "Stand in front of the stallholders and give them the plan. Say what will happen, what might happen, what each person should do, and the reason behind it.",
               "promptAr": "قف أمام أصحاب الأكشاك وقدّم لهم الخطة. قل ما سيحدث وما قد يحدث وما ينبغي لكل شخص فعله والسبب وراء ذلك.",
-              "accepted": [],
+              "accepted": ["Good morning, everyone. Rain will probably continue all morning, so the grass will be too soft for stalls. There might be thunder after two. Every stall will move to the hard path, and the food stalls will go to the top field. If thunder starts, please close your stall and go to the sports hall. Please don't move the barriers by the water, because the river is high. This is for your safety, so thank you."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -26172,7 +26172,7 @@
               "prompt": "Umm Zaid runs the food stall and does not read English. Tell her what the safety card says: where she may set up, what to do if thunder starts, two things she must not do, and who to call. Add no advice of your own.",
               "promptAr": "تدير أم زيد كشك الطعام ولا تقرأ الإنجليزية. أخبرها بما تقوله بطاقة السلامة: أين يجوز لها أن تنصب الكشك، وماذا تفعل إذا بدأ الرعد، وأمرين يجب ألا تفعلهما، وبمن تتصل. ولا تضف نصيحة من عندكَ.",
               "sourceCard": "Stallholder safety card: set up on the hard path only. If thunder starts, close the stall and go to the sports hall. Do not move the barriers by the water, and do not use a gas ring under a tent. Any problem, call the desk on two-two-one.",
-              "accepted": [],
+              "accepted": ["Umm Zaid, the safety card says this. Set up your stall on the hard path only, not on the grass. If thunder starts, close the stall and go to the sports hall. Do not move the barriers by the water, and do not use a gas ring under a tent. If there is any problem, call the desk on two-two-one."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -26223,7 +26223,7 @@
               ],
               "prompt": "Write the message that goes out to everyone who booked a place. Say what has changed and why, what may still happen, what people should do, and one thing they do not need to worry about. Use only what the notice, the forecast and the safety card told you.",
               "promptAr": "اكتب الرسالة التي سترسَل إلى كل من حجز مكاناً. اذكر ما الذي تغيّر ولماذا، وما قد يحدث بعد، وما ينبغي للناس فعله، وأمراً واحداً لا داعي لقلقهم بشأنه. استخدم فقط ما ورد في الإعلان والتوقعات وبطاقة السلامة.",
-              "accepted": [],
+              "accepted": ["Dear stallholders, the plan has changed. Because of the rain, the grass is too soft, so we have moved every stall to the hard path and the food stalls to the top field. Showers are likely all morning, and there might be thunder after two. If thunder starts, please close your stall and go to the sports hall. Please do not move the barriers by the water and do not use a gas ring under a tent. The wind will stay light, so the small tents are fine; you don't need to worry about them."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -26470,7 +26470,7 @@
               ],
               "prompt": "Invite a friend to something you are organising. Say what the occasion is, when and where it is, why you are having it, and what will happen if the weather turns bad.",
               "promptAr": "ادعُ صديقاً إلى شيء تنظّمه. قل ما المناسبة، ومتى وأين، ولماذا تقيمها، وماذا سيحدث إذا ساء الطقس.",
-              "accepted": [],
+              "accepted": ["Would you like to come to my parents' anniversary lunch? It's on Saturday at one o'clock, in our garden. We're having it because they have been married for thirty years. If it rains, we'll move everything inside, so come anyway!"],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -26693,7 +26693,7 @@
                 "I can manage two of those, but not the heavy box on my own.",
                 "Fine. So what are you doing yourself, and what time do you want me there?"
               ],
-              "accepted": [],
+              "accepted": ["Thanks, Basma. Could you bring the plates and cups from the hall? And would you mind collecting the cake from the bakery at noon? Could you also help me set up the tables? I'll carry the heavy box myself and I'll organise the music. Let's meet at the venue at four o'clock, an hour before we open."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -26910,7 +26910,7 @@
               ],
               "prompt": "It is the morning of an event you are running. Tell the team where things stand: one thing that has just happened, two that are already done, and one that has not happened yet.",
               "promptAr": "إنه صباح يوم فعالية تديرها. أخبر الفريق أين وصلت الأمور: شيء حدث للتو، وشيئان تمّا بالفعل، وشيء لم يحدث بعد.",
-              "accepted": [],
+              "accepted": ["Good morning, team. The flowers have just arrived, a minute ago. The hall is already booked and the chairs are already in place. I've done the name cards too. But the food hasn't arrived yet, and nobody has collected the key for the kitchen. Let's do that now."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -27127,7 +27127,7 @@
               ],
               "prompt": "Two invitations have arrived for the same evening. Write both replies: accept the first warmly and say what time you will arrive, then decline the second politely with a real reason and an offer for another time.",
               "promptAr": "وصلتكَ دعوتان لليلة نفسها. اكتب الردّين: اقبل الأولى بحفاوة مع ذكر وقت وصولكَ، ثم اعتذر عن الثانية بأدب مع سبب حقيقي واقتراح موعد آخر.",
-              "accepted": [],
+              "accepted": ["Dear Huda, thank you for the invitation. I'd love to come to your dinner on Friday! I will be there at seven, and I'll bring a dessert. Dear Mr Kamal, thank you very much for inviting me to the club evening on Friday. Unfortunately I can't make it, because I have already accepted a dinner with my cousin at the same time. I'm sorry. If you do it again next month, please tell me; I would love to come another time. I hope it goes well."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -27345,7 +27345,7 @@
                 "So what has actually changed, and what stays the same?",
                 "All right. And are you still going yourself?"
               ],
-              "accepted": [],
+              "accepted": ["No, Jalal, Saturday isn't cancelled. Only the place has changed. The hall has no heating this week, because the boiler broke, so we'll meet at the library instead. The time is the same, five o'clock, and the food is the same too. Yes, I'm still going. Tell your brother to come!"],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -27541,7 +27541,7 @@
               "prompt": "Your neighbour does not read English. Tell her what the hall has written: the hours the room is theirs, what is already in the room, the one thing that does not work, and what has to happen at the end of the day.",
               "promptAr": "جارتكِ لا تقرأ الإنجليزية. أخبريها بما كتبته إدارة القاعة: ساعات استخدام الغرفة، وما الموجود فيها أصلاً، والشيء الوحيد المعطّل، وما يجب فعله في نهاية اليوم.",
               "sourceCard": "Note from the hall: you may use the room from twelve until six on Saturday. The kitchen is included, however the big oven is broken. Tables and sixty chairs are already there. Please leave the room as you found it, and return the key to the shop next door.",
-              "accepted": [],
+              "accepted": ["The hall wrote this. You may use the room from twelve until six on Saturday. The kitchen is included, but the big oven is broken, so it doesn't work. Tables and sixty chairs are already there. At the end of the day you must leave the room as you found it and return the key to the shop next door."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -27597,7 +27597,7 @@
               ],
               "prompt": "Now write your own event message to a group you belong to. Give the occasion, the date, the time and the place, one thing that is already arranged and one that is not arranged yet, what you need in the reply, and how to contact you.",
               "promptAr": "اكتب الآن رسالة فعاليتكَ إلى مجموعة تنتمي إليها. اذكر المناسبة والتاريخ والوقت والمكان، وأمراً رُتّب بالفعل وأمراً لم يُرتّب بعد، وما تحتاجه في الرد، وكيف يتواصلون معكَ.",
-              "accepted": [],
+              "accepted": ["Dear reading group, you are invited to our end-of-year dinner! It's on Friday the twentieth at seven o'clock, at the Oak Centre on Mill Road. We have already booked the room and the food, and the music is arranged. But nobody has organised the transport yet, so if you can drive, please tell us. In your reply, please say how many people are coming and if anyone needs special food. Reply by Monday. You can ring me on the number below."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -27735,7 +27735,7 @@
                 "The Oak Centre? I thought it was at River Hall at four. What happened?",
                 "I can come, but not for the whole evening. Tell me what you still need, and I'll say what I can do."
               ],
-              "accepted": [],
+              "accepted": ["Hi Widad, welcome back! We'd love you to come on Saturday. It's at the Oak Centre on Mill Road now, at five o'clock, not four. River Hall is closed for repairs until the autumn, so we moved. That's fine, come when you can. We still need someone to collect the cake at four. Could you do that?"],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -27796,7 +27796,7 @@
               ],
               "prompt": "Present the final plan to the team in under a minute: the new place and time, what has already been arranged, what is not arranged yet, and who is doing each job.",
               "promptAr": "قدّم الخطة النهائية للفريق في أقل من دقيقة: المكان والوقت الجديدين، وما رُتّب بالفعل، وما لم يُرتّب بعد، ومن يتولى كل مهمة.",
-              "accepted": [],
+              "accepted": ["Here is the final plan. We have moved to the Oak Centre on Mill Road, on Saturday at five o'clock. The room is already booked, the food is arranged, and I've confirmed the guest list. The flowers haven't arrived yet, and nobody has collected the key. Thurayya is bringing the plates and collecting the cake. Munir is doing the music and will collect the key. I'll welcome the guests at the door."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -27861,7 +27861,7 @@
               "prompt": "Umm Zahra does not read English. Tell her what the Oak Centre has written: when she can come in and how long the room is yours, where to leave the car, what is included, and the one thing nobody may do.",
               "promptAr": "أم زهراء لا تقرأ الإنجليزية. أخبرها بما كتبه مركز أوك: متى يمكنها الدخول وكم من الوقت الغرفة لكم، وأين تترك السيارة، وما المشمول، والشيء الوحيد الممنوع.",
               "sourceCard": "Oak Centre, note for the organiser: doors open at half past four, and the room is yours until nine. There is no parking on Mill Road, so use the school car park opposite. Tea and coffee are included. Please do not move the piano.",
-              "accepted": [],
+              "accepted": ["Umm Zahra, the Oak Centre wrote this. The doors open at half past four, and the room is yours until nine o'clock. There is no parking on Mill Road, so leave the car at the school car park opposite. Tea and coffee are included, so we don't pay for them. And one rule: nobody may move the piano."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -27917,7 +27917,7 @@
               ],
               "prompt": "The invitation you sent last week is now wrong. Write the message that replaces it: apologise for the change, say why it happened, give the new place and time, say what has not changed, name the two jobs you still need, and ask for a reply by Thursday.",
               "promptAr": "الدعوة التي أرسلتها الأسبوع الماضي صارت خاطئة. اكتب الرسالة التي تحل محلها: اعتذر عن التغيير، واذكر سببه، وأعطِ المكان والوقت الجديدين، وقل ما لم يتغيّر، وسمِّ المهمتين اللتين ما زلت تحتاجهما، واطلب الرد قبل الخميس.",
-              "accepted": [],
+              "accepted": ["Dear friends, I'm sorry, but the invitation I sent last week is now wrong. River Hall is closed for repairs until the autumn, so we have moved. The new place is the Oak Centre on Mill Road, and we start at five o'clock, not four. The date, the cooking and the price have not changed; it is still on Saturday. We still need two jobs done: someone to collect the key and someone to help with the chairs. Please reply by Thursday and tell me if you can come. Apologies for the short notice."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [

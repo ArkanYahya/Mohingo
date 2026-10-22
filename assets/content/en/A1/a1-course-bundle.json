@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "contentVersion": "A1-COMPLETE-2026.09.22-3",
+  "contentVersion": "A1-COMPLETE-2026.10.22",
   "locale": {
     "targetLanguage": "en",
     "supportLanguage": "ar",
@@ -8900,7 +8900,7 @@
               ],
               "prompt": "Say hello and ask to join the English class.",
               "promptAr": "قل مرحباً واطلب الانضمام إلى صف الإنجليزية.",
-              "accepted": [],
+              "accepted": ["Good morning! Hello. I want to join the English class, please."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -9051,7 +9051,7 @@
                 "A1.U1.PRODUCTION.INTRODUCE_SELF"
               ],
               "prompt": "Introduce yourself.",
-              "accepted": [],
+              "accepted": ["Hello! My name is Omar. I'm from Iraq."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -9169,7 +9169,7 @@
                 "A1.U1.PRODUCTION.STATE_ORIGIN"
               ],
               "prompt": "Say where you are from.",
-              "accepted": [],
+              "accepted": ["I'm from Iraq. I'm from Baghdad."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -9317,7 +9317,7 @@
                 "A1.U1.PRODUCTION.STATE_RESIDENCE"
               ],
               "prompt": "Say where you live.",
-              "accepted": [],
+              "accepted": ["I live in Baghdad, in Iraq."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -9621,7 +9621,7 @@
                 "A1.U1.PRODUCTION.STATE_JOB"
               ],
               "prompt": "Say your job. If you do not work, say you are a student.",
-              "accepted": [],
+              "accepted": ["I'm a teacher. I work in a school."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -9851,7 +9851,7 @@
                 "A1.U1.PRODUCTION.INTRODUCE_SELF"
               ],
               "prompt": "Answer Daniel. Say your name.",
-              "accepted": [],
+              "accepted": ["Hi, Daniel. Nice to meet you. My name is Omar."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -9881,7 +9881,7 @@
                 "A1.U1.PRODUCTION.STATE_ORIGIN"
               ],
               "prompt": "Answer Daniel. Say where you are from.",
-              "accepted": [],
+              "accepted": ["Nice to meet you too. I'm from Iraq, from Basra."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -9912,7 +9912,7 @@
                 "A1.U1.PRODUCTION.STATE_RESIDENCE"
               ],
               "prompt": "Answer Daniel. Say where you live.",
-              "accepted": [],
+              "accepted": ["I live in Basra now, with my family."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -10199,7 +10199,7 @@
               ],
               "prompt": "Introduce two people in your family. You may use fictional names.",
               "promptAr": "قدّم شخصين من عائلتك، ويمكنك استخدام أسماء افتراضية.",
-              "accepted": [],
+              "accepted": ["This is my mother, Lina. And this is my brother, Sami. He's a student."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -10409,7 +10409,7 @@
               ],
               "prompt": "Say how many brothers or sisters you have and give one age. You may invent the details.",
               "promptAr": "اذكر عدد إخوتك أو أخواتك وعمر أحدهم، ويمكنك اختلاق التفاصيل.",
-              "accepted": [],
+              "accepted": ["I have two brothers and one sister. My sister is twelve years old."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -10769,7 +10769,7 @@
               ],
               "prompt": "Describe one person with two adjectives joined by and or but.",
               "promptAr": "صف شخصاً بصفتين مربوطتين بـand أو but.",
-              "accepted": [],
+              "accepted": ["My friend Huda is kind and funny."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -10936,7 +10936,7 @@
               ],
               "prompt": "Use we once and they once to describe people.",
               "promptAr": "استخدم we مرة وthey مرة لوصف أشخاص.",
-              "accepted": [],
+              "accepted": ["We are students. We study English. They are my neighbours. They are very friendly."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -11048,7 +11048,7 @@
               ],
               "prompt": "Write 4–6 short sentences about one person. Include relationship, name, age and two adjectives. You may invent the person.",
               "promptAr": "اكتب 4–6 جمل قصيرة عن شخص واحد، تشمل العلاقة والاسم والعمر وصفتين. يمكنك اختلاق الشخص.",
-              "accepted": [],
+              "accepted": ["This is my brother. His name is Sami. He is twenty years old. Sami is a student in Baghdad. He is tall and he is very funny. He is my good friend too."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -11096,7 +11096,7 @@
               ],
               "prompt": "Give a short spoken profile of one person.",
               "promptAr": "قدّم وصفاً شفهياً قصيراً لشخص.",
-              "accepted": [],
+              "accepted": ["This is my sister Noor. She's eighteen years old. She's a student. Noor is kind and quiet."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -11202,7 +11202,7 @@
               ],
               "prompt": "Explain the people map so a new friend can understand who everyone is.",
               "promptAr": "اشرح خريطة الأشخاص كي يفهم صديق جديد من يكون كل شخص.",
-              "accepted": [],
+              "accepted": ["This is Omar. Sami and Lina are his parents. Noor is his sister. She's eighteen and she's a student. Huda is his friend. She's a nurse."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -11282,7 +11282,7 @@
               ],
               "prompt": "Give the age and two qualities of one person.",
               "promptAr": "اذكر عمر شخص وصفتيه.",
-              "accepted": [],
+              "accepted": ["My father is fifty years old. He is kind and funny."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -11317,7 +11317,7 @@
               ],
               "prompt": "Write a 35–55-word explanation of your people map.",
               "promptAr": "اكتب شرحاً من 35–55 كلمة لخريطة الأشخاص.",
-              "accepted": [],
+              "accepted": ["This is my people map. Sami and Lina are my parents. Sami is my father and Lina is my mother. Noor is my sister. She's eighteen and she's a student. Huda is my friend. She's twenty and she's a nurse."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -11563,7 +11563,7 @@
               ],
               "prompt": "Name three rooms in a home using There is....",
               "promptAr": "اذكر ثلاث غرف في منزل مستخدماً There is....",
-              "accepted": [],
+              "accepted": ["There is a kitchen. There is a bedroom. There is a bathroom."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -11742,7 +11742,7 @@
               ],
               "prompt": "Describe a room with one There is sentence, one There are sentence and one negative sentence.",
               "promptAr": "صف غرفة بجملة There is وجملة There are وجملة منفية.",
-              "accepted": [],
+              "accepted": ["There is a bed in my room. There are two chairs. There isn't a TV."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -11928,7 +11928,7 @@
               ],
               "prompt": "Locate three objects using three different place phrases.",
               "promptAr": "حدد مكان ثلاثة أشياء باستخدام ثلاث عبارات مكان مختلفة.",
-              "accepted": [],
+              "accepted": ["The keys are on the table. The bag is under the chair. The book is next to the lamp."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -12111,7 +12111,7 @@
               ],
               "prompt": "Point out one near object and one far object.",
               "promptAr": "أشر إلى شيء قريب وآخر بعيد.",
-              "accepted": [],
+              "accepted": ["This is my bag. Those are my books on the shelf."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -12423,7 +12423,7 @@
               ],
               "prompt": "Write 5–7 sentences about a real or imaginary room. Include existence, quantity, location and one description.",
               "promptAr": "اكتب 5–7 جمل عن غرفة حقيقية أو خيالية، تشمل الوجود والعدد والمكان ووصفاً واحداً.",
-              "accepted": [],
+              "accepted": ["My room is small but nice. There is a bed next to the window. There are two chairs and a desk. The desk is in front of the window. My books are on the desk. There is a lamp under the shelf. The room is quiet."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -12462,7 +12462,7 @@
               ],
               "prompt": "Give a short tour of one room.",
               "promptAr": "قدّم جولة قصيرة في غرفة واحدة.",
-              "accepted": [],
+              "accepted": ["This is my room. There is a bed next to the window. There are two chairs in front of the desk. My books are on the shelf."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -12564,7 +12564,7 @@
               ],
               "prompt": "Use plan C to help your friend understand the apartment. Welcome them and describe three rooms.",
               "promptAr": "استخدم المخطط C لمساعدة صديقك على فهم الشقة. رحّب به وصف ثلاث غرف.",
-              "accepted": [],
+              "accepted": ["Welcome to my home! This is the kitchen, next to the living room. There are two bedrooms. The big bedroom has a window. And there is a small garden behind the home."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -12597,7 +12597,7 @@
               ],
               "prompt": "Describe four objects: include one singular, one plural and two locations.",
               "promptAr": "صف أربعة أشياء: مفرداً واحداً وجمعاً واحداً وموقعين.",
-              "accepted": [],
+              "accepted": ["There is a lamp on the desk. There are two chairs next to the table. The bag is under the chair. The keys are in the bag."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -12650,7 +12650,7 @@
               ],
               "prompt": "You find a phone. Ask if it belongs to your friend, then respond when they say no.",
               "promptAr": "تجد هاتفاً. اسأل هل يخص صديقك ثم استجب عندما يقول لا.",
-              "accepted": [],
+              "accepted": ["It's a phone. Is this your phone? Oh, it isn't mine. It's not my phone."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -12687,7 +12687,7 @@
               ],
               "prompt": "Write a 45–70-word message describing apartment plan C to a friend.",
               "promptAr": "اكتب رسالة من 45–70 كلمة تصف المخطط C لصديق.",
-              "accepted": [],
+              "accepted": ["Hi Sara! Here is apartment plan C. There are two bedrooms and one bathroom. The kitchen is next to the living room. There is a small garden behind the home. The big bedroom has a window. The keys are on the kitchen table. Come and see it!"],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -12901,7 +12901,7 @@
               ],
               "prompt": "Say four things you do in the morning.",
               "promptAr": "اذكر أربعة أشياء تفعلها صباحاً.",
-              "accepted": [],
+              "accepted": ["In the morning I get up at six. Then I wash my face. I get dressed. After that I have breakfast."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -13086,7 +13086,7 @@
               ],
               "prompt": "Ask someone what time they have breakfast, then give your own time.",
               "promptAr": "اسأل شخصاً متى يتناول الفطور ثم اذكر وقتك.",
-              "accepted": [],
+              "accepted": ["Good morning, Maya! What time do you have breakfast? I have breakfast at seven thirty."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -13255,7 +13255,7 @@
               ],
               "prompt": "Describe three parts of another person's day using he or she.",
               "promptAr": "صف ثلاثة أجزاء من يوم شخص آخر مستخدماً he أو she.",
-              "accepted": [],
+              "accepted": ["My brother gets up at seven. He starts work at eight. He goes home at five."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -13424,7 +13424,7 @@
               ],
               "prompt": "Ask two routine questions: one with you and one about he or she.",
               "promptAr": "اطرح سؤالين عن الروتين: أحدهما مع you والآخر عن he أو she.",
-              "accepted": [],
+              "accepted": ["What time do you get up? And does he get up late every day?"],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -13597,7 +13597,7 @@
               ],
               "prompt": "Say three routine facts using three different frequency words.",
               "promptAr": "اذكر ثلاث حقائق عن الروتين مستخدماً ثلاث كلمات تكرار مختلفة.",
-              "accepted": [],
+              "accepted": ["I always get up at six. I usually have breakfast at home. I never work at the weekend."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -13755,7 +13755,7 @@
               ],
               "prompt": "Write 5–7 sentences about your or a fictional person's routine. Include times, sequence and frequency.",
               "promptAr": "اكتب 5–7 جمل عن روتينك أو روتين شخص خيالي، مع الوقت والترتيب والتكرار.",
-              "accepted": [],
+              "accepted": ["My friend Rana has a busy routine. She always gets up at six thirty. First she has breakfast at seven. Then she goes to work at eight. She usually has lunch at twelve. After that she works until three. In the evening she sometimes reads a book. She never works at the weekend."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -13875,7 +13875,7 @@
               ],
               "prompt": "Ask for Rana's lunch time.",
               "promptAr": "اسأل عن وقت غداء رنا.",
-              "accepted": [],
+              "accepted": ["Thank you. And what time does Rana have lunch?"],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -13906,7 +13906,7 @@
               ],
               "prompt": "Explain three differences between the two routines.",
               "promptAr": "اشرح ثلاثة اختلافات بين الروتينين.",
-              "accepted": [],
+              "accepted": ["Rana gets up earlier than Hassan, at six thirty. Hassan starts work later, at eight. Rana has lunch at twelve, but Hassan has lunch at one. Hassan finishes before Rana."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -13939,7 +13939,7 @@
               ],
               "prompt": "Write a 45–70-word comparison of the routines.",
               "promptAr": "اكتب مقارنة من 45–70 كلمة بين الروتينين.",
-              "accepted": [],
+              "accepted": ["Rana and Hassan have different routines. Rana gets up at six thirty, but Hassan gets up at seven. Rana starts work earlier, at seven thirty, while Hassan starts at eight. Rana has lunch at twelve and Hassan has lunch at one. Hassan finishes work at two, before Rana. Rana finishes later, at three."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -14183,7 +14183,7 @@
               ],
               "prompt": "Say two things you like and one thing you don't like.",
               "promptAr": "اذكر شيئين تحبهما وشيئاً لا تحبه.",
-              "accepted": [],
+              "accepted": ["I like football and I love music. I don't like tennis."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -14357,7 +14357,7 @@
               ],
               "prompt": "Describe three free-time activities using like, love or hate plus -ing.",
               "promptAr": "صف ثلاثة أنشطة مستخدماً like أو love أو hate مع -ing.",
-              "accepted": [],
+              "accepted": ["I love swimming. I like reading in the evening. I hate running."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -14533,7 +14533,7 @@
               ],
               "prompt": "Ask two ability questions and answer them.",
               "promptAr": "اطرح سؤالين عن القدرة وأجب عنهما.",
-              "accepted": [],
+              "accepted": ["Can you swim? Yes, I can swim. Can you play tennis? No, I can't play tennis."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -14703,7 +14703,7 @@
               ],
               "prompt": "Ask what someone likes, then give a negative answer about one activity.",
               "promptAr": "اسأل ماذا يحب شخص ثم أعط إجابة منفية عن نشاط.",
-              "accepted": [],
+              "accepted": ["What do you like? Do you like running? I don't like running. I like football."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -14881,7 +14881,7 @@
               ],
               "prompt": "Invite someone to one activity and respond naturally to acceptance or refusal.",
               "promptAr": "ادع شخصاً إلى نشاط واستجب بصورة طبيعية للقبول أو الرفض.",
-              "accepted": [],
+              "accepted": ["Yes, I'm free. Would you like to go to the park? Oh, sorry. OK, tomorrow is good."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -15042,7 +15042,7 @@
               ],
               "prompt": "Write a 35–55-word message about what you like and invite a friend to one activity.",
               "promptAr": "اكتب رسالة من 35–55 كلمة عن ما تحب وادع صديقاً إلى نشاط.",
-              "accepted": [],
+              "accepted": ["Hi Lina! I like music and I love films. My hobby is swimming. In my free time I read books. At the weekend I'm free. Would you like to come to the cinema with me on Saturday? Let's go together!"],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -15151,7 +15151,7 @@
               ],
               "prompt": "Invite Omar to the shared activity and suggest a time.",
               "promptAr": "ادع عمر إلى النشاط المشترك واقترح وقتاً.",
-              "accepted": [],
+              "accepted": ["Hi Omar! Would you like to see a film on Saturday? The film is at four o'clock. Let's meet at the cinema at three thirty."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -15184,7 +15184,7 @@
               ],
               "prompt": "Explain why this activity works for both friends.",
               "promptAr": "اشرح لماذا يناسب هذا النشاط الصديقين.",
-              "accepted": [],
+              "accepted": ["This activity is good because both friends like films. Lina can't swim and Omar can't play tennis, so a film is good for both. They are both free on Saturday afternoon."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -15215,7 +15215,7 @@
               ],
               "prompt": "Write a 40–60-word confirmation message with activity, place and time.",
               "promptAr": "اكتب رسالة تأكيد من 40–60 كلمة تشمل النشاط والمكان والوقت.",
-              "accepted": [],
+              "accepted": ["Hi Omar! Great, I'm happy. Let's confirm our plan: a film on Saturday afternoon. We meet at the cinema next to the park at three thirty. The film starts at four o'clock. I'm looking forward to it. See you on Saturday!"],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -15456,7 +15456,7 @@
               ],
               "prompt": "Describe a simple meal with three foods.",
               "promptAr": "صف وجبة بسيطة تحتوي على ثلاثة أطعمة.",
-              "accepted": [],
+              "accepted": ["For lunch I have chicken with rice and a salad. I eat bread too."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -15636,7 +15636,7 @@
               ],
               "prompt": "Ask for one food or drink with any, then answer with some or a negative.",
               "promptAr": "اسأل عن طعام أو شراب مستخدماً any ثم أجب بـsome أو النفي.",
-              "accepted": [],
+              "accepted": ["Do you have any eggs? Yes, I have some eggs. Do we have any juice? No, we don't have any juice."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -15823,7 +15823,7 @@
               ],
               "prompt": "State three quantities using container of or a number.",
               "promptAr": "اذكر ثلاث كميات مستخدماً وعاءً أو عدداً.",
-              "accepted": [],
+              "accepted": ["We need a bottle of water, two cups of coffee and three apples."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -16008,7 +16008,7 @@
               ],
               "prompt": "Order one meal and one drink politely, then close the order.",
               "promptAr": "اطلب وجبة وشراباً بأدب ثم أنهِ الطلب.",
-              "accepted": [],
+              "accepted": ["Yes, please. I'd like chicken and rice. And a glass of orange juice, please. No, that's all. Thank you."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -16200,7 +16200,7 @@
               ],
               "prompt": "Politely report a wrong or missing item and state the correct item.",
               "promptAr": "أبلغ بأدب عن شيء خاطئ أو ناقص واذكر الشيء الصحيح.",
-              "accepted": [],
+              "accepted": ["Excuse me, this isn't my order. I ordered a salad and a coffee, not chicken and tea."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -16359,7 +16359,7 @@
               ],
               "prompt": "Write a 30–45-word café order with quantities, food, drink and one polite closing.",
               "promptAr": "اكتب طلباً من 30–45 كلمة يتضمن الكمية والطعام والشراب وختاماً مهذباً.",
-              "accepted": [],
+              "accepted": ["Hello! I'd like two cheese sandwiches and one chicken salad, please. Can I have a bottle of water and two cups of tea? Also one apple, please. That's all for me. Thank you very much!"],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -16481,7 +16481,7 @@
               ],
               "prompt": "Place the complete order politely.",
               "promptAr": "قدّم الطلب الكامل بأدب.",
-              "accepted": [],
+              "accepted": ["Hello. I'd like two cheese sandwiches, please. And two cups of tea, please. Thank you."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -16534,7 +16534,7 @@
               ],
               "prompt": "Explain the original order and the correction needed to the waiter.",
               "promptAr": "اشرح للنادل الطلب الأصلي والتصحيح المطلوب.",
-              "accepted": [],
+              "accepted": ["Excuse me. I ordered two cheese sandwiches and one tea. The tea is right, but the sandwiches are not right. These are chicken sandwiches, not cheese."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -16565,7 +16565,7 @@
               ],
               "prompt": "Write a 35–50-word final order confirmation including corrected items and quantities.",
               "promptAr": "اكتب تأكيداً نهائياً من 35–50 كلمة يشمل الأصناف والكميات المصححة.",
-              "accepted": [],
+              "accepted": ["Hello. This is my final order. I ordered two cheese sandwiches and one tea, but I have two chicken sandwiches. Please change the sandwiches: two cheese sandwiches, not chicken. The tea is right, so one tea. Thank you very much!"],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -16785,7 +16785,7 @@
               ],
               "prompt": "Ask the price of one item and one pair of items.",
               "promptAr": "اسأل عن سعر قطعة واحدة وقطع بصيغة الجمع.",
-              "accepted": [],
+              "accepted": ["Hello. How much is the bag? And how much are the shoes?"],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -16972,7 +16972,7 @@
               ],
               "prompt": "Ask for an item in a specific size and colour.",
               "promptAr": "اطلب قطعة بمقاس ولون محددين.",
-              "accepted": [],
+              "accepted": ["Yes, please. I'm looking for a shirt. I need a medium shirt in blue, please."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -17147,7 +17147,7 @@
               ],
               "prompt": "Choose one item, ask to try it on and say whether it fits.",
               "promptAr": "اختر قطعة واطلب تجربتها ثم قل هل تناسبك.",
-              "accepted": [],
+              "accepted": ["The blue one, please. Can I try it on? It's good. It fits. I like it."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -17323,7 +17323,7 @@
               ],
               "prompt": "Complete a purchase: select the item, ask the final price and choose payment.",
               "promptAr": "أكمل عملية شراء: اختر القطعة واسأل عن السعر النهائي وحدد الدفع.",
-              "accepted": [],
+              "accepted": ["Yes, that's everything. I'll take it. How much is it? OK, I pay by card, please."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -17502,7 +17502,7 @@
               ],
               "prompt": "Report one product problem and ask for a clear solution.",
               "promptAr": "أبلغ عن مشكلة في منتج واطلب حلاً واضحاً.",
-              "accepted": [],
+              "accepted": ["Hello. This shirt doesn't fit. It is too small. Can I change it for a large one? Yes, here is the receipt."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -17662,7 +17662,7 @@
               ],
               "prompt": "Write a 35–50-word shopping request with two products, specifications, budget and payment question.",
               "promptAr": "اكتب طلب تسوق من 35–50 كلمة يشمل منتجين ومواصفاتهما والميزانية وسؤال الدفع.",
-              "accepted": [],
+              "accepted": ["Hello. I need a blue shirt, size medium, and black trousers, size large. I'd like cotton, please. My budget is forty dollars only. Can I pay by card, or only cash? Thank you very much."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -17788,7 +17788,7 @@
               ],
               "prompt": "Ask for the correct sizes, confirm the items and pay by card.",
               "promptAr": "اطلب المقاسات الصحيحة وأكد القطع وادفع بالبطاقة.",
-              "accepted": [],
+              "accepted": ["Yes, the blue shirt and the black trousers, please. I need size medium for both. OK, thirty-three dollars. I pay by card, please."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -17845,7 +17845,7 @@
               ],
               "prompt": "Explain the purchase, budget and needed exchange to the assistant.",
               "promptAr": "اشرح عملية الشراء والميزانية والاستبدال المطلوب للموظف.",
-              "accepted": [],
+              "accepted": ["Hello. My budget was forty dollars. I bought a blue shirt and black trousers for thirty-three dollars by card. But the trousers are broken. Can I exchange them for the same size, please?"],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -17874,7 +17874,7 @@
               ],
               "prompt": "Write a 40–60-word record of the final purchase and exchange.",
               "promptAr": "اكتب سجلاً من 40–60 كلمة عن الشراء والاستبدال النهائي.",
-              "accepted": [],
+              "accepted": ["Today I bought a medium blue shirt for fifteen dollars and medium black trousers for eighteen dollars. The total was thirty-three dollars and I paid by card. My budget was forty dollars. The trousers are broken, so I need to exchange them for the same size. The shirt is fine."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -18099,7 +18099,7 @@
               ],
               "prompt": "Name four places in a real or fictional town and say what one place is for.",
               "promptAr": "اذكر أربعة أماكن في مدينة حقيقية أو خيالية ووظيفة أحدها.",
-              "accepted": [],
+              "accepted": ["In my town there is a bank, a pharmacy, a library and a supermarket. The supermarket is for food."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -18286,7 +18286,7 @@
               ],
               "prompt": "Ask where a place is and answer with two location details.",
               "promptAr": "اسأل عن مكان وأجب بتفصيلين عن الموقع.",
-              "accepted": [],
+              "accepted": ["Where is the pharmacy? The pharmacy is near the bank. It's opposite the library, on the corner."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -18467,7 +18467,7 @@
               ],
               "prompt": "Give a three-step route using straight, a turn and one landmark.",
               "promptAr": "أعط مساراً من ثلاث خطوات يشمل الاستمرار وانعطافاً ومعلماً.",
-              "accepted": [],
+              "accepted": ["Go straight on. Turn left at the bank. The library is next to the park."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -18644,7 +18644,7 @@
               ],
               "prompt": "Ask for directions, then give a four-step answer to a different place.",
               "promptAr": "اسأل عن اتجاهات ثم أعط إجابة من أربع خطوات إلى مكان آخر.",
-              "accepted": [],
+              "accepted": ["How do I get to the station? For the library: first, go straight. Then turn right at the bank. After that, go past the park. The library is on the left."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -18820,7 +18820,7 @@
               ],
               "prompt": "Explain the meaning of three simple public signs.",
               "promptAr": "اشرح معنى ثلاث إشارات عامة بسيطة.",
-              "accepted": [],
+              "accepted": ["Entrance means you go in here. Exit means you go out here. Closed means the shop is not open."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -18980,7 +18980,7 @@
               ],
               "prompt": "Write 45–65 words guiding someone from a known start point to a fictional destination, including one sign or entrance.",
               "promptAr": "اكتب 45–65 كلمة ترشد شخصاً من نقطة معلومة إلى وجهة خيالية، مع إشارة أو مدخل.",
-              "accepted": [],
+              "accepted": ["Hi Ali! Here is the way to the new café. Start at the station. Go straight on for two streets. Turn left at the bank. Then go past the park. The café is opposite the library, on the corner. Use the entrance on Green Street. The front door is closed today. See you there!"],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -19097,7 +19097,7 @@
               ],
               "prompt": "Ask how to get from the station to the library.",
               "promptAr": "اسأل كيف تصل من المحطة إلى المكتبة.",
-              "accepted": [],
+              "accepted": ["Yes, I'm at the station. How do I get to the library from here?"],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -19126,7 +19126,7 @@
               ],
               "prompt": "Give a route that visits the pharmacy, library and café in that order.",
               "promptAr": "أعط مساراً يزور الصيدلية والمكتبة والمقهى بهذا الترتيب.",
-              "accepted": [],
+              "accepted": ["First, go straight to the pharmacy on the corner. Then turn left to the library. After that, walk to the café next to the library."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -19160,7 +19160,7 @@
               ],
               "prompt": "Explain the route change caused by the closed entrance.",
               "promptAr": "اشرح تغيير المسار بسبب المدخل المغلق.",
-              "accepted": [],
+              "accepted": ["There is a change. The library's front entrance is closed today. So don't use the front door. Use the side entrance on Green Street instead, next to the café."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -19190,7 +19190,7 @@
               ],
               "prompt": "Write the final 50–75-word visitor route with landmarks and the usable entrance.",
               "promptAr": "اكتب المسار النهائي للزائر في 50–75 كلمة مع المعالم والمدخل المتاح.",
-              "accepted": [],
+              "accepted": ["Welcome! Here is your route. From the station, go straight on to the bank. Turn left at the bank. The library is opposite the bank. The front entrance is closed today, so use the side entrance on Green Street. It is next to the café. The café is a good landmark. Enjoy your visit!"],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -19405,7 +19405,7 @@
               ],
               "prompt": "Describe how three people travel using three different transport expressions.",
               "promptAr": "صف تنقل ثلاثة أشخاص بثلاث وسائل مختلفة.",
-              "accepted": [],
+              "accepted": ["My father goes to work by car. My sister goes to school by bus. I go to the shop on foot."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -19578,7 +19578,7 @@
               ],
               "prompt": "Buy a single or return ticket and confirm the destination and platform.",
               "promptAr": "اشتر تذكرة ذهاب أو عودة وأكد الوجهة والرصيف.",
-              "accepted": [],
+              "accepted": ["A return ticket to Central Station, please. Return, please. Platform four? Thank you."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -19766,7 +19766,7 @@
               ],
               "prompt": "Ask for the next departure, arrival time and platform.",
               "promptAr": "اسأل عن المغادرة التالية ووقت الوصول والرصيف.",
-              "accepted": [],
+              "accepted": ["What time does the next train leave? And when does it arrive? Which platform is it?"],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -19946,7 +19946,7 @@
               ],
               "prompt": "Explain a route with two transport stages and one change.",
               "promptAr": "اشرح مساراً بمرحلتين من النقل وتبديل واحد.",
-              "accepted": [],
+              "accepted": ["Take the bus to Central Station. Then change to the train. Take the train to the city."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -20114,7 +20114,7 @@
               ],
               "prompt": "Describe a real or fictional journey with origin, destination, transport, times and duration.",
               "promptAr": "صف رحلة حقيقية أو خيالية مع نقطة الانطلاق والوجهة والوسيلة والأوقات والمدة.",
-              "accepted": [],
+              "accepted": ["I travel from Basra to Baghdad by train. The train leaves at eight and arrives at one. The journey takes five hours."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -20275,7 +20275,7 @@
               ],
               "prompt": "Write a 45–65-word travel plan with two stages, one connection, times and destination.",
               "promptAr": "اكتب خطة سفر من 45–65 كلمة بمرحلتين وتبديل واحد وأوقات ووجهة.",
-              "accepted": [],
+              "accepted": ["Hi! Here is my travel plan for Saturday. First I take the bus at eight from my home. I arrive at Central Station at eight thirty. Then I change to the train. The train leaves at eight forty-five and arrives in the city at nine forty. The destination is Central Park. See you there!"],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -20401,7 +20401,7 @@
               ],
               "prompt": "Buy the correct ticket for the selected destination and ask for the platform.",
               "promptAr": "اشتر التذكرة الصحيحة للوجهة المختارة واسأل عن الرصيف.",
-              "accepted": [],
+              "accepted": ["Hello. A single ticket to Central Station, please. Which platform is it, please? Thank you."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -20434,7 +20434,7 @@
               ],
               "prompt": "Describe the updated journey with both stages and new arrival logic.",
               "promptAr": "صف الرحلة المحدثة بمرحلتيها ومنطق الوصول الجديد.",
-              "accepted": [],
+              "accepted": ["I take the bus at eight and change at Central Station. The train has a delay. It now leaves at nine. So I arrive at nine fifty-five, not nine forty."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -20463,7 +20463,7 @@
               ],
               "prompt": "Explain the delay and updated arrival to a waiting friend.",
               "promptAr": "اشرح التأخير ووقت الوصول المحدث لصديق ينتظر.",
-              "accepted": [],
+              "accepted": ["Hi! Sorry, my train has a fifteen-minute delay. It now leaves at nine. I arrive at nine fifty-five, not nine forty. See you soon!"],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -20491,7 +20491,7 @@
               ],
               "prompt": "Write the final 50–70-word journey plan including ticket, connection, delay and expected arrival.",
               "promptAr": "اكتب خطة الرحلة النهائية في 50–70 كلمة متضمنة التذكرة والتبديل والتأخير والوصول المتوقع.",
-              "accepted": [],
+              "accepted": ["My journey plan: I take the bus at eight o'clock to Central Station. I have a single ticket for the train, platform four. The train leaves at eight forty-five, but there is a fifteen-minute delay. It now leaves at nine. I arrive at nine fifty-five, not nine forty. My friend waits for me at the station."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -20717,7 +20717,7 @@
               ],
               "prompt": "Identify four body parts and describe pain in one of them.",
               "promptAr": "حدد أربعة أجزاء من الجسم وصف ألماً في أحدها.",
-              "accepted": [],
+              "accepted": ["This is my head, my arm, my leg and my hand. My head hurts."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -20896,7 +20896,7 @@
               ],
               "prompt": "Describe three simple symptoms using have, feel and hurts.",
               "promptAr": "صف ثلاثة أعراض بسيطة مستخدماً have وfeel وhurts.",
-              "accepted": [],
+              "accepted": ["I have a cold. I feel tired. My throat hurts."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -21070,7 +21070,7 @@
               ],
               "prompt": "Ask about one symptom and give two safe, basic actions from the provided advice list.",
               "promptAr": "اسأل عن عرض واحد وأعط إجراءين أساسيين آمنين من قائمة النصائح المتاحة.",
-              "accepted": [],
+              "accepted": ["What's wrong? Do you have a headache? You should rest and you should drink water."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -21255,7 +21255,7 @@
               ],
               "prompt": "Request help at a clinic, describe one symptom and confirm one instruction.",
               "promptAr": "اطلب المساعدة في عيادة وصف عرضاً وأكد تعليمة واحدة.",
-              "accepted": [],
+              "accepted": ["Good morning. I need a doctor, please. I have a fever and my head hurts. OK, I sit here and wait for the nurse."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -21430,7 +21430,7 @@
               ],
               "prompt": "State the three basic emergency communication steps shown in the lesson.",
               "promptAr": "اذكر خطوات التواصل الثلاث الأساسية في الطوارئ كما وردت في الدرس.",
-              "accepted": [],
+              "accepted": ["First, call for help. Second, say your location. Third, stay calm and follow the instructions."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -21588,7 +21588,7 @@
               ],
               "prompt": "Write a 40–60-word fictional health note with symptoms, start time, availability and a request.",
               "promptAr": "اكتب ملاحظة صحية خيالية من 40–60 كلمة تشمل الأعراض ووقت بدايتها والتوفر والطلب.",
-              "accepted": [],
+              "accepted": ["Hello. This is a note about my health. I have a bad cough and a fever. The cough started on Monday morning. I feel very tired too. I am available today and tomorrow afternoon. Can I come to the clinic tomorrow, please? Thank you."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -21715,7 +21715,7 @@
               ],
               "prompt": "Call the clinic, describe the symptoms and ask for an appointment.",
               "promptAr": "اتصل بالعيادة وصف الأعراض واطلب موعداً.",
-              "accepted": [],
+              "accepted": ["Good morning. My friend has a high fever and a bad cough. Yes, it's for today, please. Can we have an appointment at three o'clock? Yes, that's OK."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -21772,7 +21772,7 @@
               ],
               "prompt": "Pass the symptoms, appointment time and safe instructions to the visitor.",
               "promptAr": "انقل للزائر الأعراض ووقت الموعد والتعليمات الآمنة.",
-              "accepted": [],
+              "accepted": ["You have a high fever and a bad cough. You have an appointment at three o'clock today. You should rest and drink water. Don't go to work. Bring your ID card."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -21801,7 +21801,7 @@
               ],
               "prompt": "Write a 45–65-word fictional clinic note recording the problem, advice and appointment.",
               "promptAr": "اكتب ملاحظة عيادة خيالية من 45–65 كلمة تسجل المشكلة والنصيحة والموعد.",
-              "accepted": [],
+              "accepted": ["Clinic note. The visitor has a high fever and a bad cough. He feels very tired. He has an appointment at three o'clock today at City Clinic. The advice is: rest, drink water and don't go to work. He must bring his ID card to the appointment."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -22029,7 +22029,7 @@
               ],
               "prompt": "Describe today's real or fictional weather with three details.",
               "promptAr": "صف طقس اليوم الحقيقي أو الخيالي بثلاثة تفاصيل.",
-              "accepted": [],
+              "accepted": ["Today it is sunny and warm. It is a little windy."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -22212,7 +22212,7 @@
               ],
               "prompt": "Describe three actions happening now in a weather scene.",
               "promptAr": "صف ثلاثة أفعال تحدث الآن في مشهد طقس.",
-              "accepted": [],
+              "accepted": ["It is raining now. People are wearing coats. A man is walking with an umbrella."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -22399,7 +22399,7 @@
               ],
               "prompt": "Ask what someone is wearing and answer with two clothing details.",
               "promptAr": "اسأل ماذا يرتدي شخص وأجب بتفصيلين عن الملابس.",
-              "accepted": [],
+              "accepted": ["What are you wearing? I'm wearing a sweater and boots. It's cold here too."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -22577,7 +22577,7 @@
               ],
               "prompt": "Recommend three clothing items for a weather card and give a reason for each.",
               "promptAr": "اقترح ثلاث قطع لبطاقة طقس وأعط سبباً لكل منها.",
-              "accepted": [],
+              "accepted": ["Take a coat because it is cold. Take an umbrella because it is rainy. Wear boots because the street is wet."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -22745,7 +22745,7 @@
               ],
               "prompt": "Summarise a provided morning-and-afternoon forecast and suggest preparation.",
               "promptAr": "لخّص توقعاً معطى للصباح وبعد الظهر واقترح التجهيز.",
-              "accepted": [],
+              "accepted": ["In the morning it will be sunny and warm. In the afternoon it will rain. Take a jacket and an umbrella."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -22907,7 +22907,7 @@
               ],
               "prompt": "Write a 45–65-word weather update with today's conditions, one action now, tomorrow's forecast and preparation.",
               "promptAr": "اكتب تحديثاً من 45–65 كلمة يشمل طقس اليوم وفعلاً الآن وتوقع الغد والتجهيز.",
-              "accepted": [],
+              "accepted": ["Hi! Here is the weather update. Today it is sunny and warm, about eighteen degrees. I'm sitting in the garden now. Tomorrow it will be cloudy and windy, and it will rain in the afternoon. Take a jacket and an umbrella tomorrow. Wear boots too. See you!"],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -23029,7 +23029,7 @@
               ],
               "prompt": "Choose suitable clothes for the walk and give two reasons.",
               "promptAr": "اختر ملابس مناسبة للمشي وأعط سببين.",
-              "accepted": [],
+              "accepted": ["Take a jacket because it is windy. Take an umbrella because it will rain this afternoon."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -23061,7 +23061,7 @@
               ],
               "prompt": "Call a friend: say what the group is doing now and check what the friend is wearing.",
               "promptAr": "اتصل بصديق: اذكر ما تفعله المجموعة الآن وتحقق مما يرتديه.",
-              "accepted": [],
+              "accepted": ["Hi Maya! We are in the park. We are walking now and Ali is taking photos. What are you wearing? It's windy, so take a jacket."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -23095,7 +23095,7 @@
               ],
               "prompt": "Explain why the time and preparation changed after the update.",
               "promptAr": "اشرح لماذا تغير الوقت والتجهيز بعد التحديث.",
-              "accepted": [],
+              "accepted": ["The plan is different now because the weather will change. A light wind starts at ten, so we walk at nine and come back by ten. Heavy rain will come at three. Take a jacket, because it will be windy."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -23124,7 +23124,7 @@
               ],
               "prompt": "Write the final 50–70-word trip update with weather, time, clothes and reason.",
               "promptAr": "اكتب تحديث الرحلة النهائي في 50–70 كلمة مع الطقس والوقت والملابس والسبب.",
-              "accepted": [],
+              "accepted": ["Hi everyone! Here is the trip update. The weather is sunny now, eighteen degrees. But it will be windy at ten and rainy at three. So we walk at nine and come back by ten. Please take a jacket because of the wind. Wear light clothes but bring a jacket. See you at nine!"],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -23347,7 +23347,7 @@
               ],
               "prompt": "State three real or fictional plans with three future time expressions.",
               "promptAr": "اذكر ثلاث خطط حقيقية أو خيالية بثلاثة تعبيرات زمنية مستقبلية.",
-              "accepted": [],
+              "accepted": ["I'm going to visit my family tomorrow. I'm going to play football this evening. Next week I'm going to study English."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -23520,7 +23520,7 @@
               ],
               "prompt": "Ask two questions about future plans and answer one yes/no plan question.",
               "promptAr": "اطرح سؤالين عن الخطط المستقبلية وأجب عن سؤال خطة بنعم أو لا.",
-              "accepted": [],
+              "accepted": ["Are you going to visit your family? What are you going to do on Saturday? Yes, I'm going to visit my family on Friday."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -23702,7 +23702,7 @@
               ],
               "prompt": "Arrange a meeting by agreeing on activity, place, day and time.",
               "promptAr": "رتب لقاءً بالاتفاق على النشاط والمكان واليوم والوقت.",
-              "accepted": [],
+              "accepted": ["Yes, let's meet! Let's play football in the park. Saturday is good. At four o'clock? Great, see you at four."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -23877,7 +23877,7 @@
               ],
               "prompt": "Refuse one arrangement politely, give a reason and negotiate one replacement detail.",
               "promptAr": "ارفض ترتيباً بأدب وأعط سبباً وتفاوض على تفصيل بديل.",
-              "accepted": [],
+              "accepted": ["Sorry, I can't meet at five because I work until six. Can we meet at seven on Friday?"],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -24063,7 +24063,7 @@
               ],
               "prompt": "Write a 35–50-word reply confirming or changing the time and answering one practical request.",
               "promptAr": "اكتب رداً من 35–50 كلمة يؤكد الوقت أو يغيره ويجيب عن طلب عملي.",
-              "accepted": [],
+              "accepted": ["Hi Ali! Saturday at four works well for me. I confirm our meeting in River Park. Yes, I'll bring the ball and some water. Can you bring the snacks? See you on Saturday at four!"],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -24237,7 +24237,7 @@
               ],
               "prompt": "Write a 50–70-word weekend plan message with activity, place, time, preparation and confirmation request.",
               "promptAr": "اكتب رسالة خطة نهاية أسبوع من 50–70 كلمة تشمل النشاط والمكان والوقت والتجهيز وطلب التأكيد.",
-              "accepted": [],
+              "accepted": ["Hi friends! Here is my weekend plan. On Saturday we are going to have a picnic in River Park. Let's meet at the park entrance at four o'clock. I'm going to bring sandwiches and juice. Please bring a ball and some water. Please confirm by Friday evening. See you on Saturday!"],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -24354,7 +24354,7 @@
               ],
               "prompt": "Propose Saturday at 16:00 in River Park and ask for confirmation.",
               "promptAr": "اقترح السبت في الرابعة في حديقة النهر واطلب التأكيد.",
-              "accepted": [],
+              "accepted": ["Yes! Let's meet on Saturday at four o'clock in River Park. Can you confirm, please?"],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -24407,7 +24407,7 @@
               ],
               "prompt": "Explain the shared availability, original plan and weather-based change.",
               "promptAr": "اشرح التوفر المشترك والخطة الأصلية والتغيير بسبب الطقس.",
-              "accepted": [],
+              "accepted": ["Maya is free on Saturday after three. Omar is free from twelve to six, and Lina from four to eight. So four o'clock is good for everyone. The plan was a walk in River Park at four. But it will rain at four, so we are going to the café instead."],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [
@@ -24436,7 +24436,7 @@
               ],
               "prompt": "Write the final 55–75-word confirmation with people, activity, place, time, preparation and change reason.",
               "promptAr": "اكتب التأكيد النهائي في 55–75 كلمة مع الأشخاص والنشاط والمكان والوقت والتجهيز وسبب التغيير.",
-              "accepted": [],
+              "accepted": ["Hi Maya, Omar and Lina! Let's confirm our plan. We are going to meet on Saturday at four o'clock. The plan was a walk in River Park, but it will rain at four. So we are going to the café opposite the park instead. Please bring a jacket because it will be cold. Can everyone confirm, please? See you on Saturday!"],
               "evaluation": {
                 "type": "keywordChecklist",
                 "requiredGroups": [

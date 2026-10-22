@@ -62,6 +62,18 @@
   "@activityFeedbackPendingOnlineRefinement": {
     "description": "Feedback banner shown after submitting an open-ended writing/speaking answer whose full grading is deferred until the device is online (Tier 2 online refinement)."
   },
+  "activityFeedbackPendingLocalJudgement": "Saved — checking this on your phone",
+  "@activityFeedbackPendingLocalJudgement": {
+    "description": "Feedback shown after submitting a free answer that the installed AI pack will judge on the device in a moment (ADR 0011). Nothing leaves the phone."
+  },
+  "activityFeedbackExplanationLabel": "Explanation",
+  "@activityFeedbackExplanationLabel": {
+    "description": "Overline above the AI pack's explanation of a free answer's verdict, in the feedback panel and banner."
+  },
+  "activityFeedbackGeneratedLabel": "Generated on your phone",
+  "@activityFeedbackGeneratedLabel": {
+    "description": "Small label under the AI pack's explanation saying it was produced by a model on the device, not written by a person. Always shown with an explanation (ADR 0011)."
+  },
   "activitySpeechUnavailableUseWriting": "Speaking practice isn't available on this device yet — type your answer instead.",
   "@activitySpeechUnavailableUseWriting": {
     "description": "Shown on a speak activity's typed-answer accessibility fallback. Never phrased as a permanent limitation of the learner's ability, only the device/build."
@@ -913,6 +925,20 @@
   "@settingsResetProgressCancel": {"description": "Confirmation dialog's cancel button."},
   "settingsResetProgressDone": "Progress reset.",
   "@settingsResetProgressDone": {"description": "Snackbar shown after progress is successfully reset."},
+  "settingsSmartFeedbackTitle": "Smart feedback",
+  "@settingsSmartFeedbackTitle": {"description": "Settings row for the downloadable AI pack that judges free answers and explains them on the phone (ADR 0011). Never says AI or a model name — what it does for the learner."},
+  "settingsSmartFeedbackBodyUnavailable": "A one-time download that explains your writing and speaking answers, on your phone. Not in this version yet.",
+  "@settingsSmartFeedbackBodyUnavailable": {"description": "Smart feedback row body while this build offers no pack — an honest coming-soon line, not a working feature."},
+  "settingsSmartFeedbackBodyNotInstalled": "A one-time download that explains your writing and speaking answers, on your phone. Works offline once downloaded.",
+  "@settingsSmartFeedbackBodyNotInstalled": {"description": "Smart feedback row body when the pack can be downloaded but is not on the device."},
+  "settingsSmartFeedbackBodyDownloading": "Downloading…",
+  "@settingsSmartFeedbackBodyDownloading": {"description": "Smart feedback row body while the pack downloads."},
+  "settingsSmartFeedbackBodyInstalled": "Explaining your answers on this phone. Nothing leaves it.",
+  "@settingsSmartFeedbackBodyInstalled": {"description": "Smart feedback row body when the pack is installed."},
+  "settingsSmartFeedbackDownload": "Download",
+  "@settingsSmartFeedbackDownload": {"description": "Small action on the Smart feedback row that starts the pack download."},
+  "settingsSmartFeedbackDelete": "Delete",
+  "@settingsSmartFeedbackDelete": {"description": "Small action on the Smart feedback row that removes the downloaded pack."},
   "settingsBackupTitle": "Backup & sync",
   "@settingsBackupTitle": {"description": "Settings section title for the not-yet-built backup/sync feature."},
   "settingsBackupBody": "Reinstalling the app or changing phones starts fresh for now.",

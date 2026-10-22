@@ -1,6 +1,6 @@
 # On-device grading of free answers — a meaning signal for everyone, an optional AI pack for feedback
 
-**Status:** Proposed design for the product owner's review (2026-10-22). Decision record: [ADR 0011](../../adr/0011-on-device-ai-for-free-answers.md). No code yet.
+**Status:** Approved by the product owner on 2026-10-22; Phase A built the same day on `ccr-3aef6bc0-xt12aw` (what landed, and what differs from the text below, is in the "As built" note at the end). Decision record: [ADR 0011](../../adr/0011-on-device-ai-for-free-answers.md).
 **Date:** 2026-10-22
 
 ## Context
@@ -76,3 +76,14 @@ A pack that fails (out of memory, timeout, malformed JSON) counts as unavailable
 - The two similarity thresholds, and whether `meaning` should also look at the rubric's required groups when a task has only one model answer.
 - Firebase Storage versus the stores' on-demand assets for the pack: Storage is one path for both platforms; Play Asset Delivery and iOS Background Assets are free of egress cost. Decide at Phase B with the pack's real size.
 - The pack's licence (Gemma terms of use versus Apache 2.0 for Qwen) once the spike picks the model.
+
+## As built (Phase A, 2026-10-22)
+
+- **Model answers are required on keyword-graded mastery tasks only**, not on every mastery speak/write task: a `letterSequence` or `numericRange` rubric has no meaning to compare. 243 were written (111 A1, 132 A2); `tool/meaning/check_model_answers.py` mirrors the evaluator's keyword match for authors; the gate is in `level_answerable_test.dart`.
+- **The verdict rule** at submission is `passesWithSignals`: the rubric's own verdict stands, and a signal can only add a pass it actually raised the score to. Without any signal the verdict is exactly the rubric's, so a build with no model grades as before. The drain keeps `score ≥ 0.75`, as it always has.
+- **Queue columns** `meaningSignal` and `onlineAllowed` (schema v7) carry the signal and ADR 0005's permission separately; the drain applies the one bound over everything at once rather than compounding adjustments. LanguageTool's weight is now 0.25 through `grammarPenaltyOf` (it was `0.7 × local + 0.3 × grammar`, which could fail a fully-covered answer at 0.70 and lift a 0.65 to a pass).
+- **Thresholds** 0.35 → 0 and 0.75 → 1 (`sentence_similarity.dart`), from the shipped int8 model: unrelated 0.0–0.25, echo of the partner 0.5–0.57, paraphrase 0.68–0.94. A wrong word or a negation is not seen (0.67, 0.83) — the rubric's job.
+- **The model**: `sentence-transformers/all-MiniLM-L6-v2` exported to ONNX (Chroma's published export), dynamically quantised to int8 by `tool/meaning/quantize_model.py` — 22.9 MB plus a 226 KB vocabulary under `assets/models/`, licence in `NOTICE.md`. Runtime: `flutter_onnxruntime` 1.9. The tokenizer is pure Dart (`WordPieceTokenizer`), pinned to the reference by seven vectors.
+- **Hosts**: `ActivityFrameScope.signalsEnabled` — true in the lesson player and quick practice, false from `TestQuestionFrame` for the placement test, the Final Mission and the Final Assessment.
+- **Settings** shows the Smart feedback row with a Coming soon pill (`NoAiPackService`); `LocalJudgementService` is bound to `UnavailableLocalJudgementService`. The drain's pack-first order, its health counter and the explanation block are built and tested with fakes.
+- **Not verified on a device**: the model has run only under Python here (3–4 ms a text on this machine's CPU) and the Dart service only as far as `flutter test` lets it — the runtime has no platform there, so the service reports no signal and the rubric grades alone, which is also the documented fallback. First device run: README, Known limitations.

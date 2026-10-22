@@ -335,6 +335,8 @@ class _LessonPlayerBodyState extends ConsumerState<_LessonPlayerBody> {
             mode: activity.mode.name,
             localScore: submission.score ?? 0.0,
             wasFallback: submission.wasFallback,
+            meaningSignal: submission.meaningSignal,
+            onlineAllowed: submission.onlineRefinementAllowed,
           );
       // Without this, a learner who is online the *entire* time they use
       // the app would never see this resolve: the drainer otherwise only
@@ -361,6 +363,7 @@ class _LessonPlayerBodyState extends ConsumerState<_LessonPlayerBody> {
               ActivityCorrectness.notAutoGraded => null,
             },
             score: submission.score,
+            criteriaScores: submission.criteriaScoresJson,
             wasFallback: submission.wasFallback,
           );
     }

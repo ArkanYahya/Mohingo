@@ -16,6 +16,11 @@ class ActivitySubmission {
     this.rawAnswerJson,
     this.wasFallback = false,
     this.pendingOnlineRefinement = false,
+    this.onlineRefinementAllowed = true,
+    this.meaningSignal,
+    this.criteriaScoresJson,
+    this.explanationEn,
+    this.explanationAr,
     this.correctAnswerLabel,
   });
 
@@ -52,6 +57,28 @@ class ActivitySubmission {
   /// attempt. See docs/superpowers/specs/
   /// 2026-09-07-offline-answer-evaluation-design.md's Tier 2.
   final bool pendingOnlineRefinement;
+
+  /// With [pendingOnlineRefinement]: whether the queued answer may be sent
+  /// to the online grammar check (a rubric marked `onlineRefinement`,
+  /// ADR 0005), or was queued only for the installed AI pack to judge on
+  /// the device (ADR 0011). Meaningless otherwise.
+  final bool onlineRefinementAllowed;
+
+  /// The on-device meaning signal computed at submission (ADR 0011), 0..1,
+  /// or null when none was available. Carried on a queued submission so the
+  /// drain can combine it with the later signals under one bound.
+  final double? meaningSignal;
+
+  /// How a free answer's grade was reached — `criteriaScoresJson` of
+  /// `grading_signals.dart` — stored on the attempt row. Null for every
+  /// answer graded without signals.
+  final String? criteriaScoresJson;
+
+  /// The AI pack's explanation of the verdict, when one exists — shown to
+  /// the learner under the verdict and labelled as generated; never part of
+  /// the grade. Read back from `criteriaScores` in review mode.
+  final String? explanationEn;
+  final String? explanationAr;
 }
 
 typedef OnActivitySubmitted = void Function(ActivitySubmission submission);

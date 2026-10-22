@@ -1,6 +1,6 @@
 # 0011: Free answers are graded on the device — a bounded signal over the rubric, and an optional AI pack for feedback
 
-**Status:** Proposed (2026-10-22) — written for the product owner's review; nothing in `lib/` implements it yet. Design: docs/superpowers/specs/2026-10-22-on-device-free-answer-grading-design.md.
+**Status:** Accepted (2026-10-22). The owner approved the two layers, the bounded rule and the rubric-only capstones the same day; Phase A (the meaning signal, the combination rule, the drain's local source, the model answers, the Settings row) landed on `ccr-3aef6bc0-xt12aw`. Phase B (the downloadable AI pack) is roadmapped, not built. Design: docs/superpowers/specs/2026-10-22-on-device-free-answer-grading-design.md.
 
 ## Context
 
@@ -35,7 +35,7 @@ The owner's answers on 2026-10-22, which this ADR records: the problem to solve 
 
 ## Consequences
 
-- Every mastery `speak`/`write` task needs a model answer: A2 has none today (144 tasks); A1's count is taken at implementation. The gate already requires a model answer to pass its own rubric, and will require one to exist.
+- Every mastery `speak`/`write` task graded by a keyword checklist needs a model answer — the structured rubrics (a spelled name, a number) have no meaning to compare and are exempt. Counted at implementation: 111 in A1 and 132 in A2 had none; all 243 were written on 2026-10-22, validated against their rubrics by `tool/meaning/check_model_answers.py`, and the gate (`level_answerable_test.dart`) now requires one to exist as well as to pass.
 - The 2026-09-07 design's "no embeddings, no local ML model" non-goal is superseded. `docs/TECH_STACK.md` gains an on-device inference dependency and the embedding model as an asset; `docs/SECURITY.md` records that nothing new leaves the device and that the pack is served, not bundled; `docs/ROADMAP.md`'s item 1 (cloud AI grading) is replaced by this; `docs/DATA_MODEL.md` records the signals written into `activity_attempts.criteriaScores`. All of it in the change that lands the code, per CLAUDE.md's definition of done.
 - The app grows by the embedding model (tens of megabytes) for everyone, inside the 200 MB threshold with today's audio; the pack adds nothing to the install.
 - Grading stays deterministic where mastery is decided: the rubric and the embedding are both deterministic, and the pack's contribution is bounded. The level gates gain a rule that a model answer scores at least the pass bar and an off-topic answer scores below it, with the meaning signal on.

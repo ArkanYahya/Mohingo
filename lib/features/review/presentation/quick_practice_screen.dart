@@ -80,6 +80,7 @@ class _QuickPracticeScreenState extends ConsumerState<QuickPracticeScreen> {
             ActivityCorrectness.notAutoGraded => null,
           },
           score: submission.score,
+          criteriaScores: submission.criteriaScoresJson,
           wasFallback: submission.wasFallback,
         );
   }
@@ -125,6 +126,7 @@ class _QuickPracticeScreenState extends ConsumerState<QuickPracticeScreen> {
         ),
       ),
       testMode: false,
+      signalsEnabled: true,
       onContinue: _next,
       child: buildActivityView(
         key: ValueKey('$_round-$_index-${activity.id}'),

@@ -22,8 +22,89 @@ void main() {
     await database.close();
   });
 
-  test('schema version is 6', () {
-    expect(database.schemaVersion, 6);
+  test('schema version is 7', () {
+    expect(database.schemaVersion, 7);
+  });
+
+  test('a v6 install upgrades to 7: a queued refinement keeps its data, '
+      'reads as allowed online with no meaning signal, and the new columns '
+      'are writable', () async {
+    final raw = sqlite3.sqlite3.openInMemory();
+    raw.execute('''
+          CREATE TABLE learners (
+            id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+            uuid TEXT NOT NULL UNIQUE,
+            name TEXT NULL,
+            native_language TEXT NOT NULL DEFAULT 'ar',
+            target_language TEXT NOT NULL DEFAULT 'en',
+            created_at INTEGER NOT NULL,
+            is_active INTEGER NOT NULL DEFAULT 1,
+            firebase_uid TEXT NULL,
+            updated_at INTEGER NULL
+          )
+        ''');
+    // The v6 queue table: everything but the two v7 columns.
+    raw.execute('''
+          CREATE TABLE pending_online_refinements (
+            id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+            uuid TEXT NOT NULL UNIQUE,
+            learner_id INTEGER NOT NULL REFERENCES learners (id),
+            activity_id TEXT NOT NULL,
+            lesson_id TEXT NOT NULL,
+            unit_id TEXT NOT NULL,
+            can_do_ids TEXT NOT NULL,
+            raw_answer TEXT NOT NULL,
+            evidence_skill TEXT NOT NULL,
+            was_fallback INTEGER NOT NULL DEFAULT 0,
+            mode TEXT NOT NULL,
+            local_score REAL NOT NULL,
+            submitted_at INTEGER NOT NULL,
+            attempt_count INTEGER NOT NULL DEFAULT 0,
+            last_attempt_at INTEGER NULL
+          )
+        ''');
+    raw.execute(
+      "INSERT INTO learners (uuid, created_at) VALUES ('learner-1', 0)",
+    );
+    raw.execute(
+      'INSERT INTO pending_online_refinements '
+      '(uuid, learner_id, activity_id, lesson_id, unit_id, can_do_ids, '
+      'raw_answer, evidence_skill, mode, local_score, submitted_at) '
+      "VALUES ('q-1', 1, 'A1-U5-L6-A05', 'A1-U5-L6', 'A1-U5', '[]', "
+      "'\"answer\"', 'writing', 'mastery', 0.5, 0)",
+    );
+    raw.execute('PRAGMA user_version = 6');
+
+    final upgraded = AppDatabase(NativeDatabase.opened(raw));
+    addTearDown(upgraded.close);
+
+    final row = await upgraded
+        .select(upgraded.pendingOnlineRefinements)
+        .getSingle();
+    expect(row.activityId, 'A1-U5-L6-A05');
+    expect(row.localScore, 0.5);
+    expect(row.meaningSignal, isNull);
+    expect(
+      row.onlineAllowed,
+      isTrue,
+      reason:
+          'every row queued before v7 came from a rubric marked '
+          'onlineRefinement, so it keeps its right to the online check',
+    );
+
+    await (upgraded.update(
+      upgraded.pendingOnlineRefinements,
+    )..where((t) => t.id.equals(row.id))).write(
+      const PendingOnlineRefinementsCompanion(
+        meaningSignal: Value(0.8),
+        onlineAllowed: Value(false),
+      ),
+    );
+    final updated = await upgraded
+        .select(upgraded.pendingOnlineRefinements)
+        .getSingle();
+    expect(updated.meaningSignal, 0.8);
+    expect(updated.onlineAllowed, isFalse);
   });
 
   test('a v5 install upgrades to 6: existing progress is kept, belongs to '

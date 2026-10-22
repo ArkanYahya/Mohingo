@@ -55,6 +55,16 @@ class AppLocalizationsAr extends AppLocalizations {
       'تم الحفظ — سنكمل تصحيح هذه الإجابة عند اتصالك بالإنترنت';
 
   @override
+  String get activityFeedbackPendingLocalJudgement =>
+      'تم الحفظ — تجري مراجعة الإجابة على هاتفك';
+
+  @override
+  String get activityFeedbackExplanationLabel => 'الشرح';
+
+  @override
+  String get activityFeedbackGeneratedLabel => 'مُولَّد على هاتفك';
+
+  @override
   String get activitySpeechUnavailableUseWriting =>
       'التحدث غير متاح على هذا الجهاز حالياً — اكتب إجابتك بدلاً من ذلك.';
 
@@ -1510,6 +1520,30 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get settingsResetProgressDone => 'تمت إعادة تعيين التقدّم.';
+
+  @override
+  String get settingsSmartFeedbackTitle => 'ملاحظات ذكية';
+
+  @override
+  String get settingsSmartFeedbackBodyUnavailable =>
+      'تنزيل لمرة واحدة يشرح إجاباتك في الكتابة والتحدث على هاتفك. غير متاح في هذه النسخة بعد.';
+
+  @override
+  String get settingsSmartFeedbackBodyNotInstalled =>
+      'تنزيل لمرة واحدة يشرح إجاباتك في الكتابة والتحدث على هاتفك. يعمل دون اتصال بعد التنزيل.';
+
+  @override
+  String get settingsSmartFeedbackBodyDownloading => 'جارٍ التنزيل…';
+
+  @override
+  String get settingsSmartFeedbackBodyInstalled =>
+      'تُشرَح إجاباتك على هذا الهاتف. لا يغادره شيء.';
+
+  @override
+  String get settingsSmartFeedbackDownload => 'تنزيل';
+
+  @override
+  String get settingsSmartFeedbackDelete => 'حذف';
 
   @override
   String get settingsBackupTitle => 'النسخ الاحتياطي والمزامنة';

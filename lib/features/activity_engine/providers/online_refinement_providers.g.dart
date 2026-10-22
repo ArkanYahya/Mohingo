@@ -126,6 +126,127 @@ final class GrammarCheckServiceProvider
 String _$grammarCheckServiceHash() =>
     r'0a846684f1fb15ad3a7d85166b8c887d360450a1';
 
+/// ADR 0011's first layer, the on-device meaning signal. Bound to the
+/// unavailable implementation until the embedding model is wired
+/// (`OnnxMeaningSignalService`); with it the rubric grades alone, exactly as
+/// before, so a build without the model behaves as it always has.
+
+@ProviderFor(meaningSignalService)
+final meaningSignalServiceProvider = MeaningSignalServiceProvider._();
+
+/// ADR 0011's first layer, the on-device meaning signal. Bound to the
+/// unavailable implementation until the embedding model is wired
+/// (`OnnxMeaningSignalService`); with it the rubric grades alone, exactly as
+/// before, so a build without the model behaves as it always has.
+
+final class MeaningSignalServiceProvider
+    extends
+        $FunctionalProvider<
+          MeaningSignalService,
+          MeaningSignalService,
+          MeaningSignalService
+        >
+    with $Provider<MeaningSignalService> {
+  /// ADR 0011's first layer, the on-device meaning signal. Bound to the
+  /// unavailable implementation until the embedding model is wired
+  /// (`OnnxMeaningSignalService`); with it the rubric grades alone, exactly as
+  /// before, so a build without the model behaves as it always has.
+  MeaningSignalServiceProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'meaningSignalServiceProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$meaningSignalServiceHash();
+
+  @$internal
+  @override
+  $ProviderElement<MeaningSignalService> $createElement(
+    $ProviderPointer pointer,
+  ) => $ProviderElement(pointer);
+
+  @override
+  MeaningSignalService create(Ref ref) {
+    return meaningSignalService(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(MeaningSignalService value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<MeaningSignalService>(value),
+    );
+  }
+}
+
+String _$meaningSignalServiceHash() =>
+    r'38b90644c5bda46889b4d7fda966fac6acb1fde7';
+
+/// ADR 0011's second layer, the downloadable AI pack. Phase A ships no pack,
+/// so this is never available; Phase B swaps the binding for the installed
+/// pack's implementation and nothing else changes.
+
+@ProviderFor(localJudgementService)
+final localJudgementServiceProvider = LocalJudgementServiceProvider._();
+
+/// ADR 0011's second layer, the downloadable AI pack. Phase A ships no pack,
+/// so this is never available; Phase B swaps the binding for the installed
+/// pack's implementation and nothing else changes.
+
+final class LocalJudgementServiceProvider
+    extends
+        $FunctionalProvider<
+          LocalJudgementService,
+          LocalJudgementService,
+          LocalJudgementService
+        >
+    with $Provider<LocalJudgementService> {
+  /// ADR 0011's second layer, the downloadable AI pack. Phase A ships no pack,
+  /// so this is never available; Phase B swaps the binding for the installed
+  /// pack's implementation and nothing else changes.
+  LocalJudgementServiceProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'localJudgementServiceProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$localJudgementServiceHash();
+
+  @$internal
+  @override
+  $ProviderElement<LocalJudgementService> $createElement(
+    $ProviderPointer pointer,
+  ) => $ProviderElement(pointer);
+
+  @override
+  LocalJudgementService create(Ref ref) {
+    return localJudgementService(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(LocalJudgementService value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<LocalJudgementService>(value),
+    );
+  }
+}
+
+String _$localJudgementServiceHash() =>
+    r'27485eff6856d52fd47889e714b57fba0961ee61';
+
 /// The single [PendingRefinementRepository] binding for v1 — same seam
 /// pattern as [connectivityService]/[grammarCheckService] above.
 

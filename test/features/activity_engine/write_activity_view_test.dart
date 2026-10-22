@@ -14,12 +14,18 @@ import 'package:mohingo/data/local/database.dart';
 import 'package:mohingo/data/local/database_provider.dart';
 import 'package:mohingo/features/activity_engine/domain/activity_submission.dart';
 import 'package:mohingo/features/activity_engine/domain/evaluation/evaluation_context.dart';
+import 'package:mohingo/features/activity_engine/domain/evaluation/grading_signals.dart';
 import 'package:mohingo/features/activity_engine/domain/sound_effects_service.dart';
 import 'package:mohingo/content/models/evaluation_spec.dart';
 import 'package:mohingo/features/activity_engine/providers/online_refinement_providers.dart';
 import 'package:mohingo/features/activity_engine/providers/sound_effects_providers.dart';
 import 'package:mohingo/features/activity_engine/presentation/views/write_activity_view.dart';
+import 'package:riverpod/misc.dart' show Override;
 
+import 'package:mohingo/features/activity_engine/presentation/activity_chrome.dart';
+
+import 'fake_local_judgement_service.dart';
+import 'fake_meaning_signal_service.dart';
 import 'fake_sound_effects_service.dart';
 import 'test_harness.dart';
 
@@ -551,5 +557,208 @@ void main() {
     final missed = await submit('One coffee.');
     expect(missed?.correctness, ActivityCorrectness.incorrect);
     expect(missed?.correctAnswerLabel, 'One coffee, please.');
+  });
+
+  group('ADR 0011: the meaning signal', () {
+    // A rubric asking for two things, with a model answer; the answer below
+    // covers one of them, so the rubric alone scores 0.5 and fails.
+    const activity = WriteActivity(
+      id: 'A2-U1-L4-A05',
+      lessonId: 'A2-U1-L4',
+      mode: ActivityMode.mastery,
+      skill: Skill.writing,
+      canDo: ['A2.U1.WRITING.WRITE_LIFE_UPDATE'],
+      prompt: 'Reply to your friend.',
+      promptAr: 'ردّ على صديقك.',
+      raw: {},
+      accepted: ['That sounds great! Do you like it? I enjoy cooking now.'],
+      evaluation: KeywordChecklistEvaluationSpec(
+        requiredGroups: [
+          ['sounds great', 'interesting'],
+          ['do you', 'are you'],
+        ],
+        minGroupsMatched: 2,
+      ),
+    );
+
+    Future<ActivitySubmission?> submit(
+      WidgetTester tester, {
+      required List<Override> overrides,
+      Widget Function(Widget child)? wrap,
+    }) async {
+      ActivitySubmission? captured;
+      final view = WriteActivityView(
+        activity: activity,
+        learnerId: 1,
+        onSubmitted: (s) => captured = s,
+      );
+      await tester.pumpActivityView(
+        wrap == null ? view : wrap(view),
+        overrides: overrides,
+      );
+      await tester.enterText(find.byType(TextField), 'That sounds great!');
+      await tester.pump();
+      await tester.tap(find.widgetWithText(FilledButton, 'Check'));
+      await tester.pump();
+      await tester.pump();
+      return captured;
+    }
+
+    testWidgets('without a signal the rubric grades exactly as before', (
+      tester,
+    ) async {
+      final captured = await submit(tester, overrides: const []);
+      expect(captured!.correctness, ActivityCorrectness.incorrect);
+      expect(captured.score, 0.5);
+      expect(captured.criteriaScoresJson, isNull);
+    });
+
+    testWidgets('a full meaning match raises a half-covered answer to the '
+        'pass bar, and the signals are recorded', (tester) async {
+      final meaning = FakeMeaningSignalService(signal: 1.0);
+      final captured = await submit(
+        tester,
+        overrides: [meaningSignalServiceProvider.overrideWithValue(meaning)],
+      );
+      expect(meaning.calls.single.modelAnswers, activity.accepted);
+      expect(captured!.correctness, ActivityCorrectness.correct);
+      expect(captured.score, closeTo(0.75, 1e-9));
+      final criteria =
+          jsonDecode(captured.criteriaScoresJson!) as Map<String, dynamic>;
+      expect(criteria['rubric'], 0.5);
+      expect(criteria['meaning'], 1.0);
+      expect(find.text('Correct!'), findsOneWidget);
+    });
+
+    testWidgets('a weak meaning match cannot rescue the answer', (
+      tester,
+    ) async {
+      final captured = await submit(
+        tester,
+        overrides: [
+          meaningSignalServiceProvider.overrideWithValue(
+            FakeMeaningSignalService(signal: 0.3),
+          ),
+        ],
+      );
+      expect(captured!.correctness, ActivityCorrectness.incorrect);
+      expect(captured.score, closeTo(0.575, 1e-9));
+    });
+
+    testWidgets('inside a frame that grades on the rubric alone the signal '
+        'is never consulted', (tester) async {
+      final meaning = FakeMeaningSignalService(signal: 1.0);
+      final captured = await submit(
+        tester,
+        overrides: [meaningSignalServiceProvider.overrideWithValue(meaning)],
+        wrap: (child) => ActivityFrameScope(
+          onContinue: () {},
+          signalsEnabled: false,
+          child: child,
+        ),
+      );
+      expect(meaning.calls, isEmpty);
+      expect(captured!.correctness, ActivityCorrectness.incorrect);
+      expect(captured.score, 0.5);
+    });
+
+    testWidgets('with an AI pack installed the answer is queued for the pack '
+        'alone — never allowed online — and says so', (tester) async {
+      // A pending submission watches latestAttemptProvider, which reads the
+      // database — an in-memory one here, as in the onlineRefinement group.
+      final db = AppDatabase(NativeDatabase.memory());
+      addTearDown(db.close);
+      final captured = await submit(
+        tester,
+        overrides: [
+          appDatabaseProvider.overrideWithValue(db),
+          meaningSignalServiceProvider.overrideWithValue(
+            FakeMeaningSignalService(signal: 0.9),
+          ),
+          localJudgementServiceProvider.overrideWithValue(
+            FakeLocalJudgementService(available: true),
+          ),
+        ],
+      );
+      expect(captured!.pendingOnlineRefinement, isTrue);
+      expect(captured.onlineRefinementAllowed, isFalse);
+      expect(captured.correctness, ActivityCorrectness.notAutoGraded);
+      expect(captured.score, 0.5, reason: 'the rubric score, not combined');
+      expect(captured.meaningSignal, 0.9);
+      expect(find.text('Saved — checking this on your phone'), findsOneWidget);
+    });
+
+    testWidgets('review mode shows the stored explanation, labelled as '
+        'generated, under the recorded verdict', (tester) async {
+      await tester.pumpActivityView(
+        WriteActivityView(
+          activity: activity,
+          learnerId: 1,
+          onSubmitted: (_) {},
+          reviewAttempt: ActivityAttempt(
+            id: 1,
+            uuid: 'a-1',
+            learnerId: 1,
+            activityId: activity.id,
+            lessonId: activity.lessonId,
+            sessionType: 'lesson',
+            mode: 'mastery',
+            evidenceSkill: 'writing',
+            rawAnswer: jsonEncode('That sounds great!'),
+            isCorrect: true,
+            score: 0.85,
+            criteriaScores: criteriaScoresJson(
+              const GradingSignals(rubric: 0.5, meaning: 1, meaningOk: true),
+              finalScore: 0.85,
+              explanationEn: 'You showed interest. Now ask a question.',
+              explanationAr: 'أظهرت اهتمامك. اسأل سؤالاً الآن.',
+            ),
+            wasFallback: false,
+            attemptedAt: DateTime.utc(2026, 10, 22),
+            updatedAt: DateTime.utc(2026, 10, 22),
+          ),
+        ),
+      );
+
+      expect(find.text('Correct!'), findsOneWidget);
+      expect(find.text('EXPLANATION'), findsOneWidget);
+      expect(
+        find.text('You showed interest. Now ask a question.'),
+        findsOneWidget,
+      );
+      expect(find.text('أظهرت اهتمامك. اسأل سؤالاً الآن.'), findsOneWidget);
+      expect(find.text('Generated on your phone'), findsOneWidget);
+    });
+
+    testWidgets('an attempt without an explanation shows no explanation '
+        'block', (tester) async {
+      await tester.pumpActivityView(
+        WriteActivityView(
+          activity: activity,
+          learnerId: 1,
+          onSubmitted: (_) {},
+          reviewAttempt: ActivityAttempt(
+            id: 1,
+            uuid: 'a-1',
+            learnerId: 1,
+            activityId: activity.id,
+            lessonId: activity.lessonId,
+            sessionType: 'lesson',
+            mode: 'mastery',
+            evidenceSkill: 'writing',
+            rawAnswer: jsonEncode('That sounds great!'),
+            isCorrect: false,
+            score: 0.5,
+            criteriaScores: null,
+            wasFallback: false,
+            attemptedAt: DateTime.utc(2026, 10, 22),
+            updatedAt: DateTime.utc(2026, 10, 22),
+          ),
+        ),
+      );
+
+      expect(find.text('EXPLANATION'), findsNothing);
+      expect(find.text('Generated on your phone'), findsNothing);
+    });
   });
 }

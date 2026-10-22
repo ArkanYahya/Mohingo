@@ -13,6 +13,8 @@ import '../../../core/theme/color_seed.dart';
 import '../../../core/theme/theme_preferences_provider.dart';
 import '../../../core/widgets/section_heading.dart';
 import '../../../core/widgets/status_pill.dart';
+import '../../ai_pack/domain/ai_pack_status.dart';
+import '../../ai_pack/providers/ai_pack_providers.dart';
 import '../../account/presentation/guest_progress_dialog.dart';
 import '../../account/providers/account_providers.dart';
 import '../../progress/providers/current_learner_provider.dart';
@@ -90,6 +92,7 @@ class SettingsScreen extends ConsumerWidget {
                 const _TtsRateBlock(),
                 const _MicrophoneRow(),
                 const _SpeechRecognitionRow(),
+                const _SmartFeedbackRow(),
               ],
             ),
             if (accountsAvailable) ...[
@@ -1034,6 +1037,47 @@ class _SignOutRow extends ConsumerWidget {
       title: l10n.accountSignOutTitle,
       subtitle: l10n.accountSignOutBody,
       onTap: () => _confirmAndSignOut(context, ref),
+    );
+  }
+}
+
+/// The AI pack (ADR 0011): a model the learner may download once to judge
+/// free answers and explain them, on the phone. Phase A offers none, so the
+/// row says so with the same Coming soon pill the backup row used; Phase B
+/// turns it into Download / progress / Delete.
+class _SmartFeedbackRow extends ConsumerWidget {
+  const _SmartFeedbackRow();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
+    final status = ref.watch(aiPackStatusProvider).value;
+    final state = status?.state ?? AiPackState.notAvailable;
+    return _Row(
+      icon: Icons.psychology_outlined,
+      title: l10n.settingsSmartFeedbackTitle,
+      subtitle: switch (state) {
+        AiPackState.notAvailable => l10n.settingsSmartFeedbackBodyUnavailable,
+        AiPackState.notInstalled => l10n.settingsSmartFeedbackBodyNotInstalled,
+        AiPackState.downloading => l10n.settingsSmartFeedbackBodyDownloading,
+        AiPackState.installed => l10n.settingsSmartFeedbackBodyInstalled,
+      },
+      trailing: switch (state) {
+        AiPackState.notAvailable => StatusPill(label: l10n.comingSoon),
+        AiPackState.notInstalled => _SmallAction(
+          label: l10n.settingsSmartFeedbackDownload,
+          onPressed: () => ref.read(aiPackServiceProvider).download(),
+        ),
+        AiPackState.downloading => const SizedBox(
+          width: 20,
+          height: 20,
+          child: CircularProgressIndicator(strokeWidth: 2),
+        ),
+        AiPackState.installed => _SmallAction(
+          label: l10n.settingsSmartFeedbackDelete,
+          onPressed: () => ref.read(aiPackServiceProvider).delete(),
+        ),
+      },
     );
   }
 }

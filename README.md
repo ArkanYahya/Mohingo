@@ -9,6 +9,7 @@ Full documentation — product scope, architecture, data model, and every other 
 - Flutter SDK (stable channel; this project was built against Flutter 3.47.2 / Dart 3.13.2 — see `environment.sdk` in `pubspec.yaml` for the minimum supported Dart version)
 - No Firebase project is needed to build or run: until the project is connected (`flutterfire configure`, [docs/FIREBASE_SETUP.md](docs/FIREBASE_SETUP.md)), the app runs local-only and Settings offers no sign-in. With the project connected, learners can optionally sign in and sync progress across devices ([ADR 0010](docs/adr/0010-optional-accounts-and-progress-sync.md)).
 - Node.js 18+ and Java 11+ **only to test the Firestore Security Rules** (`tool/firestore_rules_test/`).
+- Python 3.11+ **only for the dev-time tools**: regenerating speech audio (`tool/audio/`), and checking model answers or rebuilding the bundled embedding model (`tool/meaning/`, `pip install onnx onnxruntime`). The model is committed ([ADR 0011](docs/adr/0011-on-device-ai-for-free-answers.md)), so building and running the app needs no Python.
 - Python 3.11+ **only if you regenerate speech audio** — every spoken string ships as a pre-generated clip ([ADR 0008](docs/adr/0008-bundled-pre-generated-speech-audio.md)); the clips are committed, so building and running the app needs no Python. Setup for the tool is in [tool/audio/README.md](tool/audio/README.md).
 - Android: no separate Android SDK setup beyond what `flutter doctor` already checks for.
 - iOS: a Mac with Xcode is required to build/run the iOS target — not available in every dev environment (this project has been built and tested on Windows without one; iOS-specific configuration like `Info.plist` has been hand-edited and verified by reading the file, not by an actual Xcode build).
@@ -33,6 +34,8 @@ flutter test                                                  # the full test su
 (cd tool/firestore_rules_test && npm install && npm test)     # Firestore Security Rules, on the emulator
 dart run tool/update_published_ids.dart                       # after ADDING curriculum content — records its ids, then commit the diff
 python tool/audio/generate_audio.py --level A1 --prune       # after EDITING any spoken bundle string — regenerates that level's clips (tool/audio/README.md)
+python tool/audio/sync_manifest_version.py --level A1        # after a content change that touched NO spoken string — stamps the manifest with the new contentVersion
+python tool/meaning/check_model_answers.py                   # every keyword-graded mastery speak/write task has a model answer that passes its rubric (tool/meaning/README.md)
 flutter run                                                   # run on a connected device/emulator
 ```
 
@@ -50,7 +53,7 @@ After editing `lib/l10n/app_en.arb` or `lib/l10n/app_ar.arb`, run `flutter gen-l
 ## Running tests
 
 ```
-flutter test                      # unit + widget tests (999 passing as of the last full run)
+flutter test                      # unit + widget tests (1043 passing as of the last full run)
 flutter test integration_test/    # not yet added — see "Known limitations" below
 ```
 
@@ -70,6 +73,7 @@ If a widget test hangs or times out otherwise, it's almost always a missing fake
 - **Accounts and sync have been tested against a simulated cloud and the Firestore emulator, not yet on real devices against the real project.** The sync engine, merge rules, reset, account switching and migration run in `flutter test` over real SQLite with an in-memory cloud; the Security Rules run on the Firestore emulator. The Firebase adapters themselves (`FirebaseAuthRepository`, `FirestoreProgressStore`) and Google sign-in need a device and the connected project — see [docs/FIREBASE_SETUP.md](docs/FIREBASE_SETUP.md) "Verifying end to end". No APK was built in the development environment (its network policy blocks the Android SDK download).
 - **Accounts still owe the stores two things** before release: in-app account deletion (Google Play) and, on iOS, Sign in with Apple — see [docs/ROADMAP.md](docs/ROADMAP.md) item 10.
 
+- **The on-device meaning signal has never run on a phone.** The bundled embedding model ([ADR 0011](docs/adr/0011-on-device-ai-for-free-answers.md)) was exercised in Python on this machine and the Dart service only as far as `flutter test` allows, where the ONNX runtime has no platform and the service correctly falls back to "no signal" — which means the whole suite is green with the signal doing nothing. The first real run must check that `flutter_onnxruntime` builds (it fetches ONNX Runtime from Maven and CocoaPods at build time), that the session loads from the asset, and the time per answer. The AI pack (Phase B) is not built; Settings shows its row as Coming soon.
 - **No real Android/iOS device or emulator has been used to build or run this app** in the environment this was developed in. Every device-dependent guarantee (speech permission flows, playback of the bundled speech clips through `audioplayers`, the device TTS/STT fallbacks, actual frame performance, real app-store build signing) is verified as far as it can be without one — see [TESTING.md](docs/TESTING.md) and [TECH_STACK.md](docs/TECH_STACK.md) for exactly what that means per area — and flagged as unverified where it can't be. Building and running on a real device is the natural next step before any store submission.
 - **The bundled voices have been checked by machine, not yet by ear across the whole course.** Every clip was generated by Kokoro-82M and a transcription check flags clips whose words drift from their text, but whether a name is pronounced well is a human judgement; the owner listened to the first A1 lessons only. Known and accepted: A2's two-person listening transcripts carry no speaker labels, so they play in the teacher's single voice until the content marks its turns (see [ROADMAP.md](docs/ROADMAP.md)).
 - **No `integration_test/` suite exists yet** — end-to-end flows are covered by widget tests that drive real content through real widgets (e.g. `test/features/lesson_player/lesson_player_e2e_test.dart`), which is a genuinely strong substitute for logic correctness but isn't the same as a real on-device integration test.

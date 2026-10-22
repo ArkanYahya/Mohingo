@@ -1,6 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mohingo/content/models/activity.dart';
 import 'package:mohingo/content/models/domain_definitions.dart';
+import 'package:mohingo/content/models/evaluation_spec.dart';
 import 'package:mohingo/features/activity_engine/domain/activity_submission.dart';
 import 'package:mohingo/features/activity_engine/domain/evaluation/evaluator.dart';
 
@@ -393,6 +394,34 @@ void main() {
           check(e.activity, e.where);
         }
         expect(failing, isEmpty, reason: failing.join('\n'));
+      });
+
+      test('every mastery speak or write task graded by a keyword checklist '
+          'carries a model answer', () {
+        // ADR 0011: the on-device meaning signal compares a free answer with
+        // the task's model answers, so a keyword-graded mastery task without
+        // one is graded by keywords alone — the gap the signal exists to
+        // close. (The structured rubrics — a spelled name, a number — have
+        // no meaning to compare and need none.) Each model answer must also
+        // pass its own rubric: the test above.
+        final missing = <String>[];
+        for (final unit in gate.finishedUnits()) {
+          for (final a in activitiesOf(unit)) {
+            if (a.mode != ActivityMode.mastery) continue;
+            final (accepted, spec) = switch (a) {
+              SpeakActivity s => (s.accepted, s.evaluation),
+              WriteActivity w => (w.accepted, w.evaluation),
+              _ => (null, null),
+            };
+            if (accepted == null || spec is! KeywordChecklistEvaluationSpec) {
+              continue;
+            }
+            if (accepted.every((m) => m.trim().isEmpty)) {
+              missing.add('${unit.id} ${a.id}');
+            }
+          }
+        }
+        expect(missing, isEmpty, reason: missing.join('\n'));
       });
 
       test('every word a lesson lists actually appears in that lesson', () {

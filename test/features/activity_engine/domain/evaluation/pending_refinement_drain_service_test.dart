@@ -5,12 +5,15 @@ import 'package:drift/native.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mohingo/data/local/database.dart';
 import 'package:mohingo/features/activity_engine/data/drift_pending_refinement_repository.dart';
+import 'package:mohingo/features/activity_engine/domain/evaluation/grading_signals.dart';
 import 'package:mohingo/features/activity_engine/domain/evaluation/grammar_check_service.dart';
+import 'package:mohingo/features/activity_engine/domain/evaluation/local_judgement_service.dart';
 import 'package:mohingo/features/activity_engine/domain/evaluation/pending_refinement_drain_service.dart';
 import 'package:mohingo/features/progress/data/drift_activity_attempt_repository.dart';
 import 'package:uuid/uuid.dart';
 
 import '../../fake_grammar_check_service.dart';
+import '../../fake_local_judgement_service.dart';
 
 void main() {
   driftRuntimeOptions.dontWarnAboutMultipleDatabases = true;
@@ -209,10 +212,193 @@ void main() {
 
     final attempts = await db.select(db.activityAttempts).get();
     expect(attempts.single.score! < 1.0, isTrue);
-    expect(
-      attempts.single.score! > 0.5,
-      isTrue,
-    ); // content score still dominates
+    // Grammar may take at most a quarter of the scale (combineSignals), so
+    // a fully-covered answer still passes however error-dense it is.
+    expect(attempts.single.score, closeTo(0.75, 1e-9));
+    expect(attempts.single.isCorrect, isTrue);
+    final criteria =
+        jsonDecode(attempts.single.criteriaScores!) as Map<String, dynamic>;
+    expect(criteria['rubric'], 1.0);
+    expect(criteria['grammar'], 1.0);
+    expect(criteria['final'], closeTo(0.75, 1e-9));
+    expect(criteria.containsKey('meaning'), isFalse);
+    expect(criteria.containsKey('judgement'), isFalse);
+  });
+
+  group('ADR 0011: the meaning signal and the AI pack', () {
+    const task = JudgementTask(
+      prompt: 'Write a message about your free time.',
+      modelAnswers: ['Hi! Are you free on Saturday? Let\'s go to the park.'],
+    );
+
+    Future<void> enqueueOne({
+      double localScore = 0.5,
+      double? meaningSignal,
+      bool onlineAllowed = true,
+      String activityId = 'A1-U5-L6-A05',
+    }) => pendingRepository.enqueue(
+      learnerId: learnerId,
+      activityId: activityId,
+      lessonId: 'A1-U5-L6',
+      unitId: 'A1-U5',
+      canDoIds: const ['A1.U5.WRITING.WRITE_FREE_TIME_MESSAGE'],
+      rawAnswer: jsonEncode('Hello! Free on Saturday?'),
+      evidenceSkill: 'writing',
+      mode: 'mastery',
+      localScore: localScore,
+      meaningSignal: meaningSignal,
+      onlineAllowed: onlineAllowed,
+    );
+
+    test('the meaning signal carried on the row raises the grade within the '
+        'bound, alongside the online grammar check', () async {
+      await enqueueOne(localScore: 0.5, meaningSignal: 1.0);
+      final service = PendingRefinementDrainService(
+        pendingRepository: pendingRepository,
+        attemptRepository: attemptRepository,
+        grammarCheckService: FakeGrammarCheckService(
+          result: const GrammarCheckResult(errorCount: 0, wordCount: 5),
+        ),
+      );
+
+      await service.drainOnce();
+
+      final attempt = (await db.select(db.activityAttempts).get()).single;
+      expect(attempt.score, closeTo(0.75, 1e-9));
+      expect(attempt.isCorrect, isTrue);
+      final criteria =
+          jsonDecode(attempt.criteriaScores!) as Map<String, dynamic>;
+      expect(criteria['rubric'], 0.5);
+      expect(criteria['meaning'], 1.0);
+      expect(criteria['grammar'], 0.0);
+    });
+
+    test('an installed pack judges first: its grammar and verdict enter the '
+        'grade, its explanation is stored, and the online check is never '
+        'called', () async {
+      await enqueueOne(localScore: 0.5, meaningSignal: 1.0);
+      final grammar = FakeGrammarCheckService(
+        result: const GrammarCheckResult(errorCount: 0, wordCount: 5),
+      );
+      final pack = FakeLocalJudgementService(
+        available: true,
+        judgement: const LocalJudgement(
+          meaningOk: true,
+          grammarIssues: 0,
+          wordCount: 5,
+          pack: 'test-pack-1',
+          explanationEn: 'You asked about Saturday. Good.',
+          explanationAr: 'سألت عن يوم السبت. جيد.',
+        ),
+      );
+      final service = PendingRefinementDrainService(
+        pendingRepository: pendingRepository,
+        attemptRepository: attemptRepository,
+        grammarCheckService: grammar,
+        localJudgementService: pack,
+        judgementTaskFor: (_) async => task,
+      );
+
+      await service.drainOnce();
+
+      expect(grammar.checkedText, isEmpty);
+      expect(pack.judgedAnswers, ['Hello! Free on Saturday?']);
+      final attempt = (await db.select(db.activityAttempts).get()).single;
+      // +0.25 (meaning) + 0.10 (judgement) is clamped to the bound.
+      expect(attempt.score, closeTo(0.75, 1e-9));
+      expect(attempt.isCorrect, isTrue);
+      final criteria =
+          jsonDecode(attempt.criteriaScores!) as Map<String, dynamic>;
+      expect(criteria['judgement'], true);
+      expect(criteria['pack'], 'test-pack-1');
+      expect(explanationIn(attempt.criteriaScores), (
+        en: 'You asked about Saturday. Good.',
+        ar: 'سألت عن يوم السبت. جيد.',
+      ));
+      expect(await pendingRepository.allPending(), isEmpty);
+    });
+
+    test('a row not allowed online never reaches the grammar check, and '
+        'without a pack resolves through the bounded fallback', () async {
+      await enqueueOne(localScore: 1.0, onlineAllowed: false);
+      final grammar = FakeGrammarCheckService(
+        result: const GrammarCheckResult(errorCount: 0, wordCount: 5),
+      );
+      final service = PendingRefinementDrainService(
+        pendingRepository: pendingRepository,
+        attemptRepository: attemptRepository,
+        grammarCheckService: grammar,
+        maxAttemptsBeforeFallback: 2,
+      );
+
+      await service.drainOnce();
+      expect(grammar.checkedText, isEmpty);
+      expect(await db.select(db.activityAttempts).get(), isEmpty);
+      expect((await pendingRepository.allPending()).single.attemptCount, 1);
+
+      await service.drainOnce();
+      expect(grammar.checkedText, isEmpty);
+      final attempt = (await db.select(db.activityAttempts).get()).single;
+      expect(attempt.score, 1.0);
+      expect(await pendingRepository.allPending(), isEmpty);
+    });
+
+    test('a failing pack falls through to the online check, and after three '
+        'failures in a session is not asked again', () async {
+      for (var i = 0; i < 4; i++) {
+        await enqueueOne(localScore: 1.0, activityId: 'A1-U5-L6-A0$i');
+      }
+      final pack = FakeLocalJudgementService(
+        available: true,
+        failWith: const LocalJudgementUnavailableException('out of memory'),
+      );
+      final grammar = FakeGrammarCheckService(
+        result: const GrammarCheckResult(errorCount: 0, wordCount: 5),
+      );
+      final service = PendingRefinementDrainService(
+        pendingRepository: pendingRepository,
+        attemptRepository: attemptRepository,
+        grammarCheckService: grammar,
+        localJudgementService: pack,
+        judgementTaskFor: (_) async => task,
+      );
+
+      await service.drainOnce();
+
+      expect(pack.judgedAnswers, hasLength(3));
+      expect(grammar.checkedText, hasLength(4));
+      expect(await db.select(db.activityAttempts).get(), hasLength(4));
+    });
+
+    test(
+      'a pack is not asked about an activity that has left the bundle',
+      () async {
+        await enqueueOne(localScore: 1.0);
+        final pack = FakeLocalJudgementService(
+          available: true,
+          judgement: const LocalJudgement(
+            meaningOk: true,
+            grammarIssues: 0,
+            wordCount: 5,
+            pack: 'test-pack-1',
+          ),
+        );
+        final service = PendingRefinementDrainService(
+          pendingRepository: pendingRepository,
+          attemptRepository: attemptRepository,
+          grammarCheckService: FakeGrammarCheckService(
+            result: const GrammarCheckResult(errorCount: 0, wordCount: 5),
+          ),
+          localJudgementService: pack,
+          judgementTaskFor: (_) async => null,
+        );
+
+        await service.drainOnce();
+
+        expect(pack.judgedAnswers, isEmpty);
+        expect(await db.select(db.activityAttempts).get(), hasLength(1));
+      },
+    );
   });
 
   test(

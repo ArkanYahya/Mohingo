@@ -31,6 +31,7 @@ class ActivityFrameScope extends InheritedWidget {
     this.header,
     this.usefulPhrases = const [],
     this.testMode = false,
+    this.signalsEnabled = true,
     required super.child,
     super.key,
   });
@@ -53,6 +54,13 @@ class ActivityFrameScope extends InheritedWidget {
   /// listening questions offer no transcript. See [marksAnswers].
   final bool testMode;
 
+  /// Whether a free answer here may be graded with the on-device meaning
+  /// signal and the AI pack's judgement (ADR 0011). True in the lesson
+  /// player and quick practice; false in the placement test, the final
+  /// mission and the final assessment, which measure on the rubric alone.
+  /// See [gradingSignalsEnabled].
+  final bool signalsEnabled;
+
   static ActivityFrameScope? maybeOf(BuildContext context) =>
       context.dependOnInheritedWidgetOfExactType<ActivityFrameScope>();
 
@@ -61,8 +69,16 @@ class ActivityFrameScope extends InheritedWidget {
       onContinue != oldWidget.onContinue ||
       header != oldWidget.header ||
       testMode != oldWidget.testMode ||
+      signalsEnabled != oldWidget.signalsEnabled ||
       !listEquals(usefulPhrases, oldWidget.usefulPhrases);
 }
+
+/// Whether a free answer in this activity may be graded with the meaning
+/// signal and the AI pack (ADR 0011) — true outside any
+/// [ActivityFrameScope] (answer review never grades; quick practice may),
+/// and inside one unless the host switched it off.
+bool gradingSignalsEnabled(BuildContext context) =>
+    ActivityFrameScope.maybeOf(context)?.signalsEnabled ?? true;
 
 /// Whether this activity may mark answers right or wrong once checked —
 /// false only inside an [ActivityFrameScope] in [ActivityFrameScope.testMode].
@@ -213,8 +229,12 @@ class ActivityFeedbackBanner extends StatelessWidget {
         ? (
             colorScheme.surfaceContainerHighest,
             colorScheme.onSurface,
-            Icons.cloud_sync,
-            l10n.activityFeedbackPendingOnlineRefinement,
+            submission.onlineRefinementAllowed
+                ? Icons.cloud_sync
+                : Icons.smartphone,
+            submission.onlineRefinementAllowed
+                ? l10n.activityFeedbackPendingOnlineRefinement
+                : l10n.activityFeedbackPendingLocalJudgement,
           )
         : switch (submission.correctness) {
             // A real green, not colorScheme.primaryContainer — "correct"
@@ -250,13 +270,20 @@ class ActivityFeedbackBanner extends StatelessWidget {
           color: background,
           borderRadius: BorderRadius.circular(AppRadius.control),
         ),
-        child: Row(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Icon(icon, color: onColor),
-            const SizedBox(width: AppSpace.xs),
-            Expanded(
-              child: Text(label, style: TextStyle(color: onColor)),
+            Row(
+              children: [
+                Icon(icon, color: onColor),
+                const SizedBox(width: AppSpace.xs),
+                Expanded(
+                  child: Text(label, style: TextStyle(color: onColor)),
+                ),
+              ],
             ),
+            if (!submission.pendingOnlineRefinement)
+              ActivityExplanation(submission: submission, color: onColor),
           ],
         ),
       ),

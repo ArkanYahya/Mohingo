@@ -1,10 +1,12 @@
 import 'dart:async';
+import 'dart:io' show Platform;
 
 import 'package:flutter/foundation.dart' show debugPrint;
 import 'package:flutter_riverpod/flutter_riverpod.dart'
     show FutureProvider, Provider;
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
+import '../../../content/models/activity.dart';
 import '../../../content/providers/course_content_providers.dart';
 import '../../../data/local/database.dart';
 import '../../../data/local/database_provider.dart';
@@ -12,10 +14,13 @@ import '../../learning_path/providers/unit_progress_providers.dart';
 import '../../lesson_player/presentation/lesson_review_screen.dart';
 import '../../progress/providers/progress_providers.dart';
 import '../data/device_connectivity_service.dart';
+import '../data/onnx_meaning_signal_service.dart';
 import '../data/drift_pending_refinement_repository.dart';
 import '../data/language_tool_grammar_check_service.dart';
 import '../domain/evaluation/connectivity_service.dart';
 import '../domain/evaluation/grammar_check_service.dart';
+import '../domain/evaluation/local_judgement_service.dart';
+import '../domain/evaluation/meaning_signal_service.dart';
 import '../domain/evaluation/pending_refinement_drain_service.dart';
 import '../domain/repositories/pending_refinement_repository.dart';
 
@@ -35,6 +40,34 @@ ConnectivityService connectivityService(Ref ref) {
 @Riverpod(keepAlive: true)
 GrammarCheckService grammarCheckService(Ref ref) {
   return LanguageToolGrammarCheckService();
+}
+
+/// ADR 0011's first layer, the on-device meaning signal: the bundled MiniLM
+/// model through ONNX Runtime.
+///
+/// Under `flutter test` the binding is [UnavailableMeaningSignalService]
+/// instead, so the rubric grades alone and every existing view test behaves
+/// exactly as before. A plugin's platform channel never answers inside a
+/// widget test's fake clock (docs/TESTING.md, "Platform services that must
+/// be faked"), so a view that awaited the real service there would wait
+/// forever — and this is the one platform service every write and speak
+/// task with a model answer reaches, which is far too many tests to ask
+/// each to override. A test that wants a signal overrides this provider
+/// with `FakeMeaningSignalService`.
+@Riverpod(keepAlive: true)
+MeaningSignalService meaningSignalService(Ref ref) {
+  if (Platform.environment['FLUTTER_TEST'] == 'true') {
+    return const UnavailableMeaningSignalService();
+  }
+  return OnnxMeaningSignalService();
+}
+
+/// ADR 0011's second layer, the downloadable AI pack. Phase A ships no pack,
+/// so this is never available; Phase B swaps the binding for the installed
+/// pack's implementation and nothing else changes.
+@Riverpod(keepAlive: true)
+LocalJudgementService localJudgementService(Ref ref) {
+  return const UnavailableLocalJudgementService();
 }
 
 /// The single [PendingRefinementRepository] binding for v1 — same seam
@@ -129,6 +162,22 @@ final pendingRefinementDrainerProvider = Provider<PendingRefinementDrainer>((
     pendingRepository: ref.watch(pendingRefinementRepositoryProvider),
     attemptRepository: ref.watch(activityAttemptRepositoryProvider),
     grammarCheckService: ref.watch(grammarCheckServiceProvider),
+    localJudgementService: ref.watch(localJudgementServiceProvider),
+    // The pack judges an answer against its task; the drain never reads
+    // content itself, so the prompt and model answers are resolved here.
+    judgementTaskFor: (activityId) async {
+      final index = await ref.read(
+        contentIndexForIdProvider(activityId).future,
+      );
+      final activity = index.activitiesById[activityId];
+      final modelAnswers = switch (activity) {
+        SpeakActivity a => a.accepted,
+        WriteActivity a => a.accepted,
+        _ => null,
+      };
+      if (activity == null || modelAnswers == null) return null;
+      return JudgementTask(prompt: activity.prompt, modelAnswers: modelAnswers);
+    },
     onItemResolved: ({required learnerId, required unitId}) async {
       final index = await ref.read(contentIndexForIdProvider(unitId).future);
       final unit = index.unitsById[unitId];

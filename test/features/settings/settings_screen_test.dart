@@ -142,6 +142,14 @@ void main() {
     expect(find.text(l10n.settingsFaster), findsOneWidget);
     expect(find.text(l10n.settingsVersion(kAppVersion)), findsOneWidget);
     expect(find.text(l10n.settingsResetProgressTitle), findsOneWidget);
+    // The AI pack row (ADR 0011): offered under Listening & speaking, and
+    // honest that this build has none to download.
+    expect(find.text(l10n.settingsSmartFeedbackTitle), findsOneWidget);
+    expect(
+      find.text(l10n.settingsSmartFeedbackBodyUnavailable),
+      findsOneWidget,
+    );
+    expect(find.text(l10n.settingsSmartFeedbackDownload), findsNothing);
   });
 
   testWidgets('Try it plays a sample in the chosen voice', (tester) async {

@@ -50,7 +50,7 @@ class AppDatabase extends _$AppDatabase {
   AppDatabase.defaults() : super(driftDatabase(name: 'mohingo_progress'));
 
   @override
-  int get schemaVersion => 6;
+  int get schemaVersion => 7;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
@@ -127,6 +127,37 @@ class AppDatabase extends _$AppDatabase {
           'INSERT INTO sync_outbox (entity, row_id, learner_id) '
           "SELECT 'learners', id, id FROM learners WHERE name IS NOT NULL",
         );
+      }
+      if (from < 7) {
+        // ADR 0011: the refinement queue carries the meaning signal and
+        // whether the row may go online. An install coming from before v3
+        // just had the table created in its current shape by the v3 step,
+        // and a hand-built fixture may lack the table altogether, so each
+        // column is added only where it is genuinely missing.
+        final hasQueue = (await customSelect(
+          "SELECT name FROM sqlite_master WHERE type = 'table' "
+          "AND name = 'pending_online_refinements'",
+        ).get()).isNotEmpty;
+        if (hasQueue) {
+          final columns = {
+            for (final row in await customSelect(
+              'PRAGMA table_info(pending_online_refinements)',
+            ).get())
+              row.read<String>('name'),
+          };
+          if (!columns.contains('meaning_signal')) {
+            await migrator.addColumn(
+              pendingOnlineRefinements,
+              pendingOnlineRefinements.meaningSignal,
+            );
+          }
+          if (!columns.contains('online_allowed')) {
+            await migrator.addColumn(
+              pendingOnlineRefinements,
+              pendingOnlineRefinements.onlineAllowed,
+            );
+          }
+        }
       }
     },
   );

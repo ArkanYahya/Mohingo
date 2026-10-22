@@ -14,6 +14,11 @@ abstract interface class PendingRefinementRepository {
   /// verbatim, so a `speak` activity answered via its typed-answer
   /// accessibility fallback still resolves into an attempt row pairing
   /// `wasFallback: true` with the fallback skill. See docs/DATA_MODEL.md.
+  ///
+  /// [meaningSignal] is the on-device meaning signal computed at submission
+  /// (ADR 0011), or null when none was available. [onlineAllowed] is false
+  /// for a row queued only for the installed AI pack's local judgement —
+  /// such a row is never sent to the online grammar check.
   Future<int> enqueue({
     required int learnerId,
     required String activityId,
@@ -25,6 +30,8 @@ abstract interface class PendingRefinementRepository {
     required String mode,
     required double localScore,
     bool wasFallback = false,
+    double? meaningSignal,
+    bool onlineAllowed = true,
   });
 
   /// Every queued item across every learner — the drain service resolves

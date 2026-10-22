@@ -55,6 +55,16 @@ class AppLocalizationsEn extends AppLocalizations {
       'Saved — we\'ll finish checking this once you\'re online';
 
   @override
+  String get activityFeedbackPendingLocalJudgement =>
+      'Saved — checking this on your phone';
+
+  @override
+  String get activityFeedbackExplanationLabel => 'Explanation';
+
+  @override
+  String get activityFeedbackGeneratedLabel => 'Generated on your phone';
+
+  @override
   String get activitySpeechUnavailableUseWriting =>
       'Speaking practice isn\'t available on this device yet — type your answer instead.';
 
@@ -1478,6 +1488,30 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get settingsResetProgressDone => 'Progress reset.';
+
+  @override
+  String get settingsSmartFeedbackTitle => 'Smart feedback';
+
+  @override
+  String get settingsSmartFeedbackBodyUnavailable =>
+      'A one-time download that explains your writing and speaking answers, on your phone. Not in this version yet.';
+
+  @override
+  String get settingsSmartFeedbackBodyNotInstalled =>
+      'A one-time download that explains your writing and speaking answers, on your phone. Works offline once downloaded.';
+
+  @override
+  String get settingsSmartFeedbackBodyDownloading => 'Downloading…';
+
+  @override
+  String get settingsSmartFeedbackBodyInstalled =>
+      'Explaining your answers on this phone. Nothing leaves it.';
+
+  @override
+  String get settingsSmartFeedbackDownload => 'Download';
+
+  @override
+  String get settingsSmartFeedbackDelete => 'Delete';
 
   @override
   String get settingsBackupTitle => 'Backup & sync';

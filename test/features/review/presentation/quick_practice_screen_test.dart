@@ -143,10 +143,14 @@ void main() {
 
     await _answerAll(tester);
 
-    // The helper's stock spoken answer misses A03's keyword checklist, so
-    // one of the three is "not quite".
+    // Every task in the set has a model answer since ADR 0011, and the
+    // helper answers a speak or write task with its model answer, so all
+    // three are right (before 2026-10-22 A03 had none, the helper's stock
+    // answer missed its checklist, and the score was 2 of 3).
     expect(
-      find.text(l10n.lessonReviewScore(2, _set.activities.length)),
+      find.text(
+        l10n.lessonReviewScore(_set.activities.length, _set.activities.length),
+      ),
       findsOneWidget,
     );
     expect(find.text(l10n.practiceNoMastery), findsOneWidget);

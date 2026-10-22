@@ -12,6 +12,8 @@ import '../../../lesson_player/presentation/widgets/lesson_top_bar.dart';
 /// [TestProgressBar] ([groupSizes], [completed]) at the top, [eyebrow]
 /// above the prompt, and Check / the feedback panel pinned to the bottom
 /// (see [ActivityFrameScope]). In [testMode] answers are saved, not marked.
+/// Free answers are graded on the rubric alone unless [signalsEnabled] —
+/// the three tests measure, so only quick practice turns it on (ADR 0011).
 class TestQuestionFrame extends StatelessWidget {
   const TestQuestionFrame({
     required this.groupSizes,
@@ -20,6 +22,7 @@ class TestQuestionFrame extends StatelessWidget {
     required this.testMode,
     required this.onContinue,
     required this.child,
+    this.signalsEnabled = false,
     super.key,
   });
 
@@ -28,6 +31,7 @@ class TestQuestionFrame extends StatelessWidget {
   final Widget eyebrow;
   final bool testMode;
   final VoidCallback onContinue;
+  final bool signalsEnabled;
 
   /// The activity view.
   final Widget child;
@@ -51,6 +55,7 @@ class TestQuestionFrame extends StatelessWidget {
               child: ActivityFrameScope(
                 onContinue: onContinue,
                 testMode: testMode,
+                signalsEnabled: signalsEnabled,
                 header: eyebrow,
                 child: child,
               ),

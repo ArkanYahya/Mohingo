@@ -176,6 +176,24 @@ abstract class AppLocalizations {
   /// **'Saved — we\'ll finish checking this once you\'re online'**
   String get activityFeedbackPendingOnlineRefinement;
 
+  /// Feedback shown after submitting a free answer that the installed AI pack will judge on the device in a moment (ADR 0011). Nothing leaves the phone.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved — checking this on your phone'**
+  String get activityFeedbackPendingLocalJudgement;
+
+  /// Overline above the AI pack's explanation of a free answer's verdict, in the feedback panel and banner.
+  ///
+  /// In en, this message translates to:
+  /// **'Explanation'**
+  String get activityFeedbackExplanationLabel;
+
+  /// Small label under the AI pack's explanation saying it was produced by a model on the device, not written by a person. Always shown with an explanation (ADR 0011).
+  ///
+  /// In en, this message translates to:
+  /// **'Generated on your phone'**
+  String get activityFeedbackGeneratedLabel;
+
   /// Shown on a speak activity's typed-answer accessibility fallback. Never phrased as a permanent limitation of the learner's ability, only the device/build.
   ///
   /// In en, this message translates to:
@@ -2371,6 +2389,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Progress reset.'**
   String get settingsResetProgressDone;
+
+  /// Settings row for the downloadable AI pack that judges free answers and explains them on the phone (ADR 0011). Never says AI or a model name — what it does for the learner.
+  ///
+  /// In en, this message translates to:
+  /// **'Smart feedback'**
+  String get settingsSmartFeedbackTitle;
+
+  /// Smart feedback row body while this build offers no pack — an honest coming-soon line, not a working feature.
+  ///
+  /// In en, this message translates to:
+  /// **'A one-time download that explains your writing and speaking answers, on your phone. Not in this version yet.'**
+  String get settingsSmartFeedbackBodyUnavailable;
+
+  /// Smart feedback row body when the pack can be downloaded but is not on the device.
+  ///
+  /// In en, this message translates to:
+  /// **'A one-time download that explains your writing and speaking answers, on your phone. Works offline once downloaded.'**
+  String get settingsSmartFeedbackBodyNotInstalled;
+
+  /// Smart feedback row body while the pack downloads.
+  ///
+  /// In en, this message translates to:
+  /// **'Downloading…'**
+  String get settingsSmartFeedbackBodyDownloading;
+
+  /// Smart feedback row body when the pack is installed.
+  ///
+  /// In en, this message translates to:
+  /// **'Explaining your answers on this phone. Nothing leaves it.'**
+  String get settingsSmartFeedbackBodyInstalled;
+
+  /// Small action on the Smart feedback row that starts the pack download.
+  ///
+  /// In en, this message translates to:
+  /// **'Download'**
+  String get settingsSmartFeedbackDownload;
+
+  /// Small action on the Smart feedback row that removes the downloaded pack.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get settingsSmartFeedbackDelete;
 
   /// Settings section title for the not-yet-built backup/sync feature.
   ///

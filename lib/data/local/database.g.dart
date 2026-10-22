@@ -7357,6 +7357,32 @@ class $PendingOnlineRefinementsTable extends PendingOnlineRefinements
         type: DriftSqlType.dateTime,
         requiredDuringInsert: false,
       );
+  static const VerificationMeta _meaningSignalMeta = const VerificationMeta(
+    'meaningSignal',
+  );
+  @override
+  late final GeneratedColumn<double> meaningSignal = GeneratedColumn<double>(
+    'meaning_signal',
+    aliasedName,
+    true,
+    type: DriftSqlType.double,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _onlineAllowedMeta = const VerificationMeta(
+    'onlineAllowed',
+  );
+  @override
+  late final GeneratedColumn<bool> onlineAllowed = GeneratedColumn<bool>(
+    'online_allowed',
+    aliasedName,
+    false,
+    type: DriftSqlType.bool,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'CHECK ("online_allowed" IN (0, 1))',
+    ),
+    defaultValue: const Constant(true),
+  );
   @override
   List<GeneratedColumn> get $columns => [
     id,
@@ -7374,6 +7400,8 @@ class $PendingOnlineRefinementsTable extends PendingOnlineRefinements
     submittedAt,
     attemptCount,
     lastAttemptAt,
+    meaningSignal,
+    onlineAllowed,
   ];
   @override
   String get aliasedName => _alias ?? actualTableName;
@@ -7511,6 +7539,24 @@ class $PendingOnlineRefinementsTable extends PendingOnlineRefinements
         ),
       );
     }
+    if (data.containsKey('meaning_signal')) {
+      context.handle(
+        _meaningSignalMeta,
+        meaningSignal.isAcceptableOrUnknown(
+          data['meaning_signal']!,
+          _meaningSignalMeta,
+        ),
+      );
+    }
+    if (data.containsKey('online_allowed')) {
+      context.handle(
+        _onlineAllowedMeta,
+        onlineAllowed.isAcceptableOrUnknown(
+          data['online_allowed']!,
+          _onlineAllowedMeta,
+        ),
+      );
+    }
     return context;
   }
 
@@ -7583,6 +7629,14 @@ class $PendingOnlineRefinementsTable extends PendingOnlineRefinements
         DriftSqlType.dateTime,
         data['${effectivePrefix}last_attempt_at'],
       ),
+      meaningSignal: attachedDatabase.typeMapping.read(
+        DriftSqlType.double,
+        data['${effectivePrefix}meaning_signal'],
+      ),
+      onlineAllowed: attachedDatabase.typeMapping.read(
+        DriftSqlType.bool,
+        data['${effectivePrefix}online_allowed'],
+      )!,
     );
   }
 
@@ -7609,6 +7663,19 @@ class PendingOnlineRefinement extends DataClass
   final DateTime submittedAt;
   final int attemptCount;
   final DateTime? lastAttemptAt;
+
+  /// The on-device meaning signal computed at submission (ADR 0011), 0..1,
+  /// or null when none was available — carried separately from
+  /// [localScore] so the drain can apply the one bounded combination rule
+  /// over every signal at once rather than compounding adjustments.
+  final double? meaningSignal;
+
+  /// Whether this answer may be sent to the online grammar check: true for
+  /// a rubric marked `onlineRefinement` (ADR 0005's scope), false for an
+  /// answer queued only because an AI pack was installed to judge it
+  /// locally. A false row never reaches the network, whatever happens to
+  /// the pack.
+  final bool onlineAllowed;
   const PendingOnlineRefinement({
     required this.id,
     required this.uuid,
@@ -7625,6 +7692,8 @@ class PendingOnlineRefinement extends DataClass
     required this.submittedAt,
     required this.attemptCount,
     this.lastAttemptAt,
+    this.meaningSignal,
+    required this.onlineAllowed,
   });
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
@@ -7646,6 +7715,10 @@ class PendingOnlineRefinement extends DataClass
     if (!nullToAbsent || lastAttemptAt != null) {
       map['last_attempt_at'] = Variable<DateTime>(lastAttemptAt);
     }
+    if (!nullToAbsent || meaningSignal != null) {
+      map['meaning_signal'] = Variable<double>(meaningSignal);
+    }
+    map['online_allowed'] = Variable<bool>(onlineAllowed);
     return map;
   }
 
@@ -7668,6 +7741,10 @@ class PendingOnlineRefinement extends DataClass
       lastAttemptAt: lastAttemptAt == null && nullToAbsent
           ? const Value.absent()
           : Value(lastAttemptAt),
+      meaningSignal: meaningSignal == null && nullToAbsent
+          ? const Value.absent()
+          : Value(meaningSignal),
+      onlineAllowed: Value(onlineAllowed),
     );
   }
 
@@ -7692,6 +7769,8 @@ class PendingOnlineRefinement extends DataClass
       submittedAt: serializer.fromJson<DateTime>(json['submittedAt']),
       attemptCount: serializer.fromJson<int>(json['attemptCount']),
       lastAttemptAt: serializer.fromJson<DateTime?>(json['lastAttemptAt']),
+      meaningSignal: serializer.fromJson<double?>(json['meaningSignal']),
+      onlineAllowed: serializer.fromJson<bool>(json['onlineAllowed']),
     );
   }
   @override
@@ -7713,6 +7792,8 @@ class PendingOnlineRefinement extends DataClass
       'submittedAt': serializer.toJson<DateTime>(submittedAt),
       'attemptCount': serializer.toJson<int>(attemptCount),
       'lastAttemptAt': serializer.toJson<DateTime?>(lastAttemptAt),
+      'meaningSignal': serializer.toJson<double?>(meaningSignal),
+      'onlineAllowed': serializer.toJson<bool>(onlineAllowed),
     };
   }
 
@@ -7732,6 +7813,8 @@ class PendingOnlineRefinement extends DataClass
     DateTime? submittedAt,
     int? attemptCount,
     Value<DateTime?> lastAttemptAt = const Value.absent(),
+    Value<double?> meaningSignal = const Value.absent(),
+    bool? onlineAllowed,
   }) => PendingOnlineRefinement(
     id: id ?? this.id,
     uuid: uuid ?? this.uuid,
@@ -7750,6 +7833,10 @@ class PendingOnlineRefinement extends DataClass
     lastAttemptAt: lastAttemptAt.present
         ? lastAttemptAt.value
         : this.lastAttemptAt,
+    meaningSignal: meaningSignal.present
+        ? meaningSignal.value
+        : this.meaningSignal,
+    onlineAllowed: onlineAllowed ?? this.onlineAllowed,
   );
   PendingOnlineRefinement copyWithCompanion(
     PendingOnlineRefinementsCompanion data,
@@ -7784,6 +7871,12 @@ class PendingOnlineRefinement extends DataClass
       lastAttemptAt: data.lastAttemptAt.present
           ? data.lastAttemptAt.value
           : this.lastAttemptAt,
+      meaningSignal: data.meaningSignal.present
+          ? data.meaningSignal.value
+          : this.meaningSignal,
+      onlineAllowed: data.onlineAllowed.present
+          ? data.onlineAllowed.value
+          : this.onlineAllowed,
     );
   }
 
@@ -7804,7 +7897,9 @@ class PendingOnlineRefinement extends DataClass
           ..write('localScore: $localScore, ')
           ..write('submittedAt: $submittedAt, ')
           ..write('attemptCount: $attemptCount, ')
-          ..write('lastAttemptAt: $lastAttemptAt')
+          ..write('lastAttemptAt: $lastAttemptAt, ')
+          ..write('meaningSignal: $meaningSignal, ')
+          ..write('onlineAllowed: $onlineAllowed')
           ..write(')'))
         .toString();
   }
@@ -7826,6 +7921,8 @@ class PendingOnlineRefinement extends DataClass
     submittedAt,
     attemptCount,
     lastAttemptAt,
+    meaningSignal,
+    onlineAllowed,
   );
   @override
   bool operator ==(Object other) =>
@@ -7845,7 +7942,9 @@ class PendingOnlineRefinement extends DataClass
           other.localScore == this.localScore &&
           other.submittedAt == this.submittedAt &&
           other.attemptCount == this.attemptCount &&
-          other.lastAttemptAt == this.lastAttemptAt);
+          other.lastAttemptAt == this.lastAttemptAt &&
+          other.meaningSignal == this.meaningSignal &&
+          other.onlineAllowed == this.onlineAllowed);
 }
 
 class PendingOnlineRefinementsCompanion
@@ -7865,6 +7964,8 @@ class PendingOnlineRefinementsCompanion
   final Value<DateTime> submittedAt;
   final Value<int> attemptCount;
   final Value<DateTime?> lastAttemptAt;
+  final Value<double?> meaningSignal;
+  final Value<bool> onlineAllowed;
   const PendingOnlineRefinementsCompanion({
     this.id = const Value.absent(),
     this.uuid = const Value.absent(),
@@ -7881,6 +7982,8 @@ class PendingOnlineRefinementsCompanion
     this.submittedAt = const Value.absent(),
     this.attemptCount = const Value.absent(),
     this.lastAttemptAt = const Value.absent(),
+    this.meaningSignal = const Value.absent(),
+    this.onlineAllowed = const Value.absent(),
   });
   PendingOnlineRefinementsCompanion.insert({
     this.id = const Value.absent(),
@@ -7898,6 +8001,8 @@ class PendingOnlineRefinementsCompanion
     required DateTime submittedAt,
     this.attemptCount = const Value.absent(),
     this.lastAttemptAt = const Value.absent(),
+    this.meaningSignal = const Value.absent(),
+    this.onlineAllowed = const Value.absent(),
   }) : uuid = Value(uuid),
        learnerId = Value(learnerId),
        activityId = Value(activityId),
@@ -7925,6 +8030,8 @@ class PendingOnlineRefinementsCompanion
     Expression<DateTime>? submittedAt,
     Expression<int>? attemptCount,
     Expression<DateTime>? lastAttemptAt,
+    Expression<double>? meaningSignal,
+    Expression<bool>? onlineAllowed,
   }) {
     return RawValuesInsertable({
       if (id != null) 'id': id,
@@ -7942,6 +8049,8 @@ class PendingOnlineRefinementsCompanion
       if (submittedAt != null) 'submitted_at': submittedAt,
       if (attemptCount != null) 'attempt_count': attemptCount,
       if (lastAttemptAt != null) 'last_attempt_at': lastAttemptAt,
+      if (meaningSignal != null) 'meaning_signal': meaningSignal,
+      if (onlineAllowed != null) 'online_allowed': onlineAllowed,
     });
   }
 
@@ -7961,6 +8070,8 @@ class PendingOnlineRefinementsCompanion
     Value<DateTime>? submittedAt,
     Value<int>? attemptCount,
     Value<DateTime?>? lastAttemptAt,
+    Value<double?>? meaningSignal,
+    Value<bool>? onlineAllowed,
   }) {
     return PendingOnlineRefinementsCompanion(
       id: id ?? this.id,
@@ -7978,6 +8089,8 @@ class PendingOnlineRefinementsCompanion
       submittedAt: submittedAt ?? this.submittedAt,
       attemptCount: attemptCount ?? this.attemptCount,
       lastAttemptAt: lastAttemptAt ?? this.lastAttemptAt,
+      meaningSignal: meaningSignal ?? this.meaningSignal,
+      onlineAllowed: onlineAllowed ?? this.onlineAllowed,
     );
   }
 
@@ -8029,6 +8142,12 @@ class PendingOnlineRefinementsCompanion
     if (lastAttemptAt.present) {
       map['last_attempt_at'] = Variable<DateTime>(lastAttemptAt.value);
     }
+    if (meaningSignal.present) {
+      map['meaning_signal'] = Variable<double>(meaningSignal.value);
+    }
+    if (onlineAllowed.present) {
+      map['online_allowed'] = Variable<bool>(onlineAllowed.value);
+    }
     return map;
   }
 
@@ -8049,7 +8168,9 @@ class PendingOnlineRefinementsCompanion
           ..write('localScore: $localScore, ')
           ..write('submittedAt: $submittedAt, ')
           ..write('attemptCount: $attemptCount, ')
-          ..write('lastAttemptAt: $lastAttemptAt')
+          ..write('lastAttemptAt: $lastAttemptAt, ')
+          ..write('meaningSignal: $meaningSignal, ')
+          ..write('onlineAllowed: $onlineAllowed')
           ..write(')'))
         .toString();
   }
@@ -15230,6 +15351,8 @@ typedef $$PendingOnlineRefinementsTableCreateCompanionBuilder =
       required DateTime submittedAt,
       Value<int> attemptCount,
       Value<DateTime?> lastAttemptAt,
+      Value<double?> meaningSignal,
+      Value<bool> onlineAllowed,
     });
 typedef $$PendingOnlineRefinementsTableUpdateCompanionBuilder =
     PendingOnlineRefinementsCompanion Function({
@@ -15248,6 +15371,8 @@ typedef $$PendingOnlineRefinementsTableUpdateCompanionBuilder =
       Value<DateTime> submittedAt,
       Value<int> attemptCount,
       Value<DateTime?> lastAttemptAt,
+      Value<double?> meaningSignal,
+      Value<bool> onlineAllowed,
     });
 
 final class $$PendingOnlineRefinementsTableReferences
@@ -15360,6 +15485,16 @@ class $$PendingOnlineRefinementsTableFilterComposer
     builder: (column) => ColumnFilters(column),
   );
 
+  ColumnFilters<double> get meaningSignal => $composableBuilder(
+    column: $table.meaningSignal,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<bool> get onlineAllowed => $composableBuilder(
+    column: $table.onlineAllowed,
+    builder: (column) => ColumnFilters(column),
+  );
+
   $$LearnersTableFilterComposer get learnerId {
     final $$LearnersTableFilterComposer composer = $composerBuilder(
       composer: this,
@@ -15463,6 +15598,16 @@ class $$PendingOnlineRefinementsTableOrderingComposer
     builder: (column) => ColumnOrderings(column),
   );
 
+  ColumnOrderings<double> get meaningSignal => $composableBuilder(
+    column: $table.meaningSignal,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<bool> get onlineAllowed => $composableBuilder(
+    column: $table.onlineAllowed,
+    builder: (column) => ColumnOrderings(column),
+  );
+
   $$LearnersTableOrderingComposer get learnerId {
     final $$LearnersTableOrderingComposer composer = $composerBuilder(
       composer: this,
@@ -15552,6 +15697,16 @@ class $$PendingOnlineRefinementsTableAnnotationComposer
     builder: (column) => column,
   );
 
+  GeneratedColumn<double> get meaningSignal => $composableBuilder(
+    column: $table.meaningSignal,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<bool> get onlineAllowed => $composableBuilder(
+    column: $table.onlineAllowed,
+    builder: (column) => column,
+  );
+
   $$LearnersTableAnnotationComposer get learnerId {
     final $$LearnersTableAnnotationComposer composer = $composerBuilder(
       composer: this,
@@ -15630,6 +15785,8 @@ class $$PendingOnlineRefinementsTableTableManager
                 Value<DateTime> submittedAt = const Value.absent(),
                 Value<int> attemptCount = const Value.absent(),
                 Value<DateTime?> lastAttemptAt = const Value.absent(),
+                Value<double?> meaningSignal = const Value.absent(),
+                Value<bool> onlineAllowed = const Value.absent(),
               }) => PendingOnlineRefinementsCompanion(
                 id: id,
                 uuid: uuid,
@@ -15646,6 +15803,8 @@ class $$PendingOnlineRefinementsTableTableManager
                 submittedAt: submittedAt,
                 attemptCount: attemptCount,
                 lastAttemptAt: lastAttemptAt,
+                meaningSignal: meaningSignal,
+                onlineAllowed: onlineAllowed,
               ),
           createCompanionCallback:
               ({
@@ -15664,6 +15823,8 @@ class $$PendingOnlineRefinementsTableTableManager
                 required DateTime submittedAt,
                 Value<int> attemptCount = const Value.absent(),
                 Value<DateTime?> lastAttemptAt = const Value.absent(),
+                Value<double?> meaningSignal = const Value.absent(),
+                Value<bool> onlineAllowed = const Value.absent(),
               }) => PendingOnlineRefinementsCompanion.insert(
                 id: id,
                 uuid: uuid,
@@ -15680,6 +15841,8 @@ class $$PendingOnlineRefinementsTableTableManager
                 submittedAt: submittedAt,
                 attemptCount: attemptCount,
                 lastAttemptAt: lastAttemptAt,
+                meaningSignal: meaningSignal,
+                onlineAllowed: onlineAllowed,
               ),
           withReferenceMapper: (p0) => p0
               .map(

@@ -13,6 +13,7 @@ import '../../domain/activity_submission.dart';
 import '../../domain/answer_matching.dart';
 import '../../domain/evaluation/evaluation_context.dart';
 import '../../domain/evaluation/evaluator.dart';
+import '../../domain/evaluation/grading_signals.dart';
 import '../../domain/sound_effects_service.dart';
 import '../../providers/online_refinement_providers.dart';
 import '../../providers/sound_effects_providers.dart';
@@ -63,6 +64,10 @@ class _WriteActivityViewState extends ConsumerState<WriteActivityView> {
   final _controller = TextEditingController();
   ActivitySubmission? _submission;
 
+  /// True while the meaning signal is being computed for a submitted
+  /// answer — Check is disabled, and a second tap is ignored.
+  var _grading = false;
+
   /// Captured the instant [_submission] goes pending — a resolved attempt
   /// with an older `attemptedAt` belongs to an earlier retry of this same
   /// activity, not this submission, and must not be shown as its result.
@@ -85,6 +90,7 @@ class _WriteActivityViewState extends ConsumerState<WriteActivityView> {
     if (reviewAttempt == null) return;
     final decoded = _decodeText(reviewAttempt.rawAnswer);
     if (decoded != null) _controller.text = decoded;
+    final explanation = explanationIn(reviewAttempt.criteriaScores);
     _submission = ActivitySubmission(
       correctness: switch (reviewAttempt.isCorrect) {
         true => ActivityCorrectness.correct,
@@ -93,6 +99,8 @@ class _WriteActivityViewState extends ConsumerState<WriteActivityView> {
       },
       score: reviewAttempt.score,
       rawAnswerJson: reviewAttempt.rawAnswer,
+      explanationEn: explanation?.en,
+      explanationAr: explanation?.ar,
     );
   }
 
@@ -110,27 +118,74 @@ class _WriteActivityViewState extends ConsumerState<WriteActivityView> {
   /// `accepted` list grades only a task without a rubric, and is otherwise
   /// the model answer shown after a miss. Written answers are graded as
   /// written — spelling is the learner's own (ADR 0009).
-  void _submit() {
+  ///
+  /// A `keywordChecklist` task with model answers also gets the on-device
+  /// meaning signal (ADR 0011), which may raise the rubric's score within
+  /// `combineSignals`'s bound — unless the host grades on the rubric alone
+  /// ([gradingSignalsEnabled]). The answer is queued for deferred grading
+  /// when its rubric is marked `onlineRefinement`, or when an AI pack is
+  /// installed to judge it on the device.
+  Future<void> _submit() async {
     final text = _controller.text.trim();
-    if (text.isEmpty || _submission != null) return;
+    if (text.isEmpty || _submission != null || _grading) return;
 
     final ActivitySubmission submission;
     final evaluation = widget.activity.evaluation;
-    if (evaluation is KeywordChecklistEvaluationSpec &&
-        evaluation.onlineRefinement != null) {
-      // Open-ended, deferred-grading path: the local score is computed now
-      // but never used as the graded score directly — it's carried through
-      // to the pending_online_refinements queue and combined with a free
-      // online grammar-quality pass once the device is online. See
-      // docs/superpowers/specs/2026-09-07-offline-answer-evaluation-design.md.
-      final localResult = evaluate(evaluation, text);
-      submission = ActivitySubmission(
-        correctness: ActivityCorrectness.notAutoGraded,
-        score: localResult.score,
-        rawAnswerJson: jsonEncode(text),
-        pendingOnlineRefinement: true,
-      );
-      _pendingSince = _truncatedToSeconds(DateTime.now());
+    if (evaluation is KeywordChecklistEvaluationSpec) {
+      final rubric = evaluate(evaluation, text);
+      final signalsOn = gradingSignalsEnabled(context);
+      setState(() => _grading = true);
+      // No model answers, no meaning to compare: the service is not asked,
+      // so a task without them never waits on the model.
+      final meaning = signalsOn && widget.activity.accepted.isNotEmpty
+          ? await ref
+                .read(meaningSignalServiceProvider)
+                .meaning(text, modelAnswers: widget.activity.accepted)
+          : null;
+      final packAvailable = signalsOn
+          ? await ref.read(localJudgementServiceProvider).isAvailable
+          : false;
+      if (!mounted) return;
+      _grading = false;
+      final onlineAllowed = evaluation.onlineRefinement != null;
+      if (onlineAllowed || packAvailable) {
+        // Deferred-grading path: the rubric score and the meaning signal
+        // are carried to the pending_online_refinements queue and combined
+        // with the later signals (the pack's judgement, or the online
+        // grammar check) in the drain. See docs/superpowers/specs/
+        // 2026-09-07-offline-answer-evaluation-design.md and ADR 0011.
+        submission = ActivitySubmission(
+          correctness: ActivityCorrectness.notAutoGraded,
+          score: rubric.score,
+          rawAnswerJson: jsonEncode(text),
+          pendingOnlineRefinement: true,
+          onlineRefinementAllowed: onlineAllowed,
+          meaningSignal: meaning,
+        );
+        _pendingSince = _truncatedToSeconds(DateTime.now());
+      } else {
+        final signals = GradingSignals(
+          rubric: rubric.score ?? 0.0,
+          meaning: meaning,
+        );
+        final finalScore = combineSignals(signals);
+        final passes = passesWithSignals(
+          rubricCorrect: rubric.correctness == ActivityCorrectness.correct,
+          rubricScore: signals.rubric,
+          finalScore: finalScore,
+        );
+        submission = ActivitySubmission(
+          correctness: passes
+              ? ActivityCorrectness.correct
+              : ActivityCorrectness.incorrect,
+          score: finalScore,
+          rawAnswerJson: jsonEncode(text),
+          criteriaScoresJson: meaning == null
+              ? null
+              : criteriaScoresJson(signals, finalScore: finalScore),
+          correctAnswerLabel: _correctAnswerLabel(),
+        );
+      }
     } else if (evaluation != null) {
       final result = evaluate(
         evaluation,
@@ -165,7 +220,7 @@ class _WriteActivityViewState extends ConsumerState<WriteActivityView> {
     widget.onSubmitted(submission);
     // Never for notAutoGraded — nothing definitive to celebrate or flag
     // yet, whether it's a form-style "no automatic check exists" answer or
-    // one still queued for deferred online-refinement grading.
+    // one still queued for deferred grading.
     if (submission.correctness != ActivityCorrectness.notAutoGraded) {
       if (marksAnswers(context)) {
         playFeedbackSoundSafely(
@@ -185,12 +240,15 @@ class _WriteActivityViewState extends ConsumerState<WriteActivityView> {
   ActivitySubmission? _resolvedSubmission(ActivityAttempt? attempt) {
     if (attempt == null) return null;
     if (attempt.attemptedAt.isBefore(_pendingSince!)) return null;
+    final explanation = explanationIn(attempt.criteriaScores);
     return ActivitySubmission(
       correctness: attempt.isCorrect == true
           ? ActivityCorrectness.correct
           : ActivityCorrectness.incorrect,
       score: attempt.score,
       rawAnswerJson: _submission!.rawAnswerJson,
+      explanationEn: explanation?.en,
+      explanationAr: explanation?.ar,
     );
   }
 
@@ -242,7 +300,7 @@ class _WriteActivityViewState extends ConsumerState<WriteActivityView> {
         children: [
           TextField(
             controller: _controller,
-            enabled: _submission == null,
+            enabled: _submission == null && !_grading,
             minLines: 5,
             maxLines: null,
             keyboardType: TextInputType.multiline,
@@ -261,7 +319,7 @@ class _WriteActivityViewState extends ConsumerState<WriteActivityView> {
       ),
       feedback: ActivitySubmitOrFeedback(
         submission: displaySubmission,
-        canSubmit: _controller.text.trim().isNotEmpty,
+        canSubmit: _controller.text.trim().isNotEmpty && !_grading,
         onSubmit: _submit,
         correctAnswerLabel: _correctAnswerLabel(),
       ),
