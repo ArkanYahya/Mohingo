@@ -250,7 +250,6 @@ class SpikeController extends ChangeNotifier {
     report = null;
     caseIndex = 0;
     _notify();
-    final output = judgementOutput(mode);
     final params = judgeGenerationParams(mode);
     final thinking = !selected.disableThinking;
     try {
@@ -265,7 +264,7 @@ class SpikeController extends ChangeNotifier {
           judgement = await engine
               .createStructuredJson<SpikeJudgement>(
                 judgeMessages(c, mode),
-                output: output,
+                output: judgementOutput(mode, c),
                 params: params,
                 enableThinking: thinking,
               )

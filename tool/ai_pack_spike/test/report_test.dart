@@ -6,9 +6,10 @@ import 'package:mohingo_ai_pack_spike/report.dart';
 SpikeJudgement _j(bool answers, int issues, {String ar = 'شرح جيد'}) =>
     SpikeJudgement(
       isEnglish: true,
-      missing: answers ? 'nothing' : 'a part',
-      answersTask: answers,
-      grammarIssues: issues,
+      partsDone: {'a part': answers},
+      mistakes: [
+        for (var i = 0; i < issues; i++) Mistake(wrong: 'w$i', right: 'r$i'),
+      ],
       corrected: 'c',
       explanationEn: 'e',
       explanationAr: ar,

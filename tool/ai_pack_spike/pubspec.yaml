@@ -96,7 +96,10 @@ flutter:
   # see https://flutter.dev/to/font-from-package
 
 # Ship only the GGUF runtime, CPU only on Android (ADR 0013 decides CPU; the
-# Vulkan path is experimental there), in its compact profile.
+# Vulkan path is experimental there). The CPU profile stays `full`: every ARM
+# kernel variant (dotprod, i8mm, SVE), so the phone gets the fastest one. The
+# first two runs used `compact`, which ships the ARMv8.0 baseline kernel
+# alone and evaluated the prompt at ~35 tokens/s on a 2024 flagship.
 hooks:
   user_defines:
     llamadart:
@@ -105,4 +108,3 @@ hooks:
         platforms:
           android-arm64:
             backends: [cpu]
-            cpu_profile: compact

@@ -9,6 +9,7 @@ class BenchmarkCase {
   const BenchmarkCase({
     required this.id,
     required this.task,
+    required this.parts,
     required this.modelAnswer,
     required this.answer,
     required this.expectAnswersTask,
@@ -18,6 +19,12 @@ class BenchmarkCase {
 
   final String id;
   final String task;
+
+  /// What the task asks for, one entry per requirement, in the words the
+  /// model is asked about. The verdict is computed from these: an answer
+  /// does the task when every part is done. In Mohingo these are the
+  /// rubric's `requiredGroups`, read as meanings instead of keywords.
+  final List<String> parts;
   final String modelAnswer;
   final String answer;
   final bool expectAnswersTask;
@@ -29,17 +36,32 @@ class BenchmarkCase {
 
 const String _likesTask =
     'Say two things you like and one thing you don\'t like.';
+const List<String> _likesParts = [
+  'two things the speaker likes',
+  'one thing the speaker does not like',
+];
 const String _likesModel =
     'I like football and I love music. I don\'t like tennis.';
 const String _politeTask = 'A person helps you. Respond politely.';
+const List<String> _politeParts = ['a polite reply to someone who helped'];
 const String _politeModel = 'Thank you. / Thanks.';
 const String _introTask =
     'Introduce yourself: say your name, where you are from and your job.';
+const List<String> _introParts = [
+  'the speaker\'s name',
+  'where the speaker is from',
+  'the speaker\'s job',
+];
 const String _introModel = 'Hi, I\'m Sara. I\'m from Egypt and I\'m a nurse.';
 const String _emailTask =
     'Reply to a friend who writes that they volunteer at the library on '
     'Saturdays. Show interest, ask a question about it, and say what you '
     'are doing these days.';
+const List<String> _emailParts = [
+  'shows interest in the friend\'s volunteering',
+  'asks a question about the volunteering',
+  'says what the writer is doing these days',
+];
 const String _emailModel =
     'Hi! That sounds great. Volunteering at the library is a lovely idea. '
     'Do you help the children with their reading, or do you work at the '
@@ -47,10 +69,17 @@ const String _emailModel =
     'moment. Every Friday I try a new dish. Tell me more about your '
     'Saturdays when you have time!';
 const String _routineTask = 'Describe your morning routine in three sentences.';
+const List<String> _routineParts = [
+  'describes the speaker\'s morning routine',
+  'has three sentences',
+];
 const String _routineModel =
     'I get up at seven. I have breakfast with my family. Then I take the bus '
     'to work.';
 const String _weekendTask = 'Say what you did last weekend.';
+const List<String> _weekendParts = [
+  'says what the speaker did last weekend, as past events',
+];
 const String _weekendModel =
     'Last weekend I visited my grandmother and we cooked together.';
 
@@ -58,6 +87,7 @@ const List<BenchmarkCase> kBenchmarkCases = [
   BenchmarkCase(
     id: 'likes-synonym',
     task: _likesTask,
+    parts: _likesParts,
     modelAnswer: _likesModel,
     answer: 'I like football and I love music, but I can\'t stand tennis.',
     expectAnswersTask: true,
@@ -67,6 +97,7 @@ const List<BenchmarkCase> kBenchmarkCases = [
   BenchmarkCase(
     id: 'likes-other-topic',
     task: _likesTask,
+    parts: _likesParts,
     modelAnswer: _likesModel,
     answer: 'I like tea and I love coffee, but I can\'t stand milk.',
     expectAnswersTask: true,
@@ -76,6 +107,7 @@ const List<BenchmarkCase> kBenchmarkCases = [
   BenchmarkCase(
     id: 'likes-no-dislike',
     task: _likesTask,
+    parts: _likesParts,
     modelAnswer: _likesModel,
     answer: 'I like football and I love music. I like tennis too.',
     expectAnswersTask: false,
@@ -85,6 +117,7 @@ const List<BenchmarkCase> kBenchmarkCases = [
   BenchmarkCase(
     id: 'likes-off-topic',
     task: _likesTask,
+    parts: _likesParts,
     modelAnswer: _likesModel,
     answer: 'The weather is nice today.',
     expectAnswersTask: false,
@@ -94,6 +127,7 @@ const List<BenchmarkCase> kBenchmarkCases = [
   BenchmarkCase(
     id: 'likes-broken-grammar',
     task: _likesTask,
+    parts: _likesParts,
     modelAnswer: _likesModel,
     answer: 'I like swim and I love read books. I no like run.',
     expectAnswersTask: true,
@@ -103,6 +137,7 @@ const List<BenchmarkCase> kBenchmarkCases = [
   BenchmarkCase(
     id: 'polite-appreciate',
     task: _politeTask,
+    parts: _politeParts,
     modelAnswer: _politeModel,
     answer: 'I appreciate it.',
     expectAnswersTask: true,
@@ -112,6 +147,7 @@ const List<BenchmarkCase> kBenchmarkCases = [
   BenchmarkCase(
     id: 'polite-rude',
     task: _politeTask,
+    parts: _politeParts,
     modelAnswer: _politeModel,
     answer: 'Go away.',
     expectAnswersTask: false,
@@ -121,6 +157,7 @@ const List<BenchmarkCase> kBenchmarkCases = [
   BenchmarkCase(
     id: 'intro-complete',
     task: _introTask,
+    parts: _introParts,
     modelAnswer: _introModel,
     answer:
         'Hello! My name is Omar, I come from Iraq and I work as an engineer.',
@@ -131,6 +168,7 @@ const List<BenchmarkCase> kBenchmarkCases = [
   BenchmarkCase(
     id: 'intro-one-part',
     task: _introTask,
+    parts: _introParts,
     modelAnswer: _introModel,
     answer: 'Hello! My name is Omar.',
     expectAnswersTask: false,
@@ -140,6 +178,7 @@ const List<BenchmarkCase> kBenchmarkCases = [
   BenchmarkCase(
     id: 'intro-broken-grammar',
     task: _introTask,
+    parts: _introParts,
     modelAnswer: _introModel,
     answer: 'My name Omar, I from Iraq, I am engineer.',
     expectAnswersTask: true,
@@ -149,6 +188,7 @@ const List<BenchmarkCase> kBenchmarkCases = [
   BenchmarkCase(
     id: 'intro-arabic',
     task: _introTask,
+    parts: _introParts,
     modelAnswer: _introModel,
     answer: 'اسمي عمر وأنا من العراق وأعمل مهندساً.',
     expectAnswersTask: false,
@@ -158,6 +198,7 @@ const List<BenchmarkCase> kBenchmarkCases = [
   BenchmarkCase(
     id: 'email-two-of-three',
     task: _emailTask,
+    parts: _emailParts,
     modelAnswer: _emailModel,
     answer:
         'That sounds great! Do you like working at the library? Does it open '
@@ -169,6 +210,7 @@ const List<BenchmarkCase> kBenchmarkCases = [
   BenchmarkCase(
     id: 'email-vague',
     task: _emailTask,
+    parts: _emailParts,
     modelAnswer: _emailModel,
     answer:
         'That sounds great! Do you like it? I am happy for you. See you '
@@ -180,6 +222,7 @@ const List<BenchmarkCase> kBenchmarkCases = [
   BenchmarkCase(
     id: 'email-complete',
     task: _emailTask,
+    parts: _emailParts,
     modelAnswer: _emailModel,
     answer:
         'Really? That\'s wonderful. Do you help children with their reading? '
@@ -192,6 +235,7 @@ const List<BenchmarkCase> kBenchmarkCases = [
   BenchmarkCase(
     id: 'email-broken-grammar',
     task: _emailTask,
+    parts: _emailParts,
     modelAnswer: _emailModel,
     answer:
         'That sounds great! Do you like the library? I enjoy to cook now. Me '
@@ -203,6 +247,7 @@ const List<BenchmarkCase> kBenchmarkCases = [
   BenchmarkCase(
     id: 'routine-complete',
     task: _routineTask,
+    parts: _routineParts,
     modelAnswer: _routineModel,
     answer:
         'I wake up at six and drink coffee. After that I take a shower. I '
@@ -214,6 +259,7 @@ const List<BenchmarkCase> kBenchmarkCases = [
   BenchmarkCase(
     id: 'routine-yes',
     task: _routineTask,
+    parts: _routineParts,
     modelAnswer: _routineModel,
     answer: 'Yes.',
     expectAnswersTask: false,
@@ -223,6 +269,7 @@ const List<BenchmarkCase> kBenchmarkCases = [
   BenchmarkCase(
     id: 'routine-echo',
     task: _routineTask,
+    parts: _routineParts,
     modelAnswer: _routineModel,
     answer: 'Describe your morning routine in three sentences.',
     expectAnswersTask: false,
@@ -232,6 +279,7 @@ const List<BenchmarkCase> kBenchmarkCases = [
   BenchmarkCase(
     id: 'weekend-tense',
     task: _weekendTask,
+    parts: _weekendParts,
     modelAnswer: _weekendModel,
     answer: 'Last weekend I go to the beach with my friends and we swim.',
     expectAnswersTask: true,
@@ -241,6 +289,7 @@ const List<BenchmarkCase> kBenchmarkCases = [
   BenchmarkCase(
     id: 'weekend-habit',
     task: _weekendTask,
+    parts: _weekendParts,
     modelAnswer: _weekendModel,
     answer: 'Every weekend I go to the beach.',
     expectAnswersTask: false,
@@ -250,6 +299,7 @@ const List<BenchmarkCase> kBenchmarkCases = [
   BenchmarkCase(
     id: 'dislike-register',
     task: 'Tell your new colleague about one thing you don\'t like at work.',
+    parts: ['one thing the speaker does not like at work'],
     modelAnswer: 'I don\'t like long meetings.',
     answer: 'I can\'t stand long meetings.',
     expectAnswersTask: true,
@@ -259,6 +309,7 @@ const List<BenchmarkCase> kBenchmarkCases = [
   BenchmarkCase(
     id: 'shop-wrong-item',
     task: 'Ask the shop assistant for the price of the shoes.',
+    parts: ['asks for a price', 'the thing asked about is the shoes'],
     modelAnswer: 'Excuse me, how much are these shoes?',
     answer: 'Excuse me, how much is this shirt?',
     expectAnswersTask: false,

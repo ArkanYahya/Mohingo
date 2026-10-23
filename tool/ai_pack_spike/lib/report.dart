@@ -182,8 +182,13 @@ String buildReport({
     } else {
       b
         ..writeln(
-          'english: ${j.isEnglish}; missing: ${j.missing}; '
-          'verdict: ${j.answersTask}; issues: ${j.grammarIssues}',
+          'english (code): ${j.isEnglish}; parts: '
+          '${j.partsDone.entries.map((e) => '${e.key}=${e.value}').join('; ')}'
+          '; verdict: ${j.answersTask}',
+        )
+        ..writeln(
+          'mistakes (${j.grammarIssues}): '
+          '${j.mistakes.isEmpty ? 'none' : j.mistakes.join(', ')}',
         )
         ..writeln('en: ${j.explanationEn}');
       if (j.corrected.isNotEmpty) b.writeln('corrected: ${j.corrected}');

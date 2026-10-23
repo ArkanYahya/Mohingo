@@ -2,71 +2,88 @@ import 'package:llamadart/llamadart.dart';
 
 import 'benchmark_cases.dart';
 
-/// What the model is asked to produce. `fast` asks for the verdict, the
-/// grammar count and a one-line English explanation; `full` adds the
-/// corrected answer and an Arabic explanation. The first run on a phone
-/// (Gemma 3 1B, 2026-10-23) spent most of its 15 s per answer generating
-/// ~100 tokens of explanation, so the two are measured apart.
+/// What the model is asked to produce. `fast` asks for the part checks, the
+/// mistakes and a one-line English explanation; `full` adds the corrected
+/// answer and an Arabic explanation.
 enum JudgeMode { fast, full }
 
-/// The fixed instruction every candidate gets. It mirrors what the main
-/// app's `LocalJudgementService` will ask (ADR 0013): does the answer do
-/// the task, how many grammar issues, and a short explanation.
+/// Prompt v3. The first two runs (Gemma 3 1B, LFM2.5 1.2B, 2026-10-23)
+/// showed that a model of this size cannot be asked for a verdict: both
+/// said yes to all 22 answers, and the second copied the prompt's worked
+/// example into every `missing` field. So the model is no longer asked to
+/// judge, count or decide anything:
 ///
-/// The first run showed a 1B model saying yes to all 22 answers and
-/// opening every explanation with "Good!", so the prompt now makes the
-/// model check the task's parts *before* it gives a verdict (the fields
-/// come in that order in the JSON), tells it to be strict, and shows one
-/// failing and one passing example.
+/// - The task's requirements are listed for it (the case's `parts`, in
+///   Mohingo the rubric's groups) and it answers true/false per part; the
+///   JSON fixes the part names, so it only ever produces the booleans.
+/// - Grammar mistakes come back as a list of (wrong, right) pairs; code
+///   counts them. A list is easier for a small model than a number.
+/// - Whether the answer is English is decided by code from its script,
+///   never asked.
+/// - The verdict is computed: English and every part done.
+///
+/// No worked example: it contaminated the previous output.
 String judgeSystemPrompt(JudgeMode mode) =>
-    'You are a strict English teacher grading one short answer from an '
-    'adult learner of English (CEFR A1 to A2) whose first language is '
-    'Arabic. You get the TASK, one MODEL ANSWER (an example of a good '
-    'answer; an answer with different words or a different topic can be '
-    'just as good) and the LEARNER ANSWER.\n'
-    'Work in this order:\n'
-    '1. is_english: true only if the learner answer is written in English.\n'
-    '2. missing: list every part the TASK asks for that the learner answer '
-    'does not do, in a few words. Write "nothing" only if every part is '
-    'done. An answer that is off topic, that only repeats the task, that '
-    'is one word, or that does the wrong thing is missing everything.\n'
-    '3. answers_task: true only if is_english is true and missing is '
-    '"nothing". Most learner answers have a problem; do not be kind here.\n'
-    '4. grammar_issues: the number of grammar or spelling mistakes in the '
-    'learner answer. 0 if there are none. Do not count style or '
-    'punctuation.\n'
-    '${mode == JudgeMode.full ? '5. corrected: the learner answer with those mistakes fixed, keeping the learner\'s own words. If the answer is not English or is off topic, copy it unchanged.\n6' : '5'}'
-    '. explanation_en: one short sentence in simple English. If something '
-    'is missing or wrong, say what. If all is well, say what was done '
-    'well. Never start with "Good" when something is missing.\n'
-    '${mode == JudgeMode.full ? '7. explanation_ar: the same sentence written in Arabic script, in Arabic (not Bengali, not Chinese, not English).\n' : ''}'
-    'Example 1. TASK: Say two things you like and one thing you don\'t '
-    'like. LEARNER ANSWER: I like tea. I like coffee too. -> is_english '
-    'true, missing "one thing you don\'t like", answers_task false, '
-    'grammar_issues 0.\n'
-    'Example 2. TASK: Ask for the price of the shoes. LEARNER ANSWER: '
-    'Excuse me, how much are this shoes? -> is_english true, missing '
-    '"nothing", answers_task true, grammar_issues 1 (this -> these).\n'
+    'You check one short answer written by an adult beginner learning '
+    'English (CEFR A1 to A2). You get the TASK, a MODEL ANSWER (one good '
+    'answer; other words and other topics can be just as good) and the '
+    'LEARNER ANSWER.\n'
+    'For each part of the task listed in "parts", say whether the learner '
+    'answer really does it: true or false. Read only the learner answer. If '
+    'the learner answer does not do a part, or talks about something else, '
+    'or only repeats the task, that part is false.\n'
+    'In "mistakes", list each grammar or spelling mistake in the learner '
+    'answer as the wrong words and the right words. Leave the list empty '
+    'when there are none. Do not list style or punctuation.\n'
+    '${mode == JudgeMode.full ? 'In "corrected", give the learner answer with the mistakes fixed, keeping the learner\'s words.\n' : ''}'
+    'In "explanation_en", write one short sentence in simple English for '
+    'the learner: what is missing or wrong, or, if nothing is, what was done '
+    'well.\n'
+    '${mode == JudgeMode.full ? 'In "explanation_ar", write that sentence in Arabic, in Arabic script.\n' : ''}'
     'Reply with JSON only.';
 
-/// The JSON the model must produce; constrained decoding enforces it. The
-/// checks come before the verdict so the verdict is conditioned on them.
-Map<String, dynamic> judgementSchema(JudgeMode mode) => {
+/// The JSON the model must produce; constrained decoding enforces it, and
+/// the part names are fixed by the schema so the model emits only booleans.
+Map<String, dynamic> judgementSchema(JudgeMode mode, List<String> parts) => {
   'type': 'object',
   'properties': {
-    'is_english': {'type': 'boolean'},
-    'missing': {'type': 'string'},
-    'answers_task': {'type': 'boolean'},
-    'grammar_issues': {'type': 'integer', 'minimum': 0, 'maximum': 20},
+    'parts': {
+      'type': 'array',
+      'minItems': parts.length,
+      'maxItems': parts.length,
+      'prefixItems': [
+        for (final part in parts)
+          {
+            'type': 'object',
+            'properties': {
+              'part': {'const': part},
+              'done': {'type': 'boolean'},
+            },
+            'required': ['part', 'done'],
+            'additionalProperties': false,
+          },
+      ],
+    },
+    'mistakes': {
+      'type': 'array',
+      'maxItems': 6,
+      'items': {
+        'type': 'object',
+        'properties': {
+          'wrong': {'type': 'string'},
+          'right': {'type': 'string'},
+        },
+        'required': ['wrong', 'right'],
+        'additionalProperties': false,
+      },
+    },
     if (mode == JudgeMode.full) 'corrected': {'type': 'string'},
     'explanation_en': {'type': 'string'},
     if (mode == JudgeMode.full) 'explanation_ar': {'type': 'string'},
   },
   'required': [
-    'is_english',
-    'missing',
-    'answers_task',
-    'grammar_issues',
+    'parts',
+    'mistakes',
     if (mode == JudgeMode.full) 'corrected',
     'explanation_en',
     if (mode == JudgeMode.full) 'explanation_ar',
@@ -77,7 +94,7 @@ Map<String, dynamic> judgementSchema(JudgeMode mode) => {
 /// Deterministic decoding: the same answer must get the same judgement on
 /// every run (ADR 0013, alternatives: "the model's judgement as the grade").
 GenerationParams judgeGenerationParams(JudgeMode mode) => GenerationParams(
-  maxTokens: mode == JudgeMode.full ? 320 : 120,
+  maxTokens: mode == JudgeMode.full ? 360 : 200,
   temp: 0.0,
   topK: 1,
   topP: 1.0,
@@ -88,6 +105,7 @@ GenerationParams judgeGenerationParams(JudgeMode mode) => GenerationParams(
 
 String judgeUserPrompt(BenchmarkCase c) =>
     'TASK: ${c.task}\n'
+    'parts: ${c.parts.map((p) => '"$p"').join(', ')}\n'
     'MODEL ANSWER: ${c.modelAnswer}\n'
     'LEARNER ANSWER: ${c.answer}';
 
@@ -130,56 +148,97 @@ Script dominantScript(String text) {
   return best.$2 * 10 >= total * 6 ? best.$1 : Script.other;
 }
 
-/// One model's judgement of one answer.
+/// Code's own check: an answer in Latin script is treated as English.
+bool looksEnglish(String answer) => dominantScript(answer) == Script.latin;
+
+/// One grammar mistake the model listed.
+class Mistake {
+  const Mistake({required this.wrong, required this.right});
+  final String wrong;
+  final String right;
+
+  @override
+  String toString() => '"$wrong" -> "$right"';
+}
+
+/// One model's judgement of one answer, with the verdict computed by code.
 class SpikeJudgement {
   const SpikeJudgement({
-    required this.isEnglish,
-    required this.missing,
-    required this.answersTask,
-    required this.grammarIssues,
+    required this.partsDone,
+    required this.mistakes,
     required this.corrected,
     required this.explanationEn,
     required this.explanationAr,
+    required this.isEnglish,
   });
 
-  factory SpikeJudgement.fromJson(Map<String, dynamic> json) {
-    final answers = json['answers_task'];
-    final issues = json['grammar_issues'];
-    if (answers is! bool) {
-      throw const FormatException('answers_task must be a boolean');
+  /// [parts] are the case's part names, in order; [answer] is the learner
+  /// answer, read by code for its script.
+  factory SpikeJudgement.fromJson(
+    Map<String, dynamic> json, {
+    required List<String> parts,
+    required String answer,
+  }) {
+    final rawParts = json['parts'];
+    if (rawParts is! List) {
+      throw const FormatException('parts must be a list');
     }
-    if (issues is! int) {
-      throw const FormatException('grammar_issues must be an integer');
+    final done = <String, bool>{};
+    for (var i = 0; i < parts.length; i++) {
+      final item = i < rawParts.length ? rawParts[i] : null;
+      final flag = item is Map ? item['done'] : null;
+      if (flag is! bool) {
+        throw FormatException('parts[$i].done must be a boolean');
+      }
+      done[parts[i]] = flag;
     }
+    final rawMistakes = json['mistakes'];
+    final mistakes = <Mistake>[
+      if (rawMistakes is List)
+        for (final m in rawMistakes)
+          if (m is Map)
+            Mistake(
+              wrong: (m['wrong'] as String?) ?? '',
+              right: (m['right'] as String?) ?? '',
+            ),
+    ];
     return SpikeJudgement(
-      isEnglish: json['is_english'] is bool ? json['is_english'] as bool : true,
-      missing: (json['missing'] as String?) ?? '',
-      answersTask: answers,
-      grammarIssues: issues < 0 ? 0 : issues,
+      partsDone: done,
+      mistakes: mistakes,
       corrected: (json['corrected'] as String?) ?? '',
       explanationEn: (json['explanation_en'] as String?) ?? '',
       explanationAr: (json['explanation_ar'] as String?) ?? '',
+      isEnglish: looksEnglish(answer),
     );
   }
 
-  final bool isEnglish;
-  final String missing;
-  final bool answersTask;
-  final int grammarIssues;
+  final Map<String, bool> partsDone;
+  final List<Mistake> mistakes;
   final String corrected;
   final String explanationEn;
   final String explanationAr;
 
-  /// Whether the Arabic field is actually Arabic. The first run produced
-  /// Bengali and Chinese there, and one Arabic word in a Bengali sentence
-  /// must not count.
+  /// Decided by code from the answer's script, not by the model.
+  final bool isEnglish;
+
+  /// The verdict: English, and every part done.
+  bool get answersTask => isEnglish && partsDone.values.every((d) => d);
+
+  /// The grammar count the main app would use (`LocalJudgement.grammarIssues`).
+  int get grammarIssues => mistakes.length;
+
+  /// Whether the Arabic field is actually Arabic (the first run produced
+  /// Bengali and Chinese there).
   bool get explanationArIsArabic =>
       dominantScript(explanationAr) == Script.arabic;
 }
 
-LlamaStructuredOutput<SpikeJudgement> judgementOutput(JudgeMode mode) =>
-    LlamaStructuredOutput.jsonSchema(
-      schema: judgementSchema(mode),
-      decoder: SpikeJudgement.fromJson,
-      name: 'judgement',
-    );
+LlamaStructuredOutput<SpikeJudgement> judgementOutput(
+  JudgeMode mode,
+  BenchmarkCase c,
+) => LlamaStructuredOutput.jsonSchema(
+  schema: judgementSchema(mode, c.parts),
+  decoder: (json) =>
+      SpikeJudgement.fromJson(json, parts: c.parts, answer: c.answer),
+  name: 'judgement',
+);
