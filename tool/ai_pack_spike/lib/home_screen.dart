@@ -4,6 +4,8 @@ import 'package:flutter/services.dart';
 import 'benchmark_cases.dart';
 import 'candidates.dart';
 import 'judge_prompt.dart';
+import 'nli/nli_controller.dart';
+import 'nli/nli_section.dart';
 import 'spike_controller.dart';
 
 /// One screen: pick a model, download it, load it, run the benchmark, copy
@@ -18,6 +20,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final SpikeController _c = SpikeController();
+  final NliController _n = NliController();
   final TextEditingController _customUri = TextEditingController();
   final TextEditingController _token = TextEditingController();
 
@@ -25,7 +28,9 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     super.initState();
     _c.addListener(_onChanged);
-    _c.init();
+    _n.addListener(_onChanged);
+    _c.init().then((_) => _n.deviceLine = _c.deviceLine);
+    _n.init();
   }
 
   void _onChanged() {
@@ -35,7 +40,9 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void dispose() {
     _c.removeListener(_onChanged);
+    _n.removeListener(_onChanged);
     _c.dispose();
+    _n.dispose();
     _customUri.dispose();
     _token.dispose();
     super.dispose();
@@ -51,7 +58,8 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           Text(
             'الخطوات: اختر نموذجاً ← Download ← Load ← Run ← Copy report، '
-            'ثم ألصق التقرير في المحادثة.',
+            'ثم ألصق التقرير في المحادثة. القسم الثاني أسفل الصفحة (NLI) '
+            'له الخطوات نفسها.',
             textDirection: TextDirection.rtl,
             style: theme.textTheme.bodyMedium,
           ),
@@ -274,6 +282,8 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ],
+          const Divider(height: 32, thickness: 2),
+          NliSection(controller: _n, copy: _copy),
           const Divider(height: 24),
           Row(
             children: [

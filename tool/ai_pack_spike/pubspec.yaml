@@ -41,6 +41,11 @@ dependencies:
   llamadart_llama_cpp_flutter: ^0.16.0
   # The app's private cache directory, where downloaded models live.
   path_provider: ^2.1.5
+  # The second engine: a natural-language-inference cross-encoder in ONNX,
+  # through the same runtime the app ships for its meaning signal.
+  flutter_onnxruntime: ^1.9.0
+  # Plain downloads of the NLI model files from Hugging Face.
+  http: ^1.2.0
 
 dev_dependencies:
   flutter_test:

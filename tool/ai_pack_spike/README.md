@@ -16,6 +16,8 @@ For one candidate model at a time, on the phone:
 
 Every judgement is one structured-JSON call with greedy decoding and a fixed seed (`lib/judge_prompt.dart`). After two runs in which 1B-class models said yes to everything, the model is no longer asked to judge: each case lists the task's requirements (`parts`, what the rubric's `requiredGroups` are in Mohingo), the JSON schema fixes those names and the model emits only a true/false per part, grammar mistakes come back as a list of (wrong, right) pairs, and code computes the verdict (English by script, and every part done) and the count. Two modes: **Fast** asks for the parts, the mistakes and one English line (what the main app's `LocalJudgementService` needs to grade); **Full** adds the corrected answer and an Arabic explanation (what the feedback block would show). The report says where each answer's time went (prompt, generation, sampling) and the thread count can be changed before Load.
 
+**The second engine (NLI).** After three runs in which no 1B-class generative model read a learner's answer, the spike grew a second, non-generative engine (`lib/nli/`): a natural-language-inference cross-encoder in ONNX (MobileBERT-MNLI, 25 MB; DistilBERT-MNLI, 67 MB; or any Hugging Face repository in the Transformers.js layout), run through `flutter_onnxruntime`, the runtime Mohingo already ships for its meaning signal. Each case's parts have a statement form (`hypotheses`); the answer is the premise, and a part is done when the model's most likely class is entailment. A hypothesis of the form `@sentences:3` is a count, checked by code. The verdict (English by script, every part done) is computed, as in the LLM path. One forward pass per part, deterministic, with the class probabilities in the report. On the phone it is the second section of the screen, with the same Download → Load → Run → Copy steps.
+
 Runs so far, with what they decided: [`results/`](results/README.md).
 
 ## Candidates
@@ -45,7 +47,7 @@ cd tool/ai_pack_spike
 flutter pub get
 dart format --set-exit-if-changed .
 flutter analyze
-flutter test        # the pure parts: cases, prompt, report; no model is loaded
+flutter test        # the pure parts: cases, prompt, report, NLI tokenizer/labels/report; no model is loaded
 ```
 
 iOS: the deployment target is 16.4, llamadart's floor. An iPhone build (`flutter build ios --release --no-codesign` in CI) proves it compiles; installing on an iPhone needs an Apple developer account and a Mac, as for Mohingo itself.
