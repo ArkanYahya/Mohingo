@@ -14,7 +14,9 @@ For one candidate model at a time, on the phone:
 | Speed | wall-clock time of each judgement as the app would wait for it, plus llama.cpp's token counts and timings | median of a few seconds; 5 s is the line the report draws |
 | Judgement quality | 22 learner answers with a verdict a teacher would not dispute (`lib/benchmark_cases.dart`): paraphrases, a missing negation, off-topic, an echo of the prompt, Arabic instead of English, broken grammar, wrong tense, the wrong item | how many verdicts and grammar flags are right, and whether the Arabic explanation is Arabic at all |
 
-Every judgement is one structured-JSON call with greedy decoding and a fixed seed (`lib/judge_prompt.dart`), the shape the main app's `LocalJudgementService` will ask for: does the answer do the task, how many grammar issues, a correction, an explanation in English and one in Arabic.
+Every judgement is one structured-JSON call with greedy decoding and a fixed seed (`lib/judge_prompt.dart`). The JSON puts the checks first — is it English, what the task asked for that is missing — and the verdict after them, because the first run showed a verdict-first prompt saying yes to everything. Two modes: **Fast** asks for the verdict, the grammar count and one English line (what the main app's `LocalJudgementService` needs to grade); **Full** adds the corrected answer and an Arabic explanation (what the feedback block would show). The report says where each answer's time went (prompt, generation, sampling — a JSON-schema grammar makes sampling expensive) and the thread count can be changed before Load.
+
+Runs so far, with what they decided: [`results/`](results/README.md).
 
 ## Candidates
 
@@ -31,7 +33,7 @@ The runtime is [llamadart](https://pub.dev/packages/llamadart) (llama.cpp, CPU o
 On the phone, on Wi-Fi:
 
 1. Pick **SmolLM2 135M** first, Download → Load → Run. It judges badly, but it proves the pipeline in a minute.
-2. Pick a real candidate, Download (0.8-1.1 GB, once; the file stays in the app's cache) → Load → Run. Wait for all 22 answers.
+2. Pick a real candidate, Download (0.8-1.1 GB, once; the file stays in the app's cache) → Load → Run in **Fast** mode first, then again in **Full**. Wait for all 22 answers each time.
 3. **Copy report** and paste it into the conversation. The button appears with the first judged answer and the report grows as the run goes; it is also saved to a file after every answer, so if the phone kills the app mid-run, the next start shows the last saved report with its own copy button. **Copy log** copies the log when there is no report to explain why. Then **Unload**, and **Delete file** if space is short, before the next candidate. One model at a time: two loaded would not fit.
 
 If the app closes during Load or Run, the model did not fit: that is a result too, and the log line before the close is in the report of the previous run.

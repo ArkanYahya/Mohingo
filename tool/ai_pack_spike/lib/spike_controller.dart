@@ -28,6 +28,13 @@ class SpikeController extends ChangeNotifier {
 
   SpikePhase phase = SpikePhase.idle;
   CandidateModel selected = kCandidates.first;
+
+  /// What the model is asked for; see [JudgeMode].
+  JudgeMode mode = JudgeMode.fast;
+
+  /// llama.cpp threads; 0 lets the runtime choose. Phones have big and
+  /// little cores, so more is not always faster: a setting to try.
+  int threads = 0;
   String hfToken = '';
   final List<String> log = [];
 
@@ -99,6 +106,23 @@ class SpikeController extends ChangeNotifier {
   }
 
   void setToken(String t) => hfToken = t.trim();
+
+  void setMode(JudgeMode m) {
+    if (busy) return;
+    mode = m;
+    _notify();
+  }
+
+  /// Takes effect at the next Load.
+  void setThreads(int n) {
+    if (busy) return;
+    threads = n;
+    _notify();
+  }
+
+  String get settingsLine =>
+      'mode ${mode.name}, threads ${threads == 0 ? 'default' : threads}, '
+      'context 1024, greedy, seed 7';
 
   Future<void> download() async {
     final manager = _manager;
@@ -176,7 +200,12 @@ class SpikeController extends ChangeNotifier {
         LlamaModel(ModelSource.path(entry.filePath)),
         // One answer at a time, a short prompt: 1024 tokens of context is
         // plenty and keeps memory down (phones: one model, small context).
-        params: const ModelParams(contextSize: 1024, device: ComputeDevice.cpu),
+        params: ModelParams(
+          contextSize: 1024,
+          device: ComputeDevice.cpu,
+          numberOfThreads: threads,
+          numberOfThreadsBatch: threads,
+        ),
       );
       sw.stop();
       loadMs = sw.elapsedMilliseconds;
@@ -221,7 +250,8 @@ class SpikeController extends ChangeNotifier {
     report = null;
     caseIndex = 0;
     _notify();
-    final output = judgementOutput();
+    final output = judgementOutput(mode);
+    final params = judgeGenerationParams(mode);
     final thinking = !selected.disableThinking;
     try {
       for (final c in kBenchmarkCases) {
@@ -234,9 +264,9 @@ class SpikeController extends ChangeNotifier {
         try {
           judgement = await engine
               .createStructuredJson<SpikeJudgement>(
-                judgeMessages(c),
+                judgeMessages(c, mode),
                 output: output,
-                params: kJudgeGenerationParams,
+                params: params,
                 enableThinking: thinking,
               )
               .timeout(_judgementTimeout);
@@ -265,6 +295,7 @@ class SpikeController extends ChangeNotifier {
             generatedTokens: perf?.evalTokens,
             promptMs: perf?.promptEvalMs,
             generateMs: perf?.evalMs,
+            sampleMs: perf?.sampleMs,
             rssMbAfter: _rssMb(),
           ),
         );
@@ -286,6 +317,7 @@ class SpikeController extends ChangeNotifier {
       deviceLine: deviceLine,
       modelLine: '${selected.name} — ${selected.uri}',
       runtimeLine: runtimeLine,
+      settingsLine: settingsLine,
       loadMs: loadMs,
       rssMbBeforeLoad: rssMbBeforeLoad,
       rssMbAfterLoad: rssMbAfterLoad,

@@ -12,6 +12,7 @@ class CaseResult {
     this.generatedTokens,
     this.promptMs,
     this.generateMs,
+    this.sampleMs,
     this.rssMbAfter,
   });
 
@@ -27,6 +28,10 @@ class CaseResult {
   final int? generatedTokens;
   final double? promptMs;
   final double? generateMs;
+
+  /// Time llama.cpp spent choosing tokens: with a JSON-schema grammar this
+  /// can rival generation itself, which is why it is reported apart.
+  final double? sampleMs;
   final double? rssMbAfter;
 
   bool get ok => judgement != null;
@@ -59,6 +64,9 @@ class BenchmarkSummary {
     required this.maxWallMs,
     required this.meanTokensPerSecond,
     required this.peakRssMb,
+    required this.meanPromptMs,
+    required this.meanGenerateMs,
+    required this.meanSampleMs,
   });
 
   factory BenchmarkSummary.from(List<CaseResult> results) {
@@ -66,7 +74,15 @@ class BenchmarkSummary {
     final walls = done.map((r) => r.wallMs).toList()..sort();
     final tps = done.map((r) => r.tokensPerSecond).whereType<double>().toList();
     final rss = results.map((r) => r.rssMbAfter).whereType<double>().toList();
+    double? mean(Iterable<double?> xs) {
+      final v = xs.whereType<double>().toList();
+      return v.isEmpty ? null : v.reduce((a, b) => a + b) / v.length;
+    }
+
     return BenchmarkSummary._(
+      meanPromptMs: mean(done.map((r) => r.promptMs)),
+      meanGenerateMs: mean(done.map((r) => r.generateMs)),
+      meanSampleMs: mean(done.map((r) => r.sampleMs)),
       total: results.length,
       completed: done.length,
       verdictsRight: done.where((r) => r.verdictRight == true).length,
@@ -92,6 +108,9 @@ class BenchmarkSummary {
   final int? maxWallMs;
   final double? meanTokensPerSecond;
   final double? peakRssMb;
+  final double? meanPromptMs;
+  final double? meanGenerateMs;
+  final double? meanSampleMs;
 
   /// ADR 0013's bar: "a judgement slower than a few seconds" degrades to the
   /// first layer. Five seconds at the median is the line the spike draws.
@@ -103,6 +122,7 @@ String buildReport({
   required String deviceLine,
   required String modelLine,
   required String runtimeLine,
+  required String settingsLine,
   required int? loadMs,
   required double? rssMbBeforeLoad,
   required double? rssMbAfterLoad,
@@ -114,6 +134,7 @@ String buildReport({
     ..writeln('device: $deviceLine')
     ..writeln('model: $modelLine')
     ..writeln('runtime: $runtimeLine')
+    ..writeln('settings: $settingsLine')
     ..writeln(
       'load: ${loadMs ?? '-'} ms, rss before ${_mb(rssMbBeforeLoad)} -> '
       'after ${_mb(rssMbAfterLoad)}, peak during run ${_mb(s.peakRssMb)}',
@@ -129,6 +150,11 @@ String buildReport({
       '${s.meanTokensPerSecond?.toStringAsFixed(1) ?? '-'} tokens/s '
       '(${s.fastEnough ? 'fast enough' : 'too slow or incomplete'})',
     )
+    ..writeln(
+      'where the time goes (mean per answer): prompt '
+      '${_ms(s.meanPromptMs)}, generation ${_ms(s.meanGenerateMs)}, '
+      'sampling ${_ms(s.meanSampleMs)}',
+    )
     ..writeln()
     ..writeln('id | expected | got | issues | ms | prompt/gen tokens | tests');
   for (final r in results) {
@@ -140,7 +166,8 @@ String buildReport({
       '${c.id} | ${c.expectAnswersTask ? 'yes' : 'no'}'
       '${c.expectGrammarIssues ? '+err' : ''} | $got $mark | '
       '${j?.grammarIssues ?? '-'} | ${r.wallMs} | '
-      '${r.promptTokens ?? '-'}/${r.generatedTokens ?? '-'} | ${c.tests}',
+      '${r.promptTokens ?? '-'}/${r.generatedTokens ?? '-'} | '
+      '${_ms(r.sampleMs)} | ${c.tests}',
     );
   }
   b.writeln();
@@ -154,9 +181,17 @@ String buildReport({
       b.writeln('error: ${r.error}');
     } else {
       b
-        ..writeln('corrected: ${j.corrected}')
-        ..writeln('en: ${j.explanationEn}')
-        ..writeln('ar: ${j.explanationAr}');
+        ..writeln(
+          'english: ${j.isEnglish}; missing: ${j.missing}; '
+          'verdict: ${j.answersTask}; issues: ${j.grammarIssues}',
+        )
+        ..writeln('en: ${j.explanationEn}');
+      if (j.corrected.isNotEmpty) b.writeln('corrected: ${j.corrected}');
+      if (j.explanationAr.isNotEmpty) {
+        b.writeln(
+          'ar (${dominantScript(j.explanationAr).name}): ${j.explanationAr}',
+        );
+      }
     }
     b.writeln();
   }
@@ -164,3 +199,4 @@ String buildReport({
 }
 
 String _mb(double? v) => v == null ? '-' : '${v.toStringAsFixed(0)} MB';
+String _ms(double? v) => v == null ? '-' : '${v.toStringAsFixed(0)} ms';

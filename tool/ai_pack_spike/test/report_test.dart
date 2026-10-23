@@ -3,8 +3,10 @@ import 'package:mohingo_ai_pack_spike/benchmark_cases.dart';
 import 'package:mohingo_ai_pack_spike/judge_prompt.dart';
 import 'package:mohingo_ai_pack_spike/report.dart';
 
-SpikeJudgement _j(bool answers, int issues, {String ar = 'شرح'}) =>
+SpikeJudgement _j(bool answers, int issues, {String ar = 'شرح جيد'}) =>
     SpikeJudgement(
+      isEnglish: true,
+      missing: answers ? 'nothing' : 'a part',
       answersTask: answers,
       grammarIssues: issues,
       corrected: 'c',
@@ -27,6 +29,7 @@ void main() {
         wallMs: 1200,
         generatedTokens: 60,
         generateMs: 3000,
+        sampleMs: 500,
         rssMbAfter: 1500,
       ),
       CaseResult(
@@ -35,6 +38,7 @@ void main() {
         wallMs: 4000,
         generatedTokens: 60,
         generateMs: 2000,
+        sampleMs: 1500,
         rssMbAfter: 1600,
       ),
       CaseResult(
@@ -55,6 +59,8 @@ void main() {
     expect(s.maxWallMs, 9000);
     expect(s.meanTokensPerSecond, closeTo(25, 0.01)); // (20 + 30) / 2
     expect(s.peakRssMb, 1600);
+    expect(s.meanSampleMs, 1000);
+    expect(s.meanGenerateMs, 2500);
     expect(s.fastEnough, isTrue);
   });
 
@@ -69,6 +75,7 @@ void main() {
       deviceLine: 'android 14; RAM total 3800 MB',
       modelLine: 'Gemma 3 1B',
       runtimeLine: 'CPU',
+      settingsLine: 'mode fast, threads 4',
       loadMs: 2500,
       rssMbBeforeLoad: 100,
       rssMbAfterLoad: 1000,
@@ -84,6 +91,8 @@ void main() {
     expect(text, contains('RAM total 3800 MB'));
     expect(text, contains('Gemma 3 1B'));
     expect(text, contains('load: 2500 ms'));
+    expect(text, contains('settings: mode fast, threads 4'));
+    expect(text, contains('where the time goes'));
     expect(text, contains('## ${yesClean.id}'));
     expect(text, contains('## ${no.id}'));
     expect(text, contains('error: bad json'));

@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 
 import 'benchmark_cases.dart';
 import 'candidates.dart';
+import 'judge_prompt.dart';
 import 'spike_controller.dart';
 
 /// One screen: pick a model, download it, load it, run the benchmark, copy
@@ -106,6 +107,44 @@ class _HomeScreenState extends State<HomeScreen> {
               labelText: 'Hugging Face token (only for gated repositories)',
             ),
             onChanged: _c.setToken,
+          ),
+          const SizedBox(height: 12),
+          Text('Judgement', style: theme.textTheme.titleMedium),
+          const SizedBox(height: 4),
+          SegmentedButton<JudgeMode>(
+            segments: const [
+              ButtonSegment(
+                value: JudgeMode.fast,
+                label: Text('Fast: verdict + 1 line'),
+              ),
+              ButtonSegment(
+                value: JudgeMode.full,
+                label: Text('Full: + correction + Arabic'),
+              ),
+            ],
+            selected: {_c.mode},
+            onSelectionChanged: _c.busy ? null : (s) => _c.setMode(s.first),
+          ),
+          const SizedBox(height: 8),
+          Row(
+            children: [
+              const Text('Threads (applies at Load): '),
+              DropdownButton<int>(
+                value: _c.threads,
+                items: const [
+                  DropdownMenuItem(value: 0, child: Text('default')),
+                  DropdownMenuItem(value: 2, child: Text('2')),
+                  DropdownMenuItem(value: 4, child: Text('4')),
+                  DropdownMenuItem(value: 6, child: Text('6')),
+                  DropdownMenuItem(value: 8, child: Text('8')),
+                ],
+                onChanged: _c.busy
+                    ? null
+                    : (v) {
+                        if (v != null) _c.setThreads(v);
+                      },
+              ),
+            ],
           ),
           const SizedBox(height: 8),
           Text(
