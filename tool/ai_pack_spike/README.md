@@ -20,7 +20,7 @@ Runs so far, with what they decided: [`results/`](results/README.md).
 
 ## Candidates
 
-`lib/candidates.dart`: SmolLM2 135M (a pipeline check only), Gemma 3 1B, Llama 3.2 1B, Qwen2.5 1.5B, Qwen3 1.7B (thinking off), and Gemma 3n E2B, which at 3 GB is expected to fail on a 4 GB phone and is there to prove it. All are GGUF files at 4-bit (`Q4_K_M`) from Hugging Face repositories that need no login; a model can also be entered by URL, with a token for a gated repository.
+`lib/candidates.dart`: SmolLM2 135M (a pipeline check only), Gemma 3 1B, Llama 3.2 1B, Qwen2.5 1.5B, LFM2.5 1.2B and LFM2.5 350M (Liquid AI's on-device models, the owner's suggestion; the 350M file is a community upload), Qwen3 1.7B (thinking off), and Gemma 3n E2B, which at 3 GB is expected to fail on a 4 GB phone and is there to prove it. All are GGUF files at 4-bit (`Q4_K_M`) from Hugging Face repositories that need no login; a model can also be entered by URL, with a token for a gated repository.
 
 The runtime is [llamadart](https://pub.dev/packages/llamadart) (llama.cpp, CPU only on Android, Metal on iOS). The build hook downloads the native library on the first build; the pubspec limits it to the GGUF runtime and the compact CPU profile.
 

@@ -83,6 +83,29 @@ const List<CandidateModel> kCandidates = [
         'can be hosted on the project\'s own storage without terms.',
   ),
   CandidateModel(
+    id: 'lfm2.5-1.2b',
+    name: 'LFM2.5 1.2B Instruct (Q4_K_M)',
+    uri: 'hf://LiquidAI/LFM2.5-1.2B-Instruct-GGUF/LFM2.5-1.2B-Instruct-Q4_K_M.gguf',
+    approxMb: 731,
+    license: 'LFM Open License v1.0',
+    note:
+        'Liquid AI\'s on-device model: built for CPU speed and low memory, '
+        'Arabic among its eight languages. The owner\'s suggestion '
+        '(2026-10-23); the smallest file of the serious candidates.',
+  ),
+  CandidateModel(
+    id: 'lfm2.5-350m',
+    name: 'LFM2.5 350M (Q4_K_M, community GGUF)',
+    uri: 'hf://jamesatron1512/LFM2.5-350M-GGUF/LFM2.5-350M-Q4_K_M.gguf',
+    approxMb: 230,
+    license: 'LFM Open License v1.0',
+    note:
+        'Liquid AI\'s smallest text model. No official GGUF was found, so '
+        'this is a community upload and the file name is unverified: if the '
+        'download fails, enter the right URL below. Too small to judge, '
+        'most likely; fast enough to prove it.',
+  ),
+  CandidateModel(
     id: 'qwen3-1.7b',
     name: 'Qwen3 1.7B (Q4_K_M, thinking off)',
     uri: 'hf://unsloth/Qwen3-1.7B-GGUF/Qwen3-1.7B-Q4_K_M.gguf',
