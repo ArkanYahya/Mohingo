@@ -1,0 +1,86 @@
+# The AI-pack device spike (tool/ai_pack_spike, ADR 0013 Phase B): a
+# separate throwaway app that measures candidate on-device language models
+# on a phone. Built on demand and when the spike itself changes, never as
+# part of Mohingo's CI — nothing in it ships in the app.
+name: AI pack spike
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'tool/ai_pack_spike/**'
+      - '.github/workflows/ai-pack-spike.yml'
+
+concurrency:
+  group: ai-pack-spike-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  # Keep in step with .github/workflows/ci.yml and README.md.
+  FLUTTER_VERSION: 3.47.2
+
+defaults:
+  run:
+    working-directory: tool/ai_pack_spike
+
+jobs:
+  check:
+    name: Format, analyze, test
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+          cache: true
+      - run: flutter pub get
+      - run: dart format --set-exit-if-changed .
+      - run: flutter analyze
+      - run: flutter test
+
+  android-apk:
+    name: Android APK (arm64)
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+          cache: true
+      - run: flutter pub get
+      # Release mode, so the timings are the ones a learner would get. arm64
+      # only: every phone the spike targets is arm64, and one ABI keeps the
+      # APK small. llamadart's build hook fetches the native llama.cpp
+      # runtime here, on the first build.
+      - run: flutter build apk --release --target-platform android-arm64
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mohingo-ai-pack-spike-apk
+          path: tool/ai_pack_spike/build/app/outputs/flutter-apk/app-release.apk
+          if-no-files-found: error
+          retention-days: 14
+
+  ios-build:
+    name: iOS build (unsigned)
+    runs-on: macos-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+          cache: true
+      - run: flutter pub get
+      # Proves the iOS project compiles with llamadart's Swift package at a
+      # 16.4 deployment target. Running it on the reference iPhone needs a
+      # Mac and an Apple developer account.
+      - run: flutter build ios --release --no-codesign

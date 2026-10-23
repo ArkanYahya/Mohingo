@@ -113,6 +113,8 @@ If a widget test hangs or times out otherwise, it's almost always a missing fake
 
 Every push runs `.github/workflows/ci.yml`, which builds a release APK. To put it on an Android phone: open the repository's **Actions** tab, pick the run for your commit, download the artifact **mohingo-android-apk**, unzip it, copy `app-release.apk` to the phone and open it (allow installing from this source when asked). The APK is signed with the runner's debug key, which changes every run, so **uninstall the previous Mohingo build first** or Android refuses the install. The iOS job only proves the project compiles; installing on an iPhone needs an Apple developer account and a Mac.
 
+A second, on-demand workflow, **AI pack spike**, builds the separate test app in `tool/ai_pack_spike/` the same way (artifact **mohingo-ai-pack-spike-apk**). It is not Mohingo: it downloads candidate language models and measures them on the phone for [ADR 0013](docs/adr/0013-on-device-ai-for-free-answers.md)'s Phase B; `tool/ai_pack_spike/README.md` says what to do with it.
+
 Things worth checking on the first device run, none of which this environment could: that speech clips play and the microphone flow works; that a writing or speaking task with a model answer grades without a visible pause (the meaning signal, [ADR 0013](docs/adr/0013-on-device-ai-for-free-answers.md) — `flutter logs` prints `meaning signal model unavailable: …` if the model failed to load, and nothing if it loaded); frame smoothness on the longest lists; and, with the Firebase project connected, sign-in and sync ([docs/FIREBASE_SETUP.md](docs/FIREBASE_SETUP.md)).
 
 ## Project structure

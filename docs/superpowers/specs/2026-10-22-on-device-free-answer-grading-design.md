@@ -69,7 +69,7 @@ A pack that fails (out of memory, timeout, malformed JSON) counts as unavailable
 ## Phasing
 
 1. **Phase A — this environment:** ADR 0013 and this spec; Layer 1 code with the combination rule and fakes; the gate and the model answers A2 needs; the drain's local source behind the `LocalJudgementService` interface; the Settings row; docs per CLAUDE.md's table. The real embedding model is wired and verified on the owner's phone.
-2. **Phase B — after a device spike:** the pack: model and library chosen from the spike's speed and memory numbers on the reference phone, hosting, the explanation block, Arabic quality judged by the owner before it is shown.
+2. **Phase B — after a device spike** (the spike app was built on 2026-10-23: `tool/ai_pack_spike/`, llamadart / llama.cpp, candidates Gemma 3 1B, Llama 3.2 1B, Qwen2.5-1.5B, Qwen3-1.7B and Gemma 3n E2B, 22 benchmark answers, a pasteable report; MediaPipe/`flutter_gemma` was not taken because its model format is not GGUF and Gemma 3n's `.task` file is gated) **:** the pack: model and library chosen from the spike's speed and memory numbers on the reference phone, hosting, the explanation block, Arabic quality judged by the owner before it is shown.
 
 ## Open questions
 

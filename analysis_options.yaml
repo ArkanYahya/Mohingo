@@ -5,3 +5,6 @@ analyzer:
     - build/**
     - android/**
     - ios/**
+    # A separate Flutter package with its own pubspec and checks
+    # (.github/workflows/ai-pack-spike.yml).
+    - tool/ai_pack_spike/**
