@@ -117,6 +117,18 @@ const List<CandidateModel> kCandidates = [
     disableThinking: true,
   ),
   CandidateModel(
+    id: 'qwen2.5-3b',
+    name: 'Qwen2.5 3B Instruct (Q4_K_M)',
+    uri: 'hf://Qwen/Qwen2.5-3B-Instruct-GGUF/qwen2.5-3b-instruct-q4_k_m.gguf',
+    approxMb: 2100,
+    license: 'Qwen Research License',
+    note:
+        'Twice the size the pack can afford, on the list to find the '
+        'quality ceiling: if 3B cannot read a learner answer either, the '
+        'approach is wrong, not the size. Research licence, not for shipping.',
+    heavy: true,
+  ),
+  CandidateModel(
     id: 'gemma-3n-e2b',
     name: 'Gemma 3n E2B it (Q4_K_M)',
     uri: 'hf://unsloth/gemma-3n-E2B-it-GGUF/gemma-3n-E2B-it-Q4_K_M.gguf',

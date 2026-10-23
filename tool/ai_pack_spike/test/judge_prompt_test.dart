@@ -4,12 +4,13 @@ import 'package:mohingo_ai_pack_spike/judge_prompt.dart';
 
 void main() {
   test(
-    'the user prompt carries task, parts, model answer and learner answer',
+    'the user prompt carries task, parts and learner answer, no model answer',
     () {
       final c = kBenchmarkCases.first;
       final p = judgeUserPrompt(c);
       expect(p, contains(c.task));
-      expect(p, contains(c.modelAnswer));
+      // Not shown since v4: run 3 copied it as the learner's "mistakes".
+      expect(p, isNot(contains(c.modelAnswer)));
       expect(p, contains(c.answer));
       for (final part in c.parts) {
         expect(p, contains(part));

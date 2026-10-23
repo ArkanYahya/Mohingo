@@ -47,6 +47,12 @@ class SpikeController extends ChangeNotifier {
   ModelDownloadTaskSnapshot? downloadSnapshot;
 
   String? loadedUri;
+
+  /// The candidate actually in memory; the report names this, never the
+  /// selection. (Run 3's second report was labelled Qwen2.5 while LFM2.5 was
+  /// still loaded: the owner had selected and downloaded Qwen and pressed
+  /// Run without Load, which the screen allowed.)
+  CandidateModel? loadedModel;
   String runtimeLine = '-';
   int? loadMs;
   double? rssMbBeforeLoad;
@@ -70,6 +76,9 @@ class SpikeController extends ChangeNotifier {
   bool get busy => phase != SpikePhase.idle;
   bool get isLoaded => loadedUri != null && (_engine?.isReady ?? false);
   bool get selectedIsDownloaded => downloaded.contains(selected.uri);
+
+  /// Run is offered only for the model that is loaded.
+  bool get selectedIsLoaded => isLoaded && loadedUri == selected.uri;
 
   Future<void> init() async {
     _readMemInfo();
@@ -211,6 +220,7 @@ class SpikeController extends ChangeNotifier {
       loadMs = sw.elapsedMilliseconds;
       rssMbAfterLoad = _rssMb();
       loadedUri = selected.uri;
+      loadedModel = selected;
       runtimeLine =
           '${await engine.getBackendName()} / ${engine.runtime} / '
           'llamadart 0.16';
@@ -220,9 +230,11 @@ class SpikeController extends ChangeNotifier {
       );
     } on LlamaException catch (e) {
       loadedUri = null;
+      loadedModel = null;
       _log('load failed: ${e.message}');
     } catch (e) {
       loadedUri = null;
+      loadedModel = null;
       _log('load failed: $e');
     } finally {
       phase = SpikePhase.idle;
@@ -239,19 +251,21 @@ class SpikeController extends ChangeNotifier {
       _log('unload failed: $e');
     }
     loadedUri = null;
+    loadedModel = null;
     _notify();
   }
 
   Future<void> runBenchmark() async {
     final engine = _engine;
-    if (busy || engine == null || !isLoaded) return;
+    if (busy || engine == null || !selectedIsLoaded) return;
     phase = SpikePhase.running;
     results.clear();
     report = null;
     caseIndex = 0;
     _notify();
     final params = judgeGenerationParams(mode);
-    final thinking = !selected.disableThinking;
+    final model = loadedModel ?? selected;
+    final thinking = !model.disableThinking;
     try {
       for (final c in kBenchmarkCases) {
         if (_disposed) return;
@@ -314,7 +328,8 @@ class SpikeController extends ChangeNotifier {
   void _rebuildReport({required bool partial}) {
     final text = buildReport(
       deviceLine: deviceLine,
-      modelLine: '${selected.name} — ${selected.uri}',
+      modelLine:
+          '${(loadedModel ?? selected).name} — ${(loadedModel ?? selected).uri}',
       runtimeLine: runtimeLine,
       settingsLine: settingsLine,
       loadMs: loadMs,

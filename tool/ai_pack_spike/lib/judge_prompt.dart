@@ -7,6 +7,12 @@ import 'benchmark_cases.dart';
 /// answer and an Arabic explanation.
 enum JudgeMode { fast, full }
 
+/// Prompt v4. Run 3 (LFM2.5 1.2B on v3) copied its "mistakes" and half its
+/// explanations from the MODEL ANSWER — "I don't like tennis" listed as the
+/// learner's mistake on an answer about tea and milk — so the model answer
+/// is no longer shown to the model at all: the parts carry the requirement,
+/// and there is nothing left to copy from.
+///
 /// Prompt v3. The first two runs (Gemma 3 1B, LFM2.5 1.2B, 2026-10-23)
 /// showed that a model of this size cannot be asked for a verdict: both
 /// said yes to all 22 answers, and the second copied the prompt's worked
@@ -25,9 +31,8 @@ enum JudgeMode { fast, full }
 /// No worked example: it contaminated the previous output.
 String judgeSystemPrompt(JudgeMode mode) =>
     'You check one short answer written by an adult beginner learning '
-    'English (CEFR A1 to A2). You get the TASK, a MODEL ANSWER (one good '
-    'answer; other words and other topics can be just as good) and the '
-    'LEARNER ANSWER.\n'
+    'English (CEFR A1 to A2). You get the TASK, its parts, and the LEARNER '
+    'ANSWER.\n'
     'For each part of the task listed in "parts", say whether the learner '
     'answer really does it: true or false. Read only the learner answer. If '
     'the learner answer does not do a part, or talks about something else, '
@@ -106,7 +111,6 @@ GenerationParams judgeGenerationParams(JudgeMode mode) => GenerationParams(
 String judgeUserPrompt(BenchmarkCase c) =>
     'TASK: ${c.task}\n'
     'parts: ${c.parts.map((p) => '"$p"').join(', ')}\n'
-    'MODEL ANSWER: ${c.modelAnswer}\n'
     'LEARNER ANSWER: ${c.answer}';
 
 List<LlamaChatMessage> judgeMessages(BenchmarkCase c, JudgeMode mode) => [

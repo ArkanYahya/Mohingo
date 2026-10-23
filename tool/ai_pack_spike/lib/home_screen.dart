@@ -148,9 +148,17 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           const SizedBox(height: 8),
           Text(
-            'Selected: ${_c.selected.name}'
-            '${_c.isLoaded && _c.loadedUri == _c.selected.uri ? ' (loaded)' : ''}',
+            'Selected: ${_c.selected.name}',
             style: theme.textTheme.bodyMedium,
+          ),
+          Text(
+            'Loaded: ${_c.loadedModel?.name ?? 'nothing'}'
+            '${_c.isLoaded && !_c.selectedIsLoaded ? ' — press Load to switch to the selected model' : ''}',
+            style: theme.textTheme.bodyMedium?.copyWith(
+              color: _c.isLoaded && !_c.selectedIsLoaded
+                  ? theme.colorScheme.error
+                  : null,
+            ),
           ),
           const SizedBox(height: 8),
           Wrap(
@@ -170,12 +178,17 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: const Text('Cancel'),
                 ),
               FilledButton.icon(
-                onPressed: _c.busy || !_c.selectedIsDownloaded ? null : _c.load,
+                onPressed:
+                    _c.busy || !_c.selectedIsDownloaded || _c.selectedIsLoaded
+                    ? null
+                    : _c.load,
                 icon: const Icon(Icons.memory),
                 label: const Text('Load'),
               ),
               FilledButton.icon(
-                onPressed: _c.busy || !_c.isLoaded ? null : _c.runBenchmark,
+                onPressed: _c.busy || !_c.selectedIsLoaded
+                    ? null
+                    : _c.runBenchmark,
                 icon: const Icon(Icons.play_arrow),
                 label: Text('Run (${kBenchmarkCases.length} answers)'),
               ),
