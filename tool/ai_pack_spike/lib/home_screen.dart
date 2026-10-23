@@ -173,17 +173,16 @@ class _HomeScreenState extends State<HomeScreen> {
             Row(
               children: [
                 Expanded(
-                  child: Text('Report', style: theme.textTheme.titleMedium),
+                  child: Text(
+                    _c.phase == SpikePhase.running
+                        ? 'Report (partial, ${_c.results.length} of '
+                              '${kBenchmarkCases.length})'
+                        : 'Report',
+                    style: theme.textTheme.titleMedium,
+                  ),
                 ),
                 FilledButton.tonalIcon(
-                  onPressed: () async {
-                    await Clipboard.setData(ClipboardData(text: _c.report!));
-                    if (context.mounted) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('Report copied')),
-                      );
-                    }
-                  },
+                  onPressed: () => _copy(_c.report!, 'Report copied'),
                   icon: const Icon(Icons.copy),
                   label: const Text('Copy report'),
                 ),
@@ -197,13 +196,58 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ],
+          if (_c.report == null && _c.savedReport != null) ...[
+            const Divider(height: 24),
+            Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    'Last saved report (from the previous run)',
+                    style: theme.textTheme.titleMedium,
+                  ),
+                ),
+                FilledButton.tonalIcon(
+                  onPressed: () =>
+                      _copy(_c.savedReport!, 'Saved report copied'),
+                  icon: const Icon(Icons.copy),
+                  label: const Text('Copy saved report'),
+                ),
+              ],
+            ),
+            const SizedBox(height: 8),
+            SelectableText(
+              _c.savedReport!,
+              style: theme.textTheme.bodySmall?.copyWith(
+                fontFamily: 'monospace',
+              ),
+            ),
+          ],
           const Divider(height: 24),
-          Text('Log', style: theme.textTheme.titleMedium),
+          Row(
+            children: [
+              Expanded(child: Text('Log', style: theme.textTheme.titleMedium)),
+              OutlinedButton.icon(
+                onPressed: _c.log.isEmpty
+                    ? null
+                    : () => _copy(_c.logText, 'Log copied'),
+                icon: const Icon(Icons.copy),
+                label: const Text('Copy log'),
+              ),
+            ],
+          ),
           for (final line in _c.log.take(40))
             Text(line, style: theme.textTheme.bodySmall),
         ],
       ),
     );
+  }
+
+  Future<void> _copy(String text, String message) async {
+    await Clipboard.setData(ClipboardData(text: text));
+    if (mounted) {
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text(message)));
+    }
   }
 
   Widget _downloadProgress(ThemeData theme) {

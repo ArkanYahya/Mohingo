@@ -47,7 +47,18 @@ class SpikeController extends ChangeNotifier {
 
   final List<CaseResult> results = [];
   int caseIndex = 0;
+
+  /// The report of the current run, rebuilt after every answer so it can be
+  /// copied while the run is still going, or after a crash cut it short.
   String? report;
+
+  /// The report found on disk at start-up: the last run's, written after
+  /// every answer, so a run the phone killed still leaves its numbers.
+  String? savedReport;
+  String? _reportPath;
+
+  /// A plain text of the log, for pasting when there is no report.
+  String get logText => log.reversed.join('\n');
 
   bool get busy => phase != SpikePhase.idle;
   bool get isLoaded => loadedUri != null && (_engine?.isReady ?? false);
@@ -62,6 +73,13 @@ class SpikeController extends ChangeNotifier {
       );
       _engine = LlamaEngine(LlamaBackend(), modelDownloadManager: _manager);
       await _refreshDownloaded();
+      final docs = await getApplicationDocumentsDirectory();
+      _reportPath = '${docs.path}/spike_report.txt';
+      final f = File(_reportPath!);
+      if (f.existsSync()) {
+        savedReport = f.readAsStringSync();
+        _log('found the last saved report (${savedReport!.length} chars)');
+      }
     } catch (e) {
       _log('init failed: $e');
     }
@@ -254,20 +272,36 @@ class SpikeController extends ChangeNotifier {
           '${c.id}: ${error ?? (judgement!.answersTask ? 'yes' : 'no')} '
           '(${sw.elapsedMilliseconds} ms)',
         );
+        _rebuildReport(partial: caseIndex < kBenchmarkCases.length);
         _notify();
       }
-      report = buildReport(
-        deviceLine: deviceLine,
-        modelLine: '${selected.name} — ${selected.uri}',
-        runtimeLine: runtimeLine,
-        loadMs: loadMs,
-        rssMbBeforeLoad: rssMbBeforeLoad,
-        rssMbAfterLoad: rssMbAfterLoad,
-        results: results,
-      );
     } finally {
       phase = SpikePhase.idle;
       _notify();
+    }
+  }
+
+  void _rebuildReport({required bool partial}) {
+    final text = buildReport(
+      deviceLine: deviceLine,
+      modelLine: '${selected.name} — ${selected.uri}',
+      runtimeLine: runtimeLine,
+      loadMs: loadMs,
+      rssMbBeforeLoad: rssMbBeforeLoad,
+      rssMbAfterLoad: rssMbAfterLoad,
+      results: results,
+    );
+    report = partial
+        ? '# PARTIAL: ${results.length} of ${kBenchmarkCases.length} answers '
+              'judged so far\n$text'
+        : text;
+    final path = _reportPath;
+    if (path != null) {
+      try {
+        File(path).writeAsStringSync(report!, flush: true);
+      } catch (e) {
+        _log('could not save the report: $e');
+      }
     }
   }
 

@@ -32,7 +32,7 @@ On the phone, on Wi-Fi:
 
 1. Pick **SmolLM2 135M** first, Download → Load → Run. It judges badly, but it proves the pipeline in a minute.
 2. Pick a real candidate, Download (0.8-1.1 GB, once; the file stays in the app's cache) → Load → Run. Wait for all 22 answers.
-3. **Copy report** and paste it into the conversation. Then **Unload**, and **Delete file** if space is short, before the next candidate. One model at a time: two loaded would not fit.
+3. **Copy report** and paste it into the conversation. The button appears with the first judged answer and the report grows as the run goes; it is also saved to a file after every answer, so if the phone kills the app mid-run, the next start shows the last saved report with its own copy button. **Copy log** copies the log when there is no report to explain why. Then **Unload**, and **Delete file** if space is short, before the next candidate. One model at a time: two loaded would not fit.
 
 If the app closes during Load or Run, the model did not fit: that is a result too, and the log line before the close is in the report of the previous run.
 
