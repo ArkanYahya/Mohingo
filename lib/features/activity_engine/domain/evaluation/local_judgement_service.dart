@@ -1,4 +1,4 @@
-/// What the AI pack says about one free answer (ADR 0011's second layer):
+/// What the AI pack says about one free answer (ADR 0013's second layer):
 /// whether the answer does what the task asked, how many grammar issues it
 /// has, and a short explanation for the learner in simple English and,
 /// when the model managed one, in Arabic.
@@ -63,7 +63,7 @@ abstract interface class LocalJudgementService {
   });
 }
 
-/// The binding until the AI pack ships (ADR 0011's Phase B), and the state
+/// The binding until the AI pack ships (ADR 0013's Phase B), and the state
 /// of a build whose pack is not installed: never available, never asked.
 class UnavailableLocalJudgementService implements LocalJudgementService {
   const UnavailableLocalJudgementService();

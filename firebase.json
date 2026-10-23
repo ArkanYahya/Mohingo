@@ -3,6 +3,18 @@
     "rules": "firestore.rules",
     "indexes": "firestore.indexes.json"
   },
+  "hosting": {
+    "public": "build/legal_site",
+    "predeploy": [
+      "python3 \"$PROJECT_DIR/tool/legal/build_site.py\""
+    ],
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "ignore": [
+      "firebase.json",
+      "**/.*"
+    ]
+  },
   "emulators": {
     "auth": {
       "port": 9099
@@ -20,7 +32,7 @@
       "android": {
         "default": {
           "projectId": "mohingo",
-          "appId": "1:219416710516:android:484ea34d5b308574bd3021",
+          "appId": "1:219416710516:android:6a72382d69964d7abd3021",
           "fileOutput": "android/app/google-services.json"
         }
       },
@@ -28,8 +40,17 @@
         "lib/firebase_options.dart": {
           "projectId": "mohingo",
           "configurations": {
-            "android": "1:219416710516:android:484ea34d5b308574bd3021"
+            "android": "1:219416710516:android:6a72382d69964d7abd3021",
+            "ios": "1:219416710516:ios:52f73b11cfb2eddbbd3021"
           }
+        }
+      },
+      "ios": {
+        "default": {
+          "projectId": "mohingo",
+          "appId": "1:219416710516:ios:52f73b11cfb2eddbbd3021",
+          "uploadDebugSymbols": false,
+          "fileOutput": "ios/Runner/GoogleService-Info.plist"
         }
       }
     }

@@ -140,12 +140,6 @@ abstract class AppLocalizations {
   /// **'Coming soon'**
   String get comingSoon;
 
-  /// Body text for a scaffold screen that has no real content yet.
-  ///
-  /// In en, this message translates to:
-  /// **'{screenName} — coming in a later phase.'**
-  String placeholderScreenBody(String screenName);
-
   /// Button label to submit an answer for grading.
   ///
   /// In en, this message translates to:
@@ -176,7 +170,7 @@ abstract class AppLocalizations {
   /// **'Saved — we\'ll finish checking this once you\'re online'**
   String get activityFeedbackPendingOnlineRefinement;
 
-  /// Feedback shown after submitting a free answer that the installed AI pack will judge on the device in a moment (ADR 0011). Nothing leaves the phone.
+  /// Feedback shown after submitting a free answer that the installed AI pack will judge on the device in a moment (ADR 0013). Nothing leaves the phone.
   ///
   /// In en, this message translates to:
   /// **'Saved — checking this on your phone'**
@@ -188,7 +182,7 @@ abstract class AppLocalizations {
   /// **'Explanation'**
   String get activityFeedbackExplanationLabel;
 
-  /// Small label under the AI pack's explanation saying it was produced by a model on the device, not written by a person. Always shown with an explanation (ADR 0011).
+  /// Small label under the AI pack's explanation saying it was produced by a model on the device, not written by a person. Always shown with an explanation (ADR 0013).
   ///
   /// In en, this message translates to:
   /// **'Generated on your phone'**
@@ -962,12 +956,6 @@ abstract class AppLocalizations {
   /// **'Review answers'**
   String get lessonCompleteReviewAnswers;
 
-  /// Button to advance to the next activity after seeing feedback.
-  ///
-  /// In en, this message translates to:
-  /// **'Next'**
-  String get lessonPlayerNext;
-
   /// Lesson player app bar progress indicator, e.g. "3 of 6".
   ///
   /// In en, this message translates to:
@@ -1598,12 +1586,6 @@ abstract class AppLocalizations {
   /// **'Voice speed'**
   String get settingsSpeechRate;
 
-  /// Settings slider label for TTS pitch.
-  ///
-  /// In en, this message translates to:
-  /// **'Voice pitch'**
-  String get settingsSpeechPitch;
-
   /// Accessible label/tooltip for the icon button that plays text aloud via on-device TTS.
   ///
   /// In en, this message translates to:
@@ -2174,18 +2156,6 @@ abstract class AppLocalizations {
   /// **'Faster'**
   String get settingsFaster;
 
-  /// Voice pitch slider: the low end.
-  ///
-  /// In en, this message translates to:
-  /// **'Lower'**
-  String get settingsLower;
-
-  /// Voice pitch slider: the high end.
-  ///
-  /// In en, this message translates to:
-  /// **'Higher'**
-  String get settingsHigher;
-
   /// Plays a short sample in the chosen voice settings.
   ///
   /// In en, this message translates to:
@@ -2255,13 +2225,13 @@ abstract class AppLocalizations {
   /// Settings row title: privacy.
   ///
   /// In en, this message translates to:
-  /// **'Stays on this device'**
+  /// **'Works offline'**
   String get settingsOfflineTitle;
 
   /// Settings row body: privacy.
   ///
   /// In en, this message translates to:
-  /// **'Works fully offline. Without an account, nothing leaves this phone.'**
+  /// **'Every lesson works without internet. Without an account, your progress stays on this phone.'**
   String get settingsOfflineBody;
 
   /// Under the Reset progress row.
@@ -2269,12 +2239,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Erase every lesson, test result and review on this device.'**
   String get settingsResetProgressBody;
-
-  /// The app version at the foot of Settings.
-  ///
-  /// In en, this message translates to:
-  /// **'Mohingo · version {version}'**
-  String settingsVersion(String version);
 
   /// Profile card when the learner has no name yet.
   ///
@@ -2323,12 +2287,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Automatic'**
   String get settingsThemeModeSystem;
-
-  /// Settings section title for the colour-seed picker (see AppColorSeed).
-  ///
-  /// In en, this message translates to:
-  /// **'Colour'**
-  String get settingsColorThemeTitle;
 
   /// Section title on Settings for the learner's name field.
   ///
@@ -2390,7 +2348,7 @@ abstract class AppLocalizations {
   /// **'Progress reset.'**
   String get settingsResetProgressDone;
 
-  /// Settings row for the downloadable AI pack that judges free answers and explains them on the phone (ADR 0011). Never says AI or a model name — what it does for the learner.
+  /// Settings row for the downloadable AI pack that judges free answers and explains them on the phone (ADR 0013). Never says AI or a model name — what it does for the learner.
   ///
   /// In en, this message translates to:
   /// **'Smart feedback'**
@@ -2702,7 +2660,7 @@ abstract class AppLocalizations {
   /// **'Forgot password?'**
   String get authForgotPasswordLink;
 
-  /// Divider text between email sign-in and Google sign-in.
+  /// Divider text between email sign-in and the Apple and Google sign-in buttons.
   ///
   /// In en, this message translates to:
   /// **'or'**
@@ -2713,6 +2671,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Continue with Google'**
   String get authGoogleAction;
+
+  /// Sign in with Apple button, iPhone only. Apple's own approved title; 'Apple' is a brand name — keep it in Latin script.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue with Apple'**
+  String get authAppleAction;
 
   /// Link from sign-in to create-account.
   ///
@@ -2863,6 +2827,408 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Every lesson works without internet. Your progress is also copied to your account.'**
   String get settingsOfflineBodyAccount;
+
+  /// Title of the generic error state shown when a screen cannot load. Never shows the raw error.
+  ///
+  /// In en, this message translates to:
+  /// **'Something went wrong'**
+  String get errorGenericTitle;
+
+  /// Body of the generic error state: reassures that progress is safe and says what to do.
+  ///
+  /// In en, this message translates to:
+  /// **'This page couldn\'t be opened. Your progress is safe — go back and try again.'**
+  String get errorGenericBody;
+
+  /// Title of the privacy policy document and of the links to it.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy Policy'**
+  String get legalPrivacyTitle;
+
+  /// Title of the terms of use document and of the links to it.
+  ///
+  /// In en, this message translates to:
+  /// **'Terms of Use'**
+  String get legalTermsTitle;
+
+  /// Heading of the first-run agreement screen.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome to Mohingo'**
+  String get welcomeTitle;
+
+  /// What Mohingo is, under the first-run heading.
+  ///
+  /// In en, this message translates to:
+  /// **'An English course for Arabic speakers. It works without internet and keeps your progress on your phone.'**
+  String get welcomeSubtitle;
+
+  /// Shown on the agreement screen only to a learner who accepted an earlier version of the documents.
+  ///
+  /// In en, this message translates to:
+  /// **'We\'ve updated the Privacy Policy and Terms of Use. Please take a look, then accept to continue.'**
+  String get welcomeUpdatedNotice;
+
+  /// Overline above the four privacy points on the first-run agreement screen.
+  ///
+  /// In en, this message translates to:
+  /// **'Your privacy, in brief'**
+  String get welcomePrivacyHeading;
+
+  /// Privacy point: local storage.
+  ///
+  /// In en, this message translates to:
+  /// **'Your progress stays on your phone'**
+  String get welcomeLocalTitle;
+
+  /// Privacy point: local storage, and what the app does not do.
+  ///
+  /// In en, this message translates to:
+  /// **'Lessons, answers and settings are saved on this device. No ads, no analytics, no tracking.'**
+  String get welcomeLocalBody;
+
+  /// Privacy point: accounts and sync.
+  ///
+  /// In en, this message translates to:
+  /// **'An account is optional'**
+  String get welcomeAccountTitle;
+
+  /// Privacy point: what an account uploads, and to whom.
+  ///
+  /// In en, this message translates to:
+  /// **'If you sign in, your progress and name are copied to your account (Google Firebase) so you can use them on other phones. Without an account, your progress is never uploaded.'**
+  String get welcomeAccountBody;
+
+  /// Privacy point: the online grammar check.
+  ///
+  /// In en, this message translates to:
+  /// **'Checking some written answers'**
+  String get welcomeWritingTitle;
+
+  /// Privacy point: typed answers sent to LanguageTool.
+  ///
+  /// In en, this message translates to:
+  /// **'When you\'re online, the text of some typed answers is sent to LanguageTool, a grammar-checking service, to help mark them. Nothing that identifies you is sent with it.'**
+  String get welcomeWritingBody;
+
+  /// Privacy point: speech recognition.
+  ///
+  /// In en, this message translates to:
+  /// **'Speaking tasks'**
+  String get welcomeSpeechTitle;
+
+  /// Privacy point: the system speech recogniser, which may process audio online.
+  ///
+  /// In en, this message translates to:
+  /// **'Your phone\'s speech recognition (from Google or Apple) turns your voice into text and may do so online. Mohingo keeps only the text, never the recording.'**
+  String get welcomeSpeechBody;
+
+  /// Small line above the accept button on the first-run agreement screen.
+  ///
+  /// In en, this message translates to:
+  /// **'By continuing, you agree to the Terms of Use and confirm you\'ve read the Privacy Policy.'**
+  String get welcomeConsentLine;
+
+  /// The first-run agreement button. Must match the label quoted in assets/legal/terms_*.md.
+  ///
+  /// In en, this message translates to:
+  /// **'Accept and continue'**
+  String get welcomeAccept;
+
+  /// App guide: which step of how many.
+  ///
+  /// In en, this message translates to:
+  /// **'{current} of {total}'**
+  String guideStepCounter(int current, int total);
+
+  /// App guide: closes the guide at once.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip'**
+  String get guideSkip;
+
+  /// App guide: the previous step.
+  ///
+  /// In en, this message translates to:
+  /// **'Back'**
+  String get guideBack;
+
+  /// App guide: the next step.
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get guideNext;
+
+  /// App guide: closes the guide on its last step.
+  ///
+  /// In en, this message translates to:
+  /// **'Done'**
+  String get guideDone;
+
+  /// App guide, first step title.
+  ///
+  /// In en, this message translates to:
+  /// **'A quick tour'**
+  String get guideIntroTitle;
+
+  /// App guide, first step: what the guide is and where to find it again.
+  ///
+  /// In en, this message translates to:
+  /// **'Here\'s where everything is in Mohingo. It takes under a minute, and you can open this guide again from Settings.'**
+  String get guideIntroBody;
+
+  /// App guide step pointing at the level and streak pills on Home.
+  ///
+  /// In en, this message translates to:
+  /// **'Your level'**
+  String get guideLevelTitle;
+
+  /// App guide: explains the level pill and the streak pill.
+  ///
+  /// In en, this message translates to:
+  /// **'This shows the level you\'re studying (A1 is where beginners start) and your streak: how many days in a row you\'ve studied.'**
+  String get guideLevelBody;
+
+  /// App guide step pointing at the continue-lesson card.
+  ///
+  /// In en, this message translates to:
+  /// **'Your next lesson'**
+  String get guideContinueTitle;
+
+  /// App guide: how to start a lesson and what a lesson contains.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap here to start your next lesson or carry on where you stopped. Each lesson opens with a short conversation, then practice in listening, reading, speaking and writing.'**
+  String get guideContinueBody;
+
+  /// App guide step pointing at the journey card.
+  ///
+  /// In en, this message translates to:
+  /// **'Your path through the level'**
+  String get guideJourneyTitle;
+
+  /// App guide: how a level is organised.
+  ///
+  /// In en, this message translates to:
+  /// **'A level is made of units, and each unit of short lessons that end with a unit mission. Each segment of this track is a unit; tap it to see them all.'**
+  String get guideJourneyBody;
+
+  /// App guide step pointing at the Learn tab. Same word as the tab label.
+  ///
+  /// In en, this message translates to:
+  /// **'Learn'**
+  String get guideLearnTitle;
+
+  /// App guide: the Learn tab, followed by a legend of the progress marks.
+  ///
+  /// In en, this message translates to:
+  /// **'Every unit and lesson, in order. Open a finished lesson to review your answers. These marks show where you are:'**
+  String get guideLearnBody;
+
+  /// App guide legend: the green check means a finished lesson or a mastered unit.
+  ///
+  /// In en, this message translates to:
+  /// **'Finished lesson, or mastered unit'**
+  String get guideLegendDone;
+
+  /// App guide step pointing at the Review tab.
+  ///
+  /// In en, this message translates to:
+  /// **'Review'**
+  String get guideReviewTitle;
+
+  /// App guide: the Review tab and spaced review.
+  ///
+  /// In en, this message translates to:
+  /// **'The words and grammar from your lessons. Words come back for review just before you\'re likely to forget them, and the number on this tab shows how many are due.'**
+  String get guideReviewBody;
+
+  /// App guide step pointing at the Tests tab.
+  ///
+  /// In en, this message translates to:
+  /// **'Tests'**
+  String get guideTestsTitle;
+
+  /// App guide: the Tests tab.
+  ///
+  /// In en, this message translates to:
+  /// **'A placement test to find where to start, and at the end of each level a final mission and a final assessment.'**
+  String get guideTestsBody;
+
+  /// App guide step pointing at the Settings tab.
+  ///
+  /// In en, this message translates to:
+  /// **'Settings'**
+  String get guideSettingsTitle;
+
+  /// App guide: the Settings tab, in a build without accounts.
+  ///
+  /// In en, this message translates to:
+  /// **'Change the app language, light or dark mode and the voice speed. This guide is here too, under App guide.'**
+  String get guideSettingsBody;
+
+  /// App guide: the Settings tab, in a build with accounts.
+  ///
+  /// In en, this message translates to:
+  /// **'Change the app language, light or dark mode and the voice speed. You can also sign in here to keep your progress on more than one phone — that part is optional. This guide is here too, under App guide.'**
+  String get guideSettingsBodyAccount;
+
+  /// Settings section overline above App guide and About.
+  ///
+  /// In en, this message translates to:
+  /// **'Help & information'**
+  String get settingsHelpOverline;
+
+  /// Settings row that starts the app guide again.
+  ///
+  /// In en, this message translates to:
+  /// **'App guide'**
+  String get settingsGuideTitle;
+
+  /// Under the App guide row.
+  ///
+  /// In en, this message translates to:
+  /// **'A short tour of where everything is.'**
+  String get settingsGuideBody;
+
+  /// Settings row, and the title of the About screen.
+  ///
+  /// In en, this message translates to:
+  /// **'About Mohingo'**
+  String get settingsAboutTitle;
+
+  /// Under the About row.
+  ///
+  /// In en, this message translates to:
+  /// **'Version, privacy policy and terms'**
+  String get settingsAboutBody;
+
+  /// About screen: the installed version, read from the app package.
+  ///
+  /// In en, this message translates to:
+  /// **'Version {version}'**
+  String aboutVersion(String version);
+
+  /// About screen: one-paragraph description of the app.
+  ///
+  /// In en, this message translates to:
+  /// **'An English course for Arabic speakers, organised by CEFR level from A1. Every lesson works offline, in Arabic and English.'**
+  String get aboutDescription;
+
+  /// About screen: under the Privacy Policy row.
+  ///
+  /// In en, this message translates to:
+  /// **'What the app stores and what can leave your phone'**
+  String get aboutPrivacyBody;
+
+  /// About screen: under the Terms of Use row.
+  ///
+  /// In en, this message translates to:
+  /// **'The rules for using Mohingo'**
+  String get aboutTermsBody;
+
+  /// About screen: row opening the open-source licences page.
+  ///
+  /// In en, this message translates to:
+  /// **'Open-source licences'**
+  String get aboutLicensesTitle;
+
+  /// About screen: under the open-source licences row.
+  ///
+  /// In en, this message translates to:
+  /// **'The software Mohingo is built with'**
+  String get aboutLicensesBody;
+
+  /// Settings row, and the final button, for deleting the account.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete account'**
+  String get accountDeleteTitle;
+
+  /// Under the Delete account row.
+  ///
+  /// In en, this message translates to:
+  /// **'Permanently delete your account and its copy of your progress.'**
+  String get accountDeleteBody;
+
+  /// Title of the delete-account confirmation.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete your account?'**
+  String get accountDeleteConfirmTitle;
+
+  /// Body of the delete-account confirmation: exactly what goes and what stays.
+  ///
+  /// In en, this message translates to:
+  /// **'This permanently deletes your Mohingo account, the copy of your progress stored with it, and this account\'s progress on this phone. It can\'t be undone. Progress you made on this phone without signing in is kept.'**
+  String get accountDeleteConfirmBody;
+
+  /// Delete-account confirmation: go on to confirm identity.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue'**
+  String get accountDeleteContinue;
+
+  /// Title of the step that asks for a fresh sign-in before deleting the account.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm it\'s you'**
+  String get accountDeletePasswordTitle;
+
+  /// Asks for the password before deleting an email account.
+  ///
+  /// In en, this message translates to:
+  /// **'To delete the account, enter the password for {email}.'**
+  String accountDeletePasswordBody(String email);
+
+  /// As accountDeletePasswordBody, when the account has no email to show.
+  ///
+  /// In en, this message translates to:
+  /// **'To delete the account, enter its password.'**
+  String get accountDeletePasswordBodyNoEmail;
+
+  /// Asks a Google account to sign in again before deleting it.
+  ///
+  /// In en, this message translates to:
+  /// **'To delete the account, choose your Google account again.'**
+  String get accountDeleteGoogleBody;
+
+  /// Asks an account made with Sign in with Apple to confirm with Apple before deleting it.
+  ///
+  /// In en, this message translates to:
+  /// **'To delete the account, confirm with Apple that it\'s you.'**
+  String get accountDeleteAppleBody;
+
+  /// Shown while the account is being deleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Deleting your account…'**
+  String get accountDeleting;
+
+  /// Snackbar after the account was deleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Your account has been deleted.'**
+  String get accountDeleted;
+
+  /// Shown when deleting the account failed for a reason other than a sign-in error.
+  ///
+  /// In en, this message translates to:
+  /// **'Your account couldn\'t be deleted. Check your internet connection and try again.'**
+  String get accountDeleteFailed;
+
+  /// The sign-in service wants a fresh sign-in before a sensitive change.
+  ///
+  /// In en, this message translates to:
+  /// **'For your security, please confirm your password or account again.'**
+  String get authErrorRecentLogin;
+
+  /// The learner confirmed with a different account from the signed-in one.
+  ///
+  /// In en, this message translates to:
+  /// **'That\'s a different account. Choose the account you\'re signed in with.'**
+  String get authErrorWrongAccount;
 }
 
 class _AppLocalizationsDelegate

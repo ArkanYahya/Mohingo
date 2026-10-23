@@ -31,7 +31,7 @@ typedef JudgementTaskResolver = Future<JudgementTask?> Function(
 );
 
 /// Resolves queued open-ended answers, in this order for every row: the
-/// installed AI pack's local judgement (ADR 0011) when one is available;
+/// installed AI pack's local judgement (ADR 0013) when one is available;
 /// else the online grammar-quality pass, for a row allowed online, when it
 /// succeeds; else — once a row has failed enough times or sat long enough —
 /// the signals it already carries. Either way, this is the only place a
@@ -40,7 +40,7 @@ typedef JudgementTaskResolver = Future<JudgementTask?> Function(
 /// (`combineSignals`). See docs/superpowers/specs/
 /// 2026-09-07-offline-answer-evaluation-design.md's Tier 2,
 /// docs/adr/0005-narrow-network-exception-for-open-ended-grading.md and
-/// docs/adr/0011-on-device-ai-for-free-answers.md.
+/// docs/adr/0013-on-device-ai-for-free-answers.md.
 class PendingRefinementDrainService {
   PendingRefinementDrainService({
     required PendingRefinementRepository pendingRepository,

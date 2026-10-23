@@ -166,6 +166,13 @@ class AccountSessionController extends AsyncNotifier<AccountSession> {
     await _queue;
   }
 
+  /// Returns the device to its guest learner after the account was
+  /// deleted (the sign-in service has already forgotten it).
+  Future<void> returnToGuest() async {
+    _onAuthChanged(null);
+    await _queue;
+  }
+
   /// Waits until the session reflects [user] — used right after a sign-in,
   /// so the caller sees the resulting session (e.g. a pending decision).
   Future<AccountSession> settleFor(AuthUser user) async {

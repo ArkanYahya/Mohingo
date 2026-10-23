@@ -10,7 +10,7 @@
 - `all-MiniLM-L6-v2-vocab.txt` — its uncased WordPiece vocabulary (30,522
   entries), unchanged.
 
-Used by `OnnxMeaningSignalService` (ADR 0011) to measure how close a free
+Used by `OnnxMeaningSignalService` (ADR 0013) to measure how close a free
 answer is in meaning to a task's model answers, entirely on the device.
 Source: the ONNX export published by Chroma
 (`https://chroma-onnx-models.s3.amazonaws.com/all-MiniLM-L6-v2/onnx.tar.gz`),

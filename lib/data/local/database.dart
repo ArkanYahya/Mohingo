@@ -129,7 +129,7 @@ class AppDatabase extends _$AppDatabase {
         );
       }
       if (from < 7) {
-        // ADR 0011: the refinement queue carries the meaning signal and
+        // ADR 0013: the refinement queue carries the meaning signal and
         // whether the row may go online. An install coming from before v3
         // just had the table created in its current shape by the v3 step,
         // and a hand-built fixture may lack the table altogether, so each
@@ -196,6 +196,20 @@ class AppDatabase extends _$AppDatabase {
         'INSERT INTO sync_outbox (entity, row_id, learner_id) '
         "VALUES ('learners', NEW.id, NEW.id); END",
   ];
+
+  /// Removes [learnerId] from this device entirely: every progress row
+  /// ([resetProgressForLearner]), its sync state, and the `Learners` row
+  /// itself. Used only when the account that owned the learner has been
+  /// deleted ("Delete account"); a reset keeps the learner.
+  Future<void> deleteLearner(int learnerId) {
+    return transaction(() async {
+      await resetProgressForLearner(learnerId);
+      await (delete(
+        accountSyncStates,
+      )..where((t) => t.learnerId.equals(learnerId))).go();
+      await (delete(learners)..where((t) => t.id.equals(learnerId))).go();
+    });
+  }
 
   /// Erases every progress row for [learnerId] — mastery evidence, attempt
   /// history (lesson/placement/mission/assessment alike), vocabulary/grammar

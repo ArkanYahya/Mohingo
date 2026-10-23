@@ -1,5 +1,5 @@
 /// The uncased BERT WordPiece tokenizer the bundled MiniLM embedding model
-/// was trained with (ADR 0011): lower-case, strip accents, split off
+/// was trained with (ADR 0013): lower-case, strip accents, split off
 /// punctuation, then greedy longest-match sub-words with `##` continuations.
 /// Pure Dart, deterministic, pinned to the reference implementation by the
 /// vectors in `wordpiece_tokenizer_test.dart`.

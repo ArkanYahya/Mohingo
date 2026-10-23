@@ -5,8 +5,11 @@ import 'package:mohingo/features/account/domain/auth_repository.dart';
 /// A scriptable [AuthRepository]: [accounts] maps email → password, uids
 /// are `uid-<email>`, and [nextFailure] makes the next call fail.
 class FakeAuthRepository implements AuthRepository {
-  FakeAuthRepository({AuthUser? signedIn, this.supportsGoogle = true})
-    : _user = signedIn;
+  FakeAuthRepository({
+    AuthUser? signedIn,
+    this.supportsGoogle = true,
+    this.supportsApple = false,
+  }) : _user = signedIn;
 
   final accounts = <String, String>{};
   final _changes = StreamController<AuthUser?>.broadcast();
@@ -16,6 +19,9 @@ class FakeAuthRepository implements AuthRepository {
 
   @override
   final bool supportsGoogle;
+
+  @override
+  final bool supportsApple;
 
   @override
   bool get isAvailable => true;
@@ -87,6 +93,20 @@ class FakeAuthRepository implements AuthRepository {
     return user;
   }
 
+  /// The account Sign in with Apple signs in to.
+  static const appleUser = AuthUser(
+    uid: 'uid-apple',
+    email: 'hidden@privaterelay.appleid.com',
+    providers: {AuthProvider.apple},
+  );
+
+  @override
+  Future<AuthUser> signInWithApple() async {
+    _maybeFail();
+    _set(appleUser);
+    return appleUser;
+  }
+
   /// When set, [signOut] announces the sign-out on the stream at once but
   /// returns only once this completes — as Firebase does on a device, where
   /// listeners hear of it before the call itself returns.
@@ -96,5 +116,46 @@ class FakeAuthRepository implements AuthRepository {
   Future<void> signOut() async {
     _set(null);
     await signOutGate?.future;
+  }
+
+  /// How many times the learner confirmed who they are (and how, by
+  /// provider), and whether the account was then deleted.
+  int reauthentications = 0;
+  final reauthenticatedWith = <AuthProvider>[];
+  final deletedUids = <String>[];
+
+  @override
+  Future<void> reauthenticateWithPassword(String password) async {
+    _maybeFail();
+    final email = _user?.email;
+    if (email == null || accounts[email] != password) {
+      throw const AuthException(AuthFailure.wrongCredentials);
+    }
+    reauthentications++;
+    reauthenticatedWith.add(AuthProvider.emailPassword);
+  }
+
+  @override
+  Future<void> reauthenticateWithGoogle() async {
+    _maybeFail();
+    reauthentications++;
+    reauthenticatedWith.add(AuthProvider.google);
+  }
+
+  @override
+  Future<void> reauthenticateWithApple() async {
+    _maybeFail();
+    reauthentications++;
+    reauthenticatedWith.add(AuthProvider.apple);
+  }
+
+  @override
+  Future<void> deleteCurrentUser() async {
+    _maybeFail();
+    final user = _user;
+    if (user == null) return;
+    accounts.remove(user.email);
+    deletedUids.add(user.uid);
+    _set(null);
   }
 }

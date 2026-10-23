@@ -1,4 +1,4 @@
-/// The on-device meaning signal of ADR 0011's first layer: how close a free
+/// The on-device meaning signal of ADR 0013's first layer: how close a free
 /// answer is in meaning to a task's model answers, 0 (nothing alike) to 1
 /// (says the same thing), computed entirely on the device.
 ///

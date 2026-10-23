@@ -25,7 +25,7 @@ class AuthUser {
 
 /// The sign-in methods the app offers. Adding one means a new value here, a
 /// branch in the repository implementation, and a button — nothing else.
-enum AuthProvider { emailPassword, google }
+enum AuthProvider { emailPassword, google, apple }
 
 /// Why an account action failed, in terms the UI can explain. Each maps to
 /// one bilingual message (`AuthFailureMessage`); raw provider errors never
@@ -39,11 +39,19 @@ enum AuthFailure {
   tooManyRequests,
   network,
 
-  /// The learner closed the Google sign-in sheet — not an error to show.
+  /// The learner closed the Google or Apple sign-in sheet — not an error
+  /// to show.
   cancelled,
 
   /// This account was created with another sign-in method.
   accountExistsWithDifferentMethod,
+
+  /// Firebase wants a fresh sign-in before a sensitive change (deleting
+  /// the account) and the learner has not just confirmed who they are.
+  requiresRecentLogin,
+
+  /// The learner confirmed with a different account from the one signed in.
+  wrongAccount,
 
   /// Accounts aren't set up in this build (no Firebase configuration).
   unavailable,
@@ -68,6 +76,9 @@ abstract interface class AuthRepository {
   /// Whether [signInWithGoogle] is offered on this platform.
   bool get supportsGoogle;
 
+  /// Whether [signInWithApple] is offered on this platform.
+  bool get supportsApple;
+
   AuthUser? get currentUser;
 
   /// Emits the signed-in user (or null) now and on every change, including
@@ -88,7 +99,28 @@ abstract interface class AuthRepository {
 
   Future<AuthUser> signInWithGoogle();
 
+  Future<AuthUser> signInWithApple();
+
   Future<void> signOut();
+
+  /// Confirms again that the signed-in learner is who they say, with the
+  /// account's password — Firebase asks for this before deleting an
+  /// account.
+  Future<void> reauthenticateWithPassword(String password);
+
+  /// As [reauthenticateWithPassword], for an account that signs in with
+  /// Google: the learner picks their Google account again.
+  Future<void> reauthenticateWithGoogle();
+
+  /// As [reauthenticateWithPassword], for an account that signs in with
+  /// Apple: the learner confirms with Apple again.
+  Future<void> reauthenticateWithApple();
+
+  /// Permanently deletes the signed-in account from the sign-in service,
+  /// first revoking the app's Apple sign-in if it was made with Apple.
+  /// Call right after a reauthentication; the caller deletes the account's
+  /// progress first (see `deleteAccountProvider`).
+  Future<void> deleteCurrentUser();
 }
 
 /// The repository used when Firebase isn't configured or failed to start:
@@ -101,6 +133,9 @@ class UnavailableAuthRepository implements AuthRepository {
 
   @override
   bool get supportsGoogle => false;
+
+  @override
+  bool get supportsApple => false;
 
   @override
   AuthUser? get currentUser => null;
@@ -130,5 +165,21 @@ class UnavailableAuthRepository implements AuthRepository {
   Future<AuthUser> signInWithGoogle() async => _unavailable();
 
   @override
+  Future<AuthUser> signInWithApple() async => _unavailable();
+
+  @override
   Future<void> signOut() async {}
+
+  @override
+  Future<void> reauthenticateWithPassword(String password) async =>
+      _unavailable();
+
+  @override
+  Future<void> reauthenticateWithGoogle() async => _unavailable();
+
+  @override
+  Future<void> reauthenticateWithApple() async => _unavailable();
+
+  @override
+  Future<void> deleteCurrentUser() async => _unavailable();
 }

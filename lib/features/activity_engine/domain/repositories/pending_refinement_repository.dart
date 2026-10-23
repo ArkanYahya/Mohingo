@@ -16,7 +16,7 @@ abstract interface class PendingRefinementRepository {
   /// `wasFallback: true` with the fallback skill. See docs/DATA_MODEL.md.
   ///
   /// [meaningSignal] is the on-device meaning signal computed at submission
-  /// (ADR 0011), or null when none was available. [onlineAllowed] is false
+  /// (ADR 0013), or null when none was available. [onlineAllowed] is false
   /// for a row queued only for the installed AI pack's local judgement —
   /// such a row is never sent to the online grammar check.
   Future<int> enqueue({

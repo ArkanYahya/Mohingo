@@ -1,7 +1,7 @@
 import 'dart:async';
+import 'dart:developer' as developer;
 import 'dart:io' show Platform;
 
-import 'package:flutter/foundation.dart' show debugPrint;
 import 'package:flutter_riverpod/flutter_riverpod.dart'
     show FutureProvider, Provider;
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -42,7 +42,7 @@ GrammarCheckService grammarCheckService(Ref ref) {
   return LanguageToolGrammarCheckService();
 }
 
-/// ADR 0011's first layer, the on-device meaning signal: the bundled MiniLM
+/// ADR 0013's first layer, the on-device meaning signal: the bundled MiniLM
 /// model through ONNX Runtime.
 ///
 /// Under `flutter test` the binding is [UnavailableMeaningSignalService]
@@ -62,7 +62,7 @@ MeaningSignalService meaningSignalService(Ref ref) {
   return OnnxMeaningSignalService();
 }
 
-/// ADR 0011's second layer, the downloadable AI pack. Phase A ships no pack,
+/// ADR 0013's second layer, the downloadable AI pack. Phase A ships no pack,
 /// so this is never available; Phase B swaps the binding for the installed
 /// pack's implementation and nothing else changes.
 @Riverpod(keepAlive: true)
@@ -110,8 +110,11 @@ class PendingRefinementDrainer {
   void triggerDrain() {
     unawaited(
       _drain().catchError((Object error, StackTrace stackTrace) {
-        debugPrint(
-          'Pending online-refinement drain failed: $error\n$stackTrace',
+        developer.log(
+          'Pending online-refinement drain failed',
+          name: 'mohingo.grading',
+          error: error,
+          stackTrace: stackTrace,
         );
       }),
     );

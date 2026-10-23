@@ -158,4 +158,63 @@ void main() {
     expect(find.text("The passwords don't match."), findsOneWidget);
     expect(auth.accounts, isNot(contains('new@example.com')));
   });
+
+  group('Sign in with Apple', () {
+    Finder appleButton() => find.ancestor(
+      of: find.text('Continue with Apple'),
+      matching: find.byWidgetPredicate((w) => w is FilledButton),
+    );
+
+    testWidgets('is offered only where the platform supports it', (
+      tester,
+    ) async {
+      await pump(tester);
+      expect(find.text('Continue with Apple'), findsNothing);
+      expect(find.text('Continue with Google'), findsOneWidget);
+    });
+
+    testWidgets("is drawn in Apple's black, not the app's accent", (
+      tester,
+    ) async {
+      auth = FakeAuthRepository(supportsApple: true);
+      await pump(tester);
+      final button = tester.widget<FilledButton>(appleButton());
+      expect(button.style!.backgroundColor!.resolve({}), Colors.black);
+      expect(button.style!.foregroundColor!.resolve({}), Colors.white);
+    });
+
+    testWidgets('signs in and closes the screen', (tester) async {
+      auth = FakeAuthRepository(supportsApple: true);
+      final container = await pump(tester);
+      await tester.tap(appleButton());
+      await tester.pumpAndSettle();
+      expect(find.byType(AuthScreen), findsNothing);
+      final session = container.read(accountSessionProvider).value;
+      expect(session, isA<SignedInSession>());
+      expect(session!.user, FakeAuthRepository.appleUser);
+    });
+
+    testWidgets("closing Apple's sheet is a choice, not an error", (
+      tester,
+    ) async {
+      auth = FakeAuthRepository(supportsApple: true)
+        ..nextFailure = AuthFailure.cancelled;
+      await pump(tester);
+      await tester.tap(appleButton());
+      await tester.pumpAndSettle();
+      expect(find.byType(AuthScreen), findsOneWidget);
+      expect(
+        find.text('Something went wrong. Please try again.'),
+        findsNothing,
+      );
+    });
+
+    testWidgets('keeps Apple\'s Latin name in the Arabic interface', (
+      tester,
+    ) async {
+      auth = FakeAuthRepository(supportsApple: true);
+      await pump(tester, locale: const Locale('ar'));
+      expect(find.text('المتابعة باستخدام Apple'), findsOneWidget);
+    });
+  });
 }

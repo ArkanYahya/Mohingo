@@ -55,7 +55,7 @@ class ActivityFrameScope extends InheritedWidget {
   final bool testMode;
 
   /// Whether a free answer here may be graded with the on-device meaning
-  /// signal and the AI pack's judgement (ADR 0011). True in the lesson
+  /// signal and the AI pack's judgement (ADR 0013). True in the lesson
   /// player and quick practice; false in the placement test, the final
   /// mission and the final assessment, which measure on the rubric alone.
   /// See [gradingSignalsEnabled].
@@ -74,7 +74,7 @@ class ActivityFrameScope extends InheritedWidget {
 }
 
 /// Whether a free answer in this activity may be graded with the meaning
-/// signal and the AI pack (ADR 0011) — true outside any
+/// signal and the AI pack (ADR 0013) — true outside any
 /// [ActivityFrameScope] (answer review never grades; quick practice may),
 /// and inside one unless the host switched it off.
 bool gradingSignalsEnabled(BuildContext context) =>

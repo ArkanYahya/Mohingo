@@ -3,7 +3,7 @@ import 'dart:typed_data';
 
 /// The arithmetic behind the meaning signal, kept pure so it is tested
 /// without the model: mean pooling, the cosine, and the two-threshold map
-/// from a cosine to a 0..1 signal (ADR 0011).
+/// from a cosine to a 0..1 signal (ADR 0013).
 
 /// Mean-pools a `[tokens × dim]` row-major `last_hidden_state` into one
 /// L2-normalised vector. Every token counts (the attention mask is all ones:

@@ -11,6 +11,8 @@ import '../../../core/l10n/generated/app_localizations.dart';
 import '../../../core/l10n/lesson_type_label.dart';
 import '../../../core/theme/app_tokens.dart';
 import '../../../data/local/database.dart';
+import '../../../core/widgets/error_state_view.dart';
+import '../../app_guide/providers/app_guide_providers.dart';
 import '../../learning_path/domain/current_unit_selector.dart';
 import '../../learning_path/providers/unit_progress_providers.dart';
 import '../../progress/domain/level_access.dart';
@@ -53,7 +55,8 @@ class HomeScreen extends ConsumerWidget {
         bottom: false,
         child: courseAsync.when(
           loading: () => const Center(child: CircularProgressIndicator()),
-          error: (error, _) => Center(child: Text('$error')),
+          error: (error, stackTrace) =>
+              ErrorStateView(error: error, stackTrace: stackTrace),
           data: (course) => _HomeBody(course: course),
         ),
       ),
@@ -82,6 +85,7 @@ class _HomeBody extends ConsumerWidget {
         ref.watch(dailyTaskCountsProvider).value ??
         (lesson: 0, vocabularyReview: 0, speaking: 0);
     final learnerName = ref.watch(currentLearnerProvider).value?.name?.trim();
+    final guideTargets = ref.watch(appGuideTargetsProvider);
 
     final units = index.bundle.units;
     final masteredUnitIds = <String>{
@@ -209,9 +213,10 @@ class _HomeBody extends ConsumerWidget {
           name: (learnerName?.isEmpty ?? true) ? null : learnerName,
           levelCode: levelCode,
           streakDays: streakDays,
+          badgesKey: guideTargets.levelBadges,
         ),
         const SizedBox(height: AppSpace.lg),
-        hero,
+        KeyedSubtree(key: guideTargets.continueCard, child: hero),
         if (nextLevelOffer != null) ...[
           const SizedBox(height: AppSpace.sm),
           nextLevelOffer,
@@ -220,7 +225,7 @@ class _HomeBody extends ConsumerWidget {
         goals,
         if (dueCount > 0) ...[const SizedBox(height: AppSpace.md), review],
         const SizedBox(height: AppSpace.md),
-        journey,
+        KeyedSubtree(key: guideTargets.journey, child: journey),
         if (dueCount <= 0) ...[const SizedBox(height: AppSpace.xs), review],
       ],
     );

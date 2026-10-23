@@ -136,4 +136,8 @@ abstract interface class CloudProgressStore {
   /// Deletes records left over from epochs before [epoch] — the progress a
   /// reset erased. Returns how many were deleted.
   Future<int> deleteRecordsBefore(String uid, int epoch);
+
+  /// Deletes everything stored for [uid] — every record of every
+  /// collection, then the account document — for "Delete account".
+  Future<void> deleteAccount(String uid);
 }

@@ -2,7 +2,7 @@
 
 Python, dev-time only; nothing here ships. The app side is
 `OnnxMeaningSignalService` and `WordPieceTokenizer` under
-`lib/features/activity_engine/` ([ADR 0011](../../docs/adr/0011-on-device-ai-for-free-answers.md)).
+`lib/features/activity_engine/` ([ADR 0013](../../docs/adr/0013-on-device-ai-for-free-answers.md)).
 
 ```
 python -m pip install onnx onnxruntime

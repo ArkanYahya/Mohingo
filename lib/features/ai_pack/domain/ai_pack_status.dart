@@ -1,4 +1,4 @@
-/// Where the downloadable AI pack stands on this device (ADR 0011's second
+/// Where the downloadable AI pack stands on this device (ADR 0013's second
 /// layer). Phase A ships no pack, so every build reads [notAvailable]; Phase
 /// B adds the download and the other three states.
 enum AiPackState {

@@ -57,3 +57,7 @@ app.*.map.json
 /tool/audio/models/
 __pycache__/
 .pytest_cache/
+
+# Firebase CLI: the hosting deploy cache and debug logs
+.firebase/
+firebase-debug.log

@@ -890,7 +890,7 @@ void main() {
       await tester.pumpAndSettle();
       await tester.tap(find.byType(FilledButton));
       // A task with model answers asks the meaning signal before it reports,
-      // which takes a few turns of the event loop (ADR 0011).
+      // which takes a few turns of the event loop (ADR 0013).
       await tester.pumpAndSettle();
       return reported;
     }
@@ -947,7 +947,7 @@ void main() {
     });
   });
 
-  group('ADR 0011: the meaning signal on a spoken answer', () {
+  group('ADR 0013: the meaning signal on a spoken answer', () {
     SpeakActivity describeWeek() => SpeakActivity(
       id: 'A2-U1-L1-A05',
       lessonId: 'A2-U1-L1',

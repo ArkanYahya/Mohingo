@@ -31,11 +31,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get comingSoon => 'Coming soon';
 
   @override
-  String placeholderScreenBody(String screenName) {
-    return '$screenName — coming in a later phase.';
-  }
-
-  @override
   String get activitySubmitButton => 'Check';
 
   @override
@@ -589,9 +584,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get lessonCompleteReviewAnswers => 'Review answers';
 
   @override
-  String get lessonPlayerNext => 'Next';
-
-  @override
   String lessonPlayerProgress(int current, int total) {
     return '$current of $total';
   }
@@ -999,9 +991,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settingsSpeechRate => 'Voice speed';
 
   @override
-  String get settingsSpeechPitch => 'Voice pitch';
-
-  @override
   String get speechListen => 'Listen';
 
   @override
@@ -1369,12 +1358,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settingsFaster => 'Faster';
 
   @override
-  String get settingsLower => 'Lower';
-
-  @override
-  String get settingsHigher => 'Higher';
-
-  @override
   String get settingsTryVoice => 'Try it';
 
   @override
@@ -1413,20 +1396,15 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settingsDataOverline => 'Your data';
 
   @override
-  String get settingsOfflineTitle => 'Stays on this device';
+  String get settingsOfflineTitle => 'Works offline';
 
   @override
   String get settingsOfflineBody =>
-      'Works fully offline. Without an account, nothing leaves this phone.';
+      'Every lesson works without internet. Without an account, your progress stays on this phone.';
 
   @override
   String get settingsResetProgressBody =>
       'Erase every lesson, test result and review on this device.';
-
-  @override
-  String settingsVersion(String version) {
-    return 'Mohingo · version $version';
-  }
 
   @override
   String get settingsNameEmpty => 'Add your name';
@@ -1453,9 +1431,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get settingsThemeModeSystem => 'Automatic';
-
-  @override
-  String get settingsColorThemeTitle => 'Colour';
 
   @override
   String get settingsNameTitle => 'Your name';
@@ -1677,6 +1652,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get authGoogleAction => 'Continue with Google';
 
   @override
+  String get authAppleAction => 'Continue with Apple';
+
+  @override
   String get authSwitchToCreate => 'New here? Create an account';
 
   @override
@@ -1761,4 +1739,238 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get settingsOfflineBodyAccount =>
       'Every lesson works without internet. Your progress is also copied to your account.';
+
+  @override
+  String get errorGenericTitle => 'Something went wrong';
+
+  @override
+  String get errorGenericBody =>
+      'This page couldn\'t be opened. Your progress is safe — go back and try again.';
+
+  @override
+  String get legalPrivacyTitle => 'Privacy Policy';
+
+  @override
+  String get legalTermsTitle => 'Terms of Use';
+
+  @override
+  String get welcomeTitle => 'Welcome to Mohingo';
+
+  @override
+  String get welcomeSubtitle =>
+      'An English course for Arabic speakers. It works without internet and keeps your progress on your phone.';
+
+  @override
+  String get welcomeUpdatedNotice =>
+      'We\'ve updated the Privacy Policy and Terms of Use. Please take a look, then accept to continue.';
+
+  @override
+  String get welcomePrivacyHeading => 'Your privacy, in brief';
+
+  @override
+  String get welcomeLocalTitle => 'Your progress stays on your phone';
+
+  @override
+  String get welcomeLocalBody =>
+      'Lessons, answers and settings are saved on this device. No ads, no analytics, no tracking.';
+
+  @override
+  String get welcomeAccountTitle => 'An account is optional';
+
+  @override
+  String get welcomeAccountBody =>
+      'If you sign in, your progress and name are copied to your account (Google Firebase) so you can use them on other phones. Without an account, your progress is never uploaded.';
+
+  @override
+  String get welcomeWritingTitle => 'Checking some written answers';
+
+  @override
+  String get welcomeWritingBody =>
+      'When you\'re online, the text of some typed answers is sent to LanguageTool, a grammar-checking service, to help mark them. Nothing that identifies you is sent with it.';
+
+  @override
+  String get welcomeSpeechTitle => 'Speaking tasks';
+
+  @override
+  String get welcomeSpeechBody =>
+      'Your phone\'s speech recognition (from Google or Apple) turns your voice into text and may do so online. Mohingo keeps only the text, never the recording.';
+
+  @override
+  String get welcomeConsentLine =>
+      'By continuing, you agree to the Terms of Use and confirm you\'ve read the Privacy Policy.';
+
+  @override
+  String get welcomeAccept => 'Accept and continue';
+
+  @override
+  String guideStepCounter(int current, int total) {
+    return '$current of $total';
+  }
+
+  @override
+  String get guideSkip => 'Skip';
+
+  @override
+  String get guideBack => 'Back';
+
+  @override
+  String get guideNext => 'Next';
+
+  @override
+  String get guideDone => 'Done';
+
+  @override
+  String get guideIntroTitle => 'A quick tour';
+
+  @override
+  String get guideIntroBody =>
+      'Here\'s where everything is in Mohingo. It takes under a minute, and you can open this guide again from Settings.';
+
+  @override
+  String get guideLevelTitle => 'Your level';
+
+  @override
+  String get guideLevelBody =>
+      'This shows the level you\'re studying (A1 is where beginners start) and your streak: how many days in a row you\'ve studied.';
+
+  @override
+  String get guideContinueTitle => 'Your next lesson';
+
+  @override
+  String get guideContinueBody =>
+      'Tap here to start your next lesson or carry on where you stopped. Each lesson opens with a short conversation, then practice in listening, reading, speaking and writing.';
+
+  @override
+  String get guideJourneyTitle => 'Your path through the level';
+
+  @override
+  String get guideJourneyBody =>
+      'A level is made of units, and each unit of short lessons that end with a unit mission. Each segment of this track is a unit; tap it to see them all.';
+
+  @override
+  String get guideLearnTitle => 'Learn';
+
+  @override
+  String get guideLearnBody =>
+      'Every unit and lesson, in order. Open a finished lesson to review your answers. These marks show where you are:';
+
+  @override
+  String get guideLegendDone => 'Finished lesson, or mastered unit';
+
+  @override
+  String get guideReviewTitle => 'Review';
+
+  @override
+  String get guideReviewBody =>
+      'The words and grammar from your lessons. Words come back for review just before you\'re likely to forget them, and the number on this tab shows how many are due.';
+
+  @override
+  String get guideTestsTitle => 'Tests';
+
+  @override
+  String get guideTestsBody =>
+      'A placement test to find where to start, and at the end of each level a final mission and a final assessment.';
+
+  @override
+  String get guideSettingsTitle => 'Settings';
+
+  @override
+  String get guideSettingsBody =>
+      'Change the app language, light or dark mode and the voice speed. This guide is here too, under App guide.';
+
+  @override
+  String get guideSettingsBodyAccount =>
+      'Change the app language, light or dark mode and the voice speed. You can also sign in here to keep your progress on more than one phone — that part is optional. This guide is here too, under App guide.';
+
+  @override
+  String get settingsHelpOverline => 'Help & information';
+
+  @override
+  String get settingsGuideTitle => 'App guide';
+
+  @override
+  String get settingsGuideBody => 'A short tour of where everything is.';
+
+  @override
+  String get settingsAboutTitle => 'About Mohingo';
+
+  @override
+  String get settingsAboutBody => 'Version, privacy policy and terms';
+
+  @override
+  String aboutVersion(String version) {
+    return 'Version $version';
+  }
+
+  @override
+  String get aboutDescription =>
+      'An English course for Arabic speakers, organised by CEFR level from A1. Every lesson works offline, in Arabic and English.';
+
+  @override
+  String get aboutPrivacyBody =>
+      'What the app stores and what can leave your phone';
+
+  @override
+  String get aboutTermsBody => 'The rules for using Mohingo';
+
+  @override
+  String get aboutLicensesTitle => 'Open-source licences';
+
+  @override
+  String get aboutLicensesBody => 'The software Mohingo is built with';
+
+  @override
+  String get accountDeleteTitle => 'Delete account';
+
+  @override
+  String get accountDeleteBody =>
+      'Permanently delete your account and its copy of your progress.';
+
+  @override
+  String get accountDeleteConfirmTitle => 'Delete your account?';
+
+  @override
+  String get accountDeleteConfirmBody =>
+      'This permanently deletes your Mohingo account, the copy of your progress stored with it, and this account\'s progress on this phone. It can\'t be undone. Progress you made on this phone without signing in is kept.';
+
+  @override
+  String get accountDeleteContinue => 'Continue';
+
+  @override
+  String get accountDeletePasswordTitle => 'Confirm it\'s you';
+
+  @override
+  String accountDeletePasswordBody(String email) {
+    return 'To delete the account, enter the password for $email.';
+  }
+
+  @override
+  String get accountDeletePasswordBodyNoEmail =>
+      'To delete the account, enter its password.';
+
+  @override
+  String get accountDeleteGoogleBody =>
+      'To delete the account, choose your Google account again.';
+
+  @override
+  String get accountDeleteAppleBody =>
+      'To delete the account, confirm with Apple that it\'s you.';
+
+  @override
+  String get accountDeleting => 'Deleting your account…';
+
+  @override
+  String get accountDeleted => 'Your account has been deleted.';
+
+  @override
+  String get accountDeleteFailed =>
+      'Your account couldn\'t be deleted. Check your internet connection and try again.';
+
+  @override
+  String get authErrorRecentLogin =>
+      'For your security, please confirm your password or account again.';
+
+  @override
+  String get authErrorWrongAccount =>
+      'That\'s a different account. Choose the account you\'re signed in with.';
 }

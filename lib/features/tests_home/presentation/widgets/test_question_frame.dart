@@ -13,7 +13,7 @@ import '../../../lesson_player/presentation/widgets/lesson_top_bar.dart';
 /// above the prompt, and Check / the feedback panel pinned to the bottom
 /// (see [ActivityFrameScope]). In [testMode] answers are saved, not marked.
 /// Free answers are graded on the rubric alone unless [signalsEnabled] —
-/// the three tests measure, so only quick practice turns it on (ADR 0011).
+/// the three tests measure, so only quick practice turns it on (ADR 0013).
 class TestQuestionFrame extends StatelessWidget {
   const TestQuestionFrame({
     required this.groupSizes,

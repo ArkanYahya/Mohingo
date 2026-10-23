@@ -10,20 +10,36 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:mohingo/app.dart';
 import 'package:mohingo/content/providers/course_content_providers.dart';
+import 'package:mohingo/core/l10n/generated/app_localizations.dart';
 import 'package:mohingo/core/preferences/shared_preferences_provider.dart';
+import 'package:mohingo/core/theme/theme_preferences_provider.dart';
 import 'package:mohingo/data/local/database.dart';
 import 'package:mohingo/data/local/database_provider.dart';
 import 'package:mohingo/features/activity_engine/providers/online_refinement_providers.dart';
+import 'package:mohingo/features/app_guide/presentation/app_guide_overlay.dart';
+import 'package:mohingo/features/app_guide/providers/app_guide_providers.dart';
 import 'package:mohingo/features/app_shell/presentation/app_shell_scaffold.dart';
 import 'package:mohingo/features/app_shell/presentation/content_error_screen.dart';
+import 'package:mohingo/features/legal/domain/legal_documents.dart';
+import 'package:mohingo/features/legal/presentation/welcome_screen.dart';
 import 'package:mohingo/features/review/providers/review_providers.dart';
 
 import 'features/activity_engine/fake_connectivity_service.dart';
 
+/// A returning learner's preferences: the agreement accepted and the app
+/// guide seen, so the app opens straight on Home. [values] are added on
+/// top; [firstLaunch] starts from nothing, as a fresh install does.
 Future<SharedPreferences> _mockPrefs([
   Map<String, Object> values = const {},
+  bool firstLaunch = false,
 ]) async {
-  SharedPreferences.setMockInitialValues(values);
+  SharedPreferences.setMockInitialValues({
+    if (!firstLaunch) ...{
+      'legal.acceptedAgreementVersion': kAgreementVersion,
+      'appGuide.completedVersion': kAppGuideVersion,
+    },
+    ...values,
+  });
   return SharedPreferences.getInstance();
 }
 
@@ -92,6 +108,56 @@ Future<void> _pumpAppAndWaitForContent(
   // Fail here rather than letting a caller silently assert against the
   // splash screen if the bundle never finished loading.
   expect(find.byType(AppShellScaffold), findsOneWidget);
+}
+
+/// Pumps [MohingoApp] from [prefs] and keeps pumping, in real time, until
+/// [until] finds something (or ~10 s pass). For start-up paths that do not
+/// end on the shell, such as a first launch.
+Future<void> _pumpAppUntil(
+  WidgetTester tester,
+  SharedPreferences prefs,
+  Finder until,
+) async {
+  await tester.runAsync(() async {
+    await tester.pumpWidget(
+      ProviderScope(
+        overrides: [
+          sharedPreferencesProvider.overrideWithValue(prefs),
+          appDatabaseProvider.overrideWithValue(
+            AppDatabase(NativeDatabase.memory()),
+          ),
+          connectivityServiceProvider.overrideWithValue(
+            FakeConnectivityService(online: false),
+          ),
+        ],
+        child: const MohingoApp(),
+      ),
+    );
+    await _pumpRealTimeUntil(tester, until);
+  });
+  await tester.pump();
+}
+
+/// Pumps in real time until [finder] finds something, for at most ~10 s.
+/// Must run inside [WidgetTester.runAsync].
+Future<void> _pumpRealTimeUntil(WidgetTester tester, Finder finder) async {
+  for (var i = 0; i < 100 && finder.evaluate().isEmpty; i++) {
+    await Future<void>.delayed(const Duration(milliseconds: 100));
+    await tester.pump();
+  }
+}
+
+/// Taps [finder] and lets the app settle in real time (the app guide
+/// scrolls and measures its targets after a frame).
+Future<void> _tapAndSettle(WidgetTester tester, Finder finder) async {
+  await tester.runAsync(() async {
+    await tester.ensureVisible(finder);
+    await tester.tap(finder);
+    for (var i = 0; i < 20; i++) {
+      await Future<void>.delayed(const Duration(milliseconds: 30));
+      await tester.pump(const Duration(milliseconds: 50));
+    }
+  });
 }
 
 void main() {
@@ -224,5 +290,118 @@ void main() {
     // covers the other failure — the gate surfacing a later level's error
     // as the app's own, via ContentErrorScreen.
     expect(find.byType(ContentErrorScreen), findsNothing);
+  });
+
+  testWidgets('a fresh install opens on the agreement, then Home with the '
+      'app guide; finishing the guide remembers both', (tester) async {
+    final prefs = await _mockPrefs(const {}, true);
+    await _pumpAppUntil(tester, prefs, find.byType(WelcomeScreen));
+
+    expect(find.byType(WelcomeScreen), findsOneWidget);
+    expect(find.byType(AppShellScaffold), findsNothing);
+    final l10n = AppLocalizations.of(
+      tester.element(find.byType(WelcomeScreen)),
+    )!;
+    // Arabic by default, and the agreement says what leaves the phone.
+    expect(find.text(l10n.welcomeWritingTitle), findsOneWidget);
+    expect(find.text(l10n.welcomeSpeechTitle), findsOneWidget);
+
+    await _tapAndSettle(tester, find.text(l10n.welcomeAccept));
+    await tester.runAsync(
+      () => _pumpRealTimeUntil(tester, find.text(l10n.guideIntroTitle)),
+    );
+    await tester.pump();
+
+    expect(prefs.getInt('legal.acceptedAgreementVersion'), kAgreementVersion);
+    expect(find.byType(WelcomeScreen), findsNothing);
+    expect(find.byType(AppShellScaffold), findsOneWidget);
+    expect(find.text(l10n.guideIntroTitle), findsOneWidget);
+
+    // Every step, forwards, then Done on the last.
+    for (final title in [
+      l10n.guideLevelTitle,
+      l10n.guideContinueTitle,
+      l10n.guideJourneyTitle,
+      l10n.guideLearnTitle,
+      l10n.guideReviewTitle,
+      l10n.guideTestsTitle,
+      l10n.guideSettingsTitle,
+    ]) {
+      await _tapAndSettle(tester, find.text(l10n.guideNext));
+      expect(
+        find.descendant(
+          of: find.byType(AppGuideOverlay),
+          matching: find.text(title),
+        ),
+        findsOneWidget,
+        reason: 'guide step "$title"',
+      );
+    }
+    expect(find.text(l10n.guideSkip), findsNothing);
+    await _tapAndSettle(tester, find.text(l10n.guideDone));
+
+    expect(find.text(l10n.guideSettingsBody), findsNothing);
+    expect(prefs.getInt('appGuide.completedVersion'), kAppGuideVersion);
+  });
+
+  testWidgets('Skip closes the guide at once and remembers it', (tester) async {
+    final prefs = await _mockPrefs(const {
+      'legal.acceptedAgreementVersion': kAgreementVersion,
+    }, true);
+    await _pumpAppUntil(tester, prefs, find.byType(AppGuideOverlay));
+    final l10n = AppLocalizations.of(
+      tester.element(find.byType(AppShellScaffold)),
+    )!;
+    await tester.runAsync(
+      () => _pumpRealTimeUntil(tester, find.text(l10n.guideSkip)),
+    );
+    await tester.pump();
+
+    await _tapAndSettle(tester, find.text(l10n.guideSkip));
+
+    expect(find.text(l10n.guideIntroTitle), findsNothing);
+    expect(prefs.getInt('appGuide.completedVersion'), kAppGuideVersion);
+  });
+
+  testWidgets('a returning learner sees neither the agreement nor the guide', (
+    tester,
+  ) async {
+    final prefs = await _mockPrefs();
+    await _pumpAppAndWaitForContent(tester, prefs);
+    final l10n = AppLocalizations.of(
+      tester.element(find.byType(AppShellScaffold)),
+    )!;
+
+    expect(find.byType(WelcomeScreen), findsNothing);
+    expect(find.text(l10n.guideIntroTitle), findsNothing);
+  });
+
+  testWidgets('an agreement accepted at an older version is asked for again, '
+      'saying the documents changed', (tester) async {
+    final prefs = await _mockPrefs(const {
+      'legal.acceptedAgreementVersion': kAgreementVersion - 1,
+      'appGuide.completedVersion': kAppGuideVersion,
+    }, true);
+    await _pumpAppUntil(tester, prefs, find.byType(WelcomeScreen));
+    final l10n = AppLocalizations.of(
+      tester.element(find.byType(WelcomeScreen)),
+    )!;
+    // Version 1 is the first: nobody has an older one yet, so there is no
+    // notice. The screen itself is still the gate.
+    expect(find.byType(WelcomeScreen), findsOneWidget);
+    expect(
+      find.text(l10n.welcomeUpdatedNotice),
+      kAgreementVersion > 1 ? findsOneWidget : findsNothing,
+    );
+  });
+
+  testWidgets('an upgrade from 0.1 drops the retired colour-theme setting', (
+    tester,
+  ) async {
+    final prefs = await _mockPrefs({'settings.colorSeed': 'slateIndigo'});
+    await removeRetiredPreferences(prefs);
+    expect(prefs.containsKey('settings.colorSeed'), isFalse);
+    // The rest of the learner's settings are untouched.
+    expect(prefs.getInt('legal.acceptedAgreementVersion'), kAgreementVersion);
   });
 }

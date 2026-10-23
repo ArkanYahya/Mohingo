@@ -15,7 +15,9 @@ import 'guest_progress_dialog.dart';
 ///
 /// While a request runs, the form is disabled and the primary button shows
 /// progress. Failures appear under the form as a bilingual message, never a
-/// raw provider error (`authFailureMessage`). After signing in, a phone
+/// raw provider error (`authFailureMessage`). Sign in with Apple is offered
+/// where the platform supports it (iPhone), above Google, in Apple's own
+/// black-or-white style. After signing in, a phone
 /// with guest progress asks what to do with it
 /// ([showGuestProgressDecision]); then the screen closes.
 class AuthScreen extends ConsumerStatefulWidget {
@@ -61,6 +63,9 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
 
   Future<void> _submitGoogle() =>
       _run(() => ref.read(authRepositoryProvider).signInWithGoogle());
+
+  Future<void> _submitApple() =>
+      _run(() => ref.read(authRepositoryProvider).signInWithApple());
 
   Future<void> _run(Future<AuthUser> Function() signIn) async {
     FocusScope.of(context).unfocus();
@@ -243,7 +248,7 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
                                 : l10n.authSignInAction,
                           ),
                   ),
-                  if (auth.supportsGoogle) ...[
+                  if (auth.supportsApple || auth.supportsGoogle) ...[
                     const SizedBox(height: AppSpace.md),
                     Row(
                       children: [
@@ -262,6 +267,12 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
                         Expanded(child: Divider(color: tokens.border)),
                       ],
                     ),
+                  ],
+                  if (auth.supportsApple) ...[
+                    const SizedBox(height: AppSpace.md),
+                    _AppleButton(onPressed: _busy ? null : _submitApple),
+                  ],
+                  if (auth.supportsGoogle) ...[
                     const SizedBox(height: AppSpace.md),
                     OutlinedButton.icon(
                       onPressed: _busy ? null : _submitGoogle,
@@ -294,6 +305,32 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
           ),
         ),
       ),
+    );
+  }
+}
+
+/// "Continue with Apple", drawn to Apple's rules for a custom Sign in with
+/// Apple button rather than the app's own: black on a light screen, white
+/// on a dark one, the Apple logo in the title's colour, never the accent.
+/// See docs/DESIGN_SYSTEM.md, Sign in with Apple.
+class _AppleButton extends StatelessWidget {
+  const _AppleButton({required this.onPressed});
+
+  final VoidCallback? onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final dark = Theme.of(context).brightness == Brightness.dark;
+    return FilledButton.icon(
+      onPressed: onPressed,
+      style: FilledButton.styleFrom(
+        minimumSize: const Size.fromHeight(48),
+        backgroundColor: dark ? Colors.white : Colors.black,
+        foregroundColor: dark ? Colors.black : Colors.white,
+      ),
+      icon: const Icon(Icons.apple),
+      label: Text(l10n.authAppleAction),
     );
   }
 }

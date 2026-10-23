@@ -398,7 +398,7 @@ void main() {
 
       test('every mastery speak or write task graded by a keyword checklist '
           'carries a model answer', () {
-        // ADR 0011: the on-device meaning signal compares a free answer with
+        // ADR 0013: the on-device meaning signal compares a free answer with
         // the task's model answers, so a keyword-graded mastery task without
         // one is graded by keywords alone — the gap the signal exists to
         // close. (The structured rubrics — a spelled name, a number — have

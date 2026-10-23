@@ -1,11 +1,11 @@
 # On-device grading of free answers — a meaning signal for everyone, an optional AI pack for feedback
 
-**Status:** Approved by the product owner on 2026-10-22; Phase A built the same day on `ccr-3aef6bc0-xt12aw` (what landed, and what differs from the text below, is in the "As built" note at the end). Decision record: [ADR 0011](../../adr/0011-on-device-ai-for-free-answers.md).
+**Status:** Approved by the product owner on 2026-10-22; Phase A built the same day on `ccr-3aef6bc0-xt12aw` (what landed, and what differs from the text below, is in the "As built" note at the end). Decision record: [ADR 0013](../../adr/0013-on-device-ai-for-free-answers.md).
 **Date:** 2026-10-22
 
 ## Context
 
-The owner wants the app to grade a learner's free answers — `write` tasks and `speak` tasks, in lessons and in review — by what they mean, not only by which words they contain, and to tell the learner why an answer missed. The answers to the design questions, recorded in ADR 0011: free answers first; an optional download of hundreds of megabytes is fine; reference phone iPhone 11/12; a model may adjust the mastery score within bounds but never set it; the Final Assessment stays deterministic; Arabic explanations are a bonus.
+The owner wants the app to grade a learner's free answers — `write` tasks and `speak` tasks, in lessons and in review — by what they mean, not only by which words they contain, and to tell the learner why an answer missed. The answers to the design questions, recorded in ADR 0013: free answers first; an optional download of hundreds of megabytes is fine; reference phone iPhone 11/12; a model may adjust the mastery score within bounds but never set it; the Final Assessment stays deterministic; Arabic explanations are a bonus.
 
 What exists today, and is kept:
 
@@ -68,7 +68,7 @@ A pack that fails (out of memory, timeout, malformed JSON) counts as unavailable
 
 ## Phasing
 
-1. **Phase A — this environment:** ADR 0011 and this spec; Layer 1 code with the combination rule and fakes; the gate and the model answers A2 needs; the drain's local source behind the `LocalJudgementService` interface; the Settings row; docs per CLAUDE.md's table. The real embedding model is wired and verified on the owner's phone.
+1. **Phase A — this environment:** ADR 0013 and this spec; Layer 1 code with the combination rule and fakes; the gate and the model answers A2 needs; the drain's local source behind the `LocalJudgementService` interface; the Settings row; docs per CLAUDE.md's table. The real embedding model is wired and verified on the owner's phone.
 2. **Phase B — after a device spike:** the pack: model and library chosen from the spike's speed and memory numbers on the reference phone, hosting, the explanation block, Arabic quality judged by the owner before it is shown.
 
 ## Open questions

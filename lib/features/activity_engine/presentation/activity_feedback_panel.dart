@@ -248,7 +248,7 @@ class ActivityFeedbackPanel extends StatelessWidget {
   }
 }
 
-/// The AI pack's explanation of a verdict (ADR 0011): an "Explanation"
+/// The AI pack's explanation of a verdict (ADR 0013): an "Explanation"
 /// overline, the English, the Arabic when the pack managed one, and the
 /// "Generated on your phone" label that always accompanies it. Feedback
 /// only — it never changes the verdict above it. Renders nothing when the

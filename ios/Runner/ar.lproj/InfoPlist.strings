@@ -1,0 +1,7 @@
+/* The Arabic permission prompts. The English ones are in Info.plist, the
+   development language's own copy. Written in Arabic, not translated from
+   the English — see docs/UX_PRINCIPLES.md. */
+
+"NSMicrophoneUsageDescription" = "يستخدم Mohingo الميكروفون فقط عندما تضغط لتسجيل إجابتك في إحدى مهام التحدث.";
+
+"NSSpeechRecognitionUsageDescription" = "يستخدم Mohingo خدمة التعرّف على الكلام لتحويل إجاباتك المنطوقة إلى نص حتى يتمكّن من تقييمها. قد تعالج Apple التسجيل لإتمام ذلك.";

@@ -31,11 +31,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get comingSoon => 'قريباً';
 
   @override
-  String placeholderScreenBody(String screenName) {
-    return '$screenName — قادمة في مرحلة لاحقة.';
-  }
-
-  @override
   String get activitySubmitButton => 'تحقّق';
 
   @override
@@ -610,9 +605,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get lessonCompleteReviewAnswers => 'راجع إجاباتك';
 
   @override
-  String get lessonPlayerNext => 'التالي';
-
-  @override
   String lessonPlayerProgress(int current, int total) {
     return '$current من $total';
   }
@@ -1030,9 +1022,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get settingsSpeechRate => 'سرعة الصوت';
 
   @override
-  String get settingsSpeechPitch => 'طبقة الصوت';
-
-  @override
   String get speechListen => 'استمع';
 
   @override
@@ -1401,12 +1390,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get settingsFaster => 'أسرع';
 
   @override
-  String get settingsLower => 'أخفض';
-
-  @override
-  String get settingsHigher => 'أعلى';
-
-  @override
   String get settingsTryVoice => 'جرّب';
 
   @override
@@ -1445,20 +1428,15 @@ class AppLocalizationsAr extends AppLocalizations {
   String get settingsDataOverline => 'بياناتك';
 
   @override
-  String get settingsOfflineTitle => 'تبقى على هذا الجهاز';
+  String get settingsOfflineTitle => 'يعمل دون اتصال';
 
   @override
   String get settingsOfflineBody =>
-      'يعمل دون إنترنت بالكامل. ومن دون حساب لا يغادر شيء هذا الهاتف.';
+      'كل الدروس تعمل دون إنترنت، ومن دون حساب يبقى تقدّمك على هذا الهاتف.';
 
   @override
   String get settingsResetProgressBody =>
       'امسح كل الدروس ونتائج الاختبارات والمراجعات على هذا الجهاز.';
-
-  @override
-  String settingsVersion(String version) {
-    return 'Mohingo · الإصدار $version';
-  }
 
   @override
   String get settingsNameEmpty => 'أضف اسمك';
@@ -1485,9 +1463,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get settingsThemeModeSystem => 'تلقائي';
-
-  @override
-  String get settingsColorThemeTitle => 'اللون';
 
   @override
   String get settingsNameTitle => 'اسمك';
@@ -1711,6 +1686,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get authGoogleAction => 'المتابعة باستخدام Google';
 
   @override
+  String get authAppleAction => 'المتابعة باستخدام Apple';
+
+  @override
   String get authSwitchToCreate => 'جديد هنا؟ أنشئ حساباً';
 
   @override
@@ -1797,4 +1775,236 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get settingsOfflineBodyAccount =>
       'كل الدروس تعمل دون إنترنت، وتُحفظ نسخة من تقدّمك في حسابك أيضاً.';
+
+  @override
+  String get errorGenericTitle => 'حدث خطأ ما';
+
+  @override
+  String get errorGenericBody =>
+      'تعذّر فتح هذه الصفحة. تقدّمك محفوظ، فارجع وحاول مرة أخرى.';
+
+  @override
+  String get legalPrivacyTitle => 'سياسة الخصوصية';
+
+  @override
+  String get legalTermsTitle => 'شروط الاستخدام';
+
+  @override
+  String get welcomeTitle => 'أهلاً بك في Mohingo';
+
+  @override
+  String get welcomeSubtitle =>
+      'دورة لتعلّم الإنجليزية للمتحدثين بالعربية، تعمل دون إنترنت وتحفظ تقدّمك على هاتفك.';
+
+  @override
+  String get welcomeUpdatedNotice =>
+      'حدّثنا سياسة الخصوصية وشروط الاستخدام. نرجو الاطلاع عليهما ثم الموافقة للمتابعة.';
+
+  @override
+  String get welcomePrivacyHeading => 'خصوصيتك باختصار';
+
+  @override
+  String get welcomeLocalTitle => 'تقدّمك يبقى على هاتفك';
+
+  @override
+  String get welcomeLocalBody =>
+      'تُحفظ دروسك وإجاباتك وإعداداتك على هذا الجهاز. لا إعلانات ولا أدوات تحليل ولا تتبّع.';
+
+  @override
+  String get welcomeAccountTitle => 'الحساب اختياري';
+
+  @override
+  String get welcomeAccountBody =>
+      'إذا سجّلت الدخول، تُنسخ بيانات تقدّمك واسمك إلى حسابك (عبر Google Firebase) لتستخدمها على هواتف أخرى. ومن دون حساب لا يُرفع تقدّمك إلى أي مكان.';
+
+  @override
+  String get welcomeWritingTitle => 'تدقيق بعض الإجابات المكتوبة';
+
+  @override
+  String get welcomeWritingBody =>
+      'عندما تكون متصلاً بالإنترنت، يُرسل نص بعض إجاباتك المكتوبة إلى LanguageTool، وهي خدمة تدقيق نحوي، للمساعدة في تصحيحها. ولا يُرسل معه ما يدلّ على هويتك.';
+
+  @override
+  String get welcomeSpeechTitle => 'مهام التحدث';
+
+  @override
+  String get welcomeSpeechBody =>
+      'تستخدم مهام التحدث خدمة التعرّف على الكلام في هاتفك، من Google أو Apple، لتحويل صوتك إلى نص، وقد تعالجه عبر الإنترنت. يحتفظ Mohingo بالنص فقط، ولا يحتفظ بالتسجيل أبداً.';
+
+  @override
+  String get welcomeConsentLine =>
+      'بالمتابعة فإنك توافق على شروط الاستخدام وتؤكد أنك قرأت سياسة الخصوصية.';
+
+  @override
+  String get welcomeAccept => 'أوافق وأتابع';
+
+  @override
+  String guideStepCounter(int current, int total) {
+    return '$current من $total';
+  }
+
+  @override
+  String get guideSkip => 'تخطّي';
+
+  @override
+  String get guideBack => 'السابق';
+
+  @override
+  String get guideNext => 'التالي';
+
+  @override
+  String get guideDone => 'تم';
+
+  @override
+  String get guideIntroTitle => 'جولة سريعة';
+
+  @override
+  String get guideIntroBody =>
+      'إليك أين تجد كل شيء في Mohingo. لن تستغرق الجولة أكثر من دقيقة، ويمكنك فتح هذا الدليل مجدداً من الإعدادات.';
+
+  @override
+  String get guideLevelTitle => 'مستواك';
+
+  @override
+  String get guideLevelBody =>
+      'يظهر هنا المستوى الذي تدرسه (يبدأ المبتدئون من A1)، وسلسلة أيامك: عدد الأيام المتتالية التي درست فيها.';
+
+  @override
+  String get guideContinueTitle => 'درسك التالي';
+
+  @override
+  String get guideContinueBody =>
+      'اضغط هنا لتبدأ درسك التالي أو تكمل من حيث توقفت. يبدأ كل درس بمحادثة قصيرة، يليها تدريب على الاستماع والقراءة والتحدث والكتابة.';
+
+  @override
+  String get guideJourneyTitle => 'مسارك في المستوى';
+
+  @override
+  String get guideJourneyBody =>
+      'يتكوّن كل مستوى من وحدات، وكل وحدة من دروس قصيرة تنتهي بمهمة الوحدة. كل جزء من هذا المسار يمثّل وحدة؛ اضغط عليه لترى الوحدات كلها.';
+
+  @override
+  String get guideLearnTitle => 'تعلّم';
+
+  @override
+  String get guideLearnBody =>
+      'كل الوحدات والدروس بالترتيب، ويمكنك فتح أي درس أنهيته لمراجعة إجاباتك. تدلّك هذه العلامات على موقعك:';
+
+  @override
+  String get guideLegendDone => 'درس منتهٍ، أو وحدة أتقنتها';
+
+  @override
+  String get guideReviewTitle => 'مراجعة';
+
+  @override
+  String get guideReviewBody =>
+      'الكلمات والقواعد التي مرّت بك في الدروس. تعود الكلمات للمراجعة قبيل الوقت الذي يُرجَّح أن تنساها فيه، ويُظهر الرقم على هذا التبويب عدد ما حان موعد مراجعته.';
+
+  @override
+  String get guideTestsTitle => 'الاختبارات';
+
+  @override
+  String get guideTestsBody =>
+      'اختبار تحديد المستوى لتعرف من أين تبدأ، وفي نهاية كل مستوى مهمة نهائية وتقييم نهائي.';
+
+  @override
+  String get guideSettingsTitle => 'الإعدادات';
+
+  @override
+  String get guideSettingsBody =>
+      'غيّر لغة التطبيق والوضع الفاتح أو الداكن وسرعة الصوت. وستجد هذا الدليل هنا أيضاً تحت «دليل التطبيق».';
+
+  @override
+  String get guideSettingsBodyAccount =>
+      'غيّر لغة التطبيق والوضع الفاتح أو الداكن وسرعة الصوت. ويمكنك أيضاً تسجيل الدخول من هنا لتحتفظ بتقدّمك على أكثر من هاتف، وهذا اختياري. وستجد هذا الدليل هنا أيضاً تحت «دليل التطبيق».';
+
+  @override
+  String get settingsHelpOverline => 'المساعدة والمعلومات';
+
+  @override
+  String get settingsGuideTitle => 'دليل التطبيق';
+
+  @override
+  String get settingsGuideBody => 'جولة قصيرة تعرّفك بمكان كل شيء.';
+
+  @override
+  String get settingsAboutTitle => 'حول Mohingo';
+
+  @override
+  String get settingsAboutBody => 'الإصدار وسياسة الخصوصية والشروط';
+
+  @override
+  String aboutVersion(String version) {
+    return 'الإصدار $version';
+  }
+
+  @override
+  String get aboutDescription =>
+      'دورة لتعلّم الإنجليزية للمتحدثين بالعربية، منظّمة وفق مستويات الإطار الأوروبي المرجعي بدءاً من A1. كل الدروس تعمل دون إنترنت، بالعربية والإنجليزية.';
+
+  @override
+  String get aboutPrivacyBody => 'ما يحفظه التطبيق وما قد يغادر هاتفك';
+
+  @override
+  String get aboutTermsBody => 'قواعد استخدام Mohingo';
+
+  @override
+  String get aboutLicensesTitle => 'تراخيص البرمجيات مفتوحة المصدر';
+
+  @override
+  String get aboutLicensesBody => 'البرمجيات التي بُني بها Mohingo';
+
+  @override
+  String get accountDeleteTitle => 'حذف الحساب';
+
+  @override
+  String get accountDeleteBody => 'احذف حسابك ونسخة تقدّمك فيه نهائياً.';
+
+  @override
+  String get accountDeleteConfirmTitle => 'حذف حسابك؟';
+
+  @override
+  String get accountDeleteConfirmBody =>
+      'سيُحذف حسابك في Mohingo نهائياً، ومعه نسخة تقدّمك المحفوظة فيه، وتقدّم هذا الحساب على هذا الهاتف. لا يمكن التراجع عن ذلك. أما التقدّم الذي أحرزته على هذا الهاتف دون تسجيل الدخول فيبقى كما هو.';
+
+  @override
+  String get accountDeleteContinue => 'متابعة';
+
+  @override
+  String get accountDeletePasswordTitle => 'تأكيد هويتك';
+
+  @override
+  String accountDeletePasswordBody(String email) {
+    return 'لحذف الحساب، أدخل كلمة المرور الخاصة بـ $email.';
+  }
+
+  @override
+  String get accountDeletePasswordBodyNoEmail =>
+      'لحذف الحساب، أدخل كلمة المرور الخاصة به.';
+
+  @override
+  String get accountDeleteGoogleBody =>
+      'لحذف الحساب، اختر حسابك في Google مرة أخرى.';
+
+  @override
+  String get accountDeleteAppleBody =>
+      'لحذف الحساب، أكّد هويتك باستخدام Apple.';
+
+  @override
+  String get accountDeleting => 'جارٍ حذف حسابك…';
+
+  @override
+  String get accountDeleted => 'تم حذف حسابك.';
+
+  @override
+  String get accountDeleteFailed =>
+      'تعذّر حذف حسابك. تحقّق من اتصالك بالإنترنت وحاول مرة أخرى.';
+
+  @override
+  String get authErrorRecentLogin =>
+      'لحمايتك، أكّد كلمة المرور أو حسابك مرة أخرى.';
+
+  @override
+  String get authErrorWrongAccount =>
+      'هذا حساب مختلف. اختر الحساب الذي سجّلت الدخول به.';
 }

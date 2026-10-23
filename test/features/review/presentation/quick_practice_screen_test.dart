@@ -143,7 +143,7 @@ void main() {
 
     await _answerAll(tester);
 
-    // Every task in the set has a model answer since ADR 0011, and the
+    // Every task in the set has a model answer since ADR 0013, and the
     // helper answers a speak or write task with its model answer, so all
     // three are right (before 2026-10-22 A03 had none, the helper's stock
     // answer missed its checklist, and the score was 2 of 3).

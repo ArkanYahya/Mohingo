@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../preferences/shared_preferences_provider.dart';
-import 'color_seed.dart';
 
 part 'theme_preferences_provider.g.dart';
 
 const _themeModeKey = 'settings.themeMode';
-const _colorSeedKey = 'settings.colorSeed';
 
 /// Light/dark/system theme choice, persisted immediately on change — see
 /// docs/DESIGN_SYSTEM.md's theming rules ("changes apply immediately, no
@@ -31,23 +30,16 @@ class ThemeModePreference extends _$ThemeModePreference {
   }
 }
 
-/// Selected colour-theme seed, persisted immediately on change. See
-/// docs/DESIGN_SYSTEM.md.
-@riverpod
-class ColorSeedPreference extends _$ColorSeedPreference {
-  @override
-  AppColorSeed build() {
-    final prefs = ref.watch(sharedPreferencesProvider);
-    final stored = prefs.getString(_colorSeedKey);
-    return AppColorSeed.values.firstWhere(
-      (seed) => seed.name == stored,
-      orElse: () => AppColorSeed.calmTeal,
-    );
-  }
+/// Preference keys earlier versions wrote and nothing reads any more.
+/// `settings.colorSeed` held the colour-theme choice, retired in 1.0.0: the
+/// app has one brand accent (`kAppColorSeed`) and Settings offers only
+/// light, dark or automatic.
+const retiredPreferenceKeys = ['settings.colorSeed'];
 
-  Future<void> set(AppColorSeed seed) async {
-    final prefs = ref.read(sharedPreferencesProvider);
-    await prefs.setString(_colorSeedKey, seed.name);
-    state = seed;
+/// Removes [retiredPreferenceKeys], so an upgraded install carries no
+/// setting it can no longer see or change. Called once at start-up.
+Future<void> removeRetiredPreferences(SharedPreferences prefs) async {
+  for (final key in retiredPreferenceKeys) {
+    if (prefs.containsKey(key)) await prefs.remove(key);
   }
 }

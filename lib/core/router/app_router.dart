@@ -22,6 +22,11 @@ import '../../features/review/presentation/review_home_screen.dart';
 import '../../features/review/presentation/review_session_screen.dart';
 import '../../features/account/presentation/auth_screen.dart';
 import '../../features/account/presentation/forgot_password_screen.dart';
+import '../../features/legal/domain/legal_documents.dart';
+import '../../features/legal/presentation/legal_document_screen.dart';
+import '../../features/legal/presentation/welcome_screen.dart';
+import '../../features/legal/providers/agreement_providers.dart';
+import '../../features/settings/presentation/about_screen.dart';
 import '../../features/settings/presentation/settings_screen.dart';
 import '../../features/tests_home/presentation/tests_home_screen.dart';
 import '../../features/vocabulary/presentation/chunk_detail_screen.dart';
@@ -40,6 +45,13 @@ part 'app_router.g.dart';
 /// otherwise the normal tree. A later level failing to load is handled
 /// where that level is shown and never blocks the app. See
 /// docs/ARCHITECTURE.md's content-loading strategy.
+///
+/// Once content is ready, the first-run agreement gates everything else:
+/// until the current agreement version is accepted, every route leads to
+/// `/welcome` (whose privacy policy and terms, `/legal/*`, stay readable).
+/// Accepting opens `/home`, where the app guide starts. Sign-in is never a
+/// gate — accounts are optional and live in Settings.
+/// See docs/adr/0011-first-run-agreement-app-guide-and-account-deletion.md.
 ///
 /// The lesson player, and any future placement/final-mission/
 /// final-assessment flows, are deliberately full-screen pushes *outside*
@@ -66,14 +78,32 @@ GoRouter appRouter(Ref ref) {
             ? null
             : '/content-error';
       }
-      // Content ready: leave the gate screens if we're still on one.
-      return atGateScreen ? '/home' : null;
+      final location = state.matchedLocation;
+      final readingDocument = location.startsWith('/legal/');
+      if (!ref.read(agreementAcceptedProvider)) {
+        return location == '/welcome' || readingDocument ? null : '/welcome';
+      }
+      // Content ready and agreement accepted: leave the gate screens.
+      return atGateScreen || location == '/welcome' ? '/home' : null;
     },
     routes: [
       GoRoute(path: '/splash', builder: (_, _) => const SplashScreen()),
       GoRoute(
         path: '/content-error',
         builder: (_, _) => const ContentErrorScreen(),
+      ),
+      GoRoute(path: '/welcome', builder: (_, _) => const WelcomeScreen()),
+      GoRoute(
+        // The privacy policy and terms, full screen: from the first-run
+        // agreement and from About.
+        path: '/legal/:document',
+        redirect: (_, state) =>
+            LegalDocument.fromSlug(state.pathParameters['document']!) == null
+            ? '/home'
+            : null,
+        builder: (_, state) => LegalDocumentScreen(
+          document: LegalDocument.fromSlug(state.pathParameters['document']!)!,
+        ),
       ),
 
       StatefulShellRoute.indexedStack(
@@ -170,6 +200,12 @@ GoRouter appRouter(Ref ref) {
               GoRoute(
                 path: '/settings',
                 builder: (_, _) => const SettingsScreen(),
+                routes: [
+                  GoRoute(
+                    path: 'about',
+                    builder: (_, _) => const AboutScreen(),
+                  ),
+                ],
               ),
             ],
           ),

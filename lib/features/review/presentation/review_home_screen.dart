@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../core/widgets/error_state_view.dart';
 import '../../../core/l10n/generated/app_localizations.dart';
 import '../../../core/l10n/skill_label.dart';
 import '../../../core/theme/app_tokens.dart';
@@ -48,7 +49,8 @@ class ReviewHomeScreen extends ConsumerWidget {
         bottom: false,
         child: contentAsync.when(
           loading: () => const Center(child: CircularProgressIndicator()),
-          error: (error, _) => Center(child: Text('$error')),
+          error: (error, stackTrace) =>
+              ErrorStateView(error: error, stackTrace: stackTrace),
           data: (content) => _ReviewBody(content: content),
         ),
       ),

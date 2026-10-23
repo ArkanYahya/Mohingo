@@ -225,7 +225,7 @@ void main() {
     expect(criteria.containsKey('judgement'), isFalse);
   });
 
-  group('ADR 0011: the meaning signal and the AI pack', () {
+  group('ADR 0013: the meaning signal and the AI pack', () {
     const task = JudgementTask(
       prompt: 'Write a message about your free time.',
       modelAnswers: ['Hi! Are you free on Saturday? Let\'s go to the park.'],

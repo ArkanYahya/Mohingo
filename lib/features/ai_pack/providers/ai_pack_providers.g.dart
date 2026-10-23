@@ -8,21 +8,21 @@ part of 'ai_pack_providers.dart';
 
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, type=warning
-/// The one binding for the AI pack (ADR 0011). Phase A offers none; Phase B
+/// The one binding for the AI pack (ADR 0013). Phase A offers none; Phase B
 /// swaps this for the implementation that downloads and manages a real
 /// pack, and binds `localJudgementServiceProvider` to it.
 
 @ProviderFor(aiPackService)
 final aiPackServiceProvider = AiPackServiceProvider._();
 
-/// The one binding for the AI pack (ADR 0011). Phase A offers none; Phase B
+/// The one binding for the AI pack (ADR 0013). Phase A offers none; Phase B
 /// swaps this for the implementation that downloads and manages a real
 /// pack, and binds `localJudgementServiceProvider` to it.
 
 final class AiPackServiceProvider
     extends $FunctionalProvider<AiPackService, AiPackService, AiPackService>
     with $Provider<AiPackService> {
-  /// The one binding for the AI pack (ADR 0011). Phase A offers none; Phase B
+  /// The one binding for the AI pack (ADR 0013). Phase A offers none; Phase B
   /// swaps this for the implementation that downloads and manages a real
   /// pack, and binds `localJudgementServiceProvider` to it.
   AiPackServiceProvider._()

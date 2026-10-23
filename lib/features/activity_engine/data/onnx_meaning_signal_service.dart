@@ -9,7 +9,7 @@ import '../domain/evaluation/sentence_similarity.dart';
 import '../domain/evaluation/wordpiece_tokenizer.dart';
 
 /// The meaning signal computed on the device with the bundled MiniLM
-/// sentence-embedding model through ONNX Runtime (ADR 0011, first layer).
+/// sentence-embedding model through ONNX Runtime (ADR 0013, first layer).
 ///
 /// The model and its vocabulary load lazily on the first call and stay
 /// loaded. Anything that goes wrong — no runtime on this platform, a failed

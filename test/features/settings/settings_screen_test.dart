@@ -5,7 +5,6 @@ import 'package:drift/native.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mohingo/core/app_version.dart';
 import 'package:mohingo/core/l10n/generated/app_localizations.dart';
 import 'package:mohingo/core/l10n/locale_preference_provider.dart';
 import 'package:mohingo/core/preferences/shared_preferences_provider.dart';
@@ -15,6 +14,7 @@ import 'package:mohingo/core/theme/theme_preferences_provider.dart';
 import 'package:mohingo/data/local/database.dart';
 import 'package:mohingo/data/local/database_provider.dart';
 import 'package:mohingo/features/account/providers/account_providers.dart';
+import 'package:mohingo/features/app_guide/providers/app_guide_providers.dart';
 import 'package:mohingo/features/settings/presentation/settings_screen.dart';
 import 'package:mohingo/features/speech/domain/speech_capability_service.dart';
 import 'package:mohingo/features/speech/domain/speech_recognition_service.dart';
@@ -42,11 +42,10 @@ class _SettingsHarness extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final locale = ref.watch(localePreferenceProvider);
     final themeMode = ref.watch(themeModePreferenceProvider);
-    final colorSeed = ref.watch(colorSeedPreferenceProvider);
     return MaterialApp(
       locale: locale,
-      theme: AppTheme.light(colorSeed),
-      darkTheme: AppTheme.dark(colorSeed),
+      theme: AppTheme.light(kAppColorSeed),
+      darkTheme: AppTheme.dark(kAppColorSeed),
       themeMode: themeMode,
       supportedLocales: AppLocalizations.supportedLocales,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
@@ -99,9 +98,10 @@ Future<(AppDatabase, SharedPreferences)> _setupBacking() async {
 void main() {
   driftRuntimeOptions.dontWarnAboutMultipleDatabases = true;
 
-  testWidgets('groups settings under Appearance, Listening & speaking and '
-      'Your data, names the colours, labels the slider ends, and shows the '
-      'app version', (tester) async {
+  testWidgets('groups settings under Appearance, Listening & speaking, '
+      'Your data and Help & information, and labels the slider ends', (
+    tester,
+  ) async {
     _useTallViewport(tester);
     final (db, prefs) = await _setupBacking();
 
@@ -127,22 +127,19 @@ void main() {
       l10n.settingsAppearanceOverline,
       l10n.settingsSpeechTitle,
       l10n.settingsDataOverline,
+      l10n.settingsHelpOverline,
     ]) {
       expect(find.text(overline.toUpperCase()), findsOneWidget);
     }
     expect(find.text('العربية'), findsOneWidget);
     expect(find.text('English'), findsOneWidget);
-    for (final seed in AppColorSeed.values) {
-      expect(find.text(seed.labelEn), findsOneWidget);
-    }
     // One slider: voice speed. Pitch went with the device engine — bundled
     // clips have none to change (ADR 0008).
     expect(find.byType(Slider), findsOneWidget);
     expect(find.text(l10n.settingsSlower), findsOneWidget);
     expect(find.text(l10n.settingsFaster), findsOneWidget);
-    expect(find.text(l10n.settingsVersion(kAppVersion)), findsOneWidget);
     expect(find.text(l10n.settingsResetProgressTitle), findsOneWidget);
-    // The AI pack row (ADR 0011): offered under Listening & speaking, and
+    // The AI pack row (ADR 0013): offered under Listening & speaking, and
     // honest that this build has none to download.
     expect(find.text(l10n.settingsSmartFeedbackTitle), findsOneWidget);
     expect(
@@ -219,45 +216,70 @@ void main() {
     expect(recognition.initialPermission, SpeechPermissionStatus.granted);
   });
 
-  testWidgets(
-    'the colour-theme picker swatches preview the actual flat brand accent '
-    'the app applies (AppColorSeed.brandPrimary), not the muted raw seed — '
-    'otherwise the picker no longer shows what selecting that theme '
-    'produces',
-    (tester) async {
-      _useTallViewport(tester);
-      final (db, prefs) = await _setupBacking();
+  testWidgets('offers no colour choice: light, dark and automatic only', (
+    tester,
+  ) async {
+    _useTallViewport(tester);
+    final (db, prefs) = await _setupBacking();
 
-      await tester.pumpWidget(
-        ProviderScope(
-          overrides: _baseOverrides(prefs, db),
-          child: MaterialApp(
-            theme: AppTheme.light(AppColorSeed.calmTeal),
-            supportedLocales: AppLocalizations.supportedLocales,
-            localizationsDelegates: AppLocalizations.localizationsDelegates,
-            home: const SettingsScreen(),
-          ),
+    await tester.pumpWidget(
+      ProviderScope(
+        overrides: _baseOverrides(prefs, db),
+        child: MaterialApp(
+          theme: AppTheme.light(AppColorSeed.calmTeal),
+          locale: const Locale('en'),
+          supportedLocales: AppLocalizations.supportedLocales,
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          home: const SettingsScreen(),
         ),
-      );
-      await tester.pumpAndSettle();
+      ),
+    );
+    await tester.pumpAndSettle();
+    final l10n = AppLocalizations.of(
+      tester.element(find.byType(SettingsScreen)),
+    )!;
 
-      final swatches = tester
-          .widgetList<CircleAvatar>(find.byType(CircleAvatar))
-          .map((c) => c.backgroundColor)
-          .toSet();
-      expect(
-        swatches,
-        containsAll(AppColorSeed.values.map((s) => s.brandPrimary)),
-      );
-      expect(
-        swatches.intersection(
-          AppColorSeed.values.map((s) => s.seedColor).toSet(),
+    for (final seed in AppColorSeed.values) {
+      expect(find.text(seed.labelEn), findsNothing);
+    }
+    expect(find.text(l10n.settingsThemeModeLight), findsOneWidget);
+    expect(find.text(l10n.settingsThemeModeDark), findsOneWidget);
+    expect(find.text(l10n.settingsThemeModeSystem), findsOneWidget);
+  });
+
+  testWidgets('Help & information opens the app guide and About', (
+    tester,
+  ) async {
+    _useTallViewport(tester);
+    final (db, prefs) = await _setupBacking();
+    final container = ProviderContainer(overrides: _baseOverrides(prefs, db));
+    addTearDown(container.dispose);
+
+    await tester.pumpWidget(
+      UncontrolledProviderScope(
+        container: container,
+        child: MaterialApp(
+          theme: AppTheme.light(AppColorSeed.calmTeal),
+          locale: const Locale('en'),
+          supportedLocales: AppLocalizations.supportedLocales,
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          home: const SettingsScreen(),
         ),
-        isEmpty,
-        reason: 'the raw, muted seed colour must not leak into the picker',
-      );
-    },
-  );
+      ),
+    );
+    await tester.pumpAndSettle();
+    final l10n = AppLocalizations.of(
+      tester.element(find.byType(SettingsScreen)),
+    )!;
+
+    expect(find.text(l10n.settingsHelpOverline.toUpperCase()), findsOneWidget);
+    expect(find.text(l10n.settingsAboutTitle), findsOneWidget);
+    expect(container.read(appGuideControllerProvider).active, isFalse);
+    await tester.tap(find.text(l10n.settingsGuideTitle));
+    await tester.pump();
+    expect(container.read(appGuideControllerProvider).active, isTrue);
+    expect(container.read(appGuideControllerProvider).step, 0);
+  });
 
   testWidgets('switching interface language via Settings actually changes '
       'the app locale', (tester) async {

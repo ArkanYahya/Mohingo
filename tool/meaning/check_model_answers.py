@@ -1,4 +1,4 @@
-"""Validate the model answers that ADR 0011's meaning signal relies on.
+"""Validate the model answers that ADR 0013's meaning signal relies on.
 
   python tool/meaning/check_model_answers.py [--answers FILE.json] [--apply]
 

@@ -248,7 +248,7 @@ class _SpeakActivityViewState extends ConsumerState<SpeakActivityView> {
   /// as it was said ([SpokenAnswer], ADR 0009); a typed fallback as written.
   ///
   /// A `keywordChecklist` task with model answers also gets the on-device
-  /// meaning signal (ADR 0011) — see `WriteActivityView._submit` for the
+  /// meaning signal (ADR 0013) — see `WriteActivityView._submit` for the
   /// rule, which is the same here. Nothing a learner says ever goes online:
   /// a speak rubric is never marked `onlineRefinement` (a gate), so a
   /// spoken answer is queued only for an installed AI pack to judge on the

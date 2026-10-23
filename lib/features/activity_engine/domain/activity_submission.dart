@@ -61,10 +61,10 @@ class ActivitySubmission {
   /// With [pendingOnlineRefinement]: whether the queued answer may be sent
   /// to the online grammar check (a rubric marked `onlineRefinement`,
   /// ADR 0005), or was queued only for the installed AI pack to judge on
-  /// the device (ADR 0011). Meaningless otherwise.
+  /// the device (ADR 0013). Meaningless otherwise.
   final bool onlineRefinementAllowed;
 
-  /// The on-device meaning signal computed at submission (ADR 0011), 0..1,
+  /// The on-device meaning signal computed at submission (ADR 0013), 0..1,
   /// or null when none was available. Carried on a queued submission so the
   /// drain can combine it with the later signals under one bound.
   final double? meaningSignal;

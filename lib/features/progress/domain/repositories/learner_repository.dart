@@ -40,6 +40,12 @@ abstract interface class LearnerRepository {
     required String firebaseUid,
   });
 
+  /// Removes the learner bound to the account [firebaseUid] from this
+  /// device, with all of its progress — after that account was deleted.
+  /// Does nothing if the account has no learner here, and never removes
+  /// the active learner (the caller returns the device to its guest first).
+  Future<void> forgetAccountLearner(String firebaseUid);
+
   /// Whether [learnerId] has any progress worth keeping: an answer, a lesson
   /// position, a review state or a test attempt. An enrolment alone does not
   /// count — the app creates one on first launch.

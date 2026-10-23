@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
-/// Approved colour-theme seeds for the Settings colour-theme picker.
+/// The app's brand accent. Learners no longer choose a colour (the picker
+/// left Settings in 1.0.0); the other seeds stay as tested theme
+/// infrastructure.
+const kAppColorSeed = AppColorSeed.calmTeal;
+
+/// Approved colour-theme seeds. [kAppColorSeed] is the one the app uses.
 ///
 /// Material 3's `ColorScheme.fromSeed` derives the full light/dark role set
 /// from one seed colour per theme, so adding a "colour theme" choice is a

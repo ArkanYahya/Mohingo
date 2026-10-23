@@ -5,14 +5,15 @@ import 'core/l10n/generated/app_localizations.dart';
 import 'core/l10n/locale_preference_provider.dart';
 import 'core/router/app_router.dart';
 import 'core/theme/app_theme.dart';
+import 'core/theme/color_seed.dart';
 import 'core/theme/theme_preferences_provider.dart';
 import 'features/activity_engine/providers/online_refinement_providers.dart';
 import 'features/sync/providers/sync_providers.dart';
 import 'features/progress/providers/content_version_providers.dart';
 import 'features/progress/providers/level_providers.dart';
 
-/// The root widget. Theme mode, colour theme, and interface language are all
-/// read from Riverpod-backed preferences and apply immediately on change —
+/// The root widget. Theme mode (light, dark or automatic) and interface
+/// language are read from Riverpod-backed preferences and apply immediately on change —
 /// no restart required. See docs/DESIGN_SYSTEM.md's theming rules.
 class MohingoApp extends ConsumerWidget {
   const MohingoApp({super.key});
@@ -21,7 +22,6 @@ class MohingoApp extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final router = ref.watch(appRouterProvider);
     final themeMode = ref.watch(themeModePreferenceProvider);
-    final colorSeed = ref.watch(colorSeedPreferenceProvider);
     final locale = ref.watch(localePreferenceProvider);
     // Fire-and-forget: enrols the learner in the level they're working in as
     // soon as both the profile and that level's content are ready. Not
@@ -46,10 +46,11 @@ class MohingoApp extends ConsumerWidget {
     ref.watch(syncControllerProvider);
 
     return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
       onGenerateTitle: (context) => AppLocalizations.of(context)!.appTitle,
       routerConfig: router,
-      theme: AppTheme.light(colorSeed),
-      darkTheme: AppTheme.dark(colorSeed),
+      theme: AppTheme.light(kAppColorSeed),
+      darkTheme: AppTheme.dark(kAppColorSeed),
       themeMode: themeMode,
       locale: locale,
       supportedLocales: AppLocalizations.supportedLocales,

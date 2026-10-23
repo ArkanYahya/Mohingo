@@ -38,6 +38,18 @@ final syncEngineProvider = Provider<SyncEngine?>((ref) {
   return SyncEngine(local: ref.watch(localProgressStoreProvider), cloud: cloud);
 });
 
+/// True while syncing must not run: during "Delete account", between
+/// deleting the account's cloud copy and deleting the account, so no
+/// upload can write it back.
+class SyncPause extends Notifier<bool> {
+  @override
+  bool build() => false;
+
+  void set(bool paused) => state = paused;
+}
+
+final syncPausedProvider = NotifierProvider<SyncPause, bool>(SyncPause.new);
+
 /// What the account screen shows about syncing.
 class SyncStatus {
   const SyncStatus({
@@ -96,7 +108,9 @@ class SyncController extends Notifier<SyncStatus> {
   SyncStatus build() {
     final session = ref.watch(accountSessionProvider).value;
     final engine = ref.watch(syncEngineProvider);
-    if (session is! SignedInSession || engine == null) {
+    if (session is! SignedInSession ||
+        engine == null ||
+        ref.watch(syncPausedProvider)) {
       return const SyncStatus();
     }
     final learnerId = session.learnerId;
@@ -137,6 +151,15 @@ class SyncController extends Notifier<SyncStatus> {
   void _schedule(Duration delay) {
     _debounceTimer?.cancel();
     _debounceTimer = Timer(delay, () => unawaited(syncNow()));
+  }
+
+  /// Completes once no sync run is in flight.
+  Future<void> whenIdle() async {
+    for (var running = _running; running != null; running = _running) {
+      try {
+        await running;
+      } on Object catch (_) {}
+    }
   }
 
   /// Syncs now (or, if a run is under way, once more right after it).
@@ -255,6 +278,34 @@ final resetProgressProvider = Provider<Future<void> Function()>((ref) {
         .resetProgress(learner.id, firebaseUid: learner.firebaseUid);
     if (learner.firebaseUid != null) {
       unawaited(ref.read(syncControllerProvider.notifier).syncNow());
+    }
+  };
+});
+
+/// Deletes the signed-in account for good: its cloud copy of the learner's
+/// progress, the account itself, and this device's learner for it. The
+/// device returns to its guest learner, whose progress is untouched.
+///
+/// The caller confirms with the learner and has them sign in again first
+/// (Firebase deletes only an account that has just proved who it is) —
+/// see `runDeleteAccountFlow`. Syncing is paused throughout, so no upload
+/// can recreate what was deleted. Throws [SyncException] if the cloud copy
+/// cannot be deleted (then nothing else is), or an `AuthException` if the
+/// account cannot.
+final deleteAccountProvider = Provider<Future<void> Function()>((ref) {
+  return () async {
+    final user = ref.read(accountSessionProvider).value?.user;
+    if (user == null) return;
+    final pause = ref.read(syncPausedProvider.notifier);
+    pause.set(true);
+    try {
+      await ref.read(syncControllerProvider.notifier).whenIdle();
+      await ref.read(cloudProgressStoreProvider)?.deleteAccount(user.uid);
+      await ref.read(authRepositoryProvider).deleteCurrentUser();
+      await ref.read(accountSessionProvider.notifier).returnToGuest();
+      await ref.read(learnerRepositoryProvider).forgetAccountLearner(user.uid);
+    } finally {
+      pause.set(false);
     }
   };
 });

@@ -126,18 +126,34 @@ final class GrammarCheckServiceProvider
 String _$grammarCheckServiceHash() =>
     r'0a846684f1fb15ad3a7d85166b8c887d360450a1';
 
-/// ADR 0011's first layer, the on-device meaning signal. Bound to the
-/// unavailable implementation until the embedding model is wired
-/// (`OnnxMeaningSignalService`); with it the rubric grades alone, exactly as
-/// before, so a build without the model behaves as it always has.
+/// ADR 0013's first layer, the on-device meaning signal: the bundled MiniLM
+/// model through ONNX Runtime.
+///
+/// Under `flutter test` the binding is [UnavailableMeaningSignalService]
+/// instead, so the rubric grades alone and every existing view test behaves
+/// exactly as before. A plugin's platform channel never answers inside a
+/// widget test's fake clock (docs/TESTING.md, "Platform services that must
+/// be faked"), so a view that awaited the real service there would wait
+/// forever — and this is the one platform service every write and speak
+/// task with a model answer reaches, which is far too many tests to ask
+/// each to override. A test that wants a signal overrides this provider
+/// with `FakeMeaningSignalService`.
 
 @ProviderFor(meaningSignalService)
 final meaningSignalServiceProvider = MeaningSignalServiceProvider._();
 
-/// ADR 0011's first layer, the on-device meaning signal. Bound to the
-/// unavailable implementation until the embedding model is wired
-/// (`OnnxMeaningSignalService`); with it the rubric grades alone, exactly as
-/// before, so a build without the model behaves as it always has.
+/// ADR 0013's first layer, the on-device meaning signal: the bundled MiniLM
+/// model through ONNX Runtime.
+///
+/// Under `flutter test` the binding is [UnavailableMeaningSignalService]
+/// instead, so the rubric grades alone and every existing view test behaves
+/// exactly as before. A plugin's platform channel never answers inside a
+/// widget test's fake clock (docs/TESTING.md, "Platform services that must
+/// be faked"), so a view that awaited the real service there would wait
+/// forever — and this is the one platform service every write and speak
+/// task with a model answer reaches, which is far too many tests to ask
+/// each to override. A test that wants a signal overrides this provider
+/// with `FakeMeaningSignalService`.
 
 final class MeaningSignalServiceProvider
     extends
@@ -147,10 +163,18 @@ final class MeaningSignalServiceProvider
           MeaningSignalService
         >
     with $Provider<MeaningSignalService> {
-  /// ADR 0011's first layer, the on-device meaning signal. Bound to the
-  /// unavailable implementation until the embedding model is wired
-  /// (`OnnxMeaningSignalService`); with it the rubric grades alone, exactly as
-  /// before, so a build without the model behaves as it always has.
+  /// ADR 0013's first layer, the on-device meaning signal: the bundled MiniLM
+  /// model through ONNX Runtime.
+  ///
+  /// Under `flutter test` the binding is [UnavailableMeaningSignalService]
+  /// instead, so the rubric grades alone and every existing view test behaves
+  /// exactly as before. A plugin's platform channel never answers inside a
+  /// widget test's fake clock (docs/TESTING.md, "Platform services that must
+  /// be faked"), so a view that awaited the real service there would wait
+  /// forever — and this is the one platform service every write and speak
+  /// task with a model answer reaches, which is far too many tests to ask
+  /// each to override. A test that wants a signal overrides this provider
+  /// with `FakeMeaningSignalService`.
   MeaningSignalServiceProvider._()
     : super(
         from: null,
@@ -186,16 +210,16 @@ final class MeaningSignalServiceProvider
 }
 
 String _$meaningSignalServiceHash() =>
-    r'38b90644c5bda46889b4d7fda966fac6acb1fde7';
+    r'9f14891ea0d851d1f0a544ac82f94f0af2f7a672';
 
-/// ADR 0011's second layer, the downloadable AI pack. Phase A ships no pack,
+/// ADR 0013's second layer, the downloadable AI pack. Phase A ships no pack,
 /// so this is never available; Phase B swaps the binding for the installed
 /// pack's implementation and nothing else changes.
 
 @ProviderFor(localJudgementService)
 final localJudgementServiceProvider = LocalJudgementServiceProvider._();
 
-/// ADR 0011's second layer, the downloadable AI pack. Phase A ships no pack,
+/// ADR 0013's second layer, the downloadable AI pack. Phase A ships no pack,
 /// so this is never available; Phase B swaps the binding for the installed
 /// pack's implementation and nothing else changes.
 
@@ -207,7 +231,7 @@ final class LocalJudgementServiceProvider
           LocalJudgementService
         >
     with $Provider<LocalJudgementService> {
-  /// ADR 0011's second layer, the downloadable AI pack. Phase A ships no pack,
+  /// ADR 0013's second layer, the downloadable AI pack. Phase A ships no pack,
   /// so this is never available; Phase B swaps the binding for the installed
   /// pack's implementation and nothing else changes.
   LocalJudgementServiceProvider._()

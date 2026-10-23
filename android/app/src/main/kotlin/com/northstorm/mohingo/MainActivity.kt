@@ -1,4 +1,4 @@
-package com.mohingo.mohingo
+package com.northstorm.mohingo
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -8,7 +8,7 @@ const double kFreeAnswerPassScore = 0.75;
 /// The most every signal together may move a rubric's score, in either
 /// direction — a quarter of the scale. A rubric score of 0 can therefore
 /// never pass and a rubric score of 1 can never fall below the pass bar.
-/// See docs/adr/0011-on-device-ai-for-free-answers.md, decision 2.
+/// See docs/adr/0013-on-device-ai-for-free-answers.md, decision 2.
 const double kMaxSignalAdjustment = 0.25;
 
 /// How much a full meaning match may add — only ever when the rubric left
@@ -141,7 +141,7 @@ String criteriaScoresJson(
 
 /// The AI pack's explanation stored in a `criteriaScores` JSON string, or
 /// `null` when the string is absent, not JSON, or carries none — every
-/// attempt written before ADR 0011, and every attempt graded without the
+/// attempt written before ADR 0013, and every attempt graded without the
 /// pack, reads as "no explanation" rather than failing.
 ({String? en, String? ar})? explanationIn(String? criteriaScores) {
   if (criteriaScores == null) return null;

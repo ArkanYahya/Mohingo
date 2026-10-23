@@ -120,7 +120,7 @@ class _WriteActivityViewState extends ConsumerState<WriteActivityView> {
   /// written — spelling is the learner's own (ADR 0009).
   ///
   /// A `keywordChecklist` task with model answers also gets the on-device
-  /// meaning signal (ADR 0011), which may raise the rubric's score within
+  /// meaning signal (ADR 0013), which may raise the rubric's score within
   /// `combineSignals`'s bound — unless the host grades on the rubric alone
   /// ([gradingSignalsEnabled]). The answer is queued for deferred grading
   /// when its rubric is marked `onlineRefinement`, or when an AI pack is
@@ -153,7 +153,7 @@ class _WriteActivityViewState extends ConsumerState<WriteActivityView> {
         // are carried to the pending_online_refinements queue and combined
         // with the later signals (the pack's judgement, or the online
         // grammar check) in the drain. See docs/superpowers/specs/
-        // 2026-09-07-offline-answer-evaluation-design.md and ADR 0011.
+        // 2026-09-07-offline-answer-evaluation-design.md and ADR 0013.
         submission = ActivitySubmission(
           correctness: ActivityCorrectness.notAutoGraded,
           score: rubric.score,

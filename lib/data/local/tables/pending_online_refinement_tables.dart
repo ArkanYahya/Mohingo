@@ -42,7 +42,7 @@ class PendingOnlineRefinements extends Table {
   IntColumn get attemptCount => integer().withDefault(const Constant(0))();
   DateTimeColumn get lastAttemptAt => dateTime().nullable()();
 
-  /// The on-device meaning signal computed at submission (ADR 0011), 0..1,
+  /// The on-device meaning signal computed at submission (ADR 0013), 0..1,
   /// or null when none was available — carried separately from
   /// [localScore] so the drain can apply the one bounded combination rule
   /// over every signal at once rather than compounding adjustments.

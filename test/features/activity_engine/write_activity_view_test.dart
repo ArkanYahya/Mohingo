@@ -559,7 +559,7 @@ void main() {
     expect(missed?.correctAnswerLabel, 'One coffee, please.');
   });
 
-  group('ADR 0011: the meaning signal', () {
+  group('ADR 0013: the meaning signal', () {
     // A rubric asking for two things, with a model answer; the answer below
     // covers one of them, so the rubric alone scores 0.5 and fails.
     const activity = WriteActivity(

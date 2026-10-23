@@ -1,4 +1,4 @@
-# 0011: Free answers are graded on the device — a bounded signal over the rubric, and an optional AI pack for feedback
+# 0013: Free answers are graded on the device — a bounded signal over the rubric, and an optional AI pack for feedback
 
 **Status:** Accepted (2026-10-22). The owner approved the two layers, the bounded rule and the rubric-only capstones the same day; Phase A (the meaning signal, the combination rule, the drain's local source, the model answers, the Settings row) landed on `ccr-3aef6bc0-xt12aw`. Phase B (the downloadable AI pack) is roadmapped, not built. Design: docs/superpowers/specs/2026-10-22-on-device-free-answer-grading-design.md.
 
