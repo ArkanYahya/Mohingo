@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "contentVersion": "A1-COMPLETE-2026.10.22",
+  "contentVersion": "A1-COMPLETE-2026.10.24",
   "locale": {
     "targetLanguage": "en",
     "supportLanguage": "ar",
@@ -8404,7 +8404,10 @@
                 "requiredGroups": [
                   ["thank you", "thanks", "thank"]
                 ],
-                "minGroupsMatched": 1
+                "minGroupsMatched": 1,
+                "meanings": [
+                  {"says": "The speaker expresses thanks or appreciation.", "en": "a thank-you", "ar": "عبارة شكر"}
+                ]
               },
               "partnerSpeaker": "Stranger",
               "partnerTurns": ["Hi! Here is your bag."]
@@ -8919,7 +8922,11 @@
                     "sign up"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker greets someone.", "en": "a greeting", "ar": "تحية"},
+                  {"says": "The speaker asks to join or sign up for a class.", "en": "asking to join the class", "ar": "طلب الانضمام إلى الصف"}
+                ]
               },
               "fallbackSkill": "writing",
               "partnerSpeaker": "Receptionist",
@@ -9063,7 +9070,10 @@
                     "my name's"
                   ]
                 ],
-                "minGroupsMatched": 1
+                "minGroupsMatched": 1,
+                "meanings": [
+                  {"says": "The speaker says their own name.", "en": "your name", "ar": "اسمك"}
+                ]
               },
               "fallbackSkill": "writing",
               "promptAr": "عرّف بنفسك."
@@ -9088,7 +9098,10 @@
                 "requiredGroups": [
                   ["what's your name", "what is your name", "your name"]
                 ],
-                "minGroupsMatched": 1
+                "minGroupsMatched": 1,
+                "meanings": [
+                  {"says": "The speaker asks what the other person's name is.", "en": "asking the person's name", "ar": "السؤال عن اسم الشخص"}
+                ]
               },
               "partnerSpeaker": "Omar",
               "partnerTurns": ["Hi! I'm new here."]
@@ -9182,7 +9195,11 @@
                     "from"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker talks about themselves.", "en": "a sentence about yourself", "ar": "جملة عن نفسك"},
+                  {"says": "The speaker says which country or city they are from.", "en": "where you are from", "ar": "من أين أنت"}
+                ]
               },
               "fallbackSkill": "writing",
               "promptAr": "قل من أين أنت."
@@ -9207,7 +9224,10 @@
                 "requiredGroups": [
                   ["where are you from", "where you from", "are you from"]
                 ],
-                "minGroupsMatched": 1
+                "minGroupsMatched": 1,
+                "meanings": [
+                  {"says": "The speaker asks where the other person is from.", "en": "asking where she is from", "ar": "السؤال من أين هي"}
+                ]
               },
               "partnerSpeaker": "Anna",
               "partnerTurns": ["Hello. I'm Anna. I'm not from here."]
@@ -9328,7 +9348,11 @@
                     "in"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker says that they live somewhere.", "en": "saying that you live somewhere", "ar": "قولك إنك تسكن في مكان"},
+                  {"says": "The speaker names the place where they live.", "en": "the place where you live", "ar": "المكان الذي تسكن فيه"}
+                ]
               },
               "fallbackSkill": "writing",
               "promptAr": "قل أين تسكن."
@@ -9353,7 +9377,10 @@
                 "requiredGroups": [
                   ["where do you live", "where you live", "do you live"]
                 ],
-                "minGroupsMatched": 1
+                "minGroupsMatched": 1,
+                "meanings": [
+                  {"says": "The speaker asks where the other person lives.", "en": "asking where the person lives", "ar": "السؤال أين يسكن الشخص"}
+                ]
               },
               "partnerSpeaker": "Anna",
               "partnerTurns": ["I'm from Italy, but I don't live there now."]
@@ -9475,7 +9502,11 @@
                   ["this is sara", "sara"],
                   ["she's my friend", "she is my friend", "my friend", "friend"]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker introduces a person called Sara.", "en": "introducing Sara", "ar": "تقديم سارة"},
+                  {"says": "The speaker says the person is their friend.", "en": "saying she is your friend", "ar": "قولك إنها صديقتك"}
+                ]
               }
             },
             {
@@ -9635,7 +9666,11 @@
                     "an"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker talks about themselves.", "en": "a sentence about yourself", "ar": "جملة عن نفسك"},
+                  {"says": "The speaker says what their job is, or that they are a student.", "en": "your job, or that you are a student", "ar": "عملك، أو أنك طالب"}
+                ]
               },
               "fallbackSkill": "writing",
               "promptAr": "قل ما وظيفتك. وإن كنت لا تعمل فقل إنك طالب."
@@ -9760,7 +9795,10 @@
                     "say that again"
                   ]
                 ],
-                "minGroupsMatched": 1
+                "minGroupsMatched": 1,
+                "meanings": [
+                  {"says": "The speaker says they did not understand, or asks the other person to repeat.", "en": "saying you did not understand or asking them to repeat", "ar": "قولك إنك لم تفهم أو طلب الإعادة"}
+                ]
               },
               "partnerSpeaker": "Daniel",
               "partnerTurns": ["I'm from Novosibirsk, in Russia."]
@@ -9790,7 +9828,10 @@
                     "and where are you from"
                   ]
                 ],
-                "minGroupsMatched": 1
+                "minGroupsMatched": 1,
+                "meanings": [
+                  {"says": "The speaker asks the other person the same question back.", "en": "asking the same question back", "ar": "إعادة السؤال إلى الشخص الآخر"}
+                ]
               },
               "partnerSpeaker": "Omar",
               "partnerTurns": ["I'm from Jordan."]
@@ -9863,7 +9904,10 @@
                     "my name's"
                   ]
                 ],
-                "minGroupsMatched": 1
+                "minGroupsMatched": 1,
+                "meanings": [
+                  {"says": "The speaker says their own name.", "en": "your name", "ar": "اسمك"}
+                ]
               },
               "fallbackSkill": "writing",
               "promptAr": "ردّ على دانيال. قل اسمك.",
@@ -9894,7 +9938,11 @@
                     "from"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker talks about themselves.", "en": "a sentence about yourself", "ar": "جملة عن نفسك"},
+                  {"says": "The speaker says which country or city they are from.", "en": "where you are from", "ar": "من أين أنت"}
+                ]
               },
               "fallbackSkill": "writing",
               "promptAr": "ردّ على دانيال. قل من أين أنت.",
@@ -9923,7 +9971,11 @@
                     "in"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker says that they live somewhere.", "en": "saying that you live somewhere", "ar": "قولك إنك تسكن في مكان"},
+                  {"says": "The speaker names the place where they live.", "en": "the place where you live", "ar": "المكان الذي تسكن فيه"}
+                ]
               },
               "fallbackSkill": "writing",
               "promptAr": "ردّ على دانيال. قل أين تسكن.",
@@ -10001,7 +10053,10 @@
                     "what do you do"
                   ]
                 ],
-                "minGroupsMatched": 1
+                "minGroupsMatched": 1,
+                "meanings": [
+                  {"says": "The speaker asks the other person a personal question about their name, home, age or job.", "en": "a personal question", "ar": "سؤال شخصي"}
+                ]
               },
               "partnerSpeaker": "Anna",
               "partnerTurns": ["Hello, I'm Anna. Ask me anything!"]
@@ -10225,7 +10280,11 @@
                     "shes"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker names family members or a friend.", "en": "two people in your family", "ar": "شخصان من عائلتك"},
+                  {"says": "The speaker introduces a person, saying who he or she is.", "en": "introducing each person", "ar": "تقديم كل شخص"}
+                ]
               },
               "fallbackSkill": "writing"
             },
@@ -10424,7 +10483,11 @@
                     "sisters"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker says how many brothers or sisters they have.", "en": "how many brothers or sisters you have", "ar": "عدد إخوتك أو أخواتك"},
+                  {"says": "The speaker mentions a brother or a sister.", "en": "a brother or sister", "ar": "أخ أو أخت"}
+                ]
               },
               "fallbackSkill": "writing"
             }
@@ -10574,7 +10637,10 @@
                     "who is she"
                   ]
                 ],
-                "minGroupsMatched": 1
+                "minGroupsMatched": 1,
+                "meanings": [
+                  {"says": "The speaker asks who a person is.", "en": "asking who the person is", "ar": "السؤال من هذا الشخص"}
+                ]
               },
               "partnerSpeaker": "Maya",
               "partnerTurns": ["Look, this is a photo of my family."]
@@ -10601,7 +10667,12 @@
                   ["sami's daughter", "sami", "daughter"],
                   ["omar's sister", "omar", "sister"]
                 ],
-                "minGroupsMatched": 3
+                "minGroupsMatched": 3,
+                "meanings": [
+                  {"says": "The speaker talks about a person called Noor.", "en": "Noor", "ar": "نور"},
+                  {"says": "The speaker says that someone is Sami's daughter.", "en": "that she is Sami's daughter", "ar": "أنها ابنة سامي"},
+                  {"says": "The speaker says that someone is Omar's sister.", "en": "that she is Omar's sister", "ar": "أنها أخت عمر"}
+                ]
               }
             }
           ]
@@ -10788,7 +10859,11 @@
                     "young"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker joins two ideas with and or but.", "en": "joining two words with and or but", "ar": "ربط صفتين بـ and أو but"},
+                  {"says": "The speaker describes a person's character or appearance.", "en": "two adjectives about the person", "ar": "صفتان للشخص"}
+                ]
               },
               "fallbackSkill": "writing"
             }
@@ -10947,7 +11022,11 @@
                     "they"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker talks about a group that includes themselves, using we.", "en": "a sentence with we", "ar": "جملة بـ we"},
+                  {"says": "The speaker talks about other people, using they.", "en": "a sentence with they", "ar": "جملة بـ they"}
+                ]
               },
               "fallbackSkill": "writing"
             }
@@ -11078,6 +11157,10 @@
                   ]
                 ],
                 "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The writer says how the person is related to them, as family or a friend.", "en": "the person's relationship to you", "ar": "صلة الشخص بك"},
+                  {"says": "The writer describes the person's character or appearance.", "en": "two adjectives about the person", "ar": "صفتان للشخص"}
+                ],
                 "onlineRefinement": "grammarCheck"
               },
               "wordGuide": [
@@ -11125,7 +11208,11 @@
                     "young"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker says how the person is related to them, as family or a friend.", "en": "the person's relationship to you", "ar": "صلة الشخص بك"},
+                  {"says": "The speaker describes the person's character or appearance.", "en": "two adjectives about the person", "ar": "صفتان للشخص"}
+                ]
               },
               "fallbackSkill": "writing"
             }
@@ -11229,7 +11316,11 @@
                     "is my"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker names family members or a friend.", "en": "the family members and friends", "ar": "أفراد العائلة والأصدقاء"},
+                  {"says": "The speaker says who each person is.", "en": "saying who each person is", "ar": "قول من هو كل شخص"}
+                ]
               },
               "fallbackSkill": "writing",
               "sourceCard": "People map: Omar (you). Sami and Lina are Omar's parents. Noor is Omar's sister; she is eighteen and a student. Huda is Omar's friend; she is twenty and a nurse."
@@ -11265,7 +11356,10 @@
                     "who is she"
                   ]
                 ],
-                "minGroupsMatched": 1
+                "minGroupsMatched": 1,
+                "meanings": [
+                  {"says": "The speaker asks who a person is.", "en": "asking who the person is", "ar": "السؤال من هذا الشخص"}
+                ]
               },
               "partnerSpeaker": "Omar",
               "partnerTurns": ["This is my people map. Do you know everyone?"]
@@ -11301,7 +11395,11 @@
                     "young"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker says how old a person is.", "en": "the person's age", "ar": "عمر الشخص"},
+                  {"says": "The speaker describes a person's character or appearance.", "en": "two qualities of the person", "ar": "صفتان للشخص"}
+                ]
               },
               "fallbackSkill": "writing"
             },
@@ -11345,6 +11443,10 @@
                   ]
                 ],
                 "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The writer names family members or a friend.", "en": "the family members and friends", "ar": "أفراد العائلة والأصدقاء"},
+                  {"says": "The writer says who each person is.", "en": "saying who each person is", "ar": "قول من هو كل شخص"}
+                ],
                 "onlineRefinement": "grammarCheck"
               },
               "wordGuide": [
@@ -11580,7 +11682,11 @@
                     "room"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker says that something exists, using there is.", "en": "sentences with there is", "ar": "جمل بـ there is"},
+                  {"says": "The speaker names rooms in a home.", "en": "three rooms", "ar": "ثلاث غرف"}
+                ]
               },
               "fallbackSkill": "writing"
             }
@@ -11761,7 +11867,12 @@
                     "not"
                   ]
                 ],
-                "minGroupsMatched": 3
+                "minGroupsMatched": 3,
+                "meanings": [
+                  {"says": "The speaker says there is one thing in the room.", "en": "a there is sentence", "ar": "جملة بـ there is"},
+                  {"says": "The speaker says there are several things in the room.", "en": "a there are sentence", "ar": "جملة بـ there are"},
+                  {"says": "The speaker says that something is not in the room.", "en": "a negative sentence", "ar": "جملة منفية"}
+                ]
               },
               "fallbackSkill": "writing"
             }
@@ -11951,7 +12062,11 @@
                     "desk"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker says where things are, using place words such as on, under or next to.", "en": "three place phrases", "ar": "ثلاث عبارات مكان"},
+                  {"says": "The speaker names objects such as keys, a bag, a book or furniture.", "en": "the objects", "ar": "الأشياء"}
+                ]
               },
               "fallbackSkill": "writing"
             }
@@ -12124,7 +12239,11 @@
                     "those"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker points to something near them, using this or these.", "en": "a near object with this or these", "ar": "شيء قريب بـ this أو these"},
+                  {"says": "The speaker points to something far from them, using that or those.", "en": "a far object with that or those", "ar": "شيء بعيد بـ that أو those"}
+                ]
               },
               "fallbackSkill": "writing",
               "partnerSpeaker": "Sara",
@@ -12282,7 +12401,10 @@
                     "is it your phone"
                   ]
                 ],
-                "minGroupsMatched": 1
+                "minGroupsMatched": 1,
+                "meanings": [
+                  {"says": "The speaker asks whether the phone belongs to the other person.", "en": "asking if the phone is theirs", "ar": "السؤال إن كان الهاتف له"}
+                ]
               },
               "partnerSpeaker": "Ali",
               "partnerTurns": ["There's a phone on the table."]
@@ -12314,7 +12436,11 @@
                   ],
                   ["sara's", "sara", "it's sara's", "her book", "hers"]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker says the book is not theirs.", "en": "saying it is not yours", "ar": "قولك إنه ليس لك"},
+                  {"says": "The speaker says the book belongs to Sara.", "en": "saying it is Sara's", "ar": "قولك إنه لسارة"}
+                ]
               },
               "partnerSpeaker": "Ali",
               "partnerTurns": ["Is this your book?"]
@@ -12443,6 +12569,10 @@
                   ]
                 ],
                 "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The writer says what there is in the room.", "en": "what there is in the room", "ar": "ما يوجد في الغرفة"},
+                  {"says": "The writer says where things are, using place words such as on, under or next to.", "en": "where the things are", "ar": "أين الأشياء"}
+                ],
                 "onlineRefinement": "grammarCheck"
               },
               "wordGuide": [
@@ -12481,7 +12611,11 @@
                     "between"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker says what there is in the room.", "en": "what there is in the room", "ar": "ما يوجد في الغرفة"},
+                  {"says": "The speaker says where things are, using place words such as on, under or next to.", "en": "where the things are", "ar": "أين الأشياء"}
+                ]
               },
               "fallbackSkill": "writing"
             }
@@ -12580,7 +12714,11 @@
                     "room"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker welcomes someone.", "en": "a welcome", "ar": "ترحيب"},
+                  {"says": "The speaker names rooms in a home.", "en": "three rooms", "ar": "ثلاث غرف"}
+                ]
               },
               "fallbackSkill": "writing",
               "sourceCard": "Apartment plan C: two bedrooms, one bathroom, a kitchen next to the living room, and a small garden behind the home. The big bedroom has a window. The keys are on the kitchen table."
@@ -12616,7 +12754,11 @@
                     "between"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker says what there is in the room.", "en": "what there is", "ar": "ما يوجد"},
+                  {"says": "The speaker says where things are, using place words such as on, under or next to.", "en": "where the objects are", "ar": "أين الأشياء"}
+                ]
               },
               "fallbackSkill": "writing"
             },
@@ -12666,7 +12808,11 @@
                     "isn't mine"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker asks whether the phone belongs to someone.", "en": "asking whose phone it is", "ar": "السؤال لمن الهاتف"},
+                  {"says": "The speaker says the phone is not theirs.", "en": "saying it is not yours", "ar": "قولك إنه ليس لك"}
+                ]
               },
               "fallbackSkill": "writing",
               "partnerSpeaker": "Sara",
@@ -12706,6 +12852,10 @@
                   ]
                 ],
                 "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The writer says what there is in the apartment.", "en": "what there is in the apartment", "ar": "ما يوجد في الشقة"},
+                  {"says": "The writer names rooms in a home.", "en": "the rooms", "ar": "الغرف"}
+                ],
                 "onlineRefinement": "grammarCheck"
               },
               "wordGuide": [
@@ -12925,7 +13075,15 @@
                     "sleep"
                   ]
                 ],
-                "minGroupsMatched": 4
+                "minGroupsMatched": 4,
+                "meanings": [
+                  {"says": "The speaker says they get up or wake up.", "en": "getting up", "ar": "الاستيقاظ"},
+                  {"says": "The speaker says they wash.", "en": "washing", "ar": "الاغتسال"},
+                  {"says": "The speaker says they get dressed.", "en": "getting dressed", "ar": "ارتداء الملابس"},
+                  {"says": "The speaker says they have breakfast.", "en": "breakfast", "ar": "الفطور"},
+                  {"says": "The speaker says they go home.", "en": "going home", "ar": "العودة إلى البيت"},
+                  {"says": "The speaker says they sleep.", "en": "sleeping", "ar": "النوم"}
+                ]
               },
               "fallbackSkill": "writing"
             }
@@ -13097,7 +13255,11 @@
                     "at"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker asks what time the other person does something.", "en": "asking what time", "ar": "السؤال عن الوقت"},
+                  {"says": "The speaker says the time at which they do something.", "en": "your own time", "ar": "وقتك أنت"}
+                ]
               },
               "fallbackSkill": "writing",
               "partnerSpeaker": "Maya",
@@ -13275,7 +13437,11 @@
                     "studies"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker talks about another person as he or she.", "en": "talking about him or her", "ar": "الحديث عنه أو عنها"},
+                  {"says": "The speaker describes what the person does during their day.", "en": "three things the person does", "ar": "ثلاثة أشياء يفعلها الشخص"}
+                ]
               },
               "fallbackSkill": "writing"
             }
@@ -13436,7 +13602,11 @@
                     "does she"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker asks the other person a question about their routine with do you.", "en": "a question with do you", "ar": "سؤال بـ do you"},
+                  {"says": "The speaker asks a question about a third person with does he or does she.", "en": "a question with does he or does she", "ar": "سؤال بـ does he أو does she"}
+                ]
               },
               "fallbackSkill": "writing",
               "partnerSpeaker": "Sara",
@@ -13614,7 +13784,13 @@
                     "never"
                   ]
                 ],
-                "minGroupsMatched": 3
+                "minGroupsMatched": 3,
+                "meanings": [
+                  {"says": "The speaker says something they always do.", "en": "something you always do", "ar": "شيء تفعله دائماً"},
+                  {"says": "The speaker says something they usually do.", "en": "something you usually do", "ar": "شيء تفعله عادةً"},
+                  {"says": "The speaker says something they sometimes do.", "en": "something you sometimes do", "ar": "شيء تفعله أحياناً"},
+                  {"says": "The speaker says something they never do.", "en": "something you never do", "ar": "شيء لا تفعله أبداً"}
+                ]
               },
               "fallbackSkill": "writing"
             }
@@ -13773,6 +13949,10 @@
                   ]
                 ],
                 "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The writer says at what times things happen.", "en": "the times", "ar": "الأوقات"},
+                  {"says": "The writer says how often things happen or in what order.", "en": "how often, or in what order", "ar": "التكرار أو الترتيب"}
+                ],
                 "onlineRefinement": "grammarCheck"
               },
               "wordGuide": [
@@ -13886,7 +14066,11 @@
                     "lunch"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker asks what time something happens.", "en": "asking what time", "ar": "السؤال عن الوقت"},
+                  {"says": "The speaker asks about lunch.", "en": "lunch", "ar": "الغداء"}
+                ]
               },
               "fallbackSkill": "writing",
               "partnerSpeaker": "Omar",
@@ -13922,7 +14106,11 @@
                     "after"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker contrasts two people or two things.", "en": "contrasting the two routines", "ar": "المقابلة بين الروتينَين"},
+                  {"says": "The speaker says that something happens earlier or later than something else.", "en": "earlier, later, before or after", "ar": "أبكر أو أتأخر، قبل أو بعد"}
+                ]
               },
               "fallbackSkill": "writing",
               "sourceCard": "Rana: gets up at 6:30, starts work at 7:30, has lunch at 12:00, finishes at 3:00. Hassan: gets up at 7:00, starts work at 8:00, has lunch at 1:00, finishes at 2:00."
@@ -13956,6 +14144,10 @@
                   ]
                 ],
                 "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The writer contrasts two people or two things.", "en": "contrasting the two routines", "ar": "المقابلة بين الروتينَين"},
+                  {"says": "The writer says that something happens earlier or later than something else.", "en": "earlier, later, before or after", "ar": "أبكر أو أتأخر، قبل أو بعد"}
+                ],
                 "onlineRefinement": "grammarCheck"
               },
               "wordGuide": [
@@ -14197,7 +14389,11 @@
                     "hate"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker says two things they like.", "en": "two things you like", "ar": "شيئان تحبهما"},
+                  {"says": "The speaker says one thing they do not like.", "en": "one thing you don't like", "ar": "شيء لا تحبه"}
+                ]
               },
               "fallbackSkill": "writing"
             }
@@ -14379,7 +14575,11 @@
                     "reading"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker says what they like, love or hate.", "en": "like, love or hate", "ar": "like أو love أو hate"},
+                  {"says": "The speaker names free-time activities such as swimming, reading or cooking.", "en": "three activities", "ar": "ثلاثة أنشطة"}
+                ]
               },
               "fallbackSkill": "writing"
             }
@@ -14546,7 +14746,11 @@
                     "i cant"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker asks whether the other person can do something.", "en": "asking can you", "ar": "السؤال بـ can you"},
+                  {"says": "The speaker says what they can or cannot do.", "en": "saying what you can or can't do", "ar": "قول ما تستطيع أو لا تستطيع"}
+                ]
               },
               "fallbackSkill": "writing",
               "partnerSpeaker": "Ali",
@@ -14718,7 +14922,11 @@
                     "doesnt"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker asks what the other person likes.", "en": "asking what they like", "ar": "السؤال عما يحب"},
+                  {"says": "The speaker says there is something they do not like.", "en": "a negative answer about one activity", "ar": "جواب منفي عن نشاط واحد"}
+                ]
               },
               "fallbackSkill": "writing",
               "partnerSpeaker": "Sara",
@@ -14896,7 +15104,11 @@
                     "im busy"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker invites the other person to do something.", "en": "an invitation", "ar": "دعوة"},
+                  {"says": "The speaker accepts an invitation, or says sorry and that they are busy.", "en": "accepting, or saying sorry", "ar": "القبول أو الاعتذار"}
+                ]
               },
               "fallbackSkill": "writing",
               "partnerSpeaker": "Maya",
@@ -15051,6 +15263,11 @@
                   ["would you like", "let's", "join", "come"]
                 ],
                 "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The writer says what they like or enjoy.", "en": "what you like", "ar": "ما تحبه"},
+                  {"says": "The writer talks about their free time, weekend or hobbies.", "en": "your free time or hobbies", "ar": "وقت فراغك أو هواياتك"},
+                  {"says": "The writer invites the friend to do something.", "en": "an invitation", "ar": "دعوة"}
+                ],
                 "onlineRefinement": "grammarCheck"
               },
               "wordGuide": [
@@ -15162,7 +15379,11 @@
                     "at"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker invites the other person to do something.", "en": "an invitation", "ar": "دعوة"},
+                  {"says": "The speaker suggests a time.", "en": "a time", "ar": "وقت"}
+                ]
               },
               "fallbackSkill": "writing",
               "partnerSpeaker": "Omar",
@@ -15199,7 +15420,11 @@
                     "likes"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker gives a reason, using because or so.", "en": "a reason with because or so", "ar": "سبب بـ because أو so"},
+                  {"says": "The speaker says what both friends like or can do.", "en": "what both friends like or can do", "ar": "ما يحبه الصديقان أو يستطيعانه"}
+                ]
               },
               "fallbackSkill": "writing",
               "sourceCard": "Lina likes films and can't swim. Omar likes films and swimming, but he can't play tennis. Both are free on Saturday afternoon. The cinema is next to the park."
@@ -15230,6 +15455,10 @@
                   ]
                 ],
                 "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The writer says at what time they will meet.", "en": "the time", "ar": "الوقت"},
+                  {"says": "The writer confirms the plan or says they look forward to it.", "en": "confirming the plan", "ar": "تأكيد الخطة"}
+                ],
                 "onlineRefinement": "grammarCheck"
               },
               "wordGuide": [
@@ -15479,7 +15708,11 @@
                     "banana"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker says what they have or eat.", "en": "what you have or eat", "ar": "ما تأكله"},
+                  {"says": "The speaker names foods such as chicken, rice, salad or bread.", "en": "three foods", "ar": "ثلاثة أطعمة"}
+                ]
               },
               "fallbackSkill": "writing"
             }
@@ -15650,7 +15883,11 @@
                     "no"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker asks whether there is any of something.", "en": "a question with any", "ar": "سؤال بـ any"},
+                  {"says": "The speaker says they have some, or that they do not have any.", "en": "an answer with some or a negative", "ar": "جواب بـ some أو نفي"}
+                ]
               },
               "fallbackSkill": "writing",
               "partnerSpeaker": "Sara",
@@ -15838,7 +16075,11 @@
                     "of"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker names a container such as a bottle, a cup or a glass.", "en": "a container word", "ar": "كلمة وعاء"},
+                  {"says": "The speaker says a quantity of something, such as a bottle of water.", "en": "three quantities", "ar": "ثلاث كميات"}
+                ]
               },
               "fallbackSkill": "writing"
             }
@@ -16024,7 +16265,11 @@
                     "thank you"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker asks for food or drink politely.", "en": "ordering with I'd like or can I have", "ar": "الطلب بـ I'd like أو can I have"},
+                  {"says": "The speaker says please, thank you or that that is all.", "en": "please, thank you or that's all", "ar": "please أو thank you أو that's all"}
+                ]
               },
               "fallbackSkill": "writing",
               "partnerSpeaker": "Waiter",
@@ -16215,7 +16460,11 @@
                     "not"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker says that the order is wrong or that something is missing.", "en": "saying the order is wrong", "ar": "قول إن الطلب خاطئ"},
+                  {"says": "The speaker says what they ordered.", "en": "what you ordered", "ar": "ما طلبته"}
+                ]
               },
               "fallbackSkill": "writing",
               "partnerSpeaker": "Waiter",
@@ -16374,6 +16623,10 @@
                   ]
                 ],
                 "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The writer says please or thank you.", "en": "please or thank you", "ar": "please أو thank you"},
+                  {"says": "The writer asks for food or drink politely.", "en": "ordering with I'd like or can I have", "ar": "الطلب بـ I'd like أو can I have"}
+                ],
                 "onlineRefinement": "grammarCheck"
               },
               "wordGuide": [
@@ -16494,7 +16747,11 @@
                     "please"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker asks for food or drink politely.", "en": "ordering with I'd like or can I have", "ar": "الطلب بـ I'd like أو can I have"},
+                  {"says": "The speaker says please.", "en": "please", "ar": "كلمة please"}
+                ]
               },
               "fallbackSkill": "writing",
               "partnerSpeaker": "Waiter",
@@ -16548,7 +16805,11 @@
                     "but"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker says what they ordered.", "en": "what you ordered", "ar": "ما طلبته"},
+                  {"says": "The speaker says what is wrong and what they want instead.", "en": "the correction", "ar": "التصحيح"}
+                ]
               },
               "fallbackSkill": "writing",
               "sourceCard": "Original order: two cheese sandwiches and one tea. Delivered: two chicken sandwiches and one tea. The sandwiches are wrong; the tea is right."
@@ -16580,6 +16841,10 @@
                   ]
                 ],
                 "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The writer says what they ordered.", "en": "what you ordered", "ar": "ما طلبته"},
+                  {"says": "The writer says what is wrong and what they want instead.", "en": "the correction", "ar": "التصحيح"}
+                ],
                 "onlineRefinement": "grammarCheck"
               },
               "wordGuide": [
@@ -16796,7 +17061,11 @@
                     "how much are"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker asks how much one item costs.", "en": "asking the price of one item", "ar": "السؤال عن سعر شيء واحد"},
+                  {"says": "The speaker asks how much two or more items cost.", "en": "asking the price of a pair", "ar": "السؤال عن سعر زوج"}
+                ]
               },
               "fallbackSkill": "writing",
               "partnerSpeaker": "Assistant",
@@ -16988,7 +17257,11 @@
                     "white"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker says which size they want.", "en": "a size", "ar": "مقاس"},
+                  {"says": "The speaker says which colour they want.", "en": "a colour", "ar": "لون"}
+                ]
               },
               "fallbackSkill": "writing",
               "partnerSpeaker": "Assistant",
@@ -17162,7 +17435,11 @@
                     "fine"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker asks to try something on.", "en": "asking to try it on", "ar": "طلب تجربة القطعة"},
+                  {"says": "The speaker says whether it fits.", "en": "whether it fits", "ar": "هل المقاس مناسب"}
+                ]
               },
               "fallbackSkill": "writing",
               "partnerSpeaker": "Assistant",
@@ -17338,7 +17615,11 @@
                     "ill take it"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker asks how much something costs.", "en": "asking the price", "ar": "السؤال عن السعر"},
+                  {"says": "The speaker says they will take it, or how they will pay.", "en": "taking it or choosing how to pay", "ar": "أخذ القطعة أو طريقة الدفع"}
+                ]
               },
               "fallbackSkill": "writing",
               "partnerSpeaker": "Assistant",
@@ -17517,7 +17798,11 @@
                     "can you"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker says something is broken, wrong or does not fit.", "en": "the problem", "ar": "المشكلة"},
+                  {"says": "The speaker asks for a change, a refund or help.", "en": "asking for a solution", "ar": "طلب الحل"}
+                ]
               },
               "fallbackSkill": "writing",
               "partnerSpeaker": "Assistant",
@@ -17680,6 +17965,10 @@
                   ]
                 ],
                 "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The writer says what they need or would like to buy.", "en": "what you need", "ar": "ما تحتاجه"},
+                  {"says": "The writer mentions a budget or how they will pay.", "en": "your budget or payment", "ar": "ميزانيتك أو طريقة الدفع"}
+                ],
                 "onlineRefinement": "grammarCheck"
               },
               "wordGuide": [
@@ -17804,7 +18093,11 @@
                     "pay"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker says which size they need.", "en": "the sizes", "ar": "المقاسات"},
+                  {"says": "The speaker says how they will pay.", "en": "paying by card", "ar": "الدفع بالبطاقة"}
+                ]
               },
               "fallbackSkill": "writing",
               "partnerSpeaker": "Assistant",
@@ -17858,7 +18151,11 @@
                     "exchange"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker mentions their budget.", "en": "your budget", "ar": "ميزانيتك"},
+                  {"says": "The speaker says something is broken or asks to exchange it.", "en": "the exchange you need", "ar": "التبديل الذي تحتاجه"}
+                ]
               },
               "fallbackSkill": "writing",
               "sourceCard": "Budget: $40. Bought: a medium blue shirt for $15 and medium black trousers for $18, total $33, paid by card. Problem: the trousers are broken. Needed: exchange the trousers for the same size."
@@ -17891,6 +18188,10 @@
                   ]
                 ],
                 "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The writer says what they bought or paid.", "en": "what you bought and paid", "ar": "ما اشتريته ودفعته"},
+                  {"says": "The writer says something is broken or needs to be exchanged.", "en": "the exchange", "ar": "التبديل"}
+                ],
                 "onlineRefinement": "grammarCheck"
               },
               "wordGuide": [
@@ -18119,7 +18420,11 @@
                     "is for"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker names places in a town such as a bank, a pharmacy or a library.", "en": "four places", "ar": "أربعة أماكن"},
+                  {"says": "The speaker says what a place is for.", "en": "what one place is for", "ar": "ما الغرض من مكان واحد"}
+                ]
               },
               "fallbackSkill": "writing"
             }
@@ -18303,7 +18608,11 @@
                     "far"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker asks where a place is.", "en": "asking where the place is", "ar": "السؤال أين المكان"},
+                  {"says": "The speaker says where a place is, using words such as near, opposite or next to.", "en": "two location details", "ar": "تفصيلان عن الموقع"}
+                ]
               },
               "fallbackSkill": "writing",
               "partnerSpeaker": "Visitor",
@@ -18478,7 +18787,11 @@
                     "turn"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker tells someone to go straight.", "en": "go straight", "ar": "السير مباشرة"},
+                  {"says": "The speaker tells someone to turn.", "en": "a turn", "ar": "انعطاف"}
+                ]
               },
               "fallbackSkill": "writing"
             }
@@ -18658,7 +18971,11 @@
                     "after that"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker asks how to get somewhere.", "en": "asking for directions", "ar": "طلب الاتجاهات"},
+                  {"says": "The speaker gives directions in steps, with words such as first or then.", "en": "steps with first, then, after that", "ar": "خطوات بـ first وthen وafter that"}
+                ]
               },
               "fallbackSkill": "writing",
               "partnerSpeaker": "Visitor",
@@ -18836,7 +19153,11 @@
                     "is"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker names signs such as entrance, exit, open or closed.", "en": "three signs", "ar": "ثلاث لافتات"},
+                  {"says": "The speaker explains what each sign means.", "en": "what each sign means", "ar": "معنى كل لافتة"}
+                ]
               },
               "fallbackSkill": "writing"
             }
@@ -18994,6 +19315,10 @@
                   ]
                 ],
                 "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The writer gives directions with go straight or turn.", "en": "the directions", "ar": "الاتجاهات"},
+                  {"says": "The writer mentions an entrance or an exit.", "en": "an entrance or exit", "ar": "مدخل أو مخرج"}
+                ],
                 "onlineRefinement": "grammarCheck"
               },
               "wordGuide": [
@@ -19109,7 +19434,11 @@
                     "from"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker asks how to get somewhere.", "en": "asking how to get there", "ar": "السؤال كيف تصل"},
+                  {"says": "The speaker says where they are starting from.", "en": "where you start from", "ar": "نقطة البداية"}
+                ]
               },
               "fallbackSkill": "writing",
               "partnerSpeaker": "Resident",
@@ -19144,7 +19473,11 @@
                     "station"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker gives the route in steps, with words such as first or then.", "en": "the steps in order", "ar": "الخطوات بالترتيب"},
+                  {"says": "The speaker names places such as the pharmacy, the library or the café.", "en": "the places on the route", "ar": "الأماكن على الطريق"}
+                ]
               },
               "fallbackSkill": "writing"
             },
@@ -19173,7 +19506,11 @@
                     "change"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker says that something is closed.", "en": "the closed entrance", "ar": "المدخل المغلق"},
+                  {"says": "The speaker says what to do instead.", "en": "the change to the route", "ar": "تغيير الطريق"}
+                ]
               },
               "fallbackSkill": "writing",
               "sourceCard": "Route: from the station, go straight to the bank and turn left. The library is opposite the bank. The library's front entrance is closed today. Use the side entrance on Green Street, next to the café."
@@ -19204,6 +19541,10 @@
                   ]
                 ],
                 "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The writer gives directions with go straight or turn.", "en": "the directions", "ar": "الاتجاهات"},
+                  {"says": "The writer says which entrance to use.", "en": "the entrance to use", "ar": "المدخل الذي يُستعمل"}
+                ],
                 "onlineRefinement": "grammarCheck"
               },
               "wordGuide": [
@@ -19421,7 +19762,11 @@
                     "foot"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker says how someone travels, using by.", "en": "by with a means of transport", "ar": "by مع وسيلة نقل"},
+                  {"says": "The speaker names means of transport such as bus, train, car or on foot.", "en": "three means of transport", "ar": "ثلاث وسائل نقل"}
+                ]
               },
               "fallbackSkill": "writing"
             }
@@ -19591,7 +19936,11 @@
                     "platform"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker asks for a ticket, single or return.", "en": "the ticket", "ar": "التذكرة"},
+                  {"says": "The speaker mentions the platform.", "en": "the platform", "ar": "الرصيف"}
+                ]
               },
               "fallbackSkill": "writing",
               "partnerSpeaker": "Clerk",
@@ -19780,7 +20129,11 @@
                     "platform"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker asks what time or when something happens.", "en": "asking what time", "ar": "السؤال عن الوقت"},
+                  {"says": "The speaker asks about leaving, arriving or the platform.", "en": "departure, arrival or platform", "ar": "المغادرة أو الوصول أو الرصيف"}
+                ]
               },
               "fallbackSkill": "writing",
               "partnerSpeaker": "Clerk",
@@ -19957,7 +20310,11 @@
                     "change"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker tells someone to take a bus, a train or another transport.", "en": "taking a bus or train", "ar": "أخذ حافلة أو قطار"},
+                  {"says": "The speaker tells someone to change from one transport to another.", "en": "the change", "ar": "التبديل"}
+                ]
               },
               "fallbackSkill": "writing"
             }
@@ -20127,7 +20484,11 @@
                     "takes"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker says where the journey starts and where it goes.", "en": "from where to where", "ar": "من أين إلى أين"},
+                  {"says": "The speaker says how they travel or how long the journey takes.", "en": "the transport or how long it takes", "ar": "وسيلة النقل أو مدة الرحلة"}
+                ]
               },
               "fallbackSkill": "writing"
             }
@@ -20289,6 +20650,10 @@
                   ]
                 ],
                 "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The writer says which transport to take and where to change.", "en": "the stages and the connection", "ar": "المراحل والتبديل"},
+                  {"says": "The writer says when the journey leaves or arrives.", "en": "the leaving and arriving times", "ar": "وقت المغادرة والوصول"}
+                ],
                 "onlineRefinement": "grammarCheck"
               },
               "wordGuide": [
@@ -20414,7 +20779,11 @@
                     "platform"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker asks for a ticket, single or return.", "en": "the ticket", "ar": "التذكرة"},
+                  {"says": "The speaker asks which platform.", "en": "the platform", "ar": "الرصيف"}
+                ]
               },
               "fallbackSkill": "writing",
               "partnerSpeaker": "Clerk",
@@ -20448,7 +20817,11 @@
                     "new"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker says which transport they take and where they change.", "en": "the two stages", "ar": "المرحلتان"},
+                  {"says": "The speaker says that something is delayed or has a new time.", "en": "the delay and the new time", "ar": "التأخير والوقت الجديد"}
+                ]
               },
               "fallbackSkill": "writing"
             },
@@ -20475,7 +20848,11 @@
                     "now"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker says that there is a delay.", "en": "the delay", "ar": "التأخير"},
+                  {"says": "The speaker says when they will now arrive.", "en": "the new arrival time", "ar": "وقت الوصول الجديد"}
+                ]
               },
               "fallbackSkill": "writing",
               "sourceCard": "Route A: bus at 8:00, change at Central Station, train at 8:45, arrive 9:40. Update: the 8:45 train has a fifteen-minute delay. It now leaves at 9:00 and arrives at 9:55."
@@ -20505,6 +20882,10 @@
                   ]
                 ],
                 "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The writer mentions the ticket or the platform.", "en": "the ticket and platform", "ar": "التذكرة والرصيف"},
+                  {"says": "The writer mentions a delay and when they arrive.", "en": "the delay and arrival", "ar": "التأخير والوصول"}
+                ],
                 "onlineRefinement": "grammarCheck"
               },
               "wordGuide": [
@@ -20739,7 +21120,11 @@
                     "pain"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker names parts of the body.", "en": "four body parts", "ar": "أربعة أعضاء من الجسم"},
+                  {"says": "The speaker says that something hurts or that they have pain.", "en": "pain in one of them", "ar": "ألم في أحدها"}
+                ]
               },
               "fallbackSkill": "writing"
             }
@@ -20910,7 +21295,12 @@
                     "hurts"
                   ]
                 ],
-                "minGroupsMatched": 3
+                "minGroupsMatched": 3,
+                "meanings": [
+                  {"says": "The speaker says they have an illness or a symptom, such as a cold.", "en": "a sentence with have", "ar": "جملة بـ have"},
+                  {"says": "The speaker says how they feel.", "en": "a sentence with feel", "ar": "جملة بـ feel"},
+                  {"says": "The speaker says that a part of their body hurts.", "en": "a sentence with hurts", "ar": "جملة بـ hurts"}
+                ]
               },
               "fallbackSkill": "writing"
             }
@@ -21085,7 +21475,11 @@
                     "drink water"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker asks the other person about their symptom or what is wrong.", "en": "asking about the symptom", "ar": "السؤال عن العَرَض"},
+                  {"says": "The speaker gives advice, such as to rest or drink water.", "en": "two pieces of advice", "ar": "نصيحتان"}
+                ]
               },
               "fallbackSkill": "writing",
               "partnerSpeaker": "Patient",
@@ -21271,7 +21665,11 @@
                     "hurts"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker says they need a doctor or help.", "en": "asking for help", "ar": "طلب المساعدة"},
+                  {"says": "The speaker describes a symptom such as a cough, a fever or pain.", "en": "one symptom", "ar": "عَرَض واحد"}
+                ]
               },
               "fallbackSkill": "writing",
               "partnerSpeaker": "Receptionist",
@@ -21446,7 +21844,12 @@
                     "instructions"
                   ]
                 ],
-                "minGroupsMatched": 3
+                "minGroupsMatched": 3,
+                "meanings": [
+                  {"says": "The speaker says to call for help.", "en": "calling for help", "ar": "طلب النجدة"},
+                  {"says": "The speaker says to give the location.", "en": "saying the location", "ar": "ذكر الموقع"},
+                  {"says": "The speaker says to stay calm and follow instructions.", "en": "staying calm and following instructions", "ar": "الهدوء واتباع التعليمات"}
+                ]
               },
               "fallbackSkill": "writing"
             }
@@ -21607,6 +22010,10 @@
                   ]
                 ],
                 "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The writer describes symptoms such as a cough, a fever, pain or feeling tired.", "en": "the symptoms", "ar": "الأعراض"},
+                  {"says": "The writer says when they can come, or asks for an appointment.", "en": "when you can come, and a request", "ar": "موعد حضورك وطلبك"}
+                ],
                 "onlineRefinement": "grammarCheck"
               },
               "wordGuide": [
@@ -21731,7 +22138,11 @@
                     "appointment"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker describes symptoms such as a cough, a fever, pain or feeling tired.", "en": "the symptoms", "ar": "الأعراض"},
+                  {"says": "The speaker asks for an appointment.", "en": "asking for an appointment", "ar": "طلب موعد"}
+                ]
               },
               "fallbackSkill": "writing",
               "partnerSpeaker": "Receptionist",
@@ -21785,7 +22196,11 @@
                     "drink water"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker tells the other person their appointment.", "en": "the appointment", "ar": "الموعد"},
+                  {"says": "The speaker gives advice, such as to rest or drink water.", "en": "the advice", "ar": "النصائح"}
+                ]
               },
               "fallbackSkill": "writing",
               "sourceCard": "The visitor has a high fever and a bad cough and feels very tired. Clinic: appointment at 3:00 today. Advice: rest, drink water, and don't go to work. Bring your ID card."
@@ -21818,6 +22233,10 @@
                   ]
                 ],
                 "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The writer describes symptoms such as a cough, a fever, pain or feeling tired.", "en": "the symptoms", "ar": "الأعراض"},
+                  {"says": "The writer records the appointment.", "en": "the appointment", "ar": "الموعد"}
+                ],
                 "onlineRefinement": "grammarCheck"
               },
               "wordGuide": [
@@ -22055,7 +22474,16 @@
                     "cold"
                   ]
                 ],
-                "minGroupsMatched": 3
+                "minGroupsMatched": 3,
+                "meanings": [
+                  {"says": "The speaker says it is sunny.", "en": "sunny", "ar": "مشمس"},
+                  {"says": "The speaker says it is cloudy.", "en": "cloudy", "ar": "غائم"},
+                  {"says": "The speaker says it is rainy.", "en": "rainy", "ar": "ماطر"},
+                  {"says": "The speaker says it is windy.", "en": "windy", "ar": "عاصف"},
+                  {"says": "The speaker says it is hot.", "en": "hot", "ar": "حار"},
+                  {"says": "The speaker says it is warm.", "en": "warm", "ar": "دافئ"},
+                  {"says": "The speaker says it is cold.", "en": "cold", "ar": "بارد"}
+                ]
               },
               "fallbackSkill": "writing"
             }
@@ -22228,7 +22656,11 @@
                     "snowing"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker describes what is happening right now.", "en": "sentences about now", "ar": "جمل عما يحدث الآن"},
+                  {"says": "The speaker describes actions such as raining, wearing, sitting or walking.", "en": "three actions", "ar": "ثلاثة أفعال"}
+                ]
               },
               "fallbackSkill": "writing"
             }
@@ -22416,7 +22848,11 @@
                     "umbrella"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker asks what the other person is wearing.", "en": "asking what they are wearing", "ar": "السؤال عما يرتدي"},
+                  {"says": "The speaker names clothes such as a coat, a jacket, boots or a hat.", "en": "two clothing items", "ar": "قطعتا ملابس"}
+                ]
               },
               "fallbackSkill": "writing",
               "partnerSpeaker": "Ali",
@@ -22593,7 +23029,11 @@
                     "because"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker names clothes such as a coat, a jacket, boots or an umbrella.", "en": "three clothing items", "ar": "ثلاث قطع ملابس"},
+                  {"says": "The speaker gives a reason, using because.", "en": "a reason for each", "ar": "سبب لكل قطعة"}
+                ]
               },
               "fallbackSkill": "writing"
             }
@@ -22757,7 +23197,11 @@
                     "wear"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker says what the weather will be like.", "en": "the forecast with will", "ar": "التوقعات بـ will"},
+                  {"says": "The speaker suggests what to take or wear.", "en": "what to take or wear", "ar": "ما يُؤخذ أو يُلبَس"}
+                ]
               },
               "fallbackSkill": "writing"
             }
@@ -22926,6 +23370,10 @@
                   ]
                 ],
                 "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The writer describes the weather, such as sunny, cloudy, rainy or cold.", "en": "today's weather", "ar": "طقس اليوم"},
+                  {"says": "The writer says what the weather will be like tomorrow.", "en": "tomorrow's forecast", "ar": "توقعات الغد"}
+                ],
                 "onlineRefinement": "grammarCheck"
               },
               "wordGuide": [
@@ -23045,7 +23493,11 @@
                     "because"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker names clothes such as a coat, a jacket, boots or an umbrella.", "en": "the clothes", "ar": "الملابس"},
+                  {"says": "The speaker gives a reason, using because.", "en": "two reasons", "ar": "سببان"}
+                ]
               },
               "fallbackSkill": "writing"
             },
@@ -23074,7 +23526,11 @@
                     "what are you wearing"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker says what the group is doing right now.", "en": "what the group is doing now", "ar": "ما تفعله المجموعة الآن"},
+                  {"says": "The speaker asks what the friend is wearing.", "en": "asking what the friend is wearing", "ar": "السؤال عما يرتدي الصديق"}
+                ]
               },
               "fallbackSkill": "writing",
               "partnerSpeaker": "Maya",
@@ -23108,7 +23564,11 @@
                     "so"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker says what the weather will do or what the plan is now.", "en": "what will happen or what is different now", "ar": "ما سيحدث أو ما تغيّر الآن"},
+                  {"says": "The speaker gives a reason, using because or so.", "en": "the reason", "ar": "السبب"}
+                ]
               },
               "fallbackSkill": "writing",
               "sourceCard": "Original plan: a short walk at 9:00, sunny and 18 degrees, in light clothes. Update: a light wind starts at 10:00 and heavy rain at 3:00. New plan: walk at 9:00, back by 10:00, and take a jacket."
@@ -23144,6 +23604,10 @@
                   ]
                 ],
                 "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The writer describes the weather, such as sunny, cloudy, rainy or cold.", "en": "the weather", "ar": "الطقس"},
+                  {"says": "The writer gives a reason or says what to take or wear.", "en": "the clothes and the reason", "ar": "الملابس والسبب"}
+                ],
                 "onlineRefinement": "grammarCheck"
               },
               "wordGuide": [
@@ -23363,7 +23827,11 @@
                     "sunday"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker says what they are going to do.", "en": "plans with going to", "ar": "خطط بـ going to"},
+                  {"says": "The speaker says when, using a future time such as tomorrow, this evening or next week.", "en": "three future times", "ar": "ثلاثة أوقات مستقبلية"}
+                ]
               },
               "fallbackSkill": "writing"
             }
@@ -23534,7 +24002,11 @@
                     "im going to"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker asks what the other person is going to do.", "en": "two questions about plans", "ar": "سؤالان عن الخطط"},
+                  {"says": "The speaker says what they are or are not going to do.", "en": "your answer about a plan", "ar": "جوابك عن خطة"}
+                ]
               },
               "fallbackSkill": "writing",
               "partnerSpeaker": "Sara",
@@ -23714,7 +24186,11 @@
                     "at"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker agrees to meet and says what they will do or where.", "en": "agreeing to meet, with the activity and place", "ar": "الاتفاق على اللقاء مع النشاط والمكان"},
+                  {"says": "The speaker says at what time.", "en": "the time", "ar": "الوقت"}
+                ]
               },
               "fallbackSkill": "writing",
               "partnerSpeaker": "Maya",
@@ -23891,7 +24367,11 @@
                     "can we"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker says sorry or that they cannot.", "en": "refusing politely", "ar": "الرفض بأدب"},
+                  {"says": "The speaker gives a reason or suggests another time.", "en": "a reason and another time", "ar": "سبب ووقت آخر"}
+                ]
               },
               "fallbackSkill": "writing",
               "partnerSpeaker": "Ali",
@@ -24077,6 +24557,10 @@
                   ]
                 ],
                 "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The writer confirms the time or says it works.", "en": "confirming the time", "ar": "تأكيد الوقت"},
+                  {"says": "The writer says what they will bring or do.", "en": "what you will bring", "ar": "ما ستجلبه"}
+                ],
                 "onlineRefinement": "grammarCheck"
               },
               "wordGuide": [
@@ -24250,6 +24734,10 @@
                   ]
                 ],
                 "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The writer says what they are going to do.", "en": "the plan with going to", "ar": "الخطة بـ going to"},
+                  {"says": "The writer asks the friends to confirm.", "en": "asking them to confirm", "ar": "طلب التأكيد"}
+                ],
                 "onlineRefinement": "grammarCheck"
               },
               "wordGuide": [
@@ -24366,7 +24854,11 @@
                     "confirm"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker suggests meeting, with let's or can we.", "en": "the suggestion", "ar": "الاقتراح"},
+                  {"says": "The speaker asks the other person to confirm.", "en": "asking for confirmation", "ar": "طلب التأكيد"}
+                ]
               },
               "fallbackSkill": "writing",
               "partnerSpeaker": "Sara",
@@ -24420,7 +24912,11 @@
                     "change"
                   ]
                 ],
-                "minGroupsMatched": 2
+                "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The speaker gives a reason, using because or so.", "en": "the reason", "ar": "السبب"},
+                  {"says": "The speaker says what changed or what they will do instead.", "en": "the change", "ar": "التغيير"}
+                ]
               },
               "fallbackSkill": "writing",
               "sourceCard": "Availability: Maya is free on Saturday after 3:00; Omar on Saturday from 12:00 to 6:00; Lina on Saturday from 4:00 to 8:00. Original plan: a walk in River Park at 4:00. Update: rain at 4:00. New plan: the café opposite the park at 4:00."
@@ -24449,6 +24945,10 @@
                   ]
                 ],
                 "minGroupsMatched": 2,
+                "meanings": [
+                  {"says": "The writer asks the others to confirm.", "en": "asking everyone to confirm", "ar": "طلب التأكيد من الجميع"},
+                  {"says": "The writer gives a reason or says what they will do instead.", "en": "the change and its reason", "ar": "التغيير وسببه"}
+                ],
                 "onlineRefinement": "grammarCheck"
               },
               "wordGuide": [
