@@ -170,23 +170,23 @@ abstract class AppLocalizations {
   /// **'Saved — we\'ll finish checking this once you\'re online'**
   String get activityFeedbackPendingOnlineRefinement;
 
-  /// Feedback shown after submitting a free answer that the installed AI pack will judge on the device in a moment (ADR 0013). Nothing leaves the phone.
+  /// Feedback shown after submitting a free answer that a local model will finish grading on the device in a moment (ADR 0013/0014). Nothing leaves the phone.
   ///
   /// In en, this message translates to:
   /// **'Saved — checking this on your phone'**
   String get activityFeedbackPendingLocalJudgement;
 
-  /// Overline above the AI pack's explanation of a free answer's verdict, in the feedback panel and banner.
+  /// Overline above the explanation of a free answer's verdict, in the feedback panel and banner (ADR 0014).
   ///
   /// In en, this message translates to:
   /// **'Explanation'**
   String get activityFeedbackExplanationLabel;
 
-  /// Small label under the AI pack's explanation saying it was produced by a model on the device, not written by a person. Always shown with an explanation (ADR 0013).
+  /// The explanation under a free answer that left out part of what the task asked (ADR 0014). {parts} is the list of the missing parts' names from the content, joined with commas, e.g. "one thing you don't like". Written by a person, not generated.
   ///
   /// In en, this message translates to:
-  /// **'Generated on your phone'**
-  String get activityFeedbackGeneratedLabel;
+  /// **'Your answer is missing: {parts}.'**
+  String activityFeedbackMissingParts(String parts);
 
   /// Shown on a speak activity's typed-answer accessibility fallback. Never phrased as a permanent limitation of the learner's ability, only the device/build.
   ///
@@ -2348,37 +2348,37 @@ abstract class AppLocalizations {
   /// **'Progress reset.'**
   String get settingsResetProgressDone;
 
-  /// Settings row for the downloadable AI pack that judges free answers and explains them on the phone (ADR 0013). Never says AI or a model name — what it does for the learner.
+  /// Settings row for the future downloadable grammar model that checks written answers on the phone (ADR 0014). Never says AI or a model name — what it does for the learner.
   ///
   /// In en, this message translates to:
-  /// **'Smart feedback'**
+  /// **'Grammar check, offline'**
   String get settingsSmartFeedbackTitle;
 
-  /// Smart feedback row body while this build offers no pack — an honest coming-soon line, not a working feature.
+  /// Grammar check row body while this build offers no download — an honest coming-soon line, not a working feature.
   ///
   /// In en, this message translates to:
-  /// **'A one-time download that explains your writing and speaking answers, on your phone. Not in this version yet.'**
+  /// **'A one-time download that checks the grammar of your written answers on your phone, with no internet. Not in this version yet.'**
   String get settingsSmartFeedbackBodyUnavailable;
 
-  /// Smart feedback row body when the pack can be downloaded but is not on the device.
+  /// Grammar check row body when the download is offered but not on the device.
   ///
   /// In en, this message translates to:
-  /// **'A one-time download that explains your writing and speaking answers, on your phone. Works offline once downloaded.'**
+  /// **'A one-time download that checks the grammar of your written answers on your phone. Works offline once downloaded.'**
   String get settingsSmartFeedbackBodyNotInstalled;
 
-  /// Smart feedback row body while the pack downloads.
+  /// Grammar check row body while the download runs.
   ///
   /// In en, this message translates to:
   /// **'Downloading…'**
   String get settingsSmartFeedbackBodyDownloading;
 
-  /// Smart feedback row body when the pack is installed.
+  /// Grammar check row body when the download is installed.
   ///
   /// In en, this message translates to:
-  /// **'Explaining your answers on this phone. Nothing leaves it.'**
+  /// **'Checking your grammar on this phone. Nothing leaves it.'**
   String get settingsSmartFeedbackBodyInstalled;
 
-  /// Small action on the Smart feedback row that starts the pack download.
+  /// Small action on the Grammar check row that starts the download.
   ///
   /// In en, this message translates to:
   /// **'Download'**

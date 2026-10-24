@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import '../../../../content/models/evaluation_spec.dart';
+
 /// The pass bar every free answer is held to — the same value
 /// `MasteryPolicy.minimumObjectiveScore` carries in both shipped bundles, and
 /// the one `PendingRefinementDrainService` has always finalized against.
@@ -18,16 +20,64 @@ const double kMeaningWeight = 0.25;
 /// How much a maximally error-dense answer may lose to grammar.
 const double kGrammarWeight = 0.25;
 
-/// How much the AI pack's yes/no judgement of the meaning moves the score,
-/// up when it agrees the answer does the task, down when it does not.
+/// How much a local yes/no judgement of the meaning moves the score, up
+/// when it agrees the answer does the task, down when it does not. Reserved
+/// for a future local grammar judgement (ADR 0014); nothing sets it today.
 const double kJudgementWeight = 0.10;
+
+/// The entailment probability at which the inference model is taken to say
+/// an answer does what a group means (ADR 0014). The most likely of the
+/// model's three classes, no more: measured on the device spike, right
+/// answers scored 0.58-0.98 and wrong ones 0.00-0.42.
+const double kEntailmentThreshold = 0.5;
+
+/// Which groups an answer meets, by its words or by its meaning: a group
+/// the rubric matched counts as met whatever the model says, so the model
+/// can only add. Both lists are per group, in order.
+List<bool> groupsMet({
+  required List<bool> metByKeyword,
+  required List<double> entailment,
+}) => [
+  for (var i = 0; i < metByKeyword.length; i++)
+    metByKeyword[i] ||
+        (i < entailment.length && entailment[i] >= kEntailmentThreshold),
+];
+
+/// The meaning signal of ADR 0014: the share of a rubric's groups the answer
+/// meets by words or by meaning, 0..1. Feeds [GradingSignals.meaning] with
+/// the same weight and bound as the similarity signal it replaces where
+/// meanings are authored, so an answer that meets one group of two by its
+/// words and the other by its meaning scores 0.5 + 0.25 = 0.75, the pass
+/// bar, and an answer that meets neither stays at 0.
+double meaningFromParts({
+  required List<bool> metByKeyword,
+  required List<double> entailment,
+}) {
+  if (metByKeyword.isEmpty) return 0;
+  final met = groupsMet(metByKeyword: metByKeyword, entailment: entailment);
+  return met.where((m) => m).length / met.length;
+}
+
+/// The groups an answer meets neither by words nor by meaning — what the
+/// feedback panel names for the learner, in the group's own words.
+List<GroupMeaning> missingMeanings({
+  required List<GroupMeaning> meanings,
+  required List<bool> metByKeyword,
+  required List<double> entailment,
+}) {
+  final met = groupsMet(metByKeyword: metByKeyword, entailment: entailment);
+  return [
+    for (var i = 0; i < meanings.length && i < met.length; i++)
+      if (!met[i]) meanings[i],
+  ];
+}
 
 /// Everything known about one free answer when its grade is decided.
 ///
 /// [rubric] is the rubric's own score (`evaluate()`), the base nothing else
 /// may replace. The rest are optional: [meaning] is the on-device meaning
 /// signal (0 = nothing like any model answer, 1 = says the same thing),
-/// [grammarPenalty] the error density mapped to 0..1 (from the AI pack, or
+/// [grammarPenalty] the error density mapped to 0..1 (from a local grammar model, or
 /// LanguageTool for a learner without it), [meaningOk] the pack's judgement.
 /// Any of them may be absent and the rule still works.
 class GradingSignals {
@@ -44,7 +94,7 @@ class GradingSignals {
   final double? grammarPenalty;
   final bool? meaningOk;
 
-  /// `<name>-<version>` of the AI pack that judged this answer, if one did.
+  /// `<name>-<version>` of the local model that judged this answer, if one did.
   final String? pack;
 
   GradingSignals copyWith({
@@ -115,18 +165,21 @@ double grammarPenaltyOf({required int errorCount, required int wordCount}) {
 
 /// The record of how a free answer was graded, stored JSON-encoded in
 /// `activity_attempts.criteriaScores` so the answer review and a later
-/// reader can see which signals were present. [explanationEn] and
-/// [explanationAr] are the AI pack's written feedback — shown to the
-/// learner, never read by mastery.
+/// reader can see which signals were present. [parts] are the per-group
+/// entailment probabilities when the inference model read the answer (ADR
+/// 0014). [explanationEn] and [explanationAr] are the feedback shown to the
+/// learner — never read by mastery.
 String criteriaScoresJson(
   GradingSignals signals, {
   required double finalScore,
+  List<double>? parts,
   String? explanationEn,
   String? explanationAr,
 }) {
   final map = <String, Object?>{
     'rubric': signals.rubric,
     if (signals.meaning != null) 'meaning': signals.meaning,
+    'parts': ?parts,
     if (signals.grammarPenalty != null) 'grammar': signals.grammarPenalty,
     if (signals.meaningOk != null) 'judgement': signals.meaningOk,
     if (signals.pack != null) 'pack': signals.pack,
@@ -139,10 +192,10 @@ String criteriaScoresJson(
   return jsonEncode(map);
 }
 
-/// The AI pack's explanation stored in a `criteriaScores` JSON string, or
-/// `null` when the string is absent, not JSON, or carries none — every
-/// attempt written before ADR 0013, and every attempt graded without the
-/// pack, reads as "no explanation" rather than failing.
+/// The explanation stored in a `criteriaScores` JSON string, or `null` when
+/// the string is absent, not JSON, or carries none — every attempt written
+/// before ADR 0013, and every attempt graded with nothing to explain, reads
+/// as "no explanation" rather than failing.
 ({String? en, String? ar})? explanationIn(String? criteriaScores) {
   if (criteriaScores == null) return null;
   try {

@@ -1,4 +1,5 @@
-/// What the AI pack says about one free answer (ADR 0013's second layer):
+/// What a local judgement model says about one free answer (ADR 0013's second
+/// layer, reserved by ADR 0014 for a downloadable grammar model):
 /// whether the answer does what the task asked, how many grammar issues it
 /// has, and a short explanation for the learner in simple English and,
 /// when the model managed one, in Arabic.
@@ -49,7 +50,7 @@ class LocalJudgementUnavailableException implements Exception {
   String toString() => 'LocalJudgementUnavailableException: $message';
 }
 
-/// Judges a free answer with the installed AI pack, entirely on the device.
+/// Judges a free answer with the installed local model, entirely on the device.
 /// Implementations must throw [LocalJudgementUnavailableException] (never
 /// let another exception type escape) for any failure.
 abstract interface class LocalJudgementService {
@@ -63,7 +64,7 @@ abstract interface class LocalJudgementService {
   });
 }
 
-/// The binding until the AI pack ships (ADR 0013's Phase B), and the state
+/// The binding until a local model ships (ADR 0014, grammar), and the state
 /// of a build whose pack is not installed: never available, never asked.
 class UnavailableLocalJudgementService implements LocalJudgementService {
   const UnavailableLocalJudgementService();
@@ -76,6 +77,8 @@ class UnavailableLocalJudgementService implements LocalJudgementService {
     required JudgementTask task,
     required String answer,
   }) async {
-    throw const LocalJudgementUnavailableException('no AI pack is installed');
+    throw const LocalJudgementUnavailableException(
+      'no local model is installed',
+    );
   }
 }

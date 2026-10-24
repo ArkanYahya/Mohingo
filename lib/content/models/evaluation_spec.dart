@@ -65,7 +65,29 @@ sealed class EvaluationSpec {
       requiredGroups: requiredGroups,
       minGroupsMatched: minGroupsMatched,
       onlineRefinement: onlineRefinement is String ? onlineRefinement : null,
+      meanings: _meaningsFromJson(json['meanings'], requiredGroups.length),
     );
+  }
+
+  /// One [GroupMeaning] per required group, or `null` when the task has
+  /// none yet or they are mis-authored (wrong count, a missing field): the
+  /// rubric then grades as it always has and the meaning signal falls back
+  /// to the model answers. Never a reason to drop the whole spec.
+  static List<GroupMeaning>? _meaningsFromJson(Object? raw, int groupCount) {
+    if (raw is! List || raw.length != groupCount) return null;
+    final meanings = <GroupMeaning>[];
+    for (final item in raw) {
+      if (item is! Map<String, dynamic>) return null;
+      final says = item['says'];
+      final en = item['en'];
+      final ar = item['ar'];
+      if (says is! String || en is! String || ar is! String) return null;
+      if (says.trim().isEmpty || en.trim().isEmpty || ar.trim().isEmpty) {
+        return null;
+      }
+      meanings.add(GroupMeaning(hypothesis: says, labelEn: en, labelAr: ar));
+    }
+    return meanings;
   }
 }
 
@@ -136,8 +158,38 @@ class KeywordChecklistEvaluationSpec extends EvaluationSpec {
     required this.requiredGroups,
     required this.minGroupsMatched,
     this.onlineRefinement,
+    this.meanings,
   });
   final List<List<String>> requiredGroups;
   final int minGroupsMatched;
   final String? onlineRefinement;
+
+  /// What each group *means*, one per group in order (ADR 0014): the
+  /// statement the on-device inference model checks the answer against,
+  /// and the part's name for the learner in both languages. `null` for a
+  /// task not yet authored this way.
+  final List<GroupMeaning>? meanings;
+
+  bool get hasMeanings =>
+      meanings != null && meanings!.length == requiredGroups.length;
+}
+
+/// The meaning of one keyword group, for a reader of answers rather than a
+/// matcher of words (ADR 0014). [hypothesis] is a plain English statement
+/// of what an answer that meets the group says — "The speaker says one
+/// thing they do not like." — and must describe the answer's own content,
+/// never the task's situation. [labelEn] and [labelAr] name the part for
+/// the learner ("one thing you don't like" / "شيئاً لا تحبّه"), written
+/// natively in each language, and are what the feedback panel lists as
+/// missing.
+class GroupMeaning {
+  const GroupMeaning({
+    required this.hypothesis,
+    required this.labelEn,
+    required this.labelAr,
+  });
+
+  final String hypothesis;
+  final String labelEn;
+  final String labelAr;
 }

@@ -1,6 +1,8 @@
-/// Where the downloadable AI pack stands on this device (ADR 0013's second
-/// layer). Phase A ships no pack, so every build reads [notAvailable]; Phase
-/// B adds the download and the other three states.
+/// Where the downloadable grammar model stands on this device — ADR 0014's
+/// deferred fifth decision, which took over this seam from ADR 0013's
+/// language-model pack (tried on a phone, not chosen). No build offers it
+/// yet, so every build reads [notAvailable]; the download and the other
+/// three states come with the model.
 enum AiPackState {
   /// This build has no pack to offer — the row in Settings says so, as the
   /// backup row did before accounts existed.
@@ -41,8 +43,9 @@ class AiPackStatus {
   final double? progress;
 }
 
-/// How Settings reads and drives the pack. Phase A binds the implementation
-/// below; Phase B's downloads, verifies, stores and deletes a real pack.
+/// How Settings reads and drives the download. Today's binding is the
+/// implementation below; the grammar model's downloads, verifies, stores and
+/// deletes a real file.
 abstract interface class AiPackService {
   Stream<AiPackStatus> get status;
   Future<void> download();

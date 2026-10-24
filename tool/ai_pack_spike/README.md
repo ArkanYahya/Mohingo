@@ -18,7 +18,7 @@ Every judgement is one structured-JSON call with greedy decoding and a fixed see
 
 **The second engine (NLI).** After three runs in which no 1B-class generative model read a learner's answer, the spike grew a second, non-generative engine (`lib/nli/`): a natural-language-inference cross-encoder in ONNX (MobileBERT-MNLI, 25 MB; DistilBERT-MNLI, 67 MB; or any Hugging Face repository in the Transformers.js layout), run through `flutter_onnxruntime`, the runtime Mohingo already ships for its meaning signal. Each case's parts have a statement form (`hypotheses`); the answer is the premise, and a part is done when the model's most likely class is entailment. A hypothesis of the form `@sentences:3` is a count, checked by code. The verdict (English by script, every part done) is computed, as in the LLM path. One forward pass per part, deterministic, with the class probabilities in the report. On the phone it is the second section of the screen, with the same Download → Load → Run → Copy steps.
 
-Runs so far, with what they decided: [`results/`](results/README.md).
+Runs so far, with what they decided: [`results/`](results/README.md). The decision they led to is [ADR 0014](../../docs/adr/0014-read-free-answers-by-parts-with-nli.md): the per-part NLI reading is what Phase B is built on, and the language-model pack is not.
 
 ## Candidates
 

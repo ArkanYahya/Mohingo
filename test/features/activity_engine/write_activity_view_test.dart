@@ -688,8 +688,8 @@ void main() {
       expect(find.text('Saved — checking this on your phone'), findsOneWidget);
     });
 
-    testWidgets('review mode shows the stored explanation, labelled as '
-        'generated, under the recorded verdict', (tester) async {
+    testWidgets('review mode shows the stored explanation under the recorded '
+        'verdict', (tester) async {
       await tester.pumpActivityView(
         WriteActivityView(
           activity: activity,
@@ -727,7 +727,6 @@ void main() {
         findsOneWidget,
       );
       expect(find.text('أظهرت اهتمامك. اسأل سؤالاً الآن.'), findsOneWidget);
-      expect(find.text('Generated on your phone'), findsOneWidget);
     });
 
     testWidgets('an attempt without an explanation shows no explanation '
@@ -758,7 +757,118 @@ void main() {
       );
 
       expect(find.text('EXPLANATION'), findsNothing);
-      expect(find.text('Generated on your phone'), findsNothing);
+    });
+  });
+
+  group('ADR 0014: reading by parts', () {
+    const withMeanings = WriteActivity(
+      id: 'A1-U5-L1-A05',
+      lessonId: 'A1-U5-L1',
+      mode: ActivityMode.mastery,
+      skill: Skill.writing,
+      canDo: ['A1.U5.SPEAKING.LIKES'],
+      prompt: "Say two things you like and one thing you don't like.",
+      promptAr: 'قل شيئين تحبهما وشيئاً لا تحبه.',
+      raw: {},
+      accepted: ["I like football and I love music. I don't like tennis."],
+      evaluation: KeywordChecklistEvaluationSpec(
+        requiredGroups: [
+          ['like', 'love'],
+          ["don't like", 'dont like', 'hate'],
+        ],
+        minGroupsMatched: 2,
+        meanings: [
+          GroupMeaning(
+            hypothesis: 'The speaker says two things they like.',
+            labelEn: 'two things you like',
+            labelAr: 'شيئين تحبّهما',
+          ),
+          GroupMeaning(
+            hypothesis: 'The speaker says one thing they do not like.',
+            labelEn: "one thing you don't like",
+            labelAr: 'شيئاً لا تحبّه',
+          ),
+        ],
+      ),
+    );
+
+    Future<ActivitySubmission?> submit(
+      WidgetTester tester,
+      String answer, {
+      required FakeMeaningSignalService meaning,
+    }) async {
+      ActivitySubmission? captured;
+      await tester.pumpActivityView(
+        WriteActivityView(
+          activity: withMeanings,
+          learnerId: 1,
+          onSubmitted: (s) => captured = s,
+        ),
+        overrides: [meaningSignalServiceProvider.overrideWithValue(meaning)],
+      );
+      await tester.enterText(find.byType(TextField), answer);
+      await tester.pump();
+      await tester.tap(find.widgetWithText(FilledButton, 'Check'));
+      await tester.pump();
+      await tester.pump();
+      return captured;
+    }
+
+    testWidgets('a part said in other words is read as met, and the answer '
+        'reaches the pass bar', (tester) async {
+      final meaning = FakeMeaningSignalService(parts: [0.98, 0.98]);
+      final captured = await submit(
+        tester,
+        "I like tea and I love coffee, but I can't stand milk.",
+        meaning: meaning,
+      );
+      expect(captured!.correctness, ActivityCorrectness.correct);
+      expect(captured.score, closeTo(0.75, 1e-9));
+      expect(captured.explanationEn, isNull);
+      expect(meaning.partCalls.single.hypotheses, [
+        'The speaker says two things they like.',
+        'The speaker says one thing they do not like.',
+      ]);
+      // The parts path never asks the similarity signal.
+      expect(meaning.calls, isEmpty);
+      final decoded = jsonDecode(captured.criteriaScoresJson!) as Map;
+      expect(decoded['parts'], [0.98, 0.98]);
+    });
+
+    testWidgets('a missing part fails and is named in both languages', (
+      tester,
+    ) async {
+      final captured = await submit(
+        tester,
+        'I like football and I love music. I like tennis too.',
+        meaning: FakeMeaningSignalService(parts: [0.89, 0.04]),
+      );
+      expect(captured!.correctness, ActivityCorrectness.incorrect);
+      expect(captured.score, closeTo(0.625, 1e-9));
+      expect(
+        captured.explanationEn,
+        "Your answer is missing: one thing you don't like.",
+      );
+      expect(captured.explanationAr, 'ينقص جوابك: شيئاً لا تحبّه.');
+      expect(find.text('EXPLANATION'), findsOneWidget);
+      expect(
+        find.text("Your answer is missing: one thing you don't like."),
+        findsOneWidget,
+      );
+    });
+
+    testWidgets('without the inference model the task falls back to the '
+        'similarity signal over its model answers', (tester) async {
+      final meaning = FakeMeaningSignalService(parts: null, signal: 1.0);
+      final captured = await submit(
+        tester,
+        "I like tea and I love coffee, but I can't stand milk.",
+        meaning: meaning,
+      );
+      expect(meaning.partCalls, hasLength(1));
+      expect(meaning.calls, hasLength(1));
+      expect(captured!.correctness, ActivityCorrectness.correct);
+      expect(captured.explanationEn, isNull);
     });
   });
 }

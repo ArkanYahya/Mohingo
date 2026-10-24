@@ -55,15 +55,16 @@
   },
   "activityFeedbackPendingLocalJudgement": "Saved — checking this on your phone",
   "@activityFeedbackPendingLocalJudgement": {
-    "description": "Feedback shown after submitting a free answer that the installed AI pack will judge on the device in a moment (ADR 0013). Nothing leaves the phone."
+    "description": "Feedback shown after submitting a free answer that a local model will finish grading on the device in a moment (ADR 0013/0014). Nothing leaves the phone."
   },
   "activityFeedbackExplanationLabel": "Explanation",
   "@activityFeedbackExplanationLabel": {
-    "description": "Overline above the AI pack's explanation of a free answer's verdict, in the feedback panel and banner."
+    "description": "Overline above the explanation of a free answer's verdict, in the feedback panel and banner (ADR 0014)."
   },
-  "activityFeedbackGeneratedLabel": "Generated on your phone",
-  "@activityFeedbackGeneratedLabel": {
-    "description": "Small label under the AI pack's explanation saying it was produced by a model on the device, not written by a person. Always shown with an explanation (ADR 0013)."
+  "activityFeedbackMissingParts": "Your answer is missing: {parts}.",
+  "@activityFeedbackMissingParts": {
+    "description": "The explanation under a free answer that left out part of what the task asked (ADR 0014). {parts} is the list of the missing parts' names from the content, joined with commas, e.g. \"one thing you don't like\". Written by a person, not generated.",
+    "placeholders": {"parts": {"type": "String"}}
   },
   "activitySpeechUnavailableUseWriting": "Speaking practice isn't available on this device yet — type your answer instead.",
   "@activitySpeechUnavailableUseWriting": {
@@ -902,18 +903,18 @@
   "@settingsResetProgressCancel": {"description": "Confirmation dialog's cancel button."},
   "settingsResetProgressDone": "Progress reset.",
   "@settingsResetProgressDone": {"description": "Snackbar shown after progress is successfully reset."},
-  "settingsSmartFeedbackTitle": "Smart feedback",
-  "@settingsSmartFeedbackTitle": {"description": "Settings row for the downloadable AI pack that judges free answers and explains them on the phone (ADR 0013). Never says AI or a model name — what it does for the learner."},
-  "settingsSmartFeedbackBodyUnavailable": "A one-time download that explains your writing and speaking answers, on your phone. Not in this version yet.",
-  "@settingsSmartFeedbackBodyUnavailable": {"description": "Smart feedback row body while this build offers no pack — an honest coming-soon line, not a working feature."},
-  "settingsSmartFeedbackBodyNotInstalled": "A one-time download that explains your writing and speaking answers, on your phone. Works offline once downloaded.",
-  "@settingsSmartFeedbackBodyNotInstalled": {"description": "Smart feedback row body when the pack can be downloaded but is not on the device."},
+  "settingsSmartFeedbackTitle": "Grammar check, offline",
+  "@settingsSmartFeedbackTitle": {"description": "Settings row for the future downloadable grammar model that checks written answers on the phone (ADR 0014). Never says AI or a model name — what it does for the learner."},
+  "settingsSmartFeedbackBodyUnavailable": "A one-time download that checks the grammar of your written answers on your phone, with no internet. Not in this version yet.",
+  "@settingsSmartFeedbackBodyUnavailable": {"description": "Grammar check row body while this build offers no download — an honest coming-soon line, not a working feature."},
+  "settingsSmartFeedbackBodyNotInstalled": "A one-time download that checks the grammar of your written answers on your phone. Works offline once downloaded.",
+  "@settingsSmartFeedbackBodyNotInstalled": {"description": "Grammar check row body when the download is offered but not on the device."},
   "settingsSmartFeedbackBodyDownloading": "Downloading…",
-  "@settingsSmartFeedbackBodyDownloading": {"description": "Smart feedback row body while the pack downloads."},
-  "settingsSmartFeedbackBodyInstalled": "Explaining your answers on this phone. Nothing leaves it.",
-  "@settingsSmartFeedbackBodyInstalled": {"description": "Smart feedback row body when the pack is installed."},
+  "@settingsSmartFeedbackBodyDownloading": {"description": "Grammar check row body while the download runs."},
+  "settingsSmartFeedbackBodyInstalled": "Checking your grammar on this phone. Nothing leaves it.",
+  "@settingsSmartFeedbackBodyInstalled": {"description": "Grammar check row body when the download is installed."},
   "settingsSmartFeedbackDownload": "Download",
-  "@settingsSmartFeedbackDownload": {"description": "Small action on the Smart feedback row that starts the pack download."},
+  "@settingsSmartFeedbackDownload": {"description": "Small action on the Grammar check row that starts the download."},
   "settingsSmartFeedbackDelete": "Delete",
   "@settingsSmartFeedbackDelete": {"description": "Small action on the Smart feedback row that removes the downloaded pack."},
   "settingsBackupTitle": "Backup & sync",

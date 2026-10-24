@@ -159,6 +159,19 @@ final _whitespaceRun = RegExp(r'\s+');
 /// written in a non-Latin script, where Dart's ASCII `\b` would never
 /// match — still behaves like the old substring check rather than silently
 /// never matching.
+/// Which of [spec]'s groups [answer] meets by its words, one flag per group
+/// in order — the rubric's own reading, before any meaning signal. The
+/// meaning signal (ADR 0014) reads the groups an answer did *not* meet this
+/// way, and the feedback panel names them.
+List<bool> keywordGroupMatches(
+  KeywordChecklistEvaluationSpec spec,
+  String answer, {
+  SpokenAnswer? spoken,
+}) => [
+  for (final group in spec.requiredGroups)
+    group.any((kw) => _mentionsKeyword(answer, kw, spoken)),
+];
+
 bool _mentionsKeyword(String answer, String keyword, SpokenAnswer? spoken) {
   final trimmed = keyword.trim();
   if (trimmed.isEmpty) return false;
@@ -214,9 +227,11 @@ bool _mentionsSpokenKeyword(
   String answer,
   SpokenAnswer? spoken,
 ) {
-  final matchedGroups = spec.requiredGroups
-      .where((group) => group.any((kw) => _mentionsKeyword(answer, kw, spoken)))
-      .length;
+  final matchedGroups = keywordGroupMatches(
+    spec,
+    answer,
+    spoken: spoken,
+  ).where((met) => met).length;
   final isCorrect = matchedGroups >= spec.minGroupsMatched;
   // Guards both a rubric with no groups at all and a non-positive pass bar
   // (which every answer clears, and which would divide by zero).

@@ -83,6 +83,11 @@ flutter:
     # (ADR 0013) and its vocabulary; licence in assets/models/NOTICE.md.
     - assets/models/all-MiniLM-L6-v2-int8.onnx
     - assets/models/all-MiniLM-L6-v2-vocab.txt
+    # The natural-language-inference model that reads a free answer part by
+    # part (ADR 0014): model.onnx, vocab.txt and config.json, fetched by
+    # tool/meaning/fetch_nli_model.sh; the folder's README says how. Listed
+    # as a folder so a checkout without the files still builds.
+    - assets/models/nli/
 
 # App icon (Android + iOS). Sources live in assets/icon/ and are not bundled
 # into the app. Regenerate after changing them:

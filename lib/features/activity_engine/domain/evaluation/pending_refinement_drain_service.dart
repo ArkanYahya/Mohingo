@@ -24,14 +24,14 @@ typedef OnItemResolved = Future<void> Function({
 });
 
 /// Resolves the task a queued answer belongs to — its prompt and model
-/// answers — for the AI pack's judgement. Resolved by the caller from the
+/// answers — for the local model's judgement. Resolved by the caller from the
 /// content bundle; `null` when the activity is no longer in it.
 typedef JudgementTaskResolver = Future<JudgementTask?> Function(
   String activityId,
 );
 
 /// Resolves queued open-ended answers, in this order for every row: the
-/// installed AI pack's local judgement (ADR 0013) when one is available;
+/// installed local model's judgement (ADR 0013, ADR 0014) when one is available;
 /// else the online grammar-quality pass, for a row allowed online, when it
 /// succeeds; else — once a row has failed enough times or sat long enough —
 /// the signals it already carries. Either way, this is the only place a
@@ -63,7 +63,7 @@ class PendingRefinementDrainService {
   final GrammarCheckService _grammarCheckService;
   final LocalJudgementService _localJudgementService;
 
-  /// How the AI pack learns what a queued answer was asked for. `null` (the
+  /// How the local model learns what a queued answer was asked for. `null` (the
   /// default) means the pack is never asked, since it cannot judge an
   /// answer without its task.
   final JudgementTaskResolver? judgementTaskFor;
@@ -75,8 +75,8 @@ class PendingRefinementDrainService {
 
   var _packFailures = 0;
 
-  /// Whether the AI pack is healthy enough to ask — false until Phase B
-  /// ships a pack, and false again after [maxPackFailuresPerSession].
+  /// Whether the local model is healthy enough to ask — false until a
+  /// build ships one, and false again after [maxPackFailuresPerSession].
   Future<bool> get _packUsable async =>
       judgementTaskFor != null &&
       _packFailures < maxPackFailuresPerSession &&
@@ -140,7 +140,7 @@ class PendingRefinementDrainService {
       meaning: item.meaningSignal,
     );
 
-    // 1. The AI pack, on the device, when it is installed and healthy.
+    // 1. The local model, on the device, when it is installed and healthy.
     final judgement = await _judgeLocally(item);
     if (judgement != null) {
       signals = signals.copyWith(

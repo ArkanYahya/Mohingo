@@ -23,6 +23,7 @@ import '../../domain/sound_effects_service.dart';
 import '../../providers/online_refinement_providers.dart';
 import '../../providers/sound_effects_providers.dart';
 import '../activity_chrome.dart';
+import '../meaning_explanation.dart';
 import '../widgets/activity_partner_turns_card.dart';
 import '../widgets/activity_text_field.dart';
 import '../widgets/phrase_text.dart';
@@ -251,7 +252,7 @@ class _SpeakActivityViewState extends ConsumerState<SpeakActivityView> {
   /// meaning signal (ADR 0013) — see `WriteActivityView._submit` for the
   /// rule, which is the same here. Nothing a learner says ever goes online:
   /// a speak rubric is never marked `onlineRefinement` (a gate), so a
-  /// spoken answer is queued only for an installed AI pack to judge on the
+  /// spoken answer is queued only for an installed local grammar model to judge on the
   /// device.
   Future<void> _submit(String text, {required bool wasFallback}) async {
     if (_submission != null || _grading) return;
@@ -265,13 +266,43 @@ class _SpeakActivityViewState extends ConsumerState<SpeakActivityView> {
       final rubric = evaluate(evaluation, text, spoken: spoken);
       final signalsOn = gradingSignalsEnabled(context);
       setState(() => _grading = true);
-      // No model answers, no meaning to compare: the service is not asked,
-      // so a task without them never waits on the model.
-      final meaning = signalsOn && widget.activity.accepted.isNotEmpty
-          ? await ref
-                .read(meaningSignalServiceProvider)
-                .meaning(text, modelAnswers: widget.activity.accepted)
-          : null;
+      // Read by parts where the groups carry meanings (ADR 0014); by
+      // similarity to the model answers where they do not yet. A task with
+      // neither never waits on a model.
+      final metByKeyword = keywordGroupMatches(
+        evaluation,
+        text,
+        spoken: spoken,
+      );
+      final service = ref.read(meaningSignalServiceProvider);
+      List<double>? parts;
+      double? meaning;
+      if (signalsOn && evaluation.hasMeanings) {
+        parts = await service.partMeanings(
+          text,
+          meanings: evaluation.meanings!,
+        );
+      }
+      if (parts != null) {
+        meaning = meaningFromParts(
+          metByKeyword: metByKeyword,
+          entailment: parts,
+        );
+      } else if (signalsOn && widget.activity.accepted.isNotEmpty) {
+        meaning = await service.meaning(
+          text,
+          modelAnswers: widget.activity.accepted,
+        );
+      }
+      final explanation = parts == null
+          ? null
+          : missingPartsExplanation(
+              missingMeanings(
+                meanings: evaluation.meanings!,
+                metByKeyword: metByKeyword,
+                entailment: parts,
+              ),
+            );
       final packAvailable = signalsOn
           ? await ref.read(localJudgementServiceProvider).isAvailable
           : false;
@@ -309,7 +340,15 @@ class _SpeakActivityViewState extends ConsumerState<SpeakActivityView> {
           wasFallback: wasFallback,
           criteriaScoresJson: meaning == null
               ? null
-              : criteriaScoresJson(signals, finalScore: finalScore),
+              : criteriaScoresJson(
+                  signals,
+                  finalScore: finalScore,
+                  parts: parts,
+                  explanationEn: explanation?.en,
+                  explanationAr: explanation?.ar,
+                ),
+          explanationEn: explanation?.en,
+          explanationAr: explanation?.ar,
           correctAnswerLabel: _correctAnswerLabel(),
         );
       }

@@ -4,9 +4,11 @@ import 'package:flutter/foundation.dart' show debugPrint;
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_onnxruntime/flutter_onnxruntime.dart';
 
+import '../../../content/models/evaluation_spec.dart';
 import '../domain/evaluation/meaning_signal_service.dart';
 import '../domain/evaluation/sentence_similarity.dart';
 import '../domain/evaluation/wordpiece_tokenizer.dart';
+import 'onnx_entailment_model.dart';
 
 /// The meaning signal computed on the device with the bundled MiniLM
 /// sentence-embedding model through ONNX Runtime (ADR 0013, first layer).
@@ -19,6 +21,26 @@ import '../domain/evaluation/wordpiece_tokenizer.dart';
 /// embeddings are cached, since the same few texts are compared again and
 /// again.
 class OnnxMeaningSignalService implements MeaningSignalService {
+  /// The per-part reader (ADR 0014); its own lazy load and its own
+  /// fallback, so a build with the embedding model but not the inference
+  /// model keeps the similarity signal.
+  final OnnxEntailmentModel _entailment = OnnxEntailmentModel();
+
+  @override
+  Future<List<double>?> partMeanings(
+    String answer, {
+    required List<GroupMeaning> meanings,
+  }) async {
+    if (meanings.isEmpty || answer.trim().isEmpty) return null;
+    final out = <double>[];
+    for (final m in meanings) {
+      final p = await _entailment.entailment(answer, m.hypothesis);
+      if (p == null) return null;
+      out.add(p);
+    }
+    return out;
+  }
+
   OnnxMeaningSignalService({
     this.modelAsset = 'assets/models/all-MiniLM-L6-v2-int8.onnx',
     this.vocabAsset = 'assets/models/all-MiniLM-L6-v2-vocab.txt',
@@ -160,6 +182,7 @@ class OnnxMeaningSignalService implements MeaningSignalService {
   /// Releases the model. The service may be used again afterwards: it
   /// reloads on the next call.
   Future<void> close() async {
+    await _entailment.close();
     await _session?.close();
     _session = null;
     _loading = null;

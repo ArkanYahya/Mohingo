@@ -57,7 +57,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get activityFeedbackExplanationLabel => 'Explanation';
 
   @override
-  String get activityFeedbackGeneratedLabel => 'Generated on your phone';
+  String activityFeedbackMissingParts(String parts) {
+    return 'Your answer is missing: $parts.';
+  }
 
   @override
   String get activitySpeechUnavailableUseWriting =>
@@ -1465,22 +1467,22 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settingsResetProgressDone => 'Progress reset.';
 
   @override
-  String get settingsSmartFeedbackTitle => 'Smart feedback';
+  String get settingsSmartFeedbackTitle => 'Grammar check, offline';
 
   @override
   String get settingsSmartFeedbackBodyUnavailable =>
-      'A one-time download that explains your writing and speaking answers, on your phone. Not in this version yet.';
+      'A one-time download that checks the grammar of your written answers on your phone, with no internet. Not in this version yet.';
 
   @override
   String get settingsSmartFeedbackBodyNotInstalled =>
-      'A one-time download that explains your writing and speaking answers, on your phone. Works offline once downloaded.';
+      'A one-time download that checks the grammar of your written answers on your phone. Works offline once downloaded.';
 
   @override
   String get settingsSmartFeedbackBodyDownloading => 'Downloading…';
 
   @override
   String get settingsSmartFeedbackBodyInstalled =>
-      'Explaining your answers on this phone. Nothing leaves it.';
+      'Checking your grammar on this phone. Nothing leaves it.';
 
   @override
   String get settingsSmartFeedbackDownload => 'Download';

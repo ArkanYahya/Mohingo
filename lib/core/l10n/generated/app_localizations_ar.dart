@@ -57,7 +57,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get activityFeedbackExplanationLabel => 'الشرح';
 
   @override
-  String get activityFeedbackGeneratedLabel => 'مُولَّد على هاتفك';
+  String activityFeedbackMissingParts(String parts) {
+    return 'ينقص جوابك: $parts.';
+  }
 
   @override
   String get activitySpeechUnavailableUseWriting =>
@@ -1497,22 +1499,22 @@ class AppLocalizationsAr extends AppLocalizations {
   String get settingsResetProgressDone => 'تمت إعادة تعيين التقدّم.';
 
   @override
-  String get settingsSmartFeedbackTitle => 'ملاحظات ذكية';
+  String get settingsSmartFeedbackTitle => 'تدقيق القواعد دون اتصال';
 
   @override
   String get settingsSmartFeedbackBodyUnavailable =>
-      'تنزيل لمرة واحدة يشرح إجاباتك في الكتابة والتحدث على هاتفك. غير متاح في هذه النسخة بعد.';
+      'تنزيل لمرة واحدة يدقّق قواعد إجاباتك المكتوبة على هاتفك دون إنترنت. غير متاح في هذه النسخة بعد.';
 
   @override
   String get settingsSmartFeedbackBodyNotInstalled =>
-      'تنزيل لمرة واحدة يشرح إجاباتك في الكتابة والتحدث على هاتفك. يعمل دون اتصال بعد التنزيل.';
+      'تنزيل لمرة واحدة يدقّق قواعد إجاباتك المكتوبة على هاتفك. يعمل دون اتصال بعد التنزيل.';
 
   @override
   String get settingsSmartFeedbackBodyDownloading => 'جارٍ التنزيل…';
 
   @override
   String get settingsSmartFeedbackBodyInstalled =>
-      'تُشرَح إجاباتك على هذا الهاتف. لا يغادره شيء.';
+      'تُدقَّق قواعدك على هذا الهاتف. لا يغادره شيء.';
 
   @override
   String get settingsSmartFeedbackDownload => 'تنزيل';

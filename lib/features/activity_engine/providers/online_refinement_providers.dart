@@ -62,7 +62,8 @@ MeaningSignalService meaningSignalService(Ref ref) {
   return OnnxMeaningSignalService();
 }
 
-/// ADR 0013's second layer, the downloadable AI pack. Phase A ships no pack,
+/// The local judgement seam: ADR 0014 reserves it for a downloadable grammar
+/// model (the language-model pack of ADR 0013 was not chosen). No build offers one,
 /// so this is never available; Phase B swaps the binding for the installed
 /// pack's implementation and nothing else changes.
 @Riverpod(keepAlive: true)

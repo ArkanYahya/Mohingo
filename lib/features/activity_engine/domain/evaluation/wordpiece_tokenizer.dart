@@ -52,6 +52,35 @@ class WordPieceTokenizer {
     return ids;
   }
 
+  /// `[CLS] premise [SEP] hypothesis [SEP]` and the matching segment ids
+  /// (0 for the first sentence and its separators, 1 for the second), the
+  /// input a natural-language-inference cross-encoder takes (ADR 0014).
+  /// The premise is truncated first when the pair exceeds [maxTokens].
+  ({List<int> ids, List<int> typeIds}) encodePair(
+    String premise,
+    String hypothesis, {
+    int maxTokens = 256,
+  }) {
+    final a = <int>[
+      for (final word in basicTokens(premise)) ..._wordPiece(word),
+    ];
+    final b = <int>[
+      for (final word in basicTokens(hypothesis)) ..._wordPiece(word),
+    ];
+    final room = maxTokens - 3;
+    if (a.length + b.length > room) {
+      final keepA = (room - b.length).clamp(0, room);
+      if (a.length > keepA) a.length = keepA;
+      if (a.length + b.length > room) b.length = room - a.length;
+    }
+    final ids = <int>[_cls, ...a, _sep, ...b, _sep];
+    final typeIds = <int>[
+      ...List<int>.filled(a.length + 2, 0),
+      ...List<int>.filled(b.length + 1, 1),
+    ];
+    return (ids: ids, typeIds: typeIds);
+  }
+
   List<int> _wordPiece(String word) {
     // Work on code points, not UTF-16 units, so a character outside the
     // Basic Multilingual Plane is never split into lone surrogates.

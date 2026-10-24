@@ -115,6 +115,79 @@ void main() {
     // ContentParseException, which would blank the entire course over a
     // single typo. See docs/superpowers/specs/
     // 2026-09-07-offline-answer-evaluation-design.md.
+    group('keywordChecklist meanings (ADR 0014)', () {
+      const base = {
+        'type': 'keywordChecklist',
+        'requiredGroups': [
+          ['like', 'love'],
+          ["don't like", 'hate'],
+        ],
+        'minGroupsMatched': 2,
+      };
+
+      test('parses one meaning per group, in order', () {
+        final spec = EvaluationSpec.fromJson({
+          ...base,
+          'meanings': [
+            {
+              'says': 'The speaker says two things they like.',
+              'en': 'two things you like',
+              'ar': 'شيئين تحبّهما',
+            },
+            {
+              'says': 'The speaker says one thing they do not like.',
+              'en': "one thing you don't like",
+              'ar': 'شيئاً لا تحبّه',
+            },
+          ],
+        }) as KeywordChecklistEvaluationSpec;
+        expect(spec.hasMeanings, isTrue);
+        expect(spec.meanings!.length, 2);
+        expect(
+          spec.meanings![1].hypothesis,
+          'The speaker says one thing they do not like.',
+        );
+        expect(spec.meanings![1].labelEn, "one thing you don't like");
+        expect(spec.meanings![1].labelAr, 'شيئاً لا تحبّه');
+      });
+
+      test('a task without meanings parses with none', () {
+        final spec =
+            EvaluationSpec.fromJson(base) as KeywordChecklistEvaluationSpec;
+        expect(spec.meanings, isNull);
+        expect(spec.hasMeanings, isFalse);
+      });
+
+      test('a meanings list of the wrong length is dropped, not the spec', () {
+        final spec = EvaluationSpec.fromJson({
+          ...base,
+          'meanings': [
+            {
+              'says': 'The speaker likes things.',
+              'en': 'likes',
+              'ar': 'أشياء يحبها',
+            },
+          ],
+        }) as KeywordChecklistEvaluationSpec;
+        expect(spec.requiredGroups.length, 2);
+        expect(spec.meanings, isNull);
+      });
+
+      test('a meaning missing a language, or blank, drops the list', () {
+        for (final bad in [
+          {'says': 'The speaker likes things.', 'en': 'likes'},
+          {'says': 'The speaker likes things.', 'en': 'likes', 'ar': '  '},
+          {'says': 3, 'en': 'likes', 'ar': 'أشياء'},
+        ]) {
+          final spec = EvaluationSpec.fromJson({
+            ...base,
+            'meanings': [bad, bad],
+          }) as KeywordChecklistEvaluationSpec;
+          expect(spec.meanings, isNull, reason: '$bad');
+        }
+      });
+    });
+
     group('malformed but recognized types degrade to null, never throw', () {
       test('numericRange with no min or max', () {
         expect(EvaluationSpec.fromJson({'type': 'numericRange'}), isNull);

@@ -248,7 +248,7 @@ class ActivityFeedbackPanel extends StatelessWidget {
   }
 }
 
-/// The AI pack's explanation of a verdict (ADR 0013): an "Explanation"
+/// The explanation of a verdict (ADR 0014, templated from the content): an "Explanation"
 /// overline, the English, the Arabic when the pack managed one, and the
 /// "Generated on your phone" label that always accompanies it. Feedback
 /// only — it never changes the verdict above it. Renders nothing when the
@@ -297,13 +297,6 @@ class ActivityExplanation extends StatelessWidget {
             style: theme.textTheme.bodyMedium?.copyWith(color: color),
           ),
         ],
-        const SizedBox(height: AppSpace.xxs),
-        Text(
-          l10n.activityFeedbackGeneratedLabel,
-          style: theme.textTheme.bodySmall?.copyWith(
-            color: color.withValues(alpha: 0.8),
-          ),
-        ),
       ],
     );
   }

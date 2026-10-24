@@ -148,4 +148,38 @@ void main() {
     const text = 'I usually work in the morning and cook in the evening.';
     expect(tokenizer.encode(text), tokenizer.encode(text));
   });
+
+  test(
+    'encodePair is [CLS] a [SEP] b [SEP] with segment ids 0/1 (ADR 0014)',
+    () {
+      final t = WordPieceTokenizer.fromVocab(
+        [
+          '[PAD]',
+          '[UNK]',
+          '[CLS]',
+          '[SEP]',
+          'i',
+          'like',
+          'tea',
+          '.',
+          'the',
+          'speaker',
+          'says',
+        ].join('\n'),
+      );
+      final enc = t.encodePair('I like tea.', 'The speaker says.');
+      expect(enc.ids, [2, 4, 5, 6, 7, 3, 8, 9, 10, 7, 3]);
+      expect(enc.typeIds, [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1]);
+      final short = t.encodePair(
+        'I like tea.',
+        'The speaker says.',
+        maxTokens: 8,
+      );
+      expect(short.ids.length, 8);
+      expect(short.ids.first, 2);
+      expect(short.ids.last, 3);
+      // The premise is cut first; the hypothesis survives whole.
+      expect(short.ids.sublist(short.ids.length - 5), [8, 9, 10, 7, 3]);
+    },
+  );
 }
