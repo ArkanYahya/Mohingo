@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "levelId": "a2",
- "contentVersion": "A2-COMPLETE-2026.10.22",
+ "contentVersion": "A2-COMPLETE-2026.10.24",
  "generatedAt": "2026-09-22T20:21:47Z",
  "engine": {
   "name": "kokoro-onnx/kokoro-v1.0",

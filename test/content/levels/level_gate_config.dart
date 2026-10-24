@@ -479,13 +479,6 @@ const _a2 = LevelGateConfig(
   capstoneWordGuide: Range(70, 90),
   capstoneSuiteFile: 'test/content/levels/level_capstones_test.dart',
   audioManifestAssetPath: 'assets/audio/en/A2/manifest.json',
-  // ADR 0014: A1's 286 groups were given meanings on 2026-10-24; A2's 580
-  // are the next content batch. Until then A2 grades by the similarity
-  // fallback, and this number may only rise.
-  meaningsCoverageException: DeclaredException(
-    value: 0.0,
-    reason: 'A2 meanings are authored after A1 (ADR 0014)',
-  ),
 );
 
 /// Every level this suite holds to the standard. Adding B1 means adding a

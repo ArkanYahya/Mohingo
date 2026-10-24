@@ -1,0 +1,739 @@
+{
+  "A2-U1-L1-A05": [
+    {"says": "The speaker says how often they do something.", "en": "how often", "ar": "عدد المرات"},
+    {"says": "The speaker says what they do in their week.", "en": "what you do", "ar": "ما تفعله"},
+    {"says": "The speaker says when they do it.", "en": "when you do it", "ar": "متى تفعله"}
+  ],
+  "A2-U1-L2-A05": [
+    {"says": "The speaker says what is different in their life at the moment.", "en": "what is different at the moment", "ar": "ما المختلف حالياً"},
+    {"says": "The speaker asks the friend a question about her news.", "en": "a question about her news", "ar": "سؤال عن أخبارها"}
+  ],
+  "A2-U1-L3-A05": [
+    {"says": "The speaker says what they are learning or practising at the moment.", "en": "what you are learning", "ar": "ما تتعلمه"},
+    {"says": "The speaker says how often they do it.", "en": "how often", "ar": "عدد المرات"},
+    {"says": "The speaker says how long it takes.", "en": "how long it takes", "ar": "كم يستغرق"}
+  ],
+  "A2-U1-L4-A05": [
+    {"says": "The writer says something positive about what the friend does.", "en": "showing interest", "ar": "إظهار الاهتمام"},
+    {"says": "The writer asks the friend a question.", "en": "two questions", "ar": "سؤالان"},
+    {"says": "The writer says what they enjoy doing these days.", "en": "what you enjoy doing at the moment", "ar": "ما تستمتع به حالياً"}
+  ],
+  "A2-U1-L5-A05": [
+    {"says": "The speaker says something they and the partner both do.", "en": "one thing you both do", "ar": "شيء مشترك بينكما"},
+    {"says": "The speaker says what is different for them at the moment.", "en": "what is different for you now", "ar": "ما المختلف لديك الآن"},
+    {"says": "The speaker asks the partner a question.", "en": "a question for her", "ar": "سؤال لها"}
+  ],
+  "A2-U1-L6-A04": [
+    {"says": "The speaker says what Suhad usually teaches and when.", "en": "what Suhad usually does", "ar": "ما تفعله سهاد عادةً"},
+    {"says": "The speaker says what is new this term.", "en": "what is new this term", "ar": "الجديد هذا الفصل"},
+    {"says": "The speaker gives the reason for the change.", "en": "why", "ar": "السبب"},
+    {"says": "The speaker says how Dina can join.", "en": "how Dina can join", "ar": "كيف تنضم دينا"}
+  ],
+  "A2-U1-L6-A05": [
+    {"says": "The writer says what they usually do.", "en": "what you usually do", "ar": "ما تفعله عادةً"},
+    {"says": "The writer says what is different at the moment.", "en": "what is different at the moment", "ar": "ما المختلف حالياً"},
+    {"says": "The writer gives a reason or joins ideas with but or because.", "en": "the reason", "ar": "السبب"}
+  ],
+  "A2-U1-L7-A03": [
+    {"says": "The speaker reacts to the friend's news with interest.", "en": "reacting to her news", "ar": "الردّ على أخبارها"},
+    {"says": "The speaker says what their own week is like at the moment.", "en": "your week at the moment", "ar": "أسبوعك حالياً"},
+    {"says": "The speaker asks the friend follow-up questions.", "en": "two follow-up questions", "ar": "سؤالان للمتابعة"}
+  ],
+  "A2-U1-L7-A04": [
+    {"says": "The speaker says what they usually do.", "en": "what you usually do", "ar": "ما تفعله عادةً"},
+    {"says": "The speaker says what is different at the moment.", "en": "what is different at the moment", "ar": "ما المختلف حالياً"},
+    {"says": "The speaker gives the reason for the difference.", "en": "why it is different", "ar": "سبب الاختلاف"},
+    {"says": "The speaker says how they feel about it.", "en": "how you feel about it", "ar": "رأيك فيه"}
+  ],
+  "A2-U1-L7-A05": [
+    {"says": "The speaker says what the trip is and where it goes.", "en": "what the trip is", "ar": "ما الرحلة"},
+    {"says": "The speaker says who can go on it.", "en": "who can go", "ar": "من يمكنه الذهاب"},
+    {"says": "The speaker says what is included and what is not.", "en": "what is included", "ar": "ما المشمول"},
+    {"says": "The speaker says what Firas must do before Friday.", "en": "what he must do before Friday", "ar": "ما عليه فعله قبل الجمعة"}
+  ],
+  "A2-U1-L7-A06": [
+    {"says": "The writer says what they usually do.", "en": "what you usually do", "ar": "ما تفعله عادةً"},
+    {"says": "The writer says what is different at the moment.", "en": "what is different at the moment", "ar": "ما المختلف حالياً"},
+    {"says": "The writer gives the reason.", "en": "the reason", "ar": "السبب"},
+    {"says": "The writer asks the friend questions about her course.", "en": "two questions about her course", "ar": "سؤالان عن دورتها"}
+  ],
+  "A2-U2-L1-A05": [
+    {"says": "The speaker says where they were and who was with them.", "en": "where you were and who was with you", "ar": "أين كنت ومن كان معك"},
+    {"says": "The speaker says when it was, in the past.", "en": "when it was", "ar": "متى كان ذلك"},
+    {"says": "The speaker describes what the place was like.", "en": "what the place was like", "ar": "كيف كان المكان"}
+  ],
+  "A2-U2-L2-A05": [
+    {"says": "The speaker tells about a day when they packed or carried things.", "en": "what you did that day", "ar": "ما فعلته ذلك اليوم"},
+    {"says": "The speaker says when it happened.", "en": "when it happened", "ar": "متى حدث"},
+    {"says": "The speaker asks the neighbour questions about her moving day.", "en": "two questions about her day", "ar": "سؤالان عن يومها"}
+  ],
+  "A2-U2-L3-A05": [
+    {"says": "The speaker tells what they did, using past verbs such as went, saw or bought.", "en": "what you did, in the past", "ar": "ما فعلته بصيغة الماضي"},
+    {"says": "The speaker says who they were with or where they went.", "en": "who you were with or where", "ar": "مع من كنت أو أين"},
+    {"says": "The speaker says one thing that went wrong.", "en": "one thing that went wrong", "ar": "شيء واحد سار على نحو خاطئ"}
+  ],
+  "A2-U2-L4-A05": [
+    {"says": "The writer asks the friend questions about what she did.", "en": "two questions with did", "ar": "سؤالان بـ did"},
+    {"says": "The writer says one thing they did not do.", "en": "one thing you did not do", "ar": "شيء لم تفعله"},
+    {"says": "The writer says when they did something recently.", "en": "when you did it", "ar": "متى فعلته"}
+  ],
+  "A2-U2-L5-A05": [
+    {"says": "The speaker asks the friend what happened on her journey.", "en": "questions about what happened", "ar": "أسئلة عما حدث"},
+    {"says": "The speaker puts events in order with words such as first, then or finally.", "en": "the order of events", "ar": "ترتيب الأحداث"},
+    {"says": "The speaker tells about a journey of their own that went wrong.", "en": "your own journey that went wrong", "ar": "رحلتك التي ساءت"}
+  ],
+  "A2-U2-L6-A04": [
+    {"says": "The speaker says that a driver found the wallet on the bus.", "en": "the driver finding it on the bus", "ar": "أن السائق وجدها في الحافلة"},
+    {"says": "The speaker says the driver gave it to the manager.", "en": "the manager getting it", "ar": "تسليمها إلى المدير"},
+    {"says": "The speaker says the wallet is now at the police station.", "en": "where it is now", "ar": "أين هي الآن"},
+    {"says": "The speaker puts the events in order with words such as first, then or finally.", "en": "the order of events", "ar": "ترتيب الأحداث"}
+  ],
+  "A2-U2-L6-A05": [
+    {"says": "The writer says when the day happened.", "en": "when it was", "ar": "متى كان ذلك"},
+    {"says": "The writer puts the events in order with words such as first, then or finally.", "en": "the order of events", "ar": "ترتيب الأحداث"},
+    {"says": "The writer tells what happened, in the past.", "en": "what happened", "ar": "ما حدث"},
+    {"says": "The writer says how the day ended or how they felt at the end.", "en": "how it ended", "ar": "كيف انتهى اليوم"}
+  ],
+  "A2-U2-L7-A03": [
+    {"says": "The speaker says when the day was.", "en": "when it was", "ar": "متى كان ذلك"},
+    {"says": "The speaker says who they were with or where they were.", "en": "who you were with", "ar": "مع من كنت"},
+    {"says": "The speaker tells what happened, in order.", "en": "what happened", "ar": "ما حدث"},
+    {"says": "The speaker says why they still remember the day.", "en": "why you still remember it", "ar": "لماذا تذكره حتى الآن"}
+  ],
+  "A2-U2-L7-A04": [
+    {"says": "The speaker says when the day was.", "en": "when it was", "ar": "متى كان ذلك"},
+    {"says": "The speaker describes the scene or the people, in the past.", "en": "where and how it was", "ar": "أين وكيف كان"},
+    {"says": "The speaker tells the events in order with words such as first, then or finally.", "en": "the events in order", "ar": "الأحداث بالترتيب"},
+    {"says": "The speaker says why they still remember the day.", "en": "why you still remember it", "ar": "لماذا تذكره حتى الآن"}
+  ],
+  "A2-U2-L7-A05": [
+    {"says": "The speaker says the day started with a walk by the river in the morning.", "en": "the morning walk", "ar": "المشي الصباحي"},
+    {"says": "The speaker says the children played football and everyone ate lunch together.", "en": "the football and the lunch", "ar": "الكرة والغداء"},
+    {"says": "The speaker says photographs were taken at the end.", "en": "the photographs", "ar": "الصور"},
+    {"says": "The speaker says what Firas must bring next time.", "en": "what to bring next time", "ar": "ما يجب إحضاره المرة القادمة"}
+  ],
+  "A2-U2-L7-A06": [
+    {"says": "The writer says when the day was.", "en": "when it was", "ar": "متى كان ذلك"},
+    {"says": "The writer puts the events in order with words such as first, then or finally.", "en": "the order of events", "ar": "ترتيب الأحداث"},
+    {"says": "The writer tells what happened, in the past.", "en": "what happened", "ar": "ما حدث"},
+    {"says": "The writer says why the day stayed with them.", "en": "why the day stayed with you", "ar": "لماذا بقي اليوم في ذاكرتك"}
+  ],
+  "A2-U3-L1-A05": [
+    {"says": "The speaker says how tall or how big the friend is.", "en": "her height or build", "ar": "طولها أو بنيتها"},
+    {"says": "The speaker describes the friend's hair, eyes or face.", "en": "her hair", "ar": "شعرها"},
+    {"says": "The speaker says what the friend is wearing or carrying.", "en": "something he will see quickly", "ar": "تفصيل يلاحظه سريعاً"}
+  ],
+  "A2-U3-L2-A05": [
+    {"says": "The speaker describes Hala's character.", "en": "two qualities", "ar": "صفتان"},
+    {"says": "The speaker gives an example of how Hala behaves.", "en": "an example for each", "ar": "مثال على كل صفة"},
+    {"says": "The speaker asks the friend a question about her new office.", "en": "a question about her office", "ar": "سؤال عن مكتبها"}
+  ],
+  "A2-U3-L3-A05": [
+    {"says": "The speaker compares two people, saying one is more or less something.", "en": "two comparisons", "ar": "مقارنتان"},
+    {"says": "The speaker compares one person with another.", "en": "comparing with than", "ar": "المقارنة بـ than"},
+    {"says": "The speaker says which person they will ask and why.", "en": "who you will ask and why", "ar": "من ستسأل ولماذا"}
+  ],
+  "A2-U3-L4-A05": [
+    {"says": "The writer says who is the best or the most at something.", "en": "who is the best at what", "ar": "من الأفضل في ماذا"},
+    {"says": "The writer gives each person a job or role.", "en": "a role for each person", "ar": "دور لكل شخص"},
+    {"says": "The writer explains why each person suits the role.", "en": "why each one is the best choice", "ar": "لماذا كلٌّ هو الخيار الأفضل"}
+  ],
+  "A2-U3-L5-A05": [
+    {"says": "The speaker suggests a person and describes them as someone who does something.", "en": "a person described with someone who", "ar": "شخص موصوف بـ someone who"},
+    {"says": "The speaker says why the person can be trusted or is kind.", "en": "why she can be trusted", "ar": "لماذا يُمكن الوثوق بها"},
+    {"says": "The speaker asks the neighbour a question about what her mother needs.", "en": "a question about what her mother needs", "ar": "سؤال عما تحتاجه أمها"}
+  ],
+  "A2-U3-L6-A04": [
+    {"says": "The speaker says when and where the team meets.", "en": "when and where the team meets", "ar": "متى وأين يلتقي الفريق"},
+    {"says": "The speaker says the two kinds of person the team needs.", "en": "the two kinds of person needed", "ar": "نوعا الأشخاص المطلوبين"},
+    {"says": "The speaker says the one condition for joining.", "en": "the condition", "ar": "الشرط"},
+    {"says": "The speaker invites Ayman to join the team.", "en": "the invitation to join", "ar": "الدعوة إلى الانضمام"}
+  ],
+  "A2-U3-L6-A05": [
+    {"says": "The writer says what each person is good at.", "en": "what each one is good at", "ar": "ما يُجيده كل واحد"},
+    {"says": "The writer says a quality the two people share.", "en": "a quality they share", "ar": "صفة مشتركة بينهما"},
+    {"says": "The writer explains the reasons, joining ideas with and, but or because.", "en": "the reasons", "ar": "الأسباب"},
+    {"says": "The writer says why the two fit together as a team.", "en": "why they fit together", "ar": "لماذا يتناسبان معاً"}
+  ],
+  "A2-U3-L7-A03": [
+    {"says": "The speaker compares the candidates with each other.", "en": "comparing two candidates", "ar": "مقارنة مرشّحَين"},
+    {"says": "The speaker agrees or disagrees politely with the project leader.", "en": "agreeing or disagreeing politely", "ar": "الموافقة أو المخالفة بأدب"},
+    {"says": "The speaker chooses two names.", "en": "the two names you choose", "ar": "الاسمان اللذان تختارهما"}
+  ],
+  "A2-U3-L7-A04": [
+    {"says": "The speaker describes the qualities of the people chosen.", "en": "describing the two people", "ar": "وصف الشخصين"},
+    {"says": "The speaker compares the two people with each other.", "en": "comparing them", "ar": "المقارنة بينهما"},
+    {"says": "The speaker says which part of the work each person is best at.", "en": "what each one is best at", "ar": "ما يُجيده كلٌّ منهما"}
+  ],
+  "A2-U3-L7-A05": [
+    {"says": "The speaker says when the training is.", "en": "when the training is", "ar": "موعد التدريب"},
+    {"says": "The speaker says what to bring.", "en": "what to bring", "ar": "ما يجب إحضاره"},
+    {"says": "The speaker says what the centre pays for and what it does not.", "en": "what the centre pays for", "ar": "ما يدفعه المركز"},
+    {"says": "The speaker says what to do if they cannot come.", "en": "what to do if they cannot come", "ar": "ما يُفعَل إن تعذّر الحضور"}
+  ],
+  "A2-U3-L7-A06": [
+    {"says": "The writer gives each chosen person a job.", "en": "a job for each person", "ar": "عمل لكل شخص"},
+    {"says": "The writer compares the chosen people with the one not chosen.", "en": "comparing with the other candidate", "ar": "المقارنة مع المرشّح الآخر"},
+    {"says": "The writer explains the reasons with and, but or because.", "en": "the reasons", "ar": "الأسباب"},
+    {"says": "The writer names the two people they recommend.", "en": "your recommendation", "ar": "توصيتك"}
+  ],
+  "A2-U4-L1-A05": [
+    {"says": "The speaker says what there was in the old home.", "en": "what there was", "ar": "ما كان موجوداً"},
+    {"says": "The speaker says what there was not in the old home.", "en": "what there wasn't", "ar": "ما لم يكن موجوداً"},
+    {"says": "The speaker says one thing they miss about it.", "en": "one thing you miss", "ar": "شيء تفتقده"}
+  ],
+  "A2-U4-L2-A05": [
+    {"says": "The speaker says how much or how many of something there is in the area.", "en": "how much or how many", "ar": "الكمية أو العدد"},
+    {"says": "The speaker names shops, transport or other places nearby.", "en": "the places nearby", "ar": "الأماكن القريبة"},
+    {"says": "The speaker asks Rana a question about what she needs.", "en": "a question about what she needs", "ar": "سؤال عما تحتاجه"}
+  ],
+  "A2-U4-L3-A05": [
+    {"says": "The speaker says one area is cheaper, bigger or quieter than the other.", "en": "which one is cheaper, bigger or quieter", "ar": "أيّهما أرخص أو أكبر أو أهدأ"},
+    {"says": "The speaker says one area is not as something as the other.", "en": "a sentence with not as … as", "ar": "جملة بـ not as … as"},
+    {"says": "The speaker says where they would live and why.", "en": "where you would live and why", "ar": "أين ستسكن ولماذا"}
+  ],
+  "A2-U4-L4-A05": [
+    {"says": "The writer says one thing in the flat is good enough.", "en": "one thing that is good enough", "ar": "شيء واحد كافٍ"},
+    {"says": "The writer says things in the flat are too small, too noisy or too far.", "en": "two things that are too much", "ar": "شيئان مبالغان"},
+    {"says": "The writer says what they want to do next.", "en": "what to do next", "ar": "الخطوة التالية"}
+  ],
+  "A2-U4-L5-A05": [
+    {"says": "The speaker says something in the flat is broken or does not work.", "en": "the problem", "ar": "المشكلة"},
+    {"says": "The speaker politely asks the office to do something.", "en": "a polite request", "ar": "طلب مهذّب"},
+    {"says": "The speaker explains how the problem affects them.", "en": "how it affects you", "ar": "أثر المشكلة عليك"}
+  ],
+  "A2-U4-L6-A04": [
+    {"says": "The speaker says how much the rent is.", "en": "the rent", "ar": "الأجرة"},
+    {"says": "The speaker says what is included in the rent.", "en": "what is included", "ar": "ما المشمول"},
+    {"says": "The speaker says what the deposit is.", "en": "the deposit", "ar": "التأمين"},
+    {"says": "The speaker says when Bilal can see the flat.", "en": "when he can see it", "ar": "متى يمكنه رؤيتها"}
+  ],
+  "A2-U4-L6-A05": [
+    {"says": "The writer compares the two homes.", "en": "comparing the two homes", "ar": "المقارنة بين المسكنَين"},
+    {"says": "The writer says which home they recommend.", "en": "which one you recommend", "ar": "أيّهما توصي به"},
+    {"says": "The writer gives the reason for the recommendation.", "en": "your reason", "ar": "سببك"},
+    {"says": "The writer warns the friend about something to check.", "en": "one thing to check", "ar": "شيء واحد ينبغي التحقق منه"}
+  ],
+  "A2-U4-L7-A03": [
+    {"says": "The speaker asks Yara what matters most to her.", "en": "asking what matters most", "ar": "السؤال عمّا يهمّها أكثر"},
+    {"says": "The speaker compares the two homes in size, price, quiet or distance.", "en": "the advantages", "ar": "المزايا"},
+    {"says": "The speaker mentions a problem or disadvantage of a home.", "en": "the disadvantages", "ar": "العيوب"}
+  ],
+  "A2-U4-L7-A04": [
+    {"says": "The speaker names the two homes.", "en": "naming the two homes", "ar": "تسمية المسكنَين"},
+    {"says": "The speaker compares the two homes.", "en": "comparing them", "ar": "المقارنة بينهما"},
+    {"says": "The speaker says clearly which home Yara should take.", "en": "which one she should take", "ar": "أيّهما تأخذ"},
+    {"says": "The speaker gives a practical reason.", "en": "a practical reason", "ar": "سبب عملي"}
+  ],
+  "A2-U4-L7-A05": [
+    {"says": "The speaker says the new rent and the condition attached to it.", "en": "the new rent and its condition", "ar": "الأجرة الجديدة وشرطها"},
+    {"says": "The speaker says what the deposit is.", "en": "the deposit", "ar": "التأمين"},
+    {"says": "The speaker says the lift will be repaired in March.", "en": "what changes in March", "ar": "ما يتغيّر في آذار"},
+    {"says": "The speaker says the two rules: no pets and water not included.", "en": "the two rules", "ar": "القاعدتان"}
+  ],
+  "A2-U4-L7-A06": [
+    {"says": "The writer names the two homes.", "en": "naming the two homes", "ar": "تسمية المسكنَين"},
+    {"says": "The writer compares the two homes.", "en": "comparing them", "ar": "المقارنة بينهما"},
+    {"says": "The writer says which home they recommend.", "en": "your choice for her", "ar": "اختيارك لها"},
+    {"says": "The writer warns about a possible problem.", "en": "one possible problem", "ar": "مشكلة محتملة"}
+  ],
+  "A2-U5-L1-A05": [
+    {"says": "The speaker says how much of an ingredient the dish needs.", "en": "how much of two ingredients", "ar": "كمية مكوّنَين"},
+    {"says": "The speaker says how many of an ingredient the dish needs.", "en": "how many of one ingredient", "ar": "عدد مكوّن واحد"},
+    {"says": "The speaker names ingredients or says where they buy them.", "en": "the ingredients and where you buy them", "ar": "المكوّنات ومن أين تشتريها"}
+  ],
+  "A2-U5-L2-A05": [
+    {"says": "The speaker puts the steps in order with words such as first, then or finally.", "en": "the steps in order", "ar": "الخطوات بالترتيب"},
+    {"says": "The speaker tells the friend what to do, such as chop, boil or stir.", "en": "what to do", "ar": "ما يُفعَل"},
+    {"says": "The speaker says how long a step takes or how much to use.", "en": "how long or how much", "ar": "المدة أو الكمية"}
+  ],
+  "A2-U5-L3-A05": [
+    {"says": "The speaker says what there is a little of.", "en": "what there is a little of", "ar": "ما يوجد منه قليل"},
+    {"says": "The speaker says what there are a few of.", "en": "what there are a few of", "ar": "ما يوجد منه بعض"},
+    {"says": "The speaker says a dish they could make.", "en": "a dish you could make", "ar": "طبق يمكنك إعداده"}
+  ],
+  "A2-U5-L4-A05": [
+    {"says": "The writer says what they ordered.", "en": "what you ordered", "ar": "ما طلبته"},
+    {"says": "The writer says what arrived instead.", "en": "what arrived", "ar": "ما وصل"},
+    {"says": "The writer says what is missing or extra.", "en": "what is missing", "ar": "ما الناقص"},
+    {"says": "The writer asks the restaurant to do something.", "en": "what you want them to do", "ar": "ما تريد منهم فعله"}
+  ],
+  "A2-U5-L5-A05": [
+    {"says": "The speaker says what was wrong with the meal.", "en": "what happened", "ar": "ما حدث"},
+    {"says": "The speaker makes a polite request.", "en": "a polite request", "ar": "طلب مهذّب"},
+    {"says": "The speaker agrees what the restaurant will do and when.", "en": "what they will do", "ar": "ما سيفعلونه"}
+  ],
+  "A2-U5-L6-A04": [
+    {"says": "The speaker says the packet serves three people.", "en": "how many it serves", "ar": "لكم شخصاً يكفي"},
+    {"says": "The speaker says what to add, water and oil.", "en": "what to add", "ar": "ما يُضاف"},
+    {"says": "The speaker says how long to cook it.", "en": "how long it cooks", "ar": "مدة الطهي"},
+    {"says": "The speaker says not to add salt.", "en": "the warning about salt", "ar": "التحذير بشأن الملح"}
+  ],
+  "A2-U5-L6-A05": [
+    {"says": "The writer says how many people the dish serves.", "en": "how many it serves", "ar": "لكم شخصاً يكفي"},
+    {"says": "The writer lists the ingredients with their amounts.", "en": "the amounts", "ar": "الكميات"},
+    {"says": "The writer puts the steps in order with words such as first, then or finally.", "en": "the steps in order", "ar": "الخطوات بالترتيب"},
+    {"says": "The writer says what to do, such as chop, boil or stir.", "en": "the cooking actions", "ar": "أفعال الطهي"}
+  ],
+  "A2-U5-L7-A03": [
+    {"says": "The speaker says what was ordered and what was sent by mistake.", "en": "the mistake", "ar": "الخطأ"},
+    {"says": "The speaker says what is missing or extra.", "en": "what is missing", "ar": "ما الناقص"},
+    {"says": "The speaker asks the restaurant to send, replace or refund.", "en": "the solution you ask for", "ar": "الحل الذي تطلبه"},
+    {"says": "The speaker explains why they prefer that solution.", "en": "why you prefer it", "ar": "لماذا تفضّله"}
+  ],
+  "A2-U5-L7-A04": [
+    {"says": "The speaker gives the amounts of the ingredients.", "en": "the amounts", "ar": "الكميات"},
+    {"says": "The speaker puts the steps in order with words such as first, then or finally.", "en": "the steps in order", "ar": "الخطوات بالترتيب"},
+    {"says": "The speaker says what to do, such as chop, boil or stir.", "en": "the cooking actions", "ar": "أفعال الطهي"},
+    {"says": "The speaker says one thing not to do.", "en": "one thing not to do", "ar": "شيء لا يجب فعله"}
+  ],
+  "A2-U5-L7-A05": [
+    {"says": "The speaker says the restaurant is sending the vegetable plates and the bread.", "en": "what they are sending", "ar": "ما يرسلونه"},
+    {"says": "The speaker says what the restaurant will not charge for.", "en": "what they will not charge for", "ar": "ما لن يحاسبوا عليه"},
+    {"says": "The speaker says when the driver comes.", "en": "when the driver comes", "ar": "متى يأتي السائق"},
+    {"says": "The speaker says Samia must give the wrong plates back.", "en": "what they need from her", "ar": "ما يحتاجونه منها"}
+  ],
+  "A2-U5-L7-A06": [
+    {"says": "The writer puts the recipe steps in order with words such as first, then or finally.", "en": "the steps in order", "ar": "الخطوات بالترتيب"},
+    {"says": "The writer gives the amounts of the ingredients.", "en": "the amounts", "ar": "الكميات"},
+    {"says": "The writer says what was wrong with the order.", "en": "the wrong order", "ar": "الطلب الخاطئ"},
+    {"says": "The writer says what the restaurant agreed to do.", "en": "what the restaurant agreed", "ar": "ما وافق عليه المطعم"}
+  ],
+  "A2-U6-L1-A05": [
+    {"says": "The speaker says where they are going.", "en": "where you are going", "ar": "إلى أين ستذهب"},
+    {"says": "The speaker says how long they are going to stay.", "en": "how long you will stay", "ar": "مدة إقامتك"},
+    {"says": "The speaker says things they plan to do there.", "en": "two things you plan to do", "ar": "شيئان تنوي فعلهما"}
+  ],
+  "A2-U6-L2-A05": [
+    {"says": "The speaker asks to book a room or asks what rooms are free.", "en": "the room and nights you need", "ar": "الغرفة والليالي المطلوبة"},
+    {"says": "The speaker says what time they are arriving.", "en": "your arrival time", "ar": "وقت وصولك"},
+    {"says": "The speaker asks about the price.", "en": "checking the price", "ar": "التحقق من السعر"}
+  ],
+  "A2-U6-L3-A05": [
+    {"says": "The speaker compares two ways of travelling in time, price or directness.", "en": "comparing the two ways", "ar": "المقارنة بين الطريقتَين"},
+    {"says": "The speaker decides which way they will take.", "en": "which one you will take", "ar": "أيّهما ستأخذ"},
+    {"says": "The speaker offers to do something for the other traveller.", "en": "an offer to help", "ar": "عرض للمساعدة"}
+  ],
+  "A2-U6-L4-A05": [
+    {"says": "The writer says what could go wrong, starting with if.", "en": "two things that could go wrong", "ar": "شيئان قد يسوءان"},
+    {"says": "The writer says what they will do in each case.", "en": "what you will do", "ar": "ما ستفعله"},
+    {"says": "The writer describes the plan for the meeting or the flight.", "en": "the plan", "ar": "الخطة"}
+  ],
+  "A2-U6-L5-A05": [
+    {"says": "The speaker confirms the new arrival time.", "en": "the new arrival time", "ar": "وقت الوصول الجديد"},
+    {"says": "The speaker says what they will do when the colleague lands.", "en": "what you will do when she lands", "ar": "ما ستفعله عند وصولها"},
+    {"says": "The speaker says what the colleague should do before leaving the airport.", "en": "what she should do before leaving", "ar": "ما عليها فعله قبل الخروج"}
+  ],
+  "A2-U6-L6-A04": [
+    {"says": "The speaker says the early coach is full and Hanan is taking a later one.", "en": "what has changed", "ar": "ما تغيّر"},
+    {"says": "The speaker says what time Hanan now arrives.", "en": "when she now arrives", "ar": "وقت وصولها الجديد"},
+    {"says": "The speaker says what Hanan plans to do instead of the market.", "en": "what she plans to do instead", "ar": "ما تنوي فعله بديلاً"},
+    {"says": "The speaker says what Ziad must do before Friday.", "en": "what he must do before Friday", "ar": "ما عليه فعله قبل الجمعة"}
+  ],
+  "A2-U6-L6-A05": [
+    {"says": "The writer says the travel arrangements that are fixed.", "en": "the fixed travel arrangements", "ar": "ترتيبات السفر المحددة"},
+    {"says": "The writer says what they are going to do on each day.", "en": "what you are going to do", "ar": "ما ستفعلونه"},
+    {"says": "The writer gives an alternative if the weather is bad.", "en": "an alternative for bad weather", "ar": "بديل إن ساء الطقس"},
+    {"says": "The writer gives times or the transport.", "en": "the times", "ar": "الأوقات"}
+  ],
+  "A2-U6-L7-A03": [
+    {"says": "The speaker asks Basma what matters most to her.", "en": "asking what matters most", "ar": "السؤال عمّا يهمّها أكثر"},
+    {"says": "The speaker compares the two places to stay.", "en": "comparing the two places", "ar": "المقارنة بين المكانَين"},
+    {"says": "The speaker agrees what they are doing on Saturday.", "en": "the Saturday plan", "ar": "خطة السبت"}
+  ],
+  "A2-U6-L7-A04": [
+    {"says": "The speaker says the arrangements that are fixed.", "en": "the fixed arrangements", "ar": "الترتيبات المحددة"},
+    {"says": "The speaker says what they are going to do each day.", "en": "what you are going to do", "ar": "ما ستفعلونه"},
+    {"says": "The speaker gives a Plan B if the weather changes.", "en": "a Plan B", "ar": "خطة بديلة"}
+  ],
+  "A2-U6-L7-A05": [
+    {"says": "The speaker says the four o'clock coach no longer runs.", "en": "what has changed", "ar": "ما تغيّر"},
+    {"says": "The speaker says the last coach now leaves earlier.", "en": "what it means for Sunday", "ar": "ما يعنيه ذلك للأحد"},
+    {"says": "The speaker says Basma must change her ticket.", "en": "changing the ticket", "ar": "تغيير التذكرة"},
+    {"says": "The speaker says when she must do it.", "en": "when she must do it", "ar": "متى عليها فعل ذلك"}
+  ],
+  "A2-U6-L7-A06": [
+    {"says": "The writer gives the times that are fixed.", "en": "the fixed times", "ar": "الأوقات المحددة"},
+    {"says": "The writer says what they are going to do each day.", "en": "what you are going to do", "ar": "ما ستفعلونه"},
+    {"says": "The writer gives an alternative if it rains.", "en": "an alternative if it rains", "ar": "بديل إن أمطرت"},
+    {"says": "The writer gives the new Sunday coach time.", "en": "the new coach time", "ar": "وقت الحافلة الجديد"}
+  ],
+  "A2-U7-L1-A05": [
+    {"says": "The speaker says how they feel or what hurts.", "en": "two things you feel", "ar": "شيئان تشعر بهما"},
+    {"says": "The speaker says what they should or should not do.", "en": "advice with should", "ar": "نصيحة بـ should"},
+    {"says": "The speaker mentions rest, sleep, drinking or staying at home.", "en": "what to do to get better", "ar": "ما يُفعَل للتحسّن"}
+  ],
+  "A2-U7-L2-A05": [
+    {"says": "The speaker asks what they have to do or do not have to do.", "en": "what you have to do", "ar": "ما عليك فعله"},
+    {"says": "The speaker asks about something on the label or instructions.", "en": "one thing on the label", "ar": "شيء على الملصق"},
+    {"says": "The speaker is polite, saying please, excuse me or thank you.", "en": "polite words", "ar": "عبارات مهذّبة"}
+  ],
+  "A2-U7-L3-A05": [
+    {"says": "The speaker says the friend is allergic and must not eat something.", "en": "what your friend must not eat", "ar": "ما يجب ألا تأكله صديقتك"},
+    {"says": "The speaker asks the waiter to make sure or check.", "en": "asking the waiter to check", "ar": "طلب التحقق من النادل"},
+    {"says": "The speaker names foods such as nuts, eggs or bread.", "en": "the foods to check", "ar": "الأطعمة المطلوب التحقق منها"}
+  ],
+  "A2-U7-L4-A05": [
+    {"says": "The writer says the purpose of each change with to and a verb.", "en": "the purpose of each change", "ar": "غرض كل تغيير"},
+    {"says": "The writer suggests small healthy changes such as walking or drinking water.", "en": "three small changes", "ar": "ثلاثة تغييرات صغيرة"},
+    {"says": "The writer says one thing nobody has to do.", "en": "one thing nobody has to do", "ar": "شيء لا يجب على أحد فعله"}
+  ],
+  "A2-U7-L5-A05": [
+    {"says": "The speaker says where it hurts or what the symptom is.", "en": "where it hurts", "ar": "موضع الألم"},
+    {"says": "The speaker says how long they have had it or when it started.", "en": "how long you have had it", "ar": "منذ متى"},
+    {"says": "The speaker says whether it has changed, better or worse.", "en": "whether it has changed", "ar": "هل تغيّر"}
+  ],
+  "A2-U7-L6-A04": [
+    {"says": "The speaker says Amal does not have to come back this month.", "en": "what Amal doesn't have to do", "ar": "ما لا يجب على أمل فعله"},
+    {"says": "The speaker says the two habits Amal should keep.", "en": "the two habits to keep", "ar": "العادتان اللتان تحافظ عليهما"},
+    {"says": "The speaker says when Amal must ring the clinic.", "en": "when she must ring", "ar": "متى يجب أن تتصل"},
+    {"says": "The speaker says the results are normal.", "en": "the good news", "ar": "الخبر الجيد"}
+  ],
+  "A2-U7-L6-A05": [
+    {"says": "The writer says what the friend should or does not have to do.", "en": "what he should do", "ar": "ما عليه فعله"},
+    {"says": "The writer mentions rest, sleep, food or water.", "en": "rest, sleep, food and water", "ar": "الراحة والنوم والطعام والماء"},
+    {"says": "The writer gives the reason for the advice.", "en": "why", "ar": "السبب"},
+    {"says": "The writer says what to do if it gets worse.", "en": "what to do if it gets worse", "ar": "ما يُفعَل إن ساءت الحال"}
+  ],
+  "A2-U7-L7-A03": [
+    {"says": "The speaker asks the visitor where it hurts or what is wrong.", "en": "asking where it hurts", "ar": "السؤال عن موضع الألم"},
+    {"says": "The speaker asks how long the visitor has had it.", "en": "asking how long", "ar": "السؤال منذ متى"},
+    {"says": "The speaker asks whether it has changed.", "en": "asking whether it has changed", "ar": "السؤال هل تغيّر"},
+    {"says": "The speaker tells the visitor what happens next.", "en": "what happens next", "ar": "ما سيحدث بعد ذلك"}
+  ],
+  "A2-U7-L7-A04": [
+    {"says": "The speaker says the visitor's shoulder hurts.", "en": "where it hurts", "ar": "موضع الألم"},
+    {"says": "The speaker says how long the visitor has had it.", "en": "how long he has had it", "ar": "منذ متى يعاني منه"},
+    {"says": "The speaker says whether it has changed.", "en": "whether it has changed", "ar": "هل تغيّر"},
+    {"says": "The speaker says what the visitor asked.", "en": "what he asked you", "ar": "ما سألك عنه"}
+  ],
+  "A2-U7-L7-A05": [
+    {"says": "The speaker says to keep moving the arm gently.", "en": "what to keep doing", "ar": "ما يواصل فعله"},
+    {"says": "The speaker says he does not have to rest the arm completely.", "en": "what he doesn't have to do", "ar": "ما لا يجب عليه فعله"},
+    {"says": "The speaker says to come back in two weeks if it is the same.", "en": "when to come back", "ar": "متى يعود"},
+    {"says": "The speaker says to ring straight away if it gets worse.", "en": "when to ring instead", "ar": "متى يتصل بدلاً من ذلك"}
+  ],
+  "A2-U7-L7-A06": [
+    {"says": "The writer says the pain is in the shoulder.", "en": "where the pain is", "ar": "موضع الألم"},
+    {"says": "The writer says how long he has had it.", "en": "how long he has had it", "ar": "منذ متى"},
+    {"says": "The writer says what the nurse wrote he should and does not have to do.", "en": "what the nurse wrote", "ar": "ما كتبته الممرضة"},
+    {"says": "The writer says when the family should ring the clinic.", "en": "when to ring the clinic", "ar": "متى يتصلون بالعيادة"}
+  ],
+  "A2-U8-L1-A05": [
+    {"says": "The speaker says things the cousin has to do.", "en": "two things she has to do", "ar": "شيئان عليها فعلهما"},
+    {"says": "The speaker says one thing the cousin does not have to do.", "en": "one thing she doesn't have to do", "ar": "شيء لا يجب عليها فعله"},
+    {"says": "The speaker mentions the job's duties or the deadline.", "en": "the duties and the deadline", "ar": "المهام والموعد النهائي"}
+  ],
+  "A2-U8-L2-A05": [
+    {"says": "The speaker says one thing they have done before.", "en": "one thing you have done before", "ar": "شيء فعلته من قبل"},
+    {"says": "The speaker says one thing they have never done.", "en": "one thing you have never done", "ar": "شيء لم تفعله أبداً"},
+    {"says": "The speaker says one thing they could do well a few years ago.", "en": "one thing you could do years ago", "ar": "شيء كنت تجيده قبل سنوات"},
+    {"says": "The speaker is polite, saying thank you or excuse me.", "en": "polite words", "ar": "عبارات مهذّبة"}
+  ],
+  "A2-U8-L3-A05": [
+    {"says": "The speaker says how to do each task, such as carefully or politely.", "en": "how to do each thing", "ar": "كيف يُفعَل كل شيء"},
+    {"says": "The speaker names tasks such as answering the phone or writing a form.", "en": "three things to do", "ar": "ثلاثة أشياء يفعلها"},
+    {"says": "The speaker tells the trainee what to do, with please, make sure or always.", "en": "the instructions", "ar": "التعليمات"}
+  ],
+  "A2-U8-L4-A05": [
+    {"says": "The writer says what they enjoy doing.", "en": "what you enjoy doing", "ar": "ما تستمتع بفعله"},
+    {"says": "The writer says what they want or hope to learn or do.", "en": "what you want to learn or hope to do", "ar": "ما تريد تعلمه أو تأمله"},
+    {"says": "The writer talks about a course or its parts.", "en": "the course", "ar": "الدورة"},
+    {"says": "The writer says why they chose that course.", "en": "why you chose it", "ar": "لماذا اختَرتها"}
+  ],
+  "A2-U8-L5-A05": [
+    {"says": "The speaker asks politely, with could you or is it possible.", "en": "polite questions", "ar": "أسئلة مهذّبة"},
+    {"says": "The speaker asks about the fee, the start date, the timetable or how to enrol.", "en": "three things you do not know", "ar": "ثلاثة أشياء لا تعرفها"},
+    {"says": "The speaker greets, gives their name or thanks the office.", "en": "a greeting and thanks", "ar": "تحية وشكر"},
+    {"says": "The speaker checks something they were told.", "en": "checking one thing", "ar": "التحقق من شيء واحد"}
+  ],
+  "A2-U8-L6-A04": [
+    {"says": "The speaker says the son has to send a letter and a referee's name.", "en": "what he has to send", "ar": "ما عليه إرساله"},
+    {"says": "The speaker says the son does not need a qualification.", "en": "what he does not need", "ar": "ما لا يحتاجه"},
+    {"says": "The speaker says the deadline is the ninth of May.", "en": "the last day", "ar": "آخر موعد"},
+    {"says": "The speaker says the son should give the hours he is available.", "en": "his available hours", "ar": "أوقات تفرّغه"}
+  ],
+  "A2-U8-L6-A05": [
+    {"says": "The writer names the role they are applying for.", "en": "the role", "ar": "الوظيفة"},
+    {"says": "The writer says what they can do or have done before.", "en": "what you can do and have done", "ar": "ما تستطيعه وما فعلته"},
+    {"says": "The writer says when they are free.", "en": "your free hours", "ar": "أوقات تفرّغك"},
+    {"says": "The writer says why they want the role.", "en": "why you want it", "ar": "لماذا تريدها"}
+  ],
+  "A2-U8-L7-A03": [
+    {"says": "The speaker asks politely, with could you or is it possible.", "en": "polite questions", "ar": "أسئلة مهذّبة"},
+    {"says": "The speaker asks about the training, the pay, the hours or the uniform.", "en": "two things the notice did not say", "ar": "شيئان لم يذكرهما الإعلان"},
+    {"says": "The speaker says what they can do, have done or when they are free.", "en": "about yourself", "ar": "عن نفسك"},
+    {"says": "The speaker greets, gives their name or thanks the office.", "en": "a greeting and thanks", "ar": "تحية وشكر"}
+  ],
+  "A2-U8-L7-A04": [
+    {"says": "The speaker says what the job needs.", "en": "what the job needs", "ar": "ما تحتاجه الوظيفة"},
+    {"says": "The speaker says what they can do.", "en": "what you can do", "ar": "ما تستطيعه"},
+    {"says": "The speaker says one thing they have done before.", "en": "one thing you have done before", "ar": "شيء فعلته من قبل"},
+    {"says": "The speaker says one thing they have never done.", "en": "one thing you have never done", "ar": "شيء لم تفعله أبداً"}
+  ],
+  "A2-U8-L7-A05": [
+    {"says": "The speaker says the day and time of the meeting.", "en": "the day and time", "ar": "اليوم والوقت"},
+    {"says": "The speaker says to bring something with his name and photograph.", "en": "what to bring", "ar": "ما يجب إحضاره"},
+    {"says": "The speaker says he does not have to prepare anything.", "en": "what he does not have to do", "ar": "ما لا يجب عليه فعله"},
+    {"says": "The speaker says to ring the office if he cannot come.", "en": "what to do if he cannot come", "ar": "ما يُفعَل إن تعذّر الحضور"}
+  ],
+  "A2-U8-L7-A06": [
+    {"says": "The writer says which role they want and where they saw it.", "en": "the role and where you saw it", "ar": "الوظيفة وأين رأيتها"},
+    {"says": "The writer says what they can do.", "en": "two things you can do", "ar": "شيئان تستطيعهما"},
+    {"says": "The writer says what they have done before.", "en": "one thing you have done before", "ar": "شيء فعلته من قبل"},
+    {"says": "The writer says when they are free and why they want the role.", "en": "your free hours and why you want it", "ar": "أوقات تفرّغك ولماذا تريدها"}
+  ],
+  "A2-U9-L1-A05": [
+    {"says": "The speaker tells the neighbour to press or hold a button.", "en": "pressing the button", "ar": "ضغط الزر"},
+    {"says": "The speaker tells the neighbour to charge the phone or check the cable.", "en": "charging it", "ar": "شحنه"},
+    {"says": "The speaker says what to do if the screen is still dark.", "en": "what to do if it stays dark", "ar": "ما يُفعَل إن بقيت الشاشة سوداء"}
+  ],
+  "A2-U9-L2-A05": [
+    {"says": "The speaker gives the steps in order with words such as first, then or next.", "en": "the steps in order", "ar": "الخطوات بالترتيب"},
+    {"says": "The speaker tells the cousin how to connect to the network.", "en": "getting onto the network", "ar": "الاتصال بالشبكة"},
+    {"says": "The speaker tells the cousin how to open the form or the link.", "en": "opening the form", "ar": "فتح الاستمارة"}
+  ],
+  "A2-U9-L3-A05": [
+    {"says": "The speaker starts steps with if.", "en": "steps starting with if", "ar": "خطوات تبدأ بـ if"},
+    {"says": "The speaker says to restart or switch something off and on.", "en": "restarting", "ar": "إعادة التشغيل"},
+    {"says": "The speaker mentions the network, the password or the settings.", "en": "what to check", "ar": "ما يُفحَص"}
+  ],
+  "A2-U9-L4-A05": [
+    {"says": "The writer uses it, them or that to point to the files.", "en": "it, them and that", "ar": "it وthem وthat"},
+    {"says": "The writer says where the files are, in a folder, a link or an attachment.", "en": "where everything is", "ar": "أين كل شيء"},
+    {"says": "The writer mentions the notes or the photographs.", "en": "the notes and the photographs", "ar": "الملاحظات والصور"},
+    {"says": "The writer puts the steps in order or gives a reason.", "en": "the steps in order", "ar": "الخطوات بالترتيب"}
+  ],
+  "A2-U9-L5-A05": [
+    {"says": "The speaker says what happens when they open the app.", "en": "what happens", "ar": "ما يحدث"},
+    {"says": "The speaker says what they have already tried.", "en": "what you have already tried", "ar": "ما جرّبته"},
+    {"says": "The speaker reads out the message or error they can see.", "en": "the exact message", "ar": "الرسالة بالضبط"}
+  ],
+  "A2-U9-L6-A04": [
+    {"says": "The speaker says someone signed in from a new device.", "en": "what has happened", "ar": "ما حدث"},
+    {"says": "The speaker says she does not have to do anything if it was her.", "en": "what she doesn't have to do if it was her", "ar": "ما لا يجب عليها فعله إن كانت هي"},
+    {"says": "The speaker says to change the password and sign out of every device.", "en": "the two things to do if it was not her", "ar": "الأمران إن لم تكن هي"},
+    {"says": "The speaker says the company never asks for a password in a message.", "en": "the rule about messages", "ar": "القاعدة بشأن الرسائل"}
+  ],
+  "A2-U9-L6-A05": [
+    {"says": "The writer gives the steps in order with words such as first, second or finally.", "en": "three steps in order", "ar": "ثلاث خطوات بالترتيب"},
+    {"says": "The writer gives the purpose of each step.", "en": "the purpose of each step", "ar": "غرض كل خطوة"},
+    {"says": "The writer says what to do if something goes wrong, with if.", "en": "an if sentence", "ar": "جملة بـ if"},
+    {"says": "The writer warns never to share something.", "en": "the warning about sharing", "ar": "التحذير من المشاركة"}
+  ],
+  "A2-U9-L7-A03": [
+    {"says": "The speaker tells Nour how to get into the session step by step.", "en": "the steps into the session", "ar": "خطوات الدخول إلى الجلسة"},
+    {"says": "The speaker asks Nour questions to find the cause.", "en": "questions to find the cause", "ar": "أسئلة لمعرفة السبب"},
+    {"says": "The speaker suggests turning the camera off or moving closer to the router.", "en": "the fix for the connection", "ar": "حل مشكلة الاتصال"},
+    {"says": "The speaker says they do not need and must not have her password.", "en": "refusing her password", "ar": "رفض كلمة سرّها"}
+  ],
+  "A2-U9-L7-A04": [
+    {"says": "The speaker gives the steps in order with words such as first, next or then.", "en": "the steps in order", "ar": "الخطوات بالترتيب"},
+    {"says": "The speaker mentions the link, signing in, the room or the worksheet.", "en": "the link, the sign-in and the worksheet", "ar": "الرابط والدخول والورقة"},
+    {"says": "The speaker says what to do if the picture freezes, with if.", "en": "an if sentence for the freeze", "ar": "جملة بـ if للتجمّد"},
+    {"says": "The speaker says to turn the camera off or move closer to the router.", "en": "the fix", "ar": "الحل"}
+  ],
+  "A2-U9-L7-A05": [
+    {"says": "The speaker says when and where the session is.", "en": "where and when the session is", "ar": "أين ومتى الجلسة"},
+    {"says": "The speaker says Nour has to download the worksheet before Friday.", "en": "what she has to do before Friday", "ar": "ما عليها فعله قبل الجمعة"},
+    {"says": "The speaker says nobody will ever ask for her password.", "en": "the rule about passwords", "ar": "القاعدة بشأن كلمة السر"},
+    {"says": "The speaker says Nour does not need to bring anything.", "en": "that she brings nothing", "ar": "أنها لا تجلب شيئاً"}
+  ],
+  "A2-U9-L7-A06": [
+    {"says": "The writer says how to get into the session, in steps.", "en": "how to get in", "ar": "كيفية الدخول"},
+    {"says": "The writer says where the worksheet is and when the folder closes.", "en": "the worksheet and the deadline", "ar": "الورقة والموعد النهائي"},
+    {"says": "The writer says what to do if the picture freezes.", "en": "what to do if it freezes", "ar": "ما يُفعَل إن تجمّدت الصورة"},
+    {"says": "The writer says never to share the password.", "en": "the rule about passwords", "ar": "القاعدة بشأن كلمة السر"}
+  ],
+  "A2-U10-L1-A05": [
+    {"says": "The speaker says what people were doing, using was or were with an -ing verb.", "en": "what people were doing", "ar": "ما كان الناس يفعلونه"},
+    {"says": "The speaker says where and when the story was happening.", "en": "where and when it was", "ar": "أين ومتى كان ذلك"},
+    {"says": "The speaker names the people in the scene.", "en": "the people", "ar": "الأشخاص"}
+  ],
+  "A2-U10-L2-A05": [
+    {"says": "The speaker says what they were doing at the time.", "en": "what you were doing", "ar": "ما كنت تفعله"},
+    {"says": "The speaker says what suddenly happened and interrupted them.", "en": "what interrupted you", "ar": "ما قطع عليك"},
+    {"says": "The speaker asks the neighbour questions about her day.", "en": "two questions about her day", "ar": "سؤالان عن يومها"}
+  ],
+  "A2-U10-L3-A05": [
+    {"says": "The speaker says things were happening at the same time, with while or meanwhile.", "en": "things at the same time", "ar": "أشياء في الوقت نفسه"},
+    {"says": "The speaker says what people were doing, using were with an -ing verb.", "en": "what people were doing", "ar": "ما كان الناس يفعلونه"},
+    {"says": "The speaker names the groups of people in the scene.", "en": "the different people or groups", "ar": "الأشخاص أو المجموعات"}
+  ],
+  "A2-U10-L4-A05": [
+    {"says": "The writer describes people or things with who, which or that.", "en": "who, which or that", "ar": "who أو which أو that"},
+    {"says": "The writer says what kind of film, series or book it is.", "en": "what kind it is", "ar": "نوعه"},
+    {"says": "The writer says who the main character is.", "en": "the main character", "ar": "الشخصية الرئيسية"},
+    {"says": "The writer says what happens in the story.", "en": "what happens", "ar": "ما يحدث"}
+  ],
+  "A2-U10-L5-A05": [
+    {"says": "The speaker says one thing they liked about the film.", "en": "one thing you liked", "ar": "شيء أعجبك"},
+    {"says": "The speaker says one limitation, with although or but.", "en": "one limitation with although", "ar": "عيب واحد بـ although"},
+    {"says": "The speaker says clearly whether to watch it.", "en": "a clear recommendation", "ar": "توصية واضحة"}
+  ],
+  "A2-U10-L6-A04": [
+    {"says": "The speaker says the film is about a girl who builds a radio.", "en": "what it is about", "ar": "موضوعه"},
+    {"says": "The speaker says the warning about a frightening storm scene.", "en": "the warning", "ar": "التحذير"},
+    {"says": "The speaker says the film is suitable from ten years old.", "en": "the age it suits", "ar": "العمر المناسب"},
+    {"says": "The speaker says which showing to book, with Arabic subtitles.", "en": "which showing to book", "ar": "أي عرض تحجز"}
+  ],
+  "A2-U10-L6-A05": [
+    {"says": "The writer says what kind it is and who is in it, with who, which or that.", "en": "what kind it is and who is in it", "ar": "نوعه ومن فيه"},
+    {"says": "The writer gives one limitation, with although or but.", "en": "one limitation", "ar": "عيب واحد"},
+    {"says": "The writer says who the film or book is for.", "en": "who it is for", "ar": "لمن هو"},
+    {"says": "The writer gives a rating.", "en": "a rating", "ar": "تقييم"}
+  ],
+  "A2-U10-L7-A03": [
+    {"says": "The speaker says what worked well in the film.", "en": "what worked", "ar": "ما نجح"},
+    {"says": "The speaker says what did not work, with although or but.", "en": "what did not work", "ar": "ما لم ينجح"},
+    {"says": "The speaker agrees with the friend who should watch it.", "en": "who should watch it", "ar": "من ينبغي أن يشاهده"}
+  ],
+  "A2-U10-L7-A04": [
+    {"says": "The speaker describes the film with who, which or that.", "en": "describing it with who, which or that", "ar": "وصفه بـ who أو which أو that"},
+    {"says": "The speaker gives a balanced opinion with although or but.", "en": "a balanced opinion with although", "ar": "رأي متوازن بـ although"},
+    {"says": "The speaker recommends the film or says who it is for.", "en": "a recommendation", "ar": "توصية"},
+    {"says": "The speaker says they will not tell the ending.", "en": "keeping the ending secret", "ar": "عدم كشف النهاية"}
+  ],
+  "A2-U10-L7-A05": [
+    {"says": "The speaker says the film won a prize and its audience score.", "en": "what the board says", "ar": "ما تقوله اللوحة"},
+    {"says": "The speaker says what the audience wrote about it.", "en": "what the audience wrote", "ar": "ما كتبه الجمهور"},
+    {"says": "The speaker says the Friday showing has Arabic subtitles.", "en": "the Friday showing", "ar": "عرض الجمعة"},
+    {"says": "The speaker says the Saturday showing has no subtitles.", "en": "the Saturday showing", "ar": "عرض السبت"}
+  ],
+  "A2-U10-L7-A06": [
+    {"says": "The writer summarises the story without the ending.", "en": "the story without the ending", "ar": "القصة بدون النهاية"},
+    {"says": "The writer gives a balanced opinion with although or but.", "en": "a balanced opinion", "ar": "رأي متوازن"},
+    {"says": "The writer says who the film suits.", "en": "the audience it suits", "ar": "الجمهور المناسب"},
+    {"says": "The writer gives a rating.", "en": "a rating", "ar": "تقييم"}
+  ],
+  "A2-U11-L1-A05": [
+    {"says": "The speaker says something stopped working, such as the power, the lift or a drain.", "en": "what happened", "ar": "ما حدث"},
+    {"says": "The speaker says what caused it, such as the storm or the wind.", "en": "what caused it", "ar": "سببه"},
+    {"says": "The speaker says the results people are living with now.", "en": "two results today", "ar": "نتيجتان اليوم"}
+  ],
+  "A2-U11-L2-A05": [
+    {"says": "The speaker says what will happen if nobody reports the drain, with if.", "en": "what happens if nobody reports it", "ar": "ما سيحدث إن لم يبلّغ أحد"},
+    {"says": "The speaker says what the water or the road will do.", "en": "the result with will", "ar": "النتيجة بـ will"},
+    {"says": "The speaker agrees who will do what before Thursday.", "en": "who does what", "ar": "من يفعل ماذا"}
+  ],
+  "A2-U11-L3-A05": [
+    {"says": "The speaker says what the weather will certainly do.", "en": "what the weather will do", "ar": "ما سيفعله الطقس حتماً"},
+    {"says": "The speaker says what the weather may or might do.", "en": "two things it may do", "ar": "شيئان قد يحدثان"},
+    {"says": "The speaker says what they will change because of the weather.", "en": "what you will change", "ar": "ما ستغيّره"}
+  ],
+  "A2-U11-L4-A05": [
+    {"says": "The writer uses words such as someone, something, anyone or nobody.", "en": "someone, something, anyone, nobody", "ar": "someone وsomething وanyone وnobody"},
+    {"says": "The writer says what they can see, such as rubbish, damage or a blocked path.", "en": "what you can see", "ar": "ما تراه"},
+    {"says": "The writer says where the problem is and how long it has been there.", "en": "where it is and for how long", "ar": "أين هي ومنذ متى"},
+    {"says": "The writer says what they have already tried.", "en": "what you have already tried", "ar": "ما جرّبته"}
+  ],
+  "A2-U11-L5-A05": [
+    {"says": "The speaker suggests one way forward, with we could or let's.", "en": "one suggestion", "ar": "اقتراح أول"},
+    {"says": "The speaker suggests another way forward.", "en": "a second suggestion", "ar": "اقتراح ثانٍ"},
+    {"says": "The speaker says what each suggestion is for.", "en": "what each one is for", "ar": "غرض كل اقتراح"},
+    {"says": "The speaker agrees with the neighbour on one option.", "en": "agreeing on one", "ar": "الاتفاق على واحد"}
+  ],
+  "A2-U11-L6-A04": [
+    {"says": "The speaker says the riverside path is closed because of flood damage.", "en": "what has closed and why", "ar": "ما أُغلق ولماذا"},
+    {"says": "The speaker says what may happen on Sunday.", "en": "what may happen on Sunday", "ar": "ما قد يحدث الأحد"},
+    {"says": "The speaker says to use the east gate and the hard path.", "en": "which way in to use", "ar": "المدخل الذي يُستعمل"},
+    {"says": "The speaker says the park is not responsible for things left there.", "en": "what the park is not responsible for", "ar": "ما لا تتحمله الحديقة"}
+  ],
+  "A2-U11-L6-A05": [
+    {"says": "The writer says what is likely or will probably happen.", "en": "what is likely", "ar": "ما المرجّح"},
+    {"says": "The writer says what may or might happen.", "en": "what may happen", "ar": "ما قد يحدث"},
+    {"says": "The writer gives instructions with a reason for each.", "en": "instructions with reasons", "ar": "تعليمات بأسبابها"},
+    {"says": "The writer makes a suggestion the neighbours can agree to.", "en": "one suggestion", "ar": "اقتراح واحد"}
+  ],
+  "A2-U11-L7-A03": [
+    {"says": "The speaker says what the weather will probably do.", "en": "what is likely", "ar": "ما المرجّح"},
+    {"says": "The speaker says what may or might happen.", "en": "what may happen", "ar": "ما قد يحدث"},
+    {"says": "The speaker suggests changes to the plan, with we could or let's.", "en": "two changes", "ar": "تغييران"},
+    {"says": "The speaker agrees which change to announce.", "en": "which one to announce", "ar": "أي تغيير يُعلَن"}
+  ],
+  "A2-U11-L7-A04": [
+    {"says": "The speaker says what will happen.", "en": "what will happen", "ar": "ما سيحدث"},
+    {"says": "The speaker says what might happen.", "en": "what might happen", "ar": "ما قد يحدث"},
+    {"says": "The speaker says where each stall or person should go.", "en": "what each person should do", "ar": "ما على كل شخص فعله"},
+    {"says": "The speaker gives the reason behind the plan.", "en": "the reason", "ar": "السبب"}
+  ],
+  "A2-U11-L7-A05": [
+    {"says": "The speaker says to set up on the hard path only.", "en": "where she may set up", "ar": "أين يمكنها الإعداد"},
+    {"says": "The speaker says to close the stall and go to the sports hall if thunder starts.", "en": "what to do if thunder starts", "ar": "ما يُفعَل إن بدأ الرعد"},
+    {"says": "The speaker says not to move the barriers and not to use a gas ring under a tent.", "en": "the two things she must not do", "ar": "الأمران الممنوعان"},
+    {"says": "The speaker says to call the desk.", "en": "who to call", "ar": "بمن تتصل"}
+  ],
+  "A2-U11-L7-A06": [
+    {"says": "The writer says the stalls have moved from the grass to the hard path and the top field.", "en": "what has changed", "ar": "ما تغيّر"},
+    {"says": "The writer says why, because of the rain.", "en": "why", "ar": "السبب"},
+    {"says": "The writer says showers or thunder may still happen.", "en": "what may still happen", "ar": "ما قد يحدث أيضاً"},
+    {"says": "The writer says one thing people do not need to worry about.", "en": "one thing not to worry about", "ar": "شيء لا يستدعي القلق"}
+  ],
+  "A2-U12-L1-A05": [
+    {"says": "The speaker invites the friend to come.", "en": "the invitation", "ar": "الدعوة"},
+    {"says": "The speaker says what the occasion is and why they are having it.", "en": "the occasion and why", "ar": "المناسبة وسببها"},
+    {"says": "The speaker says when and where it is.", "en": "when and where", "ar": "متى وأين"},
+    {"says": "The speaker says what will happen if the weather turns bad.", "en": "the plan if the weather turns bad", "ar": "الخطة إن ساء الطقس"}
+  ],
+  "A2-U12-L2-A05": [
+    {"says": "The speaker asks the neighbour politely, with could you or would you mind.", "en": "three polite requests", "ar": "ثلاثة طلبات مهذّبة"},
+    {"says": "The speaker names jobs such as bringing, collecting or setting up.", "en": "the jobs", "ar": "المهام"},
+    {"says": "The speaker says which job they will do themselves.", "en": "the job you will do", "ar": "المهمة التي ستقوم بها"},
+    {"says": "The speaker agrees a time to meet.", "en": "a time to meet", "ar": "وقت اللقاء"}
+  ],
+  "A2-U12-L3-A05": [
+    {"says": "The speaker says one thing that has just happened.", "en": "one thing that has just happened", "ar": "شيء حدث للتو"},
+    {"says": "The speaker says things that are already done.", "en": "two things already done", "ar": "شيئان أُنجزا"},
+    {"says": "The speaker says one thing that has not happened yet.", "en": "one thing not done yet", "ar": "شيء لم يحدث بعد"},
+    {"says": "The speaker mentions the chairs, the tables, the food or other arrangements.", "en": "the arrangements", "ar": "الترتيبات"}
+  ],
+  "A2-U12-L4-A05": [
+    {"says": "The writer accepts the first invitation warmly.", "en": "accepting the first invitation", "ar": "قبول الدعوة الأولى"},
+    {"says": "The writer declines the second invitation politely.", "en": "declining the second politely", "ar": "رفض الثانية بأدب"},
+    {"says": "The writer gives a real reason for declining.", "en": "a real reason", "ar": "سبب حقيقي"},
+    {"says": "The writer offers another time or wishes them well.", "en": "an offer for another time", "ar": "عرض لوقت آخر"}
+  ],
+  "A2-U12-L5-A05": [
+    {"says": "The speaker says Saturday is not cancelled, only changed.", "en": "that it is not cancelled", "ar": "أنه لم يُلغَ"},
+    {"says": "The speaker gives the reason for the change.", "en": "why", "ar": "السبب"},
+    {"says": "The speaker says what will happen instead and what stays the same.", "en": "what has changed and what has not", "ar": "ما تغيّر وما لم يتغيّر"},
+    {"says": "The speaker says whether they are still going.", "en": "whether you are still going", "ar": "هل ما زلت ذاهباً"}
+  ],
+  "A2-U12-L6-A04": [
+    {"says": "The speaker says the room is theirs from twelve until six.", "en": "the hours", "ar": "الساعات"},
+    {"says": "The speaker says tables and chairs are already in the room.", "en": "what is already in the room", "ar": "ما هو موجود في الغرفة"},
+    {"says": "The speaker says the oven does not work.", "en": "the one thing that does not work", "ar": "الشيء الذي لا يعمل"},
+    {"says": "The speaker says to leave the room tidy and return the key.", "en": "what has to happen at the end", "ar": "ما يجب في النهاية"}
+  ],
+  "A2-U12-L6-A05": [
+    {"says": "The writer invites the group to the event.", "en": "the invitation", "ar": "الدعوة"},
+    {"says": "The writer gives the date, time and place.", "en": "the date, time and place", "ar": "التاريخ والوقت والمكان"},
+    {"says": "The writer says what is already arranged and what is not yet.", "en": "what is arranged and what is not yet", "ar": "ما رُتّب وما لم يُرتَّب بعد"},
+    {"says": "The writer says what to include in the reply and how to contact them.", "en": "what you need in the reply", "ar": "ما تحتاجه في الردّ"}
+  ],
+  "A2-U12-L7-A03": [
+    {"says": "The speaker invites the guest to come.", "en": "the invitation", "ar": "الدعوة"},
+    {"says": "The speaker gives the new place and time.", "en": "the new place and time", "ar": "المكان والوقت الجديدان"},
+    {"says": "The speaker explains why it moved.", "en": "why it moved", "ar": "سبب الانتقال"},
+    {"says": "The speaker asks the guest to take one job.", "en": "asking her to take one job", "ar": "طلب أن تتولى مهمة"}
+  ],
+  "A2-U12-L7-A04": [
+    {"says": "The speaker gives the new place and time.", "en": "the new place and time", "ar": "المكان والوقت الجديدان"},
+    {"says": "The speaker says what has already been arranged.", "en": "what is already arranged", "ar": "ما رُتّب"},
+    {"says": "The speaker says what is not arranged yet.", "en": "what is not arranged yet", "ar": "ما لم يُرتَّب بعد"},
+    {"says": "The speaker says who is doing each job.", "en": "who is doing each job", "ar": "من يقوم بكل مهمة"}
+  ],
+  "A2-U12-L7-A05": [
+    {"says": "The speaker says when the doors open and until when the room is theirs.", "en": "when she can come in and for how long", "ar": "متى تدخل وإلى متى"},
+    {"says": "The speaker says to leave the car at the school car park.", "en": "where to leave the car", "ar": "أين تترك السيارة"},
+    {"says": "The speaker says tea and coffee are included.", "en": "what is included", "ar": "ما المشمول"},
+    {"says": "The speaker says nobody may move the piano.", "en": "the one thing nobody may do", "ar": "الشيء الممنوع"}
+  ],
+  "A2-U12-L7-A06": [
+    {"says": "The writer apologises for the change.", "en": "an apology", "ar": "اعتذار"},
+    {"says": "The writer says why the change happened.", "en": "why it happened", "ar": "سبب التغيير"},
+    {"says": "The writer gives the new place and time.", "en": "the new place and time", "ar": "المكان والوقت الجديدان"},
+    {"says": "The writer says what has not changed.", "en": "what has not changed", "ar": "ما لم يتغيّر"},
+    {"says": "The writer names the jobs still needed and asks for a reply by Thursday.", "en": "the two jobs and a reply by Thursday", "ar": "المهمتان والردّ قبل الخميس"}
+  ]
+}
