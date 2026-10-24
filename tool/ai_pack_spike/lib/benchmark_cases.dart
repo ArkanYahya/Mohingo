@@ -55,7 +55,15 @@ const String _likesModel =
     'I like football and I love music. I don\'t like tennis.';
 const String _politeTask = 'A person helps you. Respond politely.';
 const List<String> _politeParts = ['a polite reply to someone who helped'];
-const List<String> _politeHypotheses = ['The speaker thanks someone politely.'];
+// Hypotheses v2 (2026-10-24): each states only what the answer itself says,
+// never the task's situation. v1's "thanks someone politely" missed
+// "I appreciate it." (lexical); "…about the friend's volunteering" missed
+// replies that never name the volunteering; "…at work" missed "I can't stand
+// long meetings."; "describes their morning routine" missed three plain
+// morning sentences (a category label).
+const List<String> _politeHypotheses = [
+  'The speaker expresses thanks or appreciation.',
+];
 const String _politeModel = 'Thank you. / Thanks.';
 const String _introTask =
     'Introduce yourself: say your name, where you are from and your job.';
@@ -80,9 +88,9 @@ const List<String> _emailParts = [
   'says what the writer is doing these days',
 ];
 const List<String> _emailHypotheses = [
-  'The writer is interested in the friend\'s volunteering.',
-  'The writer asks the friend a question about the volunteering.',
-  'The writer says what they are doing these days.',
+  'The writer says something positive about what the friend does.',
+  'The writer asks the friend a question.',
+  'The writer talks about their own life these days.',
 ];
 const String _emailModel =
     'Hi! That sounds great. Volunteering at the library is a lovely idea. '
@@ -96,7 +104,7 @@ const List<String> _routineParts = [
   'has three sentences',
 ];
 const List<String> _routineHypotheses = [
-  'The speaker describes their morning routine.',
+  'The speaker says what they do in the morning.',
   '@sentences:3',
 ];
 const String _routineModel =
@@ -349,7 +357,7 @@ const List<BenchmarkCase> kBenchmarkCases = [
     id: 'dislike-register',
     task: 'Tell your new colleague about one thing you don\'t like at work.',
     parts: ['one thing the speaker does not like at work'],
-    hypotheses: ['The speaker says one thing they do not like at work.'],
+    hypotheses: ['The speaker says one thing they do not like.'],
     modelAnswer: 'I don\'t like long meetings.',
     answer: 'I can\'t stand long meetings.',
     expectAnswersTask: true,
